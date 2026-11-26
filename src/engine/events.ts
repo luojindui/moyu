@@ -8,7 +8,7 @@ export const BOSS_INTERVAL_MAX = 150;
 export const BOSS_DURATION = 8;
 export const BOSS_PENALTY_RATE = 0.05;
 export const BOSS_PENALTY_MIN = 10;
-export const BOSS_REWARD_IDLE_SECONDS = 20;
+export const BOSS_REWARD_IDLE_SECONDS = 5;
 export const BOSS_REWARD_MIN = 50;
 
 export const MEME_INTERVAL_MIN = 45;
@@ -65,9 +65,10 @@ export function scheduleEvents(es: EventState, now: number, rng: () => number): 
   }
 }
 
-/** 巡逻中点击 = 被逮：扣 max(10, 5% 摸鱼值) */
+/** 巡逻中点击 = 被逮：扣 max(10, 5% 摸鱼值)；同一巡逻只扣一次（连点无额外伤） */
 export function onBossTap(state: GameState, es: EventState): { state: GameState; caught: boolean; lost: number } {
   if (es.bossUntil <= 0) return { state, caught: false, lost: 0 };
+  if (es.bossCaught) return { state, caught: false, lost: 0 };
   const lost = Math.max(BOSS_PENALTY_MIN, state.moyu * BOSS_PENALTY_RATE);
   es.bossCaught = true;
   return { state: { ...state, moyu: Math.max(0, state.moyu - lost) }, caught: true, lost };

@@ -91,11 +91,22 @@ describe("老板巡逻结算", () => {
     expect(r.state.moyu).toBe(50 - BOSS_PENALTY_MIN);
   });
 
-  it("安然度过：奖励 = max(50, 20 × idleRate)", () => {
+  it("同一巡逻内被抓一次后不再重复扣（连点无额外伤）", () => {
     const s = initialState();
-    s.levels["phone" as string] = 5; // 5/秒 → 奖励 100
+    s.moyu = 1000;
+    const es: EventState = { nextBossAt: Infinity, bossUntil: 10, nextMemeAt: Infinity, memeUntil: -1, bossCaught: false };
+    const first = onBossTap(s, es);
+    expect(first.caught).toBe(true);
+    const second = onBossTap(first.state, es);
+    expect(second.caught).toBe(false);
+    expect(second.state.moyu).toBe(first.state.moyu);
+  });
+
+  it("安然度过：奖励 = max(50, 5 × idleRate)（克制，不喧宾夺主）", () => {
+    const s = initialState();
+    s.levels["phone" as string] = 5; // 5/秒 → 5×5=25 → 下限 50
     const reward = bossSurviveReward(s);
-    expect(reward).toBe(BOSS_REWARD_IDLE_SECONDS * 5);
+    expect(reward).toBe(50);
     expect(reward).toBeGreaterThanOrEqual(BOSS_REWARD_MIN);
   });
 
@@ -133,11 +144,11 @@ describe("同事丢梗", () => {
     expect(caught.state.moyu).toBe(950);
   });
 
-  it("常数合理：巡逻 8s、梗 5s、惩罚率 5%", () => {
+  it("常数合理：巡逻 8s、梗 5s、惩罚率 5%、安然奖 5 秒挂机", () => {
     expect(BOSS_DURATION).toBe(8);
     expect(MEME_DURATION).toBe(5);
     expect(BOSS_PENALTY_RATE).toBeCloseTo(0.05);
     expect(MEME_REWARD_CLICKS).toBe(5);
-    expect(BOSS_REWARD_IDLE_SECONDS).toBe(20);
+    expect(BOSS_REWARD_IDLE_SECONDS).toBe(5);
   });
 });
