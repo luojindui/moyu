@@ -90,11 +90,17 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
       typeof blob.totalEarned === "number" && Number.isFinite(blob.totalEarned) && blob.totalEarned >= 0
         ? blob.totalEarned
         : 0;
-    const offlineSeconds = Math.max(0, (now - blob.savedAt) / 1000);
+    const savedAtMs: number = blob.savedAt;
+    const offlineSeconds = Math.max(0, (now - savedAtMs) / 1000);
+    // createdAt 钳制：缺失默认 savedAt（不重发首日）；越界（未来/NaN）按 savedAt 收敛，堵离线分级绕过
+    const clampCreatedAt = (ca: unknown): number => {
+      if (typeof ca !== "number" || !Number.isFinite(ca) || ca > now) return savedAtMs;
+      return Math.max(ca, savedAtMs - 365 * 86_400_000);
+    };
     return {
       state: { moyu, levels, totalEarned },
       offlineSeconds,
-      createdAt: typeof blob.createdAt === "number" ? blob.createdAt : now,
+      createdAt: clampCreatedAt(blob.createdAt),
     };
   } catch {
     return { state: initialState(), offlineSeconds: 0, createdAt: now };

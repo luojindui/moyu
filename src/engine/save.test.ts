@@ -38,6 +38,24 @@ describe("存档", () => {
     expect(r.createdAt).toBeGreaterThan(0);
   });
 
+  it("createdAt 越界（未来/垃圾）钳制为 savedAt，防离线分级永久绕过", () => {
+    const savedAt = Date.now() - 7 * 86400_000; // 建档 7 天前，远超首日
+    const a = memoryAdapter({
+      "moyu-save": JSON.stringify({ v: 1, moyu: 88, levels: {}, savedAt, createdAt: Date.now() + 1e12 }),
+    });
+    const r = restore(a, Date.now());
+    expect(r.createdAt).toBe(savedAt);
+  });
+
+  it("createdAt 缺失时默认为 savedAt（不重发首日全额）", () => {
+    const savedAt = Date.now() - 7 * 86400_000;
+    const a = memoryAdapter({
+      "moyu-save": JSON.stringify({ v: 1, moyu: 88, levels: {}, savedAt }),
+    });
+    const r = restore(a, Date.now());
+    expect(r.createdAt).toBe(savedAt);
+  });
+
   it("损坏 JSON：返回初始状态且不抛错", () => {
     const a = memoryAdapter({ "moyu-save": "{oops not json" });
     const r = restore(a, Date.now());

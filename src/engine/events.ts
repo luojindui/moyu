@@ -83,12 +83,12 @@ export function onBossTap(state: GameState, es: EventState, now: number): { stat
   if (now < es.bossStartAt + BOSS_GRACE_SECONDS) return { state, caught: false, lost: 0 };
   const raw = Math.max(BOSS_PENALTY_MIN, state.moyu * BOSS_PENALTY_RATE);
   const cap = Math.max(BOSS_PENALTY_MIN, BOSS_PENALTY_CAP_IDLE_SECONDS * effectOf(state).idleRate);
-  const lost = Math.min(raw, cap);
+  const lost = Math.min(raw, cap, state.moyu); // 汇报口径 = 实扣金额，不为 0 不虚报
   es.bossCaught = true;
-  return { state: { ...state, moyu: Math.max(0, state.moyu - lost) }, caught: true, lost };
+  return { state: { ...state, moyu: state.moyu - lost }, caught: true, lost };
 }
 
-/** 巡逻安然结束奖励：max(50, 20 × idleRate)；被抓过不给 */
+/** 巡逻安然结束奖励：max(BOSS_REWARD_MIN, BOSS_REWARD_IDLE_SECONDS × idleRate) 即 max(50, 5×idleRate)；被抓过不给 */
 export function bossSurviveReward(state: GameState, es?: EventState): number {
   if (es?.bossCaught) return 0;
   const { idleRate } = effectOf(state);

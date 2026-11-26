@@ -92,7 +92,11 @@ async function boot(): Promise<void> {
     if (es.bossUntil > scene.gameTime) {
       const r = onBossTap(state, es, scene.gameTime);
       state = r.state;
-      scene.fx.floatText(p.x, p.y, `被逮住了！-${Math.round(r.lost)}`);
+      if (r.caught) {
+        scene.fx.floatText(p.x, p.y, `被逮住了！-${Math.round(r.lost)}`);
+      } else {
+        scene.fx.floatText(p.x, p.y, "忍住！");
+      }
       return;
     }
     // 丢梗命中（虚拟坐标半径内）

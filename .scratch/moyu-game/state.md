@@ -22,8 +22,8 @@
 - [x] G1 clarify write-back + 批量问题已答（2026-11-26）
 - [x] G2 plan posted（mvp-v1 spec 工件，校验清单过）+ 批次2 范围扩已获用户批准
 - [x] G3 部分：npm run build 干净 + vitest 23 绿 + 模拟驱动报告
-- [ ] G4 review closed（第 1 轮试玩报告 → 分诊 → 批次2 → 复审）
-- [ ] G5 archive confirm
+- [x] G4 review closed（reviewer-g4：首轮 NEEDS_FIXES 7 发现全修 → 复审 APPROVE，commit a71ad1c/9280475）
+- [ ] G5 archive confirm（第 2 轮试玩达标后提交归档提案）
 - [ ] G6 cleanup verified
 
 ## 试玩闭环
@@ -31,4 +31,5 @@
 - 开发服务器 http://127.0.0.1:5173/（后台，日志 /tmp/moyu-dev.log）
 - 模拟驱动：`npx vitest run playtest/simulate.test.ts` → playtest/report.json
 - 试玩 agent：player-optimizer（数值）/ player-casual（休闲）/ player-auditor（审计）
-- 循环计划：批次2 实现 → G3/G4 → 第 2 轮试玩 → 达标交付
+- 第 1 轮：三报告全回收，12 项发现全处置（2 critical 修复 + 数值重构 + 随机事件）
+- 第 2 轮：进行中（2026-11-26 19:48 发车，三人复测 + 可交付判定）
