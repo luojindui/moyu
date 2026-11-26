@@ -116,34 +116,34 @@ function percentile(arr: number[], p: number): number {
 }
 
 describe("R2 审计①②：一次性惩罚 / 一梗一奖 / 安然奖", () => {
-  it("同一巡逻连点 5 次只扣一次", () => {
-    const es: EventState = { ...newEventState(), bossUntil: 100 };
-    let state = initialState();
-    const before = state.moyu;
+  it("同一巡逻连点 5 次只扣一次（宽限后：越窗首击扣 1 次）", () => {
+    const es: EventState = { ...newEventState(), bossUntil: 100, bossStartAt: 0 };
+    let state = { ...initialState(), moyu: 1000 };
     let totalLost = 0;
     for (let i = 0; i < 5; i++) {
-      const r = onBossTap(state, es);
+      const r = onBossTap(state, es, 5); // now=5 已过 0.8s 宽限
       state = r.state;
       totalLost += r.lost;
     }
-    expect(totalLost).toBe(Math.max(10, before * 0.05)); // 只有一次
-    expect(state.moyu).toBe(0); // 初始 0 余额 → 扣到 0
+    // raw=max(10,50)=50；cap=max(10, 10×0.2)=10；lost=min(50,10,1000)=10，仅一次
+    expect(totalLost).toBe(10);
+    expect(state.moyu).toBe(990);
   });
 
   it("巡逻外点击不触发惩罚", () => {
     const es = newEventState();
-    const r = onBossTap(initialState(), es);
+    const r = onBossTap(initialState(), es, 5);
     expect(r.caught).toBe(false);
     expect(r.lost).toBe(0);
   });
 
-  it("惩罚口径：lost 上报 10 但余额 3 时实扣 3（浮字夸大，cosmetic）", () => {
-    const es: EventState = { ...newEventState(), bossUntil: 100 };
+  it("惩罚口径（已修复）：lost = 实扣金额（余额 3 时上报 3 不夸大）", () => {
+    const es: EventState = { ...newEventState(), bossUntil: 100, bossStartAt: 0 };
     const state = { ...initialState(), moyu: 3 };
-    const r = onBossTap(state, es);
+    const r = onBossTap(state, es, 5);
     console.log("上报 lost:", r.lost, "实扣:", state.moyu - r.state.moyu);
     expect(r.state.moyu).toBe(0); // 实扣 3
-    expect(r.lost).toBe(10); // 上报 10 ≠ 实扣 3（main.ts 浮字显示 -10）
+    expect(r.lost).toBe(3); // ✅ 已修复：上报=实扣
   });
 
   it("被抓过 → 安然奖为 0；未被抓 → max(50, 5×idleRate)（BOSS_REWARD_IDLE_SECONDS=5；注释写 20× 已过时）", () => {

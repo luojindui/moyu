@@ -41,23 +41,22 @@ describe("R2 审计③a：createdAt 继承链", () => {
     expect((JSON.parse(a.dump()!) as { createdAt: number }).createdAt).toBe(5000);
   });
 
-  it("旧档（无 createdAt）restore 补当前时间 → 重新获得首日全额", () => {
+  it("旧档（无 createdAt）→ 补 savedAt（已修复：不重发首日全额）", () => {
     const a = memAdapter({
       "moyu-save": JSON.stringify({ v: 1, moyu: 5, levels: { phone: 1 }, savedAt: 1000 }),
     });
     const r = restore(a, 9000);
-    expect(r.createdAt).toBe(9000); // 迁移：老玩家重获 24h 首日（设计选择，现状记录）
+    expect(r.createdAt).toBe(1000); // ✅ 修复前补 now → 老玩家可反复白嫖首日
   });
 
-  it("restore 接受未来/超大 createdAt → 首日判定可被永久伪造（鲁棒性洞）", () => {
+  it("restore 拒绝未来/超大 createdAt（已钳制到 savedAt）", () => {
     const a = memAdapter({
       "moyu-save": JSON.stringify({ v: 1, moyu: 5, levels: {}, savedAt: 1000, createdAt: 1e18 }),
     });
     const r = restore(a, 2000);
-    console.log("未来 createdAt 被原样接受:", r.createdAt);
     const firstDay = Date.now() - r.createdAt < DAY;
-    expect(Number.isFinite(r.createdAt)).toBe(true); // 通过（有限）
-    expect(r.createdAt).toBe(1e18); // 🔴 现状：任意数值原样接受 → currentOfflineRate 恒判首日
+    expect(firstDay).toBe(false); // ✅ 修复前可永久伪造首日
+    expect(r.createdAt).toBe(1000); // 钳制到 savedAt
   });
 
   it("restore 接受负 createdAt（同样恒判首日）", () => {

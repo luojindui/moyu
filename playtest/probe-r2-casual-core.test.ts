@@ -99,10 +99,11 @@ describe("R2-③ 彩蛋与商店增量文案覆盖", () => {
     console.log(`coffee Lv20 → ${render("coffee", 20)}`);
     console.log(`phone  Lv19 → ${render("phone", 19)}`);
     console.log(`phone  Lv20 → ${render("phone", 20)}`);
-    // 里程碑数值验证：19→20 级那一口吃到 ×2 跳变（19→40，边际+21），之后回落 +2
+    // 里程碑数值验证（错峰后）：coffee（偏移0）19→20 吃到 ×2 跳变；phone（偏移15）跳变口在 lv4→5
     expect(marginalEffect("coffee", 19).clickPower).toBe(21); // 40 - 19：里程碑口
     expect(marginalEffect("coffee", 20).clickPower).toBe(2); // 42 - 40：常态口
-    expect(marginalEffect("phone", 19).idleRate).toBe(21);
+    expect(marginalEffect("phone", 4).idleRate).toBe(6); // 4 → 10：错峰里程碑口
+    expect(marginalEffect("phone", 19).idleRate).toBe(2); // 38 → 40：常态口
     // 点击飘字梗池
     console.log(`点击梗池 ${CLICK_MEMES.length} 条: ${CLICK_MEMES.join(" / ")}`);
     expect(CLICK_MEMES.length).toBeGreaterThanOrEqual(6);

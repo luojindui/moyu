@@ -24,30 +24,35 @@ describe("R2 审计②a：工位底薪（规格：零购买挂机 60s → +12）
   });
 });
 
-describe("R2 审计②b：效果里程碑（规格：19 级 19/秒 → 20 级 40/秒）", () => {
+describe("R2 审计②b：效果里程碑（R2 错峰后：coffee 偏移 0 / phone 偏移 15）", () => {
   const at = (lv: number) => effectOf({ ...initialState(), levels: { phone: lv } }).idleRate - BASE_IDLE_RATE;
+  const coffeeAt = (lv: number) => effectOf({ ...initialState(), levels: { coffee: lv } }).clickPower;
 
-  it("刷手机 19 级贡献 19/秒，20 级 40/秒", () => {
-    expect(at(19)).toBe(19);
-    expect(at(20)).toBe(40); // 20 × 2^1
+  it("coffee（偏移 0）：19 级 19，20 级 40", () => {
+    expect(coffeeAt(19)).toBe(19);
+    expect(coffeeAt(20)).toBe(40); // 20 × 2^1
   });
-  it("39→41 级：78(×2), 160(×4), 164(×4)", () => {
-    expect(at(39)).toBe(78); // floor(39/20)=1 → ×2
-    expect(at(40)).toBe(160); // floor(40/20)=2 → ×4
-    expect(at(41)).toBe(164);
+  it("phone（偏移 15）：首次翻倍在第 5 级；19→20 无跳变", () => {
+    expect(at(4)).toBe(4); // ⌊(4+15)/20⌋=0
+    expect(at(5)).toBe(10); // ⌊(5+15)/20⌋=1 → 5×2
+    expect(at(19)).toBe(38); // 19×2，无跳变
+    expect(at(24)).toBe(48); // 第二次翻倍前一级
+    expect(at(25)).toBe(100); // 25×4
   });
-  it("marginalEffect 在里程碑处跳变（19→20 增量 21）", () => {
-    expect(marginalEffect("phone", 19).idleRate).toBe(40 - 19);
-    expect(marginalEffect("phone", 18).idleRate).toBe(1);
-    expect(marginalEffect("phone", 0).idleRate).toBe(1);
+  it("marginalEffect 在里程碑处跳变（coffee 19→20 增量 21；phone 错峰口在 lv4→5 增量 6）", () => {
+    expect(marginalEffect("coffee", 19).clickPower).toBe(21);
+    expect(marginalEffect("phone", 4).idleRate).toBe(6); // 4 → 10
+    expect(marginalEffect("phone", 19).idleRate).toBe(2); // 38 → 40
+    expect(marginalEffect("phone", 0).idleRate).toBe(2); // 0 → 2（lv1 即 ×2）
     expect(marginalEffect("coffee", 19).clickPower).toBe(21);
   });
-  it("milestoneGap：0→20，19→1，20→20，39→1，40→20", () => {
-    expect(milestoneGap("phone", 0)).toBe(MILESTONE_LEVELS);
-    expect(milestoneGap("phone", 19)).toBe(1);
-    expect(milestoneGap("phone", 20)).toBe(20);
-    expect(milestoneGap("phone", 39)).toBe(1);
-    expect(milestoneGap("phone", 40)).toBe(20);
+  it("milestoneGap：coffee 0→20,19→1,20→20；phone 0→5（错峰），24→1", () => {
+    expect(milestoneGap("coffee", 0)).toBe(MILESTONE_LEVELS);
+    expect(milestoneGap("coffee", 19)).toBe(1);
+    expect(milestoneGap("coffee", 20)).toBe(20);
+    expect(milestoneGap("phone", 0)).toBe(5); // 偏移 15：首次翻倍在 lv5
+    expect(milestoneGap("phone", 24)).toBe(1); // lv25 第二次
+    expect(milestoneGap("phone", 25)).toBe(20);
   });
   it("多升级叠加：phone20 + toilet20 = 40 + 200 + 底薪", () => {
     const s = { ...initialState(), levels: { phone: 20, toilet: 20 } };
