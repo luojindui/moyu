@@ -1,0 +1,4122 @@
+{
+  "generatedAt": "2026-11-26T10:47:56.475Z",
+  "engine": "mvp-v1 batch1（纯放置循环，无随机事件）",
+  "sessions": [
+    {
+      "persona": "clicker(狂点党)",
+      "checkpoints": [
+        {
+          "minute": 0,
+          "moyu": 0,
+          "moyuText": "0",
+          "clickPower": 1,
+          "idleRate": 0,
+          "levels": {}
+        },
+        {
+          "minute": 1,
+          "moyu": 734,
+          "moyuText": "734",
+          "clickPower": 11,
+          "idleRate": 2,
+          "levels": {
+            "coffee": 10,
+            "phone": 2
+          }
+        },
+        {
+          "minute": 3,
+          "moyu": 5772,
+          "moyuText": "5772",
+          "clickPower": 32,
+          "idleRate": 11,
+          "levels": {
+            "coffee": 19,
+            "phone": 11,
+            "water": 6
+          }
+        },
+        {
+          "minute": 10,
+          "moyu": 9155,
+          "moyuText": "9155",
+          "clickPower": 90,
+          "idleRate": 148,
+          "levels": {
+            "coffee": 39,
+            "phone": 30,
+            "water": 25,
+            "toilet": 18,
+            "group": 8
+          }
+        },
+        {
+          "minute": 30,
+          "moyu": 4092.5,
+          "moyuText": "4092",
+          "clickPower": 134,
+          "idleRate": 567,
+          "levels": {
+            "coffee": 53,
+            "phone": 45,
+            "water": 40,
+            "toilet": 32,
+            "group": 22,
+            "meeting": 10
+          }
+        },
+        {
+          "minute": 60,
+          "moyu": 8348.3,
+          "moyuText": "8348",
+          "clickPower": 158,
+          "idleRate": 863,
+          "levels": {
+            "coffee": 61,
+            "phone": 53,
+            "water": 48,
+            "toilet": 40,
+            "group": 30,
+            "meeting": 18
+          }
+        },
+        {
+          "minute": 120,
+          "moyu": 75988.3,
+          "moyuText": "7.60万",
+          "clickPower": 179,
+          "idleRate": 1147,
+          "levels": {
+            "coffee": 68,
+            "phone": 60,
+            "water": 55,
+            "toilet": 47,
+            "group": 37,
+            "meeting": 26
+          }
+        },
+        {
+          "minute": 180,
+          "moyu": 12755.3,
+          "moyuText": "1.28万",
+          "clickPower": 191,
+          "idleRate": 1295,
+          "levels": {
+            "coffee": 72,
+            "phone": 64,
+            "water": 59,
+            "toilet": 51,
+            "group": 41,
+            "meeting": 30
+          }
+        }
+      ],
+      "firstPurchaseMinute": 0.08333333333333333,
+      "purchases": 317,
+      "maxDeadAirSeconds": 187,
+      "purchaseTimeline": [
+        {
+          "minute": 0.1,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 0.2,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 0.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 0.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 0.4,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 0.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 0.6,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 0.7,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 0.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 0.8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 0.9,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 1,
+          "item": "刷手机"
+        },
+        {
+          "minute": 1.1,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 1.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 1.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 1.3,
+          "item": "刷手机"
+        },
+        {
+          "minute": 1.4,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 1.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 1.6,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 1.7,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 1.8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 1.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 1.9,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 2.1,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 2.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 2.3,
+          "item": "刷手机"
+        },
+        {
+          "minute": 2.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 2.4,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 2.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 2.6,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 2.7,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 2.8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 2.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 2.9,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 3,
+          "item": "刷手机"
+        },
+        {
+          "minute": 3.1,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 3.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 3.3,
+          "item": "刷手机"
+        },
+        {
+          "minute": 3.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 3.4,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 3.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 3.6,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 3.7,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 3.8,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 3.8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 3.9,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 4,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 4.1,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 4.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 4.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 4.3,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 4.4,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 4.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 4.6,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 4.7,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 4.8,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 4.8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 4.9,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 5.1,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 5.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 5.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 5.3,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 5.4,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 5.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 5.6,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 5.7,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 5.8,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 5.8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 5.9,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 6,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 6.1,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 6.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 6.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 6.3,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 6.4,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 6.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 6.6,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 6.7,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 6.8,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 6.8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 6.9,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 7,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 7.1,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 7.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 7.3,
+          "item": "刷手机"
+        },
+        {
+          "minute": 7.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 7.4,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 7.5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 7.6,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 7.7,
+          "item": "刷手机"
+        },
+        {
+          "minute": 7.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 7.8,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 7.9,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 8,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 8.1,
+          "item": "刷手机"
+        },
+        {
+          "minute": 8.2,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 8.3,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 8.3,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 8.4,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 8.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 8.6,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 8.7,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 8.8,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 8.8,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 8.9,
+          "item": "刷手机"
+        },
+        {
+          "minute": 9,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 9.1,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 9.2,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 9.3,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 9.3,
+          "item": "刷手机"
+        },
+        {
+          "minute": 9.4,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 9.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 9.6,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 9.7,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 9.8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 9.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 9.9,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 10,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 10.1,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 10.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 10.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 10.3,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 10.4,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 10.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 10.6,
+          "item": "刷手机"
+        },
+        {
+          "minute": 10.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 10.9,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 11.1,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 11.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 11.4,
+          "item": "刷手机"
+        },
+        {
+          "minute": 11.6,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 11.7,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 11.9,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 12.1,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 12.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 12.4,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 12.6,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 12.8,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 13,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 13.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 13.4,
+          "item": "无用会议"
+        },
+        {
+          "minute": 13.6,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 13.8,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 14,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 14.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 14.4,
+          "item": "刷手机"
+        },
+        {
+          "minute": 14.6,
+          "item": "无用会议"
+        },
+        {
+          "minute": 14.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 15,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 15.2,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 15.4,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 15.6,
+          "item": "刷手机"
+        },
+        {
+          "minute": 15.9,
+          "item": "无用会议"
+        },
+        {
+          "minute": 16.1,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 16.3,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 16.5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 16.7,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 17,
+          "item": "刷手机"
+        },
+        {
+          "minute": 17.2,
+          "item": "无用会议"
+        },
+        {
+          "minute": 17.4,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 17.7,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 17.9,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 18.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 18.4,
+          "item": "刷手机"
+        },
+        {
+          "minute": 18.7,
+          "item": "无用会议"
+        },
+        {
+          "minute": 18.9,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 19.2,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 19.4,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 19.7,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 20,
+          "item": "刷手机"
+        },
+        {
+          "minute": 20.2,
+          "item": "无用会议"
+        },
+        {
+          "minute": 20.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 20.8,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 21.1,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 21.3,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 21.6,
+          "item": "刷手机"
+        },
+        {
+          "minute": 21.9,
+          "item": "无用会议"
+        },
+        {
+          "minute": 22.2,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 22.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 22.8,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 23.1,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 23.4,
+          "item": "刷手机"
+        },
+        {
+          "minute": 23.8,
+          "item": "无用会议"
+        },
+        {
+          "minute": 24.1,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 24.4,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 24.7,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 25.1,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 25.4,
+          "item": "刷手机"
+        },
+        {
+          "minute": 25.8,
+          "item": "无用会议"
+        },
+        {
+          "minute": 26.1,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 26.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 26.8,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 27.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 27.6,
+          "item": "刷手机"
+        },
+        {
+          "minute": 28,
+          "item": "无用会议"
+        },
+        {
+          "minute": 28.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 28.7,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 29.1,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 29.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 29.9,
+          "item": "刷手机"
+        },
+        {
+          "minute": 30.3,
+          "item": "无用会议"
+        },
+        {
+          "minute": 30.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 31.2,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 31.6,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 32.1,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 32.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 33,
+          "item": "无用会议"
+        },
+        {
+          "minute": 33.4,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 33.9,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 34.4,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 34.9,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 35.4,
+          "item": "刷手机"
+        },
+        {
+          "minute": 35.9,
+          "item": "无用会议"
+        },
+        {
+          "minute": 36.4,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 36.9,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 37.4,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 38,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 38.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 39.1,
+          "item": "无用会议"
+        },
+        {
+          "minute": 39.6,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 40.2,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 40.8,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 41.4,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 42,
+          "item": "刷手机"
+        },
+        {
+          "minute": 42.6,
+          "item": "无用会议"
+        },
+        {
+          "minute": 43.2,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 43.8,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 44.5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 45.1,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 45.8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 46.5,
+          "item": "无用会议"
+        },
+        {
+          "minute": 47.1,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 47.8,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 48.6,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 49.3,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 50,
+          "item": "刷手机"
+        },
+        {
+          "minute": 50.8,
+          "item": "无用会议"
+        },
+        {
+          "minute": 51.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 52.3,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 53.1,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 53.9,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 54.7,
+          "item": "刷手机"
+        },
+        {
+          "minute": 55.5,
+          "item": "无用会议"
+        },
+        {
+          "minute": 56.4,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 57.2,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 58.1,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 59,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 59.9,
+          "item": "刷手机"
+        },
+        {
+          "minute": 60.8,
+          "item": "无用会议"
+        },
+        {
+          "minute": 61.7,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 62.7,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 63.7,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 64.7,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 65.7,
+          "item": "刷手机"
+        },
+        {
+          "minute": 66.7,
+          "item": "无用会议"
+        },
+        {
+          "minute": 67.7,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 68.8,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 69.9,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 71,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 72.1,
+          "item": "刷手机"
+        },
+        {
+          "minute": 73.3,
+          "item": "无用会议"
+        },
+        {
+          "minute": 74.4,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 75.6,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 76.8,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 78,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 79.3,
+          "item": "刷手机"
+        },
+        {
+          "minute": 80.6,
+          "item": "无用会议"
+        },
+        {
+          "minute": 81.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 83.2,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 84.5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 85.9,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 87.3,
+          "item": "刷手机"
+        },
+        {
+          "minute": 88.7,
+          "item": "无用会议"
+        },
+        {
+          "minute": 90.1,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 91.6,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 93.1,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 94.6,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 96.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 97.8,
+          "item": "无用会议"
+        },
+        {
+          "minute": 99.4,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 101,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 102.7,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 104.4,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 106.1,
+          "item": "刷手机"
+        },
+        {
+          "minute": 107.9,
+          "item": "无用会议"
+        },
+        {
+          "minute": 109.7,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 111.6,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 113.4,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 115.3,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 117.3,
+          "item": "刷手机"
+        },
+        {
+          "minute": 119.3,
+          "item": "无用会议"
+        },
+        {
+          "minute": 121.2,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 123.3,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 125.4,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 127.6,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 129.7,
+          "item": "刷手机"
+        },
+        {
+          "minute": 131.9,
+          "item": "无用会议"
+        },
+        {
+          "minute": 134.2,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 136.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 138.9,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 141.3,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 143.7,
+          "item": "刷手机"
+        },
+        {
+          "minute": 146.1,
+          "item": "无用会议"
+        },
+        {
+          "minute": 148.6,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 151.3,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 153.9,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 156.6,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 159.3,
+          "item": "刷手机"
+        },
+        {
+          "minute": 162,
+          "item": "无用会议"
+        },
+        {
+          "minute": 164.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 167.8,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 170.7,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 173.7,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 176.8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 179.9,
+          "item": "无用会议"
+        }
+      ]
+    },
+    {
+      "persona": "idle(挂机党)",
+      "checkpoints": [
+        {
+          "minute": 0,
+          "moyu": 0,
+          "moyuText": "0",
+          "clickPower": 1,
+          "idleRate": 0,
+          "levels": {}
+        },
+        {
+          "minute": 1,
+          "moyu": 10,
+          "moyuText": "10",
+          "clickPower": 1,
+          "idleRate": 0,
+          "levels": {}
+        },
+        {
+          "minute": 3,
+          "moyu": 10,
+          "moyuText": "10",
+          "clickPower": 1,
+          "idleRate": 0,
+          "levels": {}
+        },
+        {
+          "minute": 10,
+          "moyu": 10,
+          "moyuText": "10",
+          "clickPower": 1,
+          "idleRate": 0,
+          "levels": {}
+        },
+        {
+          "minute": 30,
+          "moyu": 10,
+          "moyuText": "10",
+          "clickPower": 1,
+          "idleRate": 0,
+          "levels": {}
+        },
+        {
+          "minute": 60,
+          "moyu": 10,
+          "moyuText": "10",
+          "clickPower": 1,
+          "idleRate": 0,
+          "levels": {}
+        },
+        {
+          "minute": 120,
+          "moyu": 10,
+          "moyuText": "10",
+          "clickPower": 1,
+          "idleRate": 0,
+          "levels": {}
+        },
+        {
+          "minute": 180,
+          "moyu": 10,
+          "moyuText": "10",
+          "clickPower": 1,
+          "idleRate": 0,
+          "levels": {}
+        }
+      ],
+      "firstPurchaseMinute": null,
+      "purchases": 0,
+      "maxDeadAirSeconds": 10800,
+      "purchaseTimeline": []
+    },
+    {
+      "persona": "whale(爆肝党)",
+      "checkpoints": [
+        {
+          "minute": 0,
+          "moyu": 2,
+          "moyuText": "2",
+          "clickPower": 1,
+          "idleRate": 0,
+          "levels": {}
+        },
+        {
+          "minute": 1,
+          "moyu": 435,
+          "moyuText": "435",
+          "clickPower": 5,
+          "idleRate": 10,
+          "levels": {
+            "phone": 1,
+            "water": 2,
+            "toilet": 3
+          }
+        },
+        {
+          "minute": 3,
+          "moyu": 249,
+          "moyuText": "249",
+          "clickPower": 9,
+          "idleRate": 55,
+          "levels": {
+            "phone": 1,
+            "water": 4,
+            "toilet": 10,
+            "group": 3
+          }
+        },
+        {
+          "minute": 10,
+          "moyu": 642,
+          "moyuText": "642",
+          "clickPower": 35,
+          "idleRate": 302,
+          "levels": {
+            "phone": 1,
+            "water": 17,
+            "toilet": 24,
+            "group": 13,
+            "meeting": 5
+          }
+        },
+        {
+          "minute": 30,
+          "moyu": 34223,
+          "moyuText": "3.42万",
+          "clickPower": 98,
+          "idleRate": 749,
+          "levels": {
+            "phone": 47,
+            "water": 43,
+            "toilet": 37,
+            "group": 27,
+            "meeting": 15,
+            "coffee": 11
+          }
+        },
+        {
+          "minute": 60,
+          "moyu": 50610,
+          "moyuText": "5.06万",
+          "clickPower": 158,
+          "idleRate": 888,
+          "levels": {
+            "phone": 53,
+            "water": 48,
+            "toilet": 40,
+            "group": 30,
+            "meeting": 19,
+            "coffee": 61
+          }
+        },
+        {
+          "minute": 120,
+          "moyu": 11035,
+          "moyuText": "1.10万",
+          "clickPower": 176,
+          "idleRate": 1110,
+          "levels": {
+            "phone": 59,
+            "water": 54,
+            "toilet": 46,
+            "group": 36,
+            "meeting": 25,
+            "coffee": 67
+          }
+        },
+        {
+          "minute": 180,
+          "moyu": 152430.3,
+          "moyuText": "15.24万",
+          "clickPower": 186,
+          "idleRate": 1232,
+          "levels": {
+            "phone": 62,
+            "water": 57,
+            "toilet": 50,
+            "group": 40,
+            "meeting": 28,
+            "coffee": 71
+          }
+        }
+      ],
+      "firstPurchaseMinute": 0.16666666666666666,
+      "purchases": 308,
+      "maxDeadAirSeconds": 200,
+      "purchaseTimeline": [
+        {
+          "minute": 0.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 0.3,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 0.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 0.7,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 0.8,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 1,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 1.2,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 1.3,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 1.5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 1.7,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 1.8,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 2.2,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 2.3,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 2.5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 2.7,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 2.8,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 3,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 3.2,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 3.3,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 3.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 3.7,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 3.8,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 4,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 4.2,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 4.3,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 4.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 4.7,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 4.8,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 5.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 5.3,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 5.5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 5.7,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 5.8,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 6,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 6.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 6.3,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 6.5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 6.7,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 6.8,
+          "item": "无用会议"
+        },
+        {
+          "minute": 7,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 7.2,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 7.3,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 7.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 7.7,
+          "item": "无用会议"
+        },
+        {
+          "minute": 7.8,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 8,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 8.2,
+          "item": "无用会议"
+        },
+        {
+          "minute": 8.3,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 8.5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 8.7,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 8.8,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 9,
+          "item": "无用会议"
+        },
+        {
+          "minute": 9.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 9.3,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 9.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 9.7,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 9.8,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 10,
+          "item": "无用会议"
+        },
+        {
+          "minute": 10.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 10.3,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 10.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 10.7,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 10.8,
+          "item": "无用会议"
+        },
+        {
+          "minute": 11,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 11.2,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 11.3,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 11.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 11.7,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 11.8,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 12,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 12.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 12.3,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 12.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 12.7,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 12.8,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 13,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 13.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 13.3,
+          "item": "无用会议"
+        },
+        {
+          "minute": 13.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 13.7,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 13.8,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 14,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 14.2,
+          "item": "无用会议"
+        },
+        {
+          "minute": 14.3,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 14.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 14.7,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 14.8,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 15,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 15.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 15.3,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 15.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 15.7,
+          "item": "无用会议"
+        },
+        {
+          "minute": 15.8,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 16,
+          "item": "刷手机"
+        },
+        {
+          "minute": 16.2,
+          "item": "无用会议"
+        },
+        {
+          "minute": 16.3,
+          "item": "刷手机"
+        },
+        {
+          "minute": 16.5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 16.7,
+          "item": "刷手机"
+        },
+        {
+          "minute": 16.8,
+          "item": "无用会议"
+        },
+        {
+          "minute": 17,
+          "item": "刷手机"
+        },
+        {
+          "minute": 17.2,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 17.3,
+          "item": "刷手机"
+        },
+        {
+          "minute": 17.5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 17.7,
+          "item": "刷手机"
+        },
+        {
+          "minute": 17.8,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 18,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 18.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 18.3,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 18.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 18.7,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 18.8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 19,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 19.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 19.3,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 19.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 19.7,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 19.8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 20,
+          "item": "无用会议"
+        },
+        {
+          "minute": 20.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 20.3,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 20.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 20.7,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 20.8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 21,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 21.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 21.3,
+          "item": "刷手机"
+        },
+        {
+          "minute": 21.5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 21.7,
+          "item": "刷手机"
+        },
+        {
+          "minute": 21.8,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 22,
+          "item": "刷手机"
+        },
+        {
+          "minute": 22.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 22.3,
+          "item": "无用会议"
+        },
+        {
+          "minute": 22.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 22.7,
+          "item": "刷手机"
+        },
+        {
+          "minute": 22.8,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 23,
+          "item": "刷手机"
+        },
+        {
+          "minute": 23.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 23.3,
+          "item": "无用会议"
+        },
+        {
+          "minute": 23.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 23.7,
+          "item": "刷手机"
+        },
+        {
+          "minute": 23.8,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 24,
+          "item": "刷手机"
+        },
+        {
+          "minute": 24.2,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 24.3,
+          "item": "刷手机"
+        },
+        {
+          "minute": 24.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 24.7,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 24.8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 25,
+          "item": "刷手机"
+        },
+        {
+          "minute": 25.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 25.3,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 25.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 25.7,
+          "item": "刷手机"
+        },
+        {
+          "minute": 25.8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 26,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 26.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 26.3,
+          "item": "刷手机"
+        },
+        {
+          "minute": 26.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 26.7,
+          "item": "刷手机"
+        },
+        {
+          "minute": 26.8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 27,
+          "item": "刷手机"
+        },
+        {
+          "minute": 27.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 27.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 27.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 27.7,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 27.8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 28,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 28.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 28.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 28.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 28.7,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 28.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 29,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 29.2,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 29.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 29.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 29.7,
+          "item": "无用会议"
+        },
+        {
+          "minute": 29.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 30,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 30.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 30.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 30.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 30.7,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 30.8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 31,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 31.2,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 31.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 31.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 31.7,
+          "item": "刷手机"
+        },
+        {
+          "minute": 31.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 32,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 32.2,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 32.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 32.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 32.7,
+          "item": "无用会议"
+        },
+        {
+          "minute": 32.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 33,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 33.2,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 33.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 33.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 33.7,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 33.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 34,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 34.2,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 34.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 34.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 34.7,
+          "item": "刷手机"
+        },
+        {
+          "minute": 34.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 35,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 35.2,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 35.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 35.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 35.7,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 35.8,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 36,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 36.2,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 36.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 36.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 36.7,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 36.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 37,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 37.2,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 37.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 37.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 37.7,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 37.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 38,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 38.4,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 38.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 39.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 39.9,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 40.6,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 41.4,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 42.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 43.1,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 44,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 45,
+          "item": "刷手机"
+        },
+        {
+          "minute": 46,
+          "item": "无用会议"
+        },
+        {
+          "minute": 47,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 48,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 49.1,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 50.1,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 51.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 52.3,
+          "item": "无用会议"
+        },
+        {
+          "minute": 53.4,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 54.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 55.6,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 56.8,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 58,
+          "item": "刷手机"
+        },
+        {
+          "minute": 59.2,
+          "item": "无用会议"
+        },
+        {
+          "minute": 60.4,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 61.7,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 62.9,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 64.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 65.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 66.9,
+          "item": "无用会议"
+        },
+        {
+          "minute": 68.2,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 69.6,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 71,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 72.4,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 73.9,
+          "item": "刷手机"
+        },
+        {
+          "minute": 75.4,
+          "item": "无用会议"
+        },
+        {
+          "minute": 76.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 78.4,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 80,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 81.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 83.1,
+          "item": "刷手机"
+        },
+        {
+          "minute": 84.8,
+          "item": "无用会议"
+        },
+        {
+          "minute": 86.4,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 88.2,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 89.9,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 91.7,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 93.4,
+          "item": "刷手机"
+        },
+        {
+          "minute": 95.3,
+          "item": "无用会议"
+        },
+        {
+          "minute": 97.1,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 99,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 100.9,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 102.9,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 104.9,
+          "item": "刷手机"
+        },
+        {
+          "minute": 106.9,
+          "item": "无用会议"
+        },
+        {
+          "minute": 108.9,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 111.1,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 113.2,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 115.4,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 117.6,
+          "item": "刷手机"
+        },
+        {
+          "minute": 119.9,
+          "item": "无用会议"
+        },
+        {
+          "minute": 122.1,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 124.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 126.9,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 129.3,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 131.8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 134.3,
+          "item": "无用会议"
+        },
+        {
+          "minute": 136.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 139.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 142.2,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 144.9,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 147.6,
+          "item": "刷手机"
+        },
+        {
+          "minute": 150.4,
+          "item": "无用会议"
+        },
+        {
+          "minute": 153.2,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 156.2,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 159.2,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 162.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 165.3,
+          "item": "刷手机"
+        },
+        {
+          "minute": 168.4,
+          "item": "无用会议"
+        },
+        {
+          "minute": 171.6,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 174.9,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 178.2,
+          "item": "带薪蹲坑"
+        }
+      ]
+    },
+    {
+      "persona": "casual(休闲党)",
+      "checkpoints": [
+        {
+          "minute": 0,
+          "moyu": 0,
+          "moyuText": "0",
+          "clickPower": 1,
+          "idleRate": 0,
+          "levels": {}
+        },
+        {
+          "minute": 1,
+          "moyu": 57,
+          "moyuText": "57",
+          "clickPower": 3,
+          "idleRate": 0,
+          "levels": {
+            "coffee": 2
+          }
+        },
+        {
+          "minute": 3,
+          "moyu": 496,
+          "moyuText": "496",
+          "clickPower": 7,
+          "idleRate": 0,
+          "levels": {
+            "coffee": 6
+          }
+        },
+        {
+          "minute": 10,
+          "moyu": 5247,
+          "moyuText": "5247",
+          "clickPower": 17,
+          "idleRate": 5,
+          "levels": {
+            "coffee": 14,
+            "phone": 5,
+            "water": 1
+          }
+        },
+        {
+          "minute": 30,
+          "moyu": 53571,
+          "moyuText": "5.36万",
+          "clickPower": 51,
+          "idleRate": 32,
+          "levels": {
+            "coffee": 26,
+            "phone": 17,
+            "water": 12,
+            "toilet": 5
+          }
+        },
+        {
+          "minute": 60,
+          "moyu": 229160,
+          "moyuText": "22.92万",
+          "clickPower": 90,
+          "idleRate": 148,
+          "levels": {
+            "coffee": 39,
+            "phone": 30,
+            "water": 25,
+            "toilet": 18,
+            "group": 8
+          }
+        },
+        {
+          "minute": 120,
+          "moyu": 37401.5,
+          "moyuText": "3.74万",
+          "clickPower": 152,
+          "idleRate": 789,
+          "levels": {
+            "coffee": 59,
+            "phone": 51,
+            "water": 46,
+            "toilet": 38,
+            "group": 28,
+            "meeting": 16
+          }
+        },
+        {
+          "minute": 180,
+          "moyu": 58816.5,
+          "moyuText": "5.88万",
+          "clickPower": 173,
+          "idleRate": 1048,
+          "levels": {
+            "coffee": 66,
+            "phone": 58,
+            "water": 53,
+            "toilet": 45,
+            "group": 35,
+            "meeting": 23
+          }
+        }
+      ],
+      "firstPurchaseMinute": 0.5,
+      "purchases": 280,
+      "maxDeadAirSeconds": 118,
+      "purchaseTimeline": [
+        {
+          "minute": 0.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 1,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 1.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 2,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 2.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 3.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 4,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 4.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 5.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 6,
+          "item": "刷手机"
+        },
+        {
+          "minute": 6.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 7,
+          "item": "刷手机"
+        },
+        {
+          "minute": 7.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 8.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 9,
+          "item": "刷手机"
+        },
+        {
+          "minute": 9.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 10,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 10.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 11,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 11.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 12,
+          "item": "刷手机"
+        },
+        {
+          "minute": 12.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 13,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 13.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 14,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 14.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 15,
+          "item": "刷手机"
+        },
+        {
+          "minute": 15.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 16,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 16.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 17,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 17.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 18,
+          "item": "刷手机"
+        },
+        {
+          "minute": 18.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 19,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 19.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 20,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 20.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 21,
+          "item": "刷手机"
+        },
+        {
+          "minute": 21.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 22,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 22.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 23,
+          "item": "刷手机"
+        },
+        {
+          "minute": 23.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 24,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 24.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 25,
+          "item": "刷手机"
+        },
+        {
+          "minute": 25.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 26,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 26.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 27,
+          "item": "刷手机"
+        },
+        {
+          "minute": 27.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 28,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 28.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 29,
+          "item": "刷手机"
+        },
+        {
+          "minute": 29.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 30,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 30.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 31,
+          "item": "刷手机"
+        },
+        {
+          "minute": 31.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 32,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 32.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 33,
+          "item": "刷手机"
+        },
+        {
+          "minute": 33.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 34,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 34.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 35,
+          "item": "刷手机"
+        },
+        {
+          "minute": 35.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 36,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 36.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 37,
+          "item": "刷手机"
+        },
+        {
+          "minute": 37.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 38,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 38.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 39,
+          "item": "刷手机"
+        },
+        {
+          "minute": 39.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 40,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 40.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 41,
+          "item": "刷手机"
+        },
+        {
+          "minute": 41.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 42,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 42.5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 43,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 43.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 44,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 44.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 45,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 45.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 46,
+          "item": "刷手机"
+        },
+        {
+          "minute": 46.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 47,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 47.5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 48,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 48.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 49,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 49.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 50,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 50.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 51,
+          "item": "刷手机"
+        },
+        {
+          "minute": 51.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 52,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 52.5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 53,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 53.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 54,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 54.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 55,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 55.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 56,
+          "item": "刷手机"
+        },
+        {
+          "minute": 56.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 57,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 57.5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 58,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 58.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 59,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 59.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 60,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 60.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 61,
+          "item": "刷手机"
+        },
+        {
+          "minute": 61.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 62,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 62.5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 63,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 63.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 64,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 64.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 65,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 65.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 66,
+          "item": "刷手机"
+        },
+        {
+          "minute": 66.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 67,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 67.5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 68,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 68.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 69,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 69.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 70,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 70.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 71,
+          "item": "刷手机"
+        },
+        {
+          "minute": 71.5,
+          "item": "无用会议"
+        },
+        {
+          "minute": 72,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 72.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 73,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 73.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 74,
+          "item": "刷手机"
+        },
+        {
+          "minute": 74.5,
+          "item": "无用会议"
+        },
+        {
+          "minute": 75,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 75.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 76,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 76.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 77,
+          "item": "刷手机"
+        },
+        {
+          "minute": 77.5,
+          "item": "无用会议"
+        },
+        {
+          "minute": 78,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 78.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 79,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 79.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 80,
+          "item": "刷手机"
+        },
+        {
+          "minute": 80.5,
+          "item": "无用会议"
+        },
+        {
+          "minute": 81,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 81.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 82,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 82.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 83,
+          "item": "刷手机"
+        },
+        {
+          "minute": 83.5,
+          "item": "无用会议"
+        },
+        {
+          "minute": 84,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 84.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 85,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 85.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 86,
+          "item": "刷手机"
+        },
+        {
+          "minute": 86.5,
+          "item": "无用会议"
+        },
+        {
+          "minute": 87,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 87.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 88,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 88.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 89,
+          "item": "刷手机"
+        },
+        {
+          "minute": 89.5,
+          "item": "无用会议"
+        },
+        {
+          "minute": 90,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 90.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 91,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 91.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 92,
+          "item": "刷手机"
+        },
+        {
+          "minute": 92.5,
+          "item": "无用会议"
+        },
+        {
+          "minute": 93,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 93.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 94,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 94.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 95,
+          "item": "刷手机"
+        },
+        {
+          "minute": 95.5,
+          "item": "无用会议"
+        },
+        {
+          "minute": 96,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 96.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 97,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 97.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 98,
+          "item": "刷手机"
+        },
+        {
+          "minute": 98.5,
+          "item": "无用会议"
+        },
+        {
+          "minute": 99,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 99.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 100,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 100.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 101,
+          "item": "刷手机"
+        },
+        {
+          "minute": 101.5,
+          "item": "无用会议"
+        },
+        {
+          "minute": 102,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 102.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 103,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 103.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 104,
+          "item": "刷手机"
+        },
+        {
+          "minute": 104.5,
+          "item": "无用会议"
+        },
+        {
+          "minute": 105,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 105.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 106,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 106.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 107,
+          "item": "刷手机"
+        },
+        {
+          "minute": 107.5,
+          "item": "无用会议"
+        },
+        {
+          "minute": 108,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 108.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 109,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 109.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 110,
+          "item": "刷手机"
+        },
+        {
+          "minute": 110.5,
+          "item": "无用会议"
+        },
+        {
+          "minute": 111,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 111.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 112,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 112.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 113,
+          "item": "刷手机"
+        },
+        {
+          "minute": 113.5,
+          "item": "无用会议"
+        },
+        {
+          "minute": 114,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 114.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 115,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 115.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 116,
+          "item": "刷手机"
+        },
+        {
+          "minute": 116.5,
+          "item": "无用会议"
+        },
+        {
+          "minute": 117,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 117.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 118,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 118.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 119.3,
+          "item": "刷手机"
+        },
+        {
+          "minute": 120.3,
+          "item": "无用会议"
+        },
+        {
+          "minute": 121.3,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 122.4,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 123.4,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 124.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 125.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 126.6,
+          "item": "无用会议"
+        },
+        {
+          "minute": 127.7,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 128.8,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 130,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 131.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 132.3,
+          "item": "刷手机"
+        },
+        {
+          "minute": 133.5,
+          "item": "无用会议"
+        },
+        {
+          "minute": 134.7,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 136,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 137.3,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 138.6,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 139.9,
+          "item": "刷手机"
+        },
+        {
+          "minute": 141.2,
+          "item": "无用会议"
+        },
+        {
+          "minute": 142.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 143.9,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 145.3,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 146.8,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 148.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 149.7,
+          "item": "无用会议"
+        },
+        {
+          "minute": 151.2,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 152.7,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 154.3,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 155.9,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 157.5,
+          "item": "刷手机"
+        },
+        {
+          "minute": 159.1,
+          "item": "无用会议"
+        },
+        {
+          "minute": 160.8,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 162.5,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 164.2,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 166,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 167.8,
+          "item": "刷手机"
+        },
+        {
+          "minute": 169.6,
+          "item": "无用会议"
+        },
+        {
+          "minute": 171.4,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 173.3,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 175.3,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 177.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 179.2,
+          "item": "刷手机"
+        }
+      ]
+    }
+  ],
+  "offlineCheck": {
+    "offlineSeconds": 28800,
+    "earned": 86400,
+    "cappedAt": 28800
+  },
+  "summary": [
+    {
+      "persona": "clicker(狂点党)",
+      "firstPurchaseMinute": 0.08333333333333333,
+      "purchasesIn180min": 317,
+      "maxDeadAirSeconds": 187,
+      "endMoyu": {
+        "minute": 180,
+        "moyu": 12755.3,
+        "moyuText": "1.28万",
+        "clickPower": 191,
+        "idleRate": 1295,
+        "levels": {
+          "coffee": 72,
+          "phone": 64,
+          "water": 59,
+          "toilet": 51,
+          "group": 41,
+          "meeting": 30
+        }
+      }
+    },
+    {
+      "persona": "idle(挂机党)",
+      "firstPurchaseMinute": null,
+      "purchasesIn180min": 0,
+      "maxDeadAirSeconds": 10800,
+      "endMoyu": {
+        "minute": 180,
+        "moyu": 10,
+        "moyuText": "10",
+        "clickPower": 1,
+        "idleRate": 0,
+        "levels": {}
+      }
+    },
+    {
+      "persona": "whale(爆肝党)",
+      "firstPurchaseMinute": 0.16666666666666666,
+      "purchasesIn180min": 308,
+      "maxDeadAirSeconds": 200,
+      "endMoyu": {
+        "minute": 180,
+        "moyu": 152430.3,
+        "moyuText": "15.24万",
+        "clickPower": 186,
+        "idleRate": 1232,
+        "levels": {
+          "phone": 62,
+          "water": 57,
+          "toilet": 50,
+          "group": 40,
+          "meeting": 28,
+          "coffee": 71
+        }
+      }
+    },
+    {
+      "persona": "casual(休闲党)",
+      "firstPurchaseMinute": 0.5,
+      "purchasesIn180min": 280,
+      "maxDeadAirSeconds": 118,
+      "endMoyu": {
+        "minute": 180,
+        "moyu": 58816.5,
+        "moyuText": "5.88万",
+        "clickPower": 173,
+        "idleRate": 1048,
+        "levels": {
+          "coffee": 66,
+          "phone": 58,
+          "water": 53,
+          "toilet": 45,
+          "group": 35,
+          "meeting": 23
+        }
+      }
+    }
+  ]
+}
