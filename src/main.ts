@@ -3,7 +3,7 @@ import { initialState, gain } from "./engine/state";
 import { doClick, buyUpgrade, clickPowerOf } from "./engine/actions";
 import { advance } from "./engine/tick";
 import { settleReturn } from "./engine/resume";
-import { CLICK_MEMES } from "./engine/flavor";
+import { CLICK_MEMES, MEME_QUOTES } from "./engine/flavor";
 import { serialize, restore, clearSave, SAVE_KEY, type SaveAdapter } from "./engine/save";
 import {
   newEventState,
@@ -90,7 +90,7 @@ async function boot(): Promise<void> {
     if (!e.isPrimary) return;
     const p = scene.toVirtual(e.clientX, e.clientY, canvas);
     if (es.bossUntil > scene.gameTime) {
-      const r = onBossTap(state, es);
+      const r = onBossTap(state, es, scene.gameTime);
       state = r.state;
       scene.fx.floatText(p.x, p.y, `被逮住了！-${Math.round(r.lost)}`);
       return;
@@ -103,6 +103,8 @@ async function boot(): Promise<void> {
     if (hitMeme) {
       const r = onMemeTap(state, es);
       state = r.state;
+      const quote = MEME_QUOTES[Math.floor(Math.random() * MEME_QUOTES.length)];
+      scene.fx.floatText(p.x, p.y - 24, quote ?? "");
       scene.fx.floatText(p.x, p.y, `梗收了 +${Math.round(r.earned)}`);
       return;
     }
@@ -177,7 +179,7 @@ async function boot(): Promise<void> {
       state = r.state;
       hud.refresh(state);
       shop.refresh(state);
-      if (r.showPanel) welcome.show(r.applied, r.earned, () => undefined);
+      if (r.showPanel) welcome.show(r.applied, r.earned, currentOfflineRate(), () => undefined);
     }
     lastActiveMs = Date.now();
     last = performance.now();
@@ -192,7 +194,7 @@ async function boot(): Promise<void> {
   });
 
   if (offline.earned > 0 && offline.showPanel) {
-    welcome.show(offline.applied, offline.earned, () => undefined);
+    welcome.show(offline.applied, offline.earned, currentOfflineRate(), () => undefined);
   }
 
   // 6) agent 试玩调试钩子（先注册，资产加载不阻塞探测）

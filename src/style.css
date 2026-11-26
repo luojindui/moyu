@@ -176,6 +176,10 @@ body {
   font-size: 28px;
   color: #ffd76e;
 }
+.welcome-rule {
+  font-size: 11px;
+  color: #8f9fd0;
+}
 #welcome-ok {
   margin-top: 6px;
   padding: 10px;

@@ -9,8 +9,12 @@ export const BOSS_INTERVAL_MAX = 150;
 export const BOSS_DURATION = 8;
 export const BOSS_PENALTY_RATE = 0.05;
 export const BOSS_PENALTY_MIN = 10;
+/** 罚款封顶：10 秒挂机收益（防后期洗劫，保"早期罚轻、后期不伤筋骨"） */
+export const BOSS_PENALTY_CAP_IDLE_SECONDS = 10;
 export const BOSS_REWARD_IDLE_SECONDS = 5;
 export const BOSS_REWARD_MIN = 50;
+/** 反应宽限：横幅弹出到此时间内点击免罚（半空中的手指不算顶风作案） */
+export const BOSS_GRACE_SECONDS = 0.8;
 
 export const MEME_INTERVAL_MIN = 45;
 export const MEME_INTERVAL_MAX = 75;
@@ -24,11 +28,13 @@ export interface EventState {
   memeUntil: number;
   /** 本次巡逻是否已被抓（抓过则无安然奖励） */
   bossCaught: boolean;
+  /** 本次巡逻开启时刻（宽限判定用） */
+  bossStartAt: number;
 }
 
 /** 事件为运行时状态，不入存档 */
 export function newEventState(): EventState {
-  return { nextBossAt: Infinity, bossUntil: -1, nextMemeAt: Infinity, memeUntil: -1, bossCaught: false };
+  return { nextBossAt: Infinity, bossUntil: -1, nextMemeAt: Infinity, memeUntil: -1, bossCaught: false, bossStartAt: 0 };
 }
 
 function nextWindow(now: number, min: number, max: number, rng: () => number): number {
@@ -57,6 +63,7 @@ export function scheduleEvents(es: EventState, now: number, rng: () => number): 
   }
   if (now >= es.nextBossAt && es.bossUntil < 0 && es.memeUntil < 0) {
     es.bossUntil = now + BOSS_DURATION;
+    es.bossStartAt = now;
     es.bossCaught = false;
     es.nextBossAt = Infinity;
     // 巡逻开启时丢梗必然已结束（互斥条件 memeUntil < 0），无需清场
@@ -66,11 +73,17 @@ export function scheduleEvents(es: EventState, now: number, rng: () => number): 
   }
 }
 
-/** 巡逻中点击 = 被逮：扣 max(10, 5% 摸鱼值)；同一巡逻只扣一次（连点无额外伤） */
-export function onBossTap(state: GameState, es: EventState): { state: GameState; caught: boolean; lost: number } {
+/**
+ * 巡逻中点击 = 被逮：扣 min(max(10, 5% 余额), max(10, 10×idleRate))。
+ * 宽限期（开启后 0.8s 内）与同一巡逻已抓过 → 免罚免逮。
+ */
+export function onBossTap(state: GameState, es: EventState, now: number): { state: GameState; caught: boolean; lost: number } {
   if (es.bossUntil <= 0) return { state, caught: false, lost: 0 };
   if (es.bossCaught) return { state, caught: false, lost: 0 };
-  const lost = Math.max(BOSS_PENALTY_MIN, state.moyu * BOSS_PENALTY_RATE);
+  if (now < es.bossStartAt + BOSS_GRACE_SECONDS) return { state, caught: false, lost: 0 };
+  const raw = Math.max(BOSS_PENALTY_MIN, state.moyu * BOSS_PENALTY_RATE);
+  const cap = Math.max(BOSS_PENALTY_MIN, BOSS_PENALTY_CAP_IDLE_SECONDS * effectOf(state).idleRate);
+  const lost = Math.min(raw, cap);
   es.bossCaught = true;
   return { state: { ...state, moyu: Math.max(0, state.moyu - lost) }, caught: true, lost };
 }
