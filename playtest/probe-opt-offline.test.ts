@@ -47,9 +47,16 @@ function simulateOfflineSettle(state: GameState, awayHours: number, capHours?: n
   const mem = memAdapter();
   serialize(state, mem, 0);
   const back = restore(mem, awayHours * 3600 * 1000);
-  const appliedSec = capHours ? Math.min(back.offlineSeconds, capHours * 3600) : back.offlineSeconds;
-  const r = offlineEarn(back.state, appliedSec);
-  return { applied: r.applied, earned: r.earned, state: r.state };
+  const cap = capHours ?? OFFLINE_CAP_SECONDS / 3600;
+  if (cap <= OFFLINE_CAP_SECONDS / 3600) {
+    // ≤8h：走引擎真链路（引擎自身 8h 封顶）
+    const r = offlineEarn(back.state, Math.min(back.offlineSeconds, cap * 3600));
+    return { applied: r.applied, earned: r.earned, state: r.state, enginePath: true };
+  }
+  // >8h 反事实：引擎封顶外的假设上限，直接按速率结算（标注反事实）
+  const applied = Math.min(back.offlineSeconds, cap * 3600);
+  const earned = effectOf(back.state).idleRate * applied;
+  return { applied, earned, state: { ...back.state, moyu: back.state.moyu + earned }, enginePath: false };
 }
 
 describe("早期离线暴富：首个会话后睡一觉", () => {
@@ -135,11 +142,12 @@ describe("离线公平性与上限敏感", () => {
     const rate = effectOf(sess.endState).idleRate;
     console.log(`\n  样本进度: 挂机速率=${Math.round(rate)}/s`);
     for (const h of [1, 4, 8, 12, 24]) {
-      const off = simulateOfflineSettle(sess.endState, h, 24);
+      const off = simulateOfflineSettle(sess.endState, h, h); // 上限=离线时长（即不封顶，仅测时长本身）
       const dump = dumpBuy(off.state);
       const r2 = effectOf(dump.state).idleRate;
+      const tag = h > 8 ? "(反事实,引擎实际封8h)" : "";
       console.log(
-        `  离线${String(h).padStart(2)}h: 入账=${Math.round(off.earned).toString().padStart(10)}  清仓后速率=${Math.round(r2).toString().padStart(6)}/s (×${(r2 / rate).toFixed(2)}) 清仓购买${dump.buys}次`,
+        `  离线${String(h).padStart(2)}h: 入账=${Math.round(off.earned).toString().padStart(10)}  清仓后速率=${Math.round(r2).toString().padStart(6)}/s (×${(r2 / rate).toFixed(2)}) 清仓购买${dump.buys}次 ${tag}`,
       );
     }
     // 说明下一步价格量级

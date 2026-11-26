@@ -4,7 +4,7 @@
  */
 import { describe, it } from "vitest";
 import { UPGRADES, costOf } from "../src/engine/upgrades";
-import { runSim, makeGreedy, byPrice, ablate, engineCost, engineEffect, phaseStats } from "./probe-opt-lib";
+import { runSim, makeGreedy, makeGreedyFilter, byPrice, ablate, engineCost, engineEffect, phaseStats } from "./probe-opt-lib";
 
 describe("边际性价比表", () => {
   it("每个升级在第 N 级的买价 / 每单位效果成本", () => {
@@ -45,12 +45,18 @@ describe("边际性价比表", () => {
   });
 });
 
-describe("策略对比（tps=3，180min）：贪心 vs 逐价 vs 单线", () => {
+describe("策略对比（tps=3，180min）：贪心 vs 逐价 vs 攒钱等最优", () => {
   it("终局收入与误买证据", () => {
+    // 攒钱等最优：永远只买当前边际性价比最高的那一项，买不起就等（不将就买便宜的）
+    const waitBest: Parameters<typeof runSim>[0]["orderFn"] = (state, t, tpsNow, income) => {
+      const order = makeGreedy(engineCost, engineEffect)(state, t, tpsNow, income);
+      return order.slice(0, 1);
+    };
     const strategies: [string, Parameters<typeof runSim>[0]][] = [
-      ["贪心(最优)", { orderFn: makeGreedy(engineCost, engineEffect) }],
+      ["贪心-立即花光", { orderFn: makeGreedy(engineCost, engineEffect) }],
       ["逐价便宜优先(stock画像)", { orderFn: byPrice(engineCost) }],
       ["逐价最贵优先(stock画像)", { orderFn: byPrice(engineCost, true) }],
+      ["攒钱等最优项", { orderFn: waitBest }],
     ];
     console.log("\n===== 策略对比 tps=3 @180min =====");
     const results: { name: string; income: number; run: ReturnType<typeof runSim> }[] = [];
@@ -59,12 +65,12 @@ describe("策略对比（tps=3，180min）：贪心 vs 逐价 vs 单线", () => 
       const end = run.curve.at(-1)!;
       results.push({ name, income: end.income, run });
       console.log(
-        `  ${name.padEnd(22)}: income@180=${String(end.income).padStart(8)}/s  购买${run.purchases}次  终局等级=${JSON.stringify(run.endState.levels)}`,
+        `  ${name.padEnd(22)}: income@180=${String(end.income).padStart(8)}/s  income@30=${String(run.curve[0].income).padStart(7)}/s  购买${run.purchases}次  终局等级=${JSON.stringify(run.endState.levels)}`,
       );
     }
-    const best = results[0].income;
-    for (const r of results.slice(1)) {
-      console.log(`  ${r.name} 相对贪心损失: ${(((best - r.income) / best) * 100).toFixed(1)}%`);
+    const best = Math.max(...results.map((r) => r.income));
+    for (const r of results) {
+      console.log(`  ${r.name} 相对最优: ${(((best - r.income) / best) * 100).toFixed(1)}%`);
     }
     // 贪心的购买顺序：看每项最后一次被买的时刻（=该项退出最优的时间）
     const greedy = results[0].run;
@@ -100,24 +106,28 @@ describe("策略对比（tps=3，180min）：贪心 vs 逐价 vs 单线", () => 
     for (const [name, loss] of rows) console.log(`  ${name.padEnd(10)}: 砍掉后收入损失 ${loss.toFixed(1)}%`);
   });
 
-  it("挂机党视角(0.5tps 摸鱼 1 分钟后挂机)消融：点击项价值", () => {
-    const tps = (t: number) => (t < 60 ? 0.5 : 0);
-    console.log("\n===== 消融实验 挂机党(0.5tps×1min后纯挂, 180min) =====");
-    const base = runSim({
+  it("转型陷阱：点 1 分钟(60下)后转挂机，买咖啡 vs 攒钱买刷手机", () => {
+    const tps = (t: number) => (t < 60 ? 1 : 0);
+    console.log("\n===== 转型陷阱：1tps×1min 后纯挂 180min =====");
+    // (a) 贪心按当前价值买：第一分钟内咖啡性价比最高(1tps×1/15 > 1/50) → 会买咖啡
+    const greedyRun = runSim({
       minutes: 180, tps, dt: 0.25,
       orderFn: makeGreedy(engineCost, engineEffect),
-      checkpointMinutes: [180],
+      checkpointMinutes: [1, 3, 10, 30, 180],
     });
-    const baseIncome = base.curve.at(-1)!.income;
-    for (const u of UPGRADES) {
-      const run = runSim({
-        minutes: 180, tps, dt: 0.25,
-        orderFn: ablate(makeGreedy(engineCost, engineEffect), u.id),
-        checkpointMinutes: [180],
-      });
-      const income = run.curve.at(-1)!.income;
-      console.log(`  砍 ${u.name.padEnd(10)}: income@180 ${baseIncome}→${income} (${(((baseIncome - income) / baseIncome) * 100).toFixed(1)}%)`);
-    }
+    // (b) 只买挂机项（攒钱到 50 买刷手机）
+    const idleRun = runSim({
+      minutes: 180, tps, dt: 0.25,
+      orderFn: makeGreedyFilter(engineCost, engineEffect, "idle"),
+      checkpointMinutes: [1, 3, 10, 30, 180],
+    });
+    console.log(
+      `  (a) 贪心买咖啡路线: 1min 时等级=${JSON.stringify(greedyRun.curve[0].levels)}(终局${JSON.stringify(greedyRun.endState.levels)}) → income@180=${greedyRun.curve.at(-1)!.income}/s ${greedyRun.curve.at(-1)!.income > 0 ? "" : "【死局】"}`,
+    );
+    console.log(`      轨迹: ${greedyRun.curve.map((c) => `${c.tMin}min:${c.income}/s`).join("  ")}`);
+    console.log(
+      `  (b) 攒钱直奔刷手机: income@180=${idleRun.curve.at(-1)!.income}/s  购买${idleRun.purchases}次  轨迹: ${idleRun.curve.map((c) => `${c.tMin}min:${c.income}/s`).join("  ")}`,
+    );
   });
 });
 

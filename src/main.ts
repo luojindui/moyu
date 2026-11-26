@@ -5,6 +5,14 @@ import { advance } from "./engine/tick";
 import { settleReturn } from "./engine/resume";
 import { CLICK_MEMES } from "./engine/flavor";
 import { serialize, restore, clearSave, SAVE_KEY, type SaveAdapter } from "./engine/save";
+import {
+  newEventState,
+  scheduleEvents,
+  onBossTap,
+  onMemeTap,
+  bossSurviveReward,
+  type EventState,
+} from "./engine/events";
 import { Hud } from "./ui/hud";
 import { Shop } from "./ui/shop";
 import { Welcome } from "./ui/welcome";
@@ -74,12 +82,31 @@ async function boot(): Promise<void> {
   fit();
   window.addEventListener("resize", fit);
 
-  // 3) 输入：主指针才算点击（防多指连点刷）
+  // 3) 输入：主指针才算点击（防多指连点刷）；巡逻中点击会被逮
+  const es: EventState = newEventState();
+  scene.events = es;
   canvas.addEventListener("pointerdown", (e) => {
     if (!e.isPrimary) return;
+    const p = scene.toVirtual(e.clientX, e.clientY, canvas);
+    if (es.bossUntil > scene.gameTime) {
+      const r = onBossTap(state, es);
+      state = r.state;
+      scene.fx.floatText(p.x, p.y, `被逮住了！-${Math.round(r.lost)}`);
+      return;
+    }
+    // 丢梗命中（虚拟坐标半径内）
+    const vx = p.x / scene.scale;
+    const vy = p.y / scene.scale;
+    const hitMeme =
+      es.memeUntil > scene.gameTime && Math.hypot(vx - scene.memePos.x, vy - scene.memePos.y) < 3 * 16;
+    if (hitMeme) {
+      const r = onMemeTap(state, es);
+      state = r.state;
+      scene.fx.floatText(p.x, p.y, `梗收了 +${Math.round(r.earned)}`);
+      return;
+    }
     const gained = clickPowerOf(state);
     state = doClick(state);
-    const p = scene.toVirtual(e.clientX, e.clientY, canvas);
     const meme = CLICK_MEMES[Math.floor(Math.random() * CLICK_MEMES.length)];
     const text = Math.random() < 0.22 && meme ? meme : `+${gained}`;
     scene.fx.floatText(p.x, p.y, text);
@@ -91,10 +118,29 @@ async function boot(): Promise<void> {
   let fpsWindowStart = last;
   let fpsFrames = 0;
   let lastHud = 0;
+  let prevBossActive = false;
+  const rng = Math.random;
   const frame = (now: number): void => {
     const dt = Math.min(1, (now - last) / 1000);
     last = now;
     lastActiveMs = Date.now();
+    scene.gameTime += dt;
+    // 随机事件调度（丢梗位置：每次窗口随机出现在场景上半区）
+    const memeWasIdle = es.memeUntil < 0;
+    scheduleEvents(es, scene.gameTime, rng);
+    if (memeWasIdle && es.memeUntil > 0) {
+      scene.memePos = { x: 4 * 16 + Math.random() * ((scene.w / scene.scale) - 8 * 16), y: 4 * 16 + Math.random() * 6 * 16 };
+    }
+    // 巡逻结束：未被抓则发安然奖励
+    const bossActive = es.bossUntil > scene.gameTime;
+    if (prevBossActive && !bossActive && !es.bossCaught) {
+      const reward = bossSurviveReward(state, es);
+      if (reward > 0) {
+        state = { ...state, moyu: state.moyu + reward };
+        scene.fx.floatText((scene.w / 2), scene.h * 0.3, `安然度过 +${Math.round(reward)}`);
+      }
+    }
+    prevBossActive = bossActive;
     state = advance(state, dt);
     scene.update(dt);
     scene.draw(ctx);

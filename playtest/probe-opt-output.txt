@@ -1,0 +1,310 @@
+
+ RUN  v3.2.7 /Users/p/Desktop/workspace/code/moyu
+
+stdout | playtest/probe-opt-value.test.ts > 边际性价比表 > 每个升级在第 N 级的买价 / 每单位效果成本
+
+===== 边际性价比：第 N 级买价 ÷ 效果增量 =====
+  咖啡续命(coffee, 每级+1点击力): lv0:15  lv5:31  lv10:61  lv20:246  lv30:994  lv50:16255  lv75:535094
+  带薪喝水(water, 每级+2点击力): lv0:50  lv5:101  lv10:203  lv20:819  lv30:3311  lv50:54183  lv75:1783644
+  刷手机(phone, 每级+1/s): lv0:50  lv5:101  lv10:203  lv20:819  lv30:3311  lv50:54183  lv75:1783644
+  带薪蹲坑(toilet, 每级+3/s): lv0:100  lv5:201  lv10:405  lv20:1637  lv30:6621  lv50:108366  lv75:3567287
+  摸鱼群聊(group, 每级+8/s): lv0:150  lv5:302  lv10:607  lv20:2455  lv30:9932  lv50:162549  lv75:5350930
+  无用会议(meeting, 每级+25/s): lv0:240  lv5:483  lv10:971  lv20:3928  lv30:15891  lv50:260078  lv75:8561488
+  注：点击力价值=taps/s×点击力；对 3tps 玩家 1点击力≈3/s，对挂机党≈0
+
+stdout | playtest/probe-opt-value.test.ts > 边际性价比表 > 交叉点：某项升到第几级就不如下一档裸价（陷阱区间）
+
+===== 交叉点（边际成本/效果 > 下一档裸价/效果 的最低等级）=====
+  刷手机→带薪蹲坑: 从 lv5 起，刷手机第5级(101摸鱼值/+1/s=101) 贵过 带薪蹲坑裸价(300/+3/s=100)
+  带薪蹲坑→摸鱼群聊: 从 lv3 起，带薪蹲坑第3级(457摸鱼值/+3/s=152) 贵过 摸鱼群聊裸价(1200/+8/s=150)
+  摸鱼群聊→无用会议: 从 lv4 起，摸鱼群聊第4级(2099摸鱼值/+8/s=262) 贵过 无用会议裸价(6000/+25/s=240)
+  咖啡→带薪喝水(点击线, 1tps): 从 lv9 起咖啡单级贵过喝水裸价
+  咖啡→带薪喝水(点击线, 3tps): 从 lv9 起咖啡单级贵过喝水裸价
+  咖啡→带薪喝水(点击线, 8tps): 从 lv9 起咖啡单级贵过喝水裸价
+
+stdout | playtest/simulate.test.ts > agent 试玩模拟 > 运行四类玩家画像并产出报告
+report written to playtest/report.json
+[
+ "clicker(狂点党): 首购 0.08333333333333333min, 180min 购买 317 次, 最长空转 187s",
+ "idle(挂机党): 首购 nullmin, 180min 购买 0 次, 最长空转 10800s",
+ "whale(爆肝党): 首购 0.16666666666666666min, 180min 购买 308 次, 最长空转 200s",
+ "casual(休闲党): 首购 0.5min, 180min 购买 280 次, 最长空转 118s"
+]
+
+ ✓ playtest/simulate.test.ts (1 test) 199ms
+stdout | playtest/probe-opt-offline.test.ts > 早期离线暴富：首个会话后睡一觉 > 活跃 10min / 30min / 180min 后离线 8h：暴富倍数与清仓效果
+
+===== 离线暴富测试（1tps 休闲贪心，活跃 N min → 离线 8h → 贪心清仓）=====
+  [引擎常量] OFFLINE_CAP_SECONDS = 8h
+  活跃  10min: 存档时挂机速率=77/s  活跃期总收入=43432  离线8h入账=2217600 (活跃期收入的×51.1)  清仓购买117次(+924/s) → 速率77→1001/s (×13.0)
+  活跃  30min: 存档时挂机速率=370/s  活跃期总收入=407711  离线8h入账=10656000 (活跃期收入的×26.1)  清仓购买106次(+1052/s) → 速率370→1422/s (×3.8)
+  活跃 180min: 存档时挂机速率=1184/s  活跃期总收入=9979457  离线8h入账=34099200 (活跃期收入的×3.4)  清仓购买40次(+597/s) → 速率1184→1781/s (×1.5)
+
+stdout | playtest/probe-opt-offline.test.ts > 早期离线暴富：首个会话后睡一觉 > 超早期（只买得起 1-2 级刷手机）离线 8h 是否直接跳档
+
+  phone×2(2/s) 起步离线8h: 入账=57600（=刷手机裸价×1152） 清仓购买78次 +189/s → 2→191/s (×95.5) 终局等级={"phone":16,"coffee":25,"water":16,"toilet":12,"group":8,"meeting":3}
+
+stdout | playtest/probe-opt-curve.test.ts > 原版曲线：贪心玩家的 180min > tps=1 / tps=3 / 爆肝(8tps 30min 后 1tps) 三画像
+
+===== 贪心 casual(1tps) =====
+曲线(min): moyu / 点击力 / 挂机/秒 / 收入/秒
+     0min  moyu=       0  cp=    1  idle=     0/s  income=      1/s  levels={}
+     1min  moyu=      23  cp=    9  idle=     0/s  income=      9/s  levels={"coffee":8}
+     3min  moyu=     126  cp=   31  idle=     9/s  income=     40/s  levels={"coffee":18,"phone":9,"water":6}
+    10min  moyu=    1254  cp=   74  idle=    77/s  income=    151/s  levels={"coffee":33,"phone":25,"water":20,"toilet":12,"group":2}
+    30min  moyu=    1608  cp=  116  idle=   370/s  income=    486/s  levels={"coffee":47,"phone":39,"water":34,"toilet":26,"group":16,"meeting":5}
+    60min  moyu=    6796  cp=  144  idle=   711/s  income=    855/s  levels={"coffee":57,"phone":48,"water":43,"toilet":35,"group":26,"meeting":14}
+    90min  moyu=   26368  cp=  159  idle=   896/s  income=   1055/s  levels={"coffee":62,"phone":53,"water":48,"toilet":40,"group":31,"meeting":19}
+   120min  moyu=   30617  cp=  170  idle=  1010/s  income=   1180/s  levels={"coffee":65,"phone":56,"water":52,"toilet":44,"group":34,"meeting":22}
+   150min  moyu=  171516  cp=  176  idle=  1110/s  income=   1286/s  levels={"coffee":67,"phone":59,"water":54,"toilet":46,"group":36,"meeting":25}
+   180min  moyu=  136039  cp=  182  idle=  1184/s  income=   1366/s  levels={"coffee":69,"phone":61,"water":56,"toilet":48,"group":38,"meeting":27}
+  阶段0-3min    : {"purchases":33,"medianRelGain":7.143,"p90RelGain":25,"maxRelGain":100,"medianWaitSec":5,"maxWaitSec":9,"waitsOver5min":0}
+  阶段3-30min   : {"purchases":134,"medianRelGain":1.282,"p90RelGain":4.396,"maxRelGain":8.306,"medianWaitSec":11,"maxWaitSec":23,"waitsOver5min":0}
+  阶段30-180min : {"purchases":132,"medianRelGain":0.274,"p90RelGain":2.449,"maxRelGain":4.99,"medianWaitSec":54,"maxWaitSec":169,"waitsOver5min":0}
+  首次购买: {"coffee":0.25,"phone":1.13,"water":1.93,"toilet":3.8,"group":8.6,"meeting":21.72}
+  总购买 299 次；点击收入 1586454，挂机收入 8393003
+
+===== 贪心 clicker(3tps) =====
+曲线(min): moyu / 点击力 / 挂机/秒 / 收入/秒
+     0min  moyu=       0  cp=    1  idle=     0/s  income=      3/s  levels={}
+     1min  moyu=     101  cp=   27  idle=     8/s  income=     89/s  levels={"coffee":18,"phone":8,"water":4}
+     3min  moyu=      22  cp=   65  idle=    45/s  income=    240/s  levels={"coffee":30,"phone":21,"water":17,"toilet":8}
+    10min  moyu=    3339  cp=  102  idle=   185/s  income=    491/s  levels={"coffee":43,"phone":34,"water":29,"toilet":21,"group":11}
+    30min  moyu=    1460  cp=  137  idle=   604/s  income=   1015/s  levels={"coffee":54,"phone":46,"water":41,"toilet":33,"group":23,"meeting":11}
+    60min  moyu=   65041  cp=  159  idle=   888/s  income=   1365/s  levels={"coffee":62,"phone":53,"water":48,"toilet":40,"group":30,"meeting":19}
+    90min  moyu=   86925  cp=  171  idle=  1044/s  income=   1557/s  levels={"coffee":66,"phone":57,"water":52,"toilet":44,"group":35,"meeting":23}
+   120min  moyu=  131815  cp=  180  idle=  1147/s  income=   1687/s  levels={"coffee":69,"phone":60,"water":55,"toilet":47,"group":37,"meeting":26}
+   150min  moyu=  138471  cp=  186  idle=  1229/s  income=   1787/s  levels={"coffee":71,"phone":62,"water":57,"toilet":49,"group":40,"meeting":28}
+   180min  moyu=  297561  cp=  191  idle=  1295/s  income=   1868/s  levels={"coffee":72,"phone":64,"water":59,"toilet":51,"group":41,"meeting":30}
+  阶段0-3min    : {"purchases":76,"medianRelGain":2.679,"p90RelGain":12.5,"maxRelGain":100,"medianWaitSec":2,"maxWaitSec":4,"waitsOver5min":0}
+  阶段3-30min   : {"purchases":132,"medianRelGain":0.802,"p90RelGain":2.58,"maxRelGain":4.912,"medianWaitSec":12,"maxWaitSec":27,"waitsOver5min":0}
+  阶段30-180min : {"purchases":109,"medianRelGain":0.327,"p90RelGain":1.644,"maxRelGain":2.463,"medianWaitSec":69,"maxWaitSec":188,"waitsOver5min":0}
+  首次购买: {"coffee":0.08,"phone":0.4,"water":0.68,"toilet":1.41,"group":3.56,"meeting":10.84}
+  总购买 317 次；点击收入 5224410，挂机收入 10070309
+
+===== 贪心 whale(8→1tps) =====
+曲线(min): moyu / 点击力 / 挂机/秒 / 收入/秒
+     0min  moyu=       2  cp=    1  idle=     0/s  income=      8/s  levels={}
+     1min  moyu=     120  cp=   59  idle=    37/s  income=    509/s  levels={"coffee":28,"phone":19,"water":15,"toilet":6}
+     3min  moyu=    2963  cp=   90  idle=   137/s  income=    857/s  levels={"coffee":39,"phone":30,"water":25,"toilet":17,"group":7}
+    10min  moyu=       9  cp=  123  idle=   455/s  income=   1439/s  levels={"coffee":50,"phone":41,"water":36,"toilet":29,"group":19,"meeting":7}
+    30min  moyu=   18169  cp=  155  idle=   851/s  income=   1006/s  levels={"coffee":60,"phone":52,"water":47,"toilet":39,"group":29,"meeting":18}
+    60min  moyu=   70231  cp=  167  idle=   973/s  income=   1140/s  levels={"coffee":64,"phone":55,"water":51,"toilet":43,"group":33,"meeting":21}
+    90min  moyu=  112978  cp=  174  idle=  1081/s  income=   1255/s  levels={"coffee":67,"phone":58,"water":53,"toilet":45,"group":36,"meeting":24}
+   120min  moyu=   32858  cp=  180  idle=  1158/s  income=   1338/s  levels={"coffee":69,"phone":60,"water":55,"toilet":48,"group":38,"meeting":26}
+   150min  moyu=   84176  cp=  186  idle=  1221/s  income=   1407/s  levels={"coffee":71,"phone":62,"water":57,"toilet":49,"group":39,"meeting":28}
+   180min  moyu=  270307  cp=  189  idle=  1269/s  income=   1458/s  levels={"coffee":72,"phone":63,"water":58,"toilet":51,"group":41,"meeting":29}
+  阶段0-3min    : {"purchases":118,"medianRelGain":1.266,"p90RelGain":10,"maxRelGain":100,"medianWaitSec":1,"maxWaitSec":4,"waitsOver5min":0}
+  阶段3-30min   : {"purchases":127,"medianRelGain":0.54,"p90RelGain":1.584,"maxRelGain":2.43,"medianWaitSec":11,"maxWaitSec":31,"waitsOver5min":0}
+  阶段30-180min : {"purchases":69,"medianRelGain":0.206,"p90RelGain":1.922,"maxRelGain":2.449,"medianWaitSec":122,"maxWaitSec":224,"waitsOver5min":0}
+  首次购买: {"coffee":0.03,"phone":0.15,"water":0.25,"toilet":0.63,"group":1.44,"meeting":4.89}
+  总购买 314 次；点击收入 3410434，挂机收入 10846708
+
+stdout | playtest/probe-opt-value.test.ts > 策略对比（tps=3，180min）：贪心 vs 逐价 vs 攒钱等最优 > 终局收入与误买证据
+
+===== 策略对比 tps=3 @180min =====
+  贪心-立即花光               : income@180=    1868/s  income@30=   1015/s  购买317次  终局等级={"coffee":72,"phone":64,"water":59,"toilet":51,"group":41,"meeting":30}
+  逐价便宜优先(stock画像)       : income@180=    1868/s  income@30=   1014/s  购买317次  终局等级={"coffee":72,"phone":64,"water":59,"toilet":51,"group":41,"meeting":30}
+  逐价最贵优先(stock画像)       : income@180=    1868/s  income@30=   1014/s  购买317次  终局等级={"coffee":72,"phone":64,"water":59,"toilet":51,"group":41,"meeting":30}
+  攒钱等最优项                : income@180=    2056/s  income@30=   1238/s  购买302次  终局等级={"coffee":67,"water":58,"phone":50,"toilet":45,"group":43,"meeting":39}
+  贪心-立即花光 相对最优: 9.1%
+  逐价便宜优先(stock画像) 相对最优: 9.1%
+  逐价最贵优先(stock画像) 相对最优: 9.1%
+  攒钱等最优项 相对最优: 0.0%
+  贪心买 咖啡续命: 72次, 最后一次@162.3min(终局lv72), 该次花费=305942
+  贪心买 带薪喝水: 59次, 最后一次@171.2min(终局lv59), 该次花费=331494
+  贪心买 刷手机: 64次, 最后一次@174.2min(终局lv64), 该次花费=333376
+  贪心买 带薪蹲坑: 51次, 最后一次@168.2min(终局lv51), 该次花费=325098
+  贪心买 摸鱼群聊: 41次, 最后一次@165.2min(终局lv41), 该次花费=321437
+  贪心买 无用会议: 30次, 最后一次@177.3min(终局lv30), 该次花费=345453
+
+stdout | playtest/probe-opt-curve.test.ts > 原版曲线：贪心玩家的 180min > tps=1：每 30min 一桶的每次购买相对收益（饱和速度）
+
+===== tps=1 贪心：每 30min 桶内[每次购买相对收益%] =====
+  {"bucket":"0-30min","purchases":167,"medianRelGainPct":1.802,"maxRelGainPct":100}
+  {"bucket":"30-60min","purchases":56,"medianRelGainPct":0.387,"maxRelGainPct":4.99}
+  {"bucket":"60-90min","purchases":30,"medianRelGainPct":0.296,"maxRelGainPct":2.9}
+  {"bucket":"90-120min","purchases":20,"medianRelGainPct":0.255,"maxRelGainPct":2.36}
+  {"bucket":"120-150min","purchases":14,"medianRelGainPct":0.239,"maxRelGainPct":2.12}
+  {"bucket":"150-180min","purchases":12,"medianRelGainPct":0.225,"maxRelGainPct":1.92}
+
+stdout | playtest/probe-opt-idle.test.ts > 纯挂机党：点多少下才能活？ > 点击数 T ∈ {0,5,10,15,20,30,40,49,50,60,100} → 180min 结局
+
+===== 点击数门槛扫描（之后 0tps，挂 180min）=====
+T(下) | 首购min | 挂机速率 | income/s@180 | 购买数 | 结局
+    0 |       - |        0 |            0 |    0 | 死局
+    5 |       - |        0 |            0 |    0 | 死局
+   10 |       - |        0 |            0 |    0 | 死局
+   15 |       - |        0 |            0 |    0 | 死局
+   20 |       - |        0 |            0 |    0 | 死局
+   30 |       - |        0 |            0 |    0 | 死局
+   40 |       - |        0 |            0 |    0 | 死局
+   49 |       - |        0 |            0 |    0 | 死局
+   50 |       0 |     1233 |         1233 |  181 | 活
+   60 |       0 |     1233 |         1233 |  181 | 活
+  100 |       0 |     1233 |         1233 |  181 | 活
+  [门槛解释] 最便宜挂机项=刷手机(50)；咖啡(15)只加点击力，对挂机党零价值
+
+stdout | playtest/probe-opt-idle.test.ts > 纯挂机党：点多少下才能活？ > 死局逃逸路径核数：T=15/30/49 全花咖啡能否爬到刷手机？
+  T=15: 全花咖啡后剩余=0(花费15) → 距刷手机(50)还差 50，且咖啡不产生挂机 → 死局
+  T=30: 全花咖啡后剩余=15(花费15) → 距刷手机(50)还差 35，且咖啡不产生挂机 → 死局
+  T=49: 全花咖啡后剩余=16(花费33) → 距刷手机(50)还差 34，且咖啡不产生挂机 → 死局
+
+stdout | playtest/probe-opt-curve.test.ts > 反事实 A：换价曲线因子（tps=1） > factor ∈ {1.15, 1.12, 1.10, 1.07}：购买数/终局收入/相对收益分布/长等待
+
+===== 价曲线因子对比（贪心 tps=1, 180min）=====
+  ×1.15: 购买299次  income@180=1366/s  30-180min: 中位相对收益=0.274%  p90=2.449%  中位间隔=54s  最大间隔=169s  >5min等待=0次  最高等级=69
+  ×1.12: 购买368次  income@180=1677/s  30-180min: 中位相对收益=0.228%  p90=2.063%  中位间隔=45s  最大间隔=137s  >5min等待=0次  最高等级=85
+  ×1.1: 购买437次  income@180=1988/s  30-180min: 中位相对收益=0.189%  p90=1.745%  中位间隔=37s  最大间隔=115s  >5min等待=0次  最高等级=101
+  ×1.07: 购买614次  income@180=2770/s  30-180min: 中位相对收益=0.134%  p90=1.22%  中位间隔=27s  最大间隔=82s  >5min等待=0次  最高等级=143
+
+stdout | playtest/probe-opt-value.test.ts > 策略对比（tps=3，180min）：贪心 vs 逐价 vs 攒钱等最优 > 消融：砍掉某一项升级，贪心 180min 收入损失 → 重要性排序
+
+===== 消融实验 tps=3（砍掉单项后的 income@180 相对损失%）=====
+  刷手机       : 砍掉后收入损失 0.4%
+  带薪蹲坑      : 砍掉后收入损失 7.2%
+  咖啡续命      : 砍掉后收入损失 11.1%
+  摸鱼群聊      : 砍掉后收入损失 17.6%
+  带薪喝水      : 砍掉后收入损失 20.5%
+  无用会议      : 砍掉后收入损失 42.4%
+
+stdout | playtest/probe-opt-offline.test.ts > 7 天回访循环：每天 2h 活跃(1tps 贪心) + 夜里离线 > 上限 0h(无离线) / 4h / 8h / 24h 对比
+
+===== 7天循环（每天 2h 活跃 → 离线 min(上限, 夜长12h)）=====
+  上限 0h: 每日活跃末挂机速率=[1010, 1295, 1443, 1528, 1602, 1673, 1714]/s  7天终局速率=1714/s  第7夜离线入账=0
+  上限 4h: 每日活跃末挂机速率=[1010, 1593, 1827, 1959, 2058, 2132, 2189]/s  7天终局速率=2189/s  第7夜离线入账=31521600
+  上限 8h: 每日活跃末挂机速率=[1010, 1746, 1996, 2140, 2231, 2304, 2367]/s  7天终局速率=2367/s  第7夜离线入账=68169600
+  上限24h: 每日活跃末挂机速率=[1010, 1832, 2099, 2243, 2340, 2411, 2471]/s  7天终局速率=2471/s  第7夜离线入账=106747200
+  注: '无离线'仅第1天累积(探针串行限制)，读数时对比 4/8/24 的倍数关系为主
+
+stdout | playtest/probe-opt-idle.test.ts > 修复方案对比（目标：10 下点击的挂机党能活，且不破坏点击党） > V0 原版 / V1 底薪0.2 / V1b 底薪0.5 / V2 刷手机50→30 / V3 底薪0.2+刷手机→30
+
+===== 修复方案（开局点 10 下后纯挂 180min）=====
+  V0 原版             : 首购刷手机@      -min  income@180=       0/s  购买   0次  结局=死局
+     生存轨迹: 1min:0/s  3min:0/s  10min:0/s  30min:0/s  60min:0/s  120min:0/s  180min:0/s
+  V1 底薪0.2/s        : 首购刷手机@   3.33min  income@180=  1232.2/s  购买 180次  结局=活
+     生存轨迹: 1min:0.2/s  3min:0.2/s  10min:25.2/s  30min:234.2/s  60min:703.2/s  120min:1048.2/s  180min:1232.2/s
+  V1b 底薪0.5/s       : 首购刷手机@   1.33min  income@180=  1233.5/s  购买 181次  结局=活
+     生存轨迹: 1min:0.5/s  3min:4.5/s  10min:41.5/s  30min:296.5/s  60min:714.5/s  120min:1073.5/s  180min:1233.5/s
+  V2 刷手机50→30       : 首购刷手机@      -min  income@180=       0/s  购买   0次  结局=死局
+     生存轨迹: 1min:0/s  3min:0/s  10min:0/s  30min:0/s  60min:0/s  120min:0/s  180min:0/s
+  V3 底薪0.2+手机→30    : 首购刷手机@   1.66min  income@180=  1261.2/s  购买 185次  结局=活
+     生存轨迹: 1min:0.2/s  3min:5.2/s  10min:49.2/s  30min:311.2/s  60min:744.2/s  120min:1085.2/s  180min:1261.2/s
+
+stdout | playtest/probe-opt-value.test.ts > 策略对比（tps=3，180min）：贪心 vs 逐价 vs 攒钱等最优 > 转型陷阱：点 1 分钟(60下)后转挂机，买咖啡 vs 攒钱买刷手机
+
+===== 转型陷阱：1tps×1min 后纯挂 180min =====
+  (a) 贪心买咖啡路线: 1min 时等级={"coffee":8}(终局{"coffee":8}) → income@180=0/s 【死局】
+      轨迹: 1min:0/s  3min:0/s  10min:0/s  30min:0/s  180min:0/s
+  (b) 攒钱直奔刷手机: income@180=1233/s  购买181次  轨迹: 1min:1/s  3min:5/s  10min:41/s  30min:296/s  180min:1233/s
+
+stdout | playtest/probe-opt-offline.test.ts > 离线公平性与上限敏感 > 同一进度下离线 1h/4h/8h/12h/24h 收益曲线（8h 是否是甜点）
+
+  样本进度: 挂机速率=1184/s
+  离线 1h: 入账=   4262400  清仓后速率=  1403/s (×1.18) 清仓购买11次 
+  离线 4h: 入账=  17049600  清仓后速率=  1637/s (×1.38) 清仓购买26次 
+  离线 8h: 入账=  34099200  清仓后速率=  1781/s (×1.50) 清仓购买40次 
+  离线12h: 入账=  51148800  清仓后速率=  1870/s (×1.58) 清仓购买50次 (反事实,引擎实际封8h)
+  离线24h: 入账= 102297600  清仓后速率=  2030/s (×1.71) 清仓购买78次 (反事实,引擎实际封8h)
+  该进度下各项下一级价格: 咖啡续命:231336  带薪喝水:250657  刷手机:252080  带薪蹲坑:245821  摸鱼群聊:243052  无用会议:261212
+
+ ✓ playtest/probe-opt-offline.test.ts (4 tests) 1663ms
+   ✓ 7 天回访循环：每天 2h 活跃(1tps 贪心) + 夜里离线 > 上限 0h(无离线) / 4h / 8h / 24h 对比  1290ms
+stdout | playtest/probe-opt-value.test.ts > 购买间隔手感（贪心 tps=3） > 间隔分位数 per 阶段（等待感≠空转，是攒钱预期）
+
+===== 购买间隔手感 tps=3 贪心 =====
+  0-3min: 购买76次  中位间隔=2s  最大间隔=4s  间隔>5min=0次
+  3-30min: 购买132次  中位间隔=12s  最大间隔=27s  间隔>5min=0次
+  30-180min: 购买109次  中位间隔=69s  最大间隔=188s  间隔>5min=0次
+
+ ✓ playtest/probe-opt-value.test.ts (6 tests) 1752ms
+   ✓ 策略对比（tps=3，180min）：贪心 vs 逐价 vs 攒钱等最优 > 终局收入与误买证据  552ms
+   ✓ 策略对比（tps=3，180min）：贪心 vs 逐价 vs 攒钱等最优 > 消融：砍掉某一项升级，贪心 180min 收入损失 → 重要性排序  875ms
+stdout | playtest/probe-opt-idle.test.ts > 修复方案对比（目标：10 下点击的挂机党能活，且不破坏点击党） > 底薪 0.2/s 是否破坏点击党平衡（tps=3 贪心 180min）
+
+  点击党(3tps) income@180: 原版=1868/s vs 底薪0.2=1868.2/s (Δ0.0%)
+
+ ✓ playtest/probe-opt-idle.test.ts (4 tests) 1840ms
+   ✓ 纯挂机党：点多少下才能活？ > 点击数 T ∈ {0,5,10,15,20,30,40,49,50,60,100} → 180min 结局  1079ms
+   ✓ 修复方案对比（目标：10 下点击的挂机党能活，且不破坏点击党） > V0 原版 / V1 底薪0.2 / V1b 底薪0.5 / V2 刷手机50→30 / V3 底薪0.2+刷手机→30  481ms
+stdout | playtest/probe-opt-curve.test.ts > 反事实 B：里程碑倍数（每 M 级全效果 ×2） > tps=1：M ∈ {10, 20, 25} vs 原版：收入曲线 + 里程碑脉冲
+
+===== 里程碑(每10级×2) 贪心 tps=1 =====
+     3min  income=      176/s  levels={"coffee":24,"phone":15,"water":10,"toilet":3}
+    10min  income=     3692/s  levels={"coffee":51,"phone":41,"water":36,"toilet":29,"group":19,"meeting":7}
+    30min  income=    39369/s  levels={"coffee":76,"phone":67,"water":62,"toilet":54,"group":44,"meeting":33}
+    60min  income=   132977/s  levels={"coffee":90,"phone":81,"water":76,"toilet":68,"group":58,"meeting":47}
+   120min  income=   478465/s  levels={"coffee":103,"phone":94,"water":90,"toilet":82,"group":72,"meeting":60}
+   180min  income=   685505/s  levels={"coffee":110,"phone":102,"water":97,"toilet":89,"group":79,"meeting":67}
+  income@180: 原版=1366/s  M=10=685505/s (×501.8)  购买544次  相对收益>10%的脉冲购买49次
+  30-180min: 中位相对收益=0.237%  中位间隔=33s  最大间隔=109s
+
+===== 里程碑(每20级×2) 贪心 tps=1 =====
+     3min  income=       40/s  levels={"coffee":18,"phone":9,"water":6}
+    10min  income=      319/s  levels={"coffee":37,"phone":28,"water":23,"toilet":16,"group":6}
+    30min  income=     1570/s  levels={"coffee":54,"phone":46,"water":41,"toilet":33,"group":23,"meeting":11}
+    60min  income=     3333/s  levels={"coffee":65,"phone":56,"water":52,"toilet":44,"group":34,"meeting":22}
+   120min  income=     5777/s  levels={"coffee":75,"phone":66,"water":62,"toilet":54,"group":44,"meeting":32}
+   180min  income=     7047/s  levels={"coffee":80,"phone":71,"water":67,"toilet":59,"group":49,"meeting":37}
+  income@180: 原版=1366/s  M=20=7047/s (×5.2)  购买363次  相对收益>10%的脉冲购买21次
+  30-180min: 中位相对收益=0.317%  中位间隔=49s  最大间隔=148s
+
+===== 里程碑(每25级×2) 贪心 tps=1 =====
+     3min  income=       40/s  levels={"coffee":18,"phone":9,"water":6}
+    10min  income=      241/s  levels={"coffee":35,"phone":26,"water":22,"toilet":14,"group":4}
+    30min  income=     1012/s  levels={"coffee":52,"phone":43,"water":38,"toilet":30,"group":20,"meeting":9}
+    60min  income=     1870/s  levels={"coffee":62,"phone":53,"water":48,"toilet":41,"group":31,"meeting":19}
+   120min  income=     3691/s  levels={"coffee":71,"phone":63,"water":58,"toilet":50,"group":40,"meeting":29}
+   180min  income=     4489/s  levels={"coffee":77,"phone":68,"water":63,"toilet":55,"group":46,"meeting":34}
+  income@180: 原版=1366/s  M=25=4489/s (×3.3)  购买343次  相对收益>10%的脉冲购买17次
+  30-180min: 中位相对收益=0.332%  中位间隔=51s  最大间隔=145s
+
+stdout | playtest/probe-opt-curve.test.ts > 48h 长线（原版 ×1.15，贪心 tps=1，纯在线） > 收入曲线 / 每 6h 购买节奏 / 首次 >10min 等待
+
+===== 48h 长线：收入曲线 =====
+    0.5h  moyu=      6906  income=      486/s  levels={"coffee":47,"phone":39,"water":34,"toilet":26,"group":16,"meeting":5}
+    1.0h  moyu=     15973  income=      855/s  levels={"coffee":57,"phone":48,"water":43,"toilet":35,"group":26,"meeting":14}
+    2.0h  moyu=     43156  income=     1180/s  levels={"coffee":65,"phone":56,"water":52,"toilet":44,"group":34,"meeting":22}
+    4.0h  moyu=    111008  income=     1486/s  levels={"coffee":72,"phone":64,"water":59,"toilet":51,"group":41,"meeting":30}
+    6.0h  moyu=     84324  income=     1646/s  levels={"coffee":76,"phone":68,"water":63,"toilet":55,"group":45,"meeting":34}
+    8.0h  moyu=    372221  income=     1740/s  levels={"coffee":79,"phone":70,"water":66,"toilet":58,"group":48,"meeting":36}
+   12.0h  moyu=   1060344  income=     1895/s  levels={"coffee":83,"phone":74,"water":69,"toilet":61,"group":52,"meeting":40}
+   18.0h  moyu=    920328  income=     2046/s  levels={"coffee":86,"phone":78,"water":73,"toilet":65,"group":55,"meeting":44}
+   24.0h  moyu=   1485265  income=     2138/s  levels={"coffee":89,"phone":80,"water":75,"toilet":68,"group":58,"meeting":46}
+   36.0h  moyu=   1789528  income=     2286/s  levels={"coffee":92,"phone":84,"water":79,"toilet":71,"group":61,"meeting":50}
+   48.0h  moyu=   7333093  income=     2375/s  levels={"coffee":95,"phone":86,"water":81,"toilet":73,"group":64,"meeting":52}
+===== 每 6h 块：购买数 / 中位间隔 / 最大间隔 / 块末收入较块初倍数 =====
+     0-   6h: 购买 341次  中位间隔=    23s  最大间隔=   372s  >5min等待=11  收入486→1646/s (×3.39)
+     6-  12h: 购买  38次  中位间隔=   556s  最大间隔=   793s  >5min等待=37  收入1646→1895/s (×1.15)
+    12-  18h: 购买  22次  中位间隔=  1005s  最大间隔=  1210s  >5min等待=21  收入1895→2046/s (×1.08)
+    18-  24h: 购买  15次  中位间隔=  1452s  最大间隔=  1639s  >5min等待=14  收入2046→2138/s (×1.04)
+    24-  30h: 购买  11次  中位间隔=  1883s  最大间隔=  2072s  >5min等待=10  收入2138→2138/s (×1.00)
+    30-  36h: 购买  10次  中位间隔=  2342s  最大间隔=  2501s  >5min等待=9  收入2138→2286/s (×1.07)
+    36-  42h: 购买   8次  中位间隔=  2728s  最大间隔=  2990s  >5min等待=7  收入2286→2286/s (×1.00)
+    42-  48h: 购买   6次  中位间隔=  3194s  最大间隔=  3380s  >5min等待=5  收入2286→2375/s (×1.04)
+  首次购买间隔>10min 出现在 570min；>30min 在 1573min
+  全程等待分位: p50=49s p90=1317s p99=3069s  总购买=451
+  终局等级与边际成本(下一级价格 / 每秒增量):
+    咖啡续命(lv95): 下一级 8757620 摸鱼值 / +1点击力 → 每单位效果 8757620
+    带薪喝水(lv81): 下一级 8251352 摸鱼值 / +2点击力 → 每单位效果 4125676
+    刷手机(lv86): 下一级 8298208 摸鱼值 / +1/s → 每单位效果 8298208
+    带薪蹲坑(lv73): 下一级 8092144 摸鱼值 / +3/s → 每单位效果 2697381
+    摸鱼群聊(lv64): 下一级 9201170 摸鱼值 / +8/s → 每单位效果 1150146
+    无用会议(lv52): 下一级 8598822 摸鱼值 / +25/s → 每单位效果 343953
+
+ ✓ playtest/probe-opt-curve.test.ts (6 tests) 2587ms
+   ✓ 原版曲线：贪心玩家的 180min > tps=1 / tps=3 / 爆肝(8tps 30min 后 1tps) 三画像  493ms
+   ✓ 反事实 A：换价曲线因子（tps=1） > factor ∈ {1.15, 1.12, 1.10, 1.07}：购买数/终局收入/相对收益分布/长等待  513ms
+   ✓ 反事实 B：里程碑倍数（每 M 级全效果 ×2） > tps=1：M ∈ {10, 20, 25} vs 原版：收入曲线 + 里程碑脉冲  938ms
+   ✓ 48h 长线（原版 ×1.15，贪心 tps=1，纯在线） > 收入曲线 / 每 6h 购买节奏 / 首次 >10min 等待  499ms
+
+ Test Files  5 passed (5)
+      Tests  21 passed (21)
+   Start at  19:10:50
+   Duration  2.84s (transform 141ms, setup 0ms, collect 262ms, tests 8.04s, environment 0ms, prepare 296ms)
+
+npm notice
+npm notice New major version of npm available! 10.9.8 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice

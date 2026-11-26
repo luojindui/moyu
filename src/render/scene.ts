@@ -1,5 +1,7 @@
 import { SpriteGrid } from "./sprites";
 import { Fx } from "./fx";
+import type { EventState } from "../engine/events";
+import { MEME_REWARD_CLICKS } from "../engine/events";
 
 /** 场景精灵的行列映射（视觉定稿前可一键调整） */
 export const SPRITE_MAP = {
@@ -35,6 +37,12 @@ export class Scene {
   scale = 4;
   w = 0; // CSS 像素
   h = 0;
+  /** 随机事件状态（由 main 挂载；场景只读渲染） */
+  events: EventState | null = null;
+  /** 当前事件时钟（游戏秒） */
+  gameTime = 0;
+  /** 丢梗目标位置（虚拟坐标），由 main 设置 */
+  memePos = { x: 0, y: 0 };
 
   constructor(public sprites: SceneSprites = {}) {}
 
@@ -140,7 +148,31 @@ export class Scene {
     ctx.font = `${Math.max(10, 3 * s)}px system-ui`;
     ctx.fillStyle = "rgba(255,255,255,0.75)";
     ctx.textAlign = "center";
-    ctx.fillText("戳屏幕摸鱼", (vw / 2) * s, u * 0.9 * s);
+    if (this.events && this.events.bossUntil > this.gameTime) {
+      // 老板巡逻：红色警戒横幅
+      const remain = Math.ceil(this.events.bossUntil - this.gameTime);
+      ctx.fillStyle = "#b3413c";
+      ctx.fillRect(0, 0, vw * s, 3.2 * s * 4);
+      ctx.fillStyle = "#fff";
+      ctx.font = `bold ${Math.max(14, 4 * s)}px system-ui`;
+      ctx.fillText(`⚠ 老板来了！忍住别点 (${remain}s)`, (vw / 2) * s, 2.6 * s * 4);
+    } else if (this.events && this.events.memeUntil > this.gameTime) {
+      // 同事丢梗：气泡目标
+      const mx = this.memePos.x * s;
+      const my = this.memePos.y * s;
+      const bob = Math.sin(this.gameTime * 6) * 3 * s;
+      ctx.fillStyle = "#ffd76e";
+      ctx.beginPath();
+      ctx.arc(mx, my + bob, 2.2 * u * s, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "#5a3c00";
+      ctx.font = `bold ${Math.max(10, 2.2 * s)}px system-ui`;
+      ctx.fillText("丢梗!", mx, my + bob + 1 * s);
+      ctx.fillStyle = "#fff";
+      ctx.fillText(`戳它 +${MEME_REWARD_CLICKS}×点击力`, (vw / 2) * s, u * 0.9 * s);
+    } else {
+      ctx.fillText("戳屏幕摸鱼", (vw / 2) * s, u * 0.9 * s);
+    }
 
     this.fx.draw(ctx, s);
   }
