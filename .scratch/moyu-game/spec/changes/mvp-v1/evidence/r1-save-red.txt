@@ -1,0 +1,5 @@
+   × 存档 > levels 非对象（如数字）：整档作废回初始状态 3ms
+   × 存档 > levels 含小数/负数/超大值：该键丢弃，其余保留 1ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+ Test Files  1 failed (1)
+      Tests  2 failed | 5 passed (7)

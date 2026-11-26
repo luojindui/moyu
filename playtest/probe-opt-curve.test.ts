@@ -119,38 +119,37 @@ describe("反事实 A：换价曲线因子（tps=1）", () => {
   });
 });
 
-describe("反事实 B：里程碑倍数（每 10 级全效果 ×2）", () => {
-  it("tps=1：cfEffect(10) vs 原版：收入曲线 + 里程碑脉冲", () => {
-    const effM10 = cfEffect(10);
-    const run = runSim({
-      minutes: 180,
-      tps: 1,
-      dt: 0.25,
-      orderFn: makeGreedy(engineCost, effM10),
-      effectFn: effM10,
-      checkpointMinutes: [0, 3, 10, 30, 60, 90, 120, 150, 180],
-    });
-    console.log("\n===== 里程碑(每10级×2) 贪心 tps=1 曲线 =====");
-    for (const c of run.curve) {
+describe("反事实 B：里程碑倍数（每 M 级全效果 ×2）", () => {
+  it("tps=1：M ∈ {10, 20, 25} vs 原版：收入曲线 + 里程碑脉冲", () => {
+    for (const M of [10, 20, 25]) {
+      const effM = cfEffect(M);
+      const run = runSim({
+        minutes: 180,
+        tps: 1,
+        dt: 0.25,
+        orderFn: makeGreedy(engineCost, effM),
+        effectFn: effM,
+        checkpointMinutes: [3, 10, 30, 60, 120, 180],
+      });
+      const base = runSim({
+        minutes: 180,
+        tps: 1,
+        dt: 0.25,
+        orderFn: makeGreedy(engineCost, engineEffect),
+        checkpointMinutes: [180],
+      });
+      const mM = run.curve.at(-1)!.income;
+      const vanilla = base.curve.at(-1)!.income;
+      const bigPurchases = run.events.filter((e) => e.relGain > 0.1);
+      console.log(`\n===== 里程碑(每${M}级×2) 贪心 tps=1 =====`);
+      for (const c of run.curve) {
+        console.log(`  ${String(c.tMin).padStart(4)}min  income=${String(c.income).padStart(9)}/s  levels=${JSON.stringify(c.levels)}`);
+      }
       console.log(
-        `  ${String(c.tMin).padStart(4)}min  income=${String(c.income).padStart(9)}/s  levels=${JSON.stringify(c.levels)}`,
+        `  income@180: 原版=${vanilla}/s  M=${M}=${mM}/s (×${(mM / vanilla).toFixed(1)})  购买${run.purchases}次  相对收益>10%的脉冲购买${bigPurchases.length}次`,
       );
-    }
-    const base = runSim({
-      minutes: 180,
-      tps: 1,
-      dt: 0.25,
-      orderFn: makeGreedy(engineCost, engineEffect),
-      checkpointMinutes: [180],
-    });
-    const m10 = run.curve.at(-1)!.income;
-    const vanilla = base.curve.at(-1)!.income;
-    const bigPurchases = run.events.filter((e) => e.relGain > 0.15);
-    console.log(
-      `  income@180: 原版=${vanilla}/s  里程碑=${m10}/s  (×${(m10 / vanilla).toFixed(1)})  购买${run.purchases}次  其中相对收益>15%的"里程碑脉冲"购买 ${bigPurchases.length} 次`,
-    );
-    for (const e of bigPurchases.slice(0, 12)) {
-      console.log(`    +${(e.relGain * 100).toFixed(1)}% @${e.tMin}min ${e.name}`);
+      const late = phaseStats(run, 30, 180);
+      console.log(`  30-180min: 中位相对收益=${late.medianRelGain}%  中位间隔=${late.medianWaitSec}s  最大间隔=${late.maxWaitSec}s`);
     }
   });
 });
@@ -173,7 +172,7 @@ describe("48h 长线（原版 ×1.15，贪心 tps=1，纯在线）", () => {
     const blocks: { b: number; s: ReturnType<typeof phaseStats>; inc0: number; inc1: number }[] = [];
     for (let b = 0; b < 2880; b += 360) {
       const s = phaseStats(run, b, b + 360);
-      const c0 = run.curve.find((c) => c.tMin === b) ?? run.curve[0];
+      const c0 = run.curve.filter((c) => c.tMin <= b).at(-1) ?? run.curve[0];
       const c1 = run.curve.filter((c) => c.tMin <= b + 360).at(-1)!;
       blocks.push({ b, s, inc0: c0.income, inc1: c1.income });
     }

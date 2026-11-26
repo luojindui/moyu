@@ -38,6 +38,24 @@ describe("存档", () => {
     expect(r.state!.moyu).toBe(0);
   });
 
+  it("levels 非对象（如数字）：整档作废回初始状态", () => {
+    const a = memoryAdapter({ "moyu-save": JSON.stringify({ v: 1, moyu: 9999, levels: 42, savedAt: Date.now() - 1000 }) });
+    const r = restore(a, Date.now());
+    expect(r.state).toEqual(initialState());
+  });
+
+  it("levels 含小数/负数/超大值：该键丢弃，其余保留", () => {
+    const blob = JSON.stringify({
+      v: 1,
+      moyu: 500,
+      levels: { coffee: 1.5, toilet: -2, group: 1e308, phone: 3, meeting: "5" },
+      savedAt: Date.now() - 1000,
+    });
+    const r = restore(memoryAdapter({ "moyu-save": blob }), Date.now());
+    expect(r.state!.moyu).toBe(500);
+    expect(r.state!.levels).toEqual({ phone: 3 });
+  });
+
   it("无存档：返回初始状态", () => {
     const r = restore(memoryAdapter(), Date.now());
     expect(r.state).toEqual(initialState());

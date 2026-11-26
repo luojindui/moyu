@@ -15,12 +15,15 @@ const DRINK_EVERY = 22; // 平均每 22 秒切到喝水动画
 const DRINK_FOR = 2.5;
 
 export interface SceneSprites {
-  worker: SpriteGrid;
-  computer: SpriteGrid;
-  cooler: SpriteGrid;
+  worker?: SpriteGrid;
+  computer?: SpriteGrid;
+  cooler?: SpriteGrid;
 }
 
-/** 像素办公场景：墙/地板/工位桌/电脑/职员/饮水机，16 单位网格虚拟坐标 */
+/**
+ * 像素办公场景。坐标系：全部使用"虚拟像素"（16 单位网格），
+ * SpriteGrid.draw 负责乘 scale；纯 canvas 矩形在此处乘 scale。
+ */
 export class Scene {
   private t = 0;
   private nextDrink = DRINK_EVERY;
@@ -28,27 +31,25 @@ export class Scene {
   private workerCol = 0;
   private screenCol = 0;
   private coolerCol = 0;
-  /** 触摸点（虚拟坐标）供 fx 使用 */
   readonly fx = new Fx();
   scale = 4;
-  w = 0;
+  w = 0; // CSS 像素
   h = 0;
 
-  constructor(private sprites: SceneSprites) {}
+  constructor(public sprites: SceneSprites = {}) {}
 
   resize(cssW: number, cssH: number): void {
     this.w = cssW;
     this.h = cssH;
-    // 场景设计宽度约 56 虚拟单位（=3.5 帧），取 2..7 的整数放大
     this.scale = Math.max(2, Math.min(7, Math.floor(cssW / 200)));
   }
 
   update(dt: number): void {
     this.t += dt;
     const { worker, computer, cooler } = this.sprites;
-    this.workerCol = Math.floor(this.t * TYPING_FPS) % worker.cols;
-    this.screenCol = Math.floor(this.t * SCREEN_FPS) % computer.cols;
-    this.coolerCol = Math.floor(this.t * COOLER_FPS) % cooler.cols;
+    if (worker) this.workerCol = Math.floor(this.t * TYPING_FPS) % worker.cols;
+    if (computer) this.screenCol = Math.floor(this.t * SCREEN_FPS) % computer.cols;
+    if (cooler) this.coolerCol = Math.floor(this.t * COOLER_FPS) % cooler.cols;
     if (this.drinkUntil < 0 && this.t >= this.nextDrink) {
       this.drinkUntil = this.t + DRINK_FOR;
       this.nextDrink = this.t + DRINK_EVERY + Math.random() * 8;
@@ -62,63 +63,89 @@ export class Scene {
     return this.drinkUntil >= 0;
   }
 
+  /** 虚拟坐标系下的布局（16 单位网格） */
+  private layout() {
+    const vw = this.w / this.scale;
+    const vh = this.h / this.scale;
+    const groundY = vh - 3 * 16;
+    const deskX = vw / 2 - 2 * 16;
+    const deskY = groundY - 1.6 * 16;
+    return { vw, vh, groundY, deskX, deskY };
+  }
+
   draw(ctx: CanvasRenderingContext2D): void {
     const s = this.scale;
-    const u = 16 * s; // 一帧的屏幕像素
-    const groundY = this.h - u * 3;
+    const { vw, vh, groundY, deskX, deskY } = this.layout();
+    const u = 16;
 
     // 墙与地板
     ctx.fillStyle = "#3a3f5c";
-    ctx.fillRect(0, 0, this.w, groundY);
+    ctx.fillRect(0, 0, vw * s, groundY * s);
     ctx.fillStyle = "#2e334d";
-    ctx.fillRect(0, groundY - u, this.w, u); // 踢脚线
+    ctx.fillRect(0, (groundY - u) * s, vw * s, u * s);
     ctx.fillStyle = "#5a4a3f";
-    ctx.fillRect(0, groundY, this.w, this.h - groundY);
+    ctx.fillRect(0, groundY * s, vw * s, (vh - groundY) * s);
     ctx.fillStyle = "#524438";
-    for (let y = groundY + u; y < this.h; y += u) {
-      for (let x = ((y / u) % 2) * u; x < this.w; x += u * 2) ctx.fillRect(x, y, u, u);
+    for (let y = groundY + u; y < vh; y += u) {
+      for (let x = ((y / u) % 2) * u; x < vw; x += u * 2) ctx.fillRect(x * s, y * s, u * s, u * s);
     }
 
     // 窗户
     ctx.fillStyle = "#7ec8ff";
-    ctx.fillRect(u * 2, u, u * 3, u * 2);
+    ctx.fillRect(2 * u * s, u * s, 3 * u * s, 2 * u * s);
     ctx.fillStyle = "#8fd4ff";
-    ctx.fillRect(u * 2, u, u * 3, u);
+    ctx.fillRect(2 * u * s, u * s, 3 * u * s, u * s);
     ctx.strokeStyle = "#2b2b3a";
     ctx.lineWidth = Math.max(2, s);
-    ctx.strokeRect(u * 2, u, u * 3, u * 2);
+    ctx.strokeRect(2 * u * s, u * s, 3 * u * s, 2 * u * s);
+
+    // 工位桌
+    ctx.fillStyle = "#8a6a4a";
+    ctx.fillRect(deskX * s, deskY * s, 4 * u * s, 0.5 * u * s);
+    ctx.fillStyle = "#6d5238";
+    ctx.fillRect((deskX + 0.2 * u) * s, (deskY + 0.5 * u) * s, 0.25 * u * s, 1.1 * u * s);
+    ctx.fillRect((deskX + 3.6 * u) * s, (deskY + 0.5 * u) * s, 0.25 * u * s, 1.1 * u * s);
 
     const { worker, computer, cooler } = this.sprites;
 
-    // 饮水机（右侧）
-    cooler.draw(ctx, this.coolerCol, SPRITE_MAP.cooler.row, this.w - u * 3.5, groundY - u * 2, s);
+    // 精灵（缺资产时色块占位，游戏不死）
+    const coolerX = vw - 3.5 * u;
+    if (cooler) {
+      cooler.draw(ctx, this.coolerCol, SPRITE_MAP.cooler.row, coolerX, groundY - 2 * u, s);
+    } else {
+      ctx.fillStyle = "#9ec8e8";
+      ctx.fillRect(coolerX * s, (groundY - 2 * u) * s, u * s, 2 * u * s);
+    }
 
-    // 工位桌
-    const deskX = this.w / 2 - u * 2;
-    const deskY = groundY - u * 1.6;
-    ctx.fillStyle = "#8a6a4a";
-    ctx.fillRect(deskX, deskY, u * 4, u * 0.5);
-    ctx.fillStyle = "#6d5238";
-    ctx.fillRect(deskX + u * 0.2, deskY + u * 0.5, u * 0.25, u * 1.1);
-    ctx.fillRect(deskX + u * 3.6, deskY + u * 0.5, u * 0.25, u * 1.1);
+    const pcX = deskX + 1.2 * u;
+    const pcY = deskY - u;
+    if (computer) {
+      computer.draw(ctx, this.screenCol, SPRITE_MAP.computer.screenRow, pcX, pcY, s);
+    } else {
+      ctx.fillStyle = "#c8c8d8";
+      ctx.fillRect(pcX * s, pcY * s, u * s, u * s);
+    }
 
-    // 电脑（桌上，屏幕朝外）
-    computer.draw(ctx, this.screenCol, SPRITE_MAP.computer.screenRow, deskX + u * 1.2, deskY - u, s);
-
-    // 职员（桌后，打字/喝水动画）
     const row = this.drinkUntil >= 0 ? SPRITE_MAP.worker.drinkingRow : SPRITE_MAP.worker.typingRow;
-    worker.draw(ctx, this.workerCol, row, this.w / 2 - u * 0.5, deskY - u * 1.9, s);
+    const wkrX = vw / 2 - u / 2;
+    const wkrY = deskY - 1.9 * u;
+    if (worker) {
+      worker.draw(ctx, this.workerCol, row, wkrX, wkrY, s);
+    } else {
+      ctx.fillStyle = "#e8c8a8";
+      ctx.fillRect(wkrX * s, wkrY * s, u * s, 2 * u * s);
+    }
 
-    // 提示条
+    // 提示条（屏幕像素坐标，文字清晰优先）
     ctx.font = `${Math.max(10, 3 * s)}px system-ui`;
     ctx.fillStyle = "rgba(255,255,255,0.75)";
     ctx.textAlign = "center";
-    ctx.fillText("戳屏幕摸鱼", this.w / 2, u * 0.9);
+    ctx.fillText("戳屏幕摸鱼", (vw / 2) * s, u * 0.9 * s);
 
     this.fx.draw(ctx, s);
   }
 
-  /** CSS 坐标 → 虚拟坐标（供 fx 定位） */
+  /** CSS 坐标 → 画布内坐标（供 fx 定位） */
   toVirtual(clientX: number, clientY: number, canvas: HTMLCanvasElement): { x: number; y: number } {
     const r = canvas.getBoundingClientRect();
     return { x: clientX - r.left, y: clientY - r.top };

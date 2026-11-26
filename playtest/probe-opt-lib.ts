@@ -77,6 +77,8 @@ export interface RunOpts {
   baselineIdle?: number;
   /** t=0 时先点这么多下（之后按 tps 点击） */
   initialTaps?: number;
+  /** 从既有状态续跑（多日循环） */
+  initial?: GameState;
   checkpointMinutes?: number[];
 }
 
@@ -101,7 +103,8 @@ export function incomeOf(
   return tpsNow * (BASE_CLICK_POWER + eff.clickPower) + eff.idleRate + baseline;
 }
 
-/** 贪心：边际收益/价格 最大者优先。+1 点击力按 tpsNow 折算收入，+1 挂机按 1 折算。 */
+/** 贪心：边际收益/价格 最大者优先。+1 点击力按 tpsNow 折算收入，+1 挂机按 1 折算。
+ *  边际价值为 0 的项（挂机党的点击升级）直接跳过：买了纯浪费，会拖慢攒钱。 */
 export function makeGreedy(costFn: CostFn, effectFn: EffFn): OrderFn {
   return (state, _t, tpsNow) => {
     const cur = effectFn(state.levels);
@@ -111,8 +114,9 @@ export function makeGreedy(costFn: CostFn, effectFn: EffFn): OrderFn {
         const nxt = effectFn({ ...state.levels, [u.id]: lv + 1 });
         const value =
           (nxt.clickPower - cur.clickPower) * tpsNow + (nxt.idleRate - cur.idleRate);
-        return { id: u.id, eff: value / Math.max(costFn(u.id, lv), 1) };
+        return { id: u.id, eff: value / Math.max(costFn(u.id, lv), 1), value };
       })
+      .filter((s) => s.value > 0)
       .sort((a, b) => b.eff - a.eff)
       .map((s) => s.id);
   };
@@ -157,7 +161,7 @@ export function runSim(opts: RunOpts): RunResult {
   const vanilla = costFn === engineCost && effectFn === engineEffect && baseline === 0;
   const tpsAt = (t: number) => (typeof opts.tps === "function" ? opts.tps(t) : opts.tps);
 
-  let state = initialState();
+  let state = opts.initial ? { moyu: opts.initial.moyu, levels: { ...opts.initial.levels } } : initialState();
   let purchases = 0;
   let lastBuyT = 0;
   let tapCredit = 0;
