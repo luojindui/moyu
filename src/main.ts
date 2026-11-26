@@ -234,6 +234,7 @@ async function boot(): Promise<void> {
       es.nextBossAt = Infinity;
       es.nextMemeAt = Infinity;
       es.bossCaught = false;
+      prevBossActive = false; // 防止巡逻中重置触发幻影安然奖励
       scene.gameTime = 0;
       hud.refresh(state);
       shop.refresh(state);
