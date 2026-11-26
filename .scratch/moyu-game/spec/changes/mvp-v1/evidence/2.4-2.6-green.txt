@@ -1,0 +1,5 @@
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ Test Files  1 failed | 5 passed (6)
+      Tests  1 failed | 22 passed (23)
+ Test Files  6 passed (6)
+      Tests  23 passed (23)
