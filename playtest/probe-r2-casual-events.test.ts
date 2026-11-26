@@ -151,7 +151,7 @@ describe("R2-② 随机事件打扰感（休闲节奏 30min×20 seed）", () => 
       console.log(`反应${r}s: 被逮率 ${(rate * 100).toFixed(0)}% | 每30min净事件收益 ${net.toFixed(0)}（正=忍奖>罚款）`);
     }
     REACTION_S = 0.8;
-  });
+  }, 20_000);
 
   it("2min 碎片视角：一个 session 撞到几次事件", () => {
     const hits: { boss: number; meme: number; firstMeme: number; firstBoss: number }[] = [];

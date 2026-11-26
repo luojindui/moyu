@@ -162,10 +162,11 @@ describe("R2-④ 切后台 resume 路径（上轮丢 99.7% 的修复验证）", 
     const mem = memAdapter();
     let s = initialState();
     s.levels = { phone: 5 };
-    serialize(s, mem, Date.now());
-    const back = restore(mem, Date.now() + 1800_000);
+    const t0 = Date.now(); // 固定同一时钟基准，避免两次 Date.now() 间的墙钟漂移
+    serialize(s, mem, t0);
+    const back = restore(mem, t0 + 1800_000);
     const bootPath = offlineEarn(back.state!, back.offlineSeconds, 1);
-    const resumePath = settleReturn(s, Date.now(), Date.now() + 1800_000, 1);
+    const resumePath = settleReturn(s, t0, t0 + 1800_000, 1);
     expect(bootPath.earned).toBeCloseTo(resumePath.earned, 6);
     console.log(`两条路径 30min 各得 ${bootPath.earned}：一致 ✓（不再"杀页面反而更赚"）`);
   });
