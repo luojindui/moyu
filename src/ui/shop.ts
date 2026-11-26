@@ -1,6 +1,7 @@
 import type { GameState } from "../engine/state";
 import { UPGRADES, costOf } from "../engine/upgrades";
 import { formatMoyu } from "../engine/format";
+import { flavorFor } from "../engine/flavor";
 
 /** 升级商店：卡片 + 可购态刷新 + 购买回调 */
 export class Shop {
@@ -16,6 +17,7 @@ export class Shop {
       card.innerHTML = `<span class="shop-name">${u.name}</span>
         <span class="shop-desc">${u.desc}</span>
         <span class="shop-cost"><b>0</b> 摸鱼值</span>
+        <span class="shop-flavor"></span>
         <span class="shop-level"></span>`;
       card.addEventListener("click", () => onBuy(u.id));
       this.container.appendChild(card);
@@ -32,6 +34,7 @@ export class Shop {
       this.costs.get(u.id)!.textContent = formatMoyu(price);
       const lvEl = btn.querySelector(".shop-level")!;
       lvEl.textContent = lv > 0 ? `Lv.${lv}` : "";
+      btn.querySelector(".shop-flavor")!.textContent = flavorFor(u.id, lv) ?? "";
       btn.disabled = state.moyu < price;
       btn.classList.toggle("affordable", state.moyu >= price);
     }

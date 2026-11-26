@@ -121,6 +121,12 @@ body {
   font-size: 11px;
   color: #b8b39c;
 }
+.shop-flavor {
+  font-size: 10px;
+  color: #8f9fd0;
+  font-style: italic;
+  min-height: 12px;
+}
 .shop-cost {
   margin-top: auto;
   font-size: 12px;

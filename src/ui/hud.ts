@@ -12,6 +12,8 @@ export class Hud {
   refresh(state: GameState): void {
     this.elMoyu.textContent = formatMoyu(state.moyu);
     this.elClick.textContent = String(clickPowerOf(state));
-    this.elIdle.textContent = formatMoyu(effectOf(state).idleRate);
+    const idle = effectOf(state).idleRate;
+    // 前期 0/秒 像坏了：明确标注未解锁
+    this.elIdle.textContent = idle > 0 ? formatMoyu(idle) : "未解锁";
   }
 }

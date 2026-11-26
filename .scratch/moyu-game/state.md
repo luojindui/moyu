@@ -20,8 +20,15 @@
 ## Gates
 
 - [x] G1 clarify write-back + 批量问题已答（2026-11-26）
-- [ ] G2 plan posted
-- [ ] G3 verify evidence
-- [ ] G4 review closed
+- [x] G2 plan posted（mvp-v1 spec 工件，校验清单过）+ 批次2 范围扩已获用户批准
+- [x] G3 部分：npm run build 干净 + vitest 23 绿 + 模拟驱动报告
+- [ ] G4 review closed（第 1 轮试玩报告 → 分诊 → 批次2 → 复审）
 - [ ] G5 archive confirm
 - [ ] G6 cleanup verified
+
+## 试玩闭环
+
+- 开发服务器 http://127.0.0.1:5173/（后台，日志 /tmp/moyu-dev.log）
+- 模拟驱动：`npx vitest run playtest/simulate.test.ts` → playtest/report.json
+- 试玩 agent：player-optimizer（数值）/ player-casual（休闲）/ player-auditor（审计）
+- 循环计划：批次2 实现 → G3/G4 → 第 2 轮试玩 → 达标交付

@@ -3,6 +3,8 @@ import { doClick, buyUpgrade, clickPowerOf } from "./engine/actions";
 import { advance } from "./engine/tick";
 import { offlineEarn } from "./engine/offline";
 import { serialize, restore, clearSave, type SaveAdapter } from "./engine/save";
+import { settleReturn } from "./engine/resume";
+import { CLICK_MEMES } from "./engine/flavor";
 import { Hud } from "./ui/hud";
 import { Shop } from "./ui/shop";
 import { Welcome } from "./ui/welcome";
@@ -85,17 +87,21 @@ async function boot(): Promise<void> {
     const gained = clickPowerOf(state);
     state = doClick(state);
     const p = scene.toVirtual(e.clientX, e.clientY, canvas);
-    scene.fx.floatText(p.x, p.y, `+${gained}`);
+    const meme = CLICK_MEMES[Math.floor(Math.random() * CLICK_MEMES.length)];
+    const text = Math.random() < 0.22 && meme ? meme : `+${gained}`;
+    scene.fx.floatText(p.x, p.y, text);
   });
 
   // 主循环
   let last = performance.now();
   let lastHud = 0;
+  let lastActiveMs = Date.now();
   let fpsWindowStart = last;
   let fpsFrames = 0;
   const frame = (now: number): void => {
     const dt = Math.min(1, (now - last) / 1000);
     last = now;
+    lastActiveMs = Date.now();
     state = advance(state, dt);
     scene.update(dt);
     scene.draw(ctx);
@@ -116,12 +122,24 @@ async function boot(): Promise<void> {
   };
   requestAnimationFrame(frame);
 
-  // 自动存档
+  // 自动存档 + 切后台回归结算（rAF 后台被暂停，回来必须按真实时钟补算）
   setInterval(() => serialize(state, localStorageAdapter, Date.now()), 10_000);
   const saveNow = (): void => serialize(state, localStorageAdapter, Date.now());
   document.addEventListener("pagehide", saveNow);
   document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "hidden") saveNow();
+    if (document.visibilityState === "hidden") {
+      saveNow();
+    } else {
+      const r = settleReturn(state, lastActiveMs, Date.now());
+      if (r.earned > 0) {
+        state = r.state;
+        hud.refresh(state);
+        shop.refresh(state);
+        if (r.showPanel) welcome.show(r.applied, r.earned, () => undefined);
+      }
+      lastActiveMs = Date.now();
+      last = performance.now(); // 防止恢复瞬间 dt 巨大
+    }
   });
 
   // 离线收益面板
