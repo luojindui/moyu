@@ -40,7 +40,12 @@
 
 ## 7. 批次2（用户已批准：先跑起来再加）
 
-- [ ] 7.1 回收第 1 轮报告 → 按 VALID/INVALID/UNCERTAIN 分诊（codevelop §12）
-- [ ] 7.2 实现批次2：老板巡逻 + 同事丢梗（随机事件，TDD）+ 第 1 轮有效缺陷修复
-- [ ] 7.3 G3 全量验证 + subagent 独立 review（G4）
-- [ ] 7.4 第 2 轮 agent 试玩 → 若仍有 major 问题继续第 3 轮，否则交付
+- [x] 7.1 第 1 轮报告回收与分诊：casual（6/10，5 发现 5 需求）、auditor（5/10，8 缺陷全实锤）已处理；optimizer 待回收
+- [x] 7.1a 缺陷修复：CSS 装配、精灵坐标双重缩放、资产降级+boot 兜底、visibility/pageshow 回归结算（resume.ts TDD）、存档净化、__MOYU__ 补强
+- [x] 7.1b 文案梗化：flavor.ts 三级彩蛋 + 点击蹦梗 + HUD 未解锁标注
+- [x] 7.2 随机事件引擎（老板巡逻 + 同事丢梗，TDD 14 测试）+ 场景/主循环接线 + 模拟驱动事件经济
+- [x] 7.2a 事件经济再平衡：安然奖 5×idleRate（约挂机 4%）、每巡逻最多扣一次
+- [ ] 7.3 数值曲线调优（等 optimizer 报告：新手引导/前期空窗/点击贬值/内容深度方案）
+- [ ] 7.4 里程碑/段位系统（累计摸鱼值 + 称号，方案待 optimizer 数值输入）
+- [ ] 7.5 G3 全量验证 + subagent 独立 review（G4）
+- [ ] 7.6 第 2 轮 agent 试玩（player-optimizer / player-casual / player-auditor 复测）→ 达标交付

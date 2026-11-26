@@ -9,14 +9,26 @@ export interface UpgradeDef {
   idleRate?: number;
 }
 
-/** 摸鱼主题升级表（纯数据） */
+/** 里程碑：每满 20 级该项效果 ×2 */
+export const MILESTONE_LEVELS = 20;
+
+/** 工位底薪：无条件基础挂机（修纯挂机党死局，对点击党零副作用） */
+export const BASE_IDLE_RATE = 0.2;
+
+/**
+ * 摸鱼主题升级表（optimizer 批次3 方案）：
+ * 点击线 咖啡15/喝水100/老板椅800；挂机线 刷手机50/蹲坑600/群聊4000/会议25000/深摸150000/躺平1000000
+ */
 export const UPGRADES: UpgradeDef[] = [
   { id: "coffee", name: "咖啡续命", desc: "点击力 +1", baseCost: 15, clickPower: 1 },
   { id: "water", name: "带薪喝水", desc: "点击力 +2", baseCost: 100, clickPower: 2 },
+  { id: "chair", name: "人体工学椅", desc: "点击力 +5", baseCost: 800, clickPower: 5 },
   { id: "phone", name: "刷手机", desc: "挂机 +1/秒", baseCost: 50, idleRate: 1 },
-  { id: "toilet", name: "带薪蹲坑", desc: "挂机 +3/秒", baseCost: 300, idleRate: 3 },
-  { id: "group", name: "摸鱼群聊", desc: "挂机 +8/秒", baseCost: 1200, idleRate: 8 },
-  { id: "meeting", name: "无用会议", desc: "挂机 +25/秒", baseCost: 6000, idleRate: 25 },
+  { id: "toilet", name: "带薪蹲坑", desc: "挂机 +5/秒", baseCost: 600, idleRate: 5 },
+  { id: "group", name: "摸鱼群聊", desc: "挂机 +15/秒", baseCost: 4000, idleRate: 15 },
+  { id: "meeting", name: "无用会议", desc: "挂机 +50/秒", baseCost: 25000, idleRate: 50 },
+  { id: "deep", name: "深度摸鱼", desc: "挂机 +180/秒", baseCost: 150000, idleRate: 180 },
+  { id: "retire", name: "退休式躺平", desc: "挂机 +700/秒", baseCost: 1000000, idleRate: 700 },
 ];
 
 /** 当前等级的购买价：base × 1.15^level，向上取整 */
@@ -26,15 +38,43 @@ export function costOf(id: string, level: number): number {
   return Math.ceil(u.baseCost * 1.15 ** level);
 }
 
-/** 状态合计加成 */
+function milestoneMult(level: number): number {
+  return 2 ** Math.floor(level / MILESTONE_LEVELS);
+}
+
+/** 等级 → 该项当前效果（base × lv × 2^⌊lv/20⌋） */
+function effectAt(u: UpgradeDef, level: number): number {
+  if (level <= 0) return 0;
+  return (u.clickPower ?? u.idleRate ?? 0) * level * milestoneMult(level);
+}
+
+/** 状态合计加成（含底薪） */
 export function effectOf(state: GameState): { clickPower: number; idleRate: number } {
   let clickPower = 0;
-  let idleRate = 0;
+  let idleRate = BASE_IDLE_RATE;
   for (const u of UPGRADES) {
     const lv = state.levels[u.id] ?? 0;
     if (lv <= 0) continue;
-    clickPower += (u.clickPower ?? 0) * lv;
-    idleRate += (u.idleRate ?? 0) * lv;
+    if (u.clickPower) clickPower += effectAt(u, lv);
+    if (u.idleRate) idleRate += effectAt(u, lv);
   }
   return { clickPower, idleRate };
+}
+
+/** 下一级（level → level+1）的即时效果增量（含里程碑跳变） */
+export function marginalEffect(id: string, level: number): { clickPower: number; idleRate: number } {
+  const u = UPGRADES.find((x) => x.id === id);
+  if (!u) return { clickPower: 0, idleRate: 0 };
+  const before = effectAt(u, level);
+  const after = effectAt(u, level + 1);
+  return {
+    clickPower: u.clickPower ? after - before : 0,
+    idleRate: u.idleRate ? after - before : 0,
+  };
+}
+
+/** 距离下次里程碑 ×2 还差几级（无等级恒为 MILESTONE_LEVELS） */
+export function milestoneGap(id: string, level: number): number {
+  if (!UPGRADES.some((u) => u.id === id)) return 0;
+  return MILESTONE_LEVELS - (level % MILESTONE_LEVELS);
 }

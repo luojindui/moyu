@@ -13,16 +13,29 @@ function memoryAdapter(prefill: Record<string, string> = {}): SaveAdapter & { st
 }
 
 describe("存档", () => {
-  it("roundtrip：存后取回状态一致", () => {
+  it("roundtrip：存后取回状态一致（含累计摸鱼值与建档时间）", () => {
     const a = memoryAdapter();
     const s = initialState();
     s.moyu = 123.45;
+    s.totalEarned = 999.9;
     s.levels["coffee" as string] = 3;
     serialize(s, a, 1_700_000_000_000);
     const r = restore(a, 1_700_000_000_500);
     expect(r.state).not.toBeNull();
     expect(r.state!.moyu).toBe(123.45);
+    expect(r.state!.totalEarned).toBe(999.9);
     expect(r.state!.levels["coffee" as string]).toBe(3);
+    expect(r.createdAt).toBe(1_700_000_000_000);
+  });
+
+  it("旧档缺 totalEarned/createdAt 时给默认值且不弃档", () => {
+    const a = memoryAdapter({
+      "moyu-save": JSON.stringify({ v: 1, moyu: 88, levels: { coffee: 2 }, savedAt: Date.now() - 1000 }),
+    });
+    const r = restore(a, Date.now());
+    expect(r.state!.moyu).toBe(88);
+    expect(r.state!.totalEarned).toBe(0);
+    expect(r.createdAt).toBeGreaterThan(0);
   });
 
   it("损坏 JSON：返回初始状态且不抛错", () => {

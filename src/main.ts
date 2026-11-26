@@ -1,5 +1,5 @@
 import "./style.css";
-import { initialState } from "./engine/state";
+import { initialState, gain } from "./engine/state";
 import { doClick, buyUpgrade, clickPowerOf } from "./engine/actions";
 import { advance } from "./engine/tick";
 import { settleReturn } from "./engine/resume";
@@ -44,10 +44,11 @@ function withTimeout<T>(p: Promise<T>, ms: number): Promise<T> {
 }
 
 async function boot(): Promise<void> {
-  // 1) 状态与离线结算（不依赖任何资产）
+  // 1) 状态与离线结算（不依赖任何资产）；首日（建档 24h 内）全额，之后 70% 效率
   const restored = restore(localStorageAdapter, Date.now());
   let state = restored.state ?? initialState();
-  const offline = settleReturn(state, Date.now() - restored.offlineSeconds * 1000, Date.now());
+  const offlineRate = Date.now() - restored.createdAt < 86_400_000 ? 1 : 0.7;
+  const offline = settleReturn(state, Date.now() - restored.offlineSeconds * 1000, Date.now(), offlineRate);
   state = offline.state;
 
   // 2) UI 与场景骨架（先装配，资产后到）
@@ -136,7 +137,7 @@ async function boot(): Promise<void> {
     if (prevBossActive && !bossActive && !es.bossCaught) {
       const reward = bossSurviveReward(state, es);
       if (reward > 0) {
-        state = { ...state, moyu: state.moyu + reward };
+        state = gain(state, reward);
         scene.fx.floatText((scene.w / 2), scene.h * 0.3, `安然度过 +${Math.round(reward)}`);
       }
     }
@@ -166,7 +167,7 @@ async function boot(): Promise<void> {
   document.addEventListener("pagehide", saveNow);
 
   const settleForeground = (): void => {
-    const r = settleReturn(state, lastActiveMs, Date.now());
+    const r = settleReturn(state, lastActiveMs, Date.now(), offlineRate);
     if (r.earned > 0) {
       state = r.state;
       hud.refresh(state);

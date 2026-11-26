@@ -1,4 +1,5 @@
 import type { GameState } from "./state";
+import { gain } from "./state";
 import { clickPowerOf } from "./actions";
 import { effectOf } from "./upgrades";
 
@@ -86,5 +87,5 @@ export function onMemeTap(state: GameState, es: EventState): { state: GameState;
   if (es.memeUntil <= 0) return { state, earned: 0 };
   const earned = MEME_REWARD_CLICKS * clickPowerOf(state);
   es.memeUntil = -1; // 一梗一奖
-  return { state: { ...state, moyu: state.moyu + earned }, earned };
+  return { state: gain(state, earned), earned };
 }

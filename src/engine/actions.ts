@@ -1,4 +1,5 @@
 import type { GameState } from "./state";
+import { gain } from "./state";
 import { effectOf, costOf, UPGRADES } from "./upgrades";
 
 /** 初始点击力（未买任何升级时） */
@@ -11,7 +12,7 @@ export function clickPowerOf(state: GameState): number {
 
 /** 点击一次：返回新状态（摸鱼值 + 总点击力） */
 export function doClick(state: GameState): GameState {
-  return { ...state, moyu: state.moyu + clickPowerOf(state) };
+  return gain(state, clickPowerOf(state));
 }
 
 /**

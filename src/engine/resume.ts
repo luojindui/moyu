@@ -18,13 +18,13 @@ export interface ResumeResult {
   state: GameState;
 }
 
-/** lastActiveMs/nowMs 均为 Date.now() 毫秒时钟 */
-export function settleReturn(state: GameState, lastActiveMs: number, nowMs: number): ResumeResult {
+/** lastActiveMs/nowMs 均为 Date.now() 毫秒时钟；rate 为离线效率（首日 1 / 之后 0.7） */
+export function settleReturn(state: GameState, lastActiveMs: number, nowMs: number, rate = 1): ResumeResult {
   const gap = Math.max(0, (nowMs - lastActiveMs) / 1000);
   if (gap < RESUME_SETTLE_THRESHOLD_SECONDS) {
     return { applied: 0, earned: 0, showPanel: false, state };
   }
-  const r = offlineEarn(state, gap);
+  const r = offlineEarn(state, gap, rate);
   return {
     applied: r.applied,
     earned: r.earned,

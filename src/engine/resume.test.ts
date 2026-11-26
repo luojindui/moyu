@@ -11,10 +11,10 @@ describe("切后台回归结算", () => {
 
   it("离开超过阈值：按真实缺口全额结算并要求弹面板", () => {
     const s = idleState();
-    // 独立推定：300s × 5/s = 1500，未超 8h 封顶
+    // 独立推定：(5 + 0.2底薪) × 300s = 1560，未超 8h 封顶
     const r = settleReturn(s, 0, 300_000);
     expect(r.applied).toBe(300);
-    expect(r.earned).toBe(1500);
+    expect(r.earned).toBeCloseTo(1560, 6);
     expect(r.showPanel).toBe(true);
   });
 
