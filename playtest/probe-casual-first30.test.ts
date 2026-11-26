@@ -92,7 +92,8 @@ describe("休闲玩家探针②：首次体验显微镜", () => {
     }
     rows.forEach((x) => console.log(x));
     console.log("[结论] 零收益窗口至少覆盖到第", worst, "秒才退出");
-    expect(worst).toBeGreaterThan(0); // 窗口存在
+    // ✅ 已修复（回归）：底薪 0.2/s 后零收益窗口消失——任何时候退出都有收益
+    expect(worst).toBe(0);
   });
 
   it("点击贡献衰减：点击一次值几秒挂机", () => {

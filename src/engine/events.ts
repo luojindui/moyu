@@ -59,7 +59,7 @@ export function scheduleEvents(es: EventState, now: number, rng: () => number): 
     es.bossUntil = now + BOSS_DURATION;
     es.bossCaught = false;
     es.nextBossAt = Infinity;
-    if (es.memeUntil > 0) es.memeUntil = -1; // 巡逻清场
+    // 巡逻开启时丢梗必然已结束（互斥条件 memeUntil < 0），无需清场
   } else if (now >= es.nextMemeAt && es.memeUntil < 0 && es.bossUntil < 0) {
     es.memeUntil = now + MEME_DURATION;
     es.nextMemeAt = Infinity;

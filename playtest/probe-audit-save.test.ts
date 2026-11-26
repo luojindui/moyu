@@ -31,14 +31,14 @@ describe("审计 D：restore 字段校验", () => {
     expect(r.state).toEqual(initialState()); // 🔴 实测 moyu=9999 被保留，未按规格整体忽略
   });
 
-  it("levels 中小数等级（非法）应被拒绝", () => {
+  it("levels 中小数等级（非法）应被拒绝（现行策略：该键丢弃）", () => {
     const a = memAdapter({
       "moyu-save": JSON.stringify({ v: 1, moyu: 0, levels: { coffee: 1.5 }, savedAt: Date.now() }),
     });
     const r = restore(a, Date.now());
     const lv = r.state!.levels["coffee"];
     console.log("恢复出的 coffee 等级:", lv);
-    expect(Number.isInteger(lv)).toBe(true); // 🔴 实测 1.5 被接受 → 点击力 2.5
+    expect(lv).toBeUndefined(); // ✅ 已修复：非整数键直接丢弃，不会被接受为 1.5
   });
 
   it("超大等级不应把 idleRate 算成 Infinity 并污染显示", () => {
@@ -61,13 +61,13 @@ describe("审计 D：restore 字段校验", () => {
     expect(r.state).toEqual(initialState()); // ✅ 对照：moyu 非法时整体丢弃
   });
 
-  it("levels 为字符串/数字/数组等垃圾类型时安全降级为空等级（对照）", () => {
+  it("levels 为字符串/数字/数组/-null 等垃圾类型时按规格整体忽略（与 levels=42 一致）", () => {
     for (const levels of ["x", 42, [], null]) {
       const a = memAdapter({
         "moyu-save": JSON.stringify({ v: 1, moyu: 5, levels, savedAt: Date.now() }),
       });
       const r = restore(a, Date.now());
-      expect(r.state!.moyu).toBe(5); // ✅ 保留数值部分，等级清空，不抛错
+      expect(r.state).toEqual(initialState()); // ✅ 规格口径：字段非法 → 整档作废（与 probe 25 号用例一致）
       expect(r.state!.levels).toEqual({});
     }
   });

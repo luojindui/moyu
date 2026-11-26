@@ -15,12 +15,15 @@ const distIndex = readFileSync("dist/index.html", "utf8");
 const distAssets = readdirSync("dist/assets");
 const bundleFile = distAssets.find((f) => f.endsWith(".js"));
 const bundle = bundleFile ? readFileSync(`dist/assets/${bundleFile}`, "utf8") : "";
+const cssFile = distAssets.find((f) => f.endsWith(".css"));
+const cssBundle = cssFile ? readFileSync(`dist/assets/${cssFile}`, "utf8") : "";
 
 const mainImportsCss = /import\s+["']\.\/style\.css["']/.test(mainTs);
 const htmlLinksCss = /<link[^>]*stylesheet|<style[\s>]/i.test(indexHtml);
 const distLinksCss = /<link[^>]*\.css/i.test(distIndex);
 const distHasCssFile = distAssets.some((f) => f.endsWith(".css"));
-const bundleHasHiddenDisplayNone = bundle.includes("#welcome.hidden") || /\.hidden\s*\{[^}]*display\s*:\s*none/.test(bundle);
+// vite 为分离式 CSS 产物：规则在 .css 文件而非 JS bundle
+const bundleHasHiddenDisplayNone = cssBundle.includes("#welcome.hidden") || /\.hidden\s*\{[^}]*display\s*:\s*none/.test(cssBundle);
 const wired = mainImportsCss || htmlLinksCss || distLinksCss || distHasCssFile;
 
 describe("审计 B：样式表装配（手机适配需求）", () => {
@@ -32,8 +35,8 @@ describe("审计 B：样式表装配（手机适配需求）", () => {
     expect(wired).toBe(true); // 🔴 失败 = 全链路未装配
   });
 
-  it("生产 bundle 应包含 .hidden{display:none} 规则（否则离线面板永不消失）", () => {
-    expect(bundleHasHiddenDisplayNone).toBe(true); // 🔴 失败
+  it("生产产物应包含 .hidden{display:none} 规则（vite 分离式 CSS 文件）", () => {
+    expect(bundleHasHiddenDisplayNone).toBe(true); // ✅ 已修复：dist/assets/*.css 含该规则
   });
 
   it("证据快照", () => {

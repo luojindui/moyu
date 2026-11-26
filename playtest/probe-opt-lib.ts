@@ -7,7 +7,7 @@ import { initialState } from "../src/engine/state";
 import type { GameState } from "../src/engine/state";
 import { doClick, buyUpgrade, BASE_CLICK_POWER } from "../src/engine/actions";
 import { advance } from "../src/engine/tick";
-import { UPGRADES, costOf, effectOf } from "../src/engine/upgrades";
+import { UPGRADES, costOf, effectOf, BASE_IDLE_RATE, MILESTONE_LEVELS } from "../src/engine/upgrades";
 
 export type Tps = number | ((t: number) => number);
 export type Levels = Record<string, number>;
@@ -31,15 +31,16 @@ export function cfCost(factor: number, baseScale = 1): CostFn {
   return (id, lv) => Math.ceil((base.get(id) ?? 0) * factor ** lv);
 }
 
-/** 反事实效果曲线：每 milestone 级全效果 ×2（null = 原版线性） */
+/** 反事实效果曲线：每 milestone 级全效果 ×2；null = 镜像引擎现行里程碑（含底薪 0.2） */
 export function cfEffect(milestone: number | null): EffFn {
+  const m = milestone ?? MILESTONE_LEVELS;
   return (levels) => {
     let clickPower = 0;
-    let idleRate = 0;
+    let idleRate = BASE_IDLE_RATE;
     for (const u of UPGRADES) {
       const lv = levels[u.id] ?? 0;
       if (lv <= 0) continue;
-      const mult = milestone ? 2 ** Math.floor(lv / milestone) : 1;
+      const mult = 2 ** Math.floor(lv / m);
       clickPower += (u.clickPower ?? 0) * lv * mult;
       idleRate += (u.idleRate ?? 0) * lv * mult;
     }

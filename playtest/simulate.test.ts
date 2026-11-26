@@ -6,6 +6,7 @@ import { advance } from "../src/engine/tick";
 import { effectOf, UPGRADES, costOf } from "../src/engine/upgrades";
 import { serialize, restore, type SaveAdapter } from "../src/engine/save";
 import { offlineEarn } from "../src/engine/offline";
+import { gain } from "../src/engine/state";
 import {
   newEventState,
   scheduleEvents,
@@ -92,10 +93,10 @@ function simulate(p: Persona) {
       memeRewards += r.earned;
     }
     prevMemeActive = memeActive;
-    // 巡逻结束：安然奖励
+    // 巡逻结束：安然奖励（走 gain() 保持 totalEarned 语义一致）
     if (prevBossActive && !bossActive && !es.bossCaught) {
       const reward = bossSurviveReward(state, es);
-      state = { ...state, moyu: state.moyu + reward };
+      state = gain(state, reward);
       bossRewards += reward;
     }
     prevBossActive = bossActive;

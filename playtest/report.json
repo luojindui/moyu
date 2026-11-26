@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T11:21:41.527Z",
+  "generatedAt": "2026-11-26T11:43:52.132Z",
   "engine": "mvp-v1 batch1（纯放置循环，无随机事件）",
   "sessions": [
     {
@@ -8,7 +8,7 @@
         {
           "minute": 0,
           "moyu": 0.1,
-          "moyuText": "0",
+          "moyuText": "0.1",
           "clickPower": 1,
           "idleRate": 0.2,
           "levels": {}
@@ -16,7 +16,7 @@
         {
           "minute": 1,
           "moyu": 796,
-          "moyuText": "796",
+          "moyuText": "796.0",
           "clickPower": 11,
           "idleRate": 2.2,
           "levels": {
@@ -27,7 +27,7 @@
         {
           "minute": 3,
           "moyu": 5805.1,
-          "moyuText": "5805",
+          "moyuText": "5805.1",
           "clickPower": 32,
           "idleRate": 11.2,
           "levels": {
@@ -2023,7 +2023,7 @@
         {
           "minute": 0,
           "moyu": 0.1,
-          "moyuText": "0",
+          "moyuText": "0.1",
           "clickPower": 1,
           "idleRate": 0.2,
           "levels": {}
@@ -2031,7 +2031,7 @@
         {
           "minute": 1,
           "moyu": 12.1,
-          "moyuText": "12",
+          "moyuText": "12.1",
           "clickPower": 2,
           "idleRate": 0.2,
           "levels": {
@@ -2041,7 +2041,7 @@
         {
           "minute": 3,
           "moyu": 73,
-          "moyuText": "73",
+          "moyuText": "73.0",
           "clickPower": 4,
           "idleRate": 0.2,
           "levels": {
@@ -2051,7 +2051,7 @@
         {
           "minute": 10,
           "moyu": 270.1,
-          "moyuText": "270",
+          "moyuText": "270.1",
           "clickPower": 10,
           "idleRate": 1.2,
           "levels": {
@@ -2062,7 +2062,7 @@
         {
           "minute": 30,
           "moyu": 6496.1,
-          "moyuText": "6496",
+          "moyuText": "6496.1",
           "clickPower": 26,
           "idleRate": 9.2,
           "levels": {
@@ -2849,7 +2849,7 @@
         {
           "minute": 0,
           "moyu": 2,
-          "moyuText": "2",
+          "moyuText": "2.0",
           "clickPower": 1,
           "idleRate": 0.2,
           "levels": {}
@@ -2857,7 +2857,7 @@
         {
           "minute": 1,
           "moyu": 301,
-          "moyuText": "301",
+          "moyuText": "301.0",
           "clickPower": 17,
           "idleRate": 1.2,
           "levels": {
@@ -2869,7 +2869,7 @@
         {
           "minute": 3,
           "moyu": 3200.1,
-          "moyuText": "3200",
+          "moyuText": "3200.1",
           "clickPower": 57,
           "idleRate": 61.2,
           "levels": {
@@ -4722,7 +4722,7 @@
         {
           "minute": 0,
           "moyu": 0.1,
-          "moyuText": "0",
+          "moyuText": "0.1",
           "clickPower": 1,
           "idleRate": 0.2,
           "levels": {}
@@ -4730,7 +4730,7 @@
         {
           "minute": 1,
           "moyu": 79,
-          "moyuText": "79",
+          "moyuText": "79.0",
           "clickPower": 3,
           "idleRate": 0.2,
           "levels": {
@@ -4740,7 +4740,7 @@
         {
           "minute": 3,
           "moyu": 610.1,
-          "moyuText": "610",
+          "moyuText": "610.1",
           "clickPower": 7,
           "idleRate": 0.2,
           "levels": {
@@ -4750,7 +4750,7 @@
         {
           "minute": 10,
           "moyu": 5684.1,
-          "moyuText": "5684",
+          "moyuText": "5684.1",
           "clickPower": 17,
           "idleRate": 5.2,
           "levels": {

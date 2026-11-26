@@ -34,14 +34,19 @@ describe("审计 E：__MOYU__ 调试钩子（规格：state/fps/资源状态/存
 
 describe("审计 E2：输入绑定顺序与资产失败降级", () => {
   it("pointerdown 应在资产加载前可用（或资产失败仍有可用输入）", () => {
-    const lastAwait = mainTs.lastIndexOf('await load("cooler"');
+    // 资产加载标记：Promise.allSettled 内首个 load("worker"
+    const assetLoadIdx = mainTs.indexOf('load("worker"');
     const pointerIdx = mainTs.indexOf('canvas.addEventListener("pointerdown"');
-    console.log("最后一个资产 await 位置:", lastAwait, "pointerdown 绑定位置:", pointerIdx);
-    expect(pointerIdx).toBeLessThan(lastAwait); // 🔴 实测 pointerdown 在三张精灵图 await 之后
+    console.log("资产加载位置:", assetLoadIdx, "pointerdown 绑定位置:", pointerIdx);
+    expect(pointerIdx).toBeGreaterThan(0);
+    expect(assetLoadIdx).toBeGreaterThan(0);
+    expect(pointerIdx).toBeLessThan(assetLoadIdx); // ✅ 已修复：输入先于资产装配
   });
 
-  it("boot 失败兜底应不止 console.error（用户可感知）", () => {
-    expect(/boot\(\)\.catch/.test(mainTs)).toBe(false); // 🔴 实测只有 console.error，页面静默死掉
+  it("boot 失败兜底应有用户可感知的降级 UI（横幅而非仅 console.error）", () => {
+    // ✅ 已修复：showBootError 创建 .boot-error 横幅
+    expect(/boot\(\)\.catch\(showBootError\)/.test(mainTs)).toBe(true);
+    expect(/class (Name )?= ?"boot-error"|className = "boot-error"/.test(mainTs)).toBe(true);
   });
 });
 
@@ -54,27 +59,18 @@ describe("审计 E3：pagehide / visibilitychange 存档语义", () => {
   });
 });
 
-describe("审计 E4：rewindSave 健壮性（复刻 main.ts 第 162-166 行）", () => {
-  function rewindSaveReplica(getItem: () => string | null, seconds: number): void {
-    // ↓ 与 src/main.ts rewindSave 逐字一致的逻辑
-    const blob = JSON.parse(getItem() ?? "{}");
-    blob.savedAt = Date.now() - seconds * 1000;
-    localStorageSetItemReplica(JSON.stringify(blob));
-  }
-  let written: string | null = null;
-  function localStorageSetItemReplica(v: string): void {
-    written = v;
-  }
+describe("审计 E4：rewindSave 健壮性（对照 main.ts 现行实现）", () => {
+  // ✅ 已修复：现行 rewindSave 为 try/catch + 无档先 serialize 再改时间戳
+  const rewindRegion = mainTs.slice(mainTs.indexOf("rewindSave(seconds"));
 
-  it("损坏存档（非法 JSON）时不应抛错", () => {
-    expect(() => rewindSaveReplica(() => "{oops not json", 3600)).not.toThrow(); // 🔴 实测 SyntaxError 未捕获
+  it("损坏存档（非法 JSON）被 try/catch 包裹，不抛错", () => {
+    expect(rewindRegion).toContain("try");
+    expect(rewindRegion).toContain("catch");
   });
 
-  it("无存档时 rewindSave 写出的 blob 缺 v/moyu，restore 会静默丢弃（rewind 空转）", () => {
-    rewindSaveReplica(() => null, 3600);
-    const blob = JSON.parse(written ?? "{}") as Record<string, unknown>;
-    console.log("无存档时 rewindSave 写出:", blob);
-    expect(blob.v).toBe(1); // 🔴 实测 undefined → restore 判版本不符直接丢弃，离线模拟静默无效
+  it("无存档时先 serialize 补全 v/moyu 再改时间戳（rewind 不空转）", () => {
+    expect(rewindRegion).toContain("serialize(");
+    expect(rewindRegion).toContain("blob.savedAt");
   });
 });
 

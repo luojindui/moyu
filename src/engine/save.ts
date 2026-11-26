@@ -86,8 +86,16 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
       if (typeof v === "number" && Number.isInteger(v) && v >= 0 && v <= MAX_LEVEL) levels[k] = v;
     }
     const moyu = Number.isFinite(blob.moyu) && blob.moyu >= 0 ? blob.moyu : 0;
+    const totalEarned =
+      typeof blob.totalEarned === "number" && Number.isFinite(blob.totalEarned) && blob.totalEarned >= 0
+        ? blob.totalEarned
+        : 0;
     const offlineSeconds = Math.max(0, (now - blob.savedAt) / 1000);
-    return { state: { moyu, levels, totalEarned: typeof blob.totalEarned === "number" && blob.totalEarned >= 0 ? blob.totalEarned : 0 }, offlineSeconds, createdAt: typeof blob.createdAt === "number" ? blob.createdAt : now };
+    return {
+      state: { moyu, levels, totalEarned },
+      offlineSeconds,
+      createdAt: typeof blob.createdAt === "number" ? blob.createdAt : now,
+    };
   } catch {
     return { state: initialState(), offlineSeconds: 0, createdAt: now };
   }

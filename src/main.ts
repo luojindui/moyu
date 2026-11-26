@@ -44,11 +44,11 @@ function withTimeout<T>(p: Promise<T>, ms: number): Promise<T> {
 }
 
 async function boot(): Promise<void> {
-  // 1) 状态与离线结算（不依赖任何资产）；首日（建档 24h 内）全额，之后 70% 效率
+  // 1) 状态与离线结算（不依赖任何资产）；离线效率现算：建档 24h 内全额，之后 70%
   const restored = restore(localStorageAdapter, Date.now());
   let state = restored.state ?? initialState();
-  const offlineRate = Date.now() - restored.createdAt < 86_400_000 ? 1 : 0.7;
-  const offline = settleReturn(state, Date.now() - restored.offlineSeconds * 1000, Date.now(), offlineRate);
+  const currentOfflineRate = (): number => (Date.now() - restored.createdAt < 86_400_000 ? 1 : 0.7);
+  const offline = settleReturn(state, Date.now() - restored.offlineSeconds * 1000, Date.now(), currentOfflineRate());
   state = offline.state;
 
   // 2) UI 与场景骨架（先装配，资产后到）
@@ -126,11 +126,16 @@ async function boot(): Promise<void> {
     last = now;
     lastActiveMs = Date.now();
     scene.gameTime += dt;
-    // 随机事件调度（丢梗位置：每次窗口随机出现在场景上半区）
+    // 随机事件调度（丢梗位置：每次窗口随机出现在场景上半区，并按视口高度防裁剪）
     const memeWasIdle = es.memeUntil < 0;
     scheduleEvents(es, scene.gameTime, rng);
     if (memeWasIdle && es.memeUntil > 0) {
-      scene.memePos = { x: 4 * 16 + Math.random() * ((scene.w / scene.scale) - 8 * 16), y: 4 * 16 + Math.random() * 6 * 16 };
+      const vh = scene.h / scene.scale;
+      const yMax = Math.min(10 * 16, Math.max(6 * 16, vh - 6 * 16));
+      scene.memePos = {
+        x: 4 * 16 + Math.random() * ((scene.w / scene.scale) - 8 * 16),
+        y: 4 * 16 + Math.random() * (yMax - 4 * 16),
+      };
     }
     // 巡逻结束：未被抓则发安然奖励
     const bossActive = es.bossUntil > scene.gameTime;
@@ -167,7 +172,7 @@ async function boot(): Promise<void> {
   document.addEventListener("pagehide", saveNow);
 
   const settleForeground = (): void => {
-    const r = settleReturn(state, lastActiveMs, Date.now(), offlineRate);
+    const r = settleReturn(state, lastActiveMs, Date.now(), currentOfflineRate());
     if (r.earned > 0) {
       state = r.state;
       hud.refresh(state);
@@ -224,6 +229,12 @@ async function boot(): Promise<void> {
     reset(): void {
       clearSave(localStorageAdapter);
       state = initialState();
+      es.bossUntil = -1;
+      es.memeUntil = -1;
+      es.nextBossAt = Infinity;
+      es.nextMemeAt = Infinity;
+      es.bossCaught = false;
+      scene.gameTime = 0;
       hud.refresh(state);
       shop.refresh(state);
     },
