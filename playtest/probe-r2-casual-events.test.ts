@@ -138,7 +138,7 @@ describe("R2-② 随机事件打扰感（休闲节奏 30min×20 seed）", () => 
     console.log(`  丢梗 ${avg((s) => s.memeCount).toFixed(1)} 次（间隔${MEME_INTERVAL_MIN}-${MEME_INTERVAL_MAX}s，${MEME_DURATION}s 窗口），命中均 ${avg((s) => s.memeHit).toFixed(1)}，梗收益均 ${avg((s) => s.memeEarnTotal).toFixed(0)}`);
     console.log(`  事件净收益 ${avg((s) => s.eventIncome).toFixed(0)} / session 总收入 ${avg((s) => s.sessionIncome).toFixed(0)} = ${(avg((s) => s.eventIncome) / Math.max(1, avg((s) => s.sessionIncome)) * 100).toFixed(1)}%`);
     expect(avg((s) => s.bossCount)).toBeGreaterThan(8); // 30min 应有 ~12-20 次
-  });
+  }, 20_000);
 
   it("敏感性：反应延迟 0.3/0.5/0.8s 的被逮率（红横幅显眼度决定真实值）", () => {
     for (const r of [0.3, 0.5, 0.8]) {

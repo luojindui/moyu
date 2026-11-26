@@ -43,7 +43,7 @@ describe("R2 审计②b：效果里程碑（R2 错峰后：coffee 偏移 0 / pho
     expect(marginalEffect("coffee", 19).clickPower).toBe(21);
     expect(marginalEffect("phone", 4).idleRate).toBe(6); // 4 → 10
     expect(marginalEffect("phone", 19).idleRate).toBe(2); // 38 → 40
-    expect(marginalEffect("phone", 0).idleRate).toBe(2); // 0 → 2（lv1 即 ×2）
+    expect(marginalEffect("phone", 0).idleRate).toBe(1); // 0 → 1（首翻倍在 lv5）
     expect(marginalEffect("coffee", 19).clickPower).toBe(21);
   });
   it("milestoneGap：coffee 0→20,19→1,20→20；phone 0→5（错峰），24→1", () => {
