@@ -22,7 +22,7 @@ const hookRegion = mainTs.slice(hookStart);
 describe("审计 E：__MOYU__ 调试钩子（规格：state/fps/资源状态/存档时间戳/reset + 模拟驱动）", () => {
   it("应暴露存档时间戳的只读读取（get savedAt 之类）", () => {
     console.log("hook 暴露的成员:", /__MOYU__[^;]{0,400}/s.exec(mainTs)?.[0]?.slice(0, 400));
-    expect(/get\s+savedAt|savedAt\s*\(\s*\)\s*[:{]/.test(hookRegion)).toBe(true); // 🔴 缺失（rewindSave 只能写不能读）
+    expect(/get\s+savedAt|savedAt\s*\(\s*\)\s*[:{]/.test(hookRegion)).toBe(true); // ✅ 已补 savedAt getter
   });
 
   it("资产加载状态应有 error 态标记", () => {

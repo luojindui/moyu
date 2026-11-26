@@ -78,7 +78,7 @@ function simulate(p: Persona) {
     while (tapCredit >= 1) {
       tapCredit -= 1;
       if (bossActive) {
-        const r = onBossTap(state, es);
+        const r = onBossTap(state, es, t);
         state = r.state;
         if (r.caught) bossCaught++;
       } else {

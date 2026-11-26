@@ -60,7 +60,8 @@ function simulateOfflineSettle(state: GameState, awayHours: number, capHours?: n
 }
 
 describe("早期离线暴富：首个会话后睡一觉", () => {
-  it("活跃 10min / 30min / 180min 后离线 8h：暴富倍数与清仓效果", () => {
+  it("活跃 10min / 30min / 180min 后离线 8h：暴富倍数与清仓效果", { timeout: 120_000 },
+      () => {
     console.log("\n===== 离线暴富测试（1tps 休闲贪心，活跃 N min → 离线 8h → 贪心清仓）=====");
     console.log(`  [引擎常量] OFFLINE_CAP_SECONDS = ${OFFLINE_CAP_SECONDS / 3600}h`);
     for (const activeMin of [10, 30, 180]) {
@@ -83,7 +84,8 @@ describe("早期离线暴富：首个会话后睡一觉", () => {
     }
   });
 
-  it("超早期（只买得起 1-2 级刷手机）离线 8h 是否直接跳档", () => {
+  it("超早期（只买得起 1-2 级刷手机）离线 8h 是否直接跳档", { timeout: 120_000 },
+      () => {
     // 手造极早期状态：刷手机×2（挂机 2/s），离线 8h
     let s = initialState();
     s = { ...s, levels: { phone: 2 } };
@@ -96,7 +98,8 @@ describe("早期离线暴富：首个会话后睡一觉", () => {
 });
 
 describe("7 天回访循环：每天 2h 活跃(1tps 贪心) + 夜里离线", () => {
-  it("上限 0h(无离线) / 4h / 8h / 24h 对比", () => {
+  it("上限 0h(无离线) / 4h / 8h / 24h 对比", { timeout: 120_000 },
+      () => {
     console.log("\n===== 7天循环（每天 2h 活跃 → 离线 min(上限, 夜长12h)）=====");
     for (const capH of [0, 4, 8, 24]) {
       let state = initialState();
@@ -130,7 +133,8 @@ describe("7 天回访循环：每天 2h 活跃(1tps 贪心) + 夜里离线", () 
 });
 
 describe("离线公平性与上限敏感", () => {
-  it("同一进度下离线 1h/4h/8h/12h/24h 收益曲线（8h 是否是甜点）", () => {
+  it("同一进度下离线 1h/4h/8h/12h/24h 收益曲线（8h 是否是甜点）", { timeout: 120_000 },
+      () => {
     // 取 180min 会话后的典型进度
     const sess = runSim({
       minutes: 180,

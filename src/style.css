@@ -127,6 +127,14 @@ body {
   font-style: italic;
   min-height: 12px;
 }
+.shop-next {
+  font-size: 10px;
+  color: #b8e0ff;
+}
+.shop-value {
+  font-size: 10px;
+  color: #ffd76e;
+}
 .shop-cost {
   margin-top: auto;
   font-size: 12px;

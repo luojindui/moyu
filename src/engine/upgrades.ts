@@ -9,8 +9,9 @@ export interface UpgradeDef {
   idleRate?: number;
 }
 
-/** 里程碑：每满 20 级该项效果 ×2 */
+/** 里程碑：每满 20 级该项效果 ×2，错峰偏移 (表序%4)×5 级（脉冲错开空谷） */
 export const MILESTONE_LEVELS = 20;
+export const MILESTONE_OFFSET_STEP = 5;
 
 /** 工位底薪：无条件基础挂机（修纯挂机党死局，对点击党零副作用） */
 export const BASE_IDLE_RATE = 0.2;
@@ -31,6 +32,12 @@ export const UPGRADES: UpgradeDef[] = [
   { id: "retire", name: "退休式躺平", desc: "挂机 +700/秒", baseCost: 1000000, idleRate: 700 },
 ];
 
+/** 各升级的里程碑偏移（表序 %4 × 5，脉冲错峰） */
+const MILESTONE_OFFSET: Record<string, number> = {};
+UPGRADES.forEach((u, i) => {
+  MILESTONE_OFFSET[u.id] = (i % 4) * MILESTONE_OFFSET_STEP;
+});
+
 /** 当前等级的购买价：base × 1.15^level，向上取整 */
 export function costOf(id: string, level: number): number {
   const u = UPGRADES.find((x) => x.id === id);
@@ -38,14 +45,14 @@ export function costOf(id: string, level: number): number {
   return Math.ceil(u.baseCost * 1.15 ** level);
 }
 
-function milestoneMult(level: number): number {
-  return 2 ** Math.floor(level / MILESTONE_LEVELS);
+function milestoneMult(level: number, offset: number): number {
+  return 2 ** Math.floor((level + offset) / MILESTONE_LEVELS);
 }
 
-/** 等级 → 该项当前效果（base × lv × 2^⌊lv/20⌋） */
+/** 等级 → 该项当前效果（base × lv × 2^⌊(lv+偏移)/20⌋） */
 function effectAt(u: UpgradeDef, level: number): number {
   if (level <= 0) return 0;
-  return (u.clickPower ?? u.idleRate ?? 0) * level * milestoneMult(level);
+  return (u.clickPower ?? u.idleRate ?? 0) * level * milestoneMult(level, MILESTONE_OFFSET[u.id] ?? 0);
 }
 
 /** 状态合计加成（含底薪） */
@@ -73,8 +80,20 @@ export function marginalEffect(id: string, level: number): { clickPower: number;
   };
 }
 
-/** 距离下次里程碑 ×2 还差几级（无等级恒为 MILESTONE_LEVELS） */
+/** 距离下次里程碑 ×2 还差几级（含错峰偏移） */
 export function milestoneGap(id: string, level: number): number {
   if (!UPGRADES.some((u) => u.id === id)) return 0;
-  return MILESTONE_LEVELS - (level % MILESTONE_LEVELS);
+  const offset = MILESTONE_OFFSET[id] ?? 0;
+  return MILESTONE_LEVELS - ((level + offset) % MILESTONE_LEVELS);
+}
+
+/**
+ * 性价比：每 1 万摸鱼值换到的边际效果。
+ * 点击项与挂机项是两个维度（点击向/挂机向），同维度内可横向比较。
+ */
+export function valueScoreOf(id: string, level: number): { click: number; idle: number } {
+  const price = costOf(id, level);
+  if (price <= 0) return { click: 0, idle: 0 };
+  const m = marginalEffect(id, level);
+  return { click: (m.clickPower / price) * 10_000, idle: (m.idleRate / price) * 10_000 };
 }

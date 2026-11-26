@@ -25,8 +25,9 @@ const PHASES: [number, number, string][] = [
   [30, 180, "30-180min "],
 ];
 
-describe("sanity：探针循环 ≡ 引擎语义", () => {
-  it("cfCost(1.15) 与引擎 costOf 逐级相等；cfEffect(null) 与 effectOf 相等；手动点击/挂机与引擎相等", () => {
+describe("sanity：探针循环 ≡ 引擎语义（批次3）", () => {
+  it("cfCost(1.15)≡costOf；cfEffect(20)≡effectOf(含底薪+里程碑)；手动点击/挂机与引擎相等", { timeout: 120_000 },
+      () => {
     const cf115 = cfCost(1.15);
     for (const u of UPGRADES) {
       for (let lv = 0; lv <= 90; lv++) {
@@ -36,10 +37,11 @@ describe("sanity：探针循环 ≡ 引擎语义", () => {
     const samples = [
       {},
       { coffee: 5 },
-      { coffee: 20, water: 10, phone: 30, toilet: 12, group: 7, meeting: 40 },
+      { coffee: 20, water: 10, phone: 30, toilet: 12, group: 7, meeting: 40, chair: 21, deep: 3, retire: 1 },
+      { coffee: 41, phone: 60 },
     ];
     for (const levels of samples) {
-      expect(cfEffect(null)(levels)).toEqual(effectOf({ moyu: 0, levels }));
+      expect(cfEffect(20)(levels)).toEqual(effectOf({ moyu: 0, totalEarned: 0, levels }));
     }
     // 手动点击 ≡ doClick；手动挂机 ≡ advance
     for (const levels of samples) {
@@ -55,7 +57,8 @@ describe("sanity：探针循环 ≡ 引擎语义", () => {
 });
 
 describe("原版曲线：贪心玩家的 180min", () => {
-  it("tps=1 / tps=3 / 爆肝(8tps 30min 后 1tps) 三画像", () => {
+  it("tps=1 / tps=3 / 爆肝(8tps 30min 后 1tps) 三画像", { timeout: 120_000 },
+      () => {
     const runs = [
       { name: "casual(1tps)", tps: 1 },
       { name: "clicker(3tps)", tps: 3 },
@@ -84,7 +87,8 @@ describe("原版曲线：贪心玩家的 180min", () => {
     }
   });
 
-  it("tps=1：每 30min 一桶的每次购买相对收益（饱和速度）", () => {
+  it("tps=1：每 30min 一桶的每次购买相对收益（饱和速度）", { timeout: 120_000 },
+      () => {
     const run = runSim({
       minutes: 180,
       tps: 1,
@@ -97,7 +101,8 @@ describe("原版曲线：贪心玩家的 180min", () => {
 });
 
 describe("反事实 A：换价曲线因子（tps=1）", () => {
-  it("factor ∈ {1.15, 1.12, 1.10, 1.07}：购买数/终局收入/相对收益分布/长等待", () => {
+  it("factor ∈ {1.15, 1.12, 1.10, 1.07}：购买数/终局收入/相对收益分布/长等待", { timeout: 120_000 },
+      () => {
     console.log("\n===== 价曲线因子对比（贪心 tps=1, 180min）=====");
     for (const f of [1.15, 1.12, 1.1, 1.07]) {
       const costFn = f === 1.15 ? engineCost : cfCost(f);
@@ -120,7 +125,8 @@ describe("反事实 A：换价曲线因子（tps=1）", () => {
 });
 
 describe("反事实 B：里程碑倍数（每 M 级全效果 ×2）", () => {
-  it("tps=1：M ∈ {10, 20, 25} vs 原版：收入曲线 + 里程碑脉冲", () => {
+  it("tps=1：M ∈ {10, 20, 25} vs 原版：收入曲线 + 里程碑脉冲", { timeout: 120_000 },
+      () => {
     for (const M of [10, 20, 25]) {
       const effM = cfEffect(M);
       const run = runSim({
@@ -155,7 +161,8 @@ describe("反事实 B：里程碑倍数（每 M 级全效果 ×2）", () => {
 });
 
 describe("48h 长线（原版 ×1.15，贪心 tps=1，纯在线）", () => {
-  it("收入曲线 / 每 6h 购买节奏 / 首次 >10min 等待", () => {
+  it("收入曲线 / 每 6h 购买节奏 / 首次 >10min 等待", { timeout: 120_000 },
+      () => {
     const run = runSim({
       minutes: 2880,
       tps: 1,

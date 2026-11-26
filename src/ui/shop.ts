@@ -1,9 +1,9 @@
 import type { GameState } from "../engine/state";
-import { UPGRADES, costOf, marginalEffect, milestoneGap } from "../engine/upgrades";
+import { UPGRADES, costOf, marginalEffect, milestoneGap, valueScoreOf } from "../engine/upgrades";
 import { formatMoyu } from "../engine/format";
 import { flavorFor } from "../engine/flavor";
 
-/** 升级商店：卡片 + 可购态刷新 + 购买回调 */
+/** 升级商店：卡片 + 可购态刷新 + 性价比提示 + 购买回调 */
 export class Shop {
   private container = document.getElementById("shop-cards")!;
   private buttons = new Map<string, HTMLButtonElement>();
@@ -17,6 +17,7 @@ export class Shop {
       card.innerHTML = `<span class="shop-name">${u.name}</span>
         <span class="shop-desc">${u.desc}</span>
         <span class="shop-next"></span>
+        <span class="shop-value"></span>
         <span class="shop-cost"><b>0</b> 摸鱼值</span>
         <span class="shop-flavor"></span>
         <span class="shop-level"></span>`;
@@ -28,6 +29,24 @@ export class Shop {
   }
 
   refresh(state: GameState): void {
+    // 挂机向性价比最佳项（星标）；点击向与挂机向是两个维度，各自展示
+    let bestIdleId: string | null = null;
+    let bestIdleScore = 0;
+    let bestClickId: string | null = null;
+    let bestClickScore = 0;
+    for (const u of UPGRADES) {
+      const lv = state.levels[u.id] ?? 0;
+      const score = valueScoreOf(u.id, lv);
+      if (u.idleRate && score.idle > bestIdleScore) {
+        bestIdleScore = score.idle;
+        bestIdleId = u.id;
+      }
+      if (u.clickPower && score.click > bestClickScore) {
+        bestClickScore = score.click;
+        bestClickId = u.id;
+      }
+    }
+
     for (const u of UPGRADES) {
       const lv = state.levels[u.id] ?? 0;
       const price = costOf(u.id, lv);
@@ -41,6 +60,11 @@ export class Shop {
       const inc = m.clickPower > 0 ? `+${m.clickPower} 点击力` : `+${m.idleRate}/秒`;
       const gap = milestoneGap(u.id, lv);
       btn.querySelector(".shop-next")!.textContent = `${inc}｜×2还差${gap}级`;
+      // 性价比：每万摸鱼值的边际收益；星标当前维度最优（黑箱显性化）
+      const score = valueScoreOf(u.id, lv);
+      const isBest = u.clickPower ? u.id === bestClickId : u.id === bestIdleId;
+      const dim = u.clickPower ? `点击 ${score.click.toFixed(0)}/万` : `挂机 ${score.idle.toFixed(1)}/万`;
+      btn.querySelector(".shop-value")!.textContent = `${isBest ? "★ " : ""}${dim}`;
       btn.disabled = state.moyu < price;
       btn.classList.toggle("affordable", state.moyu >= price);
     }

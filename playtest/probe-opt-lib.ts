@@ -1,13 +1,14 @@
 /**
  * probe-opt-lib.ts — 数值党探针公共库（只在 playtest/ 内使用，不改 src/）。
- * 反事实模拟（改价曲线/里程碑倍数/基线挂机）与原版引擎共用同一循环；
- * 与引擎语义的等价性在 probe-opt-curve.test.ts 的 sanity 段断言。
+ * 批次3 适配：引擎 effectOf 已含 底薪0.2/s + 里程碑×2/20；
+ * cfEffect(M) 镜像同一结构（M=null 线性、含底薪），cfCost(1.15) 与 costOf 逐级相等。
+ * 与引擎语义的等价性断言见 probe-r2-opt-curve.test.ts sanity 段。
  */
 import { initialState } from "../src/engine/state";
 import type { GameState } from "../src/engine/state";
 import { doClick, buyUpgrade, BASE_CLICK_POWER } from "../src/engine/actions";
 import { advance } from "../src/engine/tick";
-import { UPGRADES, costOf, effectOf, BASE_IDLE_RATE, MILESTONE_LEVELS } from "../src/engine/upgrades";
+import { UPGRADES, costOf, effectOf, BASE_IDLE_RATE } from "../src/engine/upgrades";
 
 export type Tps = number | ((t: number) => number);
 export type Levels = Record<string, number>;
@@ -23,24 +24,27 @@ export type OrderFn = (
 ) => string[];
 
 export const engineCost: CostFn = (id, lv) => costOf(id, lv);
-export const engineEffect: EffFn = (levels) => effectOf({ moyu: 0, levels });
+export const engineEffect: EffFn = (levels) => effectOf({ moyu: 0, totalEarned: 0, levels });
+export const BASE_SALARY = BASE_IDLE_RATE;
 
 /** 反事实价格曲线：base × factor^level（factor=1.15 时与引擎逐级相等，见 sanity） */
 export function cfCost(factor: number, baseScale = 1): CostFn {
   const base = new Map(UPGRADES.map((u) => [u.id, u.baseCost * baseScale]));
-  return (id, lv) => Math.ceil((base.get(id) ?? 0) * factor ** lv);
+  return (id, lv) => {
+    const b = base.get(id);
+    return b === undefined ? 0 : Math.ceil(b * factor ** lv);
+  };
 }
 
-/** 反事实效果曲线：每 milestone 级全效果 ×2；null = 镜像引擎现行里程碑（含底薪 0.2） */
+/** 反事实效果曲线：镜像引擎结构（底薪 + 每 milestone 级全效果 ×2；null = 纯线性） */
 export function cfEffect(milestone: number | null): EffFn {
-  const m = milestone ?? MILESTONE_LEVELS;
   return (levels) => {
     let clickPower = 0;
-    let idleRate = BASE_IDLE_RATE;
+    let idleRate = BASE_SALARY;
     for (const u of UPGRADES) {
       const lv = levels[u.id] ?? 0;
       if (lv <= 0) continue;
-      const mult = 2 ** Math.floor(lv / m);
+      const mult = milestone ? 2 ** Math.floor(lv / milestone) : 1;
       clickPower += (u.clickPower ?? 0) * lv * mult;
       idleRate += (u.idleRate ?? 0) * lv * mult;
     }
@@ -61,6 +65,7 @@ export interface BuyEvent {
 export interface CurvePoint {
   tMin: number;
   moyu: number;
+  totalEarned: number;
   cp: number;
   ir: number;
   income: number;
@@ -74,7 +79,7 @@ export interface RunOpts {
   orderFn: OrderFn;
   costFn?: CostFn;
   effectFn?: EffFn;
-  /** 反事实：无条件基础挂机速率（"底薪"） */
+  /** 反事实额外底薪（仅当 effectFn 为不含底薪的自定义函数时使用；engineEffect/cfEffect 已含 0.2） */
   baselineIdle?: number;
   /** t=0 时先点这么多下（之后按 tps 点击） */
   initialTaps?: number;
@@ -93,7 +98,7 @@ export interface RunResult {
   totalIdleIncome: number;
 }
 
-/** 当前"收入" = tps×点击力 + 挂机 + 基线（单位：摸鱼值/秒） */
+/** 当前"收入" = tps×点击力 + 挂机（effectFn 已含底薪）+ 额外反事实底薪（单位：摸鱼值/秒） */
 export function incomeOf(
   levels: Levels,
   tpsNow: number,
@@ -105,7 +110,8 @@ export function incomeOf(
 }
 
 /** 贪心：边际收益/价格 最大者优先。+1 点击力按 tpsNow 折算收入，+1 挂机按 1 折算。
- *  边际价值为 0 的项（挂机党的点击升级）直接跳过：买了纯浪费，会拖慢攒钱。 */
+ *  边际价值为 0 的项（挂机党的点击升级）直接跳过：买了纯浪费，会拖慢攒钱。
+ *  里程碑跳变（lv19→20 等）通过 effectFn 差分自动计入价值。 */
 export function makeGreedy(costFn: CostFn, effectFn: EffFn): OrderFn {
   return (state, _t, tpsNow) => {
     const cur = effectFn(state.levels);
@@ -158,11 +164,14 @@ export function runSim(opts: RunOpts): RunResult {
   const dt = opts.dt ?? 0.25;
   const costFn = opts.costFn ?? engineCost;
   const effectFn = opts.effectFn ?? engineEffect;
-  const baseline = opts.baselineIdle ?? 0;
-  const vanilla = costFn === engineCost && effectFn === engineEffect && baseline === 0;
+  // engineEffect/cfEffect 均已含底薪，额外 baseline 仅用于"无底薪自定义效果"的反事实
+  const baseline = effectFn === engineEffect ? 0 : (opts.baselineIdle ?? 0);
+  const vanilla = costFn === engineCost && effectFn === engineEffect;
   const tpsAt = (t: number) => (typeof opts.tps === "function" ? opts.tps(t) : opts.tps);
 
-  let state = opts.initial ? { moyu: opts.initial.moyu, levels: { ...opts.initial.levels } } : initialState();
+  let state = opts.initial
+    ? { moyu: opts.initial.moyu, totalEarned: opts.initial.totalEarned ?? 0, levels: { ...opts.initial.levels } }
+    : initialState();
   let purchases = 0;
   let lastBuyT = 0;
   let tapCredit = 0;
@@ -174,21 +183,24 @@ export function runSim(opts: RunOpts): RunResult {
   const pending = new Set(opts.checkpointMinutes ?? [0, 1, 3, 10, 30, 60, 90, 120, 150, 180]);
   const nameOf = (id: string) => UPGRADES.find((u) => u.id === id)?.name ?? id;
 
-  const doTap = (tpsNow: number) => {
+  const applyGain = (amount: number) => {
+    state = { ...state, moyu: state.moyu + amount, totalEarned: state.totalEarned + amount };
+  };
+
+  const doTap = () => {
     if (vanilla) {
       const s2 = doClick(state);
       totalClickIncome += s2.moyu - state.moyu;
       state = s2;
     } else {
       const gain = BASE_CLICK_POWER + effectFn(state.levels).clickPower;
-      state = { ...state, moyu: state.moyu + gain };
+      applyGain(gain);
       totalClickIncome += gain;
     }
-    void tpsNow;
   };
 
   // t=0 的初始点击（点完就走的挂机党）
-  for (let i = 0; i < (opts.initialTaps ?? 0); i++) doTap(0);
+  for (let i = 0; i < (opts.initialTaps ?? 0); i++) doTap();
 
   const steps = Math.round((opts.minutes * 60) / dt);
   for (let i = 0; i <= steps; i++) {
@@ -199,17 +211,17 @@ export function runSim(opts: RunOpts): RunResult {
     tapCredit += tpsNow * dt;
     while (tapCredit >= 1) {
       tapCredit -= 1;
-      doTap(tpsNow);
+      doTap();
     }
 
-    // 被动收益
+    // 被动收益（effectFn 已含底薪）
     const ir = effectFn(state.levels).idleRate + baseline;
     if (ir > 0) {
       const gain = ir * dt;
       if (vanilla) {
         state = advance(state, dt);
       } else {
-        state = { ...state, moyu: state.moyu + gain };
+        applyGain(gain);
       }
       totalIdleIncome += gain;
     }
@@ -228,11 +240,7 @@ export function runSim(opts: RunOpts): RunResult {
             if (!s2) continue;
             state = s2;
           } else {
-            state = {
-              ...state,
-              moyu: state.moyu - price,
-              levels: { ...state.levels, [id]: (state.levels[id] ?? 0) + 1 },
-            };
+            state = { ...state, moyu: state.moyu - price, levels: { ...state.levels, [id]: (state.levels[id] ?? 0) + 1 } };
           }
           const incomeAfter = incomeOf(state.levels, tpsNow, effectFn, baseline);
           purchases += 1;
@@ -263,7 +271,8 @@ export function runSim(opts: RunOpts): RunResult {
         curve.push({
           tMin: m,
           moyu: Math.round(state.moyu),
-          cp: BASE_CLICK_POWER + eff.clickPower,
+          totalEarned: Math.round(state.totalEarned ?? 0),
+          cp: Math.round(BASE_CLICK_POWER + eff.clickPower),
           ir: +(eff.idleRate + baseline).toFixed(2),
           income: +(tpsNow * (BASE_CLICK_POWER + eff.clickPower) + eff.idleRate + baseline).toFixed(2),
           levels: { ...state.levels },
@@ -306,10 +315,11 @@ export function phaseStats(run: RunResult, fromMin: number, toMin: number) {
     medianWaitSec: Math.round(median(waits)),
     maxWaitSec: Math.round(Math.max(0, ...waits)),
     waitsOver5min: waits.filter((w) => w > 300).length,
+    waitsOver30min: waits.filter((w) => w > 1800).length,
   };
 }
 
-/** 按 bucket 分钟分桶的每桶购买相对收益（回答"×1.15 是否过快饱和"） */
+/** 按 bucket 分钟分桶的每桶购买相对收益 */
 export function relGainByBucket(run: RunResult, bucketMin: number, untilMin: number) {
   const out: { bucket: string; purchases: number; medianRelGainPct: number; maxRelGainPct: number }[] = [];
   for (let b = 0; b < untilMin; b += bucketMin) {
@@ -323,8 +333,4 @@ export function relGainByBucket(run: RunResult, bucketMin: number, untilMin: num
     });
   }
   return out;
-}
-
-export function fmtRow(cols: (string | number)[]): string {
-  return cols.map((c) => String(c).padEnd(12)).join(" ");
 }

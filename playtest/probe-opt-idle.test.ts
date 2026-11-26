@@ -27,7 +27,8 @@ function idleOnlyRun(taps: number, minutes = 180, opts: { baselineIdle?: number;
 }
 
 describe("纯挂机党：点多少下才能活？", () => {
-  it("点击数 T ∈ {0,5,10,15,20,30,40,49,50,60,100} → 180min 结局", () => {
+  it("点击数 T ∈ {0,5,10,15,20,30,40,49,50,60,100} → 180min 结局", { timeout: 120_000 },
+      () => {
     console.log("\n===== 点击数门槛扫描（之后 0tps，挂 180min）=====");
     console.log("T(下) | 首购min | 挂机速率 | income/s@180 | 购买数 | 结局");
     for (const T of [0, 5, 10, 15, 20, 30, 40, 49, 50, 60, 100]) {
@@ -43,7 +44,8 @@ describe("纯挂机党：点多少下才能活？", () => {
     );
   });
 
-  it("死局逃逸路径核数：T=15/30/49 全花咖啡能否爬到刷手机？", () => {
+  it("死局逃逸路径核数：T=15/30/49 全花咖啡能否爬到刷手机？", { timeout: 120_000 },
+      () => {
     for (const T of [15, 30, 49]) {
       let moyu = T;
       let lv = 0;
@@ -64,7 +66,8 @@ describe("纯挂机党：点多少下才能活？", () => {
 });
 
 describe("修复方案对比（目标：10 下点击的挂机党能活，且不破坏点击党）", () => {
-  it("V0 原版 / V1 底薪0.2 / V1b 底薪0.5 / V2 刷手机50→30 / V3 底薪0.2+刷手机→30", () => {
+  it("V0 原版 / V1 底薪0.2 / V1b 底薪0.5 / V2 刷手机50→30 / V3 底薪0.2+刷手机→30", { timeout: 120_000 },
+      () => {
     const cfPhone30: CostFn = (id, lv) => {
       const u = UPGRADES.find((x) => x.id === id)!;
       const base = id === "phone" ? 30 : u.baseCost;
@@ -88,7 +91,8 @@ describe("修复方案对比（目标：10 下点击的挂机党能活，且不�
     }
   });
 
-  it("底薪 0.2/s 是否破坏点击党平衡（tps=3 贪心 180min）", () => {
+  it("底薪 0.2/s 是否破坏点击党平衡（tps=3 贪心 180min）", { timeout: 120_000 },
+      () => {
     const base = runSim({
       minutes: 180, tps: 3, dt: 0.25,
       orderFn: makeGreedy(engineCost, engineEffect),

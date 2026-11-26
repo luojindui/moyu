@@ -125,9 +125,9 @@ describe("老板巡逻结算", () => {
 
   it("安然度过：奖励 = max(50, 5 × idleRate)（克制，不喧宾夺主）", () => {
     const s = initialState();
-    s.levels["phone" as string] = 5; // 5/秒 → 5×5=25 → 下限 50
+    s.levels["phone" as string] = 5; // 偏移15 → 10.2/秒
     const reward = bossSurviveReward(s);
-    expect(reward).toBe(50);
+    expect(reward).toBe(51); // max(50, 5×10.2)
     expect(reward).toBeGreaterThanOrEqual(BOSS_REWARD_MIN);
   });
 
