@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#2b2b3a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>摸鱼工位</title>
+  </head>
+  <body>
+    <div id="app">
+      <header id="hud">
+        <div class="hud-moyu"><span id="hud-moyu">0</span><small>摸鱼值</small></div>
+        <div class="hud-sub">
+          <span>点击 +<b id="hud-click">1</b></span>
+          <span>挂机 <b id="hud-idle">0</b>/秒</span>
+        </div>
+      </header>
+      <main id="stage-wrap"><canvas id="stage"></canvas></main>
+      <footer id="shop"><div id="shop-cards"></div></footer>
+    </div>
+    <div id="welcome" class="hidden">
+      <div class="welcome-panel">
+        <h2>欢迎回来摸鱼</h2>
+        <p>你离开的 <b id="welcome-time">0</b> 里，悄悄摸了</p>
+        <p class="welcome-gain"><b id="welcome-gain">0</b> 摸鱼值</p>
+        <button id="welcome-ok">继续摸鱼</button>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
