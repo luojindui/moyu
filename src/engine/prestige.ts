@@ -72,6 +72,7 @@ export function doPrestige(state: GameState): { state: GameState; gained: number
       cards: state.cards,
       decor: state.decor, // 装修保留（看得见的成长）
       energy: state.energy,
+      arcade: state.arcade,
     },
   };
 }

@@ -79,7 +79,9 @@ async function boot(): Promise<void> {
   let state = restored.state ?? initialState();
   state = ensureVisits(state, Date.now()); // 本次打开算一次回访（可把离线效率挣回 1.0）
   // 先按今天重置精力/卡池，再结算离线：否则"昨天的精力加成"会被算进今天这笔离线收益
-  state = ensureEnergy(state, new Date().toLocaleDateString("sv-SE"));
+  const todayStr = new Date().toLocaleDateString("sv-SE");
+  const energyWasStale = state.energy.date !== "" && state.energy.date !== todayStr;
+  state = ensureEnergy(state, todayStr);
   const currentOfflineRate = (): number => offlineEfficiency(state, restored.createdAt, Date.now());
   const offline = settleReturn(state, Date.now() - restored.offlineSeconds * 1000, Date.now(), currentOfflineRate());
   state = offline.state;
@@ -270,7 +272,8 @@ async function boot(): Promise<void> {
         showToast(msg);
         announce(msg, 1);
         if (state.energy.used.length >= 3) {
-          setTimeout(() => announce("今日精力已用完"), 400);
+          // 错过 500ms 播报锁，确保"用完"提示不被前面的成功播报吞掉
+          setTimeout(() => announce("今日精力已用完", 1), 600);
         }
         serialize(state, localStorageAdapter, Date.now());
       }
@@ -291,6 +294,7 @@ async function boot(): Promise<void> {
         const msg = `已使用 ${used} 项精力（剩余 ${state.energy.left} 点）`;
         showToast(msg);
         announce(msg, 1);
+        setTimeout(() => announce(`今日精力已用完`, 1), 600);
         serialize(state, localStorageAdapter, Date.now());
       }
     },
@@ -847,6 +851,9 @@ async function boot(): Promise<void> {
     if ((e as PageTransitionEvent).persisted) settleForeground();
   });
 
+  if (energyWasStale) {
+    setTimeout(() => showToast("新的一天：精力已回满 100"), 1200);
+  }
   if (offline.earned > 0 && offline.showPanel) {
     welcome.show(restored.offlineSeconds, offline.earned, currentOfflineRate(), () => undefined, offline.applied);
   }

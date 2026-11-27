@@ -7,6 +7,7 @@ import { TALENTS, emptyTalents, type TalentState } from "./talents";
 import { CARDS, emptyCardState, type CardState } from "./cards";
 import { DECOR } from "./decor";
 import { ENERGY_ACTIONS as ENERGY_ACTIONS_CACHE, ENERGY_PER_DAY, emptyEnergy, type EnergyAction, type EnergyState } from "./energy";
+import { ARCADE_DAILY_LIMIT, GAMES, emptyArcade, type ArcadeState } from "./minigames";
 
 export const SAVE_KEY = "moyu-save";
 export const SAVE_VERSION = 2; // v2：加入 team/talents/patrolSurvives
@@ -44,6 +45,8 @@ interface SaveBlob {
   decor?: string[];
   /** 每日精力 */
   energy?: EnergyState;
+  /** 摸鱼站 */
+  arcade?: ArcadeState;
   /** 累计点击（点击线彩蛋解锁用；旧档为 0） */
   totalClicks?: number;
   /** 今日回访计数 */
@@ -88,6 +91,7 @@ export function serialize(state: GameState, adapter: SaveAdapter, savedAt: numbe
     cards: state.cards,
     decor: state.decor,
     energy: state.energy,
+    arcade: state.arcade,
     totalClicks: state.totalClicks,
     visits: state.visits,
     lifetimeEarned: state.lifetimeEarned,
@@ -286,6 +290,22 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
         if (a === "focus") energy.boosted.clickMult *= 1.2;
       }
     }
+    // 摸鱼站：日期校验、次数 0-3、最高分只接受已知游戏
+    const arcade: ArcadeState = emptyArcade();
+    const rawArcade = blob.arcade as Partial<ArcadeState> | undefined;
+    if (rawArcade && typeof rawArcade === "object") {
+      arcade.date = typeof rawArcade.date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(rawArcade.date) ? rawArcade.date : "";
+      arcade.played =
+        typeof rawArcade.played === "number" && Number.isFinite(rawArcade.played)
+          ? Math.max(0, Math.min(ARCADE_DAILY_LIMIT, Math.floor(rawArcade.played)))
+          : 0;
+      const best: Partial<Record<string, number>> = {};
+      for (const g of GAMES) {
+        const v = rawArcade.best?.[g.id];
+        if (typeof v === "number" && Number.isFinite(v) && v >= 0) best[g.id] = Math.min(9999, Math.floor(v));
+      }
+      arcade.best = best;
+    }
     const patrolSurvives =
       typeof blob.patrolSurvives === "number" && Number.isInteger(blob.patrolSurvives) && blob.patrolSurvives >= 0
         ? blob.patrolSurvives
@@ -331,7 +351,7 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
       return Math.max(ca, savedAtMs - 365 * 86_400_000);
     };
     return {
-      state: { moyu, levels, totalEarned, collected, daily, surviveStreak, totalClicks, visits, lifetimeEarned, prestige, team, talents, patrolSurvives, cards, decor, energy },
+      state: { moyu, levels, totalEarned, collected, daily, surviveStreak, totalClicks, visits, lifetimeEarned, prestige, team, talents, patrolSurvives, cards, decor, energy, arcade },
       offlineSeconds,
       createdAt: clampCreatedAt(blob.createdAt),
     };

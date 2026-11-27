@@ -6,6 +6,8 @@ import { emptyTeam } from "./team";
 import type { TalentState } from "./talents";
 import type { CardState } from "./cards";
 import type { EnergyState } from "./energy";
+import type { ArcadeState } from "./minigames";
+import { emptyArcade } from "./minigames";
 import { emptyEnergy } from "./energy";
 import { emptyCardState } from "./cards";
 import { emptyTalents } from "./talents";
@@ -44,6 +46,8 @@ export interface GameState {
   decor: string[];
   /** 每日精力 */
   energy: EnergyState;
+  /** 摸鱼站（小游戏） */
+  arcade: ArcadeState;
 }
 
 export function initialState(): GameState {
@@ -64,6 +68,7 @@ export function initialState(): GameState {
     cards: emptyCardState(),
     decor: [],
     energy: emptyEnergy(),
+    arcade: emptyArcade(),
   };
 }
 

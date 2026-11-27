@@ -180,8 +180,11 @@ export class TeamPanel {
     else this.refresh(state);
     // 焦点恢复：渲染后找同一 act+id 的控件（找不到就落在当前 tab）
     if (act) {
-      const sel = id ? `[data-act="${act}"][data-id="${id}"]` : `[data-act="${act}"]`;
-      const el = this.body.querySelector<HTMLElement>(sel) ?? (this.root.querySelector(".team-tabs .tab.active") as HTMLElement | null);
+      // 优先聚焦可聚焦的 button（.row-tap 行 div 也带 data-act/data-id，但不是可聚焦元素）
+      const btnSel = id ? `button[data-act="${act}"][data-id="${id}"]` : `button[data-act="${act}"]`;
+      const el =
+        this.body.querySelector<HTMLElement>(btnSel) ??
+        (this.root.querySelector(".team-tabs .tab.active") as HTMLElement | null);
       el?.focus?.();
     }
   }

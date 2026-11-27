@@ -1,6 +1,6 @@
 {
   "commit": "7857cf1",
-  "generatedAt": "2026-11-27T11:32:01.531Z",
+  "generatedAt": "2026-11-27T11:35:54.467Z",
   "wiring": {
     "idle": {
       "base": 0.2,
@@ -21,17 +21,17 @@
     },
     "offline": {
       "base": 0.7,
-      "rug": 0.8,
-      "chair": 0.8599999999999999,
-      "catbed": 0.8999999999999999,
-      "allThree": 1.16
+      "rug": 0.75,
+      "chair": 0.7799999999999999,
+      "catbed": 0.7999999999999999,
+      "allThree": 0.9299999999999999
     },
     "offlineStation": {
       "station": 0.22999999999999998,
       "total": 0.22999999999999998,
       "teamPart": 0,
-      "eff": 0.8999999999999999,
-      "earned": 745.1999999999998
+      "eff": 0.7999999999999999,
+      "earned": 662.3999999999999
     },
     "dispatch": {
       "base": 1552,
@@ -104,60 +104,47 @@
       "collected": 0,
       "prestige": 0
     },
-    "decorOfflineDouble": {
-      "rugActual": 0.8,
-      "rugSpec": 0.75,
-      "allActual": 1.16,
-      "allSpec": 0.93,
-      "note": "progression.ts base 里 teamBase 已含 decorBonus，capRaise 又含 decorBase → 家具离线加成被计两次"
+    "decorOffline": {
+      "rug": 0.75,
+      "chair": 0.7799999999999999,
+      "catbed": 0.7999999999999999,
+      "all": 0.9299999999999999
     },
     "decorCompleteBonus": {
       "specProduct": 1.4345100000000002,
       "actualIdleMult": 1.5779610000000004
+    },
+    "cardOfflineRaise": {
+      "noCard": 1,
+      "withCard": 1,
+      "cardId": "early_leave",
+      "cardBonus": 0.15,
+      "expectedIfInRaise": 1.15
     }
   },
   "defects": [
-    {
-      "id": "D4-residual",
-      "where": "save.ts:269-281",
-      "detail": "left 未按 used 成本重算，used=3+left=100 可再使用 focus（145 点预算）",
-      "actualLeft": 100
-    },
-    {
-      "id": "D11",
-      "where": "src/engine/progression.ts:41-52",
-      "detail": "progression.ts base 里 teamBase 已含 decorBonus，capRaise 又含 decorBase → 家具离线加成被计两次",
-      "rugActual": 0.8,
-      "rugSpec": 0.75,
-      "allActual": 1.16,
-      "allSpec": 0.93
-    },
-    {
-      "id": "D17",
-      "where": "src/render/scene.ts:378-386",
-      "detail": "矮屏自适应把鱼缸压到 ay=max(0.6u,groundY-6.1u) 后，与右墙公告板（y 7.65-33.25u）及挂钟（y 20.5-43.5u）重叠；drawDecor 后画 → 鱼缸覆盖公告板右半与挂钟左上",
-      "evidence": "playtest/r14-reaudit-s1-scene-1280.png"
-    },
     {
       "id": "D14",
       "where": "src/engine/energy.ts:76、src/render/scene.ts:378",
       "detail": "注释残留：social 处「好感 +3」实际 +5；鱼缸注释「左墙」实际画右墙（energy.ts:4 头部注释已在 658a610 修正）"
     },
     {
-      "id": "D15",
-      "where": "src/engine/decor.ts:61-80",
-      "detail": "新增「集齐 8 件挂机额外 +10%」未写入 docs/spec-batch3.md、无对应测试；全家具 idle 1.43451→1.577961（+10%），属规格外平衡改动",
-      "specProduct": 1.4345100000000002,
-      "actualIdleMult": 1.5779610000000004
+      "id": "D16-doc",
+      "where": "docs/spec-batch3.md:10",
+      "detail": "spec 表格「护眼台灯 场景表现：桌面右侧」与新增说明「台灯画在桌面左侧（以代码为准）」自相矛盾，建议改表格行"
     },
     {
-      "id": "D16",
-      "where": "src/render/scene.ts:342-343",
-      "detail": "台灯 lx=vw/2-1.5u 移到桌面左侧，与 spec「桌面右侧灯杆+灯罩+光锥」不符（为避让公告板改位置，但文档未同步）"
+      "id": "D18",
+      "where": "src/engine/progression.ts:44-51",
+      "detail": "今日卡离线加成（early_leave +0.15）只进 raw、不进 raise：visits=3 时被 100% 上限完全吃掉（实测 1，若按 lead 描述 raise 含今日卡应为 1.15）",
+      "cardBonus": 0.15
     }
   ],
   "fixed": {
+    "D4残余": "600487a 修复（存档 left 由 used 成本重算；used3+left100→0）",
+    "D11": "600487a 修复（raise/raw 各计一次；0.75/0.78/0.80；三件 0.93）",
     "D12": "658a610 修复（CDP S8：left=100 按钮可用，点击后 left=0/used=3）",
-    "D13": "658a610 修复（CDP S7：rowDataDisabled=1、btnDisabled=true、点击无消耗）"
+    "D13": "658a610 修复（CDP S7：rowDataDisabled=1、btnDisabled=true、点击无消耗）",
+    "D15": "600487a 修复（spec 已记载 ×1.1 + probe-b3-decor-offline 回归测试）"
   }
 }

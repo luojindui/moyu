@@ -1,0 +1,318 @@
+{
+  "startedAt": "2026-11-27T11:35:58.663Z",
+  "url": "http://127.0.0.1:5173/",
+  "head": "600487a",
+  "scenarios": {
+    "S1": {
+      "summary": "\n      已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23%\n    ",
+      "hud": {
+        "idle": "0.3",
+        "click": "1.3"
+      },
+      "canvas": {
+        "w": 900,
+        "h": 581,
+        "cssW": 900,
+        "cssH": 581
+      },
+      "bboxes": {
+        "plant": {
+          "n": 3767,
+          "bbox": [
+            71,
+            153,
+            142,
+            240
+          ],
+          "w": 900,
+          "h": 581
+        },
+        "fridge": {
+          "n": 5712,
+          "bbox": [
+            7,
+            181,
+            55,
+            311
+          ],
+          "w": 900,
+          "h": 581
+        },
+        "aquaWater": {
+          "n": 3277,
+          "bbox": [
+            459,
+            40,
+            538,
+            105
+          ],
+          "w": 900,
+          "h": 581
+        },
+        "aquaFrame": {
+          "n": 840,
+          "bbox": [
+            47,
+            32,
+            538,
+            276
+          ],
+          "w": 900,
+          "h": 581
+        },
+        "aquaBase": {
+          "n": 180,
+          "bbox": [
+            474,
+            107,
+            493,
+            115
+          ],
+          "w": 900,
+          "h": 581
+        },
+        "aquaFishP": {
+          "n": 0,
+          "bbox": null,
+          "w": 900,
+          "h": 581
+        },
+        "projector": {
+          "n": 5312,
+          "bbox": [
+            495,
+            71,
+            621,
+            117
+          ],
+          "w": 900,
+          "h": 581
+        },
+        "catbed": {
+          "n": 1084,
+          "bbox": [
+            415,
+            265,
+            503,
+            292
+          ],
+          "w": 900,
+          "h": 581
+        },
+        "boardTan": {
+          "n": 7177,
+          "bbox": [
+            657,
+            37,
+            803,
+            125
+          ],
+          "w": 900,
+          "h": 581
+        },
+        "boardFrame": {
+          "n": 2314,
+          "bbox": [
+            651,
+            31,
+            809,
+            132
+          ],
+          "w": 900,
+          "h": 581
+        },
+        "clockCream": {
+          "n": 2801,
+          "bbox": [
+            735,
+            100,
+            821,
+            171
+          ],
+          "w": 900,
+          "h": 581
+        },
+        "ceilingLamp": {
+          "n": 3605,
+          "bbox": [
+            0,
+            64,
+            899,
+            109
+          ],
+          "w": 900,
+          "h": 581
+        }
+      },
+      "scene": "playtest/r14-final-s1-desktop.png",
+      "note": "canvas 900x581"
+    },
+    "S2": {
+      "tablet": {
+        "viewport": "768x1024",
+        "canvas": {
+          "w": 768,
+          "h": 805,
+          "cssW": 768,
+          "cssH": 805
+        },
+        "aqua": {
+          "n": 13233,
+          "bbox": [
+            106,
+            60,
+            248,
+            158
+          ],
+          "w": 768,
+          "h": 805
+        },
+        "board": {
+          "n": 11022,
+          "bbox": [
+            404,
+            0,
+            623,
+            104
+          ],
+          "w": 768,
+          "h": 805
+        },
+        "scene": "playtest/r14-final-s2-tablet.png"
+      },
+      "tall": {
+        "viewport": "1440x900",
+        "canvas": {
+          "w": 900,
+          "h": 681,
+          "cssW": 900,
+          "cssH": 681
+        },
+        "aqua": {
+          "n": 6392,
+          "bbox": [
+            348,
+            50,
+            467,
+            131
+          ],
+          "w": 900,
+          "h": 681
+        },
+        "board": {
+          "n": 12509,
+          "bbox": [
+            596,
+            1,
+            779,
+            112
+          ],
+          "w": 900,
+          "h": 681
+        },
+        "scene": "playtest/r14-final-s2-tall.png"
+      },
+      "mobile": {
+        "viewport": "390x844",
+        "canvas": {
+          "w": 390,
+          "h": 625,
+          "cssW": 390,
+          "cssH": 625
+        },
+        "aqua": {
+          "n": 2302,
+          "bbox": [
+            251,
+            132,
+            305,
+            180
+          ],
+          "w": 390,
+          "h": 625
+        },
+        "board": {
+          "n": 19,
+          "bbox": [
+            284,
+            217,
+            287,
+            225
+          ],
+          "w": 390,
+          "h": 625
+        },
+        "scene": "playtest/r14-final-s2-mobile.png"
+      }
+    },
+    "S3": {
+      "restored": {
+        "left": 0,
+        "used": [
+          "social",
+          "fake-work",
+          "slack"
+        ],
+        "boosted": {
+          "idleMult": 1.3125,
+          "patrolRewardMult": 2.2,
+          "clickMult": 1
+        },
+        "heading": "今日精力 （剩 0/100）"
+      },
+      "focusBtn": {
+        "disabled": true,
+        "label": "使用"
+      },
+      "afterFocusClick": {
+        "left": 0,
+        "used": [
+          "social",
+          "fake-work",
+          "slack"
+        ]
+      }
+    },
+    "S4": {
+      "noDecor": {
+        "moyu": 2017689.1079401341,
+        "rate": 0.8004
+      },
+      "rug": {
+        "moyu": 2143730.7795598716,
+        "rate": 0.8504
+      },
+      "allThree": {
+        "moyu": 2987075.047990515,
+        "rate": 1.185
+      },
+      "rugRatio": 1.06247,
+      "rugSpecRatio": 1.0625,
+      "allThreeRatio": 1.48044,
+      "allThreeSpecRatio": 1.1625
+    },
+    "S5": {
+      "boostedIgnored": {
+        "idleMult": 1,
+        "patrolRewardMult": 1,
+        "clickMult": 1
+      },
+      "left": 100,
+      "summary": "\n      已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23%\n    ",
+      "hudIdle": "20.3",
+      "afterCombo": {
+        "left": 0,
+        "used": [
+          "social",
+          "fake-work",
+          "slack"
+        ],
+        "focusBtn": {
+          "disabled": true
+        }
+      }
+    }
+  },
+  "consoleErrors": [],
+  "pageErrors": []
+}

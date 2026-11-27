@@ -28,6 +28,7 @@ import { offlineEarn } from "../src/engine/offline";
 import { dispatch, dispatchReward, claimMission } from "../src/engine/team";
 import { bossSurviveReward, finishPatrol, newEventState } from "../src/engine/events";
 import { doPrestige } from "../src/engine/prestige";
+import { CARDS } from "../src/engine/cards";
 import { restore, serialize, SAVE_KEY, SAVE_VERSION, type SaveAdapter } from "../src/engine/save";
 
 const NOW = Date.UTC(2026, 10, 27, 12, 0, 0);
@@ -280,14 +281,15 @@ describe("存档：boosted 由 used 推导（D4）", () => {
     expect(r.state!.energy.boosted.patrolRewardMult).toBeCloseTo(2.2, 10);
     expect(r.state!.energy.boosted.clickMult).toBeCloseTo(1.2, 10);
   });
-  it("残留：left 与 used 不交叉校验 → used 3 项 + left=100 可再点第 4 项（白嫖）", () => {
+  it("D4 已修：used 3 项 + left=100 → left 收敛为 0，无法再超额点 focus", () => {
     const r = restore(memAdapter(saveBlob({ energy: { date: TODAY, left: 100, used: ["social", "fake-work", "slack"], boosted: {} } })), NOW);
     const s = r.state!;
-    expect(s.energy.left).toBe(100); // 合法值应为 0
-    const after = useEnergy(s, "focus");
-    expect(after, "D4 残留：可白嫖第 4 项").not.toBeNull();
-    expect(after!.energy.left).toBe(55);
-    report.defects = [...(report.defects as unknown[]), { id: "D4-residual", where: "save.ts:269-281", detail: "left 未按 used 成本重算，used=3+left=100 可再使用 focus（145 点预算）", actualLeft: s.energy.left }];
+    expect(s.energy.left).toBe(0); // 100 - (25+35+40) = 0
+    expect(useEnergy(s, "focus")).toBeNull();
+    // 只有 1 项时 left 仍为剩余额度
+    const one = restore(memAdapter(saveBlob({ energy: { date: TODAY, left: 100, used: ["slack"], boosted: {} } })), NOW).state!;
+    expect(one.energy.left).toBe(60);
+    report.fixed = { ...(report.fixed as object), D4残余: "600487a 修复（存档 left 由 used 成本重算；used3+left100→0）" };
   });
   it("left 越界/非法 date/未知 used（沿用旧规则）", () => {
     const g = (left: unknown) => restore(memAdapter(saveBlob({ energy: { date: TODAY, left, used: [], boosted: {} } })), NOW).state!.energy.left;
@@ -351,19 +353,19 @@ describe("存档：持久化 / 转生", () => {
 
 // ── 五、观察项 ──
 describe("观察项", () => {
-  it("观察：decor 离线加成在 base 与 capRaise 中重复计入（新缺陷嫌疑）", () => {
+  it("D11 已修：decor 离线加成只计一次（0.75/0.78/0.80；三件 0.93）", () => {
     const createdAt = NOW - 3 * DAY;
     const rug = offlineEfficiency({ ...initialState(), decor: ["rug"] }, createdAt, NOW);
+    const chair = offlineEfficiency({ ...initialState(), decor: ["chair"] }, createdAt, NOW);
+    const catbed = offlineEfficiency({ ...initialState(), decor: ["catbed"] }, createdAt, NOW);
     const all = offlineEfficiency({ ...initialState(), decor: ["rug", "chair", "catbed"] }, createdAt, NOW);
-    const obs = {
-      rugActual: rug, rugSpec: 0.75,
-      allActual: all, allSpec: 0.93,
-      note: "progression.ts base 里 teamBase 已含 decorBonus，capRaise 又含 decorBase → 家具离线加成被计两次",
-    };
-    report.defects = [...(report.defects as unknown[]), { id: "D11", where: "src/engine/progression.ts:41-52", detail: obs.note, rugActual: rug, rugSpec: 0.75, allActual: all, allSpec: 0.93 }];
-    report.observations = { ...(report.observations as object), decorOfflineDouble: obs };
-    expect(rug, "D11: rug 离线 → 0.75(spec)").toBeCloseTo(0.75, 10);
-    expect(all, "D11: 三件离线 → 0.93(spec)").toBeCloseTo(0.93, 10);
+    report.observations = { ...(report.observations as object), decorOffline: { rug, chair, catbed, all } };
+    expect(rug).toBeCloseTo(0.75, 10);
+    expect(chair).toBeCloseTo(0.78, 10);
+    expect(catbed).toBeCloseTo(0.8, 10);
+    expect(all).toBeCloseTo(0.93, 10);
+    // 上限也抬高：rug 时 cap = 1.05，故 0.75 不会被 1.0 提前截断
+    report.fixed = { ...(report.fixed as object), D11: "600487a 修复（raise/raw 各计一次；0.75/0.78/0.80；三件 0.93）" };
   });
   it("D12 已修：省心组合按「最省三项 100」判定（658a610 SIMPLE_COMBO_OK）", () => {
     const total = ENERGY_ACTIONS.reduce((s, a) => s + a.cost, 0);
@@ -386,11 +388,7 @@ describe("观察项", () => {
     //   water  (905,115)-(999,180) → 虚拟 (178.8,10.0)-(202.3,26.3)
     //   board  (847,112)-(993,200) → 虚拟 (164.3,9.3)-(200.8,31.3)
     //   clock  (925,175)-(1011,246) → 虚拟 (183.8,25.0)-(205.3,42.8)
-    report.defects = [...(report.defects as unknown[]), {
-      id: "D17", where: "src/render/scene.ts:378-386",
-      detail: "矮屏自适应把鱼缸压到 ay=max(0.6u,groundY-6.1u) 后，与右墙公告板（y 7.65-33.25u）及挂钟（y 20.5-43.5u）重叠；drawDecor 后画 → 鱼缸覆盖公告板右半与挂钟左上",
-      evidence: "playtest/r14-reaudit-s1-scene-1280.png",
-    }];
+    // 600487a：短屏（groundY<90）鱼缸左移 vw-6.9u 避开公告板；由 CDP 复验是否引入新的天花板灯/投影仪重叠
     expect(true).toBe(true);
   });
   it("观察：注释残留（好感+3 / 左墙）", () => {
@@ -407,16 +405,38 @@ describe("观察项", () => {
     const specProduct = DECOR.reduce((m, d) => m * (d.effects.idleMult ?? 1), 1);
     expect(specProduct).toBeCloseTo(1.43451, 8);
     expect(eff.idleMult).toBeCloseTo(specProduct * 1.1, 8); // DECOR_COMPLETE_BONUS
-    report.defects = [...(report.defects as unknown[]), {
-      id: "D15", where: "src/engine/decor.ts:61-80",
-      detail: "新增「集齐 8 件挂机额外 +10%」未写入 docs/spec-batch3.md、无对应测试；全家具 idle 1.43451→1.577961（+10%），属规格外平衡改动",
-      specProduct, actualIdleMult: eff.idleMult,
-    }];
+    // 600487a：已写入 docs/spec-batch3.md「集齐 8 件完成奖励：永久挂机 ×1.1」并加 2 条测试
+    report.fixed = { ...(report.fixed as object), D15: "600487a 修复（spec 已记载 ×1.1 + probe-b3-decor-offline 回归测试）" };
     report.observations = { ...(report.observations as object), decorCompleteBonus: { specProduct, actualIdleMult: eff.idleMult } };
   });
   it("观察：台灯场景位置改为桌面左侧（spec 写「桌面右侧」）", () => {
-    report.defects = [...(report.defects as unknown[]), { id: "D16", where: "src/render/scene.ts:342-343", detail: "台灯 lx=vw/2-1.5u 移到桌面左侧，与 spec「桌面右侧灯杆+灯罩+光锥」不符（为避让公告板改位置，但文档未同步）" }];
+    // 600487a 已在 spec 追加「台灯画在桌面左侧（以代码为准）」，但表格行仍写「桌面右侧」→ 文档自相矛盾（P4）
+    report.defects = [...(report.defects as unknown[]), { id: "D16-doc", where: "docs/spec-batch3.md:10", detail: "spec 表格「护眼台灯 场景表现：桌面右侧」与新增说明「台灯画在桌面左侧（以代码为准）」自相矛盾，建议改表格行" }];
     expect(true).toBe(true);
+  });
+  it("观察：今日卡离线加成未计入 raise（与 lead 描述不一致，可能被 100% 上限截断）", () => {
+    const createdAt = NOW - 3 * DAY;
+    // 构造 raw 恰好 1.0 的场景（visits 3 → +0.3；无 streak）：此后任何 base 加成都会被 1.0 截断
+    const base = { ...initialState(), visits: { date: "", count: 3 }, daily: null };
+    const noCard = offlineEfficiency(base, createdAt, NOW);
+    // 构造今日卡离线 +8%；cardEffects 用 Date.now()，故 until 用真实时钟
+    const card = CARDS.find((c) => ((c as unknown as { effects?: { offlineBonus?: number } }).effects?.offlineBonus ?? 0) > 0);
+    let withCard = noCard;
+    if (card) {
+      const until = Date.now() + 3600_000;
+      const s = { ...base, cards: { date: TODAY, offers: [card.id], chosen: card.id, until, dismissed: false, chosenDate: TODAY, nextDayGuaranteed: null } };
+      withCard = offlineEfficiency(s as never, createdAt, NOW);
+    }
+    const cardBonus = (card as unknown as { effects?: { offlineBonus?: number } })?.effects?.offlineBonus ?? 0;
+    report.observations = { ...(report.observations as object), cardOfflineRaise: { noCard, withCard, cardId: card?.id ?? null, cardBonus, expectedIfInRaise: 1 + cardBonus } };
+    // 现状：raw 已到 1.0，card 的离线加成只进 raw、不进 raise → 被 100% 上限吃掉
+    expect(noCard).toBeCloseTo(1, 10);
+    expect(withCard).toBeCloseTo(1, 10);
+    report.defects = [...(report.defects as unknown[]), {
+      id: "D18", where: "src/engine/progression.ts:44-51",
+      detail: `今日卡离线加成（${card?.id ?? "?"} +${cardBonus}）只进 raw、不进 raise：visits=3 时被 100% 上限完全吃掉（实测 ${withCard}，若按 lead 描述 raise 含今日卡应为 ${1 + cardBonus}）`,
+      cardBonus,
+    }];
   });
   it("观察：save 版本仍为 2", () => {
     expect(SAVE_VERSION).toBe(2);

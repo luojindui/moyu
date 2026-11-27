@@ -1103,7 +1103,7 @@ body {
 #dom-toast {
   position: fixed;
   left: 50%;
-  top: 108px;
+  top: 150px;
   transform: translate(-50%, -8px);
   z-index: 45;
   max-width: 86vw;
@@ -1293,7 +1293,12 @@ body.choice-open .shop-row {
 }
 .row-tap[data-disabled="1"] {
   cursor: default;
-  opacity: 0.75;
+  background: #33334a;
+  border: 1px solid #4d4d6b;
+}
+/* 已获得/禁用行的说明文字保持 AA 对比度（不用 opacity，避免降到 3.67:1） */
+.row-tap[data-disabled="1"] .talent-desc {
+  color: #c9d2ea;
 }
 #btn-team .energy-badge {
   position: absolute;
