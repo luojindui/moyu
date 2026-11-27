@@ -1,0 +1,23 @@
+{
+  "played0": {
+    "badge": "3",
+    "aria": "摸鱼站，今天还剩 3 次"
+  },
+  "played2": {
+    "badge": "1",
+    "aria": "摸鱼站，今天还剩 1 次"
+  },
+  "played3": {
+    "badge": null,
+    "aria": "摸鱼站小游戏"
+  },
+  "dayResetBoot": {
+    "badge": null,
+    "aria": "摸鱼站小游戏"
+  },
+  "dayResetState": {
+    "date": "2026-11-27",
+    "played": 0,
+    "best": {}
+  }
+}

@@ -253,7 +253,12 @@ export class Arcade {
           this.finish(def, findScore(correct, wrong, 0), { caught: correct, missed: wrong });
         }
       };
-      this.play = { raf: requestAnimationFrame(tick), cleanup: () => undefined, score: () => findScore(correct, wrong, 0) };
+      // 屏幕分 = 结算分：都含剩余时间奖励（之前屏幕含时间项、结算不含，差 299）
+      this.play = {
+        raf: requestAnimationFrame(tick),
+        cleanup: () => undefined,
+        score: () => findScore(correct, wrong, Math.max(0, def.duration - (performance.now() - startAt) / 1000)),
+      };
       return;
     }
 
@@ -293,8 +298,9 @@ export class Arcade {
           judgeEl.className = `judge-text ${res.kind}`;
         }
       } else {
-        // 乱点惩罚：无节拍可对应时扣 5 分（防"狂点拿保底"）
-        score = Math.max(0, score - 5);
+        // 晚按合并：若最近 0.22s 内有一个"刚被判漏拍"的节拍，视为同一次 MISS（不再额外扣分）
+        const nearMissed = beats.some((b, i) => usedBeats.has(i) && Math.abs(tapAt - b) <= 0.24);
+        if (!nearMissed) score = Math.max(0, score - 5);
         if (judgeEl) {
           judgeEl.textContent = "MISS";
           judgeEl.className = "judge-text miss";

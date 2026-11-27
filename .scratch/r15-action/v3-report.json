@@ -1,0 +1,320 @@
+{
+  "startedAt": "2026-11-27T12:19:49.484Z",
+  "url": "http://127.0.0.1:5173/",
+  "viewport": "390x844 mobile",
+  "phases": {
+    "V0": {
+      "served": {
+        "judgeText": true,
+        "missPenalty10": true,
+        "highlight30": true,
+        "audioWired": true,
+        "scoreBackfill": false,
+        "recordBeforeBest": false,
+        "missedBeatsCount": true,
+        "earlyExitScale": true,
+        "arcadeGate": true,
+        "refreshCopy": true,
+        "replayBtn": true
+      },
+      "boot": {
+        "timeOrigin": 1795781989891.1,
+        "bootErr": null
+      }
+    },
+    "A": {
+      "setup": {
+        "startAt": 1735.1000003814697,
+        "rect": [
+          33.59375,
+          301,
+          322.796875,
+          300
+        ]
+      },
+      "ops": [
+        {
+          "label": "b0-0",
+          "delta": 20,
+          "judge": "PERFECT",
+          "judgeCls": "judge-text perfect",
+          "t": 818,
+          "osc": 2
+        },
+        {
+          "label": "b1+100",
+          "delta": 10,
+          "judge": "GOOD",
+          "judgeCls": "judge-text good",
+          "t": 1201,
+          "osc": 2
+        },
+        {
+          "label": "offbeat1850",
+          "delta": -15,
+          "judge": "MISS",
+          "judgeCls": "judge-text miss",
+          "t": 1850,
+          "osc": 0
+        },
+        {
+          "label": "b3-recover",
+          "delta": 20,
+          "judge": "PERFECT",
+          "judgeCls": "judge-text perfect",
+          "t": 2100,
+          "osc": 2
+        },
+        {
+          "label": "b4-80",
+          "delta": 20,
+          "judge": "PERFECT",
+          "judgeCls": "judge-text perfect",
+          "t": 2520,
+          "osc": 2
+        },
+        {
+          "label": "b5+79",
+          "delta": 20,
+          "judge": "PERFECT",
+          "judgeCls": "judge-text perfect",
+          "t": 3179,
+          "osc": 2
+        },
+        {
+          "label": "b6-81",
+          "delta": 10,
+          "judge": "GOOD",
+          "judgeCls": "judge-text good",
+          "t": 3519,
+          "osc": 2
+        },
+        {
+          "label": "b7+80",
+          "delta": 10,
+          "judge": "GOOD",
+          "judgeCls": "judge-text good",
+          "t": 4180,
+          "osc": 2
+        },
+        {
+          "label": "b8-160",
+          "delta": 10,
+          "judge": "GOOD",
+          "judgeCls": "judge-text good",
+          "t": 4440,
+          "osc": 2
+        },
+        {
+          "label": "b9-161",
+          "delta": -5,
+          "judge": "MISS",
+          "judgeCls": "judge-text miss",
+          "t": 4939,
+          "osc": 0
+        },
+        {
+          "label": "b10+159",
+          "delta": 0,
+          "judge": "GOOD",
+          "judgeCls": "judge-text good",
+          "t": 5759,
+          "osc": 2
+        },
+        {
+          "label": "b11+160",
+          "delta": 10,
+          "judge": "PERFECT",
+          "judgeCls": "judge-text perfect",
+          "t": 6600,
+          "osc": 2
+        }
+      ],
+      "missTimed": {
+        "judge": "MISS",
+        "judgeCls": "judge-text miss",
+        "score": "15",
+        "beat2Cls": "beat missed",
+        "t": 1900
+      },
+      "onsetRows": [
+        {
+          "beat": 0,
+          "onsetMs": -15
+        },
+        {
+          "beat": 1,
+          "onsetMs": -14
+        },
+        {
+          "beat": 2,
+          "onsetMs": -14
+        },
+        {
+          "beat": 3,
+          "onsetMs": -15
+        },
+        {
+          "beat": 5,
+          "onsetMs": -14
+        },
+        {
+          "beat": 7,
+          "onsetMs": -14
+        },
+        {
+          "beat": 9,
+          "onsetMs": -14
+        },
+        {
+          "beat": 10,
+          "onsetMs": -14
+        },
+        {
+          "beat": 11,
+          "onsetMs": -14
+        },
+        {
+          "beat": 12,
+          "onsetMs": -14
+        }
+      ],
+      "oscTotal": 20,
+      "playedBefore": 0,
+      "after": {
+        "played": 1,
+        "best": {
+          "rhythm": 110
+        },
+        "confirmCalls": [
+          "本局已玩 7 秒，结束会按已完成比例结算并消耗 1 次机会。确定结束？"
+        ],
+        "toast": "摸鱼站 +4（得分 110）",
+        "arcadeOpen": false
+      },
+      "shot": ".scratch/r15-action/v3-rhythm-judgetext.png"
+    },
+    "B": {
+      "menuOver": 0,
+      "menuCards": 0,
+      "menuSample": {
+        "bossHidden": true,
+        "bossRect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "arcadeOpen": true,
+        "cardsHidden": true,
+        "bossZ": "18",
+        "arcadeZ": "17"
+      },
+      "gameOver": 0,
+      "gameSample": {
+        "bossHidden": true,
+        "bossRect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "arcadeOpen": true,
+        "cardsHidden": true,
+        "bossZ": "18",
+        "arcadeZ": "17"
+      },
+      "playedAfterEarlyClose": 2,
+      "confirmAfterEarly": 2,
+      "resumed": false,
+      "resumedInfo": {
+        "bossHidden": true,
+        "bossRect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "arcadeOpen": false,
+        "cardsHidden": false,
+        "bossZ": "18",
+        "arcadeZ": "17"
+      },
+      "residual": null,
+      "shots": {
+        "game": null,
+        "residual": null
+      }
+    },
+    "C": {
+      "run": {
+        "startAt": 22916.60000038147,
+        "clicks": [
+          {
+            "k": 0,
+            "t": 0,
+            "score": 349
+          },
+          {
+            "k": 1,
+            "t": 0,
+            "score": 399
+          },
+          {
+            "k": 2,
+            "t": 0,
+            "score": 449
+          }
+        ],
+        "beforeWrong": 449,
+        "afterWrong": 429
+      },
+      "later": {
+        "score": "429",
+        "timer": "29.0s",
+        "hint": "找出王总（红色「王」）· 已找 3"
+      },
+      "playedBeforeClose": 2,
+      "after": {
+        "played": 3,
+        "best": {
+          "rhythm": 110,
+          "findboss": 130
+        },
+        "confirmCalls": [
+          "本局已玩 3 秒，结束会按已完成比例结算并消耗 1 次机会。确定结束？",
+          "本局已玩 2 秒，结束会按已完成比例结算并消耗 1 次机会。确定结束？"
+        ],
+        "toast": "摸鱼站 +2（得分 130）",
+        "open": false
+      },
+      "shot": ".scratch/r15-action/v3-findboss-live-score.png"
+    },
+    "D": {
+      "data": {
+        "left": "今天玩完了，明天再来",
+        "played": 3,
+        "cardBtns": [
+          {
+            "text": "明天再来",
+            "disabled": true
+          },
+          {
+            "text": "明天再来",
+            "disabled": true
+          },
+          {
+            "text": "明天再来",
+            "disabled": true
+          }
+        ],
+        "badge": "🎮"
+      },
+      "shot": ".scratch/r15-action/v3-menu-0of3.png"
+    }
+  },
+  "originStart": 1795781989891.1,
+  "originEnd": 1795782015807.3,
+  "errs": [],
+  "finishedAt": "2026-11-27T12:20:19.094Z"
+}

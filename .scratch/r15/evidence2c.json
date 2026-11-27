@@ -1,0 +1,54 @@
+{
+  "before": {
+    "date": "2026-11-27",
+    "played": 0,
+    "best": {}
+  },
+  "beforeBadge": {
+    "badge": "3",
+    "aria": "摸鱼站，今天还剩 3 次"
+  },
+  "menuOpen": {
+    "hidden": false,
+    "title": "摸鱼站",
+    "cards": true
+  },
+  "started": {
+    "title": "接咖啡",
+    "hasArea": true,
+    "areaVisible": true
+  },
+  "mid": {
+    "score": "78",
+    "timer": "23.9s",
+    "taps": 6
+  },
+  "confirms": [
+    "本局已玩 6 秒，结束会按已完成比例结算并消耗 1 次机会。确定结束？"
+  ],
+  "panelHidden": true,
+  "toast": "摸鱼站 +3（得分 78）",
+  "after": {
+    "date": "2026-11-27",
+    "played": 1,
+    "best": {
+      "coffee": 78
+    }
+  },
+  "afterSave": {
+    "date": "2026-11-27",
+    "played": 1,
+    "best": {
+      "coffee": 78
+    }
+  },
+  "badge": {
+    "badge": "2",
+    "aria": "摸鱼站，今天还剩 2 次"
+  },
+  "menuAfter": {
+    "left": "今天还能玩 2/3 次 · 每局能赢摸鱼值",
+    "title": "摸鱼站"
+  },
+  "errors": []
+}

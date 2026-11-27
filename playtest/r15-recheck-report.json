@@ -1,0 +1,196 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "snapshot": "HEAD 8d4b598 / src@4ffb46d / arcade 2ef4de82 / minigames 4f78ed57 / main b6fe4f3e / save 9b2a5452 / spec df82454e",
+  "startedAt": "2026-11-27T12:21:19.958Z",
+  "steps": [
+    {
+      "step": "setup",
+      "at": 1795782082776,
+      "data": {
+        "idle": 10.2,
+        "state": {
+          "date": "2026-11-27",
+          "played": 0,
+          "best": {}
+        },
+        "badge": "3",
+        "head": "HEAD 8d4b598 / src@4ffb46d / arcade 2ef4de82 / minigames 4f78ed57 / main b6fe4f3e / save 9b2a5452 / spec df82454e"
+      }
+    },
+    {
+      "step": "menu",
+      "at": 1795782082941,
+      "data": {
+        "left": "今天还能玩 3/3 次 · 每局能赢摸鱼值",
+        "cards": [
+          {
+            "name": "接咖啡 最高 0",
+            "descs": [
+              "咖啡掉下来时点住它——掉地上就没了",
+              "满分 ≈ 25 秒挂机收益（新号保底 30）"
+            ],
+            "game": "coffee",
+            "btnText": "开始（30 秒）",
+            "disabled": false
+          },
+          {
+            "name": "找老板 最高 0",
+            "descs": [
+              "在一堆同事脸里找出王总，越快越好",
+              "满分 ≈ 25 秒挂机收益（新号保底 30）"
+            ],
+            "game": "findboss",
+            "btnText": "开始（30 秒内无限轮）",
+            "disabled": false
+          },
+          {
+            "name": "节奏点击 最高 0",
+            "descs": [
+              "跟着节拍点屏幕，越准分越高",
+              "满分 ≈ 25 秒挂机收益（新号保底 30）"
+            ],
+            "game": "rhythm",
+            "btnText": "开始（30 秒）",
+            "disabled": false
+          }
+        ],
+        "state": {
+          "date": "2026-11-27",
+          "played": 0,
+          "best": {}
+        }
+      }
+    },
+    {
+      "step": "A-under2s-exit",
+      "at": 1795782083850,
+      "data": {
+        "state": {
+          "date": "2026-11-27",
+          "played": 0,
+          "best": {}
+        },
+        "toast": "得分 0，没拿到奖励",
+        "panelHidden": true,
+        "elapsedMs": 907
+      }
+    },
+    {
+      "step": "B-early-exit-2s",
+      "at": 1795782086582,
+      "data": {
+        "bClicks": 20,
+        "bElapsed": 2114,
+        "bToast": "摸鱼站 +53（得分 1000）",
+        "bReward": 53,
+        "bState": {
+          "date": "2026-11-27",
+          "played": 1,
+          "best": {
+            "findboss": 1000
+          }
+        },
+        "bExpected": 53,
+        "bTf": 0.21139999999999998
+      }
+    },
+    {
+      "step": "C-full-30s",
+      "at": 1795782116883,
+      "data": {
+        "cClicks": 20,
+        "cElapsed": 30134,
+        "cDisplayed": 1297,
+        "cResult": {
+          "score": "1000 分",
+          "record": "",
+          "hint": "历史最高 1000",
+          "rewardRow": "本局奖励 +254 摸鱼值",
+          "left": "今天还能玩 1/3 次 · 每局能赢摸鱼值"
+        },
+        "cState": {
+          "date": "2026-11-27",
+          "played": 2,
+          "best": {
+            "findboss": 1000
+          }
+        },
+        "cToast": "摸鱼站 +254（得分 1000）",
+        "cReward": 254
+      }
+    },
+    {
+      "step": "early-vs-full",
+      "at": 1795782116883,
+      "data": {
+        "full": 254,
+        "early2_1s": 53,
+        "ratio": 4.7924528301886795
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "注入档 idle≈10.2",
+      "pass": true,
+      "detail": "idle=10.2"
+    },
+    {
+      "name": "🎮 启动即显示剩余次数角标 = 3",
+      "pass": true,
+      "detail": "badge=3"
+    },
+    {
+      "name": "菜单：找老板标注 30 秒内无限轮",
+      "pass": true,
+      "detail": "[\"开始（30 秒）\",\"开始（30 秒内无限轮）\",\"开始（30 秒）\"]"
+    },
+    {
+      "name": "菜单：显示满分奖励说明（25 秒挂机 / 新号保底 30）",
+      "pass": true,
+      "detail": "[[\"咖啡掉下来时点住它——掉地上就没了\",\"满分 ≈ 25 秒挂机收益（新号保底 30）\"],[\"在一堆同事脸里找出王总，越快越好\",\"满分 ≈ 25 秒挂机收益（新号保底 30）\"],[\"跟着节拍点屏幕，越准分越高\",\"满分 ≈ 25 秒挂机收益（新号保底 30）\"]]"
+    },
+    {
+      "name": "A：<2s 退出不消耗次数（played 仍 0）、0 奖励、面板关闭",
+      "pass": true,
+      "detail": "{\"state\":{\"date\":\"2026-11-27\",\"played\":0,\"best\":{}},\"toast\":\"得分 0，没拿到奖励\",\"panelHidden\":true,\"elapsedMs\":907}"
+    },
+    {
+      "name": "A：与 spec v2「中途退出也消耗次数」不一致（spec 未写退还规则）",
+      "pass": true,
+      "detail": "spec mismatch → 见 P3-1"
+    },
+    {
+      "name": "B：19+ 次点击在 2.1s 内完成并按比例结算（消耗 1 次）",
+      "pass": true,
+      "detail": "{\"bClicks\":20,\"played\":1,\"best\":{\"findboss\":1000}}"
+    },
+    {
+      "name": "B：奖励 = max(idle*25*ratio, ceil(30*ratio))，ratio=分数比×时长系数",
+      "pass": true,
+      "detail": "toast=53 expected=53 tf=0.211"
+    },
+    {
+      "name": "C：单局时长≈30s、最终分 1000（findScore(20,0,0)）、奖励全额 254",
+      "pass": true,
+      "detail": "{\"cElapsed\":30134,\"score\":\"1000 分\",\"cReward\":254}"
+    },
+    {
+      "name": "C：找老板显示分（含剩余时间≈299）≠ 结算分 1000 —— 显示口径差仍在",
+      "pass": true,
+      "detail": "displayed=1297 final=1000"
+    },
+    {
+      "name": "早退 vs 打满：实测差距 ≈4.8×（2.1s 退）；2.0s 理论上限恰 5.0×，「>5×」不成立",
+      "pass": true,
+      "detail": "ratio=4.79"
+    },
+    {
+      "name": "C：结算屏奖励行 +254",
+      "pass": true,
+      "detail": "本局奖励 +254 摸鱼值"
+    }
+  ],
+  "consoleErrors": [],
+  "error": "Error: waitFor timeout: !document.getElementById('arcade').classList.contains('hidden')\n    at waitFor (file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-r15-recheck.mjs:40:13)\n    at async openArcade (file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-r15-recheck.mjs:66:7)\n    at async runChrome.timeoutMs (file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-r15-recheck.mjs:170:7)\n    at async runChrome (file:///Users/p/Desktop/workspace/code/moyu/playtest/lib/chrome.mjs:40:12)\n    at async file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-r15-recheck.mjs:21:1"
+}

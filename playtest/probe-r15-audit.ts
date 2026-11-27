@@ -22,6 +22,7 @@ import {
   judgeCatch,
 } from "../src/engine/minigames";
 import { restore, serialize, type SaveAdapter } from "../src/engine/save";
+import { readFileSync } from "node:fs";
 
 const out: Record<string, unknown> = {};
 const results: Array<{ name: string; pass: boolean; detail: string }> = [];
@@ -32,51 +33,74 @@ const TODAY = "2026-11-27";
 const NOW = 1795948800000;
 const fresh = () => ({ ...gain(initialState(), 0), arcade: emptyArcade(TODAY) });
 
-/* ---------- 1) 奖励：规格公式 vs 现行实现 ---------- */
+/* ---------- 1) 奖励：spec-batch4 v2 公式一致性 + 时长系数 + <2s 退还 ---------- */
 {
-  const specFormula = (idle: number, score: number): number => Math.floor((idle * 0.6 + 20) * (score / 100));
-  const implFormula = (idle: number, score: number): number => {
+  const tFactor = (played: number): number => {
+    const t = Math.max(0, Math.min(1, played / 30));
+    return t >= 1 / 3 ? 1 : t * 3;
+  };
+  const specV2 = (idle: number, score: number, played = 30): number => {
+    if (played < 2) return 0; // spec v2 未写，但实现为退还；单独校验
     const capped = Math.min(score, MAX_SCORE);
-    const ratio = Math.min(1, capped / REF_SCORE);
+    const scoreRatio = Math.min(1, capped / REF_SCORE);
+    const ratio = scoreRatio * tFactor(played);
     return Math.max(Math.floor(idle * TARGET_IDLE_SECONDS * ratio), Math.ceil(EARLY_FLOOR * ratio));
   };
-  const table: Array<{ idle: number; score: number; spec: number; impl: number; got: number }> = [];
-  for (const idle of [0.2, 1, 10.2, 1000]) {
-    for (const score of [0, 1, 100, 300, 600, 1000]) {
-      const r = finishGame(fresh(), "rhythm", score, idle);
-      table.push({ idle, score, spec: score > 0 ? specFormula(idle, score) : 0, impl: score > 0 ? implFormula(idle, score) : 0, got: r!.reward });
-    }
-  }
+  const cases: Array<[number, number, number]> = [
+    [1000, 600, 30], [1000, 600, 15], [1000, 600, 10], [1000, 600, 9], [1000, 600, 2], [1000, 600, 2.5],
+    [0.2, 600, 30], [0.2, 600, 2], [0.2, 600, 1.5], [0.2, 300, 2], [10.2, 1000, 30], [10.2, 1000, 2], [10.2, 1000, 2.1],
+    [1, 300, 30], [1000, 2000, 30],
+  ];
+  const table = cases.map(([idle, score, played]) => {
+    const r = finishGame(fresh(), "rhythm", score, idle, played)!;
+    return { idle, score, played, specV2: specV2(idle, score, played), got: r.reward, playedAfter: r.state.arcade.played };
+  });
   out.rewardTable = table;
-  const allMatchImpl = table.every((t) => t.got === t.impl);
-  const anySpecMismatch = table.some((t) => t.got !== t.spec);
-  check("实现与注释公式一致（idle*25*ratio，含 EARLY_FLOOR 保底）", allMatchImpl, JSON.stringify(table.slice(0, 4)));
-  check("与批次4规格公式不符（规格= floor((idle*0.6+20)*score/100)）", anySpecMismatch, JSON.stringify(table.filter((t) => t.got !== t.spec).slice(0, 6)));
+  check("实现与 spec v2 公式完全一致（15 组 idle×score×played）", table.every((t) => t.got === t.specV2), JSON.stringify(table.filter((t) => t.got !== t.specV2)));
+  check("时长系数：≥10s 全额、9s 名义 90%（浮点得 22499）、2s 为 20%", specV2(1000, 600, 10) === 25000 && specV2(1000, 600, 9) === 22499 && specV2(1000, 600, 2) === 5000, JSON.stringify({ at10: specV2(1000, 600, 10), at9: specV2(1000, 600, 9), at2: specV2(1000, 600, 2), note: "9/30*3=0.8999999999999999 → 22499.99 floor=22499" }));
+  const full = finishGame(fresh(), "rhythm", 1000, 1000, 30)!.reward;
+  const b2 = finishGame(fresh(), "rhythm", 1000, 1000, 2)!.reward;
+  const b21 = finishGame(fresh(), "rhythm", 1000, 1000, 2.1)!.reward;
+  out.earlyExit = { full, at2s: b2, at2_1s: b21, ratio2s: full / b2, ratio2_1s: full / b21 };
+  check("2.0s 退 vs 打满 30s：奖励 ≈1/5（2.0s 比值 5.0）", b2 === 5000 && full === 25000, JSON.stringify(out.earlyExit));
+  check(">5× 的宣称不成立：2.1s 比值 4.76（≥2s 最大仅 5.0，floor 后 <5）", full / b21 < 5 && full / b21 > 4.5, JSON.stringify(out.earlyExit));
 
-  const r600 = finishGame(fresh(), "rhythm", 600, 1000)!;
-  check("满分(600 分)奖励 = 25 秒挂机收益（idle=1000 → 25000）", r600.reward === 25000, `got=${r600.reward}`);
-  const rEarly = finishGame(fresh(), "rhythm", 600, 0.2)!;
-  check("早期保底：idle=0.2 满分 = EARLY_FLOOR=30", rEarly.reward === 30, `got=${rEarly.reward}`);
-  const rZero = finishGame(fresh(), "coffee", 0, 1000)!;
-  check("0 分：消耗次数、奖励 0、不写 best", rZero.reward === 0 && rZero.state.arcade.played === 1 && rZero.state.arcade.best.coffee === undefined, "");
-  for (const bad of [Infinity, -Infinity, NaN, -5]) {
-    const rb = finishGame(fresh(), "coffee", bad as number, 100)!;
+  // <2s 退还次数（与 spec v2「中途退出也消耗次数」冲突，见规格一致性检查）
+  const refund = finishGame({ ...fresh(), moyu: 7, arcade: { date: TODAY, played: 1, best: { coffee: 5 } } }, "rhythm", 600, 1000, 1.5)!;
+  check("<2s：退还次数 / 0 奖励 / 状态完全不变（moyu、best、played 均不变）", refund.reward === 0 && refund.state.arcade.played === 1 && refund.state.moyu === 7 && refund.state.arcade.best.coffee === 5, JSON.stringify(refund.state.arcade));
+  const at2 = finishGame({ ...fresh(), arcade: { date: TODAY, played: 1, best: {} } }, "rhythm", 600, 1000, 2)!;
+  check("≥2s：正常结算并消耗次数", at2.reward === 5000 && at2.state.arcade.played === 2, JSON.stringify({ reward: at2.reward, played: at2.state.arcade.played }));
+  const zeroLong = finishGame(fresh(), "coffee", 0, 1000, 30)!;
+  check("0 分且 ≥2s：消耗次数、0 奖励、不写 best", zeroLong.reward === 0 && zeroLong.state.arcade.played === 1 && zeroLong.state.arcade.best.coffee === undefined, "");
+  const zeroShort = finishGame(fresh(), "coffee", 0, 1000, 1)!;
+  check("0 分且 <2s：退还次数（不消耗）", zeroShort.reward === 0 && zeroShort.state.arcade.played === 0, JSON.stringify(zeroShort.state.arcade));
+  for (const bad of [Infinity, NaN, -5]) {
+    const rb = finishGame(fresh(), "coffee", bad as number, 100, 30)!;
     check(`非法分 ${String(bad)}：按 0 处理并消耗次数`, rb !== null && rb.reward === 0 && rb.state.arcade.played === 1, "");
   }
-  const rCap = finishGame(fresh(), "rhythm", 1e9, 1000)!;
+  const rCap = finishGame(fresh(), "rhythm", 1e9, 1000, 30)!;
   out.scoreCap = { MAX_SCORE, REF_SCORE, bestOn1e9: rCap.state.arcade.best.rhythm, rewardOn1e9: rCap.reward };
   check("MAX_SCORE=8000 生效：1e9 分 → best=8000、ratio 封顶", rCap.state.arcade.best.rhythm === MAX_SCORE && rCap.reward === 25000, JSON.stringify(out.scoreCap));
-  // 早退折算（引擎层）：playedSeconds 默认 30；界面是否接线见界面探针
-  const full = finishGame(fresh(), "rhythm", REF_SCORE, 1000)!;
-  const early2s = finishGame(fresh(), "rhythm", REF_SCORE, 1000, 2)!;
-  const earlyHalf = finishGame(fresh(), "rhythm", REF_SCORE, 1000, 15)!;
-  out.playedSecondsScaling = { full: full.reward, at2s: early2s.reward, at15s: earlyHalf.reward };
-  check("引擎支持 playedSeconds 早退折算（2s≈1/5 奖励、15s 全额）", early2s.reward === Math.floor(1000 * 25 * 0.2) && earlyHalf.reward === 25000, JSON.stringify(out.playedSecondsScaling));
-
   // best 只增不减
-  let s2 = finishGame(fresh(), "coffee", 120, 100)!.state;
-  s2 = finishGame(s2, "coffee", 30, 100)!.state;
-  check("best 只增不减", s2.arcade.best.coffee === 120 && s2.arcade.played === 2, "");
+  let s2 = finishGame(fresh(), "coffee", 120, 100, 30)!.state;
+  s2 = finishGame(s2, "coffee", 30, 100, 30)!.state;
+  check("best 只增不减", s2.arcade.best.coffee === 120, "");
+
+  // spec 文档 vs 实现一致性（重点复验项 ②）
+  const doc = readFileSync(new URL("../docs/spec-batch4.md", import.meta.url), "utf8");
+  out.specDoc = {
+    hasV2Formula: /挂机\/秒 × 25 × ratio/.test(doc) && /max\(floor/.test(doc),
+    hasTimeFactor: /已玩秒\/10/.test(doc),
+    hasEndless: /30 秒内无限轮/.test(doc),
+    hasRhythmPenalty: /乱点 -5、漏拍 -10/.test(doc),
+    hasExitConfirm: /2–28 秒/.test(doc),
+    hasRefundRule: /退还次数|退还/.test(doc),
+    has8000: /上限 8000/.test(doc),
+    has9999: /≤9999/.test(doc),
+  };
+  check("spec 已同步 v2 奖励公式 / 时长系数 / 无限轮 / 节奏惩罚 / 退出确认", Object.entries({ hasV2Formula: true, hasTimeFactor: true, hasEndless: true, hasRhythmPenalty: true, hasExitConfirm: true }).every(([k]) => (out.specDoc as Record<string, boolean>)[k]), JSON.stringify(out.specDoc));
+  check("spec 未记录 <2s 退还次数规则（与实现不一致）", (out.specDoc as Record<string, boolean>).hasRefundRule === false, JSON.stringify(out.specDoc));
+  check("spec 内部不一致：概览写「上限 8000」而净化节写「≤9999」", (out.specDoc as Record<string, boolean>).has8000 && (out.specDoc as Record<string, boolean>).has9999, JSON.stringify({ has8000: (out.specDoc as Record<string, boolean>).has8000, has9999: (out.specDoc as Record<string, boolean>).has9999 }));
 }
 
 /* ---------- 2) 次数封顶 / 跨游戏共享 / 跨日 ---------- */
