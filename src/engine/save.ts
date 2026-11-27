@@ -6,6 +6,7 @@ import { COLLEAGUES, MAX_COLLEAGUE_LEVEL, MISSIONS, emptyTeam, type TeamState } 
 import { TALENTS, emptyTalents, type TalentState } from "./talents";
 import { CARDS, emptyCardState, type CardState } from "./cards";
 import { DECOR } from "./decor";
+import { UPGRADES } from "./upgrades";
 import { ENERGY_ACTIONS as ENERGY_ACTIONS_CACHE, ENERGY_PER_DAY, emptyEnergy, type EnergyAction, type EnergyState } from "./energy";
 import { ARCADE_DAILY_LIMIT, GAMES, MAX_SCORE, emptyArcade, type ArcadeState } from "./minigames";
 
@@ -138,9 +139,10 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
       return { state: initialState(), offlineSeconds: 0, createdAt: now };
     }
     const levels: Record<string, number> = {};
+    const KNOWN_UPGRADES = new Set(UPGRADES.map((u) => u.id));
     for (const [k, v] of Object.entries(blob.levels)) {
       // 只接受正整数且不超上限，其余键丢弃
-      if (typeof v === "number" && Number.isInteger(v) && v >= 0 && v <= MAX_LEVEL) levels[k] = v;
+      if (KNOWN_UPGRADES.has(k) && typeof v === "number" && Number.isInteger(v) && v >= 0 && v <= MAX_LEVEL) levels[k] = v;
     }
     const rawMoyu = Number.isFinite(blob.moyu) && blob.moyu >= 0 ? blob.moyu : 0;
     const rawTotal =

@@ -726,12 +726,6 @@ body {
     filter: brightness(1.15);
   }
 }
-/* 横屏（高度很矮）提示：场景仍可用，但建议竖屏 */
-@media (orientation: landscape) and (max-height: 560px) {
-  #rotate-hint {
-    display: block;
-  }
-}
 #rotate-hint {
   display: none;
   position: fixed;
@@ -746,6 +740,13 @@ body {
   border-radius: 10px;
   pointer-events: none;
 }
+/* 横屏（高度很矮）提示：场景仍可用，但建议竖屏 */
+@media (orientation: landscape) and (max-height: 560px) {
+  #rotate-hint {
+    display: block;
+  }
+}
+
 
 /* ---------- 更新提示条 / 关于 ---------- */
 #update-bar {

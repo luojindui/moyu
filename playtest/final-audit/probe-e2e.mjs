@@ -188,6 +188,10 @@ await runChrome(async ({ port }) => {
     const s1 = await state(c);
     r.expect("C4 招募成功", s1.team.colleagues.zhou && s1.team.colleagues.zhou.level === 1, JSON.stringify(Object.keys(s1.team.colleagues)));
     r.expect("C5 招募扣 12000", Math.abs(m0 - 12000 - s1.moyu) < 20, `${m0.toFixed(0)}→${s1.moyu.toFixed(0)}`);
+    // 面板显示与引擎同口径（da93ce4 修复项）
+    const summaryText = (await text(c, ".team-summary")) ?? "";
+    const fmtTeam = await fmtEngine("Math.round(M.teamIdleBreakdown(window.__MOYU__.state).total)", "/src/engine/upgrades.ts");
+    r.expect("C5b 小队挂机显示与引擎一致", summaryText.includes(`+${fmtTeam}/秒`), `面板="${summaryText.slice(0, 60)}" 期望 +${fmtTeam}/秒`);
     const disp = await ev(c, `(() => { const b = document.querySelector('button[data-act="dispatch"][data-id="zhou"][data-mission="stroll"]'); return b ? { disabled: b.disabled, text: b.textContent.trim().replace(/\\s+/g, " ") } : null; })()`);
     r.expect("C6 派遣按钮存在", !!disp, JSON.stringify(disp));
     await click(c, 'button[data-act="dispatch"][data-id="zhou"][data-mission="stroll"]');
@@ -400,7 +404,8 @@ await runChrome(async ({ port }) => {
     r.expect("H4 决策期点击被拦截", (await state(c)).totalClicks === clicksBefore, `${clicksBefore}→${(await state(c)).totalClicks}`);
     const hit = await ev(c, `(() => { const b = document.querySelector(".boss-box").getBoundingClientRect(); const top = document.elementFromPoint(b.left + b.width/2, b.top + b.height/2); return { tag: top?.tagName, inBoss: !!top?.closest("#boss-choice") }; })()`);
     r.expect("H5 弹层按钮区真实可点（命中弹层而非画布）", hit.inBoss === true, JSON.stringify(hit));
-    // 选对
+    // 选对（先等过 150ms 防误触守卫）
+    await sleep(220);
     const base = await modEval(c, "/src/engine/events.ts", "M.bossSurviveReward(window.__MOYU__.state)");
     const expReward = Math.floor(base * 1.8);
     const s0 = await state(c);
@@ -415,6 +420,7 @@ await runChrome(async ({ port }) => {
     // H9 第 2 次（新手宽限内）选错：不扣钱 + 明确提示
     await ev(c, `window.__MOYU__.forceBoss("choice")`);
     await waitFor(c, `document.getElementById("boss-choice").classList.contains("hidden") === false`, 4000);
+    await sleep(220);
     await click(c, '#boss-opts button[data-choice="act-busy"]');
     await sleep(700);
     const s2 = await state(c);
@@ -426,6 +432,7 @@ await runChrome(async ({ port }) => {
       await ev(c, `window.__MOYU__.forceBoss("choice")`);
       await waitFor(c, `document.getElementById("boss-choice").classList.contains("hidden") === false`, 4000);
       const wrongNow = i === 1; // 第 3 次正确（保留宽限外判定），第 4 次选错
+      await sleep(220);
       await click(c, `#boss-opts button[data-choice="${wrongNow ? "act-busy" : "switch-screen"}"]`);
       await sleep(650);
     }
@@ -610,7 +617,8 @@ await runChrome(async ({ port }) => {
       const sAfter = await state(c);
       const actual = sAfter.moyu - sOff.moyu;
       r.expect("J16 离线收益符合引擎公式", actual >= expOff.lo * 0.985 && actual <= expOff.hi * 1.015, `实际 ${actual.toFixed(1)} 期望 ${expOff.lo.toFixed(1)}~${expOff.hi.toFixed(1)} (面板 ${gainText})`);
-      r.expect("J17 欢迎面板文案", /首日全额|离线效率/.test((await text(c, "#welcome-rule")) ?? ""), await text(c, "#welcome-rule"));
+      const ruleText = await text(c, "#welcome-rule");
+      r.expect("J17 欢迎面板文案（离线效率 + 真实 12h 封顶）", /离线效率|首日全额/.test(ruleText ?? "") && /12 小时封顶/.test(ruleText ?? ""), ruleText ?? "null");
       await shot(c, "J-offline-welcome");
       await click(c, "#welcome-ok");
     }

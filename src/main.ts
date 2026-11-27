@@ -699,7 +699,9 @@ async function boot(): Promise<void> {
         if (dg.granted > 0) {
           state = { ...state, talents: dg.talents };
           teamPanel.refresh(state);
-          showToast("戳屏幕摸鱼，攒够 15 解锁第一件升级");
+          showToast(
+            state.talents.points > 0 ? `送你 ${state.talents.points} 个天赋点，点 👥 看看` : "戳屏幕摸鱼，攒够 15 解锁第一件升级",
+          );
         }
       }
       // 段位天赋点：按生涯段位发放（幂等）
@@ -791,14 +793,14 @@ async function boot(): Promise<void> {
       // 回合制老板：同步弹层
       {
         const wasOpen = bossPanel.isOpen;
-        // 新一轮 choice 开始 → 复位"已作答"标记
-        if (!wasOpen && bossPanel.isOpen) choicePickedThisRound = false;
         bossPanel.sync(es);
+        // sync 之后才判断"刚被关闭"（之前在 sync 前取值恒为假 → 死代码）
         if (wasOpen && !bossPanel.isOpen && es.bossChoiceDone && es.bossUntil < 0) {
-          // 只有"确实超时未作答"才提示；已作答的走面板内结果
           if (!choicePickedThisRound) showToast("没来得及选…这次不算");
           choicePickedThisRound = false;
         }
+        // 新一轮 choice 开始 → 复位"已作答"标记
+        if (!wasOpen && bossPanel.isOpen) choicePickedThisRound = false;
       }
 
       // 任务完成提醒（角标之外给一次明确提示）

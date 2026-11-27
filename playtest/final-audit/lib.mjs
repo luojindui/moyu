@@ -88,7 +88,8 @@ export async function state(c) {
 export async function mod(c, path) {
   // 返回可序列化的调用结果；调用方给出表达式（避免传函数跨进程）
   const key = `__mod_${path.replace(/[^a-z0-9]/gi, "_")}`;
-  await ev(c, `void (async () => { if (!window.${key}) window.${key} = await import(${JSON.stringify(path)}); })()`);
+  // 必须 await 模块加载完成，否则紧接着的 modEval 会拿到 undefined（竞态）
+  await ev(c, `(async () => { if (!window.${key}) window.${key} = await import(${JSON.stringify(path)}); return true; })()`);
   return key;
 }
 
