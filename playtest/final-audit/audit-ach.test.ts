@@ -57,8 +57,8 @@ const ACH_MIN_STATE: Record<string, (s: GameState) => GameState> = {
   arcade_500: (s) => ({ ...s, arcade: { ...s.arcade, best: { coffee: 500 } } }),
   arcade_2000: (s) => ({ ...s, arcade: { ...s.arcade, best: { coffee: 2_000 } } }),
   card_5: (s) => ({ ...s, cardsChosenTotal: 5 }),
-  boss_3: (s) => ({ ...s, surviveStreak: 3 }),
-  boss_10: (s) => ({ ...s, surviveStreak: 10 }),
+  boss_3: (s) => ({ ...s, bestSurviveStreak: 3 }),
+  boss_10: (s) => ({ ...s, bestSurviveStreak: 10 }),
 };
 
 const memAdapter = (initial: string) => {
@@ -131,12 +131,48 @@ describe("成就墙 · 结构与进度", () => {
     }
   });
 
-  it("段位成就：rankIndex 0-based vs 目标 1-based 的可达性", () => {
-    // main.ts 用 RANKS.findIndex 记录 rankIndex（0..13），RANKS 共 14 档
+  it("段位成就：rankIndex 1 基（1..14），rank_7/rank_14 均可达", () => {
     expect(RANKS).toHaveLength(14);
-    const maxLegit = RANKS.length - 1; // 13
-    expect(achDone(achById("rank_7")!, { ...base(), rankIndex: 6 }), "第 7 档应点亮 rank_7（描述「第 7 段位」）").toBe(true);
+    const maxLegit = RANKS.length; // 1 基最高 14
+    expect(achDone(achById("rank_7")!, { ...base(), rankIndex: 7 }), "第 7 段位应点亮 rank_7").toBe(true);
+    expect(achDone(achById("rank_7")!, { ...base(), rankIndex: 6 }), "第 6 段位不应点亮 rank_7").toBe(false);
     expect(achDone(achById("rank_14")!, { ...base(), rankIndex: maxLegit }), "最高档（第 14 段位）应点亮 rank_14").toBe(true);
+    expect(achDone(achById("rank_14")!, { ...base(), rankIndex: 13 }), "第 13 段位不应点亮 rank_14").toBe(false);
+  });
+
+  it("全部 22 条 target 都不超过系统上限（数学可达）", () => {
+    // 各系统上限（与实现一致）
+    const caps: Record<string, number> = {
+      click_1k: Infinity, click_10k: Infinity, click_100k: Infinity,
+      idle_1k: Infinity, idle_1m: Infinity,
+      codex_20: 55, codex_40: 55, codex_55: 55,
+      decor_3: DECOR.length, decor_8: DECOR.length,
+      team_1: COLLEAGUES.length, team_5: COLLEAGUES.length, team_lv5: 5,
+      // 24 天赋点可点亮的数量上限：3×1 + 3×1 + 3×2 + 3×2 + 1×3 = 21 点 13 条（再多一条需 +3 点）
+      talent_6: 13, talent_18: 13,
+      rank_7: RANKS.length, rank_14: RANKS.length,
+      arcade_500: 8000, arcade_2000: 8000,
+      card_5: Infinity, boss_3: Infinity, boss_10: Infinity,
+    };
+    for (const a of ACHIEVEMENTS) {
+      expect(a.target, `${a.id} target 应 ≤ 系统上限`).toBeLessThanOrEqual(caps[a.id]!);
+      expect(caps[a.id], `${a.id} 缺少上限定义`).toBeDefined();
+    }
+  });
+
+  it("成就等级本身给挂机加成（每级 +2%，Lv.1 不计）", () => {
+    // 4 条完成 → 点数 4 → 等级 2；奖励 idle: idle_1k 1.02 × decor_3 1.02，点击: click_1k 1.02 × click_10k 1.05
+    const s: GameState = {
+      ...base(),
+      totalClicks: 10_000,
+      bestIdleRate: 1_000,
+      decor: DECOR.slice(0, 3).map((d) => d.id),
+    };
+    expect(achPoints(s)).toBe(4);
+    expect(achLevel(s)).toBe(2);
+    const e = achEffects(s);
+    expect(e.idleMult).toBeCloseTo(1.02 * 1.02 * 1.02, 9); // 两条 idle 奖励 × 等级 2 的 +2%
+    expect(e.clickMult).toBeCloseTo(1.02 * 1.05, 9);
   });
 });
 
@@ -191,9 +227,10 @@ describe("成就墙 · 加成生效（挂机/点击/离线）", () => {
       click *= 1 + (a.reward?.clickBonus ?? 0);
     }
     const e = achEffects(all);
-    expect(e.idleMult).toBeCloseTo(idle, 9);
+    expect(achLevel(all)).toBe(Math.floor(22 / 4) + 1); // 6 级
+    const levelBonus = 1 + 0.02 * (achLevel(all) - 1); // 1.10
+    expect(e.idleMult).toBeCloseTo(idle * levelBonus, 9);
     expect(e.clickMult).toBeCloseTo(click, 9);
-    expect(achLevel(all)).toBe(Math.floor(22 / 4) + 1);
   });
 });
 
@@ -221,14 +258,16 @@ describe("成就墙 · 永久性与转生保留", () => {
       rankIndex: 7,
       cardsChosenTotal: 6,
       surviveStreak: 10,
+      bestSurviveStreak: 10,
     };
     const r = doPrestige(s);
     expect(r).not.toBeNull();
     expect(r!.state.bestIdleRate).toBe(5_000);
     expect(r!.state.rankIndex).toBe(7);
     expect(r!.state.cardsChosenTotal).toBe(6);
-    // 记录：boss 成就进度因 surviveStreak 重置而回落
-    expect(achDone(achById("boss_10")!, r!.state)).toBe(false);
+    expect(r!.state.bestSurviveStreak).toBe(10);
+    // 转生后 boss 成就应保持（历史最高连胜保留）
+    expect(achDone(achById("boss_10")!, r!.state)).toBe(true);
   });
 });
 
@@ -258,10 +297,11 @@ describe("成就墙 · 存档净化（bestIdleRate/rankIndex/cardsChosenTotal）
   });
 
   it("极值钳制（bestIdleRate≤1e30 / rankIndex≤20 / cardsChosenTotal≤100000）", () => {
-    const s = restoreOf({ bestIdleRate: 1e308, rankIndex: 999, cardsChosenTotal: 1e9 });
+    const s = restoreOf({ bestIdleRate: 1e308, rankIndex: 999, cardsChosenTotal: 1e9, bestSurviveStreak: 1e9 });
     expect(s.bestIdleRate).toBe(1e30);
     expect(s.rankIndex).toBe(20);
     expect(s.cardsChosenTotal).toBe(100000);
+    expect(s.bestSurviveStreak).toBe(100000);
   });
 
   it("小数向下取整", () => {

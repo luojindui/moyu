@@ -1,0 +1,16 @@
+label=r2
+mode=quitter
+frames=96
+events=6460
+steps=16
+firstToasts=["28937:今日卡：空调坏了","29898:安总：嗯，忙你的。 +90","30249:图鉴 +1（1/55）","40365:日报可领 +792，点右下 📔"]
+questDoneAt=null
+claimAt=45544
+recruitAt=null
+recruitWall={"balance":"1515.3","recruit":{"text":"攒够再招 1.20万","disabled":true}}
+arcadeResult=undefined
+taps=141
+finalHud={"moyu":"216.5","click":"64.2","idle":"31.6","rank":"实习生 60%","card":"卡·空调坏了","combo":"连×3","streak":"🔥连胜 1"}
+badgeStates=1
+endOnboarding=true
+endBadges={"arcade":{"n":1,"texts":["3"],"displays":["none"],"visible":0},"talent":{"n":1,"texts":["天赋"],"displays":["none"],"visible":0},"energy":{"n":1,"texts":["精力 100"],"displays":["none"],"visible":0},"mission":{"n":0,"texts":[],"displays":[],"visible":0}}

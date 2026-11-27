@@ -10,9 +10,9 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { runChrome, connect, sleep } from "./lib/chrome.mjs";
 
 const PROD = "https://luojindui.github.io/moyu/";
-const SHOTS = "playtest/r17-collector-shots";
+const SHOTS = "playtest/r17-collector-shots-v061";
 mkdirSync(SHOTS, { recursive: true });
-const OUT = "playtest/r17-collector-layout.json";
+const OUT = "playtest/r17-collector-layout-v061.json";
 const log = (...a) => console.log("[r17-layout]", ...a);
 const R = { startedAt: new Date().toISOString(), url: PROD };
 

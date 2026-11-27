@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import { initialState, gain } from "./state";
 import {
   COLLEAGUES,
+  FIRST_COLLEAGUE_PRICE,
   MAX_COLLEAGUE_LEVEL,
   MISSIONS,
   SKILL_MATCH_BONUS,
@@ -34,7 +35,8 @@ describe("摸鱼小队（第二玩法）", () => {
     const s = rich();
     expect(canRecruit(s, "zhou")).toBe(true);
     const r = recruit(s, "zhou")!;
-    expect(r.moyu).toBe(s.moyu - COLLEAGUES[0]!.cost);
+    // 首位同事有新人价折扣（12,000 → 1,500），让新手目标链第 8 步可达
+    expect(r.moyu).toBe(s.moyu - FIRST_COLLEAGUE_PRICE);
     expect(teamSize(r)).toBe(1);
     expect(teamFixedRate(r)).toBe(COLLEAGUES[0]!.idlePerLevel);
     expect(teamShareRatio(r)).toBeCloseTo(COLLEAGUES[0]!.sharePerLevel, 10);

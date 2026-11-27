@@ -495,7 +495,7 @@ await runChrome(
       };
       const confirmCard = (s.shop || []).find((c) => c.confirming);
       if (confirmCard) { await buyCard(confirmCard.id); await sleep(150); }
-      else if (S.questDoneAt === null) {
+      else if (S.questDoneAt === null && !(FLOW && S.injected)) {
         const savingForRecruit = /招募第一位同事/.test(qt);
         const bal = numOf(s.hud.moyu);
         const stopBuy = savingForRecruit && bal >= 8000;

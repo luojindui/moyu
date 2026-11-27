@@ -32,7 +32,7 @@ async function blobFromState() {
     patrolSurvives: s.patrolSurvives, cards: s.cards, decor: s.decor, energy: s.energy,
     arcade: s.arcade, totalClicks: s.totalClicks, visits: s.visits,
     lifetimeEarned: s.lifetimeEarned, prestige: s.prestige, team: s.team, talents: s.talents,
-    bestIdleRate: s.bestIdleRate, rankIndex: s.rankIndex, cardsChosenTotal: s.cardsChosenTotal,
+    bestIdleRate: s.bestIdleRate, rankIndex: s.rankIndex, cardsChosenTotal: s.cardsChosenTotal, bestSurviveStreak: s.bestSurviveStreak,
   };
 }
 async function writeSaveAndReload(blob, ms = 500) {
@@ -57,7 +57,7 @@ async function engineAch() {
       done: A.ACHIEVEMENTS.filter((a) => a.progress(s) >= a.target).map((a) => a.id),
       idleMult: e.idleMult, clickMult: e.clickMult, offlineBonus: e.offlineBonus,
       idleRate: U.effectOf(s).idleRate, clickPower: AC.clickPowerOf(s),
-      bestIdleRate: s.bestIdleRate, rankIndex: s.rankIndex, cardsChosenTotal: s.cardsChosenTotal,
+      bestIdleRate: s.bestIdleRate, rankIndex: s.rankIndex, cardsChosenTotal: s.cardsChosenTotal, bestSurviveStreak: s.bestSurviveStreak, bestSurviveStreak: s.bestSurviveStreak,
     };
   })()`);
 }
@@ -115,6 +115,34 @@ await runChrome(async ({ port }) => {
     const uiB = await journalAchSummary();
     rep.expect("B4 成就墙完成数 = 引擎", uiB.doneItems === engB.points, `${uiB.doneItems} vs ${engB.points}（${uiB.summary}）`);
     rep.expect("B5 工位分类 2/2 标绿", uiB.cats.some((x) => /工位 2\/2/.test(x)), JSON.stringify(uiB.cats));
+    // B6：成就等级加成（4 条完成 → Lv.2 → 额外 +2% 挂机）
+    await ev(c, "window.__MOYU__.saveNow()");
+    const b2 = await blobFromState();
+    b2.totalClicks = 100_000; // 点击 3 条 + 挂机 1 条 = 4 点 → Lv.2（等级 +2%）
+    b2.bestIdleRate = 1_000;
+    b2.bestSurviveStreak = 0;
+    b2.decor = [];
+    b2.levels = {};
+    b2.collected = { quotes: [], flavors: [] };
+    b2.team = { colleagues: {} };
+    b2.talents = { ...(b2.talents ?? {}), unlocked: [], points: 0 };
+    b2.cardsChosenTotal = 0;
+    b2.surviveStreak = 0;
+    b2.rankIndex = 1;
+    b2.arcade = { ...(b2.arcade ?? {}), best: {} };
+    await writeSaveAndReload(b2);
+    const engB2 = await engineAch();
+    const lvExpected = await ev(c, `(async () => {
+      const A = await import("/src/engine/achievements.ts");
+      const s = JSON.parse(JSON.stringify(window.__MOYU__.state));
+      const done = A.ACHIEVEMENTS.filter((a) => a.progress(s) >= a.target);
+      const points = done.length;
+      const level = Math.floor(points / 4) + 1;
+      let idle = 1 + 0.02 * (level - 1);
+      for (const a of done) idle *= 1 + (a.reward?.idleBonus ?? 0);
+      return { points, level, idle };
+    })()`);
+    rep.expect("B6 成就等级每级 +2% 挂机（live）", lvExpected.points >= 4 && Math.abs(engB2.idleMult - lvExpected.idle) < 1e-9, `points=${lvExpected.points} lv=${lvExpected.level} idleMult=${engB2.idleMult.toFixed(6)} 期望 ${lvExpected.idle.toFixed(6)}`);
     await closeAllModals(c);
 
     // ============ C. 点击成就加成重复接入检测（升级点击力被平方） ============
@@ -136,18 +164,21 @@ await runChrome(async ({ port }) => {
     await ev(c, "window.__MOYU__.saveNow()");
     const d0 = await blobFromState();
     d0.surviveStreak = 10;
+    d0.bestSurviveStreak = 0; // 旧档只有当前连胜 → 主循环应把历史最高补上
     d0.decor = [];
     d0.levels = { phone: 5 };
     d0.bestIdleRate = 0;
-    await writeSaveAndReload(d0);
+    await writeSaveAndReload(d0, 800);
     const engD1 = await engineAch();
     const hudD1 = await text(c, "#hud-idle");
-    d0.surviveStreak = 0; // 模拟"被抓一次"
+    d0.surviveStreak = 0;
+    d0.bestSurviveStreak = engD1.bestSurviveStreak; // 模拟被抓一次（历史最高保留）
     await writeSaveAndReload(d0);
     const engD2 = await engineAch();
     const hudD2 = await text(c, "#hud-idle");
     rep.expect("D1 连胜 10 时 boss_3/boss_10 达成", engD1.done.includes("boss_3") && engD1.done.includes("boss_10"), JSON.stringify(engD1.done));
-    rep.expect("D2 被老板抓后 boss 成就仍应保持（永久）", engD2.done.includes("boss_10") && engD2.done.includes("boss_3"), `被抓后 done=${JSON.stringify(engD2.done)}；HUD 挂机 ${hudD1}→${hudD2}；idleMult ${engD1.idleMult.toFixed(4)}→${engD2.idleMult.toFixed(4)}`);
+    rep.expect("D2 游戏把当前连胜写入历史最高", engD1.bestSurviveStreak === 10, String(engD1.bestSurviveStreak));
+    rep.expect("D3 被老板抓后 boss 成就仍保持（永久）", engD2.done.includes("boss_10") && engD2.done.includes("boss_3"), `被抓后 done=${JSON.stringify(engD2.done)}；HUD 挂机 ${hudD1}→${hudD2}`);
 
     // ============ E. 天赋成就永久性（重置天赋后是否丢失） ============
     await ev(c, "window.__MOYU__.saveNow()");
@@ -179,7 +210,7 @@ await runChrome(async ({ port }) => {
       return { b: st.bestIdleRate, r: st.rankIndex, c: st.cardsChosenTotal };
     })()`);
     rep.expect("F1 负数净化 → 0", sanBad.b === 0 && sanBad.r === 0 && sanBad.c === 0, JSON.stringify(sanBad));
-    rep.expect("F1b 实机负值 bestIdleRate 被游戏立刻上调为合法值（无负值残留）", Number.isFinite(sBad.bestIdleRate) && sBad.bestIdleRate >= 0 && sBad.rankIndex === 0 && sBad.cardsChosenTotal === 0, JSON.stringify({ b: sBad.bestIdleRate, r: sBad.rankIndex, c: sBad.cardsChosenTotal }));
+    rep.expect("F1b 实机负值 bestIdleRate 被游戏立刻上调为合法值（无负值残留）", Number.isFinite(sBad.bestIdleRate) && sBad.bestIdleRate >= 0 && sBad.rankIndex === 1 && sBad.cardsChosenTotal === 0, JSON.stringify({ b: sBad.bestIdleRate, r: sBad.rankIndex, c: sBad.cardsChosenTotal }));
     await ev(c, "window.__MOYU__.saveNow()");
     const fNull = await blobFromState();
     fNull.bestIdleRate = null; fNull.rankIndex = "x"; fNull.cardsChosenTotal = null;
@@ -193,7 +224,7 @@ await runChrome(async ({ port }) => {
       return { b: st.bestIdleRate, r: st.rankIndex, c: st.cardsChosenTotal };
     })()`);
     rep.expect("F2 非法类型净化 → 0", sanNull.b === 0 && sanNull.r === 0 && sanNull.c === 0, JSON.stringify(sanNull));
-    rep.expect("F2b 实机非法类型不残留", Number.isFinite(sNull.bestIdleRate) && sNull.bestIdleRate >= 0 && sNull.rankIndex === 0 && sNull.cardsChosenTotal === 0, JSON.stringify({ b: sNull.bestIdleRate, r: sNull.rankIndex, c: sNull.cardsChosenTotal }));
+    rep.expect("F2b 实机非法类型不残留", Number.isFinite(sNull.bestIdleRate) && sNull.bestIdleRate >= 0 && sNull.rankIndex === 1 && sNull.cardsChosenTotal === 0, JSON.stringify({ b: sNull.bestIdleRate, r: sNull.rankIndex, c: sNull.cardsChosenTotal }));
     await ev(c, "window.__MOYU__.saveNow()");
     const fMax = await blobFromState();
     fMax.bestIdleRate = 1e308; fMax.rankIndex = 999; fMax.cardsChosenTotal = 1e9;
@@ -208,7 +239,7 @@ await runChrome(async ({ port }) => {
     const g0 = await blobFromState();
     g0.totalEarned = 2e8; g0.lifetimeEarned = 2e8;
     g0.bestIdleRate = 5000; g0.rankIndex = 7; g0.cardsChosenTotal = 6;
-    g0.surviveStreak = 10; g0.decor = []; g0.levels = { phone: 5 }; g0.talents = { ...(g0.talents ?? {}), unlocked: [], points: 0 };
+    g0.surviveStreak = 10; g0.bestSurviveStreak = 10; g0.decor = []; g0.levels = { phone: 5 }; g0.talents = { ...(g0.talents ?? {}), unlocked: [], points: 0 };
     await writeSaveAndReload(g0);
     const engG1 = await engineAch();
     await openPanel(c, "#btn-journal", "#journal");
@@ -221,7 +252,7 @@ await runChrome(async ({ port }) => {
     await closeAllModals(c);
     rep.expect("G2 转生保留 bestIdleRate/rankIndex/cardsChosenTotal", sG.bestIdleRate === 5000 && sG.rankIndex === 7 && sG.cardsChosenTotal === 6, JSON.stringify({ b: sG.bestIdleRate, r: sG.rankIndex, c: sG.cardsChosenTotal }));
     rep.expect("G3 转生后 rank/idle/card 类成就仍在", engG1.done.includes("rank_7") && engG1.done.includes("idle_1k") && engG1.done.includes("card_5"), JSON.stringify(engG1.done));
-    rep.expect("G4 转生后 boss 成就应保留（永久）", engG2.done.includes("boss_10"), `转生后 done=${JSON.stringify(engG2.done)}（surviveStreak 被转生清零 → 成就丢失）`);
+    rep.expect("G4 转生后 boss 成就保留（历史最高连胜不清）", engG2.done.includes("boss_10"), `转生后 done=${JSON.stringify(engG2.done)}`);
 
     // ============ H. 重复发放 / 幂等 ============
     const engH1 = await engineAch();

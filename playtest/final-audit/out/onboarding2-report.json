@@ -1,0 +1,74 @@
+{
+  "summary": {
+    "name": "新手引导 v0.6.1",
+    "pass": 2,
+    "total": 4,
+    "failed": [
+      "H3 目标链可完整走通（无重载时）",
+      "ONB:EXCEPTION"
+    ],
+    "checks": [
+      {
+        "id": "H1 新号 onboarding 激活/目标链可见",
+        "ok": true,
+        "detail": "{\"hidden\":false,\"text\":\"再戳 15 下 → 解锁「咖啡续命」\",\"onboarding\":true}"
+      },
+      {
+        "id": "H2 新手期系统角标隐藏",
+        "ok": true,
+        "detail": "{\"arcade\":\"none\",\"energy\":\"none\",\"talent\":\"none\"}"
+      },
+      {
+        "id": "H3 目标链可完整走通（无重载时）",
+        "ok": false,
+        "detail": "{\"seen\":5,\"reloads\":1}"
+      },
+      {
+        "id": "ONB:EXCEPTION",
+        "ok": false,
+        "detail": "ev 异常 ({\n    hidden: document.getElementById(\"quest\").classList.contains(\"hidden\"),\n  : {\"exceptionId\":1,\"text\":\"Uncaught\",\"lineNumber\":1,\"columnNumber\":44,\"scriptId\":\"51\",\"exception\":{\"type\":\"object\",\"subtype\":\"error\",\"className\":\"TypeError\",\"description\":\"TypeError: Cannot read propert"
+      }
+    ],
+    "ms": 236893
+  },
+  "runs": [
+    {
+      "scenario": "happy-attempt1",
+      "finished": false,
+      "seen": [
+        "再戳 15 下 → 解锁「咖啡续命」",
+        "买下点亮的「咖啡续命」卡片",
+        "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "买下「刷手机」：之后每秒自动赚钱",
+        "什么都不点，等 10 秒看挂机收益",
+        "选一张「今日摸鱼卡」：24 小时有效，HUD 会显示"
+      ],
+      "ms": 150204
+    },
+    {
+      "scenario": "happy-attempt2",
+      "reloaded": true,
+      "seen": [
+        "再戳 15 下 → 解锁「咖啡续命」",
+        "买下点亮的「咖啡续命」卡片",
+        "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "买下「刷手机」：之后每秒自动赚钱",
+        "什么都不点，等 10 秒看挂机收益",
+        "选一张「今日摸鱼卡」：24 小时有效，HUD 会显示"
+      ],
+      "reloads": 1
+    },
+    {
+      "scenario": "happy-attempt3",
+      "reloaded": true,
+      "seen": [
+        "再戳 15 下 → 解锁「咖啡续命」",
+        "买下点亮的「咖啡续命」卡片",
+        "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "买下「刷手机」：之后每秒自动赚钱",
+        "什么都不点，等 10 秒看挂机收益"
+      ],
+      "reloads": 1
+    }
+  ]
+}

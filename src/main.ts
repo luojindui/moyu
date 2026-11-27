@@ -709,8 +709,13 @@ async function boot(): Promise<void> {
         if (dg.granted > 0) {
           state = { ...state, talents: dg.talents };
           teamPanel.refresh(state);
+          // 新手期先教点击（不推销第二个系统）；老玩家才提示天赋点
           showToast(
-            state.talents.points > 0 ? `送你 ${state.talents.points} 个天赋点，点 👥 看看` : "戳屏幕摸鱼，攒够 15 解锁第一件升级",
+            onboardingActive && state.talents.points <= 1
+              ? "戳屏幕摸鱼，攒够 15 解锁第一件升级"
+              : state.talents.points > 0
+                ? `送你 ${state.talents.points} 个天赋点，点 👥 看看`
+                : "戳屏幕摸鱼，攒够 15 解锁第一件升级",
           );
         }
       }

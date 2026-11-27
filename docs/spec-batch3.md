@@ -2,6 +2,10 @@
 
 > 实现：`src/engine/decor.ts`、`src/engine/energy.ts`、`src/render/scene.ts`（drawDecor）、`src/ui/team-panel.ts`（工位 tab）
 
+## 零、首位同事新人价
+- 还没有任何同事时，招募第一位同事为**新人价 1,500**（原价 12,000），让新手目标链能在 2-3 分钟内走完
+- 招募后恢复原价
+
 ## 一、工位经营（8 件家具）
 
 | 家具 | 价格 | 加成 | 场景表现 |

@@ -84,7 +84,7 @@ export class Quest {
     {
       id: "zhaomu",
       doneText: "第一位同事 已入职",
-      text: () => "点右下 👥 招募第一位同事：他会帮你自动摸鱼",
+      text: () => "点右下 👥 招募第一位同事（新人价 1,500）：他会帮你自动摸鱼",
       done: (s) => Object.keys(s.team.colleagues).length > 0,
       progress: (s) => Math.min(1, Object.keys(s.team.colleagues).length),
     },

@@ -22,8 +22,8 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { runChrome, connect, sleep } from "./lib/chrome.mjs";
 
 const PROD = "https://luojindui.github.io/moyu/";
-const SHOTS = "playtest/r17-collector-shots";
-const OUT = "playtest/r17-collector-live.json";
+const SHOTS = "playtest/r17-collector-shots-v061";
+const OUT = "playtest/r17-collector-live-v061.json";
 mkdirSync(SHOTS, { recursive: true });
 
 const t0 = Date.now();
@@ -31,13 +31,14 @@ const log = (...a) => console.log(`[${((Date.now() - t0) / 1000).toFixed(1)}s]`,
 const R = {
   startedAt: new Date().toISOString(),
   url: PROD,
+  version: "v0.6.1",
   expected: {
-    // 与 playtest/r17-collector-engine.test.ts 输出一致
+    // 与 playtest/r17-collector-engine.test.ts 输出一致（v0.6.1：成就等级每级 +2% 挂机）
     A: { clickHud: "3841", idleHud: "220.2", achSummary: "3/22 · Lv.1" },
-    B: { clickBefore: "3841", clickAfterDouble: "3996.2", clickAfterSingleIfNoDoubleBug: "3917.8", idleHud: "220.2", achSummaryAfter: "4/22 · Lv.2" },
-    C: { idleHud: "1795.2", achSummary: "4/22 · Lv.2" },
-    D: { idleHud: "224.6", achSummary: "4/22 · Lv.2" },
-    E: { achSummary: "20/22 · Lv.6", rank14: "13/14", talent18: "14/18" },
+    B: { clickBefore: "3841", clickAfterDouble: "3996.2", clickAfterSingleIfNoDoubleBug: "3917.8", idleBefore: "220.2", idleAfterLevelReward: "224.6", achSummaryAfter: "4/22 · Lv.2" },
+    C: { idleHud: "1831.1", achSummary: "4/22 · Lv.2" },
+    D: { idleHud: "229.1", achSummary: "4/22 · Lv.2" },
+    E: { achSummary: "22/22 · Lv.6", rank14: "14/14", talent18: "13/13" },
     F: { achSummary: "5/22 · Lv.2" },
   },
   errors: [],
@@ -101,8 +102,9 @@ const saveStuck = (today) => {
     collected: fullCollected(),
     totalClicks: 100000,
     bestIdleRate: 1e6,
-    rankIndex: 13,
+    rankIndex: 14,
     surviveStreak: 10,
+    bestSurviveStreak: 10,
     cardsChosenTotal: 5,
     decor: ["plant", "lamp", "rug", "fridge", "chair", "aquarium", "projector", "catbed"],
     team: { colleagues: cols },

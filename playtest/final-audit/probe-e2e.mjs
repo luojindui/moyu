@@ -181,13 +181,14 @@ await runChrome(async ({ port }) => {
     await openPanel(c, "#btn-team", "#team");
     r.expect("C2 小队面板打开", await visible(c, "#team"));
     const rec = await ev(c, `(() => { const b = document.querySelector('button[data-act="recruit"][data-id="zhou"]'); return b ? { disabled: b.disabled, text: b.textContent.trim() } : null; })()`);
+    const recruitPrice = await modEval(c, "/src/engine/team.ts", "M.recruitCostOf(window.__MOYU__.state, 'zhou')");
     r.expect("C3 老周招募按钮可用", rec && !rec.disabled, JSON.stringify(rec));
     const m0 = (await state(c)).moyu;
     await click(c, 'button[data-act="recruit"][data-id="zhou"]');
     await sleep(350);
     const s1 = await state(c);
     r.expect("C4 招募成功", s1.team.colleagues.zhou && s1.team.colleagues.zhou.level === 1, JSON.stringify(Object.keys(s1.team.colleagues)));
-    r.expect("C5 招募扣 12000", Math.abs(m0 - 12000 - s1.moyu) < 20, `${m0.toFixed(0)}→${s1.moyu.toFixed(0)}`);
+    r.expect("C5 招募按实际价格扣款", Math.abs(m0 - recruitPrice - s1.moyu) < 20, `价格 ${recruitPrice}：${m0.toFixed(0)}→${s1.moyu.toFixed(0)}`);
     // 面板显示与引擎同口径（da93ce4 修复项）
     const summaryText = (await text(c, ".team-summary")) ?? "";
     const fmtTeam = await fmtEngine("Math.round(M.teamIdleBreakdown(window.__MOYU__.state).total)", "/src/engine/upgrades.ts");

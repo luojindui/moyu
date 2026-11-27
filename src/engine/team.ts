@@ -233,17 +233,28 @@ export function teamSize(state: GameState): number {
   return COLLEAGUES.filter((d) => state.team.colleagues[d.id]).length;
 }
 
+/** 首位同事的新人价（12,000 → 1,500）：让新手目标链第 8 步能在经验内完成 */
+export const FIRST_COLLEAGUE_PRICE = 1_500;
+
+/** 该同事当前的实际招募价（首位同事有新人价折扣） */
+export function recruitCostOf(state: GameState, id: string): number {
+  const def = colleagueDef(id);
+  if (!def) return 0;
+  const isFirst = Object.keys(state.team.colleagues).length === 0;
+  return isFirst ? FIRST_COLLEAGUE_PRICE : def.cost;
+}
+
 export function canRecruit(state: GameState, id: string): boolean {
   const def = colleagueDef(id);
   if (!def) return false;
   if (state.team.colleagues[id]) return false;
-  return state.moyu >= def.cost;
+  return state.moyu >= recruitCostOf(state, id);
 }
 
 export function recruit(state: GameState, id: string): GameState | null {
   if (!canRecruit(state, id)) return null;
-  const def = colleagueDef(id)!;
-  const paid = pay(state, def.cost);
+  const price = recruitCostOf(state, id);
+  const paid = pay(state, price);
   return {
     ...paid,
     team: {

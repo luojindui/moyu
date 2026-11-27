@@ -9,6 +9,7 @@ import {
   MISSIONS,
   MAX_COLLEAGUE_LEVEL,
   canRecruit,
+  recruitCostOf,
   claimableCount,
   claimableTotal,
   colleagueDef,
@@ -302,7 +303,8 @@ export class TeamPanel {
       if (btn.dataset.act === "recruit") {
         const ok = canRecruit(state, id);
         btn.disabled = !ok;
-        const next = ok ? `招募 ${formatMoyu(def.cost)}` : `攒够再招 ${formatMoyu(def.cost)}`;
+        const price = recruitCostOf(state, def.id);
+        const next = ok ? `招募 ${formatMoyu(price)}` : `攒够再招 ${formatMoyu(price)}`;
         if (btn.textContent?.trim() !== next) btn.textContent = next;
       } else if (btn.dataset.act === "upgrade") {
         const cur = state.team.colleagues[id];
@@ -377,7 +379,7 @@ export class TeamPanel {
           <div class="mate-skill" style="color:#8be28b">被动：${traitLabel(def.trait)}（${traitValueText(def)}）</div>
           <div class="mate-actions">
             <button data-act="recruit" data-id="${def.id}" ${affordable ? "" : "disabled"}>
-              ${affordable ? "招募" : "攒够再招"} ${formatMoyu(def.cost)}
+              ${affordable ? "招募" : "攒够再招"} ${formatMoyu(recruitCostOf(state, def.id))}
             </button>
           </div>
         </div>`);

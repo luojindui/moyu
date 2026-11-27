@@ -1,0 +1,16 @@
+label=flow
+mode=tester
+frames=70
+events=34052
+steps=24
+firstToasts=["5674:今日卡：团建吃饭","16284:图鉴 +1（1/55）","22971:日报可领 +720，点右下 📔","23151:老李：……我刚才要说什么来着？ +90"]
+questDoneAt=62391
+claimAt=24217
+recruitAt=28614
+recruitWall={"balance":"803.5","recruit":{"text":"攒够再招 1.20万","disabled":true}}
+arcadeResult="接咖啡 结束 / 110 分 / 本局奖励 +20 摸鱼值 / 🎉 新纪录！（旧 0） / 接住 13 · 漏接 13 · 最高连击 1 / 再来一局 返回摸鱼站"
+taps=182
+finalHud={"moyu":"1.19万","click":"12.2","idle":"24.5","rank":"学徒 16%","card":"卡·团建吃饭","combo":"连×20","streak":"🔥连胜 1"}
+badgeStates=3
+endOnboarding=false
+endBadges={"arcade":{"n":1,"texts":["2"],"displays":["block"],"visible":1},"talent":{"n":1,"texts":["天赋"],"displays":["block"],"visible":1},"energy":{"n":1,"texts":["精力 60"],"displays":["block"],"visible":1},"mission":{"n":0,"texts":[],"displays":[],"visible":0}}
