@@ -43,7 +43,7 @@ describe("R7 长线：回访提升离线效率（回访可挣回 0.7 → 1.0）"
   });
 
   it("streak 里程碑：每满 7 天 +0.05，封顶 +0.15", () => {
-    const s = { ...initialState(), daily: { date: "2026-11-27", goals: [], streak: 7, lastCompleteDate: null, claimed: true } };
+    const s = { ...initialState(), daily: { date: "2026-11-27", goals: [], streak: 7, lastCompleteDate: null, claimed: true, window: 0, claimsToday: 1 } };
     // 0.7 + 0.1(第一次回访) + 0.05 = 0.85
     const s1 = ensureVisits(s, 2 * DAY + 1000);
     expect(offlineEfficiency(s1, 1000, 2 * DAY + 1000)).toBeCloseTo(0.85, 6);

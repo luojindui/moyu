@@ -32,7 +32,7 @@ describe("离职再就业（转生层）", () => {
   it("转生重置本局（余额/等级/本局累计），保留图鉴/日报/历史累计/点击数", () => {
     let s = gain(initialState(), 2e8);
     s = { ...s, levels: { phone: 9 }, collected: { quotes: [1, 2], flavors: [3] }, totalClicks: 1234 };
-    s = { ...s, daily: { date: "2026-11-27", goals: [], streak: 4, lastCompleteDate: "2026-11-26", claimed: true } };
+    s = { ...s, daily: { date: "2026-11-27", goals: [], streak: 4, lastCompleteDate: "2026-11-26", claimed: true, window: 0, claimsToday: 1 } };
     const r = doPrestige(s)!;
     expect(r.gained).toBe(prestigeGain(s));
     expect(r.state.prestige).toBe(r.gained);

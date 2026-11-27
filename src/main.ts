@@ -68,7 +68,8 @@ async function boot(): Promise<void> {
   const today = (): string => new Date().toLocaleDateString("sv-SE"); // YYYY-MM-DD（本地时区）
   // 读档迁移：补齐历史彩蛋档 + 保证今日日报存在
   state = syncFlavorCollection(state);
-  state = ensureDaily(state, today(), Math.random);
+  const dayWindow = (): number => Math.floor(new Date().getHours() / 6); // 每 6 小时一个时段
+  state = ensureDaily(state, today(), Math.random, dayWindow());
   const journal = new Journal(
     () => {
       const r = claimDaily(state, today());
@@ -200,9 +201,19 @@ async function boot(): Promise<void> {
     scene.fx.floatText(scene.w / 2, scene.h * 0.22, text);
   };
   const rng = Math.random;
+  let frameSkip = 0;
   const frame = (now: number): void => {
     const dt = Math.min(1, (now - last) / 1000);
     last = now;
+    // 面板打开 / 页面不可见时降帧（移动端省电；浏览器后台本身会暂停 rAF）
+    const overlayOpen = !document.getElementById("journal")!.classList.contains("hidden");
+    if (overlayOpen || document.visibilityState === "hidden") {
+      frameSkip += 1;
+      if (frameSkip % 3 !== 0) {
+        requestAnimationFrame(frame);
+        return;
+      }
+    }
     lastActiveMs = Date.now();
     scene.gameTime += dt;
     // 随机事件调度（丢梗位置：每次窗口随机出现在场景上半区，并按视口高度防裁剪）
@@ -230,11 +241,12 @@ async function boot(): Promise<void> {
       }
     }
     prevBossActive = bossActive;
-    // 跨日重置日报（长时间挂机不刷新页面）
+    // 跨日/跨时段刷新日报（长时间挂机不刷新页面）
     const d = today();
-    if (state.daily && state.daily.date !== d) {
-      state = ensureDaily(state, d, Math.random);
-      journal.refresh(state);
+    const w = dayWindow();
+    if (state.daily && (state.daily.date !== d || state.daily.window !== w)) {
+      state = ensureDaily(state, d, Math.random, w);
+      journal.refresh(state, true);
     }
     state = advance(state, dt);
     scene.update(dt);
@@ -393,6 +405,11 @@ async function boot(): Promise<void> {
 
   hud.refresh(state);
   shop.refresh(state);
+
+  // 离线可用：注册 Service Worker（仅生产/支持时；失败静默）
+  if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+    navigator.serviceWorker.register("./sw.js").catch(() => undefined);
+  }
 }
 
 function showBootError(err: unknown): void {

@@ -19,7 +19,14 @@ export interface DailyState {
   /** 上一次全完成的日期（判断连续） */
   lastCompleteDate: string | null;
   claimed: boolean;
+  /** 当日第几个时段（0..3，每 6 小时一换）：让 4-6 次/天的碎片回访都有事可做 */
+  window: number;
+  /** 当日已领取次数 */
+  claimsToday: number;
 }
+
+/** 每 6 小时一个时段（4 段/天） */
+export const DAILY_WINDOWS_PER_DAY = 4;
 
 export interface GoalTemplate {
   id: string;
@@ -82,7 +89,10 @@ export function restoreDaily(raw: unknown): DailyState | null {
   const streakRaw = d.streak;
   if (typeof streakRaw !== "number" || !Number.isInteger(streakRaw) || streakRaw < 0) return null;
   const lastCompleteDate = typeof d.lastCompleteDate === "string" ? d.lastCompleteDate : null;
-  return { date: d.date, goals, streak: streakRaw, lastCompleteDate, claimed: d.claimed };
+  const win = typeof d.window === "number" && Number.isInteger(d.window) && d.window >= 0 ? d.window : 0;
+  const claimsToday =
+    typeof d.claimsToday === "number" && Number.isInteger(d.claimsToday) && d.claimsToday >= 0 ? d.claimsToday : 0;
+  return { date: d.date, goals, streak: streakRaw, lastCompleteDate, claimed: d.claimed, window: win, claimsToday };
 }
 
 /** 掷出当日目标（3 个不重复，继承 streak 基础） */
@@ -94,15 +104,31 @@ export function rollDaily(date: string, rng: () => number, prevStreak = 0): Dail
     const t = pool.splice(i, 1)[0]!;
     goals.push({ id: t.id, target: t.target, progress: 0, done: false });
   }
-  return { date, goals, streak: prevStreak, lastCompleteDate: null, claimed: false };
+  return { date, goals, streak: prevStreak, lastCompleteDate: null, claimed: false, window: 0, claimsToday: 0 };
 }
 
 /** 保证当日日报存在：同日幂等；跨日重掷（streak 由 lastCompleteDate 推导保留） */
-export function ensureDaily(state: GameState, date: string, rng: () => number): GameState {
-  if (state.daily && state.daily.date === date) return state;
-  // streak 保留：昨天全完成过 → 保留次数；否则归零（领取时会再 +1）
-  const keptStreak = state.daily?.lastCompleteDate === yesterdayOf(date) ? state.daily.streak : 0;
-  return { ...state, daily: rollDaily(date, rng, keptStreak) };
+export function ensureDaily(state: GameState, date: string, rng: () => number, window = 0): GameState {
+  const d = state.daily;
+  if (d && d.date === date) {
+    // 同日但跨时段：重掷目标（保留 streak 与当日领取次数）
+    if ((d.window ?? 0) !== window) {
+      const rerolled = rollDaily(date, rng, d.streak);
+      return {
+        ...state,
+        daily: { ...rerolled, window, claimsToday: d.claimsToday, lastCompleteDate: d.lastCompleteDate, streak: d.streak },
+      };
+    }
+    return state;
+  }
+  // 跨日：streak 保留（昨天全完成过），当日领取次数清零；保留 lastCompleteDate 供连续判定
+  const prev = state.daily;
+  const keptStreak = prev?.lastCompleteDate === yesterdayOf(date) ? prev.streak : 0;
+  const rolled = rollDaily(date, rng, keptStreak);
+  return {
+    ...state,
+    daily: { ...rolled, window, lastCompleteDate: prev?.lastCompleteDate ?? null, claimsToday: 0 },
+  };
 }
 
 /** 行为计数：kind ∈ click/meme/buy/survive */
@@ -127,10 +153,15 @@ export function claimDaily(state: GameState, date: string): { state: GameState; 
     return { state, claimedReward: null };
   }
   const reward = dailyReward(state);
-  const streak = d.streak + 1;
+  // streak 只在当天第一次领取时 +1（多时段可多领，但连续天数按天算）
+  const firstOfDay = d.lastCompleteDate !== date;
+  const streak = firstOfDay ? (d.lastCompleteDate === yesterdayOf(date) ? d.streak + 1 : Math.max(1, d.streak ? d.streak : 1)) : d.streak;
   const next: GameState = gain(state, reward);
   return {
-    state: { ...next, daily: { ...d, claimed: true, streak, lastCompleteDate: date } },
+    state: {
+      ...next,
+      daily: { ...d, claimed: true, streak, lastCompleteDate: date, claimsToday: (d.claimsToday ?? 0) + 1 },
+    },
     claimedReward: reward,
   };
 }

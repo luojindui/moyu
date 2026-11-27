@@ -1,0 +1,14 @@
+import { CURRENT, LEGACY, noPrestigeRoute, searchRoute, TOTAL_TARGET } from "./probe-r8-speedrun-lib";
+const t0 = Date.now();
+const A = noPrestigeRoute({ model: CURRENT });
+console.log("A idle never:", (A.time/3600).toFixed(1)+"h", Date.now()-t0+"ms");
+const B = searchRoute({ model: CURRENT });
+console.log("B idle prestige:", (B.time/3600).toFixed(1)+"h", "theta="+(B.theta/1e8)+"e8", "n="+B.farmCycles, "P="+B.prestige, "runs="+B.runs.length, Date.now()-t0+"ms");
+const C5 = searchRoute({ model: CURRENT, cps: 5 });
+console.log("C click5 prestige:", (C5.time/3600).toFixed(1)+"h", "theta="+(C5.theta/1e8)+"e8", "n="+C5.farmCycles, "P="+C5.prestige, "runs="+C5.runs.length, Date.now()-t0+"ms");
+const C8 = searchRoute({ model: CURRENT, cps: 8 });
+console.log("C click8 prestige:", (C8.time/3600).toFixed(1)+"h", "theta="+(C8.theta/1e8)+"e8", "n="+C8.farmCycles, "P="+C8.prestige, Date.now()-t0+"ms");
+const B0 = searchRoute({ model: LEGACY });
+console.log("B legacy idle:", (B0.time/3600).toFixed(1)+"h", "theta="+(B0.theta/1e8)+"e8", "n="+B0.farmCycles, "P="+B0.prestige, Date.now()-t0+"ms");
+const C0 = searchRoute({ model: LEGACY, cps: 5 });
+console.log("C legacy click5:", (C0.time/3600).toFixed(1)+"h", "theta="+(C0.theta/1e8)+"e8", "n="+C0.farmCycles, "P="+C0.prestige, Date.now()-t0+"ms");

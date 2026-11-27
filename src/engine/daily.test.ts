@@ -74,7 +74,7 @@ describe("每日摸鱼日报", () => {
     // 独立推定：R7 上调 10× → max(500, 600 × 10.2) = 6120
     expect(r.claimedReward).toBe(6120);
     expect(r.state.daily!.claimed).toBe(true);
-    expect(r.state.daily!.streak).toBe(1);
+    expect(r.state.daily!.streak).toBe(1); // 当日首领 → 1
     // 次日完成 → streak 2
     let s2 = r.state;
     s2 = ensureDaily(s2, "2026-11-27", rng);
@@ -170,5 +170,39 @@ describe("restoreDaily 严格度（final-collect 建议 #2）", () => {
     const over = { ...ok, goals: ok.goals.map((g) => ({ ...g, progress: g.target * 3, done: true })) };
     const d = restoreDaily(over)!;
     expect(d.goals.every((g) => g.progress === g.target)).toBe(true);
+  });
+});
+
+describe("R8 时段刷新（碎片回访有事可做）", () => {
+  it("同日跨时段重掷 3 目标、可再次领取；streak 按天只 +1", () => {
+    let s = initialState();
+    s = ensureDaily(s, "2026-11-27", rng, 0);
+    s.daily!.goals.forEach((g) => {
+      g.progress = g.target;
+      g.done = true;
+    });
+    const r1 = claimDaily(s, "2026-11-27");
+    expect(r1.claimedReward).not.toBeNull();
+    expect(r1.state.daily!.streak).toBe(1);
+    expect(r1.state.daily!.claimsToday).toBe(1);
+    // 进入下一时段（6h 后）
+    let s2 = ensureDaily(r1.state, "2026-11-27", rng, 1);
+    expect(s2.daily!.window).toBe(1);
+    expect(s2.daily!.claimed).toBe(false);
+    expect(s2.daily!.goals.filter((g) => g.done)).toHaveLength(0);
+    s2.daily!.goals.forEach((g) => {
+      g.progress = g.target;
+      g.done = true;
+    });
+    const r2 = claimDaily(s2, "2026-11-27");
+    expect(r2.claimedReward).not.toBeNull();
+    expect(r2.state.daily!.streak).toBe(1); // 同一天，streak 不再 +1
+    expect(r2.state.daily!.claimsToday).toBe(2);
+  });
+
+  it("同日同窗口 ensureDaily 幂等", () => {
+    const a = ensureDaily(initialState(), "2026-11-27", rng, 2);
+    const b = ensureDaily(a, "2026-11-27", rng, 2);
+    expect(b).toBe(a);
   });
 });

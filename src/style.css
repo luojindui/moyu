@@ -291,10 +291,13 @@ body {
 
 /* ---------- 日报 / 图鉴 ---------- */
 #btn-journal {
-  margin-left: auto;
-  flex: 0 0 auto;
-  position: relative;
-  height: 28px;
+  position: fixed;
+  right: 10px;
+  bottom: 186px;
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
   line-height: 1;
   padding: 2px 8px;
   font-size: 15px;
@@ -310,10 +313,7 @@ body {
   animation: journalPulse 1.4s ease-in-out infinite;
 }
 #btn-journal::before {
-  /* 扩大点击热区到 ≥44×44（视觉不变） */
-  content: "";
-  position: absolute;
-  inset: -9px -3px;
+  content: none;
 }
 #btn-journal.has-reward::after {
   content: "";
