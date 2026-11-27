@@ -253,9 +253,57 @@ describe("V5. 规格数值漂移与初始状态", () => {
     expect(COSTS).not.toEqual(documented); // 12000/50万/800万/6000万/4亿 vs 文档 12k/80万/1500万/3亿/60亿
     expect(COSTS).toEqual([12_000, 500_000, 8_000_000, 60_000_000, 400_000_000]);
     expect(COLLEAGUES.map((c) => c.sharePerLevel)).toEqual([0.008, 0.01, 0.012, 0.014, 0.016]);
-    // 决策书：任务倍率 quick=1.2；实现为 1.3（另：小李被动决策书/lead 通告为 +50%，实现 +60%）
-    console.log("[V5] quick 倍率=", MISSIONS[0]!.mult, " 小李 trait=", COLLEAGUES.find((c) => c.id === "li")!.traitValue);
-    expect(MISSIONS[0]!.mult).toBe(1.3); // 与决策书 1.2 不一致（无新决策文档）
+    // 决策书：任务倍率 quick=1.2；实现为 1.45（另新增 3 分钟任务；小李被动决策书 +50%→实现 +60%）
+    const quick = MISSIONS.find((m) => m.id === "quick")!;
+    console.log("[V5] 任务数=", MISSIONS.length, " quick 倍率=", quick.mult, " stroll=", !!MISSIONS.find((m) => m.id === "stroll"), " 小李 trait=", COLLEAGUES.find((c) => c.id === "li")!.traitValue);
+    expect(quick.mult).toBe(1.45); // 与决策书 1.2 不一致（无新决策文档）
+    expect(MISSIONS).toHaveLength(6); // 新增 3 分钟任务（规格为 5 个任务）
     expect(COLLEAGUES.find((c) => c.id === "li")!.traitValue).toBe(0.6);
+  });
+});
+
+
+describe("V6. 本轮新增：好感 20/60 效果 / 每日天赋点 / 新任务", () => {
+  it("V6a 好感 20：全队派遣奖励 +8%；好感 60：丢梗奖励 +10%（快照包含 +8%）", async () => {
+    const { favorBonuses } = await import("../src/engine/team");
+    const base = withColleagues(withLevels(rich(), { retire: 10 }), ["zhou"], 1);
+    const f19 = { ...base, team: { colleagues: { zhou: { ...base.team.colleagues["zhou"]!, favor: 19 } } } };
+    const f20 = { ...base, team: { colleagues: { zhou: { ...base.team.colleagues["zhou"]!, favor: 20 } } } };
+    expect(favorBonuses(f20).dispatchMult).toBeCloseTo(1.08, 6);
+    const d19 = dispatchAt(f19, "zhou", "quick", 0, 1000);
+    const d20 = dispatchAt(f20, "zhou", "quick", 0, 1000);
+    console.log("[V6a] 好感19快照=", d19.state.team.colleagues["zhou"]!.rewardSnapshot, " 好感20快照=", d20.state.team.colleagues["zhou"]!.rewardSnapshot);
+    expect(d20.state.team.colleagues["zhou"]!.rewardSnapshot / d19.state.team.colleagues["zhou"]!.rewardSnapshot).toBeCloseTo(1.08, 2);
+    const f60 = { ...base, team: { colleagues: { zhou: { ...base.team.colleagues["zhou"]!, favor: 60 } } } };
+    expect(favorBonuses(f60).memeMult).toBeCloseTo(1.1, 6);
+    // 好感 80 仍是全队固定挂机 ×1.1（未按 +2%/人）
+    const f80 = { ...base, team: { colleagues: { zhou: { ...base.team.colleagues["zhou"]!, favor: 80 } } } };
+    const station = stationIdleScaled(f80);
+    const share = station * teamShareRatio(f80);
+    const fixedPart = effectOf(f80).idleRate - station - share;
+    expect(fixedPart).toBeCloseTo(22, 6);
+  });
+
+  it("V6b 每日天赋点：同日幂等、上限 18、dailyGiftDate 入档", async () => {
+    const { grantDailyTalentPoint, emptyTalents, TALENT_POINT_CAP } = await import("../src/engine/talents");
+    expect(TALENT_POINT_CAP).toBe(18);
+    const g1 = grantDailyTalentPoint(emptyTalents(), "2026-11-27");
+    expect(g1.granted).toBe(1);
+    expect(g1.talents.dailyGiftDate).toBe("2026-11-27");
+    expect(grantDailyTalentPoint(g1.talents, "2026-11-27").granted).toBe(0); // 同日不再发
+    const full = { ...emptyTalents(), points: 18 };
+    const g2 = grantDailyTalentPoint(full, "2026-11-28");
+    expect(g2.granted).toBe(0); // 满点不产出
+    expect(g2.talents.dailyGiftDate).toBe("2026-11-28"); // 但记日期
+    // 存档 roundtrip
+    const { restore, serialize } = await import("../src/engine/save");
+    const { memoryAdapter } = await import("./probe-r12-aud2-lib");
+    const s = { ...initialState(), moyu: 0, totalEarned: 0, lifetimeEarned: 0, talents: { unlocked: [], points: 3, rankGranted: -1, dailyGiftDate: "2026-11-27" } };
+    const a = memoryAdapter();
+    const now = Date.now();
+    serialize(s, a, now);
+    const back = restore(a, now).state!;
+    expect(back.talents.dailyGiftDate).toBe("2026-11-27");
+    console.log("[V6b] 每日天赋点幂等/上限/入档 ✓（新增点数来源，规格未列）");
   });
 });

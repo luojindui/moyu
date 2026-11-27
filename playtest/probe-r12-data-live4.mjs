@@ -48,6 +48,8 @@ try {
 
   // ---------- Phase A：一键领取显示 = 实际 ----
   await freshPage();
+  await b.ev("__MOYU__.reset(); true"); // 彻底回到初始局（清档 reload 会被退出前存档抢写）
+  await sleep(300);
   await b.ev("__MOYU__.grant(1e11); true");
   await sleep(200);
   await b.ev(`(() => { for (let i = 0; i < 60; i++) document.querySelector('#shop-cards button[data-upgrade="phone"]')?.click(); return true; })()`);
@@ -76,8 +78,10 @@ try {
 
   // ---------- Phase B：暴击入账 ----------
   await freshPage();
+  await b.ev("__MOYU__.reset(); true");
+  await sleep(300);
   await b.ev("__MOYU__.grant(1e12); true");
-  await sleep(500); // 段位天赋点由主循环发放
+  await sleep(600); // 段位天赋点由主循环发放
   const pts0 = await b.ev("__MOYU__.state.talents.points");
   await b.ev("document.getElementById('btn-team').click(); true");
   await sleep(400);
@@ -90,6 +94,7 @@ try {
   await sleep(300);
   ev.phases.critPre = await b.ev(`(() => { const s = __MOYU__.state; return { levels: s.levels, prestige: s.prestige, hudClick: document.getElementById('hud-click').textContent, hudIdle: document.getElementById('hud-idle').textContent, totalClicks: s.totalClicks, unlocked: s.talents.unlocked }; })()`);
   // Round 1：仅 click_1，无暴击
+  const idle1 = await b.ev("__MOYU__.state.levels && null");
   const t0 = await b.ev("__MOYU__.state.totalEarned");
   const clicks1 = await tap(40, 100);
   const t1 = await b.ev("__MOYU__.state.totalEarned");
@@ -126,6 +131,8 @@ try {
 
   // ---------- Phase C：小李短任务 ----------
   await freshPage();
+  await b.ev("__MOYU__.reset(); true");
+  await sleep(300);
   await b.ev("__MOYU__.grant(1e12); true");
   await sleep(300);
   await b.ev(`(() => { for (let i = 0; i < 80; i++) document.querySelector('#shop-cards button[data-upgrade="phone"]')?.click(); return true; })()`);

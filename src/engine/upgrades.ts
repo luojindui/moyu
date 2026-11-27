@@ -1,6 +1,6 @@
 import type { GameState } from "./state";
 import { prestigeMultiplier } from "./prestige";
-import { teamFixedRate, teamShareRatio, favorTier } from "./team";
+import { favorBonuses, teamFixedRate, teamShareRatio } from "./team";
 import { talentEffects } from "./talents";
 
 export interface UpgradeDef {
@@ -87,7 +87,7 @@ export function conversionBonus(state: GameState): number {
   }
   // click_5b：立即 +12%，每 1000 点击再 +1%（封顶 +20%）
   if (talent.clickUltBase > 0) {
-    bonus += Math.min(0.2, talent.clickUltBase + Math.floor(state.totalClicks / 1000) * talent.clickUltPerK);
+    bonus += Math.min(0.32, talent.clickUltBase + Math.floor(state.totalClicks / 1000) * talent.clickUltPerK);
   }
   return bonus;
 }
@@ -97,6 +97,19 @@ export function stationIdleScaled(state: GameState): number {
   const mult = prestigeMultiplier(state.prestige) * collectionBonus(state);
   const talent = talentEffects(state.talents);
   return stationIdleOf(state) * mult * talent.idleMult * (1 + conversionBonus(state));
+}
+
+/** 假设所有同事都在家（未派遣）时的挂机收益，用于计算派遣净收益 */
+export function idleIfHome(state: GameState): number {
+  const home: GameState = {
+    ...state,
+    team: {
+      colleagues: Object.fromEntries(
+        Object.entries(state.team.colleagues).map(([k, v]) => [k, { ...v, missionId: null, endsAt: 0 }]),
+      ),
+    },
+  };
+  return effectOf(home).idleRate;
 }
 
 /** 状态合计加成（含底薪/同事） */
@@ -111,14 +124,16 @@ export function effectOf(state: GameState): { clickPower: number; idleRate: numb
   const talent = talentEffects(state.talents);
 
   // 工位部分（吃满倍率 + 天赋转化）
-  const station = stationIdleOf(state) * mult * talent.idleMult * (1 + conversionBonus(state));
+  const rawStation = stationIdleOf(state) * mult; // 未放大（share 基数）
+  const station = rawStation * talent.idleMult * (1 + conversionBonus(state));
   // 同事固定部分（吃转生/图鉴，但不吃挂机天赋——避免双重放大）
-  const favorIdleBonus = favorTier(state) >= 4 ? 1.1 : 1;
+  const favorIdleBonus = favorBonuses(state).idleMult;
   // 天赋 idle_5b：同事挂机 +40%
   const teamMult = talent.teamIdleMult;
   const teamFixed = teamFixedRate(state) * mult * favorIdleBonus * teamMult;
   // 同事占比部分：以工位为基数（同样吃 idle_5b）
-  const teamShare = station * teamShareRatio(state) * teamMult;
+  // share 以"未放大工位"为基数，避免被挂机天赋二次放大
+  const teamShare = rawStation * teamShareRatio(state) * teamMult;
 
   return {
     clickPower: clickPower * mult,

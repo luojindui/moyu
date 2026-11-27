@@ -1,8 +1,8 @@
 import { describe, it, expect } from "vitest";
 import { initialState, type GameState } from "./state";
 import {
-  MAX_TIER,
   TALENT_POINT_CAP,
+  talentCostOf,
   TALENTS,
   TALENT_POINTS_PER_PRESTIGE,
   branchTier,
@@ -62,23 +62,24 @@ describe("天赋树（18 个：3 流派 × 4 线性 + 2 互斥终极）", () => 
     expect(canUnlock(t.talents, "click_5b")).toBe(true);
   });
 
-  it("终极要 2 点且需 tier4 前置", () => {
+  it("终极要 3 点且需 tier4 前置", () => {
     let t = withPoints(10);
     for (const id of ["idle_1", "idle_2", "idle_3"]) t = unlockTalent(t, id)!;
     expect(canUnlock(t.talents, "idle_5a")).toBe(false); // 缺 tier4
     t = unlockTalent(t, "idle_4")!;
     const before = t.talents.points;
     t = unlockTalent(t, "idle_5a")!;
-    expect(costOfTalent("idle_5a")).toBe(2);
-    expect(t.talents.points).toBe(before - 2);
+    expect(costOfTalent("idle_5a")).toBe(3);
+    expect(t.talents.points).toBe(before - 3);
   });
 
-  it("重置返还全部点数（含终极的 2 点）", () => {
-    let s = withPoints(10);
+  it("重置返还全部点数（含终极的 3 点）", () => {
+    let s = withPoints(20);
     for (const id of ["idle_1", "idle_2", "idle_3", "idle_4", "idle_5a"]) s = unlockTalent(s, id)!;
-    expect(s.talents.points).toBe(10 - 1 - 1 - 1 - 1 - 2);
+    expect(s.talents.points).toBe(20 - 1 - 1 - 2 - 2 - 3);
     const r = resetTalents(s);
-    expect(r.talents.points).toBe(10);
+    // 上限 27，返还后为 20
+    expect(r.talents.points).toBe(20);
     expect(r.talents.unlocked).toEqual([]);
   });
 
@@ -147,12 +148,14 @@ describe("天赋树（18 个：3 流派 × 4 线性 + 2 互斥终极）", () => 
     expect(eb.surviveToIdle).toBe(false);
   });
 
-  it("满树需要 18 点但只能点 14 个左右（存在真实取舍）", () => {
-    // 全树 18 个天赋，但互斥导致最多点亮 15 个（每流派 4+1）
-    const maxPickable = 3 * (MAX_TIER - 1 + 1); // 4 线性 + 1 终极
-    expect(maxPickable).toBe(15);
-    const totalCost = 3 * (1 + 1 + 1 + 1 + 2); // 每流派 6 点
-    expect(totalCost).toBe(18);
-    expect(TALENT_POINT_CAP).toBe(18);
+  it("满树 27 点（每流派 9 点），单流派 9 点", () => {
+    expect(talentCostOf(1)).toBe(1);
+    expect(talentCostOf(2)).toBe(1);
+    expect(talentCostOf(3)).toBe(2);
+    expect(talentCostOf(4)).toBe(2);
+    expect(talentCostOf(5)).toBe(3);
+    const perBranch = 1 + 1 + 2 + 2 + 3;
+    expect(perBranch).toBe(9);
+    expect(TALENT_POINT_CAP).toBe(perBranch * 3);
   });
 });

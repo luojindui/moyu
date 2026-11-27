@@ -5,7 +5,7 @@ import { effectOf, stationIdleScaled } from "./engine/upgrades";
 import { advance } from "./engine/tick";
 import { settleReturn } from "./engine/resume";
 import { CLICK_MEMES, MEME_QUOTES } from "./engine/flavor";
-import { serialize, restore, clearSave, encodeSaveCode, decodeSaveCode, SAVE_KEY, type SaveAdapter } from "./engine/save";
+import { serialize, restore, clearSave, encodeSaveCode, decodeSaveCode, backupNewerSave, SAVE_KEY, type SaveAdapter } from "./engine/save";
 import {
   newEventState,
   scheduleEvents,
@@ -28,7 +28,7 @@ import { Welcome } from "./ui/welcome";
 import { Journal } from "./ui/journal";
 import { Quest } from "./ui/quest";
 import { TeamPanel } from "./ui/team-panel";
-import { claimMission, colleagueDef, recruit, upgradeColleague, dispatch as dispatchMission , setAutoRepeat } from "./engine/team";
+import { claimMission, colleagueDef, recruit, upgradeColleague, dispatch as dispatchMission , setAutoRepeat, favorTier } from "./engine/team";
 import { grantDailyTalentPoint, grantRankTalents, resetTalents, talentEffects, unlockTalent } from "./engine/talents";
 import { initAudio, playClick, playBreak, playSuccess, toggleMute, isMuted } from "./ui/audio";
 import { Scene, SPRITE_MAP } from "./render/scene";
@@ -431,7 +431,7 @@ async function boot(): Promise<void> {
     }
     // 天赋 event_4：巡逻提前 2s 预警
     {
-      const warnSec = talentEffects(state.talents).patrolWarnSeconds;
+      const warnSec = talentEffects(state.talents).patrolWarnSeconds + (favorTier(state) >= 1 ? 1 : 0);
       const untilBoss = es.nextBossAt - scene.gameTime;
       if (warnSec > 0 && es.bossUntil < 0 && untilBoss > 0 && untilBoss <= warnSec && !warnedBoss) {
         warnedBoss = true;
@@ -496,7 +496,7 @@ async function boot(): Promise<void> {
         const dg = grantDailyTalentPoint(state.talents, today);
         if (dg.granted > 0) {
           state = { ...state, talents: dg.talents };
-          teamPanel.refreshNow(state);
+          teamPanel.refresh(state);
           showToast("今日签到：天赋点 +1");
         }
       }
@@ -508,7 +508,7 @@ async function boot(): Promise<void> {
         if (g.granted > 0) {
           state = { ...state, talents: g.talents };
           toast(`段位奖励：天赋点 +${g.granted}`);
-          teamPanel.refreshNow(state);
+          teamPanel.refresh(state);
           serialize(state, localStorageAdapter, Date.now());
         }
       }
@@ -541,6 +541,16 @@ async function boot(): Promise<void> {
         for (const cid of ["zhou", "mei", "qiang", "li", "wang"]) {
           const c2 = state.team.colleagues[cid];
           if (c2 && c2.missionId !== null && nowMs >= c2.endsAt) doneNow.add(cid);
+        }
+        // 自动重复的同事：完成后自动领取并续班（否则离线会停摆且仍吃离岗折损）
+        for (const cid of doneNow) {
+          const c2 = state.team.colleagues[cid];
+          if (!c2 || !c2.autoRepeat) continue;
+          const r = claimMission(state, cid, nowMs, stationIdleScaled(state));
+          if (r) {
+            state = r.state;
+            teamPanel.refresh(state);
+          }
         }
         for (const cid of doneNow) {
           if (!lastDoneMissions.has(cid)) {
@@ -593,6 +603,9 @@ async function boot(): Promise<void> {
     }
   };
   let suppressSave = false; // rewindSave 后暂停写档，避免覆盖回拨的时间戳
+  // 启动时先备份"更高版本"的存档（防本客户端降级覆盖新数据）
+  backupNewerSave(localStorageAdapter);
+
   const saveTimer = setInterval(() => {
     if (!suppressSave) serialize(state, localStorageAdapter, Date.now());
   }, 10_000);
@@ -662,7 +675,7 @@ async function boot(): Promise<void> {
         if (c.missionId) cols[id] = { ...c, startedAt: now - 1000, endsAt: now - 1 };
       }
       state = { ...state, team: { colleagues: cols } };
-      teamPanel.refreshNow(state);
+      teamPanel.refresh(state);
     },
     get fps(): number {
       return debug.fps;
@@ -695,7 +708,7 @@ async function boot(): Promise<void> {
       state = gain(state, Math.max(0, n));
       hud.refresh(state);
       shop.refresh(state);
-      teamPanel.refreshNow(state);
+      teamPanel.refresh(state);
       journal.refresh(state, true);
     },
     reset(): void {

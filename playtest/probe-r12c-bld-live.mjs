@@ -64,6 +64,11 @@ async function hookText() {
 async function ev(js) {
   return JSON.parse(await b.ev(`JSON.stringify(${js})`));
 }
+/** 直接求值（用于 async IIFE：不要包 JSON.stringify，否则拿到 "{}"） */
+async function evRaw(expr) {
+  const v = await b.ev(expr);
+  return typeof v === "string" ? JSON.parse(v) : v;
+}
 
 await b.send("Page.enable");
 await b.send("Runtime.enable");
@@ -87,7 +92,7 @@ const TODAY = new Date().toLocaleDateString("sv-SE");
   await setConfig({ levels: { coffee: 20, water: 20, chair: 20 }, unlocked: ["click_1", "click_2", "click_3", "click_4"], points: 0 });
   await b.ev("window.__texts=[];window.__crit=0;1");
   const s0 = await ev("window.__MOYU__.state");
-  const eng = await ev(`(async()=>{const A=await import('/src/engine/actions.ts');const U=await import('/src/engine/upgrades.ts');const s=${JSON.stringify(s0)};return {click:A.clickPowerOf(s),cap:A.comboCapOf(s),idle:U.effectOf(s).idleRate};})()`);
+  const eng = await evRaw(`(async()=>{const A=await import('/src/engine/actions.ts');const U=await import('/src/engine/upgrades.ts');const s=${JSON.stringify(s0)};return JSON.stringify({click:A.clickPowerOf(s),cap:A.comboCapOf(s),idle:U.effectOf(s).idleRate});})()`);
   const t0 = Date.now();
   await tap(19, 105);
   await tap(1, 20);
@@ -160,7 +165,7 @@ async function warnRun(unlocked, label) {
 // D) idle_4：3 次回访/天，离线效率应 >100%
 {
   await setConfig({ levels: { phone: 60 }, unlocked: ["idle_1", "idle_2", "idle_3", "idle_4"], points: 0, visits: 3, visitsDate: TODAY });
-  const eff = await ev(
+  const eff = await b.ev(
     "(async()=>{const P=await import('/src/engine/progression.ts');const s=window.__MOYU__.state;const now=Date.now();return P.offlineEfficiency(s, now-30*86400000, now);})()",
   );
   out.checks.idle4 = { visitsCount: 3, eff: +Number(eff).toFixed(3), over100: eff > 1 };

@@ -1,15 +1,15 @@
 {
-  "startedAt": "2026-11-27T08:54:06.313Z",
+  "startedAt": "2026-11-27T08:57:09.584Z",
   "scenarios": {
     "L1": {
       "summaryText": "已招募 0/5 · 小队挂机 +0/秒",
       "countdownBeforeEnd": "⏳ 溜一圈 进行中 · 12:45",
       "badge": "1",
-      "claimText": "领取 +390",
-      "snapshot": 390,
-      "moyuDelta": 393.03024000000005,
-      "expectedSnapshot": 390,
-      "idleAccrual": 3.030240000000049,
+      "claimText": "领取 +435",
+      "snapshot": 435,
+      "moyuDelta": 438.0302400000037,
+      "expectedSnapshot": 435,
+      "idleAccrual": 3.030240000003687,
       "favor": 2,
       "missionCleared": true,
       "badgeAfter": "1",
@@ -22,9 +22,9 @@
         "领取 +5000",
         "领取 +6000"
       ],
-      "moyuDelta": 13778.194460239998,
+      "moyuDelta": 12449.240720000003,
       "snapshotSum": 11000,
-      "idleAccrual": 2778.194460239998,
+      "idleAccrual": 1449.2407200000034,
       "note": "一键按钮显示值=快照合计（96117f2 修复），实到账=快照之和 11000"
     },
     "L3": {
@@ -35,16 +35,16 @@
       "fast30ms": {
         "rect": {
           "rect": {
-            "x": 93.0546875,
+            "x": 194.984375,
             "y": 360.578125
           }
         },
-        "missionId": "quick"
+        "missionId": null
       },
       "slow250ms": {
         "rect": {
           "rect": {
-            "x": 93.0546875,
+            "x": 194.984375,
             "y": 360.578125
           }
         },
@@ -67,15 +67,15 @@
         "摸鱼气场（终极·2点）",
         "老板眼线（终极·2点）"
       ],
-      "pointsLabelBefore": "天赋点 10",
-      "pointsAfterLinear": 6,
+      "pointsLabelBefore": "天赋点 11",
+      "pointsAfterLinear": 7,
       "unlockedAfterLinear": [
         "click_1",
         "click_2",
         "click_3",
         "click_4"
       ],
-      "pointsAfterUlt": 4,
+      "pointsAfterUlt": 5,
       "unlockedAfterUlt": [
         "click_1",
         "click_2",
@@ -88,7 +88,7 @@
         "text": "点亮 2",
         "desc": "5\n指尖风暴（终极·2点） 立即 +12% 挂机；此后每 1000 次累计点击再 +1%（封顶 +20%）+ 点击力 +60% · 与另一个终极互斥\n点亮 2"
       },
-      "resetPoints": 10,
+      "resetPoints": 11,
       "resetUnlocked": [],
       "confirmCalls": 1,
       "note": "18 节点 / 终极标 2 点 / 选 5a 后 5b 禁用 / 重置有 confirm"
@@ -110,13 +110,13 @@
         "moyu-save"
       ],
       "saveVersionAfterBoot": 2,
-      "saveMoyuAfterBoot": 0.35160000000000013,
+      "saveMoyuAfterBoot": 0.3552400000381471,
       "newerBackup": null,
       "note": "P1-5 复验：v3 档被 v2 客户端覆盖，moyu-save.newer.bak 未生成（备份函数仍未调用）"
     },
     "L7": {
       "critClick": {
-        "delta": 6.299979999999997,
+        "delta": 6.3033199999999985,
         "clicksBefore": 19,
         "clicksAfter": 20
       },
@@ -149,17 +149,17 @@
       ],
       "summary": "已招募 5/5 · 小队挂机 +7010/秒",
       "autoText": [
-        "自动重复：开",
         "自动重复：关",
         "自动重复：关",
         "自动重复：关",
-        "自动重复：关"
+        "自动重复：关",
+        "自动重复：开"
       ],
       "blobSnapshotBeforeReload": {
         "level": 5,
         "missionId": "coffee",
-        "startedAt": 1795769685989,
-        "endsAt": 1795798487989,
+        "startedAt": 1795769868882,
+        "endsAt": 1795798670882,
         "favor": 0,
         "autoRepeat": true,
         "rewardSnapshot": 123456
@@ -167,8 +167,8 @@
       "afterReload": {
         "level": 5,
         "missionId": "coffee",
-        "startedAt": 1795769685989,
-        "endsAt": 1795798487989,
+        "startedAt": 1795769868882,
+        "endsAt": 1795798670882,
         "favor": 0,
         "autoRepeat": true,
         "rewardSnapshot": 123456
@@ -181,7 +181,18 @@
       "badgeWhileOpenAfterClaim": null,
       "badgeAfterClosePanel": null,
       "note": "面板打开期间领取后角标仍显示 1（refreshNow 打开时只 render 不更新角标），关闭面板才同步"
+    },
+    "L11": {
+      "firstOpen": {
+        "points": 1,
+        "dailyGiftDate": "2026-11-27"
+      },
+      "afterReload": {
+        "points": 1,
+        "dailyGiftDate": "2026-11-27"
+      },
+      "note": "每日首开 +1 天赋点；同日刷新不再重复发"
     }
   },
-  "finishedAt": "2026-11-27T08:54:56.748Z"
+  "finishedAt": "2026-11-27T08:58:05.936Z"
 }

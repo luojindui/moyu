@@ -30,7 +30,9 @@ export function offlineEfficiency(state: GameState, createdAtMs: number, nowMs: 
   const visits = Math.min(state.visits.count, VISIT_BONUS_MAX_VISITS);
   const streakDays = state.daily?.streak ?? 0;
   const streakBonus = Math.min(STREAK_BONUS_MAX, STREAK_BONUS_STEP * Math.floor(streakDays / STREAK_BONUS_DAYS));
-  const talentBase = talentEffects(state.talents).offlineBaseBonus;
+  const eff = talentEffects(state.talents);
+  const talentBase = eff.offlineBaseBonus;
+  const eventBonus = eff.offlineEfficiencyBonus;
   // 好感 40 里程碑：离线基础效率 +3%
   const favorBase = favorTier(state) >= 2 ? 0.03 : 0;
   // 小美被动：在队期间离线基础效率 +2%
@@ -38,6 +40,6 @@ export function offlineEfficiency(state: GameState, createdAtMs: number, nowMs: 
   // idle_4：离线效率上限可超过 100%（上限随天赋 +talentBase 提高）
   return Math.min(
     1 + talentBase,
-    0.7 + talentBase + favorBase + teamBase + visits * VISIT_BONUS_STEP + streakBonus,
+    0.7 + talentBase + eventBonus + favorBase + teamBase + visits * VISIT_BONUS_STEP + streakBonus,
   );
 }

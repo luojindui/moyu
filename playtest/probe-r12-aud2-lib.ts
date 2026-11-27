@@ -29,7 +29,7 @@ export function withColleagues(state: GameState, ids: string[], level = MAX_COLL
 }
 
 export function withTalents(state: GameState, ids: string[], points = 0, rankGranted = state.talents.rankGranted): GameState {
-  const talents: TalentState = { unlocked: [...ids], points, rankGranted };
+  const talents: TalentState = { unlocked: [...ids], points, rankGranted, dailyGiftDate: "" };
   return { ...state, talents };
 }
 

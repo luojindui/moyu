@@ -1,0 +1,66 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "head": "96117f2",
+  "checks": {
+    "save18": {
+      "loaded": 18,
+      "ok": true
+    },
+    "badge": {
+      "badge": true,
+      "text": "天赋"
+    },
+    "crit": {
+      "critFloatCount": 52,
+      "pageLoadsDuringCrit": 2,
+      "stateGain": 23744,
+      "predictedNoCrit": 19734,
+      "predictedWithCrit": 23907,
+      "ratioVsWithCrit": 0.9932,
+      "ratioVsNoCrit": 1.2032,
+      "maxDisplayedPlus": 526,
+      "normalTapMax": 546,
+      "ok": true
+    },
+    "warn": {
+      "withEvent4": {
+        "label": "with",
+        "warnMs": 29743,
+        "bossMs": 31734,
+        "gapMs": 1991
+      },
+      "withoutEvent4": {
+        "label": "without",
+        "warnMs": null,
+        "bossMs": 31270,
+        "gapMs": null
+      },
+      "ok": true,
+      "verdict": "点 event_4：预警在巡逻前 1991ms（期望≈2000）；未点：无预警 ✅"
+    },
+    "idle4": {
+      "visitsCount": 3,
+      "eff": 1.08,
+      "over100": true
+    },
+    "idle5b": {
+      "before": 673,
+      "after": 722,
+      "mul": 1.074,
+      "unlocked": [
+        "idle_1",
+        "idle_2",
+        "idle_3",
+        "idle_4",
+        "idle_5b"
+      ],
+      "ok": true
+    }
+  },
+  "shots": [
+    "/tmp/r12c2-badge.png",
+    "/tmp/r12c2-crit.png",
+    "/tmp/r12c2-warn-with.png",
+    "/tmp/r12c2-idle5b.png"
+  ]
+}

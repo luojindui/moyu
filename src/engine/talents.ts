@@ -25,13 +25,19 @@ export interface TalentDef {
 
 /** 每级天赋需要的点数（tier1-4 = 1 点，终极 = 2 点） */
 export const TALENT_COST = 1;
-export const ULTIMATE_COST = 2;
+export const ULTIMATE_COST = 3;
+/** 各级花费：tier1-2 = 1 点，tier3-4 = 2 点，终极 = 3 点（每流派 9 点，全树 27 点） */
+export function talentCostOf(tier: number): number {
+  if (tier >= MAX_TIER) return ULTIMATE_COST;
+  if (tier >= 3) return 2;
+  return 1;
+}
 /** 每流派最大等级 */
 export const MAX_TIER = 5;
 /** 每次转生获得的天赋点 */
 export const TALENT_POINTS_PER_PRESTIGE = 1;
 /** 全树点数上限（3 流派 × 6 点 = 18） */
-export const TALENT_POINT_CAP = 18;
+export const TALENT_POINT_CAP = 27; // 每流派 4 线性(1+1+2+2=6) + 终极 3 = 9；全树 27
 /** 发放天赋点的段位档位（第 3/5/7/9/11/13 档，索引 2/4/6/8/10/12） */
 export const TALENT_RANK_TIERS = [2, 4, 6, 8, 10, 12];
 
@@ -42,7 +48,7 @@ export const TALENTS: TalentDef[] = [
   { id: "click_3", branch: "click", tier: 3, name: "连击上限", desc: "连击上限 20 → 30（最高 ×1.36）", value: 10 },
   { id: "click_4", branch: "click", tier: 4, name: "暴击", desc: "每 20 次点击必暴击 ×5（巡逻偷点不触发）", value: 20 },
   { id: "click_5a", branch: "click", tier: 5, name: "摸鱼转正", desc: "每 300 次累计点击 → 挂机 +1%（封顶 +35%）", value: 300, exclusive: "click_ult" },
-  { id: "click_5b", branch: "click", tier: 5, name: "指尖风暴", desc: "立即 +12% 挂机；此后每 1000 次累计点击再 +1%（封顶 +20%）+ 点击力 +60%", value: 0.12, exclusive: "click_ult" },
+  { id: "click_5b", branch: "click", tier: 5, name: "指尖风暴", desc: "立即 +12% 挂机；此后每 1000 次累计点击再 +1%（封顶 +32%）+ 点击力 +60%", value: 0.12, exclusive: "click_ult" },
 
   // ---------- 挂机流 ----------
   { id: "idle_1", branch: "idle", tier: 1, name: "稳", desc: "挂机收益 +6%", value: 0.06 },
@@ -58,7 +64,7 @@ export const TALENTS: TalentDef[] = [
   { id: "event_3", branch: "event", tier: 3, name: "人脉", desc: "丢梗奖励 +15%", value: 0.15 },
   { id: "event_4", branch: "event", tier: 4, name: "预警", desc: "巡逻横幅提前 2s + 奖励再 +5%", value: 0.05 },
   { id: "event_5a", branch: "event", tier: 5, name: "摸鱼气场", desc: "每次安然巡逻 → 挂机 +1%（封顶 +30%）", value: 1, exclusive: "event_ult" },
-  { id: "event_5b", branch: "event", tier: 5, name: "老板眼线", desc: "巡逻与丢梗奖励 ×2，且每次安然巡逻额外 +10 秒挂机收益", value: 2, exclusive: "event_ult" },
+  { id: "event_5b", branch: "event", tier: 5, name: "老板眼线", desc: "巡逻与丢梗奖励 ×2，且离线结算效率 +20%", value: 2, exclusive: "event_ult" },
 ];
 
 export interface TalentState {
@@ -83,7 +89,7 @@ export function talentDef(id: string): TalentDef | undefined {
 /** 该天赋的花费 */
 export function costOfTalent(id: string): number {
   const def = talentDef(id);
-  return def && def.tier >= MAX_TIER ? ULTIMATE_COST : TALENT_COST;
+  return def ? talentCostOf(def.tier) : TALENT_COST;
 }
 
 /** 某流派已点到第几级（终极算 5 级） */
@@ -215,6 +221,8 @@ export interface TalentEffects {
   clickUltPerK: number;
   /** event_5b：每次安然巡逻额外给的挂机秒数 */
   surviveBonusIdleSeconds: number;
+  /** event_5b：离线效率加成 */
+  offlineEfficiencyBonus: number;
 }
 
 /** 汇总当前已点天赋的效果 */
@@ -240,5 +248,6 @@ export function talentEffects(talents: TalentState): TalentEffects {
     clickUltBase: has("click_5b") ? v("click_5b") : 0,
     clickUltPerK: has("click_5b") ? 0.01 : 0,
     surviveBonusIdleSeconds: has("event_5b") ? 10 : 0,
+    offlineEfficiencyBonus: has("event_5b") ? 0.2 : 0,
   };
 }

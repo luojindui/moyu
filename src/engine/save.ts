@@ -2,7 +2,7 @@ import type { GameState } from "./state";
 import { initialState } from "./state";
 import { sanitizeCollected, type Collected } from "./collection";
 import { restoreDaily, type DailyState } from "./daily";
-import { COLLEAGUES, MAX_COLLEAGUE_LEVEL, emptyTeam, type TeamState } from "./team";
+import { COLLEAGUES, MAX_COLLEAGUE_LEVEL, MISSIONS, emptyTeam, type TeamState } from "./team";
 import { TALENTS, emptyTalents, type TalentState } from "./talents";
 
 export const SAVE_KEY = "moyu-save";
@@ -168,21 +168,33 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
     const talents: TalentState = emptyTalents();
     const rawTalents = blob.talents as { unlocked?: unknown; points?: unknown; rankGranted?: unknown } | undefined;
     if (Array.isArray(rawTalents?.unlocked)) {
-      talents.unlocked = rawTalents.unlocked.filter(
-        (x): x is string => typeof x === "string" && TALENTS.some((t) => t.id === x),
-      );
+      const seen = new Set<string>();
+      const takenGroups = new Set<string>();
+      talents.unlocked = rawTalents.unlocked.filter((x): x is string => {
+        if (typeof x !== "string") return false;
+        const def = TALENTS.find((t) => t.id === x);
+        if (!def || seen.has(x)) return false;
+        // 互斥组只能有一个
+        if (def.exclusive) {
+          if (takenGroups.has(def.exclusive)) return false;
+          takenGroups.add(def.exclusive);
+        }
+        seen.add(x);
+        return true;
+      });
     }
     talents.points =
       typeof rawTalents?.points === "number" && Number.isInteger(rawTalents.points) && rawTalents.points >= 0
-        ? Math.min(18, rawTalents.points)
+        ? Math.min(27, rawTalents.points)
         : 0;
     talents.rankGranted =
       typeof rawTalents?.rankGranted === "number" && Number.isInteger(rawTalents.rankGranted)
-        ? rawTalents.rankGranted
+        ? Math.min(12, Math.max(-1, rawTalents.rankGranted))
         : -1;
-    talents.dailyGiftDate = typeof (rawTalents as { dailyGiftDate?: unknown })?.dailyGiftDate === "string"
-      ? ((rawTalents as { dailyGiftDate: string }).dailyGiftDate)
-      : "";
+    {
+      const d = (rawTalents as { dailyGiftDate?: unknown })?.dailyGiftDate;
+      talents.dailyGiftDate = typeof d === "string" && /^\d{4}-\d{2}-\d{2}$/.test(d) ? d : "";
+    }
     const patrolSurvives =
       typeof blob.patrolSurvives === "number" && Number.isInteger(blob.patrolSurvives) && blob.patrolSurvives >= 0
         ? blob.patrolSurvives
@@ -197,14 +209,19 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
         const level = typeof c.level === "number" && Number.isInteger(c.level) && c.level >= 1
           ? Math.min(c.level, MAX_COLLEAGUE_LEVEL)
           : 1;
-        const missionId = typeof c.missionId === "string" ? c.missionId : null;
-        const startedAt = numOr0(c.startedAt);
-        const endsAt = numOr0(c.endsAt);
+        // 未知任务 id → 清空（否则领取时 missionDef 为 undefined 会崩）；时间戳钳制，防 1e300 永久卡死
+        const rawMission = typeof c.missionId === "string" ? c.missionId : null;
+        const missionId = rawMission && MISSIONS.some((m) => m.id === rawMission) ? rawMission : null;
+        const MAX_MISSION_MS = 9 * 3600 * 1000; // 最长 8h + 1h 余量
+        const nowRef = Number.isFinite(now) ? now : Date.now();
+        const startedAt = missionId ? Math.min(Math.max(0, numOr0(c.startedAt)), nowRef + MAX_MISSION_MS) : 0;
+        const rawEnds = missionId ? numOr0(c.endsAt) : 0;
+        const endsAt = missionId ? Math.min(Math.max(startedAt + 1000, rawEnds), startedAt + MAX_MISSION_MS) : 0;
         const favor = typeof c.favor === "number" && Number.isFinite(c.favor) && c.favor >= 0
           ? Math.min(100, Math.floor(c.favor))
           : 0;
         const autoRepeat = typeof c.autoRepeat === "boolean" ? c.autoRepeat : false;
-        const rewardSnapshot = numOr0(c.rewardSnapshot);
+        const rewardSnapshot = Math.min(numOr0(c.rewardSnapshot), 1e18);
         team.colleagues[def.id] = { level, missionId, startedAt, endsAt, favor, autoRepeat, rewardSnapshot };
       }
     }

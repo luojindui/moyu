@@ -1,24 +1,24 @@
 {
-  "startedAt": "2026-11-27T08:55:06.433Z",
+  "startedAt": "2026-11-27T08:58:20.739Z",
   "rates": {
     "60ms": {
-      "success": 3,
+      "success": 4,
       "trials": 5,
       "noButton": 0,
       "details": [
         "ok",
-        "idle",
+        "ok",
         "ok",
         "ok",
         "idle"
       ]
     },
     "90ms": {
-      "success": 2,
+      "success": 1,
       "trials": 5,
       "noButton": 0,
       "details": [
-        "ok",
+        "idle",
         "idle",
         "idle",
         "ok",
@@ -65,27 +65,27 @@
   "reRender": {
     "rendersIn1500ms": 10,
     "rendersPerSec": 6.67,
-    "avgGapMs": 151.8,
+    "avgGapMs": 153.5,
     "gaps": [
-      149.9,
-      150,
+      148.4,
       150.1,
-      149.8,
-      150,
-      150.9,
-      149.3,
-      166.4,
-      150.2
+      149.9,
+      150.3,
+      150.1,
+      149.7,
+      166.6,
+      150.2,
+      166.6
     ]
   },
   "claimTap": {
     "favorPre": 12,
-    "claimBtn": "领取 +390",
+    "claimBtn": "领取 +435",
     "favorBefore": 12,
     "favorAfter": 12,
     "missionId": "quick",
     "claimed": false
   },
   "eventTrace": null,
-  "finishedAt": "2026-11-27T08:55:27.620Z"
+  "finishedAt": "2026-11-27T08:58:42.148Z"
 }

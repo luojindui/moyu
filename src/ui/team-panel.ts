@@ -1,6 +1,6 @@
 import type { GameState } from "../engine/state";
 import { formatMoyu } from "../engine/format";
-import { stationIdleScaled } from "../engine/upgrades";
+import { effectOf, idleIfHome, stationIdleScaled } from "../engine/upgrades";
 import { prestigeMultiplier } from "../engine/prestige";
 import {
   COLLEAGUES,
@@ -173,7 +173,6 @@ export class TeamPanel {
       cols,
       state.talents.points,
       state.talents.unlocked.join(","),
-      Math.floor(state.moyu),
       claimableCount(state, Date.now()),
       Math.floor(state.totalClicks / 300),
       state.patrolSurvives,
@@ -193,9 +192,22 @@ export class TeamPanel {
     else this.renderTalents(state);
   }
 
-  /** 只更新倒计时文本（不重绘 DOM，避免按钮被替换导致点空） */
+  /** 只更新倒计时文本与按钮可用态（不重绘 DOM，避免按钮被替换导致点空） */
   private updateCountdowns(state: GameState): void {
     const now = Date.now();
+    // 按钮可用态（买了新同事/钱够了时从禁用变可用，但不重建 DOM）
+    this.body.querySelectorAll<HTMLButtonElement>("button[data-act]").forEach((btn) => {
+      const id = btn.dataset.id ?? "";
+      const def = COLLEAGUES.find((x) => x.id === id);
+      if (!def) return;
+      if (btn.dataset.act === "recruit") {
+        btn.disabled = !canRecruit(state, id);
+      } else if (btn.dataset.act === "upgrade") {
+        const cur = state.team.colleagues[id];
+        if (!cur) return;
+        btn.disabled = cur.level >= MAX_COLLEAGUE_LEVEL || state.moyu < upgradeCostOf(def, cur.level);
+      }
+    });
     for (const def of COLLEAGUES) {
       const cur = state.team.colleagues[def.id];
       if (!cur || cur.missionId === null) continue;
@@ -288,9 +300,12 @@ export class TeamPanel {
           };
           const est = dispatchReward(probe, def.id, station);
           const perHour = secs > 0 ? est / (secs / 3600) : 0;
+          // 净收益 = 毛收益/小时 − 离岗损失/小时（让取舍可见）
+          const lostPerHour = Math.max(0, idleIfHome(state) - effectOf(state).idleRate) * 3600;
+          const netPerHour = perHour - lostPerHour;
           const durText = secs >= 3600 ? `${Math.round(secs / 3600)}h` : `${Math.round(secs / 60)}m`;
           return `<button data-act="dispatch" data-id="${def.id}" data-mission="${m.id}">
-            ${m.name}${match ? " ★" : ""}<br><small>${durText} · +${formatMoyu(est)} · ${formatMoyu(perHour)}/h</small>
+            ${m.name}${match ? " ★" : ""}<br><small>${durText} · +${formatMoyu(est)} · 净 ${netPerHour >= 0 ? "+" : ""}${formatMoyu(netPerHour)}/h</small>
           </button>`;
         }).join("");
         actionHtml = `<div class="mate-missions">${btns}</div>`;

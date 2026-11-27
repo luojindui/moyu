@@ -96,7 +96,9 @@ describe("摸鱼小队（第二玩法）", () => {
     const stationIdle = 1000;
     const withMatch = dispatchReward(matched, "zhou", stationIdle);
     // 直接计算：max(300, 1000×秒×0.011) × mult × 匹配1.5 × 等级系数1（lv1） × 好感1
-    const base = Math.max(DISPATCH_FLOOR, stationIdle * chatMission.seconds * DISPATCH_COEF);
+    // 公式：base = max(300, (工位 + 同事贡献×2) × 秒 × 0.011)
+    const colIdle = 20 * 1 + stationIdle * 0.008 * 1; // 老周 Lv1
+    const base = Math.max(DISPATCH_FLOOR, (stationIdle + colIdle * 2) * chatMission.seconds * DISPATCH_COEF);
     const levelFactor = 1 + DISPATCH_LEVEL_FACTOR * 0; // lv1
     expect(withMatch).toBe(Math.floor(base * chatMission.mult * (1 + SKILL_MATCH_BONUS) * levelFactor));
     expect(SKILL_MATCH_BONUS).toBe(0.5);

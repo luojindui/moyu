@@ -32,7 +32,7 @@ describe("R1. v1→v2 迁移 / v2 roundtrip", () => {
     expect(s.moyu).toBe(999);
     expect(s.levels["retire"]).toBe(3);
     expect(s.team).toEqual({ colleagues: {} });
-    expect(s.talents).toEqual({ unlocked: [], points: 0, rankGranted: -1 });
+    expect(s.talents).toEqual({ unlocked: [], points: 0, rankGranted: -1, dailyGiftDate: "" });
     expect(s.patrolSurvives).toBe(0);
   });
 

@@ -7,7 +7,7 @@ import { readFileSync } from "node:fs";
 import { initialState, type GameState, gain } from "../src/engine/state";
 import { doClick, clickPowerOf, comboMultiplier, comboCapOf } from "../src/engine/actions";
 import { effectOf, stationIdleScaled, conversionBonus } from "../src/engine/upgrades";
-import { talentEffects, TALENTS } from "../src/engine/talents";
+import { talentEffects, TALENTS, grantDailyTalentPoint, TALENT_POINT_CAP, emptyTalents } from "../src/engine/talents";
 import { newEventState, onBossTap, finishPatrol, bossSurviveReward, onMemeTap } from "../src/engine/events";
 import { offlineEfficiency } from "../src/engine/progression";
 import { offlineEarn } from "../src/engine/offline";
@@ -133,6 +133,19 @@ describe("R12C-A 第 3 轮修复逐条验证（当前 HEAD）", () => {
     const withMei = { ...base, team, visits: { date: "2026-11-27", count: 1 } };
     console.log(`小美在队 eff=${offlineEfficiency(withMei, 0, now).toFixed(3)}（teamTraits=${teamTraits(withMei).offlineEfficiency}）`);
     expect(offlineEfficiency({ ...i4, visits: { date: "x", count: 3 } }, 0, now)).toBeGreaterThan(1);
+  });
+
+  it("⑥b 新增：每日首开 +1 天赋点（节奏改善）✅", () => {
+    let t = { ...emptyTalents(), points: 0 };
+    const d1 = grantDailyTalentPoint(t, "2026-11-27");
+    const d1b = grantDailyTalentPoint(d1.talents, "2026-11-27");
+    console.log(`\n每日签到点：首次=${d1.granted}（余额 ${d1.talents.points}）　同日再开=${d1b.granted}（幂等 ✅）`);
+    let t2 = { ...emptyTalents(), points: TALENT_POINT_CAP };
+    const capped = grantDailyTalentPoint(t2, "2026-11-27");
+    console.log(`已满 18 点再签到：+${capped.granted}（不溢出 ✅）`);
+    expect(d1.granted).toBe(1);
+    expect(d1b.granted).toBe(0);
+    expect(capped.granted).toBe(0);
   });
 
   it("⑦ 天赋点角标 ✅", () => {

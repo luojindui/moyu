@@ -58,14 +58,18 @@ export interface TeamState {
 export const MAX_COLLEAGUE_LEVEL = 5;
 /** 匹配任务加成 */
 export const SKILL_MATCH_BONUS = 0.5;
-/** 好感里程碑加成（按全队最高好感） */
-export function favorBonuses(state: GameState): { dispatchMult: number; memeMult: number } {
+/** 好感里程碑加成：20 预警（在 main 用 favorTier>=1）、60 丢梗 +10%、80 每同事 +2%（封顶 10%） */
+export function favorBonuses(state: GameState): { dispatchMult: number; memeMult: number; idleMult: number } {
   const tier = favorTier(state);
+  let highFavor = 0;
+  for (const def of COLLEAGUES) {
+    const cur = state.team.colleagues[def.id];
+    if (cur && cur.favor >= 80) highFavor += 1;
+  }
   return {
-    // 20：派遣奖励 +8%；100：该同事 ×1.5 已单独处理
-    dispatchMult: tier >= 1 ? 1.08 : 1,
-    // 60：丢梗奖励 +10%
+    dispatchMult: 1, // 20 档改为预警，不再影响奖励
     memeMult: tier >= 3 ? 1.1 : 1,
+    idleMult: 1 + Math.min(0.1, highFavor * 0.02),
   };
 }
 
@@ -195,7 +199,7 @@ export function favorTier(state: GameState): number {
 }
 
 /** 派遣在外的挂机折损（制造"派他还是留他"的取舍） */
-export const AWAY_IDLE_FACTOR = 0.5;
+export const AWAY_IDLE_FACTOR = 0.85; // 离岗只损失 15% 挂机（原 0.5 会让升级后派遣净亏）
 
 /** 已招募同事的固定挂机总和（未乘倍率；在外派遣的只算 50%） */
 export function teamFixedRate(state: GameState): number {
@@ -203,7 +207,8 @@ export function teamFixedRate(state: GameState): number {
   for (const def of COLLEAGUES) {
     const c = state.team.colleagues[def.id];
     if (!c) continue;
-    const factor = c.missionId !== null ? AWAY_IDLE_FACTOR : 1;
+    const away = c.missionId !== null && Date.now() < c.endsAt; // 完成后不再扣
+    const factor = away ? AWAY_IDLE_FACTOR : 1;
     sum += def.idlePerLevel * c.level * factor;
   }
   return sum;
@@ -215,7 +220,8 @@ export function teamShareRatio(state: GameState): number {
   for (const def of COLLEAGUES) {
     const c = state.team.colleagues[def.id];
     if (!c) continue;
-    const factor = c.missionId !== null ? AWAY_IDLE_FACTOR : 1;
+    const away = c.missionId !== null && Date.now() < c.endsAt;
+    const factor = away ? AWAY_IDLE_FACTOR : 1;
     sum += def.sharePerLevel * c.level * factor;
   }
   return sum;
@@ -308,7 +314,9 @@ export function dispatchReward(state: GameState, id: string, stationIdle: number
   const cur = state.team.colleagues[id];
   const m = cur?.missionId ? missionDef(cur.missionId) : undefined;
   if (!def || !cur || !m) return 0;
-  const base = Math.max(DISPATCH_FLOOR, stationIdle * m.seconds * DISPATCH_COEF);
+  // 同事自身挂机贡献也计入派遣产出（否则升级后"离岗损失"涨、奖励不涨 → 净亏）
+  const colIdle = def.idlePerLevel * cur.level + stationIdle * def.sharePerLevel * cur.level;
+  const base = Math.max(DISPATCH_FLOOR, (stationIdle + colIdle * 2) * m.seconds * DISPATCH_COEF);
   const match = def.skill === m.type ? 1 + SKILL_MATCH_BONUS : 1;
   const levelFactor = 1 + DISPATCH_LEVEL_FACTOR * ((cur.level - 1) / (MAX_COLLEAGUE_LEVEL - 1));
   const bonus = favorBonuses(state);

@@ -490,6 +490,23 @@ try {
   console.error("[L9]", e);
 }
 
+// ---------- L11：每日天赋点（新增来源）实机：首开 +1、刷新不重复 ----------
+try {
+  await seedSave(baseBlob({ moyu: 0, totalEarned: 0, lifetimeEarned: 0, talents: { unlocked: [], points: 0, rankGranted: 12, dailyGiftDate: "" } }));
+  await sleep(1200); // 等 150ms 主循环发点
+  const first = await evj(`(() => { const t=window.__MOYU__.state.talents; return {points:t.points, dailyGiftDate:t.dailyGiftDate}; })()`);
+  await ev(`window.__MOYU__.saveNow()`);
+  await sleep(300);
+  await reload();
+  await sleep(1200);
+  const second = await evj(`(() => { const t=window.__MOYU__.state.talents; return {points:t.points, dailyGiftDate:t.dailyGiftDate}; })()`);
+  report.scenarios.L11 = { firstOpen: first, afterReload: second, note: "每日首开 +1 天赋点；同日刷新不再重复发" };
+  console.log("[L11]", JSON.stringify(report.scenarios.L11));
+} catch (e) {
+  report.scenarios.L11 = { error: String(e) };
+  console.error("[L11]", e);
+}
+
 report.finishedAt = new Date().toISOString();
 writeFileSync("playtest/r12-aud2-cdp-report.json", JSON.stringify(report, null, 2));
 console.log("\n=== REPORT ===\n" + JSON.stringify(report, null, 2));

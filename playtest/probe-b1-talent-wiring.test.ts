@@ -90,9 +90,9 @@ describe("天赋接线守卫（防描述说谎回归）", () => {
     expect(critIdx).toBeGreaterThan(-1);
   });
 
-  it("存档保留 18 点天赋（不再截断到 15）", () => {
+  it("存档保留 27 点天赋（上限与树一致，不再截断）", () => {
     const save = readFileSync("src/engine/save.ts", "utf8");
-    expect(save).toContain("Math.min(18");
+    expect(save).toContain("Math.min(27");
     expect(save).not.toContain("Math.min(15, rawTalents.points)");
   });
 });
