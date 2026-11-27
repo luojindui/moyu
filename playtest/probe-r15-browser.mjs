@@ -7,7 +7,7 @@ import { runChrome, connect, sleep } from "./lib/chrome.mjs";
 const URL = "http://127.0.0.1:5173/";
 const DIR = "/Users/p/Desktop/workspace/code/moyu/playtest/";
 const REPORT = DIR + "r15-audit-report.json";
-const SNAPSHOT = "HEAD 14057dc / arcade b8ad5a0 / minigames fd365b1";
+const SNAPSHOT = "HEAD f5b1d7b / arcade f9440546 / minigames 9255e0ae / main 0d4f0447 / save 9b2a5452 / spec 5a517f15";
 const report = { url: URL, snapshot: SNAPSHOT, startedAt: new Date().toISOString(), steps: [], checks: [], consoleErrors: [] };
 
 function log(step, data) {
@@ -119,7 +119,7 @@ await runChrome(
     };
     const resultInfo = () =>
       ev(`(()=>({ score:document.querySelector('.arcade-play .arcade-score')?.textContent, hint:document.querySelector('.arcade-play .arcade-hint')?.textContent,
-        record:document.querySelectorAll('.arcade-record').length, rewardRow:document.querySelector('.arcade-reward')?.textContent,
+        record:document.querySelectorAll('.arcade-record').length, recordText:document.querySelector('.arcade-record')?.textContent || '', rewardRow:document.querySelector('.arcade-reward')?.textContent,
         hasBack:!!document.getElementById('arcade-back'), left:document.getElementById('arcade-left').textContent, toast:document.getElementById('dom-toast')?.textContent || '' }))()`);
     const backToMenu = async () => {
       await ev("document.getElementById('arcade-back').click(); 1");
@@ -208,34 +208,35 @@ await runChrome(
       check("接住后结算：次数 2、best.coffee=本局分", p2.played === 2 && p2.best.coffee === coffeePlayScore, JSON.stringify([p2, coffeePlayScore]));
       check("早期保底奖励：idle≈0.2、score≈10 → toast 奖励 = max(0, ceil(30*score/600)) = 1", /\+1（得分/.test(p2toast), p2toast);
 
-      /* ---------- 4. 第 3 次：节奏（perfect 20 vs 规格 25、乱点 -5、中途退出结算） ---------- */
+      /* ---------- 4. 第 3 次：节奏（perfect 20、PERFECT/GOOD/MISS、乱点 -5、漏拍 -10、中途退出结算） ---------- */
       await openArcade();
-      await startGame("rhythm");
-      const rect = await ev("(()=>{ const r=document.getElementById('play-area').getBoundingClientRect(); return {x:r.left+r.width/2, y:r.top+r.height/2}; })()");
-      const rhythms = [];
-      for (let i = 0; i < 40 && rhythms.length < 2; i++) {
-        if (await ev("!!document.querySelector('.beat.on')")) {
-          await sleep(30);
-          await mouseClick(rect.x, rect.y);
-          await sleep(100);
-          rhythms.push(await ev("Number(document.getElementById('play-score')?.textContent||0)"));
-          if (rhythms.length < 2) await sleep(430);
-        } else await sleep(15);
-      }
-      // 刚命中后 100ms 内再点：最近未用节拍在 0.4s 外 → 应为 miss（-5），连按两次验证 -10
-      await mouseClick(rect.x, rect.y);
-      await sleep(40);
-      await mouseClick(rect.x, rect.y);
-      await sleep(150);
-      const rhythmAfter = await ev(`(()=>({ score:Number(document.getElementById('play-score')?.textContent||0), perfect:document.querySelectorAll('.beat.perfect').length, good:document.querySelectorAll('.beat.good').length }))()`);
+      // 页面内按真实节拍时刻（0.6/1.1/1.6s）派发 pointerdown；乱点/漏拍验证惩罚
+      await ev(`(()=>{ const btn=document.querySelector('button[data-game="rhythm"]'); btn.click(); const t0=performance.now(); const log=[];
+        const area=document.getElementById('play-area');
+        const fire=(tag)=>{ const scoreEl=document.getElementById('play-score'); const j=document.getElementById('judge-text');
+          area.dispatchEvent(new PointerEvent('pointerdown',{bubbles:true,clientX:150,clientY:150}));
+          log.push({tag, at:Math.round(performance.now()-t0), score:Number(scoreEl?.textContent||0), judge:j?.textContent||''}); };
+        [600,1100,1600].forEach(off=>setTimeout(()=>fire('beat'+off), Math.max(0, t0+off-performance.now())));
+        setTimeout(()=>fire('offbeatA'), 1720);
+        setTimeout(()=>fire('offbeatB'), 1770);
+        window.__r15r = { t0, log }; return true; })()`);
+      await sleep(3000);
+      const rhythmAfter = await ev(`(()=>({ score:Number(document.getElementById('play-score')?.textContent||0), judge:document.getElementById('judge-text')?.textContent||'',
+        perfect:document.querySelectorAll('.beat.perfect').length, good:document.querySelectorAll('.beat.good').length, missed:document.querySelectorAll('.beat.missed').length, log:window.__r15r.log }))()`);
       await esc();
-      await sleep(400);
+      await sleep(450);
       const p3 = await arcadeState();
       const p3toast = await ev("document.getElementById('dom-toast')?.textContent || ''");
-      log("play3-rhythm", { rhythms, rhythmAfter, p3, p3toast });
-      check("节奏 perfect 单次 +20（规格为 20+额外5=25，偏小）", rhythms[0] === 20 || rhythms[0] === 10, `首次得分=${rhythms[0]}`);
-      const beforePenalty = rhythms.at(-1) ?? 0;
-      check("节奏无节拍乱点 -5/次（连按两次 -10）", rhythmAfter.score === Math.max(0, beforePenalty - 10), `before=${beforePenalty} after=${rhythmAfter.score}`);
+      log("play3-rhythm", { rhythmLog: rhythmAfter.log, rhythmAfter, p3, p3toast });
+      const hitMarks = rhythmAfter.log.filter((x) => x.tag.startsWith("beat"));
+      const hitDelta = hitMarks.length >= 2 ? hitMarks[1].score - hitMarks[0].score : 0;
+      check("节奏打准节拍：单次 +20（perfect；规格要求额外 +5=25）", hitMarks.length === 3 && (hitDelta === 20 || hitDelta === 10), JSON.stringify(hitMarks));
+      check("节奏判定反馈 PERFECT/GOOD 文本出现", hitMarks.some((x) => x.judge === "PERFECT" || x.judge === "GOOD"), JSON.stringify(hitMarks.map((x) => x.judge)));
+      const afterHits = hitMarks.at(-1)?.score ?? 0;
+      const offA = rhythmAfter.log.find((x) => x.tag === "offbeatA");
+      const offB = rhythmAfter.log.find((x) => x.tag === "offbeatB");
+      check("节奏乱点 -5/次（连按两次 -10）", offA && offB && offA.score === afterHits - 5 && offB.score === afterHits - 10, JSON.stringify({ afterHits, offA, offB }));
+      check("节奏新增漏拍惩罚 -10（规格无此规则；.beat.missed≥1 且总分再降）", rhythmAfter.missed >= 1 && rhythmAfter.score <= offB.score - 10, JSON.stringify({ missed: rhythmAfter.missed, score: rhythmAfter.score, last: offB }));
       check("节奏中途退出结算：次数 3、best.rhythm=当前分", p3.played === 3 && p3.best.rhythm === rhythmAfter.score, JSON.stringify([p3, rhythmAfter.score]));
 
       /* ---------- 5. 封顶：0/3、按钮禁用、强点无效 ---------- */
@@ -285,7 +286,6 @@ await runChrome(
         await ev("document.querySelector('.face.boss')?.click(); 1");
         await sleep(90);
       }
-      // 每次点击后 renderRound 重建面板，比分显示会被重置为 0 —— 读到的显示值就是 0
       const displayed = await ev("Number(document.getElementById('play-score')?.textContent||0)");
       const tDisplayed = Date.now();
       // 等自然结束（30s）
@@ -296,9 +296,9 @@ await runChrome(
       log("findboss-natural", { idleLow, displayed, tDisplayed, naturalMs, fbNatural, fbNaturalState });
       const finalScore = parseInt(String(fbNatural.score), 10);
       check("找老板单局时长 ≈30s（规格 30s）", naturalMs > 28000 && naturalMs < 34000, `naturalMs=${naturalMs}`);
-      check("找老板比分显示每轮被重置为 0（renderRound 硬编码 0，实测读到 0）", displayed === 0, `displayed=${displayed}`);
-      check("找老板 final 分 = 5 正确×50 = 250（剩余时间奖励≈290 未结算，findScore(...0)）", finalScore === 250, `final=${finalScore} displayed=${displayed}`);
-      check("新纪录横幅永不出现（best 已先被 onFinish 刷新 → record 恒 false）", fbNatural.record === 0 && String(fbNatural.hint).includes("历史最高 250"), JSON.stringify({ record: fbNatural.record, hint: fbNatural.hint }));
+      check("找老板实时比分已修复（5 次点击后显示 ≈250+时间分）", displayed > 400, `displayed=${displayed}`);
+      check("找老板 final 分 = 5×50 = 250：显示中的剩余时间分（≈290）结算被丢弃", finalScore === 250 && displayed - finalScore > 200, `displayed=${displayed} final=${finalScore}`);
+      check("新纪录横幅显示（首局破纪录；旧 best=0）", fbNatural.record >= 1 && /新纪录/.test(fbNatural.recordText), JSON.stringify({ record: fbNatural.record, recordText: fbNatural.recordText, hint: fbNatural.hint }));
       const expectedRow = Math.max(Math.floor(idleLow * 25 * (finalScore / 600)), Math.ceil(30 * (finalScore / 600)));
       check("结算屏奖励行 = max(idle*25*ratio, ceil(30*ratio))", String(fbNatural.rewardRow).includes(`+${expectedRow}`), `row=${fbNatural.rewardRow} expected=+${expectedRow}`);
       check("找老板 best=250", fbNaturalState.best.findboss === 250, JSON.stringify(fbNaturalState));
@@ -329,8 +329,8 @@ await runChrome(
       const pRapidToast = await ev("document.getElementById('dom-toast')?.textContent || ''");
       const expRapid = Math.max(Math.floor(idleHi * 25 * 1), Math.ceil(30 * 1));
       log("rapid-findboss", { idleHi, clicks, rapidMs, rapidDisplay, pRapid, pRapidToast, expRapid });
-      check("找老板快速点击 45 次 <3s 即拿到封顶分 2000", rapidMs < 3000 && pRapid.best.findboss === 2000, JSON.stringify({ rapidMs, best: pRapid.best.findboss }));
-      check("MAX_SCORE=2000 生效（40+ 次正确点击结算被截断到 2000，显示仍被重置为 0）", pRapid.best.findboss === 2000, `display=${rapidDisplay} best=${pRapid.best.findboss}`);
+      check("找老板快速点击 45 次 <3s：结算分 = 45×50 = 2250 计入 best（MAX_SCORE=8000 未截断）", rapidMs < 3000 && pRapid.best.findboss === 2250, JSON.stringify({ rapidMs, best: pRapid.best.findboss }));
+      check("找老板实时比分显示（快速点击后 >2000）", rapidDisplay > 2000, `display=${rapidDisplay}`);
       check("中途退出结算奖励 = max(idle*25, 30)（idle≈10.2 → 255；规格公式应 156）", pRapidToast.includes(`+${expRapid}`), `toast=${pRapidToast} expected=+${expRapid}`);
       check("中途退出也消耗次数", pRapid.played === 1, JSON.stringify(pRapid));
 
@@ -347,7 +347,9 @@ await runChrome(
         coffeeSpec: "接住+10、连击×2、漏接-2",
         coffeeImpl: "coffeeScore 下限 0（漏接扣分最多扣到 0）",
         closeSettlement: "规格未定义：中途退出按当前分结算并消耗次数（实测）",
-        saveCap: "规格 best ≤9999；引擎 MAX_SCORE=2000（低分入口，save 未同步）",
+        findbossRounds: "规格 5 轮；实现 30 秒无限轮 & 无时间奖励结算",
+        rhythmPenalty: "实现新增：乱点 -5、漏拍 -10（规格均无）",
+        scoreCap: "引擎 MAX_SCORE=8000；save 净化仍允许 best ≤9999",
       };
       report.specCompare = specCompare;
       log("spec-compare", specCompare);

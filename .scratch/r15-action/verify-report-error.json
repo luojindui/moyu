@@ -1,0 +1,12 @@
+{
+  "startedAt": "2026-11-27T12:09:25.818Z",
+  "url": "http://127.0.0.1:5173/",
+  "viewport": "390x844 mobile",
+  "phases": {
+    "V0": {
+      "served": {}
+    }
+  },
+  "error": "Error: eval: {\"exceptionId\":1,\"text\":\"Uncaught\",\"lineNumber\":0,\"columnNumber\":40,\"scriptId\":\"74\",\"stackTrace\":{\"callFrames\":[{\"functionName\":\"\",\"scriptId\":\"74\",\"url\":\"\",\"lineNumber\":0,\"columnNumber\":40}]},\"exception\":{\"type\":\"object\",\"subtype\":\"error\",\"className\":\"TypeError\",\"description\":\"TypeError: Cannot read properties of undefined (reading 'ops')\\n    at <anonymous>:1:41\",\"objectId\":\"-1289825893045852158.\n    at evaluate (file:///Users/p/Desktop/workspace/code/moyu/.scratch/r15-action/verify.mjs:37:37)\n    at async evj (file:///Users/p/Desktop/workspace/code/moyu/.scratch/r15-action/verify.mjs:40:44)\n    at async runChrome.timeoutMs (file:///Users/p/Desktop/workspace/code/moyu/.scratch/r15-action/verify.mjs:199:22)\n    at async runChrome (file:///Users/p/Desktop/workspace/code/moyu/playtest/lib/chrome.mjs:40:12)\n    at async file:///Users/p/Desktop/workspace/code/moyu/.scratch/r15-action/verify.mjs:30:1",
+  "errs": []
+}

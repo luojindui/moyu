@@ -65,7 +65,7 @@ const fresh = () => ({ ...gain(initialState(), 0), arcade: emptyArcade(TODAY) })
   }
   const rCap = finishGame(fresh(), "rhythm", 1e9, 1000)!;
   out.scoreCap = { MAX_SCORE, REF_SCORE, bestOn1e9: rCap.state.arcade.best.rhythm, rewardOn1e9: rCap.reward };
-  check("MAX_SCORE=2000 生效：1e9 分 → best=2000、ratio 封顶", rCap.state.arcade.best.rhythm === MAX_SCORE && rCap.reward === 25000, JSON.stringify(out.scoreCap));
+  check("MAX_SCORE=8000 生效：1e9 分 → best=8000、ratio 封顶", rCap.state.arcade.best.rhythm === MAX_SCORE && rCap.reward === 25000, JSON.stringify(out.scoreCap));
   // best 只增不减
   let s2 = finishGame(fresh(), "coffee", 120, 100)!.state;
   s2 = finishGame(s2, "coffee", 30, 100)!.state;
@@ -129,7 +129,7 @@ const fresh = () => ({ ...gain(initialState(), 0), arcade: emptyArcade(TODAY) })
   out.scoreCeilings = {
     coffee: { drops: drops.length, maxScore: coffeeMax },
     rhythm: { beats: genBeats(30, 120, 0.6).length, maxScore: rhythmMax },
-    findboss: { maxScore: "unbounded（30s 内点击数×50，封顶 MAX_SCORE=2000）" },
+    findboss: { maxScore: "30s 内点击数×50，封顶 MAX_SCORE=8000（注释称 30s 可到 ~6000）" },
     REF_SCORE,
     MAX_SCORE,
   };
@@ -202,9 +202,9 @@ function rngFactory(): () => number {
   check("best 上限 9999 且向下取整", sane.bestHuge.best.coffee === 9999 && sane.bestHuge.best.findboss === 9999 && sane.bestHuge.best.rhythm === 12, JSON.stringify(sane.bestHuge.best));
   check("best 负数/字符串/null/数字容器忽略", [sane.bestNeg, sane.bestStr, sane.bestNull, sane.bestNum].every((x) => JSON.stringify(x.best) === "{}"), "");
   check("原型污染防护（best.__proto__ 不污染）", sane.pollution === "none" && JSON.stringify(sane.proto.best) === JSON.stringify({ coffee: 10 }), JSON.stringify(sane.proto));
-  check("净化上限 9999 与引擎 MAX_SCORE=2000 不一致（save 允许 >2000 的 best 原样保留）", (() => {
+  check("净化上限 9999 与引擎 MAX_SCORE=8000 不一致（save 允许 >8000 的 best 原样保留）", (() => {
     const a = arc({ date: TODAY, played: 0, best: { coffee: 5000 } });
-    return a.best.coffee === 5000 && MAX_SCORE === 2000;
+    return a.best.coffee === 5000 && MAX_SCORE === 8000;
   })(), JSON.stringify({ saveCap: 9999, engineCap: MAX_SCORE }));
 
   let state = fresh();

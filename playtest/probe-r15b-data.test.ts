@@ -458,7 +458,120 @@ describe("R15b-4 刷分面与自洽性", () => {
   });
 });
 
-describe("R15b 汇总落盘", () => {
+
+/* ============================================================
+ * ⑤ 节奏（HEAD f5b1d7b/cd1bcea 新规则）：漏拍 -10 + 乱点 -5 的 UI 模拟
+ * ============================================================ */
+describe("R15b-5 节奏 UI 计分模拟（漏拍 -10 / 乱点 -5）", () => {
+  const beats = genBeats(30, 120, 0.6);
+  /** 复刻 arcade.ts 的新计分：命中 +20/+10；空点 -5；节拍 b+0.22s 未打 → -10 */
+  function simUi(taps: number[], opts: { withMissPenalty?: boolean } = {}) {
+    const withMissPenalty = opts.withMissPenalty ?? true;
+    const used = new Set<number>();
+    let score = 0;
+    let hits = 0;
+    let perfect = 0;
+    let spurious = 0;
+    const sorted = [...taps].sort((a, b) => a - b);
+    for (const t of sorted) {
+      const r = judgeBeat(beats, t, used);
+      if (r.kind !== "miss" && r.index >= 0) {
+        used.add(r.index);
+        score += r.score;
+        hits++;
+        if (r.kind === "perfect") perfect++;
+      } else {
+        score = Math.max(0, score - 5);
+        spurious++;
+      }
+    }
+    let missedBeats = 0;
+    if (withMissPenalty) {
+      beats.forEach((b, i) => {
+        if (used.has(i)) return;
+        if (30 > b + 0.22) {
+          missedBeats++;
+          score = Math.max(0, score - 10);
+        }
+      });
+    }
+    return { taps: sorted.length, hits, perfect, spurious, missedBeats, score };
+  }
+  const atBeats = (offset: number) => beats.map((b) => b + offset);
+  const every = (intervalMs: number) => {
+    const out: number[] = [];
+    for (let t = 0.0; t < 30; t += intervalMs / 1000) out.push(t);
+    return out;
+  };
+  const rnd = (() => {
+    const r = mulberry32(2026);
+    return () => r();
+  })();
+  const randomTaps = (cps: number) =>
+    Array.from({ length: Math.round(cps * 30) }, () => Number((rnd() * 30).toFixed(3)));
+
+  it("8 种打法：完美/全 good/隔拍/乱点/随机", () => {
+    const strategies = {
+      "完美正拍(±0ms)": simUi(atBeats(0)),
+      "全 good(晚 0.12s)": simUi(atBeats(0.12)),
+      "只打偶数拍(隔拍)": simUi(beats.filter((_, i) => i % 2 === 0).map((b) => b)),
+      "乱点 100ms": simUi(every(100)),
+      "乱点 250ms": simUi(every(250)),
+      "乱点 400ms": simUi(every(400)),
+      "随机 2 次/秒": simUi(randomTaps(2)),
+      "随机 4 次/秒": simUi(randomTaps(4)),
+      "完美但漏最后 5 拍": simUi(beats.slice(0, 54).map((b) => b)),
+    };
+    ev.rhythmStrategies = Object.fromEntries(
+      Object.entries(strategies).map(([k, v]) => [
+        k,
+        { ...v, rewardAtMidIdle: rewardOf(1000, v.score), reachesRef: v.score >= FULL },
+      ]),
+    );
+    // 惩罚生效：乱点/隔拍都远低于正拍
+    expect(strategies["完美正拍(±0ms)"]!.score).toBe(1180);
+    expect(strategies["只打偶数拍(隔拍)"]!.score).toBeLessThan(400);
+    expect(strategies["乱点 100ms"]!.score).toBeLessThan(100);
+    expect(strategies["完美但漏最后 5 拍"]!.score).toBeLessThan(1180);
+  });
+});
+
+/* ============================================================
+ * ⑥ 三游戏"期望奖励"对齐（中后期）——修复后是否仍有唯一支配
+ * ============================================================ */
+describe("R15b-6 三游戏期望奖励对齐", () => {
+  it("中后期（idle=1000）三游戏期望奖励（秒挂机等效）", () => {
+    const idle = 1000;
+    // 找老板：12 个正确即满（2 次/秒 ≈6s，4 次/秒 ≈3s）→ 几乎必满
+    const findboss = { score: 600, reward: rewardOf(idle, 600), idleSecEq: rewardOf(idle, 600) / idle, effort: "12 个正确（2~6 秒）" };
+    // 节奏：正拍 perfect 1180；全 good 590；普通玩家混合 ≈700-1000
+    const rhythmRows = [590, 800, 1000, 1180].map((s) => ({
+      score: s,
+      reward: rewardOf(idle, s),
+      idleSecEq: Number((rewardOf(idle, s) / idle).toFixed(1)),
+    }));
+    // 咖啡：满分 500~600（均值 544）→ 结构上 <600；按不同接住率
+    const coffeeRows = (ev.coffeeExpectation as Array<{ catchRate: number; expectedScore: number }>).map((x) => ({
+      catchRate: x.catchRate,
+      expectedScore: x.expectedScore,
+      reward: rewardOf(idle, Math.round(x.expectedScore)),
+      idleSecEq: Number((rewardOf(idle, Math.round(x.expectedScore)) / idle).toFixed(1)),
+    }));
+    ev.expectationAligned = {
+      idle,
+      findboss,
+      rhythmRows,
+      coffeeRows,
+      fullRewardIdleSecEq: TARGET_IDLE_SECONDS,
+      coffeeMaxIdleSecEq: Number((rewardOf(idle, 544) / idle).toFixed(1)),
+      rhythmGoodIdleSecEq: Number((rewardOf(idle, 590) / idle).toFixed(2)),
+      gapCoffeeVsFullPct: Number((((TARGET_IDLE_SECONDS - rewardOf(idle, 544) / idle) / TARGET_IDLE_SECONDS) * 100).toFixed(1)),
+    };
+    // 咖啡拿不到满奖励（均值 544 < 600）
+    expect(544).toBeLessThan(FULL);
+  });
+});
+\ndescribe("R15b 汇总落盘", () => {
   it("写入 v2 证据 JSON", () => {
     writeFileSync(`${OUT}/v2-engine-evidence.json`, JSON.stringify(ev, null, 2));
     expect(Object.keys(ev).length).toBeGreaterThan(8);

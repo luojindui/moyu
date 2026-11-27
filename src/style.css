@@ -1516,3 +1516,19 @@ body.choice-open .shop-row {
 .judge-text.good { color: #7ec8ff; }
 .judge-text.miss { color: #ff8a8a; }
 .beat.missed { background: #6b3f22; opacity: 0.5; }
+
+#btn-arcade .arcade-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 9px;
+  background: #8be28b;
+  color: #10241a;
+  font-size: 11px;
+  line-height: 18px;
+  text-align: center;
+  font-weight: 700;
+}

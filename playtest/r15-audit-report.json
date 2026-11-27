@@ -1,14 +1,14 @@
 {
   "url": "http://127.0.0.1:5173/",
-  "snapshot": "HEAD 14057dc / arcade b8ad5a0 / minigames fd365b1",
-  "startedAt": "2026-11-27T12:03:39.106Z",
+  "snapshot": "HEAD f5b1d7b / arcade f9440546 / minigames 9255e0ae / main 0d4f0447 / save 9b2a5452 / spec 5a517f15",
+  "startedAt": "2026-11-27T12:09:16.544Z",
   "steps": [
     {
       "step": "fresh",
-      "at": 1795781020881,
+      "at": 1795781358145,
       "data": {
         "today": "2026-11-27",
-        "head": "HEAD 14057dc / arcade b8ad5a0 / minigames fd365b1",
+        "head": "HEAD f5b1d7b / arcade f9440546 / minigames 9255e0ae / main 0d4f0447 / save 9b2a5452 / spec 5a517f15",
         "arcade": {
           "date": "2026-11-27",
           "played": 0,
@@ -18,7 +18,7 @@
     },
     {
       "step": "menu-initial",
-      "at": 1795781021026,
+      "at": 1795781358289,
       "data": {
         "left": "今天还能玩 3/3 次",
         "title": "摸鱼站",
@@ -73,7 +73,7 @@
     },
     {
       "step": "play1-zero-close",
-      "at": 1795781021835,
+      "at": 1795781359091,
       "data": {
         "p1": {
           "date": "2026-11-27",
@@ -91,44 +91,44 @@
     },
     {
       "step": "coffee-catch-attempt",
-      "at": 1795781023927,
+      "at": 1795781361142,
       "data": {
         "target": {
-          "x": 285.1875,
-          "y": 366.109375,
-          "top": 80.9512,
-          "left": "21%"
+          "x": 422.796875,
+          "y": 376.453125,
+          "top": 84.4448,
+          "left": "64%"
         },
         "score": 8,
         "landed": {
           "caught": 1,
           "score": 8
         },
-        "clickRounds": 2
+        "clickRounds": 1
       }
     },
     {
       "step": "play2-coffee-catch",
-      "at": 1795781024331,
+      "at": 1795781361544,
       "data": {
         "animSamples": [
           {
-            "t": 202,
-            "top": "73.1192%",
+            "t": 203,
+            "top": "73.4331%",
             "landed": false,
             "caught": false,
             "drops": 3
           },
           {
-            "t": 405,
-            "top": "78.9917%",
+            "t": 406,
+            "top": "79.2997%",
             "landed": false,
             "caught": false,
             "drops": 3
           },
           {
             "t": 607,
-            "top": "85.3424%",
+            "top": "85.1664%",
             "landed": false,
             "caught": false,
             "drops": 3
@@ -145,17 +145,17 @@
             "top": "88%",
             "landed": true,
             "caught": false,
-            "drops": 3
+            "drops": 4
           },
           {
-            "t": 1215,
+            "t": 1214,
             "top": "88%",
             "landed": true,
             "caught": false,
             "drops": 4
           },
           {
-            "t": 1415,
+            "t": 1416,
             "top": null,
             "landed": true,
             "caught": false,
@@ -170,9 +170,9 @@
           }
         ],
         "anim": [
-          73.1192,
-          78.9917,
-          85.3424,
+          73.4331,
+          79.2997,
+          85.1664,
           88,
           88,
           88
@@ -186,347 +186,6 @@
           }
         },
         "p2toast": "摸鱼站 +1（得分 8）"
-      }
-    },
-    {
-      "step": "play3-rhythm",
-      "at": 1795781026314,
-      "data": {
-        "rhythms": [
-          20,
-          40
-        ],
-        "rhythmAfter": {
-          "score": 30,
-          "perfect": 2,
-          "good": 0
-        },
-        "p3": {
-          "date": "2026-11-27",
-          "played": 3,
-          "best": {
-            "coffee": 8,
-            "rhythm": 30
-          }
-        },
-        "p3toast": "摸鱼站 +2（得分 30）"
-      }
-    },
-    {
-      "step": "menu-0-of-3",
-      "at": 1795781026458,
-      "data": {
-        "left": "今天还能玩 0/3 次",
-        "title": "摸鱼站",
-        "cards": [
-          {
-            "name": "接咖啡 最高 8",
-            "desc": "咖啡掉下来时点住它——掉地上就没了",
-            "game": "coffee",
-            "btnText": "明天再来",
-            "disabled": true,
-            "btnSize": [
-              300,
-              44
-            ]
-          },
-          {
-            "name": "找老板 最高 0",
-            "desc": "在一堆同事脸里找出王总，越快越好",
-            "game": "findboss",
-            "btnText": "明天再来",
-            "disabled": true,
-            "btnSize": [
-              300,
-              44
-            ]
-          },
-          {
-            "name": "节奏点击 最高 30",
-            "desc": "跟着节拍点屏幕，越准分越高",
-            "game": "rhythm",
-            "btnText": "明天再来",
-            "disabled": true,
-            "btnSize": [
-              300,
-              44
-            ]
-          }
-        ],
-        "closeSize": [
-          44,
-          44
-        ],
-        "role": "dialog",
-        "ariaModal": "true",
-        "state": {
-          "date": "2026-11-27",
-          "played": 3,
-          "best": {
-            "coffee": 8,
-            "rhythm": 30
-          }
-        },
-        "toast": "摸鱼站 +2（得分 30）"
-      }
-    },
-    {
-      "step": "after-reload",
-      "at": 1795781027637,
-      "data": {
-        "m2": {
-          "left": "今天还能玩 0/3 次",
-          "title": "摸鱼站",
-          "cards": [
-            {
-              "name": "接咖啡 最高 8",
-              "desc": "咖啡掉下来时点住它——掉地上就没了",
-              "game": "coffee",
-              "btnText": "明天再来",
-              "disabled": true,
-              "btnSize": [
-                300,
-                44
-              ]
-            },
-            {
-              "name": "找老板 最高 0",
-              "desc": "在一堆同事脸里找出王总，越快越好",
-              "game": "findboss",
-              "btnText": "明天再来",
-              "disabled": true,
-              "btnSize": [
-                300,
-                44
-              ]
-            },
-            {
-              "name": "节奏点击 最高 30",
-              "desc": "跟着节拍点屏幕，越准分越高",
-              "game": "rhythm",
-              "btnText": "明天再来",
-              "disabled": true,
-              "btnSize": [
-                300,
-                44
-              ]
-            }
-          ],
-          "closeSize": [
-            44,
-            44
-          ],
-          "role": "dialog",
-          "ariaModal": "true",
-          "state": {
-            "date": "2026-11-27",
-            "played": 3,
-            "best": {
-              "coffee": 8,
-              "rhythm": 30
-            }
-          },
-          "toast": ""
-        },
-        "persisted": {
-          "date": "2026-11-27",
-          "played": 3,
-          "best": {
-            "coffee": 8,
-            "rhythm": 30
-          }
-        }
-      }
-    },
-    {
-      "step": "sanitize-a",
-      "at": 1795781028464,
-      "data": {
-        "sanA": {
-          "date": "2026-11-27",
-          "played": 3,
-          "best": {
-            "coffee": 9999
-          }
-        },
-        "mA": {
-          "left": "今天还能玩 0/3 次",
-          "title": "摸鱼站",
-          "cards": [
-            {
-              "name": "接咖啡 最高 9999",
-              "desc": "咖啡掉下来时点住它——掉地上就没了",
-              "game": "coffee",
-              "btnText": "明天再来",
-              "disabled": true,
-              "btnSize": [
-                300,
-                44
-              ]
-            },
-            {
-              "name": "找老板 最高 0",
-              "desc": "在一堆同事脸里找出王总，越快越好",
-              "game": "findboss",
-              "btnText": "明天再来",
-              "disabled": true,
-              "btnSize": [
-                300,
-                44
-              ]
-            },
-            {
-              "name": "节奏点击 最高 0",
-              "desc": "跟着节拍点屏幕，越准分越高",
-              "game": "rhythm",
-              "btnText": "明天再来",
-              "disabled": true,
-              "btnSize": [
-                300,
-                44
-              ]
-            }
-          ],
-          "closeSize": [
-            44,
-            44
-          ],
-          "role": "dialog",
-          "ariaModal": "true",
-          "state": {
-            "date": "2026-11-27",
-            "played": 3,
-            "best": {
-              "coffee": 9999
-            }
-          },
-          "toast": ""
-        }
-      }
-    },
-    {
-      "step": "sanitize-b",
-      "at": 1795781029279,
-      "data": {
-        "sanB": {
-          "date": "2026-11-27",
-          "played": 0,
-          "best": {}
-        },
-        "mB": {
-          "left": "今天还能玩 3/3 次",
-          "title": "摸鱼站",
-          "cards": [
-            {
-              "name": "接咖啡 最高 0",
-              "desc": "咖啡掉下来时点住它——掉地上就没了",
-              "game": "coffee",
-              "btnText": "开始（30 秒）",
-              "disabled": false,
-              "btnSize": [
-                300,
-                44
-              ]
-            },
-            {
-              "name": "找老板 最高 0",
-              "desc": "在一堆同事脸里找出王总，越快越好",
-              "game": "findboss",
-              "btnText": "开始（30 秒内无限轮）",
-              "disabled": false,
-              "btnSize": [
-                300,
-                44
-              ]
-            },
-            {
-              "name": "节奏点击 最高 0",
-              "desc": "跟着节拍点屏幕，越准分越高",
-              "game": "rhythm",
-              "btnText": "开始（30 秒）",
-              "disabled": false,
-              "btnSize": [
-                300,
-                44
-              ]
-            }
-          ],
-          "closeSize": [
-            44,
-            44
-          ],
-          "role": "dialog",
-          "ariaModal": "true",
-          "state": {
-            "date": "2026-11-27",
-            "played": 0,
-            "best": {}
-          },
-          "toast": ""
-        }
-      }
-    },
-    {
-      "step": "findboss-natural",
-      "at": 1795781060131,
-      "data": {
-        "idleLow": 0.2,
-        "displayed": 0,
-        "tDisplayed": 1795781030677,
-        "naturalMs": 29923,
-        "fbNatural": {
-          "score": "250 分",
-          "hint": "历史最高 250",
-          "record": 0,
-          "rewardRow": "本局奖励 +13 摸鱼值",
-          "hasBack": true,
-          "left": "今天还能玩 2/3 次",
-          "toast": "摸鱼站 +13（得分 250）"
-        },
-        "fbNaturalState": {
-          "date": "2026-11-27",
-          "played": 1,
-          "best": {
-            "findboss": 250
-          }
-        }
-      }
-    },
-    {
-      "step": "rapid-findboss",
-      "at": 1795781062317,
-      "data": {
-        "idleHi": 10.2,
-        "clicks": 45,
-        "rapidMs": 473,
-        "rapidDisplay": 0,
-        "pRapid": {
-          "date": "2026-11-27",
-          "played": 1,
-          "best": {
-            "findboss": 2000
-          }
-        },
-        "pRapidToast": "摸鱼站 +254（得分 2250）",
-        "expRapid": 254
-      }
-    },
-    {
-      "step": "spec-compare",
-      "at": 1795781062317,
-      "data": {
-        "rewardSpec": "floor((idle*0.6+20)*score/100)",
-        "rewardImpl": "max(floor(idle*25*min(1,min(score,2000)/600)), ceil(30*ratio))",
-        "observedEarly": "摸鱼站 +1（得分 8）",
-        "observedRapid": "摸鱼站 +254（得分 2250）",
-        "findbossSpec": "5 轮、正确+50/错误-20/剩余时间每 0.1s+1",
-        "findbossImpl": "30 秒无限轮；结束时剩余时间=0，时间奖励恒 0",
-        "rhythmSpec": "perfect ±80ms +20 且额外 +5（共 25）",
-        "rhythmImpl": "单次 perfect = 20（实测 20）",
-        "coffeeSpec": "接住+10、连击×2、漏接-2",
-        "coffeeImpl": "coffeeScore 下限 0（漏接扣分最多扣到 0）",
-        "closeSettlement": "规格未定义：中途退出按当前分结算并消耗次数（实测）",
-        "saveCap": "规格 best ≤9999；引擎 MAX_SCORE=2000（低分入口，save 未同步）"
       }
     }
   ],
@@ -579,7 +238,7 @@
     {
       "name": "咖啡掉落有下落动画（首个掉落 top 持续下移至杯口 88%）",
       "pass": true,
-      "detail": "[73.1192,78.9917,85.3424,88,88,88]"
+      "detail": "[73.4331,79.2997,85.1664,88,88,88]"
     },
     {
       "name": "咖啡落地后加 .landed class",
@@ -589,7 +248,7 @@
     {
       "name": "咖啡可被真实点击接住（得分 > 0）",
       "pass": true,
-      "detail": "score=8 clicks=2"
+      "detail": "score=8 clicks=1"
     },
     {
       "name": "接住后结算：次数 2、best.coffee=本局分",
@@ -600,139 +259,8 @@
       "name": "早期保底奖励：idle≈0.2、score≈10 → toast 奖励 = max(0, ceil(30*score/600)) = 1",
       "pass": true,
       "detail": "摸鱼站 +1（得分 8）"
-    },
-    {
-      "name": "节奏 perfect 单次 +20（规格为 20+额外5=25，偏小）",
-      "pass": true,
-      "detail": "首次得分=20"
-    },
-    {
-      "name": "节奏无节拍乱点 -5/次（连按两次 -10）",
-      "pass": true,
-      "detail": "before=40 after=30"
-    },
-    {
-      "name": "节奏中途退出结算：次数 3、best.rhythm=当前分",
-      "pass": true,
-      "detail": "[{\"date\":\"2026-11-27\",\"played\":3,\"best\":{\"coffee\":8,\"rhythm\":30}},30]"
-    },
-    {
-      "name": "3 次用完后 0/3 且提示明天再来",
-      "pass": true,
-      "detail": "今天还能玩 0/3 次"
-    },
-    {
-      "name": "3 张卡全部禁用、按钮文案「明天再来」",
-      "pass": true,
-      "detail": "[[true,\"明天再来\"],[true,\"明天再来\"],[true,\"明天再来\"]]"
-    },
-    {
-      "name": "禁用按钮点击不启动游戏、不消耗次数",
-      "pass": true,
-      "detail": "{\"playArea\":false,\"played\":3}"
-    },
-    {
-      "name": "刷新后 0/3、best 保留（coffee/rhythm/findboss）",
-      "pass": true,
-      "detail": "{\"date\":\"2026-11-27\",\"played\":3,\"best\":{\"coffee\":8,\"rhythm\":30}}"
-    },
-    {
-      "name": "刷新后菜单显示最高分",
-      "pass": true,
-      "detail": "[\"接咖啡 最高 8\",\"找老板 最高 0\",\"节奏点击 最高 30\"]"
-    },
-    {
-      "name": "净化A：played 99→3（0/3）",
-      "pass": true,
-      "detail": "[3,\"今天还能玩 0/3 次\"]"
-    },
-    {
-      "name": "净化A：合法 date 保留、ghost 丢弃、coffee 1e9→9999",
-      "pass": true,
-      "detail": "{\"date\":\"2026-11-27\",\"played\":3,\"best\":{\"coffee\":9999}}"
-    },
-    {
-      "name": "净化A：菜单显示最高 9999",
-      "pass": true,
-      "detail": "[\"接咖啡 最高 9999\",\"找老板 最高 0\",\"节奏点击 最高 0\"]"
-    },
-    {
-      "name": "净化B：非法 date → 今日、played 归 0、ghost 丢弃",
-      "pass": true,
-      "detail": "[{\"date\":\"2026-11-27\",\"played\":0,\"best\":{}},\"今天还能玩 3/3 次\"]"
-    },
-    {
-      "name": "找老板单局时长 ≈30s（规格 30s）",
-      "pass": true,
-      "detail": "naturalMs=29923"
-    },
-    {
-      "name": "找老板比分显示每轮被重置为 0（renderRound 硬编码 0，实测读到 0）",
-      "pass": true,
-      "detail": "displayed=0"
-    },
-    {
-      "name": "找老板 final 分 = 5 正确×50 = 250（剩余时间奖励≈290 未结算，findScore(...0)）",
-      "pass": true,
-      "detail": "final=250 displayed=0"
-    },
-    {
-      "name": "新纪录横幅永不出现（best 已先被 onFinish 刷新 → record 恒 false）",
-      "pass": true,
-      "detail": "{\"record\":0,\"hint\":\"历史最高 250\"}"
-    },
-    {
-      "name": "结算屏奖励行 = max(idle*25*ratio, ceil(30*ratio))",
-      "pass": true,
-      "detail": "row=本局奖励 +13 摸鱼值 expected=+13"
-    },
-    {
-      "name": "找老板 best=250",
-      "pass": true,
-      "detail": "{\"date\":\"2026-11-27\",\"played\":1,\"best\":{\"findboss\":250}}"
-    },
-    {
-      "name": "结算屏后 Esc 不再扣次数（无重复结算）",
-      "pass": true,
-      "detail": "{\"date\":\"2026-11-27\",\"played\":1,\"best\":{\"findboss\":250}}"
-    },
-    {
-      "name": "找老板快速点击 45 次 <3s 即拿到封顶分 2000",
-      "pass": true,
-      "detail": "{\"rapidMs\":473,\"best\":2000}"
-    },
-    {
-      "name": "MAX_SCORE=2000 生效（40+ 次正确点击结算被截断到 2000，显示仍被重置为 0）",
-      "pass": true,
-      "detail": "display=0 best=2000"
-    },
-    {
-      "name": "中途退出结算奖励 = max(idle*25, 30)（idle≈10.2 → 255；规格公式应 156）",
-      "pass": true,
-      "detail": "toast=摸鱼站 +254（得分 2250） expected=+254"
-    },
-    {
-      "name": "中途退出也消耗次数",
-      "pass": true,
-      "detail": "{\"date\":\"2026-11-27\",\"played\":1,\"best\":{\"findboss\":2000}}"
     }
   ],
   "consoleErrors": [],
-  "specCompare": {
-    "rewardSpec": "floor((idle*0.6+20)*score/100)",
-    "rewardImpl": "max(floor(idle*25*min(1,min(score,2000)/600)), ceil(30*ratio))",
-    "observedEarly": "摸鱼站 +1（得分 8）",
-    "observedRapid": "摸鱼站 +254（得分 2250）",
-    "findbossSpec": "5 轮、正确+50/错误-20/剩余时间每 0.1s+1",
-    "findbossImpl": "30 秒无限轮；结束时剩余时间=0，时间奖励恒 0",
-    "rhythmSpec": "perfect ±80ms +20 且额外 +5（共 25）",
-    "rhythmImpl": "单次 perfect = 20（实测 20）",
-    "coffeeSpec": "接住+10、连击×2、漏接-2",
-    "coffeeImpl": "coffeeScore 下限 0（漏接扣分最多扣到 0）",
-    "closeSettlement": "规格未定义：中途退出按当前分结算并消耗次数（实测）",
-    "saveCap": "规格 best ≤9999；引擎 MAX_SCORE=2000（低分入口，save 未同步）"
-  },
-  "finishedAt": "2026-11-27T12:04:22.317Z",
-  "checksPassed": 37,
-  "checksFailed": []
+  "error": "Error: evaluate failed: {\"exceptionId\":1,\"text\":\"Uncaught\",\"lineNumber\":1,\"columnNumber\":195,\"scriptId\":\"130\",\"stackTrace\":{\"callFrames\":[{\"functionName\":\"\",\"scriptId\":\"130\",\"url\":\"\",\"lineNumber\":1,\"columnNumber\":195},{\"func\n    at ev (file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-r15-browser.mjs:28:61)\n    at async runChrome.timeoutMs (file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-r15-browser.mjs:224:27)\n    at async runChrome (file:///Users/p/Desktop/workspace/code/moyu/playtest/lib/chrome.mjs:40:12)\n    at async file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-r15-browser.mjs:22:1"
 }

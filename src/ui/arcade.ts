@@ -1,9 +1,9 @@
 import type { GameState } from "../engine/state";
 import { playClick, playSuccess } from "./audio";
 import {
+  arcadeLeft,
   ARCADE_DAILY_LIMIT,
   GAMES,
-  arcadeLeft,
   coffeeScore,
   findScore,
   genBeats,
@@ -22,8 +22,9 @@ export class Arcade {
   private play: { raf: number; cleanup: () => void; score?: () => number } | null = null;
   private lastState: GameState | null = null;
   private currentGame: GameId | null = null;
+  private gameStartAt = 0;
 
-  constructor(private onFinish: (game: GameId, score: number) => number) {
+  constructor(private onFinish: (game: GameId, score: number, playedSeconds: number) => number) {
     document.getElementById("btn-arcade")!.addEventListener("click", () => this.toggle());
     document.getElementById("arcade-close")!.addEventListener("click", () => this.close());
     this.root.addEventListener("click", (e) => {
@@ -50,8 +51,14 @@ export class Arcade {
     if (this.play) {
       const partial = this.play.score ? this.play.score() : 0;
       const game = this.currentGame;
+      const playedSec = (performance.now() - this.gameStartAt) / 1000;
+      // 早退确认：手滑/误触不白扣次数（前 2 秒豁免，超过后询问）
+      if (playedSec > 2 && playedSec < 28) {
+        const ok = confirm(`本局已玩 ${Math.round(playedSec)} 秒，结束会按已完成比例结算并消耗 1 次机会。确定结束？`);
+        if (!ok) return;
+      }
       this.stopPlay();
-      if (game) this.onFinish(game, Math.max(0, Math.floor(partial)));
+      if (game) this.onFinish(game, Math.max(0, Math.floor(partial)), playedSec);
       this.currentGame = null;
     }
     this.root.classList.add("hidden");
@@ -61,7 +68,8 @@ export class Arcade {
     this.lastState = state;
     if (this.isOpen) {
       const left = arcadeLeft(state);
-      this.elLeft.textContent = left > 0 ? `今天还能玩 ${left}/${ARCADE_DAILY_LIMIT} 次` : "今天玩完了，明天再来";
+      this.elLeft.textContent =
+        left > 0 ? `今天还能玩 ${left}/${ARCADE_DAILY_LIMIT} 次 · 每局能赢摸鱼值` : "今天玩完了，明天再来";
     }
   }
 
@@ -95,6 +103,7 @@ export class Arcade {
 
   private startGame(game: GameId): void {
     this.currentGame = game;
+    this.gameStartAt = performance.now();
     const def = GAMES.find((g) => g.id === game)!;
     this.elTitle.textContent = def.name;
     const startAt = performance.now();
@@ -332,7 +341,7 @@ export class Arcade {
     // 先取旧纪录再结算（否则首局破纪录不庆祝）
     const best = this.lastState?.arcade.best[def.id] ?? 0;
     const record = Math.floor(score) > best;
-    const gotReward = this.onFinish(def.id, Math.max(0, Math.floor(score)));
+    const gotReward = this.onFinish(def.id, Math.max(0, Math.floor(score)), def.duration);
     const label = (k: string): string => {
       if (def.id === "coffee") return k === "caught" ? "接住" : k === "missed" ? "漏接" : "最高连击";
       if (def.id === "findboss") return k === "caught" ? "找对" : "找错";
@@ -350,8 +359,14 @@ export class Arcade {
       <div class="arcade-reward">${gotReward > 0 ? `本局奖励 +${gotReward} 摸鱼值` : "本局 0 分，次数已扣 1 次"}</div>
       ${record ? `<div class="arcade-record">🎉 新纪录！（旧 ${best}）</div>` : `<div class="arcade-hint">历史最高 ${best}</div>`}
       ${detailText ? `<div class="arcade-hint">${detailText}</div>` : ""}
+      <button class="arcade-back-btn" id="arcade-again">再来一局</button>
       <button class="ghost arcade-back-btn" id="arcade-back">返回摸鱼站</button>
     </div>`;
     document.getElementById("arcade-back")!.addEventListener("click", () => this.renderMenu());
+    document.getElementById("arcade-again")!.addEventListener("click", () => {
+      const left = this.lastState ? arcadeLeft(this.lastState) : 0;
+      if (left > 0) this.startGame(def.id);
+      else this.renderMenu();
+    });
   }
 }

@@ -63,6 +63,8 @@ export function finishGame(
   game: GameId,
   score: number,
   idleRate: number,
+  /** 本局实际玩了多久（秒）；早退按比例折算，防"开局即退刷奖励" */
+  playedSeconds = 30,
 ): { state: GameState; reward: number } | null {
   if (arcadeLeft(state) <= 0) return null;
   if (!Number.isFinite(score) || score <= 0) {
@@ -72,8 +74,11 @@ export function finishGame(
   const capped = Math.min(score, MAX_SCORE);
   // 奖励 = 满分的 0..1 比例 × 「目标挂机秒数」
   // 用比例×秒数而不是固定 +20，避免跨阶段漂移（早期曾达 300 倍）
-  const ratio = Math.min(1, capped / REF_SCORE); // REF_SCORE 分 = 打满
-  // 双轨：后期按 25 秒挂机收益；早期保底 30（≈ 一次首购），否则新号玩 30 秒只得 +3 没人玩
+  const scoreRatio = Math.min(1, capped / REF_SCORE); // REF_SCORE 分 = 打满
+  // 早退折算：至少玩 1/3 时长才给全额，否则按比例（防"开局即退"）
+  const timeRatio = Math.max(0, Math.min(1, playedSeconds / 30));
+  const ratio = scoreRatio * (timeRatio >= 1 / 3 ? 1 : timeRatio * 3);
+  // 双轨：后期按 25 秒挂机收益；早期保底 30（≈ 一次首购）
   const reward = Math.max(Math.floor(idleRate * TARGET_IDLE_SECONDS * ratio), Math.ceil(EARLY_FLOOR * ratio));
   const best = Math.max(state.arcade.best[game] ?? 0, capped);
   return {

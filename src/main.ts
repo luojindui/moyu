@@ -32,7 +32,7 @@ import { TeamPanel } from "./ui/team-panel";
 import { CardPanel } from "./ui/card-panel";
 import { BossChoicePanel } from "./ui/boss-panel";
 import { Arcade } from "./ui/arcade";
-import { ensureArcade, finishGame } from "./engine/minigames";
+import { arcadeLeft, ensureArcade, finishGame } from "./engine/minigames";
 import { CARDS, chooseCard, dismissCards, ensureCards } from "./engine/cards";
 import { onBossChoice } from "./engine/events";
 import { DECOR, buyDecor, decorComplete, decorDef } from "./engine/decor";
@@ -362,6 +362,21 @@ async function boot(): Promise<void> {
           showToast(`得分 ${score}，没拿到奖励`);
         }
         arcade.refresh(state);
+        // 🎮 角标：剩余次数
+        const ab = document.getElementById("btn-arcade");
+        if (ab) {
+          const leftN = arcadeLeft(state);
+          let badge = ab.querySelector<HTMLElement>(".arcade-badge");
+          if (leftN > 0) {
+            if (!badge) {
+              badge = document.createElement("span");
+              badge.className = "arcade-badge";
+              ab.appendChild(badge);
+            }
+            badge.textContent = String(leftN);
+          } else if (badge) badge.remove();
+          ab.setAttribute("aria-label", leftN > 0 ? `摸鱼站，今天还剩 ${leftN} 次` : "摸鱼站，今天已玩完");
+        }
         serialize(state, localStorageAdapter, Date.now());
         return r.reward;
       }
