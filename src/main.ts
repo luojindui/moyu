@@ -17,6 +17,7 @@ import {
 import { collectQuote, syncFlavorCollection } from "./engine/collection";
 import { ensureVisits, offlineEfficiency } from "./engine/progression";
 import { rankFor, RANKS } from "./engine/titles";
+import { formatMoyu } from "./engine/format";
 import { chapterFor, zhouLine, bossOutcome, HR_PRESTIGE_LINE } from "./engine/story";
 import { APP_VERSION } from "./version";
 import { RECORDS_KEY, parseRecords, updateRecords, type Records } from "./engine/records";
@@ -177,8 +178,8 @@ async function boot(): Promise<void> {
         hud.refresh(state);
         shop.refresh(state);
         teamPanel.refreshNow(state);
-        teamPanel.flash(`任务完成 +${Math.round(r.reward)}`);
-        toast(`任务完成 +${Math.round(r.reward)}`);
+        if (teamPanel.isOpen) teamPanel.flash(`任务完成 +${formatMoyu(r.reward)}`);
+        else toast(`任务完成 +${formatMoyu(r.reward)}`);
         serialize(state, localStorageAdapter, Date.now());
       }
     },
@@ -199,8 +200,9 @@ async function boot(): Promise<void> {
         hud.refresh(state);
         shop.refresh(state);
         teamPanel.refreshNow(state);
-        teamPanel.flash(`一键领取 ${count} 个任务 +${Math.round(total)}`);
-        toast(`一键领取 ${count} 个任务 +${Math.round(total)}`);
+        const msg = `一键领取 ${count} 个任务 +${formatMoyu(total)}`;
+        if (teamPanel.isOpen) teamPanel.flash(msg);
+        else toast(msg);
         playSuccess();
         serialize(state, localStorageAdapter, Date.now());
       }
@@ -553,6 +555,8 @@ async function boot(): Promise<void> {
           }
         }
         for (const cid of doneNow) {
+          const c2 = state.team.colleagues[cid];
+          if (c2?.autoRepeat) continue; // 已自动领取的不再提示
           if (!lastDoneMissions.has(cid)) {
             const name = colleagueDef(cid)?.name ?? "";
             showToast(`${name} 回来了，点 👥 领取`);
@@ -581,7 +585,7 @@ async function boot(): Promise<void> {
       hud.refresh(state, combo);
       shop.refresh(state);
       journal.refresh(state);
-      teamPanel.refreshNow(state);
+      teamPanel.refresh(state);
     }
     requestAnimationFrame(frame);
   };

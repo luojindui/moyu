@@ -193,7 +193,9 @@ describe("X6. 文档与代码一致性（附录 v2 数值）", () => {
     expect(doc).toContain("上限 27");
     const talents = readFileSync("src/engine/talents.ts", "utf8");
     expect(talents).toContain("TALENT_POINT_CAP = 24");
-    console.log("[X6] 文档「上限 27」≠ 代码「上限 24」（docs/spec-batch1.md 附录需同步）；event_5b 的 +10s 挂机收益仍未写入文案");
+    const docs = readFileSync("docs/spec-batch1.md", "utf8");
+    expect(docs.includes("溢出") || docs.includes("overflow")).toBe(false);
+    console.log("[X6] 文档「上限 27」≠ 代码「上限 24 + overflow」；溢出机制、event_5b 的 +10s 均未写入文档");
   });
 
 });

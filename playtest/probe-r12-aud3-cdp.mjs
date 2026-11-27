@@ -229,7 +229,7 @@ try {
     rankGranted: st.talents.rankGranted,
     dailyGiftDate: st.talents.dailyGiftDate,
     rewardSnapshot: st.team.colleagues.zhou?.rewardSnapshot,
-    note: "期望：互斥各留一个、去重、27 点、rank<=12、日期置空、快照<=1e18",
+    note: "期望：互斥各留一个、去重、点数封顶 24、rank<=12、日期置空、快照<=1e18"
   };
   console.log("[T5]", JSON.stringify(report.scenarios.T5));
 } catch (e) {
@@ -308,7 +308,7 @@ try {
     pointsBefore: before.talents?.points,
     pointsAfter: after.talents?.points,
     unlockedAfter: after.talents?.unlocked,
-    note: "标签写「点亮 2」/「终极·2点」/底部上限 18，实际终极扣 3、上限 27",
+    note: "标签已修正为「点亮 3」「终极·3点」「上限 24」，点击实际扣 3 点；满树 27 点 > 上限 24",
   };
   console.log("[T8]", JSON.stringify(report.scenarios.T8));
 } catch (e) {

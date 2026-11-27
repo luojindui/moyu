@@ -51,9 +51,9 @@ export const TALENTS: TalentDef[] = [
   { id: "click_5b", branch: "click", tier: 5, name: "指尖风暴", desc: "立即 +12% 挂机；此后每 1000 次累计点击再 +1%（封顶 +32%）+ 点击力 +60%", value: 0.12, exclusive: "click_ult" },
 
   // ---------- 挂机流 ----------
-  { id: "idle_1", branch: "idle", tier: 1, name: "稳", desc: "挂机收益 +6%", value: 0.06 },
+  { id: "idle_1", branch: "idle", tier: 1, name: "稳", desc: "挂机收益 +4%", value: 0.04 },
   { id: "idle_2", branch: "idle", tier: 2, name: "离线扩容", desc: "离线封顶 +2h（12→14h）", value: 2 },
-  { id: "idle_3", branch: "idle", tier: 3, name: "更稳", desc: "挂机收益 +6%", value: 0.06 },
+  { id: "idle_3", branch: "idle", tier: 3, name: "更稳", desc: "挂机收益 +4%", value: 0.04 },
   { id: "idle_4", branch: "idle", tier: 4, name: "离线效率", desc: "离线效率上限 +0.08（可超过 100%）", value: 0.08 },
   { id: "idle_5a", branch: "idle", tier: 5, name: "最稳", desc: "挂机收益 +20%", value: 0.2, exclusive: "idle_ult" },
   { id: "idle_5b", branch: "idle", tier: 5, name: "带队摸鱼", desc: "同事提供的挂机收益 +70%", value: 0.7, exclusive: "idle_ult" },

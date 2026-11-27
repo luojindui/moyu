@@ -1,39 +1,39 @@
 {
-  "startedAt": "2026-11-27T09:08:13.439Z",
+  "startedAt": "2026-11-27T09:14:32.238Z",
   "scenarios": {
     "T1": {
       "rates": {
         "60ms": {
-          "success": 4,
+          "success": 5,
           "trials": 5,
           "details": [
             "ok",
-            "idle",
+            "ok",
             "ok",
             "ok",
             "ok"
           ]
         },
         "90ms": {
-          "success": 2,
+          "success": 3,
           "trials": 5,
           "details": [
+            "idle",
             "ok",
-            "idle",
-            "idle",
+            "ok",
             "idle",
             "ok"
           ]
         },
         "120ms": {
-          "success": 1,
+          "success": 2,
           "trials": 5,
           "details": [
             "idle",
             "idle",
             "ok",
             "idle",
-            "idle"
+            "ok"
           ]
         },
         "160ms": {
@@ -106,13 +106,13 @@
       "rankGranted": 12,
       "dailyGiftDate": "",
       "rewardSnapshot": 1000000000000000000,
-      "note": "期望：互斥各留一个、去重、27 点、rank<=12、日期置空、快照<=1e18"
+      "note": "期望：互斥各留一个、去重、点数封顶 24、rank<=12、日期置空、快照<=1e18"
     },
     "T6": {
       "missionId": "quick",
       "endsAtInFuture": true,
       "favor": 2,
-      "moyu": 1053.306174935706,
+      "moyu": 1053.3442579401453,
       "domToast": "老周 回来了，点 👥 领取",
       "note": "自动续班后 missionId 应仍为 quick、endsAt 未来、好感+2、余额≥1000；toast 若提示「回来了，点领取」但与自动领取矛盾=文案误导"
     },
@@ -140,15 +140,15 @@
         "click_4",
         "click_5b"
       ],
-      "note": "标签写「点亮 2」/「终极·2点」/底部上限 18，实际终极扣 3、上限 27"
+      "note": "标签已修正为「点亮 3」「终极·3点」「上限 24」，点击实际扣 3 点；满树 27 点 > 上限 24"
     },
     "T9": {
       "pointsAfterClamp": 24,
       "claimButtonText": "领取 +5000",
-      "claimDelta": 5005.385746560005,
+      "claimDelta": 5005.048379840005,
       "expectedSnapshot": 5000,
-      "idleAccrual": 5.385746560004918
+      "idleAccrual": 5.0483798400046
     }
   },
-  "finishedAt": "2026-11-27T09:09:02.937Z"
+  "finishedAt": "2026-11-27T09:15:23.948Z"
 }

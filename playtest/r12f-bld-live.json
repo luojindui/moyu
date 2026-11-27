@@ -1,0 +1,28 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "checks": {
+    "overflow": {
+      "loadedOverflow": 30,
+      "idleWithout": 123627,
+      "idleWith30": 127535,
+      "mul": 1.032,
+      "effectOverflowBonus": 0.15,
+      "ok": false
+    },
+    "overflowUI": {
+      "panelMentions": false,
+      "hudMentions": false,
+      "idleHint": "不点也 12.75万/秒",
+      "note": "overflow 生效但没有任何 UI 说明来源"
+    },
+    "idleUltText": [],
+    "saveOverflowCap": {
+      "injected": 99,
+      "loaded": 30,
+      "ok": true
+    }
+  },
+  "shots": [
+    "/tmp/r12f-overflow.png"
+  ]
+}

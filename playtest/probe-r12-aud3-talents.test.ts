@@ -17,14 +17,16 @@ import {
   resetTalents,
   talentEffects,
   unlockTalent,
+  addTalentPoints,
 } from "../src/engine/talents";
-import { conversionBonus } from "../src/engine/upgrades";
+import { conversionBonus, effectOf, stationIdleOf, stationIdleScaled } from "../src/engine/upgrades";
 import { finishPatrol, newEventState } from "../src/engine/events";
 import { offlineEfficiency } from "../src/engine/progression";
 import { withLevels, rich, withColleagues } from "./probe-r12-aud2-lib";
+import { teamFixedRate, teamShareRatio } from "../src/engine/team";
 
 const S = (over: Partial<ReturnType<typeof initialState>> = {}) => ({ ...initialState(), ...over });
-const tal = (unlocked: string[], points = 27) => ({ unlocked: [], points, rankGranted: 12, dailyGiftDate: "" } as never);
+const tal = (unlocked: string[], points = 24) => ({ unlocked: [], points, rankGranted: 12, dailyGiftDate: "", overflow: 0 } as never);
 
 describe("Y1. 27 点树：分层花费 / 逐级 / 互斥 / 重置", () => {
   it("Y1 花费：tier1-2=1、tier3-4=2、终极=3；每流派 9 点，全树 27", () => {
@@ -124,3 +126,49 @@ describe("Y2. 新效果与文案一致性", () => {
 function NOW() {
   return Date.UTC(2026, 11, 1);
 }
+
+
+describe("Y3. 溢出天赋点（485191e 新机制）", () => {
+  it("Y7 溢出点 → 每点 +0.5% 挂机，封顶 +15%；存入 overflow，保留至重置/解锁", () => {
+    const t = addTalentPoints({ ...emptyTalents() }, 30);
+    console.log("[Y7] 赠送 30 点 → points=", t.points, " overflow=", t.overflow);
+    expect(t.points).toBe(24);
+    expect(t.overflow).toBe(6);
+    expect(talentEffects(t).overflowIdleBonus).toBeCloseTo(0.03, 6);
+    const capped = addTalentPoints({ ...emptyTalents(), points: 24, overflow: 30 }, 5);
+    expect(capped.overflow).toBe(30);
+    expect(talentEffects(capped).overflowIdleBonus).toBeCloseTo(0.15, 6);
+    // 转生/段位发点会进 overflow；每日签到满点不再给
+    expect(grantPrestigeTalentPoints({ ...emptyTalents(), points: 24, overflow: 2 }).overflow).toBe(3);
+    expect(grantDailyTalentPoint({ ...emptyTalents(), points: 24, overflow: 2 }, "2099-01-01").granted).toBe(0);
+    expect(grantDailyTalentPoint({ ...emptyTalents(), points: 24, overflow: 2 }, "2099-01-01").talents.overflow).toBe(2);
+    // 重置/点亮保留 overflow
+    expect(resetTalents(S({ talents: { ...emptyTalents(), points: 5, unlocked: ["click_1"], overflow: 4 } })).talents.overflow).toBe(4);
+  });
+
+  it("Y8 溢出加成进入工位挂机（stationIdleScaled/effectOf），但不放大同事 share 基数", () => {
+    const base = withColleagues(withLevels(rich(), { retire: 10 }), ["zhou"], 1);
+    const withOverflow = { ...base, talents: { ...emptyTalents(), overflow: 10 } };
+    const ratio = stationIdleScaled(withOverflow) / stationIdleScaled(base);
+    console.log("[Y8] overflow=10 → 工位 ×", ratio.toFixed(3));
+    expect(ratio).toBeCloseTo(1.05, 6); // +5%
+    // share 基数 rawStation 不含 overflow
+    const raw = stationIdleOf(withOverflow) * 1;
+    expect(effectOf(withOverflow).idleRate).toBeCloseTo(stationIdleScaled(withOverflow) + raw * teamShareRatio(withOverflow) + teamFixedRate(withOverflow), 6);
+  });
+
+  it("Y9 【可用性缺陷】溢出点/加成在 UI（天赋面板/角标/main 提示）完全没有显示", () => {
+    const panel = readFileSync("src/ui/team-panel.ts", "utf8");
+    const main = readFileSync("src/main.ts", "utf8");
+    expect(panel.includes("overflow") || panel.includes("溢出")).toBe(false);
+    expect(main.includes("overflow") || main.includes("溢出")).toBe(false);
+    console.log("[Y9] overflow 机制无任何 UI 展示/提示（玩家无法知道溢出点带来的 +X% 挂机）");
+  });
+
+  it("Y10 idle 终极已加强：5a +20%、5b 同事 +70%", () => {
+    expect(TALENTS.find((t) => t.id === "idle_5a")!.value).toBe(0.2);
+    expect(TALENTS.find((t) => t.id === "idle_5b")!.value).toBe(0.7);
+    expect(talentEffects({ ...emptyTalents(), unlocked: ["idle_5a"] }).idleMult).toBeCloseTo(1.2, 6);
+    expect(talentEffects({ ...emptyTalents(), unlocked: ["idle_5b"] }).teamIdleMult).toBeCloseTo(1.7, 6);
+  });
+});

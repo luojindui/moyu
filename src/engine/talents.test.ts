@@ -121,7 +121,7 @@ describe("天赋树（18 个：3 流派 × 4 线性 + 2 互斥终极）", () => 
     let a = withPoints(10);
     for (const id of ["idle_1", "idle_2", "idle_3", "idle_4", "idle_5a"]) a = unlockTalent(a, id)!;
     const ea = talentEffects(a.talents);
-    expect(ea.idleMult).toBeCloseTo(1 + 0.06 + 0.06 + 0.2, 6);
+    expect(ea.idleMult).toBeCloseTo(1 + 0.04 + 0.04 + 0.2, 6);
     expect(ea.offlineCapBonusHours).toBe(2);
     expect(ea.offlineBaseBonus).toBe(0.08);
     expect(ea.teamIdleMult).toBe(1);

@@ -1,8 +1,8 @@
 {
-  "startedAt": "2026-11-27T08:58:20.739Z",
+  "startedAt": "2026-11-27T09:21:30.073Z",
   "rates": {
     "60ms": {
-      "success": 4,
+      "success": 5,
       "trials": 5,
       "noButton": 0,
       "details": [
@@ -10,82 +10,72 @@
         "ok",
         "ok",
         "ok",
-        "idle"
+        "ok"
       ]
     },
     "90ms": {
-      "success": 1,
+      "success": 5,
       "trials": 5,
       "noButton": 0,
       "details": [
-        "idle",
-        "idle",
-        "idle",
         "ok",
-        "idle"
+        "ok",
+        "ok",
+        "ok",
+        "ok"
       ]
     },
     "120ms": {
-      "success": 1,
+      "success": 5,
       "trials": 5,
       "noButton": 0,
       "details": [
-        "idle",
         "ok",
-        "idle",
-        "idle",
-        "idle"
+        "ok",
+        "ok",
+        "ok",
+        "ok"
       ]
     },
     "160ms": {
-      "success": 0,
+      "success": 5,
       "trials": 5,
       "noButton": 0,
       "details": [
-        "idle",
-        "idle",
-        "idle",
-        "idle",
-        "idle"
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok"
       ]
     },
     "220ms": {
-      "success": 0,
+      "success": 5,
       "trials": 5,
       "noButton": 0,
       "details": [
-        "idle",
-        "idle",
-        "idle",
-        "idle",
-        "idle"
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok"
       ]
     }
   },
   "reRender": {
-    "rendersIn1500ms": 10,
-    "rendersPerSec": 6.67,
-    "avgGapMs": 153.5,
-    "gaps": [
-      148.4,
-      150.1,
-      149.9,
-      150.3,
-      150.1,
-      149.7,
-      166.6,
-      150.2,
-      166.6
-    ]
+    "rendersIn1500ms": 0,
+    "rendersPerSec": 0,
+    "avgGapMs": 0,
+    "gaps": []
   },
   "claimTap": {
-    "favorPre": 12,
-    "claimBtn": "领取 +435",
-    "favorBefore": 12,
-    "favorAfter": 12,
-    "missionId": "quick",
-    "claimed": false
+    "favorPre": 50,
+    "claimBtn": "领取 +577",
+    "favorBefore": 50,
+    "favorAfter": 52,
+    "missionId": null,
+    "claimed": true
   },
   "eventTrace": null,
-  "finishedAt": "2026-11-27T08:58:42.148Z"
+  "finishedAt": "2026-11-27T09:22:05.822Z"
 }

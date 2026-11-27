@@ -1,6 +1,6 @@
 import type { GameState } from "../engine/state";
 import { formatMoyu } from "../engine/format";
-import { effectOf, idleIfHome, stationIdleScaled } from "../engine/upgrades";
+import { stationIdleScaled } from "../engine/upgrades";
 import { prestigeMultiplier } from "../engine/prestige";
 import {
   COLLEAGUES,
@@ -27,6 +27,15 @@ import {
   talentEffects,
   type TalentBranch,
 } from "../engine/talents";
+
+/** 好感里程碑效果说明（与实现一致） */
+const MILESTONE_EFFECT: Record<number, string> = {
+  20: "巡逻预警提前 1 秒",
+  40: "离线效率 +3%",
+  60: "丢梗奖励 +10%",
+  80: "团队挂机 +2%/人",
+  100: "该同事派遣奖励 ×1.5",
+};
 
 const SKILL_LABEL: Record<string, string> = {
   chat: "聊八卦",
@@ -286,7 +295,7 @@ export class TeamPanel {
       const nextMilestone = favor < 20 ? 20 : favor < 40 ? 40 : favor < 60 ? 60 : favor < 80 ? 80 : favor < 100 ? 100 : 0;
       const favorHint =
         nextMilestone > 0
-          ? `好感 ${favor}/100 · 再领 ${Math.ceil((nextMilestone - favor) / 2)} 次到 ${nextMilestone}`
+          ? `好感 ${favor}/100 · 再领 ${Math.ceil((nextMilestone - favor) / 2)} 次到 ${nextMilestone}（${MILESTONE_EFFECT[nextMilestone] ?? ""}）`
           : "好感 100/100 · 派遣奖励 ×1.5";
 
       let actionHtml = "";
@@ -306,8 +315,10 @@ export class TeamPanel {
           };
           const est = dispatchReward(probe, def.id, station);
           const perHour = secs > 0 ? est / (secs / 3600) : 0;
-          // 净收益 = 毛收益/小时 − 离岗损失/小时（让取舍可见）
-          const lostPerHour = Math.max(0, idleIfHome(state) - effectOf(state).idleRate) * 3600;
+          // 净收益 = 毛收益/小时 − 该同事本人的离岗损失/小时（(-15%) × 他的挂机贡献）
+          const colIdlePerSec =
+            (def.idlePerLevel * cur.level * mult + station * def.sharePerLevel * cur.level) * 0.15;
+          const lostPerHour = colIdlePerSec * 3600;
           const netPerHour = perHour - lostPerHour;
           const durText = secs >= 3600 ? `${Math.round(secs / 3600)}h` : `${Math.round(secs / 60)}m`;
           return `<button data-act="dispatch" data-id="${def.id}" data-mission="${m.id}">
@@ -325,7 +336,7 @@ export class TeamPanel {
         </div>
         <div class="mate-skill">
           挂机 +${formatMoyu(idlePart)}/秒 + 工位 ${(def.sharePerLevel * cur.level * 100).toFixed(1)}%
-          ${busy ? "（派遣中只算一半）" : ""} · 擅长 ${SKILL_LABEL[def.skill]}
+          ${busy ? "（派遣中 -15%）" : ""} · 擅长 ${SKILL_LABEL[def.skill]}
         </div>
         <div class="mate-skill" style="color:#8be28b">被动：${traitLabel(def.trait)}（${traitValueText(def)}）</div>
         <div class="mate-favor" title="${favorHint}">
@@ -348,7 +359,7 @@ export class TeamPanel {
   }
 
   private renderTalents(state: GameState): void {
-    if (state.talents.points === 0 && state.talents.unlocked.length === 0) {
+    if (state.talents.points === 0 && state.talents.unlocked.length === 0 && (state.talents.overflow ?? 0) === 0) {
       this.body.innerHTML = `<div class="team-hint">
         还没有天赋点。<br>
         获取方式：<b>每次转生 +1</b>；生涯段位第 3/5/7/9/11/13 档各 +1（共 6 点）。<br>
@@ -393,7 +404,8 @@ export class TeamPanel {
     parts.push(`<div class="talent-progress">
       <div>点击转化：${Math.min(10500, state.totalClicks)}/10500 次（当前 +${(Math.min(0.35, Math.floor(state.totalClicks / 300) * 0.01) * 100).toFixed(0)}%）</div>
       <div>安然转化：${Math.min(30, state.patrolSurvives)}/30 次（当前 +${(Math.min(0.3, state.patrolSurvives * 0.01) * 100).toFixed(0)}%）</div>
-      <div style="color:#a8a493">天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1；每日首开 +1（上限 24，满树需 27 点 → 必须放弃一条流派）</div>
+      <div>溢出转化：${state.talents.overflow ?? 0}/30 点（当前 +${(((state.talents.overflow ?? 0) * 0.005) * 100).toFixed(1)}% 挂机，封顶 +15%）</div>
+      <div style="color:#a8a493">天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1；每日首开 +1（上限 24，满树需 27 点 → 终局必须放弃一条流派）</div>
     </div>`);
     this.body.innerHTML = parts.join("");
     this.bindActions();

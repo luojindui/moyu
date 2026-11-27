@@ -220,15 +220,24 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
         const missionId = rawMission && MISSIONS.some((m) => m.id === rawMission) ? rawMission : null;
         const MAX_MISSION_MS = 9 * 3600 * 1000; // 最长 8h + 1h 余量
         const nowRef = Number.isFinite(now) ? now : Date.now();
-        const startedAt = missionId ? Math.min(Math.max(0, numOr0(c.startedAt)), nowRef + MAX_MISSION_MS) : 0;
-        const rawEnds = missionId ? numOr0(c.endsAt) : 0;
-        const endsAt = missionId ? Math.min(Math.max(startedAt + 1000, rawEnds), startedAt + MAX_MISSION_MS) : 0;
+        const rawStart = missionId ? numOr0(c.startedAt) : 0;
+        const rawEnds0 = missionId ? numOr0(c.endsAt) : 0;
+        // 时间不合理（startedAt 不在合理区间 / endsAt <= startedAt）→ 视为没有任务，防"白领"
+        const timeOk =
+          missionId !== null &&
+          rawStart > 0 &&
+          rawStart <= nowRef + 60_000 &&
+          rawEnds0 > rawStart &&
+          rawEnds0 - rawStart <= MAX_MISSION_MS;
+        const finalMission = timeOk ? missionId : null;
+        const startedAt = timeOk ? rawStart : 0;
+        const endsAt = timeOk ? Math.min(rawEnds0, rawStart + MAX_MISSION_MS) : 0;
         const favor = typeof c.favor === "number" && Number.isFinite(c.favor) && c.favor >= 0
           ? Math.min(100, Math.floor(c.favor))
           : 0;
         const autoRepeat = typeof c.autoRepeat === "boolean" ? c.autoRepeat : false;
         const rewardSnapshot = Math.min(numOr0(c.rewardSnapshot), 1e18);
-        team.colleagues[def.id] = { level, missionId, startedAt, endsAt, favor, autoRepeat, rewardSnapshot };
+        team.colleagues[def.id] = { level, missionId: finalMission, startedAt, endsAt, favor, autoRepeat, rewardSnapshot };
       }
     }
     // createdAt 钳制：缺失默认 savedAt（不重发首日）；越界（未来/NaN）按 savedAt收敛，堵离线分级绕过

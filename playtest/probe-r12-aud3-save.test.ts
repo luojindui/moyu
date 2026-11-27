@@ -103,6 +103,19 @@ describe("Z1. 存档净化（P1-2/P2-4 复验）", () => {
     expect(restore(b, NOW).state!.talents.unlocked).toEqual(["event_5b"]);
   });
 
+  it("Z2a 溢出点 overflow：整数 0-30 钳制，非法/缺失 → 0，并 roundtrip", () => {
+    const a = memoryAdapter({ [SAVE_KEY]: blob({ moyu: 1, totalEarned: 1, talents: { unlocked: [], points: 24, overflow: 99 } }) });
+    expect(restore(a, NOW).state!.talents.overflow).toBe(30);
+    const b = memoryAdapter({ [SAVE_KEY]: blob({ moyu: 1, totalEarned: 1, talents: { unlocked: [], points: 0, overflow: -5 } }) });
+    expect(restore(b, NOW).state!.talents.overflow).toBe(0);
+    const c = memoryAdapter({ [SAVE_KEY]: blob({ moyu: 1, totalEarned: 1, talents: { unlocked: [] } }) });
+    expect(restore(c, NOW).state!.talents.overflow).toBe(0);
+    const s = { ...initialState(), moyu: 0, totalEarned: 0, talents: { unlocked: [], points: 0, rankGranted: 12, dailyGiftDate: "", overflow: 7 } };
+    const d = memoryAdapter();
+    serialize(s, d, T0);
+    expect(restore(d, NOW).state!.talents.overflow).toBe(7);
+  });
+
   it("Z2b rankGranted 下限钳制到 -1", () => {
     const a = memoryAdapter({ [SAVE_KEY]: blob({ moyu: 1, totalEarned: 1, talents: { unlocked: [], points: 0, rankGranted: -999 } }) });
     expect(restore(a, NOW).state!.talents.rankGranted).toBe(-1);
