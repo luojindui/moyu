@@ -22,6 +22,7 @@ import {
   TALENTS,
   branchTier,
   canUnlock,
+  costOfTalent,
   exclusiveTaken,
   talentEffects,
   type TalentBranch,
@@ -369,15 +370,15 @@ export class TeamPanel {
         .map((t) => {
           const on = state.talents.unlocked.includes(t.id);
           const can = canUnlock(state.talents, t.id);
-          const need = t.tier >= 5 ? 2 : 1;
+          const need = costOfTalent(t.id);
           const lockedByExclusive = t.exclusive && exclusiveTaken(state.talents, t.exclusive) && !on;
           return `<div class="talent ${on ? "on" : ""}">
             <span class="talent-dot">${on ? "✓" : t.tier}</span>
             <span class="talent-info">
-              <span class="talent-name">${t.name}${t.tier >= 5 ? "（终极·2点）" : ""}</span>
+              <span class="talent-name">${t.name}${t.tier >= 5 ? `（终极·${need}点）` : need > 1 ? `（${need}点）` : ""}</span>
               <span class="talent-desc">${t.desc}${lockedByExclusive ? " · 与另一个终极互斥" : ""}</span>
             </span>
-            ${on ? "" : `<button data-act="talent" data-id="${t.id}" ${can ? "" : "disabled"}>${need === 2 ? "点亮 2" : "点亮"}</button>`}
+            ${on ? "" : `<button data-act="talent" data-id="${t.id}" ${can ? "" : "disabled"}>${`点亮 ${need}`}</button>`}
           </div>`;
         })
         .join("");
@@ -392,7 +393,7 @@ export class TeamPanel {
     parts.push(`<div class="talent-progress">
       <div>点击转化：${Math.min(10500, state.totalClicks)}/10500 次（当前 +${(Math.min(0.35, Math.floor(state.totalClicks / 300) * 0.01) * 100).toFixed(0)}%）</div>
       <div>安然转化：${Math.min(30, state.patrolSurvives)}/30 次（当前 +${(Math.min(0.3, state.patrolSurvives * 0.01) * 100).toFixed(0)}%）</div>
-      <div style="color:#a8a493">天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1（上限 18）</div>
+      <div style="color:#a8a493">天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1；每日首开 +1（上限 24，满树需 27 点 → 必须放弃一条流派）</div>
     </div>`);
     this.body.innerHTML = parts.join("");
     this.bindActions();

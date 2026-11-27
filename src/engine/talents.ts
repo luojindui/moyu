@@ -2,7 +2,7 @@ import type { GameState } from "./state";
 
 /**
  * 天赋树（批次 1）：三条流派，每流派 4 个线性天赋 + 2 个**互斥终极**（二选一）。
- * 共 18 个天赋，点数上限 18 → 必然要有取舍（每个流派只能选一个终极）。
+ * 共 18 个天赋，满树需 27 点，但上限 24 → 终局必须放弃一条流派的一部分。
  *
  * 点数来源：每次转生 +1；段位第 3/5/7/9/11/13 档各 +1。可免费重置。
  * 数值由 balance-owner 决策，见 playtest/b1-balance-decision.md。
@@ -37,7 +37,7 @@ export const MAX_TIER = 5;
 /** 每次转生获得的天赋点 */
 export const TALENT_POINTS_PER_PRESTIGE = 1;
 /** 全树点数上限（3 流派 × 6 点 = 18） */
-export const TALENT_POINT_CAP = 27; // 每流派 4 线性(1+1+2+2=6) + 终极 3 = 9；全树 27
+export const TALENT_POINT_CAP = 24; // 满树需 27 点（3 流派 × 9），上限 24 → 终局必须放弃一条流派
 /** 发放天赋点的段位档位（第 3/5/7/9/11/13 档，索引 2/4/6/8/10/12） */
 export const TALENT_RANK_TIERS = [2, 4, 6, 8, 10, 12];
 

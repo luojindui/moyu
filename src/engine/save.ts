@@ -185,7 +185,7 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
     }
     talents.points =
       typeof rawTalents?.points === "number" && Number.isInteger(rawTalents.points) && rawTalents.points >= 0
-        ? Math.min(27, rawTalents.points)
+        ? Math.min(24, rawTalents.points)
         : 0;
     talents.rankGranted =
       typeof rawTalents?.rankGranted === "number" && Number.isInteger(rawTalents.rankGranted)

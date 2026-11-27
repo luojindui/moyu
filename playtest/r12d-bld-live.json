@@ -1,0 +1,58 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "checks": {
+    "save27": {
+      "loaded": 27,
+      "ok": true
+    },
+    "panelLabels": {
+      "click_3": {
+        "id": "click_3",
+        "t": "点亮",
+        "dis": true
+      },
+      "click_5a": {
+        "id": "click_5a",
+        "t": "点亮 2",
+        "dis": true
+      },
+      "bottomLine": [
+        "连击上限 连击上限 20 → 30（最高 ×1.36）",
+        "离线效率 离线效率上限 +0.08（可超过 100%）",
+        "天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1（上限 18）"
+      ],
+      "click5bDesc": "指尖风暴（终极·2点） 立即 +12% 挂机；此后每 1000 次累计点击再 +1%（封顶 +32%）+ 点击力 +60%",
+      "costNote": "实装花费：t1/t2=1，t3/t4=2，终极=3；面板按钮标签若仍写 1/2 即为不一致"
+    },
+    "spendCheck": {
+      "unlocked": [
+        "click_1",
+        "click_2",
+        "click_3",
+        "click_4",
+        "click_5a"
+      ],
+      "pointsLeft": 18,
+      "spent": 9,
+      "expect": 9
+    },
+    "event5bOffline": {
+      "visits": 4,
+      "effWithout": 1,
+      "effWith": 1,
+      "gain": "0%（被 cap 吃掉）"
+    },
+    "newbieBadge": {
+      "points": 1,
+      "badge": true,
+      "seen": "1",
+      "toast": "送你 1 个天赋点，点 👥 看看",
+      "badgeAfterOpen": true,
+      "note": "新手首次打开：每日点 +1，角标要开过 👥 才出现（有 toast 引导）"
+    }
+  },
+  "shots": [
+    "/tmp/r12d-talents-27.png",
+    "/tmp/r12d-newbie.png"
+  ]
+}

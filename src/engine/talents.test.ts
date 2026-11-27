@@ -156,6 +156,8 @@ describe("天赋树（18 个：3 流派 × 4 线性 + 2 互斥终极）", () => 
     expect(talentCostOf(5)).toBe(3);
     const perBranch = 1 + 1 + 2 + 2 + 3;
     expect(perBranch).toBe(9);
-    expect(TALENT_POINT_CAP).toBe(perBranch * 3);
+    // 上限 24 < 满树 27 → 终局必须放弃一条流派
+    expect(TALENT_POINT_CAP).toBe(24);
+    expect(perBranch * 3).toBe(27);
   });
 });
