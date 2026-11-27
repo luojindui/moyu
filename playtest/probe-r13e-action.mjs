@@ -2,7 +2,7 @@
 import { spawn } from "node:child_process";
 import { writeFileSync } from "node:fs";
 const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
-const PORT = 9843;
+const PORT = 9844;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const log = (...a) => console.error("[r13e]", ...a);
 const proc = spawn(CHROME, ["--headless=new","--disable-gpu","--no-sandbox","--hide-scrollbars","--mute-audio","--no-first-run","--disable-extensions",`--user-data-dir=/tmp/chrome-r13e-${Date.now()}`,`--remote-debugging-port=${PORT}`,"about:blank"], { stdio: "ignore" });
@@ -28,7 +28,7 @@ const state=()=>ev(`window.__MOYU__.state`);
 await send("Runtime.enable"); await send("Page.enable");
 await send("Emulation.setDeviceMetricsOverride",{width:390,height:844,deviceScaleFactor:3,mobile:true,screenWidth:390,screenHeight:844});
 await send("Emulation.setTouchEmulationEnabled",{enabled:true,maxTouchPoints:5});
-await send("Page.navigate",{url:"http://127.0.0.1:5173/"});
+await send("Page.navigate",{url:"http://127.0.0.1:5180/"});
 for(let i=0;i<150;i++){const ok=await ev(`typeof window.__MOYU__==='object' && document.readyState==='complete'`);if(ok===true)break;await sleep(100);}
 await sleep(600);
 const out={trials:[],special:{},errors:[]};
@@ -60,7 +60,7 @@ const rects=()=>ev(`(()=>{const w=document.getElementById('boss-choice');const r
    boxAnim:cs.animationName, boxTransition:cs.transitionDuration,
    srLive:(document.getElementById('sr-live')||{}).textContent||'',
    toast:(()=>{const e=document.getElementById('dom-toast');const b=e.getBoundingClientRect();return {x:+b.x.toFixed(0),y:+b.y.toFixed(0),w:+b.width.toFixed(0),h:+b.height.toFixed(0),text:e.textContent,show:e.classList.contains('show')}})()};})()`);
-const KEY={"走路带风":"act-busy","盯着别人屏幕":"switch-screen","看手机":"keep-slacking","眼神是散":"keep-slacking"};
+const KEY={"脚步声又快又重":"act-busy","盯着别人的屏幕":"switch-screen","看手机":"keep-slacking","眼神是散":"keep-slacking"};
 const mapping=(tell)=>{for(const k in KEY) if(tell.includes(k)) return KEY[k];return null;};
 // 开一次确定的新面板（带重试：上一轮残留面板会吞掉 show 突变）
 async function closeModals(){

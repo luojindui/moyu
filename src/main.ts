@@ -33,6 +33,7 @@ import { CardPanel } from "./ui/card-panel";
 import { BossChoicePanel } from "./ui/boss-panel";
 import { CARDS, chooseCard, dismissCards, ensureCards } from "./engine/cards";
 import { onBossChoice } from "./engine/events";
+import { CHOICE_SECONDS } from "./engine/boss-choice";
 import { cardEffects } from "./engine/cards";
 import { claimMission, colleagueDef, recruit, upgradeColleague, dispatch as dispatchMission , setAutoRepeat, favorTier } from "./engine/team";
 import { grantDailyTalentPoint, grantRankTalents, resetTalents, talentEffects, unlockTalent } from "./engine/talents";
@@ -509,7 +510,7 @@ async function boot(): Promise<void> {
           : es.bossVariant === "blitz"
             ? "摸鱼冲刺：8 秒内连点 16 下"
             : es.bossVariant === "choice"
-              ? "回合制老板：看线索，在 4 秒内选对应对"
+              ? `回合制老板：看线索，在 ${CHOICE_SECONDS} 秒内选对应对`
               : "假装工作：8 秒内点 5 下",
       );
     }

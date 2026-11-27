@@ -197,10 +197,12 @@ export interface CardState {
   nextDayGuaranteed: string | null;
   /** 当天是否已被玩家"今天先不选"（防止每帧重开） */
   dismissed: boolean;
+  /** 已选卡的选取日期（用于"每天可再选一次"，旧卡 buff 仍按 24h 生效） */
+  chosenDate: string;
 }
 
 export function emptyCardState(date = ""): CardState {
-  return { date, offers: [], chosen: null, until: 0, nextDayGuaranteed: null, dismissed: false };
+  return { date, offers: [], chosen: null, until: 0, nextDayGuaranteed: null, dismissed: false, chosenDate: "" };
 }
 
 function rngPick<T>(arr: T[], rng: () => number): T {
@@ -234,13 +236,17 @@ export function rollOffers(date: string, rng: () => number, guaranteed?: string 
     until: 0,
     nextDayGuaranteed: guaranteed === "hr_talk" ? "secret_project" : null,
     dismissed: false,
+    chosenDate: "",
   };
 }
 
 /** 选卡（一天只能选一次）；返回新状态 */
 export function chooseCard(state: GameState, id: string, nowMs: number): GameState | null {
   const cs = state.cards;
-  if (!cs || cs.chosen) return null;
+  if (!cs) return null;
+  // 每天只能选一次（昨天选的卡仍按 24h 生效，但今天可以覆盖它）
+  const today = new Date(nowMs).toLocaleDateString("sv-SE");
+  if (cs.chosenDate === today) return null;
   if (!cs.offers.includes(id)) return null;
   const def = CARDS.find((c) => c.id === id);
   if (!def) return null;
@@ -250,6 +256,7 @@ export function chooseCard(state: GameState, id: string, nowMs: number): GameSta
     cards: {
       ...cs,
       chosen: id,
+      chosenDate: today,
       until: nowMs + CARD_DURATION * 1000,
       nextDayGuaranteed: id === "hr_talk" ? "secret_project" : null,
     },
@@ -298,12 +305,15 @@ export function cardEffects(state: GameState, nowMs: number): CardEffects {
 /** 每天首次打开时刷新卡池（幂等） */
 export function ensureCards(state: GameState, today: string, rng: () => number, nowMs: number): GameState {
   const cs = state.cards;
-  // 同一张已选卡 24h 内跨天仍有效：只更新 date，不重抽
-  if (cs?.chosen && cs.until > nowMs) {
-    if (cs.date === today) return state;
-    return { ...state, cards: { ...cs, date: today } };
-  }
   if (cs && cs.date === today) return state; // 同日不重抽
   const guaranteed = cs?.nextDayGuaranteed ?? null;
-  return { ...state, cards: rollOffers(today, rng, guaranteed) };
+  const fresh = rollOffers(today, rng, guaranteed);
+  // 旧卡若仍在 24h 内，buff 继续生效（chosen/until 保留），但今天可以重新选
+  if (cs?.chosen && cs.until > nowMs) {
+    return {
+      ...state,
+      cards: { ...fresh, chosen: cs.chosen, chosenDate: cs.chosenDate, until: cs.until },
+    };
+  }
+  return { ...state, cards: fresh };
 }

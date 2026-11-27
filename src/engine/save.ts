@@ -237,6 +237,10 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
         cards.until = 0;
       }
       cards.dismissed = rawCards.dismissed === true;
+      cards.chosenDate = typeof rawCards.chosenDate === "string" && /^\d{4}-\d{2}-\d{2}$/.test(rawCards.chosenDate)
+        ? rawCards.chosenDate
+        : "";
+      if (cards.chosen && !cards.chosenDate) cards.chosenDate = cards.date;
       cards.nextDayGuaranteed =
         typeof rawCards.nextDayGuaranteed === "string" && CARDS.some((c) => c.id === rawCards.nextDayGuaranteed)
           ? rawCards.nextDayGuaranteed
