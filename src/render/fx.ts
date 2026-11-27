@@ -69,7 +69,8 @@ export class Fx {
       ctx.font = `bold ${10 * scale}px system-ui`;
       ctx.fillStyle = "#fff8e1";
       // 长文本按宽度折成两行，避免在手机上被左右裁切
-      const maxW = viewW - 8;
+      // canvas 未做整体缩放：坐标是虚拟单位，需乘 scale 转成像素
+      const maxW = (viewW - 8) * scale;
       const lines: string[] = [];
       let cur = "";
       for (const ch of t.text) {
@@ -84,8 +85,8 @@ export class Fx {
       const shown = lines.slice(0, 2);
       // 水平钳制：保证文字块不出画布
       const halfMax = (Math.max(...shown.map((l) => ctx.measureText(l).width), 0) / 2) + 2;
-      const cx = Math.max(halfMax, Math.min(viewW - halfMax, t.x));
-      const cy = Math.max(12, Math.min(viewH - 6, t.y));
+      const cx = Math.max(halfMax, Math.min(viewW * scale - halfMax, t.x * scale));
+      const cy = Math.max(14 * scale, Math.min(viewH * scale - 4 * scale, t.y * scale));
       shown.forEach((line, i) => {
         ctx.fillText(line, cx, cy + i * 11 * scale);
       });

@@ -1,0 +1,42 @@
+{
+  "reRender": {
+    "renders": 9,
+    "seconds": 1.5,
+    "rendersPerSec": 6,
+    "gaps": [
+      149.7,
+      151.8,
+      149.5,
+      167.2,
+      166.6,
+      148,
+      151.5,
+      150
+    ]
+  },
+  "rates": {
+    "30ms": "3/5",
+    "60ms": "2/5",
+    "90ms": "5/5",
+    "120ms": "1/5",
+    "160ms": "0/5",
+    "220ms": "0/5"
+  },
+  "claimTap": {
+    "panelOpen": true,
+    "claimBtnFound": null,
+    "favorBefore": 26,
+    "favorAfter": 26,
+    "claimed": false
+  },
+  "note": "主循环每 150ms 调 teamPanel.refreshNow() → 面板打开时强制整块重建 innerHTML；真实点按跨越一次重建即丢 click",
+  "eventTrace": {
+    "log": [
+      "up:SMALL",
+      "click:SMALL"
+    ],
+    "sameNodeAtRelease": false,
+    "targetActAtRelease": "SMALL",
+    "panelHidden": false
+  }
+}

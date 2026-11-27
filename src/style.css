@@ -1091,3 +1091,41 @@ body {
 .team-hint b {
   color: #ffd76e;
 }
+
+/* ---------- DOM toast（长消息，不折行不截断） ---------- */
+#dom-toast {
+  position: fixed;
+  left: 50%;
+  top: 108px;
+  transform: translate(-50%, -8px);
+  z-index: 45;
+  max-width: 86vw;
+  padding: 8px 14px;
+  font-size: 14px;
+  line-height: 1.45;
+  text-align: center;
+  color: #fff8e1;
+  background: rgba(24, 24, 38, 0.94);
+  border: 2px solid #7ec8ff;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+#dom-toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+/* 天赋点角标 */
+#btn-team .talent-badge {
+  position: absolute;
+  left: -30px;
+  top: 12px;
+  padding: 2px 5px;
+  font-size: 10px;
+  line-height: 1.2;
+  color: #10241a;
+  background: #ffd76e;
+  border-radius: 3px;
+  white-space: nowrap;
+}

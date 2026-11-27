@@ -1,0 +1,200 @@
+{
+  "startedAt": "2026-11-27T08:42:54.658Z",
+  "scenarios": {
+    "L1": {
+      "summaryText": "已招募 0/5 · 小队挂机 +0/秒",
+      "countdownBeforeEnd": "⏳ 溜一圈 进行中 · 12:45",
+      "badge": "1",
+      "claimText": "领取 +360",
+      "snapshot": 360,
+      "moyuDelta": 363.03226015999826,
+      "expectedSnapshot": 360,
+      "idleAccrual": 3.032260159998259,
+      "favor": 2,
+      "missionCleared": true,
+      "badgeAfter": "1",
+      "note": "按钮文案=快照=实到账（差额为等待期间自然挂机）"
+    },
+    "L2": {
+      "summary": "已招募 2/5 · 小队挂机 +123/秒 一键领取 +26.33万",
+      "claimAllText": "一键领取 +26.33万",
+      "cardTexts": [
+        "领取 +5000",
+        "领取 +6000"
+      ],
+      "moyuDelta": 13656.45823976,
+      "snapshotSum": 11000,
+      "idleAccrual": 2656.4582397600007,
+      "note": "一键按钮显示值按当前挂机率重算（虚高），实到账=快照之和 11000"
+    },
+    "L3": {
+      "firstDispatchButton": {
+        "found": true
+      },
+      "markAfter220ms": "same-pos-new-node",
+      "fast30ms": {
+        "rect": {
+          "rect": {
+            "x": 93.0546875,
+            "y": 360.578125
+          }
+        },
+        "missionId": "quick"
+      },
+      "slow250ms": {
+        "rect": {
+          "rect": {
+            "x": 93.0546875,
+            "y": 360.578125
+          }
+        },
+        "missionId": null
+      },
+      "tap120msTrials": [
+        null,
+        null,
+        null
+      ],
+      "note": "面板每 ~150ms 全量重建 → 按住超过一次重建的点击落在被替换的节点上，click 不触发（120ms 点按也可能丢）"
+    },
+    "L4": {
+      "talentNodeCount": 18,
+      "ultimateLabels": [
+        "摸鱼转正（终极·2点）",
+        "指尖风暴（终极·2点）",
+        "最稳（终极·2点）",
+        "带队摸鱼（终极·2点）",
+        "摸鱼气场（终极·2点）",
+        "老板眼线（终极·2点）"
+      ],
+      "pointsLabelBefore": "天赋点 10",
+      "pointsAfterLinear": 6,
+      "unlockedAfterLinear": [
+        "click_1",
+        "click_2",
+        "click_3",
+        "click_4"
+      ],
+      "pointsAfterUlt": 4,
+      "unlockedAfterUlt": [
+        "click_1",
+        "click_2",
+        "click_3",
+        "click_4",
+        "click_5a"
+      ],
+      "ult5b": {
+        "disabled": true,
+        "text": "点亮 2",
+        "desc": "5\n指尖风暴（终极·2点） 点击力再 +60%，连击每层收益翻倍（上限 ×1.72） · 与另一个终极互斥\n点亮 2"
+      },
+      "resetPoints": 10,
+      "resetUnlocked": [],
+      "confirmCalls": 1,
+      "note": "18 节点 / 终极标 2 点 / 选 5a 后 5b 禁用 / 重置有 confirm"
+    },
+    "L5": {
+      "claimButton": "领取 +0",
+      "errors": [
+        "Uncaught TypeError: Cannot read properties of undefined (reading 'type')"
+      ],
+      "favorBefore": 0,
+      "favorAfter": 0,
+      "missionStill": "ghost_mission",
+      "note": "P1-4 复验：未知 missionId 仍抛 TypeError、状态不变、同事卡死"
+    },
+    "L6": {
+      "keys": [
+        "moyu-persist-hint-v1",
+        "moyu-records",
+        "moyu-save"
+      ],
+      "saveVersionAfterBoot": 2,
+      "saveMoyuAfterBoot": 0.3533000000000001,
+      "newerBackup": null,
+      "note": "P1-5 复验：v3 档被 v2 客户端覆盖，moyu-save.newer.bak 未生成（备份函数仍未调用）"
+    },
+    "L7": {
+      "clickDeltas": [
+        1.25,
+        1.265,
+        1.28,
+        1.295,
+        1.31,
+        1.325,
+        1.34,
+        1.355,
+        1.37,
+        1.385,
+        1.4,
+        1.415,
+        1.43,
+        1.445,
+        1.46,
+        1.475,
+        1.49,
+        1.505,
+        1.52,
+        1.535,
+        1.55,
+        1.565,
+        1.58,
+        1.595,
+        1.61,
+        1.625
+      ],
+      "minDelta": 1.25,
+      "maxDelta": 1.625,
+      "comboHud": {
+        "text": "连×25",
+        "hidden": false
+      },
+      "note": "有 click_3/click_4：HUD 连击应 >20（证明 click_3 接入）；delta 最大值应≈最小值（证明 click_4 暴击未接入）"
+    },
+    "L8": {
+      "countdown": "⏳ 楼下买咖啡 进行中 · 7:59:58",
+      "upgradeTexts": [
+        "已满级 Lv.5",
+        "已满级 Lv.5",
+        "已满级 Lv.5",
+        "已满级 Lv.5",
+        "已满级 Lv.5"
+      ],
+      "summary": "已招募 5/5 · 小队挂机 +7010/秒",
+      "autoText": [
+        "自动重复：开",
+        "自动重复：关",
+        "自动重复：关",
+        "自动重复：关",
+        "自动重复：关"
+      ],
+      "blobSnapshotBeforeReload": {
+        "level": 5,
+        "missionId": "coffee",
+        "startedAt": 1795769011939,
+        "endsAt": 1795797813939,
+        "favor": 0,
+        "autoRepeat": true,
+        "rewardSnapshot": 123456
+      },
+      "afterReload": {
+        "level": 5,
+        "missionId": "coffee",
+        "startedAt": 1795769011939,
+        "endsAt": 1795797813939,
+        "favor": 0,
+        "autoRepeat": true,
+        "rewardSnapshot": 123456
+      },
+      "note": "hh:mm:ss / 已满级 Lv.5 / 顶部汇总 / autoRepeat+rewardSnapshot 刷新后保留"
+    },
+    "L9": {
+      "badgeBeforeOpen": "1",
+      "badgeWhileOpenBeforeClaim": "1",
+      "badgeWhileOpenAfterClaim": null,
+      "badgeAfterClosePanel": null,
+      "note": "面板打开期间领取后角标仍显示 1（refreshNow 打开时只 render 不更新角标），关闭面板才同步"
+    }
+  },
+  "finishedAt": "2026-11-27T08:43:42.682Z"
+}

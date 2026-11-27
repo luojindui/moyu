@@ -1,6 +1,6 @@
 import type { GameState } from "./state";
 import { talentEffects } from "./talents";
-import { favorTier } from "./team";
+import { favorTier, teamTraits } from "./team";
 
 /**
  * 长线进度辅助（R7）：
@@ -33,5 +33,11 @@ export function offlineEfficiency(state: GameState, createdAtMs: number, nowMs: 
   const talentBase = talentEffects(state.talents).offlineBaseBonus;
   // 好感 40 里程碑：离线基础效率 +3%
   const favorBase = favorTier(state) >= 2 ? 0.03 : 0;
-  return Math.min(1, 0.7 + talentBase + favorBase + visits * VISIT_BONUS_STEP + streakBonus);
+  // 小美被动：在队期间离线基础效率 +2%
+  const teamBase = teamTraits(state).offlineEfficiency;
+  // idle_4：离线效率上限可超过 100%（上限随天赋 +talentBase 提高）
+  return Math.min(
+    1 + talentBase,
+    0.7 + talentBase + favorBase + teamBase + visits * VISIT_BONUS_STEP + streakBonus,
+  );
 }

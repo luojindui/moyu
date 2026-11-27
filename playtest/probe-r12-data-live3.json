@@ -1,0 +1,25 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "at": "2026-11-27T08:45:29.382Z",
+  "buy1": 60,
+  "missionAfterDispatch": {
+    "level": 1,
+    "missionId": "coffee",
+    "startedAt": 1795769136857,
+    "endsAt": 1795793616857,
+    "favor": 0,
+    "autoRepeat": false,
+    "rewardSnapshot": 434475
+  },
+  "snapshot": 434475,
+  "buy2": 120,
+  "panelBeforeClaim": {
+    "claimAll": "一键领取 +1609.80万",
+    "single": "领取 +43.45万"
+  },
+  "singleClaim": {
+    "display": "领取 +43.45万",
+    "actualMoyuDelta": 443629.9828186035,
+    "actualLifetimeDelta": 443629.9828491211
+  }
+}

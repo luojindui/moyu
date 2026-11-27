@@ -3,6 +3,7 @@ import { gain, lose } from "./state";
 import { clickPowerOf, doClick, comboMultiplier } from "./actions";
 import { effectOf } from "./upgrades";
 import { talentEffects } from "./talents";
+import { teamTraits } from "./team";
 
 /** 随机事件数值（视觉层读取同一份） */
 export const BOSS_INTERVAL_MIN = 90;
@@ -182,7 +183,12 @@ export function onBossTap(
   if (es.bossPenaltyTotal >= cap) {
     return { state: afterIncome, caught: false, lost: 0, income }; // 已罚满封顶
   }
-  const due = Math.min(perTap, cap - es.bossPenaltyTotal);
+  // 罚款减免：天赋 event_2(-35%) + 强哥被动(-10%)，合计封顶 -60%
+  const penaltyCut = Math.min(
+    0.6,
+    talentEffects(state.talents).penaltyReduction + teamTraits(state).penaltyReduction,
+  );
+  const due = Math.min(perTap, cap - es.bossPenaltyTotal) * (1 - penaltyCut);
   // 扣款同时扣回累计值（防"零余额偷点刷段位"）；连胜清零立即写回 GameState（防刷新规避）
   const { state: paid, lost } = lose({ ...afterIncome, surviveStreak: 0 }, due);
   es.bossCaught = true;

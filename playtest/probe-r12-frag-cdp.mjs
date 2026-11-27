@@ -67,6 +67,8 @@ const SNAP = `JSON.stringify((() => { try {
     teamOpen: teamEl ? !teamEl.classList.contains("hidden") : false,
     teamTab: document.getElementById("tab-talents").classList.contains("active") ? "talents" : "colleagues",
     teamPoints: document.getElementById("team-points").textContent,
+    summary: (() => { const el = document.querySelector("#team-body .team-summary"); return el ? el.innerText : null; })(),
+    hint: (() => { const el = document.querySelector("#team-body .team-hint"); return el ? el.innerText : null; })(),
     panel: body ? {
       scrollH: body.scrollHeight,
       clientH: body.clientHeight,

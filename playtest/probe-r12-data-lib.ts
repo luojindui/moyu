@@ -5,7 +5,7 @@
  * 复算：回本时间、派遣 vs 挂机、三流派收益、面板一致性。
  */
 import { initialState, type GameState } from "../src/engine/state";
-import { doClick, buyUpgrade, clickPowerOf } from "../src/engine/actions";
+import { doClick, buyUpgrade, clickPowerOf, comboCapOf } from "../src/engine/actions";
 import {
   costOf,
   marginalEffect,
@@ -21,6 +21,7 @@ import { newEventState, finishPatrol, onMemeTap } from "../src/engine/events";
 import {
   COLLEAGUES,
   MISSIONS,
+  AWAY_IDLE_FACTOR,
   recruit,
   upgradeColleague,
   dispatch,
@@ -28,9 +29,13 @@ import {
   missionDone,
   colleagueDef,
   missionDef,
+  missionSecondsFor,
+  dispatchReward,
   upgradeCostOf,
   MAX_COLLEAGUE_LEVEL,
   favorTier,
+  teamFixedRate,
+  teamShareRatio,
 } from "../src/engine/team";
 import { TALENTS } from "../src/engine/talents";
 
@@ -72,8 +77,17 @@ export function withTalents(state: GameState, ids: string[]): GameState {
   }
   return s;
 }
-export function branchIds(branch: "click" | "idle" | "event"): string[] {
-  return TALENTS.filter((t) => t.branch === branch).map((t) => t.id);
+/** 该流派的线性天赋（tier 1-4，不含互斥终极） */
+export function branchLinearIds(branch: "click" | "idle" | "event"): string[] {
+  return TALENTS.filter((t) => t.branch === branch && t.tier < 5).map((t) => t.id);
+}
+/** 该流派两个互斥终极 id */
+export function ultimateIds(branch: "click" | "idle" | "event"): string[] {
+  return TALENTS.filter((t) => t.branch === branch && t.tier >= 5).map((t) => t.id);
+}
+/** 一条完整流派 = 4 线性 + 指定终极 */
+export function branchBuild(branch: "click" | "idle" | "event", ult = 0): string[] {
+  return [...branchLinearIds(branch), ultimateIds(branch)[ult]!];
 }
 export function allTalentIds(): string[] {
   return TALENTS.map((t) => t.id);
@@ -173,13 +187,16 @@ export interface SimResult {
     { atDay: number; station: number; cumIncome: number; upgradePayback: number; state: GameState | null }
   >;
   log: { recruits: string[]; upgrades: string[]; dispatches: number; claims: number };
+  /** 一键领取显示值/实际到账 的最大倍率（快照 vs 现价的偏差） */
+  claimMismatchMax: number;
   /** 期末状态（用于同一钱包下的 ROI 对照） */
   state: GameState;
 }
 
-function comboFor(cps: number): number {
-  if (cps >= 3) return 12;
-  if (cps >= 1) return 6;
+/** 可稳定维持的连击数：3cps+ 每拍 0.33s 可一路连到上限；1cps 间隔≈1s 不涨连 */
+function comboFor(cps: number, cap: number): number {
+  if (cps >= 3) return cap;
+  if (cps >= 2) return Math.min(12, cap);
   return 0;
 }
 
@@ -233,8 +250,22 @@ export function simulate(o: SimOpts): SimResult {
     state = greedySpend(state, o.cps);
   };
 
+  let claimMismatchMax = 1;
   const teamTick = (nowMs: number): void => {
     if (o.team === "none") return;
+    // 面板"一键领取"总额（用当前工位）vs 实际（用快照）
+    {
+      const station = stationIdleScaled(state);
+      let panel = 0;
+      let actual = 0;
+      for (const def of COLLEAGUES) {
+        if (!missionDone(state, def.id, nowMs)) continue;
+        const cur = state.team.colleagues[def.id]!;
+        panel += dispatchReward(state, def.id, station);
+        actual += cur.rewardSnapshot > 0 ? cur.rewardSnapshot : dispatchReward(state, def.id, station);
+      }
+      if (actual > 0) claimMismatchMax = Math.max(claimMismatchMax, panel / actual);
+    }
     for (const def of COLLEAGUES) {
       if (missionDone(state, def.id, nowMs)) {
         const r = claimMission(state, def.id, nowMs, stationIdleScaled(state));
@@ -273,7 +304,7 @@ export function simulate(o: SimOpts): SimResult {
       const cur = state.team.colleagues[def.id];
       if (!cur || cur.missionId) continue;
       const m = bestMissionByHour(state, def.id);
-      const next = dispatch(state, def.id, m.id, nowMs);
+      const next = dispatch(state, def.id, m.id, nowMs, stationIdleScaled(state));
       if (next) {
         state = next;
         log.dispatches += 1;
@@ -296,7 +327,7 @@ export function simulate(o: SimOpts): SimResult {
       lastAt = nowMs;
       teamTick(nowMs);
       gameTime = 0;
-      const combo = comboFor(o.cps);
+      const combo = comboFor(o.cps, comboCapOf(state));
       for (let t = 0; t < o.sessionSeconds; t += dt) {
         gameTime += dt;
         if (o.cps > 0) {
@@ -369,23 +400,41 @@ export function simulate(o: SimOpts): SimResult {
     firstAfford,
     log,
     state,
+    claimMismatchMax,
   };
 }
 
-/** 派遣：按"每秒占用收益"选最优任务（含 300 地板） */
-export function bestMissionByHour(state: GameState, colleagueId: string): (typeof MISSIONS)[number] {
-  const S = stationIdleScaled(state);
+/** 该同事留岗时的挂机/秒（固定值×倍率×好感 + 工位×share） */
+export function ownIdleRate(state: GameState, colleagueId: string, level?: number): number {
   const def = colleagueDef(colleagueId)!;
   const cur = state.team.colleagues[colleagueId];
-  const lv = cur?.level ?? 1;
+  const lv = level ?? cur?.level ?? 1;
+  const M = multOf(state);
+  const favorIdleBonus = favorTier(state) >= 4 ? 1.1 : 1;
+  return def.idlePerLevel * lv * M * favorIdleBonus + stationIdleScaled(state) * def.sharePerLevel * lv;
+}
+
+/** 派这一单的净收益（奖励 − 派遣在外损失的 50% 挂机），含任务时长 */
+export function netDispatchProfit(state: GameState, colleagueId: string, missionId: string): number {
+  const def = colleagueDef(colleagueId)!;
+  const cur = state.team.colleagues[colleagueId];
+  const m = missionDef(missionId)!;
+  const probe: GameState = {
+    ...state,
+    team: { colleagues: { ...state.team.colleagues, [colleagueId]: { ...cur!, missionId } } },
+  };
+  const reward = dispatchReward(probe, colleagueId, stationIdleScaled(state));
+  const loss = (1 - AWAY_IDLE_FACTOR) * ownIdleRate(state, colleagueId) * m.seconds;
+  return reward - loss;
+}
+
+/** 派遣：按"净收益/小时"选最优任务（含 300 地板 + 50% 挂机代价） */
+export function bestMissionByHour(state: GameState, colleagueId: string): (typeof MISSIONS)[number] {
   let best = MISSIONS[0]!;
-  let bestRate = -1;
+  let bestRate = -Infinity;
   for (const m of MISSIONS) {
-    const base = Math.max(300, S * m.seconds * 0.011);
-    const match = def.skill === m.type ? 1.5 : 1;
-    const lvF = 1 + 0.5 * ((lv - 1) / (MAX_COLLEAGUE_LEVEL - 1));
-    const reward = base * m.mult * match * lvF;
-    const rate = reward / m.seconds;
+    const sec = missionSecondsFor(colleagueId, m.id);
+    const rate = netDispatchProfit(state, colleagueId, m.id) / sec;
     if (rate > bestRate) {
       bestRate = rate;
       best = m;
@@ -398,13 +447,9 @@ export function bestMissionByHour(state: GameState, colleagueId: string): (typeo
 // 回本 / ROI 静态计算
 // ---------------------------------------------------------------------------
 
-/** 同事 Lv1 招募后的挂机/秒（引擎口径：固定值×倍率 + 工位 × 0.008/级） */
+/** 同事在岗挂机/秒（引擎口径：固定值×倍率×好感 + 工位 × share/级） */
 export function colleagueIdleAt(state: GameState, id: string, level = 1): number {
-  const def = colleagueDef(id)!;
-  const M = multOf(state);
-  const favorIdleBonus = favorTier(state) >= 4 ? 1.1 : 1;
-  const station = stationIdleScaled(state);
-  return def.idlePerLevel * level * M * favorIdleBonus + station * def.sharePerLevel * level;
+  return ownIdleRate(state, id, level);
 }
 
 /** 招募回本秒数（按招募瞬间 engine 口径） */
@@ -491,7 +536,7 @@ export function idleGainForBudget(state: GameState, budget: number): { gain: num
   return { gain: stationIdleScaled(s) - stationIdleScaled(state), spent: budget - remain, levels };
 }
 
-/** 派遣：单次奖励（手工给任务/等级/好感，不依赖 state.team） */
+/** 派遣：单次奖励（含等级/好感/匹配/独特被动；不依赖 state.team） */
 export function dispatchRewardOf(
   stationIdle: number,
   colleagueId: string,
@@ -505,5 +550,8 @@ export function dispatchRewardOf(
   const match = def.skill === m.type ? 1.5 : 1;
   const lvF = 1 + 0.5 * ((level - 1) / (MAX_COLLEAGUE_LEVEL - 1));
   const favorF = favor >= 100 ? 1.5 : 1;
-  return Math.floor(base * m.mult * match * lvF * favorF);
+  let traitMult = 1;
+  if (def.trait === "短任务加成" && m.seconds <= 3600) traitMult += def.traitValue;
+  if (def.trait === "长任务加成" && m.seconds >= 4 * 3600) traitMult += def.traitValue;
+  return Math.floor(base * m.mult * match * lvF * favorF * traitMult);
 }

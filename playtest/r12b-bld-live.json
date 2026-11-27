@@ -1,0 +1,166 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "checks": {
+    "saveCap18": {
+      "injectedPoints": 18,
+      "loadedPoints": 15,
+      "verdict": "❌ 读档截断"
+    },
+    "saveCap16": {
+      "injectedPoints": 16,
+      "loadedPoints": 15
+    },
+    "panel": {
+      "points": "15",
+      "hasUltLabel": true,
+      "hasExclusiveHint": false,
+      "hasProgress": true,
+      "progressText": [
+        "点击转化：6000/10500 次（当前 +20%）",
+        "安然转化：12/30 次（当前 +12%）"
+      ],
+      "ultButtons": [
+        {
+          "id": "click_5a",
+          "t": "点亮 2",
+          "dis": true
+        },
+        {
+          "id": "click_5b",
+          "t": "点亮 2",
+          "dis": true
+        },
+        {
+          "id": "idle_5a",
+          "t": "点亮 2",
+          "dis": true
+        },
+        {
+          "id": "idle_5b",
+          "t": "点亮 2",
+          "dis": true
+        },
+        {
+          "id": "event_5a",
+          "t": "点亮 2",
+          "dis": true
+        },
+        {
+          "id": "event_5b",
+          "t": "点亮 2",
+          "dis": true
+        }
+      ],
+      "hintLine": [
+        "摸鱼小队",
+        "✕",
+        "同事"
+      ]
+    },
+    "exclusive": {
+      "unlocked": [
+        "click_1",
+        "click_2",
+        "click_3",
+        "click_4",
+        "click_5a"
+      ],
+      "pointsLeft": 9,
+      "click_5b": {
+        "id": "click_5b",
+        "t": "点亮 2",
+        "dis": true,
+        "desc": "5\n指尖风暴（终极·2点） 点击力再 +60%，连击每层收益翻倍（上限 ×1.72） · 与另一个终极互斥\n点亮 2"
+      }
+    },
+    "resetCancel": {
+      "beforeReset": {
+        "unlocked": [
+          "click_1",
+          "click_2",
+          "click_3",
+          "click_4",
+          "click_5a"
+        ],
+        "points": 9,
+        "rankGranted": 12
+      },
+      "afterCancel": {
+        "unlocked": [
+          "click_1",
+          "click_2",
+          "click_3",
+          "click_4",
+          "click_5a"
+        ],
+        "points": 9,
+        "rankGranted": 12
+      },
+      "kept": true
+    },
+    "resetAccept": {
+      "unlocked": [],
+      "points": 15,
+      "rankGranted": 12
+    },
+    "badge": {
+      "points": 15,
+      "badge": false,
+      "label": "摸鱼小队"
+    },
+    "zeroPanel": {
+      "text": "摸鱼小队\n✕\n同事\n天赋\n天赋点 0\n还没有天赋点。\n获取方式：每次转生 +1；生涯段位第 3/5/7/9/11/13 档各 +1（共 6 点）。\n转到「摸鱼学徒（1 万）」后不久就有第一个点。",
+      "hasGuide": true
+    },
+    "tap": {
+      "plain": {
+        "label": "无点击天赋",
+        "click": 321,
+        "cap": 20,
+        "win": 0.5,
+        "idle": 0.2,
+        "hudCombo": "连×20",
+        "comboSeen": 20,
+        "gained": 15113.616657972336,
+        "predicted": 15190.631800000005,
+        "ratio": 0.9949300896077496,
+        "ratioIfCrit": 0.829108408006458
+      },
+      "cap30": {
+        "label": "click_1/2/3（上限30+窗口0.65）",
+        "click": 401.25,
+        "cap": 30,
+        "win": 0.65,
+        "idle": 0.2,
+        "hudCombo": "连×30",
+        "comboSeen": 30,
+        "gained": 19589.93495965004,
+        "predicted": 19734.3592,
+        "ratio": 0.9926815844950284,
+        "ratioIfCrit": 0.827234653745857
+      },
+      "crit": {
+        "label": "click_1/2/3/4（含暴击）",
+        "click": 401.25,
+        "cap": 30,
+        "win": 0.65,
+        "idle": 0.2,
+        "hudCombo": "连×30",
+        "comboSeen": 30,
+        "gained": 19589.918299674988,
+        "predicted": 19734.3418,
+        "ratio": 0.9926816155416437,
+        "ratioIfCrit": 0.8272346796180364
+      },
+      "verdict": "连击：无天赋封顶 20，点 click_3 后 30（应 30）；暴击：40 次点击收入比 0.993（若无暴击≈1.00，若有≈1.10），与无暴击的 0.993 比较"
+    }
+  },
+  "shots": [
+    "/tmp/r12b-talents-15.png",
+    "/tmp/r12b-talents-exclusive.png",
+    "/tmp/r12b-talents-reset.png",
+    "/tmp/r12b-hud-15points.png",
+    "/tmp/r12b-talents-0.png",
+    "/tmp/r12b-combo30.png"
+  ]
+}

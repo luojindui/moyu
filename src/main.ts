@@ -29,7 +29,7 @@ import { Journal } from "./ui/journal";
 import { Quest } from "./ui/quest";
 import { TeamPanel } from "./ui/team-panel";
 import { claimMission, colleagueDef, recruit, upgradeColleague, dispatch as dispatchMission , setAutoRepeat } from "./engine/team";
-import { grantRankTalents, resetTalents, unlockTalent } from "./engine/talents";
+import { grantRankTalents, resetTalents, talentEffects, unlockTalent } from "./engine/talents";
 import { initAudio, playClick, playBreak, playSuccess, toggleMute, isMuted } from "./ui/audio";
 import { Scene, SPRITE_MAP } from "./render/scene";
 import { SpriteGrid, frameActivity } from "./render/sprites";
@@ -244,7 +244,7 @@ async function boot(): Promise<void> {
       }
     },
     (msg) => {
-      scene.fx.floatText(scene.w / 2, scene.h * 0.58, msg);
+      showToast(msg);
       announce(msg);
     },
   );
@@ -330,7 +330,15 @@ async function boot(): Promise<void> {
       journal.refresh(state);
       return;
     }
-    const gained = clickPowerOf(state) * comboMultiplier(combo, comboCapOf(state));
+    const clickComboCap = comboCapOf(state);
+    let gained = clickPowerOf(state) * comboMultiplier(combo, clickComboCap);
+    // 天赋 click_4：每 N 次点击必暴击 ×5（巡逻偷点不触发，保红线 C）
+    const critEvery = talentEffects(state.talents).critEvery;
+    if (critEvery > 0 && (state.totalClicks + 1) % critEvery === 0) {
+      gained *= 5;
+      scene.fx.floatText(p.x, p.y - 30, "暴击!");
+      playSuccess();
+    }
     state = doClick(state, combo);
     trackDaily("click");
     if (state.totalClicks % 25 === 0) state = syncFlavorCollection(state); // 点击线彩蛋按累计点击数解锁
@@ -361,13 +369,31 @@ async function boot(): Promise<void> {
   const quest = new Quest((text) => toast(text));
   let lastRankName = "";
   let lastChapterId = "";
+  let warnedBoss = false;
   let lastCollectionCount = state.collected.quotes.length + state.collected.flavors.length;
   const srLive = document.getElementById("sr-live");
+  // DOM toast：长消息走这里（canvas 飘字只留短文本 +N / 连×N）
+  const toastEl = (() => {
+    const el = document.createElement("div");
+    el.id = "dom-toast";
+    document.body.appendChild(el);
+    return el;
+  })();
+  let toastTimer = 0;
+  const showToast = (text: string): void => {
+    toastEl.textContent = text;
+    toastEl.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = window.setTimeout(() => toastEl.classList.remove("show"), 1800);
+  };
+
   const announce = (text: string): void => {
     if (srLive) srLive.textContent = text; // aria-live 区域：读屏可听到关键事件
   };
   const toast = (text: string): void => {
-    scene.fx.floatText(scene.w / 2, scene.h * 0.22, text);
+    // 短文本走 canvas 飘字（跟着场景），长文本走 DOM toast（不折行不截断）
+    if (text.length <= 10) scene.fx.floatText(scene.w / 2, scene.h * 0.22, text);
+    else showToast(text);
     announce(text);
   };
   // 模态：Esc 关闭 + 打开时把焦点移入面板
@@ -400,6 +426,19 @@ async function boot(): Promise<void> {
         y: 4 * 16 + Math.random() * (yMax - 4 * 16),
       };
     }
+    // 天赋 event_4：巡逻提前 2s 预警
+    {
+      const warnSec = talentEffects(state.talents).patrolWarnSeconds;
+      const untilBoss = es.nextBossAt - scene.gameTime;
+      if (warnSec > 0 && es.bossUntil < 0 && untilBoss > 0 && untilBoss <= warnSec && !warnedBoss) {
+        warnedBoss = true;
+        showToast("王总快来了！");
+        announce("王总快来了");
+      } else if (es.bossUntil >= 0 || untilBoss > warnSec + 3) {
+        warnedBoss = false;
+      }
+    }
+
     // 巡逻开启瞬间播报规则（读屏用户需要知道要"忍住"）
     if (!prevBossActive && es.bossUntil > scene.gameTime) {
       announce(
@@ -419,10 +458,10 @@ async function boot(): Promise<void> {
         trackDaily("survive");
         playSuccess();
         const label = es.bossVariant === "blitz" ? "冲刺成功 ×1.5" : es.bossVariant === "type" ? "假装工作成功" : bossOutcome(false);
-        scene.fx.floatText(scene.w / 2, scene.h * 0.3, `${label} +${Math.round(r.reward)}（连胜 ${es.surviveStreak}）`);
+        showToast(`${label} +${Math.round(r.reward)}（连胜 ${es.surviveStreak}）`);
       } else if (es.bossVariant === "type" || es.bossVariant === "blitz") {
         // 点击任务变体未达标：鼓励语气，不责备
-        scene.fx.floatText(scene.w / 2, scene.h * 0.3, "这次没完成，没关系～");
+        showToast("这次没完成，没关系～");
       }
     }
     prevBossActive = bossActive;
@@ -481,6 +520,21 @@ async function boot(): Promise<void> {
       if (combo > 0 && (performance.now() - lastClickAt) / 1000 > COMBO_BREAK_S) {
         combo = 0;
         playBreak();
+      }
+      // 天赋点角标（有无未花点数）
+      const teamBtn = document.getElementById("btn-team");
+      if (teamBtn) {
+        const pBadge = teamBtn.querySelector<HTMLElement>(".talent-badge");
+        if (state.talents.points > 0) {
+          if (!pBadge) {
+            const el = document.createElement("span");
+            el.className = "talent-badge";
+            teamBtn.appendChild(el);
+          }
+          (teamBtn.querySelector(".talent-badge") as HTMLElement).textContent = "天赋";
+        } else if (pBadge) {
+          pBadge.remove();
+        }
       }
       hud.refresh(state, combo);
       shop.refresh(state);

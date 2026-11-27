@@ -110,9 +110,11 @@ export function effectOf(state: GameState): { clickPower: number; idleRate: numb
   const station = stationIdleOf(state) * mult * talent.idleMult * (1 + conversionBonus(state));
   // 同事固定部分（吃转生/图鉴，但不吃挂机天赋——避免双重放大）
   const favorIdleBonus = favorTier(state) >= 4 ? 1.1 : 1;
-  const teamFixed = teamFixedRate(state) * mult * favorIdleBonus;
-  // 同事占比部分：以工位为基数
-  const teamShare = station * teamShareRatio(state);
+  // 天赋 idle_5b：同事挂机 +40%
+  const teamMult = talent.teamIdleMult;
+  const teamFixed = teamFixedRate(state) * mult * favorIdleBonus * teamMult;
+  // 同事占比部分：以工位为基数（同样吃 idle_5b）
+  const teamShare = station * teamShareRatio(state) * teamMult;
 
   return {
     clickPower: clickPower * mult,

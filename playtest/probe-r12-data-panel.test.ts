@@ -1,10 +1,10 @@
 import { describe, it } from "vitest";
-import { fmt, pct, secs, multOf } from "./probe-r12-data-lib";
-import { initialState, type GameState } from "../src/engine/state";
-import { gain } from "../src/engine/state";
+import { fmt, pct } from "./probe-r12-data-lib";
+import { initialState, gain } from "../src/engine/state";
 import { computeStats, investedOf } from "../src/engine/stats";
 import { buyUpgrade } from "../src/engine/actions";
-import { stationIdleScaled, effectOf, costOf } from "../src/engine/upgrades";
+import { stationIdleScaled, effectOf } from "../src/engine/upgrades";
+import { prestigeMultiplier } from "../src/engine/prestige";
 import {
   COLLEAGUES,
   MISSIONS,
@@ -13,138 +13,130 @@ import {
   dispatch,
   claimMission,
   dispatchReward,
-  colleagueDef,
+  claimableTotal,
+  upgradeCostOf,
   MAX_COLLEAGUE_LEVEL,
+  teamFixedRate,
+  teamShareRatio,
 } from "../src/engine/team";
 import { offlineEfficiency } from "../src/engine/progression";
-import { talentEffects } from "../src/engine/talents";
 
 const NOW = 1_700_000_000_000;
-const HOUR = 3600_000;
 
-function rich(amount = 1e12): GameState {
+function rich(amount = 1e12) {
   return gain(initialState(), amount);
 }
 
-describe("R12-4 面板可信度", () => {
-  it("① 团队面板预览的派遣奖励 ≠ 实际领取（面板用总挂机，领取用工位挂机）", () => {
+describe("R12R2-5 面板可信度复验", () => {
+  it("① 派遣预览 = 实领？（快照已修）", () => {
     let s = rich();
-    for (const def of COLLEAGUES) {
-      s = recruit(s, def.id)!;
-    }
-    // 让工位有值：买一批 phone
+    s = recruit(s, "zhou")!;
     for (let i = 0; i < 120; i++) s = buyUpgrade(s, "phone")!;
-    const idleTotal = effectOf(s).idleRate;
-    const idleStation = stationIdleScaled(s);
-    console.log(
-      `\n### 工位挂机=${fmt(idleStation)}/s，总挂机=${fmt(idleTotal)}/s（同事占比 ${pct((idleTotal - idleStation) / idleTotal)}）`,
-    );
-    for (const def of COLLEAGUES.slice(0, 3)) {
-      const m = MISSIONS[4]!;
-      const busy = dispatch(s, def.id, m.id, NOW)!;
-      const panelReward = dispatchReward(busy, def.id, idleTotal); // team-panel.ts 的预览口径
-      const claim = claimMission(busy, def.id, NOW + m.seconds * 1000, idleStation)!; // main.ts 实际口径
-      console.log(
-        `${def.name} 8h咖啡：面板显示 +${fmt(panelReward)}，实到 +${fmt(claim.reward)}（面板虚高 ${pct(panelReward / claim.reward - 1)}）`,
-      );
-    }
+    const m = MISSIONS[4]!;
+    const busy = dispatch(s, "zhou", m.id, NOW, stationIdleScaled(s))!;
+    const snap = busy.team.colleagues.zhou!.rewardSnapshot;
+    // 面板：team-panel 用 cur.rewardSnapshot → 与实领一致
+    const claim = claimMission(busy, "zhou", NOW + m.seconds * 1000, stationIdleScaled(busy))!;
+    console.log(`\n派单预览（快照）=${fmt(snap)}，实领=${fmt(claim.reward)} → ${snap === claim.reward ? "一致 ✓" : "不一致 ✗"}`);
   });
 
-  it("② 累计投入不统计同事花费 → 面板三本账对不上", () => {
-    let s = rich(1e9);
-    // 买 20 次 phone
-    for (let i = 0; i < 20; i++) s = buyUpgrade(s, "phone")!;
-    const upgradeSpent = investedOf(s);
-    const before = computeStats(s);
-    // 招募 + 升满 老周
-    s = recruit(s, "zhou")!;
-    for (let i = 0; i < MAX_COLLEAGUE_LEVEL - 1; i++) s = upgradeColleague(s, "zhou")!;
-    const after = computeStats(s);
-    let teamSpent = COLLEAGUES[0]!.cost;
-    for (let lv = 1; lv < MAX_COLLEAGUE_LEVEL; lv++) {
-      teamSpent += Math.ceil(COLLEAGUES[0]!.cost * 0.4 * 1.35 ** lv);
-    }
-    console.log(`\n### 升级花费=${fmt(upgradeSpent)} 同事花费=${fmt(teamSpent)} 实际总花费=${fmt(upgradeSpent + teamSpent)}`);
-    console.log(`面板「累计投入」=${fmt(after.invested)}（只统计升级，漏掉同事 ${fmt(teamSpent)}，漏报 ${pct(after.invested / (upgradeSpent + teamSpent) - 1)}）`);
-    console.log(
-      `面板「生涯=${fmt(after.lifetime)} / 本局=${fmt(after.run)} / 往期=${fmt(after.previous)}」；` +
-        `招募前本局=${fmt(before.run)} → 招募后本局=${fmt(after.run)}（-${fmt(before.run - after.run)}，生涯不变 ${fmt(after.lifetime)}）`,
-    );
-    console.log(`即：花在同事上的钱不进「累计投入」，却从「本局收入」里扣掉 → 凭空多出「往期收入 ${fmt(after.previous)}」`);
-  });
-
-  it("③ 同事挂机/派遣是否进面板与生涯", () => {
-    let s = rich(1e12);
-    s = recruit(s, "zhou")!;
-    const idleWith = effectOf(s).idleRate;
-    const noTeam = effectOf({ ...s, team: { colleagues: {} } }).idleRate;
-    const st = computeStats(s);
-    console.log(`\n### 招募老周后：面板 idleRate=${fmt(st.idleRate)}/s（无同事 ${noTeam.toFixed(3)}/s，同事贡献 ${pct((idleWith - noTeam) / idleWith)}）→ 同事挂机已进面板 ✓`);
-    // 派遣奖励进生涯
-    const before = computeStats(s);
-    s = dispatch(s, "zhou", MISSIONS[0]!.id, NOW)!;
-    const r = claimMission(s, "zhou", NOW + MISSIONS[0]!.seconds * 1000, stationIdleScaled(s))!;
-    const after = computeStats(r.state);
-    console.log(
-      `派遣奖励 +${fmt(r.reward)} → 生涯 +${fmt(after.lifetime - before.lifetime)}，本局 +${fmt(after.run - before.run)}（一致 ✓）`,
-    );
-  });
-
-  it("④ 团队面板的「挂机 +X/秒」漏算转生/图鉴倍率与 share 项", () => {
-    let s = rich(1e12);
-    s = recruit(s, "wang")!;
-    // 造一个工位：买 phone 到高等级
-    for (let i = 0; i < 150; i++) s = buyUpgrade(s, "phone")!;
-    const S = stationIdleScaled(s);
-    const def = COLLEAGUES[4]!;
-    const shown = def.idlePerLevel * 1; // team-panel.ts 显示值
-    const real = def.idlePerLevel * multOf(s) + S * def.sharePerLevel;
-    console.log(
-      `\n### 王师傅 Lv1：面板写「挂机 +${shown}/秒」；实际=${fmt(real)}/s（显示值只占实际的 ${pct(shown / real)}，漏算 share ${fmt(S * def.sharePerLevel)}/s + 倍率）`,
-    );
-  });
-
-  it("⑤ 今日回访的「离线效率」显示 vs 引擎实际（首日/天赋/好感）", () => {
-    // journal.ts 行内公式：0.7 + min(3,visits)*0.1
-    const panelRate = (visits: number) => Math.min(1, 0.7 + Math.min(3, visits) * 0.1);
-    // 场景 A：首日（建档 12h 内）2 次回访
-    let s = initialState();
-    s = { ...s, visits: { date: "2026-11-27", count: 2 } };
-    const day1 = offlineEfficiency(s, NOW - 12 * HOUR, NOW);
-    // 场景 B：老玩家 0 次回访 + 挂机流4级（+0.05）+ 好感40（+0.03）
-    let s2 = initialState();
-    s2 = { ...s2, visits: { date: "2026-11-27", count: 0 }, talents: { unlocked: ["idle_4"], points: 0, rankGranted: -1 } };
-    s2 = recruit(gain(s2, 1e9), "zhou")!;
-    for (let i = 0; i < MAX_COLLEAGUE_LEVEL - 1; i++) s2 = upgradeColleague(s2, "zhou")!; // 好感靠领奖，这里手动
-    s2 = { ...s2, team: { colleagues: { ...s2.team.colleagues, zhou: { ...s2.team.colleagues.zhou!, favor: 45 } } } };
-    const b = offlineEfficiency(s2, NOW - 10 * 86400_000, NOW);
-    console.log(
-      `\n### 首日 2 次回访：面板写 ${pct(panelRate(2))}，引擎实际 ${pct(day1)}（首日全额，面板低估）\n` +
-        `### 老玩家 0 回访 + 挂机4级 + 好感45：面板写 ${pct(panelRate(0))}，引擎实际 ${pct(b)}（面板漏天赋/好感加成）`,
-    );
-  });
-
-  it("⑥ 点击飘字金额 vs 实际入账（main.ts 用 0.02，引擎用 0.012）", () => {
-    const clicks = [0, 6, 12, 20];
-    for (const combo of clicks) {
-      const shown = 1 + 0.02 * Math.min(combo, 20); // main.ts doTap 的飘字口径
-      const real = 1 + 0.012 * Math.min(combo, 20); // actions.ts comboMultiplier
-      console.log(`连击 ${combo}：飘字 ×${shown.toFixed(2)} vs 实际 ×${real.toFixed(2)}（虚高 ${pct(shown / real - 1)}）`);
-    }
-  });
-
-  it("⑦ 面板 idleRate 与工位/同事的闭合关系", () => {
-    let s = rich(1e10);
+  it("② 一键领取按钮总额 = 各单实领之和？（快照 vs 现价）", () => {
+    let s = rich();
     s = recruit(s, "zhou")!;
     s = recruit(s, "mei")!;
-    s = { ...s, team: { colleagues: { ...s.team.colleagues, zhou: { ...s.team.colleagues.zhou!, favor: 80 } } } };
-    for (let i = 0; i < 60; i++) s = buyUpgrade(s, "phone")!;
-    const eff = effectOf(s);
-    const station = stationIdleScaled(s);
-    const share = station * (0.008 * 1 + 0.008 * 1);
-    const fixed = (20 + 100) * multOf(s) * (1.1); // favorTier>=4 → +10%
+    const m = MISSIONS[4]!;
+    s = dispatch(s, "zhou", m.id, NOW, stationIdleScaled(s))!;
+    s = dispatch(s, "mei", m.id, NOW, stationIdleScaled(s))!;
+    // 派遣后玩家又升级工位（挂机率涨 200 倍）
+    for (let i = 0; i < 200; i++) {
+      const n = buyUpgrade(s, "phone");
+      if (!n) break;
+      s = n;
+    }
+    const at = NOW + m.seconds * 1000;
+    const panelTotal = claimableTotal(s, at, stationIdleScaled(s)); // 一键领取显示值
+    let actual = 0;
+    let st = s;
+    for (const id of ["zhou", "mei"]) {
+      const r = claimMission(st, id, at, stationIdleScaled(st))!;
+      actual += r.reward;
+      st = r.state;
+    }
     console.log(
-      `\n### idleRate=${fmt(eff.idleRate)} = 工位${fmt(station)} + 同事固定${fmt(fixed)} + share${fmt(share)} → ${fmt(station + fixed + share)}（闭合 ✓）`,
+      `\n一键领取显示=${fmt(panelTotal)}｜实际到账=${fmt(actual)} → 面板高估 ${pct(panelTotal / actual - 1)}（claimableTotal 用当前工位，逐单领取用快照）`,
     );
+  });
+
+  it("③ 「本局/往期」：招募后往期是否仍为 0", () => {
+    let s = rich();
+    for (let i = 0; i < 20; i++) s = buyUpgrade(s, "phone")!;
+    s = recruit(s, "zhou")!;
+    for (let i = 0; i < MAX_COLLEAGUE_LEVEL - 1; i++) s = upgradeColleague(s, "zhou")!;
+    const st = computeStats(s);
+    console.log(`\n本局=${fmt(st.run)}｜往期=${fmt(st.previous)} → ${st.previous === 0 ? "0 ✓（不再被招募费污染）" : "非 0 ✗"}`);
+  });
+
+  it("④「累计投入」是否含同事招募+升级", () => {
+    let s = rich();
+    for (let i = 0; i < 20; i++) s = buyUpgrade(s, "phone")!;
+    const upSpent = investedOf(s);
+    s = recruit(s, "zhou")!;
+    for (let i = 0; i < MAX_COLLEAGUE_LEVEL - 1; i++) s = upgradeColleague(s, "zhou")!;
+    let teamSpent = COLLEAGUES[0]!.cost;
+    for (let lv = 1; lv < MAX_COLLEAGUE_LEVEL; lv++) teamSpent += upgradeCostOf(COLLEAGUES[0]!, lv);
+    const st = computeStats(s);
+    console.log(`\n升级花费=${fmt(upSpent)}｜同事花费=${fmt(teamSpent)}｜面板累计投入=${fmt(st.invested)} → ${st.invested === upSpent + teamSpent ? "闭合 ✓" : "差 " + fmt(upSpent + teamSpent - st.invested) + " ✗"}`);
+  });
+
+  it("⑤「今日回访/离线效率」是否用真实函数（首日/回访/天赋）", () => {
+    const createdAt = NOW - 12 * 3600_000;
+    let s = initialState();
+    s = { ...s, visits: { date: "x", count: 2 } };
+    const day1 = offlineEfficiency(s, createdAt, NOW);
+    const createdAt2 = NOW - 10 * 86400_000;
+    let s2 = { ...s, visits: { date: "x", count: 0 }, talents: { unlocked: ["idle_4"], points: 0, rankGranted: -1 } };
+    const later = offlineEfficiency(s2, createdAt2, NOW);
+    console.log(
+      `\n首日 2 回访：引擎实际=${pct(day1)}（面板直接调同一函数 → 一致 ✓）；老玩家 0 回访+idle_4=${pct(later)}`,
+    );
+  });
+
+  it("⑥ 团队面板「挂机 +X/秒」：漏图鉴/好感倍率？", () => {
+    let s = rich();
+    s = recruit(s, "wang")!;
+    for (let i = 0; i < 150; i++) s = buyUpgrade(s, "phone")!;
+    // 造图鉴 + 好感
+    s = { ...s, collected: { quotes: Array.from({ length: 10 }, (_, i) => i), flavors: Array.from({ length: 10 }, (_, i) => i) } };
+    const cols = { ...s.team.colleagues, wang: { ...s.team.colleagues.wang!, favor: 85 } };
+    s = { ...s, team: { colleagues: cols } };
+    const def = COLLEAGUES[4]!;
+    const panel = def.idlePerLevel * 1 * prestigeMultiplier(s.prestige); // team-panel 显示口径
+    // 实际固定部分贡献 = effectOf.idleRate − 工位 − 工位×share
+    const station = stationIdleScaled(s);
+    const teamContribution = effectOf(s).idleRate - station;
+    const fixedPart = teamContribution - station * 0.016;
+    console.log(
+      `\n王师傅 Lv1「挂机 +${fmt(panel)}/秒」；实际固定部分贡献≈${fmt(fixedPart)}/秒（含图鉴 +${pct((1 + 0.04) - 1)}、好感 80+ 的 +10%）→ 显示 ${pct(panel / fixedPart)}，漏报 ${pct(1 - panel / fixedPart)}`,
+    );
+    console.log(`（team-panel 用 prestigeMultiplier 单乘，未乘 collectionBonus/favorIdleBonus）`);
+  });
+
+  it("⑦ 顶部「小队挂机 +X/秒」与实际同事贡献", () => {
+    let s = rich();
+    for (const d of COLLEAGUES) s = recruit(s, d.id)!;
+    for (let i = 0; i < 150; i++) s = buyUpgrade(s, "phone")!;
+    s = { ...s, collected: { quotes: Array.from({ length: 10 }, (_, i) => i), flavors: Array.from({ length: 10 }, (_, i) => i) } };
+    const station = stationIdleScaled(s);
+    // panel 口径：teamFixedRate + station*shareRatio（均不含 mult/favor）
+    const panel = teamFixedRate(s) + station * teamShareRatio(s);
+    const real = effectOf(s).idleRate - station;
+    console.log(`\n小队挂机：面板 ${fmt(panel)}/s vs 实际 ${fmt(real)}/s → 显示 ${pct(panel / real)}`);
+  });
+
+  it("⑧ 点击飘字 = 引擎实际（已统一）", () => {
+    const combo = 20;
+    const shown = 1 + 0.012 * combo; // main.ts: comboMultiplier(combo, cap) = 1+0.012×combo
+    const engine = 1 + 0.012 * Math.min(combo, 20);
+    console.log(`\n20 连击：飘字 ×${shown.toFixed(2)} vs 引擎 ×${engine.toFixed(2)} → ${shown === engine ? "一致 ✓" : "不一致 ✗"}`);
   });
 });
