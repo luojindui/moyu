@@ -1,0 +1,149 @@
+{
+  "generatedAt": "2026-11-27T03:26:41.744Z",
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "dpr": 3
+  },
+  "first": {
+    "booted": true,
+    "fps": 60,
+    "assets": {
+      "worker": "loaded",
+      "computer": "loaded",
+      "cooler": "loaded"
+    },
+    "firstState": {
+      "totalEarned": 6.866374000000056,
+      "idle": null,
+      "levels": {},
+      "clicks": 0,
+      "prestige": 0,
+      "rank": null
+    },
+    "badWordHits": [],
+    "buttons": 14,
+    "prestigeBtnText": "未解锁（本局累计需 1 亿）",
+    "prestigeDisabled": true,
+    "questVisible": true,
+    "questText": "再戳 10 下 → 解锁「咖啡续命」",
+    "hud": {
+      "moyu": "6.9",
+      "click": "1",
+      "idle": "0.2",
+      "rank": "实习生 0%"
+    },
+    "shopCards": 9,
+    "journalHasNoAd": true
+  },
+  "afterClicks": {
+    "before": {
+      "total": 6.866374000000056,
+      "clicks": 0
+    },
+    "after": {
+      "total": 55.17969400000017,
+      "clicks": 40
+    },
+    "gained": 48.31332000000011,
+    "shop": [
+      {
+        "name": "咖啡续命",
+        "cost": "15",
+        "next": "+1 点击力",
+        "affordable": true
+      },
+      {
+        "name": "刷手机",
+        "cost": "50",
+        "next": "+1/秒 · ×2差5级",
+        "affordable": true
+      },
+      {
+        "name": "带薪喝水",
+        "cost": "100",
+        "next": "+2 点击力",
+        "affordable": false
+      },
+      {
+        "name": "带薪蹲坑",
+        "cost": "600",
+        "next": "+5/秒",
+        "affordable": false
+      },
+      {
+        "name": "人体工学椅",
+        "cost": "800",
+        "next": "+5 点击力",
+        "affordable": false
+      },
+      {
+        "name": "摸鱼群聊",
+        "cost": "4000",
+        "next": "+15/秒",
+        "affordable": false
+      },
+      {
+        "name": "无用会议",
+        "cost": "2.50万",
+        "next": "+50/秒",
+        "affordable": false
+      },
+      {
+        "name": "深度摸鱼",
+        "cost": "15.00万",
+        "next": "+180/秒 · ×2差5级",
+        "affordable": false
+      },
+      {
+        "name": "退休式躺平",
+        "cost": "100.00万",
+        "next": "+700/秒",
+        "affordable": false
+      }
+    ]
+  },
+  "offline": {
+    "before": 55.17969400000017,
+    "totalAfter": 5816.069660800009,
+    "welcomeVisible": true,
+    "welcomeGain": "5760",
+    "welcomeRule": "首日全额｜8 小时封顶",
+    "idleRate": "0.2"
+  },
+  "requests": {
+    "total": 67,
+    "external": [],
+    "sample": [
+      "http://127.0.0.1:5173/",
+      "http://127.0.0.1:5173/@vite/client",
+      "http://127.0.0.1:5173/src/main.ts?t=1795749951858",
+      "http://127.0.0.1:5173/src/style.css?t=1795749951856",
+      "http://127.0.0.1:5173/src/engine/state.ts?t=1795749454154",
+      "http://127.0.0.1:5173/src/engine/actions.ts?t=1795749454154",
+      "http://127.0.0.1:5173/src/engine/tick.ts?t=1795749454154",
+      "http://127.0.0.1:5173/src/engine/resume.ts?t=1795749454154",
+      "http://127.0.0.1:5173/src/engine/flavor.ts",
+      "http://127.0.0.1:5173/src/engine/save.ts?t=1795749626518",
+      "http://127.0.0.1:5173/src/engine/events.ts?t=1795749454154",
+      "http://127.0.0.1:5173/src/engine/collection.ts?t=1795749454154",
+      "http://127.0.0.1:5173/src/engine/progression.ts",
+      "http://127.0.0.1:5173/src/engine/titles.ts?t=1795749427305",
+      "http://127.0.0.1:5173/src/engine/prestige.ts?t=1795749454154",
+      "http://127.0.0.1:5173/src/engine/daily.ts?t=1795749626518",
+      "http://127.0.0.1:5173/src/ui/hud.ts?t=1795749933215",
+      "http://127.0.0.1:5173/src/ui/shop.ts?t=1795749951858",
+      "http://127.0.0.1:5173/src/ui/welcome.ts",
+      "http://127.0.0.1:5173/src/ui/journal.ts?t=1795749626518"
+    ]
+  },
+  "screenshots": [
+    "playtest/r8-comp-first-screen.png",
+    "playtest/r8-comp-journal.png"
+  ],
+  "journal": {
+    "text": "摸鱼日报\n✕\n\n2026-11-27 · 🔥 连续 0 天（今天未领）\n\n○\n买 3 次升级\n0/3\n○\n老板巡逻时忍住不点，1 次\n0/1\n○\n戳 100 下\n40/100\n完成 0/3\n摸鱼图鉴\n0/55\n梗语录 0/10\n升级彩蛋 0/45\n\n买升级、收线索，开始收集摸鱼彩蛋\n\n离职再就业\n\n重置本局（余额/升级），换永久点数：每点 ×1.08 复利；图鉴/日报/段位保留。\n\n未解锁（本局累计 5816.4 / 1亿）\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???",
+    "claimDisabled": true,
+    "claimText": "完成 0/3"
+  }
+}

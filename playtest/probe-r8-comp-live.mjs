@@ -83,7 +83,7 @@ await sleep(4500);
 
 const first = JSON.parse(
   await ev(`JSON.stringify((() => {
-    const text = document.body.innerText + "\n" + document.documentElement.outerHTML;
+    const text = document.body.innerText + "\\n" + document.documentElement.outerHTML;
     const badWords = ["广告","充值","内购","VIP","礼包","签到","商城","看视频","领取奖励","体力"];
     const hits = badWords.filter((w) => text.includes(w));
     const btn = document.querySelectorAll("button").length;

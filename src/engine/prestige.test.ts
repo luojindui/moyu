@@ -13,20 +13,20 @@ describe("离职再就业（转生层）", () => {
     expect(doPrestige(s)).toBeNull();
   });
 
-  it("转生点 = floor(2 × (本局累计/1e8)^0.4)，单局封顶 20", () => {
-    // 独立推定：1e8 → floor(2×1^0.4)=2；1e9 → floor(2×10^0.4)=floor(5.023)=5
-    expect(prestigeGain(gain(initialState(), 1e8))).toBe(2);
-    expect(prestigeGain(gain(initialState(), 1e9))).toBe(5);
+  it("转生点 = floor(3 × (本局累计/1e8)^0.4)，单局封顶 20", () => {
+    // 独立推定：1e8 → floor(3)=3；1e10 → floor(3×100^0.4)=floor(18.9)=18
+    expect(prestigeGain(gain(initialState(), 1e8))).toBe(3);
+    expect(prestigeGain(gain(initialState(), 1e10))).toBe(18);
     // 极大值封顶 20
     expect(prestigeGain(gain(initialState(), 1e20))).toBe(PRESTIGE_POINT_CAP);
   });
 
-  it("每点永久 ×1.08 复利", () => {
+  it("每点永久 +75%（线性，避免指数爆炸）", () => {
     expect(prestigeMultiplier(0)).toBe(1);
-    expect(prestigeMultiplier(1)).toBeCloseTo(1.08, 10);
-    expect(prestigeMultiplier(10)).toBeCloseTo(1.08 ** 10, 10);
-    const s = { ...initialState(), prestige: 10 };
-    expect(effectOf(s).idleRate).toBeCloseTo(0.2 * 1.08 ** 10, 8);
+    expect(prestigeMultiplier(1)).toBeCloseTo(1.75, 10);
+    expect(prestigeMultiplier(4)).toBeCloseTo(4, 10);
+    const s = { ...initialState(), prestige: 4 };
+    expect(effectOf(s).idleRate).toBeCloseTo(0.2 * 4, 8);
   });
 
   it("转生重置本局（余额/等级/本局累计），保留图鉴/日报/历史累计/点击数", () => {
@@ -37,7 +37,7 @@ describe("离职再就业（转生层）", () => {
     expect(r.gained).toBe(prestigeGain(s));
     expect(r.state.prestige).toBe(r.gained);
     expect(r.state.moyu).toBe(0);
-    expect(r.state.levels).toEqual({});
+    expect(r.state.levels).toEqual({ phone: 7 }); // 保留 80% 等级（9→7）
     expect(r.state.totalEarned).toBe(0);
     expect(r.state.lifetimeEarned).toBe(2e8);
     expect(r.state.collected.quotes).toEqual([1, 2]);
@@ -56,6 +56,6 @@ describe("离职再就业（转生层）", () => {
 
   it("转生后点击收益也吃倍率（复利生效）", () => {
     const s = { ...initialState(), prestige: 5 };
-    expect(doClick(s).moyu).toBeCloseTo(1 * 1.08 ** 5, 8);
+    expect(doClick(s).moyu).toBeCloseTo(1 * (1 + 0.75 * 5), 8);
   });
 });

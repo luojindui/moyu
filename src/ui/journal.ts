@@ -4,7 +4,7 @@ import { collectionCount, collectionRows, TOTAL_ITEMS } from "../engine/collecti
 import { MEME_QUOTES, UPGRADE_FLAVOR } from "../engine/flavor";
 import { UPGRADES } from "../engine/upgrades";
 import { formatMoyu } from "../engine/format";
-import { canPrestige, prestigeGain } from "../engine/prestige";
+import { canPrestige, prestigeGain, prestigeMultiplier } from "../engine/prestige";
 
 /** 日报 + 图鉴面板（收集党：差距可见、每日有仪式） */
 export class Journal {
@@ -110,9 +110,10 @@ export class Journal {
     const unlocked = canPrestige(state);
     this.elPrestigeBtn.disabled = !unlocked;
     this.elPrestigeBtn.textContent = unlocked
-      ? `离职再就业：+${gain} 点（永久 ×${(1.08 ** (state.prestige + gain)).toFixed(2)}）`
+      ? `离职再就业：+${gain} 点（永久 ×${prestigeMultiplier(state.prestige + gain).toFixed(2)}）`
       : `未解锁（本局累计 ${formatMoyu(state.totalEarned)} / 1亿）`;
-    this.elPrestigeInfo.textContent = state.prestige > 0 ? `已有 ${state.prestige} 点 · 当前 ×${(1.08 ** state.prestige).toFixed(2)}` : "";
+    this.elPrestigeInfo.textContent =
+      state.prestige > 0 ? `已有 ${state.prestige} 点 · 当前 ×${prestigeMultiplier(state.prestige).toFixed(2)}` : "";
 
     // 最新收集（彩蛋优先展示文本）
     const latestFlavor = state.collected.flavors.at(-1);
