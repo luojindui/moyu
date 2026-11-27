@@ -24,6 +24,7 @@ export interface CardDef {
     dispatchRewardMult: number;
     eventRateMult: number;
     riskPenalty: number;
+    favorPerClaim: number;
   }>;
   /** 剧情提示（显示在卡面） */
   flavor: string;
@@ -179,7 +180,7 @@ export const CARDS: CardDef[] = [
     desc: "今天派遣奖励 ×1.8，且领奖好感 +1",
     rarity: "event",
     duration: CARD_DURATION,
-    effects: { dispatchRewardMult: 1.8 },
+    effects: { dispatchRewardMult: 1.8, favorPerClaim: 1 },
     flavor: "他说他其实写过一个小说，主角是我们部门。",
   },
 ];
@@ -221,7 +222,7 @@ export function rollOffers(date: string, rng: () => number, guaranteed?: string 
     // 稀有/剧情卡权重 1，普通卡权重 3
     const weighted: CardDef[] = [];
     for (const c of pool) {
-      const w = c.rarity === "common" ? 3 : 1;
+      const w = c.rarity === "common" ? 3 : c.rarity === "event" ? 2 : 1;
       for (let i = 0; i < w; i++) weighted.push(c);
     }
     const pick = rngPick(weighted, rng);
@@ -295,6 +296,8 @@ export interface CardEffects {
   dispatchRewardMult: number;
   eventRateMult: number;
   riskPenalty: number;
+  /** 今日卡：每次领奖额外好感 */
+  favorPerClaim: number;
 }
 
 export function cardEffects(state: GameState, nowMs: number): CardEffects {
@@ -308,6 +311,7 @@ export function cardEffects(state: GameState, nowMs: number): CardEffects {
     dispatchRewardMult: e.dispatchRewardMult ?? 1,
     eventRateMult: e.eventRateMult ?? 1,
     riskPenalty: e.riskPenalty ?? 0,
+    favorPerClaim: e.favorPerClaim ?? 0,
   };
 }
 

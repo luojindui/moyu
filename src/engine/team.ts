@@ -343,7 +343,9 @@ export function claimMission(
   // 优先用派单时快照（防放大）；旧存档无快照则按当前结算
   const reward = cur.rewardSnapshot > 0 ? cur.rewardSnapshot : dispatchReward(state, id, stationIdle);
   const next = earn(state, reward);
-  const favorGain = FAVOR_PER_CLAIM + (def.skill === m.type ? FAVOR_MATCH_BONUS : 0);
+  // 今日卡「老周的秘密」：领奖好感额外 +1
+  const cardFavorBonus = cardEffects(state, Date.now()).favorPerClaim;
+  const favorGain = FAVOR_PER_CLAIM + (def.skill === m.type ? FAVOR_MATCH_BONUS : 0) + cardFavorBonus;
   const favor = Math.min(100, cur.favor + favorGain);
   // 排班层：开启自动重复则立刻再派同一任务（并用当前工位重算快照）
   let autoNext = { missionId: null as string | null, startedAt: 0, endsAt: 0, rewardSnapshot: 0 };

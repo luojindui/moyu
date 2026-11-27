@@ -1,0 +1,264 @@
+{
+  "S1_skip_guard": {
+    "frames": [
+      {
+        "i": 1,
+        "cardsOpen": false
+      },
+      {
+        "i": 2,
+        "cardsOpen": false
+      },
+      {
+        "i": 3,
+        "cardsOpen": false
+      },
+      {
+        "i": 4,
+        "cardsOpen": false
+      },
+      {
+        "i": 5,
+        "cardsOpen": false
+      },
+      {
+        "i": 6,
+        "cardsOpen": false
+      },
+      {
+        "i": 7,
+        "cardsOpen": false
+      },
+      {
+        "i": 8,
+        "cardsOpen": false
+      },
+      {
+        "i": 9,
+        "cardsOpen": false
+      },
+      {
+        "i": 10,
+        "cardsOpen": false
+      }
+    ],
+    "modalDuringTaps": false,
+    "appearAfterStopTapsMs": 601,
+    "appear": {
+      "cardsOpen": true,
+      "skipBtn": true,
+      "texts": [
+        "普通 | 食堂加菜 | 今天离线效率 +8% | 今天的糖醋排骨是限量的。",
+        "稀有 | 秘密项目 | 今天点击力 ×2，派遣奖励 +30% | 没人知道你在做什么，但看起来很重要。",
+        "普通 | 手速上头 | 今天点击力 +80% | 键盘声比平时快了三个度，隔壁老周抬头看了你一眼。"
+      ]
+    },
+    "guard1_2s": {
+      "stillOpen": true,
+      "hudCard": {
+        "text": "",
+        "hidden": true
+      }
+    },
+    "skipRect": {
+      "x": 194.9921875,
+      "y": 595.5
+    },
+    "hiddenAfterSkip": true,
+    "staysHidden8s": true,
+    "hudAfterSkip": {
+      "text": "",
+      "hidden": true
+    },
+    "totalMs": 16214
+  },
+  "S2_mask": {
+    "appearAtS": 12.3,
+    "found": true,
+    "skipBtn": true,
+    "hiddenAfterMask": true,
+    "staysHidden6s": true
+  },
+  "S3_choose": {
+    "taps8": [
+      {
+        "i": 1,
+        "cardsOpen": false
+      },
+      {
+        "i": 2,
+        "cardsOpen": false
+      },
+      {
+        "i": 3,
+        "cardsOpen": false
+      },
+      {
+        "i": 4,
+        "cardsOpen": false
+      },
+      {
+        "i": 5,
+        "cardsOpen": false
+      },
+      {
+        "i": 6,
+        "cardsOpen": false
+      },
+      {
+        "i": 7,
+        "cardsOpen": false
+      },
+      {
+        "i": 8,
+        "cardsOpen": false
+      }
+    ],
+    "modalDuringTaps": false,
+    "appearAfter8": true,
+    "offers": [
+      "手速上头",
+      "咖啡管够",
+      "老板出差"
+    ],
+    "afterChoose": {
+      "cardsOpen": false,
+      "toast": "今日卡：咖啡管够",
+      "toastShown": true,
+      "hudCard": {
+        "text": "生效中：咖啡管够（剩 24h）",
+        "hidden": false
+      }
+    },
+    "hudAfter6s": {
+      "text": "生效中：咖啡管够（剩 24h）",
+      "hidden": false
+    }
+  },
+  "S4_firstChoice": {
+    "cardSkippedOk": true,
+    "firstBossAtS": 29,
+    "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+    "opts": [
+      "立刻装忙",
+      "切到工作界面",
+      "继续摸鱼"
+    ],
+    "boss": true,
+    "enterFocused": true,
+    "afterEnter": [
+      {
+        "at": 4,
+        "bossOpen": true,
+        "result": [
+          "王总：切得真快。 +0"
+        ],
+        "toast": "",
+        "hud": "13.9"
+      },
+      {
+        "at": 60,
+        "bossOpen": true,
+        "result": [
+          "王总：切得真快。 +0"
+        ],
+        "toast": "",
+        "hud": "13.9"
+      },
+      {
+        "at": 114,
+        "bossOpen": true,
+        "result": [
+          "王总：切得真快。 +0"
+        ],
+        "toast": "",
+        "hud": "13.9"
+      },
+      {
+        "at": 166,
+        "bossOpen": true,
+        "result": [
+          "王总：切得真快。 +0"
+        ],
+        "toast": "",
+        "hud": "13.9"
+      },
+      {
+        "at": 217,
+        "bossOpen": true,
+        "result": [
+          "王总：切得真快。 +0"
+        ],
+        "toast": "",
+        "hud": "13.9"
+      },
+      {
+        "at": 269,
+        "bossOpen": false,
+        "result": [
+          "王总：切得真快。 +0"
+        ],
+        "toast": "",
+        "hud": "13.9"
+      },
+      {
+        "at": 321,
+        "bossOpen": false,
+        "result": [
+          "王总：切得真快。 +0"
+        ],
+        "toast": "王总：切得真快。 +0",
+        "hud": "13.9"
+      },
+      {
+        "at": 378,
+        "bossOpen": false,
+        "result": [
+          "王总：切得真快。 +0"
+        ],
+        "toast": "王总：切得真快。 +0",
+        "hud": "13.9"
+      },
+      {
+        "at": 430,
+        "bossOpen": false,
+        "result": [
+          "王总：切得真快。 +0"
+        ],
+        "toast": "王总：切得真快。 +0",
+        "hud": "14.0"
+      },
+      {
+        "at": 484,
+        "bossOpen": false,
+        "result": [
+          "王总：切得真快。 +0"
+        ],
+        "toast": "王总：切得真快。 +0",
+        "hud": "14.0"
+      },
+      {
+        "at": 538,
+        "bossOpen": false,
+        "result": [
+          "王总：切得真快。 +0"
+        ],
+        "toast": "王总：切得真快。 +0",
+        "hud": "14.0"
+      },
+      {
+        "at": 592,
+        "bossOpen": false,
+        "result": [
+          "王总：切得真快。 +0"
+        ],
+        "toast": "王总：切得真快。 +0",
+        "hud": "14.0"
+      }
+    ],
+    "final": {
+      "bossOpen": false,
+      "toast": "王总：切得真快。 +0"
+    }
+  }
+}

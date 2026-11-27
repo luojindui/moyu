@@ -1273,6 +1273,10 @@ body.choice-open .shop-row {
 
 #hud-card {
   color: #ffd76e;
-  font-size: 12px;
+  font-size: 11px;
+  max-width: 92px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 #hud-card.hidden { display: none; }

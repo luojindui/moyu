@@ -273,7 +273,10 @@ async function boot(): Promise<void> {
         trackDaily("survive");
       }
       const line = bossChoiceLine(es.bossPersonality, r.correct);
-      const text = `${line} ${r.delta >= 0 ? "+" : ""}${Math.round(r.delta)}`;
+      const text =
+        r.delta === 0 && !r.correct
+          ? `${line}（新手保护，这次不扣钱）`
+          : `${line} ${r.delta >= 0 ? "+" : ""}${Math.round(r.delta)}`;
       bossPanel.showResult(r.correct, text);
       // 兜底：面板内结果在低帧率下可能一闪而过，顶部再给一次短提示
       setTimeout(() => showToast(text), 280);

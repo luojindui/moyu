@@ -226,8 +226,9 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
             .filter((x) => (seenOffers.has(x) ? false : (seenOffers.add(x), true)))
             .slice(0, 3)
         : [];
+      // 已选卡只要求是"已知卡"（跨天后它可能不在今日 offers 里，但仍应在 24h 内生效）
       cards.chosen =
-        typeof rawCards.chosen === "string" && cards.offers.includes(rawCards.chosen) ? rawCards.chosen : null;
+        typeof rawCards.chosen === "string" && CARDS.some((c) => c.id === rawCards.chosen) ? rawCards.chosen : null;
       const until = typeof rawCards.until === "number" && Number.isFinite(rawCards.until) ? rawCards.until : 0;
       const nowRef2 = Number.isFinite(now) ? now : Date.now();
       cards.until = Math.max(0, Math.min(until, nowRef2 + 2 * 24 * 3600 * 1000));
