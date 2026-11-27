@@ -1,0 +1,46 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "checks": {
+    "overflow": {
+      "loadedOverflow": 30,
+      "idleWithout": 123627,
+      "idleWith30": 127535,
+      "mul": 1.032,
+      "effectOverflowBonus": 0.15,
+      "ok": false
+    },
+    "overflowUI": {
+      "panelMentions": true,
+      "hudMentions": false,
+      "idleHint": "不点也 12.75万/秒",
+      "note": "overflow 生效但没有任何 UI 说明来源"
+    },
+    "panelUI": {
+      "overflowLine": "溢出转化：30/30 点（当前 +15.0% 挂机，封顶 +15%）",
+      "zeroHintShown": false,
+      "costLines": [
+        "连击上限（2点） 连击上限 20 → 30（最高 ×1.36）",
+        "暴击（2点） 每 20 次点击必暴击 ×5（巡逻偷点不触发）",
+        "摸鱼转正（终极·3点） 每 300 次累计点击 → 挂机 +1%（封顶 +35%）",
+        "指尖风暴（终极·3点） 立即 +12% 挂机；此后每 1000 次累计点击再 +1%（封顶 +32%）+ 点击力 +60%",
+        "更稳（2点） 挂机收益 +4%",
+        "离线效率（2点） 离线效率上限 +0.08（可超过 100%）"
+      ],
+      "idleUltText": [
+        "稳 挂机收益 +4%",
+        "更稳（2点） 挂机收益 +4%",
+        "最稳（终极·3点） 挂机收益 +20%",
+        "带队摸鱼（终极·3点） 同事提供的挂机收益 +70%"
+      ],
+      "capLine": "天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1；每日首开 +1（上限 24，满树需 27 点 → 终局必须放弃一条流派）"
+    },
+    "saveOverflowCap": {
+      "injected": 99,
+      "loaded": 30,
+      "ok": true
+    }
+  },
+  "shots": [
+    "/tmp/r12g-overflow.png"
+  ]
+}

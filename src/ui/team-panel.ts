@@ -270,9 +270,14 @@ export class TeamPanel {
       };
       return rank(ca) - rank(cb);
     });
+    // 首日折叠：一个同事都没有时，只展示第一位（避免一上来 5 张高价卡造成信息过载）
+    const firstOnly = teamSize(state) === 0;
+    let lockedShown = 0;
     for (const def of order) {
       const cur = state.team.colleagues[def.id];
       if (!cur) {
+        lockedShown += 1;
+        if (firstOnly && lockedShown > 1) continue;
         const affordable = canRecruit(state, def.id);
         parts.push(`<div class="mate locked">
           <div class="mate-top">
@@ -357,6 +362,9 @@ export class TeamPanel {
         ${actionHtml}
       </div>`);
     }
+    if (firstOnly) {
+      parts.push(`<div class="team-hint" style="font-size:12px">还有 ${COLLEAGUES.length - 1} 位同事，攒够钱陆续解锁。</div>`);
+    }
     this.body.innerHTML = parts.join("");
     this.bindActions();
   }
@@ -377,7 +385,12 @@ export class TeamPanel {
       { key: "event", name: "事件流 · 摸鱼情报", hint: `巡逻奖 ×${eff.patrolRewardMult.toFixed(2)}` },
     ];
     const parts: string[] = [];
-    for (const b of branches) {
+    const collapsed = state.talents.points < 3 && state.talents.unlocked.length === 0;
+    for (const [bi, b] of branches.entries()) {
+      if (collapsed && bi > 0) {
+        parts.push(`<div class="team-hint" style="font-size:12px">${b.name}：攒到 3 点后展开</div>`);
+        continue;
+      }
       const tier = branchTier(state.talents, b.key);
       const taken = state.talents.unlocked.find((id) => TALENTS.find((t) => t.id === id)?.exclusive?.startsWith(b.key));
       const rows = TALENTS.filter((t) => t.branch === b.key)
