@@ -74,7 +74,7 @@ export function useEnergy(state: GameState, action: EnergyAction): GameState | n
       },
     },
   };
-  // 社交：全体同事好感 +3
+  // 社交：全体同事好感 +5
   if (action === "social") {
     const cols = { ...next.team.colleagues };
     for (const key of Object.keys(cols)) {

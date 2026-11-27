@@ -523,9 +523,12 @@ export class TeamPanel {
     const conv = conversionBonus(state);
     parts.push(`<div class="talent-progress">
       ${
-        state.talents.unlocked.some((t) => t === "click_5a" || t === "click_5b")
-          ? `<div>点击转化：${Math.min(10500, state.totalClicks)}/10500 次（当前 +${Math.round(Math.min(0.35, Math.floor(state.totalClicks / 300) * 0.01) * 100)}%）</div>`
-          : `<div>点击转化：解锁 click_5a/5b 后生效</div>`
+        state.talents.unlocked.includes("click_5b")
+          ? // click_5b：立即 +12%，每 1000 点击 +1%（封顶 +32%）→ 与 conversionBonus 一致
+            `<div>点击转化：立即 +12%，每 1000 点击 +1%（当前 +${Math.round(Math.min(0.32, 0.12 + Math.floor(state.totalClicks / 1000) * 0.01) * 100)}%，封顶 +32%）</div>`
+          : state.talents.unlocked.includes("click_5a")
+            ? `<div>点击转化：${Math.min(10500, state.totalClicks)}/10500 次（当前 +${Math.round(Math.min(0.35, Math.floor(state.totalClicks / 300) * 0.01) * 100)}%）</div>`
+            : `<div>点击转化：解锁 click_5a/5b 后生效</div>`
       }
       ${
         state.talents.unlocked.includes("event_5a")

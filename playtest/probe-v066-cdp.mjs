@@ -196,6 +196,15 @@ const run = async () => {
         const conv = U.conversionBonus(S);
         const clickPct = eff.clickToIdleStep > 0 ? Math.min(0.35, Math.floor(S.totalClicks / 300) * 0.01) : (eff.clickUltBase > 0 ? Math.min(0.32, eff.clickUltBase + Math.floor(S.totalClicks / 1000) * eff.clickUltPerK) : 0);
         const survivePct = eff.surviveToIdle ? Math.min(0.3, S.patrolSurvives * 0.01) : 0;
+        const click5a = S.talents.unlocked.includes("click_5a");
+        const click5b = S.talents.unlocked.includes("click_5b");
+        const event5a = S.talents.unlocked.includes("event_5a");
+        const srLine = document.querySelector('#team-body .talent-progress .sr-only')?.textContent?.trim() ?? null;
+        const clickActualPct = click5a
+          ? Math.min(0.35, Math.floor(S.totalClicks / 300) * 0.01) * 100
+          : click5b
+            ? Math.min(0.32, 0.12 + Math.floor(S.totalClicks / 1000) * 0.01) * 100
+            : 0;
         // 工位页
         q('#tab-decor').click();
         await new Promise((r) => setTimeout(r, 550));
@@ -222,7 +231,8 @@ const run = async () => {
         void temp;
         return {
           state: { moyu: S.moyu, idle: U.effectOf(S).idleRate, click: (await import('/src/engine/actions.ts')).clickPowerOf(S), teamTotal: bd.total, station, prestige: S.prestige, bestIdleRate: S.bestIdleRate, rankIndex: S.rankIndex, cardsChosenTotal: S.cardsChosenTotal, bestSurviveStreak: S.bestSurviveStreak, bestTalentsUnlocked: S.bestTalentsUnlocked },
-          hud, hudExp, shop, shopExp, summary, mates, perCol, dispatches, talentProg, eff: { surviveToIdle: eff.surviveToIdle, clickToIdleStep: eff.clickToIdleStep, clickUltBase: eff.clickUltBase }, conv, clickPct, survivePct, decorSummary, dEff, ach, achExp, stats, prestigeBtn,
+          hud, hudExp, shop, shopExp, summary, mates, perCol, dispatches, talentProg, srLine, talentsFlags: { click5a, click5b, event5a }, clickActualPct,
+          eff: { surviveToIdle: eff.surviveToIdle, clickToIdleStep: eff.clickToIdleStep, clickUltBase: eff.clickUltBase }, conv, clickPct, survivePct, decorSummary, dEff, ach, achExp, stats, prestigeBtn,
         };
       })()`);
       report.scenarios.S1 = s1;
@@ -242,23 +252,43 @@ const run = async () => {
         const dom = domDisp.find((x) => x.id === d.colleague && x.mission === d.mission);
         return { ...d, domNet: dom ? dom.domNet : null };
       });
-      const netBad = netRows.filter((r) => r.domNet === null || Math.sign(r.domNet) !== Math.sign(r.e2eNet) || Math.abs(r.domNet - r.e2eNet) > Math.max(2, Math.abs(r.e2eNet) * 0.02));
+      const netTol = (v) => Math.max(0.6, fmtTol(v) * 1.2);
+      const netBad = netRows.filter((r) => r.domNet === null || Math.sign(r.domNet) !== Math.sign(r.e2eNet) || Math.abs(r.domNet - r.e2eNet) > netTol(r.e2eNet));
       const netFlips = netRows.filter((r) => r.domNet !== null && Math.sign(r.domNet) !== Math.sign(r.e2eNet));
       report.scenarios.dispatchNet = { total: netRows.length, bad: netBad.length, flips: netFlips.length, examples: netFlips.slice(0, 4), rows: netRows };
       report.checks.push({
         panel: "②派遣净收益", item: `18 个任务按钮「净 +X/h」= 引擎真实净（flips=${netFlips.length}）`,
-        shown: `${netRows.length - netBad.length}/${netRows.length} 一致`, expected: "全部一致", engine: { flips: netFlips.slice(0, 4), e2eRows: netRows.slice(0, 3) }, ok: netBad.length === 0,
+        shown: `${netRows.length - netBad.length}/${netRows.length} 一致`, expected: "全部一致（30/30）", engine: { flips: netFlips.slice(0, 4), bad: netBad.slice(0, 4), e2eRows: netRows.slice(0, 3) }, ok: netBad.length === 0,
       });
       if (netFlips.length > 0) report.defects.push({ level: "P1", where: "src/ui/team-panel.ts 净收益公式", issue: `仍有符号翻转（端到端口径 = 奖励/小时 − 挂机率前后差×3600；30 个任务按钮中 2 个翻转）：${netFlips.slice(0, 3).map((f) => `${f.colleague}/${f.mission} 面板 ${Math.round(f.domNet)}/h vs 引擎 ${Math.round(f.e2eNet)}/h`).join("；")}` });
       // ⑥ 天赋转化
-      addCheck("⑥天赋面板", "点击转化行显示", s1.talentProg[0], "", { expectedStr: "包含「点击转化」", ok: String(s1.talentProg[0] ?? "").includes("点击转化") });
+      addCheck("⑥天赋面板", "点击转化行存在", String(s1.talentProg[0] ?? ""), "", { expectedStr: "包含「点击转化」", ok: String(s1.talentProg[0] ?? "").includes("点击转化") });
       const surviveLine = s1.talentProg.find((x) => x.includes("安然转化")) ?? "";
-      const surviveShown = parseMoyu((surviveLine.match(/\+([\d.]+)%/) || [])[1] ?? "");
+      const clickLine = s1.talentProg.find((x) => x.includes("点击转化")) ?? "";
+      if (!s1.talentsFlags.event5a) {
+        report.checks.push({
+          panel: "⑥天赋面板", item: "未解锁 event_5a 时显示「解锁 event_5a 后生效」",
+          shown: surviveLine, expected: "包含「解锁 event_5a 后生效」", expectedStr: "包含「解锁 event_5a 后生效」",
+          engine: { surviveToIdle: s1.eff.surviveToIdle, conv: s1.conv },
+          ok: String(surviveLine).includes("解锁 event_5a 后生效") && !/\+\d+%/.test(String(surviveLine).replace("解锁 event_5a 后生效", "")),
+        });
+      } else {
+        const pct = parseMoyu((surviveLine.match(/\+([\d.]+)%/) || [])[1] ?? "");
+        report.checks.push({ panel: "⑥天赋面板", item: "已解锁 event_5a 时显示实际百分比", shown: surviveLine, expected: s1.survivePct * 100, ok: pct !== null && Math.abs(pct - s1.survivePct * 100) <= 0.51 });
+      }
+      // 点击转化行：click_5a 用 5a 公式；click_5b 应显示 5b 的实际值（0.12+每1000点击1%）
+      const clickShown = parseMoyu((clickLine.match(/\+([\d.]+)%/) || [])[1] ?? "");
       report.checks.push({
-        panel: "⑥天赋面板", item: "未解锁 event_5a 时是否仍显示「安然转化 +X%」",
-        shown: surviveLine, expected: "不应显示非 0 加成（实际 conversionBonus 该段=0）",
-        expectedStr: "不显示/显示0", engine: { surviveToIdle: s1.eff.surviveToIdle, conv: s1.conv, survivePctEngine: s1.survivePct, uiShown: surviveShown },
-        note: "UI 恒显示进度行，实际 conversionBonus 不含该段", ok: !(s1.eff.surviveToIdle === false && (surviveShown ?? 0) > 0),
+        panel: "⑥天赋面板", item: "点击转化行显示值 = 引擎实际点击段转化",
+        shown: clickLine, expected: s1.clickActualPct, expectedStr: `+${s1.clickActualPct}%`,
+        engine: { clickActualPct: s1.clickActualPct, unlocked: s1.talentsFlags },
+        ok: clickShown !== null && Math.abs(clickShown - s1.clickActualPct) <= 0.51,
+      });
+      // sr-only 总转化 = conversionBonus
+      report.checks.push({
+        panel: "⑥天赋面板", item: "sr-only「当前总转化加成 +X%」= conversionBonus",
+        shown: s1.srLine, expected: Math.round(s1.conv * 100), expectedStr: `当前总转化加成 +${Math.round(s1.conv * 100)}%`,
+        engine: { conv: s1.conv }, ok: String(s1.srLine ?? "") === `当前总转化加成 +${Math.round(s1.conv * 100)}%`,
       });
       // 成就墙
       addCheck("成就墙", "汇总 22 条 + 等级", s1.ach.summary, s1.achExp.summary, { expectedStr: s1.achExp.summary });
@@ -429,6 +459,73 @@ const run = async () => {
       report.checks.push({ panel: "新手引导", item: "目标链步数（quest 文本存在）", shown: s4.questText, expected: "非空", ok: !!s4.questText });
       report.scenarios.S4shot = await shot(cdp, "s4-newbie-team");
 
+
+      // ═══ S6：天赋转化行边界（click_5b 公式 / event_5a 已解锁）═══
+      const T6 = today();
+      const talentCases = [
+        { name: "click_5b-only", unlocked: ["click_1", "click_2", "click_3", "click_4", "click_5b"], patrol: 0 },
+        { name: "event_5a-unlocked", unlocked: ["event_1", "event_2", "event_3", "event_4", "event_5a"], patrol: 20 },
+      ];
+      for (const tc of talentCases) {
+        await seedAndReload(cdp, makeBlob({
+          moyu: 1e8, totalEarned: 1e8, lifetimeEarned: 1e8, levels: { coffee: 10 },
+          prestige: 0, collected: { quotes: [], flavors: [] }, team: { colleagues: {} }, decor: [],
+          talents: { unlocked: tc.unlocked, points: 0, rankGranted: 12, dailyGiftDate: T6, overflow: 0 },
+          cards: { date: T6, offers: [], chosen: null, until: 0, nextDayGuaranteed: null, dismissed: true, chosenDate: "" },
+          energy: { date: T6, left: 100, used: [], boosted: { idleMult: 1, patrolRewardMult: 1, clickMult: 1 } },
+          surviveStreak: 0, patrolSurvives: tc.patrol, savedAt: Date.now() - 800,
+        }));
+        await sleep(600);
+        await cdp.ev(`document.getElementById('welcome').classList.add('hidden'); document.getElementById('btn-team').click(); true`);
+        await sleep(450);
+        await cdp.ev(`document.getElementById('tab-talents').click(); true`);
+        await sleep(550);
+        const tr = await cdp.ev(`(async () => {
+          const U = await import('/src/engine/upgrades.ts');
+          const TL = await import('/src/engine/talents.ts');
+          const S = window.__MOYU__.state;
+          const eff = TL.talentEffects(S.talents);
+          const lines = [...document.querySelectorAll('#team-body .talent-progress div')].map((x) => x.textContent.trim());
+          const sr = document.querySelector('#team-body .talent-progress .sr-only')?.textContent?.trim() ?? null;
+          const clickPart = S.talents.unlocked.includes("click_5a")
+            ? Math.min(0.35, Math.floor(S.totalClicks / 300) * 0.01)
+            : S.talents.unlocked.includes("click_5b")
+              ? Math.min(0.32, 0.12 + Math.floor(S.totalClicks / 1000) * 0.01)
+              : 0;
+          const survivePart = eff.surviveToIdle ? Math.min(0.3, S.patrolSurvives * 0.01) : 0;
+          return { lines, sr, conv: U.conversionBonus(S), clickPart: clickPart * 100, survivePart: survivePart * 100, flags: { click5a: S.talents.unlocked.includes("click_5a"), click5b: S.talents.unlocked.includes("click_5b"), event5a: eff.surviveToIdle } };
+        })()`);
+        await cdp.ev(`document.getElementById('team-close').click(); true`);
+        report.scenarios["talent_" + tc.name] = tr;
+        const clickLine = tr.lines.find((x) => x.includes("点击转化")) ?? "";
+        const surviveLine = tr.lines.find((x) => x.includes("安然转化")) ?? "";
+        if (tc.name === "click_5b-only") {
+          const shown = parseMoyu((clickLine.match(/\+([\d.]+)%/) || [])[1] ?? "");
+          report.checks.push({
+            panel: "⑥天赋边界", item: "click_5b 玩家「点击转化」显示值 = 5b 实际公式（0.12+每1000点击1%）",
+            shown: clickLine, expected: tr.clickPart, expectedStr: `+${Math.round(tr.clickPart)}%`, engine: tr,
+            ok: shown !== null && Math.abs(shown - tr.clickPart) <= 0.51,
+          });
+          report.checks.push({
+            panel: "⑥天赋边界", item: "click_5b 时「安然转化」显示解锁提示",
+            shown: surviveLine, expected: "解锁 event_5a 后生效", expectedStr: "解锁 event_5a 后生效",
+            ok: String(surviveLine).includes("解锁 event_5a 后生效"),
+          });
+        } else {
+          const shown = parseMoyu((surviveLine.match(/\+([\d.]+)%/) || [])[1] ?? "");
+          report.checks.push({
+            panel: "⑥天赋边界", item: "event_5a 已解锁时「安然转化」显示实际 20%",
+            shown: surviveLine, expected: tr.survivePart, expectedStr: `+${Math.round(tr.survivePart)}%`, engine: tr,
+            ok: shown !== null && Math.abs(shown - tr.survivePart) <= 0.51,
+          });
+        }
+        report.checks.push({
+          panel: "⑥天赋边界", item: `sr-only 总转化（${tc.name}）= conversionBonus`,
+          shown: tr.sr, expected: Math.round(tr.conv * 100), expectedStr: `当前总转化加成 +${Math.round(tr.conv * 100)}%`,
+          engine: { conv: tr.conv }, ok: String(tr.sr ?? "") === `当前总转化加成 +${Math.round(tr.conv * 100)}%`,
+        });
+      }
+
       // ═══ S5：线上 v0.6.6 ═══
       await cdp.send("Page.navigate", { url: PROD });
       for (let i = 0; i < 240; i++) {
@@ -471,25 +568,27 @@ const run = async () => {
         prodOffline.push({ case: c.name, ...ui });
       }
       report.scenarios.prod = { base: prodBase, ver: prodVer, offline: prodOffline };
-      addCheck("线上v0.6.7", "生产包不暴露 __MOYU__", String(prodBase.hasDebug), "false", { expectedStr: "false" });
-      const expectVer = "v0.6.7 · 2026-11-27";
-      addCheck("线上v0.6.7", "版本 = v0.6.7", prodVer.version, expectVer, { expectedStr: expectVer });
-      addCheck("线上v0.6.7", "9 档商店渲染", prodBase.cards, 9, { tol: 0 });
-      addCheck("线上v0.6.7", "成就墙 22 条已上线", prodVer.achItems, 22, { tol: 0 });
-      addCheck("线上v0.6.7", "初始 HUD 点击/挂机", `${prodBase.hud.click}|${prodBase.hud.idle}`, "1|0.2", { expectedStr: "1|0.2" });
+      addCheck("线上v0.6.8", "生产包不暴露 __MOYU__", String(prodBase.hasDebug), "false", { expectedStr: "false" });
+      const expectVer = "v0.6.8 · 2026-11-27";
+      addCheck("线上v0.6.8", "版本 = v0.6.8", prodVer.version, expectVer, { expectedStr: expectVer });
+      addCheck("线上v0.6.8", "9 档商店渲染", prodBase.cards, 9, { tol: 0 });
+      addCheck("线上v0.6.8", "成就墙 22 条已上线", prodVer.achItems, 22, { tol: 0 });
+      addCheck("线上v0.6.8", "初始 HUD 点击/挂机", `${prodBase.hud.click}|${prodBase.hud.idle}`, "1|0.2", { expectedStr: "1|0.2" });
       for (const o of prodOffline) {
         const expectTxt = o.case === "100h" ? "已按上限结算 12 小时" : "已按上限结算 24 小时";
-        addCheck("线上v0.6.7", `离线 ${o.case} 封顶文案`, o.rule, expectTxt, { expectedStr: `包含「${expectTxt}」`, ok: String(o.rule).includes(expectTxt) });
+        addCheck("线上v0.6.8", `离线 ${o.case} 封顶文案`, o.rule, expectTxt, { expectedStr: `包含「${expectTxt}」`, ok: String(o.rule).includes(expectTxt) });
       }
       // 反推线上 8 天档实际结算效率：100h=12h×0.9, 8d=24h×? → ratio=(24/12)×(?/0.9)
       const g100 = parseMoyu(prodOffline.find((o) => o.case === "100h")?.gain ?? "");
       const g8d = parseMoyu(prodOffline.find((o) => o.case === "8d")?.gain ?? "");
       if (g100 && g8d) {
-        const implied8d = (g8d / g100) / 2 * 0.9;
-        addCheck("线上v0.6.7", "8 天档实际结算效率（100h 档 12h×0.9 反推）", implied8d, 1, { tol: 0.02, engine: { g100, g8d, implied8d }, note: "面板写 90%，反推实际 100% → ⑤ 在线上同样未修" });
-        if (Math.abs(implied8d - 1) < 0.02) {
+        // 100h: 12h×0.9；8d: 24h×（应=0.9）→ g8d/g100 应 = 2.0
+        const ratio = g8d / g100;
+        const implied8d = ratio / 2 * 0.9;
+        addCheck("线上v0.6.8", "8 天档实际结算效率（100h 档反推；应为 90%）", implied8d, 0.9, { tol: 0.02, engine: { g100, g8d, ratio, implied8d }, note: "v0.6.8 删除强制 100% 后应等于面板 90%" });
+        if (Math.abs(implied8d - 0.9) >= 0.02) {
           const rule = prodOffline.find((o) => o.case === "8d")?.rule ?? "";
-          report.defects.push({ level: "P1", where: "线上 v0.6.7 欢迎面板（8 天回归）", issue: `面板「${rule}」，但按 100h 档反推实际按 ${(implied8d * 100).toFixed(1)}% 结算 → ≥7 天回归仍绕 95% 上限（线上同样命中）` });
+          report.defects.push({ level: "P1", where: "线上 v0.6.8 欢迎面板（8 天回归）", issue: `面板「${rule}」与实际反推 ${(implied8d * 100).toFixed(1)}% 不一致` });
         }
       }
       report.scenarios.S5shot = await shot(cdp, "s5-prod-offline");

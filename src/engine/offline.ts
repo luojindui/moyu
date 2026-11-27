@@ -9,7 +9,7 @@ export const OFFLINE_CAP_SECONDS = 12 * 3600; // R11：8h→12h（每天开机�
 export const OFFLINE_CAP_WEEK = 24 * 3600;
 export const OFFLINE_CAP_MONTH = 48 * 3600;
 
-/** 阶梯封顶（R10 回归补偿）：日常 8h；≥7 天 24h；≥30 天 48h */
+/** 阶梯封顶（R10 回归补偿）：日常 12h；≥7 天 24h；≥30 天 48h */
 export function capForElapsed(elapsed: number): number {
   if (elapsed >= 30 * 86400) return OFFLINE_CAP_MONTH;
   if (elapsed >= 7 * 86400) return OFFLINE_CAP_WEEK;

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T14:47:54.996Z",
+  "generatedAt": "2026-11-27T14:54:00.331Z",
   "version": "0.6.6",
   "checks": {
     "teamBreakdown": [
@@ -60,50 +60,39 @@
     ],
     "dispatchNet": {
       "total": 30,
-      "bad": 30,
-      "flips": 1,
-      "examples": [
-        {
-          "colleague": "wang",
-          "mission": "meeting",
-          "est": 13852976,
-          "perHour": 13852976,
-          "uiNet": 754339.6094840486,
-          "engineNet": -4579999.8592000045,
-          "signFlip": true,
-          "diffPct": 116.47029765664251
-        }
-      ],
+      "bad": 0,
+      "flips": 0,
+      "examples": [],
       "worst": [
         {
-          "colleague": "wang",
+          "colleague": "zhou",
           "mission": "stroll",
-          "est": 952392,
-          "perHour": 19047840,
-          "uiNet": 5949203.609484049,
-          "engineNet": 614864.1407999955,
+          "est": 856775,
+          "perHour": 17135500,
+          "uiNet": 15553100.0704,
+          "engineNet": 15553100.0704,
           "signFlip": false,
-          "diffPct": 867.5639242424483
+          "diffPct": 0
         },
         {
-          "colleague": "qiang",
+          "colleague": "zhou",
+          "mission": "quick",
+          "est": 2823463,
+          "perHour": 11293852,
+          "uiNet": 9711452.0704,
+          "engineNet": 9711452.0704,
+          "signFlip": false,
+          "diffPct": 0
+        },
+        {
+          "colleague": "zhou",
           "mission": "chat",
-          "est": 5340247,
-          "perHour": 10680494,
-          "uiNet": 3124516.707113035,
-          "engineNet": 1096922.1055999976,
+          "est": 7594143,
+          "perHour": 15188286,
+          "uiNet": 13605886.0704,
+          "engineNet": 13605886.0704,
           "signFlip": false,
-          "diffPct": 184.8439913063816
-        },
-        {
-          "colleague": "wang",
-          "mission": "meeting",
-          "est": 13852976,
-          "perHour": 13852976,
-          "uiNet": 754339.6094840486,
-          "engineNet": -4579999.8592000045,
-          "signFlip": true,
-          "diffPct": 116.47029765664251
+          "diffPct": 0
         }
       ]
     },
@@ -113,60 +102,60 @@
         "mission": "stroll",
         "est": 968,
         "perHour": 19360,
-        "uiNet": -90868.73413759998,
+        "uiNet": -90861.63776,
         "engineNet": -90861.63776,
         "signFlip": false,
-        "diffPct": -0.0078100921081002625
+        "diffPct": 0
       },
       {
         "colleague": "zhou",
         "mission": "quick",
         "est": 3193,
         "perHour": 12772,
-        "uiNet": -97456.73413759998,
+        "uiNet": -97449.63776,
         "engineNet": -97449.63776,
         "signFlip": false,
-        "diffPct": -0.007282097463985901
+        "diffPct": 0
       },
       {
         "colleague": "zhou",
         "mission": "chat",
         "est": 8588,
         "perHour": 17176,
-        "uiNet": -93052.73413759998,
+        "uiNet": -93045.63776,
         "engineNet": -93045.63776,
         "signFlip": false,
-        "diffPct": -0.007626770873760527
+        "diffPct": 0
       },
       {
         "colleague": "zhou",
         "mission": "meeting",
         "est": 14094,
         "perHour": 14094,
-        "uiNet": -96134.73413759998,
+        "uiNet": -96127.63776,
         "engineNet": -96127.63776,
         "signFlip": false,
-        "diffPct": -0.007382244862504366
+        "diffPct": 0
       },
       {
         "colleague": "zhou",
         "mission": "toilet",
         "est": 77518,
         "perHour": 19379.5,
-        "uiNet": -90849.23413759998,
+        "uiNet": -90842.13776,
         "engineNet": -90842.13776,
         "signFlip": false,
-        "diffPct": -0.007811768607573561
+        "diffPct": 0
       },
       {
         "colleague": "zhou",
         "mission": "coffee",
         "est": 197319,
         "perHour": 24664.875,
-        "uiNet": -85563.85913759998,
+        "uiNet": -85556.76276,
         "engineNet": -85556.76276,
         "signFlip": false,
-        "diffPct": -0.008294350289866446
+        "diffPct": 0
       }
     ],
     "dispatchNetE2E": [
@@ -179,7 +168,7 @@
         "awayIdle": 158661.98831991453,
         "deltaIdle": 2662.1033040000184,
         "e2eNet": 490672.10559993424,
-        "uiNet": 3237308.91970517,
+        "uiNet": 490672.10559999757,
         "signFlip": false
       },
       {
@@ -191,8 +180,8 @@
         "awayIdle": 156203.82055191454,
         "deltaIdle": 5120.271072000003,
         "e2eNet": -3758555.859200012,
-        "uiNet": 2534506.559606891,
-        "signFlip": true
+        "uiNet": -3758555.8592000045,
+        "signFlip": false
       },
       {
         "pair": "li/quick",
@@ -203,7 +192,7 @@
         "awayIdle": 157432.9044359145,
         "deltaIdle": 3891.18718800004,
         "e2eNet": 8553610.123199856,
-        "uiNet": 13073459.739656031,
+        "uiNet": 8553610.123199996,
         "signFlip": false
       },
       {
@@ -215,11 +204,11 @@
         "awayIdle": 158661.98831991453,
         "deltaIdle": 2662.1033040000184,
         "e2eNet": -1398249.8944000658,
-        "uiNet": 1348386.9197051702,
-        "signFlip": true
+        "uiNet": -1398249.8944000024,
+        "signFlip": false
       }
     ],
-    "dispatchNetE2Eflips": 2,
+    "dispatchNetE2Eflips": 0,
     "focus": {
       "liveBoost": {
         "idleMult": 1.08,
@@ -254,12 +243,12 @@
     },
     "offline7d": {
       "panelRate": 0.83,
-      "effectiveRate": 1.2048192771084338,
-      "earnedResume": 21012629906.98069,
+      "effectiveRate": 1,
+      "earnedResume": 17440482822.793972,
       "earnedAtPanelRate": 17440482822.793972,
-      "extraPct": 20.481927710843383,
-      "impliedRate": 1,
-      "resumeForcesFull": true
+      "extraPct": 0,
+      "impliedRate": 0.83,
+      "resumeForcesFull": false
     },
     "talentTransform": {
       "unlockedClick5a": true,
@@ -360,7 +349,9 @@
       "prestige108": true,
       "eventsCap2": true,
       "energyFavor3": true,
-      "talentCostComment": true
+      "talentCostComment": true,
+      "resumeForcedFullComment": true,
+      "summary7dFullClaim": true
     },
     "deadConstants": {
       "PRESTIGE_GAIN_PER_POINT": 1,
@@ -376,16 +367,6 @@
   },
   "defects": [
     {
-      "level": "P1",
-      "where": "src/ui/team-panel.ts 派遣净收益",
-      "issue": "端到端反例：wang/stroll 面板净 2534507/h，真实净 -3758556/h；qiang/chat 面板净 1348387/h，真实净 -1398250/h"
-    },
-    {
-      "level": "P1",
-      "where": "src/engine/resume.ts settleReturn",
-      "issue": "≥7 天回归强制 rate=1：面板显示 83.0%，实际按 100% 结算（多 20.5%）"
-    },
-    {
       "level": "P2",
       "where": "src/engine/upgrades.ts effectOf vs src/engine/actions.ts clickPowerOf",
       "issue": "成就「点击 +X%」只作用于升级点击段（实际 729.12，若全量应为 729.34，差 -0.03%）；基础点击不吃成就点击加成"
@@ -394,11 +375,6 @@
       "level": "P2",
       "where": "src/engine/achievements.ts achEffects",
       "issue": "spec-batch5 写「成就等级本身也给挂机加成（每级 +2%）」，实现为 1+0.02×(Lv−1)：Lv.1（0 条）实际 +0%，首个 +2% 要等到 Lv.2（4 条）"
-    },
-    {
-      "level": "P2",
-      "where": "src/engine/achievements.ts reward.offlineBonus / progression.ts decorBase",
-      "issue": "achEffects.offlineBonus 被 offlineEfficiency 读取，但 22 条成就没有任何一条给 offlineBonus → 死路径（离线效率实际只受天赋/卡影响）"
     },
     {
       "level": "P2",
@@ -427,8 +403,24 @@
     },
     {
       "level": "P2",
+      "where": "src/engine 注释",
+      "issue": "静态注释漂移仍在：resumeForcedFullComment"
+    },
+    {
+      "level": "P2",
+      "where": "src/engine 注释",
+      "issue": "静态注释漂移仍在：summary7dFullClaim"
+    },
+    {
+      "level": "P2",
       "where": "src/engine/progression.ts 首日分支",
       "issue": "首日风险卡负加成被 max(0, raise) + 95% 上限吃掉，带卡/不带卡首日效率相同（成本 0 的负效果文案）"
+    }
+  ],
+  "notes": [
+    {
+      "where": "src/engine/achievements.ts reward.offlineBonus",
+      "note": "achEffects.offlineBonus 被 offlineEfficiency 读取，但 22 条成就均无 offlineBonus；v0.6.7 起 spec-batch5 已注明「离线维度由家具/天赋承担，成就暂不提供」→ 字段为预留，非缺陷"
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-27T14:48:43.611Z",
+  "generatedAt": "2026-11-27T14:54:32.378Z",
   "snapshot": {
-    "head": "4a66b84",
-    "headTitle": "docs: round5 final state (all roles signed deliverable)",
+    "head": "d975635",
+    "headTitle": "fix(batch5 P1 from data re-verify): dispatch net/h now uses engine-consistent formula (fixed part x favor x teamIdleMult, share on rawStation, loss = 15% only) so negative-net dispatches show negative; >=7d offline panel rate equals actual settlement (removed forced 1.0); talent conversion rows only shown when the talent is unlocked; v0.6.8",
     "dirty": ""
   },
   "checks": [
@@ -86,34 +86,12 @@
     },
     {
       "panel": "②派遣净收益",
-      "item": "18 个任务按钮「净 +X/h」= 引擎真实净（flips=2）",
-      "shown": "0/30 一致",
-      "expected": "全部一致",
+      "item": "18 个任务按钮「净 +X/h」= 引擎真实净（flips=0）",
+      "shown": "30/30 一致",
+      "expected": "全部一致（30/30）",
       "engine": {
-        "flips": [
-          {
-            "colleague": "qiang",
-            "mission": "chat",
-            "est": 4371367,
-            "uiNet": 1745167.6027789274,
-            "engineNet": -840837.8944000024,
-            "e2eNet": -840837.8944000658,
-            "deltaIdle": 2662.1033040000184,
-            "signFlip": true,
-            "domNet": 1745200
-          },
-          {
-            "colleague": "wang",
-            "mission": "stroll",
-            "est": 782571,
-            "uiNet": 3297331.470371904,
-            "engineNet": -2781555.8592000045,
-            "e2eNet": -2781555.859200012,
-            "deltaIdle": 5120.271072000003,
-            "signFlip": true,
-            "domNet": 3297300
-          }
-        ],
+        "flips": [],
+        "bad": [],
         "e2eRows": [
           {
             "colleague": "zhou",
@@ -124,7 +102,7 @@
             "e2eNet": 14856800.0704,
             "deltaIdle": 439.55553599999985,
             "signFlip": false,
-            "domNet": 14344600
+            "domNet": 14856800
           },
           {
             "colleague": "zhou",
@@ -135,7 +113,7 @@
             "e2eNet": 9252536.540988237,
             "deltaIdle": 439.55553599999985,
             "signFlip": false,
-            "domNet": 8740300
+            "domNet": 9252500
           },
           {
             "colleague": "zhou",
@@ -146,33 +124,57 @@
             "e2eNet": 12988724.776282355,
             "deltaIdle": 439.55553599999985,
             "signFlip": false,
-            "domNet": 12476500
+            "domNet": 12988699.999999998
           }
         ]
       },
-      "ok": false
+      "ok": true
     },
     {
       "panel": "⑥天赋面板",
-      "item": "点击转化行显示",
+      "item": "点击转化行存在",
       "shown": "点击转化：3000/10500 次（当前 +10%）",
       "expected": "包含「点击转化」",
       "ok": true
     },
     {
       "panel": "⑥天赋面板",
-      "item": "未解锁 event_5a 时是否仍显示「安然转化 +X%」",
-      "shown": "安然转化：20/30 次（当前 +20%）",
-      "expected": "不应显示非 0 加成（实际 conversionBonus 该段=0）",
-      "expectedStr": "不显示/显示0",
+      "item": "未解锁 event_5a 时显示「解锁 event_5a 后生效」",
+      "shown": "安然转化：解锁 event_5a 后生效",
+      "expected": "包含「解锁 event_5a 后生效」",
+      "expectedStr": "包含「解锁 event_5a 后生效」",
       "engine": {
         "surviveToIdle": false,
-        "conv": 0.1,
-        "survivePctEngine": 0,
-        "uiShown": 20
+        "conv": 0.1
       },
-      "note": "UI 恒显示进度行，实际 conversionBonus 不含该段",
-      "ok": false
+      "ok": true
+    },
+    {
+      "panel": "⑥天赋面板",
+      "item": "点击转化行显示值 = 引擎实际点击段转化",
+      "shown": "点击转化：3000/10500 次（当前 +10%）",
+      "expected": 10,
+      "expectedStr": "+10%",
+      "engine": {
+        "clickActualPct": 10,
+        "unlocked": {
+          "click5a": true,
+          "click5b": false,
+          "event5a": false
+        }
+      },
+      "ok": true
+    },
+    {
+      "panel": "⑥天赋面板",
+      "item": "sr-only「当前总转化加成 +X%」= conversionBonus",
+      "shown": "当前总转化加成 +10%",
+      "expected": 10,
+      "expectedStr": "当前总转化加成 +10%",
+      "engine": {
+        "conv": 0.1
+      },
+      "ok": true
     },
     {
       "panel": "成就墙",
@@ -280,13 +282,13 @@
       "panel": "④离线",
       "item": "1h（非封顶） 到账金额 = 引擎 settleReturn",
       "shown": 131500,
-      "expected": 131507.7615016407,
+      "expected": 131507.57889032032,
       "engine": {
-        "elapsed": 3600.756,
-        "applied": 3600.756,
-        "earned": 131507.7615016407,
+        "elapsed": 3600.751,
+        "applied": 3600.751,
+        "earned": 131507.57889032032,
         "panelRate": 0.95,
-        "impliedRate": 0.95,
+        "impliedRate": 0.9500000000000001,
         "cap": 43200,
         "incomeMult": 1.6225,
         "capHours": 12
@@ -299,11 +301,11 @@
       "shown": "离线效率 95%｜12 小时封顶",
       "expected": "…12 小时封顶",
       "engine": {
-        "elapsed": 3600.756,
-        "applied": 3600.756,
-        "earned": 131507.7615016407,
+        "elapsed": 3600.751,
+        "applied": 3600.751,
+        "earned": 131507.57889032032,
         "panelRate": 0.95,
-        "impliedRate": 0.95,
+        "impliedRate": 0.9500000000000001,
         "cap": 43200,
         "incomeMult": 1.6225,
         "capHours": 12
@@ -347,14 +349,14 @@
     {
       "panel": "④离线",
       "item": "8 天（24h 封顶 + ≥7 天回归） 到账金额 = 引擎 settleReturn",
-      "shown": 3321600.0000000005,
-      "expected": 3321603.8063999997,
+      "shown": 3155500,
+      "expected": 3155523.6160799996,
       "engine": {
-        "elapsed": 691200.738,
+        "elapsed": 691200.751,
         "applied": 86400,
-        "earned": 3321603.8063999997,
+        "earned": 3155523.6160799996,
         "panelRate": 0.95,
-        "impliedRate": 1,
+        "impliedRate": 0.95,
         "cap": 86400,
         "incomeMult": 1.6225,
         "capHours": 24
@@ -367,11 +369,11 @@
       "shown": "离线效率 95%｜超过上限，已按上限结算 24 小时 0 分",
       "expected": "…已按上限结算 24 小时",
       "engine": {
-        "elapsed": 691200.738,
+        "elapsed": 691200.751,
         "applied": 86400,
-        "earned": 3321603.8063999997,
+        "earned": 3155523.6160799996,
         "panelRate": 0.95,
-        "impliedRate": 1,
+        "impliedRate": 0.95,
         "cap": 86400,
         "incomeMult": 1.6225,
         "capHours": 24
@@ -381,29 +383,29 @@
     {
       "panel": "⑤离线回归",
       "item": "8 天（24h 封顶 + ≥7 天回归） 面板效率 vs 实际结算效率",
-      "shown": "面板 95% / 实际 100%",
+      "shown": "面板 95% / 实际 95%",
       "expected": "两者一致",
       "expectedStr": "两者一致",
       "engine": {
         "panelRate": 0.95,
-        "impliedRate": 1,
-        "extraPct": 5.263157894736836,
-        "earned": 3321603.8063999997
+        "impliedRate": 0.95,
+        "extraPct": 0,
+        "earned": 3155523.6160799996
       },
       "note": "resume.settleReturn 对 ≥7 天强制 rate=1，绕过硬上限",
-      "ok": false
+      "ok": true
     },
     {
       "panel": "④离线",
       "item": "31 天（48h 封顶 + ≥7 天回归） 到账金额 = 引擎 settleReturn",
-      "shown": 6643200.000000001,
-      "expected": 6643207.612799999,
+      "shown": 6311000,
+      "expected": 6311047.232159999,
       "engine": {
-        "elapsed": 2678400.761,
+        "elapsed": 2678400.747,
         "applied": 172800,
-        "earned": 6643207.612799999,
+        "earned": 6311047.232159999,
         "panelRate": 0.95,
-        "impliedRate": 1,
+        "impliedRate": 0.95,
         "cap": 172800,
         "incomeMult": 1.6225,
         "capHours": 48
@@ -416,11 +418,11 @@
       "shown": "离线效率 95%｜超过上限，已按上限结算 48 小时 0 分",
       "expected": "…已按上限结算 48 小时",
       "engine": {
-        "elapsed": 2678400.761,
+        "elapsed": 2678400.747,
         "applied": 172800,
-        "earned": 6643207.612799999,
+        "earned": 6311047.232159999,
         "panelRate": 0.95,
-        "impliedRate": 1,
+        "impliedRate": 0.95,
         "cap": 172800,
         "incomeMult": 1.6225,
         "capHours": 48
@@ -430,17 +432,17 @@
     {
       "panel": "⑤离线回归",
       "item": "31 天（48h 封顶 + ≥7 天回归） 面板效率 vs 实际结算效率",
-      "shown": "面板 95% / 实际 100%",
+      "shown": "面板 95% / 实际 95%",
       "expected": "两者一致",
       "expectedStr": "两者一致",
       "engine": {
         "panelRate": 0.95,
-        "impliedRate": 1,
-        "extraPct": 5.263157894736836,
-        "earned": 6643207.612799999
+        "impliedRate": 0.95,
+        "extraPct": 0,
+        "earned": 6311047.232159999
       },
       "note": "resume.settleReturn 对 ≥7 天强制 rate=1，绕过硬上限",
-      "ok": false
+      "ok": true
     },
     {
       "panel": "新手引导",
@@ -461,72 +463,155 @@
       "ok": true
     },
     {
-      "panel": "线上v0.6.7",
+      "panel": "⑥天赋边界",
+      "item": "click_5b 玩家「点击转化」显示值 = 5b 实际公式（0.12+每1000点击1%）",
+      "shown": "点击转化：3000/10500 次（当前 +10%）",
+      "expected": 15,
+      "expectedStr": "+15%",
+      "engine": {
+        "lines": [
+          "点击转化：3000/10500 次（当前 +10%）",
+          "安然转化：解锁 event_5a 后生效",
+          "当前总转化加成 +15%",
+          "溢出转化：0/30 点（当前 +0.0% 挂机，封顶 +15%）",
+          "天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1；每日首开 +1（上限 24，满树需 27 点 → 终局必须放弃一条流派）"
+        ],
+        "sr": "当前总转化加成 +15%",
+        "conv": 0.15,
+        "clickPart": 15,
+        "survivePart": 0,
+        "flags": {
+          "click5a": false,
+          "click5b": true,
+          "event5a": false
+        }
+      },
+      "ok": false
+    },
+    {
+      "panel": "⑥天赋边界",
+      "item": "click_5b 时「安然转化」显示解锁提示",
+      "shown": "安然转化：解锁 event_5a 后生效",
+      "expected": "解锁 event_5a 后生效",
+      "expectedStr": "解锁 event_5a 后生效",
+      "ok": true
+    },
+    {
+      "panel": "⑥天赋边界",
+      "item": "sr-only 总转化（click_5b-only）= conversionBonus",
+      "shown": "当前总转化加成 +15%",
+      "expected": 15,
+      "expectedStr": "当前总转化加成 +15%",
+      "engine": {
+        "conv": 0.15
+      },
+      "ok": true
+    },
+    {
+      "panel": "⑥天赋边界",
+      "item": "event_5a 已解锁时「安然转化」显示实际 20%",
+      "shown": "安然转化：20/30 次（当前 +20%）",
+      "expected": 20,
+      "expectedStr": "+20%",
+      "engine": {
+        "lines": [
+          "点击转化：解锁 click_5a/5b 后生效",
+          "安然转化：20/30 次（当前 +20%）",
+          "当前总转化加成 +20%",
+          "溢出转化：0/30 点（当前 +0.0% 挂机，封顶 +15%）",
+          "天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1；每日首开 +1（上限 24，满树需 27 点 → 终局必须放弃一条流派）"
+        ],
+        "sr": "当前总转化加成 +20%",
+        "conv": 0.2,
+        "clickPart": 0,
+        "survivePart": 20,
+        "flags": {
+          "click5a": false,
+          "click5b": false,
+          "event5a": true
+        }
+      },
+      "ok": true
+    },
+    {
+      "panel": "⑥天赋边界",
+      "item": "sr-only 总转化（event_5a-unlocked）= conversionBonus",
+      "shown": "当前总转化加成 +20%",
+      "expected": 20,
+      "expectedStr": "当前总转化加成 +20%",
+      "engine": {
+        "conv": 0.2
+      },
+      "ok": true
+    },
+    {
+      "panel": "线上v0.6.8",
       "item": "生产包不暴露 __MOYU__",
       "shown": "false",
       "expected": "false",
       "ok": true
     },
     {
-      "panel": "线上v0.6.7",
-      "item": "版本 = v0.6.7",
-      "shown": "v0.6.7 · 2026-11-27",
-      "expected": "v0.6.7 · 2026-11-27",
+      "panel": "线上v0.6.8",
+      "item": "版本 = v0.6.8",
+      "shown": "v0.6.8 · 2026-11-27",
+      "expected": "v0.6.8 · 2026-11-27",
       "ok": true
     },
     {
-      "panel": "线上v0.6.7",
+      "panel": "线上v0.6.8",
       "item": "9 档商店渲染",
       "shown": 9,
       "expected": 9,
       "ok": true
     },
     {
-      "panel": "线上v0.6.7",
+      "panel": "线上v0.6.8",
       "item": "成就墙 22 条已上线",
       "shown": 22,
       "expected": 22,
       "ok": true
     },
     {
-      "panel": "线上v0.6.7",
+      "panel": "线上v0.6.8",
       "item": "初始 HUD 点击/挂机",
       "shown": "1|0.2",
       "expected": "1|0.2",
       "ok": true
     },
     {
-      "panel": "线上v0.6.7",
+      "panel": "线上v0.6.8",
       "item": "离线 100h 封顶文案",
       "shown": "离线效率 90%｜超过上限，已按上限结算 12 小时 0 分",
       "expected": "包含「已按上限结算 12 小时」",
       "ok": true
     },
     {
-      "panel": "线上v0.6.7",
+      "panel": "线上v0.6.8",
       "item": "离线 8d 封顶文案",
       "shown": "离线效率 90%｜超过上限，已按上限结算 24 小时 0 分",
       "expected": "包含「已按上限结算 24 小时」",
       "ok": true
     },
     {
-      "panel": "线上v0.6.7",
-      "item": "8 天档实际结算效率（100h 档 12h×0.9 反推）",
-      "shown": 0.9999809014514895,
-      "expected": 1,
+      "panel": "线上v0.6.8",
+      "item": "8 天档实际结算效率（100h 档反推；应为 90%）",
+      "shown": 0.9,
+      "expected": 0.9,
       "engine": {
         "g100": 785400.0000000001,
-        "g8d": 1745300,
-        "implied8d": 0.9999809014514895
+        "g8d": 1570800.0000000002,
+        "ratio": 2,
+        "implied8d": 0.9
       },
-      "note": "面板写 90%，反推实际 100% → ⑤ 在线上同样未修",
+      "note": "v0.6.8 删除强制 100% 后应等于面板 90%",
       "ok": true
     }
   ],
   "scenarios": {
     "S1": {
       "state": {
-        "moyu": 1000000179455.629,
+        "moyu": 1000000174111.6307,
         "idle": 166281.8483191689,
         "click": 729.1207,
         "teamTotal": 90307.57680000001,
@@ -674,32 +759,32 @@
             {
               "id": "zhou",
               "mission": "stroll",
-              "text": "就近溜达3m · +69.87万 · 净 +1434.46万/h"
+              "text": "就近溜达3m · +69.87万 · 净 +1485.68万/h"
             },
             {
               "id": "zhou",
               "mission": "quick",
-              "text": "溜一圈13m · +230.24万 · 净 +874.03万/h"
+              "text": "溜一圈13m · +230.24万 · 净 +925.25万/h"
             },
             {
               "id": "zhou",
               "mission": "chat",
-              "text": "茶水间聊八卦 ★26m · +619.27万 · 净 +1247.65万/h"
+              "text": "茶水间聊八卦 ★26m · +619.27万 · 净 +1298.87万/h"
             },
             {
               "id": "zhou",
               "mission": "meeting",
-              "text": "开个会51m · +1016.24万 · 净 +986.11万/h"
+              "text": "开个会51m · +1016.24万 · 净 +1037.34万/h"
             },
             {
               "id": "zhou",
               "mission": "toilet",
-              "text": "长线蹲点3h · +5589.33万 · 净 +1434.46万/h"
+              "text": "长线蹲点3h · +5589.33万 · 净 +1485.68万/h"
             },
             {
               "id": "zhou",
               "mission": "coffee",
-              "text": "楼下买咖啡7h · +1.42亿 · 净 +1882.80万/h"
+              "text": "楼下买咖啡7h · +1.42亿 · 净 +1934.02万/h"
             }
           ],
           "buttons": [
@@ -716,32 +801,32 @@
             {
               "act": "dispatch",
               "id": "zhou",
-              "text": "就近溜达3m · +69.87万 · 净 +1434.46万/h"
+              "text": "就近溜达3m · +69.87万 · 净 +1485.68万/h"
             },
             {
               "act": "dispatch",
               "id": "zhou",
-              "text": "溜一圈13m · +230.24万 · 净 +874.03万/h"
+              "text": "溜一圈13m · +230.24万 · 净 +925.25万/h"
             },
             {
               "act": "dispatch",
               "id": "zhou",
-              "text": "茶水间聊八卦 ★26m · +619.27万 · 净 +1247.65万/h"
+              "text": "茶水间聊八卦 ★26m · +619.27万 · 净 +1298.87万/h"
             },
             {
               "act": "dispatch",
               "id": "zhou",
-              "text": "开个会51m · +1016.24万 · 净 +986.11万/h"
+              "text": "开个会51m · +1016.24万 · 净 +1037.34万/h"
             },
             {
               "act": "dispatch",
               "id": "zhou",
-              "text": "长线蹲点3h · +5589.33万 · 净 +1434.46万/h"
+              "text": "长线蹲点3h · +5589.33万 · 净 +1485.68万/h"
             },
             {
               "act": "dispatch",
               "id": "zhou",
-              "text": "楼下买咖啡7h · +1.42亿 · 净 +1882.80万/h"
+              "text": "楼下买咖啡7h · +1.42亿 · 净 +1934.02万/h"
             }
           ]
         },
@@ -752,32 +837,32 @@
             {
               "id": "mei",
               "mission": "stroll",
-              "text": "就近溜达3m · +71.84万 · 净 +1004.81万/h"
+              "text": "就近溜达3m · +71.84万 · 净 +920.85万/h"
             },
             {
               "id": "mei",
               "mission": "quick",
-              "text": "溜一圈15m · +236.74万 · 净 +515.01万/h"
+              "text": "溜一圈15m · +236.74万 · 净 +431.05万/h"
             },
             {
               "id": "mei",
               "mission": "chat",
-              "text": "茶水间聊八卦30m · +424.49万 · 净 +417.05万/h"
+              "text": "茶水间聊八卦30m · +424.49万 · 净 +333.09万/h"
             },
             {
               "id": "mei",
               "mission": "meeting",
-              "text": "开个会 ★1h · +1567.35万 · 净 +1135.42万/h"
+              "text": "开个会 ★1h · +1567.35万 · 净 +1051.46万/h"
             },
             {
               "id": "mei",
               "mission": "toilet",
-              "text": "长线蹲点4h · +5746.95万 · 净 +1004.81万/h"
+              "text": "长线蹲点4h · +5746.95万 · 净 +920.85万/h"
             },
             {
               "id": "mei",
               "mission": "coffee",
-              "text": "楼下买咖啡8h · +1.46亿 · 净 +1396.64万/h"
+              "text": "楼下买咖啡8h · +1.46亿 · 净 +1312.69万/h"
             }
           ],
           "buttons": [
@@ -794,32 +879,32 @@
             {
               "act": "dispatch",
               "id": "mei",
-              "text": "就近溜达3m · +71.84万 · 净 +1004.81万/h"
+              "text": "就近溜达3m · +71.84万 · 净 +920.85万/h"
             },
             {
               "act": "dispatch",
               "id": "mei",
-              "text": "溜一圈15m · +236.74万 · 净 +515.01万/h"
+              "text": "溜一圈15m · +236.74万 · 净 +431.05万/h"
             },
             {
               "act": "dispatch",
               "id": "mei",
-              "text": "茶水间聊八卦30m · +424.49万 · 净 +417.05万/h"
+              "text": "茶水间聊八卦30m · +424.49万 · 净 +333.09万/h"
             },
             {
               "act": "dispatch",
               "id": "mei",
-              "text": "开个会 ★1h · +1567.35万 · 净 +1135.42万/h"
+              "text": "开个会 ★1h · +1567.35万 · 净 +1051.46万/h"
             },
             {
               "act": "dispatch",
               "id": "mei",
-              "text": "长线蹲点4h · +5746.95万 · 净 +1004.81万/h"
+              "text": "长线蹲点4h · +5746.95万 · 净 +920.85万/h"
             },
             {
               "act": "dispatch",
               "id": "mei",
-              "text": "楼下买咖啡8h · +1.46亿 · 净 +1396.64万/h"
+              "text": "楼下买咖啡8h · +1.46亿 · 净 +1312.69万/h"
             }
           ]
         },
@@ -830,32 +915,32 @@
             {
               "id": "qiang",
               "mission": "stroll",
-              "text": "就近溜达3m · +73.98万 · 净 +779.78万/h"
+              "text": "就近溜达3m · +73.98万 · 净 +521.18万/h"
             },
             {
               "id": "qiang",
               "mission": "quick",
-              "text": "溜一圈15m · +243.79万 · 净 +275.39万/h"
+              "text": "溜一圈15m · +243.79万 · 净 +16.79万/h"
             },
             {
               "id": "qiang",
               "mission": "chat",
-              "text": "茶水间聊八卦30m · +437.14万 · 净 +174.52万/h"
+              "text": "茶水间聊八卦30m · +437.14万 · 净 -840837.9/h"
             },
             {
               "id": "qiang",
               "mission": "meeting",
-              "text": "开个会1h · +1076.03万 · 净 +376.27万/h"
+              "text": "开个会1h · +1076.03万 · 净 +117.67万/h"
             },
             {
               "id": "qiang",
               "mission": "toilet",
-              "text": "长线蹲点 ★4h · +8877.24万 · 净 +1519.55万/h"
+              "text": "长线蹲点 ★4h · +8877.24万 · 净 +1260.95万/h"
             },
             {
               "id": "qiang",
               "mission": "coffee",
-              "text": "楼下买咖啡8h · +1.51亿 · 净 +1183.29万/h"
+              "text": "楼下买咖啡8h · +1.51亿 · 净 +924.69万/h"
             }
           ],
           "buttons": [
@@ -872,32 +957,32 @@
             {
               "act": "dispatch",
               "id": "qiang",
-              "text": "就近溜达3m · +73.98万 · 净 +779.78万/h"
+              "text": "就近溜达3m · +73.98万 · 净 +521.18万/h"
             },
             {
               "act": "dispatch",
               "id": "qiang",
-              "text": "溜一圈15m · +243.79万 · 净 +275.39万/h"
+              "text": "溜一圈15m · +243.79万 · 净 +16.79万/h"
             },
             {
               "act": "dispatch",
               "id": "qiang",
-              "text": "茶水间聊八卦30m · +437.14万 · 净 +174.52万/h"
+              "text": "茶水间聊八卦30m · +437.14万 · 净 -840837.9/h"
             },
             {
               "act": "dispatch",
               "id": "qiang",
-              "text": "开个会1h · +1076.03万 · 净 +376.27万/h"
+              "text": "开个会1h · +1076.03万 · 净 +117.67万/h"
             },
             {
               "act": "dispatch",
               "id": "qiang",
-              "text": "长线蹲点 ★4h · +8877.24万 · 净 +1519.55万/h"
+              "text": "长线蹲点 ★4h · +8877.24万 · 净 +1260.95万/h"
             },
             {
               "act": "dispatch",
               "id": "qiang",
-              "text": "楼下买咖啡8h · +1.51亿 · 净 +1183.29万/h"
+              "text": "楼下买咖啡8h · +1.51亿 · 净 +924.69万/h"
             }
           ]
         },
@@ -908,32 +993,32 @@
             {
               "id": "li",
               "mission": "stroll",
-              "text": "就近溜达 ★3m · +182.68万 · 净 +2686.04万/h"
+              "text": "就近溜达 ★3m · +182.68万 · 净 +2252.79万/h"
             },
             {
               "id": "li",
               "mission": "quick",
-              "text": "溜一圈 ★15m · +602.02万 · 净 +1440.49万/h"
+              "text": "溜一圈 ★15m · +602.02万 · 净 +1007.24万/h"
             },
             {
               "id": "li",
               "mission": "chat",
-              "text": "茶水间聊八卦30m · +719.65万 · 净 +471.72万/h"
+              "text": "茶水间聊八卦30m · +719.65万 · 净 +38.48万/h"
             },
             {
               "id": "li",
               "mission": "meeting",
-              "text": "开个会1h · +1771.45万 · 净 +803.87万/h"
+              "text": "开个会1h · +1771.45万 · 净 +370.62万/h"
             },
             {
               "id": "li",
               "mission": "toilet",
-              "text": "长线蹲点4h · +6089.37万 · 净 +554.76万/h"
+              "text": "长线蹲点4h · +6089.37万 · 净 +121.51万/h"
             },
             {
               "id": "li",
               "mission": "coffee",
-              "text": "楼下买咖啡8h · +1.55亿 · 净 +969.94万/h"
+              "text": "楼下买咖啡8h · +1.55亿 · 净 +536.70万/h"
             }
           ],
           "buttons": [
@@ -950,32 +1035,32 @@
             {
               "act": "dispatch",
               "id": "li",
-              "text": "就近溜达 ★3m · +182.68万 · 净 +2686.04万/h"
+              "text": "就近溜达 ★3m · +182.68万 · 净 +2252.79万/h"
             },
             {
               "act": "dispatch",
               "id": "li",
-              "text": "溜一圈 ★15m · +602.02万 · 净 +1440.49万/h"
+              "text": "溜一圈 ★15m · +602.02万 · 净 +1007.24万/h"
             },
             {
               "act": "dispatch",
               "id": "li",
-              "text": "茶水间聊八卦30m · +719.65万 · 净 +471.72万/h"
+              "text": "茶水间聊八卦30m · +719.65万 · 净 +38.48万/h"
             },
             {
               "act": "dispatch",
               "id": "li",
-              "text": "开个会1h · +1771.45万 · 净 +803.87万/h"
+              "text": "开个会1h · +1771.45万 · 净 +370.62万/h"
             },
             {
               "act": "dispatch",
               "id": "li",
-              "text": "长线蹲点4h · +6089.37万 · 净 +554.76万/h"
+              "text": "长线蹲点4h · +6089.37万 · 净 +121.51万/h"
             },
             {
               "act": "dispatch",
               "id": "li",
-              "text": "楼下买咖啡8h · +1.55亿 · 净 +969.94万/h"
+              "text": "楼下买咖啡8h · +1.55亿 · 净 +536.70万/h"
             }
           ]
         },
@@ -986,32 +1071,32 @@
             {
               "id": "wang",
               "mission": "stroll",
-              "text": "就近溜达3m · +78.26万 · 净 +329.73万/h"
+              "text": "就近溜达3m · +78.26万 · 净 -2781555.9/h"
             },
             {
               "id": "wang",
               "mission": "quick",
-              "text": "溜一圈15m · +257.89万 · 净 -2038368.5/h"
+              "text": "溜一圈15m · +257.89万 · 净 -8117255.9/h"
             },
             {
               "id": "wang",
               "mission": "chat",
-              "text": "茶水间聊八卦30m · +462.43万 · 净 -3105512.5/h"
+              "text": "茶水间聊八卦30m · +462.43万 · 净 -9184399.9/h"
             },
             {
               "id": "wang",
               "mission": "meeting",
-              "text": "开个会1h · +1138.29万 · 净 -971224.5/h"
+              "text": "开个会1h · +1138.29万 · 净 -7050111.9/h"
             },
             {
               "id": "wang",
               "mission": "toilet",
-              "text": "长线蹲点4h · +9390.86万 · 净 +1112.31万/h"
+              "text": "长线蹲点4h · +9390.86万 · 净 +504.42万/h"
             },
             {
               "id": "wang",
               "mission": "coffee",
-              "text": "楼下买咖啡 ★8h · +3.59亿 · 净 +3246.59万/h"
+              "text": "楼下买咖啡 ★8h · +3.59亿 · 净 +2638.71万/h"
             }
           ],
           "buttons": [
@@ -1028,32 +1113,32 @@
             {
               "act": "dispatch",
               "id": "wang",
-              "text": "就近溜达3m · +78.26万 · 净 +329.73万/h"
+              "text": "就近溜达3m · +78.26万 · 净 -2781555.9/h"
             },
             {
               "act": "dispatch",
               "id": "wang",
-              "text": "溜一圈15m · +257.89万 · 净 -2038368.5/h"
+              "text": "溜一圈15m · +257.89万 · 净 -8117255.9/h"
             },
             {
               "act": "dispatch",
               "id": "wang",
-              "text": "茶水间聊八卦30m · +462.43万 · 净 -3105512.5/h"
+              "text": "茶水间聊八卦30m · +462.43万 · 净 -9184399.9/h"
             },
             {
               "act": "dispatch",
               "id": "wang",
-              "text": "开个会1h · +1138.29万 · 净 -971224.5/h"
+              "text": "开个会1h · +1138.29万 · 净 -7050111.9/h"
             },
             {
               "act": "dispatch",
               "id": "wang",
-              "text": "长线蹲点4h · +9390.86万 · 净 +1112.31万/h"
+              "text": "长线蹲点4h · +9390.86万 · 净 +504.42万/h"
             },
             {
               "act": "dispatch",
               "id": "wang",
-              "text": "楼下买咖啡 ★8h · +3.59亿 · 净 +3246.59万/h"
+              "text": "楼下买咖啡 ★8h · +3.59亿 · 净 +2638.71万/h"
             }
           ]
         }
@@ -1389,10 +1474,18 @@
       ],
       "talentProg": [
         "点击转化：3000/10500 次（当前 +10%）",
-        "安然转化：20/30 次（当前 +20%）",
+        "安然转化：解锁 event_5a 后生效",
+        "当前总转化加成 +10%",
         "溢出转化：4/30 点（当前 +2.0% 挂机，封顶 +15%）",
         "天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1；每日首开 +1（上限 24，满树需 27 点 → 终局必须放弃一条流派）"
       ],
+      "srLine": "当前总转化加成 +10%",
+      "talentsFlags": {
+        "click5a": true,
+        "click5b": false,
+        "event5a": false
+      },
+      "clickActualPct": 10,
       "eff": {
         "surviveToIdle": false,
         "clickToIdleStep": 300,
@@ -1660,32 +1753,9 @@
     },
     "dispatchNet": {
       "total": 30,
-      "bad": 30,
-      "flips": 2,
-      "examples": [
-        {
-          "colleague": "qiang",
-          "mission": "chat",
-          "est": 4371367,
-          "uiNet": 1745167.6027789274,
-          "engineNet": -840837.8944000024,
-          "e2eNet": -840837.8944000658,
-          "deltaIdle": 2662.1033040000184,
-          "signFlip": true,
-          "domNet": 1745200
-        },
-        {
-          "colleague": "wang",
-          "mission": "stroll",
-          "est": 782571,
-          "uiNet": 3297331.470371904,
-          "engineNet": -2781555.8592000045,
-          "e2eNet": -2781555.859200012,
-          "deltaIdle": 5120.271072000003,
-          "signFlip": true,
-          "domNet": 3297300
-        }
-      ],
+      "bad": 0,
+      "flips": 0,
+      "examples": [],
       "rows": [
         {
           "colleague": "zhou",
@@ -1696,7 +1766,7 @@
           "e2eNet": 14856800.0704,
           "deltaIdle": 439.55553599999985,
           "signFlip": false,
-          "domNet": 14344600
+          "domNet": 14856800
         },
         {
           "colleague": "zhou",
@@ -1707,7 +1777,7 @@
           "e2eNet": 9252536.540988237,
           "deltaIdle": 439.55553599999985,
           "signFlip": false,
-          "domNet": 8740300
+          "domNet": 9252500
         },
         {
           "colleague": "zhou",
@@ -1718,7 +1788,7 @@
           "e2eNet": 12988724.776282355,
           "deltaIdle": 439.55553599999985,
           "signFlip": false,
-          "domNet": 12476500
+          "domNet": 12988699.999999998
         },
         {
           "colleague": "zhou",
@@ -1729,7 +1799,7 @@
           "e2eNet": 10373394.188047059,
           "deltaIdle": 439.55553599999985,
           "signFlip": false,
-          "domNet": 9861100
+          "domNet": 10373400
         },
         {
           "colleague": "zhou",
@@ -1740,7 +1810,7 @@
           "e2eNet": 14856817.423341177,
           "deltaIdle": 439.55553599999985,
           "signFlip": false,
-          "domNet": 14344600
+          "domNet": 14856800
         },
         {
           "colleague": "zhou",
@@ -1751,7 +1821,7 @@
           "e2eNet": 19340240.658635296,
           "deltaIdle": 439.55553599999985,
           "signFlip": false,
-          "domNet": 18828000
+          "domNet": 19340200
         },
         {
           "colleague": "mei",
@@ -1762,7 +1832,7 @@
           "e2eNet": 9208490.08800001,
           "deltaIdle": 1433.019419999997,
           "signFlip": false,
-          "domNet": 10048100
+          "domNet": 9208500
         },
         {
           "colleague": "mei",
@@ -1773,7 +1843,7 @@
           "e2eNet": 4310538.088000011,
           "deltaIdle": 1433.019419999997,
           "signFlip": false,
-          "domNet": 5150100
+          "domNet": 4310500
         },
         {
           "colleague": "mei",
@@ -1784,7 +1854,7 @@
           "e2eNet": 3330944.0880000107,
           "deltaIdle": 1433.019419999997,
           "signFlip": false,
-          "domNet": 4170500
+          "domNet": 3330899.9999999995
         },
         {
           "colleague": "mei",
@@ -1795,7 +1865,7 @@
           "e2eNet": 10514633.08800001,
           "deltaIdle": 1433.019419999997,
           "signFlip": false,
-          "domNet": 11354200
+          "domNet": 10514600
         },
         {
           "colleague": "mei",
@@ -1806,7 +1876,7 @@
           "e2eNet": 9208508.33800001,
           "deltaIdle": 1433.019419999997,
           "signFlip": false,
-          "domNet": 10048100
+          "domNet": 9208500
         },
         {
           "colleague": "mei",
@@ -1817,7 +1887,7 @@
           "e2eNet": 13126884.46300001,
           "deltaIdle": 1433.019419999997,
           "signFlip": false,
-          "domNet": 13966400.000000002
+          "domNet": 13126900
         },
         {
           "colleague": "qiang",
@@ -1828,7 +1898,7 @@
           "e2eNet": 5211808.105599934,
           "deltaIdle": 2662.1033040000184,
           "signFlip": false,
-          "domNet": 7797800
+          "domNet": 5211799.999999999
         },
         {
           "colleague": "qiang",
@@ -1839,7 +1909,7 @@
           "e2eNet": 167940.10559993424,
           "deltaIdle": 2662.1033040000184,
           "signFlip": false,
-          "domNet": 2753900
+          "domNet": 167900
         },
         {
           "colleague": "qiang",
@@ -1850,7 +1920,7 @@
           "e2eNet": -840837.8944000658,
           "deltaIdle": 2662.1033040000184,
           "signFlip": true,
-          "domNet": 1745200
+          "domNet": -840837.9
         },
         {
           "colleague": "qiang",
@@ -1861,7 +1931,7 @@
           "e2eNet": 1176717.1055999342,
           "deltaIdle": 2662.1033040000184,
           "signFlip": false,
-          "domNet": 3762700
+          "domNet": 1176700
         },
         {
           "colleague": "qiang",
@@ -1872,7 +1942,7 @@
           "e2eNet": 12609526.105599934,
           "deltaIdle": 2662.1033040000184,
           "signFlip": false,
-          "domNet": 15195500
+          "domNet": 12609500
         },
         {
           "colleague": "qiang",
@@ -1883,7 +1953,7 @@
           "e2eNet": 9246935.480599934,
           "deltaIdle": 2662.1033040000184,
           "signFlip": false,
-          "domNet": 11832900
+          "domNet": 9246900
         },
         {
           "colleague": "li",
@@ -1894,7 +1964,7 @@
           "e2eNet": 22527926.123199962,
           "deltaIdle": 3891.187188000011,
           "signFlip": false,
-          "domNet": 26860400
+          "domNet": 22527900
         },
         {
           "colleague": "li",
@@ -1905,7 +1975,7 @@
           "e2eNet": 10072406.123199962,
           "deltaIdle": 3891.187188000011,
           "signFlip": false,
-          "domNet": 14404900
+          "domNet": 10072400
         },
         {
           "colleague": "li",
@@ -1916,7 +1986,7 @@
           "e2eNet": 384776.1231999621,
           "deltaIdle": 3891.187188000011,
           "signFlip": false,
-          "domNet": 4717200
+          "domNet": 384799.99999999994
         },
         {
           "colleague": "li",
@@ -1927,7 +1997,7 @@
           "e2eNet": 3706249.123199962,
           "deltaIdle": 3891.187188000011,
           "signFlip": false,
-          "domNet": 8038700
+          "domNet": 3706200
         },
         {
           "colleague": "li",
@@ -1938,7 +2008,7 @@
           "e2eNet": 1215144.873199962,
           "deltaIdle": 3891.187188000011,
           "signFlip": false,
-          "domNet": 5547600
+          "domNet": 1215100
         },
         {
           "colleague": "li",
@@ -1949,7 +2019,7 @@
           "e2eNet": 5366986.623199962,
           "deltaIdle": 3891.187188000011,
           "signFlip": false,
-          "domNet": 9699400
+          "domNet": 5367000
         },
         {
           "colleague": "wang",
@@ -1960,7 +2030,7 @@
           "e2eNet": -2781555.859200012,
           "deltaIdle": 5120.271072000003,
           "signFlip": true,
-          "domNet": 3297300
+          "domNet": -2781555.9
         },
         {
           "colleague": "wang",
@@ -1971,7 +2041,7 @@
           "e2eNet": -8117255.859200012,
           "deltaIdle": 5120.271072000003,
           "signFlip": false,
-          "domNet": -2038368.5
+          "domNet": -8117255.9
         },
         {
           "colleague": "wang",
@@ -1982,7 +2052,7 @@
           "e2eNet": -9184399.859200012,
           "deltaIdle": 5120.271072000003,
           "signFlip": false,
-          "domNet": -3105512.5
+          "domNet": -9184399.9
         },
         {
           "colleague": "wang",
@@ -1993,7 +2063,7 @@
           "e2eNet": -7050111.859200012,
           "deltaIdle": 5120.271072000003,
           "signFlip": false,
-          "domNet": -971224.5
+          "domNet": -7050111.9
         },
         {
           "colleague": "wang",
@@ -2004,7 +2074,7 @@
           "e2eNet": 5044182.890799988,
           "deltaIdle": 5120.271072000003,
           "signFlip": false,
-          "domNet": 11123100
+          "domNet": 5044200
         },
         {
           "colleague": "wang",
@@ -2015,7 +2085,7 @@
           "e2eNet": 26387054.640799988,
           "deltaIdle": 5120.271072000003,
           "signFlip": false,
-          "domNet": 32465900
+          "domNet": 26387100
         }
       ]
     },
@@ -2055,11 +2125,11 @@
           "rule": "离线效率 95%｜12 小时封顶"
         },
         "engine": {
-          "elapsed": 3600.756,
-          "applied": 3600.756,
-          "earned": 131507.7615016407,
+          "elapsed": 3600.751,
+          "applied": 3600.751,
+          "earned": 131507.57889032032,
           "panelRate": 0.95,
-          "impliedRate": 0.95,
+          "impliedRate": 0.9500000000000001,
           "cap": 43200,
           "incomeMult": 1.6225,
           "capHours": 12
@@ -2091,40 +2161,40 @@
         "welcome": {
           "hidden": false,
           "time": "192 小时 0 分",
-          "gain": "332.16万",
+          "gain": "315.55万",
           "rule": "离线效率 95%｜超过上限，已按上限结算 24 小时 0 分"
         },
         "engine": {
-          "elapsed": 691200.738,
+          "elapsed": 691200.751,
           "applied": 86400,
-          "earned": 3321603.8063999997,
+          "earned": 3155523.6160799996,
           "panelRate": 0.95,
-          "impliedRate": 1,
+          "impliedRate": 0.95,
           "cap": 86400,
           "incomeMult": 1.6225,
           "capHours": 24
         },
-        "expectGain": "332.16万"
+        "expectGain": "315.55万"
       },
       {
         "case": "31 天（48h 封顶 + ≥7 天回归）",
         "welcome": {
           "hidden": false,
           "time": "744 小时 0 分",
-          "gain": "664.32万",
+          "gain": "631.10万",
           "rule": "离线效率 95%｜超过上限，已按上限结算 48 小时 0 分"
         },
         "engine": {
-          "elapsed": 2678400.761,
+          "elapsed": 2678400.747,
           "applied": 172800,
-          "earned": 6643207.612799999,
+          "earned": 6311047.232159999,
           "panelRate": 0.95,
-          "impliedRate": 1,
+          "impliedRate": 0.95,
           "cap": 172800,
           "incomeMult": 1.6225,
           "capHours": 48
         },
-        "expectGain": "664.32万"
+        "expectGain": "631.10万"
       }
     ],
     "newbie": {
@@ -2135,6 +2205,42 @@
       "onboardingClass": "onboarding"
     },
     "S4shot": "playtest/v066-shots/s4-newbie-team.png",
+    "talent_click_5b-only": {
+      "lines": [
+        "点击转化：3000/10500 次（当前 +10%）",
+        "安然转化：解锁 event_5a 后生效",
+        "当前总转化加成 +15%",
+        "溢出转化：0/30 点（当前 +0.0% 挂机，封顶 +15%）",
+        "天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1；每日首开 +1（上限 24，满树需 27 点 → 终局必须放弃一条流派）"
+      ],
+      "sr": "当前总转化加成 +15%",
+      "conv": 0.15,
+      "clickPart": 15,
+      "survivePart": 0,
+      "flags": {
+        "click5a": false,
+        "click5b": true,
+        "event5a": false
+      }
+    },
+    "talent_event_5a-unlocked": {
+      "lines": [
+        "点击转化：解锁 click_5a/5b 后生效",
+        "安然转化：20/30 次（当前 +20%）",
+        "当前总转化加成 +20%",
+        "溢出转化：0/30 点（当前 +0.0% 挂机，封顶 +15%）",
+        "天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1；每日首开 +1（上限 24，满树需 27 点 → 终局必须放弃一条流派）"
+      ],
+      "sr": "当前总转化加成 +20%",
+      "conv": 0.2,
+      "clickPart": 0,
+      "survivePart": 20,
+      "flags": {
+        "click5a": false,
+        "click5b": false,
+        "event5a": true
+      }
+    },
     "prod": {
       "base": {
         "hasDebug": false,
@@ -2148,7 +2254,7 @@
         "boot": false
       },
       "ver": {
-        "version": "v0.6.7 · 2026-11-27",
+        "version": "v0.6.8 · 2026-11-27",
         "achSummary": "0/22 · Lv.1",
         "achItems": 22
       },
@@ -2165,39 +2271,18 @@
           "case": "8d",
           "hidden": false,
           "time": "192 小时 0 分",
-          "gain": "174.53万",
+          "gain": "157.08万",
           "rule": "离线效率 90%｜超过上限，已按上限结算 24 小时 0 分",
-          "moyu": "174.63万"
+          "moyu": "157.18万"
         }
       ]
     },
     "S5shot": "playtest/v066-shots/s5-prod-offline.png"
   },
-  "defects": [
-    {
-      "level": "P1",
-      "where": "src/ui/team-panel.ts 净收益公式",
-      "issue": "仍有符号翻转（端到端口径 = 奖励/小时 − 挂机率前后差×3600；30 个任务按钮中 2 个翻转）：qiang/chat 面板 1745200/h vs 引擎 -840838/h；wang/stroll 面板 3297300/h vs 引擎 -2781556/h"
-    },
-    {
-      "level": "P1",
-      "where": "src/engine/resume.ts + src/ui/welcome.ts",
-      "issue": "8 天（24h 封顶 + ≥7 天回归）：面板写 95%，实际按 100% 结算（多 5.3%）；resume.settleReturn 仍对 ≥7 天强制 rate=1"
-    },
-    {
-      "level": "P1",
-      "where": "src/engine/resume.ts + src/ui/welcome.ts",
-      "issue": "31 天（48h 封顶 + ≥7 天回归）：面板写 95%，实际按 100% 结算（多 5.3%）；resume.settleReturn 仍对 ≥7 天强制 rate=1"
-    },
-    {
-      "level": "P1",
-      "where": "线上 v0.6.7 欢迎面板（8 天回归）",
-      "issue": "面板「离线效率 90%｜超过上限，已按上限结算 24 小时 0 分」，但按 100h 档反推实际按 100.0% 结算 → ≥7 天回归仍绕 95% 上限（线上同样命中）"
-    }
-  ],
+  "defects": [],
   "summary": {
-    "total": 44,
-    "pass": 40,
-    "fail": 4
+    "total": 51,
+    "pass": 50,
+    "fail": 1
   }
 }

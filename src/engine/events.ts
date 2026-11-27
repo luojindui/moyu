@@ -26,7 +26,7 @@ export const BOSS_GRACE_SECONDS = 0.8;
 export const BOSS_STEAL_PENALTY_IDLE_SECONDS = 0.6;
 /** 单次巡逻偷点罚款总封顶 = 6 × 挂机秒收益（防无限罚，仍让 8cps 有赌点） */
 export const BOSS_STEAL_CAP_IDLE_SECONDS = 10;
-/** 安然连胜：连续安然 N 次奖励 ×(1+0.1N)，封顶 ×2 */
+/** 安然连胜：连续安然 N 次奖励 ×(1+0.1N)，封顶 ×1.5 */
 export const SURVIVE_STREAK_CAP = 5; // 连胜封顶 ×1.5（原 ×2 使事件占比超 10%）
 
 /** 巡逻变体（variety #1）：拆掉"同 pattern 忍住 ×N"的重复感 */
@@ -69,7 +69,7 @@ export interface EventState {
   bossCaught: boolean;
   /** 本次巡逻开启时刻（宽限判定用） */
   bossStartAt: number;
-  /** 连续安然次数（被抓清零，奖励乘 ×(1+0.1N) 封顶 ×2） */
+  /** 连续安然次数（被抓清零，奖励乘 ×(1+0.1N) 封顶 ×1.5） */
   surviveStreak: number;
   /** 本次巡逻变体 */
   bossVariant: BossVariant;
@@ -281,7 +281,7 @@ export function finishPatrol(state: GameState, es: EventState): { state: GameSta
   return { state: { ...next, surviveStreak: es.surviveStreak, patrolSurvives: survived }, reward };
 }
 
-/** 巡逻安然结束奖励：max(50, 5×idleRate) × 连胜乘数（连续安然 N 次 ×(1+0.1N) 封顶 ×2）；被抓过不给 */
+/** 巡逻安然结束奖励：max(50, 5×idleRate) × 连胜乘数（连续安然 N 次 ×(1+0.1N) 封顶 ×1.5）；被抓过不给 */
 export function bossSurviveReward(state: GameState, es?: EventState): number {
   if (es?.bossCaught) return 0;
   const { idleRate } = effectOf(state);

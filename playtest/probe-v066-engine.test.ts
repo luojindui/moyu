@@ -135,8 +135,11 @@ describe("② 派遣「净 +X/h」口径", () => {
         const probe: GameState = { ...st, team: { colleagues: { ...st.team.colleagues, [def.id]: { ...cur, missionId: m.id } } } };
         const est = dispatchReward(probe, def.id, station);
         const perHour = est / (Math.max(1, m.seconds) / 3600);
-        // 面板公式（team-panel.ts 现值）
-        const uiLoss = (def.idlePerLevel * cur.level * mult + station * def.sharePerLevel * cur.level) * 0.15 * 3600;
+        // 面板公式（v0.6.8 现值）：固定段×(好感×teamIdle) + 未放大工位×share，损失只算 15%
+        const uiLoss =
+          (def.idlePerLevel * cur.level * mult * fav * tm +
+            rawStation * def.sharePerLevel * cur.level * tm) *
+          (1 - AWAY_IDLE_FACTOR) * 3600;
         const uiNet = perHour - uiLoss;
         // 引擎真实离岗损失：该同事在岗贡献 × (1−AWAY_IDLE_FACTOR)
         const contribution = def.idlePerLevel * cur.level * mult * fav * tm + rawStation * def.sharePerLevel * cur.level * tm;
@@ -153,8 +156,8 @@ describe("② 派遣「净 +X/h」口径", () => {
     const flips = rows.filter((r) => r.signFlip);
     report.checks.dispatchNet = { total: rows.length, bad: bad.length, flips: flips.length, examples: flips.slice(0, 4), worst: rows.slice().sort((a, b) => Math.abs(b.diffPct) - Math.abs(a.diffPct)).slice(0, 3) };
     expect(rows.length).toBeGreaterThan(0);
-    // 记录现状：仍有差异（若为 0 表示已修好）
-    expect(bad.length).toBeGreaterThan(0);
+    // v0.6.8：面板公式与引擎同口径 → 期望 0 差异
+    expect(bad.length).toBe(0);
   });
   it("中期档（无成就/卡/精力）：差异随倍率放大", () => {
     const mid: GameState = {
@@ -191,8 +194,11 @@ describe("②-b 派遣净收益端到端反例（effectOf 前后差 + 任务奖�
       const perHour = reward / (Math.max(1, m.seconds) / 3600);
       // 端到端：每小时净 = 奖励/小时 − (在家挂机率 − 派遣后挂机率)/小时
       const e2eNet = perHour - (homeIdle - awayIdle) * 3600;
-      // 面板公式（team-panel.ts 现值）
-      const uiLoss = (def.idlePerLevel * cur.level * mult + station * def.sharePerLevel * cur.level) * 0.15 * 3600;
+      // 面板公式（v0.6.8 现值）
+      const uiLoss =
+        (def.idlePerLevel * cur.level * mult * fav * tm +
+          rawStation * def.sharePerLevel * cur.level * tm) *
+        (1 - AWAY_IDLE_FACTOR) * 3600;
       const uiNet = perHour - uiLoss;
       rows.push({ pair: `${colId}/${missionId}`, secs: m.seconds, reward, perHour, homeIdle, awayIdle, deltaIdle: homeIdle - awayIdle, e2eNet, uiNet, signFlip: Math.sign(uiNet) !== Math.sign(e2eNet) });
     }
@@ -203,13 +209,18 @@ describe("②-b 派遣净收益端到端反例（effectOf 前后差 + 任务奖�
       const engineFormula = r.perHour - contribution * (1 - AWAY_IDLE_FACTOR) * 3600;
       expect(Math.abs(r.e2eNet - engineFormula)).toBeLessThan(Math.max(1, Math.abs(engineFormula)) * 1e-6);
     }
-    // 该状态下是否有符号翻转（记录；无翻转则用实机 live 状态作反例）
+    // v0.6.8：面板净应与端到端真实净一致（0 翻转）
     report.checks.dispatchNetE2Eflips = rows.filter((r) => r.signFlip).length;
-    report.defects.push({
-      level: "P1",
-      where: "src/ui/team-panel.ts 派遣净收益",
-      issue: `端到端反例：${rows.filter((r) => r.signFlip).map((r) => `${r.pair} 面板净 ${Math.round(r.uiNet)}/h，真实净 ${Math.round(r.e2eNet)}/h`).join("；")}`,
-    });
+    for (const r of rows) expect(Math.abs(r.uiNet - r.e2eNet)).toBeLessThan(Math.max(1, Math.abs(r.e2eNet)) * 1e-9);
+    expect(report.checks.dispatchNetE2Eflips).toBe(0);
+    const flips = rows.filter((r) => r.signFlip);
+    if (flips.length > 0) {
+      report.defects.push({
+        level: "P1",
+        where: "src/ui/team-panel.ts 派遣净收益",
+        issue: `端到端反例：${flips.map((r) => `${r.pair} 面板净 ${Math.round(r.uiNet)}/h，真实净 ${Math.round(r.e2eNet)}/h`).join("；")}`,
+      });
+    }
     void tm; void fav;
   });
 });
@@ -288,12 +299,16 @@ describe("④⑤ 离线封顶与回归效率", () => {
       resumeForcesFull: Math.abs(ratio - 1) > 1e-6,
     };
     // 若已统一，ratio 应为 1；现状记录
-    report.defects.push({
-      level: Math.abs(ratio - 1) > 1e-6 ? "P1" : "PASS",
-      where: "src/engine/resume.ts settleReturn",
-      issue: `≥7 天回归强制 rate=1：面板显示 ${(rate * 100).toFixed(1)}%，实际按 100% 结算（多 ${((ratio - 1) * 100).toFixed(1)}%）`,
-    });
-    expect(ratio).toBeGreaterThan(0);
+    if (Math.abs(ratio - 1) > 1e-6) {
+      report.defects.push({
+        level: "P1",
+        where: "src/engine/resume.ts settleReturn",
+        issue: `≥7 天回归 rate 与面板不一致：面板 ${(rate * 100).toFixed(1)}%，实际 ${(implied * 100).toFixed(1)}%`,
+      });
+    }
+    // v0.6.8：settleReturn 统一走传入 rate → 面板值 = 实际值
+    expect(rel(ratio, 1, 1e-9)).toBe(true);
+    expect(rel(implied, rate, 1e-9)).toBe(true);
   });
 });
 
@@ -445,7 +460,8 @@ describe("成就加成接线（新系统数据自洽）", () => {
     const used = ACHIEVEMENTS.filter((a) => a.reward?.offlineBonus);
     report.checks.achOfflineRewards = { count: used.length };
     expect(used.length).toBe(0);
-    report.defects.push({ level: "P2", where: "src/engine/achievements.ts reward.offlineBonus / progression.ts decorBase", issue: "achEffects.offlineBonus 被 offlineEfficiency 读取，但 22 条成就没有任何一条给 offlineBonus → 死路径（离线效率实际只受天赋/卡影响）" });
+    report.notes = report.notes || [];
+    report.notes.push({ where: "src/engine/achievements.ts reward.offlineBonus", note: "achEffects.offlineBonus 被 offlineEfficiency 读取，但 22 条成就均无 offlineBonus；v0.6.7 起 spec-batch5 已注明「离线维度由家具/天赋承担，成就暂不提供」→ 字段为预留，非缺陷" });
   });
 });
 // ═════════→ 旧 P2 复核（仍然存在？） ═════════
@@ -458,6 +474,8 @@ describe("上一轮 P2 复核", () => {
       eventsCap2: read("src/engine/events.ts").includes("封顶 ×2"),
       energyFavor3: read("src/engine/energy.ts").includes("好感 +3"),
       talentCostComment: read("src/engine/talents.ts").includes("tier1-4 = 1 点"),
+      resumeForcedFullComment: read("src/engine/resume.ts").includes("强制全额效率"),
+      summary7dFullClaim: read("docs/PROJECT-SUMMARY.md").includes("≥7 天回归首开 100%"),
     };
     report.checks.staticDrift = found;
     for (const [k, v] of Object.entries(found)) {
