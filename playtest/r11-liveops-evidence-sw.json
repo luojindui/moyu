@@ -1,0 +1,138 @@
+{
+  "dev": {
+    "secondLoadCache": {
+      "controlled": true,
+      "caches": [
+        {
+          "name": "moyu-v1",
+          "entries": [
+            "/index.html",
+            "/manifest.webmanifest",
+            "/",
+            "/src/main.ts?t=1795753542406",
+            "/@vite/client",
+            "/src/style.css?t=1795753270623",
+            "/src/engine/flavor.ts",
+            "/src/engine/state.ts?t=1795751845752",
+            "/src/engine/actions.ts?t=1795752493226",
+            "/src/engine/upgrades.ts?t=1795751845752",
+            "/src/engine/tick.ts?t=1795751845752",
+            "/src/engine/save.ts?t=1795751845753",
+            "/src/engine/resume.ts?t=1795753531452",
+            "/src/engine/events.ts?t=1795752493232",
+            "/src/engine/collection.ts?t=1795751845752",
+            "/src/engine/progression.ts",
+            "/src/engine/story.ts",
+            "/src/engine/titles.ts",
+            "/src/engine/records.ts",
+            "/src/engine/prestige.ts?t=1795751180317",
+            "/src/ui/shop.ts?t=1795753280053",
+            "/src/engine/daily.ts?t=1795751845752",
+            "/src/ui/hud.ts?t=1795752523363",
+            "/src/ui/welcome.ts?t=1795753542400",
+            "/node_modules/vite/dist/client/env.mjs",
+            "/src/ui/quest.ts?t=1795752554356",
+            "/src/ui/journal.ts?t=1795753215751",
+            "/src/ui/audio.ts",
+            "/src/render/scene.ts?t=1795753345781",
+            "/src/render/sprites.ts",
+            "/src/engine/offline.ts?t=1795753531451",
+            "/src/engine/format.ts",
+            "/src/engine/stats.ts?t=1795753215748",
+            "/src/render/fx.ts?t=1795752523363",
+            "/assets/sprites/computer.png",
+            "/assets/sprites/watercooler.png",
+            "/assets/sprites/worker.png",
+            "/favicon.png",
+            "/icon-192.png"
+          ]
+        }
+      ],
+      "waiting": false,
+      "title": "摸鱼工位",
+      "bodyMarker": null,
+      "hook": true,
+      "appText": "1.1摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 0%\n🔊\n📔\n再戳 14 下 → 解锁「咖啡续命」\n点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n再戳 14 下\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机",
+      "entryCount": 39
+    },
+    "srcModulesCached": 29
+  },
+  "dist": {
+    "v1Online": {
+      "controlled": true,
+      "caches": [
+        {
+          "name": "moyu-v1",
+          "entries": [
+            "/index.html",
+            "/manifest.webmanifest",
+            "/",
+            "/assets/index-B73gs0ja.css",
+            "/assets/index-Lx7xv9iD.js",
+            "/assets/sprites/computer.png",
+            "/assets/sprites/watercooler.png",
+            "/favicon.png",
+            "/icon-192.png"
+          ]
+        }
+      ],
+      "waiting": false,
+      "title": "摸鱼工位",
+      "bodyMarker": null,
+      "hook": false,
+      "appText": "1.1摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 0%\n🔊\n📔\n再戳 14 下 → 解锁「咖啡续命」\n点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n再戳 14 下\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机"
+    },
+    "offlineOnV1": {
+      "controlled": true,
+      "caches": [
+        {
+          "name": "moyu-v1",
+          "entries": [
+            "/index.html",
+            "/manifest.webmanifest",
+            "/",
+            "/assets/index-B73gs0ja.css",
+            "/assets/index-Lx7xv9iD.js",
+            "/assets/sprites/computer.png",
+            "/assets/sprites/watercooler.png",
+            "/favicon.png",
+            "/icon-192.png"
+          ]
+        }
+      ],
+      "waiting": false,
+      "title": "摸鱼工位",
+      "bodyMarker": null,
+      "hook": false,
+      "appText": "1.7摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 0%\n🔊\n📔\n再戳 14 下 → 解锁「咖啡续命」\n点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n再戳 14 下\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机",
+      "reallyOffline": true
+    },
+    "v2Online": {
+      "controlled": true,
+      "caches": [
+        {
+          "name": "moyu-v1",
+          "entries": [
+            "/index.html",
+            "/manifest.webmanifest",
+            "/assets/index-B73gs0ja.css",
+            "/assets/index-Lx7xv9iD.js",
+            "/assets/sprites/computer.png",
+            "/assets/sprites/watercooler.png",
+            "/favicon.png",
+            "/icon-192.png",
+            "/",
+            "/assets/index-ZZZZv2.js"
+          ]
+        }
+      ],
+      "waiting": false,
+      "title": "摸鱼工位 v2",
+      "bodyMarker": "v2",
+      "hook": false,
+      "appText": "2.2摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 0%\n🔊\n📔\n再戳 13 下 → 解锁「咖啡续命」\n点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n再戳 13 下\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机",
+      "staleAssetStillCached": true,
+      "cacheCount": 10
+    }
+  }
+}

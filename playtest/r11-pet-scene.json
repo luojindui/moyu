@@ -1,0 +1,196 @@
+{
+  "assets": {
+    "computer": "loaded",
+    "cooler": "loaded",
+    "worker": "error"
+  },
+  "layout": {
+    "rect": {
+      "x": 0,
+      "y": 131,
+      "w": 390,
+      "h": 552
+    },
+    "cw": 1170,
+    "ch": 1656,
+    "dpr": 3,
+    "canvasCssH": 552,
+    "parentH": 551.75
+  },
+  "anim": {
+    "scale": 3,
+    "dpr": 3,
+    "vw": 130,
+    "vh": 184,
+    "durationS": 35,
+    "regions": {
+      "workerVisible": {
+        "samples": 280,
+        "changes": 32,
+        "distinctFrames": 17
+      },
+      "workerFull": {
+        "samples": 280,
+        "changes": 100,
+        "distinctFrames": 27
+      },
+      "monitor": {
+        "samples": 280,
+        "changes": 100,
+        "distinctFrames": 32
+      },
+      "cooler": {
+        "samples": 280,
+        "changes": 105,
+        "distinctFrames": 7
+      },
+      "wallLeft": {
+        "samples": 280,
+        "changes": 48,
+        "distinctFrames": 37
+      },
+      "plant": {
+        "samples": 280,
+        "changes": 109,
+        "distinctFrames": 60
+      }
+    },
+    "avgColors": {
+      "workerVisible": [
+        217,
+        188,
+        159
+      ],
+      "workerFull": [
+        184,
+        169,
+        157
+      ],
+      "monitor": [
+        140,
+        138,
+        142
+      ],
+      "cooler": [
+        76,
+        91,
+        129
+      ],
+      "wallLeft": [
+        93,
+        115,
+        123
+      ],
+      "plant": [
+        98,
+        112,
+        114
+      ]
+    },
+    "sampleCount": 280
+  },
+  "click": {
+    "clicksBefore": 0,
+    "clicksAfterWorker": 12,
+    "clicksAfterEmpty": 12,
+    "moyuBefore": 7.62968000000008,
+    "moyuAfterWorker": 20.808340000000054,
+    "moyuAfterEmpty": 6.25500000000003,
+    "note": "点击只走全局 doTap：无角色/宠物分区反馈（源码 main.ts doTap 无坐标语义，除巡逻/丢梗）"
+  },
+  "palette": [
+    {
+      "lifetime": 0,
+      "note": 21.891660000000044,
+      "assets": {
+        "worker": "error",
+        "computer": "loaded",
+        "cooler": "loaded"
+      },
+      "workerAvg": {
+        "avg": [
+          217,
+          188,
+          159
+        ],
+        "sc": 3
+      }
+    },
+    {
+      "lifetime": 100000000,
+      "note": 22.548300000000122,
+      "assets": {
+        "cooler": "loaded",
+        "worker": "error",
+        "computer": "loaded"
+      },
+      "workerAvg": {
+        "avg": [
+          217,
+          188,
+          159
+        ],
+        "sc": 3
+      }
+    },
+    {
+      "lifetime": 320000000000,
+      "note": 23.211486800000195,
+      "assets": {
+        "computer": "loaded",
+        "cooler": "loaded",
+        "worker": "error"
+      },
+      "workerAvg": {
+        "avg": [
+          217,
+          188,
+          159
+        ],
+        "sc": 3
+      }
+    }
+  ],
+  "crops": {
+    "worker": "/tmp/r11-worker.png",
+    "scene": "/tmp/r11-scene.png"
+  },
+  "spriteFiles": [
+    {
+      "src": "./assets/sprites/worker.png",
+      "ok": false
+    },
+    {
+      "src": "./assets/sprites/worker-0.png",
+      "ok": true,
+      "w": 64,
+      "h": 160
+    },
+    {
+      "src": "./assets/sprites/worker-1.png",
+      "ok": true,
+      "w": 64,
+      "h": 160
+    },
+    {
+      "src": "./assets/sprites/worker-2.png",
+      "ok": true,
+      "w": 64,
+      "h": 160
+    },
+    {
+      "src": "./assets/sprites/worker-3.png",
+      "ok": true,
+      "w": 64,
+      "h": 160
+    }
+  ],
+  "codeFacts": {
+    "typingFPS": 7,
+    "drinkEveryS": 22,
+    "drinkForS": 2.5,
+    "monitorFPS": 2,
+    "coolerFPS": 3,
+    "R10 定格": "scene.ts 常量；但 worker 精灵加载失败时以上全部不可见"
+  }
+}

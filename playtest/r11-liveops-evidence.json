@@ -1,0 +1,115 @@
+{
+  "dev": {
+    "page": {
+      "title": "摸鱼工位",
+      "innerTextSample": "0.5摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 0%\n🔊\n📔\n再戳 15 下 → 解锁「咖啡续命」\n点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n再戳 15 下\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机最优\n50 摸鱼值\n还差 49.5\n点了才赚\n带薪喝水\n+2 点击力\n100 摸鱼值\n再戳 100 下\n会自动赚\n带薪蹲坑\n+5/秒\n600 摸鱼值\n还差 599.5\n点了才赚\n人体工学椅\n+5 点击力\n800 摸鱼值\n再戳 800 下\n会自动赚\n摸鱼群聊\n+15/秒\n4000 摸鱼值\n还差 3999.5\n会自动赚\n无用会议\n+50/秒\n2.50万 摸鱼值\n还差 2.50万\n会自动赚\n深度摸鱼\n+180/秒 · ×2差5级\n15.00万 摸鱼值\n还差 15.00万\n会自动赚\n退休式躺平\n+700/秒\n100.00万 摸鱼值\n还差 100.00万\n← 滑动查看更多 →",
+      "hasVersionNode": false,
+      "hasAnnouncement": false,
+      "buttons": [
+        "🔊",
+        "📔",
+        "点了才赚咖啡续命\n        +1 点击力\n        ★ 点击最优\n        15 摸鱼值\n        再戳 15 下",
+        "会自动赚刷手机\n        +1/秒 · ×2差5级\n        ★ 挂机最优\n        50 摸鱼值\n        还差 49.5",
+        "点了才赚带薪喝水\n        +2 点击力\n        \n        100 摸鱼值\n        再戳 100 下",
+        "会自动赚带薪蹲坑\n        +5/秒\n        \n        600 摸鱼值\n        还差 599.5",
+        "点了才赚人体工学椅\n        +5 点击力\n        \n        800 摸鱼值\n        再戳 800 下",
+        "会自动赚摸鱼群聊\n        +15/秒\n        \n        4000 摸鱼值\n        还差 3999.5",
+        "会自动赚无用会议\n        +50/秒\n        \n        2.50万 摸鱼值\n        还差 2.50万",
+        "会自动赚深度摸鱼\n        +180/秒 · ×2差5级\n        \n        15.00万 摸鱼值\n        还差 15.00万",
+        "会自动赚退休式躺平\n        +700/秒\n        \n        100.00万 摸鱼值\n        还差 100.00万",
+        "✕",
+        "完成 0/3",
+        "导出存档 JSON",
+        "复制/生成存档码",
+        "导入存档码",
+        "未解锁（本局累计需 1 亿）",
+        "继续摸鱼"
+      ],
+      "manifestHref": "./manifest.webmanifest",
+      "journalExists": true,
+      "journalStartsHidden": true,
+      "mouyuHook": true,
+      "lsKeys": []
+    },
+    "journalPanel": {
+      "open": true,
+      "headings": [
+        "摸鱼日报",
+        "摸鱼数据 摸鱼实习生",
+        "存档码（换设备用）",
+        "摸鱼图鉴 0/55",
+        "离职再就业"
+      ],
+      "hasVersionOrChangelog": false,
+      "panelBottomText": "久点数：总倍率 = 1 + 0.75 × 累计点数（线性）；图鉴/日报/段位/历史累计保留。建议攒够多点再转。\n\n未解锁（本局累计 0.6 / 需 1.00亿）\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???"
+    },
+    "sw": {
+      "controlled": true,
+      "controllerScript": "http://127.0.0.1:5173/sw.js",
+      "registrations": [
+        {
+          "scope": "http://127.0.0.1:5173/",
+          "active": "http://127.0.0.1:5173/sw.js"
+        }
+      ],
+      "caches": [
+        {
+          "name": "moyu-v1",
+          "entries": [
+            "/",
+            "/index.html",
+            "/manifest.webmanifest"
+          ]
+        }
+      ],
+      "listensForUpdate": false
+    }
+  },
+  "dist": {
+    "afterFirstLoad": {
+      "controlled": true,
+      "caches": [
+        {
+          "name": "moyu-v1",
+          "entries": [
+            "/",
+            "/index.html",
+            "/manifest.webmanifest"
+          ]
+        }
+      ],
+      "title": "摸鱼工位"
+    },
+    "v2Deployed": {
+      "titleChanged": true
+    },
+    "offlineReload": {
+      "online": false,
+      "title": "摸鱼工位 v2",
+      "bodyHasV2": true,
+      "cachedEntryCounts": [
+        {
+          "name": "moyu-v1",
+          "entries": 9
+        }
+      ],
+      "anyUpdatePrompt": false,
+      "boot": false
+    },
+    "onlineReloadAfterDeploy": {
+      "title": "摸鱼工位 v2",
+      "bodyHasV2": true,
+      "anyUpdatePrompt": false,
+      "boot": false
+    },
+    "swAfterDeploy": {
+      "cacheNames": [
+        "moyu-v1"
+      ],
+      "waiting": false,
+      "installing": false,
+      "activeScript": "http://127.0.0.1:4188/sw.js"
+    }
+  },
+  "notes": []
+}

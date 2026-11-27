@@ -1,9 +1,15 @@
 /* 摸鱼工位 Service Worker：离线可用（app shell 预缓存 + 运行时缓存） */
-const CACHE = "moyu-v1";
+// 缓存名带版本（注册时 ?v=APP_VERSION），避免旧哈希资源永久残留
+const CACHE = "moyu-" + (new URL(self.location.href).searchParams.get("v") || "v1");
 const SHELL = ["./", "./index.html", "./manifest.webmanifest"];
 
 self.addEventListener("install", (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  // 不静默接管：等待页面提示用户"有新版本，点此更新"
+  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)));
+});
+
+self.addEventListener("message", (e) => {
+  if (e.data === "SKIP_WAITING") self.skipWaiting();
 });
 
 self.addEventListener("activate", (e) => {
@@ -32,6 +38,12 @@ self.addEventListener("fetch", (e) => {
         })
         .catch(() => caches.match(req).then((hit) => hit || caches.match("./index.html"))),
     );
+    return;
+  }
+
+  // 更新日志/版本：网络优先（保证玩家能看到最新公告）
+  if (url.pathname.endsWith("/updates.json")) {
+    e.respondWith(fetch(req).catch(() => caches.match(req).then((hit) => hit || new Response("{}"))));
     return;
   }
 

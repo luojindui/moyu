@@ -744,3 +744,24 @@ body {
   border-radius: 10px;
   pointer-events: none;
 }
+
+/* ---------- 更新提示条 / 关于 ---------- */
+#update-bar {
+  position: fixed;
+  left: 50%;
+  top: 8px;
+  transform: translateX(-50%);
+  z-index: 30;
+  padding: 6px 14px;
+  font-size: 13px;
+  color: #10241a;
+  background: #8be28b;
+  border: 2px solid #4c9e52;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.about-box {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #43435c;
+}

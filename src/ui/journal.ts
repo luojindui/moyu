@@ -4,9 +4,11 @@ import { collectionCount, collectionRows, TOTAL_ITEMS } from "../engine/collecti
 import { MEME_QUOTES, UPGRADE_FLAVOR } from "../engine/flavor";
 import { UPGRADES } from "../engine/upgrades";
 import { formatMoyu } from "../engine/format";
+import { CLICK_MEMES } from "../engine/flavor";
 import { clickPowerOf } from "../engine/actions";
 import { canPrestige, prestigeGain, prestigeMultiplier, prestigeThreshold } from "../engine/prestige";
 import { computeStats } from "../engine/stats";
+import { APP_VERSION, APP_UPDATED_AT } from "../version";
 import { RECORDS_KEY, parseRecords, emptyRecords } from "../engine/records";
 
 /** 日报 + 图鉴面板（收集党：差距可见、每日有仪式） */
@@ -149,6 +151,24 @@ export class Journal {
         )
         .join("");
     }
+
+    // 关于：版本号 + 更新日志（静态，零后端）
+    document.getElementById("about-version")!.textContent = `v${APP_VERSION} · ${APP_UPDATED_AT}`;
+    const notes = document.getElementById("about-notes")!;
+    if (!notes.textContent) {
+      void fetch("./updates.json")
+        .then((r) => r.json())
+        .then((j: { notes?: string[] }) => {
+          notes.textContent = (j.notes ?? []).slice(0, 4).join("；");
+        })
+        .catch(() => {
+          notes.textContent = "更新日志暂不可用";
+        });
+    }
+    // 今日工位梗（每天轮换，零存档字段）
+    const pool = [...CLICK_MEMES, ...MEME_QUOTES];
+    const dayIdx = Math.floor(Date.now() / 86_400_000) % pool.length;
+    document.getElementById("about-today")!.textContent = `今日工位梗：${pool[dayIdx]}`;
 
     // 数据统计（全部由现有字段推导）
     let rec = emptyRecords();

@@ -18,6 +18,7 @@ import { collectQuote, syncFlavorCollection } from "./engine/collection";
 import { ensureVisits, offlineEfficiency } from "./engine/progression";
 import { rankFor } from "./engine/titles";
 import { chapterFor, zhouLine, bossOutcome, HR_PRESTIGE_LINE } from "./engine/story";
+import { APP_VERSION } from "./version";
 import { RECORDS_KEY, parseRecords, updateRecords, type Records } from "./engine/records";
 import { doPrestige } from "./engine/prestige";
 import { ensureDaily, dailyTrack, claimDaily } from "./engine/daily";
@@ -528,9 +529,36 @@ async function boot(): Promise<void> {
     /* 忽略 */
   }
 
-  // 离线可用：注册 Service Worker（仅生产/支持时；失败静默）
-  if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
-    navigator.serviceWorker.register("./sw.js").catch(() => undefined);
+  // 离线可用：仅生产构建注册 SW；带版本参数使旧缓存自然淘汰
+  if (import.meta.env.PROD && "serviceWorker" in navigator && location.protocol.startsWith("http")) {
+    navigator.serviceWorker
+      .register(`./sw.js?v=${APP_VERSION}`)
+      .then((reg) => {
+        // 发现新版本 → 顶部提示条（不打断挂机，用户点按才更新）
+        const notify = (): void => {
+          if (document.getElementById("update-bar")) return;
+          const bar = document.createElement("div");
+          bar.id = "update-bar";
+          bar.textContent = "发现新版本，点此更新";
+          bar.addEventListener("click", () => {
+            reg.waiting?.postMessage("SKIP_WAITING");
+            location.reload();
+          });
+          document.body.appendChild(bar);
+        };
+        if (reg.waiting) notify();
+        reg.addEventListener("updatefound", () => {
+          const sw = reg.installing;
+          sw?.addEventListener("statechange", () => {
+            if (sw.state === "installed" && navigator.serviceWorker.controller) notify();
+          });
+        });
+        // 回到前台时检查更新
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState === "visible") void reg.update();
+        });
+      })
+      .catch(() => undefined);
   }
 }
 
