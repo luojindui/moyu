@@ -1,6 +1,6 @@
 import type { GameState } from "../engine/state";
 import { formatMoyu } from "../engine/format";
-import { collectionBonus, stationIdleOf, stationIdleScaled, teamIdleBreakdown } from "../engine/upgrades";
+import { collectionBonus, conversionBonus, stationIdleOf, stationIdleScaled, teamIdleBreakdown } from "../engine/upgrades";
 import { DECOR, canBuyDecor, decorCount, decorEffects } from "../engine/decor";
 import { ENERGY_ACTIONS, ENERGY_PER_DAY } from "../engine/energy";
 import { prestigeMultiplier } from "../engine/prestige";
@@ -414,9 +414,15 @@ export class TeamPanel {
           };
           const est = dispatchReward(probe, def.id, station);
           const perHour = secs > 0 ? est / (secs / 3600) : 0;
-          // 净收益 = 毛收益/小时 − 该同事本人的离岗损失/小时（(-15%) × 他的挂机贡献）
+          // 离岗损失：与引擎 teamIdleBreakdown 同口径
+          // 固定段 = 每级固定 × 等级 × 转生图鉴倍率 × 好感 × teamIdleMult
+          // 占比段 = 未放大工位(rawStation) × sharePerLevel × 等级 × teamIdleMult
+          // 离岗只损失 (1 - AWAY_IDLE_FACTOR) 的部分
+          const shareBase = rawStation; // 注意：不能用放大后的 station
           const colIdlePerSec =
-            (def.idlePerLevel * cur.level * mult + station * def.sharePerLevel * cur.level) * 0.15;
+            (def.idlePerLevel * cur.level * mult * favorIdle * talent.teamIdleMult +
+              shareBase * def.sharePerLevel * cur.level * talent.teamIdleMult) *
+            (1 - AWAY_IDLE_FACTOR);
           const lostPerHour = colIdlePerSec * 3600;
           const netPerHour = perHour - lostPerHour;
           const durText = secs >= 3600 ? `${Math.round(secs / 3600)}h` : `${Math.round(secs / 60)}m`;
@@ -513,9 +519,20 @@ export class TeamPanel {
     parts.push(`<div class="mate-actions">
       <button class="ghost" data-act="reset-talents">重置天赋（返还全部点数）</button>
     </div>`);
+    // 转化行只在对应天赋已解锁时显示（否则显示"当前 +X%"会虚高，误导加点）
+    const conv = conversionBonus(state);
     parts.push(`<div class="talent-progress">
-      <div>点击转化：${Math.min(10500, state.totalClicks)}/10500 次（当前 +${(Math.min(0.35, Math.floor(state.totalClicks / 300) * 0.01) * 100).toFixed(0)}%）</div>
-      <div>安然转化：${Math.min(30, state.patrolSurvives)}/30 次（当前 +${(Math.min(0.3, state.patrolSurvives * 0.01) * 100).toFixed(0)}%）</div>
+      ${
+        state.talents.unlocked.some((t) => t === "click_5a" || t === "click_5b")
+          ? `<div>点击转化：${Math.min(10500, state.totalClicks)}/10500 次（当前 +${Math.round(Math.min(0.35, Math.floor(state.totalClicks / 300) * 0.01) * 100)}%）</div>`
+          : `<div>点击转化：解锁 click_5a/5b 后生效</div>`
+      }
+      ${
+        state.talents.unlocked.includes("event_5a")
+          ? `<div>安然转化：${Math.min(30, state.patrolSurvives)}/30 次（当前 +${Math.round(Math.min(0.3, state.patrolSurvives * 0.01) * 100)}%）</div>`
+          : `<div>安然转化：解锁 event_5a 后生效</div>`
+      }
+      <div class="sr-only">当前总转化加成 +${Math.round(conv * 100)}%</div>
       <div>溢出转化：${state.talents.overflow ?? 0}/30 点（当前 +${(((state.talents.overflow ?? 0) * 0.005) * 100).toFixed(1)}% 挂机，封顶 +15%）</div>
       <div style="color:#a8a493">天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1；每日首开 +1（上限 24，满树需 27 点 → 终局必须放弃一条流派）</div>
     </div>`);

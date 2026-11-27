@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-27T14:44:27.949Z",
+  "generatedAt": "2026-11-27T14:48:43.611Z",
   "snapshot": {
-    "head": "be5d2e9",
-    "headTitle": "fix(batch5 P1/P2 from QA audit): skipping daily card no longer deadlocks the newbie quest (dismiss counts as done), talent achievements use historical best unlocked count (reset no longer regresses permanent bonus), old players detected via team/decor/energy/card/arcade activity not just lifetime; +3 regression tests (262 green); v0.6.6",
+    "head": "4a66b84",
+    "headTitle": "docs: round5 final state (all roles signed deliverable)",
     "dirty": ""
   },
   "checks": [
@@ -280,11 +280,11 @@
       "panel": "④离线",
       "item": "1h（非封顶） 到账金额 = 引擎 settleReturn",
       "shown": 131500,
-      "expected": 131507.39627899992,
+      "expected": 131507.7615016407,
       "engine": {
-        "elapsed": 3600.746,
-        "applied": 3600.746,
-        "earned": 131507.39627899992,
+        "elapsed": 3600.756,
+        "applied": 3600.756,
+        "earned": 131507.7615016407,
         "panelRate": 0.95,
         "impliedRate": 0.95,
         "cap": 43200,
@@ -299,9 +299,9 @@
       "shown": "离线效率 95%｜12 小时封顶",
       "expected": "…12 小时封顶",
       "engine": {
-        "elapsed": 3600.746,
-        "applied": 3600.746,
-        "earned": 131507.39627899992,
+        "elapsed": 3600.756,
+        "applied": 3600.756,
+        "earned": 131507.7615016407,
         "panelRate": 0.95,
         "impliedRate": 0.95,
         "cap": 43200,
@@ -316,7 +316,7 @@
       "shown": 1577800,
       "expected": 1577761.8080399998,
       "engine": {
-        "elapsed": 360000.759,
+        "elapsed": 360000.743,
         "applied": 43200,
         "earned": 1577761.8080399998,
         "panelRate": 0.95,
@@ -333,7 +333,7 @@
       "shown": "离线效率 95%｜超过上限，已按上限结算 12 小时 0 分",
       "expected": "…已按上限结算 12 小时",
       "engine": {
-        "elapsed": 360000.759,
+        "elapsed": 360000.743,
         "applied": 43200,
         "earned": 1577761.8080399998,
         "panelRate": 0.95,
@@ -350,7 +350,7 @@
       "shown": 3321600.0000000005,
       "expected": 3321603.8063999997,
       "engine": {
-        "elapsed": 691200.74,
+        "elapsed": 691200.738,
         "applied": 86400,
         "earned": 3321603.8063999997,
         "panelRate": 0.95,
@@ -367,7 +367,7 @@
       "shown": "离线效率 95%｜超过上限，已按上限结算 24 小时 0 分",
       "expected": "…已按上限结算 24 小时",
       "engine": {
-        "elapsed": 691200.74,
+        "elapsed": 691200.738,
         "applied": 86400,
         "earned": 3321603.8063999997,
         "panelRate": 0.95,
@@ -399,7 +399,7 @@
       "shown": 6643200.000000001,
       "expected": 6643207.612799999,
       "engine": {
-        "elapsed": 2678400.829,
+        "elapsed": 2678400.761,
         "applied": 172800,
         "earned": 6643207.612799999,
         "panelRate": 0.95,
@@ -416,7 +416,7 @@
       "shown": "离线效率 95%｜超过上限，已按上限结算 48 小时 0 分",
       "expected": "…已按上限结算 48 小时",
       "engine": {
-        "elapsed": 2678400.829,
+        "elapsed": 2678400.761,
         "applied": 172800,
         "earned": 6643207.612799999,
         "panelRate": 0.95,
@@ -461,56 +461,56 @@
       "ok": true
     },
     {
-      "panel": "线上v0.6.6",
+      "panel": "线上v0.6.7",
       "item": "生产包不暴露 __MOYU__",
       "shown": "false",
       "expected": "false",
       "ok": true
     },
     {
-      "panel": "线上v0.6.6",
-      "item": "版本 = v0.6.6",
-      "shown": "v0.6.6 · 2026-11-27",
-      "expected": "v0.6.6 · 2026-11-27",
+      "panel": "线上v0.6.7",
+      "item": "版本 = v0.6.7",
+      "shown": "v0.6.7 · 2026-11-27",
+      "expected": "v0.6.7 · 2026-11-27",
       "ok": true
     },
     {
-      "panel": "线上v0.6.6",
+      "panel": "线上v0.6.7",
       "item": "9 档商店渲染",
       "shown": 9,
       "expected": 9,
       "ok": true
     },
     {
-      "panel": "线上v0.6.6",
+      "panel": "线上v0.6.7",
       "item": "成就墙 22 条已上线",
       "shown": 22,
       "expected": 22,
       "ok": true
     },
     {
-      "panel": "线上v0.6.6",
+      "panel": "线上v0.6.7",
       "item": "初始 HUD 点击/挂机",
       "shown": "1|0.2",
       "expected": "1|0.2",
       "ok": true
     },
     {
-      "panel": "线上v0.6.6",
+      "panel": "线上v0.6.7",
       "item": "离线 100h 封顶文案",
       "shown": "离线效率 90%｜超过上限，已按上限结算 12 小时 0 分",
       "expected": "包含「已按上限结算 12 小时」",
       "ok": true
     },
     {
-      "panel": "线上v0.6.6",
+      "panel": "线上v0.6.7",
       "item": "离线 8d 封顶文案",
       "shown": "离线效率 90%｜超过上限，已按上限结算 24 小时 0 分",
       "expected": "包含「已按上限结算 24 小时」",
       "ok": true
     },
     {
-      "panel": "线上v0.6.6",
+      "panel": "线上v0.6.7",
       "item": "8 天档实际结算效率（100h 档 12h×0.9 反推）",
       "shown": 0.9999809014514895,
       "expected": 1,
@@ -526,7 +526,7 @@
   "scenarios": {
     "S1": {
       "state": {
-        "moyu": 1000000177405.1764,
+        "moyu": 1000000179455.629,
         "idle": 166281.8483191689,
         "click": 729.1207,
         "teamTotal": 90307.57680000001,
@@ -2055,9 +2055,9 @@
           "rule": "离线效率 95%｜12 小时封顶"
         },
         "engine": {
-          "elapsed": 3600.746,
-          "applied": 3600.746,
-          "earned": 131507.39627899992,
+          "elapsed": 3600.756,
+          "applied": 3600.756,
+          "earned": 131507.7615016407,
           "panelRate": 0.95,
           "impliedRate": 0.95,
           "cap": 43200,
@@ -2075,7 +2075,7 @@
           "rule": "离线效率 95%｜超过上限，已按上限结算 12 小时 0 分"
         },
         "engine": {
-          "elapsed": 360000.759,
+          "elapsed": 360000.743,
           "applied": 43200,
           "earned": 1577761.8080399998,
           "panelRate": 0.95,
@@ -2095,7 +2095,7 @@
           "rule": "离线效率 95%｜超过上限，已按上限结算 24 小时 0 分"
         },
         "engine": {
-          "elapsed": 691200.74,
+          "elapsed": 691200.738,
           "applied": 86400,
           "earned": 3321603.8063999997,
           "panelRate": 0.95,
@@ -2115,7 +2115,7 @@
           "rule": "离线效率 95%｜超过上限，已按上限结算 48 小时 0 分"
         },
         "engine": {
-          "elapsed": 2678400.829,
+          "elapsed": 2678400.761,
           "applied": 172800,
           "earned": 6643207.612799999,
           "panelRate": 0.95,
@@ -2148,7 +2148,7 @@
         "boot": false
       },
       "ver": {
-        "version": "v0.6.6 · 2026-11-27",
+        "version": "v0.6.7 · 2026-11-27",
         "achSummary": "0/22 · Lv.1",
         "achItems": 22
       },
@@ -2177,7 +2177,7 @@
     {
       "level": "P1",
       "where": "src/ui/team-panel.ts 净收益公式",
-      "issue": "仍有符号翻转（端到端口径 = 奖励/小时 − 挂机率前后差×3600）：qiang/chat 面板 1745200/h vs 引擎 -840838/h；wang/stroll 面板 3297300/h vs 引擎 -2781556/h"
+      "issue": "仍有符号翻转（端到端口径 = 奖励/小时 − 挂机率前后差×3600；30 个任务按钮中 2 个翻转）：qiang/chat 面板 1745200/h vs 引擎 -840838/h；wang/stroll 面板 3297300/h vs 引擎 -2781556/h"
     },
     {
       "level": "P1",
@@ -2191,7 +2191,7 @@
     },
     {
       "level": "P1",
-      "where": "线上 v0.6.6 欢迎面板（8 天回归）",
+      "where": "线上 v0.6.7 欢迎面板（8 天回归）",
       "issue": "面板「离线效率 90%｜超过上限，已按上限结算 24 小时 0 分」，但按 100h 档反推实际按 100.0% 结算 → ≥7 天回归仍绕 95% 上限（线上同样命中）"
     }
   ],

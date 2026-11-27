@@ -25,7 +25,8 @@ export function settleReturn(state: GameState, lastActiveMs: number, nowMs: numb
     return { applied: 0, earned: 0, showPanel: false, state };
   }
   // 回归首开（≥7 天）强制全额效率，让"回来了"有实感
-  const effectiveRate = gap >= 7 * 86400 ? 1 : rate;
+  // 统一走传入的 rate（已含 95% 硬上限）：面板显示的效率 = 实际结算的效率
+  const effectiveRate = rate;
   const r = offlineEarn(state, gap, effectiveRate);
   return {
     applied: r.applied,

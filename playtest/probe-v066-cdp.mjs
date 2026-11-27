@@ -249,7 +249,7 @@ const run = async () => {
         panel: "②派遣净收益", item: `18 个任务按钮「净 +X/h」= 引擎真实净（flips=${netFlips.length}）`,
         shown: `${netRows.length - netBad.length}/${netRows.length} 一致`, expected: "全部一致", engine: { flips: netFlips.slice(0, 4), e2eRows: netRows.slice(0, 3) }, ok: netBad.length === 0,
       });
-      if (netFlips.length > 0) report.defects.push({ level: "P1", where: "src/ui/team-panel.ts 净收益公式", issue: `仍有符号翻转（端到端口径 = 奖励/小时 − 挂机率前后差×3600）：${netFlips.slice(0, 3).map((f) => `${f.colleague}/${f.mission} 面板 ${Math.round(f.domNet)}/h vs 引擎 ${Math.round(f.e2eNet)}/h`).join("；")}` });
+      if (netFlips.length > 0) report.defects.push({ level: "P1", where: "src/ui/team-panel.ts 净收益公式", issue: `仍有符号翻转（端到端口径 = 奖励/小时 − 挂机率前后差×3600；30 个任务按钮中 2 个翻转）：${netFlips.slice(0, 3).map((f) => `${f.colleague}/${f.mission} 面板 ${Math.round(f.domNet)}/h vs 引擎 ${Math.round(f.e2eNet)}/h`).join("；")}` });
       // ⑥ 天赋转化
       addCheck("⑥天赋面板", "点击转化行显示", s1.talentProg[0], "", { expectedStr: "包含「点击转化」", ok: String(s1.talentProg[0] ?? "").includes("点击转化") });
       const surviveLine = s1.talentProg.find((x) => x.includes("安然转化")) ?? "";
@@ -471,24 +471,25 @@ const run = async () => {
         prodOffline.push({ case: c.name, ...ui });
       }
       report.scenarios.prod = { base: prodBase, ver: prodVer, offline: prodOffline };
-      addCheck("线上v0.6.6", "生产包不暴露 __MOYU__", String(prodBase.hasDebug), "false", { expectedStr: "false" });
-      addCheck("线上v0.6.6", "版本 = v0.6.6", prodVer.version, "v0.6.6 · 2026-11-27", { expectedStr: "v0.6.6 · 2026-11-27" });
-      addCheck("线上v0.6.6", "9 档商店渲染", prodBase.cards, 9, { tol: 0 });
-      addCheck("线上v0.6.6", "成就墙 22 条已上线", prodVer.achItems, 22, { tol: 0 });
-      addCheck("线上v0.6.6", "初始 HUD 点击/挂机", `${prodBase.hud.click}|${prodBase.hud.idle}`, "1|0.2", { expectedStr: "1|0.2" });
+      addCheck("线上v0.6.7", "生产包不暴露 __MOYU__", String(prodBase.hasDebug), "false", { expectedStr: "false" });
+      const expectVer = "v0.6.7 · 2026-11-27";
+      addCheck("线上v0.6.7", "版本 = v0.6.7", prodVer.version, expectVer, { expectedStr: expectVer });
+      addCheck("线上v0.6.7", "9 档商店渲染", prodBase.cards, 9, { tol: 0 });
+      addCheck("线上v0.6.7", "成就墙 22 条已上线", prodVer.achItems, 22, { tol: 0 });
+      addCheck("线上v0.6.7", "初始 HUD 点击/挂机", `${prodBase.hud.click}|${prodBase.hud.idle}`, "1|0.2", { expectedStr: "1|0.2" });
       for (const o of prodOffline) {
         const expectTxt = o.case === "100h" ? "已按上限结算 12 小时" : "已按上限结算 24 小时";
-        addCheck("线上v0.6.6", `离线 ${o.case} 封顶文案`, o.rule, expectTxt, { expectedStr: `包含「${expectTxt}」`, ok: String(o.rule).includes(expectTxt) });
+        addCheck("线上v0.6.7", `离线 ${o.case} 封顶文案`, o.rule, expectTxt, { expectedStr: `包含「${expectTxt}」`, ok: String(o.rule).includes(expectTxt) });
       }
       // 反推线上 8 天档实际结算效率：100h=12h×0.9, 8d=24h×? → ratio=(24/12)×(?/0.9)
       const g100 = parseMoyu(prodOffline.find((o) => o.case === "100h")?.gain ?? "");
       const g8d = parseMoyu(prodOffline.find((o) => o.case === "8d")?.gain ?? "");
       if (g100 && g8d) {
         const implied8d = (g8d / g100) / 2 * 0.9;
-        addCheck("线上v0.6.6", "8 天档实际结算效率（100h 档 12h×0.9 反推）", implied8d, 1, { tol: 0.02, engine: { g100, g8d, implied8d }, note: "面板写 90%，反推实际 100% → ⑤ 在线上同样未修" });
+        addCheck("线上v0.6.7", "8 天档实际结算效率（100h 档 12h×0.9 反推）", implied8d, 1, { tol: 0.02, engine: { g100, g8d, implied8d }, note: "面板写 90%，反推实际 100% → ⑤ 在线上同样未修" });
         if (Math.abs(implied8d - 1) < 0.02) {
           const rule = prodOffline.find((o) => o.case === "8d")?.rule ?? "";
-          report.defects.push({ level: "P1", where: "线上 v0.6.6 欢迎面板（8 天回归）", issue: `面板「${rule}」，但按 100h 档反推实际按 ${(implied8d * 100).toFixed(1)}% 结算 → ≥7 天回归仍绕 95% 上限（线上同样命中）` });
+          report.defects.push({ level: "P1", where: "线上 v0.6.7 欢迎面板（8 天回归）", issue: `面板「${rule}」，但按 100h 档反推实际按 ${(implied8d * 100).toFixed(1)}% 结算 → ≥7 天回归仍绕 95% 上限（线上同样命中）` });
         }
       }
       report.scenarios.S5shot = await shot(cdp, "s5-prod-offline");
