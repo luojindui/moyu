@@ -94,27 +94,17 @@ describe("W4. 天赋节点接入验证（本轮修复重点）", () => {
     console.log("[W4a] comboWindow", comboWindowOf(a), "→", comboWindowOf(b), "; comboCap", comboCapOf(a), "→", comboCapOf(b));
   });
 
-  it("W4b 【缺陷·语义】click_4 暴击：main 已消费字段，但只乘到飘字变量，实际收入仍走 doClick（无暴击）", () => {
-    expect(consumers("critEvery", "talents.ts").length).toBeGreaterThan(0); // main.ts 有消费点
-    // 引擎侧：第 20 次点击（totalClicks=19）收入与无暴击完全一致
+  it("W4b click_4 暴击已真正入账（doClick critMult；偷点分支在暴击前 return）", () => {
+    expect(consumers("critEvery", "talents.ts").length).toBeGreaterThan(0);
     const s = stateWith(["click_1", "click_4"], { totalClicks: 19 });
-    const gainAt20 = doClick(s, 0).moyu - s.moyu;
-    expect(gainAt20).toBeCloseTo(clickPowerOf(s), 6); // 无 ×5
-    // 100 次点击收入恒为 1 档
-    const base = stateWith(["click_1", "click_2", "click_3", "click_4"], { levels: {} });
-    const deltas = new Set<number>();
-    let cur = base;
-    for (let i = 0; i < 100; i++) {
-      const before = cur.moyu;
-      cur = doClick(cur, 0);
-      deltas.add(Math.round((cur.moyu - before) * 1e6) / 1e6);
-    }
-    expect(deltas.size).toBe(1);
+    const normal = doClick(s, 0).moyu - s.moyu;
+    const crit = doClick(s, 0, 5).moyu - s.moyu;
+    expect(normal).toBeCloseTo(clickPowerOf(s), 6);
+    expect(crit / normal).toBeCloseTo(5, 6);
     const main = readFileSync("src/main.ts", "utf8");
-    // main 里 crit 只改 gained（飘字），随后 state = doClick(state, combo) 不含暴击倍率
-    expect(main).toContain("critEvery");
-    expect(main).not.toMatch(/doClick\([^)]*crit/);
-    console.log("[W4b] 第 20 次点击收入=", gainAt20, "=正常点击（×5 未进账，只在飘字/音效）");
+    expect(main).toContain("doClick(state, combo, isCrit ? 5 : 1)");
+    expect(main.indexOf("if (es.bossUntil > scene.gameTime)")).toBeLessThan(main.indexOf("critEvery"));
+    console.log("[W4b] 暴击入账系数=5；偷点分支先 return，不吃暴击");
   });
 
   it("W4c event_2/强哥被动 罚款减免已接入（-35%/-10%）", () => {
@@ -168,14 +158,17 @@ describe("W4. 天赋节点接入验证（本轮修复重点）", () => {
     expect(teamB / teamA).toBeCloseTo(1.4, 3);
   });
 
-  it("W4f 【缺陷】click_5b 的「连击每层收益翻倍（上限 ×1.72）」未实现：仍按 0.012/层", () => {
-    const with5b = stateWith(["click_1", "click_3", "click_5b"]);
-    const gain = doClick({ ...with5b, moyu: 0 }, 30).moyu;
-    expect(gain).toBeCloseTo(clickPowerOf(with5b) * 1.36, 6); // 不是 ×1.72
-    // perCombo 参数无任何调用方传自定义值
-    const callers = consumers("comboMultiplier(").filter((h) => !h.path.endsWith("actions.ts") && !h.path.endsWith("events.ts"));
-    console.log("[W4f] comboMultiplier 自定义 perCombo 调用点:", callers);
-    expect(consumers("0.024")).toEqual([]);
+  it("W4f click_5b 已真正生效：点击力 +60% + 挂机立即 +12%（每千点再 +1%，封顶 +20%）", () => {
+    const def = TALENTS.find((t) => t.id === "click_5b")!;
+    expect(def.desc).toContain("点击力 +60%");
+    const with5b = stateWith(["click_1", "click_5b"]);
+    const withClick1 = stateWith(["click_1"]);
+    console.log("[W4f] clickPower 比=", (clickPowerOf(with5b) / clickPowerOf(withClick1)).toFixed(3), " conversionBonus(5b)=", conversionBonus(with5b));
+    expect(clickPowerOf(with5b) / clickPowerOf(withClick1)).toBeCloseTo(1.6, 6); // 点击力 +60%
+    expect(conversionBonus(with5b)).toBeCloseTo(0.12, 6); // 挂机 +12% 已生效
+    expect(conversionBonus({ ...with5b, totalClicks: 1000 })).toBeCloseTo(0.13, 6);
+    expect(conversionBonus({ ...with5b, totalClicks: 5000 })).toBeCloseTo(0.17, 6);
+    expect(conversionBonus({ ...with5b, totalClicks: 20000 })).toBeCloseTo(0.2, 6); // 封顶 +20%
   });
 
   it("W4g idle_4「离线效率上限 +0.08（可超过100%）」已放开", () => {
@@ -187,7 +180,7 @@ describe("W4. 天赋节点接入验证（本轮修复重点）", () => {
 
   it("W4h 已接入的效果：click_1/5a/5b 点击倍率、idle_1/3/5a 挂机、event_1/3/5b 事件 ×2", () => {
     const eff = talentEffects({ ...emptyTalents(), unlocked: ["click_1", "click_5b", "idle_1", "idle_3", "idle_5a", "event_1", "event_4", "event_5b", "event_3"] });
-    expect(eff.clickMult).toBeCloseTo(1.25 * 1.12, 6);
+    expect(eff.clickMult).toBeCloseTo(1.25 * 1.6, 6);
     expect(eff.idleMult).toBeCloseTo(1.2, 6);
     expect(eff.patrolRewardMult).toBeCloseTo((1 + 0.15 + 0.05) * 2, 6);
     expect(eff.memeRewardMult).toBeCloseTo((1 + 0.15) * 2, 6);
@@ -207,7 +200,7 @@ describe("W4. 天赋节点接入验证（本轮修复重点）", () => {
     const conv = stateWith(["click_5a"], { totalClicks: 3000 });
     expect(conversionBonus(conv)).toBeCloseTo(0.1, 6);
     // 点击力倍率确实进 clickPowerOf
-    expect(clickPowerOf(stateWith(["click_1", "click_5b"])) / clickPowerOf(stateWith([]))).toBeCloseTo(1.25 * 1.12, 6);
+    expect(clickPowerOf(stateWith(["click_1", "click_5b"])) / clickPowerOf(stateWith([]))).toBeCloseTo(1.25 * 1.6, 6); // 2.0
     // 挂机天赋确实进工位
     expect(stationIdleScaled(withTalents(withLevels(s, { retire: 10 }), ["idle_1", "idle_3", "idle_5a"])) / stationIdleScaled(withLevels(s, { retire: 10 }))).toBeCloseTo(1.2, 6);
   });

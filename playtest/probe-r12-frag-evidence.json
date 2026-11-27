@@ -5546,5 +5546,65 @@
       }
     }
   },
-  "errors": []
+  "errors": [],
+  "supplement": {
+    "headAtReport": "96117f2",
+    "methodologyNote": "4 次打开用注入的 Date.now 偏移 + reload 模拟'离开'；任务/倒计时按绝对时间推进，故会话时间线有效。探针里 gap 跳转调用了两次 reload（jump 自带 + reloadReady 又 reload），会把离线收益/欢迎面板吃掉；已用单次 reload 的独立用例复验：离开 4 分钟回来会弹欢迎面板（需点 1 下'继续摸鱼'），离线收益照发。",
+    "welcomeCheck": {
+      "ranSeparately": true,
+      "result": "welcome 面板显示，welcomeGain 111.88万（4 分钟离线），需 1 下关闭"
+    },
+    "earlySim": {
+      "model": "playtest/probe-r12-frag-early.test.ts（用 src/engine/team.ts 当前真实数值构造模拟器配置；4 次/天 × 2.5 分钟，点击 1 cps）",
+      "firstRecruit": "第 2 次打开（D1 12:00）可招老周；小美/强哥第 3 次打开（D1 19:00）；小李/王师傅第 5 次打开（D2 08:00）",
+      "talentPointsByDay": {
+        "D1": 2,
+        "D2": 3,
+        "D3": 4,
+        "D4": 5
+      },
+      "cps0_firstRecruit": "纯挂机不点：19.0 小时后（D1 19:00，第 3 次打开）"
+    },
+    "formulaCheck": {
+      "measuredIdlePerSec": 5178,
+      "dispatchReward_zhou_lv1_quick": 61530,
+      "missionSeconds_zhou_quick": 765,
+      "rewardEqualsIdleSeconds": 11.9,
+      "cost_halfIdle_while_away_seconds": 765,
+      "netGainInIdleSeconds": 10.3,
+      "valueVsSameDurationIdle_pct": 1.3,
+      "valueVsDailyClaimMultiple": "日报 312.64万 可领 = 单次派遣 6.15万 的 50.8 倍",
+      "perHourFromPanel": {
+        "quick_lv1": "28.96万/h",
+        "coffee_8h_lv1": "57.43万/h",
+        "coffee_8h_lv3": "89.52万/h"
+      }
+    },
+    "panelScroll": {
+      "locked_5cards": {
+        "scrollH": 647,
+        "clientH": 613,
+        "visibleCards": 4
+      },
+      "all5_recruited": {
+        "scrollH": 1390,
+        "clientH": 613,
+        "screens": 2.27,
+        "swipesToBottom": 2,
+        "dispatchButtons": 25
+      },
+      "talentPage": {
+        "scrollH": 1111,
+        "clientH": 613,
+        "screens": 1.81,
+        "talentRows": 18
+      }
+    },
+    "fixedAfterRun_checkAtHead": [
+      "👥 天赋点角标 .talent-badge（420f89a 新增，实测运行期间尚为旧版）",
+      "长消息改 DOM toast（#dom-toast），不再被面板遮住",
+      "派单按钮已显示 时长/奖励/每小时（实测已生效）",
+      "一键领取 claim-all、自动重复 autoRepeat、结构签名防点空（实测已生效）"
+    ]
+  }
 }

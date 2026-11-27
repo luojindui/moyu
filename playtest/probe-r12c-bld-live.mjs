@@ -1,11 +1,10 @@
-/** R12 复验 3 live 探针：暴击是否真入账 / 预警是否真提前 2s / 角标 / 存档 18 / 面板描述 / idle_5b。
- *  只读 src/，证据写 playtest/。 */
+/** R12 复验 3 live（HEAD 96117f2）：暴击真入账 / 预警提前 2s / 角标 / 存档 18 / idle_4 超 100% / idle_5b。 */
 import { openBrowser, sleep } from "./r9-cdp-lib.mjs";
 import { writeFileSync } from "node:fs";
 
 const URL_ = "http://127.0.0.1:5173/";
-const b = await openBrowser({ port: 9527, tag: "r12cbld" });
-const out = { url: URL_, checks: {}, shots: [] };
+const b = await openBrowser({ port: 9529, tag: "r12c2" });
+const out = { url: URL_, head: "96117f2", checks: {}, shots: [] };
 let scriptId = null;
 
 async function setConfig(cfg) {
@@ -27,7 +26,7 @@ async function setConfig(cfg) {
     talents: { unlocked: cfg.unlocked ?? [], points: cfg.points ?? 0, rankGranted: cfg.rankGranted ?? 12 },
     collected: { quotes: [], flavors: [] },
     daily: null,
-    visits: { date: "", count: cfg.visits ?? 0 },
+    visits: { date: cfg.visitsDate ?? "", count: cfg.visits ?? 0 },
     team: cfg.team ?? { colleagues: {} },
   };
   const r = await b.send("Page.addScriptToEvaluateOnNewDocument", {
@@ -52,129 +51,100 @@ async function tap(n, gap = 105) {
     await sleep(gap);
   }
 }
+const HOOK = `(function(){try{
+  window.__texts=[];window.__crit=0;
+  window.__loads=(Number(sessionStorage.getItem('__loads'))||0)+1;sessionStorage.setItem('__loads',String(window.__loads));
+  const P=CanvasRenderingContext2D.prototype,o=P.fillText;
+  if(!P.__hooked){P.__hooked=1;P.fillText=function(t,x,y,...r){const s=String(t);if(s.includes('暴击'))window.__crit++;
+    if(window.__texts&&window.__texts.length<1200)window.__texts.push({s,t:Math.round(performance.now())});return o.call(this,t,x,y,...r);};}
+}catch(e){}})();`;
 async function hookText() {
-  await b.ev(`(()=>{
-    window.__texts=[];window.__crit=0;
-    const P=CanvasRenderingContext2D.prototype, o=P.fillText;
-    P.fillText=function(t,x,y,...r){ const s=String(t);
-      if(s.includes('暴击')) window.__crit++;
-      if(window.__texts.length<900) window.__texts.push({s,x:Math.round(x),y:Math.round(y),t:Math.round(performance.now())});
-      return o.call(this,t,x,y,...r); };
-    return 1;})()`);
+  await b.ev(HOOK);
 }
-async function engineIdle(stateJson) {
-  return JSON.parse(
-    await b.ev(
-      `(async()=>{const U=await import('/src/engine/upgrades.ts');const s=${stateJson};return JSON.stringify(U.effectOf(s).idleRate);})()`,
-    ),
-  );
+async function ev(js) {
+  return JSON.parse(await b.ev(`JSON.stringify(${js})`));
 }
 
 await b.send("Page.enable");
 await b.send("Runtime.enable");
 await b.send("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 3, mobile: true, screenWidth: 390, screenHeight: 844 });
 await b.send("Emulation.setTouchEmulationEnabled", { enabled: true, maxTouchPoints: 5 });
-
+await b.send("Page.addScriptToEvaluateOnNewDocument", { source: HOOK });
 const LEVELS = { coffee: 20, water: 20, chair: 20, phone: 40, toilet: 20 };
+const TODAY = new Date().toLocaleDateString("sv-SE");
 
-// ---------- A) 存档 18 点 ----------
+// A) 存档 18 / 角标
 {
   const s = await setConfig({ levels: LEVELS, points: 18, unlocked: [] });
   out.checks.save18 = { loaded: s.talents.points, ok: s.talents.points === 18 };
-}
-
-// ---------- B) 角标 + 面板 click_5b 描述 ----------
-{
-  await setConfig({ levels: LEVELS, points: 15, unlocked: [] });
-  const badge = JSON.parse(
-    await b.ev("JSON.stringify({badge:!!document.querySelector('#btn-team .talent-badge'),text:(document.querySelector('#btn-team .talent-badge')||{}).textContent,label:document.getElementById('btn-team').getAttribute('aria-label')})"),
-  );
+  const badge = await ev("({badge:!!document.querySelector('#btn-team .talent-badge'),text:(document.querySelector('#btn-team .talent-badge')||{}).textContent})");
   out.checks.badge = badge;
-  await shot("/tmp/r12c-badge.png");
-  await b.ev("document.getElementById('btn-team').click();document.getElementById('tab-talents').click()");
-  await sleep(400);
-  const panel = JSON.parse(
-    await b.ev("JSON.stringify({text:document.getElementById('team').innerText})"),
-  );
-  out.checks.click5bDesc = {
-    inPanel: /点击力再\\s*\\+60%/.test(panel.text),
-    claimsComboDouble: /连击每层收益翻倍/.test(panel.text),
-    line: panel.text.split("\n").find((l) => l.includes("指尖风暴")) ?? null,
-  };
-  await shot("/tmp/r12c-talents-panel.png");
-  await b.ev("document.getElementById('team-close').click()");
-  await sleep(200);
+  await shot("/tmp/r12c2-badge.png");
 }
 
-// ---------- C) 暴击：UI 飘 ×5 但 state 是否真加 ----------
+// B) 暴击（40 下，第 20/40 下必暴击）：state 是否 ×5 入账
 {
   await setConfig({ levels: { coffee: 20, water: 20, chair: 20 }, unlocked: ["click_1", "click_2", "click_3", "click_4"], points: 0 });
-  await hookText();
-  const s0 = JSON.parse(await b.ev("JSON.stringify(window.__MOYU__.state)"));
-  const eng = JSON.parse(
-    await b.ev(`(async()=>{const A=await import('/src/engine/actions.ts');const U=await import('/src/engine/upgrades.ts');const s=${JSON.stringify(s0)};return JSON.stringify({click:A.clickPowerOf(s),cap:A.comboCapOf(s),idle:U.effectOf(s).idleRate});})()`),
-  );
+  await b.ev("window.__texts=[];window.__crit=0;1");
+  const s0 = await ev("window.__MOYU__.state");
+  const eng = await ev(`(async()=>{const A=await import('/src/engine/actions.ts');const U=await import('/src/engine/upgrades.ts');const s=${JSON.stringify(s0)};return {click:A.clickPowerOf(s),cap:A.comboCapOf(s),idle:U.effectOf(s).idleRate};})()`);
   const t0 = Date.now();
-  await tap(19, 105); // 前 19 下
-  await tap(1, 20); // 第 20 下 = 暴击（totalClicks+1 = 20）
-  await sleep(70);
-  await shot("/tmp/r12c-crit.png");
+  await tap(19, 105);
+  await tap(1, 20);
   await sleep(80);
-  await tap(20, 105); // 第 21-40 下（第 40 下再暴击）
+  await shot("/tmp/r12c2-crit.png");
+  await tap(20, 105);
   const ms = Date.now() - t0;
   await sleep(120);
-  const s1 = JSON.parse(await b.ev("JSON.stringify(window.__MOYU__.state)"));
-  const ui = JSON.parse(await b.ev("JSON.stringify({crit:window.__crit,texts:window.__texts.slice(-80)})"));
+  const s1 = await ev("window.__MOYU__.state");
+  const ui = await ev("({crit:window.__crit||0,loads:window.__loads||0,texts:(window.__texts||[]).slice(-80)})");
   const gained = s1.lifetimeEarned - s0.lifetimeEarned;
   let sum = 0;
   for (let i = 1; i <= 40; i++) sum += 1 + 0.012 * Math.min(i, eng.cap);
-  const predictedNoCrit = eng.click * sum + eng.idle * (ms / 1000);
-  const predictedWithCrit = eng.click * sum + eng.idle * (ms / 1000) + eng.click * 4 * (2 * (1 + 0.012 * 20)); // 20/40 两下 ×5
-  const plusTexts = ui.texts
+  const noCrit = eng.click * sum + eng.idle * (ms / 1000);
+  const critTapVal = (combo) => eng.click * (1 + 0.012 * Math.min(combo, eng.cap));
+  const withCrit = noCrit + 4 * critTapVal(20) + 4 * critTapVal(30);
+  const plus = ui.texts
     .map((x) => {
-      const m = String(x.s).match(/([+]?)(\d[\d,]*)$/);
-      return m ? Number(m[2].replace(/,/g, "")) : null;
+      const m = String(x.s).match(/(\d[\d,]*)$/);
+      return m ? Number(m[1].replace(/,/g, "")) : null;
     })
     .filter((v) => v !== null);
   out.checks.crit = {
     critFloatCount: ui.crit,
+    pageLoadsDuringCrit: ui.loads,
     stateGain: Math.round(gained),
-    predictedNoCrit: Math.round(predictedNoCrit),
-    predictedWithCrit: Math.round(predictedWithCrit),
-    ratioVsNoCrit: +(gained / predictedNoCrit).toFixed(4),
-    ratioVsWithCrit: +(gained / predictedWithCrit).toFixed(4),
-    maxDisplayedPlus: Math.max(0, ...plusTexts),
+    predictedNoCrit: Math.round(noCrit),
+    predictedWithCrit: Math.round(withCrit),
+    ratioVsWithCrit: +(gained / withCrit).toFixed(4),
+    ratioVsNoCrit: +(gained / noCrit).toFixed(4),
+    maxDisplayedPlus: Math.max(0, ...plus),
     normalTapMax: Math.round(eng.click * (1 + 0.012 * eng.cap)),
-    critTextSample: ui.texts.filter((x) => String(x.s).includes("暴击")).slice(0, 2),
-    verdict:
-      ui.crit > 0
-        ? "UI 出现「暴击!」；但 state 收入比≈1.0（若无暴击）→ 暴击只改了飘字数值，未真正入账 ❌"
-        : "未观测到暴击（❌）",
+    ok: Math.abs(gained / withCrit - 1) < 0.03,
   };
 }
 
-// ---------- D) event_4 提前 2s 预警（含 2s 时间差实测） ----------
+// C) event_4 提前 2s 预警：DOM toast(show) 与 sr-live 巡逻播报的时间差
 async function warnRun(unlocked, label) {
-  await setConfig({ levels: { coffee: 5 }, unlocked, points: 0, totalClicks: 0 });
-  await hookText();
+  await setConfig({ levels: { coffee: 5 }, unlocked, points: 0 });
   const t0 = Date.now();
   let warnAt = null,
-    bannerAt = null,
-    warnShot = false;
-  for (let i = 0; i < 900 && !(warnAt && bannerAt); i++) {
-    const r = JSON.parse(
-      await b.ev(
-        "JSON.stringify({toast:(document.getElementById('dom-toast')||{}).textContent||'',cls:(document.getElementById('dom-toast')||{}).className||'',texts:(window.__texts||[]).slice(-12).map(x=>x.s)})",
-      ),
+    bossAt = null,
+    warned = false,
+    bossAnnounced = false;
+  for (let i = 0; i < 800 && !(warnAt && bossAt); i++) {
+    const r = await ev(
+      "({shown:document.getElementById('dom-toast')?.classList.contains('show')||false,toast:document.getElementById('dom-toast')?.textContent||'',sr:document.getElementById('sr-live')?.textContent||''})",
     );
-    if (warnAt === null && String(r.toast).includes("王总快来了")) {
+    if (!warnAt && r.shown && String(r.toast).includes("王总快来了")) {
       warnAt = Date.now() - t0;
-      await shot(`/tmp/r12c-warn-${label}.png`);
+      warned = true;
+      await shot(`/tmp/r12c2-warn-${label}.png`);
     }
-    if (bannerAt === null && r.texts.some((t) => String(t).includes("王总"))) bannerAt = Date.now() - t0;
-    await sleep(60);
+    if (!bossAt && /王总巡逻|摸鱼冲刺|假装工作/.test(String(r.sr))) bossAt = Date.now() - t0;
+    await sleep(55);
   }
-  return { label, warnMs: warnAt, bossBannerMs: bannerAt, gapMs: warnAt !== null && bannerAt !== null ? bannerAt - warnAt : null };
+  return { label, warnMs: warnAt, bossMs: bossAt, gapMs: warnAt !== null && bossAt !== null ? bossAt - warnAt : null };
 }
 {
   const withT = await warnRun(["event_1", "event_2", "event_3", "event_4"], "with");
@@ -182,44 +152,42 @@ async function warnRun(unlocked, label) {
   out.checks.warn = {
     withEvent4: withT,
     withoutEvent4: without,
-    verdict: `点 event_4 后预警提前量≈${withT.gapMs}ms（期望≈2000ms）；未点 event_4 是否无预警=${without.warnMs === null}`,
+    ok: withT.gapMs !== null && Math.abs(withT.gapMs - 2000) < 400 && without.warnMs === null,
+    verdict: `点 event_4：预警在巡逻前 ${withT.gapMs}ms（期望≈2000）；未点：${without.warnMs === null ? "无预警 ✅" : "也出现预警 ❌"}`,
   };
 }
 
-// ---------- E) idle_5b live：招募老周满级后对比挂机率 ----------
+// D) idle_4：3 次回访/天，离线效率应 >100%
+{
+  await setConfig({ levels: { phone: 60 }, unlocked: ["idle_1", "idle_2", "idle_3", "idle_4"], points: 0, visits: 3, visitsDate: TODAY });
+  const eff = await ev(
+    "(async()=>{const P=await import('/src/engine/progression.ts');const s=window.__MOYU__.state;const now=Date.now();return P.offlineEfficiency(s, now-30*86400000, now);})()",
+  );
+  out.checks.idle4 = { visitsCount: 3, eff: +Number(eff).toFixed(3), over100: eff > 1 };
+}
+
+// E) idle_5b live：老周满级，点 5b 前后总挂机
 {
   const team = { colleagues: { zhou: { level: 5, missionId: null, startedAt: 0, endsAt: 0, favor: 0, autoRepeat: false, rewardSnapshot: 0 } } };
   await setConfig({ levels: { phone: 60 }, unlocked: ["idle_1", "idle_2", "idle_3", "idle_4"], points: 2, team });
-  const s0 = JSON.parse(await b.ev("JSON.stringify(window.__MOYU__.state)"));
-  const idle0 = await engineIdle(JSON.stringify(s0));
+  const idleOf = async () =>
+    Number(
+      await b.ev(
+        "(async()=>{const U=await import('/src/engine/upgrades.ts');return U.effectOf(window.__MOYU__.state).idleRate;})()",
+      ),
+    );
+  const before = await idleOf();
   await b.ev("document.getElementById('btn-team').click();document.getElementById('tab-talents').click()");
   await sleep(300);
   await b.ev(`document.querySelector('#team-body button[data-id="idle_5b"]').click()`);
   await sleep(400);
-  const s1 = JSON.parse(await b.ev("JSON.stringify(window.__MOYU__.state)"));
-  const idle1 = await engineIdle(JSON.stringify(s1));
-  out.checks.idle5b = {
-    before: s0.talents.unlocked,
-    after: s1.talents.unlocked,
-    idleBefore: Math.round(idle0),
-    idleAfter: Math.round(idle1),
-    mul: +(idle1 / idle0).toFixed(3),
-    ok: idle1 > idle0,
-  };
-  await shot("/tmp/r12c-idle5b.png");
-  await b.ev("document.getElementById('team-close').click()");
+  const after = await idleOf();
+  const st1 = await ev("window.__MOYU__.state.talents");
+  out.checks.idle5b = { before: Math.round(before), after: Math.round(after), mul: +(after / before).toFixed(3), unlocked: st1.unlocked, ok: after > before };
+  await shot("/tmp/r12c2-idle5b.png");
 }
 
-// ---------- F) idle_4 live：3 次回访/天离线效率是否 >100% ----------
-{
-  await setConfig({ levels: { phone: 60 }, unlocked: ["idle_1", "idle_2", "idle_3", "idle_4"], points: 0, visits: 3 });
-  const eff = JSON.parse(
-    await b.ev(`(async()=>{const P=await import('/src/engine/progression.ts');const s=window.__MOYU__.state;const now=Date.now();return JSON.stringify(P.offlineEfficiency(s, now-30*86400000, now));})()`),
-  );
-  out.checks.idle4 = { visits: 3, eff, over100: eff > 1 };
-}
-
-writeFileSync("playtest/r12c-bld-live.json", JSON.stringify(out, null, 2));
+writeFileSync("playtest/r12c2-bld-live.json", JSON.stringify(out, null, 2));
 console.log(JSON.stringify(out, null, 2));
 b.close();
 process.exit(0);

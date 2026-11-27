@@ -6,6 +6,7 @@
  */
 import { initialState, type GameState } from "../src/engine/state";
 import { doClick, buyUpgrade, clickPowerOf, comboCapOf } from "../src/engine/actions";
+import { talentEffects } from "../src/engine/talents";
 import {
   costOf,
   marginalEffect,
@@ -36,6 +37,7 @@ import {
   favorTier,
   teamFixedRate,
   teamShareRatio,
+  claimableTotal,
 } from "../src/engine/team";
 import { TALENTS } from "../src/engine/talents";
 
@@ -255,15 +257,14 @@ export function simulate(o: SimOpts): SimResult {
   let claimMismatchMax = 1;
   const teamTick = (nowMs: number): void => {
     if (o.team === "none") return;
-    // 面板"一键领取"总额（用当前工位）vs 实际（用快照）
+    // 面板"一键领取"总额 vs 实际（都应按快照求和，应为 1.00）
     {
       const station = stationIdleScaled(state);
-      let panel = 0;
+      const panel = claimableTotal(state, nowMs, station); // 面板实际调用的函数（一次）
       let actual = 0;
       for (const def of COLLEAGUES) {
         if (!missionDone(state, def.id, nowMs)) continue;
         const cur = state.team.colleagues[def.id]!;
-        panel += dispatchReward(state, def.id, station);
         actual += cur.rewardSnapshot > 0 ? cur.rewardSnapshot : dispatchReward(state, def.id, station);
       }
       if (actual > 0) claimMismatchMax = Math.max(claimMismatchMax, panel / actual);
@@ -335,7 +336,12 @@ export function simulate(o: SimOpts): SimResult {
         if (o.cps > 0) {
           const n = Math.round(o.cps * dt);
           const before = state.lifetimeEarned;
-          for (let i = 0; i < n; i++) state = doClick(state, combo);
+          const critEvery = talentEffects(state.talents).critEvery;
+          for (let i = 0; i < n; i++) {
+            // click_4：每 N 次点击必暴击 ×5（与 main.ts 同口径：按即将累加的点击序号判定）
+            const isCrit = critEvery > 0 && (state.totalClicks + 1) % critEvery === 0;
+            state = doClick(state, combo, isCrit ? 5 : 1);
+          }
           acc.click += state.lifetimeEarned - before;
         }
         if (gameTime % patrolEvery < dt) {

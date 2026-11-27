@@ -1,31 +1,31 @@
 {
-  "startedAt": "2026-11-27T08:42:54.658Z",
+  "startedAt": "2026-11-27T08:54:06.313Z",
   "scenarios": {
     "L1": {
       "summaryText": "已招募 0/5 · 小队挂机 +0/秒",
       "countdownBeforeEnd": "⏳ 溜一圈 进行中 · 12:45",
       "badge": "1",
-      "claimText": "领取 +360",
-      "snapshot": 360,
-      "moyuDelta": 363.03226015999826,
-      "expectedSnapshot": 360,
-      "idleAccrual": 3.032260159998259,
+      "claimText": "领取 +390",
+      "snapshot": 390,
+      "moyuDelta": 393.03024000000005,
+      "expectedSnapshot": 390,
+      "idleAccrual": 3.030240000000049,
       "favor": 2,
       "missionCleared": true,
       "badgeAfter": "1",
       "note": "按钮文案=快照=实到账（差额为等待期间自然挂机）"
     },
     "L2": {
-      "summary": "已招募 2/5 · 小队挂机 +123/秒 一键领取 +26.33万",
-      "claimAllText": "一键领取 +26.33万",
+      "summary": "已招募 2/5 · 小队挂机 +123/秒 一键领取 +1.10万",
+      "claimAllText": "一键领取 +1.10万",
       "cardTexts": [
         "领取 +5000",
         "领取 +6000"
       ],
-      "moyuDelta": 13656.45823976,
+      "moyuDelta": 13778.194460239998,
       "snapshotSum": 11000,
-      "idleAccrual": 2656.4582397600007,
-      "note": "一键按钮显示值按当前挂机率重算（虚高），实到账=快照之和 11000"
+      "idleAccrual": 2778.194460239998,
+      "note": "一键按钮显示值=快照合计（96117f2 修复），实到账=快照之和 11000"
     },
     "L3": {
       "firstDispatchButton": {
@@ -86,7 +86,7 @@
       "ult5b": {
         "disabled": true,
         "text": "点亮 2",
-        "desc": "5\n指尖风暴（终极·2点） 点击力再 +60%，连击每层收益翻倍（上限 ×1.72） · 与另一个终极互斥\n点亮 2"
+        "desc": "5\n指尖风暴（终极·2点） 立即 +12% 挂机；此后每 1000 次累计点击再 +1%（封顶 +20%）+ 点击力 +60% · 与另一个终极互斥\n点亮 2"
       },
       "resetPoints": 10,
       "resetUnlocked": [],
@@ -110,46 +110,33 @@
         "moyu-save"
       ],
       "saveVersionAfterBoot": 2,
-      "saveMoyuAfterBoot": 0.3533000000000001,
+      "saveMoyuAfterBoot": 0.35160000000000013,
       "newerBackup": null,
       "note": "P1-5 复验：v3 档被 v2 客户端覆盖，moyu-save.newer.bak 未生成（备份函数仍未调用）"
     },
     "L7": {
-      "clickDeltas": [
-        1.25,
-        1.265,
-        1.28,
-        1.295,
-        1.31,
-        1.325,
-        1.34,
-        1.355,
-        1.37,
-        1.385,
-        1.4,
-        1.415,
-        1.43,
-        1.445,
-        1.46,
-        1.475,
-        1.49,
-        1.505,
-        1.52,
-        1.535,
-        1.55,
-        1.565,
-        1.58,
-        1.595,
-        1.61,
-        1.625
-      ],
-      "minDelta": 1.25,
-      "maxDelta": 1.625,
+      "critClick": {
+        "delta": 6.299979999999997,
+        "clicksBefore": 19,
+        "clicksAfter": 20
+      },
+      "normalClick": {
+        "delta": 1.3149999999999942,
+        "clicksBefore": 20,
+        "clicksAfter": 21
+      },
+      "critRatioApprox": 4.79,
+      "maxComboDelta": 7.75,
       "comboHud": {
-        "text": "连×25",
+        "text": "连×27",
         "hidden": false
       },
-      "note": "有 click_3/click_4：HUD 连击应 >20（证明 click_3 接入）；delta 最大值应≈最小值（证明 click_4 暴击未接入）"
+      "note": "第 20 次点击应 ×5（critRatio≈5）；HUD「连×25」证明 click_3 上限 30 接入"
+    },
+    "L10": {
+      "pointsAfterReload": 18,
+      "talentBadge": true,
+      "note": "18 点存档原样保留（不再截断 15）；有未花点数时按钮带「天赋」角标"
     },
     "L8": {
       "countdown": "⏳ 楼下买咖啡 进行中 · 7:59:58",
@@ -171,8 +158,8 @@
       "blobSnapshotBeforeReload": {
         "level": 5,
         "missionId": "coffee",
-        "startedAt": 1795769011939,
-        "endsAt": 1795797813939,
+        "startedAt": 1795769685989,
+        "endsAt": 1795798487989,
         "favor": 0,
         "autoRepeat": true,
         "rewardSnapshot": 123456
@@ -180,8 +167,8 @@
       "afterReload": {
         "level": 5,
         "missionId": "coffee",
-        "startedAt": 1795769011939,
-        "endsAt": 1795797813939,
+        "startedAt": 1795769685989,
+        "endsAt": 1795798487989,
         "favor": 0,
         "autoRepeat": true,
         "rewardSnapshot": 123456
@@ -196,5 +183,5 @@
       "note": "面板打开期间领取后角标仍显示 1（refreshNow 打开时只 render 不更新角标），关闭面板才同步"
     }
   },
-  "finishedAt": "2026-11-27T08:43:42.682Z"
+  "finishedAt": "2026-11-27T08:54:56.748Z"
 }

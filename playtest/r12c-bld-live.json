@@ -1,0 +1,90 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "checks": {
+    "save18": {
+      "loaded": 18,
+      "ok": true
+    },
+    "badge": {
+      "badge": true,
+      "text": "天赋",
+      "label": "摸鱼小队"
+    },
+    "click5bDesc": {
+      "inPanel": false,
+      "claimsComboDouble": false,
+      "line": "指尖风暴（终极·2点） 立即 +12% 挂机；此后每 1000 次累计点击再 +1%（封顶 +20%）+ 点击力 +60%"
+    },
+    "crit": {
+      "critFloatCount": 53,
+      "stateGain": 23744,
+      "predictedNoCrit": 19734,
+      "predictedWithCrit": 23715,
+      "ratioVsNoCrit": 1.2032,
+      "ratioVsWithCrit": 1.0012,
+      "maxDisplayedPlus": 2464,
+      "normalTapMax": 546,
+      "critTextSample": [
+        {
+          "s": "暴击!",
+          "x": 353,
+          "y": 597,
+          "t": 4796
+        },
+        {
+          "s": "暴击!",
+          "x": 353,
+          "y": 597,
+          "t": 4814
+        }
+      ],
+      "verdict": "UI 出现「暴击!」；但 state 收入比≈1.0（若无暴击）→ 暴击只改了飘字数值，未真正入账 ❌"
+    },
+    "warn": {
+      "withEvent4": {
+        "label": "with",
+        "warnMs": 44339,
+        "bossBannerMs": null,
+        "gapMs": null
+      },
+      "withoutEvent4": {
+        "label": "without",
+        "warnMs": null,
+        "bossBannerMs": null,
+        "gapMs": null
+      },
+      "verdict": "点 event_4 后预警提前量≈nullms（期望≈2000ms）；未点 event_4 是否无预警=true"
+    },
+    "idle5b": {
+      "before": [
+        "idle_1",
+        "idle_2",
+        "idle_3",
+        "idle_4"
+      ],
+      "after": [
+        "idle_1",
+        "idle_2",
+        "idle_3",
+        "idle_4",
+        "idle_5b"
+      ],
+      "idleBefore": 673,
+      "idleAfter": 722,
+      "mul": 1.074,
+      "ok": true
+    },
+    "idle4": {
+      "visits": 3,
+      "eff": 0.8799999999999999,
+      "over100": false
+    }
+  },
+  "shots": [
+    "/tmp/r12c-badge.png",
+    "/tmp/r12c-talents-panel.png",
+    "/tmp/r12c-crit.png",
+    "/tmp/r12c-warn-with.png",
+    "/tmp/r12c-idle5b.png"
+  ]
+}

@@ -180,6 +180,9 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
       typeof rawTalents?.rankGranted === "number" && Number.isInteger(rawTalents.rankGranted)
         ? rawTalents.rankGranted
         : -1;
+    talents.dailyGiftDate = typeof (rawTalents as { dailyGiftDate?: unknown })?.dailyGiftDate === "string"
+      ? ((rawTalents as { dailyGiftDate: string }).dailyGiftDate)
+      : "";
     const patrolSurvives =
       typeof blob.patrolSurvives === "number" && Number.isInteger(blob.patrolSurvives) && blob.patrolSurvives >= 0
         ? blob.patrolSurvives

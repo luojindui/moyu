@@ -1,28 +1,28 @@
 {
-  "startedAt": "2026-11-27T08:46:13.069Z",
+  "startedAt": "2026-11-27T08:55:06.433Z",
   "rates": {
     "60ms": {
       "success": 3,
       "trials": 5,
       "noButton": 0,
       "details": [
-        "idle",
         "ok",
+        "idle",
         "ok",
         "ok",
         "idle"
       ]
     },
     "90ms": {
-      "success": 3,
+      "success": 2,
       "trials": 5,
       "noButton": 0,
       "details": [
         "ok",
         "idle",
-        "ok",
         "idle",
-        "ok"
+        "ok",
+        "idle"
       ]
     },
     "120ms": {
@@ -31,9 +31,9 @@
       "noButton": 0,
       "details": [
         "idle",
-        "idle",
-        "idle",
         "ok",
+        "idle",
+        "idle",
         "idle"
       ]
     },
@@ -63,28 +63,29 @@
     }
   },
   "reRender": {
-    "rendersIn1500ms": 9,
-    "rendersPerSec": 6,
-    "avgGapMs": 154.4,
+    "rendersIn1500ms": 10,
+    "rendersPerSec": 6.67,
+    "avgGapMs": 151.8,
     "gaps": [
-      168.6,
-      147.9,
-      152.1,
-      149.4,
-      148.5,
-      150.4,
-      150.7,
-      167.4
+      149.9,
+      150,
+      150.1,
+      149.8,
+      150,
+      150.9,
+      149.3,
+      166.4,
+      150.2
     ]
   },
   "claimTap": {
-    "favorPre": 14,
-    "claimBtn": "领取 +360",
-    "favorBefore": 14,
-    "favorAfter": 14,
+    "favorPre": 12,
+    "claimBtn": "领取 +390",
+    "favorBefore": 12,
+    "favorAfter": 12,
     "missionId": "quick",
     "claimed": false
   },
   "eventTrace": null,
-  "finishedAt": "2026-11-27T08:46:35.009Z"
+  "finishedAt": "2026-11-27T08:55:27.620Z"
 }

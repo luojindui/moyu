@@ -58,6 +58,17 @@ export interface TeamState {
 export const MAX_COLLEAGUE_LEVEL = 5;
 /** 匹配任务加成 */
 export const SKILL_MATCH_BONUS = 0.5;
+/** 好感里程碑加成（按全队最高好感） */
+export function favorBonuses(state: GameState): { dispatchMult: number; memeMult: number } {
+  const tier = favorTier(state);
+  return {
+    // 20：派遣奖励 +8%；100：该同事 ×1.5 已单独处理
+    dispatchMult: tier >= 1 ? 1.08 : 1,
+    // 60：丢梗奖励 +10%
+    memeMult: tier >= 3 ? 1.1 : 1,
+  };
+}
+
 /** 全队被动汇总（只算已招募的同事） */
 export function teamTraits(state: GameState): { offlineEfficiency: number; penaltyReduction: number } {
   let offlineEfficiency = 0;
@@ -127,7 +138,9 @@ export const COLLEAGUES: ColleagueDef[] = [
 ];
 
 export const MISSIONS: MissionDef[] = [
-  { id: "quick", name: "溜一圈", type: "errand", seconds: 15 * 60, mult: 1.3 },
+  // 3 分钟档：让"打开→派→领"能在一次碎片会话内闭环
+  { id: "stroll", name: "就近溜达", type: "errand", seconds: 3 * 60, mult: 1.1 },
+  { id: "quick", name: "溜一圈", type: "errand", seconds: 15 * 60, mult: 1.45 },
   { id: "chat", name: "茶水间聊八卦", type: "chat", seconds: 30 * 60, mult: 1.3 },
   { id: "meeting", name: "开个会", type: "meeting", seconds: 60 * 60, mult: 1.6 },
   { id: "toilet", name: "长线蹲点", type: "toilet", seconds: 4 * 60 * 60, mult: 2.2 },
@@ -298,7 +311,8 @@ export function dispatchReward(state: GameState, id: string, stationIdle: number
   const base = Math.max(DISPATCH_FLOOR, stationIdle * m.seconds * DISPATCH_COEF);
   const match = def.skill === m.type ? 1 + SKILL_MATCH_BONUS : 1;
   const levelFactor = 1 + DISPATCH_LEVEL_FACTOR * ((cur.level - 1) / (MAX_COLLEAGUE_LEVEL - 1));
-  const favorBonus = cur.favor >= 100 ? 1.5 : 1;
+  const bonus = favorBonuses(state);
+  const favorBonus = (cur.favor >= 100 ? 1.5 : 1) * bonus.dispatchMult;
   // 独特被动：小李短任务 +50% / 王师傅长任务 +50%
   let traitMult = 1;
   if (def.trait === "短任务加成" && m.seconds <= 3600) traitMult += def.traitValue;

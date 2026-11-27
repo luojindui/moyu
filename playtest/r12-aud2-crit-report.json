@@ -1,0 +1,16 @@
+{
+  "startedAt": "2026-11-27T08:53:23.459Z",
+  "critClick": {
+    "delta": 6.343319999999996,
+    "clicksBefore": 19,
+    "clicksAfter": 20
+  },
+  "normalClick": {
+    "delta": 1.3183399999999983,
+    "clicksBefore": 20,
+    "clicksAfter": 21
+  },
+  "ratio": 4.81,
+  "critCredited": true,
+  "error": "Error: {\"code\":-32000,\"message\":\"Inspected target navigated or closed\"}"
+}

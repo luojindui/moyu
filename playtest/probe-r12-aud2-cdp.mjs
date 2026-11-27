@@ -7,7 +7,7 @@
 import { openBrowser, sleep, setupMobilePage } from "./r9-cdp-lib.mjs";
 import { writeFileSync } from "node:fs";
 
-const URL = "http://127.0.0.1:5173/";
+const URL = process.env.MOYU_URL ?? "http://127.0.0.1:5173/";
 const W = 390;
 const H = 844;
 const report = { startedAt: new Date().toISOString(), scenarios: {} };
@@ -173,7 +173,7 @@ try {
     moyuDelta: after.moyu - before.moyu,
     snapshotSum: 11_000,
     idleAccrual: after.moyu - before.moyu - 11_000,
-    note: "一键按钮显示值按当前挂机率重算（虚高），实到账=快照之和 11000",
+    note: "一键按钮显示值=快照合计（96117f2 修复），实到账=快照之和 11000",
   };
   await b.shot("playtest/r12-aud2-team-live.png");
   console.log("[L2]", JSON.stringify(report.scenarios.L2));
@@ -353,16 +353,28 @@ try {
   console.error("[L6]", e);
 }
 
-// ---------- L7：暴击缺失 / 连击上限已接入（实机） ----------
+// ---------- L7：click_4 暴击真实入账 / click_3 连击上限（实机） ----------
 try {
+  // totalClicks=19 → 下一次点击是第 20 次（应暴击 ×5）
   await seedSave(
     baseBlob({
       moyu: 0,
       totalEarned: 0,
       lifetimeEarned: 0,
+      totalClicks: 19,
       talents: { unlocked: ["click_1", "click_2", "click_3", "click_4"], points: 0, rankGranted: 12 },
     }),
   );
+  const clickOnce = async () => {
+    const before = await state();
+    await b.ev(`(() => { const c=document.getElementById('stage'); c.dispatchEvent(new PointerEvent('pointerdown',{clientX:120,clientY:200,bubbles:true,isPrimary:true,pointerType:'touch'})); })()`);
+    await sleep(250);
+    const after = await state();
+    return { delta: after.moyu - before.moyu, clicksBefore: before.totalClicks, clicksAfter: after.totalClicks };
+  };
+  const critClick = await clickOnce(); // 第 20 次
+  const normalClick = await clickOnce(); // 第 21 次（combo 继续，但无暴击）
+  // 连击上限：连续 26 次后 HUD 应 >20
   const deltas = await b.ev(`(async () => {
     const c = document.getElementById('stage');
     const out = [];
@@ -382,16 +394,31 @@ try {
   await sleep(400);
   const comboHud = await evj(`(() => { const el=document.getElementById('hud-combo'); return {text:el.textContent, hidden:el.classList.contains('hidden')}; })()`);
   report.scenarios.L7 = {
-    clickDeltas: deltas,
-    minDelta: Math.min(...deltas),
-    maxDelta: Math.max(...deltas),
+    critClick,
+    normalClick,
+    critRatioApprox: +(critClick.delta / Math.max(1e-9, normalClick.delta)).toFixed(2),
+    maxComboDelta: Math.max(...deltas),
     comboHud,
-    note: "有 click_3/click_4：HUD 连击应 >20（证明 click_3 接入）；delta 最大值应≈最小值（证明 click_4 暴击未接入）",
+    note: "第 20 次点击应 ×5（critRatio≈5）；HUD「连×25」证明 click_3 上限 30 接入",
   };
   console.log("[L7]", JSON.stringify(report.scenarios.L7));
 } catch (e) {
   report.scenarios.L7 = { error: String(e) };
   console.error("[L7]", e);
+}
+
+// ---------- L10：18 点天赋存档上限（实机） ----------
+try {
+  await seedSave(
+    baseBlob({ moyu: 100, totalEarned: 100, lifetimeEarned: 100, talents: { unlocked: [], points: 18, rankGranted: 12 } }),
+  );
+  const pts = await evj(`window.__MOYU__.state.talents.points`);
+  const badge = await evj(`!!document.querySelector('#btn-team .talent-badge')`);
+  report.scenarios.L10 = { pointsAfterReload: pts, talentBadge: badge, note: "18 点存档原样保留（不再截断 15）；有未花点数时按钮带「天赋」角标" };
+  console.log("[L10]", JSON.stringify(report.scenarios.L10));
+} catch (e) {
+  report.scenarios.L10 = { error: String(e) };
+  console.error("[L10]", e);
 }
 
 // ---------- L8：UI 规格（hh:mm:ss / 满级文案 / 汇总）与存档持久化 ----------

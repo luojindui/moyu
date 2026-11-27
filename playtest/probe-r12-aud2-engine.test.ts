@@ -6,6 +6,7 @@ import { describe, it, expect } from "vitest";
 import { initialState } from "../src/engine/state";
 import {
   AWAY_IDLE_FACTOR,
+  MISSIONS,
   COLLEAGUES,
   DISPATCH_COEF,
   DISPATCH_FLOOR,
@@ -152,16 +153,23 @@ describe("V3. 新增机制：在外折损 / traits / 排班", () => {
     // 小李：1h 内任务 +50%
     const li = withColleagues(rich(), ["li"], 1);
     const st = 1000;
+    const liDef = COLLEAGUES.find((c) => c.id === "li")!;
+    const quickDef = MISSIONS.find((m) => m.id === "quick")!;
     const dLi = dispatchAt(li, "li", "quick", 0, st);
-    const baseLi = Math.max(DISPATCH_FLOOR, st * 900 * DISPATCH_COEF);
-    const expectedLi = Math.floor(baseLi * 1.2 * 1.5 * 1 * 1 * 1.5);
+    const baseLi = Math.max(DISPATCH_FLOOR, st * quickDef.seconds * DISPATCH_COEF);
+    // 小李是跑腿线，quick 匹配 ×1.5；短任务被动 +traitValue
+    const expectedLi = Math.floor(baseLi * quickDef.mult * 1.5 * 1 * 1 * (1 + liDef.traitValue));
     const curLi = dLi.state.team.colleagues["li"]!;
-    console.log("[V3c-debug] li snapshot=", curLi.rewardSnapshot, " base=", baseLi, " expected=", expectedLi, " lv=", curLi.level, " stationScaled=", stationIdleScaled(li), " direct=", dispatchReward({ ...li, team: { colleagues: { li: { ...curLi, missionId: "quick" } } } }, "li", st));
-    expect(curLi.rewardSnapshot).toBe(dispatchReward({ ...li, team: { colleagues: { li: { ...curLi, missionId: "quick" } } } }, "li", st));
+    console.log("[V3c-debug] li snapshot=", curLi.rewardSnapshot, " expected=", expectedLi);
+    expect(curLi.rewardSnapshot).toBe(expectedLi);
     // 王师傅：4h 以上 +50%
     const wang = withColleagues(rich(), ["wang"], 1);
+    const wangDef = COLLEAGUES.find((c) => c.id === "wang")!;
+    const coffeeDef = MISSIONS.find((m) => m.id === "coffee")!;
     const dW = dispatchAt(wang, "wang", "coffee", 0, st);
-    const expectedW = Math.floor(Math.max(DISPATCH_FLOOR, st * 28800 * DISPATCH_COEF) * 2.8 * 1.5 * 1 * 1 * 1.5);
+    const expectedW = Math.floor(
+      Math.max(DISPATCH_FLOOR, st * coffeeDef.seconds * DISPATCH_COEF) * coffeeDef.mult * 1.5 * 1 * 1 * (1 + wangDef.traitValue),
+    );
     expect(dW.state.team.colleagues["wang"]!.rewardSnapshot).toBe(expectedW);
     // 小美（离线效率 +2%）/强哥（罚款 -10%）：现在有消费点
     const traitConsumers = consumers("teamTraits", "team.ts");
@@ -245,5 +253,9 @@ describe("V5. 规格数值漂移与初始状态", () => {
     expect(COSTS).not.toEqual(documented); // 12000/50万/800万/6000万/4亿 vs 文档 12k/80万/1500万/3亿/60亿
     expect(COSTS).toEqual([12_000, 500_000, 8_000_000, 60_000_000, 400_000_000]);
     expect(COLLEAGUES.map((c) => c.sharePerLevel)).toEqual([0.008, 0.01, 0.012, 0.014, 0.016]);
+    // 决策书：任务倍率 quick=1.2；实现为 1.3（另：小李被动决策书/lead 通告为 +50%，实现 +60%）
+    console.log("[V5] quick 倍率=", MISSIONS[0]!.mult, " 小李 trait=", COLLEAGUES.find((c) => c.id === "li")!.traitValue);
+    expect(MISSIONS[0]!.mult).toBe(1.3); // 与决策书 1.2 不一致（无新决策文档）
+    expect(COLLEAGUES.find((c) => c.id === "li")!.traitValue).toBe(0.6);
   });
 });

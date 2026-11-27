@@ -29,7 +29,7 @@ import { Journal } from "./ui/journal";
 import { Quest } from "./ui/quest";
 import { TeamPanel } from "./ui/team-panel";
 import { claimMission, colleagueDef, recruit, upgradeColleague, dispatch as dispatchMission , setAutoRepeat } from "./engine/team";
-import { grantRankTalents, resetTalents, talentEffects, unlockTalent } from "./engine/talents";
+import { grantDailyTalentPoint, grantRankTalents, resetTalents, talentEffects, unlockTalent } from "./engine/talents";
 import { initAudio, playClick, playBreak, playSuccess, toggleMute, isMuted } from "./ui/audio";
 import { Scene, SPRITE_MAP } from "./render/scene";
 import { SpriteGrid, frameActivity } from "./render/sprites";
@@ -372,6 +372,7 @@ async function boot(): Promise<void> {
   let lastRankName = "";
   let lastChapterId = "";
   let warnedBoss = false;
+  let lastDoneMissions = new Set<string>();
   let lastCollectionCount = state.collected.quotes.length + state.collected.flavors.length;
   const srLive = document.getElementById("sr-live");
   // DOM toast：长消息走这里（canvas 飘字只留短文本 +N / 连×N）
@@ -489,6 +490,16 @@ async function boot(): Promise<void> {
     if (now - lastHud >= 150) {
       lastHud = now;
       scene.hideHint = state.totalEarned > 500;
+      // 每日首开 +1 天赋点（碎片党每次打开都有 1 个决策）
+      {
+        const today = new Date().toLocaleDateString("sv-SE");
+        const dg = grantDailyTalentPoint(state.talents, today);
+        if (dg.granted > 0) {
+          state = { ...state, talents: dg.talents };
+          teamPanel.refreshNow(state);
+          showToast("今日签到：天赋点 +1");
+        }
+      }
       // 段位天赋点：按生涯段位发放（幂等）
       {
         const rankIdx = RANKS.findIndex((r, i) => state.lifetimeEarned >= r.at && (i + 1 >= RANKS.length || state.lifetimeEarned < RANKS[i + 1]!.at));
@@ -522,6 +533,24 @@ async function boot(): Promise<void> {
       if (combo > 0 && (performance.now() - lastClickAt) / 1000 > COMBO_BREAK_S) {
         combo = 0;
         playBreak();
+      }
+      // 任务完成提醒（角标之外给一次明确提示）
+      {
+        const nowMs = Date.now();
+        const doneNow = new Set<string>();
+        for (const cid of ["zhou", "mei", "qiang", "li", "wang"]) {
+          const c2 = state.team.colleagues[cid];
+          if (c2 && c2.missionId !== null && nowMs >= c2.endsAt) doneNow.add(cid);
+        }
+        for (const cid of doneNow) {
+          if (!lastDoneMissions.has(cid)) {
+            const name = colleagueDef(cid)?.name ?? "";
+            showToast(`${name} 回来了，点 👥 领取`);
+            playSuccess();
+            break; // 一次只提示一条，避免刷屏
+          }
+        }
+        lastDoneMissions = doneNow;
       }
       // 天赋点角标（有无未花点数）
       const teamBtn = document.getElementById("btn-team");
@@ -619,6 +648,10 @@ async function boot(): Promise<void> {
   if (import.meta.env.DEV) (window as unknown as Record<string, unknown>).__MOYU__ = {
     get state(): unknown {
       return JSON.parse(JSON.stringify(state));
+    },
+    /** 仅 dev：当前飘字坐标（验证点击反馈位置） */
+    fxTexts(): Array<{ x: number; y: number; text: string }> {
+      return scene.fx.peekTexts();
     },
     /** 仅 dev：把所有进行中的派遣直接快进到"已完成"（试玩/测试用） */
     endMissions(): void {

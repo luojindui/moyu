@@ -40,7 +40,7 @@ describe("R12R2-5 面板可信度复验", () => {
     console.log(`\n派单预览（快照）=${fmt(snap)}，实领=${fmt(claim.reward)} → ${snap === claim.reward ? "一致 ✓" : "不一致 ✗"}`);
   });
 
-  it("② 一键领取按钮总额 = 各单实领之和？（快照 vs 现价）", () => {
+  it("② 一键领取按钮总额 = 各单实领之和？（应 1:1）", () => {
     let s = rich();
     s = recruit(s, "zhou")!;
     s = recruit(s, "mei")!;
@@ -54,7 +54,7 @@ describe("R12R2-5 面板可信度复验", () => {
       s = n;
     }
     const at = NOW + m.seconds * 1000;
-    const panelTotal = claimableTotal(s, at, stationIdleScaled(s)); // 一键领取显示值
+    const panelTotal = claimableTotal(s, at, stationIdleScaled(s)); // 一键领取显示值（应=各单快照之和）
     let actual = 0;
     let st = s;
     for (const id of ["zhou", "mei"]) {
@@ -63,7 +63,7 @@ describe("R12R2-5 面板可信度复验", () => {
       st = r.state;
     }
     console.log(
-      `\n一键领取显示=${fmt(panelTotal)}｜实际到账=${fmt(actual)} → 面板高估 ${pct(panelTotal / actual - 1)}（claimableTotal 用当前工位，逐单领取用快照）`,
+      `\n一键领取显示=${fmt(panelTotal)}｜逐单实领合计=${fmt(actual)} → ${panelTotal === actual ? "1:1 一致 ✓" : "仍差 " + pct(panelTotal / actual - 1)}`,
     );
   });
 

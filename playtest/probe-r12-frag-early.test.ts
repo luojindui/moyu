@@ -1,5 +1,24 @@
 import { describe, it } from "vitest";
-import { DRAFT_TEAM, NO_TALENT, simulate } from "./probe-b1-lib";
+import { NO_TALENT, simulate, type TeamCfg } from "./probe-b1-lib";
+import {
+  COLLEAGUES, MISSIONS, MAX_COLLEAGUE_LEVEL, UPGRADE_COEF, UPGRADE_BASE,
+  SKILL_MATCH_BONUS, DISPATCH_COEF, DISPATCH_FLOOR, DISPATCH_LEVEL_FACTOR, TEAM_OFFLINE_SHARE,
+} from "../src/engine/team";
+
+/** 用当前 src/engine/team.ts 的真实数值构造模拟器配置（避免与 DRAFT_TEAM 脱节） */
+const CURRENT_TEAM: TeamCfg = {
+  colleagues: COLLEAGUES.map((c) => ({ ...c, upgradeCoef: UPGRADE_COEF })),
+  missions: MISSIONS.map((m) => ({ ...m })),
+  maxLevel: MAX_COLLEAGUE_LEVEL,
+  upgradeBase: UPGRADE_BASE,
+  matchBonus: SKILL_MATCH_BONUS,
+  dispatchCoef: DISPATCH_COEF,
+  dispatchFloor: DISPATCH_FLOOR,
+  dispatchBase: "workstation",
+  offlineTeamFactor: TEAM_OFFLINE_SHARE,
+  idleWhileDispatched: true,
+  dispatchLevelFactor: DISPATCH_LEVEL_FACTOR,
+};
 import { RANKS } from "../src/engine/titles";
 import { TALENT_RANK_TIERS } from "../src/engine/talents";
 
@@ -22,7 +41,7 @@ describe("R12 碎片党：新系统（老周/天赋）在第几天可摸到", ()
         recruit: true,
         dispatch: true,
         levelColleagues: true,
-        team: DRAFT_TEAM,
+        team: CURRENT_TEAM,
         talent: NO_TALENT,
         prestige: false,
         dailyClaim: true,
@@ -60,7 +79,7 @@ describe("R12 碎片党：新系统（老周/天赋）在第几天可摸到", ()
         recruit: true,
         dispatch: true,
         levelColleagues: true,
-        team: DRAFT_TEAM,
+        team: CURRENT_TEAM,
         talent: NO_TALENT,
         prestige: false,
         dailyClaim: true,

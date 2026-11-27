@@ -147,7 +147,7 @@ describe("R6. 天赋净化与新字段边界", () => {
     expect(exclusiveTaken(s.talents, "click_ult")).toBe("click_5a"); // 两个互斥终极同时存在
     const eff = talentEffects(s.talents);
     expect(eff.clickToIdleStep).toBe(300); // 5a 生效
-    expect(eff.clickMult).toBeCloseTo(1.25 * 1.12, 6); // 5b 也生效（+12%）→ 互斥被篡改破坏
+    expect(eff.clickMult).toBeCloseTo(1.25 * 1.6, 6); // 5b 也生效（+60%）→ 互斥被篡改破坏
     expect(branchTier(s.talents, "click")).toBe(5);
     console.log("[R6] 篡改档可同时点亮 click_5a+click_5b（互斥仅在 canUnlock 生效，restore 不校验）");
   });

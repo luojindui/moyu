@@ -311,7 +311,7 @@ export class Scene {
       }
     }
 
-    this.fx.draw(ctx, s, vw, vh);
+    this.fx.draw(ctx, s, this.w, this.h);
   }
 
   /** CSS 坐标 → 画布内坐标（供 fx 定位） */

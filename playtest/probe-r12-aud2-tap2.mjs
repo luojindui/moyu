@@ -26,7 +26,7 @@ async function waitGame() {
   }
   throw new Error("game not ready");
 }
-await setupMobilePage(b, { url: "http://127.0.0.1:5173/", width: 390, height: 844 });
+await setupMobilePage(b, { url: process.env.MOYU_URL ?? "http://127.0.0.1:5173/", width: 390, height: 844 });
 await waitGame();
 const ev = (x) => b.ev(x);
 const evj = async (x) => JSON.parse(await ev(`JSON.stringify(${x})`));

@@ -3,7 +3,7 @@ import { gain, lose } from "./state";
 import { clickPowerOf, doClick, comboMultiplier } from "./actions";
 import { effectOf } from "./upgrades";
 import { talentEffects } from "./talents";
-import { teamTraits } from "./team";
+import { favorBonuses, teamTraits } from "./team";
 
 /** 随机事件数值（视觉层读取同一份） */
 export const BOSS_INTERVAL_MIN = 90;
@@ -241,7 +241,11 @@ export function bossSurviveReward(state: GameState, es?: EventState): number {
 /** 丢梗点击奖励：5 × 点击力（仅窗口内有效） */
 export function onMemeTap(state: GameState, es: EventState): { state: GameState; earned: number } {
   if (es.memeUntil <= 0) return { state, earned: 0 };
-  const earned = MEME_REWARD_CLICKS * clickPowerOf(state) * talentEffects(state.talents).memeRewardMult;
+  const earned =
+    MEME_REWARD_CLICKS *
+    clickPowerOf(state) *
+    talentEffects(state.talents).memeRewardMult *
+    favorBonuses(state).memeMult;
   es.memeUntil = -1; // 一梗一奖
   return { state: { ...gain(state, earned), totalClicks: state.totalClicks + 1 }, earned };
 }

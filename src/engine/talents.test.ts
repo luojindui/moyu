@@ -18,7 +18,7 @@ import {
 } from "./talents";
 
 function withPoints(points: number): GameState {
-  return { ...initialState(), talents: { unlocked: [], points, rankGranted: -1 } };
+  return { ...initialState(), talents: { unlocked: [], points, rankGranted: -1, dailyGiftDate: "" } };
 }
 
 describe("天赋树（18 个：3 流派 × 4 线性 + 2 互斥终极）", () => {

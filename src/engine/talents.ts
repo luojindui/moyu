@@ -68,10 +68,12 @@ export interface TalentState {
   points: number;
   /** 已发放到第几个段位档（防重复发点） */
   rankGranted: number;
+  /** 最近一次"每日签到天赋点"的日期（YYYY-MM-DD） */
+  dailyGiftDate: string;
 }
 
 export function emptyTalents(): TalentState {
-  return { unlocked: [], points: 0, rankGranted: -1 };
+  return { unlocked: [], points: 0, rankGranted: -1, dailyGiftDate: "" };
 }
 
 export function talentDef(id: string): TalentDef | undefined {
@@ -122,6 +124,7 @@ export function unlockTalent(state: GameState, id: string): GameState | null {
       unlocked: [...state.talents.unlocked, id],
       points: state.talents.points - costOfTalent(id),
       rankGranted: state.talents.rankGranted,
+      dailyGiftDate: state.talents.dailyGiftDate,
     },
   };
 }
@@ -135,6 +138,7 @@ export function resetTalents(state: GameState): GameState {
       unlocked: [],
       points: Math.min(TALENT_POINT_CAP, state.talents.points + refunded),
       rankGranted: state.talents.rankGranted,
+      dailyGiftDate: state.talents.dailyGiftDate,
     },
   };
 }
@@ -142,6 +146,21 @@ export function resetTalents(state: GameState): GameState {
 /** 转生时加天赋点 */
 export function grantPrestigeTalentPoints(talents: TalentState, count = TALENT_POINTS_PER_PRESTIGE): TalentState {
   return { ...talents, points: Math.min(TALENT_POINT_CAP, talents.points + count) };
+}
+
+/** 每日首次打开送 1 点（保证碎片党每次打开都有 1 个决策；上限内） */
+export function grantDailyTalentPoint(
+  talents: TalentState,
+  today: string,
+): { talents: TalentState; granted: number } {
+  if (talents.dailyGiftDate === today) return { talents, granted: 0 };
+  if (talents.points >= TALENT_POINT_CAP) {
+    return { talents: { ...talents, dailyGiftDate: today }, granted: 0 };
+  }
+  return {
+    granted: 1,
+    talents: { ...talents, dailyGiftDate: today, points: Math.min(TALENT_POINT_CAP, talents.points + 1) },
+  };
 }
 
 /** 按生涯累计检查应发放的段位天赋点（幂等） */

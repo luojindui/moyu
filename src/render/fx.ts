@@ -62,15 +62,22 @@ export class Fx {
     }
   }
 
+  /**
+   * @param viewW/viewH 画布 CSS 尺寸（fx 的坐标来自 toVirtual，单位是 CSS px，不要再乘 scale）
+   */
+  /** 调试：当前飘字（坐标单位 CSS px） */
+  peekTexts(): Array<{ x: number; y: number; text: string }> {
+    return this.texts.map((t) => ({ x: Math.round(t.x), y: Math.round(t.y), text: t.text }));
+  }
+
   draw(ctx: CanvasRenderingContext2D, scale: number, viewW = 240, viewH = 160): void {
     ctx.textAlign = "center";
     for (const t of this.texts) {
       ctx.globalAlpha = Math.max(0, t.alpha);
-      ctx.font = `bold ${10 * scale}px system-ui`;
+      ctx.font = `bold ${Math.max(13, 5 * scale)}px system-ui`;
       ctx.fillStyle = "#fff8e1";
       // 长文本按宽度折成两行，避免在手机上被左右裁切
-      // canvas 未做整体缩放：坐标是虚拟单位，需乘 scale 转成像素
-      const maxW = (viewW - 8) * scale;
+      const maxW = viewW - 16;
       const lines: string[] = [];
       let cur = "";
       for (const ch of t.text) {
@@ -85,8 +92,8 @@ export class Fx {
       const shown = lines.slice(0, 2);
       // 水平钳制：保证文字块不出画布
       const halfMax = (Math.max(...shown.map((l) => ctx.measureText(l).width), 0) / 2) + 2;
-      const cx = Math.max(halfMax, Math.min(viewW * scale - halfMax, t.x * scale));
-      const cy = Math.max(14 * scale, Math.min(viewH * scale - 4 * scale, t.y * scale));
+      const cx = Math.max(halfMax, Math.min(viewW - halfMax, t.x));
+      const cy = Math.max(18, Math.min(viewH - 8, t.y));
       shown.forEach((line, i) => {
         ctx.fillText(line, cx, cy + i * 11 * scale);
       });
@@ -94,7 +101,7 @@ export class Fx {
     for (const p of this.particles) {
       ctx.globalAlpha = Math.max(0, p.alpha);
       ctx.fillStyle = p.color;
-      ctx.fillRect(p.x - 2 * scale, p.y - 2 * scale, 4 * scale, 4 * scale);
+      ctx.fillRect(p.x - 2, p.y - 2, 4, 4);
     }
     ctx.globalAlpha = 1;
   }

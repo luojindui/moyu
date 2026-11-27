@@ -229,7 +229,18 @@ export class TeamPanel {
       </div>`);
     }
 
-    for (const def of COLLEAGUES) {
+    // 排序：可领 → 空闲 → 派遣中；未招募的排最后
+    const order = [...COLLEAGUES].sort((a, b) => {
+      const ca = state.team.colleagues[a.id];
+      const cb = state.team.colleagues[b.id];
+      const rank = (x: typeof ca): number => {
+        if (!x) return 3;
+        if (x.missionId === null) return 1;
+        return missionDone(state, x === ca ? a.id : b.id, Date.now()) ? 0 : 2;
+      };
+      return rank(ca) - rank(cb);
+    });
+    for (const def of order) {
       const cur = state.team.colleagues[def.id];
       if (!cur) {
         const affordable = canRecruit(state, def.id);

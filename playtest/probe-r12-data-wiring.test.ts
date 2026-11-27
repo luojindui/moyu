@@ -27,16 +27,20 @@ describe("R12R2-4 接线审计（天赋/被动是否真的生效）", () => {
     const t2 = withTalents(base, ["click_2"]);
     console.log(`连击窗口：${comboWindowOf(base)}s → ${comboWindowOf(t2)}s（UI 用 comboWindowOf）✓`);
 
-    // 暴击：每 20 次必暴击 ×5 → 100 次点击收入应显著增加
-    const income = (s: typeof base) => {
+    // 暴击：每 20 次必暴击 ×5（doClick 第三参数）
+    const noCritIncome = (s: typeof base, crit: boolean) => {
       let x = s;
       const before = x.lifetimeEarned;
-      for (let i = 0; i < 100; i++) x = doClick(x, 0);
+      for (let i = 0; i < 100; i++) {
+        const isCrit = crit && (x.totalClicks + 1) % 20 === 0;
+        x = doClick(x, 0, isCrit ? 5 : 1);
+      }
       return x.lifetimeEarned - before;
     };
-    const t4 = withTalents(base, ["click_4"]);
+    const plain = noCritIncome(base, false);
+    const withCrit = noCritIncome(base, true);
     console.log(
-      `暴击（引擎 doClick 路径）：100 次点击收入 无天赋=${income(base).toFixed(0)} vs click_4=${income(t4).toFixed(0)} → ${income(base) === income(t4) ? "实际入账没生效 ✗（main.ts 只把飘字×5，doClick 未乘暴击）" : "生效 ✓"}`,
+      `暴击（doClick 第三参数 critMult）：100 次点击入账 无暴击=${plain.toFixed(0)} vs 含暴击=${withCrit.toFixed(0)}（×${(withCrit / plain).toFixed(3)}，理论 ×1.2）→ ${Math.abs(withCrit / plain - 1.2) < 0.01 ? "入账已生效 ✓" : "仍有问题 ✗"}`,
     );
 
     const t5b = withTalents(base, ["click_1", "click_5b"]);
@@ -114,6 +118,37 @@ describe("R12R2-4 接线审计（天赋/被动是否真的生效）", () => {
     const a = offlineEfficiency(withMei, createdAt, NOW);
     const b = offlineEfficiency(initialState(), createdAt, NOW);
     console.log(`小美被动（离线效率+2%）：有/无小美 offlineEfficiency=${pct(a)} vs ${pct(b)} → ${a === b ? "未接线 ✗" : "生效 ✓"}（teamTraits=${JSON.stringify(teamTraits(withMei))}）`);
+  });
+
+  it("x 新增终极：click_5b（+12%挂机/每千点+1%/点击力+60%）与 event_5b（安然+10秒挂机）", () => {
+    const base = gain(initialState(), 0);
+    const t5b = withTalents(base, ["click_5b"]);
+    const eff0 = effectOf(t5b).idleRate / effectOf(base).idleRate - 1;
+    console.log(`\nclick_5b 0 点击时挂机 +${pct(eff0)}（应 +12%）→ ${Math.abs(eff0 - 0.12) < 1e-9 ? "✓" : "✗"}`);
+    const rich = withTalents({ ...base, totalClicks: 10000 }, ["click_5b"]);
+    const effRich = effectOf(rich).idleRate / effectOf({ ...base, totalClicks: 10000 }).idleRate - 1;
+    console.log(`click_5b 1 万点击时挂机 +${pct(effRich)}（封顶 +20%）→ ${Math.abs(effRich - 0.2) < 1e-9 ? "✓" : "✗"}`);
+    console.log(`click_5b 点击力倍率=${withTalents(base, ["click_5b"]).talents.unlocked.length > 0 ? (clickPowerOf(withTalents(base, ["click_5b"])) / clickPowerOf(base)).toFixed(2) : "-"}（应 ×1.6）`);
+
+    // event_5b：安然巡逻奖励对比 A 版
+    const es = newEventState();
+    const tA = withTalents(initialState(), ["event_1", "event_2", "event_3", "event_4", "event_5a"]);
+    const tB = withTalents(initialState(), ["event_1", "event_2", "event_3", "event_4", "event_5b"]);
+    const rA = bossSurviveReward(tA, es);
+    const rB = bossSurviveReward(tB, es);
+    console.log(`event_5b 基础巡逻奖=${fmt(rB)} vs 5a=${fmt(rA)}；另 finishPatrol 额外 +10 秒挂机收入（engine finishPatrol 已接线）`);
+  });
+
+  it("y 小李短任务：quick 匹配+被动 3.12 是否 > 咖啡 2.8（任务选择翻转）", async () => {
+    const { recruit, dispatch, missionDef } = await import("../src/engine/team");
+    let s = gain(initialState(), 1e12);
+    s = recruit(s, "li")!;
+    const { bestMissionByHour, netDispatchProfit } = await import("./probe-r12-data-lib");
+    const pick = bestMissionByHour(s, "li");
+    console.log(
+      `\n小李最优任务=${pick.name}（quick 匹配+被动 rate=1.3×1.5×1.6=3.12 vs 咖啡 2.8）→ ${pick.id === "quick" ? "已翻转为短任务 ✓" : "仍选 " + pick.id + " ✗"}`,
+    );
+    console.log(`quick 净收益=${fmt(netDispatchProfit(s, "li", "quick"))} 咖啡净收益=${fmt(netDispatchProfit(s, "li", "coffee"))}`);
   });
 
   it("④ UI 层统计与实际结算一致性（面板同源）", () => {
