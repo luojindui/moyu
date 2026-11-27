@@ -1,0 +1,2217 @@
+{
+  "startedAt": "2026-11-27T11:59:22.813Z",
+  "url": "http://127.0.0.1:5173/",
+  "head": "c96dc43",
+  "viewport": "390x844 mobile",
+  "phases": {
+    "P0": {
+      "served": {},
+      "arcadeState": {
+        "date": "2026-11-27",
+        "played": 0,
+        "best": {}
+      }
+    },
+    "P1": {
+      "setup": {
+        "startAt": 1320.1999998092651,
+        "rect": [
+          33.59375,
+          301,
+          322.796875,
+          300
+        ]
+      },
+      "samples": [
+        {
+          "beatIdx": 4,
+          "plannedMs": -200,
+          "actualMs": -200,
+          "beforeScore": 0,
+          "afterScore": 0,
+          "delta": 0,
+          "hits": [],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 5,
+          "plannedMs": 200,
+          "actualMs": 200,
+          "beforeScore": 0,
+          "afterScore": 0,
+          "delta": 0,
+          "hits": [],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 6,
+          "plannedMs": -161,
+          "actualMs": -161,
+          "beforeScore": 0,
+          "afterScore": 0,
+          "delta": 0,
+          "hits": [],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 7,
+          "plannedMs": 164,
+          "actualMs": 164,
+          "beforeScore": 0,
+          "afterScore": 0,
+          "delta": 0,
+          "hits": [],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 8,
+          "plannedMs": -160.5,
+          "actualMs": -160.5,
+          "beforeScore": 0,
+          "afterScore": 0,
+          "delta": 0,
+          "hits": [],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 9,
+          "plannedMs": 162,
+          "actualMs": 162,
+          "beforeScore": 0,
+          "afterScore": 0,
+          "delta": 0,
+          "hits": [],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 10,
+          "plannedMs": -160,
+          "actualMs": -160,
+          "beforeScore": 0,
+          "afterScore": 10,
+          "delta": 10,
+          "hits": [
+            {
+              "idx": 10,
+              "cls": "beat good"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 11,
+          "plannedMs": 161,
+          "actualMs": 161,
+          "beforeScore": 10,
+          "afterScore": 5,
+          "delta": -5,
+          "hits": [],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 12,
+          "plannedMs": -158,
+          "actualMs": -158,
+          "beforeScore": 5,
+          "afterScore": 15,
+          "delta": 10,
+          "hits": [
+            {
+              "idx": 12,
+              "cls": "beat good"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 13,
+          "plannedMs": 160,
+          "actualMs": 160,
+          "beforeScore": 15,
+          "afterScore": 10,
+          "delta": -5,
+          "hits": [],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 14,
+          "plannedMs": -156,
+          "actualMs": -156,
+          "beforeScore": 10,
+          "afterScore": 20,
+          "delta": 10,
+          "hits": [
+            {
+              "idx": 14,
+              "cls": "beat good"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 15,
+          "plannedMs": 159,
+          "actualMs": 159,
+          "beforeScore": 20,
+          "afterScore": 30,
+          "delta": 10,
+          "hits": [
+            {
+              "idx": 15,
+              "cls": "beat good"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 16,
+          "plannedMs": -84,
+          "actualMs": -84,
+          "beforeScore": 30,
+          "afterScore": 40,
+          "delta": 10,
+          "hits": [
+            {
+              "idx": 16,
+              "cls": "beat good"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 17,
+          "plannedMs": 158,
+          "actualMs": 158,
+          "beforeScore": 40,
+          "afterScore": 50,
+          "delta": 10,
+          "hits": [
+            {
+              "idx": 17,
+              "cls": "beat good"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 18,
+          "plannedMs": -82,
+          "actualMs": -82,
+          "beforeScore": 50,
+          "afterScore": 60,
+          "delta": 10,
+          "hits": [
+            {
+              "idx": 18,
+              "cls": "beat good"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 19,
+          "plannedMs": 156,
+          "actualMs": 156,
+          "beforeScore": 60,
+          "afterScore": 70,
+          "delta": 10,
+          "hits": [
+            {
+              "idx": 19,
+              "cls": "beat good"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 20,
+          "plannedMs": -81,
+          "actualMs": -81,
+          "beforeScore": 70,
+          "afterScore": 80,
+          "delta": 10,
+          "hits": [
+            {
+              "idx": 20,
+              "cls": "beat good"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 21,
+          "plannedMs": 84,
+          "actualMs": 84,
+          "beforeScore": 80,
+          "afterScore": 90,
+          "delta": 10,
+          "hits": [
+            {
+              "idx": 21,
+              "cls": "beat good"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 22,
+          "plannedMs": -80,
+          "actualMs": -80,
+          "beforeScore": 90,
+          "afterScore": 110,
+          "delta": 20,
+          "hits": [
+            {
+              "idx": 22,
+              "cls": "beat perfect"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 23,
+          "plannedMs": 82,
+          "actualMs": 82,
+          "beforeScore": 110,
+          "afterScore": 120,
+          "delta": 10,
+          "hits": [
+            {
+              "idx": 23,
+              "cls": "beat good"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 24,
+          "plannedMs": -79,
+          "actualMs": -79,
+          "beforeScore": 120,
+          "afterScore": 140,
+          "delta": 20,
+          "hits": [
+            {
+              "idx": 24,
+              "cls": "beat perfect"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 25,
+          "plannedMs": 81,
+          "actualMs": 81,
+          "beforeScore": 140,
+          "afterScore": 150,
+          "delta": 10,
+          "hits": [
+            {
+              "idx": 25,
+              "cls": "beat good"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 26,
+          "plannedMs": -78,
+          "actualMs": -78,
+          "beforeScore": 150,
+          "afterScore": 170,
+          "delta": 20,
+          "hits": [
+            {
+              "idx": 26,
+              "cls": "beat perfect"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 27,
+          "plannedMs": 80,
+          "actualMs": 80,
+          "beforeScore": 170,
+          "afterScore": 180,
+          "delta": 10,
+          "hits": [
+            {
+              "idx": 27,
+              "cls": "beat good"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 28,
+          "plannedMs": -76,
+          "actualMs": -76,
+          "beforeScore": 180,
+          "afterScore": 200,
+          "delta": 20,
+          "hits": [
+            {
+              "idx": 28,
+              "cls": "beat perfect"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 29,
+          "plannedMs": 79,
+          "actualMs": 79,
+          "beforeScore": 200,
+          "afterScore": 220,
+          "delta": 20,
+          "hits": [
+            {
+              "idx": 29,
+              "cls": "beat perfect"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 30,
+          "plannedMs": 0,
+          "actualMs": 0,
+          "beforeScore": 220,
+          "afterScore": 240,
+          "delta": 20,
+          "hits": [
+            {
+              "idx": 30,
+              "cls": "beat perfect"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 31,
+          "plannedMs": 0.05,
+          "actualMs": 0.1,
+          "beforeScore": 240,
+          "afterScore": 260,
+          "delta": 20,
+          "hits": [
+            {
+              "idx": 31,
+              "cls": "beat perfect"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 32,
+          "plannedMs": 0.05,
+          "actualMs": 0.1,
+          "beforeScore": 260,
+          "afterScore": 280,
+          "delta": 20,
+          "hits": [
+            {
+              "idx": 32,
+              "cls": "beat perfect"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 33,
+          "plannedMs": 79,
+          "actualMs": 79,
+          "beforeScore": 280,
+          "afterScore": 300,
+          "delta": 20,
+          "hits": [
+            {
+              "idx": 33,
+              "cls": "beat perfect"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 34,
+          "plannedMs": 80,
+          "actualMs": 80,
+          "beforeScore": 300,
+          "afterScore": 310,
+          "delta": 10,
+          "hits": [
+            {
+              "idx": 34,
+              "cls": "beat good"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 35,
+          "plannedMs": 81,
+          "actualMs": 81,
+          "beforeScore": 310,
+          "afterScore": 320,
+          "delta": 10,
+          "hits": [
+            {
+              "idx": 35,
+              "cls": "beat good"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 36,
+          "plannedMs": 82,
+          "actualMs": 82,
+          "beforeScore": 320,
+          "afterScore": 330,
+          "delta": 10,
+          "hits": [
+            {
+              "idx": 36,
+              "cls": "beat good"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 37,
+          "plannedMs": 84,
+          "actualMs": 84,
+          "beforeScore": 330,
+          "afterScore": 340,
+          "delta": 10,
+          "hits": [
+            {
+              "idx": 37,
+              "cls": "beat good"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 38,
+          "plannedMs": 156,
+          "actualMs": 156,
+          "beforeScore": 340,
+          "afterScore": 350,
+          "delta": 10,
+          "hits": [
+            {
+              "idx": 38,
+              "cls": "beat good"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 39,
+          "plannedMs": 158,
+          "actualMs": 158,
+          "beforeScore": 350,
+          "afterScore": 360,
+          "delta": 10,
+          "hits": [
+            {
+              "idx": 39,
+              "cls": "beat good"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 40,
+          "plannedMs": 159,
+          "actualMs": 159,
+          "beforeScore": 360,
+          "afterScore": 370,
+          "delta": 10,
+          "hits": [
+            {
+              "idx": 40,
+              "cls": "beat good"
+            }
+          ],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 41,
+          "plannedMs": 160,
+          "actualMs": 160,
+          "beforeScore": 370,
+          "afterScore": 365,
+          "delta": -5,
+          "hits": [],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 42,
+          "plannedMs": 161,
+          "actualMs": 161,
+          "beforeScore": 365,
+          "afterScore": 360,
+          "delta": -5,
+          "hits": [],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 43,
+          "plannedMs": 162,
+          "actualMs": 162,
+          "beforeScore": 360,
+          "afterScore": 355,
+          "delta": -5,
+          "hits": [],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 44,
+          "plannedMs": 164,
+          "actualMs": 164,
+          "beforeScore": 355,
+          "afterScore": 350,
+          "delta": -5,
+          "hits": [],
+          "toastChanged": false
+        },
+        {
+          "beatIdx": 45,
+          "plannedMs": 200,
+          "actualMs": 200,
+          "beforeScore": 350,
+          "afterScore": 345,
+          "delta": -5,
+          "hits": [],
+          "toastChanged": false
+        }
+      ],
+      "extra": {
+        "osc": 0,
+        "silent": true
+      },
+      "stateAfterClose": {
+        "date": "2026-11-27",
+        "played": 1,
+        "best": {
+          "rhythm": 345
+        }
+      }
+    },
+    "P2": {
+      "setup": {
+        "startAt": 2263.699999809265
+      },
+      "res": {
+        "taps": 50,
+        "perfect": 6,
+        "good": 10,
+        "used": 16,
+        "score": "55",
+        "samples": [
+          {
+            "k": 0,
+            "score": "10",
+            "perfect": 0,
+            "good": 1
+          },
+          {
+            "k": 10,
+            "score": "5",
+            "perfect": 0,
+            "good": 4
+          },
+          {
+            "k": 20,
+            "score": "35",
+            "perfect": 3,
+            "good": 4
+          },
+          {
+            "k": 30,
+            "score": "30",
+            "perfect": 3,
+            "good": 7
+          },
+          {
+            "k": 40,
+            "score": "35",
+            "perfect": 4,
+            "good": 9
+          }
+        ]
+      }
+    },
+    "P3": {
+      "setup": {
+        "startAt": 2263.7000007629395,
+        "rect": [
+          33.59375,
+          301,
+          322.796875,
+          300
+        ]
+      },
+      "done": true,
+      "taps": [
+        {
+          "k": 0,
+          "at": 0.8,
+          "deltaMs": -2,
+          "before": 0,
+          "after": 10,
+          "hit": true,
+          "visualTopPct": "87.2491%",
+          "visualCls": "drop",
+          "dropsOnScreen": 4
+        },
+        {
+          "k": 1,
+          "at": 1.61,
+          "deltaMs": -2,
+          "before": 10,
+          "after": 22,
+          "hit": true,
+          "visualTopPct": "87.4867%",
+          "visualCls": "drop",
+          "dropsOnScreen": 3
+        },
+        {
+          "k": 2,
+          "at": 2.76,
+          "deltaMs": -2,
+          "before": 22,
+          "after": 34,
+          "hit": true,
+          "visualTopPct": "87.4427%",
+          "visualCls": "drop",
+          "dropsOnScreen": 3
+        },
+        {
+          "k": 3,
+          "at": 3.62,
+          "deltaMs": -2,
+          "before": 34,
+          "after": 48,
+          "hit": true,
+          "visualTopPct": "87.6392%",
+          "visualCls": "drop",
+          "dropsOnScreen": 3
+        },
+        {
+          "k": 4,
+          "at": 4.72,
+          "deltaMs": -2,
+          "before": 48,
+          "after": 62,
+          "hit": true,
+          "visualTopPct": "87.6451%",
+          "visualCls": "drop",
+          "dropsOnScreen": 3
+        },
+        {
+          "k": 5,
+          "at": 5.95,
+          "deltaMs": -2,
+          "before": 62,
+          "after": 78,
+          "hit": true,
+          "visualTopPct": "87.2549%",
+          "visualCls": "drop",
+          "dropsOnScreen": 3
+        }
+      ],
+      "tapHits": 6,
+      "tapSample": [
+        {
+          "k": 0,
+          "at": 0.8,
+          "deltaMs": -2,
+          "before": 0,
+          "after": 10,
+          "hit": true,
+          "visualTopPct": "87.2491%",
+          "visualCls": "drop",
+          "dropsOnScreen": 4
+        },
+        {
+          "k": 1,
+          "at": 1.61,
+          "deltaMs": -2,
+          "before": 10,
+          "after": 22,
+          "hit": true,
+          "visualTopPct": "87.4867%",
+          "visualCls": "drop",
+          "dropsOnScreen": 3
+        },
+        {
+          "k": 2,
+          "at": 2.76,
+          "deltaMs": -2,
+          "before": 22,
+          "after": 34,
+          "hit": true,
+          "visualTopPct": "87.4427%",
+          "visualCls": "drop",
+          "dropsOnScreen": 3
+        },
+        {
+          "k": 3,
+          "at": 3.62,
+          "deltaMs": -2,
+          "before": 34,
+          "after": 48,
+          "hit": true,
+          "visualTopPct": "87.6392%",
+          "visualCls": "drop",
+          "dropsOnScreen": 3
+        },
+        {
+          "k": 4,
+          "at": 4.72,
+          "deltaMs": -2,
+          "before": 48,
+          "after": 62,
+          "hit": true,
+          "visualTopPct": "87.6451%",
+          "visualCls": "drop",
+          "dropsOnScreen": 3
+        },
+        {
+          "k": 5,
+          "at": 5.95,
+          "deltaMs": -2,
+          "before": 62,
+          "after": 78,
+          "hit": true,
+          "visualTopPct": "87.2549%",
+          "visualCls": "drop",
+          "dropsOnScreen": 3
+        }
+      ],
+      "trajSample": [
+        {
+          "t": 83,
+          "drops": [
+            {
+              "top": "66.7128%",
+              "left": "14%",
+              "cls": "drop"
+            },
+            {
+              "top": "42.9528%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "9.21947%",
+              "left": "81%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 144,
+          "drops": [
+            {
+              "top": "68.6752%",
+              "left": "14%",
+              "cls": "drop"
+            },
+            {
+              "top": "44.9152%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "11.1819%",
+              "left": "81%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 206,
+          "drops": [
+            {
+              "top": "70.1419%",
+              "left": "14%",
+              "cls": "drop"
+            },
+            {
+              "top": "46.3819%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "12.6485%",
+              "left": "81%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 269,
+          "drops": [
+            {
+              "top": "72.0955%",
+              "left": "14%",
+              "cls": "drop"
+            },
+            {
+              "top": "48.3355%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "14.6021%",
+              "left": "81%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 331,
+          "drops": [
+            {
+              "top": "74.0491%",
+              "left": "14%",
+              "cls": "drop"
+            },
+            {
+              "top": "50.2891%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "16.5557%",
+              "left": "81%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 392,
+          "drops": [
+            {
+              "top": "76.0056%",
+              "left": "14%",
+              "cls": "drop"
+            },
+            {
+              "top": "52.2456%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "18.5123%",
+              "left": "81%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 455,
+          "drops": [
+            {
+              "top": "77.5221%",
+              "left": "14%",
+              "cls": "drop"
+            },
+            {
+              "top": "53.7621%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "20.0288%",
+              "left": "81%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 516,
+          "drops": [
+            {
+              "top": "79.4347%",
+              "left": "14%",
+              "cls": "drop"
+            },
+            {
+              "top": "55.6747%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "21.9413%",
+              "left": "81%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 577,
+          "drops": [
+            {
+              "top": "81.3853%",
+              "left": "14%",
+              "cls": "drop"
+            },
+            {
+              "top": "57.6253%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "23.892%",
+              "left": "81%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 640,
+          "drops": [
+            {
+              "top": "82.8491%",
+              "left": "14%",
+              "cls": "drop"
+            },
+            {
+              "top": "59.0891%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "25.3557%",
+              "left": "81%",
+              "cls": "drop"
+            },
+            {
+              "top": "0.129067%",
+              "left": "50%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 702,
+          "drops": [
+            {
+              "top": "84.8027%",
+              "left": "14%",
+              "cls": "drop"
+            },
+            {
+              "top": "61.0427%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "27.3093%",
+              "left": "81%",
+              "cls": "drop"
+            },
+            {
+              "top": "2.08267%",
+              "left": "50%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 764,
+          "drops": [
+            {
+              "top": "86.7592%",
+              "left": "14%",
+              "cls": "drop"
+            },
+            {
+              "top": "62.9992%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "29.2659%",
+              "left": "81%",
+              "cls": "drop"
+            },
+            {
+              "top": "4.0392%",
+              "left": "50%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 825,
+          "drops": [
+            {
+              "top": "88%",
+              "left": "14%",
+              "cls": "drop caught landed"
+            },
+            {
+              "top": "64.9557%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "31.2224%",
+              "left": "81%",
+              "cls": "drop"
+            },
+            {
+              "top": "5.99573%",
+              "left": "50%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 887,
+          "drops": [
+            {
+              "top": "88%",
+              "left": "14%",
+              "cls": "drop caught landed"
+            },
+            {
+              "top": "66.4224%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "32.6891%",
+              "left": "81%",
+              "cls": "drop"
+            },
+            {
+              "top": "7.4624%",
+              "left": "50%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 950,
+          "drops": [
+            {
+              "top": "88%",
+              "left": "14%",
+              "cls": "drop caught landed"
+            },
+            {
+              "top": "68.3789%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "34.6456%",
+              "left": "81%",
+              "cls": "drop"
+            },
+            {
+              "top": "9.41893%",
+              "left": "50%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 1011,
+          "drops": [
+            {
+              "top": "70.3355%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "36.6021%",
+              "left": "81%",
+              "cls": "drop"
+            },
+            {
+              "top": "11.3755%",
+              "left": "50%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 1072,
+          "drops": [
+            {
+              "top": "71.7992%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "38.0659%",
+              "left": "81%",
+              "cls": "drop"
+            },
+            {
+              "top": "12.8392%",
+              "left": "50%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 1133,
+          "drops": [
+            {
+              "top": "73.7587%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "40.0253%",
+              "left": "81%",
+              "cls": "drop"
+            },
+            {
+              "top": "14.7987%",
+              "left": "50%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 1193,
+          "drops": [
+            {
+              "top": "75.7123%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "41.9789%",
+              "left": "81%",
+              "cls": "drop"
+            },
+            {
+              "top": "16.7523%",
+              "left": "50%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 1256,
+          "drops": [
+            {
+              "top": "77.1819%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "43.4485%",
+              "left": "81%",
+              "cls": "drop"
+            },
+            {
+              "top": "18.2219%",
+              "left": "50%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 1316,
+          "drops": [
+            {
+              "top": "79.1355%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "45.4021%",
+              "left": "81%",
+              "cls": "drop"
+            },
+            {
+              "top": "20.1755%",
+              "left": "50%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 1377,
+          "drops": [
+            {
+              "top": "81.092%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "47.3587%",
+              "left": "81%",
+              "cls": "drop"
+            },
+            {
+              "top": "22.132%",
+              "left": "50%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 1439,
+          "drops": [
+            {
+              "top": "82.5587%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "48.8253%",
+              "left": "81%",
+              "cls": "drop"
+            },
+            {
+              "top": "23.5987%",
+              "left": "50%",
+              "cls": "drop"
+            }
+          ]
+        },
+        {
+          "t": 1501,
+          "drops": [
+            {
+              "top": "84.5093%",
+              "left": "53%",
+              "cls": "drop"
+            },
+            {
+              "top": "50.776%",
+              "left": "81%",
+              "cls": "drop"
+            },
+            {
+              "top": "25.5493%",
+              "left": "50%",
+              "cls": "drop"
+            }
+          ]
+        }
+      ],
+      "trajLen": 105,
+      "finish": {
+        "body": "接咖啡 结束\n238 分\n本局奖励 +12 摸鱼值\n历史最高 238\n接住 15 · 漏接 12 · 最高连击 15\n返回摸鱼站",
+        "rewardText": "本局奖励 +12 摸鱼值",
+        "recordText": null,
+        "detailText": [
+          "历史最高 238",
+          "接住 15 · 漏接 12 · 最高连击 15"
+        ],
+        "arcade": {
+          "date": "2026-11-27",
+          "played": 1,
+          "best": {
+            "rhythm": 345,
+            "coffee": 238
+          }
+        },
+        "fps": 60
+      },
+      "shots": {
+        "mid": ".scratch/r15-action/head2-coffee-falling-mid.png",
+        "finish": ".scratch/r15-action/head2-coffee-finish-partial.png"
+      }
+    },
+    "P4": {
+      "setup": {
+        "startAt": 2265.699999809265
+      },
+      "samples": [
+        {
+          "kind": "early-310",
+          "offsetMs": -310,
+          "dx": 0,
+          "expected": true,
+          "actualMs": -310,
+          "before": 0,
+          "after": 4,
+          "hit": true,
+          "targetVisual": [
+            {
+              "top": "78.4725%",
+              "cls": "drop"
+            }
+          ],
+          "dropsOnScreen": 3
+        },
+        {
+          "kind": "early-320",
+          "offsetMs": -320,
+          "dx": 0,
+          "expected": true,
+          "actualMs": -320,
+          "before": 4,
+          "after": 16,
+          "hit": true,
+          "targetVisual": [
+            {
+              "top": "47.0859%",
+              "cls": "drop"
+            }
+          ],
+          "dropsOnScreen": 3
+        },
+        {
+          "kind": "early-321",
+          "offsetMs": -321,
+          "dx": 0,
+          "expected": false,
+          "actualMs": -321,
+          "before": 16,
+          "after": 16,
+          "hit": false,
+          "targetVisual": [
+            {
+              "top": "51.6501%",
+              "cls": "drop"
+            }
+          ],
+          "dropsOnScreen": 3
+        },
+        {
+          "kind": "late+310",
+          "offsetMs": 310,
+          "dx": 0,
+          "expected": true,
+          "actualMs": 310,
+          "before": 16,
+          "after": 27,
+          "hit": true,
+          "targetVisual": [
+            {
+              "top": "41.6357%",
+              "cls": "drop"
+            }
+          ],
+          "dropsOnScreen": 4
+        },
+        {
+          "kind": "late+320",
+          "offsetMs": 320,
+          "dx": 0,
+          "expected": true,
+          "actualMs": 320,
+          "before": 25,
+          "after": 25,
+          "hit": false,
+          "targetVisual": [
+            {
+              "top": "66.6043%",
+              "cls": "drop"
+            }
+          ],
+          "dropsOnScreen": 4
+        },
+        {
+          "kind": "late+321",
+          "offsetMs": 321,
+          "dx": 0,
+          "expected": false,
+          "actualMs": 321,
+          "before": 25,
+          "after": 25,
+          "hit": false,
+          "targetVisual": [
+            {
+              "top": "63.0784%",
+              "cls": "drop"
+            }
+          ],
+          "dropsOnScreen": 4
+        },
+        {
+          "kind": "x+120",
+          "offsetMs": 0,
+          "dx": 0.12,
+          "expected": true,
+          "actualMs": 0,
+          "before": 23,
+          "after": 34,
+          "hit": true,
+          "targetVisual": [
+            {
+              "top": "71.9459%",
+              "cls": "drop"
+            }
+          ],
+          "dropsOnScreen": 4
+        },
+        {
+          "kind": "x-120",
+          "offsetMs": 0,
+          "dx": -0.12,
+          "expected": true,
+          "actualMs": 0,
+          "before": 32,
+          "after": 43,
+          "hit": true,
+          "targetVisual": [
+            {
+              "top": "53.7093%",
+              "cls": "drop"
+            }
+          ],
+          "dropsOnScreen": 3
+        },
+        {
+          "kind": "x+135",
+          "offsetMs": 0,
+          "dx": 0.135,
+          "expected": false,
+          "actualMs": 0,
+          "before": 43,
+          "after": 43,
+          "hit": false,
+          "targetVisual": [
+            {
+              "top": "50.7819%",
+              "cls": "drop"
+            }
+          ],
+          "dropsOnScreen": 3
+        },
+        {
+          "kind": "x-140",
+          "offsetMs": 0,
+          "dx": -0.14,
+          "expected": false,
+          "actualMs": 0,
+          "before": 43,
+          "after": 43,
+          "hit": false,
+          "targetVisual": [
+            {
+              "top": "48.7637%",
+              "cls": "drop"
+            }
+          ],
+          "dropsOnScreen": 3
+        },
+        {
+          "kind": "control",
+          "offsetMs": -2,
+          "dx": 0,
+          "expected": true,
+          "actualMs": -2,
+          "before": 41,
+          "after": 52,
+          "hit": true,
+          "targetVisual": [
+            {
+              "top": "55.7861%",
+              "cls": "drop"
+            }
+          ],
+          "dropsOnScreen": 3
+        },
+        {
+          "kind": "control2",
+          "offsetMs": -2,
+          "dx": 0,
+          "expected": true,
+          "actualMs": -2,
+          "before": 50,
+          "after": 61,
+          "hit": true,
+          "targetVisual": [
+            {
+              "top": "54.2432%",
+              "cls": "drop"
+            }
+          ],
+          "dropsOnScreen": 3
+        }
+      ]
+    },
+    "P5": {
+      "setup": {
+        "startAt": 2263
+      },
+      "done": true,
+      "data": {
+        "rounds": 119,
+        "wrongClicks": 0,
+        "samples": [
+          {
+            "t": 102,
+            "score": "0",
+            "timer": "29.9s",
+            "hint": "0"
+          },
+          {
+            "t": 1110,
+            "score": "0",
+            "timer": "28.9s",
+            "hint": "4"
+          },
+          {
+            "t": 2115,
+            "score": "0",
+            "timer": "27.9s",
+            "hint": "8"
+          },
+          {
+            "t": 3121,
+            "score": "0",
+            "timer": "26.9s",
+            "hint": "12"
+          },
+          {
+            "t": 4130,
+            "score": "0",
+            "timer": "25.9s",
+            "hint": "16"
+          },
+          {
+            "t": 5136,
+            "score": "0",
+            "timer": "24.9s",
+            "hint": "20"
+          },
+          {
+            "t": 6144,
+            "score": "0",
+            "timer": "23.9s",
+            "hint": "24"
+          },
+          {
+            "t": 7149,
+            "score": "0",
+            "timer": "22.9s",
+            "hint": "28"
+          },
+          {
+            "t": 8156,
+            "score": "0",
+            "timer": "21.9s",
+            "hint": "32"
+          },
+          {
+            "t": 9166,
+            "score": "0",
+            "timer": "20.8s",
+            "hint": "36"
+          },
+          {
+            "t": 10173,
+            "score": "0",
+            "timer": "19.8s",
+            "hint": "40"
+          },
+          {
+            "t": 11180,
+            "score": "0",
+            "timer": "18.8s",
+            "hint": "44"
+          },
+          {
+            "t": 12183,
+            "score": "0",
+            "timer": "17.8s",
+            "hint": "48"
+          },
+          {
+            "t": 13192,
+            "score": "0",
+            "timer": "16.8s",
+            "hint": "52"
+          },
+          {
+            "t": 14197,
+            "score": "0",
+            "timer": "15.8s",
+            "hint": "56"
+          },
+          {
+            "t": 15203,
+            "score": "0",
+            "timer": "14.8s",
+            "hint": "60"
+          },
+          {
+            "t": 16212,
+            "score": "0",
+            "timer": "13.8s",
+            "hint": "64"
+          },
+          {
+            "t": 17215,
+            "score": "0",
+            "timer": "12.8s",
+            "hint": "68"
+          },
+          {
+            "t": 18218,
+            "score": "0",
+            "timer": "11.8s",
+            "hint": "72"
+          },
+          {
+            "t": 19227,
+            "score": "0",
+            "timer": "10.8s",
+            "hint": "76"
+          },
+          {
+            "t": 20231,
+            "score": "0",
+            "timer": "9.8s",
+            "hint": "80"
+          },
+          {
+            "t": 21234,
+            "score": "0",
+            "timer": "8.8s",
+            "hint": "84"
+          },
+          {
+            "t": 22238,
+            "score": "0",
+            "timer": "7.8s",
+            "hint": "88"
+          },
+          {
+            "t": 23246,
+            "score": "0",
+            "timer": "6.8s",
+            "hint": "92"
+          },
+          {
+            "t": 24250,
+            "score": "0",
+            "timer": "5.8s",
+            "hint": "96"
+          },
+          {
+            "t": 25257,
+            "score": "0",
+            "timer": "4.8s",
+            "hint": "100"
+          },
+          {
+            "t": 26265,
+            "score": "0",
+            "timer": "3.7s",
+            "hint": "104"
+          },
+          {
+            "t": 27271,
+            "score": "0",
+            "timer": "2.7s",
+            "hint": "108"
+          },
+          {
+            "t": 28280,
+            "score": "0",
+            "timer": "1.7s",
+            "hint": "112"
+          },
+          {
+            "t": 29284,
+            "score": "0",
+            "timer": "0.7s",
+            "hint": "116"
+          }
+        ],
+        "endT": 30040
+      },
+      "finish": {
+        "body": "找老板 结束\n5950 分\n本局奖励 +30 摸鱼值\n🎉 新纪录！（旧 2000）\n接住 119 · 漏接 0\n返回摸鱼站",
+        "rewardText": "本局奖励 +30 摸鱼值",
+        "recordText": "🎉 新纪录！（旧 2000）",
+        "arcade": {
+          "date": "2026-11-27",
+          "played": 1,
+          "best": {
+            "coffee": 238,
+            "rhythm": 345,
+            "findboss": 2000
+          }
+        }
+      },
+      "shot": ".scratch/r15-action/head2-findboss-30s-finish.png"
+    },
+    "P6": {
+      "setup": {
+        "startAt": 2263.7999992370605
+      },
+      "res": {
+        "clicks": 20,
+        "body": "29.1s\n0\n找出王总（红色「王」）· 已找 0\n员\n员\n员\n员\n王\n员\n员\n员\n员"
+      },
+      "shot": ".scratch/r15-action/head2-findboss-blind-spam.png"
+    },
+    "P7": {
+      "setup": {
+        "startAt": 2265.5
+      },
+      "pre": {
+        "score": "60",
+        "played": 0
+      },
+      "post": {
+        "arcade": {
+          "date": "2026-11-27",
+          "played": 1,
+          "best": {
+            "coffee": 238,
+            "findboss": 2000,
+            "rhythm": 345
+          }
+        },
+        "body": "\n      27.8s\n      60\n      跟着节拍点！\n      \n    ",
+        "arcadeOpen": false
+      }
+    },
+    "P8": {
+      "setup": {
+        "startAt": 2264.5
+      },
+      "visibleCount": 59,
+      "firstVisible": {
+        "hidden": false,
+        "rect": [
+          0,
+          417,
+          390,
+          227
+        ],
+        "arcadeOpen": true,
+        "bodyChoiceOpen": true,
+        "topAtBossCenter": "BUTTON",
+        "arcadeZ": "17",
+        "bossZ": "18"
+      },
+      "sample": {
+        "hidden": true,
+        "rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "arcadeOpen": true,
+        "bodyChoiceOpen": false,
+        "topAtBossCenter": null,
+        "arcadeZ": "17",
+        "bossZ": "18"
+      },
+      "shot": ".scratch/r15-action/head2-boss-choice-over-arcade.png"
+    },
+    "P9": {
+      "data": {
+        "left": "今天还能玩 0/3 次",
+        "played": 3,
+        "cards": [
+          {
+            "name": "接咖啡 最高 238",
+            "locked": true,
+            "disabled": true
+          },
+          {
+            "name": "找老板 最高 2000",
+            "locked": true,
+            "disabled": true
+          },
+          {
+            "name": "节奏点击 最高 345",
+            "locked": true,
+            "disabled": true
+          }
+        ]
+      },
+      "shot": ".scratch/r15-action/head2-menu-locked.png"
+    }
+  },
+  "dropSchedules": {
+    "seed12345": [
+      [
+        0.8,
+        0.14
+      ],
+      [
+        1.61,
+        0.53
+      ],
+      [
+        2.76,
+        0.81
+      ],
+      [
+        3.62,
+        0.5
+      ],
+      [
+        4.72,
+        0.57
+      ],
+      [
+        5.95,
+        0.15
+      ],
+      [
+        7.16,
+        0.85
+      ],
+      [
+        8,
+        0.65
+      ],
+      [
+        9.06,
+        0.42
+      ],
+      [
+        10.38,
+        0.43
+      ],
+      [
+        11.71,
+        0.88
+      ],
+      [
+        12.87,
+        0.44
+      ],
+      [
+        13.95,
+        0.34
+      ],
+      [
+        14.98,
+        0.63
+      ],
+      [
+        15.87,
+        0.19
+      ],
+      [
+        17.13,
+        0.36
+      ],
+      [
+        17.94,
+        0.47
+      ],
+      [
+        18.9,
+        0.56
+      ],
+      [
+        20.23,
+        0.13
+      ],
+      [
+        21.46,
+        0.35
+      ],
+      [
+        22.43,
+        0.85
+      ],
+      [
+        23.53,
+        0.63
+      ],
+      [
+        24.7,
+        0.59
+      ],
+      [
+        25.58,
+        0.83
+      ],
+      [
+        26.81,
+        0.47
+      ],
+      [
+        28.01,
+        0.37
+      ],
+      [
+        29.2,
+        0.56
+      ]
+    ],
+    "seed777": [
+      [
+        0.8,
+        0.53
+      ],
+      [
+        2.02,
+        0.76
+      ],
+      [
+        3.05,
+        0.29
+      ],
+      [
+        4.18,
+        0.32
+      ],
+      [
+        5.25,
+        0.71
+      ],
+      [
+        6.17,
+        0.38
+      ],
+      [
+        7.43,
+        0.6
+      ],
+      [
+        8.47,
+        0.44
+      ],
+      [
+        9.64,
+        0.66
+      ],
+      [
+        10.51,
+        0.41
+      ],
+      [
+        11.68,
+        0.5
+      ],
+      [
+        12.95,
+        0.25
+      ],
+      [
+        14.29,
+        0.3
+      ],
+      [
+        15.39,
+        0.62
+      ],
+      [
+        16.54,
+        0.66
+      ],
+      [
+        17.77,
+        0.81
+      ],
+      [
+        18.87,
+        0.78
+      ],
+      [
+        19.97,
+        0.69
+      ],
+      [
+        21.1,
+        0.25
+      ],
+      [
+        22.38,
+        0.17
+      ],
+      [
+        23.4,
+        0.41
+      ],
+      [
+        24.38,
+        0.42
+      ],
+      [
+        25.33,
+        0.38
+      ],
+      [
+        26.39,
+        0.54
+      ],
+      [
+        27.7,
+        0.68
+      ],
+      [
+        28.85,
+        0.55
+      ]
+    ]
+  },
+  "boundaryPlan": [
+    -200,
+    200,
+    -161,
+    164,
+    -160.5,
+    162,
+    -160,
+    161,
+    -158,
+    160,
+    -156,
+    159,
+    -84,
+    158,
+    -82,
+    156,
+    -81,
+    84,
+    -80,
+    82,
+    -79,
+    81,
+    -78,
+    80,
+    -76,
+    79,
+    0,
+    0.05,
+    0.05,
+    79,
+    80,
+    81,
+    82,
+    84,
+    156,
+    158,
+    159,
+    160,
+    161,
+    162,
+    164,
+    200
+  ],
+  "windowSamples": [
+    {
+      "kind": "early-310",
+      "offsetMs": -310,
+      "dx": 0,
+      "expected": true,
+      "id": 3,
+      "at": 4.18,
+      "x": 0.32
+    },
+    {
+      "kind": "early-320",
+      "offsetMs": -320,
+      "dx": 0,
+      "expected": true,
+      "id": 4,
+      "at": 5.25,
+      "x": 0.71
+    },
+    {
+      "kind": "early-321",
+      "offsetMs": -321,
+      "dx": 0,
+      "expected": false,
+      "id": 5,
+      "at": 6.17,
+      "x": 0.38
+    },
+    {
+      "kind": "late+310",
+      "offsetMs": 310,
+      "dx": 0,
+      "expected": true,
+      "id": 6,
+      "at": 7.43,
+      "x": 0.6
+    },
+    {
+      "kind": "late+320",
+      "offsetMs": 320,
+      "dx": 0,
+      "expected": true,
+      "id": 7,
+      "at": 8.47,
+      "x": 0.44
+    },
+    {
+      "kind": "late+321",
+      "offsetMs": 321,
+      "dx": 0,
+      "expected": false,
+      "id": 8,
+      "at": 9.64,
+      "x": 0.66
+    },
+    {
+      "kind": "x+120",
+      "offsetMs": 0,
+      "dx": 0.12,
+      "expected": true,
+      "id": 9,
+      "at": 10.51,
+      "x": 0.41
+    },
+    {
+      "kind": "x-120",
+      "offsetMs": 0,
+      "dx": -0.12,
+      "expected": true,
+      "id": 10,
+      "at": 11.68,
+      "x": 0.5
+    },
+    {
+      "kind": "x+135",
+      "offsetMs": 0,
+      "dx": 0.135,
+      "expected": false,
+      "id": 11,
+      "at": 12.95,
+      "x": 0.25
+    },
+    {
+      "kind": "x-140",
+      "offsetMs": 0,
+      "dx": -0.14,
+      "expected": false,
+      "id": 12,
+      "at": 14.29,
+      "x": 0.3
+    },
+    {
+      "kind": "control",
+      "offsetMs": -2,
+      "dx": 0,
+      "expected": true,
+      "id": 13,
+      "at": 15.39,
+      "x": 0.62
+    },
+    {
+      "kind": "control2",
+      "offsetMs": -2,
+      "dx": 0,
+      "expected": true,
+      "id": 14,
+      "at": 16.54,
+      "x": 0.66
+    }
+  ],
+  "errs": [],
+  "finishedAt": "2026-11-27T12:01:42.299Z"
+}

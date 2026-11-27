@@ -576,8 +576,9 @@ async function boot(): Promise<void> {
     const anyModalOpen =
       !document.getElementById("journal")!.classList.contains("hidden") ||
       !document.getElementById("team")!.classList.contains("hidden") ||
-      !document.getElementById("cards")!.classList.contains("hidden");
-    if (anyModalOpen && es.bossUntil < 0 && es.nextBossAt <= scene.gameTime) {
+      !document.getElementById("cards")!.classList.contains("hidden") ||
+      !document.getElementById("arcade")!.classList.contains("hidden");
+    if ((anyModalOpen || arcade.isOpen) && es.bossUntil < 0 && es.nextBossAt <= scene.gameTime) {
       es.nextBossAt = scene.gameTime + 3;
     }
     scheduleEvents(es, scene.gameTime, rng, cardEffects(state, Date.now()).eventRateMult);
@@ -743,7 +744,8 @@ async function boot(): Promise<void> {
         const anyPanelOpen =
           !document.getElementById("welcome")!.classList.contains("hidden") ||
           !document.getElementById("team")!.classList.contains("hidden") ||
-          !document.getElementById("journal")!.classList.contains("hidden");
+          !document.getElementById("journal")!.classList.contains("hidden") ||
+          !document.getElementById("arcade")!.classList.contains("hidden");
         if (!anyPanelOpen) cardPanel.maybeShow(state);
       }
       // 回合制老板：同步弹层

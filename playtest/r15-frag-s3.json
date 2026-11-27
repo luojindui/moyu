@@ -1,0 +1,190 @@
+{
+  "phase": "s3",
+  "meta": {
+    "startedAt": "2026-11-27T11:58:32.654Z",
+    "url": "http://127.0.0.1:5173/",
+    "finishedAt": "2026-11-27T11:59:45.101Z"
+  },
+  "hashesBefore": {
+    "src/ui/arcade.ts": "b8ad5a04ac78",
+    "src/engine/minigames.ts": "fd365b1187bf",
+    "src/style.css": "0c670acda141",
+    "src/main.ts": "aff35a29365f",
+    "index.html": "432f4b73d496"
+  },
+  "errors": [],
+  "pageOrigin": 1795780713138.7,
+  "firstScreen": {
+    "viewport": {
+      "w": 1280,
+      "h": 800
+    },
+    "btn": {
+      "label": "摸鱼站小游戏",
+      "rect": {
+        "x": 1226,
+        "y": 414,
+        "w": 44,
+        "h": 44
+      },
+      "visible": true
+    },
+    "centerHit": {
+      "id": "btn-arcade",
+      "tag": "BUTTON",
+      "isSelf": true
+    },
+    "shopTop": 639,
+    "stageRect": {
+      "top": 131,
+      "h": 508
+    },
+    "overlapStageRatio": 0,
+    "bodyHasArcadeWord": {
+      "摸鱼站": false,
+      "小游戏": false,
+      "游戏": false
+    },
+    "hudSubOverflow": {
+      "scrollW": 876,
+      "clientW": 876
+    }
+  },
+  "entry": {
+    "steps": 1,
+    "msToMenu": 441,
+    "open": true,
+    "left": "今天还能玩 3/3 次",
+    "body": "接咖啡 最高 0\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 0\n在一堆同事脸里找出王总，越快越好\n开始（30 秒内无限轮）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n开始（30 秒）",
+    "title": "摸鱼站"
+  },
+  "menu": {
+    "leftText": "今天还能玩 3/3 次",
+    "cards": [
+      {
+        "name": "接咖啡 最高 0",
+        "desc": "咖啡掉下来时点住它——掉地上就没了",
+        "btn": "开始（30 秒）",
+        "disabled": false,
+        "locked": false
+      },
+      {
+        "name": "找老板 最高 0",
+        "desc": "在一堆同事脸里找出王总，越快越好",
+        "btn": "开始（30 秒内无限轮）",
+        "disabled": false,
+        "locked": false
+      },
+      {
+        "name": "节奏点击 最高 0",
+        "desc": "跟着节拍点屏幕，越准分越高",
+        "btn": "开始（30 秒）",
+        "disabled": false,
+        "locked": false
+      }
+    ],
+    "panelText": "摸鱼站\n✕\n今天还能玩 3/3 次\n接咖啡 最高 0\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 0\n在一堆同事脸里找出王总，越快越好\n开始（30 秒内无限轮）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n开始（30 秒）",
+    "showsRewardInfo": false,
+    "showsResetHint": false,
+    "panelRect": {
+      "x": 460,
+      "y": 169,
+      "w": 360,
+      "h": 463
+    }
+  },
+  "findbossLow": {
+    "series": [
+      {
+        "label": "t+4s",
+        "timer": "25.5s",
+        "score": "0"
+      },
+      {
+        "label": "t+8s",
+        "timer": "21.5s",
+        "score": "0"
+      },
+      {
+        "label": "t+12s",
+        "timer": "17.5s",
+        "score": "0"
+      },
+      {
+        "label": "t+16s",
+        "timer": "13.5s",
+        "score": "0"
+      },
+      {
+        "label": "t+20s",
+        "timer": "9.5s",
+        "score": "0"
+      },
+      {
+        "label": "t+24s",
+        "timer": "5.5s",
+        "score": "0"
+      }
+    ],
+    "end": {
+      "body": "找老板 结束\n16400 分\n本局奖励 +30 摸鱼值\n🎉 新纪录！（旧 2000）\n接住 328 · 漏接 0\n返回摸鱼站",
+      "played": 1,
+      "best": {
+        "findboss": 2000
+      },
+      "toast": {
+        "text": "摸鱼站 +30（得分 16400）",
+        "show": true
+      },
+      "left": "今天还能玩 2/3 次",
+      "hudIdle": "0.2",
+      "hasRecordBadge": true
+    },
+    "playMs": 29661
+  },
+  "rich": {
+    "upgrades": {
+      "bought": 36,
+      "idle": "7063.9",
+      "click": "1",
+      "moyu": "9.90亿"
+    },
+    "before": {
+      "hudIdle": "7063.9",
+      "hudClick": "1",
+      "moyu": 989678467.9946498,
+      "levels": {
+        "phone": 6,
+        "toilet": 6,
+        "group": 6,
+        "meeting": 6,
+        "deep": 6,
+        "retire": 6
+      }
+    },
+    "after": {
+      "scoreText": "\n        接咖啡 最高 0\n        咖啡掉下来时点住它——掉地上就没了\n        开始（30 秒）\n      \n        找老板 最高 2000\n        在一堆同事脸里找出王总，越快越好\n        开始（30 秒内无限轮）\n      \n        节奏点击 最高 0\n        跟着节拍点屏幕，越准分越高\n        开始（30 秒）\n      ",
+      "played": 0,
+      "toast": {
+        "text": "没来得及选…这次不算",
+        "show": false
+      },
+      "moyu": 989940528.3499829,
+      "hudIdle": "7063.9",
+      "left": "今天还能玩 3/3 次",
+      "moyuDelta": 262060.36,
+      "best": {},
+      "hudIdleDuringPlay": null
+    },
+    "rewardParsed": null
+  },
+  "reloaded": false,
+  "durationMs": 72395,
+  "hashesAfter": {
+    "src/ui/arcade.ts": "b8ad5a04ac78",
+    "src/engine/minigames.ts": "fd365b1187bf",
+    "src/style.css": "0c670acda141",
+    "src/main.ts": "aff35a29365f",
+    "index.html": "432f4b73d496"
+  }
+}

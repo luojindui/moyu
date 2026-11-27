@@ -1,0 +1,19 @@
+[0.4s] s5: 移动端 390x844 误触+老板冲突+锁死
+[1.8s] shot s5-01-first-screen
+[2.2s] shot s5-02-menu
+[2.2s] step rhythm on-beat then mash
+[2.7s] shot s5-03-rhythm-start
+[5.3s] shot s5-04-rhythm-onbeat
+[7.9s] shot s5-05-rhythm-mash
+[7.9s] step forceBoss choice during rhythm
+[8.1s] shot s5-06-boss-over-minigame
+[10.0s] shot s5-07-after-boss
+[10.0s] step backdrop mistap mid-game
+[10.7s] shot s5-08-after-backdrop-mistap
+[10.7s] step burn remaining attempts
+[15.0s] shot s5-09-burned
+[15.0s] step locked state
+[16.1s] shot s5-10-locked
+[16.6s] shot s5-11-tap-disabled
+[17.9s] evidence -> playtest/r15-frag-s5.json
+DONE s5

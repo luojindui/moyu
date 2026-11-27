@@ -31,7 +31,7 @@ export const REF_SCORE = 600;
 /** 满分奖励 ≈ 该秒数的挂机收益（跨阶段恒定，不随进度漂移） */
 export const TARGET_IDLE_SECONDS = 25;
 /** 分数硬上限（防篡改） */
-export const MAX_SCORE = 2000;
+export const MAX_SCORE = 8000; // 找老板 30s 可到 ~6000，上限需留余量
 /** 早期保底奖励（满分时；新号一局 ≈ 一次首购） */
 export const EARLY_FLOOR = 30;
 

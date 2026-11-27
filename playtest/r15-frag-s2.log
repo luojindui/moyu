@@ -1,0 +1,23 @@
+[0.5s] s2: 移动端 390x844 中途退出实测
+[1.9s] shot s2-01-first-screen
+[1.9s] step open menu
+[2.5s] shot s2-02-menu
+[3.0s] step coffee 2.5s then X
+[6.2s] shot s2-03-coffee-mid-before-quit
+[6.9s] shot s2-04-after-quit-x
+[6.9s] step reopen after quit
+[7.5s] shot s2-05-reopen-after-quit
+[7.5s] step findboss 3s then Esc
+[10.7s] shot s2-06-findboss-mid
+[11.1s] shot s2-07-after-quit-esc
+[11.1s] step wait 31s zombie check
+[42.1s] shot s2-08-after-zombie-wait
+[42.1s] step reload
+[43.5s] shot s2-09-reload-first-screen
+[43.5s] step open + rhythm 2s then backdrop tap
+[51.5s] CRASH Error: CDP timeout: Input.dispatchTouchEvent
+    at Timeout._onTimeout (file:///Users/p/Desktop/workspace/code/moyu/playtest/r15-frag-probe2.mjs:37:56)
+    at listOnTimeout (node:internal/timers:585:17)
+    at process.processTimers (node:internal/timers:521:7)
+[51.5s] evidence -> playtest/r15-frag-s2.json
+DONE s2

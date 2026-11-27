@@ -1,0 +1,9 @@
+[0.5s] s3: 桌面 1280x800
+[1.9s] shot s3-01-first-screen
+[2.4s] shot s3-02-menu
+[32.8s] shot s3-03-findboss-result
+[33.3s] 富态：reset+grant(1e9)+升级…
+[35.2s] shot s3-04-rich
+[72.4s] shot s3-05-rich-result
+[72.4s] evidence -> playtest/r15-frag-s3.json
+DONE s3

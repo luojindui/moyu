@@ -1503,3 +1503,16 @@ body.choice-open .shop-row {
   font-weight: 700;
   color: #7ec8ff;
 }
+
+.judge-text {
+  height: 22px;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #b8b39c;
+  transition: color 0.1s ease;
+}
+.judge-text.perfect { color: #8be28b; }
+.judge-text.good { color: #7ec8ff; }
+.judge-text.miss { color: #ff8a8a; }
+.beat.missed { background: #6b3f22; opacity: 0.5; }

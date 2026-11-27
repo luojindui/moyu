@@ -4,3 +4,8 @@
 [3.6s] shot s1-03-coffee-start
 [4.2s] shot s1-04-coffee-fall-1
 [5.1s] shot s1-05-coffee-fall-2
+[17.4s] shot s1-06-coffee-autoplay
+[33.2s] shot s1-07-coffee-result
+[33.7s] shot s1-08-menu-after-one
+[34.2s] evidence -> playtest/r15-frag-s1.json
+DONE s1

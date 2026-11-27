@@ -1,4 +1,5 @@
 import type { GameState } from "../engine/state";
+import { playClick, playSuccess } from "./audio";
 import {
   ARCADE_DAILY_LIMIT,
   GAMES,
@@ -58,7 +59,10 @@ export class Arcade {
 
   refresh(state: GameState): void {
     this.lastState = state;
-    if (this.isOpen) this.elLeft.textContent = `今天还能玩 ${arcadeLeft(state)}/${ARCADE_DAILY_LIMIT} 次`;
+    if (this.isOpen) {
+      const left = arcadeLeft(state);
+      this.elLeft.textContent = left > 0 ? `今天还能玩 ${left}/${ARCADE_DAILY_LIMIT} 次` : "今天玩完了，明天再来";
+    }
   }
 
   private stopPlay(): void {
@@ -209,7 +213,6 @@ export class Arcade {
           </div>
         </div>`;
         const grid = document.getElementById("play-grid")!;
-        const scoreEl = document.getElementById("play-score")!;
         grid.querySelectorAll<HTMLButtonElement>("button.face").forEach((b) => {
           b.addEventListener("click", () => {
             if (idx === undefined) return;
@@ -217,9 +220,11 @@ export class Arcade {
             if (ok) correct++;
             else wrong++;
             idx++;
-            scoreEl.textContent = String(findScore(correct, wrong, Math.max(0, def.duration - (performance.now() - startAt) / 1000)));
             bossAt = genRound();
             renderRound();
+            // 局部更新分数（renderRound 会重置 DOM，这里立刻补上真实值）
+            const se = document.getElementById("play-score");
+            if (se) se.textContent = String(findScore(correct, wrong, Math.max(0, def.duration - (performance.now() - startAt) / 1000)));
           });
         });
       };
@@ -248,6 +253,7 @@ export class Arcade {
       <div class="arcade-timer" id="play-timer">${def.duration}s</div>
       <div class="arcade-score" id="play-score">0</div>
       <div class="arcade-hint">跟着节拍点！</div>
+      <div class="judge-text" id="judge-text"></div>
       <div class="beat-row" id="beat-row"></div>
     </div>`;
     const area = document.getElementById("play-area")!;
@@ -258,15 +264,27 @@ export class Arcade {
     const onTap = (): void => {
       const tapAt = (performance.now() - startAt) / 1000;
       const res = judgeBeat(beats, tapAt, usedBeats);
+      const judgeEl = document.getElementById("judge-text");
       if (res.kind !== "miss" && res.index >= 0) {
         usedBeats.add(res.index);
         score += res.score;
         if (res.kind === "perfect") perfect++;
         const el = row.querySelector<HTMLElement>(`[data-b="${res.index}"]`);
         if (el) el.className = `beat ${res.kind}`;
+        // 音游反馈：判定音（perfect 更高更亮）
+        if (res.kind === "perfect") playSuccess();
+        else playClick(6);
+        if (judgeEl) {
+          judgeEl.textContent = res.kind === "perfect" ? "PERFECT" : "GOOD";
+          judgeEl.className = `judge-text ${res.kind}`;
+        }
       } else {
         // 乱点惩罚：无节拍可对应时扣 5 分（防"狂点拿保底"）
         score = Math.max(0, score - 5);
+        if (judgeEl) {
+          judgeEl.textContent = "MISS";
+          judgeEl.className = "judge-text miss";
+        }
       }
       scoreEl.textContent = String(score);
     };
@@ -279,7 +297,19 @@ export class Arcade {
       beats.forEach((b, i) => {
         const el = row.querySelector<HTMLElement>(`[data-b="${i}"]`);
         if (!el || usedBeats.has(i)) return;
-        el.className = Math.abs(b - elapsed) < 0.1 ? "beat on" : "beat";
+        // 漏拍惩罚：节拍过去 0.22s 仍未打 → 记 miss 并扣 10（防"只打一半拍零风险"）
+        if (elapsed > b + 0.22) {
+          usedBeats.add(i);
+          score = Math.max(0, score - 10);
+          el.className = "beat missed";
+          const judgeEl = document.getElementById("judge-text");
+          if (judgeEl) {
+            judgeEl.textContent = "MISS";
+            judgeEl.className = "judge-text miss";
+          }
+          return;
+        }
+        el.className = Math.abs(b - elapsed) < 0.03 ? "beat on" : "beat";
       });
       if (leftS > 0) this.play!.raf = requestAnimationFrame(tick);
       else {
@@ -297,11 +327,10 @@ export class Arcade {
   private finish(def: (typeof GAMES)[number], score: number, detail?: Record<string, number>): void {
     this.stopPlay();
     this.currentGame = null;
-    const gotReward = this.onFinish(def.id, Math.max(0, Math.floor(score)));
-    // 显示结算
-    const state = this.lastState;
-    const best = state?.arcade.best[def.id] ?? 0;
+    // 先取旧纪录再结算（否则首局破纪录不庆祝）
+    const best = this.lastState?.arcade.best[def.id] ?? 0;
     const record = Math.floor(score) > best;
+    const gotReward = this.onFinish(def.id, Math.max(0, Math.floor(score)));
     const detailText = detail
       ? Object.entries(detail)
           .map(([k, v]) => `${k === "caught" ? "接住" : k === "missed" ? "漏接" : "最高连击"} ${v}`)

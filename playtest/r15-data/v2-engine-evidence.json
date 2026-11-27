@@ -1,0 +1,486 @@
+{
+  "coffee": {
+    "samples": 5000,
+    "drops": {
+      "min": 25,
+      "max": 30,
+      "mean": 27.2
+    },
+    "perfectScore": {
+      "min": 500,
+      "max": 600,
+      "mean": 544.5,
+      "p50": 540,
+      "p90": 560,
+      "p99": 580
+    },
+    "reachRef600": 0.0012,
+    "maxPossibleDrops": 36,
+    "refScore": 600
+  },
+  "coffeeExpectation": [
+    {
+      "catchRate": 0.5,
+      "expectedScore": 138.7,
+      "maxScore": 412,
+      "reachRef600Pct": 0,
+      "rewardAtMidIdle": 5791
+    },
+    {
+      "catchRate": 0.7,
+      "expectedScore": 245.8,
+      "maxScore": 540,
+      "reachRef600Pct": 0,
+      "rewardAtMidIdle": 10250
+    },
+    {
+      "catchRate": 0.85,
+      "expectedScore": 365,
+      "maxScore": 580,
+      "reachRef600Pct": 0,
+      "rewardAtMidIdle": 15208
+    },
+    {
+      "catchRate": 0.95,
+      "expectedScore": 479.9,
+      "maxScore": 600,
+      "reachRef600Pct": 0.03,
+      "rewardAtMidIdle": 20000
+    },
+    {
+      "catchRate": 1,
+      "expectedScore": 544.7,
+      "maxScore": 600,
+      "reachRef600Pct": 0.1,
+      "rewardAtMidIdle": 22708
+    }
+  ],
+  "findboss": {
+    "refScore": 600,
+    "clicksNeededForRef": 12,
+    "byClickRate": [
+      {
+        "clicksPerSec": 2,
+        "correctIn30s": 60,
+        "rawScore": 3000,
+        "cappedByMaxScore": 2000,
+        "timeToReachRefSec": 6,
+        "rewardAtMidIdle": 25000
+      },
+      {
+        "clicksPerSec": 3,
+        "correctIn30s": 90,
+        "rawScore": 4500,
+        "cappedByMaxScore": 2000,
+        "timeToReachRefSec": 4,
+        "rewardAtMidIdle": 25000
+      },
+      {
+        "clicksPerSec": 4,
+        "correctIn30s": 120,
+        "rawScore": 6000,
+        "cappedByMaxScore": 2000,
+        "timeToReachRefSec": 3,
+        "rewardAtMidIdle": 25000
+      },
+      {
+        "clicksPerSec": 6,
+        "correctIn30s": 180,
+        "rawScore": 9000,
+        "cappedByMaxScore": 2000,
+        "timeToReachRefSec": 2,
+        "rewardAtMidIdle": 25000
+      },
+      {
+        "clicksPerSec": 8,
+        "correctIn30s": 240,
+        "rawScore": 12000,
+        "cappedByMaxScore": 2000,
+        "timeToReachRefSec": 1.5,
+        "rewardAtMidIdle": 25000
+      }
+    ],
+    "liveScoreVsFinal": [
+      {
+        "elapsedSec": 0.5,
+        "liveScoreWith0Correct": 295,
+        "finalScoreWith0Correct": 0
+      },
+      {
+        "elapsedSec": 5,
+        "liveScoreWith0Correct": 250,
+        "finalScoreWith0Correct": 0
+      },
+      {
+        "elapsedSec": 15,
+        "liveScoreWith0Correct": 150,
+        "finalScoreWith0Correct": 0
+      },
+      {
+        "elapsedSec": 29.9,
+        "liveScoreWith0Correct": 1,
+        "finalScoreWith0Correct": 0
+      }
+    ],
+    "timeBonusDeadAtSettlement": true,
+    "maxRawIn30s": 45000
+  },
+  "rhythm": {
+    "beatCount": 59,
+    "perfectAll": 1180,
+    "uiEffectivePerPerfect": 20,
+    "scoreToRef": {
+      "perfectsNeeded": 30,
+      "goodsNeeded": 60
+    },
+    "spam": [
+      {
+        "intervalMs": 100,
+        "taps": 300,
+        "hits": 59,
+        "penalties": 241,
+        "score": 0,
+        "perfect": 0,
+        "reachesRef": false,
+        "rewardAtMidIdle": 0
+      },
+      {
+        "intervalMs": 200,
+        "taps": 150,
+        "hits": 59,
+        "penalties": 92,
+        "score": 445,
+        "perfect": 30,
+        "reachesRef": false,
+        "rewardAtMidIdle": 18541
+      },
+      {
+        "intervalMs": 250,
+        "taps": 120,
+        "hits": 59,
+        "penalties": 61,
+        "score": 295,
+        "perfect": 0,
+        "reachesRef": false,
+        "rewardAtMidIdle": 12291
+      },
+      {
+        "intervalMs": 300,
+        "taps": 100,
+        "hits": 59,
+        "penalties": 41,
+        "score": 595,
+        "perfect": 20,
+        "reachesRef": false,
+        "rewardAtMidIdle": 24791
+      },
+      {
+        "intervalMs": 400,
+        "taps": 75,
+        "hits": 44,
+        "penalties": 32,
+        "score": 445,
+        "perfect": 15,
+        "reachesRef": false,
+        "rewardAtMidIdle": 18541
+      },
+      {
+        "intervalMs": 500,
+        "taps": 60,
+        "hits": 59,
+        "penalties": 1,
+        "score": 590,
+        "perfect": 0,
+        "reachesRef": false,
+        "rewardAtMidIdle": 24583
+      }
+    ]
+  },
+  "rewardTable": [
+    {
+      "stage": "开局(0.2/s)",
+      "idleRate": 0.2,
+      "idle30s": 6,
+      "oneDispatch_zhouLv1_stroll": 660,
+      "atRef600": {
+        "reward": 30,
+        "vsIdle30": 5,
+        "idleSecEquivalent": 150,
+        "vsDispatch": 0.05
+      },
+      "atCoffeeRealMax": {
+        "reward": 27,
+        "vsIdle30": 4.5,
+        "idleSecEquivalent": 135,
+        "vsDispatch": 0.04
+      },
+      "atRhythmMax": {
+        "reward": 30,
+        "vsIdle30": 5,
+        "idleSecEquivalent": 150,
+        "vsDispatch": 0.05
+      },
+      "atFindbossRealistic": {
+        "reward": 30,
+        "vsIdle30": 5,
+        "idleSecEquivalent": 150,
+        "vsDispatch": 0.05
+      }
+    },
+    {
+      "stage": "早期(1/s)",
+      "idleRate": 1,
+      "idle30s": 30,
+      "oneDispatch_zhouLv1_stroll": 660,
+      "atRef600": {
+        "reward": 30,
+        "vsIdle30": 1,
+        "idleSecEquivalent": 30,
+        "vsDispatch": 0.05
+      },
+      "atCoffeeRealMax": {
+        "reward": 27,
+        "vsIdle30": 0.9,
+        "idleSecEquivalent": 27,
+        "vsDispatch": 0.04
+      },
+      "atRhythmMax": {
+        "reward": 30,
+        "vsIdle30": 1,
+        "idleSecEquivalent": 30,
+        "vsDispatch": 0.05
+      },
+      "atFindbossRealistic": {
+        "reward": 30,
+        "vsIdle30": 1,
+        "idleSecEquivalent": 30,
+        "vsDispatch": 0.05
+      }
+    },
+    {
+      "stage": "中期(1000/s)",
+      "idleRate": 1000,
+      "idle30s": 30000,
+      "oneDispatch_zhouLv1_stroll": 4599,
+      "atRef600": {
+        "reward": 25000,
+        "vsIdle30": 0.833,
+        "idleSecEquivalent": 25,
+        "vsDispatch": 5.44
+      },
+      "atCoffeeRealMax": {
+        "reward": 22500,
+        "vsIdle30": 0.75,
+        "idleSecEquivalent": 22.5,
+        "vsDispatch": 4.89
+      },
+      "atRhythmMax": {
+        "reward": 25000,
+        "vsIdle30": 0.833,
+        "idleSecEquivalent": 25,
+        "vsDispatch": 5.44
+      },
+      "atFindbossRealistic": {
+        "reward": 25000,
+        "vsIdle30": 0.833,
+        "idleSecEquivalent": 25,
+        "vsDispatch": 5.44
+      }
+    },
+    {
+      "stage": "后期(10万/s)",
+      "idleRate": 100000,
+      "idle30s": 3000000,
+      "oneDispatch_zhouLv1_stroll": 442743,
+      "atRef600": {
+        "reward": 2500000,
+        "vsIdle30": 0.833,
+        "idleSecEquivalent": 25,
+        "vsDispatch": 5.65
+      },
+      "atCoffeeRealMax": {
+        "reward": 2250000,
+        "vsIdle30": 0.75,
+        "idleSecEquivalent": 22.5,
+        "vsDispatch": 5.08
+      },
+      "atRhythmMax": {
+        "reward": 2500000,
+        "vsIdle30": 0.833,
+        "idleSecEquivalent": 25,
+        "vsDispatch": 5.65
+      },
+      "atFindbossRealistic": {
+        "reward": 2500000,
+        "vsIdle30": 0.833,
+        "idleSecEquivalent": 25,
+        "vsDispatch": 5.65
+      }
+    }
+  ],
+  "stageDrift": {
+    "vs30sIdle": {
+      "opening_0_2": 5,
+      "early_1": 1,
+      "mid_1000": 0.833,
+      "late_100000": 0.833
+    },
+    "oldDrift34x_fixed": true,
+    "earlyFloorCoversIdleBelow": 1.2
+  },
+  "daily3": [
+    {
+      "stage": "开局(0.2/s)",
+      "idleRate": 0.2,
+      "perGame": 30,
+      "daily3": 90,
+      "idle90s": 18
+    },
+    {
+      "stage": "早期(1/s)",
+      "idleRate": 1,
+      "perGame": 30,
+      "daily3": 90,
+      "idle90s": 90
+    },
+    {
+      "stage": "中期(1000/s)",
+      "idleRate": 1000,
+      "perGame": 25000,
+      "daily3": 75000,
+      "idle90s": 90000
+    },
+    {
+      "stage": "后期(10万/s)",
+      "idleRate": 100000,
+      "perGame": 2500000,
+      "daily3": 7500000,
+      "idle90s": 9000000
+    }
+  ],
+  "daily3Coffee": [
+    {
+      "stage": "开局(0.2/s)",
+      "daily3AtCoffee540": 81,
+      "daily3AtRef600": 90,
+      "lossPct": 10
+    },
+    {
+      "stage": "早期(1/s)",
+      "daily3AtCoffee540": 81,
+      "daily3AtRef600": 90,
+      "lossPct": 10
+    },
+    {
+      "stage": "中期(1000/s)",
+      "daily3AtCoffee540": 67500,
+      "daily3AtRef600": 75000,
+      "lossPct": 10
+    },
+    {
+      "stage": "后期(10万/s)",
+      "daily3AtCoffee540": 6750000,
+      "daily3AtRef600": 7500000,
+      "lossPct": 10
+    }
+  ],
+  "strategy": {
+    "midIdle": 1000,
+    "fullRewardThreshold": 600,
+    "games": [
+      {
+        "game": "找老板",
+        "fullRewardScore": 600,
+        "effortForFull": "12 个正确；2 次/秒约 6s，3 次/秒约 4s（30s 内可点 60~240 个）",
+        "realisticScore": 9000,
+        "expectedReward": 25000,
+        "ratioOfFull": 1,
+        "canFull": true
+      },
+      {
+        "game": "节奏点击",
+        "fullRewardScore": 600,
+        "effortForFull": "30 perfect（51% 命中）/ 60 good；熟练玩家正拍点击可达",
+        "realisticScore": 900,
+        "expectedReward": 25000,
+        "ratioOfFull": 1.5,
+        "canFull": true
+      },
+      {
+        "game": "接咖啡",
+        "fullRewardScore": 600,
+        "effortForFull": "需要掉落数 ≥30（概率见 coffee.reachRef600），且全接住",
+        "realisticScore": 540,
+        "expectedReward": 22500,
+        "ratioOfFull": 0.9,
+        "canFull": false
+      }
+    ],
+    "argmax": "找老板"
+  },
+  "coffeeReach600Probability": 0.0018,
+  "capAndExploit": {
+    "maxScore": 2000,
+    "raw9000_bestRecorded": 2000,
+    "raw9000_reward": 25000,
+    "raw1e9_rewardEquals9000": true,
+    "raw1e9_bestRecorded": 2000,
+    "zeroConsumes": true,
+    "negConsumes": true,
+    "nanConsumes": true,
+    "fourthBlocked": true,
+    "uiResultShowsRawButBestCapped": "结算屏显示原始分（如 9000），入档 best 截到 2000 → 菜单'最高 2000'"
+  },
+  "rewardSaturation": {
+    "at600": 25000,
+    "at1180": 25000,
+    "at2000": 25000,
+    "saturated": true
+  },
+  "crossDay": {
+    "sameDaySame": true,
+    "nextPlayed": 0,
+    "bestKept": 555,
+    "zeroScoreText": "结算屏：本局 0 分，次数已扣 1 次（arcade.ts:313）"
+  },
+  "earlyFloor": {
+    "EARLY_FLOOR": 30,
+    "TARGET_IDLE_SECONDS": 25,
+    "REF_SCORE": 600,
+    "rows": [
+      {
+        "stage": "开局(0.2/s)",
+        "idleRate": 0.2,
+        "full": 30,
+        "half": 15,
+        "fullVs30sIdle": 5,
+        "fullInIdleSeconds": 150
+      },
+      {
+        "stage": "早期(1/s)",
+        "idleRate": 1,
+        "full": 30,
+        "half": 15,
+        "fullVs30sIdle": 1,
+        "fullInIdleSeconds": 30
+      },
+      {
+        "stage": "中期(1000/s)",
+        "idleRate": 1000,
+        "full": 25000,
+        "half": 12500,
+        "fullVs30sIdle": 0.833,
+        "fullInIdleSeconds": 25
+      },
+      {
+        "stage": "后期(10万/s)",
+        "idleRate": 100000,
+        "full": 2500000,
+        "half": 1250000,
+        "fullVs30sIdle": 0.833,
+        "fullInIdleSeconds": 25
+      }
+    ],
+    "note": "开局 0.2/s 时 30 摸鱼值 = 150 秒挂机（5×同局时长）；idle≥1.2 后恒为 25s"
+  }
+}

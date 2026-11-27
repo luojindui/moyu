@@ -1,0 +1,182 @@
+{
+  "phase": "s5",
+  "meta": {
+    "startedAt": "2026-11-27T12:04:46.765Z",
+    "url": "http://127.0.0.1:5173/",
+    "finishedAt": "2026-11-27T12:05:04.686Z"
+  },
+  "hashesBefore": {
+    "src/ui/arcade.ts": "b8ad5a04ac78",
+    "src/engine/minigames.ts": "fd365b1187bf",
+    "src/style.css": "0c670acda141",
+    "src/main.ts": "aff35a29365f",
+    "index.html": "432f4b73d496"
+  },
+  "errors": [],
+  "steps": [
+    {
+      "t": 2.2,
+      "s": "rhythm on-beat then mash"
+    },
+    {
+      "t": 7.9,
+      "s": "forceBoss choice during rhythm"
+    },
+    {
+      "t": 10,
+      "s": "backdrop mistap mid-game"
+    },
+    {
+      "t": 10.7,
+      "s": "burn remaining attempts"
+    },
+    {
+      "t": 15,
+      "s": "locked state"
+    }
+  ],
+  "entry": {
+    "open": true,
+    "left": "今天还能玩 3/3 次",
+    "body": "接咖啡 最高 0\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 0\n在一堆同事脸里找出王总，越快越好\n开始（30 秒内无限轮）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n开始（30 秒）"
+  },
+  "rhythm": {
+    "onBeat2500ms": "60",
+    "mashExtra2500ms": "0"
+  },
+  "bossConflict": {
+    "appeared": true,
+    "bossOpen": true,
+    "arcadeOpen": true,
+    "titleDuring": "节奏点击",
+    "timerBefore": "24.4s",
+    "timerDuring": "24.2s",
+    "bossRect": {
+      "x": 15.59375,
+      "y": 417,
+      "w": 358.796875,
+      "h": 227,
+      "text": "\n        有人过来了——他一路盯着别人的屏幕走过来\n        立刻装忙切到工作界面继续摸鱼\n        \n      ",
+      "vis": true
+    },
+    "playRect": {
+      "x": 33.59375,
+      "y": 301,
+      "w": 322.796875,
+      "h": 300,
+      "text": "\n      24.2s\n      0\n      跟着节拍点！\n      \n    ",
+      "vis": true
+    },
+    "overlap": {
+      "w": 323,
+      "h": 184,
+      "areaRatio": 0.613
+    },
+    "zIndex": {
+      "boss": "18",
+      "arcade": "17"
+    },
+    "gameText": "24.2s\n0\n跟着节拍点！",
+    "after": {
+      "bossOpen": false,
+      "arcadeOpen": true,
+      "title": "节奏点击",
+      "timer": "22.3s",
+      "body": "22.3s\n0\n跟着节拍点！",
+      "toast": {
+        "text": "王总：切得真快。（新手保护，这次不扣钱）",
+        "show": true
+      }
+    }
+  },
+  "mistap": {
+    "playedBefore": 0,
+    "tapAt": {
+      "x": 8,
+      "y": 422
+    },
+    "how": "touch",
+    "closed": true,
+    "playedAfter": 1,
+    "toast": {
+      "text": "得分 0，没拿到奖励",
+      "show": true
+    },
+    "resultShown": false,
+    "left": "今天还能玩 2/3 次"
+  },
+  "burn": [
+    {
+      "i": 0,
+      "left": "今天还能玩 1/3 次",
+      "played": 2,
+      "toast": {
+        "text": "得分 0，没拿到奖励",
+        "show": true
+      }
+    },
+    {
+      "i": 1,
+      "left": "今天还能玩 0/3 次",
+      "played": 3,
+      "toast": {
+        "text": "得分 0，没拿到奖励",
+        "show": true
+      }
+    },
+    {
+      "i": 2,
+      "locked": true,
+      "left": "今天还能玩 0/3 次",
+      "body": "接咖啡 最高 0\n咖啡掉下来时点住它——掉地上就没了\n明天再来\n找老板 最高 0\n在一堆同事脸里找出王总，越快越好\n明天再来\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n明天再来"
+    }
+  ],
+  "locked": {
+    "open": false,
+    "info": {
+      "leftTextLiveAfter800ms": "今天还能玩 0/3 次",
+      "panelText": "\n      \n        \n          摸鱼站\n          ✕\n        \n        今天还能玩 0/3 次\n        \n        接咖啡 最高 0\n        咖啡掉下来时点住它——掉地上就没了\n        明天再来\n      \n        找老板 最高 0\n        在一堆同事脸里找出王总，越快越好\n        明天再来\n      \n        节奏点击 最高 0\n        跟着节拍点屏幕，越准分越高\n        明天再来\n      \n      \n    ",
+      "cards": [
+        {
+          "name": "接咖啡 最高 0",
+          "locked": true,
+          "disabled": true,
+          "btnText": "明天再来"
+        },
+        {
+          "name": "找老板 最高 0",
+          "locked": true,
+          "disabled": true,
+          "btnText": "明天再来"
+        },
+        {
+          "name": "节奏点击 最高 0",
+          "locked": true,
+          "disabled": true,
+          "btnText": "明天再来"
+        }
+      ],
+      "showsResetHint": true
+    },
+    "afterClickDisabled": {
+      "title": "摸鱼站",
+      "played": 3,
+      "open": false
+    },
+    "entryButton": {
+      "aria": "摸鱼站小游戏",
+      "text": "🎮",
+      "cls": ""
+    },
+    "reopenLeftText": "今天还能玩 0/3 次",
+    "reopenBody": "接咖啡 最高 0\n咖啡掉下来时点住它——掉地上就没了\n明天再来\n找老板 最高 0\n在一堆同事脸里找出王总，越快越好\n明天再来\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n明天再来"
+  },
+  "durationMs": 17874,
+  "hashesAfter": {
+    "src/ui/arcade.ts": "b8ad5a04ac78",
+    "src/engine/minigames.ts": "fd365b1187bf",
+    "src/style.css": "0c670acda141",
+    "src/main.ts": "aff35a29365f",
+    "index.html": "432f4b73d496"
+  }
+}

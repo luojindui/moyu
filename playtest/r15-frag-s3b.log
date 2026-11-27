@@ -1,0 +1,8 @@
+[0.4s] s3b: 桌面 1280x800 富态奖励实测
+[1.8s] shot s3b-01-first-screen
+[1.8s] step reset + grant + upgrades
+[3.9s] shot s3b-02-rich
+[3.9s] step rich findboss full run
+[34.3s] shot s3b-03-rich-result
+[34.7s] evidence -> playtest/r15-frag-s3b.json
+DONE s3b
