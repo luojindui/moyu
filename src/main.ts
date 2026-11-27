@@ -1053,6 +1053,19 @@ async function boot(): Promise<void> {
   hud.refresh(state);
   shop.refresh(state);
 
+  // 🎮 剩余次数角标（启动时就显示，不只玩过之后）
+  {
+    const ab = document.getElementById("btn-arcade");
+    const leftN = arcadeLeft(state);
+    if (ab && leftN > 0) {
+      const badge = document.createElement("span");
+      badge.className = "arcade-badge";
+      badge.textContent = String(leftN);
+      ab.appendChild(badge);
+      ab.setAttribute("aria-label", `摸鱼站，今天还剩 ${leftN} 次`);
+    }
+  }
+
   // 音效开关
   const muteBtn = document.getElementById("btn-mute");
   if (muteBtn) {

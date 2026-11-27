@@ -42,6 +42,9 @@ export class Arcade {
   }
 
   open(): void {
+    // 摸鱼站层级高于卡片弹窗：进入时先把卡片收起来，避免玩完关掉后突然弹出
+    const cards = document.getElementById("cards");
+    if (cards && !cards.classList.contains("hidden")) cards.classList.add("hidden");
     this.root.classList.remove("hidden");
     this.renderMenu();
   }
@@ -93,6 +96,7 @@ export class Arcade {
       return `<div class="arcade-card ${can ? "" : "locked"}">
         <div class="arcade-name">${g.name} <small>最高 ${best}</small></div>
         <div class="arcade-desc">${g.desc}</div>
+        <div class="arcade-desc" style="color:#8be28b">满分 ≈ 25 秒挂机收益（新号保底 30）</div>
         <button data-game="${g.id}" ${can ? "" : "disabled"}>${can ? `开始（${g.id === "findboss" ? "30 秒内无限轮" : `${g.duration} 秒`}）` : "明天再来"}</button>
       </div>`;
     }).join("");

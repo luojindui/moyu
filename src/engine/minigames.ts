@@ -67,6 +67,10 @@ export function finishGame(
   playedSeconds = 30,
 ): { state: GameState; reward: number } | null {
   if (arcadeLeft(state) <= 0) return null;
+  // 前 2 秒误触/手滑：退还次数（不消耗、无奖励），避免新玩家一开局就损失 1/3 机会
+  if (playedSeconds < 2) {
+    return { state, reward: 0 };
+  }
   if (!Number.isFinite(score) || score <= 0) {
     // 0 分也消耗次数（防止反复重开刷次数）
     return { state: { ...state, arcade: { ...state.arcade, played: state.arcade.played + 1 } }, reward: 0 };

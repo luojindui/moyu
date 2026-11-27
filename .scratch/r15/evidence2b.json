@@ -1,0 +1,173 @@
+{
+  "stages": {
+    "badgeReload": "ok",
+    "lateCatch": "ok",
+    "exitMid": "ok",
+    "cancel": "ok"
+  },
+  "badgeReload": {
+    "after": {
+      "badge": null,
+      "aria": "摸鱼站小游戏"
+    },
+    "menu": {
+      "left": "今天还能玩 2/3 次 · 每局能赢摸鱼值",
+      "cards": [
+        "接咖啡 最高 516",
+        "找老板 最高 8000",
+        "节奏点击 最高 1065"
+      ],
+      "buttons": [
+        {
+          "text": "开始（30 秒）",
+          "disabled": false
+        },
+        {
+          "text": "开始（30 秒内无限轮）",
+          "disabled": false
+        },
+        {
+          "text": "开始（30 秒）",
+          "disabled": false
+        }
+      ]
+    }
+  },
+  "lateCatch": {
+    "clicked": true,
+    "clsBefore": "drop landed caught",
+    "top": "88%",
+    "scoreAfter": "10",
+    "t": 1.02
+  },
+  "exitMid": {
+    "mid": {},
+    "panelHidden": true,
+    "toast": "",
+    "arcade": {
+      "date": "2026-11-27",
+      "played": 0,
+      "best": {
+        "coffee": 516,
+        "findboss": 8000,
+        "rhythm": 1065
+      }
+    },
+    "save": {
+      "date": "2026-11-27",
+      "played": 0,
+      "best": {
+        "coffee": 516,
+        "findboss": 8000,
+        "rhythm": 1065
+      }
+    },
+    "badge": {
+      "badge": "3",
+      "aria": "摸鱼站，今天还剩 3 次"
+    },
+    "menu": {
+      "left": "今天还能玩 3/3 次 · 每局能赢摸鱼值",
+      "cards": [
+        "接咖啡 最高 516",
+        "找老板 最高 8000",
+        "节奏点击 最高 1065"
+      ],
+      "buttons": [
+        {
+          "text": "开始（30 秒）",
+          "disabled": false
+        },
+        {
+          "text": "开始（30 秒内无限轮）",
+          "disabled": false
+        },
+        {
+          "text": "开始（30 秒）",
+          "disabled": false
+        }
+      ]
+    }
+  },
+  "exitEarly": {
+    "arcade": {
+      "date": "2026-11-27",
+      "played": 1,
+      "best": {
+        "coffee": 516,
+        "findboss": 8000,
+        "rhythm": 1065
+      }
+    },
+    "confirms": [],
+    "panelHidden": true,
+    "toast": "摸鱼站 +1（得分 10）",
+    "save": {
+      "date": "2026-11-27",
+      "played": 1,
+      "best": {
+        "coffee": 516,
+        "findboss": 8000,
+        "rhythm": 1065
+      }
+    },
+    "badge": {
+      "badge": "2",
+      "aria": "摸鱼站，今天还剩 2 次"
+    },
+    "menu": {
+      "left": "今天还能玩 2/3 次 · 每局能赢摸鱼值",
+      "cards": [
+        "接咖啡 最高 516",
+        "找老板 最高 8000",
+        "节奏点击 最高 1065"
+      ],
+      "buttons": [
+        {
+          "text": "开始（30 秒）",
+          "disabled": false
+        },
+        {
+          "text": "开始（30 秒内无限轮）",
+          "disabled": false
+        },
+        {
+          "text": "开始（30 秒）",
+          "disabled": false
+        }
+      ]
+    }
+  },
+  "cancel": {
+    "before": {
+      "timer": "25.8s",
+      "playing": true
+    },
+    "confirms": [
+      "本局已玩 4 秒，结束会按已完成比例结算并消耗 1 次机会。确定结束？"
+    ],
+    "panelStillOpen": true,
+    "stillPlaying": true,
+    "timerAfter": "25.4s",
+    "arcade": {
+      "date": "2026-11-27",
+      "played": 0,
+      "best": {
+        "coffee": 516,
+        "findboss": 8000,
+        "rhythm": 1065
+      }
+    }
+  },
+  "errors": [],
+  "finalArcade": {
+    "date": "2026-11-27",
+    "played": 0,
+    "best": {
+      "coffee": 516,
+      "findboss": 8000,
+      "rhythm": 1065
+    }
+  },
+  "consoleErrors": []
+}
