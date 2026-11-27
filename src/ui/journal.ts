@@ -15,6 +15,10 @@ export class Journal {
   private elQuote = document.getElementById("journal-quote")!;
   private elFlavor = document.getElementById("journal-flavor")!;
   private elLatest = document.getElementById("journal-latest")!;
+  /** 最近一次刷新的状态：面板打开时立即重绘用 */
+  private lastState: GameState | null = null;
+  /** 上一次刷新时间（节流：面板关闭时零开销） */
+  private lastRefreshAt = 0;
 
   constructor(private onClaim: () => void) {
     document.getElementById("journal-close")!.addEventListener("click", () => this.hide());
@@ -24,6 +28,7 @@ export class Journal {
 
   toggle(): void {
     this.root.classList.toggle("hidden");
+    if (this.isOpen && this.lastState) this.refresh(this.lastState, true);
   }
 
   hide(): void {
@@ -34,7 +39,13 @@ export class Journal {
     return !this.root.classList.contains("hidden");
   }
 
-  refresh(state: GameState): void {
+  refresh(state: GameState, force = false): void {
+    this.lastState = state;
+    // 面板关闭时零 DOM 开销；打开时节流 400ms（避免每帧重建列表）
+    if (!this.isOpen) return;
+    const now = performance.now();
+    if (!force && now - this.lastRefreshAt < 400) return;
+    this.lastRefreshAt = now;
     const d = state.daily;
     if (!d) return;
     this.elDate.textContent = d.date;

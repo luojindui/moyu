@@ -67,6 +67,8 @@ export interface SessionResult {
   buys: number;
   survives: number;
   claimedReward: number | null;
+  /** 各目标首次 done 的时刻（秒），用于展示余量 */
+  goalDoneAtSec: Record<string, number>;
   endGoals: { id: string; progress: number; target: number; done: boolean }[];
 }
 
