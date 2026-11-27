@@ -27,6 +27,7 @@
           <span id="hud-card" class="hidden"></span>
           <span id="hud-combo" class="hidden"></span>
           <span id="hud-streak" class="hidden"></span>
+          <button id="btn-arcade" aria-label="摸鱼站小游戏">🎮</button>
           <button id="btn-team" aria-label="摸鱼小队">👥</button>
           <button id="btn-mute" aria-label="音效开关">🔊</button>
           <button id="btn-journal" aria-label="日报与图鉴">📔</button>
@@ -39,6 +40,16 @@
       <main id="stage-wrap"><canvas id="stage" tabindex="0" role="button" aria-label="点击摸鱼" aria-describedby="decor-summary"></canvas>
         <div id="decor-summary" class="sr-only">工位尚未装修</div></main>
       <footer id="shop"><div id="shop-wrap"><div id="shop-cards"></div><span id="shop-hint">← 滑动查看更多 →</span></div></footer>
+    </div>
+    <div id="arcade" class="hidden" role="dialog" aria-modal="true" aria-labelledby="arcade-title">
+      <div class="arcade-panel">
+        <div class="arcade-head">
+          <h2 id="arcade-title">摸鱼站</h2>
+          <button id="arcade-close" aria-label="关闭">✕</button>
+        </div>
+        <div class="arcade-left" id="arcade-left"></div>
+        <div id="arcade-body"></div>
+      </div>
     </div>
     <div id="cards" class="hidden" role="dialog" aria-modal="true" aria-labelledby="cards-title">
       <div class="cards-panel">

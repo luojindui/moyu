@@ -1,0 +1,2228 @@
+{
+  "at": "2026-11-27T11:37:33.859Z",
+  "head": "acefd7a",
+  "t1": {
+    "tab": "工位",
+    "focusBuy": {
+      "aria": "购买：绿萝，3000，效果工位挂机 +5%",
+      "act": "decor",
+      "dataId": "plant",
+      "isFocused": true
+    },
+    "afterBuy": {
+      "live": "已装修：绿萝（工位挂机 +5%）",
+      "decor": "工位已装修：绿萝（工位挂机 +5%）",
+      "active": {
+        "tag": "BUTTON",
+        "id": "tab-decor",
+        "role": "tab",
+        "text": "工位",
+        "act": null,
+        "dataId": null,
+        "isBody": false,
+        "insideDialog": true
+      }
+    },
+    "focusUse": {
+      "aria": "使用：认真摸鱼（消耗 40 精力，今天挂机 +25%）",
+      "isFocused": true
+    },
+    "afterUse": {
+      "live": "精力已使用：认真摸鱼（剩余 60 点）",
+      "head": "今日精力 （剩 60/100）",
+      "active": {
+        "tag": "BUTTON",
+        "id": "tab-decor",
+        "role": "tab",
+        "text": "工位",
+        "act": null,
+        "dataId": null,
+        "isBody": false,
+        "insideDialog": true
+      }
+    }
+  },
+  "t2": {
+    "recruited": true,
+    "uses": [
+      {
+        "id": "social",
+        "live": "精力已使用：跟同事聊天（剩余 75 点）"
+      },
+      {
+        "id": "fake-work",
+        "live": "精力已使用：假装工作（剩余 40 点）"
+      },
+      {
+        "id": "slack",
+        "live": "精力已使用：认真摸鱼（剩余 0 点）"
+      }
+    ],
+    "samples": [
+      {
+        "ms": 100,
+        "live": "今日精力已用完"
+      },
+      {
+        "ms": 400,
+        "live": "今日精力已用完"
+      },
+      {
+        "ms": 620,
+        "live": "今日精力已用完"
+      },
+      {
+        "ms": 700,
+        "live": "今日精力已用完"
+      },
+      {
+        "ms": 850,
+        "live": "今日精力已用完"
+      },
+      {
+        "ms": 1200,
+        "live": "今日精力已用完"
+      }
+    ],
+    "head": "今日精力 （剩 0/100）"
+  },
+  "t3": {
+    "recruited": true,
+    "comboBefore": {
+      "text": "省心组合：摸鱼+假装工作+社交（100 精力）",
+      "disabled": false,
+      "h": 44
+    },
+    "samples": [
+      {
+        "ms": 120,
+        "live": "已使用 3 项精力（剩余 0 点）"
+      },
+      {
+        "ms": 500,
+        "live": "今日精力已用完"
+      },
+      {
+        "ms": 700,
+        "live": "今日精力已用完"
+      },
+      {
+        "ms": 820,
+        "live": "今日精力已用完"
+      },
+      {
+        "ms": 1000,
+        "live": "今日精力已用完"
+      },
+      {
+        "ms": 1400,
+        "live": "今日精力已用完"
+      }
+    ],
+    "after": {
+      "head": "今日精力 （剩 0/100）",
+      "active": {
+        "tag": "BODY",
+        "id": "",
+        "role": null,
+        "text": "今日精力已用完\n    \n      \n  ",
+        "act": null,
+        "dataId": null,
+        "isBody": true,
+        "insideDialog": false
+      }
+    }
+  },
+  "t4owned": {
+    "rows": [
+      {
+        "id": "slack",
+        "act": "energy",
+        "disabledState": "1",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgb(51, 51, 74)",
+          "border": "rgb(77, 77, 107)"
+        },
+        "name": {
+          "text": "认真摸鱼",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 10.85,
+          "effectiveContrast": 10.85
+        },
+        "desc": {
+          "text": "今天挂机 +25% · 花 40 精力",
+          "fs": "12px",
+          "color": "rgb(201, 210, 234)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 8.11,
+          "effectiveContrast": 8.11
+        },
+        "srOnly": [
+          "已使用"
+        ],
+        "btn": null
+      },
+      {
+        "id": "fake-work",
+        "act": "energy",
+        "disabledState": "0",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgba(0, 0, 0, 0)",
+          "border": "rgb(244, 241, 232) rgb(244, 241, 232) rgb(67, 67, 92)"
+        },
+        "name": {
+          "text": "假装工作",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "contrast": 9.75,
+          "effectiveContrast": 9.75
+        },
+        "desc": {
+          "text": "今天巡逻奖励 ×2.2 · 花 35 精力",
+          "fs": "12px",
+          "color": "rgb(184, 179, 156)",
+          "rowBg": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "contrast": 5.23,
+          "effectiveContrast": 5.23
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "使用：假装工作（消耗 35 精力，今天巡逻奖励 ×2.2）",
+          "text": "使用",
+          "disabled": false,
+          "h": 44
+        }
+      },
+      {
+        "id": "social",
+        "act": "energy",
+        "disabledState": "1",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgb(51, 51, 74)",
+          "border": "rgb(77, 77, 107)"
+        },
+        "name": {
+          "text": "跟同事聊天",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 10.85,
+          "effectiveContrast": 10.85
+        },
+        "desc": {
+          "text": "全体好感 +5，且今天挂机 +5% · 花 25 精力 · 还没有同事，暂不可用",
+          "fs": "12px",
+          "color": "rgb(201, 210, 234)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 8.11,
+          "effectiveContrast": 8.11
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "使用：跟同事聊天（消耗 25 精力，全体好感 +5，且今天挂机 +5%）",
+          "text": "使用",
+          "disabled": true,
+          "h": 44
+        }
+      },
+      {
+        "id": "focus",
+        "act": "energy",
+        "disabledState": "0",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgba(0, 0, 0, 0)",
+          "border": "rgb(244, 241, 232) rgb(244, 241, 232) rgb(67, 67, 92)"
+        },
+        "name": {
+          "text": "专注点击",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "contrast": 9.75,
+          "effectiveContrast": 9.75
+        },
+        "desc": {
+          "text": "今天点击力 +20% · 花 45 精力",
+          "fs": "12px",
+          "color": "rgb(184, 179, 156)",
+          "rowBg": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "contrast": 5.23,
+          "effectiveContrast": 5.23
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "使用：专注点击（消耗 45 精力，今天点击力 +20%）",
+          "text": "使用",
+          "disabled": false,
+          "h": 44
+        }
+      },
+      {
+        "id": "plant",
+        "act": "decor",
+        "disabledState": "1",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgb(51, 51, 74)",
+          "border": "rgb(77, 77, 107)"
+        },
+        "name": {
+          "text": "绿萝",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 10.85,
+          "effectiveContrast": 10.85
+        },
+        "desc": {
+          "text": "工位挂机 +5%",
+          "fs": "12px",
+          "color": "rgb(201, 210, 234)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 8.11,
+          "effectiveContrast": 8.11
+        },
+        "srOnly": [
+          "已装修"
+        ],
+        "btn": null
+      },
+      {
+        "id": "lamp",
+        "act": "decor",
+        "disabledState": "0",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgba(0, 0, 0, 0)",
+          "border": "rgb(244, 241, 232) rgb(244, 241, 232) rgb(67, 67, 92)"
+        },
+        "name": {
+          "text": "护眼台灯",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(47, 47, 68)",
+          "opacity": 1,
+          "contrast": 11.54,
+          "effectiveContrast": 11.54
+        },
+        "desc": {
+          "text": "点击力 +15%",
+          "fs": "12px",
+          "color": "rgb(184, 179, 156)",
+          "rowBg": "rgb(47, 47, 68)",
+          "opacity": 1,
+          "contrast": 6.19,
+          "effectiveContrast": 6.19
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "购买：护眼台灯，2.00万，效果点击力 +15%",
+          "text": "2.00万",
+          "disabled": false,
+          "h": 44
+        }
+      },
+      {
+        "id": "rug",
+        "act": "decor",
+        "disabledState": "0",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgba(0, 0, 0, 0)",
+          "border": "rgb(244, 241, 232) rgb(244, 241, 232) rgb(67, 67, 92)"
+        },
+        "name": {
+          "text": "毛绒地毯",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(47, 47, 68)",
+          "opacity": 1,
+          "contrast": 11.54,
+          "effectiveContrast": 11.54
+        },
+        "desc": {
+          "text": "离线效率 +5%",
+          "fs": "12px",
+          "color": "rgb(184, 179, 156)",
+          "rowBg": "rgb(47, 47, 68)",
+          "opacity": 1,
+          "contrast": 6.19,
+          "effectiveContrast": 6.19
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "购买：毛绒地毯，12.00万，效果离线效率 +5%",
+          "text": "12.00万",
+          "disabled": false,
+          "h": 44
+        }
+      },
+      {
+        "id": "fridge",
+        "act": "decor",
+        "disabledState": "0",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgba(0, 0, 0, 0)",
+          "border": "rgb(244, 241, 232) rgb(244, 241, 232) rgb(67, 67, 92)"
+        },
+        "name": {
+          "text": "迷你冰箱",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(47, 47, 68)",
+          "opacity": 1,
+          "contrast": 11.54,
+          "effectiveContrast": 11.54
+        },
+        "desc": {
+          "text": "工位挂机 +8%",
+          "fs": "12px",
+          "color": "rgb(184, 179, 156)",
+          "rowBg": "rgb(47, 47, 68)",
+          "opacity": 1,
+          "contrast": 6.19,
+          "effectiveContrast": 6.19
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "购买：迷你冰箱，60.00万，效果工位挂机 +8%",
+          "text": "60.00万",
+          "disabled": false,
+          "h": 44
+        }
+      },
+      {
+        "id": "chair",
+        "act": "decor",
+        "disabledState": "0",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgba(0, 0, 0, 0)",
+          "border": "rgb(244, 241, 232) rgb(244, 241, 232) rgb(67, 67, 92)"
+        },
+        "name": {
+          "text": "按摩椅",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(47, 47, 68)",
+          "opacity": 1,
+          "contrast": 11.54,
+          "effectiveContrast": 11.54
+        },
+        "desc": {
+          "text": "离线效率 +8%",
+          "fs": "12px",
+          "color": "rgb(184, 179, 156)",
+          "rowBg": "rgb(47, 47, 68)",
+          "opacity": 1,
+          "contrast": 6.19,
+          "effectiveContrast": 6.19
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "购买：按摩椅，400.00万，效果离线效率 +8%",
+          "text": "400.00万",
+          "disabled": false,
+          "h": 44
+        }
+      },
+      {
+        "id": "aquarium",
+        "act": "decor",
+        "disabledState": "0",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgba(0, 0, 0, 0)",
+          "border": "rgb(244, 241, 232) rgb(244, 241, 232) rgb(67, 67, 92)"
+        },
+        "name": {
+          "text": "鱼缸",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(47, 47, 68)",
+          "opacity": 1,
+          "contrast": 11.54,
+          "effectiveContrast": 11.54
+        },
+        "desc": {
+          "text": "挂机 +10%、点击 +10%",
+          "fs": "12px",
+          "color": "rgb(184, 179, 156)",
+          "rowBg": "rgb(47, 47, 68)",
+          "opacity": 1,
+          "contrast": 6.19,
+          "effectiveContrast": 6.19
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%",
+          "text": "3000.00万",
+          "disabled": false,
+          "h": 44
+        }
+      },
+      {
+        "id": "projector",
+        "act": "decor",
+        "disabledState": "0",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgba(0, 0, 0, 0)",
+          "border": "rgb(244, 241, 232) rgb(244, 241, 232) rgb(67, 67, 92)"
+        },
+        "name": {
+          "text": "投影仪",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(47, 47, 68)",
+          "opacity": 1,
+          "contrast": 11.54,
+          "effectiveContrast": 11.54
+        },
+        "desc": {
+          "text": "派遣奖励 +30%",
+          "fs": "12px",
+          "color": "rgb(184, 179, 156)",
+          "rowBg": "rgb(47, 47, 68)",
+          "opacity": 1,
+          "contrast": 6.19,
+          "effectiveContrast": 6.19
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "购买：投影仪，2.00亿，效果派遣奖励 +30%",
+          "text": "2.00亿",
+          "disabled": false,
+          "h": 44
+        }
+      },
+      {
+        "id": "catbed",
+        "act": "decor",
+        "disabledState": "0",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgba(0, 0, 0, 0)",
+          "border": "rgb(244, 241, 232)"
+        },
+        "name": {
+          "text": "工位猫窝",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(47, 47, 68)",
+          "opacity": 1,
+          "contrast": 11.54,
+          "effectiveContrast": 11.54
+        },
+        "desc": {
+          "text": "挂机 +15%、离线 +10%",
+          "fs": "12px",
+          "color": "rgb(184, 179, 156)",
+          "rowBg": "rgb(47, 47, 68)",
+          "opacity": 1,
+          "contrast": 6.19,
+          "effectiveContrast": 6.19
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%",
+          "text": "20.00亿",
+          "disabled": false,
+          "h": 44
+        }
+      }
+    ],
+    "heads": [
+      {
+        "text": "今日精力 （剩 60/100）",
+        "small": {
+          "text": "（剩 60/100）",
+          "fs": "11.6667px",
+          "color": "rgb(169, 182, 221)",
+          "rowBg": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "contrast": 5.47,
+          "effectiveContrast": 5.47
+        }
+      },
+      {
+        "text": "工位家具 （已装修 1/8）",
+        "small": {
+          "text": "（已装修 1/8）",
+          "fs": "15.6px",
+          "color": "rgb(169, 182, 221)",
+          "rowBg": "rgb(47, 47, 68)",
+          "opacity": 1,
+          "contrast": 6.47,
+          "effectiveContrast": 6.47
+        }
+      }
+    ],
+    "btns": [
+      {
+        "text": "✕",
+        "aria": "关闭",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": false
+      },
+      {
+        "text": "同事",
+        "aria": null,
+        "role": "tab",
+        "selected": "false",
+        "h": 44,
+        "disabled": false
+      },
+      {
+        "text": "天赋",
+        "aria": null,
+        "role": "tab",
+        "selected": "false",
+        "h": 44,
+        "disabled": false
+      },
+      {
+        "text": "工位",
+        "aria": null,
+        "role": "tab",
+        "selected": "true",
+        "h": 44,
+        "disabled": false
+      },
+      {
+        "text": "使用",
+        "aria": "使用：假装工作（消耗 35 精力，今天巡逻奖励 ×2.2）",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": false
+      },
+      {
+        "text": "使用",
+        "aria": "使用：跟同事聊天（消耗 25 精力，全体好感 +5，且今天挂机 +5%）",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": true
+      },
+      {
+        "text": "使用",
+        "aria": "使用：专注点击（消耗 45 精力，今天点击力 +20%）",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": false
+      },
+      {
+        "text": "省心组合：摸鱼+假装工作+社交（100 ",
+        "aria": null,
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": true
+      },
+      {
+        "text": "2.00万",
+        "aria": "购买：护眼台灯，2.00万，效果点击力 +15%",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": false
+      },
+      {
+        "text": "12.00万",
+        "aria": "购买：毛绒地毯，12.00万，效果离线效率 +5%",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": false
+      },
+      {
+        "text": "60.00万",
+        "aria": "购买：迷你冰箱，60.00万，效果工位挂机 +8%",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": false
+      },
+      {
+        "text": "400.00万",
+        "aria": "购买：按摩椅，400.00万，效果离线效率 +8%",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": false
+      },
+      {
+        "text": "3000.00万",
+        "aria": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": false
+      },
+      {
+        "text": "2.00亿",
+        "aria": "购买：投影仪，2.00亿，效果派遣奖励 +30%",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": false
+      },
+      {
+        "text": "20.00亿",
+        "aria": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": false
+      }
+    ],
+    "summary": {
+      "text": "已装修 1/8 · 挂机 ×1.05 · 点击 ×1.00 · 离线 +0%",
+      "fs": "16px",
+      "color": "rgb(244, 241, 232)",
+      "rowBg": "rgb(47, 47, 68)",
+      "opacity": 1,
+      "contrast": 11.54,
+      "effectiveContrast": 11.54
+    },
+    "tablist": "tablist",
+    "hidden": false
+  },
+  "t4disabled": {
+    "rows": [
+      {
+        "id": "slack",
+        "act": "energy",
+        "disabledState": "0",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgba(0, 0, 0, 0)",
+          "border": "rgb(244, 241, 232) rgb(244, 241, 232) rgb(67, 67, 92)"
+        },
+        "name": {
+          "text": "认真摸鱼",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "contrast": 9.75,
+          "effectiveContrast": 9.75
+        },
+        "desc": {
+          "text": "今天挂机 +25% · 花 40 精力",
+          "fs": "12px",
+          "color": "rgb(184, 179, 156)",
+          "rowBg": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "contrast": 5.23,
+          "effectiveContrast": 5.23
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "使用：认真摸鱼（消耗 40 精力，今天挂机 +25%）",
+          "text": "使用",
+          "disabled": false,
+          "h": 44
+        }
+      },
+      {
+        "id": "fake-work",
+        "act": "energy",
+        "disabledState": "0",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgba(0, 0, 0, 0)",
+          "border": "rgb(244, 241, 232) rgb(244, 241, 232) rgb(67, 67, 92)"
+        },
+        "name": {
+          "text": "假装工作",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "contrast": 9.75,
+          "effectiveContrast": 9.75
+        },
+        "desc": {
+          "text": "今天巡逻奖励 ×2.2 · 花 35 精力",
+          "fs": "12px",
+          "color": "rgb(184, 179, 156)",
+          "rowBg": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "contrast": 5.23,
+          "effectiveContrast": 5.23
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "使用：假装工作（消耗 35 精力，今天巡逻奖励 ×2.2）",
+          "text": "使用",
+          "disabled": false,
+          "h": 44
+        }
+      },
+      {
+        "id": "social",
+        "act": "energy",
+        "disabledState": "1",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgb(51, 51, 74)",
+          "border": "rgb(77, 77, 107)"
+        },
+        "name": {
+          "text": "跟同事聊天",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 10.85,
+          "effectiveContrast": 10.85
+        },
+        "desc": {
+          "text": "全体好感 +5，且今天挂机 +5% · 花 25 精力 · 还没有同事，暂不可用",
+          "fs": "12px",
+          "color": "rgb(201, 210, 234)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 8.11,
+          "effectiveContrast": 8.11
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "使用：跟同事聊天（消耗 25 精力，全体好感 +5，且今天挂机 +5%）",
+          "text": "使用",
+          "disabled": true,
+          "h": 44
+        }
+      },
+      {
+        "id": "focus",
+        "act": "energy",
+        "disabledState": "0",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgba(0, 0, 0, 0)",
+          "border": "rgb(244, 241, 232) rgb(244, 241, 232) rgb(67, 67, 92)"
+        },
+        "name": {
+          "text": "专注点击",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "contrast": 9.75,
+          "effectiveContrast": 9.75
+        },
+        "desc": {
+          "text": "今天点击力 +20% · 花 45 精力",
+          "fs": "12px",
+          "color": "rgb(184, 179, 156)",
+          "rowBg": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "contrast": 5.23,
+          "effectiveContrast": 5.23
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "使用：专注点击（消耗 45 精力，今天点击力 +20%）",
+          "text": "使用",
+          "disabled": false,
+          "h": 44
+        }
+      },
+      {
+        "id": "plant",
+        "act": "decor",
+        "disabledState": "1",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgb(51, 51, 74)",
+          "border": "rgb(77, 77, 107)"
+        },
+        "name": {
+          "text": "绿萝",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 10.85,
+          "effectiveContrast": 10.85
+        },
+        "desc": {
+          "text": "工位挂机 +5%",
+          "fs": "12px",
+          "color": "rgb(201, 210, 234)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 8.11,
+          "effectiveContrast": 8.11
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "购买：绿萝，3000，效果工位挂机 +5%",
+          "text": "3000",
+          "disabled": true,
+          "h": 44
+        }
+      },
+      {
+        "id": "lamp",
+        "act": "decor",
+        "disabledState": "1",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgb(51, 51, 74)",
+          "border": "rgb(77, 77, 107)"
+        },
+        "name": {
+          "text": "护眼台灯",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 10.85,
+          "effectiveContrast": 10.85
+        },
+        "desc": {
+          "text": "点击力 +15%",
+          "fs": "12px",
+          "color": "rgb(201, 210, 234)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 8.11,
+          "effectiveContrast": 8.11
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "购买：护眼台灯，2.00万，效果点击力 +15%",
+          "text": "2.00万",
+          "disabled": true,
+          "h": 44
+        }
+      },
+      {
+        "id": "rug",
+        "act": "decor",
+        "disabledState": "1",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgb(51, 51, 74)",
+          "border": "rgb(77, 77, 107)"
+        },
+        "name": {
+          "text": "毛绒地毯",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 10.85,
+          "effectiveContrast": 10.85
+        },
+        "desc": {
+          "text": "离线效率 +5%",
+          "fs": "12px",
+          "color": "rgb(201, 210, 234)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 8.11,
+          "effectiveContrast": 8.11
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "购买：毛绒地毯，12.00万，效果离线效率 +5%",
+          "text": "12.00万",
+          "disabled": true,
+          "h": 44
+        }
+      },
+      {
+        "id": "fridge",
+        "act": "decor",
+        "disabledState": "1",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgb(51, 51, 74)",
+          "border": "rgb(77, 77, 107)"
+        },
+        "name": {
+          "text": "迷你冰箱",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 10.85,
+          "effectiveContrast": 10.85
+        },
+        "desc": {
+          "text": "工位挂机 +8%",
+          "fs": "12px",
+          "color": "rgb(201, 210, 234)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 8.11,
+          "effectiveContrast": 8.11
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "购买：迷你冰箱，60.00万，效果工位挂机 +8%",
+          "text": "60.00万",
+          "disabled": true,
+          "h": 44
+        }
+      },
+      {
+        "id": "chair",
+        "act": "decor",
+        "disabledState": "1",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgb(51, 51, 74)",
+          "border": "rgb(77, 77, 107)"
+        },
+        "name": {
+          "text": "按摩椅",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 10.85,
+          "effectiveContrast": 10.85
+        },
+        "desc": {
+          "text": "离线效率 +8%",
+          "fs": "12px",
+          "color": "rgb(201, 210, 234)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 8.11,
+          "effectiveContrast": 8.11
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "购买：按摩椅，400.00万，效果离线效率 +8%",
+          "text": "400.00万",
+          "disabled": true,
+          "h": 44
+        }
+      },
+      {
+        "id": "aquarium",
+        "act": "decor",
+        "disabledState": "1",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgb(51, 51, 74)",
+          "border": "rgb(77, 77, 107)"
+        },
+        "name": {
+          "text": "鱼缸",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 10.85,
+          "effectiveContrast": 10.85
+        },
+        "desc": {
+          "text": "挂机 +10%、点击 +10%",
+          "fs": "12px",
+          "color": "rgb(201, 210, 234)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 8.11,
+          "effectiveContrast": 8.11
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%",
+          "text": "3000.00万",
+          "disabled": true,
+          "h": 44
+        }
+      },
+      {
+        "id": "projector",
+        "act": "decor",
+        "disabledState": "1",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgb(51, 51, 74)",
+          "border": "rgb(77, 77, 107)"
+        },
+        "name": {
+          "text": "投影仪",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 10.85,
+          "effectiveContrast": 10.85
+        },
+        "desc": {
+          "text": "派遣奖励 +30%",
+          "fs": "12px",
+          "color": "rgb(201, 210, 234)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 8.11,
+          "effectiveContrast": 8.11
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "购买：投影仪，2.00亿，效果派遣奖励 +30%",
+          "text": "2.00亿",
+          "disabled": true,
+          "h": 44
+        }
+      },
+      {
+        "id": "catbed",
+        "act": "decor",
+        "disabledState": "1",
+        "op": 1,
+        "rowStyle": {
+          "bg": "rgb(51, 51, 74)",
+          "border": "rgb(77, 77, 107)"
+        },
+        "name": {
+          "text": "工位猫窝",
+          "fs": "13px",
+          "color": "rgb(244, 241, 232)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 10.85,
+          "effectiveContrast": 10.85
+        },
+        "desc": {
+          "text": "挂机 +15%、离线 +10%",
+          "fs": "12px",
+          "color": "rgb(201, 210, 234)",
+          "rowBg": "rgb(51, 51, 74)",
+          "opacity": 1,
+          "contrast": 8.11,
+          "effectiveContrast": 8.11
+        },
+        "srOnly": [],
+        "btn": {
+          "aria": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%",
+          "text": "20.00亿",
+          "disabled": true,
+          "h": 44
+        }
+      }
+    ],
+    "heads": [
+      {
+        "text": "今日精力 （剩 100/100）",
+        "small": {
+          "text": "（剩 100/100）",
+          "fs": "11.6667px",
+          "color": "rgb(169, 182, 221)",
+          "rowBg": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "contrast": 5.47,
+          "effectiveContrast": 5.47
+        }
+      },
+      {
+        "text": "工位家具 （已装修 0/8）",
+        "small": {
+          "text": "（已装修 0/8）",
+          "fs": "15.6px",
+          "color": "rgb(169, 182, 221)",
+          "rowBg": "rgb(47, 47, 68)",
+          "opacity": 1,
+          "contrast": 6.47,
+          "effectiveContrast": 6.47
+        }
+      }
+    ],
+    "btns": [
+      {
+        "text": "✕",
+        "aria": "关闭",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": false
+      },
+      {
+        "text": "同事",
+        "aria": null,
+        "role": "tab",
+        "selected": "false",
+        "h": 44,
+        "disabled": false
+      },
+      {
+        "text": "天赋",
+        "aria": null,
+        "role": "tab",
+        "selected": "false",
+        "h": 44,
+        "disabled": false
+      },
+      {
+        "text": "工位",
+        "aria": null,
+        "role": "tab",
+        "selected": "true",
+        "h": 44,
+        "disabled": false
+      },
+      {
+        "text": "使用",
+        "aria": "使用：认真摸鱼（消耗 40 精力，今天挂机 +25%）",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": false
+      },
+      {
+        "text": "使用",
+        "aria": "使用：假装工作（消耗 35 精力，今天巡逻奖励 ×2.2）",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": false
+      },
+      {
+        "text": "使用",
+        "aria": "使用：跟同事聊天（消耗 25 精力，全体好感 +5，且今天挂机 +5%）",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": true
+      },
+      {
+        "text": "使用",
+        "aria": "使用：专注点击（消耗 45 精力，今天点击力 +20%）",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": false
+      },
+      {
+        "text": "省心组合：摸鱼+假装工作+社交（100 ",
+        "aria": null,
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": true
+      },
+      {
+        "text": "3000",
+        "aria": "购买：绿萝，3000，效果工位挂机 +5%",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": true
+      },
+      {
+        "text": "2.00万",
+        "aria": "购买：护眼台灯，2.00万，效果点击力 +15%",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": true
+      },
+      {
+        "text": "12.00万",
+        "aria": "购买：毛绒地毯，12.00万，效果离线效率 +5%",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": true
+      },
+      {
+        "text": "60.00万",
+        "aria": "购买：迷你冰箱，60.00万，效果工位挂机 +8%",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": true
+      },
+      {
+        "text": "400.00万",
+        "aria": "购买：按摩椅，400.00万，效果离线效率 +8%",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": true
+      },
+      {
+        "text": "3000.00万",
+        "aria": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": true
+      },
+      {
+        "text": "2.00亿",
+        "aria": "购买：投影仪，2.00亿，效果派遣奖励 +30%",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": true
+      },
+      {
+        "text": "20.00亿",
+        "aria": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%",
+        "role": null,
+        "selected": null,
+        "h": 44,
+        "disabled": true
+      }
+    ],
+    "summary": {
+      "text": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%",
+      "fs": "16px",
+      "color": "rgb(244, 241, 232)",
+      "rowBg": "rgb(47, 47, 68)",
+      "opacity": 1,
+      "contrast": 11.54,
+      "effectiveContrast": 11.54
+    },
+    "tablist": "tablist",
+    "hidden": false
+  },
+  "shots": {
+    "disabled": "playtest/r14c-shots/t4-disabled.png",
+    "toast": "playtest/r14c-shots/t5-toast.png",
+    "small": "playtest/r14c-shots/t6-small.png"
+  },
+  "t5": {
+    "tabsRect": {
+      "x": 33.59375,
+      "y": 110.078125,
+      "width": 322.796875,
+      "height": 44,
+      "bottom": 154.078125,
+      "right": 356.390625
+    },
+    "summaryRect": {
+      "x": 33.59375,
+      "y": 164.078125,
+      "width": 322.796875,
+      "height": 40,
+      "bottom": 204.078125,
+      "right": 356.390625
+    },
+    "toastRect": {
+      "x": 97.5,
+      "y": 148.10475158691406,
+      "width": 195,
+      "height": 60.59375,
+      "bottom": 208.69850158691406,
+      "right": 292.5
+    },
+    "toastText": "已装修：护眼台灯（点击力 +15%）",
+    "toastCls": "show",
+    "overlapTabs": true,
+    "overlapSummary": false
+  },
+  "t6": {
+    "measure": {
+      "rows": [
+        {
+          "id": "slack",
+          "act": "energy",
+          "disabledState": "0",
+          "op": 1,
+          "rowStyle": {
+            "bg": "rgba(0, 0, 0, 0)",
+            "border": "rgb(244, 241, 232) rgb(244, 241, 232) rgb(67, 67, 92)"
+          },
+          "name": {
+            "text": "认真摸鱼",
+            "fs": "13px",
+            "color": "rgb(244, 241, 232)",
+            "rowBg": "rgb(58, 58, 82)",
+            "opacity": 1,
+            "contrast": 9.75,
+            "effectiveContrast": 9.75
+          },
+          "desc": {
+            "text": "今天挂机 +25% · 花 40 精力",
+            "fs": "12px",
+            "color": "rgb(184, 179, 156)",
+            "rowBg": "rgb(58, 58, 82)",
+            "opacity": 1,
+            "contrast": 5.23,
+            "effectiveContrast": 5.23
+          },
+          "srOnly": [],
+          "btn": {
+            "aria": "使用：认真摸鱼（消耗 40 精力，今天挂机 +25%）",
+            "text": "使用",
+            "disabled": false,
+            "h": 44
+          }
+        },
+        {
+          "id": "fake-work",
+          "act": "energy",
+          "disabledState": "0",
+          "op": 1,
+          "rowStyle": {
+            "bg": "rgba(0, 0, 0, 0)",
+            "border": "rgb(244, 241, 232) rgb(244, 241, 232) rgb(67, 67, 92)"
+          },
+          "name": {
+            "text": "假装工作",
+            "fs": "13px",
+            "color": "rgb(244, 241, 232)",
+            "rowBg": "rgb(58, 58, 82)",
+            "opacity": 1,
+            "contrast": 9.75,
+            "effectiveContrast": 9.75
+          },
+          "desc": {
+            "text": "今天巡逻奖励 ×2.2 · 花 35 精力",
+            "fs": "12px",
+            "color": "rgb(184, 179, 156)",
+            "rowBg": "rgb(58, 58, 82)",
+            "opacity": 1,
+            "contrast": 5.23,
+            "effectiveContrast": 5.23
+          },
+          "srOnly": [],
+          "btn": {
+            "aria": "使用：假装工作（消耗 35 精力，今天巡逻奖励 ×2.2）",
+            "text": "使用",
+            "disabled": false,
+            "h": 44
+          }
+        },
+        {
+          "id": "social",
+          "act": "energy",
+          "disabledState": "1",
+          "op": 1,
+          "rowStyle": {
+            "bg": "rgb(51, 51, 74)",
+            "border": "rgb(77, 77, 107)"
+          },
+          "name": {
+            "text": "跟同事聊天",
+            "fs": "13px",
+            "color": "rgb(244, 241, 232)",
+            "rowBg": "rgb(51, 51, 74)",
+            "opacity": 1,
+            "contrast": 10.85,
+            "effectiveContrast": 10.85
+          },
+          "desc": {
+            "text": "全体好感 +5，且今天挂机 +5% · 花 25 精力 · 还没有同事，暂不可用",
+            "fs": "12px",
+            "color": "rgb(201, 210, 234)",
+            "rowBg": "rgb(51, 51, 74)",
+            "opacity": 1,
+            "contrast": 8.11,
+            "effectiveContrast": 8.11
+          },
+          "srOnly": [],
+          "btn": {
+            "aria": "使用：跟同事聊天（消耗 25 精力，全体好感 +5，且今天挂机 +5%）",
+            "text": "使用",
+            "disabled": true,
+            "h": 44
+          }
+        },
+        {
+          "id": "focus",
+          "act": "energy",
+          "disabledState": "0",
+          "op": 1,
+          "rowStyle": {
+            "bg": "rgba(0, 0, 0, 0)",
+            "border": "rgb(244, 241, 232) rgb(244, 241, 232) rgb(67, 67, 92)"
+          },
+          "name": {
+            "text": "专注点击",
+            "fs": "13px",
+            "color": "rgb(244, 241, 232)",
+            "rowBg": "rgb(58, 58, 82)",
+            "opacity": 1,
+            "contrast": 9.75,
+            "effectiveContrast": 9.75
+          },
+          "desc": {
+            "text": "今天点击力 +20% · 花 45 精力",
+            "fs": "12px",
+            "color": "rgb(184, 179, 156)",
+            "rowBg": "rgb(58, 58, 82)",
+            "opacity": 1,
+            "contrast": 5.23,
+            "effectiveContrast": 5.23
+          },
+          "srOnly": [],
+          "btn": {
+            "aria": "使用：专注点击（消耗 45 精力，今天点击力 +20%）",
+            "text": "使用",
+            "disabled": false,
+            "h": 44
+          }
+        },
+        {
+          "id": "plant",
+          "act": "decor",
+          "disabledState": "1",
+          "op": 1,
+          "rowStyle": {
+            "bg": "rgb(51, 51, 74)",
+            "border": "rgb(77, 77, 107)"
+          },
+          "name": {
+            "text": "绿萝",
+            "fs": "13px",
+            "color": "rgb(244, 241, 232)",
+            "rowBg": "rgb(51, 51, 74)",
+            "opacity": 1,
+            "contrast": 10.85,
+            "effectiveContrast": 10.85
+          },
+          "desc": {
+            "text": "工位挂机 +5%",
+            "fs": "12px",
+            "color": "rgb(201, 210, 234)",
+            "rowBg": "rgb(51, 51, 74)",
+            "opacity": 1,
+            "contrast": 8.11,
+            "effectiveContrast": 8.11
+          },
+          "srOnly": [
+            "已装修"
+          ],
+          "btn": null
+        },
+        {
+          "id": "lamp",
+          "act": "decor",
+          "disabledState": "0",
+          "op": 1,
+          "rowStyle": {
+            "bg": "rgba(0, 0, 0, 0)",
+            "border": "rgb(244, 241, 232) rgb(244, 241, 232) rgb(67, 67, 92)"
+          },
+          "name": {
+            "text": "护眼台灯",
+            "fs": "13px",
+            "color": "rgb(244, 241, 232)",
+            "rowBg": "rgb(47, 47, 68)",
+            "opacity": 1,
+            "contrast": 11.54,
+            "effectiveContrast": 11.54
+          },
+          "desc": {
+            "text": "点击力 +15%",
+            "fs": "12px",
+            "color": "rgb(184, 179, 156)",
+            "rowBg": "rgb(47, 47, 68)",
+            "opacity": 1,
+            "contrast": 6.19,
+            "effectiveContrast": 6.19
+          },
+          "srOnly": [],
+          "btn": {
+            "aria": "购买：护眼台灯，2.00万，效果点击力 +15%",
+            "text": "2.00万",
+            "disabled": false,
+            "h": 44
+          }
+        },
+        {
+          "id": "rug",
+          "act": "decor",
+          "disabledState": "0",
+          "op": 1,
+          "rowStyle": {
+            "bg": "rgba(0, 0, 0, 0)",
+            "border": "rgb(244, 241, 232) rgb(244, 241, 232) rgb(67, 67, 92)"
+          },
+          "name": {
+            "text": "毛绒地毯",
+            "fs": "13px",
+            "color": "rgb(244, 241, 232)",
+            "rowBg": "rgb(47, 47, 68)",
+            "opacity": 1,
+            "contrast": 11.54,
+            "effectiveContrast": 11.54
+          },
+          "desc": {
+            "text": "离线效率 +5%",
+            "fs": "12px",
+            "color": "rgb(184, 179, 156)",
+            "rowBg": "rgb(47, 47, 68)",
+            "opacity": 1,
+            "contrast": 6.19,
+            "effectiveContrast": 6.19
+          },
+          "srOnly": [],
+          "btn": {
+            "aria": "购买：毛绒地毯，12.00万，效果离线效率 +5%",
+            "text": "12.00万",
+            "disabled": false,
+            "h": 44
+          }
+        },
+        {
+          "id": "fridge",
+          "act": "decor",
+          "disabledState": "0",
+          "op": 1,
+          "rowStyle": {
+            "bg": "rgba(0, 0, 0, 0)",
+            "border": "rgb(244, 241, 232) rgb(244, 241, 232) rgb(67, 67, 92)"
+          },
+          "name": {
+            "text": "迷你冰箱",
+            "fs": "13px",
+            "color": "rgb(244, 241, 232)",
+            "rowBg": "rgb(47, 47, 68)",
+            "opacity": 1,
+            "contrast": 11.54,
+            "effectiveContrast": 11.54
+          },
+          "desc": {
+            "text": "工位挂机 +8%",
+            "fs": "12px",
+            "color": "rgb(184, 179, 156)",
+            "rowBg": "rgb(47, 47, 68)",
+            "opacity": 1,
+            "contrast": 6.19,
+            "effectiveContrast": 6.19
+          },
+          "srOnly": [],
+          "btn": {
+            "aria": "购买：迷你冰箱，60.00万，效果工位挂机 +8%",
+            "text": "60.00万",
+            "disabled": false,
+            "h": 44
+          }
+        },
+        {
+          "id": "chair",
+          "act": "decor",
+          "disabledState": "0",
+          "op": 1,
+          "rowStyle": {
+            "bg": "rgba(0, 0, 0, 0)",
+            "border": "rgb(244, 241, 232) rgb(244, 241, 232) rgb(67, 67, 92)"
+          },
+          "name": {
+            "text": "按摩椅",
+            "fs": "13px",
+            "color": "rgb(244, 241, 232)",
+            "rowBg": "rgb(47, 47, 68)",
+            "opacity": 1,
+            "contrast": 11.54,
+            "effectiveContrast": 11.54
+          },
+          "desc": {
+            "text": "离线效率 +8%",
+            "fs": "12px",
+            "color": "rgb(184, 179, 156)",
+            "rowBg": "rgb(47, 47, 68)",
+            "opacity": 1,
+            "contrast": 6.19,
+            "effectiveContrast": 6.19
+          },
+          "srOnly": [],
+          "btn": {
+            "aria": "购买：按摩椅，400.00万，效果离线效率 +8%",
+            "text": "400.00万",
+            "disabled": false,
+            "h": 44
+          }
+        },
+        {
+          "id": "aquarium",
+          "act": "decor",
+          "disabledState": "0",
+          "op": 1,
+          "rowStyle": {
+            "bg": "rgba(0, 0, 0, 0)",
+            "border": "rgb(244, 241, 232) rgb(244, 241, 232) rgb(67, 67, 92)"
+          },
+          "name": {
+            "text": "鱼缸",
+            "fs": "13px",
+            "color": "rgb(244, 241, 232)",
+            "rowBg": "rgb(47, 47, 68)",
+            "opacity": 1,
+            "contrast": 11.54,
+            "effectiveContrast": 11.54
+          },
+          "desc": {
+            "text": "挂机 +10%、点击 +10%",
+            "fs": "12px",
+            "color": "rgb(184, 179, 156)",
+            "rowBg": "rgb(47, 47, 68)",
+            "opacity": 1,
+            "contrast": 6.19,
+            "effectiveContrast": 6.19
+          },
+          "srOnly": [],
+          "btn": {
+            "aria": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%",
+            "text": "3000.00万",
+            "disabled": false,
+            "h": 44
+          }
+        },
+        {
+          "id": "projector",
+          "act": "decor",
+          "disabledState": "0",
+          "op": 1,
+          "rowStyle": {
+            "bg": "rgba(0, 0, 0, 0)",
+            "border": "rgb(244, 241, 232) rgb(244, 241, 232) rgb(67, 67, 92)"
+          },
+          "name": {
+            "text": "投影仪",
+            "fs": "13px",
+            "color": "rgb(244, 241, 232)",
+            "rowBg": "rgb(47, 47, 68)",
+            "opacity": 1,
+            "contrast": 11.54,
+            "effectiveContrast": 11.54
+          },
+          "desc": {
+            "text": "派遣奖励 +30%",
+            "fs": "12px",
+            "color": "rgb(184, 179, 156)",
+            "rowBg": "rgb(47, 47, 68)",
+            "opacity": 1,
+            "contrast": 6.19,
+            "effectiveContrast": 6.19
+          },
+          "srOnly": [],
+          "btn": {
+            "aria": "购买：投影仪，2.00亿，效果派遣奖励 +30%",
+            "text": "2.00亿",
+            "disabled": false,
+            "h": 44
+          }
+        },
+        {
+          "id": "catbed",
+          "act": "decor",
+          "disabledState": "0",
+          "op": 1,
+          "rowStyle": {
+            "bg": "rgba(0, 0, 0, 0)",
+            "border": "rgb(244, 241, 232)"
+          },
+          "name": {
+            "text": "工位猫窝",
+            "fs": "13px",
+            "color": "rgb(244, 241, 232)",
+            "rowBg": "rgb(47, 47, 68)",
+            "opacity": 1,
+            "contrast": 11.54,
+            "effectiveContrast": 11.54
+          },
+          "desc": {
+            "text": "挂机 +15%、离线 +10%",
+            "fs": "12px",
+            "color": "rgb(184, 179, 156)",
+            "rowBg": "rgb(47, 47, 68)",
+            "opacity": 1,
+            "contrast": 6.19,
+            "effectiveContrast": 6.19
+          },
+          "srOnly": [],
+          "btn": {
+            "aria": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%",
+            "text": "20.00亿",
+            "disabled": false,
+            "h": 44
+          }
+        }
+      ],
+      "heads": [
+        {
+          "text": "今日精力 （剩 100/100）",
+          "small": {
+            "text": "（剩 100/100）",
+            "fs": "11.6667px",
+            "color": "rgb(169, 182, 221)",
+            "rowBg": "rgb(58, 58, 82)",
+            "opacity": 1,
+            "contrast": 5.47,
+            "effectiveContrast": 5.47
+          }
+        },
+        {
+          "text": "工位家具 （已装修 1/8）",
+          "small": {
+            "text": "（已装修 1/8）",
+            "fs": "15.6px",
+            "color": "rgb(169, 182, 221)",
+            "rowBg": "rgb(47, 47, 68)",
+            "opacity": 1,
+            "contrast": 6.47,
+            "effectiveContrast": 6.47
+          }
+        }
+      ],
+      "btns": [
+        {
+          "text": "✕",
+          "aria": "关闭",
+          "role": null,
+          "selected": null,
+          "h": 44,
+          "disabled": false
+        },
+        {
+          "text": "同事",
+          "aria": null,
+          "role": "tab",
+          "selected": "false",
+          "h": 44,
+          "disabled": false
+        },
+        {
+          "text": "天赋",
+          "aria": null,
+          "role": "tab",
+          "selected": "false",
+          "h": 44,
+          "disabled": false
+        },
+        {
+          "text": "工位",
+          "aria": null,
+          "role": "tab",
+          "selected": "true",
+          "h": 44,
+          "disabled": false
+        },
+        {
+          "text": "使用",
+          "aria": "使用：认真摸鱼（消耗 40 精力，今天挂机 +25%）",
+          "role": null,
+          "selected": null,
+          "h": 44,
+          "disabled": false
+        },
+        {
+          "text": "使用",
+          "aria": "使用：假装工作（消耗 35 精力，今天巡逻奖励 ×2.2）",
+          "role": null,
+          "selected": null,
+          "h": 44,
+          "disabled": false
+        },
+        {
+          "text": "使用",
+          "aria": "使用：跟同事聊天（消耗 25 精力，全体好感 +5，且今天挂机 +5%）",
+          "role": null,
+          "selected": null,
+          "h": 44,
+          "disabled": true
+        },
+        {
+          "text": "使用",
+          "aria": "使用：专注点击（消耗 45 精力，今天点击力 +20%）",
+          "role": null,
+          "selected": null,
+          "h": 44,
+          "disabled": false
+        },
+        {
+          "text": "省心组合：摸鱼+假装工作+社交（100 ",
+          "aria": null,
+          "role": null,
+          "selected": null,
+          "h": 44,
+          "disabled": true
+        },
+        {
+          "text": "2.00万",
+          "aria": "购买：护眼台灯，2.00万，效果点击力 +15%",
+          "role": null,
+          "selected": null,
+          "h": 44,
+          "disabled": false
+        },
+        {
+          "text": "12.00万",
+          "aria": "购买：毛绒地毯，12.00万，效果离线效率 +5%",
+          "role": null,
+          "selected": null,
+          "h": 44,
+          "disabled": false
+        },
+        {
+          "text": "60.00万",
+          "aria": "购买：迷你冰箱，60.00万，效果工位挂机 +8%",
+          "role": null,
+          "selected": null,
+          "h": 44,
+          "disabled": false
+        },
+        {
+          "text": "400.00万",
+          "aria": "购买：按摩椅，400.00万，效果离线效率 +8%",
+          "role": null,
+          "selected": null,
+          "h": 44,
+          "disabled": false
+        },
+        {
+          "text": "3000.00万",
+          "aria": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%",
+          "role": null,
+          "selected": null,
+          "h": 44,
+          "disabled": false
+        },
+        {
+          "text": "2.00亿",
+          "aria": "购买：投影仪，2.00亿，效果派遣奖励 +30%",
+          "role": null,
+          "selected": null,
+          "h": 44,
+          "disabled": false
+        },
+        {
+          "text": "20.00亿",
+          "aria": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%",
+          "role": null,
+          "selected": null,
+          "h": 44,
+          "disabled": false
+        }
+      ],
+      "summary": {
+        "text": "已装修 1/8 · 挂机 ×1.05 · 点击 ×1.00 · 离线 +0%",
+        "fs": "16px",
+        "color": "rgb(244, 241, 232)",
+        "rowBg": "rgb(47, 47, 68)",
+        "opacity": 1,
+        "contrast": 11.54,
+        "effectiveContrast": 11.54
+      },
+      "tablist": "tablist",
+      "hidden": false
+    },
+    "axTabs": [
+      {
+        "role": "tablist",
+        "name": "小队面板",
+        "description": ""
+      },
+      {
+        "role": "tab",
+        "name": "同事",
+        "description": "",
+        "selected": false
+      },
+      {
+        "role": "tab",
+        "name": "天赋",
+        "description": "",
+        "selected": false
+      },
+      {
+        "role": "tab",
+        "name": "工位",
+        "description": "",
+        "selected": true
+      }
+    ],
+    "axHeadings": [
+      {
+        "role": "heading",
+        "name": "摸鱼小队",
+        "description": "",
+        "level": 2
+      },
+      {
+        "role": "heading",
+        "name": "今日精力 （剩 100/100）",
+        "description": "",
+        "level": 3
+      },
+      {
+        "role": "heading",
+        "name": "工位家具 （已装修 1/8）",
+        "description": "",
+        "level": 3
+      }
+    ],
+    "axButtons": [
+      {
+        "name": "省心组合：摸鱼+假装工作+社交（100 精力）",
+        "disabled": true
+      },
+      {
+        "name": "使用：认真摸鱼（消耗 40 精力，今天挂机 +25%）"
+      },
+      {
+        "name": "使用：假装工作（消耗 35 精力，今天巡逻奖励 ×2.2）"
+      },
+      {
+        "name": "使用：跟同事聊天（消耗 25 精力，全体好感 +5，且今天挂机 +5%）",
+        "disabled": true
+      },
+      {
+        "name": "使用：专注点击（消耗 45 精力，今天点击力 +20%）"
+      },
+      {
+        "name": "购买：护眼台灯，2.00万，效果点击力 +15%"
+      },
+      {
+        "name": "购买：毛绒地毯，12.00万，效果离线效率 +5%"
+      },
+      {
+        "name": "购买：迷你冰箱，60.00万，效果工位挂机 +8%"
+      },
+      {
+        "name": "购买：按摩椅，400.00万，效果离线效率 +8%"
+      },
+      {
+        "name": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%"
+      },
+      {
+        "name": "购买：投影仪，2.00亿，效果派遣奖励 +30%"
+      },
+      {
+        "name": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%"
+      }
+    ],
+    "axSr": [
+      {
+        "role": "StaticText",
+        "name": "已装修：绿萝（工位挂机 +5%）"
+      },
+      {
+        "role": "StaticText",
+        "name": "已装修：绿萝（工位挂机 +5%）"
+      },
+      {
+        "role": "InlineTextBox",
+        "name": "已装修：绿萝（工位挂机 +5%）"
+      },
+      {
+        "role": "heading",
+        "name": "工位家具 （已装修 1/8）"
+      },
+      {
+        "role": "InlineTextBox",
+        "name": "已装修：绿萝（工位挂机 "
+      },
+      {
+        "role": "StaticText",
+        "name": "工位已装修：绿萝（工位挂机 +5%）"
+      },
+      {
+        "role": "StaticText",
+        "name": "已装修 1/8 · 挂机 ×1.05 · 点击 ×1.00 "
+      },
+      {
+        "role": "StaticText",
+        "name": "（已装修 1/8）"
+      },
+      {
+        "role": "StaticText",
+        "name": "已装修"
+      },
+      {
+        "role": "InlineTextBox",
+        "name": "工位已装修：绿萝（工位挂机 +5%）"
+      },
+      {
+        "role": "InlineTextBox",
+        "name": "已装修 1/8 · 挂机 ×1.05 · 点击 ×1.00 "
+      },
+      {
+        "role": "InlineTextBox",
+        "name": "（已装修 1/8）"
+      },
+      {
+        "role": "InlineTextBox",
+        "name": "已装修"
+      }
+    ],
+    "axCheckmarks": 0,
+    "stops": [
+      {
+        "tag": "BUTTON",
+        "id": "tab-colleagues",
+        "role": "tab",
+        "text": "同事",
+        "act": null,
+        "dataId": null,
+        "isBody": false,
+        "insideDialog": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "tab-talents",
+        "role": "tab",
+        "text": "天赋",
+        "act": null,
+        "dataId": null,
+        "isBody": false,
+        "insideDialog": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "tab-decor",
+        "role": "tab",
+        "text": "工位",
+        "act": null,
+        "dataId": null,
+        "isBody": false,
+        "insideDialog": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "role": null,
+        "text": "使用",
+        "act": "energy",
+        "dataId": "slack",
+        "isBody": false,
+        "insideDialog": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "role": null,
+        "text": "使用",
+        "act": "energy",
+        "dataId": "fake-work",
+        "isBody": false,
+        "insideDialog": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "role": null,
+        "text": "使用",
+        "act": "energy",
+        "dataId": "focus",
+        "isBody": false,
+        "insideDialog": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "role": null,
+        "text": "2.00万",
+        "act": "decor",
+        "dataId": "lamp",
+        "isBody": false,
+        "insideDialog": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "role": null,
+        "text": "12.00万",
+        "act": "decor",
+        "dataId": "rug",
+        "isBody": false,
+        "insideDialog": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "role": null,
+        "text": "60.00万",
+        "act": "decor",
+        "dataId": "fridge",
+        "isBody": false,
+        "insideDialog": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "role": null,
+        "text": "400.00万",
+        "act": "decor",
+        "dataId": "chair",
+        "isBody": false,
+        "insideDialog": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "role": null,
+        "text": "3000.00万",
+        "act": "decor",
+        "dataId": "aquarium",
+        "isBody": false,
+        "insideDialog": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "role": null,
+        "text": "2.00亿",
+        "act": "decor",
+        "dataId": "projector",
+        "isBody": false,
+        "insideDialog": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "role": null,
+        "text": "20.00亿",
+        "act": "decor",
+        "dataId": "catbed",
+        "isBody": false,
+        "insideDialog": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "btn-team",
+        "role": null,
+        "text": "👥天赋精力 100",
+        "act": null,
+        "dataId": null,
+        "isBody": false,
+        "insideDialog": false
+      }
+    ],
+    "escapedAt": 13,
+    "small": {
+      "docScrollW": 375,
+      "docClientW": 375,
+      "panelW": 345,
+      "panelH": 574,
+      "clipped": 0
+    },
+    "reduced": true
+  }
+}

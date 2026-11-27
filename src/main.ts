@@ -31,6 +31,8 @@ import { Quest } from "./ui/quest";
 import { TeamPanel } from "./ui/team-panel";
 import { CardPanel } from "./ui/card-panel";
 import { BossChoicePanel } from "./ui/boss-panel";
+import { Arcade } from "./ui/arcade";
+import { ensureArcade, finishGame } from "./engine/minigames";
 import { CARDS, chooseCard, dismissCards, ensureCards } from "./engine/cards";
 import { onBossChoice } from "./engine/events";
 import { DECOR, buyDecor, decorComplete, decorDef } from "./engine/decor";
@@ -348,6 +350,22 @@ async function boot(): Promise<void> {
     }
   });
 
+  const arcade = new Arcade((game, score) => {
+      const r = finishGame(state, game, score, stationIdleScaled(state));
+      if (r) {
+        state = r.state;
+        hud.refresh(state);
+        if (r.reward > 0) {
+          showToast(`摸鱼站 +${formatMoyu(r.reward)}（得分 ${score}）`);
+          announce(`摸鱼站得分 ${score}，获得 ${formatMoyu(r.reward)}`, 1);
+        } else {
+          showToast(`得分 ${score}，没拿到奖励`);
+        }
+        arcade.refresh(state);
+        serialize(state, localStorageAdapter, Date.now());
+      }
+  });
+
   const shop = new Shop(
     (id) => {
     const next = buyUpgrade(state, id);
@@ -534,6 +552,7 @@ async function boot(): Promise<void> {
     const w = document.getElementById("welcome")!;
     if (!j.classList.contains("hidden")) journal.hide();
     else if (teamPanel.isOpen) teamPanel.hide();
+    else if (arcade.isOpen) arcade.close();
     else if (cardPanel.isOpen) {
       state = dismissCards(state);
       cardPanel.hide();
@@ -686,6 +705,16 @@ async function boot(): Promise<void> {
       if (combo > 0 && (performance.now() - lastClickAt) / 1000 > COMBO_BREAK_S) {
         combo = 0;
         playBreak();
+      }
+      // 摸鱼站：跨日重置次数
+      {
+        const today = new Date().toLocaleDateString("sv-SE");
+        const withArcade = ensureArcade(state, today);
+        if (withArcade !== state) {
+          state = withArcade;
+          serialize(state, localStorageAdapter, Date.now());
+        }
+        arcade.refresh(state);
       }
       // 每日精力：跨日重置
       {
