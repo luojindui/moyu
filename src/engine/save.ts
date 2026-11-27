@@ -108,10 +108,14 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
       // 只接受正整数且不超上限，其余键丢弃
       if (typeof v === "number" && Number.isInteger(v) && v >= 0 && v <= MAX_LEVEL) levels[k] = v;
     }
-    const moyu = Number.isFinite(blob.moyu) && blob.moyu >= 0 ? blob.moyu : 0;
-    const totalEarned =
+    const rawMoyu = Number.isFinite(blob.moyu) && blob.moyu >= 0 ? blob.moyu : 0;
+    const rawTotal =
       typeof blob.totalEarned === "number" && Number.isFinite(blob.totalEarned) && blob.totalEarned >= 0
         ? blob.totalEarned
+        : 0;
+    const rawLifetime =
+      typeof blob.lifetimeEarned === "number" && Number.isFinite(blob.lifetimeEarned) && blob.lifetimeEarned >= 0
+        ? blob.lifetimeEarned
         : 0;
     const savedAtMs: number = blob.savedAt;
     const offlineSeconds = Math.max(0, (now - savedAtMs) / 1000);
@@ -133,8 +137,14 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
         ? { date: v.date, count: v.count }
         : { date: "", count: 0 };
     const numOr0 = (x: unknown): number => (typeof x === "number" && Number.isFinite(x) && x >= 0 ? x : 0);
-    // 历史累计至少等于本局累计（旧档迁移）
-    const lifetimeEarned = Math.max(numOr0(blob.lifetimeEarned), totalEarned);
+    const totalProvided = typeof blob.totalEarned === "number" && Number.isFinite(blob.totalEarned);
+    const lifetimeProvided = typeof blob.lifetimeEarned === "number" && Number.isFinite(blob.lifetimeEarned);
+    // 旧档（字段缺失）用余额推断；新档严格钳制 lifetime ≥ total ≥ moyu（篡改档收敛）
+    let totalEarned = totalProvided ? rawTotal : rawMoyu;
+    let lifetimeEarned = Math.max(rawLifetime, totalEarned);
+    if (!lifetimeProvided) lifetimeEarned = Math.max(lifetimeEarned, rawMoyu);
+    totalEarned = Math.min(totalEarned, lifetimeEarned);
+    const moyu = Math.min(rawMoyu, totalEarned);
     const prestige = Math.floor(numOr0(blob.prestige));
     // createdAt 钳制：缺失默认 savedAt（不重发首日）；越界（未来/NaN）按 savedAt收敛，堵离线分级绕过
     const clampCreatedAt = (ca: unknown): number => {

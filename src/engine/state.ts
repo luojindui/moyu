@@ -64,7 +64,8 @@ export function lose(state: GameState, amount: number): { state: GameState; lost
       ...state,
       moyu: state.moyu - lost,
       totalEarned: Math.max(0, state.totalEarned - lost),
-      lifetimeEarned: Math.max(0, state.lifetimeEarned - lost),
+      // lifetimeEarned 是"历史毛收入"，罚款不回滚（段位不倒退；totalEarned 才是净本局）
+
     },
     lost,
   };

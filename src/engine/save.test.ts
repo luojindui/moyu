@@ -34,7 +34,9 @@ describe("存档", () => {
     });
     const r = restore(a, Date.now());
     expect(r.state!.moyu).toBe(88);
-    expect(r.state!.totalEarned).toBe(0);
+    // 旧档缺账本字段：用余额推断（否则会丢钱）
+    expect(r.state!.totalEarned).toBe(88);
+    expect(r.state!.lifetimeEarned).toBe(88);
     expect(r.createdAt).toBeGreaterThan(0);
   });
 

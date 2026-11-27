@@ -1,0 +1,105 @@
+{
+  "A_minimal_old_save": {
+    "restoredMoyu": 88,
+    "offlineSeconds": 3600
+  },
+  "B_v2_wipe": {
+    "inputMoyu": 9999999,
+    "restoredMoyu": 0,
+    "restoredPrestige": 0
+  },
+  "B_downgrade_overwrite": {
+    "afterVersion": 1,
+    "afterMoyu": 0,
+    "newSystemKept": false
+  },
+  "B_same_v_new_field_dropped": {
+    "note": "v 不变但 state 新增字段 → 旧客户端一写档就永久丢掉"
+  },
+  "C_sizes": [
+    {
+      "profile": "newbie",
+      "rawBytes": 243,
+      "plainB64Len": 324,
+      "codeLen": 227,
+      "urlLenCompressed": 247,
+      "urlLenPlain": 344
+    },
+    {
+      "profile": "mid",
+      "rawBytes": 580,
+      "plainB64Len": 774,
+      "codeLen": 437,
+      "urlLenCompressed": 457,
+      "urlLenPlain": 794
+    },
+    {
+      "profile": "maxed",
+      "rawBytes": 840,
+      "plainB64Len": 1120,
+      "codeLen": 581,
+      "urlLenCompressed": 601,
+      "urlLenPlain": 1140
+    }
+  ],
+  "C_roundtrip_newbie": {
+    "ok": true,
+    "codeLen": 227
+  },
+  "C_roundtrip_mid": {
+    "ok": true,
+    "codeLen": 437
+  },
+  "C_roundtrip_maxed": {
+    "ok": true,
+    "codeLen": 581
+  },
+  "C_checksum": {
+    "catchesTypo": true,
+    "catchesTamper": false
+  },
+  "C_import_offline_exploit": {
+    "idleRate": 20.5,
+    "earnPerImport": 590400,
+    "replay10": 5904000,
+    "note": "导入必须把 savedAt 重置为 now / 或不结算离线，否则旧码可反复刷 8h 挂机"
+  },
+  "D_silent_write_fail": {
+    "throws": false,
+    "warning": null,
+    "lostOnClose": true
+  },
+  "D_multitab_lww": {
+    "tabBPhoneAfter": 6,
+    "afterOverwrite": 3,
+    "note": "B 买的 3 级被 A 的陈旧状态覆盖（6→3），无冲突检测/无提示"
+  },
+  "D_pii": {
+    "keys": [
+      "collected",
+      "createdAt",
+      "daily",
+      "levels",
+      "lifetimeEarned",
+      "moyu",
+      "prestige",
+      "savedAt",
+      "surviveStreak",
+      "totalClicks",
+      "totalEarned",
+      "v",
+      "visits"
+    ]
+  },
+  "D_local_edit": {
+    "sanitizedShape": true,
+    "replayableAbsurdValues": true
+  },
+  "_meta": {
+    "probe": "r9-cloudsave",
+    "at": "2026-11-27T03:48:54.490Z",
+    "head": "500359b",
+    "saveVersion": 1,
+    "offlineCapSeconds": 28800
+  }
+}

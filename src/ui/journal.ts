@@ -4,7 +4,9 @@ import { collectionCount, collectionRows, TOTAL_ITEMS } from "../engine/collecti
 import { MEME_QUOTES, UPGRADE_FLAVOR } from "../engine/flavor";
 import { UPGRADES } from "../engine/upgrades";
 import { formatMoyu } from "../engine/format";
-import { canPrestige, prestigeGain, prestigeMultiplier } from "../engine/prestige";
+import { clickPowerOf } from "../engine/actions";
+import { canPrestige, prestigeGain, prestigeMultiplier, prestigeThreshold } from "../engine/prestige";
+import { computeStats } from "../engine/stats";
 
 /** 日报 + 图鉴面板（收集党：差距可见、每日有仪式） */
 export class Journal {
@@ -17,6 +19,7 @@ export class Journal {
   private elFlavor = document.getElementById("journal-flavor")!;
   private elLatest = document.getElementById("journal-latest")!;
   private elGrid = document.getElementById("journal-grid");
+  private elStats = document.getElementById("stats-list")!;
   private gridRendered = false;
   private gridRenderedCount = -1;
   /** 最近一次刷新的状态：面板打开时立即重绘用 */
@@ -34,6 +37,20 @@ export class Journal {
     document.getElementById("journal-close")!.addEventListener("click", () => this.hide());
     this.elClaim.addEventListener("click", () => this.onClaim());
     this.elPrestigeBtn.addEventListener("click", () => this.onPrestige());
+    // 导出存档 JSON（生产可用：直接读 localStorage，不依赖调试钩子）
+    document.getElementById("stats-export")!.addEventListener("click", () => {
+      try {
+        const raw = localStorage.getItem("moyu-save") ?? "{}";
+        const blob = new Blob([raw], { type: "application/json" });
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = `moyu-save-${new Date().toISOString().slice(0, 10)}.json`;
+        a.click();
+        setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+      } catch {
+        /* 忽略 */
+      }
+    });
     document.getElementById("btn-journal")!.addEventListener("click", () => this.toggle());
   }
 
@@ -105,13 +122,32 @@ export class Journal {
         .join("");
     }
 
+    // 数据统计（全部由现有字段推导）
+    const st = computeStats(state);
+    const rows: [string, string][] = [
+      ["生涯总收入", formatMoyu(st.lifetime)],
+      ["本局 / 往期", `${formatMoyu(st.run)} / ${formatMoyu(st.previous)}`],
+      ["当前余额", formatMoyu(st.balance)],
+      ["累计投入", formatMoyu(st.invested)],
+      ["点击力 / 挂机", `${clickPowerOf(state).toFixed(0)} / ${formatMoyu(st.idleRate)}每秒`],
+      ["累计点击", String(st.totalClicks)],
+      ["今日回访", `${st.visits}/3（离线效率 ${Math.round((0.7 + Math.min(3, st.visits) * 0.1) * 100)}%）`],
+      ["连续日报", `${st.streak} 天`],
+      ["图鉴", `${st.collection}/${st.collectionTotal}`],
+      ["转生", `${st.prestige} 点（×${st.prestigeMult.toFixed(2)}）`],
+    ];
+    this.elStats.innerHTML = rows
+      .map(([k, v]) => `<div class="stat-row"><span>${k}</span><b>${v}</b></div>`)
+      .join("");
+    document.getElementById("stats-rank")!.textContent = st.rank;
+
     // 转生信息
     const gain = prestigeGain(state);
     const unlocked = canPrestige(state);
     this.elPrestigeBtn.disabled = !unlocked;
     this.elPrestigeBtn.textContent = unlocked
       ? `离职再就业：+${gain} 点（永久 ×${prestigeMultiplier(state.prestige + gain).toFixed(2)}）`
-      : `未解锁（本局累计 ${formatMoyu(state.totalEarned)} / 1亿）`;
+      : `未解锁（本局累计 ${formatMoyu(state.totalEarned)} / 需 ${formatMoyu(prestigeThreshold(state))}）`;
     this.elPrestigeInfo.textContent =
       state.prestige > 0 ? `已有 ${state.prestige} 点 · 当前 ×${prestigeMultiplier(state.prestige).toFixed(2)}` : "";
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T03:47:07.182Z",
+  "generatedAt": "2026-11-27T03:53:02.016Z",
   "engine": "HEAD 06041a1 (R7 prestige + 14 ranks)",
   "profiles": {
     "active": {
@@ -10,7 +10,7 @@
         "firstClick": 9.001,
         "firstBuy": 9.001,
         "rank2_1e4": 9.041,
-        "rank3_1e5": 9.099,
+        "rank3_1e5": 9.098,
         "rank4_1e6": 10,
         "rank5_1e8": 16,
         "prestigeUnlock": 16,
@@ -341,7 +341,7 @@
           "purchases": 95,
           "claimedReward": null,
           "prestigeGained": 4,
-          "deadAirMinutes": 4
+          "deadAirMinutes": 5
         },
         {
           "day": 2,
@@ -521,7 +521,7 @@
           "purchases": 71,
           "claimedReward": null,
           "prestigeGained": 7,
-          "deadAirMinutes": 4
+          "deadAirMinutes": 5
         },
         {
           "day": 7,
@@ -652,8 +652,8 @@
           "detail": "×2 里程碑 +1（共 1 次）"
         },
         {
-          "atMs": 1795741374800,
-          "tHours": 9.049,
+          "atMs": 1795741373800,
+          "tHours": 9.048,
           "type": "collection",
           "detail": "图鉴 9→12/55"
         },
@@ -700,8 +700,8 @@
           "detail": "×2 里程碑 +1（共 3 次）"
         },
         {
-          "atMs": 1795741558000,
-          "tHours": 9.099,
+          "atMs": 1795741554300,
+          "tHours": 9.098,
           "type": "rank",
           "detail": "资深摸鱼"
         },
@@ -850,8 +850,8 @@
           "detail": "×2 里程碑 +1（共 10 次）"
         },
         {
-          "atMs": 1795753545000,
-          "tHours": 12.429,
+          "atMs": 1795753529600,
+          "tHours": 12.425,
           "type": "collection",
           "detail": "图鉴 30→33/55"
         },
@@ -988,8 +988,8 @@
           "detail": "转生 +4 点（×13.00）"
         },
         {
-          "atMs": 1795842185000,
-          "tHours": 37.051,
+          "atMs": 1795842129500,
+          "tHours": 37.036,
           "type": "collection",
           "detail": "图鉴 43→46/55"
         },
@@ -1138,8 +1138,8 @@
           "detail": "转生 +7 点（×67.00）"
         },
         {
-          "atMs": 1796216619100,
-          "tHours": 141.061,
+          "atMs": 1796216488700,
+          "tHours": 141.025,
           "type": "collection",
           "detail": "图鉴 47→50/55"
         },
@@ -3995,14 +3995,14 @@
         "firstClick": 9.001,
         "firstBuy": 9.001,
         "rank2_1e4": 9.041,
-        "rank3_1e5": 9.099,
+        "rank3_1e5": 9.098,
         "rank4_1e6": 10,
         "rank5_1e8": 16,
         "prestigeUnlock": 16,
         "firstPrestige": 57,
         "allCards": 12.333,
         "milestone20": 22.237,
-        "collection55": 141.057
+        "collection55": 141.019
       },
       "maxNoContentMinutes": 1440,
       "maxSessionDeadAirMinutes": 8,
@@ -4113,11 +4113,11 @@
             "段位:摸鱼宇宙尽头",
             "×2:×2 里程碑 +1（共 24 次）",
             "×2:×2 里程碑 +1（共 25 次）",
-            "图鉴:图鉴 46→47/55",
+            "图鉴:图鉴 46→49/55",
+            "图鉴:图鉴 49→50/55",
             "×2:×2 里程碑 +1（共 26 次）",
-            "图鉴:图鉴 47→48/55",
+            "图鉴:图鉴 50→51/55",
             "×2:×2 里程碑 +1（共 27 次）",
-            "图鉴:图鉴 48→51/55",
             "×2:×2 里程碑 +1（共 28 次）",
             "段位:带薪摸鱼之神",
             "×2:×2 里程碑 +1（共 29 次）",
@@ -4198,8 +4198,8 @@
         {
           "day": 6,
           "date": "2026-12-02",
-          "lifetimeEnd": 2689044332481.427,
-          "dayIncome": 1024207246069.4109,
+          "lifetimeEnd": 2689638448840.869,
+          "dayIncome": 1024801362428.8533,
           "idleRateEnd": 32128958.64,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 55,
@@ -4211,12 +4211,12 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2106,
-          "offlineRatio": 0.8830120991066581
+          "offlineRatio": 0.8825001833804519
         },
         {
           "day": 7,
           "date": "2026-12-03",
-          "lifetimeEnd": 4219321316899.975,
+          "lifetimeEnd": 4219915433259.4175,
           "dayIncome": 1530276984418.5483,
           "idleRateEnd": 36855762.24,
           "rankEnd": "摸鱼宇宙尽头·终",
@@ -4509,16 +4509,16 @@
           "gapSeconds": 42840,
           "rate": 0.8999999999999999,
           "offlineEarned": 424372924224,
-          "activeEarned": 9706925121.954102,
+          "activeEarned": 10301041481.396484,
           "clicks": 1077,
           "patrols": 2,
-          "patrolReward": 417175239.96,
+          "patrolReward": 448237242.72,
           "caughtTaps": 0,
           "memeHits": 6,
           "purchases": 72,
           "claimedReward": null,
           "prestigeGained": 0,
-          "deadAirMinutes": 3
+          "deadAirMinutes": 5
         },
         {
           "day": 7,
@@ -4649,8 +4649,8 @@
           "detail": "×2 里程碑 +1（共 1 次）"
         },
         {
-          "atMs": 1795741374800,
-          "tHours": 9.049,
+          "atMs": 1795741373800,
+          "tHours": 9.048,
           "type": "collection",
           "detail": "图鉴 9→12/55"
         },
@@ -4697,8 +4697,8 @@
           "detail": "×2 里程碑 +1（共 3 次）"
         },
         {
-          "atMs": 1795741558000,
-          "tHours": 9.099,
+          "atMs": 1795741554300,
+          "tHours": 9.098,
           "type": "rank",
           "detail": "资深摸鱼"
         },
@@ -4847,8 +4847,8 @@
           "detail": "×2 里程碑 +1（共 10 次）"
         },
         {
-          "atMs": 1795753545000,
-          "tHours": 12.429,
+          "atMs": 1795753529600,
+          "tHours": 12.425,
           "type": "collection",
           "detail": "图鉴 30→33/55"
         },
@@ -5039,10 +5039,16 @@
           "detail": "×2 里程碑 +1（共 25 次）"
         },
         {
+          "atMs": 1795842113700,
+          "tHours": 37.032,
+          "type": "collection",
+          "detail": "图鉴 46→49/55"
+        },
+        {
           "atMs": 1795842131800,
           "tHours": 37.037,
           "type": "collection",
-          "detail": "图鉴 46→47/55"
+          "detail": "图鉴 49→50/55"
         },
         {
           "atMs": 1795842142000,
@@ -5054,19 +5060,13 @@
           "atMs": 1795842177700,
           "tHours": 37.049,
           "type": "collection",
-          "detail": "图鉴 47→48/55"
+          "detail": "图鉴 50→51/55"
         },
         {
           "atMs": 1795842177700,
           "tHours": 37.049,
           "type": "milestone",
           "detail": "×2 里程碑 +1（共 27 次）"
-        },
-        {
-          "atMs": 1795842180800,
-          "tHours": 37.05,
-          "type": "collection",
-          "detail": "图鉴 48→51/55"
         },
         {
           "atMs": 1795842218500,
@@ -5213,8 +5213,8 @@
           "detail": "转生 +20 点（×61.00）"
         },
         {
-          "atMs": 1796216605700,
-          "tHours": 141.057,
+          "atMs": 1796216466700,
+          "tHours": 141.019,
           "type": "collection",
           "detail": "图鉴 52→55/55"
         },
@@ -6066,9 +6066,9 @@
           "tHours": 143,
           "day": 6,
           "atMs": 1796223600000,
-          "moyu": 587150570320.4395,
-          "runEarned": 625664539684.4392,
-          "lifetime": 2596512931598.227,
+          "moyu": 587744686679.7561,
+          "runEarned": 626258656043.7559,
+          "lifetime": 2597107047957.6694,
           "idleRate": 32128958.64,
           "clickPower": 1233334.6,
           "rank": "摸鱼宇宙尽头·终",
@@ -6085,9 +6085,9 @@
           "tHours": 146,
           "day": 7,
           "atMs": 1796234400000,
-          "moyu": 864744772970.0393,
-          "runEarned": 903258742334.0391,
-          "lifetime": 2874107134247.827,
+          "moyu": 865338889329.3561,
+          "runEarned": 903852858693.3558,
+          "lifetime": 2874701250607.2695,
           "idleRate": 32128958.64,
           "clickPower": 1233334.6,
           "rank": "摸鱼宇宙尽头·终",
@@ -6104,9 +6104,9 @@
           "tHours": 149,
           "day": 7,
           "atMs": 1796245200000,
-          "moyu": 1142338975619.6394,
-          "runEarned": 1180852944983.6392,
-          "lifetime": 3151701336897.427,
+          "moyu": 1142933091978.956,
+          "runEarned": 1181447061342.9558,
+          "lifetime": 3152295453256.869,
           "idleRate": 32128958.64,
           "clickPower": 1233334.6,
           "rank": "摸鱼宇宙尽头·终",
@@ -6123,9 +6123,9 @@
           "tHours": 152,
           "day": 7,
           "atMs": 1796256000000,
-          "moyu": 1151592115707.9595,
-          "runEarned": 1190106085071.9592,
-          "lifetime": 3160954476985.747,
+          "moyu": 1152186232067.2761,
+          "runEarned": 1190700201431.276,
+          "lifetime": 3161548593345.1895,
           "idleRate": 32128958.64,
           "clickPower": 1233334.6,
           "rank": "摸鱼宇宙尽头·终",
@@ -6144,7 +6144,7 @@
           "atMs": 1796266800000,
           "moyu": 173043499687.0072,
           "runEarned": 179214894751.0081,
-          "lifetime": 3340172584632.7036,
+          "lifetime": 3340766700992.146,
           "idleRate": 24037419.840000004,
           "clickPower": 993791.2000000001,
           "rank": "摸鱼宇宙尽头·终",
@@ -6163,7 +6163,7 @@
           "atMs": 1796277600000,
           "moyu": 419667427245.4072,
           "runEarned": 425838822309.4081,
-          "lifetime": 3586796512191.104,
+          "lifetime": 3587390628550.5464,
           "idleRate": 24037419.840000004,
           "clickPower": 993791.2000000001,
           "rank": "摸鱼宇宙尽头·终",
@@ -6182,7 +6182,7 @@
           "atMs": 1796288400000,
           "moyu": 666291354803.8073,
           "runEarned": 672462749867.8081,
-          "lifetime": 3833420439749.504,
+          "lifetime": 3834014556108.9463,
           "idleRate": 24037419.840000004,
           "clickPower": 993791.2000000001,
           "rank": "摸鱼宇宙尽头·终",
@@ -6201,7 +6201,7 @@
           "atMs": 1796299200000,
           "moyu": 674512152389.0872,
           "runEarned": 680683547453.0881,
-          "lifetime": 3841641237334.7837,
+          "lifetime": 3842235353694.226,
           "idleRate": 24037419.840000004,
           "clickPower": 993791.2000000001,
           "rank": "摸鱼宇宙尽头·终",
@@ -6220,7 +6220,7 @@
           "atMs": 1796310000000,
           "moyu": 899224122688.4285,
           "runEarned": 932316920157.4294,
-          "lifetime": 4093274610039.1753,
+          "lifetime": 4093868726398.6177,
           "idleRate": 36855762.24,
           "clickPower": 1526399.2,
           "rank": "摸鱼宇宙尽头·终",
@@ -6243,16 +6243,16 @@
         "firstClick": 9.001,
         "firstBuy": 9.001,
         "rank2_1e4": 9.041,
-        "rank3_1e5": 9.099,
+        "rank3_1e5": 9.098,
         "rank4_1e6": 10,
         "rank5_1e8": 16,
         "prestigeUnlock": 16,
         "firstPrestige": null,
         "allCards": 12.333,
         "milestone20": 22.237,
-        "collection55": 141.064
+        "collection55": 141.023
       },
-      "maxNoContentMinutes": 1616,
+      "maxNoContentMinutes": 1619,
       "maxSessionDeadAirMinutes": 8,
       "daily": [
         {
@@ -6361,11 +6361,11 @@
             "段位:摸鱼宇宙尽头",
             "×2:×2 里程碑 +1（共 24 次）",
             "×2:×2 里程碑 +1（共 25 次）",
-            "图鉴:图鉴 46→47/55",
+            "图鉴:图鉴 46→49/55",
+            "图鉴:图鉴 49→50/55",
             "×2:×2 里程碑 +1（共 26 次）",
-            "图鉴:图鉴 47→48/55",
+            "图鉴:图鉴 50→51/55",
             "×2:×2 里程碑 +1（共 27 次）",
-            "图鉴:图鉴 48→51/55",
             "×2:×2 里程碑 +1（共 28 次）",
             "段位:带薪摸鱼之神",
             "×2:×2 里程碑 +1（共 29 次）",
@@ -6440,8 +6440,8 @@
         {
           "day": 6,
           "date": "2026-12-02",
-          "lifetimeEnd": 101030180910.2741,
-          "dayIncome": 31179307139.209076,
+          "lifetimeEnd": 101054436148.41127,
+          "dayIncome": 31203562377.346252,
           "idleRateEnd": 792537.84,
           "rankEnd": "摸鱼奇点",
           "collectionEnd": 55,
@@ -6454,13 +6454,13 @@
           "newContentCount": 3,
           "sessions": 2,
           "clicks": 2078,
-          "offlineRatio": 0.881711493756348
+          "offlineRatio": 0.8810261193753487
         },
         {
           "day": 7,
           "date": "2026-12-03",
-          "lifetimeEnd": 144104944206.23035,
-          "dayIncome": 43074763295.95625,
+          "lifetimeEnd": 144129208267.14832,
+          "dayIncome": 43074772118.737045,
           "idleRateEnd": 822912.2399999999,
           "rankEnd": "摸鱼奇点",
           "collectionEnd": 55,
@@ -6469,7 +6469,7 @@
           "newContentCount": 0,
           "sessions": 2,
           "clicks": 2080,
-          "offlineRatio": 0.9369379008935548
+          "offlineRatio": 0.9369377089854539
         }
       ],
       "sessions": [
@@ -6750,16 +6750,16 @@
           "gapSeconds": 42840,
           "rate": 0.8999999999999999,
           "offlineEarned": 16723174463.999998,
-          "activeEarned": 308493097.2060394,
+          "activeEarned": 332748335.34321594,
           "clicks": 1053,
           "patrols": 3,
-          "patrolReward": 17039179.560000002,
+          "patrolReward": 19020447.36,
           "caughtTaps": 0,
           "memeHits": 6,
           "purchases": 9,
           "claimedReward": null,
           "prestigeGained": 0,
-          "deadAirMinutes": 4
+          "deadAirMinutes": 5
         },
         {
           "day": 7,
@@ -6768,7 +6768,7 @@
           "gapSeconds": 42840,
           "rate": 0.7999999999999999,
           "offlineEarned": 18260071833.6,
-          "activeEarned": 825866353.8763123,
+          "activeEarned": 825871269.0750122,
           "clicks": 1031,
           "patrols": 2,
           "patrolReward": 9690511.68,
@@ -6786,7 +6786,7 @@
           "gapSeconds": 42840,
           "rate": 0.95,
           "offlineEarned": 22098306470.399994,
-          "activeEarned": 348151081.43995667,
+          "activeEarned": 348154989.0220337,
           "clicks": 1049,
           "patrols": 2,
           "patrolReward": 9874025.28,
@@ -6890,8 +6890,8 @@
           "detail": "×2 里程碑 +1（共 1 次）"
         },
         {
-          "atMs": 1795741374800,
-          "tHours": 9.049,
+          "atMs": 1795741373800,
+          "tHours": 9.048,
           "type": "collection",
           "detail": "图鉴 9→12/55"
         },
@@ -6938,8 +6938,8 @@
           "detail": "×2 里程碑 +1（共 3 次）"
         },
         {
-          "atMs": 1795741558000,
-          "tHours": 9.099,
+          "atMs": 1795741554300,
+          "tHours": 9.098,
           "type": "rank",
           "detail": "资深摸鱼"
         },
@@ -7088,8 +7088,8 @@
           "detail": "×2 里程碑 +1（共 10 次）"
         },
         {
-          "atMs": 1795753545000,
-          "tHours": 12.429,
+          "atMs": 1795753529600,
+          "tHours": 12.425,
           "type": "collection",
           "detail": "图鉴 30→33/55"
         },
@@ -7280,10 +7280,16 @@
           "detail": "×2 里程碑 +1（共 25 次）"
         },
         {
+          "atMs": 1795842113700,
+          "tHours": 37.032,
+          "type": "collection",
+          "detail": "图鉴 46→49/55"
+        },
+        {
           "atMs": 1795842131800,
           "tHours": 37.037,
           "type": "collection",
-          "detail": "图鉴 46→47/55"
+          "detail": "图鉴 49→50/55"
         },
         {
           "atMs": 1795842142000,
@@ -7295,19 +7301,13 @@
           "atMs": 1795842177700,
           "tHours": 37.049,
           "type": "collection",
-          "detail": "图鉴 47→48/55"
+          "detail": "图鉴 50→51/55"
         },
         {
           "atMs": 1795842177700,
           "tHours": 37.049,
           "type": "milestone",
           "detail": "×2 里程碑 +1（共 27 次）"
-        },
-        {
-          "atMs": 1795842180800,
-          "tHours": 37.05,
-          "type": "collection",
-          "detail": "图鉴 48→51/55"
         },
         {
           "atMs": 1795842218500,
@@ -7424,8 +7424,8 @@
           "detail": "摸鱼奇点"
         },
         {
-          "atMs": 1796216631600,
-          "tHours": 141.064,
+          "atMs": 1796216483700,
+          "tHours": 141.023,
           "type": "collection",
           "detail": "图鉴 52→55/55"
         }
@@ -8271,14 +8271,14 @@
           "tHours": 143,
           "day": 6,
           "atMs": 1796223600000,
-          "moyu": 4356417570.092118,
-          "runEarned": 98747671931.0741,
-          "lifetime": 98747671931.0741,
+          "moyu": 4380672808.224118,
+          "runEarned": 98771927169.21127,
+          "lifetime": 98771927169.21127,
           "idleRate": 792537.84,
           "clickPower": 31220.199999999997,
           "rank": "摸鱼奇点",
           "rankIdx": 11,
-          "rankProgress": 0.2343458991384262,
+          "rankProgress": 0.23464908961514092,
           "collection": 55,
           "unlocked": 9,
           "totalLevels": 815,
@@ -8290,14 +8290,14 @@
           "tHours": 146,
           "day": 7,
           "atMs": 1796234400000,
-          "moyu": 11203944507.692118,
-          "runEarned": 105595198868.6741,
-          "lifetime": 105595198868.6741,
+          "moyu": 11228199745.824116,
+          "runEarned": 105619454106.81128,
+          "lifetime": 105619454106.81128,
           "idleRate": 792537.84,
           "clickPower": 31220.199999999997,
           "rank": "摸鱼奇点",
           "rankIdx": 11,
-          "rankProgress": 0.3199399858584263,
+          "rankProgress": 0.320243176335141,
           "collection": 55,
           "unlocked": 9,
           "totalLevels": 815,
@@ -8309,14 +8309,14 @@
           "tHours": 149,
           "day": 7,
           "atMs": 1796245200000,
-          "moyu": 18051471445.292114,
-          "runEarned": 112442725806.2741,
-          "lifetime": 112442725806.2741,
+          "moyu": 18075726683.424114,
+          "runEarned": 112466981044.41127,
+          "lifetime": 112466981044.41127,
           "idleRate": 792537.84,
           "clickPower": 31220.199999999997,
           "rank": "摸鱼奇点",
           "rankIdx": 11,
-          "rankProgress": 0.40553407257842616,
+          "rankProgress": 0.4058372630551409,
           "collection": 55,
           "unlocked": 9,
           "totalLevels": 815,
@@ -8328,14 +8328,14 @@
           "tHours": 152,
           "day": 7,
           "atMs": 1796256000000,
-          "moyu": 18279722343.212116,
-          "runEarned": 112670976704.19409,
-          "lifetime": 112670976704.19409,
+          "moyu": 18303977581.344116,
+          "runEarned": 112695231942.33127,
+          "lifetime": 112695231942.33127,
           "idleRate": 792537.84,
           "clickPower": 31220.199999999997,
           "rank": "摸鱼奇点",
           "rankIdx": 11,
-          "rankProgress": 0.4083872088024261,
+          "rankProgress": 0.40869039927914086,
           "collection": 55,
           "unlocked": 9,
           "totalLevels": 815,
@@ -8347,14 +8347,14 @@
           "tHours": 155,
           "day": 7,
           "atMs": 1796266800000,
-          "moyu": 5284872261.804121,
-          "runEarned": 118745190844.7904,
-          "lifetime": 118745190844.7904,
+          "moyu": 5309132415.13612,
+          "runEarned": 118769450998.12628,
+          "lifetime": 118769450998.12628,
           "idleRate": 807686.6399999999,
           "clickPower": 31719.399999999998,
           "rank": "摸鱼奇点",
           "rankIdx": 11,
-          "rankProgress": 0.48431488555988006,
+          "rankProgress": 0.4846181374765785,
           "collection": 55,
           "unlocked": 9,
           "totalLevels": 826,
@@ -8366,14 +8366,14 @@
           "tHours": 158,
           "day": 7,
           "atMs": 1796277600000,
-          "moyu": 13571737188.204119,
-          "runEarned": 127032055771.1904,
-          "lifetime": 127032055771.1904,
+          "moyu": 13595997341.536118,
+          "runEarned": 127056315924.52628,
+          "lifetime": 127056315924.52628,
           "idleRate": 807686.6399999999,
           "clickPower": 31719.399999999998,
           "rank": "摸鱼奇点",
           "rankIdx": 11,
-          "rankProgress": 0.58790069713988,
+          "rankProgress": 0.5882039490565785,
           "collection": 55,
           "unlocked": 9,
           "totalLevels": 826,
@@ -8385,14 +8385,14 @@
           "tHours": 161,
           "day": 7,
           "atMs": 1796288400000,
-          "moyu": 21858602114.60412,
-          "runEarned": 135318920697.5904,
-          "lifetime": 135318920697.5904,
+          "moyu": 21882862267.93612,
+          "runEarned": 135343180850.92627,
+          "lifetime": 135343180850.92627,
           "idleRate": 807686.6399999999,
           "clickPower": 31719.399999999998,
           "rank": "摸鱼奇点",
           "rankIdx": 11,
-          "rankProgress": 0.6914865087198799,
+          "rankProgress": 0.6917897606365784,
           "collection": 55,
           "unlocked": 9,
           "totalLevels": 826,
@@ -8404,14 +8404,14 @@
           "tHours": 164,
           "day": 7,
           "atMs": 1796299200000,
-          "moyu": 22134830945.484116,
-          "runEarned": 135595149528.4704,
-          "lifetime": 135595149528.4704,
+          "moyu": 22159091098.816116,
+          "runEarned": 135619409681.80627,
+          "lifetime": 135619409681.80627,
           "idleRate": 807686.6399999999,
           "clickPower": 31719.399999999998,
           "rank": "摸鱼奇点",
           "rankIdx": 11,
-          "rankProgress": 0.69493936910588,
+          "rankProgress": 0.6952426210225784,
           "collection": 55,
           "unlocked": 9,
           "totalLevels": 826,
@@ -8423,14 +8423,14 @@
           "tHours": 167,
           "day": 7,
           "atMs": 1796310000000,
-          "moyu": 5360943949.420118,
-          "runEarned": 141290584345.43036,
-          "lifetime": 141290584345.43036,
+          "moyu": 5385208010.336121,
+          "runEarned": 141314848406.3483,
+          "lifetime": 141314848406.3483,
           "idleRate": 822912.2399999999,
           "clickPower": 32103.399999999998,
           "rank": "摸鱼奇点",
           "rankIdx": 11,
-          "rankProgress": 0.7661323043178795,
+          "rankProgress": 0.7664356050793537,
           "collection": 55,
           "unlocked": 9,
           "totalLevels": 839,
@@ -8450,7 +8450,7 @@
         "firstClick": 9.001,
         "firstBuy": 9.001,
         "rank2_1e4": 9.041,
-        "rank3_1e5": 9.099,
+        "rank3_1e5": 9.098,
         "rank4_1e6": 10,
         "rank5_1e8": 16,
         "prestigeUnlock": 16,
@@ -8781,7 +8781,7 @@
           "purchases": 95,
           "claimedReward": null,
           "prestigeGained": 4,
-          "deadAirMinutes": 4
+          "deadAirMinutes": 5
         },
         {
           "day": 2,
@@ -8961,7 +8961,7 @@
           "purchases": 71,
           "claimedReward": null,
           "prestigeGained": 7,
-          "deadAirMinutes": 4
+          "deadAirMinutes": 5
         },
         {
           "day": 7,
@@ -9092,8 +9092,8 @@
           "detail": "×2 里程碑 +1（共 1 次）"
         },
         {
-          "atMs": 1795741374800,
-          "tHours": 9.049,
+          "atMs": 1795741373800,
+          "tHours": 9.048,
           "type": "collection",
           "detail": "图鉴 9→12/55"
         },
@@ -9140,8 +9140,8 @@
           "detail": "×2 里程碑 +1（共 3 次）"
         },
         {
-          "atMs": 1795741558000,
-          "tHours": 9.099,
+          "atMs": 1795741554300,
+          "tHours": 9.098,
           "type": "rank",
           "detail": "资深摸鱼"
         },
@@ -9290,8 +9290,8 @@
           "detail": "×2 里程碑 +1（共 10 次）"
         },
         {
-          "atMs": 1795753545000,
-          "tHours": 12.429,
+          "atMs": 1795753529600,
+          "tHours": 12.425,
           "type": "collection",
           "detail": "图鉴 30→33/55"
         },
@@ -9428,8 +9428,8 @@
           "detail": "转生 +4 点（×13.00）"
         },
         {
-          "atMs": 1795842185000,
-          "tHours": 37.051,
+          "atMs": 1795842129500,
+          "tHours": 37.036,
           "type": "collection",
           "detail": "图鉴 43→46/55"
         },
@@ -9578,8 +9578,8 @@
           "detail": "转生 +7 点（×67.00）"
         },
         {
-          "atMs": 1796216619100,
-          "tHours": 141.061,
+          "atMs": 1796216488700,
+          "tHours": 141.025,
           "type": "collection",
           "detail": "图鉴 47→50/55"
         },
@@ -10614,14 +10614,14 @@
         "firstClick": 9.001,
         "firstBuy": 9.001,
         "rank2_1e4": 9.041,
-        "rank3_1e5": 9.099,
+        "rank3_1e5": 9.098,
         "rank4_1e6": 10,
         "rank5_1e8": 16,
         "prestigeUnlock": 16,
         "firstPrestige": 57,
         "allCards": 12.333,
         "milestone20": 22.237,
-        "collection55": 141.057
+        "collection55": 141.019
       },
       "maxNoContentMinutes": 1440,
       "maxSessionDeadAirMinutes": 8,
@@ -10732,11 +10732,11 @@
             "段位:摸鱼宇宙尽头",
             "×2:×2 里程碑 +1（共 24 次）",
             "×2:×2 里程碑 +1（共 25 次）",
-            "图鉴:图鉴 46→47/55",
+            "图鉴:图鉴 46→49/55",
+            "图鉴:图鉴 49→50/55",
             "×2:×2 里程碑 +1（共 26 次）",
-            "图鉴:图鉴 47→48/55",
+            "图鉴:图鉴 50→51/55",
             "×2:×2 里程碑 +1（共 27 次）",
-            "图鉴:图鉴 48→51/55",
             "×2:×2 里程碑 +1（共 28 次）",
             "段位:带薪摸鱼之神",
             "×2:×2 里程碑 +1（共 29 次）",
@@ -10817,8 +10817,8 @@
         {
           "day": 6,
           "date": "2026-12-02",
-          "lifetimeEnd": 2689044332481.427,
-          "dayIncome": 1024207246069.4109,
+          "lifetimeEnd": 2689638448840.869,
+          "dayIncome": 1024801362428.8533,
           "idleRateEnd": 32128958.64,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 55,
@@ -10830,12 +10830,12 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2106,
-          "offlineRatio": 0.8830120991066581
+          "offlineRatio": 0.8825001833804519
         },
         {
           "day": 7,
           "date": "2026-12-03",
-          "lifetimeEnd": 4219321316899.975,
+          "lifetimeEnd": 4219915433259.4175,
           "dayIncome": 1530276984418.5483,
           "idleRateEnd": 36855762.24,
           "rankEnd": "摸鱼宇宙尽头·终",
@@ -11128,16 +11128,16 @@
           "gapSeconds": 42840,
           "rate": 0.8999999999999999,
           "offlineEarned": 424372924224,
-          "activeEarned": 9706925121.954102,
+          "activeEarned": 10301041481.396484,
           "clicks": 1077,
           "patrols": 2,
-          "patrolReward": 417175239.96,
+          "patrolReward": 448237242.72,
           "caughtTaps": 0,
           "memeHits": 6,
           "purchases": 72,
           "claimedReward": null,
           "prestigeGained": 0,
-          "deadAirMinutes": 3
+          "deadAirMinutes": 5
         },
         {
           "day": 7,
@@ -11268,8 +11268,8 @@
           "detail": "×2 里程碑 +1（共 1 次）"
         },
         {
-          "atMs": 1795741374800,
-          "tHours": 9.049,
+          "atMs": 1795741373800,
+          "tHours": 9.048,
           "type": "collection",
           "detail": "图鉴 9→12/55"
         },
@@ -11316,8 +11316,8 @@
           "detail": "×2 里程碑 +1（共 3 次）"
         },
         {
-          "atMs": 1795741558000,
-          "tHours": 9.099,
+          "atMs": 1795741554300,
+          "tHours": 9.098,
           "type": "rank",
           "detail": "资深摸鱼"
         },
@@ -11466,8 +11466,8 @@
           "detail": "×2 里程碑 +1（共 10 次）"
         },
         {
-          "atMs": 1795753545000,
-          "tHours": 12.429,
+          "atMs": 1795753529600,
+          "tHours": 12.425,
           "type": "collection",
           "detail": "图鉴 30→33/55"
         },
@@ -11658,10 +11658,16 @@
           "detail": "×2 里程碑 +1（共 25 次）"
         },
         {
+          "atMs": 1795842113700,
+          "tHours": 37.032,
+          "type": "collection",
+          "detail": "图鉴 46→49/55"
+        },
+        {
           "atMs": 1795842131800,
           "tHours": 37.037,
           "type": "collection",
-          "detail": "图鉴 46→47/55"
+          "detail": "图鉴 49→50/55"
         },
         {
           "atMs": 1795842142000,
@@ -11673,19 +11679,13 @@
           "atMs": 1795842177700,
           "tHours": 37.049,
           "type": "collection",
-          "detail": "图鉴 47→48/55"
+          "detail": "图鉴 50→51/55"
         },
         {
           "atMs": 1795842177700,
           "tHours": 37.049,
           "type": "milestone",
           "detail": "×2 里程碑 +1（共 27 次）"
-        },
-        {
-          "atMs": 1795842180800,
-          "tHours": 37.05,
-          "type": "collection",
-          "detail": "图鉴 48→51/55"
         },
         {
           "atMs": 1795842218500,
@@ -11832,8 +11832,8 @@
           "detail": "转生 +20 点（×61.00）"
         },
         {
-          "atMs": 1796216605700,
-          "tHours": 141.057,
+          "atMs": 1796216466700,
+          "tHours": 141.019,
           "type": "collection",
           "detail": "图鉴 52→55/55"
         },
@@ -12685,9 +12685,9 @@
           "tHours": 143,
           "day": 6,
           "atMs": 1796223600000,
-          "moyu": 587150570320.4395,
-          "runEarned": 625664539684.4392,
-          "lifetime": 2596512931598.227,
+          "moyu": 587744686679.7561,
+          "runEarned": 626258656043.7559,
+          "lifetime": 2597107047957.6694,
           "idleRate": 32128958.64,
           "clickPower": 1233334.6,
           "rank": "摸鱼宇宙尽头·终",
@@ -12704,9 +12704,9 @@
           "tHours": 146,
           "day": 7,
           "atMs": 1796234400000,
-          "moyu": 864744772970.0393,
-          "runEarned": 903258742334.0391,
-          "lifetime": 2874107134247.827,
+          "moyu": 865338889329.3561,
+          "runEarned": 903852858693.3558,
+          "lifetime": 2874701250607.2695,
           "idleRate": 32128958.64,
           "clickPower": 1233334.6,
           "rank": "摸鱼宇宙尽头·终",
@@ -12723,9 +12723,9 @@
           "tHours": 149,
           "day": 7,
           "atMs": 1796245200000,
-          "moyu": 1142338975619.6394,
-          "runEarned": 1180852944983.6392,
-          "lifetime": 3151701336897.427,
+          "moyu": 1142933091978.956,
+          "runEarned": 1181447061342.9558,
+          "lifetime": 3152295453256.869,
           "idleRate": 32128958.64,
           "clickPower": 1233334.6,
           "rank": "摸鱼宇宙尽头·终",
@@ -12742,9 +12742,9 @@
           "tHours": 152,
           "day": 7,
           "atMs": 1796256000000,
-          "moyu": 1151592115707.9595,
-          "runEarned": 1190106085071.9592,
-          "lifetime": 3160954476985.747,
+          "moyu": 1152186232067.2761,
+          "runEarned": 1190700201431.276,
+          "lifetime": 3161548593345.1895,
           "idleRate": 32128958.64,
           "clickPower": 1233334.6,
           "rank": "摸鱼宇宙尽头·终",
@@ -12763,7 +12763,7 @@
           "atMs": 1796266800000,
           "moyu": 173043499687.0072,
           "runEarned": 179214894751.0081,
-          "lifetime": 3340172584632.7036,
+          "lifetime": 3340766700992.146,
           "idleRate": 24037419.840000004,
           "clickPower": 993791.2000000001,
           "rank": "摸鱼宇宙尽头·终",
@@ -12782,7 +12782,7 @@
           "atMs": 1796277600000,
           "moyu": 419667427245.4072,
           "runEarned": 425838822309.4081,
-          "lifetime": 3586796512191.104,
+          "lifetime": 3587390628550.5464,
           "idleRate": 24037419.840000004,
           "clickPower": 993791.2000000001,
           "rank": "摸鱼宇宙尽头·终",
@@ -12801,7 +12801,7 @@
           "atMs": 1796288400000,
           "moyu": 666291354803.8073,
           "runEarned": 672462749867.8081,
-          "lifetime": 3833420439749.504,
+          "lifetime": 3834014556108.9463,
           "idleRate": 24037419.840000004,
           "clickPower": 993791.2000000001,
           "rank": "摸鱼宇宙尽头·终",
@@ -12820,7 +12820,7 @@
           "atMs": 1796299200000,
           "moyu": 674512152389.0872,
           "runEarned": 680683547453.0881,
-          "lifetime": 3841641237334.7837,
+          "lifetime": 3842235353694.226,
           "idleRate": 24037419.840000004,
           "clickPower": 993791.2000000001,
           "rank": "摸鱼宇宙尽头·终",
@@ -12839,7 +12839,7 @@
           "atMs": 1796310000000,
           "moyu": 899224122688.4285,
           "runEarned": 932316920157.4294,
-          "lifetime": 4093274610039.1753,
+          "lifetime": 4093868726398.6177,
           "idleRate": 36855762.24,
           "clickPower": 1526399.2,
           "rank": "摸鱼宇宙尽头·终",
@@ -12862,14 +12862,14 @@
         "firstClick": 9.001,
         "firstBuy": 9.001,
         "rank2_1e4": 9.041,
-        "rank3_1e5": 9.099,
+        "rank3_1e5": 9.098,
         "rank4_1e6": 10,
         "rank5_1e8": 16,
         "prestigeUnlock": 16,
         "firstPrestige": 18,
         "allCards": 12.333,
         "milestone20": 33.042,
-        "collection55": 141.064
+        "collection55": 141.035
       },
       "maxNoContentMinutes": 1440,
       "maxSessionDeadAirMinutes": 8,
@@ -13065,8 +13065,8 @@
         {
           "day": 6,
           "date": "2026-12-02",
-          "lifetimeEnd": 488025387950.8505,
-          "dayIncome": 129756376777.34833,
+          "lifetimeEnd": 488094205097.60815,
+          "dayIncome": 129825193924.10596,
           "idleRateEnd": 3037445.5799999996,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 55,
@@ -13079,14 +13079,14 @@
           "newContentCount": 3,
           "sessions": 2,
           "clicks": 2078,
-          "offlineRatio": 0.9321645522789834
+          "offlineRatio": 0.9316704347440314
         },
         {
           "day": 7,
           "date": "2026-12-03",
-          "lifetimeEnd": 693815415094.1185,
-          "dayIncome": 205790027143.268,
-          "idleRateEnd": 4218739.9799999995,
+          "lifetimeEnd": 693875936949.6144,
+          "dayIncome": 205781731852.00623,
+          "idleRateEnd": 4217866.38,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 55,
           "prestigeEnd": 3,
@@ -13097,7 +13097,7 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2080,
-          "offlineRatio": 0.8907669354471758
+          "offlineRatio": 0.8908028432564327
         }
       ],
       "sessions": [
@@ -13378,10 +13378,10 @@
           "gapSeconds": 42840,
           "rate": 0.8999999999999999,
           "offlineEarned": 64747554767.99999,
-          "activeEarned": 1228481507.8649902,
+          "activeEarned": 1297298654.6226196,
           "clicks": 1053,
           "patrols": 3,
-          "patrolReward": 65301959.97,
+          "patrolReward": 69857753.94,
           "caughtTaps": 0,
           "memeHits": 6,
           "purchases": 14,
@@ -13396,10 +13396,10 @@
           "gapSeconds": 42840,
           "rate": 0.7999999999999999,
           "offlineEarned": 69982746163.19998,
-          "activeEarned": 4228631056.2998657,
+          "activeEarned": 4228640116.7771606,
           "clicks": 1031,
           "patrols": 2,
-          "patrolReward": 49691126.16,
+          "patrolReward": 49692623.76,
           "caughtTaps": 0,
           "memeHits": 5,
           "purchases": 9,
@@ -13414,13 +13414,13 @@
           "gapSeconds": 42840,
           "rate": 0.95,
           "offlineEarned": 113328205660.79999,
-          "activeEarned": 1777726625.4881592,
+          "activeEarned": 1778086638.5490723,
           "clicks": 1049,
           "patrols": 2,
-          "patrolReward": 50620386.95999999,
+          "patrolReward": 50612898.95999999,
           "caughtTaps": 0,
           "memeHits": 6,
-          "purchases": 10,
+          "purchases": 9,
           "claimedReward": null,
           "prestigeGained": 0,
           "deadAirMinutes": 6
@@ -13518,8 +13518,8 @@
           "detail": "×2 里程碑 +1（共 1 次）"
         },
         {
-          "atMs": 1795741374800,
-          "tHours": 9.049,
+          "atMs": 1795741373800,
+          "tHours": 9.048,
           "type": "collection",
           "detail": "图鉴 9→12/55"
         },
@@ -13566,8 +13566,8 @@
           "detail": "×2 里程碑 +1（共 3 次）"
         },
         {
-          "atMs": 1795741558000,
-          "tHours": 9.099,
+          "atMs": 1795741554300,
+          "tHours": 9.098,
           "type": "rank",
           "detail": "资深摸鱼"
         },
@@ -13716,8 +13716,8 @@
           "detail": "×2 里程碑 +1（共 10 次）"
         },
         {
-          "atMs": 1795753545000,
-          "tHours": 12.429,
+          "atMs": 1795753529600,
+          "tHours": 12.425,
           "type": "collection",
           "detail": "图鉴 30→33/55"
         },
@@ -13902,8 +13902,8 @@
           "detail": "×2 里程碑 +1（共 23 次）"
         },
         {
-          "atMs": 1795842181600,
-          "tHours": 37.05,
+          "atMs": 1795842142600,
+          "tHours": 37.04,
           "type": "collection",
           "detail": "图鉴 45→48/55"
         },
@@ -14088,8 +14088,8 @@
           "detail": "×2 里程碑 +1（共 43 次）"
         },
         {
-          "atMs": 1796216631900,
-          "tHours": 141.064,
+          "atMs": 1796216525800,
+          "tHours": 141.035,
           "type": "collection",
           "detail": "图鉴 52→55/55"
         },
@@ -14947,9 +14947,9 @@
           "tHours": 143,
           "day": 6,
           "atMs": 1796223600000,
-          "moyu": 17129155377.059885,
-          "runEarned": 479088632459.9706,
-          "lifetime": 479277544680.45056,
+          "moyu": 17197972523.78289,
+          "runEarned": 479157449606.7282,
+          "lifetime": 479346361827.2082,
           "idleRate": 3037445.5799999996,
           "clickPower": 159123.25,
           "rank": "摸鱼宇宙尽头·终",
@@ -14966,9 +14966,9 @@
           "tHours": 146,
           "day": 7,
           "atMs": 1796234400000,
-          "moyu": 43372685188.25988,
-          "runEarned": 505332162271.17053,
-          "lifetime": 505521074491.6505,
+          "moyu": 43441502334.98289,
+          "runEarned": 505400979417.9282,
+          "lifetime": 505589891638.4082,
           "idleRate": 3037445.5799999996,
           "clickPower": 159123.25,
           "rank": "摸鱼宇宙尽头·终",
@@ -14985,9 +14985,9 @@
           "tHours": 149,
           "day": 7,
           "atMs": 1796245200000,
-          "moyu": 69616214999.45987,
-          "runEarned": 531575692082.37054,
-          "lifetime": 531764604302.8505,
+          "moyu": 69685032146.18286,
+          "runEarned": 531644509229.1282,
+          "lifetime": 531833421449.60815,
           "idleRate": 3037445.5799999996,
           "clickPower": 159123.25,
           "rank": "摸鱼宇宙尽头·终",
@@ -15004,9 +15004,9 @@
           "tHours": 152,
           "day": 7,
           "atMs": 1796256000000,
-          "moyu": 70490999326.49988,
-          "runEarned": 532450476409.4105,
-          "lifetime": 532639388629.8905,
+          "moyu": 70559816473.22287,
+          "runEarned": 532519293556.1682,
+          "lifetime": 532708205776.6482,
           "idleRate": 3037445.5799999996,
           "clickPower": 159123.25,
           "rank": "摸鱼宇宙尽头·终",
@@ -15023,9 +15023,9 @@
           "tHours": 155,
           "day": 7,
           "atMs": 1796266800000,
-          "moyu": 27342470581.20005,
-          "runEarned": 563594556310.1504,
-          "lifetime": 563783468530.6304,
+          "moyu": 27411296788.40304,
+          "runEarned": 563663382517.3854,
+          "lifetime": 563852294737.8654,
           "idleRate": 4142112.78,
           "clickPower": 159123.25,
           "rank": "摸鱼宇宙尽头·终",
@@ -15042,9 +15042,9 @@
           "tHours": 158,
           "day": 7,
           "atMs": 1796277600000,
-          "moyu": 69840547704.00005,
-          "runEarned": 606092633432.9504,
-          "lifetime": 606281545653.4304,
+          "moyu": 69909373911.20303,
+          "runEarned": 606161459640.1853,
+          "lifetime": 606350371860.6653,
           "idleRate": 4142112.78,
           "clickPower": 159123.25,
           "rank": "摸鱼宇宙尽头·终",
@@ -15061,9 +15061,9 @@
           "tHours": 161,
           "day": 7,
           "atMs": 1796288400000,
-          "moyu": 112338624826.80005,
-          "runEarned": 648590710555.7504,
-          "lifetime": 648779622776.2303,
+          "moyu": 112407451034.00304,
+          "runEarned": 648659536762.9854,
+          "lifetime": 648848448983.4653,
           "idleRate": 4142112.78,
           "clickPower": 159123.25,
           "rank": "摸鱼宇宙尽头·终",
@@ -15080,9 +15080,9 @@
           "tHours": 164,
           "day": 7,
           "atMs": 1796299200000,
-          "moyu": 113755227397.56004,
-          "runEarned": 650007313126.5104,
-          "lifetime": 650196225346.9904,
+          "moyu": 113824053604.76303,
+          "runEarned": 650076139333.7454,
+          "lifetime": 650265051554.2253,
           "idleRate": 4142112.78,
           "clickPower": 159123.25,
           "rank": "摸鱼宇宙尽头·终",
@@ -15099,17 +15099,17 @@
           "tHours": 167,
           "day": 7,
           "atMs": 1796310000000,
-          "moyu": 27425058933.21002,
-          "runEarned": 679198412142.0386,
-          "lifetime": 679387324362.5186,
-          "idleRate": 4218739.9799999995,
-          "clickPower": 159123.25,
+          "moyu": 28088920367.66904,
+          "runEarned": 679261921709.5344,
+          "lifetime": 679450833930.0144,
+          "idleRate": 4217866.38,
+          "clickPower": 159622.44999999998,
           "rank": "摸鱼宇宙尽头·终",
           "rankIdx": 13,
           "rankProgress": 1,
           "collection": 55,
           "unlocked": 9,
-          "totalLevels": 938,
+          "totalLevels": 937,
           "prestige": 3,
           "prestigeMult": 3.25,
           "dailyStreak": 7
@@ -15124,16 +15124,16 @@
         "firstClick": 9.001,
         "firstBuy": 9.001,
         "rank2_1e4": 9.041,
-        "rank3_1e5": 9.099,
+        "rank3_1e5": 9.098,
         "rank4_1e6": 10,
         "rank5_1e8": 16,
         "prestigeUnlock": 16,
         "firstPrestige": null,
         "allCards": 12.333,
         "milestone20": 22.237,
-        "collection55": 141.064
+        "collection55": 141.023
       },
-      "maxNoContentMinutes": 1616,
+      "maxNoContentMinutes": 1619,
       "maxSessionDeadAirMinutes": 8,
       "daily": [
         {
@@ -15242,11 +15242,11 @@
             "段位:摸鱼宇宙尽头",
             "×2:×2 里程碑 +1（共 24 次）",
             "×2:×2 里程碑 +1（共 25 次）",
-            "图鉴:图鉴 46→47/55",
+            "图鉴:图鉴 46→49/55",
+            "图鉴:图鉴 49→50/55",
             "×2:×2 里程碑 +1（共 26 次）",
-            "图鉴:图鉴 47→48/55",
+            "图鉴:图鉴 50→51/55",
             "×2:×2 里程碑 +1（共 27 次）",
-            "图鉴:图鉴 48→51/55",
             "×2:×2 里程碑 +1（共 28 次）",
             "段位:带薪摸鱼之神",
             "×2:×2 里程碑 +1（共 29 次）",
@@ -15321,8 +15321,8 @@
         {
           "day": 6,
           "date": "2026-12-02",
-          "lifetimeEnd": 101030180910.2741,
-          "dayIncome": 31179307139.209076,
+          "lifetimeEnd": 101054436148.41127,
+          "dayIncome": 31203562377.346252,
           "idleRateEnd": 792537.84,
           "rankEnd": "摸鱼奇点",
           "collectionEnd": 55,
@@ -15335,13 +15335,13 @@
           "newContentCount": 3,
           "sessions": 2,
           "clicks": 2078,
-          "offlineRatio": 0.881711493756348
+          "offlineRatio": 0.8810261193753487
         },
         {
           "day": 7,
           "date": "2026-12-03",
-          "lifetimeEnd": 144104944206.23035,
-          "dayIncome": 43074763295.95625,
+          "lifetimeEnd": 144129208267.14832,
+          "dayIncome": 43074772118.737045,
           "idleRateEnd": 822912.2399999999,
           "rankEnd": "摸鱼奇点",
           "collectionEnd": 55,
@@ -15350,7 +15350,7 @@
           "newContentCount": 0,
           "sessions": 2,
           "clicks": 2080,
-          "offlineRatio": 0.9369379008935548
+          "offlineRatio": 0.9369377089854539
         }
       ],
       "sessions": [
@@ -15631,16 +15631,16 @@
           "gapSeconds": 42840,
           "rate": 0.8999999999999999,
           "offlineEarned": 16723174463.999998,
-          "activeEarned": 308493097.2060394,
+          "activeEarned": 332748335.34321594,
           "clicks": 1053,
           "patrols": 3,
-          "patrolReward": 17039179.560000002,
+          "patrolReward": 19020447.36,
           "caughtTaps": 0,
           "memeHits": 6,
           "purchases": 9,
           "claimedReward": null,
           "prestigeGained": 0,
-          "deadAirMinutes": 4
+          "deadAirMinutes": 5
         },
         {
           "day": 7,
@@ -15649,7 +15649,7 @@
           "gapSeconds": 42840,
           "rate": 0.7999999999999999,
           "offlineEarned": 18260071833.6,
-          "activeEarned": 825866353.8763123,
+          "activeEarned": 825871269.0750122,
           "clicks": 1031,
           "patrols": 2,
           "patrolReward": 9690511.68,
@@ -15667,7 +15667,7 @@
           "gapSeconds": 42840,
           "rate": 0.95,
           "offlineEarned": 22098306470.399994,
-          "activeEarned": 348151081.43995667,
+          "activeEarned": 348154989.0220337,
           "clicks": 1049,
           "patrols": 2,
           "patrolReward": 9874025.28,
@@ -15771,8 +15771,8 @@
           "detail": "×2 里程碑 +1（共 1 次）"
         },
         {
-          "atMs": 1795741374800,
-          "tHours": 9.049,
+          "atMs": 1795741373800,
+          "tHours": 9.048,
           "type": "collection",
           "detail": "图鉴 9→12/55"
         },
@@ -15819,8 +15819,8 @@
           "detail": "×2 里程碑 +1（共 3 次）"
         },
         {
-          "atMs": 1795741558000,
-          "tHours": 9.099,
+          "atMs": 1795741554300,
+          "tHours": 9.098,
           "type": "rank",
           "detail": "资深摸鱼"
         },
@@ -15969,8 +15969,8 @@
           "detail": "×2 里程碑 +1（共 10 次）"
         },
         {
-          "atMs": 1795753545000,
-          "tHours": 12.429,
+          "atMs": 1795753529600,
+          "tHours": 12.425,
           "type": "collection",
           "detail": "图鉴 30→33/55"
         },
@@ -16161,10 +16161,16 @@
           "detail": "×2 里程碑 +1（共 25 次）"
         },
         {
+          "atMs": 1795842113700,
+          "tHours": 37.032,
+          "type": "collection",
+          "detail": "图鉴 46→49/55"
+        },
+        {
           "atMs": 1795842131800,
           "tHours": 37.037,
           "type": "collection",
-          "detail": "图鉴 46→47/55"
+          "detail": "图鉴 49→50/55"
         },
         {
           "atMs": 1795842142000,
@@ -16176,19 +16182,13 @@
           "atMs": 1795842177700,
           "tHours": 37.049,
           "type": "collection",
-          "detail": "图鉴 47→48/55"
+          "detail": "图鉴 50→51/55"
         },
         {
           "atMs": 1795842177700,
           "tHours": 37.049,
           "type": "milestone",
           "detail": "×2 里程碑 +1（共 27 次）"
-        },
-        {
-          "atMs": 1795842180800,
-          "tHours": 37.05,
-          "type": "collection",
-          "detail": "图鉴 48→51/55"
         },
         {
           "atMs": 1795842218500,
@@ -16305,8 +16305,8 @@
           "detail": "摸鱼奇点"
         },
         {
-          "atMs": 1796216631600,
-          "tHours": 141.064,
+          "atMs": 1796216483700,
+          "tHours": 141.023,
           "type": "collection",
           "detail": "图鉴 52→55/55"
         }
@@ -17152,14 +17152,14 @@
           "tHours": 143,
           "day": 6,
           "atMs": 1796223600000,
-          "moyu": 4356417570.092118,
-          "runEarned": 98747671931.0741,
-          "lifetime": 98747671931.0741,
+          "moyu": 4380672808.224118,
+          "runEarned": 98771927169.21127,
+          "lifetime": 98771927169.21127,
           "idleRate": 792537.84,
           "clickPower": 31220.199999999997,
           "rank": "摸鱼奇点",
           "rankIdx": 11,
-          "rankProgress": 0.2343458991384262,
+          "rankProgress": 0.23464908961514092,
           "collection": 55,
           "unlocked": 9,
           "totalLevels": 815,
@@ -17171,14 +17171,14 @@
           "tHours": 146,
           "day": 7,
           "atMs": 1796234400000,
-          "moyu": 11203944507.692118,
-          "runEarned": 105595198868.6741,
-          "lifetime": 105595198868.6741,
+          "moyu": 11228199745.824116,
+          "runEarned": 105619454106.81128,
+          "lifetime": 105619454106.81128,
           "idleRate": 792537.84,
           "clickPower": 31220.199999999997,
           "rank": "摸鱼奇点",
           "rankIdx": 11,
-          "rankProgress": 0.3199399858584263,
+          "rankProgress": 0.320243176335141,
           "collection": 55,
           "unlocked": 9,
           "totalLevels": 815,
@@ -17190,14 +17190,14 @@
           "tHours": 149,
           "day": 7,
           "atMs": 1796245200000,
-          "moyu": 18051471445.292114,
-          "runEarned": 112442725806.2741,
-          "lifetime": 112442725806.2741,
+          "moyu": 18075726683.424114,
+          "runEarned": 112466981044.41127,
+          "lifetime": 112466981044.41127,
           "idleRate": 792537.84,
           "clickPower": 31220.199999999997,
           "rank": "摸鱼奇点",
           "rankIdx": 11,
-          "rankProgress": 0.40553407257842616,
+          "rankProgress": 0.4058372630551409,
           "collection": 55,
           "unlocked": 9,
           "totalLevels": 815,
@@ -17209,14 +17209,14 @@
           "tHours": 152,
           "day": 7,
           "atMs": 1796256000000,
-          "moyu": 18279722343.212116,
-          "runEarned": 112670976704.19409,
-          "lifetime": 112670976704.19409,
+          "moyu": 18303977581.344116,
+          "runEarned": 112695231942.33127,
+          "lifetime": 112695231942.33127,
           "idleRate": 792537.84,
           "clickPower": 31220.199999999997,
           "rank": "摸鱼奇点",
           "rankIdx": 11,
-          "rankProgress": 0.4083872088024261,
+          "rankProgress": 0.40869039927914086,
           "collection": 55,
           "unlocked": 9,
           "totalLevels": 815,
@@ -17228,14 +17228,14 @@
           "tHours": 155,
           "day": 7,
           "atMs": 1796266800000,
-          "moyu": 5284872261.804121,
-          "runEarned": 118745190844.7904,
-          "lifetime": 118745190844.7904,
+          "moyu": 5309132415.13612,
+          "runEarned": 118769450998.12628,
+          "lifetime": 118769450998.12628,
           "idleRate": 807686.6399999999,
           "clickPower": 31719.399999999998,
           "rank": "摸鱼奇点",
           "rankIdx": 11,
-          "rankProgress": 0.48431488555988006,
+          "rankProgress": 0.4846181374765785,
           "collection": 55,
           "unlocked": 9,
           "totalLevels": 826,
@@ -17247,14 +17247,14 @@
           "tHours": 158,
           "day": 7,
           "atMs": 1796277600000,
-          "moyu": 13571737188.204119,
-          "runEarned": 127032055771.1904,
-          "lifetime": 127032055771.1904,
+          "moyu": 13595997341.536118,
+          "runEarned": 127056315924.52628,
+          "lifetime": 127056315924.52628,
           "idleRate": 807686.6399999999,
           "clickPower": 31719.399999999998,
           "rank": "摸鱼奇点",
           "rankIdx": 11,
-          "rankProgress": 0.58790069713988,
+          "rankProgress": 0.5882039490565785,
           "collection": 55,
           "unlocked": 9,
           "totalLevels": 826,
@@ -17266,14 +17266,14 @@
           "tHours": 161,
           "day": 7,
           "atMs": 1796288400000,
-          "moyu": 21858602114.60412,
-          "runEarned": 135318920697.5904,
-          "lifetime": 135318920697.5904,
+          "moyu": 21882862267.93612,
+          "runEarned": 135343180850.92627,
+          "lifetime": 135343180850.92627,
           "idleRate": 807686.6399999999,
           "clickPower": 31719.399999999998,
           "rank": "摸鱼奇点",
           "rankIdx": 11,
-          "rankProgress": 0.6914865087198799,
+          "rankProgress": 0.6917897606365784,
           "collection": 55,
           "unlocked": 9,
           "totalLevels": 826,
@@ -17285,14 +17285,14 @@
           "tHours": 164,
           "day": 7,
           "atMs": 1796299200000,
-          "moyu": 22134830945.484116,
-          "runEarned": 135595149528.4704,
-          "lifetime": 135595149528.4704,
+          "moyu": 22159091098.816116,
+          "runEarned": 135619409681.80627,
+          "lifetime": 135619409681.80627,
           "idleRate": 807686.6399999999,
           "clickPower": 31719.399999999998,
           "rank": "摸鱼奇点",
           "rankIdx": 11,
-          "rankProgress": 0.69493936910588,
+          "rankProgress": 0.6952426210225784,
           "collection": 55,
           "unlocked": 9,
           "totalLevels": 826,
@@ -17304,14 +17304,14 @@
           "tHours": 167,
           "day": 7,
           "atMs": 1796310000000,
-          "moyu": 5360943949.420118,
-          "runEarned": 141290584345.43036,
-          "lifetime": 141290584345.43036,
+          "moyu": 5385208010.336121,
+          "runEarned": 141314848406.3483,
+          "lifetime": 141314848406.3483,
           "idleRate": 822912.2399999999,
           "clickPower": 32103.399999999998,
           "rank": "摸鱼奇点",
           "rankIdx": 11,
-          "rankProgress": 0.7661323043178795,
+          "rankProgress": 0.7664356050793537,
           "collection": 55,
           "unlocked": 9,
           "totalLevels": 839,
@@ -17328,7 +17328,7 @@
         "firstClick": 9.001,
         "firstBuy": 9.001,
         "rank2_1e4": 9.041,
-        "rank3_1e5": 9.099,
+        "rank3_1e5": 9.098,
         "rank4_1e6": 10,
         "rank5_1e8": 16,
         "prestigeUnlock": 16,
@@ -17970,14 +17970,14 @@
         "firstClick": 9.001,
         "firstBuy": 9.001,
         "rank2_1e4": 9.041,
-        "rank3_1e5": 9.099,
+        "rank3_1e5": 9.098,
         "rank4_1e6": 10,
         "rank5_1e8": 16,
         "prestigeUnlock": 16,
         "firstPrestige": null,
         "allCards": 12.333,
         "milestone20": 22.237,
-        "collection55": 141.064
+        "collection55": 141.023
       },
       "daily": [
         {
@@ -18086,11 +18086,11 @@
             "段位:摸鱼宇宙尽头",
             "×2:×2 里程碑 +1（共 24 次）",
             "×2:×2 里程碑 +1（共 25 次）",
-            "图鉴:图鉴 46→47/55",
+            "图鉴:图鉴 46→49/55",
+            "图鉴:图鉴 49→50/55",
             "×2:×2 里程碑 +1（共 26 次）",
-            "图鉴:图鉴 47→48/55",
+            "图鉴:图鉴 50→51/55",
             "×2:×2 里程碑 +1（共 27 次）",
-            "图鉴:图鉴 48→51/55",
             "×2:×2 里程碑 +1（共 28 次）",
             "段位:带薪摸鱼之神",
             "×2:×2 里程碑 +1（共 29 次）",
@@ -18165,8 +18165,8 @@
         {
           "day": 6,
           "date": "2026-12-02",
-          "lifetimeEnd": 101030180910.2741,
-          "dayIncome": 31179307139.209076,
+          "lifetimeEnd": 101054436148.41127,
+          "dayIncome": 31203562377.346252,
           "idleRateEnd": 792537.84,
           "rankEnd": "摸鱼奇点",
           "collectionEnd": 55,
@@ -18179,13 +18179,13 @@
           "newContentCount": 3,
           "sessions": 2,
           "clicks": 2078,
-          "offlineRatio": 0.881711493756348
+          "offlineRatio": 0.8810261193753487
         },
         {
           "day": 7,
           "date": "2026-12-03",
-          "lifetimeEnd": 143245823827.67035,
-          "dayIncome": 42215642917.396255,
+          "lifetimeEnd": 143270087888.58832,
+          "dayIncome": 42215651740.17705,
           "idleRateEnd": 822912.2399999999,
           "rankEnd": "摸鱼奇点",
           "collectionEnd": 55,
@@ -18194,13 +18194,13 @@
           "newContentCount": 0,
           "sessions": 2,
           "clicks": 2080,
-          "offlineRatio": 0.9560052983906845
+          "offlineRatio": 0.9560050985921539
         },
         {
           "day": 8,
           "date": "2026-12-04",
-          "lifetimeEnd": 187657849730.0635,
-          "dayIncome": 44412025902.39316,
+          "lifetimeEnd": 187682117968.89816,
+          "dayIncome": 44412030080.309845,
           "idleRateEnd": 845721.84,
           "rankEnd": "摸鱼永恒",
           "collectionEnd": 55,
@@ -18212,13 +18212,13 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2093,
-          "offlineRatio": 0.9676896763064383
+          "offlineRatio": 0.9676895852741924
         },
         {
           "day": 9,
           "date": "2026-12-05",
-          "lifetimeEnd": 233214256293.21304,
-          "dayIncome": 45556406563.149536,
+          "lifetimeEnd": 233238528930.7596,
+          "dayIncome": 45556410961.86145,
           "idleRateEnd": 865094.6399999999,
           "rankEnd": "摸鱼永恒",
           "collectionEnd": 55,
@@ -18227,14 +18227,14 @@
           "newContentCount": 0,
           "sessions": 2,
           "clicks": 2113,
-          "offlineRatio": 0.9685874431828626
+          "offlineRatio": 0.968587349660633
         },
         {
           "day": 10,
           "date": "2026-12-06",
-          "lifetimeEnd": 279677995995.4796,
-          "dayIncome": 46463739702.26657,
-          "idleRateEnd": 880531.44,
+          "lifetimeEnd": 279704196816.02856,
+          "dayIncome": 46465667885.26895,
+          "idleRateEnd": 880512.2399999999,
           "rankEnd": "摸鱼永恒",
           "collectionEnd": 55,
           "prestigeEnd": 0,
@@ -18242,13 +18242,13 @@
           "newContentCount": 0,
           "sessions": 2,
           "clicks": 2085,
-          "offlineRatio": 0.9695350876675661
+          "offlineRatio": 0.9695400764460406
         },
         {
           "day": 11,
           "date": "2026-12-07",
-          "lifetimeEnd": 327033049379.594,
-          "dayIncome": 47355053384.11438,
+          "lifetimeEnd": 327058951444.3408,
+          "dayIncome": 47354754628.312256,
           "idleRateEnd": 904512.2399999999,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 55,
@@ -18259,14 +18259,14 @@
           "newContentCount": 1,
           "sessions": 2,
           "clicks": 2071,
-          "offlineRatio": 0.9680744347545905
+          "offlineRatio": 0.9680706168033173
         },
         {
           "day": 12,
           "date": "2026-12-08",
-          "lifetimeEnd": 375515110546.88837,
-          "dayIncome": 48482061167.29437,
-          "idleRateEnd": 916070.6399999999,
+          "lifetimeEnd": 375536244850.6307,
+          "dayIncome": 48477293406.289856,
+          "idleRateEnd": 915993.84,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 55,
           "prestigeEnd": 0,
@@ -18277,14 +18277,14 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2084,
-          "offlineRatio": 0.9698472128763257
+          "offlineRatio": 0.9698559077454546
         },
         {
           "day": 13,
           "date": "2026-12-09",
-          "lifetimeEnd": 427256909927.8474,
-          "dayIncome": 51741799380.959045,
-          "idleRateEnd": 1217568.24,
+          "lifetimeEnd": 427280547455.023,
+          "dayIncome": 51744302604.392334,
+          "idleRateEnd": 1218086.64,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 55,
           "prestigeEnd": 0,
@@ -18294,14 +18294,14 @@
           "newContentCount": 1,
           "sessions": 2,
           "clicks": 2081,
-          "offlineRatio": 0.9198194558945747
+          "offlineRatio": 0.9197183200911532
         },
         {
           "day": 14,
           "date": "2026-12-10",
-          "lifetimeEnd": 495210738135.7177,
-          "dayIncome": 67953828207.8703,
-          "idleRateEnd": 1261517.0399999998,
+          "lifetimeEnd": 495246089041.1795,
+          "dayIncome": 67965541586.156494,
+          "idleRateEnd": 1262016.24,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 55,
           "prestigeEnd": 0,
@@ -18311,13 +18311,13 @@
           "newContentCount": 1,
           "sessions": 2,
           "clicks": 2079,
-          "offlineRatio": 0.9580989413582361
+          "offlineRatio": 0.9580961307672917
         },
         {
           "day": 15,
           "date": "2026-12-11",
-          "lifetimeEnd": 569849251760.4667,
-          "dayIncome": 74638513624.74896,
+          "lifetimeEnd": 567354593585.3833,
+          "dayIncome": 72108504544.2038,
           "idleRateEnd": 1363737.8399999999,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 55,
@@ -18328,14 +18328,29 @@
           "newContentCount": 1,
           "sessions": 2,
           "clicks": 2080,
-          "offlineRatio": 0.9609695582819989
+          "offlineRatio": 0.9608178226789905
         },
         {
           "day": 16,
           "date": "2026-12-12",
-          "lifetimeEnd": 646841679443.211,
-          "dayIncome": 76992427682.74438,
+          "lifetimeEnd": 644297432623.2046,
+          "dayIncome": 76942839037.82129,
           "idleRateEnd": 1378137.8399999999,
+          "rankEnd": "摸鱼宇宙尽头·终",
+          "collectionEnd": 55,
+          "prestigeEnd": 0,
+          "newEvents": [],
+          "newContentCount": 0,
+          "sessions": 2,
+          "clicks": 2109,
+          "offlineRatio": 0.9724465738523216
+        },
+        {
+          "day": 17,
+          "date": "2026-12-13",
+          "lifetimeEnd": 722100837662.612,
+          "dayIncome": 77803405039.40747,
+          "idleRateEnd": 1391846.64,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 55,
           "prestigeEnd": 0,
@@ -18344,45 +18359,15 @@
           ],
           "newContentCount": 1,
           "sessions": 2,
-          "clicks": 2109,
-          "offlineRatio": 0.9721075287196624
-        },
-        {
-          "day": 17,
-          "date": "2026-12-13",
-          "lifetimeEnd": 724645960759.0181,
-          "dayIncome": 77804281315.807,
-          "idleRateEnd": 1391846.64,
-          "rankEnd": "摸鱼宇宙尽头·终",
-          "collectionEnd": 55,
-          "prestigeEnd": 0,
-          "newEvents": [],
-          "newContentCount": 0,
-          "sessions": 2,
           "clicks": 2118,
-          "offlineRatio": 0.9718357237680464
+          "offlineRatio": 0.9718466692621225
         },
         {
           "day": 18,
           "date": "2026-12-14",
-          "lifetimeEnd": 803107900113.2361,
-          "dayIncome": 78461939354.21802,
-          "idleRateEnd": 1402790.64,
-          "rankEnd": "摸鱼宇宙尽头·终",
-          "collectionEnd": 55,
-          "prestigeEnd": 0,
-          "newEvents": [],
-          "newContentCount": 0,
-          "sessions": 2,
-          "clicks": 2041,
-          "offlineRatio": 0.972165235381725
-        },
-        {
-          "day": 19,
-          "date": "2026-12-15",
-          "lifetimeEnd": 882228823933.0883,
-          "dayIncome": 79120923819.85217,
-          "idleRateEnd": 1418496.24,
+          "lifetimeEnd": 800659521962.887,
+          "dayIncome": 78558684300.2749,
+          "idleRateEnd": 1412544.24,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 55,
           "prestigeEnd": 0,
@@ -18391,14 +18376,29 @@
           ],
           "newContentCount": 1,
           "sessions": 2,
+          "clicks": 2041,
+          "offlineRatio": 0.9709961700635694
+        },
+        {
+          "day": 19,
+          "date": "2026-12-15",
+          "lifetimeEnd": 880267818887.4362,
+          "dayIncome": 79608296924.5492,
+          "idleRateEnd": 1422528.24,
+          "rankEnd": "摸鱼宇宙尽头·终",
+          "collectionEnd": 55,
+          "prestigeEnd": 0,
+          "newEvents": [],
+          "newContentCount": 0,
+          "sessions": 2,
           "clicks": 2138,
-          "offlineRatio": 0.9713855090442697
+          "offlineRatio": 0.9721150558734707
         },
         {
           "day": 20,
           "date": "2026-12-16",
-          "lifetimeEnd": 962120666540.598,
-          "dayIncome": 79891842607.50977,
+          "lifetimeEnd": 960346458950.883,
+          "dayIncome": 80078640063.4469,
           "idleRateEnd": 1427865.8399999999,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 55,
@@ -18407,14 +18407,14 @@
           "newContentCount": 0,
           "sessions": 2,
           "clicks": 2080,
-          "offlineRatio": 0.9725200996365126
+          "offlineRatio": 0.9730205162208656
         },
         {
           "day": 21,
           "date": "2026-12-17",
-          "lifetimeEnd": 1043253200813.0038,
-          "dayIncome": 81132534272.40576,
-          "idleRateEnd": 1432627.44,
+          "lifetimeEnd": 1041459911465.1721,
+          "dayIncome": 81113452514.28906,
+          "idleRateEnd": 1432397.0399999998,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 55,
           "prestigeEnd": 0,
@@ -18422,13 +18422,13 @@
           "newContentCount": 0,
           "sessions": 2,
           "clicks": 2104,
-          "offlineRatio": 0.9640356676421707
+          "offlineRatio": 0.9640579413263725
         },
         {
           "day": 22,
           "date": "2026-12-18",
-          "lifetimeEnd": 1125915677439.6482,
-          "dayIncome": 82662476626.64441,
+          "lifetimeEnd": 1124113865054.8364,
+          "dayIncome": 82653953589.6643,
           "idleRateEnd": 1436390.64,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 55,
@@ -18437,14 +18437,14 @@
           "newContentCount": 0,
           "sessions": 2,
           "clicks": 2103,
-          "offlineRatio": 0.973753215185606
+          "offlineRatio": 0.9737238386194281
         },
         {
           "day": 23,
           "date": "2026-12-19",
-          "lifetimeEnd": 1208761270486.5356,
-          "dayIncome": 82845593046.88745,
-          "idleRateEnd": 1438502.64,
+          "lifetimeEnd": 1207010465183.3877,
+          "dayIncome": 82896600128.55127,
+          "idleRateEnd": 1443494.64,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 55,
           "prestigeEnd": 0,
@@ -18452,14 +18452,29 @@
           "newContentCount": 0,
           "sessions": 2,
           "clicks": 2110,
-          "offlineRatio": 0.9737781452870042
+          "offlineRatio": 0.9731789701543441
         },
         {
           "day": 24,
           "date": "2026-12-20",
-          "lifetimeEnd": 1291799789760.0166,
-          "dayIncome": 83038519273.48096,
-          "idleRateEnd": 1441344.24,
+          "lifetimeEnd": 1290335292377.76,
+          "dayIncome": 83324827194.37231,
+          "idleRateEnd": 1447680.24,
+          "rankEnd": "摸鱼宇宙尽头·终",
+          "collectionEnd": 55,
+          "prestigeEnd": 0,
+          "newEvents": [],
+          "newContentCount": 0,
+          "sessions": 2,
+          "clicks": 2087,
+          "offlineRatio": 0.9736159244969811
+        },
+        {
+          "day": 25,
+          "date": "2026-12-21",
+          "lifetimeEnd": 1373835463597.1467,
+          "dayIncome": 83500171219.38672,
+          "idleRateEnd": 1448832.24,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 55,
           "prestigeEnd": 0,
@@ -18468,30 +18483,15 @@
           ],
           "newContentCount": 1,
           "sessions": 2,
-          "clicks": 2087,
-          "offlineRatio": 0.9735966952413956
-        },
-        {
-          "day": 25,
-          "date": "2026-12-21",
-          "lifetimeEnd": 1374953600080.5376,
-          "dayIncome": 83153810320.521,
-          "idleRateEnd": 1442265.8399999999,
-          "rankEnd": "摸鱼宇宙尽头·终",
-          "collectionEnd": 55,
-          "prestigeEnd": 0,
-          "newEvents": [],
-          "newContentCount": 0,
-          "sessions": 2,
           "clicks": 2103,
-          "offlineRatio": 0.9737004797051217
+          "offlineRatio": 0.9738699920117032
         },
         {
           "day": 26,
           "date": "2026-12-22",
-          "lifetimeEnd": 1458182441179.2449,
-          "dayIncome": 83228841098.70728,
-          "idleRateEnd": 1443533.0399999998,
+          "lifetimeEnd": 1457423690346.4006,
+          "dayIncome": 83588226749.2539,
+          "idleRateEnd": 1450099.44,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 55,
           "prestigeEnd": 0,
@@ -18499,13 +18499,13 @@
           "newContentCount": 0,
           "sessions": 2,
           "clicks": 2079,
-          "offlineRatio": 0.9735641427267037
+          "offlineRatio": 0.9735916016321806
         },
         {
           "day": 27,
           "date": "2026-12-23",
-          "lifetimeEnd": 1541722977602.2944,
-          "dayIncome": 83540536423.04956,
+          "lifetimeEnd": 1541068661138.7502,
+          "dayIncome": 83644970792.34961,
           "idleRateEnd": 1451021.0399999998,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 55,
@@ -18514,12 +18514,12 @@
           "newContentCount": 0,
           "sessions": 2,
           "clicks": 2070,
-          "offlineRatio": 0.9727957780263604
+          "offlineRatio": 0.9736100542442713
         },
         {
           "day": 28,
           "date": "2026-12-24",
-          "lifetimeEnd": 1625453461571.5955,
+          "lifetimeEnd": 1624799145108.0513,
           "dayIncome": 83730483969.30103,
           "idleRateEnd": 1451021.0399999998,
           "rankEnd": "摸鱼宇宙尽头·终",
@@ -18536,8 +18536,8 @@
         {
           "day": 29,
           "date": "2026-12-25",
-          "lifetimeEnd": 1709224650679.0254,
-          "dayIncome": 83771189107.42993,
+          "lifetimeEnd": 1708570317119.9534,
+          "dayIncome": 83771172011.9021,
           "idleRateEnd": 1452288.24,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 55,
@@ -18546,14 +18546,14 @@
           "newContentCount": 0,
           "sessions": 2,
           "clicks": 2112,
-          "offlineRatio": 0.9729325730577599
+          "offlineRatio": 0.9729327716081142
         },
         {
           "day": 30,
           "date": "2026-12-26",
-          "lifetimeEnd": 1794788946720.844,
-          "dayIncome": 85564296041.8186,
-          "idleRateEnd": 1476825.8399999999,
+          "lifetimeEnd": 1794196642908.1738,
+          "dayIncome": 85626325788.22046,
+          "idleRateEnd": 1483008.24,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 55,
           "prestigeEnd": 0,
@@ -18563,7 +18563,7 @@
           "newContentCount": 1,
           "sessions": 2,
           "clicks": 2089,
-          "offlineRatio": 0.9613370885234447
+          "offlineRatio": 0.9605890104619588
         }
       ]
     }

@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-27T03:47:06.154Z",
+ "generatedAt": "2026-11-27T03:53:00.582Z",
  "seeds": [
   7,
   11,
@@ -65,7 +65,7 @@
    "d3Stale": 8,
    "d3NoGoal": 11,
    "d3NoBuy": 0,
-   "d1Stale": 1,
+   "d1Stale": 3,
    "d1Visits": 15,
    "d3GoalPools": [
     [
@@ -2193,9 +2193,9 @@
        "claimed": null,
        "streakAfter": 1,
        "codexBefore": 13,
-       "codexAfter": 15,
+       "codexAfter": 18,
        "newQuotes": 1,
-       "newFlavors": 1,
+       "newFlavors": 4,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
        "sessionEarned": 156578.76000020094,
@@ -2250,10 +2250,10 @@
        "goalsNewlyDone": [],
        "claimed": null,
        "streakAfter": 1,
-       "codexBefore": 15,
+       "codexBefore": 18,
        "codexAfter": 18,
        "newQuotes": 0,
-       "newFlavors": 3,
+       "newFlavors": 0,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
        "sessionEarned": 178422.19000165537,
@@ -2261,7 +2261,7 @@
        "idleRateEnd": 952.2,
        "clickPowerEnd": 19,
        "interesting": true,
-       "stale": false
+       "stale": true
       }
      ],
      "day3": [
@@ -2789,9 +2789,9 @@
        "claimed": null,
        "streakAfter": 1,
        "codexBefore": 13,
-       "codexAfter": 14,
+       "codexAfter": 17,
        "newQuotes": 0,
-       "newFlavors": 1,
+       "newFlavors": 4,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
        "sessionEarned": 156508.76000020094,
@@ -2846,10 +2846,10 @@
        "goalsNewlyDone": [],
        "claimed": null,
        "streakAfter": 1,
-       "codexBefore": 14,
+       "codexBefore": 17,
        "codexAfter": 17,
        "newQuotes": 0,
-       "newFlavors": 3,
+       "newFlavors": 0,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
        "sessionEarned": 178440.19000165537,
@@ -2857,7 +2857,7 @@
        "idleRateEnd": 952.2,
        "clickPowerEnd": 19,
        "interesting": true,
-       "stale": false
+       "stale": true
       }
      ],
      "day3": [

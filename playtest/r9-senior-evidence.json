@@ -1,0 +1,1217 @@
+{
+  "viewport": {
+    "w": 390,
+    "h": 844,
+    "dpr": 3
+  },
+  "ta": {},
+  "layout": {
+    "hud": {
+      "y": 0,
+      "h": 124,
+      "bottom": 124
+    },
+    "quest": {
+      "y": 72,
+      "h": 42,
+      "bottom": 114
+    },
+    "stage": {
+      "y": 124,
+      "h": 573,
+      "bottom": 697
+    },
+    "shop": {
+      "y": 697,
+      "h": 147,
+      "bottom": 844
+    },
+    "journalBtn": {
+      "y": 614,
+      "h": 44,
+      "bottom": 658
+    },
+    "journalOverlapsShop": false,
+    "visibleButtons": 9,
+    "targets": [
+      {
+        "id": "coffee",
+        "w": 126,
+        "h": 111
+      },
+      {
+        "id": "phone",
+        "w": 126,
+        "h": 111
+      },
+      {
+        "id": "water",
+        "w": 126,
+        "h": 111
+      },
+      {
+        "id": "toilet",
+        "w": 126,
+        "h": 111
+      },
+      {
+        "id": "chair",
+        "w": 126,
+        "h": 111
+      },
+      {
+        "id": "group",
+        "w": 126,
+        "h": 111
+      },
+      {
+        "id": "meeting",
+        "w": 126,
+        "h": 111
+      },
+      {
+        "id": "deep",
+        "w": 126,
+        "h": 111
+      },
+      {
+        "id": "retire",
+        "w": 126,
+        "h": 111
+      }
+    ],
+    "textNodes": 66
+  },
+  "textAudit": [
+    {
+      "text": "0.5",
+      "fs": 30,
+      "fw": 800,
+      "color": "rgb(255, 215, 110)",
+      "cr": 11.19,
+      "large": true,
+      "tag": "SPAN",
+      "id": "hud-moyu",
+      "cls": "",
+      "up": null,
+      "disabled": false,
+      "w": 47,
+      "h": 35
+    },
+    {
+      "text": "摸鱼值",
+      "fs": 13,
+      "fw": 600,
+      "color": "rgb(189, 184, 159)",
+      "cr": 7.75,
+      "large": false,
+      "tag": "SMALL",
+      "id": null,
+      "cls": "",
+      "up": null,
+      "disabled": false,
+      "w": 39,
+      "h": 16
+    },
+    {
+      "text": "点击 +",
+      "fs": 12,
+      "fw": 400,
+      "color": "rgb(168, 164, 147)",
+      "cr": 6.18,
+      "large": false,
+      "tag": "SPAN",
+      "id": null,
+      "cls": "",
+      "up": null,
+      "disabled": false,
+      "w": 41,
+      "h": 17
+    },
+    {
+      "text": "1",
+      "fs": 12,
+      "fw": 700,
+      "color": "rgb(139, 226, 139)",
+      "cr": 9.83,
+      "large": false,
+      "tag": "B",
+      "id": "hud-click",
+      "cls": "",
+      "up": null,
+      "disabled": false,
+      "w": 6,
+      "h": 15
+    },
+    {
+      "text": "不点也 /秒",
+      "fs": 12,
+      "fw": 400,
+      "color": "rgb(168, 164, 147)",
+      "cr": 6.18,
+      "large": false,
+      "tag": "SPAN",
+      "id": null,
+      "cls": "",
+      "up": null,
+      "disabled": false,
+      "w": 74,
+      "h": 17
+    },
+    {
+      "text": "0.2",
+      "fs": 12,
+      "fw": 700,
+      "color": "rgb(139, 226, 139)",
+      "cr": 9.83,
+      "large": false,
+      "tag": "B",
+      "id": "hud-idle",
+      "cls": "",
+      "up": null,
+      "disabled": false,
+      "w": 19,
+      "h": 15
+    },
+    {
+      "text": "实习生 0%",
+      "fs": 12,
+      "fw": 400,
+      "color": "rgb(168, 164, 147)",
+      "cr": 6.18,
+      "large": false,
+      "tag": "SPAN",
+      "id": "hud-rank",
+      "cls": "",
+      "up": null,
+      "disabled": false,
+      "w": 58,
+      "h": 17
+    },
+    {
+      "text": "📔",
+      "fs": 15,
+      "fw": 400,
+      "color": "rgb(244, 241, 232)",
+      "cr": 9.75,
+      "large": false,
+      "tag": "BUTTON",
+      "id": "btn-journal",
+      "cls": "",
+      "up": null,
+      "disabled": false,
+      "w": 44,
+      "h": 44
+    },
+    {
+      "text": "再戳 10 下 → 解锁「咖啡续命」",
+      "fs": 12,
+      "fw": 400,
+      "color": "rgb(214, 240, 214)",
+      "cr": 9.41,
+      "large": false,
+      "tag": "SPAN",
+      "id": "quest-text",
+      "cls": "",
+      "up": null,
+      "disabled": false,
+      "w": 346,
+      "h": 17
+    },
+    {
+      "text": "点了才赚",
+      "fs": 8,
+      "fw": 400,
+      "color": "rgb(255, 158, 158)",
+      "cr": 5.95,
+      "large": false,
+      "tag": "SPAN",
+      "id": null,
+      "cls": "shop-tag tag-click",
+      "up": "coffee",
+      "disabled": true,
+      "w": 36,
+      "h": 13
+    },
+    {
+      "text": "咖啡续命",
+      "fs": 12,
+      "fw": 700,
+      "color": "rgb(244, 241, 232)",
+      "cr": 10.69,
+      "large": false,
+      "tag": "SPAN",
+      "id": null,
+      "cls": "shop-name",
+      "up": "coffee",
+      "disabled": true,
+      "w": 48,
+      "h": 17
+    },
+    {
+      "text": "+1 点击力",
+      "fs": 11,
+      "fw": 400,
+      "color": "rgb(184, 224, 255)",
+      "cr": 8.71,
+      "large": false,
+      "tag": "SPAN",
+      "id": null,
+      "cls": "shop-next",
+      "up": "coffee",
+      "disabled": true,
+      "w": 104,
+      "h": 14
+    },
+    {
+      "text": "★ 点击最优",
+      "fs": 11,
+      "fw": 400,
+      "color": "rgb(255, 215, 110)",
+      "cr": 8.74,
+      "large": false,
+      "tag": "SPAN",
+      "id": null,
+      "cls": "shop-value",
+      "up": "coffee",
+      "disabled": true,
+      "w": 104,
+      "h": 16
+    },
+    {
+      "text": "摸鱼值",
+      "fs": 13,
+      "fw": 400,
+      "color": "rgb(255, 215, 110)",
+      "cr": 8.74,
+      "large": false,
+      "tag": "SPAN",
+      "id": null,
+      "cls": "shop-cost",
+      "up": "coffee",
+      "disabled": true,
+      "w": 104,
+      "h": 18
+    },
+    {
+      "text": "15",
+      "fs": 13,
+      "fw": 700,
+      "color": "rgb(255, 215, 110)",
+      "cr": 8.74,
+      "large": false,
+      "tag": "B",
+      "id": null,
+      "cls": "",
+      "up": "coffee",
+      "disabled": true,
+      "w": 15,
+      "h": 16
+    },
+    {
+      "text": "再戳 15 下",
+      "fs": 10,
+      "fw": 400,
+      "color": "rgb(184, 179, 156)",
+      "cr": 5.73,
+      "large": false,
+      "tag": "SPAN",
+      "id": null,
+      "cls": "shop-remain",
+      "up": "coffee",
+      "disabled": true,
+      "w": 104,
+      "h": 14
+    },
+    {
+      "text": "会自动赚",
+      "fs": 8,
+      "fw": 400,
+      "color": "rgb(139, 226, 192)",
+      "cr": 6.29,
+      "large": false,
+      "tag": "SPAN",
+      "id": null,
+      "cls": "shop-tag tag-idle",
+      "up": "phone",
+      "disabled": true,
+      "w": 36,
+      "h": 13
+    },
+    {
+      "text": "刷手机",
+      "fs": 12,
+      "fw": 700,
+      "color": "rgb(244, 241, 232)",
+      "cr": 10.69,
+      "large": false,
+      "tag": "SPAN",
+      "id": null,
+      "cls": "shop-name",
+      "up": "phone",
+      "disabled": true,
+      "w": 36,
+      "h": 17
+    },
+    {
+      "text": "+1/秒 · ×2差5级",
+      "fs": 11,
+      "fw": 400,
+      "color": "rgb(184, 224, 255)",
+      "cr": 8.71,
+      "large": false,
+      "tag": "SPAN",
+      "id": null,
+      "cls": "shop-next",
+      "up": "phone",
+      "disabled": true,
+      "w": 104,
+      "h": 14
+    },
+    {
+      "text": "★ 挂机最优",
+      "fs": 11,
+      "fw": 400,
+      "color": "rgb(255, 215, 110)",
+      "cr": 8.74,
+      "large": false,
+      "tag": "SPAN",
+      "id": null,
+      "cls": "shop-value",
+      "up": "phone",
+      "disabled": true,
+      "w": 104,
+      "h": 16
+    },
+    {
+      "text": "摸鱼值",
+      "fs": 13,
+      "fw": 400,
+      "color": "rgb(255, 215, 110)",
+      "cr": 8.74,
+      "large": false,
+      "tag": "SPAN",
+      "id": null,
+      "cls": "shop-cost",
+      "up": "phone",
+      "disabled": true,
+      "w": 104,
+      "h": 18
+    },
+    {
+      "text": "50",
+      "fs": 13,
+      "fw": 700,
+      "color": "rgb(255, 215, 110)",
+      "cr": 8.74,
+      "large": false,
+      "tag": "B",
+      "id": null,
+      "cls": "",
+      "up": "phone",
+      "disabled": true,
+      "w": 17,
+      "h": 16
+    },
+    {
+      "text": "还差 49.5",
+      "fs": 10,
+      "fw": 400,
+      "color": "rgb(184, 179, 156)",
+      "cr": 5.73,
+      "large": false,
+      "tag": "SPAN",
+      "id": null,
+      "cls": "shop-remain",
+      "up": "phone",
+      "disabled": true,
+      "w": 104,
+      "h": 14
+    },
+    {
+      "text": "点了才赚",
+      "fs": 8,
+      "fw": 400,
+      "color": "rgb(255, 158, 158)",
+      "cr": 5.95,
+      "large": false,
+      "tag": "SPAN",
+      "id": null,
+      "cls": "shop-tag tag-click",
+      "up": "water",
+      "disabled": true,
+      "w": 36,
+      "h": 13
+    },
+    {
+      "text": "带薪喝水",
+      "fs": 12,
+      "fw": 700,
+      "color": "rgb(244, 241, 232)",
+      "cr": 10.69,
+      "large": false,
+      "tag": "SPAN",
+      "id": null,
+      "cls": "shop-name",
+      "up": "water",
+      "disabled": true,
+      "w": 48,
+      "h": 17
+    },
+    {
+      "text": "+2 点击力",
+      "fs": 11,
+      "fw": 400,
+      "color": "rgb(184, 224, 255)",
+      "cr": 8.71,
+      "large": false,
+      "tag": "SPAN",
+      "id": null,
+      "cls": "shop-next",
+      "up": "water",
+      "disabled": true,
+      "w": 104,
+      "h": 14
+    },
+    {
+      "text": "摸鱼值",
+      "fs": 13,
+      "fw": 400,
+      "color": "rgb(255, 215, 110)",
+      "cr": 8.74,
+      "large": false,
+      "tag": "SPAN",
+      "id": null,
+      "cls": "shop-cost",
+      "up": "water",
+      "disabled": true,
+      "w": 104,
+      "h": 18
+    },
+    {
+      "text": "100",
+      "fs": 13,
+      "fw": 700,
+      "color": "rgb(255, 215, 110)",
+      "cr": 8.74,
+      "large": false,
+      "tag": "B",
+      "id": null,
+      "cls": "",
+      "up": "water",
+      "disabled": true,
+      "w": 24,
+      "h": 16
+    },
+    {
+      "text": "再戳 100 下",
+      "fs": 10,
+      "fw": 400,
+      "color": "rgb(184, 179, 156)",
+      "cr": 5.73,
+      "large": false,
+      "tag": "SPAN",
+      "id": null,
+      "cls": "shop-remain",
+      "up": "water",
+      "disabled": true,
+      "w": 104,
+      "h": 14
+    },
+    {
+      "text": "← 滑动查看更多 →",
+      "fs": 10,
+      "fw": 400,
+      "color": "rgb(255, 215, 110)",
+      "cr": 11.19,
+      "large": false,
+      "tag": "SPAN",
+      "id": "shop-hint",
+      "cls": "",
+      "up": null,
+      "disabled": false,
+      "w": 374,
+      "h": 18
+    }
+  ],
+  "canvasText": [
+    {
+      "key": "bold 12px system-ui|rgba(255, 255, 255, 0.75)|戳屏幕摸鱼",
+      "font": "bold 12px system-ui",
+      "fill": "rgba(255, 255, 255, 0.75)",
+      "text": "戳屏幕摸鱼",
+      "w": 60,
+      "n": 188,
+      "px": 12
+    }
+  ],
+  "baseShot": "playtest/r9-screens/r9-first-screen.png",
+  "slowClicks": [
+    {
+      "i": 1,
+      "totalClicksDelta": 1,
+      "DT": 1.0899799999999997,
+      "idleRate": null,
+      "ms": 447
+    },
+    {
+      "i": 2,
+      "totalClicksDelta": 1,
+      "DT": 1.086660000000002,
+      "idleRate": null,
+      "ms": 426
+    },
+    {
+      "i": 3,
+      "totalClicksDelta": 1,
+      "DT": 1.086659999999998,
+      "idleRate": null,
+      "ms": 425
+    },
+    {
+      "i": 4,
+      "totalClicksDelta": 1,
+      "DT": 1.0900000000000016,
+      "idleRate": null,
+      "ms": 440
+    },
+    {
+      "i": 5,
+      "totalClicksDelta": 1,
+      "DT": 1.0866600000000055,
+      "idleRate": null,
+      "ms": 434
+    },
+    {
+      "i": 6,
+      "totalClicksDelta": 1,
+      "DT": 1.0899800000000006,
+      "idleRate": null,
+      "ms": 449
+    },
+    {
+      "i": 7,
+      "totalClicksDelta": 1,
+      "DT": 1.090019999999999,
+      "idleRate": null,
+      "ms": 443
+    },
+    {
+      "i": 8,
+      "totalClicksDelta": 1,
+      "DT": 1.0866800000000012,
+      "idleRate": null,
+      "ms": 424
+    }
+  ],
+  "afterSlow": {
+    "moyu": 11.046534000000033,
+    "totalEarned": 11.046534000000033,
+    "levels": {},
+    "collected": {
+      "quotes": [],
+      "flavors": []
+    },
+    "daily": {
+      "date": "2026-11-27",
+      "goals": [
+        {
+          "id": "meme_1",
+          "target": 1,
+          "progress": 0,
+          "done": false
+        },
+        {
+          "id": "buy_3",
+          "target": 3,
+          "progress": 0,
+          "done": false
+        },
+        {
+          "id": "survive_2",
+          "target": 1,
+          "progress": 0,
+          "done": false
+        }
+      ],
+      "streak": 0,
+      "lastCompleteDate": null,
+      "claimed": false,
+      "window": 1,
+      "claimsToday": 0
+    },
+    "surviveStreak": 0,
+    "totalClicks": 8,
+    "visits": {
+      "date": "2026-11-27",
+      "count": 1
+    },
+    "lifetimeEarned": 11.046534000000033,
+    "prestige": 0
+  },
+  "slowTexts": [
+    "+1"
+  ],
+  "fastClicks": [
+    {
+      "i": 1,
+      "DT": 1.047
+    },
+    {
+      "i": 2,
+      "DT": 1.063
+    },
+    {
+      "i": 3,
+      "DT": 1.083
+    },
+    {
+      "i": 4,
+      "DT": 1.103
+    },
+    {
+      "i": 5,
+      "DT": 1.123
+    },
+    {
+      "i": 6,
+      "DT": 1.143
+    },
+    {
+      "i": 7,
+      "DT": 1.177
+    },
+    {
+      "i": 8,
+      "DT": 1.183
+    }
+  ],
+  "misTapDisabledCard": {
+    "card": {
+      "x": 276,
+      "y": 707,
+      "w": 126,
+      "h": 111,
+      "cx": 339,
+      "cy": 763
+    },
+    "price": 100,
+    "moyuBefore": 20,
+    "moyuAfter": 20.1,
+    "clickLog": 0,
+    "shakeClass": false,
+    "purchased": false,
+    "totalClicksSame": true
+  },
+  "misSwipeShop": {
+    "cardArea": {
+      "x": 8,
+      "y": 707,
+      "w": 374,
+      "h": 111,
+      "cx": 195,
+      "cy": 763
+    },
+    "scrollLeftBefore": 0,
+    "scrollLeftAfter": 268,
+    "scrollChanged": true,
+    "moyuDelta": 0.2,
+    "clickLog": [
+      {
+        "ts": 15865,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 16082,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 16298,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 16516,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 16760,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 17014,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      }
+    ]
+  },
+  "misTapJournal": {
+    "btn": {
+      "x": 336,
+      "y": 614,
+      "w": 44,
+      "h": 44,
+      "cx": 358,
+      "cy": 636
+    },
+    "journalOpen": true,
+    "stillOpenAfterOutsideTap": true,
+    "closeBtn": {
+      "x": 312,
+      "y": 86,
+      "w": 44,
+      "h": 44,
+      "cx": 334,
+      "cy": 108
+    },
+    "texts": [
+      {
+        "text": "摸鱼日报",
+        "fs": 18,
+        "cr": 11.54,
+        "color": "rgb(244, 241, 232)"
+      },
+      {
+        "text": "✕",
+        "fs": 18,
+        "cr": 5.21,
+        "color": "rgb(168, 164, 147)"
+      },
+      {
+        "text": "·",
+        "fs": 12,
+        "cr": 5.21,
+        "color": "rgb(168, 164, 147)"
+      },
+      {
+        "text": "2026-11-27",
+        "fs": 12,
+        "cr": 5.21,
+        "color": "rgb(168, 164, 147)"
+      },
+      {
+        "text": "🔥 连续 0 天（今天未领）",
+        "fs": 12,
+        "cr": 5.21,
+        "color": "rgb(168, 164, 147)"
+      },
+      {
+        "text": "○",
+        "fs": 13,
+        "cr": 7,
+        "color": "rgb(139, 226, 139)"
+      },
+      {
+        "text": "点掉 1 个同事丢来的梗",
+        "fs": 13,
+        "cr": 9.75,
+        "color": "rgb(244, 241, 232)"
+      },
+      {
+        "text": "0/1",
+        "fs": 12,
+        "cr": 7.97,
+        "color": "rgb(255, 215, 110)"
+      },
+      {
+        "text": "买 3 次升级",
+        "fs": 13,
+        "cr": 9.75,
+        "color": "rgb(244, 241, 232)"
+      },
+      {
+        "text": "0/3",
+        "fs": 12,
+        "cr": 7.97,
+        "color": "rgb(255, 215, 110)"
+      },
+      {
+        "text": "老板巡逻时忍住不点，1 次",
+        "fs": 13,
+        "cr": 9.75,
+        "color": "rgb(244, 241, 232)"
+      },
+      {
+        "text": "完成 0/3",
+        "fs": 15,
+        "cr": 2.83,
+        "color": "rgb(168, 164, 147)"
+      },
+      {
+        "text": "摸鱼图鉴",
+        "fs": 15,
+        "cr": 11.54,
+        "color": "rgb(244, 241, 232)"
+      },
+      {
+        "text": "0/55",
+        "fs": 12,
+        "cr": 9.43,
+        "color": "rgb(255, 215, 110)"
+      },
+      {
+        "text": "梗语录",
+        "fs": 13,
+        "cr": 6.19,
+        "color": "rgb(184, 179, 156)"
+      },
+      {
+        "text": "0/10",
+        "fs": 13,
+        "cr": 7.2,
+        "color": "rgb(126, 200, 255)"
+      },
+      {
+        "text": "升级彩蛋",
+        "fs": 13,
+        "cr": 6.19,
+        "color": "rgb(184, 179, 156)"
+      },
+      {
+        "text": "0/45",
+        "fs": 13,
+        "cr": 7.2,
+        "color": "rgb(126, 200, 255)"
+      },
+      {
+        "text": "买升级、收线索，开始收集摸鱼彩蛋",
+        "fs": 11,
+        "cr": 4.99,
+        "color": "rgb(143, 159, 208)"
+      },
+      {
+        "text": "离职再就业",
+        "fs": 15,
+        "cr": 11.54,
+        "color": "rgb(244, 241, 232)"
+      },
+      {
+        "text": "重置余额与 20% 等级，换永久点数：每点 ×1.75（线性叠加）；图鉴",
+        "fs": 11,
+        "cr": 5.21,
+        "color": "rgb(168, 164, 147)"
+      },
+      {
+        "text": "未解锁（本局累计 20.5 / 1亿）",
+        "fs": 14,
+        "cr": 3.82,
+        "color": "rgb(168, 164, 147)"
+      },
+      {
+        "text": "???",
+        "fs": 11,
+        "cr": 6.97,
+        "color": "rgb(169, 182, 221)"
+      }
+    ],
+    "shot": "playtest/r9-screens/r9-journal-open.png"
+  },
+  "journalClosed": true,
+  "stage": {
+    "x": 0,
+    "y": 124,
+    "w": 390,
+    "h": 573,
+    "cx": 195,
+    "cy": 411
+  },
+  "canvasHint": [
+    {
+      "key": "bold 12px system-ui|rgba(255, 255, 255, 0.75)|戳屏幕摸鱼",
+      "font": "bold 12px system-ui",
+      "fill": "rgba(255, 255, 255, 0.75)",
+      "text": "戳屏幕摸鱼",
+      "w": 60,
+      "n": 188,
+      "px": 12
+    }
+  ],
+  "questNow": "买下点亮的「咖啡续命」卡片 | bar=0%",
+  "hudText": "20.5摸鱼值 | 点击 +1 | 不点也 0.2/秒 | 实习生 0% | 📔 | 买下点亮的「咖啡续命」卡片",
+  "shopCard0": "点了才赚 | 咖啡续命 | +1 点击力 | ★ 点击最优 | 15 摸鱼值",
+  "shopCard1": "会自动赚 | 刷手机 | +1/秒 · ×2差5级 | ★ 挂机最优 | 50 摸鱼值 | 还差 29.5",
+  "shopHint": "← 滑动查看更多 → | hidden=true",
+  "finalShot": "playtest/r9-screens/r9-after-play.png",
+  "raw": {
+    "clicks": [
+      {
+        "ts": 3417,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 4897,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 6399,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 7916,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 9416,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 10933,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 12431,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 13915,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 15432,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 15647,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 15865,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 16082,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 16298,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 16516,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 16760,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 17014,
+        "tag": "CANVAS",
+        "up": null,
+        "id": "stage",
+        "cls": null
+      },
+      {
+        "ts": 18682,
+        "tag": "BUTTON",
+        "up": null,
+        "id": "btn-journal",
+        "cls": null
+      },
+      {
+        "ts": 19314,
+        "tag": "DIV",
+        "up": null,
+        "id": "journal",
+        "cls": null
+      },
+      {
+        "ts": 19726,
+        "tag": "DIV",
+        "up": null,
+        "id": "journal",
+        "cls": null
+      },
+      {
+        "ts": 19726,
+        "tag": "BUTTON",
+        "up": null,
+        "id": "journal-close",
+        "cls": null
+      }
+    ],
+    "touches": [
+      {
+        "ts": 3340,
+        "x": 195,
+        "y": 420,
+        "tgt": "stage"
+      },
+      {
+        "ts": 4831,
+        "x": 195,
+        "y": 420,
+        "tgt": "stage"
+      },
+      {
+        "ts": 6333,
+        "x": 195,
+        "y": 420,
+        "tgt": "stage"
+      },
+      {
+        "ts": 7849,
+        "x": 195,
+        "y": 420,
+        "tgt": "stage"
+      },
+      {
+        "ts": 9349,
+        "x": 195,
+        "y": 420,
+        "tgt": "stage"
+      },
+      {
+        "ts": 10851,
+        "x": 195,
+        "y": 420,
+        "tgt": "stage"
+      },
+      {
+        "ts": 12349,
+        "x": 195,
+        "y": 420,
+        "tgt": "stage"
+      },
+      {
+        "ts": 13847,
+        "x": 195,
+        "y": 420,
+        "tgt": "stage"
+      },
+      {
+        "ts": 15364,
+        "x": 195,
+        "y": 420,
+        "tgt": "stage"
+      },
+      {
+        "ts": 15581,
+        "x": 195,
+        "y": 420,
+        "tgt": "stage"
+      },
+      {
+        "ts": 15798,
+        "x": 195,
+        "y": 420,
+        "tgt": "stage"
+      },
+      {
+        "ts": 16014,
+        "x": 195,
+        "y": 420,
+        "tgt": "stage"
+      },
+      {
+        "ts": 16232,
+        "x": 195,
+        "y": 420,
+        "tgt": "stage"
+      },
+      {
+        "ts": 16448,
+        "x": 195,
+        "y": 420,
+        "tgt": "stage"
+      },
+      {
+        "ts": 16666,
+        "x": 195,
+        "y": 420,
+        "tgt": "stage"
+      },
+      {
+        "ts": 16948,
+        "x": 195,
+        "y": 420,
+        "tgt": "stage"
+      },
+      {
+        "ts": 17164,
+        "x": 339,
+        "y": 763,
+        "tgt": "shop-card pixel-panel"
+      },
+      {
+        "ts": 17647,
+        "x": 340,
+        "y": 763,
+        "tgt": "shop-card pixel-panel"
+      },
+      {
+        "ts": 18597,
+        "x": 358,
+        "y": 636,
+        "tgt": "btn-journal"
+      },
+      {
+        "ts": 19229,
+        "x": 20,
+        "y": 60,
+        "tgt": "journal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "startedAt": "2026-11-27T03:50:18.605Z",
+  "step2_offline": {
+    "welcomeVisible": true,
+    "welcomeTime": "2 小时 0 分",
+    "welcomeGain": "14.54万",
+    "welcomeRule": "首日全额｜8 小时封顶",
+    "state": {
+      "totalEarned": 145466.94546680036,
+      "lifetimeEarned": 145466.94546680036,
+      "moyu": 145466.94546680036,
+      "visits": {
+        "date": "2026-11-27",
+        "count": 1
+      }
+    },
+    "diff_lifetime_minus_total": 0,
+    "stateKeys": [
+      "moyu",
+      "levels",
+      "totalEarned",
+      "collected",
+      "daily",
+      "surviveStreak",
+      "totalClicks",
+      "visits",
+      "lifetimeEarned",
+      "prestige"
+    ],
+    "hasOfflineHistory": false
+  },
+  "step3_cap": {
+    "welcomeVisible": true,
+    "welcomeTime": "8 小时 0 分",
+    "welcomeGain": "46.54万",
+    "welcomeRule": "离线效率 80%｜8 小时封顶",
+    "actualAbsenceHours": 20,
+    "appliedHoursShown": 8,
+    "state": {
+      "totalEarned": 465431.56398680125,
+      "lifetimeEarned": 465431.56398680125,
+      "visits": {
+        "date": "2026-11-27",
+        "count": 1
+      }
+    },
+    "diff_lifetime_minus_total": 0
+  },
+  "step4_prestige": {
+    "before": {
+      "hudRank": "传说 0%",
+      "hudRankTitle": "带薪摸鱼传说 → 摸鱼之神",
+      "prestigeBtn": "未解锁（本局累计需 1 亿）",
+      "prestigeDisabled": true,
+      "state": {
+        "totalEarned": 100000025.92265975,
+        "lifetimeEarned": 100000025.92265975,
+        "prestige": 0
+      }
+    },
+    "after": {
+      "hudRank": "传说 0%",
+      "hudRankTitle": "带薪摸鱼传说 → 摸鱼之神",
+      "prestigeBtn": "未解锁（本局累计 25.4 / 1亿）",
+      "prestigeDisabled": true,
+      "prestigeInfo": "已有 3 点 · 当前 ×3.25",
+      "staticDesc": "重置余额与 20% 等级，换永久点数：每点 ×1.75（线性叠加）；图鉴/日报/段位/历史累计保留。建议攒够多点再转。",
+      "state": {
+        "totalEarned": 47.385,
+        "lifetimeEarned": 100000089.46765947,
+        "prestige": 3,
+        "levels": {
+          "phone": 8
+        },
+        "surviveStreak": 0
+      },
+      "savedBlob": {
+        "totalEarned": 0,
+        "lifetimeEarned": 100000042.0826596,
+        "prestige": 3
+      },
+      "rankByLifetime": "带薪摸鱼传说",
+      "rankByTotalEarned": "摸鱼实习生"
+    }
+  },
+  "step5_tamper": {
+    "accepted": {
+      "moyu": 1000000000.2567997,
+      "totalEarned": 0.25679999988555907,
+      "lifetimeEarned": 0.25679999988555907
+    },
+    "invariant_moyu_lte_total": false,
+    "hudMoyu": "10.00亿",
+    "hudRank": "实习生 0%"
+  },
+  "inventory": {
+    "devHookFields": [
+      "state",
+      "fps",
+      "frames",
+      "assets",
+      "activity",
+      "spriteMap",
+      "savedAt",
+      "saveNow",
+      "reset",
+      "rewindSave"
+    ],
+    "stateKeys": [
+      "moyu",
+      "totalEarned",
+      "levels",
+      "collected",
+      "daily",
+      "surviveStreak",
+      "totalClicks",
+      "visits",
+      "lifetimeEarned",
+      "prestige"
+    ],
+    "saveBlobKeys": [
+      "v",
+      "moyu",
+      "totalEarned",
+      "levels",
+      "savedAt",
+      "createdAt",
+      "collected",
+      "daily",
+      "surviveStreak",
+      "totalClicks",
+      "visits",
+      "lifetimeEarned",
+      "prestige"
+    ],
+    "hud": {
+      "moyu": "0.1",
+      "click": "1",
+      "idle": "0.2",
+      "rank": "实习生 0%",
+      "rankTitle": "摸鱼实习生 → 摸鱼学徒",
+      "streakHidden": true,
+      "streakText": ""
+    },
+    "ui": {
+      "canvases": 1,
+      "svgs": 0,
+      "statsPanel": false,
+      "hasStatWords": false,
+      "downloadLinks": 0,
+      "shareButtons": 0
+    },
+    "whatIsRecordedButHidden": {
+      "lifetimeEarned_raw": 0.11999999999999998,
+      "totalEarned_raw": 0.11999999999999998,
+      "totalClicks": 0,
+      "visits": {
+        "date": "",
+        "count": 0
+      },
+      "createdAtInSave": 1795751418737,
+      "savedAtInSave": 1795751418737,
+      "prestige": 0
+    }
+  },
+  "finishedAt": "2026-11-27T03:50:26.493Z"
+}

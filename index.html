@@ -43,6 +43,9 @@
         <p class="journal-meta"><span id="journal-date"></span> · <span id="journal-streak"></span></p>
         <ul id="journal-goals"></ul>
         <button id="journal-claim">完成 0/3</button>
+        <h3>摸鱼数据 <small id="stats-rank"></small></h3>
+        <div class="stats-list" id="stats-list"></div>
+        <button id="stats-export">导出存档 JSON</button>
         <h3>摸鱼图鉴 <small id="journal-total">0/55</small></h3>
         <div class="journal-collect">
           <span>梗语录 <b id="journal-quote">0/10</b></span>
@@ -51,7 +54,7 @@
         <p class="journal-latest" id="journal-latest"></p>
         <div class="journal-prestige">
           <h3>离职再就业 <small id="prestige-info"></small></h3>
-          <p class="prestige-desc">重置余额与 20% 等级，换永久点数：每点 ×1.75（线性叠加）；图鉴/日报/段位/历史累计保留。建议攒够多点再转。</p>
+          <p class="prestige-desc">重置余额与 20% 等级，换永久点数：总倍率 = 1 + 0.75 × 累计点数（线性）；图鉴/日报/段位/历史累计保留。建议攒够多点再转。</p>
           <button id="prestige-btn" disabled>未解锁（本局累计需 1 亿）</button>
         </div>
         <div class="journal-grid" id="journal-grid"></div>

@@ -1,0 +1,6037 @@
+{
+  "generatedAt": "2026-11-27T03:53:04.096Z",
+  "head": "500359b",
+  "profiles": {
+    "main": {
+      "opts": {
+        "days": 14,
+        "openHours": [
+          9,
+          21
+        ],
+        "sessionSeconds": 30,
+        "buyPolicy": "idleBest",
+        "seed": 20260105,
+        "baseDayMs": 1767542400000,
+        "prestigeAuto": false
+      },
+      "days": [
+        {
+          "day": 1,
+          "idleRate": 57.2,
+          "rank": "摸鱼实习生",
+          "rankNext": "摸鱼学徒",
+          "rankProgress": 0.7272,
+          "collection": 5,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "buy_3",
+            "survive_2"
+          ],
+          "dailyIncome": 7272,
+          "lifetimeEarned": 7272,
+          "levels": {
+            "phone": 16,
+            "toilet": 5
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 8,
+          "offlineRates": [
+            1,
+            1
+          ],
+          "buys": 21,
+          "coverage": 0.33402777777777776
+        },
+        {
+          "day": 2,
+          "idleRate": 18672.2,
+          "rank": "摸鱼大师",
+          "rankNext": "带薪摸鱼传说",
+          "rankProgress": 0.4506099595959595,
+          "collection": 23,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "meme_1",
+            "buy_3"
+          ],
+          "dailyIncome": 45603113.99999999,
+          "lifetimeEarned": 45610385.99999999,
+          "levels": {
+            "phone": 54,
+            "toilet": 37,
+            "group": 31,
+            "meeting": 24,
+            "deep": 19,
+            "retire": 11
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 155,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 3,
+          "idleRate": 150188.2,
+          "rank": "摸鱼之神",
+          "rankNext": "摸鱼宇宙尽头",
+          "rankProgress": 0.952365433333333,
+          "collection": 29,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "click_100",
+            "survive_2"
+          ],
+          "dailyIncome": 2382937763.9999995,
+          "lifetimeEarned": 2428548149.9999995,
+          "levels": {
+            "phone": 78,
+            "toilet": 64,
+            "group": 53,
+            "meeting": 52,
+            "deep": 50,
+            "retire": 36
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 10,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 157,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 4,
+          "idleRate": 262160.2,
+          "rank": "摸鱼星人",
+          "rankNext": "摸鱼黑洞",
+          "rankProgress": 0.2021576593999998,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "survive_2",
+            "buy_3",
+            "meme_1"
+          ],
+          "dailyIncome": 9593028443.999998,
+          "lifetimeEarned": 12021576593.999998,
+          "levels": {
+            "phone": 90,
+            "toilet": 73,
+            "group": 67,
+            "meeting": 62,
+            "deep": 58,
+            "retire": 50
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 67,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 5,
+          "idleRate": 287832.2,
+          "rank": "摸鱼黑洞",
+          "rankNext": "摸鱼次元",
+          "rankProgress": 0.2616916198999998,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "survive_2",
+            "click_100",
+            "buy_3"
+          ],
+          "dailyIncome": 13212255803.999998,
+          "lifetimeEarned": 25233832397.999996,
+          "levels": {
+            "phone": 96,
+            "toilet": 79,
+            "group": 72,
+            "meeting": 67,
+            "deep": 64,
+            "retire": 55
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 33,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 6,
+          "idleRate": 446704.2,
+          "rank": "摸鱼次元",
+          "rankNext": "摸鱼奇点",
+          "rankProgress": 0.05960707504999981,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "buy_3",
+            "survive_2"
+          ],
+          "dailyIncome": 17150450603.999996,
+          "lifetimeEarned": 42384283001.99999,
+          "levels": {
+            "phone": 97,
+            "toilet": 85,
+            "group": 80,
+            "meeting": 74,
+            "deep": 70,
+            "retire": 56
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 29,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 7,
+          "idleRate": 634992.2,
+          "rank": "摸鱼次元",
+          "rankNext": "摸鱼奇点",
+          "rankProgress": 0.6140454441499998,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "buy_3",
+            "survive_2"
+          ],
+          "dailyIncome": 22177534764,
+          "lifetimeEarned": 64561817765.99999,
+          "levels": {
+            "phone": 101,
+            "toilet": 89,
+            "group": 82,
+            "meeting": 77,
+            "deep": 72,
+            "retire": 60
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 19,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 8,
+          "idleRate": 664416.2,
+          "rank": "摸鱼奇点",
+          "rankNext": "摸鱼永恒",
+          "rankProgress": 0.20105572662499982,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "survive_2",
+            "click_100",
+            "buy_3"
+          ],
+          "dailyIncome": 31522640363.999992,
+          "lifetimeEarned": 96084458129.99998,
+          "levels": {
+            "phone": 103,
+            "toilet": 91,
+            "group": 83,
+            "meeting": 78,
+            "deep": 74,
+            "retire": 64
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 12,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 9,
+          "idleRate": 687776.2,
+          "rank": "摸鱼奇点",
+          "rankNext": "摸鱼永恒",
+          "rankProgress": 0.6125386511749998,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "buy_3",
+            "survive_2",
+            "meme_1"
+          ],
+          "dailyIncome": 32918633964,
+          "lifetimeEarned": 129003092093.99998,
+          "levels": {
+            "phone": 109,
+            "toilet": 93,
+            "group": 87,
+            "meeting": 80,
+            "deep": 76,
+            "retire": 66
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 18,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 10,
+          "idleRate": 704048.2,
+          "rank": "摸鱼永恒",
+          "rankNext": "摸鱼宇宙尽头·终",
+          "rankProgress": 0.01825356286249981,
+          "collection": 30,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "survive_2",
+            "meme_1"
+          ],
+          "dailyIncome": 33917477963.999985,
+          "lifetimeEarned": 162920570057.99997,
+          "levels": {
+            "phone": 112,
+            "toilet": 95,
+            "group": 88,
+            "meeting": 82,
+            "deep": 77,
+            "retire": 68
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 11,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 11,
+          "idleRate": 717232.2,
+          "rank": "摸鱼永恒",
+          "rankNext": "摸鱼宇宙尽头·终",
+          "rankProgress": 0.2350201571374998,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "buy_3",
+            "meme_1",
+            "click_100"
+          ],
+          "dailyIncome": 34682655084,
+          "lifetimeEarned": 197603225141.99997,
+          "levels": {
+            "phone": 113,
+            "toilet": 97,
+            "group": 88,
+            "meeting": 84,
+            "deep": 79,
+            "retire": 69
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 8,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 12,
+          "idleRate": 728976.2,
+          "rank": "摸鱼永恒",
+          "rankNext": "摸鱼宇宙尽头·终",
+          "rankProgress": 0.4557219294124998,
+          "collection": 30,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "buy_3",
+            "meme_1"
+          ],
+          "dailyIncome": 35312283564,
+          "lifetimeEarned": 232915508705.99997,
+          "levels": {
+            "phone": 114,
+            "toilet": 97,
+            "group": 90,
+            "meeting": 84,
+            "deep": 79,
+            "retire": 71
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 5,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 13,
+          "idleRate": 737936.2,
+          "rank": "摸鱼永恒",
+          "rankNext": "摸鱼宇宙尽头·终",
+          "rankProgress": 0.6798032676874998,
+          "collection": 30,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "survive_2",
+            "meme_1",
+            "click_100"
+          ],
+          "dailyIncome": 35853014124,
+          "lifetimeEarned": 268768522829.99997,
+          "levels": {
+            "phone": 114,
+            "toilet": 98,
+            "group": 93,
+            "meeting": 87,
+            "deep": 81,
+            "retire": 71
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 9,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 14,
+          "idleRate": 753360.2,
+          "rank": "摸鱼永恒",
+          "rankNext": "摸鱼宇宙尽头·终",
+          "rankProgress": 0.9064882129624996,
+          "collection": 30,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "meme_1",
+            "survive_2"
+          ],
+          "dailyIncome": 36269591243.99997,
+          "lifetimeEarned": 305038114073.99994,
+          "levels": {
+            "phone": 115,
+            "toilet": 104,
+            "group": 93,
+            "meeting": 88,
+            "deep": 83,
+            "retire": 71
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 10,
+          "coverage": 0.567361111111111
+        }
+      ],
+      "totals": {
+        "earned": 305038114073.99994,
+        "offlineEarned": 304642895615.99994,
+        "liveEarned": 395218458,
+        "buys": 554,
+        "clicks": 0,
+        "memes": 0,
+        "patrols": 0,
+        "goalsCompleted": 17,
+        "goalsTotal": 84,
+        "claims": 0,
+        "collection": 30,
+        "endIdleRate": 753360.2,
+        "endLifetimeEarned": 305038114073.99994,
+        "endRank": "摸鱼永恒",
+        "prestigeUnlockedDay": 3,
+        "prestiges": 0,
+        "prestigePoints": 0,
+        "idleLevels": {
+          "phone": 115,
+          "toilet": 104,
+          "group": 93,
+          "meeting": 88,
+          "deep": 83,
+          "retire": 71
+        },
+        "clickLevels": {
+          "coffee": 0,
+          "water": 0,
+          "chair": 0
+        }
+      },
+      "sessions": [
+        {
+          "day": 1,
+          "open": 1,
+          "date": "2026-01-05",
+          "window": 1,
+          "gapHours": 0,
+          "offlineRate": 1,
+          "offlineAppliedHours": 0,
+          "offlineEarned": 0,
+          "liveEarned": 6,
+          "buys": 0,
+          "idleRateAfter": 0.2,
+          "goals": [
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            },
+            {
+              "id": "buy_3",
+              "desc": "买 3 次升级",
+              "done": false,
+              "progress": 0,
+              "target": 3
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 1,
+          "open": 2,
+          "date": "2026-01-05",
+          "window": 3,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 1,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 5760,
+          "liveEarned": 1506,
+          "buys": 21,
+          "idleRateAfter": 57.2,
+          "goals": [
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            },
+            {
+              "id": "buy_3",
+              "desc": "买 3 次升级",
+              "done": true,
+              "progress": 3,
+              "target": 3
+            },
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 2,
+          "open": 1,
+          "date": "2026-01-06",
+          "window": 1,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.7999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 1317888,
+          "liveEarned": 46356,
+          "buys": 62,
+          "idleRateAfter": 1685.2,
+          "goals": [
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            },
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 2,
+          "open": 2,
+          "date": "2026-01-06",
+          "window": 3,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.8999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 43680383.99999999,
+          "liveEarned": 558486,
+          "buys": 93,
+          "idleRateAfter": 18672.2,
+          "goals": [
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            },
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "buy_3",
+              "desc": "买 3 次升级",
+              "done": true,
+              "progress": 3,
+              "target": 3
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 3,
+          "open": 1,
+          "date": "2026-01-07",
+          "window": 1,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.7999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 430207487.99999994,
+          "liveEarned": 2250486,
+          "buys": 84,
+          "idleRateAfter": 75076.2,
+          "goals": [
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            },
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 3,
+          "open": 2,
+          "date": "2026-01-07",
+          "window": 3,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.8999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 1945975103.9999998,
+          "liveEarned": 4504686,
+          "buys": 73,
+          "idleRateAfter": 150188.2,
+          "goals": [
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            },
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 4,
+          "open": 1,
+          "date": "2026-01-08",
+          "window": 1,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.7999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 3460336127.9999995,
+          "liveEarned": 7080246,
+          "buys": 42,
+          "idleRateAfter": 236024.2,
+          "goals": [
+            {
+              "id": "buy_3",
+              "desc": "买 3 次升级",
+              "done": true,
+              "progress": 3,
+              "target": 3
+            },
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 4,
+          "open": 2,
+          "date": "2026-01-08",
+          "window": 3,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.8999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 6117747263.999999,
+          "liveEarned": 7864806,
+          "buys": 25,
+          "idleRateAfter": 262160.2,
+          "goals": [
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "buy_3",
+              "desc": "买 3 次升级",
+              "done": true,
+              "progress": 3,
+              "target": 3
+            },
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 5,
+          "open": 1,
+          "date": "2026-01-09",
+          "window": 1,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.7999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 6040171007.999999,
+          "liveEarned": 8281446,
+          "buys": 24,
+          "idleRateAfter": 276048.2,
+          "goals": [
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "buy_3",
+              "desc": "买 3 次升级",
+              "done": true,
+              "progress": 3,
+              "target": 3
+            },
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 5,
+          "open": 2,
+          "date": "2026-01-09",
+          "window": 3,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.8999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 7155169343.999999,
+          "liveEarned": 8634006,
+          "buys": 9,
+          "idleRateAfter": 287832.2,
+          "goals": [
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            },
+            {
+              "id": "buy_3",
+              "desc": "买 3 次升级",
+              "done": true,
+              "progress": 3,
+              "target": 3
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 6,
+          "open": 1,
+          "date": "2026-01-10",
+          "window": 1,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.7999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 6631653887.999999,
+          "liveEarned": 12144966,
+          "buys": 13,
+          "idleRateAfter": 404832.2,
+          "goals": [
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            },
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 6,
+          "open": 2,
+          "date": "2026-01-10",
+          "window": 3,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.8999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 10493250623.999998,
+          "liveEarned": 13401126,
+          "buys": 16,
+          "idleRateAfter": 446704.2,
+          "goals": [
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            },
+            {
+              "id": "buy_3",
+              "desc": "买 3 次升级",
+              "done": true,
+              "progress": 3,
+              "target": 3
+            },
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 7,
+          "open": 1,
+          "date": "2026-01-11",
+          "window": 1,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.7999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 10292064768,
+          "liveEarned": 13717446,
+          "buys": 11,
+          "idleRateAfter": 457280.2,
+          "goals": [
+            {
+              "id": "buy_3",
+              "desc": "买 3 次升级",
+              "done": true,
+              "progress": 3,
+              "target": 3
+            },
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            },
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 7,
+          "open": 2,
+          "date": "2026-01-11",
+          "window": 3,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.8999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 11852702783.999998,
+          "liveEarned": 19049766,
+          "buys": 8,
+          "idleRateAfter": 634992.2,
+          "goals": [
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "buy_3",
+              "desc": "买 3 次升级",
+              "done": true,
+              "progress": 3,
+              "target": 3
+            },
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 8,
+          "open": 1,
+          "date": "2026-01-12",
+          "window": 1,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.7999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 14630220287.999998,
+          "liveEarned": 19505766,
+          "buys": 6,
+          "idleRateAfter": 650192.2,
+          "goals": [
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            },
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "buy_3",
+              "desc": "买 3 次升级",
+              "done": true,
+              "progress": 3,
+              "target": 3
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 8,
+          "open": 2,
+          "date": "2026-01-12",
+          "window": 3,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.8999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 16852981823.999998,
+          "liveEarned": 19932486,
+          "buys": 6,
+          "idleRateAfter": 664416.2,
+          "goals": [
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            },
+            {
+              "id": "buy_3",
+              "desc": "买 3 次升级",
+              "done": true,
+              "progress": 3,
+              "target": 3
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 9,
+          "open": 1,
+          "date": "2026-01-13",
+          "window": 1,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.7999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 15308149247.999998,
+          "liveEarned": 20233446,
+          "buys": 8,
+          "idleRateAfter": 677840.2,
+          "goals": [
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            },
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "buy_3",
+              "desc": "买 3 次升级",
+              "done": true,
+              "progress": 3,
+              "target": 3
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 9,
+          "open": 2,
+          "date": "2026-01-13",
+          "window": 3,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.8999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 17569617984,
+          "liveEarned": 20633286,
+          "buys": 10,
+          "idleRateAfter": 687776.2,
+          "goals": [
+            {
+              "id": "buy_3",
+              "desc": "买 3 次升级",
+              "done": true,
+              "progress": 3,
+              "target": 3
+            },
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 10,
+          "open": 1,
+          "date": "2026-01-14",
+          "window": 1,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.7999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 15846363647.999998,
+          "liveEarned": 20865126,
+          "buys": 9,
+          "idleRateAfter": 695568.2,
+          "goals": [
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            },
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 10,
+          "open": 2,
+          "date": "2026-01-14",
+          "window": 3,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.8999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 18029127744,
+          "liveEarned": 21121446,
+          "buys": 2,
+          "idleRateAfter": 704048.2,
+          "goals": [
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            },
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 11,
+          "open": 1,
+          "date": "2026-01-15",
+          "window": 1,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.7999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 16221270527.999998,
+          "liveEarned": 21317766,
+          "buys": 4,
+          "idleRateAfter": 710592.2,
+          "goals": [
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            },
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "buy_3",
+              "desc": "买 3 次升级",
+              "done": true,
+              "progress": 3,
+              "target": 3
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 11,
+          "open": 2,
+          "date": "2026-01-15",
+          "window": 3,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.8999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 18418549824,
+          "liveEarned": 21516966,
+          "buys": 4,
+          "idleRateAfter": 717232.2,
+          "goals": [
+            {
+              "id": "buy_3",
+              "desc": "买 3 次升级",
+              "done": true,
+              "progress": 3,
+              "target": 3
+            },
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 12,
+          "open": 1,
+          "date": "2026-01-16",
+          "window": 1,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.7999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 16525029887.999998,
+          "liveEarned": 21694086,
+          "buys": 3,
+          "idleRateAfter": 723136.2,
+          "goals": [
+            {
+              "id": "buy_3",
+              "desc": "买 3 次升级",
+              "done": true,
+              "progress": 3,
+              "target": 3
+            },
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 12,
+          "open": 2,
+          "date": "2026-01-16",
+          "window": 3,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.8999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 18743690304,
+          "liveEarned": 21869286,
+          "buys": 2,
+          "idleRateAfter": 728976.2,
+          "goals": [
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            },
+            {
+              "id": "buy_3",
+              "desc": "买 3 次升级",
+              "done": false,
+              "progress": 2,
+              "target": 3
+            },
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 13,
+          "open": 1,
+          "date": "2026-01-17",
+          "window": 1,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.7999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 16795611647.999998,
+          "liveEarned": 22006086,
+          "buys": 4,
+          "idleRateAfter": 733536.2,
+          "goals": [
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "buy_3",
+              "desc": "买 3 次升级",
+              "done": true,
+              "progress": 3,
+              "target": 3
+            },
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 13,
+          "open": 2,
+          "date": "2026-01-17",
+          "window": 3,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.8999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 19013258304,
+          "liveEarned": 22138086,
+          "buys": 5,
+          "idleRateAfter": 737936.2,
+          "goals": [
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 14,
+          "open": 1,
+          "date": "2026-01-18",
+          "window": 1,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.7999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 17002050047.999998,
+          "liveEarned": 22248486,
+          "buys": 2,
+          "idleRateAfter": 741616.2,
+          "goals": [
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            },
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        },
+        {
+          "day": 14,
+          "open": 2,
+          "date": "2026-01-18",
+          "window": 3,
+          "gapHours": 11.991666666666667,
+          "offlineRate": 0.8999999999999999,
+          "offlineAppliedHours": 8,
+          "offlineEarned": 19222691904,
+          "liveEarned": 22600806,
+          "buys": 8,
+          "idleRateAfter": 753360.2,
+          "goals": [
+            {
+              "id": "click_100",
+              "desc": "戳 100 下",
+              "done": false,
+              "progress": 0,
+              "target": 100
+            },
+            {
+              "id": "meme_1",
+              "desc": "点掉 1 个同事丢来的梗",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            },
+            {
+              "id": "survive_2",
+              "desc": "老板巡逻时忍住不点，1 次",
+              "done": false,
+              "progress": 0,
+              "target": 1
+            }
+          ],
+          "allDone": false,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0
+        }
+      ]
+    },
+    "threeOpens": {
+      "opts": {
+        "days": 14,
+        "openHours": [
+          9,
+          13,
+          21
+        ],
+        "sessionSeconds": 30,
+        "buyPolicy": "idleBest",
+        "seed": 20260106,
+        "baseDayMs": 1767542400000,
+        "prestigeAuto": false
+      },
+      "days": [
+        {
+          "day": 1,
+          "idleRate": 1544.2,
+          "rank": "摸鱼大师",
+          "rankNext": "带薪摸鱼传说",
+          "rankProgress": 0.0020796565656565655,
+          "collection": 14,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "meme_1",
+            "survive_2"
+          ],
+          "dailyIncome": 1205886,
+          "lifetimeEarned": 1205886,
+          "levels": {
+            "phone": 36,
+            "toilet": 25,
+            "group": 14,
+            "meeting": 8,
+            "deep": 3
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 11.983333333333333,
+          "offlineRates": [
+            1,
+            1,
+            1
+          ],
+          "buys": 86,
+          "coverage": 0.5003472222222223
+        },
+        {
+          "day": 2,
+          "idleRate": 147048.2,
+          "rank": "摸鱼之神",
+          "rankNext": "摸鱼宇宙尽头",
+          "rankProgress": 0.7566535817333333,
+          "collection": 28,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "survive_2",
+            "meme_1",
+            "click_100"
+          ],
+          "dailyIncome": 2133774486.6,
+          "lifetimeEarned": 2134980372.6,
+          "levels": {
+            "phone": 78,
+            "toilet": 65,
+            "group": 54,
+            "meeting": 51,
+            "deep": 49,
+            "retire": 35
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 10,
+          "offlineAppliedHours": 19.983333333333334,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999,
+            1
+          ],
+          "buys": 246,
+          "coverage": 0.7503819444444444
+        },
+        {
+          "day": 3,
+          "idleRate": 271320.2,
+          "rank": "摸鱼星人",
+          "rankNext": "摸鱼黑洞",
+          "rankProgress": 0.5774468883200001,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "buy_3",
+            "meme_1"
+          ],
+          "dailyIncome": 13639488510.6,
+          "lifetimeEarned": 15774468883.2,
+          "levels": {
+            "phone": 95,
+            "toilet": 78,
+            "group": 71,
+            "meeting": 65,
+            "deep": 61,
+            "retire": 51
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 19.983333333333334,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999,
+            1
+          ],
+          "buys": 89,
+          "coverage": 0.7503819444444444
+        },
+        {
+          "day": 4,
+          "idleRate": 399024.2,
+          "rank": "摸鱼黑洞",
+          "rankNext": "摸鱼次元",
+          "rankProgress": 0.70539508049,
+          "collection": 30,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "survive_2",
+            "click_100",
+            "meme_1"
+          ],
+          "dailyIncome": 18333432726.6,
+          "lifetimeEarned": 34107901609.8,
+          "levels": {
+            "phone": 97,
+            "toilet": 84,
+            "group": 74,
+            "meeting": 69,
+            "deep": 69,
+            "retire": 55
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 19.983333333333334,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999,
+            1
+          ],
+          "buys": 27,
+          "coverage": 0.7503819444444444
+        },
+        {
+          "day": 5,
+          "idleRate": 465152.2,
+          "rank": "摸鱼次元",
+          "rankNext": "摸鱼奇点",
+          "rankProgress": 0.55468631801,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "survive_2",
+            "buy_3",
+            "meme_1"
+          ],
+          "dailyIncome": 28079551110.600002,
+          "lifetimeEarned": 62187452720.4,
+          "levels": {
+            "phone": 101,
+            "toilet": 88,
+            "group": 83,
+            "meeting": 78,
+            "deep": 72,
+            "retire": 59
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 19.983333333333334,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999,
+            1
+          ],
+          "buys": 33,
+          "coverage": 0.7503819444444444
+        },
+        {
+          "day": 6,
+          "idleRate": 668720.2,
+          "rank": "摸鱼奇点",
+          "rankNext": "摸鱼永恒",
+          "rankProgress": 0.2509862328875,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "buy_3",
+            "meme_1",
+            "survive_2"
+          ],
+          "dailyIncome": 37891445910.6,
+          "lifetimeEarned": 100078898631,
+          "levels": {
+            "phone": 110,
+            "toilet": 92,
+            "group": 87,
+            "meeting": 81,
+            "deep": 73,
+            "retire": 64
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 19.983333333333334,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999,
+            1
+          ],
+          "buys": 26,
+          "coverage": 0.7503819444444444
+        },
+        {
+          "day": 7,
+          "idleRate": 693968.2,
+          "rank": "摸鱼奇点",
+          "rankNext": "摸鱼永恒",
+          "rankProgress": 0.80003764337,
+          "collection": 30,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "survive_2",
+            "meme_1"
+          ],
+          "dailyIncome": 43924112838.600006,
+          "lifetimeEarned": 144003011469.6,
+          "levels": {
+            "phone": 112,
+            "toilet": 95,
+            "group": 90,
+            "meeting": 83,
+            "deep": 75,
+            "retire": 67
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 19.983333333333334,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999,
+            1
+          ],
+          "buys": 15,
+          "coverage": 0.7503819444444444
+        },
+        {
+          "day": 8,
+          "idleRate": 712736.2,
+          "rank": "摸鱼永恒",
+          "rankNext": "摸鱼宇宙尽头·终",
+          "rankProgress": 0.18362262682625008,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "buy_3",
+            "click_100",
+            "survive_2"
+          ],
+          "dailyIncome": 45376608822.600006,
+          "lifetimeEarned": 189379620292.2,
+          "levels": {
+            "phone": 114,
+            "toilet": 98,
+            "group": 92,
+            "meeting": 84,
+            "deep": 79,
+            "retire": 68
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 19.983333333333334,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999,
+            1
+          ],
+          "buys": 13,
+          "coverage": 0.7503819444444444
+        },
+        {
+          "day": 9,
+          "idleRate": 736560.2,
+          "rank": "摸鱼永恒",
+          "rankNext": "摸鱼宇宙尽头·终",
+          "rankProgress": 0.4766216243675001,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "meme_1",
+            "buy_3"
+          ],
+          "dailyIncome": 46879839606.600006,
+          "lifetimeEarned": 236259459898.80002,
+          "levels": {
+            "phone": 115,
+            "toilet": 103,
+            "group": 93,
+            "meeting": 85,
+            "deep": 80,
+            "retire": 70
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 19.983333333333334,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999,
+            1
+          ],
+          "buys": 11,
+          "coverage": 0.7503819444444444
+        },
+        {
+          "day": 10,
+          "idleRate": 771072.2,
+          "rank": "摸鱼永恒",
+          "rankNext": "摸鱼宇宙尽头·终",
+          "rankProgress": 0.7764273075087501,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "survive_2",
+            "buy_3"
+          ],
+          "dailyIncome": 47968909302.600006,
+          "lifetimeEarned": 284228369201.4,
+          "levels": {
+            "phone": 118,
+            "toilet": 104,
+            "group": 95,
+            "meeting": 88,
+            "deep": 81,
+            "retire": 71
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 19.983333333333334,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999,
+            1
+          ],
+          "buys": 11,
+          "coverage": 0.7503819444444444
+        },
+        {
+          "day": 11,
+          "idleRate": 852480.2,
+          "rank": "摸鱼宇宙尽头·终",
+          "rankNext": null,
+          "rankProgress": 1,
+          "collection": 30,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "click_100",
+            "survive_2"
+          ],
+          "dailyIncome": 50197880934.599976,
+          "lifetimeEarned": 334426250136,
+          "levels": {
+            "phone": 120,
+            "toilet": 105,
+            "group": 98,
+            "meeting": 92,
+            "deep": 82,
+            "retire": 71
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 19.983333333333334,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999,
+            1
+          ],
+          "buys": 11,
+          "coverage": 0.7503819444444444
+        },
+        {
+          "day": 12,
+          "idleRate": 863840.2,
+          "rank": "摸鱼宇宙尽头·终",
+          "rankNext": null,
+          "rankProgress": 1,
+          "collection": 30,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "survive_2",
+            "buy_3",
+            "click_100"
+          ],
+          "dailyIncome": 55466883366.599976,
+          "lifetimeEarned": 389893133502.6,
+          "levels": {
+            "phone": 120,
+            "toilet": 107,
+            "group": 100,
+            "meeting": 93,
+            "deep": 83,
+            "retire": 72
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 19.983333333333334,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999,
+            1
+          ],
+          "buys": 7,
+          "coverage": 0.7503819444444444
+        },
+        {
+          "day": 13,
+          "idleRate": 1116864.2,
+          "rank": "摸鱼宇宙尽头·终",
+          "rankNext": null,
+          "rankProgress": 1,
+          "collection": 30,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "meme_1",
+            "survive_2"
+          ],
+          "dailyIncome": 56192664006.599976,
+          "lifetimeEarned": 446085797509.19995,
+          "levels": {
+            "phone": 121,
+            "toilet": 109,
+            "group": 101,
+            "meeting": 94,
+            "deep": 85,
+            "retire": 72
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 19.983333333333334,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999,
+            1
+          ],
+          "buys": 7,
+          "coverage": 0.7503819444444444
+        },
+        {
+          "day": 14,
+          "idleRate": 1138848.2,
+          "rank": "摸鱼宇宙尽头·终",
+          "rankNext": null,
+          "rankProgress": 1,
+          "collection": 30,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "survive_2",
+            "meme_1",
+            "click_100"
+          ],
+          "dailyIncome": 72710822022.59998,
+          "lifetimeEarned": 518796619531.7999,
+          "levels": {
+            "phone": 126,
+            "toilet": 110,
+            "group": 102,
+            "meeting": 95,
+            "deep": 86,
+            "retire": 73
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 19.983333333333334,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999,
+            1
+          ],
+          "buys": 10,
+          "coverage": 0.7503819444444444
+        }
+      ],
+      "totals": {
+        "earned": 518796619531.7999,
+        "offlineEarned": 518042625979.7999,
+        "liveEarned": 753993552,
+        "buys": 592,
+        "clicks": 0,
+        "memes": 0,
+        "patrols": 0,
+        "goalsCompleted": 23,
+        "goalsTotal": 126,
+        "claims": 0,
+        "collection": 30,
+        "endIdleRate": 1138848.2,
+        "endLifetimeEarned": 518796619531.7999,
+        "endRank": "摸鱼宇宙尽头·终",
+        "prestigeUnlockedDay": 2,
+        "prestiges": 0,
+        "prestigePoints": 0,
+        "idleLevels": {
+          "phone": 126,
+          "toilet": 110,
+          "group": 102,
+          "meeting": 95,
+          "deep": 86,
+          "retire": 73
+        },
+        "clickLevels": {
+          "coffee": 0,
+          "water": 0,
+          "chair": 0
+        }
+      }
+    },
+    "noBuy": {
+      "opts": {
+        "days": 14,
+        "openHours": [
+          9,
+          21
+        ],
+        "sessionSeconds": 30,
+        "buyPolicy": "none",
+        "seed": 20260107,
+        "baseDayMs": 1767542400000,
+        "prestigeAuto": false
+      },
+      "days": [
+        {
+          "day": 1,
+          "idleRate": 0.2,
+          "rank": "摸鱼实习生",
+          "rankNext": "摸鱼学徒",
+          "rankProgress": 0.5772,
+          "collection": 0,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "buy_3",
+            "click_100"
+          ],
+          "dailyIncome": 5772,
+          "lifetimeEarned": 5772,
+          "levels": {},
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 8,
+          "offlineRates": [
+            1,
+            1
+          ],
+          "buys": 0,
+          "coverage": 0.33402777777777776
+        },
+        {
+          "day": 2,
+          "idleRate": 0.2,
+          "rank": "摸鱼学徒",
+          "rankNext": "资深摸鱼",
+          "rankProgress": 0.061955555555555555,
+          "collection": 0,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "meme_1",
+            "buy_3"
+          ],
+          "dailyIncome": 9804,
+          "lifetimeEarned": 15576,
+          "levels": {},
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 0,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 3,
+          "idleRate": 0.2,
+          "rank": "摸鱼学徒",
+          "rankNext": "资深摸鱼",
+          "rankProgress": 0.1708888888888889,
+          "collection": 0,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "buy_3",
+            "survive_2"
+          ],
+          "dailyIncome": 9804,
+          "lifetimeEarned": 25380,
+          "levels": {},
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 0,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 4,
+          "idleRate": 0.2,
+          "rank": "摸鱼学徒",
+          "rankNext": "资深摸鱼",
+          "rankProgress": 0.27982222222222225,
+          "collection": 0,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "buy_3",
+            "survive_2"
+          ],
+          "dailyIncome": 9804,
+          "lifetimeEarned": 35184,
+          "levels": {},
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 0,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 5,
+          "idleRate": 0.2,
+          "rank": "摸鱼学徒",
+          "rankNext": "资深摸鱼",
+          "rankProgress": 0.3887555555555556,
+          "collection": 0,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "buy_3",
+            "survive_2"
+          ],
+          "dailyIncome": 9804,
+          "lifetimeEarned": 44988,
+          "levels": {},
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 0,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 6,
+          "idleRate": 0.2,
+          "rank": "摸鱼学徒",
+          "rankNext": "资深摸鱼",
+          "rankProgress": 0.4976888888888889,
+          "collection": 0,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "survive_2",
+            "meme_1",
+            "click_100"
+          ],
+          "dailyIncome": 9804,
+          "lifetimeEarned": 54792,
+          "levels": {},
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 0,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 7,
+          "idleRate": 0.2,
+          "rank": "摸鱼学徒",
+          "rankNext": "资深摸鱼",
+          "rankProgress": 0.6066222222222222,
+          "collection": 0,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "survive_2",
+            "click_100",
+            "meme_1"
+          ],
+          "dailyIncome": 9804,
+          "lifetimeEarned": 64596,
+          "levels": {},
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 0,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 8,
+          "idleRate": 0.2,
+          "rank": "摸鱼学徒",
+          "rankNext": "资深摸鱼",
+          "rankProgress": 0.7155555555555555,
+          "collection": 0,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "survive_2",
+            "click_100"
+          ],
+          "dailyIncome": 9804,
+          "lifetimeEarned": 74400,
+          "levels": {},
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 0,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 9,
+          "idleRate": 0.2,
+          "rank": "摸鱼学徒",
+          "rankNext": "资深摸鱼",
+          "rankProgress": 0.8244888888888889,
+          "collection": 0,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "survive_2",
+            "click_100",
+            "meme_1"
+          ],
+          "dailyIncome": 9804,
+          "lifetimeEarned": 84204,
+          "levels": {},
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 0,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 10,
+          "idleRate": 0.2,
+          "rank": "摸鱼学徒",
+          "rankNext": "资深摸鱼",
+          "rankProgress": 0.9334222222222223,
+          "collection": 0,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "survive_2",
+            "click_100",
+            "meme_1"
+          ],
+          "dailyIncome": 9804,
+          "lifetimeEarned": 94008,
+          "levels": {},
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 0,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 11,
+          "idleRate": 0.2,
+          "rank": "资深摸鱼",
+          "rankNext": "摸鱼大师",
+          "rankProgress": 0.004235555555555556,
+          "collection": 0,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "buy_3",
+            "survive_2"
+          ],
+          "dailyIncome": 9804,
+          "lifetimeEarned": 103812,
+          "levels": {},
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 0,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 12,
+          "idleRate": 0.2,
+          "rank": "资深摸鱼",
+          "rankNext": "摸鱼大师",
+          "rankProgress": 0.01512888888888889,
+          "collection": 0,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "meme_1",
+            "buy_3"
+          ],
+          "dailyIncome": 9804,
+          "lifetimeEarned": 113616,
+          "levels": {},
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 0,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 13,
+          "idleRate": 0.2,
+          "rank": "资深摸鱼",
+          "rankNext": "摸鱼大师",
+          "rankProgress": 0.02602222222222222,
+          "collection": 0,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "click_100",
+            "survive_2"
+          ],
+          "dailyIncome": 9804,
+          "lifetimeEarned": 123420,
+          "levels": {},
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 0,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 14,
+          "idleRate": 0.2,
+          "rank": "资深摸鱼",
+          "rankNext": "摸鱼大师",
+          "rankProgress": 0.036915555555555556,
+          "collection": 0,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "survive_2",
+            "click_100"
+          ],
+          "dailyIncome": 9804,
+          "lifetimeEarned": 133224,
+          "levels": {},
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 0,
+          "coverage": 0.567361111111111
+        }
+      ],
+      "totals": {
+        "earned": 133224,
+        "offlineEarned": 133056,
+        "liveEarned": 168,
+        "buys": 0,
+        "clicks": 0,
+        "memes": 0,
+        "patrols": 0,
+        "goalsCompleted": 0,
+        "goalsTotal": 84,
+        "claims": 0,
+        "collection": 0,
+        "endIdleRate": 0.2,
+        "endLifetimeEarned": 133224,
+        "endRank": "资深摸鱼",
+        "prestigeUnlockedDay": null,
+        "prestiges": 0,
+        "prestigePoints": 0,
+        "idleLevels": {
+          "phone": 0,
+          "toilet": 0,
+          "group": 0,
+          "meeting": 0,
+          "deep": 0,
+          "retire": 0
+        },
+        "clickLevels": {
+          "coffee": 0,
+          "water": 0,
+          "chair": 0
+        }
+      }
+    },
+    "naiveBuy": {
+      "opts": {
+        "days": 14,
+        "openHours": [
+          9,
+          21
+        ],
+        "sessionSeconds": 30,
+        "buyPolicy": "anyCheapest",
+        "seed": 20260108,
+        "baseDayMs": 1767542400000,
+        "prestigeAuto": false
+      },
+      "days": [
+        {
+          "day": 1,
+          "idleRate": 28.2,
+          "rank": "摸鱼实习生",
+          "rankNext": "摸鱼学徒",
+          "rankProgress": 0.6552,
+          "collection": 3,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "buy_3",
+            "click_100",
+            "survive_2"
+          ],
+          "dailyIncome": 6552,
+          "lifetimeEarned": 6552,
+          "levels": {
+            "coffee": 23,
+            "phone": 14,
+            "water": 10
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 8,
+          "offlineRates": [
+            1,
+            1
+          ],
+          "buys": 47,
+          "coverage": 0.33402777777777776
+        },
+        {
+          "day": 2,
+          "idleRate": 5934.2,
+          "rank": "摸鱼大师",
+          "rankNext": "带薪摸鱼传说",
+          "rankProgress": 0.14856723232323232,
+          "collection": 18,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "buy_3",
+            "survive_2"
+          ],
+          "dailyIncome": 15701604,
+          "lifetimeEarned": 15708156,
+          "levels": {
+            "coffee": 71,
+            "phone": 63,
+            "water": 58,
+            "toilet": 45,
+            "chair": 43,
+            "group": 31,
+            "meeting": 18,
+            "deep": 5
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 287,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 3,
+          "idleRate": 58028.2,
+          "rank": "带薪摸鱼传说",
+          "rankNext": "摸鱼之神",
+          "rankProgress": 0.7962552888888887,
+          "collection": 26,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "survive_2",
+            "buy_3"
+          ],
+          "dailyIncome": 800921603.9999999,
+          "lifetimeEarned": 816629759.9999999,
+          "levels": {
+            "coffee": 98,
+            "phone": 89,
+            "water": 85,
+            "toilet": 72,
+            "chair": 70,
+            "group": 58,
+            "meeting": 45,
+            "deep": 32,
+            "retire": 19
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 6,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 234,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 4,
+          "idleRate": 149904.2,
+          "rank": "摸鱼宇宙尽头",
+          "rankNext": "带薪摸鱼之神",
+          "rankProgress": 0.8940992816,
+          "collection": 28,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "buy_3",
+            "survive_2",
+            "meme_1"
+          ],
+          "dailyIncome": 3918618444,
+          "lifetimeEarned": 4735248204,
+          "levels": {
+            "coffee": 111,
+            "phone": 102,
+            "water": 97,
+            "toilet": 84,
+            "chair": 82,
+            "group": 71,
+            "meeting": 58,
+            "deep": 45,
+            "retire": 31
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 14,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 113,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 5,
+          "idleRate": 187056.2,
+          "rank": "摸鱼星人",
+          "rankNext": "摸鱼黑洞",
+          "rankProgress": 0.2756252648,
+          "collection": 29,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "buy_3",
+            "meme_1",
+            "survive_2"
+          ],
+          "dailyIncome": 8021004444,
+          "lifetimeEarned": 12756252648,
+          "levels": {
+            "coffee": 118,
+            "phone": 109,
+            "water": 104,
+            "toilet": 91,
+            "chair": 89,
+            "group": 78,
+            "meeting": 65,
+            "deep": 52,
+            "retire": 38
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 63,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 6,
+          "idleRate": 263232.2,
+          "rank": "摸鱼黑洞",
+          "rankNext": "摸鱼次元",
+          "rankProgress": 0.1785697226,
+          "collection": 29,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "survive_2",
+            "click_100",
+            "meme_1"
+          ],
+          "dailyIncome": 10815141804,
+          "lifetimeEarned": 23571394452,
+          "levels": {
+            "coffee": 122,
+            "phone": 113,
+            "water": 109,
+            "toilet": 96,
+            "chair": 94,
+            "group": 82,
+            "meeting": 69,
+            "deep": 56,
+            "retire": 43
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 40,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 7,
+          "idleRate": 308848.2,
+          "rank": "摸鱼黑洞",
+          "rankNext": "摸鱼次元",
+          "rankProgress": 0.8700735488,
+          "collection": 29,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "buy_3",
+            "meme_1",
+            "survive_2"
+          ],
+          "dailyIncome": 13830076524,
+          "lifetimeEarned": 37401470976,
+          "levels": {
+            "coffee": 125,
+            "phone": 117,
+            "water": 112,
+            "toilet": 99,
+            "chair": 97,
+            "group": 86,
+            "meeting": 72,
+            "deep": 60,
+            "retire": 46
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 30,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 8,
+          "idleRate": 328736.2,
+          "rank": "摸鱼次元",
+          "rankNext": "摸鱼奇点",
+          "rankProgress": 0.3227729795,
+          "collection": 29,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "buy_3",
+            "survive_2"
+          ],
+          "dailyIncome": 15509448204,
+          "lifetimeEarned": 52910919180,
+          "levels": {
+            "coffee": 128,
+            "phone": 119,
+            "water": 114,
+            "toilet": 102,
+            "chair": 100,
+            "group": 88,
+            "meeting": 75,
+            "deep": 62,
+            "retire": 48
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 22,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 9,
+          "idleRate": 339744.2,
+          "rank": "摸鱼次元",
+          "rankNext": "摸鱼奇点",
+          "rankProgress": 0.7292181686,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "buy_3",
+            "meme_1",
+            "click_100"
+          ],
+          "dailyIncome": 16257807564,
+          "lifetimeEarned": 69168726744,
+          "levels": {
+            "coffee": 130,
+            "phone": 121,
+            "water": 116,
+            "toilet": 104,
+            "chair": 101,
+            "group": 90,
+            "meeting": 77,
+            "deep": 64,
+            "retire": 50
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 17,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 10,
+          "idleRate": 444832.2,
+          "rank": "摸鱼奇点",
+          "rankNext": "摸鱼永恒",
+          "rankProgress": 0.10466221085,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "survive_2",
+            "meme_1",
+            "buy_3"
+          ],
+          "dailyIncome": 19204250124,
+          "lifetimeEarned": 88372976868,
+          "levels": {
+            "coffee": 132,
+            "phone": 123,
+            "water": 118,
+            "toilet": 105,
+            "chair": 103,
+            "group": 92,
+            "meeting": 78,
+            "deep": 66,
+            "retire": 52
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 16,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 11,
+          "idleRate": 455536.2,
+          "rank": "摸鱼奇点",
+          "rankNext": "摸鱼永恒",
+          "rankProgress": 0.3794117654,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "buy_3",
+            "survive_2",
+            "meme_1"
+          ],
+          "dailyIncome": 21979964364,
+          "lifetimeEarned": 110352941232,
+          "levels": {
+            "coffee": 133,
+            "phone": 124,
+            "water": 120,
+            "toilet": 107,
+            "chair": 105,
+            "group": 93,
+            "meeting": 80,
+            "deep": 67,
+            "retire": 54
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 14,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 12,
+          "idleRate": 496528.2,
+          "rank": "摸鱼奇点",
+          "rankNext": "摸鱼永恒",
+          "rankProgress": 0.66249615395,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "buy_3",
+            "click_100",
+            "meme_1"
+          ],
+          "dailyIncome": 22646751084,
+          "lifetimeEarned": 132999692316,
+          "levels": {
+            "coffee": 134,
+            "phone": 126,
+            "water": 121,
+            "toilet": 108,
+            "chair": 106,
+            "group": 95,
+            "meeting": 81,
+            "deep": 69,
+            "retire": 55
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 12,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 13,
+          "idleRate": 504576.2,
+          "rank": "摸鱼奇点",
+          "rankNext": "摸鱼永恒",
+          "rankProgress": 0.9679664765,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "buy_3",
+            "meme_1",
+            "survive_2"
+          ],
+          "dailyIncome": 24437625804,
+          "lifetimeEarned": 157437318120,
+          "levels": {
+            "coffee": 136,
+            "phone": 127,
+            "water": 122,
+            "toilet": 109,
+            "chair": 107,
+            "group": 96,
+            "meeting": 83,
+            "deep": 70,
+            "retire": 56
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 11,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 14,
+          "idleRate": 511984.2,
+          "rank": "摸鱼永恒",
+          "rankNext": "摸鱼宇宙尽头·终",
+          "rankProgress": 0.139074995525,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "survive_2",
+            "meme_1",
+            "buy_3"
+          ],
+          "dailyIncome": 24814681164,
+          "lifetimeEarned": 182251999284,
+          "levels": {
+            "coffee": 137,
+            "phone": 128,
+            "water": 123,
+            "toilet": 111,
+            "chair": 108,
+            "group": 97,
+            "meeting": 84,
+            "deep": 71,
+            "retire": 57
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 10,
+          "coverage": 0.567361111111111
+        }
+      ],
+      "totals": {
+        "earned": 182251999284,
+        "offlineEarned": 182014166016,
+        "liveEarned": 237833268,
+        "buys": 916,
+        "clicks": 0,
+        "memes": 0,
+        "patrols": 0,
+        "goalsCompleted": 22,
+        "goalsTotal": 84,
+        "claims": 0,
+        "collection": 30,
+        "endIdleRate": 511984.2,
+        "endLifetimeEarned": 182251999284,
+        "endRank": "摸鱼永恒",
+        "prestigeUnlockedDay": 3,
+        "prestiges": 0,
+        "prestigePoints": 0,
+        "idleLevels": {
+          "phone": 128,
+          "toilet": 111,
+          "group": 97,
+          "meeting": 84,
+          "deep": 71,
+          "retire": 57
+        },
+        "clickLevels": {
+          "coffee": 137,
+          "water": 123,
+          "chair": 108
+        }
+      }
+    },
+    "autoPrestige": {
+      "opts": {
+        "days": 14,
+        "openHours": [
+          9,
+          21
+        ],
+        "sessionSeconds": 30,
+        "buyPolicy": "idleBest",
+        "seed": 20260109,
+        "baseDayMs": 1767542400000,
+        "prestigeAuto": true
+      },
+      "days": [
+        {
+          "day": 1,
+          "idleRate": 57.2,
+          "rank": "摸鱼实习生",
+          "rankNext": "摸鱼学徒",
+          "rankProgress": 0.7272,
+          "collection": 5,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "survive_2",
+            "click_100"
+          ],
+          "dailyIncome": 7272,
+          "lifetimeEarned": 7272,
+          "levels": {
+            "phone": 16,
+            "toilet": 5
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 8,
+          "offlineRates": [
+            1,
+            1
+          ],
+          "buys": 21,
+          "coverage": 0.33402777777777776
+        },
+        {
+          "day": 2,
+          "idleRate": 18672.2,
+          "rank": "摸鱼大师",
+          "rankNext": "带薪摸鱼传说",
+          "rankProgress": 0.4506099595959595,
+          "collection": 23,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "buy_3",
+            "survive_2",
+            "meme_1"
+          ],
+          "dailyIncome": 45603113.99999999,
+          "lifetimeEarned": 45610385.99999999,
+          "levels": {
+            "phone": 54,
+            "toilet": 37,
+            "group": 31,
+            "meeting": 24,
+            "deep": 19,
+            "retire": 11
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 155,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 3,
+          "idleRate": 1043784.15,
+          "rank": "带薪摸鱼之神",
+          "rankNext": "摸鱼星人",
+          "rankProgress": 0.5581916344999998,
+          "collection": 29,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "buy_3",
+            "survive_2"
+          ],
+          "dailyIncome": 7745347786.499999,
+          "lifetimeEarned": 7790958172.499999,
+          "levels": {
+            "phone": 71,
+            "toilet": 58,
+            "group": 52,
+            "meeting": 48,
+            "deep": 44,
+            "retire": 36
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 1075000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 268,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 4,
+          "idleRate": 7897981.9,
+          "rank": "摸鱼奇点",
+          "rankNext": "摸鱼永恒",
+          "rankProgress": 0.75820816788125,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "survive_2",
+            "buy_3",
+            "click_100"
+          ],
+          "dailyIncome": 132865695258,
+          "lifetimeEarned": 140656653430.5,
+          "levels": {
+            "phone": 83,
+            "toilet": 72,
+            "group": 68,
+            "meeting": 62,
+            "deep": 59,
+            "retire": 52
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 2950000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 279,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 5,
+          "idleRate": 20858626.55,
+          "rank": "摸鱼宇宙尽头·终",
+          "rankNext": null,
+          "rankProgress": 1,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "buy_3",
+            "meme_1"
+          ],
+          "dailyIncome": 485804800525.5,
+          "lifetimeEarned": 626461453956,
+          "levels": {
+            "phone": 92,
+            "toilet": 80,
+            "group": 74,
+            "meeting": 69,
+            "deep": 65,
+            "retire": 58
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 5275000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 263,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 6,
+          "idleRate": 53517116.24999999,
+          "rank": "摸鱼宇宙尽头·终",
+          "rankNext": null,
+          "rankProgress": 1,
+          "collection": 30,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "survive_2",
+            "meme_1"
+          ],
+          "dailyIncome": 1536440406066,
+          "lifetimeEarned": 2162901860022,
+          "levels": {
+            "phone": 96,
+            "toilet": 87,
+            "group": 80,
+            "meeting": 76,
+            "deep": 73,
+            "retire": 64
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 8125000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 276,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 7,
+          "idleRate": 77011722.25,
+          "rank": "摸鱼宇宙尽头·终",
+          "rankNext": null,
+          "rankProgress": 1,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "survive_2",
+            "meme_1",
+            "buy_3"
+          ],
+          "dailyIncome": 2917941801225,
+          "lifetimeEarned": 5080843661247,
+          "levels": {
+            "phone": 100,
+            "toilet": 88,
+            "group": 83,
+            "meeting": 78,
+            "deep": 76,
+            "retire": 68
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 11125000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 267,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 8,
+          "idleRate": 99322508.25,
+          "rank": "摸鱼宇宙尽头·终",
+          "rankNext": null,
+          "rankProgress": 1,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "buy_3",
+            "survive_2"
+          ],
+          "dailyIncome": 4051882481745,
+          "lifetimeEarned": 9132726142992,
+          "levels": {
+            "phone": 104,
+            "toilet": 91,
+            "group": 85,
+            "meeting": 80,
+            "deep": 77,
+            "retire": 69
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 14125000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 269,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 9,
+          "idleRate": 123738434.24999999,
+          "rank": "摸鱼宇宙尽头·终",
+          "rankNext": null,
+          "rankProgress": 1,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "buy_3",
+            "meme_1"
+          ],
+          "dailyIncome": 5160930736665,
+          "lifetimeEarned": 14293656879657,
+          "levels": {
+            "phone": 105,
+            "toilet": 92,
+            "group": 86,
+            "meeting": 82,
+            "deep": 78,
+            "retire": 71
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 17125000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 268,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 10,
+          "idleRate": 147121840.25,
+          "rank": "摸鱼宇宙尽头·终",
+          "rankNext": null,
+          "rankProgress": 1,
+          "collection": 30,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "survive_2",
+            "meme_1",
+            "click_100"
+          ],
+          "dailyIncome": 6361398113985,
+          "lifetimeEarned": 20655054993642,
+          "levels": {
+            "phone": 105,
+            "toilet": 92,
+            "group": 86,
+            "meeting": 82,
+            "deep": 79,
+            "retire": 72
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 20125000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 265,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 11,
+          "idleRate": 171576446.25,
+          "rank": "摸鱼宇宙尽头·终",
+          "rankNext": null,
+          "rankProgress": 1,
+          "collection": 30,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "click_100",
+            "survive_2"
+          ],
+          "dailyIncome": 7532472157305,
+          "lifetimeEarned": 28187527150947,
+          "levels": {
+            "phone": 108,
+            "toilet": 94,
+            "group": 88,
+            "meeting": 84,
+            "deep": 80,
+            "retire": 73
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 23125000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 277,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 12,
+          "idleRate": 195281292.25,
+          "rank": "摸鱼宇宙尽头·终",
+          "rankNext": null,
+          "rankProgress": 1,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "buy_3",
+            "click_100"
+          ],
+          "dailyIncome": 8684611227825,
+          "lifetimeEarned": 36872138378772,
+          "levels": {
+            "phone": 107,
+            "toilet": 94,
+            "group": 88,
+            "meeting": 84,
+            "deep": 80,
+            "retire": 74
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 26125000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 267,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 13,
+          "idleRate": 220175738.25,
+          "rank": "摸鱼宇宙尽头·终",
+          "rankNext": null,
+          "rankProgress": 1,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "click_100",
+            "buy_3"
+          ],
+          "dailyIncome": 9863023111545,
+          "lifetimeEarned": 46735161490317,
+          "levels": {
+            "phone": 107,
+            "toilet": 94,
+            "group": 88,
+            "meeting": 84,
+            "deep": 81,
+            "retire": 75
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 29125000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 274,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 14,
+          "idleRate": 245342544.24999997,
+          "rank": "摸鱼宇宙尽头·终",
+          "rankNext": null,
+          "rankProgress": 1,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "buy_3",
+            "click_100"
+          ],
+          "dailyIncome": 11087028607665,
+          "lifetimeEarned": 57822190097982,
+          "levels": {
+            "phone": 108,
+            "toilet": 95,
+            "group": 89,
+            "meeting": 86,
+            "deep": 83,
+            "retire": 75
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 32125000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 279,
+          "coverage": 0.567361111111111
+        }
+      ],
+      "totals": {
+        "earned": 0,
+        "offlineEarned": 57643284714624,
+        "liveEarned": -57643284714624,
+        "buys": 3428,
+        "clicks": 0,
+        "memes": 0,
+        "patrols": 0,
+        "goalsCompleted": 18,
+        "goalsTotal": 84,
+        "claims": 0,
+        "collection": 30,
+        "endIdleRate": 245342544.24999997,
+        "endLifetimeEarned": 57822190097982,
+        "endRank": "摸鱼宇宙尽头·终",
+        "prestigeUnlockedDay": null,
+        "prestiges": 24,
+        "prestigePoints": 427,
+        "idleLevels": {
+          "phone": 108,
+          "toilet": 95,
+          "group": 89,
+          "meeting": 86,
+          "deep": 83,
+          "retire": 75
+        },
+        "clickLevels": {
+          "coffee": 0,
+          "water": 0,
+          "chair": 0
+        }
+      }
+    },
+    "realCreatedAt": {
+      "opts": {
+        "days": 14,
+        "openHours": [
+          9,
+          21
+        ],
+        "sessionSeconds": 30,
+        "buyPolicy": "idleBest",
+        "seed": 20260113,
+        "baseDayMs": 1767542400000,
+        "prestigeAuto": false,
+        "createdAtOffsetSec": 10
+      },
+      "days": [
+        {
+          "day": 1,
+          "idleRate": 57.2,
+          "rank": "摸鱼实习生",
+          "rankNext": "摸鱼学徒",
+          "rankProgress": 0.7272,
+          "collection": 5,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "buy_3",
+            "meme_1",
+            "click_100"
+          ],
+          "dailyIncome": 7272,
+          "lifetimeEarned": 7272,
+          "levels": {
+            "phone": 16,
+            "toilet": 5
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 8,
+          "offlineRates": [
+            1,
+            1
+          ],
+          "buys": 21,
+          "coverage": 0.33402777777777776
+        },
+        {
+          "day": 2,
+          "idleRate": 22600.2,
+          "rank": "摸鱼大师",
+          "rankNext": "带薪摸鱼传说",
+          "rankProgress": 0.7560688686868687,
+          "collection": 24,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "survive_2",
+            "buy_3"
+          ],
+          "dailyIncome": 75843546,
+          "lifetimeEarned": 75850818,
+          "levels": {
+            "phone": 55,
+            "toilet": 39,
+            "group": 33,
+            "meeting": 27,
+            "deep": 23,
+            "retire": 14
+          },
+          "canPrestige": false,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 0,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            1,
+            0.8999999999999999
+          ],
+          "buys": 170,
+          "coverage": 0.6340277777777777
+        },
+        {
+          "day": 3,
+          "idleRate": 152396.2,
+          "rank": "摸鱼宇宙尽头",
+          "rankNext": "带薪摸鱼之神",
+          "rankProgress": 0.0641689688,
+          "collection": 29,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "buy_3",
+            "click_100"
+          ],
+          "dailyIncome": 2584571604,
+          "lifetimeEarned": 2660422422,
+          "levels": {
+            "phone": 76,
+            "toilet": 65,
+            "group": 53,
+            "meeting": 54,
+            "deep": 50,
+            "retire": 37
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 11,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 144,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 4,
+          "idleRate": 262984.2,
+          "rank": "摸鱼星人",
+          "rankNext": "摸鱼黑洞",
+          "rankProgress": 0.2348150306,
+          "collection": 30,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "survive_2",
+            "click_100"
+          ],
+          "dailyIncome": 9687727884,
+          "lifetimeEarned": 12348150306,
+          "levels": {
+            "phone": 92,
+            "toilet": 76,
+            "group": 69,
+            "meeting": 63,
+            "deep": 58,
+            "retire": 50
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 73,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 5,
+          "idleRate": 288320.2,
+          "rank": "摸鱼黑洞",
+          "rankNext": "摸鱼次元",
+          "rankProgress": 0.2800083335,
+          "collection": 30,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "survive_2",
+            "click_100"
+          ],
+          "dailyIncome": 13252016364,
+          "lifetimeEarned": 25600166670,
+          "levels": {
+            "phone": 95,
+            "toilet": 79,
+            "group": 73,
+            "meeting": 68,
+            "deep": 64,
+            "retire": 55
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 26,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 6,
+          "idleRate": 447008.2,
+          "rank": "摸鱼次元",
+          "rankNext": "摸鱼奇点",
+          "rankProgress": 0.06934774385,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "buy_3",
+            "survive_2"
+          ],
+          "dailyIncome": 17173743084,
+          "lifetimeEarned": 42773909754,
+          "levels": {
+            "phone": 99,
+            "toilet": 88,
+            "group": 80,
+            "meeting": 74,
+            "deep": 70,
+            "retire": 56
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 33,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 7,
+          "idleRate": 635184.2,
+          "rank": "摸鱼次元",
+          "rankNext": "摸鱼奇点",
+          "rankProgress": 0.62410670495,
+          "collection": 30,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "survive_2",
+            "meme_1"
+          ],
+          "dailyIncome": 22190358444,
+          "lifetimeEarned": 64964268198,
+          "levels": {
+            "phone": 102,
+            "toilet": 91,
+            "group": 82,
+            "meeting": 77,
+            "deep": 72,
+            "retire": 60
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 17,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 8,
+          "idleRate": 667968.2,
+          "rank": "摸鱼奇点",
+          "rankNext": "摸鱼永恒",
+          "rankProgress": 0.206200075025,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "meme_1",
+            "buy_3",
+            "survive_2"
+          ],
+          "dailyIncome": 31531737804,
+          "lifetimeEarned": 96496006002,
+          "levels": {
+            "phone": 107,
+            "toilet": 91,
+            "group": 83,
+            "meeting": 78,
+            "deep": 74,
+            "retire": 64
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 13,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 9,
+          "idleRate": 688112.2,
+          "rank": "摸鱼奇点",
+          "rankNext": "摸鱼永恒",
+          "rankProgress": 0.618769653575,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "buy_3",
+            "meme_1",
+            "survive_2"
+          ],
+          "dailyIncome": 33005566284,
+          "lifetimeEarned": 129501572286,
+          "levels": {
+            "phone": 108,
+            "toilet": 91,
+            "group": 86,
+            "meeting": 81,
+            "deep": 76,
+            "retire": 66
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 11,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 10,
+          "idleRate": 704320.2,
+          "rank": "摸鱼永恒",
+          "rankNext": "摸鱼宇宙尽头·终",
+          "rankProgress": 0.0214512460625,
+          "collection": 30,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "survive_2",
+            "click_100",
+            "meme_1"
+          ],
+          "dailyIncome": 33930627084,
+          "lifetimeEarned": 163432199370,
+          "levels": {
+            "phone": 110,
+            "toilet": 93,
+            "group": 87,
+            "meeting": 83,
+            "deep": 77,
+            "retire": 68
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 10,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 11,
+          "idleRate": 717392.2,
+          "rank": "摸鱼永恒",
+          "rankNext": "摸鱼宇宙尽头·终",
+          "rankProgress": 0.2382829883375,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "buy_3",
+            "click_100",
+            "survive_2"
+          ],
+          "dailyIncome": 34693078764,
+          "lifetimeEarned": 198125278134,
+          "levels": {
+            "phone": 113,
+            "toilet": 96,
+            "group": 89,
+            "meeting": 84,
+            "deep": 79,
+            "retire": 69
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 12,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 12,
+          "idleRate": 729072.2,
+          "rank": "摸鱼永恒",
+          "rankNext": "摸鱼宇宙尽头·终",
+          "rankProgress": 0.4590233886125,
+          "collection": 30,
+          "goalsDone": 0,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "click_100",
+            "buy_3",
+            "meme_1"
+          ],
+          "dailyIncome": 35318464044,
+          "lifetimeEarned": 233443742178,
+          "levels": {
+            "phone": 113,
+            "toilet": 96,
+            "group": 91,
+            "meeting": 84,
+            "deep": 79,
+            "retire": 71
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 4,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 13,
+          "idleRate": 738064.2,
+          "rank": "摸鱼永恒",
+          "rankNext": "摸鱼宇宙尽头·终",
+          "rankProgress": 0.6831445248875,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "buy_3",
+            "click_100",
+            "meme_1"
+          ],
+          "dailyIncome": 35859381804,
+          "lifetimeEarned": 269303123982,
+          "levels": {
+            "phone": 116,
+            "toilet": 98,
+            "group": 93,
+            "meeting": 87,
+            "deep": 81,
+            "retire": 71
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 12,
+          "coverage": 0.567361111111111
+        },
+        {
+          "day": 14,
+          "idleRate": 753392.2,
+          "rank": "摸鱼永恒",
+          "rankNext": "摸鱼宇宙尽头·终",
+          "rankProgress": 0.9111505981625,
+          "collection": 30,
+          "goalsDone": 1,
+          "goalsTotal": 3,
+          "claimable": false,
+          "dailyGoalIds": [
+            "buy_3",
+            "meme_1",
+            "survive_2"
+          ],
+          "dailyIncome": 36480971724,
+          "lifetimeEarned": 305784095706,
+          "levels": {
+            "phone": 118,
+            "toilet": 103,
+            "group": 93,
+            "meeting": 88,
+            "deep": 83,
+            "retire": 71
+          },
+          "canPrestige": true,
+          "prestigeThreshold": 100000000,
+          "prestigeGainIfAny": 20,
+          "offlineAppliedHours": 16,
+          "offlineRates": [
+            0.7999999999999999,
+            0.8999999999999999
+          ],
+          "buys": 10,
+          "coverage": 0.567361111111111
+        }
+      ],
+      "totals": {
+        "earned": 305784095706,
+        "offlineEarned": 305387866368,
+        "liveEarned": 396229338,
+        "buys": 556,
+        "clicks": 0,
+        "memes": 0,
+        "patrols": 0,
+        "goalsCompleted": 18,
+        "goalsTotal": 84,
+        "claims": 0,
+        "collection": 30,
+        "endIdleRate": 753392.2,
+        "endLifetimeEarned": 305784095706,
+        "endRank": "摸鱼永恒",
+        "prestigeUnlockedDay": 3,
+        "prestiges": 0,
+        "prestigePoints": 0,
+        "idleLevels": {
+          "phone": 118,
+          "toilet": 103,
+          "group": 93,
+          "meeting": 88,
+          "deep": 83,
+          "retire": 71
+        },
+        "clickLevels": {
+          "coffee": 0,
+          "water": 0,
+          "chair": 0
+        }
+      }
+    },
+    "lazyBuy": {
+      "onePerSession": {
+        "opts": {
+          "days": 14,
+          "openHours": [
+            9,
+            21
+          ],
+          "sessionSeconds": 30,
+          "buyPolicy": "idleBest",
+          "seed": 20260110,
+          "baseDayMs": 1767542400000,
+          "prestigeAuto": false,
+          "maxBuysPerSession": 1
+        },
+        "days": [
+          {
+            "day": 1,
+            "idleRate": 2.2,
+            "rank": "摸鱼实习生",
+            "rankNext": "摸鱼学徒",
+            "rankProgress": 0.5802,
+            "collection": 1,
+            "goalsDone": 0,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "click_100",
+              "buy_3",
+              "meme_1"
+            ],
+            "dailyIncome": 5802,
+            "lifetimeEarned": 5802,
+            "levels": {
+              "phone": 2
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 8,
+            "offlineRates": [
+              1,
+              1
+            ],
+            "buys": 2,
+            "coverage": 0.33402777777777776
+          },
+          {
+            "day": 2,
+            "idleRate": 12.2,
+            "rank": "资深摸鱼",
+            "rankNext": "摸鱼大师",
+            "rankProgress": 0.07306222222222222,
+            "collection": 2,
+            "goalsDone": 0,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "click_100",
+              "buy_3",
+              "meme_1"
+            ],
+            "dailyIncome": 159954,
+            "lifetimeEarned": 165756,
+            "levels": {
+              "phone": 6
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 4,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 3,
+            "idleRate": 20.2,
+            "rank": "资深摸鱼",
+            "rankNext": "摸鱼大师",
+            "rankProgress": 0.8530222222222222,
+            "collection": 3,
+            "goalsDone": 0,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "meme_1",
+              "survive_2",
+              "buy_3"
+            ],
+            "dailyIncome": 701964,
+            "lifetimeEarned": 867720,
+            "levels": {
+              "phone": 10
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 4,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 4,
+            "idleRate": 31.2,
+            "rank": "摸鱼大师",
+            "rankNext": "带薪摸鱼传说",
+            "rankProgress": 0.00971650505050505,
+            "collection": 4,
+            "goalsDone": 0,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "click_100",
+              "survive_2",
+              "buy_3"
+            ],
+            "dailyIncome": 1094214,
+            "lifetimeEarned": 1961934,
+            "levels": {
+              "phone": 13,
+              "toilet": 1
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 4,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 5,
+            "idleRate": 45.2,
+            "rank": "摸鱼大师",
+            "rankNext": "带薪摸鱼传说",
+            "rankProgress": 0.02700311111111111,
+            "collection": 4,
+            "goalsDone": 0,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "survive_2",
+              "buy_3",
+              "click_100"
+            ],
+            "dailyIncome": 1711374,
+            "lifetimeEarned": 3673308,
+            "levels": {
+              "phone": 15,
+              "toilet": 3
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 4,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 6,
+            "idleRate": 59.2,
+            "rank": "摸鱼大师",
+            "rankNext": "带薪摸鱼传说",
+            "rankProgress": 0.05122183838383838,
+            "collection": 5,
+            "goalsDone": 0,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "meme_1",
+              "click_100",
+              "survive_2"
+            ],
+            "dailyIncome": 2397654,
+            "lifetimeEarned": 6070962,
+            "levels": {
+              "phone": 17,
+              "toilet": 5
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 4,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 7,
+            "idleRate": 86.2,
+            "rank": "摸鱼大师",
+            "rankNext": "带薪摸鱼传说",
+            "rankProgress": 0.08577935353535354,
+            "collection": 6,
+            "goalsDone": 0,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "survive_2",
+              "meme_1",
+              "buy_3"
+            ],
+            "dailyIncome": 3421194,
+            "lifetimeEarned": 9492156,
+            "levels": {
+              "phone": 18,
+              "toilet": 7,
+              "group": 1
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 4,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 8,
+            "idleRate": 123.2,
+            "rank": "摸鱼大师",
+            "rankNext": "带薪摸鱼传说",
+            "rankProgress": 0.13292353535353535,
+            "collection": 6,
+            "goalsDone": 0,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "survive_2",
+              "buy_3",
+              "meme_1"
+            ],
+            "dailyIncome": 4667274,
+            "lifetimeEarned": 14159430,
+            "levels": {
+              "phone": 19,
+              "toilet": 8,
+              "group": 3
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 4,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 9,
+            "idleRate": 147.2,
+            "rank": "摸鱼大师",
+            "rankNext": "带薪摸鱼传说",
+            "rankProgress": 0.195766202020202,
+            "collection": 7,
+            "goalsDone": 0,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "click_100",
+              "survive_2",
+              "buy_3"
+            ],
+            "dailyIncome": 6221424,
+            "lifetimeEarned": 20380854,
+            "levels": {
+              "phone": 21,
+              "toilet": 9,
+              "group": 4
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 4,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 10,
+            "idleRate": 174.2,
+            "rank": "摸鱼大师",
+            "rankNext": "带薪摸鱼传说",
+            "rankProgress": 0.27389705050505053,
+            "collection": 9,
+            "goalsDone": 0,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "buy_3",
+              "click_100",
+              "survive_2"
+            ],
+            "dailyIncome": 7734954,
+            "lifetimeEarned": 28115808,
+            "levels": {
+              "phone": 22,
+              "toilet": 11,
+              "group": 5
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 4,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 11,
+            "idleRate": 246.2,
+            "rank": "摸鱼大师",
+            "rankNext": "带薪摸鱼传说",
+            "rankProgress": 0.3772060808080808,
+            "collection": 10,
+            "goalsDone": 0,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "meme_1",
+              "buy_3",
+              "click_100"
+            ],
+            "dailyIncome": 10227594,
+            "lifetimeEarned": 38343402,
+            "levels": {
+              "phone": 23,
+              "toilet": 12,
+              "group": 6,
+              "meeting": 1
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 4,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 12,
+            "idleRate": 365.2,
+            "rank": "摸鱼大师",
+            "rankNext": "带薪摸鱼传说",
+            "rankProgress": 0.5161660202020202,
+            "collection": 10,
+            "goalsDone": 0,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "meme_1",
+              "buy_3",
+              "click_100"
+            ],
+            "dailyIncome": 13757034,
+            "lifetimeEarned": 52100436,
+            "levels": {
+              "phone": 25,
+              "toilet": 12,
+              "group": 7,
+              "meeting": 2
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 4,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 13,
+            "idleRate": 381.2,
+            "rank": "摸鱼大师",
+            "rankNext": "带薪摸鱼传说",
+            "rankProgress": 0.6990947474747474,
+            "collection": 10,
+            "goalsDone": 0,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "meme_1",
+              "survive_2",
+              "click_100"
+            ],
+            "dailyIncome": 18109944,
+            "lifetimeEarned": 70210380,
+            "levels": {
+              "phone": 29,
+              "toilet": 12,
+              "group": 7,
+              "meeting": 2
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 4,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 14,
+            "idleRate": 455.2,
+            "rank": "摸鱼大师",
+            "rankNext": "带薪摸鱼传说",
+            "rankProgress": 0.9022692323232323,
+            "collection": 10,
+            "goalsDone": 0,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "meme_1",
+              "buy_3",
+              "click_100"
+            ],
+            "dailyIncome": 20114274,
+            "lifetimeEarned": 90324654,
+            "levels": {
+              "phone": 30,
+              "toilet": 13,
+              "group": 8,
+              "meeting": 3
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 4,
+            "coverage": 0.567361111111111
+          }
+        ],
+        "totals": {
+          "earned": 90324654,
+          "offlineEarned": 90207936,
+          "liveEarned": 116718,
+          "buys": 54,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0,
+          "goalsCompleted": 0,
+          "goalsTotal": 84,
+          "claims": 0,
+          "collection": 10,
+          "endIdleRate": 455.2,
+          "endLifetimeEarned": 90324654,
+          "endRank": "摸鱼大师",
+          "prestigeUnlockedDay": null,
+          "prestiges": 0,
+          "prestigePoints": 0,
+          "idleLevels": {
+            "phone": 30,
+            "toilet": 13,
+            "group": 8,
+            "meeting": 3,
+            "deep": 0,
+            "retire": 0
+          },
+          "clickLevels": {
+            "coffee": 0,
+            "water": 0,
+            "chair": 0
+          }
+        }
+      },
+      "threePerSession": {
+        "opts": {
+          "days": 14,
+          "openHours": [
+            9,
+            21
+          ],
+          "sessionSeconds": 30,
+          "buyPolicy": "idleBest",
+          "seed": 20260111,
+          "baseDayMs": 1767542400000,
+          "prestigeAuto": false,
+          "maxBuysPerSession": 3
+        },
+        "days": [
+          {
+            "day": 1,
+            "idleRate": 12.2,
+            "rank": "摸鱼实习生",
+            "rankNext": "摸鱼学徒",
+            "rankProgress": 0.5862,
+            "collection": 2,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "buy_3",
+              "click_100",
+              "meme_1"
+            ],
+            "dailyIncome": 5862,
+            "lifetimeEarned": 5862,
+            "levels": {
+              "phone": 6
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 8,
+            "offlineRates": [
+              1,
+              1
+            ],
+            "buys": 6,
+            "coverage": 0.33402777777777776
+          },
+          {
+            "day": 2,
+            "idleRate": 45.2,
+            "rank": "资深摸鱼",
+            "rankNext": "摸鱼大师",
+            "rankProgress": 0.9064955555555554,
+            "collection": 4,
+            "goalsDone": 0,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "survive_2",
+              "meme_1",
+              "click_100"
+            ],
+            "dailyIncome": 909983.9999999999,
+            "lifetimeEarned": 915845.9999999999,
+            "levels": {
+              "phone": 15,
+              "toilet": 3
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 12,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 3,
+            "idleRate": 123.2,
+            "rank": "摸鱼大师",
+            "rankNext": "带薪摸鱼传说",
+            "rankProgress": 0.03045323232323232,
+            "collection": 6,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "buy_3",
+              "survive_2",
+              "meme_1"
+            ],
+            "dailyIncome": 3099023.9999999995,
+            "lifetimeEarned": 4014869.9999999995,
+            "levels": {
+              "phone": 19,
+              "toilet": 8,
+              "group": 3
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 12,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 4,
+            "idleRate": 246.2,
+            "rank": "摸鱼大师",
+            "rankNext": "带薪摸鱼传说",
+            "rankProgress": 0.10301317171717171,
+            "collection": 10,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "survive_2",
+              "buy_3",
+              "meme_1"
+            ],
+            "dailyIncome": 7183434,
+            "lifetimeEarned": 11198304,
+            "levels": {
+              "phone": 23,
+              "toilet": 12,
+              "group": 6,
+              "meeting": 1
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 12,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 5,
+            "idleRate": 455.2,
+            "rank": "摸鱼大师",
+            "rankNext": "带薪摸鱼传说",
+            "rankProgress": 0.25823311111111114,
+            "collection": 10,
+            "goalsDone": 0,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "meme_1",
+              "click_100",
+              "survive_2"
+            ],
+            "dailyIncome": 15366774,
+            "lifetimeEarned": 26565078,
+            "levels": {
+              "phone": 30,
+              "toilet": 13,
+              "group": 8,
+              "meeting": 3
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 12,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 6,
+            "idleRate": 1018.2,
+            "rank": "摸鱼大师",
+            "rankNext": "带薪摸鱼传说",
+            "rankProgress": 0.551557595959596,
+            "collection": 13,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "buy_3",
+              "meme_1",
+              "click_100"
+            ],
+            "dailyIncome": 29039124,
+            "lifetimeEarned": 55604202,
+            "levels": {
+              "phone": 32,
+              "toilet": 16,
+              "group": 10,
+              "meeting": 6,
+              "deep": 2
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 12,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 7,
+            "idleRate": 3631.2,
+            "rank": "带薪摸鱼传说",
+            "rankNext": "摸鱼之神",
+            "rankProgress": 0.01393422888888889,
+            "collection": 14,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "survive_2",
+              "buy_3",
+              "meme_1"
+            ],
+            "dailyIncome": 56936604,
+            "lifetimeEarned": 112540806,
+            "levels": {
+              "phone": 34,
+              "toilet": 17,
+              "group": 12,
+              "meeting": 7,
+              "deep": 8
+            },
+            "canPrestige": true,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 3,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 12,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 8,
+            "idleRate": 5265.2,
+            "rank": "带薪摸鱼传说",
+            "rankNext": "摸鱼之神",
+            "rankProgress": 0.24444008888888888,
+            "collection": 17,
+            "goalsDone": 0,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "meme_1",
+              "click_100",
+              "survive_2"
+            ],
+            "dailyIncome": 207455274,
+            "lifetimeEarned": 319996080,
+            "levels": {
+              "phone": 35,
+              "toilet": 23,
+              "group": 13,
+              "meeting": 8,
+              "deep": 10,
+              "retire": 1
+            },
+            "canPrestige": true,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 4,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 12,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 9,
+            "idleRate": 6620.2,
+            "rank": "带薪摸鱼传说",
+            "rankNext": "摸鱼之神",
+            "rankProgress": 0.5574884822222222,
+            "collection": 18,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "buy_3",
+              "meme_1",
+              "click_100"
+            ],
+            "dailyIncome": 281743554,
+            "lifetimeEarned": 601739634,
+            "levels": {
+              "phone": 35,
+              "toilet": 24,
+              "group": 18,
+              "meeting": 14,
+              "deep": 10,
+              "retire": 1
+            },
+            "canPrestige": true,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 6,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 12,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 10,
+            "idleRate": 9028.2,
+            "rank": "带薪摸鱼传说",
+            "rankNext": "摸鱼之神",
+            "rankProgress": 0.9528329755555556,
+            "collection": 19,
+            "goalsDone": 0,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "meme_1",
+              "survive_2",
+              "click_100"
+            ],
+            "dailyIncome": 355810044,
+            "lifetimeEarned": 957549678,
+            "levels": {
+              "phone": 37,
+              "toilet": 26,
+              "group": 20,
+              "meeting": 16,
+              "deep": 12,
+              "retire": 3
+            },
+            "canPrestige": true,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 7,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 12,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 11,
+            "idleRate": 11436.2,
+            "rank": "摸鱼之神",
+            "rankNext": "摸鱼宇宙尽头",
+            "rankProgress": 0.28759992133333334,
+            "collection": 20,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "buy_3",
+              "meme_1",
+              "survive_2"
+            ],
+            "dailyIncome": 473850204,
+            "lifetimeEarned": 1431399882,
+            "levels": {
+              "phone": 39,
+              "toilet": 28,
+              "group": 22,
+              "meeting": 18,
+              "deep": 14,
+              "retire": 5
+            },
+            "canPrestige": true,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 8,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 12,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 12,
+            "idleRate": 13844.2,
+            "rank": "摸鱼之神",
+            "rankNext": "摸鱼宇宙尽头",
+            "rankProgress": 0.6821934973333333,
+            "collection": 21,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "click_100",
+              "buy_3",
+              "survive_2"
+            ],
+            "dailyIncome": 591890364,
+            "lifetimeEarned": 2023290246,
+            "levels": {
+              "phone": 41,
+              "toilet": 30,
+              "group": 24,
+              "meeting": 20,
+              "deep": 16,
+              "retire": 7
+            },
+            "canPrestige": true,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 9,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 12,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 13,
+            "idleRate": 16252.2,
+            "rank": "摸鱼宇宙尽头",
+            "rankNext": "带薪摸鱼之神",
+            "rankProgress": 0.093288308,
+            "collection": 21,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "click_100",
+              "survive_2",
+              "buy_3"
+            ],
+            "dailyIncome": 709930524,
+            "lifetimeEarned": 2733220770,
+            "levels": {
+              "phone": 43,
+              "toilet": 32,
+              "group": 26,
+              "meeting": 22,
+              "deep": 18,
+              "retire": 9
+            },
+            "canPrestige": true,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 11,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 12,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 14,
+            "idleRate": 18372.2,
+            "rank": "摸鱼宇宙尽头",
+            "rankNext": "带薪摸鱼之神",
+            "rankProgress": 0.4216696856,
+            "collection": 22,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "buy_3",
+              "survive_2",
+              "click_100"
+            ],
+            "dailyIncome": 820953444,
+            "lifetimeEarned": 3554174214,
+            "levels": {
+              "phone": 49,
+              "toilet": 33,
+              "group": 27,
+              "meeting": 23,
+              "deep": 19,
+              "retire": 11
+            },
+            "canPrestige": true,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 12,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 12,
+            "coverage": 0.567361111111111
+          }
+        ],
+        "totals": {
+          "earned": 3554174214,
+          "offlineEarned": 3549519936,
+          "liveEarned": 4654278,
+          "buys": 162,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0,
+          "goalsCompleted": 21,
+          "goalsTotal": 84,
+          "claims": 0,
+          "collection": 22,
+          "endIdleRate": 18372.2,
+          "endLifetimeEarned": 3554174214,
+          "endRank": "摸鱼宇宙尽头",
+          "prestigeUnlockedDay": 7,
+          "prestiges": 0,
+          "prestigePoints": 0,
+          "idleLevels": {
+            "phone": 49,
+            "toilet": 33,
+            "group": 27,
+            "meeting": 23,
+            "deep": 19,
+            "retire": 11
+          },
+          "clickLevels": {
+            "coffee": 0,
+            "water": 0,
+            "chair": 0
+          }
+        }
+      },
+      "fivePerSession": {
+        "opts": {
+          "days": 14,
+          "openHours": [
+            9,
+            21
+          ],
+          "sessionSeconds": 30,
+          "buyPolicy": "idleBest",
+          "seed": 20260112,
+          "baseDayMs": 1767542400000,
+          "prestigeAuto": false,
+          "maxBuysPerSession": 5
+        },
+        "days": [
+          {
+            "day": 1,
+            "idleRate": 20.2,
+            "rank": "摸鱼实习生",
+            "rankNext": "摸鱼学徒",
+            "rankProgress": 0.6072,
+            "collection": 3,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "survive_2",
+              "buy_3",
+              "click_100"
+            ],
+            "dailyIncome": 6072,
+            "lifetimeEarned": 6072,
+            "levels": {
+              "phone": 10
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 8,
+            "offlineRates": [
+              1,
+              1
+            ],
+            "buys": 10,
+            "coverage": 0.33402777777777776
+          },
+          {
+            "day": 2,
+            "idleRate": 123.2,
+            "rank": "摸鱼大师",
+            "rankNext": "带薪摸鱼传说",
+            "rankProgress": 0.008363898989898987,
+            "collection": 6,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "survive_2",
+              "meme_1",
+              "buy_3"
+            ],
+            "dailyIncome": 1821953.9999999998,
+            "lifetimeEarned": 1828025.9999999998,
+            "levels": {
+              "phone": 19,
+              "toilet": 8,
+              "group": 3
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 20,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 3,
+            "idleRate": 381.2,
+            "rank": "摸鱼大师",
+            "rankNext": "带薪摸鱼传说",
+            "rankProgress": 0.09980383838383837,
+            "collection": 10,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "survive_2",
+              "buy_3",
+              "meme_1"
+            ],
+            "dailyIncome": 9052553.999999998,
+            "lifetimeEarned": 10880579.999999998,
+            "levels": {
+              "phone": 29,
+              "toilet": 12,
+              "group": 7,
+              "meeting": 2
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 20,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 4,
+            "idleRate": 1222.2,
+            "rank": "摸鱼大师",
+            "rankNext": "带薪摸鱼传说",
+            "rankProgress": 0.3759428686868687,
+            "collection": 13,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "buy_3",
+              "meme_1",
+              "click_100"
+            ],
+            "dailyIncome": 27337764,
+            "lifetimeEarned": 38218344,
+            "levels": {
+              "phone": 33,
+              "toilet": 17,
+              "group": 11,
+              "meeting": 6,
+              "deep": 3
+            },
+            "canPrestige": false,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 0,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 20,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 5,
+            "idleRate": 5265.2,
+            "rank": "带薪摸鱼传说",
+            "rankNext": "摸鱼之神",
+            "rankProgress": 0.07798847555555556,
+            "collection": 17,
+            "goalsDone": 0,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "meme_1",
+              "survive_2",
+              "click_100"
+            ],
+            "dailyIncome": 131971284,
+            "lifetimeEarned": 170189628,
+            "levels": {
+              "phone": 35,
+              "toilet": 23,
+              "group": 13,
+              "meeting": 8,
+              "deep": 10,
+              "retire": 1
+            },
+            "canPrestige": true,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 3,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 20,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 6,
+            "idleRate": 8554.2,
+            "rank": "带薪摸鱼传说",
+            "rankNext": "摸鱼之神",
+            "rankProgress": 0.40215900222222223,
+            "collection": 19,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "click_100",
+              "meme_1",
+              "buy_3"
+            ],
+            "dailyIncome": 291753474,
+            "lifetimeEarned": 461943102,
+            "levels": {
+              "phone": 36,
+              "toilet": 25,
+              "group": 20,
+              "meeting": 15,
+              "deep": 11,
+              "retire": 3
+            },
+            "canPrestige": true,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 5,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 20,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 7,
+            "idleRate": 12530.2,
+            "rank": "带薪摸鱼传说",
+            "rankNext": "摸鱼之神",
+            "rankProgress": 0.9165360288888889,
+            "collection": 20,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "meme_1",
+              "buy_3",
+              "click_100"
+            ],
+            "dailyIncome": 462939324,
+            "lifetimeEarned": 924882426,
+            "levels": {
+              "phone": 40,
+              "toilet": 28,
+              "group": 23,
+              "meeting": 18,
+              "deep": 15,
+              "retire": 6
+            },
+            "canPrestige": true,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 7,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 20,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 8,
+            "idleRate": 16252.2,
+            "rank": "摸鱼之神",
+            "rankNext": "摸鱼宇宙尽头",
+            "rankProgress": 0.3948101133333333,
+            "collection": 21,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "survive_2",
+              "meme_1",
+              "buy_3"
+            ],
+            "dailyIncome": 667332744,
+            "lifetimeEarned": 1592215170,
+            "levels": {
+              "phone": 43,
+              "toilet": 32,
+              "group": 26,
+              "meeting": 22,
+              "deep": 18,
+              "retire": 9
+            },
+            "canPrestige": true,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 9,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 20,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 9,
+            "idleRate": 19618.2,
+            "rank": "摸鱼之神",
+            "rankNext": "摸鱼宇宙尽头",
+            "rankProgress": 0.9488104893333333,
+            "collection": 24,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "click_100",
+              "buy_3",
+              "survive_2"
+            ],
+            "dailyIncome": 831000564,
+            "lifetimeEarned": 2423215734,
+            "levels": {
+              "phone": 51,
+              "toilet": 34,
+              "group": 29,
+              "meeting": 24,
+              "deep": 20,
+              "retire": 12
+            },
+            "canPrestige": true,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 10,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 20,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 10,
+            "idleRate": 32962.2,
+            "rank": "摸鱼宇宙尽头",
+            "rankNext": "带薪摸鱼之神",
+            "rankProgress": 0.3786640952,
+            "collection": 24,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "buy_3",
+              "meme_1",
+              "click_100"
+            ],
+            "dailyIncome": 1023444504,
+            "lifetimeEarned": 3446660238,
+            "levels": {
+              "phone": 54,
+              "toilet": 37,
+              "group": 32,
+              "meeting": 27,
+              "deep": 25,
+              "retire": 15
+            },
+            "canPrestige": true,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 12,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 20,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 11,
+            "idleRate": 41510.2,
+            "rank": "带薪摸鱼之神",
+            "rankNext": "摸鱼星人",
+            "rankProgress": 0.0355987964,
+            "collection": 24,
+            "goalsDone": 0,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "click_100",
+              "meme_1",
+              "survive_2"
+            ],
+            "dailyIncome": 1731333744,
+            "lifetimeEarned": 5177993982,
+            "levels": {
+              "phone": 55,
+              "toilet": 44,
+              "group": 33,
+              "meeting": 32,
+              "deep": 30,
+              "retire": 16
+            },
+            "canPrestige": true,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 14,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 20,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 12,
+            "idleRate": 47316.2,
+            "rank": "带薪摸鱼之神",
+            "rankNext": "摸鱼星人",
+            "rankProgress": 0.4553452772,
+            "collection": 24,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "meme_1",
+              "buy_3",
+              "survive_2"
+            ],
+            "dailyIncome": 2098732404,
+            "lifetimeEarned": 7276726386,
+            "levels": {
+              "phone": 57,
+              "toilet": 46,
+              "group": 40,
+              "meeting": 36,
+              "deep": 32,
+              "retire": 19
+            },
+            "canPrestige": true,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 16,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 20,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 13,
+            "idleRate": 73220.2,
+            "rank": "摸鱼星人",
+            "rankNext": "摸鱼黑洞",
+            "rankProgress": 0.014978435,
+            "collection": 25,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "click_100",
+              "meme_1",
+              "buy_3"
+            ],
+            "dailyIncome": 2873057964,
+            "lifetimeEarned": 10149784350,
+            "levels": {
+              "phone": 60,
+              "toilet": 48,
+              "group": 43,
+              "meeting": 38,
+              "deep": 35,
+              "retire": 26
+            },
+            "canPrestige": true,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 19,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 20,
+            "coverage": 0.567361111111111
+          },
+          {
+            "day": 14,
+            "idleRate": 80664.2,
+            "rank": "摸鱼星人",
+            "rankNext": "摸鱼黑洞",
+            "rankProgress": 0.3845243234,
+            "collection": 26,
+            "goalsDone": 1,
+            "goalsTotal": 3,
+            "claimable": false,
+            "dailyGoalIds": [
+              "survive_2",
+              "click_100",
+              "buy_3"
+            ],
+            "dailyIncome": 3695458884,
+            "lifetimeEarned": 13845243234,
+            "levels": {
+              "phone": 63,
+              "toilet": 52,
+              "group": 46,
+              "meeting": 42,
+              "deep": 38,
+              "retire": 29
+            },
+            "canPrestige": true,
+            "prestigeThreshold": 100000000,
+            "prestigeGainIfAny": 20,
+            "offlineAppliedHours": 16,
+            "offlineRates": [
+              0.7999999999999999,
+              0.8999999999999999
+            ],
+            "buys": 20,
+            "coverage": 0.567361111111111
+          }
+        ],
+        "totals": {
+          "earned": 13845243234,
+          "offlineEarned": 13826981376,
+          "liveEarned": 18261858,
+          "buys": 270,
+          "clicks": 0,
+          "memes": 0,
+          "patrols": 0,
+          "goalsCompleted": 22,
+          "goalsTotal": 84,
+          "claims": 0,
+          "collection": 26,
+          "endIdleRate": 80664.2,
+          "endLifetimeEarned": 13845243234,
+          "endRank": "摸鱼星人",
+          "prestigeUnlockedDay": 5,
+          "prestiges": 0,
+          "prestigePoints": 0,
+          "idleLevels": {
+            "phone": 63,
+            "toilet": 52,
+            "group": 46,
+            "meeting": 42,
+            "deep": 38,
+            "retire": 29
+          },
+          "clickLevels": {
+            "coffee": 0,
+            "water": 0,
+            "chair": 0
+          }
+        }
+      }
+    }
+  },
+  "analysis": {
+    "theoreticalIdleCap": 30,
+    "mustClickHard": 15,
+    "mustClickSoft": 10,
+    "totalItems": 55,
+    "capReachedDay": 4,
+    "lv50Day": {
+      "phone": 2,
+      "toilet": 3,
+      "group": 3,
+      "meeting": 3,
+      "deep": 3,
+      "retire": 4
+    },
+    "goalStats": {
+      "click_100": {
+        "drawn": 22,
+        "done": 0
+      },
+      "meme_1": {
+        "drawn": 22,
+        "done": 0
+      },
+      "buy_3": {
+        "drawn": 19,
+        "done": 17
+      },
+      "survive_2": {
+        "drawn": 21,
+        "done": 0
+      }
+    },
+    "goalClaimRate": 0,
+    "patrolVisibleIn30s": false,
+    "memeVisibleIn30s": false,
+    "firstBossWindow": [
+      90,
+      150
+    ],
+    "firstMemeWindow": [
+      45,
+      75
+    ],
+    "patrolDuration": 8,
+    "typeTarget": 5,
+    "blitzTarget": 20,
+    "expectedZenGoalsPerWindow": 0.75,
+    "claimProb": 0,
+    "dailyRewardEq": 452016120,
+    "dailyIncomeEq": 39054192768,
+    "rewardShare": 0.011574074074074073,
+    "holdRewardBase": 3013440.8,
+    "holdRewardCap": 4520161.199999999,
+    "holdShare": 0.00011574074074074072,
+    "holdVsWindowIncome": 0.7499999999999999,
+    "avgCoverage": 0.5506944444444445,
+    "never": {
+      "collectionGap": 25,
+      "clickLineFlavors": 15,
+      "quotes": 10,
+      "dailyClaims": 0,
+      "dailyRewardEq": 452016120,
+      "rewardShare": 0.011574074074074073,
+      "holdFreePerPatrol": 3013440.8,
+      "holdShare": 0.00011574074074074072,
+      "collectionBonus": 1.2,
+      "prestigeReachable": true,
+      "prestigeDay": 3
+    },
+    "offlineCapHours": 8,
+    "firstDayMs": 86400000
+  }
+}

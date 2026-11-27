@@ -91,6 +91,7 @@ async function boot(): Promise<void> {
       es.nextMemeAt = Infinity;
       es.bossCaught = false;
       es.bossPenaltyTotal = 0;
+      es.surviveStreak = 0; // 转生重置连胜（避免旧连胜被下次巡逻写回）
       prevBossActive = false;
       scene.gameTime = 0;
       hud.refresh(state);
@@ -258,7 +259,7 @@ async function boot(): Promise<void> {
       scene.hideHint = state.totalEarned > 500;
       quest.tick(state, null);
       // 段位晋升提示（让"新变化"被看见，而不是只藏在 HUD 一行）
-      const rankNow = rankFor(state.totalEarned).current;
+      const rankNow = rankFor(state.lifetimeEarned).current;
       if (lastRankName && rankNow !== lastRankName) toast(`段位晋升：${rankNow}`);
       lastRankName = rankNow;
       // 图鉴新增提示
@@ -290,7 +291,10 @@ async function boot(): Promise<void> {
       state = r.state;
       hud.refresh(state);
       shop.refresh(state);
-      if (r.showPanel) welcome.show(r.applied, r.earned, currentOfflineRate(), () => undefined);
+      if (r.showPanel) {
+        const realSeconds = Math.max(0, (Date.now() - lastActiveMs) / 1000);
+        welcome.show(realSeconds, r.earned, currentOfflineRate(), () => undefined, r.applied);
+      }
     }
     lastActiveMs = Date.now();
     last = performance.now();
@@ -305,7 +309,7 @@ async function boot(): Promise<void> {
   });
 
   if (offline.earned > 0 && offline.showPanel) {
-    welcome.show(offline.applied, offline.earned, currentOfflineRate(), () => undefined);
+    welcome.show(restored.offlineSeconds, offline.earned, currentOfflineRate(), () => undefined, offline.applied);
   }
 
   // 6) agent 试玩调试钩子：仅开发/测试构建暴露，生产包剥离（防止 rewindSave 刷离线作弊）

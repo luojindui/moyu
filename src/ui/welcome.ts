@@ -7,11 +7,21 @@ export class Welcome {
   private elGain = document.getElementById("welcome-gain")!;
   private elRule = document.getElementById("welcome-rule")!;
 
-  show(offlineSeconds: number, earned: number, rate: number, onOk: () => void): void {
-    this.elTime.textContent = this.describe(offlineSeconds);
+  show(
+    realSeconds: number,
+    earned: number,
+    rate: number,
+    onOk: () => void,
+    settledSeconds?: number,
+  ): void {
+    // 显示真实离开时长；被封顶时标注实际结算时长
+    this.elTime.textContent = this.describe(realSeconds);
     this.elGain.textContent = formatMoyu(earned);
     const rateText = rate >= 1 ? "首日全额" : `离线效率 ${Math.round(rate * 100)}%`;
-    this.elRule.textContent = `${rateText}｜8 小时封顶`;
+    const capped = settledSeconds !== undefined && settledSeconds < realSeconds - 1;
+    this.elRule.textContent = capped
+      ? `${rateText}｜按上限结算 ${this.describe(settledSeconds!)}（封顶 8 小时）`
+      : `${rateText}｜8 小时封顶`;
     this.root.classList.remove("hidden");
     document.getElementById("welcome-ok")!.onclick = () => {
       this.root.classList.add("hidden");

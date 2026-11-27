@@ -1,0 +1,94 @@
+{
+  "urlA": "http://127.0.0.1:5173/",
+  "urlB": "http://localhost:5173/",
+  "seed": {
+    "moyu": 123456
+  },
+  "steps": {
+    "0_first_visit": {
+      "origin": "http://127.0.0.1:5173",
+      "hasHook": true,
+      "keys": [],
+      "exportUI": [],
+      "storagePersisted": "pending",
+      "swRegs": 1,
+      "swControl": "controlled",
+      "persisted": false
+    },
+    "1_reload_persist": {
+      "firstBoot": {
+        "origin": "http://127.0.0.1:5173",
+        "moyu": 123769.80803997595,
+        "levels": {
+          "coffee": 20,
+          "phone": 15,
+          "toilet": 8
+        },
+        "prestige": 1,
+        "lifetimeEarned": 234880.8080399759,
+        "keys": [
+          "moyu-save"
+        ],
+        "rect": false
+      },
+      "afterReload": {
+        "origin": "http://127.0.0.1:5173",
+        "moyu": 124087.28929502214,
+        "levels": {
+          "coffee": 20,
+          "phone": 15,
+          "toilet": 8
+        },
+        "prestige": 1,
+        "lifetimeEarned": 235198.28929502208,
+        "keys": [
+          "moyu-save"
+        ],
+        "rect": false
+      },
+      "seededMoyu": 123456,
+      "conclusion": "同 origin 刷新后存档保留 OK（正常持久化路径）"
+    },
+    "2_external_write_overwritten": {
+      "origin": "http://127.0.0.1:5173",
+      "moyu": 124404.95482497466,
+      "levels": {
+        "coffee": 20,
+        "phone": 15,
+        "toilet": 8
+      },
+      "prestige": 1,
+      "lifetimeEarned": 235515.95482497456,
+      "keys": [
+        "moyu-save"
+      ],
+      "rect": false,
+      "externalWroteMoyu": 999999,
+      "conclusion": "页面开着时外部写入会被 pagehide/定时存档覆盖 → 导入存档后必须同步内存 state 或强制刷新"
+    },
+    "3_clear_site_data": {
+      "origin": "http://127.0.0.1:5173",
+      "moyu": 0.49332000000000015,
+      "levels": {},
+      "prestige": 0,
+      "lifetimeEarned": 0.49332000000000015,
+      "keys": [
+        "moyu-save"
+      ],
+      "rect": false,
+      "lossNotice": false,
+      "conclusion": "清缓存后回到 0，全程无任何提示/恢复入口"
+    },
+    "4_other_origin": {
+      "beforeSwitchMoyu": 237215.87941499933,
+      "origin": "http://localhost:5173",
+      "moyu": 0.5100004000000002,
+      "levels": {},
+      "prestige": 0,
+      "lifetimeEarned": 0.5100004000000002,
+      "keys": [],
+      "rect": false,
+      "conclusion": "同浏览器 + 同端口换域名/Host → 存档完全不可见（origin 隔离）"
+    }
+  }
+}

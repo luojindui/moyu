@@ -146,7 +146,7 @@ export function onBossTap(
     return { state, caught: false, lost: 0, income: 0 };
   }
   const income = clickPowerOf(state) * comboMultiplier(combo);
-  const afterIncome = gain(state, income); // 偷点收入照给
+  const afterIncome = { ...gain(state, income), totalClicks: state.totalClicks + 1 }; // 偷点也是一次点击
   // type / blitz：反向玩法——点击是任务，不罚，计数
   if (es.bossVariant === "type" || es.bossVariant === "blitz") {
     es.bossTaps += 1;
@@ -211,5 +211,5 @@ export function onMemeTap(state: GameState, es: EventState): { state: GameState;
   if (es.memeUntil <= 0) return { state, earned: 0 };
   const earned = MEME_REWARD_CLICKS * clickPowerOf(state);
   es.memeUntil = -1; // 一梗一奖
-  return { state: gain(state, earned), earned };
+  return { state: { ...gain(state, earned), totalClicks: state.totalClicks + 1 }, earned };
 }
