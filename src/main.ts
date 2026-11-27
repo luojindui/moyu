@@ -613,6 +613,7 @@ async function boot(): Promise<void> {
       // 剧情章节：便签 + 职员配色随生涯进度变化（零新美术）
       const ch = chapterFor(state.lifetimeEarned);
       scene.note = ch.title;
+      scene.decor = state.decor; // 工位家具（看得见的成长）
       scene.palette = ch.palette;
       if (lastChapterId && ch.id !== lastChapterId) toast(`新章节：${ch.title}`);
       lastChapterId = ch.id;

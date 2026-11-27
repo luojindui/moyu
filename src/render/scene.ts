@@ -53,6 +53,8 @@ export class Scene {
   palette = 0;
   /** 公告板便签文本（章节驱动） */
   note = "";
+  /** 已购工位家具 id（批次 3：看得见的成长） */
+  decor: string[] = [];
   /** 累计摸鱼值达标后隐藏新手引导字 */
   hideHint = false;
   /** 丢梗目标位置（虚拟坐标），由 main 设置 */
@@ -159,11 +161,13 @@ export class Scene {
     ctx.lineTo(clockX * s + 0.32 * u * s, clockY * s - 0.22 * u * s);
     ctx.stroke();
 
-    // 地毯（桌下，锚定工位）
-    ctx.globalAlpha = 0.5;
-    R(vw / 2 - 3.1 * u, groundY + 1.1 * u, 6.2 * u, 1.5 * u, "#6b4f43");
-    R(vw / 2 - 2.6 * u, groundY + 1.25 * u, 5.2 * u, 1.2 * u, "#7c5c4c");
-    ctx.globalAlpha = 1;
+    // 地毯（桌下，锚定工位；需购买「毛绒地毯」）
+    if (this.decor.includes("rug")) {
+      ctx.globalAlpha = 0.5;
+      R(vw / 2 - 3.1 * u, groundY + 1.1 * u, 6.2 * u, 1.5 * u, "#6b4f43");
+      R(vw / 2 - 2.6 * u, groundY + 1.25 * u, 5.2 * u, 1.2 * u, "#7c5c4c");
+      ctx.globalAlpha = 1;
+    }
 
     // 公告板（右墙中部，避开饮水机）
     const boardX = vw - 3.9 * u;
@@ -196,7 +200,11 @@ export class Scene {
     ctx.fill();
     ctx.globalAlpha = 1;
 
-    // 绿植（左下）：矮圆盆 + 分叶
+    // 工位家具（批次 3）：只有买了才画出来
+    this.drawDecor(ctx, s, u, vw, groundY, R);
+
+    // 绿植（左下）：矮圆盆 + 分叶（需购买「绿萝」）
+    if (this.decor.includes("plant")) {
     const plantX = 0.9 * u;
     const potTop = groundY - 0.85 * u; // 盆口
     R(plantX, potTop, 1.05 * u, 0.85 * u, "#a4643f"); // 盆身
@@ -216,6 +224,7 @@ export class Scene {
       ctx.beginPath();
       ctx.arc((cx + dx * u) * s, (potTop - dy * u) * s, r * u * s, 0, Math.PI * 2);
       ctx.fill();
+    }
     }
 
     const { worker, computer, cooler } = this.sprites;
@@ -312,6 +321,103 @@ export class Scene {
     }
 
     this.fx.draw(ctx, s, this.w, this.h);
+  }
+
+  /**
+   * 工位家具绘制（批次 3）：除绿植/地毯在各自位置外，其余都在这里画。
+   * 全部用矩形/圆角的像素块，风格与场景一致。
+   */
+  private drawDecor(
+    ctx: CanvasRenderingContext2D,
+    s: number,
+    u: number,
+    vw: number,
+    groundY: number,
+    R: (x: number, y: number, w: number, h: number, color: string) => void,
+  ): void {
+    const has = (id: string): boolean => this.decor.includes(id);
+
+    // 护眼台灯（桌面上方，挂在桌板右侧）
+    if (has("lamp")) {
+      const lx = vw / 2 + 1.2 * u;
+      const ly = groundY - 3.3 * u;
+      R(lx, ly, 0.18 * u, 1.2 * u, "#8a8f9c"); // 灯杆
+      R(lx - 0.25 * u, ly - 0.3 * u, 0.72 * u, 0.32 * u, "#ffd76e"); // 灯罩
+      ctx.globalAlpha = 0.12;
+      ctx.fillStyle = "#ffe9a8";
+      ctx.beginPath();
+      ctx.moveTo((lx - 0.2 * u) * s, (ly - 0.02 * u) * s);
+      ctx.lineTo((lx + 0.5 * u) * s, (ly - 0.02 * u) * s);
+      ctx.lineTo((lx + 0.85 * u) * s, (ly + 1.5 * u) * s);
+      ctx.lineTo((lx - 0.55 * u) * s, (ly + 1.5 * u) * s);
+      ctx.closePath();
+      ctx.fill();
+      ctx.globalAlpha = 1;
+    }
+
+    // 迷你冰箱（右墙脚，饮水机左侧）
+    if (has("fridge")) {
+      const fx = 0.2 * u;
+      const fy = groundY - 2.05 * u;
+      R(fx, fy, 1.0 * u, 2.05 * u, "#d8e3ea");
+      R(fx, fy + 0.85 * u, 1.0 * u, 0.09 * u, "#9fb0bb");
+      R(fx + 0.78 * u, fy + 0.3 * u, 0.11 * u, 0.35 * u, "#8a9aa5"); // 上把手
+      R(fx + 0.78 * u, fy + 1.05 * u, 0.11 * u, 0.45 * u, "#8a9aa5"); // 下把手
+    }
+
+    // 按摩椅（桌子右侧地面）
+    if (has("chair")) {
+      const cx = vw / 2 + 1.95 * u;
+      const cy = groundY - 1.45 * u;
+      R(cx, cy, 1.25 * u, 1.45 * u, "#4a3b52"); // 椅背
+      R(cx + 0.08 * u, cy + 0.55 * u, 1.1 * u, 0.55 * u, "#5d4a66"); // 坐垫
+      R(cx + 0.12 * u, cy - 0.16 * u, 1.0 * u, 0.2 * u, "#6b5680"); // 头枕
+    }
+
+    // 鱼缸（左墙，绿植上方）
+    if (has("aquarium")) {
+      const ax = vw - 2.9 * u;
+      const ay = groundY - 6.1 * u;
+      R(ax, ay, 1.5 * u, 1.1 * u, "#3f6f8a"); // 水
+      R(ax - 0.07 * u, ay - 0.1 * u, 1.64 * u, 0.12 * u, "#8a9aa5"); // 上框
+      R(ax - 0.07 * u, ay + 1.06 * u, 1.64 * u, 0.16 * u, "#6b7880"); // 底座
+      // 两条小鱼
+      R(ax + 0.3 * u, ay + 0.35 * u, 0.28 * u, 0.16 * u, "#ffd76e");
+      R(ax + 0.95 * u, ay + 0.7 * u, 0.28 * u, 0.16 * u, "#ff9e9e");
+    }
+
+    // 投影仪（吊在天花板）
+    if (has("projector")) {
+      const px = vw / 2 - 0.6 * u;
+      R(px, 0.2 * u, 0.45 * u, 1.0 * u, "#55596b"); // 吊杆
+      R(px - 0.7 * u, 1.1 * u, 2.0 * u, 0.75 * u, "#6f7488"); // 机身
+      R(px + 1.0 * u, 1.25 * u, 0.35 * u, 0.4 * u, "#9fe0ff"); // 镜头
+      // 投到地面的光斑
+      ctx.globalAlpha = 0.08;
+      ctx.fillStyle = "#cfe8ff";
+      ctx.beginPath();
+      ctx.moveTo((px + 1.2 * u) * s, (1.5 * u) * s);
+      ctx.lineTo((px + 2.6 * u) * s, (1.5 * u) * s);
+      ctx.lineTo((px + 4.2 * u) * s, groundY * s);
+      ctx.lineTo((px - 0.4 * u) * s, groundY * s);
+      ctx.closePath();
+      ctx.fill();
+      ctx.globalAlpha = 1;
+    }
+
+    // 工位猫窝（桌下地面）：窝 + 一只猫
+    if (has("catbed")) {
+      const bx = vw / 2 - 0.6 * u;
+      const by = groundY - 0.75 * u;
+      R(bx, by + 0.35 * u, 1.5 * u, 0.42 * u, "#a4643f"); // 窝底
+      R(bx + 0.05 * u, by, 1.4 * u, 0.45 * u, "#c47a4f"); // 窝沿
+      // 猫（趴着，尾巴动）
+      const wobble = Math.sin(performance.now() / 420) * 0.06;
+      R(bx + 0.35 * u, by + 0.06 * u, 0.8 * u, 0.32 * u, "#f0d8b8"); // 身体
+      R(bx + 0.95 * u, by - 0.02 * u, 0.35 * u, 0.3 * u, "#f0d8b8"); // 头
+      R(bx + 1.02 * u, by + 0.06 * u, 0.07 * u, 0.09 * u, "#3a3020"); // 眼
+      R(bx + 0.1 * u, by + 0.18 * u + wobble * u, 0.35 * u, 0.1 * u, "#f0d8b8"); // 尾巴
+    }
   }
 
   /** CSS 坐标 → 画布内坐标（供 fx 定位） */
