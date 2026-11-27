@@ -8,6 +8,13 @@ import { CLICK_MEMES } from "../engine/flavor";
 import { clickPowerOf } from "../engine/actions";
 import { canPrestige, prestigeGain, prestigeMultiplier, prestigeThreshold } from "../engine/prestige";
 import { computeStats } from "../engine/stats";
+import {
+  ACHIEVEMENTS,
+  ACH_CATEGORY_NAME,
+  achByCategory,
+  achLevel,
+  achPoints,
+} from "../engine/achievements";
 import { offlineEfficiency } from "../engine/progression";
 import { APP_VERSION, APP_UPDATED_AT } from "../version";
 import { RECORDS_KEY, parseRecords, emptyRecords } from "../engine/records";
@@ -132,6 +139,37 @@ export class Journal {
       : allDone
         ? `领取 +${formatMoyu(dailyReward(state))}`
         : `完成 ${d.goals.filter((g) => g.done).length}/${d.goals.length}`;
+
+    // 成就墙：分类进度 + 每条成就（已完成打勾、未完成显示进度条）
+    {
+      const sum = document.getElementById("ach-summary");
+      const cats = document.getElementById("ach-categories");
+      const listEl = document.getElementById("ach-list");
+      if (sum && cats && listEl) {
+        const done = achPoints(state);
+        sum.textContent = `${done}/${ACHIEVEMENTS.length} · Lv.${achLevel(state)}`;
+        cats.innerHTML = achByCategory(state)
+          .map(
+            (cc) =>
+              `<span class="ach-cat ${cc.done === cc.total ? "done" : ""}">${ACH_CATEGORY_NAME[cc.cat]} ${cc.done}/${cc.total}</span>`,
+          )
+          .join("");
+        listEl.innerHTML = ACHIEVEMENTS.map((a) => {
+          const p = a.progress(state);
+          const ok = p >= a.target;
+          const pct = Math.max(0, Math.min(100, (p / a.target) * 100));
+          return `<div class="ach-item ${ok ? "done" : ""}">
+            <span class="ach-icon" aria-hidden="true">${ok ? "🏆" : "○"}</span>
+            <span class="ach-info">
+              <span class="ach-name">${a.name}${ok ? '<span class="sr-only">（已完成）</span>' : ""}</span>
+              <span class="ach-desc">${a.desc}</span>
+              <span class="ach-progress"><i style="width:${pct.toFixed(1)}%"></i></span>
+            </span>
+            <span class="ach-count">${ok ? "✓" : `${Math.floor(Math.min(p, a.target))}/${a.target}`}</span>
+          </div>`;
+        }).join("");
+      }
+    }
 
     // 图鉴进度
     const quotes = state.collected.quotes.length;

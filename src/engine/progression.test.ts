@@ -4,6 +4,7 @@ import { initialState } from "./state";
 import { ensureVisits, offlineEfficiency } from "./progression";
 import { syncFlavorCollection, collectionCount, TOTAL_ITEMS } from "./collection";
 import { effectOf } from "./upgrades";
+import { achEffects } from "./achievements";
 
 const DAY = 86_400_000;
 
@@ -73,8 +74,10 @@ describe("R7 长线：图鉴解锁点击线（解除 43/55 死锁）", () => {
     };
     s = syncFlavorCollection(s);
     expect(collectionCount(s)).toBe(TOTAL_ITEMS);
-    // 完成奖励在 effectOf 中生效
-    expect(effectOf(s).idleRate).toBeCloseTo(0.2 * 1.2, 6);
+    // 图鉴完成奖励 ×1.2 在 effectOf 生效；另有成就（全图鉴 ×1.08）叠加
+    const ach = achEffects(s).idleMult;
+    expect(effectOf(s).idleRate).toBeCloseTo(0.2 * 1.2 * ach, 6);
+    expect(ach).toBeGreaterThan(1); // 全图鉴成就有额外加成
     // 未集满无加成
     expect(effectOf(initialState()).idleRate).toBeCloseTo(0.2, 6);
   });

@@ -315,7 +315,7 @@ async function boot(): Promise<void> {
       const def = CARDS.find((c) => c.id === id);
       const next = chooseCard(state, id, Date.now());
       if (next) {
-        state = next;
+        state = { ...next, cardsChosenTotal: next.cardsChosenTotal + 1 };
         hud.refresh(state);
         showToast(`今日卡：${def?.name ?? ""}`);
         serialize(state, localStorageAdapter, Date.now());
@@ -367,7 +367,7 @@ async function boot(): Promise<void> {
         }
         arcade.refresh(state);
         // 🎮 角标：剩余次数
-        syncArcadeBadge(state);
+        // 启动时先不同步角标（onboarding 期间隐藏）
         serialize(state, localStorageAdapter, Date.now());
         return r.reward;
       }
@@ -570,6 +570,16 @@ async function boot(): Promise<void> {
   const rng = Math.random;
   let frameErrorLogged = false;
   let lastDailyHintAt = 0;
+  // 新手期：目标链未走完前，隐藏系统入口角标（避免首分钟就被"作业墙"劝退）
+  let onboardingActive = true;
+  const updateOnboarding = (): void => {
+    if (!onboardingActive) return;
+    if (quest.finished || state.prestige > 0 || state.lifetimeEarned > 1e6) {
+      onboardingActive = false;
+      syncArcadeBadge(state);
+      document.body.classList.remove("onboarding");
+    }
+  };
 
   /** 🎮 剩余次数角标：统一入口，避免多处创建导致重复角标 */
   const syncArcadeBadge = (st: ReturnType<typeof initialState>): void => {
@@ -736,6 +746,7 @@ async function boot(): Promise<void> {
       if (lastChapterId && ch.id !== lastChapterId) toast(`新章节：${ch.title}`);
       lastChapterId = ch.id;
       quest.tick(state, null);
+      updateOnboarding();
       // 段位晋升提示（让"新变化"被看见，而不是只藏在 HUD 一行）
       const rankNow = rankFor(state.lifetimeEarned).current;
       if (lastRankName && rankNow !== lastRankName) toast(`段位晋升：${rankNow}`);
@@ -859,6 +870,15 @@ async function boot(): Promise<void> {
           showToast(`日报可领 +${rw}，点右下 📔`);
           announce(`日报有奖励可领，加 ${rw}`, 0);
         }
+      }
+      // 成就用：记录历史最高挂机/秒 & 段位
+      {
+        const eff = effectOf(state);
+        if (eff.idleRate > state.bestIdleRate) {
+          state = { ...state, bestIdleRate: eff.idleRate };
+        }
+        const ri = RANKS.findIndex((r) => r.name === rankFor(state.lifetimeEarned).current);
+        if (ri > state.rankIndex) state = { ...state, rankIndex: ri };
       }
       hud.refresh(state, combo);
       shop.refresh(state);
@@ -1102,6 +1122,8 @@ async function boot(): Promise<void> {
   hud.refresh(state);
   shop.refresh(state);
 
+  // 新手期不显示角标；老玩家（已进阶/已招募）直接显示
+  if (state.prestige === 0 && state.lifetimeEarned <= 1e6) document.body.classList.add("onboarding");
   // 🎮 剩余次数角标（启动时就显示，不只玩过之后）
   syncArcadeBadge(state);
 

@@ -5,6 +5,7 @@ import { talentEffects } from "./talents";
 import { cardEffects } from "./cards";
 import { decorEffects } from "./decor";
 import { energyEffects } from "./energy";
+import { achEffects } from "./achievements";
 
 export interface UpgradeDef {
   id: string;
@@ -159,7 +160,8 @@ export function effectOf(state: GameState): { clickPower: number; idleRate: numb
     (1 + talent.overflowIdleBonus) *
     card.idleMult *
     decor.idleMult *
-    energy.idleMult;
+    energy.idleMult *
+    achEffects(state).idleMult;
   // 同事固定部分（吃转生/图鉴，但不吃挂机天赋——避免双重放大）
   const favorIdleBonus = favorBonuses(state).idleMult;
   // 天赋 idle_5b：同事挂机 +40%
@@ -170,7 +172,7 @@ export function effectOf(state: GameState): { clickPower: number; idleRate: numb
   const teamShare = rawStation * teamShareRatio(state) * teamMult;
 
   return {
-    clickPower: clickPower * mult,
+    clickPower: clickPower * mult * achEffects(state).clickMult,
     idleRate: station + teamFixed + teamShare,
   };
 }

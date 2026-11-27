@@ -48,6 +48,9 @@ interface SaveBlob {
   energy?: EnergyState;
   /** 摸鱼站 */
   arcade?: ArcadeState;
+  bestIdleRate?: number;
+  rankIndex?: number;
+  cardsChosenTotal?: number;
   /** 累计点击（点击线彩蛋解锁用；旧档为 0） */
   totalClicks?: number;
   /** 今日回访计数 */
@@ -93,6 +96,9 @@ export function serialize(state: GameState, adapter: SaveAdapter, savedAt: numbe
     decor: state.decor,
     energy: state.energy,
     arcade: state.arcade,
+    bestIdleRate: state.bestIdleRate,
+    rankIndex: state.rankIndex,
+    cardsChosenTotal: state.cardsChosenTotal,
     totalClicks: state.totalClicks,
     visits: state.visits,
     lifetimeEarned: state.lifetimeEarned,
@@ -312,6 +318,11 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
       }
       arcade.best = best;
     }
+    const clampNum = (v: unknown, max: number): number =>
+      typeof v === "number" && Number.isFinite(v) && v >= 0 ? Math.min(max, v) : 0;
+    const bestIdleRate = clampNum(blob.bestIdleRate, 1e30);
+    const rankIndex = Math.min(20, Math.floor(clampNum(blob.rankIndex, 20)));
+    const cardsChosenTotal = Math.floor(clampNum(blob.cardsChosenTotal, 100000));
     const patrolSurvives =
       typeof blob.patrolSurvives === "number" && Number.isInteger(blob.patrolSurvives) && blob.patrolSurvives >= 0
         ? blob.patrolSurvives
@@ -357,7 +368,7 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
       return Math.max(ca, savedAtMs - 365 * 86_400_000);
     };
     return {
-      state: { moyu, levels, totalEarned, collected, daily, surviveStreak, totalClicks, visits, lifetimeEarned, prestige, team, talents, patrolSurvives, cards, decor, energy, arcade },
+      state: { moyu, levels, totalEarned, collected, daily, surviveStreak, totalClicks, visits, lifetimeEarned, prestige, team, talents, patrolSurvives, cards, decor, energy, arcade, bestIdleRate, rankIndex, cardsChosenTotal },
       offlineSeconds,
       createdAt: clampCreatedAt(blob.createdAt),
     };

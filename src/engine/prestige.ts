@@ -73,6 +73,9 @@ export function doPrestige(state: GameState): { state: GameState; gained: number
       decor: state.decor, // 装修保留（看得见的成长）
       energy: state.energy,
       arcade: state.arcade,
+      bestIdleRate: state.bestIdleRate,
+      rankIndex: state.rankIndex,
+      cardsChosenTotal: state.cardsChosenTotal,
     },
   };
 }

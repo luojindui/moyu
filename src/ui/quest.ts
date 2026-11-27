@@ -66,7 +66,48 @@ export class Quest {
       progress: (s, prev) =>
         Math.min(1, (s.totalEarned - (prev?.totalEarned ?? s.totalEarned)) / Math.max(1, 10 * Math.max(1, s.levels["phone"] ?? 1))),
     },
+    // —— 以下把 4 批新系统逐个引出：目标链不再 28 秒就断 ——
+    {
+      id: "card",
+      doneText: "今日摸鱼卡 已选",
+      text: () => "选一张「今日摸鱼卡」：24 小时有效，HUD 会显示",
+      done: (s) => !!s.cards?.chosenDate && s.cards.chosenDate.length > 0,
+      progress: (s) => (s.cards?.chosenDate ? 1 : 0),
+    },
+    {
+      id: "claim",
+      doneText: "日报工资 已领取",
+      text: () => "点右下 📔 打开日报，领掉今天的工资",
+      done: (s) => (s.daily?.claimsToday ?? 0) > 0 || !!s.daily?.lastCompleteDate,
+      progress: (s) => (s.daily?.claimsToday ? 1 : 0),
+    },
+    {
+      id: "zhaomu",
+      doneText: "第一位同事 已入职",
+      text: () => "点右下 👥 招募第一位同事：他会帮你自动摸鱼",
+      done: (s) => Object.keys(s.team.colleagues).length > 0,
+      progress: (s) => Math.min(1, Object.keys(s.team.colleagues).length),
+    },
+    {
+      id: "energy",
+      doneText: "今日精力 已分配",
+      text: () => "在 👥 → 工位 里分配今天的精力（4 选）",
+      done: (s) => (s.energy?.used.length ?? 0) > 0,
+      progress: (s) => Math.min(1, (s.energy?.used.length ?? 0) / 1),
+    },
+    {
+      id: "arcade",
+      doneText: "摸鱼站 已开张",
+      text: () => "点右下 🎮 玩一局摸鱼站小游戏（每天 3 次）",
+      done: (s) => (s.arcade?.played ?? 0) > 0,
+      progress: (s) => Math.min(1, (s.arcade?.played ?? 0) / 1),
+    },
   ];
+
+  /** 新手目标链是否已全部走完（用于解锁系统入口角标） */
+  get finished(): boolean {
+    return this.idx >= this.steps.length;
+  }
 
   constructor(private onComplete: (text: string) => void) {}
 

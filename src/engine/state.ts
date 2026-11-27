@@ -48,6 +48,12 @@ export interface GameState {
   energy: EnergyState;
   /** 摸鱼站（小游戏） */
   arcade: ArcadeState;
+  /** 历史最高挂机收益/秒（成就用） */
+  bestIdleRate: number;
+  /** 历史最高段位 index（成就用） */
+  rankIndex: number;
+  /** 累计选卡次数（成就用） */
+  cardsChosenTotal: number;
 }
 
 export function initialState(): GameState {
@@ -69,6 +75,9 @@ export function initialState(): GameState {
     decor: [],
     energy: emptyEnergy(),
     arcade: emptyArcade(),
+    bestIdleRate: 0,
+    rankIndex: 0,
+    cardsChosenTotal: 0,
   };
 }
 

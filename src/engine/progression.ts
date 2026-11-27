@@ -2,6 +2,7 @@ import type { GameState } from "./state";
 import { talentEffects } from "./talents";
 import { cardEffects } from "./cards";
 import { decorEffects } from "./decor";
+import { achEffects } from "./achievements";
 import { favorTier, teamTraits } from "./team";
 
 /**
@@ -49,7 +50,7 @@ export function offlineEfficiency(state: GameState, createdAtMs: number, nowMs: 
   // 小美被动：在队期间离线基础效率 +2%
   const ce = cardEffects(state, Date.now());
   const teamBase = teamTraits(state).offlineEfficiency + ce.offlineBonus - ce.riskPenalty;
-  const decorBase = decorEffects(state).offlineBonus;
+  const decorBase = decorEffects(state).offlineBonus + achEffects(state).offlineBonus;
   // 「可突破 100% 的加成」= 天赋 + 今日卡 + 工位家具；它们同时抬高上限与基数（各计一次）
   const raise = talentBase + eventBonus + decorBase;
   const raw = 0.7 + favorBase + teamBase + visits * VISIT_BONUS_STEP + streakBonus;

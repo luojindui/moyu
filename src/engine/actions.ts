@@ -5,6 +5,7 @@ import { prestigeMultiplier } from "./prestige";
 import { talentEffects } from "./talents";
 import { cardEffects } from "./cards";
 import { decorEffects } from "./decor";
+import { achEffects } from "./achievements";
 import { energyEffects } from "./energy";
 
 /** 初始点击力（未买任何升级时） */
@@ -39,7 +40,8 @@ export function clickPowerOf(state: GameState): number {
     talentEffects(state.talents).clickMult *
     cardEffects(state, Date.now()).clickMult *
     decorEffects(state).clickMult *
-    energyEffects(state).clickMult
+    energyEffects(state).clickMult *
+    achEffects(state).clickMult
   );
 }
 
