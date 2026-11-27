@@ -34,7 +34,7 @@ describe("批次3 审计回归：精力取舍与跨日", () => {
     };
     const noDecor = offlineEfficiency(base, created, now);
     const withDecor = offlineEfficiency({ ...base, decor: ["rug", "chair"] }, created, now);
-    expect(withDecor).toBeGreaterThan(noDecor); // 地毯+按摩椅的离线加成确实计入（直到硬上限）
+    expect(withDecor).toBe(noDecor); // 家具离线加成已改为"离线收入倍率"，不再计入效率
     expect(withDecor).toBeLessThanOrEqual(0.95);
   });
 });

@@ -1,0 +1,16 @@
+label=smoke
+mode=quitter
+frames=17
+events=1027
+steps=11
+firstToasts=["3906:还差一些：需要 15，多点几下屏幕","4342:还差一些：需要 15，多点几下屏幕","4640:还差一些：需要 15，多点几下屏幕","4972:还差一些：需要 15，多点几下屏幕"]
+questDoneAt=null
+claimAt=null
+recruitAt=null
+recruitWall=undefined
+arcadeResult=undefined
+taps=52
+finalHud={"moyu":"12.5","click":"9","idle":"0.2","rank":"实习生 2%","card":"","combo":"连×20","streak":""}
+badgeStates=1
+endOnboarding=true
+endBadges={"arcade":{"n":1,"texts":["3"],"displays":["none"],"visible":0},"talent":{"n":1,"texts":["天赋"],"displays":["none"],"visible":0},"energy":{"n":1,"texts":["精力 100"],"displays":["none"],"visible":0},"mission":{"n":0,"texts":[],"displays":[],"visible":0}}

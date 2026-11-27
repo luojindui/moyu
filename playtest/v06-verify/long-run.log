@@ -1,0 +1,42 @@
+[long] 2020ms quest-step {"text":"再戳 15 下 → 解锁「咖啡续命」","moyu":"0.2"}
+[long] 2346ms quest-step {"text":"再戳 14 下 → 解锁「咖啡续命」","moyu":"1.3"}
+[long] 2496ms quest-step {"text":"再戳 13 下 → 解锁「咖啡续命」","moyu":"2.3"}
+[long] 2644ms quest-step {"text":"再戳 12 下 → 解锁「咖啡续命」","moyu":"3.4"}
+[long] 2794ms quest-step {"text":"再戳 11 下 → 解锁「咖啡续命」","moyu":"4.4"}
+[long] 2936ms quest-step {"text":"再戳 10 下 → 解锁「咖啡续命」","moyu":"5.5"}
+[long] 3037ms quest-step {"text":"再戳 9 下 → 解锁「咖啡续命」","moyu":"6.6"}
+[long] 3401ms quest-step {"text":"再戳 7 下 → 解锁「咖啡续命」","moyu":"8.8"}
+[long] 3504ms quest-step {"text":"再戳 6 下 → 解锁「咖啡续命」","moyu":"9.9"}
+[long] 3712ms quest-step {"text":"买下点亮的「咖啡续命」卡片","moyu":"12.2"}
+[long] 5424ms quest-step {"text":"攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）","moyu":"0.9"}
+[long] 9231ms quest-step {"text":"买下「刷手机」：之后每秒自动赚钱","moyu":"13.5"}
+[long] 16041ms quest-step {"text":"什么都不点，等 10 秒看挂机收益","moyu":"16.3"}
+[long] 16965ms cards-shown "普通\n          咖啡管够\n          今天挂机 +15%\n          行政说咖啡机修好了，全组沸腾。\n        \n          稀有\n          截止日逼近\n          今天点击力 ×1.6，离线效率 -10%\n          群里最后一条消息是三天前那句「我先走了」。\n     
+[long] 18519ms cards-pick-first
+[long] 19175ms meme-appear {"x":97.2,"y":258,"t":19172}
+[long] 19175ms meme-tap
+[long] 19280ms quest-step {"text":"选一张「今日摸鱼卡」：24 小时有效，HUD 会显示","moyu":"30.4"}
+[long] 19435ms quest-step {"text":"点右下 📔 打开日报，领掉今天的工资","moyu":"30.6"}
+[long] 19435ms journal-wall {"claim":{"text":"领取 +828.0","disabled":false},"goals":"✓ / 今天上线看一眼 / 1/1 / ✓ / 什么都不点，等摸鱼值自己涨 / 1/1 / ✓ / 买 3 次升级 / 3/3"}
+[long] 20603ms journal-claim {"before":{"text":"领取 +828.0","disabled":false},"toast":"","hud":{"moyu":"860.1","click":"10","idle":"1.4","rank":"实习生 12%","card":"卡·咖啡管够","combo":"连×20","streak":""},"goals":"✓ /
+[long] 21066ms quest-step {"text":"点右下 👥 招募第一位同事：他会帮你自动摸鱼","moyu":"860.7"}
+[long] 21066ms recruit-wall {"balance":"911.5","recruit":{"text":"攒够再招 1.20万","disabled":true}}
+[long] 23408ms meme-appear {"x":97.2,"y":259.1,"t":20954}
+[long] 23408ms meme-tap
+[long] 24522ms boss-shown {"tell":"有人过来了——他边走边看手机，眼神是散的","opts":["立刻装忙","切到工作界面","继续摸鱼"]}
+[long] 90300ms meme-appear {"x":99,"y":251.6,"t":90252}
+[long] 90300ms meme-tap
+[long] 95372ms meme-appear {"x":99,"y":256.5,"t":90687}
+[long] 95372ms meme-tap
+[long] 144255ms meme-appear {"x":96.6,"y":262.2,"t":144201}
+[long] 144255ms meme-tap
+[long] 148718ms meme-appear {"x":96.6,"y":257.9,"t":145517}
+[long] 148718ms meme-tap
+[long] 204317ms meme-appear {"x":96.1,"y":270.6,"t":204266}
+[long] 204317ms meme-tap
+[long] 208347ms meme-appear {"x":96.1,"y":271.2,"t":205414}
+[long] 208347ms meme-tap
+[long] 257107ms meme-appear {"x":98.3,"y":273,"t":257046}
+[long] 257107ms meme-tap
+[long] 261210ms meme-appear {"x":98.3,"y":273.5,"t":257180}
+[long] 261210ms meme-tap

@@ -1,0 +1,137 @@
+{
+  "startedAt": "2026-11-27T14:01:30.870Z",
+  "url": "https://luojindui.github.io/moyu/",
+  "seed": "seeded",
+  "layout": {
+    "cssLoaded": true,
+    "achItemBox": {
+      "display": "flex",
+      "position": "static",
+      "height": "44px",
+      "width": "300px",
+      "rect": {
+        "x": 490,
+        "y": 378,
+        "w": 300,
+        "h": 44
+      },
+      "bg": "rgb(51, 51, 74)",
+      "overflow": "visible"
+    },
+    "achInfoBox": {
+      "display": "block",
+      "rect": {
+        "w": 180,
+        "h": 19
+      }
+    },
+    "nameBox": {
+      "display": "inline",
+      "position": "static",
+      "height": "auto",
+      "width": "auto",
+      "rect": {
+        "x": 529,
+        "y": 393,
+        "w": 52,
+        "h": 16
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "overflow": "visible"
+    },
+    "descBox": {
+      "display": "inline",
+      "position": "static",
+      "height": "auto",
+      "width": "auto",
+      "rect": {
+        "x": 585,
+        "y": 395,
+        "w": 97,
+        "h": 13
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "overflow": "visible"
+    },
+    "progressBox": {
+      "display": "inline",
+      "position": "static",
+      "height": "4px",
+      "width": "auto",
+      "rect": {
+        "x": 529,
+        "y": 410,
+        "w": 0,
+        "h": 0
+      },
+      "bg": "rgb(38, 38, 54)",
+      "overflow": "hidden"
+    },
+    "progressFillBox": {
+      "display": "block",
+      "position": "static",
+      "height": "0px",
+      "width": "89.7969px",
+      "rect": {
+        "x": 529,
+        "y": 410,
+        "w": 90,
+        "h": 0
+      },
+      "bg": "rgb(255, 215, 110)",
+      "overflow": "visible"
+    },
+    "progress2FillBox": {
+      "display": "block",
+      "position": "static",
+      "height": "0px",
+      "width": "154.688px",
+      "rect": {
+        "x": 529,
+        "y": 520,
+        "w": 155,
+        "h": 0
+      },
+      "bg": "rgb(255, 215, 110)",
+      "overflow": "visible"
+    },
+    "progress2InlineWidth": "80%",
+    "nameDescSameLine": true,
+    "visibleBarCount": 0,
+    "itemCount": 22,
+    "itemHeights": [
+      44,
+      44,
+      54,
+      44,
+      44,
+      44,
+      44,
+      44,
+      44,
+      44,
+      44,
+      44,
+      44,
+      44,
+      44,
+      44,
+      44,
+      44,
+      44,
+      44,
+      44,
+      44
+    ],
+    "categoriesVisible": 10,
+    "achSummary": "5/22 · Lv.2"
+  },
+  "zoomClip": {
+    "x": 486,
+    "y": 374,
+    "width": 308,
+    "height": 52
+  },
+  "consoleErrors": [],
+  "finishedAt": "2026-11-27T14:01:40.006Z"
+}

@@ -877,7 +877,10 @@ async function boot(): Promise<void> {
         if (eff.idleRate > state.bestIdleRate) {
           state = { ...state, bestIdleRate: eff.idleRate };
         }
-        const ri = RANKS.findIndex((r) => r.name === rankFor(state.lifetimeEarned).current);
+        if (state.surviveStreak > state.bestSurviveStreak) {
+          state = { ...state, bestSurviveStreak: state.surviveStreak };
+        }
+        const ri = RANKS.findIndex((r) => r.name === rankFor(state.lifetimeEarned).current) + 1;
         if (ri > state.rankIndex) state = { ...state, rankIndex: ri };
       }
       hud.refresh(state, combo);

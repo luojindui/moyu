@@ -30,12 +30,12 @@ describe("工位经营", () => {
     let s = rich();
     s = buyDecor(s, "plant")!; // idle 1.05
     s = buyDecor(s, "lamp")!; // click 1.15
-    s = buyDecor(s, "rug")!; // offline +0.05
+    s = buyDecor(s, "rug")!; // 离线收入 ×1.1
     s = buyDecor(s, "fridge")!; // idle 1.08
     const e = decorEffects(s);
     expect(e.idleMult).toBeCloseTo(1.05 * 1.08, 6);
     expect(e.clickMult).toBeCloseTo(1.15, 6);
-    expect(e.offlineBonus).toBeCloseTo(0.05, 6);
+    expect(e.offlineIncomeMult).toBeCloseTo(1.1, 6);
   });
 
   it("未知 id 不生效", () => {

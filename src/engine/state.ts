@@ -54,6 +54,8 @@ export interface GameState {
   rankIndex: number;
   /** 累计选卡次数（成就用） */
   cardsChosenTotal: number;
+  /** 历史最高巡逻连胜（成就用，转生不清） */
+  bestSurviveStreak: number;
 }
 
 export function initialState(): GameState {
@@ -78,6 +80,7 @@ export function initialState(): GameState {
     bestIdleRate: 0,
     rankIndex: 0,
     cardsChosenTotal: 0,
+    bestSurviveStreak: 0,
   };
 }
 

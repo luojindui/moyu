@@ -1,6 +1,7 @@
 import type { GameState } from "./state";
 import { gain } from "./state";
 import { effectOf, stationIdleScaled } from "./upgrades";
+import { decorEffects } from "./decor";
 import { TEAM_OFFLINE_SHARE } from "./team";
 import { talentEffects } from "./talents";
 
@@ -33,6 +34,8 @@ export function offlineEarn(state: GameState, elapsed: number, rate = 1): Offlin
   const total = effectOf(state).idleRate;
   const station = stationIdleScaled(state);
   const teamPart = Math.max(0, total - station);
-  const earned = (station + teamPart * TEAM_OFFLINE_SHARE) * applied * rate;
+  // 家具「离线收益 +X%」在效率上限之后乘 → 不会被 95% 硬上限吃掉
+  const incomeMult = decorEffects(state).offlineIncomeMult;
+  const earned = (station + teamPart * TEAM_OFFLINE_SHARE) * applied * rate * incomeMult;
   return { applied, earned, state: gain(state, earned) };
 }

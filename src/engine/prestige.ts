@@ -76,6 +76,7 @@ export function doPrestige(state: GameState): { state: GameState; gained: number
       bestIdleRate: state.bestIdleRate,
       rankIndex: state.rankIndex,
       cardsChosenTotal: state.cardsChosenTotal,
+      bestSurviveStreak: state.bestSurviveStreak,
     },
   };
 }

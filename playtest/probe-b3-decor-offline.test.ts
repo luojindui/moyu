@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { initialState } from "../src/engine/state";
-import { offlineEfficiency } from "../src/engine/progression";
+import { offlineEarn } from "../src/engine/offline";
 import { decorEffects, decorComplete, buyDecor, DECOR, DECOR_COMPLETE_BONUS } from "../src/engine/decor";
 import { gain } from "../src/engine/state";
 
@@ -21,21 +21,21 @@ function lowBase() {
   };
 }
 
-describe("批次3 回归：离线加成不被重复计算（D11）", () => {
-  it("单件家具的离线加成只计一次（rug +5%）", () => {
-    // 极低基准（0.7，无回访无签退）避免撞 0.95 上限，才能看出加成幅度
-    const s = lowBase();
-    const no = offlineEfficiency(s, created, now);
-    const withRug = offlineEfficiency({ ...s, decor: ["rug"] }, created, now);
-    expect(withRug - no).toBeCloseTo(0.05, 6); // 不是 0.10
+describe("批次3 回归：家具离线加成走独立倍率（不被 95% 上限吃掉）", () => {
+  it("rug/chair/catbed 的 offlineIncomeMult 正确相乘", () => {
+    expect(decorEffects({ ...initialState(), decor: ["rug"] }).offlineIncomeMult).toBeCloseTo(1.1, 6);
+    expect(decorEffects({ ...initialState(), decor: ["chair"] }).offlineIncomeMult).toBeCloseTo(1.18, 6);
+    expect(decorEffects({ ...initialState(), decor: ["catbed"] }).offlineIncomeMult).toBeCloseTo(1.25, 6);
+    expect(decorEffects({ ...initialState(), decor: ["rug", "chair", "catbed"] }).offlineIncomeMult).toBeCloseTo(1.1 * 1.18 * 1.25, 6);
   });
 
-  it("chair +8% 与 catbed +10% 也都只计一次", () => {
-    const s = lowBase();
-    const no = offlineEfficiency(s, created, now);
-    expect(offlineEfficiency({ ...s, decor: ["chair"] }, created, now) - no).toBeCloseTo(0.08, 6);
-    expect(offlineEfficiency({ ...s, decor: ["catbed"] }, created, now) - no).toBeCloseTo(0.1, 6);
-    expect(offlineEfficiency({ ...s, decor: ["rug", "chair", "catbed"] }, created, now) - no).toBeCloseTo(0.23, 6);
+  it("离线结算真的乘上该倍率（cap 之后，不会被 95% 上限吞掉）", () => {
+    const now = Date.now();
+    const base = { ...initialState() };
+    const withRug = { ...base, decor: ["rug"] };
+    const no = offlineEarn(base, 3600, 0.95).earned;
+    const has = offlineEarn(withRug, 3600, 0.95).earned;
+    expect(has / no).toBeCloseTo(1.1, 4);
   });
 });
 

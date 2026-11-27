@@ -60,18 +60,18 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   { id: "team_lv5", name: "资深团队", desc: "任一同事升到 5 级", category: "team", target: 5, progress: maxColleagueLevel, reward: { idleBonus: 0.03 } },
   // 天赋
   { id: "talent_6", name: "初窥门径", desc: "解锁 6 个天赋", category: "talent", target: 6, progress: (s) => s.talents.unlocked.length, reward: { idleBonus: 0.02 } },
-  { id: "talent_18", name: "天赋满树", desc: "解锁 18 个天赋", category: "talent", target: 18, progress: (s) => s.talents.unlocked.length, reward: { idleBonus: 0.05 } },
+  { id: "talent_18", name: "天赋满树", desc: "解锁 13 个天赋（24 点数可达上限）", category: "talent", target: 13, progress: (s) => s.talents.unlocked.length, reward: { idleBonus: 0.05 } },
   // 段位
   { id: "rank_7", name: "中层摸鱼", desc: "达到第 7 段位", category: "rank", target: 7, progress: (s) => s.rankIndex ?? 0, reward: { idleBonus: 0.02 } },
-  { id: "rank_14", name: "宇宙尽头", desc: "达到第 14 段位", category: "rank", target: 14, progress: (s) => s.rankIndex ?? 0, reward: { idleBonus: 0.05 } },
+  { id: "rank_14", name: "宇宙尽头", desc: "达到第 14 段位（最高档）", category: "rank", target: 14, progress: (s) => s.rankIndex ?? 0, reward: { idleBonus: 0.05 } },
   // 摸鱼站
   { id: "arcade_500", name: "街机新手", desc: "任一游戏最高分 500", category: "arcade", target: 500, progress: arcadeBest, reward: { clickBonus: 0.02 } },
   { id: "arcade_2000", name: "街机高手", desc: "任一游戏最高分 2,000", category: "arcade", target: 2_000, progress: arcadeBest, reward: { idleBonus: 0.03 } },
   // 摸鱼卡
   { id: "card_5", name: "今日宜摸鱼", desc: "累计选卡 5 次", category: "card", target: 5, progress: (s) => s.cardsChosenTotal ?? 0, reward: { idleBonus: 0.01 } },
   // 老板
-  { id: "boss_3", name: "老油条", desc: "巡逻连胜 3 次", category: "boss", target: 3, progress: (s) => s.surviveStreak, reward: { idleBonus: 0.02 } },
-  { id: "boss_10", name: "摸鱼之王", desc: "巡逻连胜 10 次", category: "boss", target: 10, progress: (s) => s.surviveStreak, reward: { idleBonus: 0.04 } },
+  { id: "boss_3", name: "老油条", desc: "巡逻连胜 3 次", category: "boss", target: 3, progress: (s) => s.bestSurviveStreak ?? s.surviveStreak, reward: { idleBonus: 0.02 } },
+  { id: "boss_10", name: "摸鱼之王", desc: "巡逻连胜 10 次", category: "boss", target: 10, progress: (s) => s.bestSurviveStreak ?? s.surviveStreak, reward: { idleBonus: 0.04 } },
 ];
 
 export function achById(id: string): AchievementDef | undefined {
@@ -107,6 +107,8 @@ export interface AchEffects {
 /** 已完成成就的永久加成汇总 */
 export function achEffects(state: GameState): AchEffects {
   const out: AchEffects = { idleMult: 1, clickMult: 1, offlineBonus: 0 };
+  // 成就等级本身也给收益：每级 +2% 挂机（Lv.1 起算），避免"等级只是好看的数字"
+  out.idleMult *= 1 + 0.02 * (achLevel(state) - 1);
   for (const a of ACHIEVEMENTS) {
     if (!achDone(a, state) || !a.reward) continue;
     if (a.reward.idleBonus) out.idleMult *= 1 + a.reward.idleBonus;

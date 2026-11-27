@@ -1,0 +1,133 @@
+{
+  "summary": {
+    "name": "新手引导",
+    "pass": 6,
+    "total": 14,
+    "failed": [
+      "S4 目标链全部走完（quest 隐藏 + onboarding 移除）",
+      "S5 完成后 onboarding class 已移除",
+      "S6 完成后角标恢复显示",
+      "S7 状态闭环（日报已领/招募1人/精力已用/小游戏已玩/点击≥100）",
+      "S9 跳过每日卡后可复现卡在中途",
+      "S11 老玩家（lifetime 50 万，已有小队/家具/精力/卡）不应被当新手",
+      "S12 lifetime >100 万不触发新手引导",
+      "S13 转生玩家不触发新手引导"
+    ],
+    "checks": [
+      {
+        "id": "S1 构造新档启动",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "id": "S2 新号 onboarding 激活且目标链可见",
+        "ok": true,
+        "detail": "{\"hidden\":false,\"text\":\"再戳 15 下 → 解锁「咖啡续命」\",\"onboarding\":true}"
+      },
+      {
+        "id": "S3 新手期系统角标隐藏",
+        "ok": true,
+        "detail": "{\"arcade\":\"none\",\"energy\":\"none\",\"talent\":\"none\",\"team\":\"absent\"}"
+      },
+      {
+        "id": "S4 目标链全部走完（quest 隐藏 + onboarding 移除）",
+        "ok": false,
+        "detail": "steps=10 ms=152270"
+      },
+      {
+        "id": "S5 完成后 onboarding class 已移除",
+        "ok": false,
+        "detail": "{\"hidden\":false,\"text\":\"攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）\",\"onboarding\":true}"
+      },
+      {
+        "id": "S6 完成后角标恢复显示",
+        "ok": false,
+        "detail": "{\"arcade\":\"none\",\"energy\":\"none\",\"talent\":\"none\",\"team\":\"absent\"}"
+      },
+      {
+        "id": "S7 状态闭环（日报已领/招募1人/精力已用/小游戏已玩/点击≥100）",
+        "ok": false,
+        "detail": "{\"claimed\":false,\"team\":0,\"energy\":0,\"arcade\":0,\"clicks\":128}"
+      },
+      {
+        "id": "S8 无 JS 异常",
+        "ok": true,
+        "detail": "[]"
+      },
+      {
+        "id": "S9 跳过每日卡后可复现卡在中途",
+        "ok": false,
+        "detail": "{\"endText\":\"点右下 📔 打开日报，领掉今天的工资\",\"onboarding\":true,\"cardsHidden\":true,\"seen\":4}"
+      },
+      {
+        "id": "S10 跳过卡后弹窗不再出现（当天无法补选）",
+        "ok": true,
+        "detail": "cardsHidden=true"
+      },
+      {
+        "id": "S11 老玩家（lifetime 50 万，已有小队/家具/精力/卡）不应被当新手",
+        "ok": false,
+        "detail": "onboarding=true quest=\"攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）\" badges={\"arcade\":\"none\",\"energy\":\"none\",\"talent\":\"none\",\"team\":\"absent\"}"
+      },
+      {
+        "id": "S12 lifetime >100 万不触发新手引导",
+        "ok": false,
+        "detail": "{\"hidden\":false,\"text\":\"攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）\",\"onboarding\":true}"
+      },
+      {
+        "id": "S13 转生玩家不触发新手引导",
+        "ok": false,
+        "detail": "{\"hidden\":false,\"text\":\"攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）\",\"onboarding\":true}"
+      },
+      {
+        "id": "S14 无 JS 异常",
+        "ok": true,
+        "detail": "[]"
+      }
+    ],
+    "ms": 251431
+  },
+  "runs": [
+    {
+      "scenario": "happy",
+      "seen": [
+        "再戳 15 下 → 解锁「咖啡续命」",
+        "买下点亮的「咖啡续命」卡片",
+        "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "买下「刷手机」：之后每秒自动赚钱",
+        "什么都不点，等 10 秒看挂机收益",
+        "点右下 📔 打开日报，领掉今天的工资",
+        "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "买下「刷手机」：之后每秒自动赚钱",
+        "什么都不点，等 10 秒看挂机收益",
+        "点右下 📔 打开日报，领掉今天的工资"
+      ],
+      "finished": false,
+      "ms": 152270
+    },
+    {
+      "scenario": "skipCard",
+      "seen": [
+        "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "买下「刷手机」：之后每秒自动赚钱",
+        "什么都不点，等 10 秒看挂机收益",
+        "点右下 📔 打开日报，领掉今天的工资"
+      ],
+      "cardSkipped": false,
+      "stuckAtCard": false,
+      "endText": "点右下 📔 打开日报，领掉今天的工资",
+      "onboarding": true
+    },
+    {
+      "scenario": "veteran500k",
+      "onboarding": true,
+      "questText": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+      "badges": {
+        "arcade": "none",
+        "energy": "none",
+        "talent": "none",
+        "team": "absent"
+      }
+    }
+  ]
+}

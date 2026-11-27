@@ -1,0 +1,16 @@
+label=r1
+mode=quitter
+frames=202
+events=14118
+steps=15
+firstToasts=["4582:今日卡：提前下班","17423:图鉴 +1（1/55）","27107:安总：嗯，忙你的。 +90","38508:图鉴 +1（2/55）"]
+questDoneAt=null
+claimAt=46289
+recruitAt=null
+recruitWall={"balance":"7577.5","recruit":{"text":"攒够再招 1.20万","disabled":true}}
+arcadeResult=undefined
+taps=416
+finalHud={"moyu":"1460.4","click":"213.2","idle":"164.5","rank":"学徒 67%","card":"卡·提前下班","combo":"连×2","streak":"🔥连胜 2"}
+badgeStates=1
+endOnboarding=true
+endBadges={"arcade":{"n":1,"texts":["3"],"displays":["none"],"visible":0},"talent":{"n":1,"texts":["天赋"],"displays":["none"],"visible":0},"energy":{"n":1,"texts":["精力 100"],"displays":["none"],"visible":0},"mission":{"n":0,"texts":[],"displays":[],"visible":0}}

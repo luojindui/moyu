@@ -1,0 +1,154 @@
+{
+  "name": "成就墙 live",
+  "pass": 24,
+  "total": 28,
+  "failed": [
+    "C2 点击加成只计一次",
+    "D2 被老板抓后 boss 成就仍应保持（永久）",
+    "E2 重置天赋后 talent_6 仍应保持（永久）",
+    "G4 转生后 boss 成就应保留（永久）"
+  ],
+  "checks": [
+    {
+      "id": "A1 成就墙 22 条",
+      "ok": true,
+      "detail": "{\"items\":22}"
+    },
+    {
+      "id": "A2 分类 10 个且合计=22",
+      "ok": true,
+      "detail": "[\"点击 0/3\",\"挂机 0/2\",\"图鉴 0/3\",\"工位 0/2\",\"小队 0/3\",\"天赋 0/2\",\"段位 0/2\",\"摸鱼站 0/2\",\"摸鱼卡 0/1\",\"老板 0/2\"]"
+    },
+    {
+      "id": "A3 新号汇总 0/22 · Lv.1",
+      "ok": true,
+      "detail": "0/22 · Lv.1"
+    },
+    {
+      "id": "A4 UI 完成数与引擎一致",
+      "ok": true,
+      "detail": "0/22 · Lv.1 vs engine 0"
+    },
+    {
+      "id": "A5 新号加成中性",
+      "ok": true,
+      "detail": "{\"idle\":1,\"click\":1,\"off\":0}"
+    },
+    {
+      "id": "B1 家具成就达成（decor_3/decor_8）",
+      "ok": true,
+      "detail": "[\"decor_3\",\"decor_8\"]"
+    },
+    {
+      "id": "B2 挂机加成生效（idleMult > 1）",
+      "ok": true,
+      "detail": "1.0710000000000002"
+    },
+    {
+      "id": "B3 HUD 挂机 = 引擎含成就值",
+      "ok": true,
+      "detail": "17.2 vs 17.2"
+    },
+    {
+      "id": "B4 成就墙完成数 = 引擎",
+      "ok": true,
+      "detail": "2 vs 2（2/22 · Lv.1）"
+    },
+    {
+      "id": "B5 工位分类 2/2 标绿",
+      "ok": true,
+      "detail": "[\"点击 0/3\",\"挂机 0/2\",\"图鉴 0/3\",\"工位 2/2\",\"小队 0/3\",\"天赋 0/2\",\"段位 0/2\",\"摸鱼站 0/2\",\"摸鱼卡 0/1\",\"老板 0/2\"]"
+    },
+    {
+      "id": "C1 点击成就倍率 = 1.02",
+      "ok": true,
+      "detail": "1.02"
+    },
+    {
+      "id": "C2 点击加成只计一次",
+      "ok": false,
+      "detail": "实际 22.2442，单次接入应为 21.8280（图鉴×1.02）"
+    },
+    {
+      "id": "D1 连胜 10 时 boss_3/boss_10 达成",
+      "ok": true,
+      "detail": "[\"click_1k\",\"boss_3\",\"boss_10\"]"
+    },
+    {
+      "id": "D2 被老板抓后 boss 成就仍应保持（永久）",
+      "ok": false,
+      "detail": "被抓后 done=[\"click_1k\"]；HUD 挂机 11.0→10.4；idleMult 1.0608→1.0000"
+    },
+    {
+      "id": "E1 6 天赋时 talent_6 达成",
+      "ok": true,
+      "detail": "[\"click_1k\",\"talent_6\"]"
+    },
+    {
+      "id": "E2 重置天赋后 talent_6 仍应保持（永久）",
+      "ok": false,
+      "detail": "重置后 done=[\"click_1k\"]；idleMult 1.0200→1.0000"
+    },
+    {
+      "id": "F1 负数净化 → 0",
+      "ok": true,
+      "detail": "{\"b\":0,\"r\":0,\"c\":0}"
+    },
+    {
+      "id": "F1b 实机负值 bestIdleRate 被游戏立刻上调为合法值（无负值残留）",
+      "ok": true,
+      "detail": "{\"b\":10.404,\"r\":0,\"c\":0}"
+    },
+    {
+      "id": "F2 非法类型净化 → 0",
+      "ok": true,
+      "detail": "{\"b\":0,\"r\":0,\"c\":0}"
+    },
+    {
+      "id": "F2b 实机非法类型不残留",
+      "ok": true,
+      "detail": "{\"b\":10.404,\"r\":0,\"c\":0}"
+    },
+    {
+      "id": "F3 极值钳制（1e30 / 20 / 100000）",
+      "ok": true,
+      "detail": "{\"b\":1e+30,\"r\":20,\"c\":100000}"
+    },
+    {
+      "id": "F4 极值档 HUD 无 NaN/Infinity 且可操作",
+      "ok": true,
+      "detail": "{\"moyu\":\"54.0\",\"click\":\"1.0\",\"idle\":\"12.1\",\"rank\":\"实习生 1%\",\"card\":\"\",\"toast\":\"\",\"toastShown\":false,\"sr\":\"✓ 戳屏幕完成！\"}"
+    },
+    {
+      "id": "G1 转生按钮可用",
+      "ok": true,
+      "detail": "{\"disabled\":false,\"text\":\"离职再就业：+3 点（永久 ×3.25）\"}"
+    },
+    {
+      "id": "G2 转生保留 bestIdleRate/rankIndex/cardsChosenTotal",
+      "ok": true,
+      "detail": "{\"b\":5000,\"r\":7,\"c\":6}"
+    },
+    {
+      "id": "G3 转生后 rank/idle/card 类成就仍在",
+      "ok": true,
+      "detail": "[\"click_1k\",\"idle_1k\",\"rank_7\",\"card_5\",\"boss_3\",\"boss_10\"]"
+    },
+    {
+      "id": "G4 转生后 boss 成就应保留（永久）",
+      "ok": false,
+      "detail": "转生后 done=[\"click_1k\",\"idle_1k\",\"rank_7\",\"card_5\"]（surviveStreak 被转生清零 → 成就丢失）"
+    },
+    {
+      "id": "H1 同状态重复求值恒定（不重复叠加）",
+      "ok": true,
+      "detail": "{\"p1\":4,\"p2\":4}"
+    },
+    {
+      "id": "H2 无异常",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "ms": 11471
+}
