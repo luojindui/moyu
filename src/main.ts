@@ -29,6 +29,10 @@ import { Welcome } from "./ui/welcome";
 import { Journal } from "./ui/journal";
 import { Quest } from "./ui/quest";
 import { TeamPanel } from "./ui/team-panel";
+import { CardPanel } from "./ui/card-panel";
+import { BossChoicePanel } from "./ui/boss-panel";
+import { chooseCard, ensureCards } from "./engine/cards";
+import { onBossChoice } from "./engine/events";
 import { claimMission, colleagueDef, recruit, upgradeColleague, dispatch as dispatchMission , setAutoRepeat, favorTier } from "./engine/team";
 import { grantDailyTalentPoint, grantRankTalents, resetTalents, talentEffects, unlockTalent } from "./engine/talents";
 import { initAudio, playClick, playBreak, playSuccess, toggleMute, isMuted } from "./ui/audio";
@@ -233,6 +237,27 @@ async function boot(): Promise<void> {
       toast("天赋已重置，点数已返还");
     },
   });
+  const cardPanel = new CardPanel((id) => {
+    const next = chooseCard(state, id, Date.now());
+    if (next) {
+      state = next;
+      hud.refresh(state);
+      showToast(`今日卡：${id}`);
+      serialize(state, localStorageAdapter, Date.now());
+    }
+  });
+  const bossPanel = new BossChoicePanel((choice) => {
+    const r = onBossChoice(state, es, choice);
+    if (r) {
+      state = r.state;
+      hud.refresh(state);
+      playSuccess();
+      showToast(r.correct ? `选对了！+${Math.round(r.delta)}` : `选错了…${Math.round(r.delta)}`);
+      announce(r.correct ? "应对正确" : "应对错误");
+      serialize(state, localStorageAdapter, Date.now());
+    }
+  });
+
   const shop = new Shop(
     (id) => {
     const next = buyUpgrade(state, id);
@@ -536,6 +561,19 @@ async function boot(): Promise<void> {
         combo = 0;
         playBreak();
       }
+      // 每日事件卡：跨日刷新 + 未选时弹窗
+      {
+        const today = new Date().toLocaleDateString("sv-SE");
+        const withCards = ensureCards(state, today, rng);
+        if (withCards !== state) {
+          state = withCards;
+          serialize(state, localStorageAdapter, Date.now());
+        }
+        cardPanel.maybeShow(state);
+      }
+      // 回合制老板：同步弹层
+      bossPanel.sync(es);
+
       // 任务完成提醒（角标之外给一次明确提示）
       {
         const nowMs = Date.now();
@@ -666,6 +704,18 @@ async function boot(): Promise<void> {
   if (import.meta.env.DEV) (window as unknown as Record<string, unknown>).__MOYU__ = {
     get state(): unknown {
       return JSON.parse(JSON.stringify(state));
+    },
+    /** 仅 dev：强制触发一次指定变体的巡逻（测试回合制老板用） */
+    forceBoss(variant?: string): string {
+      es.nextBossAt = scene.gameTime - 0.01;
+      es.bossUntil = -1;
+      es.memeUntil = -1; // 丢梗期间不会开巡逻
+      es.bossChoiceDone = false;
+      if (variant) {
+        es.forcedVariant = variant as typeof es.bossVariant;
+      }
+      if (variant === "choice") es.bossPersonality = "suspicious";
+      return es.bossVariant;
     },
     /** 仅 dev：当前飘字坐标（验证点击反馈位置） */
     fxTexts(): Array<{ x: number; y: number; text: string }> {

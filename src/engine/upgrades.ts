@@ -2,6 +2,7 @@ import type { GameState } from "./state";
 import { prestigeMultiplier } from "./prestige";
 import { favorBonuses, teamFixedRate, teamShareRatio } from "./team";
 import { talentEffects } from "./talents";
+import { cardEffects } from "./cards";
 
 export interface UpgradeDef {
   id: string;
@@ -122,10 +123,11 @@ export function effectOf(state: GameState): { clickPower: number; idleRate: numb
   }
   const mult = prestigeMultiplier(state.prestige) * collectionBonus(state);
   const talent = talentEffects(state.talents);
+  const card = cardEffects(state, Date.now());
 
-  // 工位部分（吃满倍率 + 天赋转化）
+  // 工位部分（吃满倍率 + 天赋转化 + 今日卡）
   const rawStation = stationIdleOf(state) * mult; // 未放大（share 基数）
-  const station = rawStation * talent.idleMult * (1 + conversionBonus(state)) * (1 + talent.overflowIdleBonus);
+  const station = rawStation * talent.idleMult * (1 + conversionBonus(state)) * (1 + talent.overflowIdleBonus) * card.idleMult;
   // 同事固定部分（吃转生/图鉴，但不吃挂机天赋——避免双重放大）
   const favorIdleBonus = favorBonuses(state).idleMult;
   // 天赋 idle_5b：同事挂机 +40%

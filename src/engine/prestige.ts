@@ -69,6 +69,7 @@ export function doPrestige(state: GameState): { state: GameState; gained: number
       team: state.team,
       talents: grantPrestigeTalentPoints(state.talents),
       patrolSurvives: state.patrolSurvives,
+      cards: state.cards,
     },
   };
 }

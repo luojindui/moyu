@@ -4,6 +4,8 @@ import type { DailyState } from "./daily";
 import type { TeamState } from "./team";
 import { emptyTeam } from "./team";
 import type { TalentState } from "./talents";
+import type { CardState } from "./cards";
+import { emptyCardState } from "./cards";
 import { emptyTalents } from "./talents";
 
 /** 游戏状态（纯数据，engine 层的唯一事实来源） */
@@ -34,6 +36,8 @@ export interface GameState {
   talents: TalentState;
   /** 累计安然巡逻次数（事件流 Lv5 转化用） */
   patrolSurvives: number;
+  /** 每日事件卡 */
+  cards: CardState;
 }
 
 export function initialState(): GameState {
@@ -51,6 +55,7 @@ export function initialState(): GameState {
     team: emptyTeam(),
     talents: emptyTalents(),
     patrolSurvives: 0,
+    cards: emptyCardState(),
   };
 }
 

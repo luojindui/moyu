@@ -323,5 +323,6 @@ export class Scene {
 
 /** 巡逻变体横幅文案 */
 export function bossBannerText(variant: BossVariant, remain: number, taps: number): string {
+  if (variant === "choice") return `回合制老板来了！看线索选应对（${remain}s）`;
   return bossLine(variant, remain, Math.min(taps, variant === "blitz" ? BOSS_BLITZ_TARGET : BOSS_TYPE_TARGET));
 }

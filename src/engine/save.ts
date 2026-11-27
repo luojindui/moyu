@@ -4,6 +4,7 @@ import { sanitizeCollected, type Collected } from "./collection";
 import { restoreDaily, type DailyState } from "./daily";
 import { COLLEAGUES, MAX_COLLEAGUE_LEVEL, MISSIONS, emptyTeam, type TeamState } from "./team";
 import { TALENTS, emptyTalents, type TalentState } from "./talents";
+import { CARDS, emptyCardState, type CardState } from "./cards";
 
 export const SAVE_KEY = "moyu-save";
 export const SAVE_VERSION = 2; // v2：加入 team/talents/patrolSurvives
@@ -35,6 +36,8 @@ interface SaveBlob {
   surviveStreak?: number;
   /** 累计安然巡逻 */
   patrolSurvives?: number;
+  /** 每日事件卡 */
+  cards?: CardState;
   /** 累计点击（点击线彩蛋解锁用；旧档为 0） */
   totalClicks?: number;
   /** 今日回访计数 */
@@ -76,6 +79,7 @@ export function serialize(state: GameState, adapter: SaveAdapter, savedAt: numbe
     daily: state.daily,
     surviveStreak: state.surviveStreak,
     patrolSurvives: state.patrolSurvives,
+    cards: state.cards,
     totalClicks: state.totalClicks,
     visits: state.visits,
     lifetimeEarned: state.lifetimeEarned,
@@ -209,6 +213,23 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
       const d = (rawTalents as { dailyGiftDate?: unknown })?.dailyGiftDate;
       talents.dailyGiftDate = typeof d === "string" && /^\d{4}-\d{2}-\d{2}$/.test(d) ? d : "";
     }
+    // 每日事件卡：净化（候选必须是已知卡、chosen 必须在候选内、until 合理）
+    const cards: CardState = emptyCardState();
+    const rawCards = blob.cards as Partial<CardState> | undefined;
+    if (rawCards && typeof rawCards === "object") {
+      cards.date = typeof rawCards.date === "string" ? rawCards.date.slice(0, 10) : "";
+      cards.offers = Array.isArray(rawCards.offers)
+        ? rawCards.offers.filter((x): x is string => typeof x === "string" && CARDS.some((c) => c.id === x)).slice(0, 3)
+        : [];
+      cards.chosen =
+        typeof rawCards.chosen === "string" && cards.offers.includes(rawCards.chosen) ? rawCards.chosen : null;
+      const until = typeof rawCards.until === "number" && Number.isFinite(rawCards.until) ? rawCards.until : 0;
+      cards.until = Math.max(0, Math.min(until, (Number.isFinite(now) ? now : Date.now()) + 2 * 24 * 3600 * 1000));
+      cards.nextDayGuaranteed =
+        typeof rawCards.nextDayGuaranteed === "string" && CARDS.some((c) => c.id === rawCards.nextDayGuaranteed)
+          ? rawCards.nextDayGuaranteed
+          : null;
+    }
     const patrolSurvives =
       typeof blob.patrolSurvives === "number" && Number.isInteger(blob.patrolSurvives) && blob.patrolSurvives >= 0
         ? blob.patrolSurvives
@@ -254,7 +275,7 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
       return Math.max(ca, savedAtMs - 365 * 86_400_000);
     };
     return {
-      state: { moyu, levels, totalEarned, collected, daily, surviveStreak, totalClicks, visits, lifetimeEarned, prestige, team, talents, patrolSurvives },
+      state: { moyu, levels, totalEarned, collected, daily, surviveStreak, totalClicks, visits, lifetimeEarned, prestige, team, talents, patrolSurvives, cards },
       offlineSeconds,
       createdAt: clampCreatedAt(blob.createdAt),
     };

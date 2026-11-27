@@ -44,7 +44,8 @@ export function zhouLine(text: string): string {
 }
 
 /** 王总巡逻横幅（带角色名） */
-export function bossLine(variant: "hold" | "type" | "blitz", remain: number, taps: number): string {
+export function bossLine(variant: "hold" | "type" | "blitz" | "choice", remain: number, taps: number): string {
+  if (variant === "choice") return `回合制老板来了！看线索选应对（${remain}s）`;
   if (variant === "type") return `${VOICES.boss}路过！假装工作 点 ${taps}/5（${remain}s）`;
   if (variant === "blitz") return `${VOICES.boss}盯着你！连点 ${taps}/16 奖×1.5（${remain}s）`;
   return `${VOICES.boss}巡逻中！忍住别点（${remain}s）`;

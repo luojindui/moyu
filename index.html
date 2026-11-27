@@ -38,6 +38,22 @@
       <main id="stage-wrap"><canvas id="stage" tabindex="0" role="button" aria-label="点击摸鱼"></canvas></main>
       <footer id="shop"><div id="shop-wrap"><div id="shop-cards"></div><span id="shop-hint">← 滑动查看更多 →</span></div></footer>
     </div>
+    <div id="cards" class="hidden" role="dialog" aria-modal="true" aria-labelledby="cards-title">
+      <div class="cards-panel">
+        <div class="cards-head">
+          <h2 id="cards-title">今日摸鱼卡</h2>
+          <span class="cards-sub">选 1 张，生效到今天结束</span>
+        </div>
+        <div id="cards-body"></div>
+      </div>
+    </div>
+    <div id="boss-choice" class="hidden">
+      <div class="boss-box">
+        <div class="boss-tell" id="boss-tell"></div>
+        <div class="boss-opts" id="boss-opts"></div>
+        <div class="boss-timer" id="boss-timer"></div>
+      </div>
+    </div>
     <div id="team" class="hidden" role="dialog" aria-modal="true" aria-labelledby="team-title">
       <div class="team-panel">
         <div class="team-head">

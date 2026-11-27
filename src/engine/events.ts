@@ -3,6 +3,8 @@ import { gain, lose } from "./state";
 import { clickPowerOf, doClick, comboMultiplier } from "./actions";
 import { effectOf } from "./upgrades";
 import { talentEffects } from "./talents";
+import { cardEffects } from "./cards";
+import { CHOICE_SECONDS, PERSONALITIES, resolveBossChoice, type BossChoice, type BossPersonality } from "./boss-choice";
 import { favorBonuses, teamTraits } from "./team";
 
 /** 随机事件数值（视觉层读取同一份） */
@@ -27,19 +29,21 @@ export const BOSS_STEAL_CAP_IDLE_SECONDS = 10;
 export const SURVIVE_STREAK_CAP = 5; // 连胜封顶 ×1.5（原 ×2 使事件占比超 10%）
 
 /** 巡逻变体（variety #1）：拆掉"同 pattern 忍住 ×N"的重复感 */
-export type BossVariant = "hold" | "type" | "blitz";
-export const BOSS_VARIANTS: BossVariant[] = ["hold", "type", "blitz"];
+export type BossVariant = "hold" | "type" | "blitz" | "choice";
+export const BOSS_VARIANTS: BossVariant[] = ["hold", "type", "blitz", "choice"];
 /** type：8s 内点满 N 次 → 达标奖励（点击不罚） */
 export const BOSS_TYPE_TARGET = 5;
 /** blitz：8s 内点满 N 次 → 奖励 ×1.5（点击不罚） */
 export const BOSS_BLITZ_TARGET = 16; // R9：20→16（实需 ≈2.3cps，2.5cps 抖动可达成） // 需 ≥2.5cps 才能达标（与 type 的 5 次区分难度）
 export const BOSS_BLITZ_REWARD_MULT = 1.5;
 /** 变体权重：hold 40% / type 35% / blitz 25% */
+/** 巡逻变体权重：hold 35% / type 30% / blitz 20% / choice 15%（回合制老板） */
 export function pickBossVariant(rng: () => number): BossVariant {
   const r = rng();
-  if (r < 0.4) return "hold";
-  if (r < 0.75) return "type";
-  return "blitz";
+  if (r < 0.35) return "hold";
+  if (r < 0.65) return "type";
+  if (r < 0.85) return "blitz";
+  return "choice";
 }
 
 export function surviveStreakMult(n: number): number {
@@ -76,6 +80,12 @@ export interface EventState {
   patrolCount: number;
   /** 累计丢梗次数（首次提前） */
   memeCount: number;
+  /** 回合制老板的性格（仅 choice 变体） */
+  bossPersonality: BossPersonality;
+  /** 是否已做过选择（防重复结算） */
+  bossChoiceDone: boolean;
+  /** 强制下一次巡逻的变体（dev/测试用；正常为 null） */
+  forcedVariant: BossVariant | null;
 }
 
 /** 事件为运行时状态，不入存档 */
@@ -93,6 +103,9 @@ export function newEventState(): EventState {
     bossPenaltyTotal: 0,
     patrolCount: 0,
     memeCount: 0,
+    bossPersonality: "hasty",
+    bossChoiceDone: false,
+    forcedVariant: null,
   };
 }
 
@@ -130,10 +143,17 @@ export function scheduleEvents(es: EventState, now: number, rng: () => number): 
     es.nextMemeAt = memeAt;
   }
   if (now >= es.nextBossAt && es.bossUntil < 0 && es.memeUntil < 0) {
-    es.bossUntil = now + BOSS_DURATION;
     es.bossStartAt = now;
     es.bossCaught = false;
-    es.bossVariant = pickBossVariant(rng);
+    const forced = es.forcedVariant;
+    es.bossVariant = forced ?? pickBossVariant(rng);
+    es.forcedVariant = null;
+    if (forced !== "choice") {
+      es.bossPersonality = PERSONALITIES[Math.floor(rng() * PERSONALITIES.length)]!.id;
+    }
+    es.bossUntil = now + (es.bossVariant === "choice" ? CHOICE_SECONDS : BOSS_DURATION);
+    es.bossPersonality = PERSONALITIES[Math.floor(rng() * PERSONALITIES.length)]!.id;
+    es.bossChoiceDone = false;
     es.bossTaps = 0;
     es.bossPenaltyTotal = 0;
     es.patrolCount += 1;
@@ -201,9 +221,37 @@ export function onBossTap(
  * 巡逻窗口结束结算：安然 → 发奖（含连胜乘数）并推进连胜；被抓 → 0 奖且连胜清零。
  * 同时复位本巡逻状态，供下一次巡逻使用。
  */
+/** 回合制选择结算（choice 变体专用）：选完即结束巡逻 */
+export function onBossChoice(
+  state: GameState,
+  es: EventState,
+  choice: BossChoice,
+): { state: GameState; correct: boolean; delta: number } | null {
+  if (es.bossVariant !== "choice" || es.bossChoiceDone) return null;
+  const idleRate = effectOf(state).idleRate;
+  const base = Math.max(BOSS_REWARD_MIN, BOSS_REWARD_IDLE_SECONDS * idleRate);
+  const r = resolveBossChoice(state, es.bossPersonality, choice, base);
+  es.bossChoiceDone = true;
+  es.bossUntil = -1;
+  es.bossCaught = !r.correct;
+  es.bossPenaltyTotal = 0;
+  if (r.correct) es.surviveStreak += 1;
+  else es.surviveStreak = 0;
+  return {
+    state: { ...r.state, surviveStreak: es.surviveStreak, patrolSurvives: r.correct ? state.patrolSurvives + 1 : state.patrolSurvives },
+    correct: r.correct,
+    delta: r.delta,
+  };
+}
+
+export { choiceLabel, isCorrect, personalityDef } from "./boss-choice";
+
 export function finishPatrol(state: GameState, es: EventState): { state: GameState; reward: number } {
   let reward = 0;
-  if (es.bossVariant === "type") {
+  if (es.bossVariant === "choice") {
+    // 未在窗口内做出选择 → 无奖（不算被抓）
+    reward = es.bossChoiceDone ? 0 : 0;
+  } else if (es.bossVariant === "type") {
     // 点满 N 次算达标（不罚；没点满只是没奖）
     reward = es.bossTaps >= BOSS_TYPE_TARGET ? bossSurviveReward(state, { ...es, bossCaught: false }) : 0;
   } else if (es.bossVariant === "blitz") {
@@ -235,7 +283,7 @@ export function bossSurviveReward(state: GameState, es?: EventState): number {
   const { idleRate } = effectOf(state);
   const base = Math.max(BOSS_REWARD_MIN, BOSS_REWARD_IDLE_SECONDS * idleRate);
   const talent = talentEffects(state.talents);
-  return base * surviveStreakMult(es?.surviveStreak ?? 0) * talent.patrolRewardMult;
+  return base * surviveStreakMult(es?.surviveStreak ?? 0) * talent.patrolRewardMult * cardEffects(state, Date.now()).patrolRewardMult;
 }
 
 /** 丢梗点击奖励：5 × 点击力（仅窗口内有效） */
