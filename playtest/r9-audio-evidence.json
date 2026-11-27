@@ -1,0 +1,89 @@
+{
+  "errors": [],
+  "env": {
+    "hasAudioContext": true,
+    "userActivation": true
+  },
+  "measure": {
+    "info": {
+      "stateBefore": "running",
+      "stateAfter": "running",
+      "sampleRate": 48000,
+      "baseLatency": 0.005333333333333333,
+      "outputLatency": 0,
+      "blipPerClickMs": 0.015,
+      "noisePerClickMs": 0.015,
+      "beatPerBeatMs": 0.008
+    },
+    "pitch": [
+      {
+        "combo": 0,
+        "hz": 330
+      },
+      {
+        "combo": 1,
+        "hz": 350
+      },
+      {
+        "combo": 2,
+        "hz": 370
+      },
+      {
+        "combo": 3,
+        "hz": 392
+      },
+      {
+        "combo": 4,
+        "hz": 416
+      },
+      {
+        "combo": 5,
+        "hz": 440
+      },
+      {
+        "combo": 6,
+        "hz": 467
+      },
+      {
+        "combo": 7,
+        "hz": 494
+      },
+      {
+        "combo": 8,
+        "hz": 524
+      },
+      {
+        "combo": 9,
+        "hz": 555
+      },
+      {
+        "combo": 10,
+        "hz": 588
+      },
+      {
+        "combo": 11,
+        "hz": 623
+      },
+      {
+        "combo": 12,
+        "hz": 660
+      }
+    ],
+    "jitterSample": [
+      0,
+      0.1,
+      0.2,
+      0.30000000000000004,
+      0.4
+    ]
+  },
+  "verdict": {
+    "audioContextUsable": true,
+    "blipCostMs": 0.015,
+    "noiseCostMs": 0.015,
+    "at8cps": {
+      "blipCpuPercent": 0,
+      "noiseCpuPercent": 0
+    }
+  }
+}

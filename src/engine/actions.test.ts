@@ -11,13 +11,13 @@ describe("点击与购买", () => {
     expect(out.moyu).toBe(s.moyu + base);
   });
 
-  it("连击链：收入 ×(1+0.02×combo) 封顶 ×(1+0.02×COMBO_MAX)", () => {
+  it("连击链：收入 ×(1+0.012×combo)，20 连封顶 ×1.24", () => {
     const s = initialState();
     expect(doClick(s, 0).moyu).toBe(1); // 无连击
-    expect(doClick(s, 5).moyu).toBeCloseTo(1.1, 10); // ×1.1
-    expect(doClick(s, 12).moyu).toBeCloseTo(1.24, 10); // 12 连击
-    expect(doClick(s, 99).moyu).toBeCloseTo(1 + 0.02 * COMBO_MAX, 10); // 封顶
-    expect(comboMultiplier(3)).toBeCloseTo(1.06, 10);
+    expect(doClick(s, 6).moyu).toBeCloseTo(1.072, 10);
+    expect(doClick(s, COMBO_MAX).moyu).toBeCloseTo(1.24, 10); // 20 连到顶
+    expect(doClick(s, 99).moyu).toBeCloseTo(1 + 0.012 * COMBO_MAX, 10); // 越界仍封顶
+    expect(comboMultiplier(3)).toBeCloseTo(1.036, 10);
   });
 
   it("买得起：扣当前价、涨一级、价格上浮", () => {

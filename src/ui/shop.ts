@@ -10,12 +10,17 @@ const DISPLAY_ORDER = ["coffee", "phone", "water", "toilet", "chair", "group", "
 /** 升级商店：卡片 + 可购态刷新 + 性价比提示 + 购买回调 */
 export class Shop {
   private container = document.getElementById("shop-cards")!;
+  /** 大额购买（≥余额一半）需二次确认：记录待确认项与时间 */
+  private pending = new Map<string, number>();
   /** 记录已解锁（可用）状态，用于首次可买时的弹入动画 */
   private unlockedOnce = new Map<string, boolean>();
   private buttons = new Map<string, HTMLButtonElement>();
   private costs = new Map<string, HTMLElement>();
 
-  constructor(onBuy: (id: string) => void) {
+  constructor(
+    onBuy: (id: string) => void,
+    private onBlocked: (msg: string) => void = () => undefined,
+  ) {
     // 滑动一次后隐藏「滑动查看」提示
     const hint = document.getElementById("shop-hint");
     if (hint) {
@@ -37,12 +42,45 @@ export class Shop {
         <span class="shop-cost"><b>0</b> 摸鱼值</span>
         <span class="shop-remain"></span>
         <span class="shop-level"></span>`;
-      card.addEventListener("click", () => onBuy(u.id));
+      card.addEventListener("click", () => {
+        const lv = 0; // 真实等级在 refresh 时判断；这里只做确认门
+        void lv;
+        const priceText = card.querySelector(".shop-cost b")!.textContent ?? "0";
+        void priceText;
+        // 二次确认：最近的点击在 2.5s 内且此卡处于待确认态 → 执行购买
+        const now = Date.now();
+        const pendingAt = this.pending.get(u.id) ?? 0;
+        if (now - pendingAt < 2500) {
+          this.pending.delete(u.id);
+          card.classList.remove("confirming");
+          onBuy(u.id);
+          return;
+        }
+        // 大额（价格 ≥ 当前余额 50%）才要求确认
+        if (this.lastState && this.lastState.moyu >= 1) {
+          const price = Number(card.dataset.price ?? 0);
+          if (Number.isFinite(price) && price >= this.lastState.moyu * 0.5) {
+            this.pending.set(u.id, now);
+            card.classList.add("confirming");
+            this.onBlocked(`再点一次确认：花 ${card.querySelector(".shop-cost b")!.textContent} 摸鱼值买「${u.name}」`);
+            setTimeout(() => {
+              card.classList.remove("confirming");
+              this.pending.delete(u.id);
+            }, 2500);
+            return;
+          }
+        }
+        onBuy(u.id);
+      });
       // disabled 按钮会吞掉 click：用父容器捕获 pointerdown 给「还差」反馈
       card.addEventListener(
         "pointerdown",
         () => {
-          if (card.disabled) card.classList.add("shake");
+          if (card.disabled) {
+            card.classList.add("shake");
+            const cost = card.querySelector(".shop-cost b")!.textContent ?? "?";
+            this.onBlocked(`还差一些：需要 ${cost}，多点几下屏幕`);
+          }
         },
         { passive: true },
       );
@@ -53,7 +91,10 @@ export class Shop {
     }
   }
 
+  private lastState: GameState | null = null;
+
   refresh(state: GameState): void {
+    this.lastState = state;
     // 挂机向性价比最佳项（星标）；点击向与挂机向是两个维度，各自展示
     let bestIdleId: string | null = null;
     let bestIdleScore = 0;
@@ -92,6 +133,7 @@ export class Shop {
       // 性价比改为可懂的说法：这一档「当前最划算」
       const dim = isBest ? (u.clickPower ? "★ 点击最优" : "★ 挂机最优") : "";
       btn.querySelector(".shop-value")!.textContent = dim;
+      btn.dataset.price = String(price);
       btn.disabled = state.moyu < price;
       const affordable = state.moyu >= price;
       btn.classList.toggle("affordable", affordable);

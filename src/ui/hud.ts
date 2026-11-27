@@ -14,8 +14,9 @@ export class Hud {
   private elRank = document.getElementById("hud-rank")!;
   private elJournal = document.getElementById("btn-journal")!;
   private elStreak = document.getElementById("hud-streak")!;
+  private elCombo = document.getElementById("hud-combo")!;
 
-  refresh(state: GameState): void {
+  refresh(state: GameState, combo = 0): void {
     this.elMoyu.textContent = formatMoyu(state.moyu);
     this.elClick.textContent = formatMoyu(clickPowerOf(state));
     // 底薪 0.2/s 恒存在，不再有"未解锁"态
@@ -28,6 +29,14 @@ export class Hud {
       ? `${shortName} ${(rank.progress * 100).toFixed(0)}%`
       : shortName;
     this.elRank.title = rank.next ? `${rank.current} → ${rank.next.name}` : rank.current;
+    // 连击常驻显示（从 2 连起，断连隐藏）
+    if (combo >= 2) {
+      this.elCombo.textContent = `连点×${combo}`;
+      this.elCombo.classList.remove("hidden");
+    } else {
+      this.elCombo.classList.add("hidden");
+    }
+
     // 📔 可领角标：日报 3/3 完成且未领
     const claimable = !!state.daily && !state.daily.claimed && dailyAllDone(state.daily);
     this.elJournal.classList.toggle("has-reward", claimable);

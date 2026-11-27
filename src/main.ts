@@ -23,6 +23,7 @@ import { Shop } from "./ui/shop";
 import { Welcome } from "./ui/welcome";
 import { Journal } from "./ui/journal";
 import { Quest } from "./ui/quest";
+import { initAudio, playClick, playBreak, playSuccess, toggleMute, isMuted } from "./ui/audio";
 import { Scene, SPRITE_MAP } from "./render/scene";
 import { SpriteGrid, frameActivity } from "./render/sprites";
 
@@ -51,6 +52,7 @@ function withTimeout<T>(p: Promise<T>, ms: number): Promise<T> {
 }
 
 async function boot(): Promise<void> {
+  initAudio();
   // 1) 状态与离线结算（不依赖任何资产）；离线效率现算：建档 24h 内全额，之后 70%
   const restored = restore(localStorageAdapter, Date.now());
   let state = restored.state ?? initialState();
@@ -127,7 +129,8 @@ async function boot(): Promise<void> {
       serialize(state, localStorageAdapter, Date.now());
     },
   );
-  const shop = new Shop((id) => {
+  const shop = new Shop(
+    (id) => {
     const next = buyUpgrade(state, id);
     if (next) {
       state = syncFlavorCollection(next); // 购买后同步新解锁的彩蛋档
@@ -136,8 +139,10 @@ async function boot(): Promise<void> {
       state = { ...state, daily: state.daily ? dailyTrack(state.daily, "buy") : null };
       hud.refresh(state);
       serialize(state, localStorageAdapter, Date.now());
-    }
-  });
+      }
+    },
+    (msg) => scene.fx.floatText(scene.w / 2, scene.h * 0.58, msg),
+  );
 
   const fit = (): void => {
     const wrap = canvas.parentElement!;
@@ -169,13 +174,18 @@ async function boot(): Promise<void> {
   const trackDaily = (kind: "click" | "meme" | "buy" | "survive", n = 1): void => {
     if (state.daily) state = { ...state, daily: dailyTrack(state.daily, kind, n) };
   };
+  let lastPointerAt = 0;
   canvas.addEventListener("pointerdown", (e) => {
-    if (!e.isPrimary) return;
-    const p = scene.toVirtual(e.clientX, e.clientY, canvas);
     const nowMs = performance.now();
+    // 允许双指连点（音游常用），但两次点击至少间隔 80ms 防作弊
+    if (nowMs - lastPointerAt < 80) return;
+    lastPointerAt = nowMs;
+    const p = scene.toVirtual(e.clientX, e.clientY, canvas);
     // 连击链更新
     const gap = (nowMs - lastClickAt) / 1000;
+    const prevCombo = combo;
     combo = gap < COMBO_WINDOW_S ? Math.min(COMBO_MAX, combo + 1) : gap > COMBO_BREAK_S ? 0 : combo;
+    if (prevCombo >= 2 && combo === 0) playBreak();
     lastClickAt = nowMs;
 
     if (es.bossUntil > scene.gameTime) {
@@ -185,9 +195,13 @@ async function boot(): Promise<void> {
       trackDaily("click");
       if (r.caught) {
         scene.fx.floatText(p.x, p.y, `偷点被逮！+${Math.round(r.income)} -${Math.round(r.lost)}`);
-      } else {
+      } else if (es.bossVariant === "type" || es.bossVariant === "blitz") {
+        // 任务变体：说的是"摸鱼 +N"，不显示"偷点"
+        scene.fx.floatText(p.x, p.y, `摸鱼 +${Math.round(r.income)}`);
+      } else if (r.income > 0) {
         scene.fx.floatText(p.x, p.y, `偷点 +${Math.round(r.income)}`);
       }
+      playClick(combo);
       return;
     }
     // 丢梗命中（虚拟坐标半径内）
@@ -211,7 +225,9 @@ async function boot(): Promise<void> {
     trackDaily("click");
     if (state.totalClicks % 25 === 0) state = syncFlavorCollection(state); // 点击线彩蛋按累计点击数解锁
     const meme = CLICK_MEMES[Math.floor(Math.random() * CLICK_MEMES.length)];
-    const text = combo >= 6 ? `连击×${combo} +${Math.round(gained)}` : Math.random() < 0.22 && meme ? meme : `+${Math.round(gained)}`;
+    playClick(combo);
+    const text =
+      combo >= 6 ? `连点×${combo} +${Math.round(gained)}` : Math.random() < 0.22 && meme ? meme : `+${Math.round(gained)}`;
     scene.fx.floatText(p.x, p.y, text);
   });
 
@@ -255,10 +271,12 @@ async function boot(): Promise<void> {
       state = r.state;
       if (r.reward > 0) {
         trackDaily("survive");
-        scene.fx.floatText(scene.w / 2, scene.h * 0.3, `安然度过 +${Math.round(r.reward)}（连胜 ${es.surviveStreak}）`);
+        playSuccess();
+        const label = es.bossVariant === "blitz" ? "冲刺成功 ×1.5" : es.bossVariant === "type" ? "假装工作成功" : "安然度过";
+        scene.fx.floatText(scene.w / 2, scene.h * 0.3, `${label} +${Math.round(r.reward)}（连胜 ${es.surviveStreak}）`);
       } else if (es.bossVariant === "type" || es.bossVariant === "blitz") {
-        // 点击任务变体未达标：给明确失败反馈（不罚款）
-        scene.fx.floatText(scene.w / 2, scene.h * 0.3, "没达标…下次手快点");
+        // 点击任务变体未达标：鼓励语气，不责备
+        scene.fx.floatText(scene.w / 2, scene.h * 0.3, "这次没完成，没关系～");
       }
     }
     prevBossActive = bossActive;
@@ -293,7 +311,7 @@ async function boot(): Promise<void> {
       const cCount = state.collected.quotes.length + state.collected.flavors.length;
       if (cCount > lastCollectionCount) toast(`图鉴 +${cCount - lastCollectionCount}（${cCount}/55）`);
       lastCollectionCount = cCount;
-      hud.refresh(state);
+      hud.refresh(state, combo);
       shop.refresh(state);
       journal.refresh(state);
     }
@@ -431,6 +449,15 @@ async function boot(): Promise<void> {
 
   hud.refresh(state);
   shop.refresh(state);
+
+  // 音效开关
+  const muteBtn = document.getElementById("btn-mute");
+  if (muteBtn) {
+    muteBtn.textContent = isMuted() ? "🔇" : "🔊";
+    muteBtn.addEventListener("click", () => {
+      muteBtn.textContent = toggleMute() ? "🔇" : "🔊";
+    });
+  }
 
   // 离线可用：注册 Service Worker（仅生产/支持时；失败静默）
   if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {

@@ -6,7 +6,7 @@ import type { GameState } from "../engine/state";
  */
 interface Step {
   id: string;
-  text: (n: number) => string;
+  text: (state?: unknown) => string;
   /** 判定是否完成：基于状态与上一帧状态 */
   done: (state: GameState, prev: GameState | null) => boolean;
   /** 进度 0..1 */
@@ -22,9 +22,17 @@ export class Quest {
   private steps: Step[] = [
     {
       id: "click10",
-      text: () => "再戳 10 下 → 解锁「咖啡续命」",
-      done: (s) => s.totalClicks - (this.base?.totalClicks ?? 0) >= 10,
-      progress: (s) => Math.min(1, (s.totalClicks - (this.base?.totalClicks ?? 0)) / 10),
+      // 用真实差价换算"还差几下"，与商店卡显示一致（避免 10 vs 15 冲突）
+      text: (s?: unknown) => {
+        const st = s as GameState | undefined;
+        if (!st) return "戳屏幕攒摸鱼值，攒够就能买「咖啡续命」";
+        const gap = Math.max(0, 15 - st.moyu);
+        const taps = Math.ceil(gap / Math.max(1, 1 + 0));
+        return gap > 0 ? `再戳 ${taps} 下 → 解锁「咖啡续命」` : "买下点亮的「咖啡续命」卡片";
+      },
+      done: (s) => s.totalClicks - (this.base?.totalClicks ?? 0) >= 10 || s.moyu >= 15,
+      progress: (s) =>
+        Math.min(1, Math.max((s.totalClicks - (this.base?.totalClicks ?? 0)) / 10, s.moyu / 15)),
     },
     {
       id: "buyCoffee",
@@ -34,7 +42,7 @@ export class Quest {
     },
     {
       id: "click25",
-      text: () => "再戳 25 下 → 攒够「刷手机」（每秒自动 +1）",
+      text: () => "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
       done: (s) => s.totalClicks - (this.base?.totalClicks ?? 0) >= 25,
       progress: (s) => Math.min(1, (s.totalClicks - (this.base?.totalClicks ?? 0)) / 25),
     },
@@ -69,7 +77,7 @@ export class Quest {
     const step = this.steps[this.idx]!;
     if (this.base === null) this.base = { ...state };
     if (step.done(state, prev)) {
-      this.onComplete(`✓ ${step.text(0)}`);
+      this.onComplete(`✓ ${step.text(state)}`);
       this.idx += 1;
       this.base = { ...state }; // 下一步进度从此刻算
       if (this.idx >= this.steps.length) {
@@ -79,7 +87,7 @@ export class Quest {
     }
     const cur = this.steps[this.idx]!;
     this.root.classList.remove("hidden");
-    this.elText.textContent = cur.text(0);
+    this.elText.textContent = cur.text(state);
     this.elBar.style.width = `${(cur.progress(state, prev) * 100).toFixed(0)}%`;
   }
 }

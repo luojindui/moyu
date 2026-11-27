@@ -276,7 +276,7 @@ describe("巡逻变体（variety #1：拆掉同 pattern 重复）", () => {
     // type：8s 内点满 5 次达标
     expect(BOSS_TYPE_TARGET).toBe(5);
     // blitz：8s 内点满 12 次，奖励 ×1.5
-    expect(BOSS_BLITZ_TARGET).toBe(20); // R5 差异化：需 ≥2.5cps
+    expect(BOSS_BLITZ_TARGET).toBe(16); // R9：实需 ≈2.3cps
     expect(BOSS_BLITZ_REWARD_MULT).toBe(1.5);
   });
 

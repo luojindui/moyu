@@ -266,7 +266,7 @@ export class Scene {
       R(bx, by, bw, 1.5 * u, bossVariant === "hold" ? "#b3413c" : "#2f7a4f");
       R(bx, by, bw, 0.12 * u, bossVariant === "hold" ? "#d4564f" : "#3f9563");
       ctx.fillStyle = "#fff";
-      ctx.font = `bold ${Math.max(11, 2.2 * s)}px system-ui`;
+      ctx.font = `bold ${Math.max(16, 3.4 * s)}px system-ui`;
       ctx.fillText(bossBannerText(bossVariant, remain, bossTaps), (vw / 2) * s, (by + 0.98 * u) * s);
     } else if (this.events && this.events.memeUntil > this.gameTime) {
       // 同事丢梗：气泡目标
@@ -281,15 +281,15 @@ export class Scene {
       ctx.lineWidth = Math.max(2, s);
       ctx.stroke();
       ctx.fillStyle = "#4a3200";
-      ctx.font = `bold ${Math.max(10, 1.8 * s)}px system-ui`;
+      ctx.font = `bold ${Math.max(14, 2.6 * s)}px system-ui`;
       ctx.fillText("丢梗!", mx, my + bob + 1 * s);
       ctx.fillStyle = "rgba(255,255,255,0.8)";
-      ctx.font = `bold ${Math.max(11, 2.4 * s)}px system-ui`;
+      ctx.font = `bold ${Math.max(14, 2.8 * s)}px system-ui`;
       ctx.fillText(`戳它 +${MEME_REWARD_CLICKS}×点击力`, (vw / 2) * s, 2.3 * u * s);
     } else {
       if (!this.hideHint) {
         ctx.fillStyle = "rgba(255,255,255,0.75)";
-        ctx.font = `bold ${Math.max(12, 2.6 * s)}px system-ui`;
+        ctx.font = `bold ${Math.max(16, 3 * s)}px system-ui`;
         ctx.fillText("戳屏幕摸鱼", (vw / 2) * s, (groundY + 2.8 * u) * s);
       }
     }

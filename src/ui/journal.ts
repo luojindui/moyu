@@ -37,6 +37,10 @@ export class Journal {
     private onPrestige: () => void,
   ) {
     document.getElementById("journal-close")!.addEventListener("click", () => this.hide());
+    // 点遮罩空白处也能关（中老年找不到 ✕ 的兜底）
+    this.root.addEventListener("click", (e) => {
+      if (e.target === this.root) this.hide();
+    });
     this.elClaim.addEventListener("click", () => this.onClaim());
     this.elPrestigeBtn.addEventListener("click", () => this.onPrestige());
     // 导出存档 JSON（生产可用：直接读 localStorage，不依赖调试钩子）

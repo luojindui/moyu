@@ -30,7 +30,7 @@ export const BOSS_VARIANTS: BossVariant[] = ["hold", "type", "blitz"];
 /** type：8s 内点满 N 次 → 达标奖励（点击不罚） */
 export const BOSS_TYPE_TARGET = 5;
 /** blitz：8s 内点满 N 次 → 奖励 ×1.5（点击不罚） */
-export const BOSS_BLITZ_TARGET = 20; // 需 ≥2.5cps 才能达标（与 type 的 5 次区分难度）
+export const BOSS_BLITZ_TARGET = 16; // R9：20→16（实需 ≈2.3cps，2.5cps 抖动可达成） // 需 ≥2.5cps 才能达标（与 type 的 5 次区分难度）
 export const BOSS_BLITZ_REWARD_MULT = 1.5;
 /** 变体权重：hold 40% / type 35% / blitz 25% */
 export function pickBossVariant(rng: () => number): BossVariant {
@@ -158,8 +158,9 @@ export function onBossTap(
   if (es.bossUntil <= 0) {
     return { state: doClick(state, combo), caught: false, lost: 0, income: clickPowerOf(state) * comboMultiplier(combo) };
   }
-  // 宽限期内：手在半空——不给收入也不罚（不能零风险白嫖）
-  if (now < es.bossStartAt + BOSS_GRACE_SECONDS) {
+  // 宽限只对 hold（忍住）生效；type/blitz 是"点击任务"，宽限内也要计数（否则玩家点了没反应）
+  const isTask = es.bossVariant === "type" || es.bossVariant === "blitz";
+  if (!isTask && now < es.bossStartAt + BOSS_GRACE_SECONDS) {
     return { state, caught: false, lost: 0, income: 0 };
   }
   const income = clickPowerOf(state) * comboMultiplier(combo);

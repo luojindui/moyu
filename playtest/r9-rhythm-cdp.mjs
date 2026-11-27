@@ -214,7 +214,12 @@ try {
     console.log(`[multi ${k}] taps/presses=${v.taps ?? v.presses} registered=${v.registered} rawDown=${v.down} primary=${v.primary}`);
   }
   console.log(`[multi syntheticNonPrimary] registered=${f4.registered}`);
-
+} catch (e) {
+  out.errors.push(String(e && e.stack ? e.stack : e));
+  console.error("[probe error]", e);
+} finally {
+  b.close();
+}
 
 // ---------- 汇总 ----------
 const latRows = (out.phases.latency || []).filter((r) => r.lat !== null);

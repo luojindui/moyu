@@ -50,7 +50,7 @@ try {
         console.log("[patrol] type: 3cps 连点");
       } else if (boss.variant === "blitz") {
         blitzSeen++;
-        const opts = { cps: 2.5, ms: 5200, jitter: 0.15 };
+        const opts = { cps: 2.5, ms: 5000, jitter: 0.15 };
         actions.push({ variant: "blitz", firstAt: boss.firstAt, opts, stage: "A" });
         await b.ev(`window.__r9.runBurst(${JSON.stringify(opts)}).then((r)=>{ window.__r9.patrolBursts.push({variant:"blitz", firstAt:${Math.round(boss.firstAt)}, stage:"A", opts:${JSON.stringify(opts)}, clicks: r.clicks.map((c)=>({t:c.t,dMoyu:c.dMoyu,dClicks:c.dClicks}))}); }); 1`);
         followB = { firstAt: boss.firstAt };
@@ -66,7 +66,7 @@ try {
         "JSON.stringify(window.__r9.patrolBursts.map((x)=>({variant:x.variant,stage:x.stage,firstAt:x.firstAt})))",
       );
       if (bursts.some((x) => x.variant === "blitz" && x.stage === "A" && x.firstAt === Math.round(followB.firstAt))) {
-        const opts = { cps: 12, ms: 2400, jitter: 0.1 };
+        const opts = { cps: 12, ms: 2600, jitter: 0.1 };
         actions.push({ variant: "blitz", firstAt: followB.firstAt, opts, stage: "B" });
         await b.ev(`window.__r9.runBurst(${JSON.stringify(opts)}).then((r)=>{ window.__r9.patrolBursts.push({variant:"blitz", firstAt:${Math.round(followB.firstAt)}, stage:"B", opts:${JSON.stringify(opts)}, clicks: r.clicks.map((c)=>({t:c.t,dMoyu:c.dMoyu,dClicks:c.dClicks}))}); }); 1`);
         console.log("[patrol] blitz: 12cps 补完");
@@ -79,7 +79,10 @@ try {
       await b.ev("window.__r9.speed = 12; 1");
       console.log("[patrol] done", ps[ps.length - 1].variant);
     }
-    if (blitzSeen >= 1 && typeSeen >= 1) break;
+    if (blitzSeen >= 1 && typeSeen >= 1) {
+      const landed = await b.evj("JSON.stringify(window.__r9.patrols.map((x)=>x.variant))");
+      if (landed.includes("blitz")) break;
+    }
     await sleep(80);
   }
   await b.ev("window.__r9.speed = 1; 1");

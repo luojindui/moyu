@@ -63,7 +63,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 12px;
+  font-size: 14px;
   color: #a8a493;
   white-space: nowrap;
   overflow: hidden;
@@ -119,7 +119,7 @@ body {
   display: block;
   text-align: right;
   padding: 0 4px 4px;
-  font-size: 10px;
+  font-size: 12px;
   color: #ffd76e;
   pointer-events: none;
   opacity: 0.9;
@@ -136,9 +136,9 @@ body {
 }
 .shop-tag {
   flex: 0 0 auto;
-  padding: 0 2px;
+  padding: 0 3px;
   max-width: 100%;
-  font-size: 8px;
+  font-size: 10px;
   border-radius: 3px;
   line-height: 13px;
 }
@@ -152,8 +152,8 @@ body {
 }
 .shop-card {
   flex: 0 0 auto;
-  width: 126px;
-  min-height: 92px;
+  width: 140px;
+  min-height: 96px;
   padding: 8px 8px 6px;
   display: flex;
   flex-direction: column;
@@ -179,7 +179,7 @@ body {
   transform: translateY(1px);
 }
 .shop-name {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   white-space: nowrap;
   overflow: hidden;
@@ -196,21 +196,21 @@ body {
   min-height: 12px;
 }
 .shop-next {
-  font-size: 11px;
+  font-size: 13px;
   color: #b8e0ff;
   line-height: 1.25;
 }
 .shop-value {
-  font-size: 11px;
+  font-size: 13px;
   color: #ffd76e;
 }
 .shop-remain {
-  font-size: 10px;
+  font-size: 12px;
   color: #b8b39c;
 }
 .shop-cost {
   margin-top: auto;
-  font-size: 13px;
+  font-size: 15px;
   color: #ffd76e;
 }
 .shop-level {
@@ -258,8 +258,8 @@ body {
   color: #ffd76e;
 }
 .welcome-rule {
-  font-size: 11px;
-  color: #8f9fd0;
+  font-size: 13px;
+  color: #c3cce8;
 }
 #welcome-ok {
   margin-top: 6px;
@@ -387,7 +387,7 @@ body {
   display: flex;
   gap: 8px;
   align-items: center;
-  padding: 7px 9px;
+  padding: 8px 9px;
   background: #3a3a52;
   border: 2px solid #55557a;
   border-radius: 4px;
@@ -403,6 +403,7 @@ body {
 }
 .goal-desc {
   flex: 1;
+  font-size: 14px;
 }
 .goal-progress {
   color: #ffd76e;
@@ -422,7 +423,7 @@ body {
 }
 #journal-claim:disabled {
   background: #55557a;
-  color: #a8a493;
+  color: #e8e2d0;
   border-color: #43435c;
 }
 .journal-panel h3 {
@@ -478,12 +479,12 @@ body {
   opacity: 0.85;
 }
 .c-label {
-  color: #a9b6dd;
-  font-size: 11px;
+  color: #b4c0e6;
+  font-size: 12px;
 }
 .c-text {
   color: #f4f1e8;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.25;
 }
 
@@ -544,7 +545,7 @@ body {
 }
 .prestige-desc {
   margin: 6px 0 8px;
-  font-size: 11px;
+  font-size: 13px;
   color: #a8a493;
   line-height: 1.4;
 }
@@ -561,7 +562,7 @@ body {
 }
 #prestige-btn:disabled {
   background: #43435c;
-  color: #a8a493;
+  color: #e8e2d0;
   border-color: #55557a;
 }
 
@@ -577,7 +578,7 @@ body {
   display: none;
 }
 #quest-text {
-  font-size: 12px;
+  font-size: 15px;
   color: #d6f0d6;
   display: block;
   margin-bottom: 4px;
@@ -625,7 +626,7 @@ body {
 .stat-row {
   display: flex;
   justify-content: space-between;
-  font-size: 11px;
+  font-size: 13px;
   color: #b8b39c;
   padding: 3px 0;
   border-bottom: 1px dashed #43435c;
@@ -680,4 +681,26 @@ body {
 .savecode-btns button:last-child {
   background: #ffd76e;
   border-color: #a8862c;
+}
+
+#hud-combo {
+  color: #7ec8ff;
+  font-weight: 700;
+}
+#hud-combo.hidden {
+  display: none;
+}
+#btn-mute {
+  position: fixed;
+  right: 10px;
+  bottom: 238px;
+  z-index: 5;
+  width: 40px;
+  height: 40px;
+  font-size: 17px;
+  background: #3a3a52;
+  color: #f4f1e8;
+  border: 2px solid #55557a;
+  border-radius: 50%;
+  font-family: inherit;
 }

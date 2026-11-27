@@ -18,16 +18,19 @@ interface Particle {
   color: string;
 }
 
-const MAX_TEXTS = 24;
+const MAX_TEXTS = 14;
 const MAX_PARTICLES = 64;
-const TEXT_LIFE = 0.9;
+const TEXT_LIFE = 0.65;
 
 export class Fx {
   private texts: FloatText[] = [];
   private particles: Particle[] = [];
 
   floatText(x: number, y: number, text: string): void {
-    this.texts.push({ x, y, vy: -26, alpha: 1, text, born: performance.now() });
+    // 轻微错位，避免高 cps 时相邻飘字完全重叠
+    const jitterX = (Math.random() - 0.5) * 26;
+    const jitterY = (Math.random() - 0.5) * 18;
+    this.texts.push({ x: x + jitterX, y: y + jitterY, vy: -34, alpha: 1, text, born: performance.now() });
     if (this.texts.length > MAX_TEXTS) this.texts.shift();
     for (let i = 0; i < 5; i++) {
       this.particles.push({

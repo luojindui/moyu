@@ -38,6 +38,9 @@ interface ComboRun {
   maxCombo: number;
   avgCombo: number;
   avgMult: number;
+  /** 有几率推进连击的间隔占比 = P(gap < 窗口)（与是否已封顶无关） */
+  underWindowRate: number;
+  /** 爬升阶段实际推进率（封顶前） */
   advanceRate: number;
   reachedCapAt: number | null;
 }
@@ -47,10 +50,12 @@ function runCombo(cps: number, jitter: number, n: number, seed: number, windowS 
   const gaps = makeGaps(cps, jitter, n, rng);
   let combo = 0;
   let advanced = 0;
+  let under = 0;
   let sum = 0;
   let capAt: number | null = null;
   for (let i = 0; i < gaps.length; i++) {
     const before = combo;
+    if (gaps[i] < windowS) under++;
     combo = comboStep(combo, gaps[i], windowS, breakS);
     if (combo > before) advanced++;
     if (combo >= COMBO_MAX && capAt === null) capAt = i + 1;
@@ -60,7 +65,8 @@ function runCombo(cps: number, jitter: number, n: number, seed: number, windowS 
     maxCombo: combo,
     avgCombo: sum / gaps.length,
     avgMult: 1 + 0.02 * (sum / gaps.length),
-    advanceRate: advanced / gaps.length,
+    underWindowRate: under / gaps.length,
+    advanceRate: under / gaps.length,
     reachedCapAt: capAt,
   };
 }
@@ -85,7 +91,7 @@ describe("R9 连击窗口 / blitz 节奏设计探针", () => {
       rows.push({
         cps,
         "gap均值ms": Math.round(1000 / cps),
-        "推进率%": Math.round(r.advanceRate * 100),
+        "窗口命中率%": Math.round(r.underWindowRate * 100),
         "最高连击": r.maxCombo,
         "平均倍率": Number(r.avgMult.toFixed(3)),
         "到12连需点击": r.reachedCapAt ?? "未达到",
@@ -95,11 +101,11 @@ describe("R9 连击窗口 / blitz 节奏设计探针", () => {
     console.table(rows);
     // 现状：2.5cps 恰好卡在窗口边界 —— 推进率约 50%
     const r25 = runCombo(2.5, 0.15, 2000, 999);
-    expect(r25.advanceRate).toBeGreaterThan(0.4);
-    expect(r25.advanceRate).toBeLessThan(0.6);
+    expect(r25.underWindowRate).toBeGreaterThan(0.4);
+    expect(r25.underWindowRate).toBeLessThan(0.6);
     // 3cps 才能稳定推进
     const r3 = runCombo(3, 0.15, 2000, 999);
-    expect(r3.advanceRate).toBeGreaterThan(0.97);
+    expect(r3.underWindowRate).toBeGreaterThan(0.97);
   });
 
   it("窗口宽度扫描：0.4→0.5s 后 2.5cps 从'半推半断'变'稳推'", () => {
@@ -108,7 +114,7 @@ describe("R9 连击窗口 / blitz 节奏设计探针", () => {
       const line: Record<string, unknown> = { "窗口s": w };
       for (const cps of [2, 2.5, 3, 4]) {
         const r = runCombo(cps, 0.15, 2000, 777 + cps, w, 0.9);
-        line[`${cps}cps推进率%`] = Math.round(r.advanceRate * 100);
+        line[`${cps}cps命中率%`] = Math.round(r.underWindowRate * 100);
         line[`${cps}cps到12连`] = r.reachedCapAt ?? "未达到";
       }
       rows.push(line);
@@ -117,7 +123,7 @@ describe("R9 连击窗口 / blitz 节奏设计探针", () => {
     console.table(rows);
     const w40 = runCombo(2.5, 0.15, 2000, 777 + 2.5, 0.4, 0.9);
     const w50 = runCombo(2.5, 0.15, 2000, 777 + 2.5, 0.5, 0.9);
-    expect(w50.advanceRate).toBeGreaterThan(w40.advanceRate + 0.2);
+    expect(w50.underWindowRate).toBeGreaterThan(w40.underWindowRate + 0.2);
   });
 
   it("断点扫描：1.5s 太长（1.4s 空档不断），0.9s 才有'漏拍就断'的节奏压力", () => {
@@ -203,7 +209,7 @@ describe("R9 连击窗口 / blitz 节奏设计探针", () => {
     console.table(rows);
     // 建议：窗口 0.45 / 断点 0.9 / 0.012×20 连（倍率仍 1.24 封顶，链条 20 连）
     const suggested = runCombo(2.5, 0.15, 200, 42, 0.45, 0.9);
-    expect(suggested.advanceRate).toBeGreaterThan(0.9);
+    expect(suggested.underWindowRate).toBeGreaterThan(0.9);
     const suggestedCap = 1 + 0.012 * 20;
     expect(suggestedCap).toBeCloseTo(1.24, 10);
   });
