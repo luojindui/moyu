@@ -29,10 +29,10 @@ export interface GoalTemplate {
 }
 
 export const DAILY_GOAL_TEMPLATES: GoalTemplate[] = [
-  { id: "click_100", desc: "点 100 下", kind: "click", target: 100 },
-  { id: "meme_1", desc: "收 1 个梗", kind: "meme", target: 1 },
+  { id: "click_100", desc: "戳 100 下", kind: "click", target: 100 },
+  { id: "meme_1", desc: "点掉 1 个同事丢来的梗", kind: "meme", target: 1 },
   { id: "buy_3", desc: "买 3 次升级", kind: "buy", target: 3 },
-  { id: "survive_2", desc: "应付 1 次巡逻（忍住或点满都算）", kind: "survive", target: 1 },
+  { id: "survive_2", desc: "老板巡逻时忍住不点，1 次", kind: "survive", target: 1 },
 ];
 
 /** 奖励 = max(500, 600 × 挂机秒收益)：R7 上调 10×，让日报在后期仍有意义（原 60× 仅占日收入 0.14%） */

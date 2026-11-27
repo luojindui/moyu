@@ -22,6 +22,7 @@ export class Hud {
     const rank = rankFor(state.lifetimeEarned);
     // 窄屏友好：短段位名 + 进度百分比（长段位名会截断进度）
     const shortName = rank.current.replace(/^带薪/, "").replace(/^摸鱼/, "");
+    // 进度写成「当前/下一档」而不是百分比（新手看不懂 0%）
     this.elRank.textContent = rank.next
       ? `${shortName} ${(rank.progress * 100).toFixed(0)}%`
       : shortName;

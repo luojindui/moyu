@@ -30,7 +30,7 @@ export class Shop {
       const card = document.createElement("button");
       card.className = "shop-card pixel-panel";
       card.dataset.upgrade = u.id;
-      const lineTag = u.clickPower ? "点击" : "挂机";
+      const lineTag = u.clickPower ? "点了才赚" : "会自动赚";
       card.innerHTML = `<span class="shop-top"><span class="shop-tag ${u.clickPower ? "tag-click" : "tag-idle"}">${lineTag}</span><span class="shop-name">${u.name}</span></span>
         <span class="shop-next"></span>
         <span class="shop-value"></span>
@@ -87,11 +87,11 @@ export class Shop {
       const gap = milestoneGap(u.id, lv);
       const gapText = gap <= 5 ? ` · ×2差${gap}级` : ""; // 只在快到时提示（降低噪音）
       btn.querySelector(".shop-next")!.textContent = `${inc}${gapText}${flavor ? ` · ${flavor}` : ""}`;
-      // 性价比：每万摸鱼值的边际收益；星标当前维度最优（黑箱显性化）
-      const score = valueScoreOf(u.id, lv);
+      // 性价比：星标当前维度最优（黑箱显性化）
       const isBest = u.clickPower ? u.id === bestClickId : u.id === bestIdleId;
-      const dim = u.clickPower ? `${score.click.toFixed(0)}/万` : `${score.idle.toFixed(1)}/万`;
-      btn.querySelector(".shop-value")!.textContent = `${isBest ? "★ " : ""}${dim}`;
+      // 性价比改为可懂的说法：这一档「当前最划算」
+      const dim = isBest ? "★ 当前最划算" : "";
+      btn.querySelector(".shop-value")!.textContent = dim;
       btn.disabled = state.moyu < price;
       const affordable = state.moyu >= price;
       btn.classList.toggle("affordable", affordable);

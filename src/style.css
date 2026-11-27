@@ -137,6 +137,7 @@ body {
 .shop-tag {
   flex: 0 0 auto;
   padding: 0 3px;
+  max-width: 100%;
   font-size: 9px;
   border-radius: 3px;
   line-height: 13px;
