@@ -1,0 +1,771 @@
+{
+  "energy": [
+    {
+      "state": "早期D1",
+      "profile": "idle",
+      "best": [
+        "slack",
+        "fake-work",
+        "social"
+      ],
+      "cost": 100,
+      "value": 429156.78631905874,
+      "second": [
+        "slack",
+        "social"
+      ],
+      "secondValue": 377670.61764705874,
+      "singles": {
+        "slack": {
+          "idle": 50759.99999999998,
+          "click": 0,
+          "dispatch": 2409.4117647058865,
+          "offline": 243648.00000000047,
+          "patrol": 3096.3599999999965,
+          "favor": 0,
+          "total": 299913.7717647063
+        },
+        "fake-work": {
+          "idle": 0,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 46841.628672000006,
+          "favor": 0,
+          "total": 46841.628672000006
+        },
+        "social": {
+          "idle": 10151.999999999975,
+          "click": 0,
+          "dispatch": 481.764705882356,
+          "offline": 48729.59999999986,
+          "patrol": 619.2720000000027,
+          "favor": 2715.1529411764714,
+          "total": 62697.78964705867
+        },
+        "focus": {
+          "idle": 0,
+          "click": 3720,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 0,
+          "favor": 0,
+          "total": 3720
+        }
+      }
+    },
+    {
+      "state": "早期D1",
+      "profile": "clicker",
+      "best": [
+        "slack",
+        "fake-work",
+        "social"
+      ],
+      "cost": 100,
+      "value": 429156.78631905874,
+      "second": [
+        "slack",
+        "social"
+      ],
+      "secondValue": 377670.61764705874,
+      "singles": {
+        "slack": {
+          "idle": 50759.99999999998,
+          "click": 0,
+          "dispatch": 2409.4117647058865,
+          "offline": 243648.00000000047,
+          "patrol": 3096.3599999999965,
+          "favor": 0,
+          "total": 299913.7717647063
+        },
+        "fake-work": {
+          "idle": 0,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 46841.628672000006,
+          "favor": 0,
+          "total": 46841.628672000006
+        },
+        "social": {
+          "idle": 10151.999999999975,
+          "click": 0,
+          "dispatch": 481.764705882356,
+          "offline": 48729.59999999986,
+          "patrol": 619.2720000000027,
+          "favor": 2715.1529411764714,
+          "total": 62697.78964705867
+        },
+        "focus": {
+          "idle": 0,
+          "click": 22320,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 0,
+          "favor": 0,
+          "total": 22320
+        }
+      }
+    },
+    {
+      "state": "早期D1",
+      "profile": "afk",
+      "best": [
+        "slack",
+        "fake-work",
+        "social"
+      ],
+      "cost": 100,
+      "value": 315534.60155600007,
+      "second": [
+        "slack",
+        "social"
+      ],
+      "secondValue": 311244.0875,
+      "singles": {
+        "slack": {
+          "idle": 4229.999999999998,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 243648.00000000047,
+          "patrol": 258.02999999999975,
+          "favor": 0,
+          "total": 248136.03000000046
+        },
+        "fake-work": {
+          "idle": 0,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 3903.469056000001,
+          "favor": 0,
+          "total": 3903.469056000001
+        },
+        "social": {
+          "idle": 845.999999999998,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 48729.59999999986,
+          "patrol": 51.60600000000022,
+          "favor": 1074.05,
+          "total": 50701.25599999986
+        },
+        "focus": {
+          "idle": 0,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 0,
+          "favor": 0,
+          "total": 0
+        }
+      }
+    },
+    {
+      "state": "中期D7",
+      "profile": "idle",
+      "best": [
+        "slack",
+        "fake-work",
+        "social"
+      ],
+      "cost": 100,
+      "value": 54207926.816610195,
+      "second": [
+        "slack",
+        "social"
+      ],
+      "secondValue": 51170890.1754902,
+      "singles": {
+        "slack": {
+          "idle": 6163560.000000001,
+          "click": 0,
+          "dispatch": 843915.4852941177,
+          "offline": 33283224.00000003,
+          "patrol": 375977.1600000002,
+          "favor": 0,
+          "total": 40666676.64529415
+        },
+        "fake-work": {
+          "idle": 0,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 2473070.90112,
+          "favor": 0,
+          "total": 2473070.90112
+        },
+        "social": {
+          "idle": 1232712.0000000002,
+          "click": 0,
+          "dispatch": 168782.91176470576,
+          "offline": 6656644.799999982,
+          "patrol": 75195.43200000015,
+          "favor": 300622.9105392184,
+          "total": 8433958.054303907
+        },
+        "focus": {
+          "idle": 0,
+          "click": 25295.99999999999,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 0,
+          "favor": 0,
+          "total": 25295.99999999999
+        }
+      }
+    },
+    {
+      "state": "中期D7",
+      "profile": "clicker",
+      "best": [
+        "slack",
+        "fake-work",
+        "social"
+      ],
+      "cost": 100,
+      "value": 54207926.816610195,
+      "second": [
+        "slack",
+        "social"
+      ],
+      "secondValue": 51170890.1754902,
+      "singles": {
+        "slack": {
+          "idle": 6163560.000000001,
+          "click": 0,
+          "dispatch": 843915.4852941177,
+          "offline": 33283224.00000003,
+          "patrol": 375977.1600000002,
+          "favor": 0,
+          "total": 40666676.64529415
+        },
+        "fake-work": {
+          "idle": 0,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 2473070.90112,
+          "favor": 0,
+          "total": 2473070.90112
+        },
+        "social": {
+          "idle": 1232712.0000000002,
+          "click": 0,
+          "dispatch": 168782.91176470576,
+          "offline": 6656644.799999982,
+          "patrol": 75195.43200000015,
+          "favor": 300622.9105392184,
+          "total": 8433958.054303907
+        },
+        "focus": {
+          "idle": 0,
+          "click": 151775.99999999994,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 0,
+          "favor": 0,
+          "total": 151775.99999999994
+        }
+      }
+    },
+    {
+      "state": "中期D7",
+      "profile": "afk",
+      "best": [
+        "slack",
+        "fake-work",
+        "social"
+      ],
+      "cost": 100,
+      "value": 42634524.34092667,
+      "second": [
+        "slack",
+        "social"
+      ],
+      "secondValue": 42381437.95416667,
+      "singles": {
+        "slack": {
+          "idle": 513630.0000000001,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 33283224.00000003,
+          "patrol": 31331.43000000002,
+          "favor": 0,
+          "total": 33828185.43000003
+        },
+        "fake-work": {
+          "idle": 0,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 206089.24176,
+          "favor": 0,
+          "total": 206089.24176
+        },
+        "social": {
+          "idle": 102726.00000000003,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 6656644.799999982,
+          "patrol": 6266.286000000013,
+          "favor": 96206.16666666917,
+          "total": 6861843.252666651
+        },
+        "focus": {
+          "idle": 0,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 0,
+          "favor": 0,
+          "total": 0
+        }
+      }
+    },
+    {
+      "state": "后期D30",
+      "profile": "idle",
+      "best": [
+        "slack",
+        "fake-work",
+        "social"
+      ],
+      "cost": 100,
+      "value": 880788555.4432046,
+      "second": [
+        "slack",
+        "social"
+      ],
+      "secondValue": 839998664.3617647,
+      "singles": {
+        "slack": {
+          "idle": 89280359.99999997,
+          "click": 0,
+          "dispatch": 41590341.72058825,
+          "offline": 535682160,
+          "patrol": 5446101.959999999,
+          "favor": 0,
+          "total": 671998963.6805882
+        },
+        "fake-work": {
+          "idle": 0,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 32620738.141440008,
+          "favor": 0,
+          "total": 32620738.141440008
+        },
+        "social": {
+          "idle": 17856072.000000015,
+          "click": 0,
+          "dispatch": 8318076.117647061,
+          "offline": 107136432,
+          "patrol": 1089220.392000004,
+          "favor": 0,
+          "total": 134399800.50964707
+        },
+        "focus": {
+          "idle": 0,
+          "click": 149543.99999999994,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 0,
+          "favor": 0,
+          "total": 149543.99999999994
+        }
+      }
+    },
+    {
+      "state": "后期D30",
+      "profile": "clicker",
+      "best": [
+        "slack",
+        "fake-work",
+        "social"
+      ],
+      "cost": 100,
+      "value": 880788555.4432046,
+      "second": [
+        "slack",
+        "social"
+      ],
+      "secondValue": 839998664.3617647,
+      "singles": {
+        "slack": {
+          "idle": 89280359.99999997,
+          "click": 0,
+          "dispatch": 41590341.72058825,
+          "offline": 535682160,
+          "patrol": 5446101.959999999,
+          "favor": 0,
+          "total": 671998963.6805882
+        },
+        "fake-work": {
+          "idle": 0,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 32620738.141440008,
+          "favor": 0,
+          "total": 32620738.141440008
+        },
+        "social": {
+          "idle": 17856072.000000015,
+          "click": 0,
+          "dispatch": 8318076.117647061,
+          "offline": 107136432,
+          "patrol": 1089220.392000004,
+          "favor": 0,
+          "total": 134399800.50964707
+        },
+        "focus": {
+          "idle": 0,
+          "click": 897263.9999999998,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 0,
+          "favor": 0,
+          "total": 897263.9999999998
+        }
+      }
+    },
+    {
+      "state": "后期D30",
+      "profile": "afk",
+      "best": [
+        "slack",
+        "fake-work",
+        "social"
+      ],
+      "cost": 100,
+      "value": 682869197.37762,
+      "second": [
+        "slack",
+        "social"
+      ],
+      "secondValue": 679470039.7875,
+      "singles": {
+        "slack": {
+          "idle": 7440029.999999997,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 535682160,
+          "patrol": 453841.8299999999,
+          "favor": 0,
+          "total": 543576031.83
+        },
+        "fake-work": {
+          "idle": 0,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 2718394.8451200007,
+          "favor": 0,
+          "total": 2718394.8451200007
+        },
+        "social": {
+          "idle": 1488006.0000000012,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 107136432,
+          "patrol": 90768.36600000033,
+          "favor": 0,
+          "total": 108715206.366
+        },
+        "focus": {
+          "idle": 0,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 0,
+          "favor": 0,
+          "total": 0
+        }
+      }
+    },
+    {
+      "state": "纯点击流(不升挂机)",
+      "profile": "clicker",
+      "best": [
+        "fake-work",
+        "focus"
+      ],
+      "cost": 80,
+      "value": 1796651.9999999998,
+      "second": [
+        "slack",
+        "focus"
+      ],
+      "secondValue": 1792475.9999999998,
+      "singles": {
+        "slack": {
+          "idle": 359.99999999999994,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 2052,
+          "patrol": 0,
+          "favor": 0,
+          "total": 2412
+        },
+        "fake-work": {
+          "idle": 0,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 6588,
+          "favor": 0,
+          "total": 6588
+        },
+        "focus": {
+          "idle": 0,
+          "click": 1790063.9999999998,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 0,
+          "favor": 0,
+          "total": 1790063.9999999998
+        }
+      }
+    },
+    {
+      "state": "全新号(0升级)",
+      "profile": "idle",
+      "best": [
+        "slack",
+        "fake-work"
+      ],
+      "cost": 75,
+      "value": 8676,
+      "second": [
+        "fake-work",
+        "focus"
+      ],
+      "secondValue": 7332,
+      "singles": {
+        "slack": {
+          "idle": 359.99999999999994,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 1728.000000000001,
+          "patrol": 0,
+          "favor": 0,
+          "total": 2088.000000000001
+        },
+        "fake-work": {
+          "idle": 0,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 6588,
+          "favor": 0,
+          "total": 6588
+        },
+        "focus": {
+          "idle": 0,
+          "click": 743.9999999999999,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 0,
+          "favor": 0,
+          "total": 743.9999999999999
+        }
+      }
+    },
+    {
+      "state": "全新号(0升级)",
+      "profile": "clicker",
+      "best": [
+        "fake-work",
+        "focus"
+      ],
+      "cost": 80,
+      "value": 11052,
+      "second": [
+        "slack",
+        "fake-work"
+      ],
+      "secondValue": 8676,
+      "singles": {
+        "slack": {
+          "idle": 359.99999999999994,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 1728.000000000001,
+          "patrol": 0,
+          "favor": 0,
+          "total": 2088.000000000001
+        },
+        "fake-work": {
+          "idle": 0,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 6588,
+          "favor": 0,
+          "total": 6588
+        },
+        "focus": {
+          "idle": 0,
+          "click": 4463.999999999999,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 0,
+          "favor": 0,
+          "total": 4463.999999999999
+        }
+      }
+    },
+    {
+      "state": "全新号(0升级)",
+      "profile": "afk",
+      "best": [
+        "slack",
+        "fake-work"
+      ],
+      "cost": 75,
+      "value": 2307.000000000001,
+      "second": [
+        "slack"
+      ],
+      "secondValue": 1758.000000000001,
+      "singles": {
+        "slack": {
+          "idle": 29.999999999999993,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 1728.000000000001,
+          "patrol": 0,
+          "favor": 0,
+          "total": 1758.000000000001
+        },
+        "fake-work": {
+          "idle": 0,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 549,
+          "favor": 0,
+          "total": 549
+        },
+        "focus": {
+          "idle": 0,
+          "click": 0,
+          "dispatch": 0,
+          "offline": 0,
+          "patrol": 0,
+          "favor": 0,
+          "total": 0
+        }
+      }
+    }
+  ],
+  "roi": [
+    {
+      "id": "plant",
+      "name": "绿萝",
+      "cost": 3000,
+      "tDays": 0.0027466236559527952,
+      "income": 180.2,
+      "stationShare": 1,
+      "dIdle": 9.01000000000002,
+      "dOff": 350308.80000000075,
+      "dDaily": 415180.80000000086,
+      "paybackH": 0.17341842397336257,
+      "paybackOnline": 332.9633740288561
+    },
+    {
+      "id": "lamp",
+      "name": "护眼台灯",
+      "cost": 20000,
+      "tDays": 0.006981238243612816,
+      "income": 736.6880000000001,
+      "stationShare": 0.8310166583411158,
+      "dIdle": 0,
+      "dOff": 0,
+      "dDaily": 420173.99999999977,
+      "paybackH": 1.1423838695397628,
+      "paybackOnline": 57.11919347698814
+    },
+    {
+      "id": "rug",
+      "name": "毛绒地毯",
+      "cost": 120000,
+      "tDays": 0.017122701555082293,
+      "income": 2989.328,
+      "stationShare": 0.9293727553483592,
+      "dIdle": 0,
+      "dOff": 6228930.24000001,
+      "dDaily": 6228930.24000001,
+      "paybackH": 0.46235868584715367,
+      "paybackOnline": null
+    },
+    {
+      "id": "fridge",
+      "name": "迷你冰箱",
+      "cost": 600000,
+      "tDays": 0.04116522601358354,
+      "income": 11460.056,
+      "stationShare": 0.8855279590256802,
+      "dIdle": 811.8560000000016,
+      "dOff": 32266404.864000022,
+      "dDaily": 38722252.76988239,
+      "paybackH": 0.3718791901281145,
+      "paybackOnline": 669.1607458818465
+    },
+    {
+      "id": "chair",
+      "name": "按摩椅",
+      "cost": 4000000,
+      "tDays": 0.10670551051432003,
+      "income": 33143.258,
+      "stationShare": 0.9008227253941058,
+      "dIdle": 0,
+      "dOff": 108863063.42399979,
+      "dDaily": 108863063.42399979,
+      "paybackH": 0.8818418018065435,
+      "paybackOnline": null
+    },
+    {
+      "id": "aquarium",
+      "name": "鱼缸",
+      "cost": 30000000,
+      "tDays": 0.2970649798240444,
+      "income": 112727.03,
+      "stationShare": 0.8572229748268894,
+      "dIdle": 9663.220000000001,
+      "dOff": 384055015.6800003,
+      "dDaily": 470076540.4300003,
+      "paybackH": 1.5316654588663017,
+      "paybackOnline": 1982.7685525352845
+    },
+    {
+      "id": "projector",
+      "name": "投影仪",
+      "cost": 200000000,
+      "tDays": 0.8485872591989597,
+      "income": 231308.564,
+      "stationShare": 0.8086868759429071,
+      "dIdle": 0,
+      "dOff": 0,
+      "dDaily": 109942285.08823542,
+      "paybackH": 43.659270826940755,
+      "paybackOnline": 13097.781248082227
+    },
+    {
+      "id": "catbed",
+      "name": "工位猫窝",
+      "cost": 2000000000,
+      "tDays": 3.2254947398685125,
+      "income": 616890.66,
+      "stationShare": 0.7628713328225782,
+      "dIdle": 70591.22999999986,
+      "dOff": 5459529496.319996,
+      "dDaily": 6166211845.114113,
+      "paybackH": 7.784357917906031,
+      "paybackOnline": 20376.90629258276
+    }
+  ]
+}

@@ -1,0 +1,562 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "head": "3d45589",
+  "steps": [
+    {
+      "t": 2.9,
+      "step": "A 全新档：社交禁用 / 省心组合禁用",
+      "firstTab": "同事",
+      "badges": {
+        "team": null,
+        "talent": "天赋",
+        "energy": "精力 100",
+        "arcade": "3"
+      },
+      "hudIdle0": "0.2",
+      "freshRows": [
+        {
+          "id": "slack",
+          "rowDisabled": "0",
+          "desc": "今天挂机 +25% · 花 40 精力",
+          "btn": {
+            "found": true,
+            "disabled": false
+          }
+        },
+        {
+          "id": "fake-work",
+          "rowDisabled": "0",
+          "desc": "今天巡逻奖励 ×2.2 · 花 35 精力",
+          "btn": {
+            "found": true,
+            "disabled": false
+          }
+        },
+        {
+          "id": "social",
+          "rowDisabled": "1",
+          "desc": "全体好感 +5，且今天挂机 +5% · 花 25 精力 · 还没有同事，暂不可用",
+          "btn": {
+            "found": true,
+            "disabled": true
+          }
+        },
+        {
+          "id": "focus",
+          "rowDisabled": "0",
+          "desc": "今天点击力 +20% · 花 45 精力",
+          "btn": {
+            "found": true,
+            "disabled": false
+          }
+        }
+      ],
+      "freshCombo": {
+        "found": true,
+        "disabled": true,
+        "text": "省心组合：摸鱼+假装工作+社交（100 精力）"
+      },
+      "freshComboStyle": {
+        "disabled": true,
+        "color": "rgb(244, 241, 232)",
+        "background": "rgb(74, 74, 102)",
+        "border": "rgb(106, 106, 138)",
+        "cursor": "default",
+        "opacity": "1"
+      },
+      "socialClick": {
+        "found": true,
+        "disabled": true,
+        "text": "使用"
+      },
+      "socialClickNoop": true,
+      "toasts": [
+        {
+          "at": 1795783026180,
+          "text": "送你 1 个天赋点，点 👥 看看"
+        }
+      ]
+    },
+    {
+      "t": 5.6,
+      "step": "B 招 1 人后：省心组合 1 步用掉 100",
+      "recruit": {
+        "found": true,
+        "disabled": false,
+        "text": "招募 1.20万"
+      },
+      "teammates": [
+        "zhou"
+      ],
+      "socialRow": {
+        "id": "social",
+        "rowDisabled": "0",
+        "desc": "全体好感 +5，且今天挂机 +5% · 花 25 精力",
+        "btn": {
+          "found": true,
+          "disabled": false
+        }
+      },
+      "comboWithMate": {
+        "found": true,
+        "disabled": false,
+        "text": "省心组合：摸鱼+假装工作+社交（100 精力）"
+      },
+      "comboEnabledStyle": {
+        "disabled": false,
+        "color": "rgb(244, 241, 232)",
+        "background": "rgb(74, 74, 102)",
+        "border": "rgb(106, 106, 138)",
+        "cursor": "default",
+        "opacity": "1"
+      },
+      "comboClick": {
+        "found": true,
+        "disabled": false,
+        "text": "省心组合：摸鱼+假装工作+社交（100 精力）"
+      },
+      "energyAfter": {
+        "date": "2026-11-27",
+        "left": 0,
+        "used": [
+          "social",
+          "fake-work",
+          "slack"
+        ],
+        "boosted": {
+          "idleMult": 1.3125,
+          "patrolRewardMult": 2.2,
+          "clickMult": 1
+        }
+      },
+      "hudIdleAfter": "20.3",
+      "hudIdleBefore": "0.2",
+      "toasts": [
+        {
+          "at": 1795783026180,
+          "text": "送你 1 个天赋点，点 👥 看看"
+        },
+        {
+          "at": 1795783028679,
+          "text": "新章节：302 · 转正"
+        },
+        {
+          "at": 1795783030585,
+          "text": "已使用 3 项精力（剩余 0 点）"
+        }
+      ],
+      "announces": [
+        {
+          "at": 1795783029469,
+          "text": "招募成功：老周"
+        },
+        {
+          "at": 1795783030585,
+          "text": "已使用 3 项精力（剩余 0 点）"
+        },
+        {
+          "at": 1795783031187,
+          "text": "今日精力已用完"
+        }
+      ]
+    },
+    {
+      "t": 8.4,
+      "step": "C 四档取舍：focus(45) → 只剩 55 → 再 slack(40) → 剩 15 作废",
+      "resetInfo": {
+        "ok": true,
+        "today": "2026-11-27"
+      },
+      "comboReady": {
+        "found": true,
+        "disabled": false,
+        "text": "省心组合：摸鱼+假装工作+社交（100 精力）"
+      },
+      "focusRes": {
+        "found": true,
+        "disabled": false,
+        "text": "使用"
+      },
+      "afterFocus": {
+        "date": "2026-11-27",
+        "left": 55,
+        "used": [
+          "focus"
+        ],
+        "boosted": {
+          "idleMult": 1,
+          "patrolRewardMult": 1,
+          "clickMult": 1.2
+        }
+      },
+      "rowsAfterFocus": [
+        {
+          "id": "slack",
+          "disabled": false,
+          "rowDisabled": "0"
+        },
+        {
+          "id": "fake-work",
+          "disabled": false,
+          "rowDisabled": "0"
+        },
+        {
+          "id": "social",
+          "disabled": false,
+          "rowDisabled": "0"
+        },
+        {
+          "id": "focus",
+          "disabled": null,
+          "rowDisabled": "1"
+        }
+      ],
+      "comboAfterFocus": {
+        "found": true,
+        "disabled": true,
+        "text": "省心组合：摸鱼+假装工作+社交（100 精力）"
+      },
+      "slackRes": {
+        "found": true,
+        "disabled": false,
+        "text": "使用"
+      },
+      "afterFocusSlack": {
+        "date": "2026-11-27",
+        "left": 15,
+        "used": [
+          "focus",
+          "slack"
+        ],
+        "boosted": {
+          "idleMult": 1.25,
+          "patrolRewardMult": 1,
+          "clickMult": 1.2
+        }
+      },
+      "rowsAfterSlack": [
+        {
+          "id": "slack",
+          "disabled": null
+        },
+        {
+          "id": "fake-work",
+          "disabled": true
+        },
+        {
+          "id": "social",
+          "disabled": true
+        },
+        {
+          "id": "focus",
+          "disabled": null
+        }
+      ],
+      "toasts": [
+        {
+          "at": 1795783033156,
+          "text": "精力已使用：专注点击（剩余 55 点）"
+        },
+        {
+          "at": 1795783033569,
+          "text": "精力已使用：认真摸鱼（剩余 15 点）"
+        }
+      ]
+    },
+    {
+      "t": 12.8,
+      "step": "D 买满 8 件：完成奖励",
+      "summaryBefore": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%",
+      "summaryAfter": "已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23%",
+      "decor": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair",
+        "aquarium",
+        "projector",
+        "catbed"
+      ],
+      "remainingDecorBtns": 0,
+      "toasts": [
+        {
+          "at": 1795783033156,
+          "text": "精力已使用：专注点击（剩余 55 点）"
+        },
+        {
+          "at": 1795783033569,
+          "text": "精力已使用：认真摸鱼（剩余 15 点）"
+        },
+        {
+          "at": 1795783034110,
+          "text": "新章节：303 · 架构调整"
+        },
+        {
+          "at": 1795783036041,
+          "text": "已装修：绿萝（工位挂机 +5%）"
+        },
+        {
+          "at": 1795783036215,
+          "text": "已装修：护眼台灯（点击力 +15%）"
+        },
+        {
+          "at": 1795783036390,
+          "text": "已装修：毛绒地毯（离线效率 +5%）"
+        },
+        {
+          "at": 1795783036565,
+          "text": "已装修：迷你冰箱（工位挂机 +8%）"
+        },
+        {
+          "at": 1795783036738,
+          "text": "已装修：按摩椅（离线效率 +8%）"
+        },
+        {
+          "at": 1795783036913,
+          "text": "已装修：鱼缸（挂机 +10%、点击 +10%）"
+        },
+        {
+          "at": 1795783037087,
+          "text": "已装修：投影仪（派遣奖励 +30%）"
+        },
+        {
+          "at": 1795783037402,
+          "text": "🎉 工位装修完成：挂机 +10%"
+        }
+      ],
+      "announces": [
+        {
+          "at": 1795783036390,
+          "text": "已装修：毛绒地毯（离线效率 +5%）"
+        },
+        {
+          "at": 1795783036565,
+          "text": "已装修：迷你冰箱（工位挂机 +8%）"
+        },
+        {
+          "at": 1795783036738,
+          "text": "已装修：按摩椅（离线效率 +8%）"
+        },
+        {
+          "at": 1795783036913,
+          "text": "已装修：鱼缸（挂机 +10%、点击 +10%）"
+        },
+        {
+          "at": 1795783037087,
+          "text": "已装修：投影仪（派遣奖励 +30%）"
+        },
+        {
+          "at": 1795783037402,
+          "text": "工位装修完成！全部 8 件，挂机额外 +10%"
+        }
+      ],
+      "hudIdle": "20.4"
+    },
+    {
+      "t": 14.5,
+      "step": "E 每日内容量 / 版本公告",
+      "dailyContent": {
+        "arcadeBtn": {
+          "label": "摸鱼站，今天还剩 3 次",
+          "badge": "3"
+        },
+        "journalBadge": "",
+        "teamBadge": null,
+        "energyBadge": null,
+        "talentBadge": "天赋"
+      },
+      "aboutVersion": "v0.5.0 · 2026-11-27",
+      "aboutNotes": "新增：摸鱼小队（招募/派遣/好感/一键领取）+ 天赋树（18 天赋/24 点/溢出转化）；新增：每日摸鱼卡（16 张，选 1 生效 24h）；新增：回合制老板（3 性格，看线索选应对，5 秒窗口）；新增：工位经营（8 件家具，买完看得见，集齐 +10%）+ 每日精力（4 档取舍）"
+    }
+  ],
+  "shots": [
+    "playtest/r14-mgr/recheck-A-fresh-decor.png",
+    "playtest/r14-mgr/recheck-B-combo-enabled.png",
+    "playtest/r14-mgr/recheck-B-combo-used.png",
+    "playtest/r14-mgr/recheck-C-focus-tradeoff.png",
+    "playtest/r14-mgr/recheck-D-decor-complete.png",
+    "playtest/r14-mgr/recheck-D-scene-decor.png"
+  ],
+  "asserts": {
+    "socialDisabledWithoutColleagues": true,
+    "comboDisabledWithoutColleagues": true,
+    "socialClickNoop": true,
+    "fourActionsRendered": true,
+    "comboDisabledStyleRecorded": true,
+    "comboEnabledWithColleague": true,
+    "comboDisabledVsEnabledVisualDiff": false,
+    "comboOneStepUsesThree": true,
+    "socialEnabledWithColleague": true,
+    "focusLeaves55": true,
+    "comboBlockedByBudget": true,
+    "leftover15Wasted": true,
+    "decorCompleteReward": true,
+    "decorExhausted": true,
+    "updatesListBatch3": true,
+    "tapsToEnergy": 2
+  },
+  "clicks": 13,
+  "comboAfterUseStyle": {
+    "disabled": true,
+    "color": "rgb(244, 241, 232)",
+    "background": "rgb(74, 74, 102)",
+    "border": "rgb(106, 106, 138)",
+    "cursor": "default",
+    "opacity": "1"
+  },
+  "dailyContent": {
+    "arcadeBtn": {
+      "label": "摸鱼站，今天还剩 3 次",
+      "badge": "3"
+    },
+    "journalBadge": "",
+    "teamBadge": null,
+    "energyBadge": null,
+    "talentBadge": "天赋"
+  },
+  "finalState": {
+    "moyu": 97765265200,
+    "lifetime": 100000020200,
+    "rankHud": "奇点 25%",
+    "hudIdle": "20.4",
+    "hudClick": "1.5",
+    "energy": {
+      "date": "2026-11-27",
+      "left": 15,
+      "used": [
+        "focus",
+        "slack"
+      ],
+      "boosted": {
+        "idleMult": 1.25,
+        "patrolRewardMult": 1,
+        "clickMult": 1.2
+      }
+    },
+    "decor": [
+      "plant",
+      "lamp",
+      "rug",
+      "fridge",
+      "chair",
+      "aquarium",
+      "projector",
+      "catbed"
+    ],
+    "teammates": [
+      "zhou"
+    ],
+    "talents": {
+      "points": 6,
+      "unlocked": []
+    },
+    "badges": {
+      "team": null,
+      "talent": "天赋",
+      "energy": null,
+      "arcade": "3"
+    },
+    "activeTab": "工位",
+    "summaryLine": "已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23%"
+  },
+  "logs": {
+    "toasts": [
+      {
+        "at": 1795783033156,
+        "text": "精力已使用：专注点击（剩余 55 点）"
+      },
+      {
+        "at": 1795783033569,
+        "text": "精力已使用：认真摸鱼（剩余 15 点）"
+      },
+      {
+        "at": 1795783034110,
+        "text": "新章节：303 · 架构调整"
+      },
+      {
+        "at": 1795783036041,
+        "text": "已装修：绿萝（工位挂机 +5%）"
+      },
+      {
+        "at": 1795783036215,
+        "text": "已装修：护眼台灯（点击力 +15%）"
+      },
+      {
+        "at": 1795783036390,
+        "text": "已装修：毛绒地毯（离线效率 +5%）"
+      },
+      {
+        "at": 1795783036565,
+        "text": "已装修：迷你冰箱（工位挂机 +8%）"
+      },
+      {
+        "at": 1795783036738,
+        "text": "已装修：按摩椅（离线效率 +8%）"
+      },
+      {
+        "at": 1795783036913,
+        "text": "已装修：鱼缸（挂机 +10%、点击 +10%）"
+      },
+      {
+        "at": 1795783037087,
+        "text": "已装修：投影仪（派遣奖励 +30%）"
+      },
+      {
+        "at": 1795783037402,
+        "text": "🎉 工位装修完成：挂机 +10%"
+      }
+    ],
+    "announces": [
+      {
+        "at": 1795783031444,
+        "text": "✓ 戳屏幕完成！"
+      },
+      {
+        "at": 1795783033156,
+        "text": "精力已使用：专注点击（剩余 55 点）"
+      },
+      {
+        "at": 1795783033569,
+        "text": "精力已使用：认真摸鱼（剩余 15 点）"
+      },
+      {
+        "at": 1795783034110,
+        "text": "段位晋升：摸鱼奇点"
+      },
+      {
+        "at": 1795783036041,
+        "text": "已装修：绿萝（工位挂机 +5%）"
+      },
+      {
+        "at": 1795783036215,
+        "text": "已装修：护眼台灯（点击力 +15%）"
+      },
+      {
+        "at": 1795783036390,
+        "text": "已装修：毛绒地毯（离线效率 +5%）"
+      },
+      {
+        "at": 1795783036565,
+        "text": "已装修：迷你冰箱（工位挂机 +8%）"
+      },
+      {
+        "at": 1795783036738,
+        "text": "已装修：按摩椅（离线效率 +8%）"
+      },
+      {
+        "at": 1795783036913,
+        "text": "已装修：鱼缸（挂机 +10%、点击 +10%）"
+      },
+      {
+        "at": 1795783037087,
+        "text": "已装修：投影仪（派遣奖励 +30%）"
+      },
+      {
+        "at": 1795783037402,
+        "text": "工位装修完成！全部 8 件，挂机额外 +10%"
+      }
+    ]
+  },
+  "ok": true
+}

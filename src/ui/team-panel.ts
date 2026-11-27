@@ -539,7 +539,7 @@ export class TeamPanel {
         </div>`;
       }).join("")}
       <div class="mate-actions" style="margin-top:8px">
-        <button class="ghost" data-act="energy-all" ${SIMPLE_COMBO_OK(energy, Object.keys(state.team.colleagues).length > 0) ? "" : "disabled"}>省心组合：摸鱼+假装工作+社交（100 精力）</button>
+        <button class="ghost" data-act="energy-all" ${SIMPLE_COMBO_OK(energy, Object.keys(state.team.colleagues).length > 0) ? "" : "disabled"}>省心组合：摸鱼+假装工作+社交（100 精力）${Object.keys(state.team.colleagues).length === 0 ? "（招 1 人后可用）" : ""}</button>
       </div>
       <div style="font-size:11px;color:#a8a493;margin-top:6px">每天 100 点；4 项合计 145，必须放弃至少 1 项（含「专注点击」45 点时只剩 55）</div>
     </div>`);

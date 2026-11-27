@@ -1,0 +1,1538 @@
+{
+  "s0": {
+    "state": {
+      "moyu": 0.27881360000000005,
+      "totalEarned": 0.27881360000000005,
+      "levels": {},
+      "collected": {
+        "quotes": [],
+        "flavors": []
+      },
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "visit_1",
+            "target": 1,
+            "progress": 1,
+            "done": true
+          },
+          {
+            "id": "idle_earn",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "survive_2",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          }
+        ],
+        "streak": 0,
+        "lastCompleteDate": null,
+        "claimed": false,
+        "window": 3,
+        "claimsToday": 0
+      },
+      "surviveStreak": 0,
+      "totalClicks": 0,
+      "visits": {
+        "date": "2026-11-27",
+        "count": 1
+      },
+      "lifetimeEarned": 0.27881360000000005,
+      "prestige": 0,
+      "team": {
+        "colleagues": {}
+      },
+      "talents": {
+        "unlocked": [],
+        "points": 1,
+        "rankGranted": -1,
+        "dailyGiftDate": "2026-11-27",
+        "overflow": 0
+      },
+      "patrolSurvives": 0,
+      "cards": {
+        "date": "2026-11-27",
+        "offers": [
+          "ac_broken",
+          "quiet_day",
+          "click_frenzy"
+        ],
+        "chosen": null,
+        "until": 0,
+        "nextDayGuaranteed": null,
+        "dismissed": false,
+        "chosenDate": ""
+      },
+      "decor": [],
+      "energy": {
+        "date": "2026-11-27",
+        "left": 100,
+        "used": [],
+        "boosted": {
+          "idleMult": 1,
+          "patrolRewardMult": 1,
+          "clickMult": 1
+        }
+      },
+      "arcade": {
+        "date": "2026-11-27",
+        "played": 0,
+        "best": {}
+      }
+    },
+    "hud": {
+      "moyu": "0.3",
+      "click": "1",
+      "idle": "0.2",
+      "rank": "实习生 0%",
+      "teamBtn": "👥精力 100天赋",
+      "teamAria": "摸鱼小队，还有精力 100"
+    },
+    "canvas": {
+      "w": 780,
+      "h": 1104,
+      "cw": 390,
+      "ch": 552
+    }
+  },
+  "baseline": {
+    "state": {
+      "moyu": 100000000000.86267,
+      "totalEarned": 100000000000.86267,
+      "levels": {},
+      "collected": {
+        "quotes": [],
+        "flavors": []
+      },
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "visit_1",
+            "target": 1,
+            "progress": 1,
+            "done": true
+          },
+          {
+            "id": "idle_earn",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "survive_2",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          }
+        ],
+        "streak": 0,
+        "lastCompleteDate": null,
+        "claimed": false,
+        "window": 3,
+        "claimsToday": 0
+      },
+      "surviveStreak": 0,
+      "totalClicks": 0,
+      "visits": {
+        "date": "2026-11-27",
+        "count": 1
+      },
+      "lifetimeEarned": 100000000000.86267,
+      "prestige": 0,
+      "team": {
+        "colleagues": {}
+      },
+      "talents": {
+        "unlocked": [],
+        "points": 6,
+        "rankGranted": 10,
+        "dailyGiftDate": "2026-11-27",
+        "overflow": 0
+      },
+      "patrolSurvives": 0,
+      "cards": {
+        "date": "2026-11-27",
+        "offers": [
+          "ac_broken",
+          "quiet_day",
+          "click_frenzy"
+        ],
+        "chosen": null,
+        "until": 0,
+        "nextDayGuaranteed": null,
+        "dismissed": false,
+        "chosenDate": ""
+      },
+      "decor": [],
+      "energy": {
+        "date": "2026-11-27",
+        "left": 100,
+        "used": [],
+        "boosted": {
+          "idleMult": 1,
+          "patrolRewardMult": 1,
+          "clickMult": 1
+        }
+      },
+      "arcade": {
+        "date": "2026-11-27",
+        "played": 0,
+        "best": {}
+      }
+    },
+    "hud": {
+      "moyu": "1000.00亿",
+      "click": "1",
+      "idle": "0.2",
+      "rank": "奇点 25%",
+      "teamBtn": "👥精力 100天赋",
+      "teamAria": "摸鱼小队，还有精力 100"
+    }
+  },
+  "panelBefore": {
+    "summary": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%",
+    "energyTitle": "今日精力 （剩 100/100）",
+    "energy": [
+      {
+        "name": "认真摸鱼",
+        "desc": "今天挂机 +25% · 花 40 精力",
+        "dot": "40",
+        "btnText": "使用",
+        "btnDisabled": false,
+        "btnRect": {
+          "w": 64,
+          "h": 44
+        }
+      },
+      {
+        "name": "假装工作",
+        "desc": "今天巡逻奖励 ×2.2 · 花 35 精力",
+        "dot": "35",
+        "btnText": "使用",
+        "btnDisabled": false,
+        "btnRect": {
+          "w": 64,
+          "h": 44
+        }
+      },
+      {
+        "name": "跟同事聊天",
+        "desc": "全体好感 +5，且今天挂机 +5% · 花 25 精力 · 还没有同事，暂不可用",
+        "dot": "25",
+        "btnText": "使用",
+        "btnDisabled": true,
+        "btnRect": {
+          "w": 64,
+          "h": 44
+        }
+      },
+      {
+        "name": "专注点击",
+        "desc": "今天点击力 +20% · 花 45 精力",
+        "dot": "45",
+        "btnText": "使用",
+        "btnDisabled": false,
+        "btnRect": {
+          "w": 64,
+          "h": 44
+        }
+      }
+    ],
+    "decor": [
+      {
+        "name": "绿萝",
+        "desc": "工位挂机 +5%",
+        "dot": "",
+        "btnText": "3000",
+        "btnDisabled": false,
+        "btnRect": {
+          "w": 64,
+          "h": 44
+        }
+      },
+      {
+        "name": "护眼台灯",
+        "desc": "点击力 +15%",
+        "dot": "",
+        "btnText": "2.00万",
+        "btnDisabled": false,
+        "btnRect": {
+          "w": 64,
+          "h": 44
+        }
+      },
+      {
+        "name": "毛绒地毯",
+        "desc": "离线效率 +5%",
+        "dot": "",
+        "btnText": "12.00万",
+        "btnDisabled": false,
+        "btnRect": {
+          "w": 65,
+          "h": 44
+        }
+      },
+      {
+        "name": "迷你冰箱",
+        "desc": "工位挂机 +8%",
+        "dot": "",
+        "btnText": "60.00万",
+        "btnDisabled": false,
+        "btnRect": {
+          "w": 67,
+          "h": 44
+        }
+      },
+      {
+        "name": "按摩椅",
+        "desc": "离线效率 +8%",
+        "dot": "",
+        "btnText": "400.00万",
+        "btnDisabled": false,
+        "btnRect": {
+          "w": 75,
+          "h": 44
+        }
+      },
+      {
+        "name": "鱼缸",
+        "desc": "挂机 +10%、点击 +10%",
+        "dot": "",
+        "btnText": "3000.00万",
+        "btnDisabled": false,
+        "btnRect": {
+          "w": 82,
+          "h": 44
+        }
+      },
+      {
+        "name": "投影仪",
+        "desc": "派遣奖励 +30%",
+        "dot": "",
+        "btnText": "2.00亿",
+        "btnDisabled": false,
+        "btnRect": {
+          "w": 64,
+          "h": 44
+        }
+      },
+      {
+        "name": "工位猫窝",
+        "desc": "挂机 +15%、离线 +10%",
+        "dot": "",
+        "btnText": "20.00亿",
+        "btnDisabled": false,
+        "btnRect": {
+          "w": 67,
+          "h": 44
+        }
+      }
+    ],
+    "buttons": [
+      {
+        "act": "energy",
+        "id": "slack",
+        "text": "使用",
+        "disabled": false
+      },
+      {
+        "act": "energy",
+        "id": "fake-work",
+        "text": "使用",
+        "disabled": false
+      },
+      {
+        "act": "energy",
+        "id": "social",
+        "text": "使用",
+        "disabled": true
+      },
+      {
+        "act": "energy",
+        "id": "focus",
+        "text": "使用",
+        "disabled": false
+      },
+      {
+        "act": "energy-all",
+        "id": "",
+        "text": "省心组合：摸鱼+假装工作+社交（100 精力）",
+        "disabled": true
+      },
+      {
+        "act": "decor",
+        "id": "plant",
+        "text": "3000",
+        "disabled": false
+      },
+      {
+        "act": "decor",
+        "id": "lamp",
+        "text": "2.00万",
+        "disabled": false
+      },
+      {
+        "act": "decor",
+        "id": "rug",
+        "text": "12.00万",
+        "disabled": false
+      },
+      {
+        "act": "decor",
+        "id": "fridge",
+        "text": "60.00万",
+        "disabled": false
+      },
+      {
+        "act": "decor",
+        "id": "chair",
+        "text": "400.00万",
+        "disabled": false
+      },
+      {
+        "act": "decor",
+        "id": "aquarium",
+        "text": "3000.00万",
+        "disabled": false
+      },
+      {
+        "act": "decor",
+        "id": "projector",
+        "text": "2.00亿",
+        "disabled": false
+      },
+      {
+        "act": "decor",
+        "id": "catbed",
+        "text": "20.00亿",
+        "disabled": false
+      }
+    ],
+    "text": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0% | 今日精力 （剩 100/100） | 40 | 认真摸鱼 今天挂机 +25% · 花 40 精力 | 使用 | 35 | 假装工作 今天巡逻奖励 ×2.2 · 花 35 精力 | 使用 | 25 | 跟同事聊天 全体好感 +5，且今天挂机 +5% · 花 25 精力 · 还没有同事，暂不可用 | 使用 | 45 | 专注点击 今天点击力 +20% · 花 45 精力 | 使用 | 省心组合：摸鱼+假装工作+社交（100 精力） | 每天 100 点；4 项合计 145，必须放弃至少 1 项（含「专注点击」45 点时只剩 55） | 工位家具 （已装修 0/8） | 绿萝 工位挂机 +5% | 3000 | 护眼台灯 点击力 +15% | 2.00万 | 毛绒地毯 离线效率 +5% | 12.00万 | 迷你冰箱 工位挂机 +8% | 60.00万 | 按摩椅 离线效率 +8% | 400.00万 | 鱼缸 挂机 +10%、点击 +10% | 3000.00万 | 投影仪 派遣奖励 +30% | 2.00亿 | 工位猫窝 挂机 +15%、离线 +10% | 20.00亿"
+  },
+  "recruit": {
+    "ok": true,
+    "btn": "招募 1.20万",
+    "colleagues": 1
+  },
+  "energyBefore": {
+    "state": {
+      "date": "2026-11-27",
+      "left": 100,
+      "used": [],
+      "boosted": {
+        "idleMult": 1,
+        "patrolRewardMult": 1,
+        "clickMult": 1
+      }
+    },
+    "hud": {
+      "moyu": "1000.00亿",
+      "click": "1",
+      "idle": "20.2",
+      "rank": "奇点 25%",
+      "teamBtn": "👥精力 100天赋",
+      "teamAria": "摸鱼小队，还有精力 100"
+    },
+    "panel": {
+      "summary": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%",
+      "energyTitle": "今日精力 （剩 100/100）",
+      "energy": [
+        {
+          "name": "认真摸鱼",
+          "desc": "今天挂机 +25% · 花 40 精力",
+          "dot": "40",
+          "btnText": "使用",
+          "btnDisabled": false,
+          "btnRect": {
+            "w": 64,
+            "h": 44
+          }
+        },
+        {
+          "name": "假装工作",
+          "desc": "今天巡逻奖励 ×2.2 · 花 35 精力",
+          "dot": "35",
+          "btnText": "使用",
+          "btnDisabled": false,
+          "btnRect": {
+            "w": 64,
+            "h": 44
+          }
+        },
+        {
+          "name": "跟同事聊天",
+          "desc": "全体好感 +5，且今天挂机 +5% · 花 25 精力",
+          "dot": "25",
+          "btnText": "使用",
+          "btnDisabled": false,
+          "btnRect": {
+            "w": 64,
+            "h": 44
+          }
+        },
+        {
+          "name": "专注点击",
+          "desc": "今天点击力 +20% · 花 45 精力",
+          "dot": "45",
+          "btnText": "使用",
+          "btnDisabled": false,
+          "btnRect": {
+            "w": 64,
+            "h": 44
+          }
+        }
+      ],
+      "decor": [
+        {
+          "name": "绿萝",
+          "desc": "工位挂机 +5%",
+          "dot": "",
+          "btnText": "3000",
+          "btnDisabled": false,
+          "btnRect": {
+            "w": 64,
+            "h": 44
+          }
+        },
+        {
+          "name": "护眼台灯",
+          "desc": "点击力 +15%",
+          "dot": "",
+          "btnText": "2.00万",
+          "btnDisabled": false,
+          "btnRect": {
+            "w": 64,
+            "h": 44
+          }
+        },
+        {
+          "name": "毛绒地毯",
+          "desc": "离线效率 +5%",
+          "dot": "",
+          "btnText": "12.00万",
+          "btnDisabled": false,
+          "btnRect": {
+            "w": 65,
+            "h": 44
+          }
+        },
+        {
+          "name": "迷你冰箱",
+          "desc": "工位挂机 +8%",
+          "dot": "",
+          "btnText": "60.00万",
+          "btnDisabled": false,
+          "btnRect": {
+            "w": 67,
+            "h": 44
+          }
+        },
+        {
+          "name": "按摩椅",
+          "desc": "离线效率 +8%",
+          "dot": "",
+          "btnText": "400.00万",
+          "btnDisabled": false,
+          "btnRect": {
+            "w": 75,
+            "h": 44
+          }
+        },
+        {
+          "name": "鱼缸",
+          "desc": "挂机 +10%、点击 +10%",
+          "dot": "",
+          "btnText": "3000.00万",
+          "btnDisabled": false,
+          "btnRect": {
+            "w": 82,
+            "h": 44
+          }
+        },
+        {
+          "name": "投影仪",
+          "desc": "派遣奖励 +30%",
+          "dot": "",
+          "btnText": "2.00亿",
+          "btnDisabled": false,
+          "btnRect": {
+            "w": 64,
+            "h": 44
+          }
+        },
+        {
+          "name": "工位猫窝",
+          "desc": "挂机 +15%、离线 +10%",
+          "dot": "",
+          "btnText": "20.00亿",
+          "btnDisabled": false,
+          "btnRect": {
+            "w": 67,
+            "h": 44
+          }
+        }
+      ],
+      "buttons": [
+        {
+          "act": "energy",
+          "id": "slack",
+          "text": "使用",
+          "disabled": false
+        },
+        {
+          "act": "energy",
+          "id": "fake-work",
+          "text": "使用",
+          "disabled": false
+        },
+        {
+          "act": "energy",
+          "id": "social",
+          "text": "使用",
+          "disabled": false
+        },
+        {
+          "act": "energy",
+          "id": "focus",
+          "text": "使用",
+          "disabled": false
+        },
+        {
+          "act": "energy-all",
+          "id": "",
+          "text": "省心组合：摸鱼+假装工作+社交（100 精力）",
+          "disabled": false
+        },
+        {
+          "act": "decor",
+          "id": "plant",
+          "text": "3000",
+          "disabled": false
+        },
+        {
+          "act": "decor",
+          "id": "lamp",
+          "text": "2.00万",
+          "disabled": false
+        },
+        {
+          "act": "decor",
+          "id": "rug",
+          "text": "12.00万",
+          "disabled": false
+        },
+        {
+          "act": "decor",
+          "id": "fridge",
+          "text": "60.00万",
+          "disabled": false
+        },
+        {
+          "act": "decor",
+          "id": "chair",
+          "text": "400.00万",
+          "disabled": false
+        },
+        {
+          "act": "decor",
+          "id": "aquarium",
+          "text": "3000.00万",
+          "disabled": false
+        },
+        {
+          "act": "decor",
+          "id": "projector",
+          "text": "2.00亿",
+          "disabled": false
+        },
+        {
+          "act": "decor",
+          "id": "catbed",
+          "text": "20.00亿",
+          "disabled": false
+        }
+      ],
+      "text": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0% | 今日精力 （剩 100/100） | 40 | 认真摸鱼 今天挂机 +25% · 花 40 精力 | 使用 | 35 | 假装工作 今天巡逻奖励 ×2.2 · 花 35 精力 | 使用 | 25 | 跟同事聊天 全体好感 +5，且今天挂机 +5% · 花 25 精力 | 使用 | 45 | 专注点击 今天点击力 +20% · 花 45 精力 | 使用 | 省心组合：摸鱼+假装工作+社交（100 精力） | 每天 100 点；4 项合计 145，必须放弃至少 1 项（含「专注点击」45 点时只剩 55） | 工位家具 （已装修 0/8） | 绿萝 工位挂机 +5% | 3000 | 护眼台灯 点击力 +15% | 2.00万 | 毛绒地毯 离线效率 +5% | 12.00万 | 迷你冰箱 工位挂机 +8% | 60.00万 | 按摩椅 离线效率 +8% | 400.00万 | 鱼缸 挂机 +10%、点击 +10% | 3000.00万 | 投影仪 派遣奖励 +30% | 2.00亿 | 工位猫窝 挂机 +15%、离线 +10% | 20.00亿"
+    }
+  },
+  "energyComboBtn": {
+    "text": "省心组合：摸鱼+假装工作+社交（100 精力）",
+    "disabled": false
+  },
+  "energyAfterCombo": {
+    "state": {
+      "date": "2026-11-27",
+      "left": 0,
+      "used": [
+        "social",
+        "fake-work",
+        "slack"
+      ],
+      "boosted": {
+        "idleMult": 1.3125,
+        "patrolRewardMult": 2.2,
+        "clickMult": 1
+      }
+    },
+    "toast": {
+      "text": "已使用 3 项精力（剩余 0 点）",
+      "shown": true
+    },
+    "hud": {
+      "moyu": "1000.00亿",
+      "click": "1",
+      "idle": "20.3",
+      "rank": "奇点 25%",
+      "teamBtn": "👥天赋",
+      "teamAria": "摸鱼小队"
+    },
+    "buttons": [
+      {
+        "id": "focus",
+        "disabled": true
+      }
+    ],
+    "panel": {
+      "summary": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%",
+      "energyTitle": "今日精力 （剩 0/100）",
+      "energy": [
+        {
+          "name": "认真摸鱼",
+          "desc": "今天挂机 +25% · 花 40 精力",
+          "dot": "✓",
+          "btnText": null,
+          "btnDisabled": null,
+          "btnRect": null
+        },
+        {
+          "name": "假装工作",
+          "desc": "今天巡逻奖励 ×2.2 · 花 35 精力",
+          "dot": "✓",
+          "btnText": null,
+          "btnDisabled": null,
+          "btnRect": null
+        },
+        {
+          "name": "跟同事聊天",
+          "desc": "全体好感 +5，且今天挂机 +5% · 花 25 精力",
+          "dot": "✓",
+          "btnText": null,
+          "btnDisabled": null,
+          "btnRect": null
+        },
+        {
+          "name": "专注点击",
+          "desc": "今天点击力 +20% · 花 45 精力",
+          "dot": "45",
+          "btnText": "使用",
+          "btnDisabled": true,
+          "btnRect": {
+            "w": 64,
+            "h": 44
+          }
+        }
+      ],
+      "decor": [
+        {
+          "name": "绿萝",
+          "desc": "工位挂机 +5%",
+          "dot": "",
+          "btnText": "3000",
+          "btnDisabled": false,
+          "btnRect": {
+            "w": 64,
+            "h": 44
+          }
+        },
+        {
+          "name": "护眼台灯",
+          "desc": "点击力 +15%",
+          "dot": "",
+          "btnText": "2.00万",
+          "btnDisabled": false,
+          "btnRect": {
+            "w": 64,
+            "h": 44
+          }
+        },
+        {
+          "name": "毛绒地毯",
+          "desc": "离线效率 +5%",
+          "dot": "",
+          "btnText": "12.00万",
+          "btnDisabled": false,
+          "btnRect": {
+            "w": 65,
+            "h": 44
+          }
+        },
+        {
+          "name": "迷你冰箱",
+          "desc": "工位挂机 +8%",
+          "dot": "",
+          "btnText": "60.00万",
+          "btnDisabled": false,
+          "btnRect": {
+            "w": 67,
+            "h": 44
+          }
+        },
+        {
+          "name": "按摩椅",
+          "desc": "离线效率 +8%",
+          "dot": "",
+          "btnText": "400.00万",
+          "btnDisabled": false,
+          "btnRect": {
+            "w": 75,
+            "h": 44
+          }
+        },
+        {
+          "name": "鱼缸",
+          "desc": "挂机 +10%、点击 +10%",
+          "dot": "",
+          "btnText": "3000.00万",
+          "btnDisabled": false,
+          "btnRect": {
+            "w": 82,
+            "h": 44
+          }
+        },
+        {
+          "name": "投影仪",
+          "desc": "派遣奖励 +30%",
+          "dot": "",
+          "btnText": "2.00亿",
+          "btnDisabled": false,
+          "btnRect": {
+            "w": 64,
+            "h": 44
+          }
+        },
+        {
+          "name": "工位猫窝",
+          "desc": "挂机 +15%、离线 +10%",
+          "dot": "",
+          "btnText": "20.00亿",
+          "btnDisabled": false,
+          "btnRect": {
+            "w": 67,
+            "h": 44
+          }
+        }
+      ],
+      "buttons": [
+        {
+          "act": "energy",
+          "id": "focus",
+          "text": "使用",
+          "disabled": true
+        },
+        {
+          "act": "energy-all",
+          "id": "",
+          "text": "省心组合：摸鱼+假装工作+社交（100 精力）",
+          "disabled": true
+        },
+        {
+          "act": "decor",
+          "id": "plant",
+          "text": "3000",
+          "disabled": false
+        },
+        {
+          "act": "decor",
+          "id": "lamp",
+          "text": "2.00万",
+          "disabled": false
+        },
+        {
+          "act": "decor",
+          "id": "rug",
+          "text": "12.00万",
+          "disabled": false
+        },
+        {
+          "act": "decor",
+          "id": "fridge",
+          "text": "60.00万",
+          "disabled": false
+        },
+        {
+          "act": "decor",
+          "id": "chair",
+          "text": "400.00万",
+          "disabled": false
+        },
+        {
+          "act": "decor",
+          "id": "aquarium",
+          "text": "3000.00万",
+          "disabled": false
+        },
+        {
+          "act": "decor",
+          "id": "projector",
+          "text": "2.00亿",
+          "disabled": false
+        },
+        {
+          "act": "decor",
+          "id": "catbed",
+          "text": "20.00亿",
+          "disabled": false
+        }
+      ],
+      "text": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0% | 今日精力 （剩 0/100） | ✓ | 认真摸鱼 今天挂机 +25% · 花 40 精力 | 已使用 | ✓ | 假装工作 今天巡逻奖励 ×2.2 · 花 35 精力 | 已使用 | ✓ | 跟同事聊天 全体好感 +5，且今天挂机 +5% · 花 25 精力 | 已使用 | 45 | 专注点击 今天点击力 +20% · 花 45 精力 | 使用 | 省心组合：摸鱼+假装工作+社交（100 精力） | 每天 100 点；4 项合计 145，必须放弃至少 1 项（含「专注点击」45 点时只剩 55） | 工位家具 （已装修 0/8） | 绿萝 工位挂机 +5% | 3000 | 护眼台灯 点击力 +15% | 2.00万 | 毛绒地毯 离线效率 +5% | 12.00万 | 迷你冰箱 工位挂机 +8% | 60.00万 | 按摩椅 离线效率 +8% | 400.00万 | 鱼缸 挂机 +10%、点击 +10% | 3000.00万 | 投影仪 派遣奖励 +30% | 2.00亿 | 工位猫窝 挂机 +15%、离线 +10% | 20.00亿"
+    }
+  },
+  "buys": [
+    {
+      "i": 1,
+      "id": "plant",
+      "btn": {
+        "text": "3000",
+        "disabled": false,
+        "w": 64,
+        "h": 44
+      },
+      "toast": {
+        "text": "已装修：绿萝（工位挂机 +5%）",
+        "shown": true
+      },
+      "moneyBefore": 99999988043.07036,
+      "moneyAfter": 99999985049.4901,
+      "spent": 2993.5802612304688,
+      "decor": [
+        "plant"
+      ],
+      "summary": "已装修 1/8 · 挂机 ×1.05 · 点击 ×1.00 · 离线 +0%",
+      "ownedRow": null
+    },
+    {
+      "i": 2,
+      "id": "lamp",
+      "btn": {
+        "text": "2.00万",
+        "disabled": false,
+        "w": 64,
+        "h": 44
+      },
+      "toast": {
+        "text": "已装修：护眼台灯（点击力 +15%）",
+        "shown": true
+      },
+      "moneyBefore": 99999985104.57298,
+      "moneyAfter": 99999965110.99474,
+      "spent": 19993.578247070312,
+      "decor": [
+        "plant",
+        "lamp"
+      ],
+      "summary": "已装修 2/8 · 挂机 ×1.05 · 点击 ×1.15 · 离线 +0%",
+      "ownedRow": null
+    },
+    {
+      "i": 3,
+      "id": "rug",
+      "btn": {
+        "text": "12.00万",
+        "disabled": false,
+        "w": 65,
+        "h": 44
+      },
+      "toast": {
+        "text": "已装修：毛绒地毯（离线效率 +5%）",
+        "shown": true
+      },
+      "moneyBefore": 99999965171.48555,
+      "moneyAfter": 99999845177.90733,
+      "spent": 119993.57821655273,
+      "decor": [
+        "plant",
+        "lamp",
+        "rug"
+      ],
+      "summary": "已装修 3/8 · 挂机 ×1.05 · 点击 ×1.15 · 离线 +5%",
+      "ownedRow": null
+    },
+    {
+      "i": 4,
+      "id": "fridge",
+      "btn": {
+        "text": "60.00万",
+        "disabled": false,
+        "w": 67,
+        "h": 44
+      },
+      "toast": {
+        "text": "已装修：迷你冰箱（工位挂机 +8%）",
+        "shown": true
+      },
+      "moneyBefore": 99999845234.67938,
+      "moneyAfter": 99999245241.10994,
+      "spent": 599993.569442749,
+      "decor": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge"
+      ],
+      "summary": "已装修 4/8 · 挂机 ×1.13 · 点击 ×1.15 · 离线 +5%",
+      "ownedRow": null
+    },
+    {
+      "i": 5,
+      "id": "chair",
+      "btn": {
+        "text": "400.00万",
+        "disabled": false,
+        "w": 75,
+        "h": 44
+      },
+      "toast": {
+        "text": "已装修：按摩椅（离线效率 +8%）",
+        "shown": true
+      },
+      "moneyBefore": 99999245296.254,
+      "moneyAfter": 99995245302.68088,
+      "spent": 3999993.573120117,
+      "decor": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair"
+      ],
+      "summary": "已装修 5/8 · 挂机 ×1.13 · 点击 ×1.15 · 离线 +13%",
+      "ownedRow": null
+    },
+    {
+      "i": 6,
+      "id": "aquarium",
+      "btn": {
+        "text": "3000.00万",
+        "disabled": false,
+        "w": 82,
+        "h": 44
+      },
+      "toast": {
+        "text": "已装修：鱼缸（挂机 +10%、点击 +10%）",
+        "shown": true
+      },
+      "moneyBefore": 99995245357.82698,
+      "moneyAfter": 99965245364.60214,
+      "spent": 29999993.224838257,
+      "decor": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair",
+        "aquarium"
+      ],
+      "summary": "已装修 6/8 · 挂机 ×1.25 · 点击 ×1.26 · 离线 +13%",
+      "ownedRow": null
+    },
+    {
+      "i": 7,
+      "id": "projector",
+      "btn": {
+        "text": "2.00亿",
+        "disabled": false,
+        "w": 64,
+        "h": 44
+      },
+      "toast": {
+        "text": "已装修：投影仪（派遣奖励 +30%）",
+        "shown": true
+      },
+      "moneyBefore": 99965245419.82785,
+      "moneyAfter": 99765245426.26604,
+      "spent": 199999993.56181335,
+      "decor": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair",
+        "aquarium",
+        "projector"
+      ],
+      "summary": "已装修 7/8 · 挂机 ×1.25 · 点击 ×1.26 · 离线 +13%",
+      "ownedRow": null
+    },
+    {
+      "i": 8,
+      "id": "catbed",
+      "btn": {
+        "text": "20.00亿",
+        "disabled": false,
+        "w": 67,
+        "h": 44
+      },
+      "toast": {
+        "text": "🎉 工位装修完成：挂机 +10%",
+        "shown": true
+      },
+      "moneyBefore": 99765245481.48972,
+      "moneyAfter": 97765245491.01422,
+      "spent": 1999999990.4754944,
+      "decor": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair",
+        "aquarium",
+        "projector",
+        "catbed"
+      ],
+      "summary": "已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23%",
+      "ownedRow": null
+    }
+  ],
+  "celebration": {
+    "toast": {
+      "text": "🎉 工位装修完成：挂机 +10%",
+      "shown": true
+    },
+    "state": {
+      "moyu": 97765245491.01422,
+      "totalEarned": 100000000491.01422,
+      "levels": {},
+      "collected": {
+        "quotes": [],
+        "flavors": []
+      },
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "visit_1",
+            "target": 1,
+            "progress": 1,
+            "done": true
+          },
+          {
+            "id": "idle_earn",
+            "target": 1,
+            "progress": 1,
+            "done": true
+          },
+          {
+            "id": "survive_2",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          }
+        ],
+        "streak": 0,
+        "lastCompleteDate": null,
+        "claimed": false,
+        "window": 3,
+        "claimsToday": 0
+      },
+      "surviveStreak": 0,
+      "totalClicks": 0,
+      "visits": {
+        "date": "2026-11-27",
+        "count": 1
+      },
+      "lifetimeEarned": 100000000491.01422,
+      "prestige": 0,
+      "team": {
+        "colleagues": {
+          "zhou": {
+            "level": 1,
+            "missionId": null,
+            "startedAt": 0,
+            "endsAt": 0,
+            "favor": 5,
+            "autoRepeat": false,
+            "rewardSnapshot": 0
+          }
+        }
+      },
+      "talents": {
+        "unlocked": [],
+        "points": 6,
+        "rankGranted": 10,
+        "dailyGiftDate": "2026-11-27",
+        "overflow": 0
+      },
+      "patrolSurvives": 0,
+      "cards": {
+        "date": "2026-11-27",
+        "offers": [
+          "ac_broken",
+          "quiet_day",
+          "click_frenzy"
+        ],
+        "chosen": null,
+        "until": 0,
+        "nextDayGuaranteed": null,
+        "dismissed": true,
+        "chosenDate": ""
+      },
+      "decor": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair",
+        "aquarium",
+        "projector",
+        "catbed"
+      ],
+      "energy": {
+        "date": "2026-11-27",
+        "left": 0,
+        "used": [
+          "social",
+          "fake-work",
+          "slack"
+        ],
+        "boosted": {
+          "idleMult": 1.3125,
+          "patrolRewardMult": 2.2,
+          "clickMult": 1
+        }
+      },
+      "arcade": {
+        "date": "2026-11-27",
+        "played": 0,
+        "best": {}
+      }
+    },
+    "hud": {
+      "moyu": "977.65亿",
+      "click": "1.3",
+      "idle": "20.4",
+      "rank": "奇点 25%",
+      "teamBtn": "👥天赋",
+      "teamAria": "摸鱼小队"
+    },
+    "summary": "已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23%",
+    "panelText": "已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23% | 今日精力 （剩 0/100） | ✓ | 认真摸鱼 今天挂机 +25% · 花 40 精力 | 已使用 | ✓ | 假装工作 今天巡逻奖励 ×2.2 · 花 35 精力 | 已使用 | ✓ | 跟同事聊天 全体好感 +5，且今天挂机 +5% · 花 25 精力 | 已使用 | 45 | 专注点击 今天点击力 +20% · 花 45 精力 | 使用 | 省心组合：摸鱼+假装工作+社交（100 精力） | 每天 100 点；4 项合计 145，必须放弃至少 1 项（含「专注点击」45 点时只剩 55） | 工位家具 （已装修 8/8） | ✓ | 绿萝 工位挂机 +5% | 已装修 | ✓ | 护眼台灯 点击力 +15% | 已装修 | ✓ | 毛绒地毯 离线效率 +5% | 已装修 | ✓ | 迷你冰箱 工位挂机 +8% | 已装修 | ✓ | 按摩椅 离线效率 +8% | 已装修 | ✓ | 鱼缸 挂机 +10%、点击 +10% | 已装修 | ✓ | 投影仪 派遣奖励 +30% | 已装修 | ✓ | 工位猫窝 挂机 +15%、离线 +10% | 已装修"
+  },
+  "panelAfter": {
+    "summary": "已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23%",
+    "energyTitle": "今日精力 （剩 0/100）",
+    "energy": [
+      {
+        "name": "认真摸鱼",
+        "desc": "今天挂机 +25% · 花 40 精力",
+        "dot": "✓",
+        "btnText": null,
+        "btnDisabled": null,
+        "btnRect": null
+      },
+      {
+        "name": "假装工作",
+        "desc": "今天巡逻奖励 ×2.2 · 花 35 精力",
+        "dot": "✓",
+        "btnText": null,
+        "btnDisabled": null,
+        "btnRect": null
+      },
+      {
+        "name": "跟同事聊天",
+        "desc": "全体好感 +5，且今天挂机 +5% · 花 25 精力",
+        "dot": "✓",
+        "btnText": null,
+        "btnDisabled": null,
+        "btnRect": null
+      },
+      {
+        "name": "专注点击",
+        "desc": "今天点击力 +20% · 花 45 精力",
+        "dot": "45",
+        "btnText": "使用",
+        "btnDisabled": true,
+        "btnRect": {
+          "w": 64,
+          "h": 44
+        }
+      }
+    ],
+    "decor": [
+      {
+        "name": "绿萝",
+        "desc": "工位挂机 +5%",
+        "dot": "✓",
+        "btnText": null,
+        "btnDisabled": null,
+        "btnRect": null
+      },
+      {
+        "name": "护眼台灯",
+        "desc": "点击力 +15%",
+        "dot": "✓",
+        "btnText": null,
+        "btnDisabled": null,
+        "btnRect": null
+      },
+      {
+        "name": "毛绒地毯",
+        "desc": "离线效率 +5%",
+        "dot": "✓",
+        "btnText": null,
+        "btnDisabled": null,
+        "btnRect": null
+      },
+      {
+        "name": "迷你冰箱",
+        "desc": "工位挂机 +8%",
+        "dot": "✓",
+        "btnText": null,
+        "btnDisabled": null,
+        "btnRect": null
+      },
+      {
+        "name": "按摩椅",
+        "desc": "离线效率 +8%",
+        "dot": "✓",
+        "btnText": null,
+        "btnDisabled": null,
+        "btnRect": null
+      },
+      {
+        "name": "鱼缸",
+        "desc": "挂机 +10%、点击 +10%",
+        "dot": "✓",
+        "btnText": null,
+        "btnDisabled": null,
+        "btnRect": null
+      },
+      {
+        "name": "投影仪",
+        "desc": "派遣奖励 +30%",
+        "dot": "✓",
+        "btnText": null,
+        "btnDisabled": null,
+        "btnRect": null
+      },
+      {
+        "name": "工位猫窝",
+        "desc": "挂机 +15%、离线 +10%",
+        "dot": "✓",
+        "btnText": null,
+        "btnDisabled": null,
+        "btnRect": null
+      }
+    ],
+    "buttons": [
+      {
+        "act": "energy",
+        "id": "focus",
+        "text": "使用",
+        "disabled": true
+      },
+      {
+        "act": "energy-all",
+        "id": "",
+        "text": "省心组合：摸鱼+假装工作+社交（100 精力）",
+        "disabled": true
+      }
+    ],
+    "text": "已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23% | 今日精力 （剩 0/100） | ✓ | 认真摸鱼 今天挂机 +25% · 花 40 精力 | 已使用 | ✓ | 假装工作 今天巡逻奖励 ×2.2 · 花 35 精力 | 已使用 | ✓ | 跟同事聊天 全体好感 +5，且今天挂机 +5% · 花 25 精力 | 已使用 | 45 | 专注点击 今天点击力 +20% · 花 45 精力 | 使用 | 省心组合：摸鱼+假装工作+社交（100 精力） | 每天 100 点；4 项合计 145，必须放弃至少 1 项（含「专注点击」45 点时只剩 55） | 工位家具 （已装修 8/8） | ✓ | 绿萝 工位挂机 +5% | 已装修 | ✓ | 护眼台灯 点击力 +15% | 已装修 | ✓ | 毛绒地毯 离线效率 +5% | 已装修 | ✓ | 迷你冰箱 工位挂机 +8% | 已装修 | ✓ | 按摩椅 离线效率 +8% | 已装修 | ✓ | 鱼缸 挂机 +10%、点击 +10% | 已装修 | ✓ | 投影仪 派遣奖励 +30% | 已装修 | ✓ | 工位猫窝 挂机 +15%、离线 +10% | 已装修",
+    "hud": {
+      "moyu": "977.65亿",
+      "click": "1.3",
+      "idle": "20.4",
+      "rank": "奇点 25%",
+      "teamBtn": "👥天赋",
+      "teamAria": "摸鱼小队"
+    }
+  },
+  "final": {
+    "state": {
+      "moyu": 97765245580.49806,
+      "totalEarned": 100000000580.49806,
+      "levels": {},
+      "collected": {
+        "quotes": [],
+        "flavors": []
+      },
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "visit_1",
+            "target": 1,
+            "progress": 1,
+            "done": true
+          },
+          {
+            "id": "idle_earn",
+            "target": 1,
+            "progress": 1,
+            "done": true
+          },
+          {
+            "id": "survive_2",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          }
+        ],
+        "streak": 0,
+        "lastCompleteDate": null,
+        "claimed": false,
+        "window": 3,
+        "claimsToday": 0
+      },
+      "surviveStreak": 0,
+      "totalClicks": 0,
+      "visits": {
+        "date": "2026-11-27",
+        "count": 1
+      },
+      "lifetimeEarned": 100000000580.49806,
+      "prestige": 0,
+      "team": {
+        "colleagues": {
+          "zhou": {
+            "level": 1,
+            "missionId": null,
+            "startedAt": 0,
+            "endsAt": 0,
+            "favor": 5,
+            "autoRepeat": false,
+            "rewardSnapshot": 0
+          }
+        }
+      },
+      "talents": {
+        "unlocked": [],
+        "points": 6,
+        "rankGranted": 10,
+        "dailyGiftDate": "2026-11-27",
+        "overflow": 0
+      },
+      "patrolSurvives": 0,
+      "cards": {
+        "date": "2026-11-27",
+        "offers": [
+          "ac_broken",
+          "quiet_day",
+          "click_frenzy"
+        ],
+        "chosen": null,
+        "until": 0,
+        "nextDayGuaranteed": null,
+        "dismissed": true,
+        "chosenDate": ""
+      },
+      "decor": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair",
+        "aquarium",
+        "projector",
+        "catbed"
+      ],
+      "energy": {
+        "date": "2026-11-27",
+        "left": 0,
+        "used": [
+          "social",
+          "fake-work",
+          "slack"
+        ],
+        "boosted": {
+          "idleMult": 1.3125,
+          "patrolRewardMult": 2.2,
+          "clickMult": 1
+        }
+      },
+      "arcade": {
+        "date": "2026-11-27",
+        "played": 0,
+        "best": {}
+      }
+    },
+    "hud": {
+      "moyu": "977.65亿",
+      "click": "1.3",
+      "idle": "20.4",
+      "rank": "奇点 25%",
+      "teamBtn": "👥天赋",
+      "teamAria": "摸鱼小队"
+    }
+  },
+  "offline": {
+    "withRugChair": {
+      "label": "rug-chair",
+      "decor": [
+        "rug",
+        "chair"
+      ],
+      "earnedRaw": 41809.7155456543,
+      "beforeTotalEarned": 100000000597.51247,
+      "postTotalEarned": 100000042407.22801,
+      "welcome": {
+        "open": false,
+        "time": "1 小时 0 分",
+        "gain": "4.18万",
+        "rule": "首日全额｜8 小时封顶"
+      },
+      "idleHud": "20.3",
+      "energy": {
+        "date": "2026-11-27",
+        "left": 0,
+        "used": [
+          "social",
+          "fake-work",
+          "slack"
+        ],
+        "boosted": {
+          "idleMult": 1.3125,
+          "patrolRewardMult": 2.2,
+          "clickMult": 1
+        }
+      }
+    },
+    "none": {
+      "label": "none",
+      "decor": [],
+      "earnedRaw": 37006.65547180176,
+      "beforeTotalEarned": 100000042416.00839,
+      "postTotalEarned": 100000079422.66386,
+      "welcome": {
+        "open": false,
+        "time": "1 小时 0 分",
+        "gain": "3.69万",
+        "rule": "首日全额｜8 小时封顶"
+      },
+      "idleHud": "20.3",
+      "energy": {
+        "date": "2026-11-27",
+        "left": 0,
+        "used": [
+          "social",
+          "fake-work",
+          "slack"
+        ],
+        "boosted": {
+          "idleMult": 1.3125,
+          "patrolRewardMult": 2.2,
+          "clickMult": 1
+        }
+      }
+    },
+    "ratio": 1.1297890882766308
+  },
+  "errors": []
+}

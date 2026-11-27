@@ -1,0 +1,159 @@
+{
+  "booted": true,
+  "offlineAB": {
+    "A": {
+      "earned": 284804602.8428726,
+      "energy": {
+        "date": "2026-11-27",
+        "left": 100,
+        "used": [],
+        "boosted": {
+          "idleMult": 1,
+          "patrolRewardMult": 1,
+          "clickMult": 1
+        }
+      }
+    },
+    "B": {
+      "earned": 284804602.26638603,
+      "energy": {
+        "date": "2026-11-27",
+        "left": 100,
+        "used": [],
+        "boosted": {
+          "idleMult": 1,
+          "patrolRewardMult": 1,
+          "clickMult": 1
+        }
+      }
+    },
+    "ratio": 1.0000000020241477
+  },
+  "bootedFresh": true,
+  "energyButtonsFresh": [
+    {
+      "id": "slack",
+      "disabled": false
+    },
+    {
+      "id": "fake-work",
+      "disabled": false
+    },
+    {
+      "id": "social",
+      "disabled": true
+    },
+    {
+      "id": "focus",
+      "disabled": false
+    }
+  ],
+  "comboBtnFresh": {
+    "text": "省心组合：摸鱼+假装工作+社交（100 精力）",
+    "disabled": true
+  },
+  "recruitZhou": "clicked",
+  "energyButtonsAfterRecruit": [
+    {
+      "id": "slack",
+      "disabled": false
+    },
+    {
+      "id": "fake-work",
+      "disabled": false
+    },
+    {
+      "id": "social",
+      "disabled": false
+    },
+    {
+      "id": "focus",
+      "disabled": false
+    }
+  ],
+  "energyBefore": {
+    "date": "2026-11-27",
+    "left": 100,
+    "used": [],
+    "boosted": {
+      "idleMult": 1,
+      "patrolRewardMult": 1,
+      "clickMult": 1
+    }
+  },
+  "energySeq": [
+    {
+      "id": "slack",
+      "action": "clicked",
+      "energy": {
+        "date": "2026-11-27",
+        "left": 60,
+        "used": [
+          "slack"
+        ],
+        "boosted": {
+          "idleMult": 1.25,
+          "patrolRewardMult": 1,
+          "clickMult": 1
+        }
+      }
+    },
+    {
+      "id": "fake-work",
+      "action": "clicked",
+      "energy": {
+        "date": "2026-11-27",
+        "left": 25,
+        "used": [
+          "slack",
+          "fake-work"
+        ],
+        "boosted": {
+          "idleMult": 1.25,
+          "patrolRewardMult": 2.2,
+          "clickMult": 1
+        }
+      }
+    },
+    {
+      "id": "social",
+      "action": "clicked",
+      "energy": {
+        "date": "2026-11-27",
+        "left": 0,
+        "used": [
+          "slack",
+          "fake-work",
+          "social"
+        ],
+        "boosted": {
+          "idleMult": 1.3125,
+          "patrolRewardMult": 2.2,
+          "clickMult": 1
+        }
+      }
+    }
+  ],
+  "energyAfter3": {
+    "date": "2026-11-27",
+    "left": 0,
+    "used": [
+      "slack",
+      "fake-work",
+      "social"
+    ],
+    "boosted": {
+      "idleMult": 1.3125,
+      "patrolRewardMult": 2.2,
+      "clickMult": 1
+    }
+  },
+  "focusAfter3": true,
+  "clickFocusResult": "unchanged(禁用)",
+  "comboBtnAfter": {
+    "text": "省心组合：摸鱼+假装工作+社交（100 精力）",
+    "disabled": true
+  },
+  "panelText": "摸鱼小队\n✕\n同事\n天赋\n工位\n天赋点 6\n已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%\n今日精力 （剩 0/100）\n✓\n认真摸鱼 今天挂机 +25% · 花 40 精力\n已使用\n✓\n假装工作 今天巡逻奖励 ×2.2 · 花 35 精力\n已使用\n✓\n跟同事聊天 全体好感 +5，且今天挂机 +5% · 花 25 精力\n已使用\n45\n专注点击 今天点击力 +20% · 花 45 精力\n使用\n省心组合：摸鱼+假装工作+社交（100 精力）\n每天 100 点；4 项合计 145，必须放弃至少 1 项（含「专注点击」45 点时只剩 55）\n工位家具 （已装修 0/8）\n绿萝 工位挂机 +5%\n3000\n护眼台灯 点击力 +15%\n2.00万\n毛绒地毯 离线效率 +5%\n12.00万\n迷你冰箱 工位挂机 +8%\n60.00万\n按摩椅 离线效率 +8%\n400.00万\n鱼缸 挂机 +10%、点击 +10%\n3000.00万\n投影仪 派遣奖励 +30%\n2.00亿\n工位猫窝 挂机 +15%、离线 +10%\n20.00亿",
+  "consoleErrors": []
+}
