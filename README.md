@@ -6,6 +6,24 @@
 
 > 想先看结论？[交付总结（玩法/修了什么/怎么验证/遗留项）](docs/PROJECT-SUMMARY.md)
 
+## 现在就能玩（手机）
+
+**线上地址（推荐，已部署 GitHub Pages）**：<https://luojindui.github.io/moyu/>
+
+- 手机浏览器打开即玩；Safari 点「分享 → 添加到主屏幕」可全屏离线运行（PWA）
+- 存档在手机浏览器本地，换设备用 📔 →「存档码」导出/导入
+
+**局域网调试（改代码时用）**：
+
+```bash
+cd moyu
+export PATH="$HOME/.nvm/versions/node/v22.23.2/bin:$PATH"
+npm run build && npx vite preview --host 0.0.0.0 --port 4173
+# 手机连同一 Wi-Fi，访问 http://<电脑局域网IP>:4173/
+```
+
+**重新部署到线上**：`./scripts/deploy-pages.sh`（构建 dist → 推 gh-pages 分支，约 30 秒生效）
+
 ## 快速开始
 
 ```bash
