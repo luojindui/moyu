@@ -1,0 +1,129 @@
+{
+  "samples": [
+    {
+      "fps": 60,
+      "frames": 237,
+      "vis": "visible",
+      "t": 4009,
+      "bossCount": 0
+    },
+    {
+      "fps": 60,
+      "frames": 1439,
+      "vis": "visible",
+      "t": 24039,
+      "bossCount": 0
+    },
+    {
+      "fps": 60,
+      "frames": 2642,
+      "vis": "visible",
+      "t": 44086,
+      "bossCount": 0
+    },
+    {
+      "fps": 60,
+      "frames": 3844,
+      "vis": "visible",
+      "t": 64118,
+      "bossCount": 0
+    },
+    {
+      "fps": 0,
+      "frames": 14,
+      "vis": "visible",
+      "t": 383,
+      "bossCount": 0
+    },
+    {
+      "fps": 60,
+      "frames": 134,
+      "vis": "visible",
+      "t": 2385,
+      "bossCount": 0
+    },
+    {
+      "fps": 60,
+      "frames": 255,
+      "vis": "visible",
+      "t": 4389,
+      "bossCount": 0
+    },
+    {
+      "fps": 0,
+      "frames": 11,
+      "vis": "visible",
+      "t": 290,
+      "bossCount": 0
+    },
+    {
+      "fps": 60,
+      "frames": 131,
+      "vis": "visible",
+      "t": 2292,
+      "bossCount": 0
+    },
+    {
+      "fps": 60,
+      "frames": 852,
+      "vis": "visible",
+      "t": 14312,
+      "bossCount": 0
+    },
+    {
+      "fps": 60,
+      "frames": 2057,
+      "vis": "visible",
+      "t": 34392,
+      "bossCount": 0
+    },
+    {
+      "fps": 60,
+      "frames": 787,
+      "vis": "visible",
+      "t": 13324,
+      "bossCount": 0
+    },
+    {
+      "fps": 60,
+      "frames": 809,
+      "vis": "visible",
+      "t": 13730,
+      "bossCount": 0
+    },
+    {
+      "fps": 0,
+      "frames": 7,
+      "vis": "visible",
+      "t": 217,
+      "bossCount": 0
+    },
+    {
+      "fps": 60,
+      "frames": 128,
+      "vis": "visible",
+      "t": 2232,
+      "bossCount": 0
+    },
+    {
+      "fps": 0,
+      "frames": 1,
+      "vis": "visible",
+      "t": 133,
+      "bossCount": 0
+    }
+  ],
+  "found": [],
+  "shots": [],
+  "bannerGone": true,
+  "fillTail": [
+    {
+      "ts": 126,
+      "font": "bold 12px system-ui",
+      "fill": "rgba(255, 255, 255, 0.75)",
+      "text": "戳屏幕摸鱼",
+      "x": 195,
+      "y": 577
+    }
+  ]
+}

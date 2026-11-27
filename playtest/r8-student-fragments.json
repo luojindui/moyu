@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-27T03:53:00.582Z",
+ "generatedAt": "2026-11-27T03:58:19.683Z",
  "seeds": [
   7,
   11,
@@ -17,44 +17,44 @@
    "d1Visits": 15,
    "d3GoalPools": [
     [
-     "应付1次巡逻",
-     "收1梗",
-     "买3级"
-    ],
-    [
-     "买3级",
-     "点100",
-     "收1梗"
-    ],
-    [
      "买3级",
      "收1梗",
-     "点100"
+     "idle_earn"
+    ],
+    [
+     "visit_1",
+     "idle_earn",
+     "应付1次巡逻"
+    ],
+    [
+     "idle_earn",
+     "收1梗",
+     "visit_1"
     ]
    ],
    "d3Claim": [
-    1,
-    1,
-    1
+    0,
+    0,
+    0
    ],
    "last": [
     {
      "rank": "带薪摸鱼传说",
-     "idle": 1023.2,
-     "moyu": 140157818.26997817,
+     "idle": 1125.5200000000002,
+     "moyu": 150560428.27142128,
      "codex": 29
     },
     {
      "rank": "带薪摸鱼传说",
-     "idle": 1023.2,
-     "moyu": 140175278.98997828,
+     "idle": 1125.5200000000002,
+     "moyu": 150608659.66002148,
      "codex": 29
     },
     {
      "rank": "带薪摸鱼传说",
-     "idle": 1023.2,
-     "moyu": 140201690.14997864,
-     "codex": 28
+     "idle": 1125.5200000000002,
+     "moyu": 150558533.22582257,
+     "codex": 29
     }
    ]
   },
@@ -62,51 +62,51 @@
    "profile": "casual",
    "d3Visits": 15,
    "d3Nothing": 0,
-   "d3Stale": 8,
-   "d3NoGoal": 11,
+   "d3Stale": 10,
+   "d3NoGoal": 12,
    "d3NoBuy": 0,
-   "d1Stale": 3,
+   "d1Stale": 0,
    "d1Visits": 15,
    "d3GoalPools": [
     [
-     "应付1次巡逻",
-     "收1梗",
-     "买3级"
-    ],
-    [
-     "买3级",
-     "点100",
-     "收1梗"
-    ],
-    [
      "买3级",
      "收1梗",
-     "点100"
+     "idle_earn"
+    ],
+    [
+     "visit_1",
+     "idle_earn",
+     "应付1次巡逻"
+    ],
+    [
+     "idle_earn",
+     "收1梗",
+     "visit_1"
     ]
    ],
    "d3Claim": [
-    1,
-    1,
-    1
+    0,
+    0,
+    0
    ],
    "last": [
     {
      "rank": "带薪摸鱼传说",
-     "idle": 984.2,
-     "moyu": 137656142.55001885,
+     "idle": 1062.9360000000001,
+     "moyu": 146715030.09541684,
      "codex": 24
     },
     {
      "rank": "带薪摸鱼传说",
-     "idle": 984.2,
-     "moyu": 137666074.95001885,
+     "idle": 1062.9360000000001,
+     "moyu": 147157342.46780854,
      "codex": 24
     },
     {
      "rank": "带薪摸鱼传说",
-     "idle": 984.2,
-     "moyu": 137331551.10001883,
-     "codex": 23
+     "idle": 1062.9360000000001,
+     "moyu": 146223797.70560986,
+     "codex": 24
     }
    ]
   }
@@ -139,12 +139,12 @@
          "target": 1
         },
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "idle_earn",
+         "desc": "idle_earn",
          "target": 1
         }
        ],
-       "taps": 256,
+       "taps": 257,
        "memeHits": 3,
        "memesSeen": 3,
        "patrols": 1,
@@ -153,32 +153,31 @@
         "咖啡续命Lv1",
         "带薪喝水Lv1",
         "刷手机Lv1",
+        "人体工学椅Lv1",
         "带薪蹲坑Lv1",
-        "咖啡续命Lv2",
-        "人体工学椅Lv1"
+        "咖啡续命Lv2"
        ],
        "buyCount": 6,
        "dailyBefore": "0/3",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "点100 0/100 | 收1梗 0/1 | 应付1次巡逻 0/1",
-       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "点100 0/100 | 收1梗 0/1 | idle_earn 0/1",
+       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | idle_earn 0/1",
        "goalsNewlyDone": [
         "点100",
-        "收1梗",
-        "应付1次巡逻"
+        "收1梗"
        ],
-       "claimed": 3720,
-       "streakAfter": 1,
+       "claimed": null,
+       "streakAfter": 0,
        "codexBefore": 0,
-       "codexAfter": 8,
-       "newQuotes": 3,
+       "codexAfter": 7,
+       "newQuotes": 2,
        "newFlavors": 5,
        "rankBefore": "摸鱼实习生",
        "rankAfter": "摸鱼实习生",
-       "sessionEarned": 5198.500000000154,
-       "moyuEnd": 3975.500000000181,
-       "idleRateEnd": 6.2,
-       "clickPowerEnd": 10,
+       "sessionEarned": 1888.1800000001044,
+       "moyuEnd": 665.1799999999752,
+       "idleRateEnd": 6.324000000000001,
+       "clickPowerEnd": 10.18,
        "interesting": true,
        "stale": false
       },
@@ -189,7 +188,7 @@
        "weekday": "周二",
        "offlineSeconds": 6720,
        "offlineRate": 1,
-       "offlineEarned": 41664,
+       "offlineEarned": 42497.280000000006,
        "welcome": true,
        "goals": [
         {
@@ -203,15 +202,15 @@
          "target": 1
         },
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "idle_earn",
+         "desc": "idle_earn",
          "target": 1
         }
        ],
        "taps": 269,
        "memeHits": 3,
-       "memesSeen": 3,
-       "patrols": 1,
+       "memesSeen": 4,
+       "patrols": 2,
        "patrolReward": 0,
        "purchases": [
         "摸鱼群聊Lv1",
@@ -222,23 +221,23 @@
         "咖啡续命Lv6"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | idle_earn 0/1",
+       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | idle_earn 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
-       "codexBefore": 8,
+       "streakAfter": 0,
+       "codexBefore": 7,
        "codexAfter": 14,
-       "newQuotes": 1,
+       "newQuotes": 2,
        "newFlavors": 5,
        "rankBefore": "摸鱼学徒",
        "rankAfter": "摸鱼学徒",
-       "sessionEarned": 14114.149999991787,
-       "moyuEnd": 30652.6500000018,
-       "idleRateEnd": 71.2,
-       "clickPowerEnd": 14,
+       "sessionEarned": 14461.871400008677,
+       "moyuEnd": 28523.33139999866,
+       "idleRateEnd": 74.048,
+       "clickPowerEnd": 14.52,
        "interesting": true,
        "stale": false
       },
@@ -249,7 +248,7 @@
        "weekday": "周二",
        "offlineSeconds": 8520,
        "offlineRate": 1,
-       "offlineEarned": 606624,
+       "offlineEarned": 630888.96,
        "welcome": true,
        "goals": [
         {
@@ -263,16 +262,16 @@
          "target": 1
         },
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "idle_earn",
+         "desc": "idle_earn",
          "target": 1
         }
        ],
        "taps": 256,
-       "memeHits": 2,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 1105.28,
+       "memeHits": 1,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 2449.7024,
        "purchases": [
         "深度摸鱼Lv1",
         "咖啡续命Lv7",
@@ -282,23 +281,23 @@
         "刷手机Lv2"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | idle_earn 0/1",
+       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | idle_earn 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
+       "streakAfter": 0,
        "codexBefore": 14,
        "codexAfter": 16,
        "newQuotes": 1,
        "newFlavors": 1,
        "rankBefore": "资深摸鱼",
        "rankAfter": "资深摸鱼",
-       "sessionEarned": 48448.68000019656,
-       "moyuEnd": 535493.3300000533,
-       "idleRateEnd": 252.2,
-       "clickPowerEnd": 18,
+       "sessionEarned": 52024.45599996648,
+       "moyuEnd": 561204.7473999637,
+       "idleRateEnd": 267.332,
+       "clickPowerEnd": 19.02,
        "interesting": true,
        "stale": false
       },
@@ -309,7 +308,7 @@
        "weekday": "周二",
        "offlineSeconds": 11220,
        "offlineRate": 1,
-       "offlineEarned": 2829684,
+       "offlineEarned": 2999465.04,
        "welcome": true,
        "goals": [
         {
@@ -323,16 +322,16 @@
          "target": 1
         },
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "idle_earn",
+         "desc": "idle_earn",
          "target": 1
         }
        ],
-       "taps": 263,
+       "taps": 243,
        "memeHits": 2,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 4575.36,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 10906.7216,
        "purchases": [
         "退休式躺平Lv1",
         "咖啡续命Lv11",
@@ -342,23 +341,23 @@
         "咖啡续命Lv13"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | idle_earn 0/1",
+       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | idle_earn 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
+       "streakAfter": 0,
        "codexBefore": 16,
        "codexAfter": 18,
        "newQuotes": 1,
        "newFlavors": 1,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
-       "sessionEarned": 171409.57999996375,
-       "moyuEnd": 2536230.910000017,
-       "idleRateEnd": 954.2,
-       "clickPowerEnd": 21,
+       "sessionEarned": 186982.79560022615,
+       "moyuEnd": 2747296.5830001896,
+       "idleRateEnd": 1011.4520000000001,
+       "clickPowerEnd": 22.200000000000003,
        "interesting": true,
        "stale": false
       },
@@ -369,7 +368,7 @@
        "weekday": "周二",
        "offlineSeconds": 13020,
        "offlineRate": 1,
-       "offlineEarned": 12423684,
+       "offlineEarned": 13169105.040000001,
        "welcome": true,
        "goals": [
         {
@@ -383,16 +382,16 @@
          "target": 1
         },
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "idle_earn",
+         "desc": "idle_earn",
          "target": 1
         }
        ],
-       "taps": 256,
+       "taps": 269,
        "memeHits": 2,
        "memesSeen": 3,
-       "patrols": 1,
-       "patrolReward": 5003.4400000000005,
+       "patrols": 2,
+       "patrolReward": 0,
        "purchases": [
         "刷手机Lv5",
         "咖啡续命Lv14",
@@ -402,23 +401,23 @@
         "刷手机Lv7"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | idle_earn 0/1",
+       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | idle_earn 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
+       "streakAfter": 0,
        "codexBefore": 18,
-       "codexAfter": 19,
-       "newQuotes": 0,
+       "codexAfter": 20,
+       "newQuotes": 1,
        "newFlavors": 1,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
-       "sessionEarned": 184792.6799986437,
-       "moyuEnd": 15144087.58999866,
-       "idleRateEnd": 964.2,
-       "clickPowerEnd": 25,
+       "sessionEarned": 191632.07579648122,
+       "moyuEnd": 16107413.698799562,
+       "idleRateEnd": 1041.336,
+       "clickPowerEnd": 26.92,
        "interesting": true,
        "stale": false
       }
@@ -431,13 +430,13 @@
        "weekday": "周四",
        "offlineSeconds": 46020,
        "offlineRate": 0.8,
-       "offlineEarned": 22675967.999999996,
+       "offlineEarned": 24490045.44,
        "welcome": true,
        "goals": [
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
-         "target": 1
+         "id": "buy_3",
+         "desc": "买3级",
+         "target": 3
         },
         {
          "id": "meme_1",
@@ -445,16 +444,16 @@
          "target": 1
         },
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         }
        ],
        "taps": 269,
-       "memeHits": 1,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 5917.200000000001,
+       "memeHits": 3,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 6377.616000000001,
        "purchases": [
         "咖啡续命Lv26",
         "带薪喝水Lv13",
@@ -465,26 +464,25 @@
        ],
        "buyCount": 6,
        "dailyBefore": "0/3",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "应付1次巡逻 0/1 | 收1梗 0/1 | 买3级 0/3",
-       "progressAfter": "应付1次巡逻 1/1✓ | 收1梗 1/1✓ | 买3级 3/3✓",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "买3级 0/3 | 收1梗 0/1 | idle_earn 0/1",
+       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | idle_earn 0/1",
        "goalsNewlyDone": [
-        "应付1次巡逻",
-        "收1梗",
-        "买3级"
+        "买3级",
+        "收1梗"
        ],
-       "claimed": 591720,
-       "streakAfter": 3,
+       "claimed": null,
+       "streakAfter": 0,
        "codexBefore": 23,
        "codexAfter": 23,
        "newQuotes": 0,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 803190.1399948895,
-       "moyuEnd": 100243604.58999504,
-       "idleRateEnd": 988.2,
-       "clickPowerEnd": 88,
+       "sessionEarned": 228689.66480849683,
+       "moyuEnd": 106760865.39800136,
+       "idleRateEnd": 1067.256,
+       "clickPowerEnd": 94.96000000000001,
        "interesting": true,
        "stale": false
       },
@@ -495,13 +493,13 @@
        "weekday": "周四",
        "offlineSeconds": 6720,
        "offlineRate": 0.9,
-       "offlineEarned": 5976633.6,
+       "offlineEarned": 6454764.288,
        "welcome": true,
        "goals": [
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
-         "target": 1
+         "id": "buy_3",
+         "desc": "买3级",
+         "target": 3
         },
         {
          "id": "meme_1",
@@ -509,16 +507,16 @@
          "target": 1
         },
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         }
        ],
-       "taps": 269,
+       "taps": 256,
        "memeHits": 2,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 0,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 12971.856,
        "purchases": [
         "咖啡续命Lv28",
         "带薪蹲坑Lv2",
@@ -528,23 +526,23 @@
         "带薪蹲坑Lv3"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "应付1次巡逻 1/1✓ | 收1梗 1/1✓ | 买3级 3/3✓",
-       "progressAfter": "应付1次巡逻 1/1✓ | 收1梗 1/1✓ | 买3级 3/3✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | idle_earn 0/1",
+       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | idle_earn 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
+       "streakAfter": 0,
        "codexBefore": 23,
        "codexAfter": 28,
        "newQuotes": 1,
        "newFlavors": 4,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 214151.04999868572,
-       "moyuEnd": 106430080.23999372,
-       "idleRateEnd": 1000.2,
-       "clickPowerEnd": 124,
+       "sessionEarned": 238835.72039996088,
+       "moyuEnd": 113450156.40640132,
+       "idleRateEnd": 1100.22,
+       "clickPowerEnd": 136.3,
        "interesting": true,
        "stale": false
       },
@@ -555,13 +553,13 @@
        "weekday": "周四",
        "offlineSeconds": 8520,
        "offlineRate": 1,
-       "offlineEarned": 8521704,
+       "offlineEarned": 9373874.4,
        "welcome": true,
        "goals": [
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
-         "target": 1
+         "id": "buy_3",
+         "desc": "买3级",
+         "target": 3
         },
         {
          "id": "meme_1",
@@ -569,16 +567,16 @@
          "target": 1
         },
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         }
        ],
-       "taps": 257,
-       "memeHits": 2,
+       "taps": 269,
+       "memeHits": 3,
        "memesSeen": 3,
-       "patrols": 1,
-       "patrolReward": 6043.200000000001,
+       "patrols": 2,
+       "patrolReward": 6647.52,
        "purchases": [
         "带薪喝水Lv16",
         "刷手机Lv21",
@@ -588,23 +586,23 @@
         "带薪喝水Lv17"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "应付1次巡逻 1/1✓ | 收1梗 1/1✓ | 买3级 3/3✓",
-       "progressAfter": "应付1次巡逻 1/1✓ | 收1梗 1/1✓ | 买3级 3/3✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | idle_earn 0/1",
+       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | idle_earn 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
+       "streakAfter": 0,
        "codexBefore": 28,
        "codexAfter": 28,
        "newQuotes": 0,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 226023.7700033933,
-       "moyuEnd": 115172542.00999711,
-       "idleRateEnd": 1007.2,
-       "clickPowerEnd": 139,
+       "sessionEarned": 253404.30701242387,
+       "moyuEnd": 123072169.11341375,
+       "idleRateEnd": 1107.92,
+       "clickPowerEnd": 152.8,
        "interesting": true,
        "stale": true
       },
@@ -615,13 +613,13 @@
        "weekday": "周四",
        "offlineSeconds": 11220,
        "offlineRate": 1,
-       "offlineEarned": 11300784,
+       "offlineEarned": 12430862.4,
        "welcome": true,
        "goals": [
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
-         "target": 1
+         "id": "buy_3",
+         "desc": "买3级",
+         "target": 3
         },
         {
          "id": "meme_1",
@@ -629,16 +627,16 @@
          "target": 1
         },
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         }
        ],
-       "taps": 264,
-       "memeHits": 1,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 6085.200000000001,
+       "taps": 255,
+       "memeHits": 2,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 6660.720000000001,
        "purchases": [
         "刷手机Lv22",
         "咖啡续命Lv31",
@@ -648,23 +646,23 @@
         "刷手机Lv23"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "应付1次巡逻 1/1✓ | 收1梗 1/1✓ | 买3级 3/3✓",
-       "progressAfter": "应付1次巡逻 1/1✓ | 收1梗 1/1✓ | 买3级 3/3✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | idle_earn 0/1",
+       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | idle_earn 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
+       "streakAfter": 0,
        "codexBefore": 28,
        "codexAfter": 29,
        "newQuotes": 0,
        "newFlavors": 1,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 231435.96997828782,
-       "moyuEnd": 126698557.9799754,
-       "idleRateEnd": 1016.2,
-       "clickPowerEnd": 150,
+       "sessionEarned": 250756.7829925418,
+       "moyuEnd": 135747584.2964063,
+       "idleRateEnd": 1117.8200000000002,
+       "clickPowerEnd": 164.9,
        "interesting": true,
        "stale": false
       },
@@ -675,13 +673,13 @@
        "weekday": "周四",
        "offlineSeconds": 13020,
        "offlineRate": 1,
-       "offlineEarned": 13230924,
+       "offlineEarned": 14554016.400000002,
        "welcome": true,
        "goals": [
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
-         "target": 1
+         "id": "buy_3",
+         "desc": "买3级",
+         "target": 3
         },
         {
          "id": "meme_1",
@@ -689,16 +687,16 @@
          "target": 1
         },
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         }
        ],
        "taps": 269,
-       "memeHits": 1,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 0,
+       "memeHits": 2,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 6753.120000000001,
        "purchases": [
         "咖啡续命Lv32",
         "带薪蹲坑Lv6",
@@ -708,23 +706,23 @@
         "咖啡续命Lv33"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "应付1次巡逻 1/1✓ | 收1梗 1/1✓ | 买3级 3/3✓",
-       "progressAfter": "应付1次巡逻 1/1✓ | 收1梗 1/1✓ | 买3级 3/3✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | idle_earn 0/1",
+       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | idle_earn 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
+       "streakAfter": 0,
        "codexBefore": 29,
        "codexAfter": 29,
        "newQuotes": 0,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 235700.29000276327,
-       "moyuEnd": 140157818.26997817,
-       "idleRateEnd": 1023.2,
-       "clickPowerEnd": 163,
+       "sessionEarned": 266191.57501497865,
+       "moyuEnd": 150560428.27142128,
+       "idleRateEnd": 1125.5200000000002,
+       "clickPowerEnd": 179.20000000000002,
        "interesting": true,
        "stale": true
       }
@@ -744,56 +742,55 @@
        "welcome": true,
        "goals": [
         {
+         "id": "survive_2",
+         "desc": "应付1次巡逻",
+         "target": 1
+        },
+        {
          "id": "buy_3",
          "desc": "买3级",
          "target": 3
         },
         {
-         "id": "meme_1",
-         "desc": "收1梗",
-         "target": 1
-        },
-        {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "visit_1",
+         "desc": "visit_1",
          "target": 1
         }
        ],
-       "taps": 269,
-       "memeHits": 2,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 50,
+       "taps": 256,
+       "memeHits": 3,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 105,
        "purchases": [
         "咖啡续命Lv1",
         "带薪喝水Lv1",
         "刷手机Lv1",
+        "人体工学椅Lv1",
         "带薪蹲坑Lv1",
-        "咖啡续命Lv2",
-        "人体工学椅Lv1"
+        "咖啡续命Lv2"
        ],
        "buyCount": 6,
        "dailyBefore": "0/3",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "买3级 0/3 | 收1梗 0/1 | 应付1次巡逻 0/1",
-       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "应付1次巡逻 0/1 | 买3级 0/3 | visit_1 0/1",
+       "progressAfter": "应付1次巡逻 1/1✓ | 买3级 3/3✓ | visit_1 0/1",
        "goalsNewlyDone": [
-        "买3级",
-        "收1梗",
-        "应付1次巡逻"
+        "应付1次巡逻",
+        "买3级"
        ],
-       "claimed": 3720,
-       "streakAfter": 1,
+       "claimed": null,
+       "streakAfter": 0,
        "codexBefore": 0,
-       "codexAfter": 7,
-       "newQuotes": 2,
+       "codexAfter": 8,
+       "newQuotes": 3,
        "newFlavors": 5,
        "rankBefore": "摸鱼实习生",
        "rankAfter": "摸鱼实习生",
-       "sessionEarned": 5310.980000000145,
-       "moyuEnd": 4087.9800000001696,
-       "idleRateEnd": 6.2,
-       "clickPowerEnd": 10,
+       "sessionEarned": 1870.3698000000682,
+       "moyuEnd": 647.3697999999684,
+       "idleRateEnd": 6.324000000000001,
+       "clickPowerEnd": 10.18,
        "interesting": true,
        "stale": false
       },
@@ -804,30 +801,30 @@
        "weekday": "周二",
        "offlineSeconds": 6720,
        "offlineRate": 1,
-       "offlineEarned": 41664,
+       "offlineEarned": 42497.280000000006,
        "welcome": true,
        "goals": [
+        {
+         "id": "survive_2",
+         "desc": "应付1次巡逻",
+         "target": 1
+        },
         {
          "id": "buy_3",
          "desc": "买3级",
          "target": 3
         },
         {
-         "id": "meme_1",
-         "desc": "收1梗",
-         "target": 1
-        },
-        {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "visit_1",
+         "desc": "visit_1",
          "target": 1
         }
        ],
-       "taps": 256,
+       "taps": 269,
        "memeHits": 2,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 313.28000000000003,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 105.83039999999998,
        "purchases": [
         "摸鱼群聊Lv1",
         "无用会议Lv1",
@@ -837,23 +834,23 @@
         "咖啡续命Lv6"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "应付1次巡逻 1/1✓ | 买3级 3/3✓ | visit_1 0/1",
+       "progressAfter": "应付1次巡逻 1/1✓ | 买3级 3/3✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
-       "codexBefore": 7,
-       "codexAfter": 14,
+       "streakAfter": 0,
+       "codexBefore": 8,
+       "codexAfter": 15,
        "newQuotes": 2,
        "newFlavors": 5,
        "rankBefore": "摸鱼学徒",
        "rankAfter": "摸鱼学徒",
-       "sessionEarned": 13994.269999991746,
-       "moyuEnd": 30645.2500000018,
-       "idleRateEnd": 71.2,
-       "clickPowerEnd": 14,
+       "sessionEarned": 14721.098600007332,
+       "moyuEnd": 28764.748399998294,
+       "idleRateEnd": 75.47200000000001,
+       "clickPowerEnd": 14.780000000000001,
        "interesting": true,
        "stale": false
       },
@@ -864,30 +861,30 @@
        "weekday": "周二",
        "offlineSeconds": 8520,
        "offlineRate": 1,
-       "offlineEarned": 606624,
+       "offlineEarned": 643021.4400000001,
        "welcome": true,
        "goals": [
+        {
+         "id": "survive_2",
+         "desc": "应付1次巡逻",
+         "target": 1
+        },
         {
          "id": "buy_3",
          "desc": "买3级",
          "target": 3
         },
         {
-         "id": "meme_1",
-         "desc": "收1梗",
-         "target": 1
-        },
-        {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "visit_1",
+         "desc": "visit_1",
          "target": 1
         }
        ],
-       "taps": 269,
-       "memeHits": 1,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 0,
+       "taps": 243,
+       "memeHits": 2,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 2875.7375999999995,
        "purchases": [
         "深度摸鱼Lv1",
         "咖啡续命Lv7",
@@ -897,23 +894,23 @@
         "刷手机Lv2"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "应付1次巡逻 1/1✓ | 买3级 3/3✓ | visit_1 0/1",
+       "progressAfter": "应付1次巡逻 1/1✓ | 买3级 3/3✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
-       "codexBefore": 14,
+       "streakAfter": 0,
+       "codexBefore": 15,
        "codexAfter": 16,
-       "newQuotes": 1,
+       "newQuotes": 0,
        "newFlavors": 1,
        "rankBefore": "资深摸鱼",
        "rankAfter": "资深摸鱼",
-       "sessionEarned": 47710.8400001938,
-       "moyuEnd": 534748.09000005,
-       "idleRateEnd": 252.2,
-       "clickPowerEnd": 18,
+       "sessionEarned": 52342.621599970385,
+       "moyuEnd": 573896.8099999685,
+       "idleRateEnd": 267.332,
+       "clickPowerEnd": 19.02,
        "interesting": true,
        "stale": false
       },
@@ -924,30 +921,30 @@
        "weekday": "周二",
        "offlineSeconds": 11220,
        "offlineRate": 1,
-       "offlineEarned": 2829684,
+       "offlineEarned": 2999465.04,
        "welcome": true,
        "goals": [
+        {
+         "id": "survive_2",
+         "desc": "应付1次巡逻",
+         "target": 1
+        },
         {
          "id": "buy_3",
          "desc": "买3级",
          "target": 3
         },
         {
-         "id": "meme_1",
-         "desc": "收1梗",
-         "target": 1
-        },
-        {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "visit_1",
+         "desc": "visit_1",
          "target": 1
         }
        ],
-       "taps": 256,
+       "taps": 269,
        "memeHits": 2,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 4575.36,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 12124.704000000002,
        "purchases": [
         "退休式躺平Lv1",
         "咖啡续命Lv11",
@@ -957,23 +954,23 @@
         "咖啡续命Lv13"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "应付1次巡逻 1/1✓ | 买3级 3/3✓ | visit_1 0/1",
+       "progressAfter": "应付1次巡逻 1/1✓ | 买3级 3/3✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
+       "streakAfter": 0,
        "codexBefore": 16,
-       "codexAfter": 17,
-       "newQuotes": 0,
+       "codexAfter": 18,
+       "newQuotes": 1,
        "newFlavors": 1,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
-       "sessionEarned": 171405.05999995908,
-       "moyuEnd": 2535481.150000009,
-       "idleRateEnd": 954.2,
-       "clickPowerEnd": 21,
+       "sessionEarned": 189478.16840019077,
+       "moyuEnd": 2762484.018400159,
+       "idleRateEnd": 1011.4520000000001,
+       "clickPowerEnd": 22.200000000000003,
        "interesting": true,
        "stale": false
       },
@@ -984,30 +981,30 @@
        "weekday": "周二",
        "offlineSeconds": 13020,
        "offlineRate": 1,
-       "offlineEarned": 12423684,
+       "offlineEarned": 13169105.040000001,
        "welcome": true,
        "goals": [
+        {
+         "id": "survive_2",
+         "desc": "应付1次巡逻",
+         "target": 1
+        },
         {
          "id": "buy_3",
          "desc": "买3级",
          "target": 3
         },
         {
-         "id": "meme_1",
-         "desc": "收1梗",
-         "target": 1
-        },
-        {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "visit_1",
+         "desc": "visit_1",
          "target": 1
         }
        ],
-       "taps": 269,
-       "memeHits": 1,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 5003.4400000000005,
+       "taps": 256,
+       "memeHits": 3,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 6235.0560000000005,
        "purchases": [
         "刷手机Lv5",
         "咖啡续命Lv14",
@@ -1017,23 +1014,23 @@
         "刷手机Lv7"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "应付1次巡逻 1/1✓ | 买3级 3/3✓ | visit_1 0/1",
+       "progressAfter": "应付1次巡逻 1/1✓ | 买3级 3/3✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
-       "codexBefore": 17,
-       "codexAfter": 18,
-       "newQuotes": 0,
+       "streakAfter": 0,
+       "codexBefore": 18,
+       "codexAfter": 21,
+       "newQuotes": 2,
        "newFlavors": 1,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
-       "sessionEarned": 185416.75999863073,
-       "moyuEnd": 15143961.90999864,
-       "idleRateEnd": 964.2,
-       "clickPowerEnd": 25,
+       "sessionEarned": 200198.76899861544,
+       "moyuEnd": 16131167.827398658,
+       "idleRateEnd": 1041.336,
+       "clickPowerEnd": 26.92,
        "interesting": true,
        "stale": false
       }
@@ -1046,30 +1043,30 @@
        "weekday": "周四",
        "offlineSeconds": 46020,
        "offlineRate": 0.8,
-       "offlineEarned": 22675967.999999996,
+       "offlineEarned": 24490045.44,
        "welcome": true,
        "goals": [
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "visit_1",
+         "desc": "visit_1",
+         "target": 1
         },
         {
-         "id": "click_100",
-         "desc": "点100",
-         "target": 100
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         },
         {
-         "id": "meme_1",
-         "desc": "收1梗",
+         "id": "survive_2",
+         "desc": "应付1次巡逻",
          "target": 1
         }
        ],
        "taps": 269,
-       "memeHits": 2,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 0,
+       "memeHits": 3,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 12768.192000000003,
        "purchases": [
         "咖啡续命Lv26",
         "带薪喝水Lv13",
@@ -1080,26 +1077,24 @@
        ],
        "buyCount": 6,
        "dailyBefore": "0/3",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "买3级 0/3 | 点100 0/100 | 收1梗 0/1",
-       "progressAfter": "买3级 3/3✓ | 点100 100/100✓ | 收1梗 1/1✓",
+       "dailyAfter": "1/3 streak=0",
+       "progressBefore": "visit_1 0/1 | idle_earn 0/1 | 应付1次巡逻 0/1",
+       "progressAfter": "visit_1 0/1 | idle_earn 0/1 | 应付1次巡逻 1/1✓",
        "goalsNewlyDone": [
-        "买3级",
-        "点100",
-        "收1梗"
+        "应付1次巡逻"
        ],
-       "claimed": 591720,
-       "streakAfter": 3,
-       "codexBefore": 24,
+       "claimed": null,
+       "streakAfter": 0,
+       "codexBefore": 23,
        "codexAfter": 24,
-       "newQuotes": 0,
+       "newQuotes": 1,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 797383.0199948847,
-       "moyuEnd": 100246319.06999502,
-       "idleRateEnd": 988.2,
-       "clickPowerEnd": 88,
+       "sessionEarned": 235074.79760847986,
+       "moyuEnd": 106794080.65619977,
+       "idleRateEnd": 1067.256,
+       "clickPowerEnd": 94.96000000000001,
        "interesting": true,
        "stale": false
       },
@@ -1110,30 +1105,30 @@
        "weekday": "周四",
        "offlineSeconds": 6720,
        "offlineRate": 0.9,
-       "offlineEarned": 5976633.6,
+       "offlineEarned": 6454764.288,
        "welcome": true,
        "goals": [
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "visit_1",
+         "desc": "visit_1",
+         "target": 1
         },
         {
-         "id": "click_100",
-         "desc": "点100",
-         "target": 100
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         },
         {
-         "id": "meme_1",
-         "desc": "收1梗",
+         "id": "survive_2",
+         "desc": "应付1次巡逻",
          "target": 1
         }
        ],
-       "taps": 257,
+       "taps": 269,
        "memeHits": 2,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 5971.200000000001,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 12971.856,
        "purchases": [
         "咖啡续命Lv28",
         "带薪蹲坑Lv2",
@@ -1143,23 +1138,23 @@
         "带薪蹲坑Lv3"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "买3级 3/3✓ | 点100 100/100✓ | 收1梗 1/1✓",
-       "progressAfter": "买3级 3/3✓ | 点100 100/100✓ | 收1梗 1/1✓",
+       "dailyBefore": "1/3",
+       "dailyAfter": "1/3 streak=0",
+       "progressBefore": "visit_1 0/1 | idle_earn 0/1 | 应付1次巡逻 1/1✓",
+       "progressAfter": "visit_1 0/1 | idle_earn 0/1 | 应付1次巡逻 1/1✓",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
+       "streakAfter": 0,
        "codexBefore": 24,
        "codexAfter": 28,
        "newQuotes": 0,
        "newFlavors": 4,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 216004.88999837637,
-       "moyuEnd": 106434648.55999339,
-       "idleRateEnd": 1000.2,
-       "clickPowerEnd": 124,
+       "sessionEarned": 245714.07480059564,
+       "moyuEnd": 113490250.01900037,
+       "idleRateEnd": 1100.22,
+       "clickPowerEnd": 136.3,
        "interesting": true,
        "stale": false
       },
@@ -1170,30 +1165,30 @@
        "weekday": "周四",
        "offlineSeconds": 8520,
        "offlineRate": 1,
-       "offlineEarned": 8521704,
+       "offlineEarned": 9373874.4,
        "welcome": true,
        "goals": [
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "visit_1",
+         "desc": "visit_1",
+         "target": 1
         },
         {
-         "id": "click_100",
-         "desc": "点100",
-         "target": 100
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         },
         {
-         "id": "meme_1",
-         "desc": "收1梗",
+         "id": "survive_2",
+         "desc": "应付1次巡逻",
          "target": 1
         }
        ],
-       "taps": 256,
-       "memeHits": 2,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 6043.200000000001,
+       "taps": 238,
+       "memeHits": 1,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 13248.84,
        "purchases": [
         "带薪喝水Lv16",
         "刷手机Lv21",
@@ -1203,23 +1198,23 @@
         "带薪喝水Lv17"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "买3级 3/3✓ | 点100 100/100✓ | 收1梗 1/1✓",
-       "progressAfter": "买3级 3/3✓ | 点100 100/100✓ | 收1梗 1/1✓",
+       "dailyBefore": "1/3",
+       "dailyAfter": "1/3 streak=0",
+       "progressBefore": "visit_1 0/1 | idle_earn 0/1 | 应付1次巡逻 1/1✓",
+       "progressAfter": "visit_1 0/1 | idle_earn 0/1 | 应付1次巡逻 1/1✓",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
+       "streakAfter": 0,
        "codexBefore": 28,
        "codexAfter": 28,
        "newQuotes": 0,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 227075.57000350952,
-       "moyuEnd": 115178162.1299969,
-       "idleRateEnd": 1007.2,
-       "clickPowerEnd": 139,
+       "sessionEarned": 248381.41101388633,
+       "moyuEnd": 123107239.83001426,
+       "idleRateEnd": 1107.92,
+       "clickPowerEnd": 152.8,
        "interesting": true,
        "stale": true
       },
@@ -1230,30 +1225,30 @@
        "weekday": "周四",
        "offlineSeconds": 11220,
        "offlineRate": 1,
-       "offlineEarned": 11300784,
+       "offlineEarned": 12430862.4,
        "welcome": true,
        "goals": [
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "visit_1",
+         "desc": "visit_1",
+         "target": 1
         },
         {
-         "id": "click_100",
-         "desc": "点100",
-         "target": 100
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         },
         {
-         "id": "meme_1",
-         "desc": "收1梗",
+         "id": "survive_2",
+         "desc": "应付1次巡逻",
          "target": 1
         }
        ],
-       "taps": 269,
-       "memeHits": 1,
+       "taps": 256,
+       "memeHits": 3,
        "memesSeen": 3,
-       "patrols": 1,
-       "patrolReward": 6085.200000000001,
+       "patrols": 2,
+       "patrolReward": 13354.440000000002,
        "purchases": [
         "刷手机Lv22",
         "咖啡续命Lv31",
@@ -1263,23 +1258,23 @@
         "刷手机Lv23"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "买3级 3/3✓ | 点100 100/100✓ | 收1梗 1/1✓",
-       "progressAfter": "买3级 3/3✓ | 点100 100/100✓ | 收1梗 1/1✓",
+       "dailyBefore": "1/3",
+       "dailyAfter": "1/3 streak=0",
+       "progressBefore": "visit_1 0/1 | idle_earn 0/1 | 应付1次巡逻 1/1✓",
+       "progressAfter": "visit_1 0/1 | idle_earn 0/1 | 应付1次巡逻 1/1✓",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
+       "streakAfter": 0,
        "codexBefore": 28,
        "codexAfter": 29,
        "newQuotes": 0,
        "newFlavors": 1,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 235982.5699786693,
-       "moyuEnd": 126708724.69997557,
-       "idleRateEnd": 1016.2,
-       "clickPowerEnd": 150,
+       "sessionEarned": 263781.39899227023,
+       "moyuEnd": 135795679.62900653,
+       "idleRateEnd": 1117.8200000000002,
+       "clickPowerEnd": 164.9,
        "interesting": true,
        "stale": false
       },
@@ -1290,30 +1285,30 @@
        "weekday": "周四",
        "offlineSeconds": 13020,
        "offlineRate": 1,
-       "offlineEarned": 13230924,
+       "offlineEarned": 14554016.400000002,
        "welcome": true,
        "goals": [
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "visit_1",
+         "desc": "visit_1",
+         "target": 1
         },
         {
-         "id": "click_100",
-         "desc": "点100",
-         "target": 100
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         },
         {
-         "id": "meme_1",
-         "desc": "收1梗",
+         "id": "survive_2",
+         "desc": "应付1次巡逻",
          "target": 1
         }
        ],
        "taps": 269,
-       "memeHits": 3,
+       "memeHits": 2,
        "memesSeen": 3,
        "patrols": 1,
-       "patrolReward": 6127.200000000001,
+       "patrolReward": 6706.920000000001,
        "purchases": [
         "咖啡续命Lv32",
         "带薪蹲坑Lv6",
@@ -1323,23 +1318,23 @@
         "咖啡续命Lv33"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "买3级 3/3✓ | 点100 100/100✓ | 收1梗 1/1✓",
-       "progressAfter": "买3级 3/3✓ | 点100 100/100✓ | 收1梗 1/1✓",
+       "dailyBefore": "1/3",
+       "dailyAfter": "1/3 streak=0",
+       "progressBefore": "visit_1 0/1 | idle_earn 0/1 | 应付1次巡逻 1/1✓",
+       "progressAfter": "visit_1 0/1 | idle_earn 0/1 | 应付1次巡逻 1/1✓",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
+       "streakAfter": 0,
        "codexBefore": 29,
        "codexAfter": 29,
        "newQuotes": 0,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 242994.29000273347,
-       "moyuEnd": 140175278.98997828,
-       "idleRateEnd": 1023.2,
-       "clickPowerEnd": 163,
+       "sessionEarned": 266327.6310149431,
+       "moyuEnd": 150608659.66002148,
+       "idleRateEnd": 1125.5200000000002,
+       "clickPowerEnd": 179.20000000000002,
        "interesting": true,
        "stale": true
       }
@@ -1369,16 +1364,16 @@
          "target": 1
         },
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "visit_1",
+         "desc": "visit_1",
          "target": 1
         }
        ],
-       "taps": 269,
+       "taps": 256,
        "memeHits": 1,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 0,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 50,
        "purchases": [
         "咖啡续命Lv1",
         "带薪喝水Lv1",
@@ -1390,8 +1385,8 @@
        "buyCount": 6,
        "dailyBefore": "0/3",
        "dailyAfter": "2/3 streak=0",
-       "progressBefore": "点100 0/100 | 收1梗 0/1 | 应付1次巡逻 0/1",
-       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 0/1",
+       "progressBefore": "点100 0/100 | 收1梗 0/1 | visit_1 0/1",
+       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | visit_1 0/1",
        "goalsNewlyDone": [
         "点100",
         "收1梗"
@@ -1404,10 +1399,10 @@
        "newFlavors": 5,
        "rankBefore": "摸鱼实习生",
        "rankAfter": "摸鱼实习生",
-       "sessionEarned": 1530.899999999884,
-       "moyuEnd": 307.89999999991096,
-       "idleRateEnd": 6.2,
-       "clickPowerEnd": 10,
+       "sessionEarned": 1434.528999999948,
+       "moyuEnd": 211.52899999995873,
+       "idleRateEnd": 6.324000000000001,
+       "clickPowerEnd": 10.18,
        "interesting": true,
        "stale": false
       },
@@ -1418,7 +1413,7 @@
        "weekday": "周二",
        "offlineSeconds": 6720,
        "offlineRate": 1,
-       "offlineEarned": 41664,
+       "offlineEarned": 42497.280000000006,
        "welcome": true,
        "goals": [
         {
@@ -1432,16 +1427,16 @@
          "target": 1
         },
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "visit_1",
+         "desc": "visit_1",
          "target": 1
         }
        ],
-       "taps": 269,
-       "memeHits": 1,
-       "memesSeen": 2,
+       "taps": 256,
+       "memeHits": 3,
+       "memesSeen": 3,
        "patrols": 1,
-       "patrolReward": 284.8,
+       "patrolReward": 95.1456,
        "purchases": [
         "摸鱼群聊Lv1",
         "无用会议Lv1",
@@ -1452,24 +1447,22 @@
        ],
        "buyCount": 6,
        "dailyBefore": "2/3",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 0/1",
-       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "goalsNewlyDone": [
-        "应付1次巡逻"
-       ],
-       "claimed": 42720,
-       "streakAfter": 1,
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | visit_1 0/1",
+       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | visit_1 0/1",
+       "goalsNewlyDone": [],
+       "claimed": null,
+       "streakAfter": 0,
        "codexBefore": 6,
-       "codexAfter": 12,
-       "newQuotes": 1,
+       "codexAfter": 14,
+       "newQuotes": 3,
        "newFlavors": 5,
        "rankBefore": "摸鱼学徒",
-       "rankAfter": "资深摸鱼",
-       "sessionEarned": 57046.109999991786,
-       "moyuEnd": 69917.00999999641,
-       "idleRateEnd": 71.2,
-       "clickPowerEnd": 14,
+       "rankAfter": "摸鱼学徒",
+       "sessionEarned": 14020.916200007632,
+       "moyuEnd": 27628.72519999744,
+       "idleRateEnd": 74.048,
+       "clickPowerEnd": 14.52,
        "interesting": true,
        "stale": false
       },
@@ -1480,7 +1473,7 @@
        "weekday": "周二",
        "offlineSeconds": 8520,
        "offlineRate": 1,
-       "offlineEarned": 606624,
+       "offlineEarned": 630888.96,
        "welcome": true,
        "goals": [
         {
@@ -1494,16 +1487,16 @@
          "target": 1
         },
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "visit_1",
+         "desc": "visit_1",
          "target": 1
         }
        ],
-       "taps": 263,
-       "memeHits": 2,
+       "taps": 268,
+       "memeHits": 0,
        "memesSeen": 2,
        "patrols": 1,
-       "patrolReward": 1105.28,
+       "patrolReward": 0,
        "purchases": [
         "深度摸鱼Lv1",
         "咖啡续命Lv7",
@@ -1513,23 +1506,23 @@
         "刷手机Lv2"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | visit_1 0/1",
+       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
-       "codexBefore": 12,
-       "codexAfter": 14,
-       "newQuotes": 1,
+       "streakAfter": 0,
+       "codexBefore": 14,
+       "codexAfter": 15,
+       "newQuotes": 0,
        "newFlavors": 1,
        "rankBefore": "资深摸鱼",
        "rankAfter": "资深摸鱼",
-       "sessionEarned": 48372.760000198614,
-       "moyuEnd": 574681.770000195,
-       "idleRateEnd": 252.2,
-       "clickPowerEnd": 18,
+       "sessionEarned": 50452.01519996789,
+       "moyuEnd": 558737.7003999617,
+       "idleRateEnd": 267.332,
+       "clickPowerEnd": 19.02,
        "interesting": true,
        "stale": false
       },
@@ -1540,7 +1533,7 @@
        "weekday": "周二",
        "offlineSeconds": 11220,
        "offlineRate": 1,
-       "offlineEarned": 2829684,
+       "offlineEarned": 2999465.04,
        "welcome": true,
        "goals": [
         {
@@ -1554,16 +1547,16 @@
          "target": 1
         },
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "visit_1",
+         "desc": "visit_1",
          "target": 1
         }
        ],
        "taps": 269,
-       "memeHits": 1,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 0,
+       "memeHits": 2,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 4854.9696,
        "purchases": [
         "退休式躺平Lv1",
         "咖啡续命Lv11",
@@ -1573,23 +1566,23 @@
         "咖啡续命Lv13"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | visit_1 0/1",
+       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
-       "codexBefore": 14,
-       "codexAfter": 16,
-       "newQuotes": 1,
+       "streakAfter": 0,
+       "codexBefore": 15,
+       "codexAfter": 18,
+       "newQuotes": 2,
        "newFlavors": 1,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
-       "sessionEarned": 167339.05999994604,
-       "moyuEnd": 2571348.830000141,
-       "idleRateEnd": 954.2,
-       "clickPowerEnd": 21,
+       "sessionEarned": 182239.99000019068,
+       "moyuEnd": 2740086.7304001525,
+       "idleRateEnd": 1011.4520000000001,
+       "clickPowerEnd": 22.200000000000003,
        "interesting": true,
        "stale": false
       },
@@ -1600,7 +1593,7 @@
        "weekday": "周二",
        "offlineSeconds": 13020,
        "offlineRate": 1,
-       "offlineEarned": 12423684,
+       "offlineEarned": 13169105.040000001,
        "welcome": true,
        "goals": [
         {
@@ -1614,16 +1607,16 @@
          "target": 1
         },
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "visit_1",
+         "desc": "visit_1",
          "target": 1
         }
        ],
        "taps": 256,
-       "memeHits": 1,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 4618.56,
+       "memeHits": 3,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 5292.622400000001,
        "purchases": [
         "刷手机Lv5",
         "咖啡续命Lv14",
@@ -1633,23 +1626,23 @@
         "刷手机Lv7"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | visit_1 0/1",
+       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
-       "codexBefore": 16,
-       "codexAfter": 17,
-       "newQuotes": 0,
+       "streakAfter": 0,
+       "codexBefore": 18,
+       "codexAfter": 20,
+       "newQuotes": 1,
        "newFlavors": 1,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
-       "sessionEarned": 184429.47999863513,
-       "moyuEnd": 15178842.309998777,
-       "idleRateEnd": 964.2,
-       "clickPowerEnd": 25,
+       "sessionEarned": 197338.7755980119,
+       "moyuEnd": 16105910.545997947,
+       "idleRateEnd": 1041.336,
+       "clickPowerEnd": 26.92,
        "interesting": true,
        "stale": false
       }
@@ -1662,13 +1655,13 @@
        "weekday": "周四",
        "offlineSeconds": 46020,
        "offlineRate": 0.8,
-       "offlineEarned": 22675967.999999996,
+       "offlineEarned": 24490045.44,
        "welcome": true,
        "goals": [
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         },
         {
          "id": "meme_1",
@@ -1676,16 +1669,16 @@
          "target": 1
         },
         {
-         "id": "click_100",
-         "desc": "点100",
-         "target": 100
+         "id": "visit_1",
+         "desc": "visit_1",
+         "target": 1
         }
        ],
        "taps": 256,
-       "memeHits": 1,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 5917.200000000001,
+       "memeHits": 2,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 12768.192000000003,
        "purchases": [
         "咖啡续命Lv26",
         "带薪喝水Lv13",
@@ -1696,26 +1689,24 @@
        ],
        "buyCount": 6,
        "dailyBefore": "0/3",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "买3级 0/3 | 收1梗 0/1 | 点100 0/100",
-       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | 点100 100/100✓",
+       "dailyAfter": "1/3 streak=0",
+       "progressBefore": "idle_earn 0/1 | 收1梗 0/1 | visit_1 0/1",
+       "progressAfter": "idle_earn 0/1 | 收1梗 1/1✓ | visit_1 0/1",
        "goalsNewlyDone": [
-        "买3级",
-        "收1梗",
-        "点100"
+        "收1梗"
        ],
-       "claimed": 591720,
-       "streakAfter": 3,
-       "codexBefore": 21,
-       "codexAfter": 21,
-       "newQuotes": 0,
+       "claimed": null,
+       "streakAfter": 0,
+       "codexBefore": 22,
+       "codexAfter": 23,
+       "newQuotes": 1,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 800549.8999946415,
-       "moyuEnd": 100274768.30999506,
-       "idleRateEnd": 988.2,
-       "clickPowerEnd": 88,
+       "sessionEarned": 232215.67760789394,
+       "moyuEnd": 106774607.21959895,
+       "idleRateEnd": 1067.256,
+       "clickPowerEnd": 94.96000000000001,
        "interesting": true,
        "stale": false
       },
@@ -1726,13 +1717,13 @@
        "weekday": "周四",
        "offlineSeconds": 6720,
        "offlineRate": 0.9,
-       "offlineEarned": 5976633.6,
+       "offlineEarned": 6454764.288,
        "welcome": true,
        "goals": [
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         },
         {
          "id": "meme_1",
@@ -1740,16 +1731,16 @@
          "target": 1
         },
         {
-         "id": "click_100",
-         "desc": "点100",
-         "target": 100
+         "id": "visit_1",
+         "desc": "visit_1",
+         "target": 1
         }
        ],
-       "taps": 264,
-       "memeHits": 2,
+       "taps": 257,
+       "memeHits": 0,
        "memesSeen": 3,
-       "patrols": 1,
-       "patrolReward": 5959.200000000001,
+       "patrols": 2,
+       "patrolReward": 6568.32,
        "purchases": [
         "咖啡续命Lv28",
         "带薪蹲坑Lv2",
@@ -1759,23 +1750,23 @@
         "带薪蹲坑Lv3"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | 点100 100/100✓",
-       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | 点100 100/100✓",
+       "dailyBefore": "1/3",
+       "dailyAfter": "1/3 streak=0",
+       "progressBefore": "idle_earn 0/1 | 收1梗 1/1✓ | visit_1 0/1",
+       "progressAfter": "idle_earn 0/1 | 收1梗 1/1✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
-       "codexBefore": 21,
-       "codexAfter": 26,
-       "newQuotes": 1,
+       "streakAfter": 0,
+       "codexBefore": 23,
+       "codexAfter": 27,
+       "newQuotes": 0,
        "newFlavors": 4,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 216327.8499983549,
-       "moyuEnd": 106463420.7599934,
-       "idleRateEnd": 1000.2,
-       "clickPowerEnd": 124,
+       "sessionEarned": 235923.5652011782,
+       "moyuEnd": 113460986.07280013,
+       "idleRateEnd": 1100.22,
+       "clickPowerEnd": 136.3,
        "interesting": true,
        "stale": false
       },
@@ -1786,13 +1777,13 @@
        "weekday": "周四",
        "offlineSeconds": 8520,
        "offlineRate": 1,
-       "offlineEarned": 8521704,
+       "offlineEarned": 9373874.4,
        "welcome": true,
        "goals": [
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         },
         {
          "id": "meme_1",
@@ -1800,16 +1791,16 @@
          "target": 1
         },
         {
-         "id": "click_100",
-         "desc": "点100",
-         "target": 100
+         "id": "visit_1",
+         "desc": "visit_1",
+         "target": 1
         }
        ],
-       "taps": 269,
-       "memeHits": 3,
+       "taps": 256,
+       "memeHits": 1,
        "memesSeen": 3,
-       "patrols": 1,
-       "patrolReward": 6043.200000000001,
+       "patrols": 2,
+       "patrolReward": 6601.32,
        "purchases": [
         "带薪喝水Lv16",
         "刷手机Lv21",
@@ -1819,25 +1810,25 @@
         "带薪喝水Lv17"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | 点100 100/100✓",
-       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | 点100 100/100✓",
+       "dailyBefore": "1/3",
+       "dailyAfter": "1/3 streak=0",
+       "progressBefore": "idle_earn 0/1 | 收1梗 1/1✓ | visit_1 0/1",
+       "progressAfter": "idle_earn 0/1 | 收1梗 1/1✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
-       "codexBefore": 26,
+       "streakAfter": 0,
+       "codexBefore": 27,
        "codexAfter": 27,
-       "newQuotes": 1,
+       "newQuotes": 0,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 230889.37000380456,
-       "moyuEnd": 115210748.12999721,
-       "idleRateEnd": 1007.2,
-       "clickPowerEnd": 139,
+       "sessionEarned": 244621.07901383936,
+       "moyuEnd": 123074215.55181397,
+       "idleRateEnd": 1107.92,
+       "clickPowerEnd": 152.8,
        "interesting": true,
-       "stale": false
+       "stale": true
       },
       {
        "day": 3,
@@ -1846,13 +1837,13 @@
        "weekday": "周四",
        "offlineSeconds": 11220,
        "offlineRate": 1,
-       "offlineEarned": 11300784,
+       "offlineEarned": 12430862.4,
        "welcome": true,
        "goals": [
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         },
         {
          "id": "meme_1",
@@ -1860,16 +1851,16 @@
          "target": 1
         },
         {
-         "id": "click_100",
-         "desc": "点100",
-         "target": 100
+         "id": "visit_1",
+         "desc": "visit_1",
+         "target": 1
         }
        ],
-       "taps": 269,
-       "memeHits": 3,
+       "taps": 245,
+       "memeHits": 2,
        "memesSeen": 3,
        "patrols": 1,
-       "patrolReward": 6085.200000000001,
+       "patrolReward": 6660.720000000001,
        "purchases": [
         "刷手机Lv22",
         "咖啡续命Lv31",
@@ -1879,23 +1870,23 @@
         "刷手机Lv23"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | 点100 100/100✓",
-       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | 点100 100/100✓",
+       "dailyBefore": "1/3",
+       "dailyAfter": "1/3 streak=0",
+       "progressBefore": "idle_earn 0/1 | 收1梗 1/1✓ | visit_1 0/1",
+       "progressAfter": "idle_earn 0/1 | 收1梗 1/1✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
+       "streakAfter": 0,
        "codexBefore": 27,
        "codexAfter": 28,
        "newQuotes": 0,
        "newFlavors": 1,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 237101.7299786657,
-       "moyuEnd": 126742429.85997587,
-       "idleRateEnd": 1016.2,
-       "clickPowerEnd": 150,
+       "sessionEarned": 249023.30699253082,
+       "moyuEnd": 135747897.2588065,
+       "idleRateEnd": 1117.8200000000002,
+       "clickPowerEnd": 164.9,
        "interesting": true,
        "stale": false
       },
@@ -1906,13 +1897,13 @@
        "weekday": "周四",
        "offlineSeconds": 13020,
        "offlineRate": 1,
-       "offlineEarned": 13230924,
+       "offlineEarned": 14554016.400000002,
        "welcome": true,
        "goals": [
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         },
         {
          "id": "meme_1",
@@ -1920,16 +1911,16 @@
          "target": 1
         },
         {
-         "id": "click_100",
-         "desc": "点100",
-         "target": 100
+         "id": "visit_1",
+         "desc": "visit_1",
+         "target": 1
         }
        ],
-       "taps": 269,
-       "memeHits": 1,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 0,
+       "taps": 256,
+       "memeHits": 3,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 13460.04,
        "purchases": [
         "咖啡续命Lv32",
         "带薪蹲坑Lv6",
@@ -1939,25 +1930,25 @@
         "咖啡续命Lv33"
        ],
        "buyCount": 6,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | 点100 100/100✓",
-       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | 点100 100/100✓",
+       "dailyBefore": "1/3",
+       "dailyAfter": "1/3 streak=0",
+       "progressBefore": "idle_earn 0/1 | 收1梗 1/1✓ | visit_1 0/1",
+       "progressAfter": "idle_earn 0/1 | 收1梗 1/1✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
+       "streakAfter": 0,
        "codexBefore": 28,
-       "codexAfter": 28,
-       "newQuotes": 0,
+       "codexAfter": 29,
+       "newQuotes": 1,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 235700.29000276327,
-       "moyuEnd": 140201690.14997864,
-       "idleRateEnd": 1023.2,
-       "clickPowerEnd": 163,
+       "sessionEarned": 263983.5670160651,
+       "moyuEnd": 150558533.22582257,
+       "idleRateEnd": 1125.5200000000002,
+       "clickPowerEnd": 179.20000000000002,
        "interesting": true,
-       "stale": true
+       "stale": false
       }
      ]
     }
@@ -1990,8 +1981,8 @@
          "target": 1
         },
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "idle_earn",
+         "desc": "idle_earn",
          "target": 1
         }
        ],
@@ -2008,26 +1999,25 @@
        ],
        "buyCount": 4,
        "dailyBefore": "0/3",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "点100 0/100 | 收1梗 0/1 | 应付1次巡逻 0/1",
-       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "点100 0/100 | 收1梗 0/1 | idle_earn 0/1",
+       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | idle_earn 0/1",
        "goalsNewlyDone": [
         "点100",
-        "收1梗",
-        "应付1次巡逻"
+        "收1梗"
        ],
-       "claimed": 3720,
-       "streakAfter": 1,
+       "claimed": null,
+       "streakAfter": 0,
        "codexBefore": 0,
-       "codexAfter": 8,
-       "newQuotes": 3,
+       "codexAfter": 7,
+       "newQuotes": 2,
        "newFlavors": 5,
        "rankBefore": "摸鱼实习生",
        "rankAfter": "摸鱼实习生",
-       "sessionEarned": 4149.949999999958,
-       "moyuEnd": 3744.949999999958,
-       "idleRateEnd": 6.2,
-       "clickPowerEnd": 4,
+       "sessionEarned": 418.2487999999661,
+       "moyuEnd": 13.248799999966081,
+       "idleRateEnd": 6.324000000000001,
+       "clickPowerEnd": 4.0600000000000005,
        "interesting": true,
        "stale": false
       },
@@ -2038,7 +2028,7 @@
        "weekday": "周二",
        "offlineSeconds": 6720,
        "offlineRate": 1,
-       "offlineEarned": 41664,
+       "offlineEarned": 42497.280000000006,
        "welcome": true,
        "goals": [
         {
@@ -2052,15 +2042,15 @@
          "target": 1
         },
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "idle_earn",
+         "desc": "idle_earn",
          "target": 1
         }
        ],
        "taps": 130,
        "memeHits": 3,
-       "memesSeen": 3,
-       "patrols": 1,
+       "memesSeen": 4,
+       "patrols": 2,
        "patrolReward": 0,
        "purchases": [
         "人体工学椅Lv1",
@@ -2069,23 +2059,23 @@
         "咖啡续命Lv2"
        ],
        "buyCount": 4,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | idle_earn 0/1",
+       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | idle_earn 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
-       "codexBefore": 8,
+       "streakAfter": 0,
+       "codexBefore": 7,
        "codexAfter": 11,
-       "newQuotes": 1,
+       "newQuotes": 2,
        "newFlavors": 2,
        "rankBefore": "摸鱼学徒",
        "rankAfter": "摸鱼学徒",
-       "sessionEarned": 3860.749999991618,
-       "moyuEnd": 19451.699999992303,
-       "idleRateEnd": 71.2,
-       "clickPowerEnd": 10,
+       "sessionEarned": 3947.153800003529,
+       "moyuEnd": 16639.682600003034,
+       "idleRateEnd": 74.048,
+       "clickPowerEnd": 10.36,
        "interesting": true,
        "stale": false
       },
@@ -2096,7 +2086,7 @@
        "weekday": "周二",
        "offlineSeconds": 8520,
        "offlineRate": 1,
-       "offlineEarned": 606624,
+       "offlineEarned": 630888.96,
        "welcome": true,
        "goals": [
         {
@@ -2110,16 +2100,16 @@
          "target": 1
         },
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "idle_earn",
+         "desc": "idle_earn",
          "target": 1
         }
        ],
-       "taps": 123,
-       "memeHits": 2,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 1105.28,
+       "taps": 125,
+       "memeHits": 1,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 2403.4816,
        "purchases": [
         "深度摸鱼Lv1",
         "咖啡续命Lv3",
@@ -2127,23 +2117,23 @@
         "咖啡续命Lv5"
        ],
        "buyCount": 4,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | idle_earn 0/1",
+       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | idle_earn 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
+       "streakAfter": 0,
        "codexBefore": 11,
        "codexAfter": 13,
        "newQuotes": 1,
        "newFlavors": 1,
        "rankBefore": "资深摸鱼",
        "rankAfter": "资深摸鱼",
-       "sessionEarned": 42281.28000020119,
-       "moyuEnd": 518286.9800000189,
-       "idleRateEnd": 251.2,
-       "clickPowerEnd": 13,
+       "sessionEarned": 45203.68160013063,
+       "moyuEnd": 542662.324200033,
+       "idleRateEnd": 261.248,
+       "clickPowerEnd": 13.48,
        "interesting": true,
        "stale": false
       },
@@ -2154,7 +2144,7 @@
        "weekday": "周二",
        "offlineSeconds": 11220,
        "offlineRate": 1,
-       "offlineEarned": 2818464,
+       "offlineEarned": 2931202.56,
        "welcome": true,
        "goals": [
         {
@@ -2168,16 +2158,16 @@
          "target": 1
         },
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "idle_earn",
+         "desc": "idle_earn",
          "target": 1
         }
        ],
-       "taps": 128,
+       "taps": 119,
        "memeHits": 2,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 4565.76,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 10889.337599999999,
        "purchases": [
         "退休式躺平Lv1",
         "咖啡续命Lv6",
@@ -2185,23 +2175,23 @@
         "咖啡续命Lv8"
        ],
        "buyCount": 4,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | idle_earn 0/1",
+       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | idle_earn 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
+       "streakAfter": 0,
        "codexBefore": 13,
-       "codexAfter": 18,
+       "codexAfter": 15,
        "newQuotes": 1,
-       "newFlavors": 4,
+       "newFlavors": 1,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
-       "sessionEarned": 156578.76000020094,
-       "moyuEnd": 2493223.74000022,
-       "idleRateEnd": 951.2,
-       "clickPowerEnd": 16,
+       "sessionEarned": 171724.26640035864,
+       "moyuEnd": 2645483.1506003914,
+       "idleRateEnd": 1008.272,
+       "clickPowerEnd": 16.9,
        "interesting": true,
        "stale": false
       },
@@ -2212,7 +2202,7 @@
        "weekday": "周二",
        "offlineSeconds": 13020,
        "offlineRate": 1,
-       "offlineEarned": 12384624,
+       "offlineEarned": 13127701.440000001,
        "welcome": true,
        "goals": [
         {
@@ -2226,16 +2216,16 @@
          "target": 1
         },
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "idle_earn",
+         "desc": "idle_earn",
          "target": 1
         }
        ],
-       "taps": 124,
+       "taps": 130,
        "memeHits": 2,
        "memesSeen": 3,
-       "patrols": 1,
-       "patrolReward": 4946.240000000001,
+       "patrols": 2,
+       "patrolReward": 0,
        "purchases": [
         "咖啡续命Lv9",
         "咖啡续命Lv10",
@@ -2243,25 +2233,25 @@
         "咖啡续命Lv11"
        ],
        "buyCount": 4,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | idle_earn 0/1",
+       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | idle_earn 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
-       "codexBefore": 18,
-       "codexAfter": 18,
-       "newQuotes": 0,
-       "newFlavors": 0,
+       "streakAfter": 0,
+       "codexBefore": 15,
+       "codexAfter": 19,
+       "newQuotes": 1,
+       "newFlavors": 3,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
-       "sessionEarned": 178422.19000165537,
-       "moyuEnd": 15056051.930001875,
-       "idleRateEnd": 952.2,
-       "clickPowerEnd": 19,
+       "sessionEarned": 183990.70700515434,
+       "moyuEnd": 15956957.297599297,
+       "idleRateEnd": 1009.3320000000001,
+       "clickPowerEnd": 20.080000000000002,
        "interesting": true,
-       "stale": true
+       "stale": false
       }
      ],
      "day3": [
@@ -2272,13 +2262,13 @@
        "weekday": "周四",
        "offlineSeconds": 46020,
        "offlineRate": 0.8,
-       "offlineEarned": 22353408,
+       "offlineEarned": 24141680.639999997,
        "welcome": true,
        "goals": [
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
-         "target": 1
+         "id": "buy_3",
+         "desc": "买3级",
+         "target": 3
         },
         {
          "id": "meme_1",
@@ -2286,16 +2276,16 @@
          "target": 1
         },
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         }
        ],
        "taps": 130,
-       "memeHits": 1,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 0,
+       "memeHits": 3,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 6286.896000000001,
        "purchases": [
         "带薪喝水Lv6",
         "刷手机Lv11",
@@ -2304,25 +2294,25 @@
        ],
        "buyCount": 4,
        "dailyBefore": "0/3",
-       "dailyAfter": "2/3 streak=2",
-       "progressBefore": "应付1次巡逻 0/1 | 收1梗 0/1 | 买3级 0/3",
-       "progressAfter": "应付1次巡逻 0/1 | 收1梗 1/1✓ | 买3级 3/3✓",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "买3级 0/3 | 收1梗 0/1 | idle_earn 0/1",
+       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | idle_earn 0/1",
        "goalsNewlyDone": [
-        "收1梗",
-        "买3级"
+        "买3级",
+        "收1梗"
        ],
        "claimed": null,
-       "streakAfter": 2,
+       "streakAfter": 0,
        "codexBefore": 23,
        "codexAfter": 23,
        "newQuotes": 0,
        "newFlavors": 0,
-       "rankBefore": "摸鱼大师",
-       "rankAfter": "摸鱼大师",
-       "sessionEarned": 179792.90000978112,
-       "moyuEnd": 98388734.94999288,
-       "idleRateEnd": 972.2,
-       "clickPowerEnd": 60,
+       "rankBefore": "带薪摸鱼传说",
+       "rankAfter": "带薪摸鱼传说",
+       "sessionEarned": 200802.8679894358,
+       "moyuEnd": 104918626.47940724,
+       "idleRateEnd": 1049.976,
+       "clickPowerEnd": 64.72,
        "interesting": true,
        "stale": false
       },
@@ -2333,13 +2323,13 @@
        "weekday": "周四",
        "offlineSeconds": 6720,
        "offlineRate": 0.9,
-       "offlineEarned": 5879865.6,
+       "offlineEarned": 6350254.848,
        "welcome": true,
        "goals": [
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
-         "target": 1
+         "id": "buy_3",
+         "desc": "买3级",
+         "target": 3
         },
         {
          "id": "meme_1",
@@ -2347,16 +2337,16 @@
          "target": 1
         },
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         }
        ],
-       "taps": 130,
+       "taps": 125,
        "memeHits": 2,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 0,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 12625.632000000001,
        "purchases": [
         "刷手机Lv12",
         "咖啡续命Lv21",
@@ -2365,22 +2355,22 @@
        ],
        "buyCount": 4,
        "dailyBefore": "2/3",
-       "dailyAfter": "2/3 streak=2",
-       "progressBefore": "应付1次巡逻 0/1 | 收1梗 1/1✓ | 买3级 3/3✓",
-       "progressAfter": "应付1次巡逻 0/1 | 收1梗 1/1✓ | 买3级 3/3✓",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | idle_earn 0/1",
+       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | idle_earn 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 2,
+       "streakAfter": 0,
        "codexBefore": 23,
        "codexAfter": 24,
        "newQuotes": 1,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 183645.8999799788,
-       "moyuEnd": 104451232.44997285,
-       "idleRateEnd": 976.2,
-       "clickPowerEnd": 64,
+       "sessionEarned": 210695.5240110159,
+       "moyuEnd": 111478562.85141826,
+       "idleRateEnd": 1054.296,
+       "clickPowerEnd": 69.04,
        "interesting": true,
        "stale": false
       },
@@ -2391,13 +2381,13 @@
        "weekday": "周四",
        "offlineSeconds": 8520,
        "offlineRate": 1,
-       "offlineEarned": 8317224,
+       "offlineEarned": 8982601.92,
        "welcome": true,
        "goals": [
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
-         "target": 1
+         "id": "buy_3",
+         "desc": "买3级",
+         "target": 3
         },
         {
          "id": "meme_1",
@@ -2405,16 +2395,16 @@
          "target": 1
         },
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         }
        ],
-       "taps": 124,
-       "memeHits": 2,
+       "taps": 130,
+       "memeHits": 3,
        "memesSeen": 3,
-       "patrols": 1,
-       "patrolReward": 5857.200000000001,
+       "patrols": 2,
+       "patrolReward": 6325.776,
        "purchases": [
         "咖啡续命Lv22",
         "带薪喝水Lv9",
@@ -2423,26 +2413,24 @@
        ],
        "buyCount": 4,
        "dailyBefore": "2/3",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "应付1次巡逻 0/1 | 收1梗 1/1✓ | 买3级 3/3✓",
-       "progressAfter": "应付1次巡逻 1/1✓ | 收1梗 1/1✓ | 买3级 3/3✓",
-       "goalsNewlyDone": [
-        "应付1次巡逻"
-       ],
-       "claimed": 585720,
-       "streakAfter": 3,
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | idle_earn 0/1",
+       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | idle_earn 0/1",
+       "goalsNewlyDone": [],
+       "claimed": null,
+       "streakAfter": 0,
        "codexBefore": 24,
        "codexAfter": 24,
        "newQuotes": 0,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 776037.1000073999,
-       "moyuEnd": 113543271.54998025,
-       "idleRateEnd": 978.2,
-       "clickPowerEnd": 70,
+       "sessionEarned": 206265.50800010562,
+       "moyuEnd": 120666208.27941836,
+       "idleRateEnd": 1056.4560000000001,
+       "clickPowerEnd": 75.52000000000001,
        "interesting": true,
-       "stale": false
+       "stale": true
       },
       {
        "day": 3,
@@ -2451,13 +2439,13 @@
        "weekday": "周四",
        "offlineSeconds": 11220,
        "offlineRate": 1,
-       "offlineEarned": 10975404,
+       "offlineEarned": 11853436.320000002,
        "welcome": true,
        "goals": [
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
-         "target": 1
+         "id": "buy_3",
+         "desc": "买3级",
+         "target": 3
         },
         {
          "id": "meme_1",
@@ -2465,16 +2453,16 @@
          "target": 1
         },
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         }
        ],
-       "taps": 128,
-       "memeHits": 1,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 5881.200000000001,
+       "taps": 125,
+       "memeHits": 2,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 6338.736000000001,
        "purchases": [
         "带薪喝水Lv10",
         "刷手机Lv15",
@@ -2482,23 +2470,23 @@
         "带薪喝水Lv11"
        ],
        "buyCount": 4,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "应付1次巡逻 1/1✓ | 收1梗 1/1✓ | 买3级 3/3✓",
-       "progressAfter": "应付1次巡逻 1/1✓ | 收1梗 1/1✓ | 买3级 3/3✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | idle_earn 0/1",
+       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | idle_earn 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
+       "streakAfter": 0,
        "codexBefore": 24,
        "codexAfter": 24,
        "newQuotes": 0,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 191545.10000142455,
-       "moyuEnd": 124708735.64998168,
-       "idleRateEnd": 980.2,
-       "clickPowerEnd": 76,
+       "sessionEarned": 206845.18800072372,
+       "moyuEnd": 132725004.7874191,
+       "idleRateEnd": 1058.6160000000002,
+       "clickPowerEnd": 82,
        "interesting": true,
        "stale": true
       },
@@ -2509,13 +2497,13 @@
        "weekday": "周四",
        "offlineSeconds": 13020,
        "offlineRate": 1,
-       "offlineEarned": 12762204,
+       "offlineEarned": 13783180.320000002,
        "welcome": true,
        "goals": [
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
-         "target": 1
+         "id": "buy_3",
+         "desc": "买3级",
+         "target": 3
         },
         {
          "id": "meme_1",
@@ -2523,16 +2511,16 @@
          "target": 1
         },
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         }
        ],
        "taps": 130,
-       "memeHits": 1,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 0,
+       "memeHits": 2,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 6364.656000000001,
        "purchases": [
         "刷手机Lv16",
         "咖啡续命Lv25",
@@ -2540,23 +2528,23 @@
         "刷手机Lv17"
        ],
        "buyCount": 4,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "应付1次巡逻 1/1✓ | 收1梗 1/1✓ | 买3级 3/3✓",
-       "progressAfter": "应付1次巡逻 1/1✓ | 收1梗 1/1✓ | 买3级 3/3✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | idle_earn 0/1",
+       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | idle_earn 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
+       "streakAfter": 0,
        "codexBefore": 24,
        "codexAfter": 24,
        "newQuotes": 0,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 186973.90003716946,
-       "moyuEnd": 137656142.55001885,
-       "idleRateEnd": 984.2,
-       "clickPowerEnd": 80,
+       "sessionEarned": 208615.9879977405,
+       "moyuEnd": 146715030.09541684,
+       "idleRateEnd": 1062.9360000000001,
+       "clickPowerEnd": 86.32000000000001,
        "interesting": true,
        "stale": true
       }
@@ -2576,26 +2564,26 @@
        "welcome": true,
        "goals": [
         {
+         "id": "survive_2",
+         "desc": "应付1次巡逻",
+         "target": 1
+        },
+        {
          "id": "buy_3",
          "desc": "买3级",
          "target": 3
         },
         {
-         "id": "meme_1",
-         "desc": "收1梗",
-         "target": 1
-        },
-        {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "visit_1",
+         "desc": "visit_1",
          "target": 1
         }
        ],
-       "taps": 130,
-       "memeHits": 2,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 50,
+       "taps": 124,
+       "memeHits": 3,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 105,
        "purchases": [
         "咖啡续命Lv1",
         "带薪喝水Lv1",
@@ -2604,26 +2592,25 @@
        ],
        "buyCount": 4,
        "dailyBefore": "0/3",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "买3级 0/3 | 收1梗 0/1 | 应付1次巡逻 0/1",
-       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "应付1次巡逻 0/1 | 买3级 0/3 | visit_1 0/1",
+       "progressAfter": "应付1次巡逻 1/1✓ | 买3级 3/3✓ | visit_1 0/1",
        "goalsNewlyDone": [
-        "买3级",
-        "收1梗",
-        "应付1次巡逻"
+        "应付1次巡逻",
+        "买3级"
        ],
-       "claimed": 3720,
-       "streakAfter": 1,
+       "claimed": null,
+       "streakAfter": 0,
        "codexBefore": 0,
-       "codexAfter": 7,
-       "newQuotes": 2,
+       "codexAfter": 8,
+       "newQuotes": 3,
        "newFlavors": 5,
        "rankBefore": "摸鱼实习生",
        "rankAfter": "摸鱼实习生",
-       "sessionEarned": 4157.949999999958,
-       "moyuEnd": 3752.949999999958,
-       "idleRateEnd": 6.2,
-       "clickPowerEnd": 4,
+       "sessionEarned": 478.9791999999999,
+       "moyuEnd": 73.97919999999988,
+       "idleRateEnd": 6.324000000000001,
+       "clickPowerEnd": 4.0600000000000005,
        "interesting": true,
        "stale": false
       },
@@ -2634,30 +2621,30 @@
        "weekday": "周二",
        "offlineSeconds": 6720,
        "offlineRate": 1,
-       "offlineEarned": 41664,
+       "offlineEarned": 42497.280000000006,
        "welcome": true,
        "goals": [
+        {
+         "id": "survive_2",
+         "desc": "应付1次巡逻",
+         "target": 1
+        },
         {
          "id": "buy_3",
          "desc": "买3级",
          "target": 3
         },
         {
-         "id": "meme_1",
-         "desc": "收1梗",
-         "target": 1
-        },
-        {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "visit_1",
+         "desc": "visit_1",
          "target": 1
         }
        ],
-       "taps": 124,
+       "taps": 130,
        "memeHits": 2,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 93.28,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 0,
        "purchases": [
         "人体工学椅Lv1",
         "摸鱼群聊Lv1",
@@ -2665,23 +2652,23 @@
         "咖啡续命Lv2"
        ],
        "buyCount": 4,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "应付1次巡逻 1/1✓ | 买3级 3/3✓ | visit_1 0/1",
+       "progressAfter": "应付1次巡逻 1/1✓ | 买3级 3/3✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
-       "codexBefore": 7,
-       "codexAfter": 11,
+       "streakAfter": 0,
+       "codexBefore": 8,
+       "codexAfter": 12,
        "newQuotes": 2,
        "newFlavors": 2,
        "rankBefore": "摸鱼学徒",
        "rankAfter": "摸鱼学徒",
-       "sessionEarned": 3864.029999991617,
-       "moyuEnd": 19462.9799999923,
-       "idleRateEnd": 71.2,
-       "clickPowerEnd": 10,
+       "sessionEarned": 3917.833800007371,
+       "moyuEnd": 16671.09300000688,
+       "idleRateEnd": 74.048,
+       "clickPowerEnd": 10.36,
        "interesting": true,
        "stale": false
       },
@@ -2692,30 +2679,30 @@
        "weekday": "周二",
        "offlineSeconds": 8520,
        "offlineRate": 1,
-       "offlineEarned": 606624,
+       "offlineEarned": 630888.96,
        "welcome": true,
        "goals": [
+        {
+         "id": "survive_2",
+         "desc": "应付1次巡逻",
+         "target": 1
+        },
         {
          "id": "buy_3",
          "desc": "买3级",
          "target": 3
         },
         {
-         "id": "meme_1",
-         "desc": "收1梗",
-         "target": 1
-        },
-        {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "visit_1",
+         "desc": "visit_1",
          "target": 1
         }
        ],
-       "taps": 130,
-       "memeHits": 1,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 0,
+       "taps": 119,
+       "memeHits": 2,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 2612.48,
        "purchases": [
         "深度摸鱼Lv1",
         "咖啡续命Lv3",
@@ -2723,23 +2710,23 @@
         "咖啡续命Lv5"
        ],
        "buyCount": 4,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "应付1次巡逻 1/1✓ | 买3级 3/3✓ | visit_1 0/1",
+       "progressAfter": "应付1次巡逻 1/1✓ | 买3级 3/3✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
-       "codexBefore": 11,
+       "streakAfter": 0,
+       "codexBefore": 12,
        "codexAfter": 13,
-       "newQuotes": 1,
+       "newQuotes": 0,
        "newFlavors": 1,
        "rankBefore": "资深摸鱼",
        "rankAfter": "资深摸鱼",
-       "sessionEarned": 41202.000000201166,
-       "moyuEnd": 517218.9800000189,
-       "idleRateEnd": 251.2,
-       "clickPowerEnd": 13,
+       "sessionEarned": 45385.72000013047,
+       "moyuEnd": 542875.7730000374,
+       "idleRateEnd": 261.248,
+       "clickPowerEnd": 13.48,
        "interesting": true,
        "stale": false
       },
@@ -2750,30 +2737,30 @@
        "weekday": "周二",
        "offlineSeconds": 11220,
        "offlineRate": 1,
-       "offlineEarned": 2818464,
+       "offlineEarned": 2931202.56,
        "welcome": true,
        "goals": [
+        {
+         "id": "survive_2",
+         "desc": "应付1次巡逻",
+         "target": 1
+        },
         {
          "id": "buy_3",
          "desc": "买3级",
          "target": 3
         },
         {
-         "id": "meme_1",
-         "desc": "收1梗",
-         "target": 1
-        },
-        {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "visit_1",
+         "desc": "visit_1",
          "target": 1
         }
        ],
-       "taps": 123,
+       "taps": 130,
        "memeHits": 2,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 4565.76,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 5646.3232,
        "purchases": [
         "退休式躺平Lv1",
         "咖啡续命Lv6",
@@ -2781,23 +2768,23 @@
         "咖啡续命Lv8"
        ],
        "buyCount": 4,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "应付1次巡逻 1/1✓ | 买3级 3/3✓ | visit_1 0/1",
+       "progressAfter": "应付1次巡逻 1/1✓ | 买3级 3/3✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
+       "streakAfter": 0,
        "codexBefore": 13,
-       "codexAfter": 17,
-       "newQuotes": 0,
-       "newFlavors": 4,
+       "codexAfter": 15,
+       "newQuotes": 1,
+       "newFlavors": 1,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
-       "sessionEarned": 156508.76000020094,
-       "moyuEnd": 2492085.74000022,
-       "idleRateEnd": 951.2,
-       "clickPowerEnd": 16,
+       "sessionEarned": 166516.33440035675,
+       "moyuEnd": 2640488.667400394,
+       "idleRateEnd": 1008.272,
+       "clickPowerEnd": 16.9,
        "interesting": true,
        "stale": false
       },
@@ -2808,30 +2795,30 @@
        "weekday": "周二",
        "offlineSeconds": 13020,
        "offlineRate": 1,
-       "offlineEarned": 12384624,
+       "offlineEarned": 13127701.440000001,
        "welcome": true,
        "goals": [
+        {
+         "id": "survive_2",
+         "desc": "应付1次巡逻",
+         "target": 1
+        },
         {
          "id": "buy_3",
          "desc": "买3级",
          "target": 3
         },
         {
-         "id": "meme_1",
-         "desc": "收1梗",
-         "target": 1
-        },
-        {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "visit_1",
+         "desc": "visit_1",
          "target": 1
         }
        ],
-       "taps": 130,
-       "memeHits": 1,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 4946.240000000001,
+       "taps": 124,
+       "memeHits": 3,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 6163.776,
        "purchases": [
         "咖啡续命Lv9",
         "咖啡续命Lv10",
@@ -2839,25 +2826,25 @@
         "咖啡续命Lv11"
        ],
        "buyCount": 4,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "应付1次巡逻 1/1✓ | 买3级 3/3✓ | visit_1 0/1",
+       "progressAfter": "应付1次巡逻 1/1✓ | 买3级 3/3✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
-       "codexBefore": 17,
-       "codexAfter": 17,
-       "newQuotes": 0,
-       "newFlavors": 0,
+       "streakAfter": 0,
+       "codexBefore": 15,
+       "codexAfter": 20,
+       "newQuotes": 2,
+       "newFlavors": 3,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
-       "sessionEarned": 178440.19000165537,
-       "moyuEnd": 15054931.930001875,
-       "idleRateEnd": 952.2,
-       "clickPowerEnd": 19,
+       "sessionEarned": 192094.2123998031,
+       "moyuEnd": 15960066.319800893,
+       "idleRateEnd": 1028.3760000000002,
+       "clickPowerEnd": 20.44,
        "interesting": true,
-       "stale": true
+       "stale": false
       }
      ],
      "day3": [
@@ -2868,30 +2855,30 @@
        "weekday": "周四",
        "offlineSeconds": 46020,
        "offlineRate": 0.8,
-       "offlineEarned": 22353408,
+       "offlineEarned": 24141680.639999997,
        "welcome": true,
        "goals": [
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "visit_1",
+         "desc": "visit_1",
+         "target": 1
         },
         {
-         "id": "click_100",
-         "desc": "点100",
-         "target": 100
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         },
         {
-         "id": "meme_1",
-         "desc": "收1梗",
+         "id": "survive_2",
+         "desc": "应付1次巡逻",
          "target": 1
         }
        ],
        "taps": 130,
-       "memeHits": 2,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 0,
+       "memeHits": 3,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 6299.856000000001,
        "purchases": [
         "带薪喝水Lv6",
         "刷手机Lv11",
@@ -2900,26 +2887,24 @@
        ],
        "buyCount": 4,
        "dailyBefore": "0/3",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "买3级 0/3 | 点100 0/100 | 收1梗 0/1",
-       "progressAfter": "买3级 3/3✓ | 点100 100/100✓ | 收1梗 1/1✓",
+       "dailyAfter": "1/3 streak=0",
+       "progressBefore": "visit_1 0/1 | idle_earn 0/1 | 应付1次巡逻 0/1",
+       "progressAfter": "visit_1 0/1 | idle_earn 0/1 | 应付1次巡逻 1/1✓",
        "goalsNewlyDone": [
-        "买3级",
-        "点100",
-        "收1梗"
+        "应付1次巡逻"
        ],
-       "claimed": 583320,
-       "streakAfter": 3,
-       "codexBefore": 24,
+       "claimed": null,
+       "streakAfter": 0,
+       "codexBefore": 23,
        "codexAfter": 24,
-       "newQuotes": 0,
+       "newQuotes": 1,
        "newFlavors": 0,
-       "rankBefore": "摸鱼大师",
+       "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 763297.9000097811,
-       "moyuEnd": 98978292.14999288,
-       "idleRateEnd": 972.2,
-       "clickPowerEnd": 60,
+       "sessionEarned": 200736.06798945367,
+       "moyuEnd": 105361845.09179904,
+       "idleRateEnd": 1049.976,
+       "clickPowerEnd": 64.72,
        "interesting": true,
        "stale": false
       },
@@ -2930,30 +2915,30 @@
        "weekday": "周四",
        "offlineSeconds": 6720,
        "offlineRate": 0.9,
-       "offlineEarned": 5879865.6,
+       "offlineEarned": 6350254.848,
        "welcome": true,
        "goals": [
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "visit_1",
+         "desc": "visit_1",
+         "target": 1
         },
         {
-         "id": "click_100",
-         "desc": "点100",
-         "target": 100
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         },
         {
-         "id": "meme_1",
-         "desc": "收1梗",
+         "id": "survive_2",
+         "desc": "应付1次巡逻",
          "target": 1
         }
        ],
-       "taps": 123,
+       "taps": 130,
        "memeHits": 2,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 5845.200000000001,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 12625.632000000001,
        "purchases": [
         "刷手机Lv12",
         "咖啡续命Lv21",
@@ -2961,23 +2946,23 @@
         "刷手机Lv13"
        ],
        "buyCount": 4,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "买3级 3/3✓ | 点100 100/100✓ | 收1梗 1/1✓",
-       "progressAfter": "买3级 3/3✓ | 点100 100/100✓ | 收1梗 1/1✓",
+       "dailyBefore": "1/3",
+       "dailyAfter": "1/3 streak=0",
+       "progressBefore": "visit_1 0/1 | idle_earn 0/1 | 应付1次巡逻 1/1✓",
+       "progressAfter": "visit_1 0/1 | idle_earn 0/1 | 应付1次巡逻 1/1✓",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
+       "streakAfter": 0,
        "codexBefore": 24,
        "codexAfter": 24,
        "newQuotes": 0,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 189119.09997998178,
-       "moyuEnd": 105046262.84997286,
-       "idleRateEnd": 976.2,
-       "clickPowerEnd": 64,
+       "sessionEarned": 210952.2440110147,
+       "moyuEnd": 111922038.18381006,
+       "idleRateEnd": 1054.296,
+       "clickPowerEnd": 69.04,
        "interesting": true,
        "stale": true
       },
@@ -2988,30 +2973,30 @@
        "weekday": "周四",
        "offlineSeconds": 8520,
        "offlineRate": 1,
-       "offlineEarned": 8317224,
+       "offlineEarned": 8982601.92,
        "welcome": true,
        "goals": [
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "visit_1",
+         "desc": "visit_1",
+         "target": 1
         },
         {
-         "id": "click_100",
-         "desc": "点100",
-         "target": 100
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         },
         {
-         "id": "meme_1",
-         "desc": "收1梗",
+         "id": "survive_2",
+         "desc": "应付1次巡逻",
          "target": 1
         }
        ],
-       "taps": 123,
-       "memeHits": 2,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 5857.200000000001,
+       "taps": 119,
+       "memeHits": 1,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 12651.552,
        "purchases": [
         "咖啡续命Lv22",
         "带薪喝水Lv9",
@@ -3019,23 +3004,23 @@
         "咖啡续命Lv23"
        ],
        "buyCount": 4,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "买3级 3/3✓ | 点100 100/100✓ | 收1梗 1/1✓",
-       "progressAfter": "买3级 3/3✓ | 点100 100/100✓ | 收1梗 1/1✓",
+       "dailyBefore": "1/3",
+       "dailyAfter": "1/3 streak=0",
+       "progressBefore": "visit_1 0/1 | idle_earn 0/1 | 应付1次巡逻 1/1✓",
+       "progressAfter": "visit_1 0/1 | idle_earn 0/1 | 应付1次巡逻 1/1✓",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
+       "streakAfter": 0,
        "codexBefore": 24,
        "codexAfter": 24,
        "newQuotes": 0,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 190249.10000739992,
-       "moyuEnd": 113552513.94998026,
-       "idleRateEnd": 978.2,
-       "clickPowerEnd": 70,
+       "sessionEarned": 211227.68400007486,
+       "moyuEnd": 121114645.78781013,
+       "idleRateEnd": 1056.4560000000001,
+       "clickPowerEnd": 75.52000000000001,
        "interesting": true,
        "stale": true
       },
@@ -3046,30 +3031,30 @@
        "weekday": "周四",
        "offlineSeconds": 11220,
        "offlineRate": 1,
-       "offlineEarned": 10975404,
+       "offlineEarned": 11853436.320000002,
        "welcome": true,
        "goals": [
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "visit_1",
+         "desc": "visit_1",
+         "target": 1
         },
         {
-         "id": "click_100",
-         "desc": "点100",
-         "target": 100
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         },
         {
-         "id": "meme_1",
-         "desc": "收1梗",
+         "id": "survive_2",
+         "desc": "应付1次巡逻",
          "target": 1
         }
        ],
-       "taps": 130,
-       "memeHits": 1,
+       "taps": 124,
+       "memeHits": 3,
        "memesSeen": 3,
-       "patrols": 1,
-       "patrolReward": 5881.200000000001,
+       "patrols": 2,
+       "patrolReward": 6351.696000000002,
        "purchases": [
         "带薪喝水Lv10",
         "刷手机Lv15",
@@ -3077,23 +3062,23 @@
         "带薪喝水Lv11"
        ],
        "buyCount": 4,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "买3级 3/3✓ | 点100 100/100✓ | 收1梗 1/1✓",
-       "progressAfter": "买3级 3/3✓ | 点100 100/100✓ | 收1梗 1/1✓",
+       "dailyBefore": "1/3",
+       "dailyAfter": "1/3 streak=0",
+       "progressBefore": "visit_1 0/1 | idle_earn 0/1 | 应付1次巡逻 1/1✓",
+       "progressAfter": "visit_1 0/1 | idle_earn 0/1 | 应付1次巡逻 1/1✓",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
+       "streakAfter": 0,
        "codexBefore": 24,
        "codexAfter": 24,
        "newQuotes": 0,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 191617.10000142455,
-       "moyuEnd": 124718050.04998168,
-       "idleRateEnd": 980.2,
-       "clickPowerEnd": 76,
+       "sessionEarned": 207093.34799025953,
+       "moyuEnd": 133173690.45581082,
+       "idleRateEnd": 1058.6160000000002,
+       "clickPowerEnd": 82,
        "interesting": true,
        "stale": true
       },
@@ -3104,27 +3089,27 @@
        "weekday": "周四",
        "offlineSeconds": 13020,
        "offlineRate": 1,
-       "offlineEarned": 12762204,
+       "offlineEarned": 13783180.320000002,
        "welcome": true,
        "goals": [
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "visit_1",
+         "desc": "visit_1",
+         "target": 1
         },
         {
-         "id": "click_100",
-         "desc": "点100",
-         "target": 100
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         },
         {
-         "id": "meme_1",
-         "desc": "收1梗",
+         "id": "survive_2",
+         "desc": "应付1次巡逻",
          "target": 1
         }
        ],
        "taps": 130,
-       "memeHits": 3,
+       "memeHits": 2,
        "memesSeen": 3,
        "patrols": 1,
        "patrolReward": 0,
@@ -3135,23 +3120,23 @@
         "刷手机Lv17"
        ],
        "buyCount": 4,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "买3级 3/3✓ | 点100 100/100✓ | 收1梗 1/1✓",
-       "progressAfter": "买3级 3/3✓ | 点100 100/100✓ | 收1梗 1/1✓",
+       "dailyBefore": "1/3",
+       "dailyAfter": "1/3 streak=0",
+       "progressBefore": "visit_1 0/1 | idle_earn 0/1 | 应付1次巡逻 1/1✓",
+       "progressAfter": "visit_1 0/1 | idle_earn 0/1 | 应付1次巡逻 1/1✓",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
+       "streakAfter": 0,
        "codexBefore": 24,
        "codexAfter": 24,
        "newQuotes": 0,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 187591.90003716946,
-       "moyuEnd": 137666074.95001885,
-       "idleRateEnd": 984.2,
-       "clickPowerEnd": 80,
+       "sessionEarned": 202242.6919977367,
+       "moyuEnd": 147157342.46780854,
+       "idleRateEnd": 1062.9360000000001,
+       "clickPowerEnd": 86.32000000000001,
        "interesting": true,
        "stale": true
       }
@@ -3181,16 +3166,16 @@
          "target": 1
         },
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "visit_1",
+         "desc": "visit_1",
          "target": 1
         }
        ],
-       "taps": 130,
+       "taps": 124,
        "memeHits": 1,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 0,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 50,
        "purchases": [
         "咖啡续命Lv1",
         "带薪喝水Lv1",
@@ -3200,8 +3185,8 @@
        "buyCount": 4,
        "dailyBefore": "0/3",
        "dailyAfter": "2/3 streak=0",
-       "progressBefore": "点100 0/100 | 收1梗 0/1 | 应付1次巡逻 0/1",
-       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 0/1",
+       "progressBefore": "点100 0/100 | 收1梗 0/1 | visit_1 0/1",
+       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | visit_1 0/1",
        "goalsNewlyDone": [
         "点100",
         "收1梗"
@@ -3214,10 +3199,10 @@
        "newFlavors": 4,
        "rankBefore": "摸鱼实习生",
        "rankAfter": "摸鱼实习生",
-       "sessionEarned": 375.9499999999582,
-       "moyuEnd": 552.9499999999582,
-       "idleRateEnd": 1.2,
-       "clickPowerEnd": 5,
+       "sessionEarned": 397.6687999999657,
+       "moyuEnd": 574.6687999999657,
+       "idleRateEnd": 1.224,
+       "clickPowerEnd": 5.08,
        "interesting": true,
        "stale": false
       },
@@ -3228,7 +3213,7 @@
        "weekday": "周二",
        "offlineSeconds": 6720,
        "offlineRate": 1,
-       "offlineEarned": 8064,
+       "offlineEarned": 8225.28,
        "welcome": true,
        "goals": [
         {
@@ -3242,16 +3227,16 @@
          "target": 1
         },
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "visit_1",
+         "desc": "visit_1",
          "target": 1
         }
        ],
-       "taps": 130,
-       "memeHits": 1,
-       "memesSeen": 2,
+       "taps": 125,
+       "memeHits": 3,
+       "memesSeen": 3,
        "patrols": 1,
-       "patrolReward": 0,
+       "patrolReward": 55.00000000000001,
        "purchases": [
         "人体工学椅Lv1",
         "带薪蹲坑Lv1",
@@ -3261,21 +3246,21 @@
        "buyCount": 4,
        "dailyBefore": "2/3",
        "dailyAfter": "2/3 streak=0",
-       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 0/1",
-       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 0/1",
+       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | visit_1 0/1",
+       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
        "streakAfter": 0,
        "codexBefore": 5,
-       "codexAfter": 8,
-       "newQuotes": 1,
+       "codexAfter": 10,
+       "newQuotes": 3,
        "newFlavors": 2,
        "rankBefore": "摸鱼实习生",
        "rankAfter": "摸鱼学徒",
-       "sessionEarned": 1874.9999999981665,
-       "moyuEnd": 5071.949999999138,
-       "idleRateEnd": 21.2,
-       "clickPowerEnd": 11,
+       "sessionEarned": 1980.618799999189,
+       "moyuEnd": 5360.567599999276,
+       "idleRateEnd": 22.048,
+       "clickPowerEnd": 11.4,
        "interesting": true,
        "stale": false
       },
@@ -3286,7 +3271,7 @@
        "weekday": "周二",
        "offlineSeconds": 8520,
        "offlineRate": 1,
-       "offlineEarned": 180624,
+       "offlineEarned": 187848.96,
        "welcome": true,
        "goals": [
         {
@@ -3300,16 +3285,16 @@
          "target": 1
         },
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "visit_1",
+         "desc": "visit_1",
          "target": 1
         }
        ],
-       "taps": 127,
-       "memeHits": 2,
+       "taps": 129,
+       "memeHits": 0,
        "memesSeen": 2,
        "patrols": 1,
-       "patrolReward": 1004.8,
+       "patrolReward": 0,
        "purchases": [
         "无用会议Lv1",
         "深度摸鱼Lv1",
@@ -3318,24 +3303,22 @@
        ],
        "buyCount": 4,
        "dailyBefore": "2/3",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 0/1",
-       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "goalsNewlyDone": [
-        "应付1次巡逻"
-       ],
-       "claimed": 150720,
-       "streakAfter": 1,
-       "codexBefore": 8,
-       "codexAfter": 11,
-       "newQuotes": 1,
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | visit_1 0/1",
+       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | visit_1 0/1",
+       "goalsNewlyDone": [],
+       "claimed": null,
+       "streakAfter": 0,
+       "codexBefore": 10,
+       "codexAfter": 12,
+       "newQuotes": 0,
        "newFlavors": 2,
        "rankBefore": "资深摸鱼",
        "rankAfter": "资深摸鱼",
-       "sessionEarned": 178922.29999999158,
-       "moyuEnd": 189568.2499999922,
-       "idleRateEnd": 251.2,
-       "clickPowerEnd": 13,
+       "sessionEarned": 28199.16000000667,
+       "moyuEnd": 46358.687600015764,
+       "idleRateEnd": 261.248,
+       "clickPowerEnd": 13.48,
        "interesting": true,
        "stale": false
       },
@@ -3346,7 +3329,7 @@
        "weekday": "周二",
        "offlineSeconds": 11220,
        "offlineRate": 1,
-       "offlineEarned": 2818464,
+       "offlineEarned": 2931202.56,
        "welcome": true,
        "goals": [
         {
@@ -3360,16 +3343,16 @@
          "target": 1
         },
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "visit_1",
+         "desc": "visit_1",
          "target": 1
         }
        ],
        "taps": 130,
-       "memeHits": 1,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 0,
+       "memeHits": 2,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 4839.7056,
        "purchases": [
         "退休式躺平Lv1",
         "咖啡续命Lv6",
@@ -3377,23 +3360,23 @@
         "咖啡续命Lv8"
        ],
        "buyCount": 4,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | visit_1 0/1",
+       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
-       "codexBefore": 11,
-       "codexAfter": 16,
-       "newQuotes": 1,
+       "streakAfter": 0,
+       "codexBefore": 12,
+       "codexAfter": 18,
+       "newQuotes": 2,
        "newFlavors": 4,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
-       "sessionEarned": 151975.00000020117,
-       "moyuEnd": 2159901.2500001932,
-       "idleRateEnd": 951.2,
-       "clickPowerEnd": 16,
+       "sessionEarned": 163497.37680033315,
+       "moyuEnd": 2140952.624400349,
+       "idleRateEnd": 1008.272,
+       "clickPowerEnd": 16.9,
        "interesting": true,
        "stale": false
       },
@@ -3404,7 +3387,7 @@
        "weekday": "周二",
        "offlineSeconds": 13020,
        "offlineRate": 1,
-       "offlineEarned": 12384624,
+       "offlineEarned": 13127701.440000001,
        "welcome": true,
        "goals": [
         {
@@ -3418,16 +3401,16 @@
          "target": 1
         },
         {
-         "id": "survive_2",
-         "desc": "应付1次巡逻",
+         "id": "visit_1",
+         "desc": "visit_1",
          "target": 1
         }
        ],
-       "taps": 124,
-       "memeHits": 1,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 4185.280000000001,
+       "taps": 126,
+       "memeHits": 3,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 5243.0144,
        "purchases": [
         "咖啡续命Lv9",
         "咖啡续命Lv10",
@@ -3435,25 +3418,25 @@
         "咖啡续命Lv11"
        ],
        "buyCount": 4,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=1",
-       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
-       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | 应付1次巡逻 1/1✓",
+       "dailyBefore": "2/3",
+       "dailyAfter": "2/3 streak=0",
+       "progressBefore": "点100 100/100✓ | 收1梗 1/1✓ | visit_1 0/1",
+       "progressAfter": "点100 100/100✓ | 收1梗 1/1✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 1,
-       "codexBefore": 16,
-       "codexAfter": 16,
-       "newQuotes": 0,
+       "streakAfter": 0,
+       "codexBefore": 18,
+       "codexAfter": 19,
+       "newQuotes": 1,
        "newFlavors": 0,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
-       "sessionEarned": 177593.23000165448,
-       "moyuEnd": 14721900.480001848,
-       "idleRateEnd": 952.2,
-       "clickPowerEnd": 19,
+       "sessionEarned": 189210.46139889956,
+       "moyuEnd": 15457646.52579925,
+       "idleRateEnd": 1009.3320000000001,
+       "clickPowerEnd": 20.080000000000002,
        "interesting": true,
-       "stale": true
+       "stale": false
       }
      ],
      "day3": [
@@ -3464,13 +3447,13 @@
        "weekday": "周四",
        "offlineSeconds": 46020,
        "offlineRate": 0.8,
-       "offlineEarned": 22353408,
+       "offlineEarned": 24141680.639999997,
        "welcome": true,
        "goals": [
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         },
         {
          "id": "meme_1",
@@ -3478,16 +3461,16 @@
          "target": 1
         },
         {
-         "id": "click_100",
-         "desc": "点100",
-         "target": 100
+         "id": "visit_1",
+         "desc": "visit_1",
+         "target": 1
         }
        ],
        "taps": 123,
-       "memeHits": 1,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 5833.200000000001,
+       "memeHits": 2,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 6299.856000000001,
        "purchases": [
         "带薪喝水Lv6",
         "刷手机Lv11",
@@ -3496,26 +3479,24 @@
        ],
        "buyCount": 4,
        "dailyBefore": "0/3",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "买3级 0/3 | 收1梗 0/1 | 点100 0/100",
-       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | 点100 100/100✓",
+       "dailyAfter": "1/3 streak=0",
+       "progressBefore": "idle_earn 0/1 | 收1梗 0/1 | visit_1 0/1",
+       "progressAfter": "idle_earn 0/1 | 收1梗 1/1✓ | visit_1 0/1",
        "goalsNewlyDone": [
-        "买3级",
-        "收1梗",
-        "点100"
+        "收1梗"
        ],
-       "claimed": 583320,
-       "streakAfter": 3,
-       "codexBefore": 21,
-       "codexAfter": 21,
-       "newQuotes": 0,
+       "claimed": null,
+       "streakAfter": 0,
+       "codexBefore": 22,
+       "codexAfter": 23,
+       "newQuotes": 1,
        "newFlavors": 0,
-       "rankBefore": "摸鱼大师",
-       "rankAfter": "摸鱼大师",
-       "sessionEarned": 768724.1000097841,
-       "moyuEnd": 98648617.49999286,
-       "idleRateEnd": 972.2,
-       "clickPowerEnd": 60,
+       "rankBefore": "带薪摸鱼传说",
+       "rankAfter": "带薪摸鱼传说",
+       "sessionEarned": 200339.42798946798,
+       "moyuEnd": 104429847.28960022,
+       "idleRateEnd": 1049.976,
+       "clickPowerEnd": 64.72,
        "interesting": true,
        "stale": false
       },
@@ -3526,13 +3507,13 @@
        "weekday": "周四",
        "offlineSeconds": 6720,
        "offlineRate": 0.9,
-       "offlineEarned": 5879865.6,
+       "offlineEarned": 6350254.848,
        "welcome": true,
        "goals": [
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         },
         {
          "id": "meme_1",
@@ -3540,16 +3521,16 @@
          "target": 1
         },
         {
-         "id": "click_100",
-         "desc": "点100",
-         "target": 100
+         "id": "visit_1",
+         "desc": "visit_1",
+         "target": 1
         }
        ],
-       "taps": 128,
-       "memeHits": 2,
+       "taps": 123,
+       "memeHits": 0,
        "memesSeen": 3,
-       "patrols": 1,
-       "patrolReward": 5845.200000000001,
+       "patrols": 2,
+       "patrolReward": 6312.816000000001,
        "purchases": [
         "刷手机Lv12",
         "咖啡续命Lv21",
@@ -3557,25 +3538,25 @@
         "刷手机Lv13"
        ],
        "buyCount": 4,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | 点100 100/100✓",
-       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | 点100 100/100✓",
+       "dailyBefore": "1/3",
+       "dailyAfter": "1/3 streak=0",
+       "progressBefore": "idle_earn 0/1 | 收1梗 1/1✓ | visit_1 0/1",
+       "progressAfter": "idle_earn 0/1 | 收1梗 1/1✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
-       "codexBefore": 21,
-       "codexAfter": 22,
-       "newQuotes": 1,
+       "streakAfter": 0,
+       "codexBefore": 23,
+       "codexAfter": 23,
+       "newQuotes": 0,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 189433.09997998178,
-       "moyuEnd": 104716902.19997284,
-       "idleRateEnd": 976.2,
-       "clickPowerEnd": 64,
+       "sessionEarned": 203711.7480110377,
+       "moyuEnd": 110982799.88561127,
+       "idleRateEnd": 1054.296,
+       "clickPowerEnd": 69.04,
        "interesting": true,
-       "stale": false
+       "stale": true
       },
       {
        "day": 3,
@@ -3584,13 +3565,13 @@
        "weekday": "周四",
        "offlineSeconds": 8520,
        "offlineRate": 1,
-       "offlineEarned": 8317224,
+       "offlineEarned": 8982601.92,
        "welcome": true,
        "goals": [
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         },
         {
          "id": "meme_1",
@@ -3598,16 +3579,16 @@
          "target": 1
         },
         {
-         "id": "click_100",
-         "desc": "点100",
-         "target": 100
+         "id": "visit_1",
+         "desc": "visit_1",
+         "target": 1
         }
        ],
-       "taps": 130,
-       "memeHits": 3,
+       "taps": 125,
+       "memeHits": 1,
        "memesSeen": 3,
-       "patrols": 1,
-       "patrolReward": 5857.200000000001,
+       "patrols": 2,
+       "patrolReward": 6325.776,
        "purchases": [
         "咖啡续命Lv22",
         "带薪喝水Lv9",
@@ -3615,25 +3596,25 @@
         "咖啡续命Lv23"
        ],
        "buyCount": 4,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | 点100 100/100✓",
-       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | 点100 100/100✓",
+       "dailyBefore": "1/3",
+       "dailyAfter": "1/3 streak=0",
+       "progressBefore": "idle_earn 0/1 | 收1梗 1/1✓ | visit_1 0/1",
+       "progressAfter": "idle_earn 0/1 | 收1梗 1/1✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
-       "codexBefore": 22,
+       "streakAfter": 0,
+       "codexBefore": 23,
        "codexAfter": 23,
-       "newQuotes": 1,
+       "newQuotes": 0,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 190929.10000739992,
-       "moyuEnd": 113223833.29998024,
-       "idleRateEnd": 978.2,
-       "clickPowerEnd": 70,
+       "sessionEarned": 205260.0680000931,
+       "moyuEnd": 120169439.87361136,
+       "idleRateEnd": 1056.4560000000001,
+       "clickPowerEnd": 75.52000000000001,
        "interesting": true,
-       "stale": false
+       "stale": true
       },
       {
        "day": 3,
@@ -3642,13 +3623,13 @@
        "weekday": "周四",
        "offlineSeconds": 11220,
        "offlineRate": 1,
-       "offlineEarned": 10975404,
+       "offlineEarned": 11853436.320000002,
        "welcome": true,
        "goals": [
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         },
         {
          "id": "meme_1",
@@ -3656,16 +3637,16 @@
          "target": 1
         },
         {
-         "id": "click_100",
-         "desc": "点100",
-         "target": 100
+         "id": "visit_1",
+         "desc": "visit_1",
+         "target": 1
         }
        ],
-       "taps": 130,
-       "memeHits": 3,
+       "taps": 121,
+       "memeHits": 2,
        "memesSeen": 3,
        "patrols": 1,
-       "patrolReward": 0,
+       "patrolReward": 6338.736000000001,
        "purchases": [
         "带薪喝水Lv10",
         "刷手机Lv15",
@@ -3673,23 +3654,23 @@
         "带薪喝水Lv11"
        ],
        "buyCount": 4,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | 点100 100/100✓",
-       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | 点100 100/100✓",
+       "dailyBefore": "1/3",
+       "dailyAfter": "1/3 streak=0",
+       "progressBefore": "idle_earn 0/1 | 收1梗 1/1✓ | visit_1 0/1",
+       "progressAfter": "idle_earn 0/1 | 收1梗 1/1✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
+       "streakAfter": 0,
        "codexBefore": 23,
        "codexAfter": 23,
        "newQuotes": 0,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 186391.90000142157,
-       "moyuEnd": 124384144.19998166,
-       "idleRateEnd": 980.2,
-       "clickPowerEnd": 76,
+       "sessionEarned": 206605.6680007279,
+       "moyuEnd": 132227996.8616121,
+       "idleRateEnd": 1058.6160000000002,
+       "clickPowerEnd": 82,
        "interesting": true,
        "stale": true
       },
@@ -3700,13 +3681,13 @@
        "weekday": "周四",
        "offlineSeconds": 13020,
        "offlineRate": 1,
-       "offlineEarned": 12762204,
+       "offlineEarned": 13783180.320000002,
        "welcome": true,
        "goals": [
         {
-         "id": "buy_3",
-         "desc": "买3级",
-         "target": 3
+         "id": "idle_earn",
+         "desc": "idle_earn",
+         "target": 1
         },
         {
          "id": "meme_1",
@@ -3714,16 +3695,16 @@
          "target": 1
         },
         {
-         "id": "click_100",
-         "desc": "点100",
-         "target": 100
+         "id": "visit_1",
+         "desc": "visit_1",
+         "target": 1
         }
        ],
-       "taps": 130,
-       "memeHits": 1,
-       "memesSeen": 2,
-       "patrols": 1,
-       "patrolReward": 0,
+       "taps": 118,
+       "memeHits": 3,
+       "memesSeen": 3,
+       "patrols": 2,
+       "patrolReward": 12729.312000000002,
        "purchases": [
         "刷手机Lv16",
         "咖啡续命Lv25",
@@ -3731,25 +3712,25 @@
         "刷手机Lv17"
        ],
        "buyCount": 4,
-       "dailyBefore": "3/3 已领",
-       "dailyAfter": "3/3 已领 streak=3",
-       "progressBefore": "买3级 3/3✓ | 收1梗 1/1✓ | 点100 100/100✓",
-       "progressAfter": "买3级 3/3✓ | 收1梗 1/1✓ | 点100 100/100✓",
+       "dailyBefore": "1/3",
+       "dailyAfter": "1/3 streak=0",
+       "progressBefore": "idle_earn 0/1 | 收1梗 1/1✓ | visit_1 0/1",
+       "progressAfter": "idle_earn 0/1 | 收1梗 1/1✓ | visit_1 0/1",
        "goalsNewlyDone": [],
        "claimed": null,
-       "streakAfter": 3,
+       "streakAfter": 0,
        "codexBefore": 23,
-       "codexAfter": 23,
-       "newQuotes": 0,
+       "codexAfter": 24,
+       "newQuotes": 1,
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 186973.90003716946,
-       "moyuEnd": 137331551.10001883,
-       "idleRateEnd": 984.2,
-       "clickPowerEnd": 80,
+       "sessionEarned": 214391.52399775386,
+       "moyuEnd": 146223797.70560986,
+       "idleRateEnd": 1062.9360000000001,
+       "clickPowerEnd": 86.32000000000001,
        "interesting": true,
-       "stale": true
+       "stale": false
       }
      ]
     }

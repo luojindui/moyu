@@ -4,6 +4,7 @@ import { clickPowerOf } from "../engine/actions";
 import { effectOf } from "../engine/upgrades";
 import { rankFor } from "../engine/titles";
 import { dailyAllDone } from "../engine/daily";
+import { canPrestige } from "../engine/prestige";
 
 /** HUD 节流刷新（由主循环 ~150ms 调用一次） */
 export class Hud {
@@ -38,7 +39,11 @@ export class Hud {
     } else {
       this.elStreak.classList.add("hidden");
     }
-    if (state.prestige > 0) {
+    if (canPrestige(state)) {
+      // 转生入口常驻可见（原来只在 📔 里，佛系党发现不了）
+      this.elStreak.textContent = state.prestige > 0 ? `♻ 转生×${state.prestige}（可晋升）` : "♻ 可离职再就业";
+      this.elStreak.classList.remove("hidden");
+    } else if (state.prestige > 0) {
       this.elStreak.textContent = `♻ 转生×${state.prestige}`;
       this.elStreak.classList.remove("hidden");
     }

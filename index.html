@@ -46,6 +46,16 @@
         <h3>摸鱼数据 <small id="stats-rank"></small></h3>
         <div class="stats-list" id="stats-list"></div>
         <button id="stats-export">导出存档 JSON</button>
+        <div class="savecode-box">
+          <h3>存档码（换设备用）</h3>
+          <p class="prestige-desc">复制这串码到新设备「导入」，进度就能带过去（防手滑，非防篡改）。</p>
+          <textarea id="savecode" class="savecode" rows="3" placeholder="存档码会显示在这里；粘贴旧码后点导入"></textarea>
+          <div class="savecode-btns">
+            <button id="savecode-copy">复制/生成存档码</button>
+            <button id="savecode-import">导入存档码</button>
+          </div>
+          <p class="prestige-desc" id="savecode-msg"></p>
+        </div>
         <h3>摸鱼图鉴 <small id="journal-total">0/55</small></h3>
         <div class="journal-collect">
           <span>梗语录 <b id="journal-quote">0/10</b></span>

@@ -56,11 +56,10 @@ function effectAt(u: UpgradeDef, level: number): number {
   return (u.clickPower ?? u.idleRate ?? 0) * level * milestoneMult(level, MILESTONE_OFFSET[u.id] ?? 0);
 }
 
-/** 图鉴集满 55/55 的永久挂机加成（1.2×） */
-const COLLECTION_TOTAL = 55;
+/** 图鉴分段永久加成（R9）：每 5 格 +2%，55 格集满 +20%（纯挂机也能兑现 30 格的 +12%） */
 function collectionBonus(state: GameState): number {
   const n = state.collected.quotes.length + state.collected.flavors.length;
-  return n >= COLLECTION_TOTAL ? 1.2 : 1;
+  return 1 + Math.min(0.2, 0.02 * Math.floor(n / 5));
 }
 
 /** 状态合计加成（含底薪） */

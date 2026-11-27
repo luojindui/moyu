@@ -1,0 +1,188 @@
+{
+  "shakyTap": {
+    "card": {
+      "x": 8,
+      "y": 707,
+      "w": 126,
+      "h": 111,
+      "cx": 71,
+      "cy": 763
+    },
+    "moyuBefore": 19.43650040000015,
+    "moyuAfter": 4.57982040000016,
+    "coffeeLevelBefore": 0,
+    "coffeeLevelAfter": 1,
+    "accidentallyBought": true,
+    "clickLog": [
+      {
+        "ts": 18413,
+        "target": "stage"
+      },
+      {
+        "ts": 19729,
+        "target": "stage"
+      },
+      {
+        "ts": 21045,
+        "target": "stage"
+      },
+      {
+        "ts": 22463,
+        "target": "card:coffee"
+      }
+    ],
+    "floatTexts": [
+      {
+        "ts": 22876,
+        "font": "bold 30px system-ui",
+        "fill": "#fff8e1",
+        "text": "✓ 买下点亮的「咖啡续命」卡片",
+        "x": 195,
+        "y": 116
+      },
+      {
+        "ts": 22892,
+        "font": "bold 30px system-ui",
+        "fill": "#fff8e1",
+        "text": "✓ 买下点亮的「咖啡续命」卡片",
+        "x": 195,
+        "y": 115
+      },
+      {
+        "ts": 22910,
+        "font": "bold 30px system-ui",
+        "fill": "#fff8e1",
+        "text": "✓ 买下点亮的「咖啡续命」卡片",
+        "x": 195,
+        "y": 115
+      },
+      {
+        "ts": 22926,
+        "font": "bold 30px system-ui",
+        "fill": "#fff8e1",
+        "text": "✓ 买下点亮的「咖啡续命」卡片",
+        "x": 195,
+        "y": 114
+      },
+      {
+        "ts": 22942,
+        "font": "bold 30px system-ui",
+        "fill": "#fff8e1",
+        "text": "✓ 买下点亮的「咖啡续命」卡片",
+        "x": 195,
+        "y": 114
+      },
+      {
+        "ts": 22959,
+        "font": "bold 30px system-ui",
+        "fill": "#fff8e1",
+        "text": "✓ 买下点亮的「咖啡续命」卡片",
+        "x": 195,
+        "y": 113
+      }
+    ]
+  },
+  "deadClick": {
+    "card": {
+      "x": 276,
+      "y": 694,
+      "w": 126,
+      "h": 125,
+      "cx": 339,
+      "cy": 756
+    },
+    "moyuDelta": 0.17,
+    "bought": false,
+    "clsMutations": [
+      {
+        "ts": 22995,
+        "up": "water",
+        "cls": "shop-card pixel-panel shake"
+      },
+      {
+        "ts": 23292,
+        "up": "water",
+        "cls": "shop-card pixel-panel"
+      }
+    ],
+    "anims": [
+      {
+        "ts": 17077,
+        "name": "cardPop",
+        "up": "coffee"
+      },
+      {
+        "ts": 17610,
+        "name": "cardPop:end",
+        "up": "coffee"
+      },
+      {
+        "ts": 23043,
+        "name": "cardShake",
+        "up": "water"
+      },
+      {
+        "ts": 23292,
+        "name": "cardShake:end",
+        "up": "water"
+      }
+    ],
+    "floatTextsAfter": [],
+    "cardText": "点了才赚 | 带薪喝水 | +2 点击力 | 100 摸鱼值 | 再戳 48 下"
+  },
+  "events": [
+    {
+      "ts": 67043,
+      "font": "bold 10px system-ui",
+      "fill": "#4a3200",
+      "text": "丢梗!",
+      "x": 197,
+      "y": 264,
+      "firstSeenAtMs": 67651,
+      "stateMoyu": 13.4
+    },
+    {
+      "ts": 67045,
+      "font": "bold 11px system-ui",
+      "fill": "rgba(255, 255, 255, 0.8)",
+      "text": "戳它 +5×点击力",
+      "x": 195,
+      "y": 110,
+      "firstSeenAtMs": 67762,
+      "stateMoyu": 13.4
+    }
+  ],
+  "eventSeen": {
+    "memeShot": true,
+    "bossShot": false
+  },
+  "smallScreen": {
+    "hud": {
+      "y": 0,
+      "h": 124,
+      "bottom": 124
+    },
+    "quest": {
+      "y": 72,
+      "h": 42,
+      "bottom": 114
+    },
+    "stage": {
+      "y": 124,
+      "h": 396,
+      "bottom": 520
+    },
+    "shop": {
+      "y": 520,
+      "h": 147,
+      "bottom": 667
+    },
+    "journalBtn": {
+      "y": 437,
+      "h": 44,
+      "bottom": 481
+    },
+    "journalOverlapsShop": false,
+    "questVisible": true
+  }
+}

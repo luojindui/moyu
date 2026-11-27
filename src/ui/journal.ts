@@ -32,12 +32,35 @@ export class Journal {
 
   constructor(
     private onClaim: () => void,
+    private onExportCode: () => string,
+    private onImportCode: (code: string) => { ok: boolean; message: string },
     private onPrestige: () => void,
   ) {
     document.getElementById("journal-close")!.addEventListener("click", () => this.hide());
     this.elClaim.addEventListener("click", () => this.onClaim());
     this.elPrestigeBtn.addEventListener("click", () => this.onPrestige());
     // 导出存档 JSON（生产可用：直接读 localStorage，不依赖调试钩子）
+    // 存档码：生成/复制 + 导入
+    document.getElementById("savecode-copy")!.addEventListener("click", () => {
+      const ta = document.getElementById("savecode") as HTMLTextAreaElement;
+      const code = this.onExportCode();
+      ta.value = code;
+      ta.select();
+      const msg = document.getElementById("savecode-msg")!;
+      try {
+        void navigator.clipboard?.writeText(code);
+        msg.textContent = `已生成并复制（${code.length} 字符）`;
+      } catch {
+        msg.textContent = "已生成，请手动复制上面的文本";
+      }
+    });
+    document.getElementById("savecode-import")!.addEventListener("click", () => {
+      const ta = document.getElementById("savecode") as HTMLTextAreaElement;
+      const msg = document.getElementById("savecode-msg")!;
+      const r = this.onImportCode(ta.value);
+      msg.textContent = r.message;
+    });
+
     document.getElementById("stats-export")!.addEventListener("click", () => {
       try {
         const raw = localStorage.getItem("moyu-save") ?? "{}";

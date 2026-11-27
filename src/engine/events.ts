@@ -44,6 +44,10 @@ export function surviveStreakMult(n: number): number {
   return 1 + 0.1 * Math.min(n, SURVIVE_STREAK_CAP);
 }
 
+export const FIRST_BOSS_MIN = 20;
+export const FIRST_BOSS_MAX = 35;
+export const FIRST_MEME_MIN = 12;
+export const FIRST_MEME_MAX = 25;
 export const MEME_INTERVAL_MIN = 45;
 export const MEME_INTERVAL_MAX = 75;
 export const MEME_DURATION = 5;
@@ -68,6 +72,8 @@ export interface EventState {
   bossPenaltyTotal: number;
   /** 累计经历的巡逻次数（新手前 3 次免罚） */
   patrolCount: number;
+  /** 累计丢梗次数（首次提前） */
+  memeCount: number;
 }
 
 /** 事件为运行时状态，不入存档 */
@@ -84,6 +90,7 @@ export function newEventState(): EventState {
     bossTaps: 0,
     bossPenaltyTotal: 0,
     patrolCount: 0,
+    memeCount: 0,
   };
 }
 
@@ -98,9 +105,18 @@ function nextWindow(now: number, min: number, max: number, rng: () => number): n
 export function scheduleEvents(es: EventState, now: number, rng: () => number): void {
   if (es.bossUntil > 0 && now >= es.bossUntil) es.bossUntil = -1;
   if (es.memeUntil > 0 && now >= es.memeUntil) es.memeUntil = -1;
-  if (es.nextBossAt === Infinity && es.bossUntil < 0) es.nextBossAt = nextWindow(now, BOSS_INTERVAL_MIN, BOSS_INTERVAL_MAX, rng);
+  if (es.nextBossAt === Infinity && es.bossUntil < 0) {
+    // 首次巡逻提前到 20-35s（30 秒短会话也能遇到事件）
+    es.nextBossAt =
+      es.patrolCount === 0
+        ? nextWindow(now, FIRST_BOSS_MIN, FIRST_BOSS_MAX, rng)
+        : nextWindow(now, BOSS_INTERVAL_MIN, BOSS_INTERVAL_MAX, rng);
+  }
   if (es.nextMemeAt === Infinity && es.memeUntil < 0) {
-    let memeAt = nextWindow(now, MEME_INTERVAL_MIN, MEME_INTERVAL_MAX, rng);
+    let memeAt =
+      es.memeCount === 0
+        ? nextWindow(now, FIRST_MEME_MIN, FIRST_MEME_MAX, rng)
+        : nextWindow(now, MEME_INTERVAL_MIN, MEME_INTERVAL_MAX, rng);
     if (es.bossUntil > 0) {
       // 巡逻进行中：推迟到巡逻结束后
       memeAt = Math.max(memeAt, es.bossUntil + MEME_DURATION);
@@ -123,6 +139,7 @@ export function scheduleEvents(es: EventState, now: number, rng: () => number): 
     // 巡逻开启时丢梗必然已结束（互斥条件 memeUntil < 0），无需清场
   } else if (now >= es.nextMemeAt && es.memeUntil < 0 && es.bossUntil < 0) {
     es.memeUntil = now + MEME_DURATION;
+    es.memeCount += 1;
     es.nextMemeAt = Infinity;
   }
 }

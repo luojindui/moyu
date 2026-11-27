@@ -1,0 +1,217 @@
+{
+  "series": [
+    {
+      "n": 1,
+      "clicks": 0,
+      "moyu": 1.7,
+      "quest": "再戳 10 下 → 解锁「咖啡续命」",
+      "questBar": "0%",
+      "coffeeDisabled": true,
+      "coffeeRemain": "再戳 14 下",
+      "coffeeCost": "15 摸鱼值",
+      "hud": "点击 +1 | 不点也 0.2/秒 | 实习生 0% | 📔"
+    },
+    {
+      "n": 2,
+      "clicks": 1,
+      "moyu": 3,
+      "quest": "再戳 10 下 → 解锁「咖啡续命」",
+      "questBar": "10%",
+      "coffeeDisabled": true,
+      "coffeeRemain": "再戳 12 下",
+      "coffeeCost": "15 摸鱼值",
+      "hud": "点击 +1 | 不点也 0.2/秒 | 实习生 0% | 📔"
+    },
+    {
+      "n": 3,
+      "clicks": 2,
+      "moyu": 4.3,
+      "quest": "再戳 10 下 → 解锁「咖啡续命」",
+      "questBar": "20%",
+      "coffeeDisabled": true,
+      "coffeeRemain": "再戳 11 下",
+      "coffeeCost": "15 摸鱼值",
+      "hud": "点击 +1 | 不点也 0.2/秒 | 实习生 0% | 📔"
+    },
+    {
+      "n": 4,
+      "clicks": 3,
+      "moyu": 5.6,
+      "quest": "再戳 10 下 → 解锁「咖啡续命」",
+      "questBar": "30%",
+      "coffeeDisabled": true,
+      "coffeeRemain": "再戳 10 下",
+      "coffeeCost": "15 摸鱼值",
+      "hud": "点击 +1 | 不点也 0.2/秒 | 实习生 0% | 📔"
+    },
+    {
+      "n": 5,
+      "clicks": 4,
+      "moyu": 6.9,
+      "quest": "再戳 10 下 → 解锁「咖啡续命」",
+      "questBar": "40%",
+      "coffeeDisabled": true,
+      "coffeeRemain": "再戳 9 下",
+      "coffeeCost": "15 摸鱼值",
+      "hud": "点击 +1 | 不点也 0.2/秒 | 实习生 0% | 📔"
+    },
+    {
+      "n": 6,
+      "clicks": 5,
+      "moyu": 8.2,
+      "quest": "再戳 10 下 → 解锁「咖啡续命」",
+      "questBar": "50%",
+      "coffeeDisabled": true,
+      "coffeeRemain": "再戳 7 下",
+      "coffeeCost": "15 摸鱼值",
+      "hud": "点击 +1 | 不点也 0.2/秒 | 实习生 0% | 📔"
+    },
+    {
+      "n": 7,
+      "clicks": 6,
+      "moyu": 9.5,
+      "quest": "再戳 10 下 → 解锁「咖啡续命」",
+      "questBar": "60%",
+      "coffeeDisabled": true,
+      "coffeeRemain": "再戳 6 下",
+      "coffeeCost": "15 摸鱼值",
+      "hud": "点击 +1 | 不点也 0.2/秒 | 实习生 0% | 📔"
+    },
+    {
+      "n": 8,
+      "clicks": 7,
+      "moyu": 10.8,
+      "quest": "再戳 10 下 → 解锁「咖啡续命」",
+      "questBar": "70%",
+      "coffeeDisabled": true,
+      "coffeeRemain": "再戳 5 下",
+      "coffeeCost": "15 摸鱼值",
+      "hud": "点击 +1 | 不点也 0.2/秒 | 实习生 0% | 📔"
+    },
+    {
+      "n": 9,
+      "clicks": 8,
+      "moyu": 12.1,
+      "quest": "再戳 10 下 → 解锁「咖啡续命」",
+      "questBar": "80%",
+      "coffeeDisabled": true,
+      "coffeeRemain": "再戳 3 下",
+      "coffeeCost": "15 摸鱼值",
+      "hud": "点击 +1 | 不点也 0.2/秒 | 实习生 0% | 📔"
+    },
+    {
+      "n": 10,
+      "clicks": 9,
+      "moyu": 13.4,
+      "quest": "再戳 10 下 → 解锁「咖啡续命」",
+      "questBar": "90%",
+      "coffeeDisabled": true,
+      "coffeeRemain": "再戳 2 下",
+      "coffeeCost": "15 摸鱼值",
+      "hud": "点击 +1 | 不点也 0.2/秒 | 实习生 0% | 📔"
+    },
+    {
+      "n": 11,
+      "clicks": 10,
+      "moyu": 14.7,
+      "quest": "买下点亮的「咖啡续命」卡片",
+      "questBar": "0%",
+      "coffeeDisabled": true,
+      "coffeeRemain": "再戳 1 下",
+      "coffeeCost": "15 摸鱼值",
+      "hud": "点击 +1 | 不点也 0.2/秒 | 实习生 0% | 📔"
+    },
+    {
+      "n": 12,
+      "clicks": 11,
+      "moyu": 16,
+      "quest": "买下点亮的「咖啡续命」卡片",
+      "questBar": "0%",
+      "coffeeDisabled": false,
+      "coffeeRemain": "",
+      "coffeeCost": "15 摸鱼值",
+      "hud": "点击 +1 | 不点也 0.2/秒 | 实习生 0% | 📔"
+    },
+    {
+      "n": 13,
+      "clicks": 12,
+      "moyu": 17.3,
+      "quest": "买下点亮的「咖啡续命」卡片",
+      "questBar": "0%",
+      "coffeeDisabled": false,
+      "coffeeRemain": "",
+      "coffeeCost": "15 摸鱼值",
+      "hud": "点击 +1 | 不点也 0.2/秒 | 实习生 0% | 📔"
+    },
+    {
+      "n": 14,
+      "clicks": 13,
+      "moyu": 18.6,
+      "quest": "买下点亮的「咖啡续命」卡片",
+      "questBar": "0%",
+      "coffeeDisabled": false,
+      "coffeeRemain": "",
+      "coffeeCost": "15 摸鱼值",
+      "hud": "点击 +1 | 不点也 0.2/秒 | 实习生 0% | 📔"
+    }
+  ],
+  "feedbackLatencyMs": {
+    "pairs": [
+      6,
+      15,
+      12,
+      14,
+      15,
+      16,
+      12,
+      16,
+      4,
+      14,
+      14
+    ],
+    "avg": 12.5
+  },
+  "floatTexts": [
+    {
+      "ts": 2664,
+      "text": "+1"
+    },
+    {
+      "ts": 2681,
+      "text": "+1"
+    },
+    {
+      "ts": 2697,
+      "text": "+1"
+    },
+    {
+      "ts": 2713,
+      "text": "+1"
+    },
+    {
+      "ts": 2731,
+      "text": "+1"
+    },
+    {
+      "ts": 2747,
+      "text": "+1"
+    },
+    {
+      "ts": 2762,
+      "text": "+1"
+    },
+    {
+      "ts": 2780,
+      "text": "+1"
+    },
+    {
+      "ts": 2797,
+      "text": "+1"
+    },
+    {
+      "ts": 2814,
+      "text": "+1"
+    }
+  ],
+  "comboShownForSlow": false
+}

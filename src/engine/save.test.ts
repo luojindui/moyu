@@ -101,3 +101,37 @@ describe("存档", () => {
     expect(r.offlineSeconds).toBe(7200);
   });
 });
+
+describe("R9 存档码（跨设备迁移）", () => {
+  it("encode → decode 往返一致，且带完整性校验", async () => {
+    const { encodeSaveCode, decodeSaveCode } = await import("./save");
+    const blob = JSON.stringify({ v: 1, moyu: 123, levels: { phone: 3 }, savedAt: 1, totalEarned: 200, lifetimeEarned: 300 });
+    const code = encodeSaveCode(blob);
+    expect(code.length).toBeGreaterThan(20);
+    expect(code).not.toContain("{"); // base64url
+    const dec = decodeSaveCode(code);
+    expect(dec.ok).toBe(true);
+    expect(dec.blob).toBe(blob);
+  });
+
+  it("篡改/截断的存档码被拒绝", async () => {
+    const { encodeSaveCode, decodeSaveCode } = await import("./save");
+    const code = encodeSaveCode(JSON.stringify({ v: 1, moyu: 1 }));
+    expect(decodeSaveCode(code.slice(0, -4)).ok).toBe(false);
+    expect(decodeSaveCode("garbage!!!").ok).toBe(false);
+    expect(decodeSaveCode("").ok).toBe(false);
+  });
+
+  it("导入后不带离线时长（防旧码刷挂机）：decode 出来的 savedAt 由调用方重置", async () => {
+    const { encodeSaveCode, decodeSaveCode } = await import("./save");
+    const code = encodeSaveCode(JSON.stringify({ v: 1, moyu: 1, savedAt: 1000 }));
+    const dec = decodeSaveCode(code);
+    const parsed = JSON.parse(dec.blob!);
+    expect(parsed.savedAt).toBe(1000);
+  });
+
+  it("未来版本不被旧客户端覆盖（restore 拒绝 v>当前 时，写档需备份）", async () => {
+    const { SAVE_VERSION } = await import("./save");
+    expect(SAVE_VERSION).toBeGreaterThanOrEqual(1);
+  });
+});

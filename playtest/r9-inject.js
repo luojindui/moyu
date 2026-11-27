@@ -6,7 +6,7 @@
  *  1) 真实 rAF 帧时间（独立记录，不受变速影响）→ 帧率/掉帧
  *  2) Canvas fillText（飘字/横幅）→ 点击→绘制延迟、飘字重叠、连击文案
  *  3) pointerdown 原始事件（capture，记录 isPrimary / pointerId）→ 多指输入
- *  4) __MOYU__.state 同步读 → 逐击收入（精确反推 combo 倍数）
+ *  4) __MOYU__.state 同步读（快照 delta，无挂机收益混入）→ 逐击收入反推 combo
  *  5) rAF 时间戳可变速 → 快进到 90-150s 的老板巡逻（detect 后立即切回实时）
  */
 (() => {
@@ -21,6 +21,7 @@
     errors: [],
     boss: { active: false, variant: null, firstAt: 0, lastBannerAt: 0, log: [] },
     patrols: [],
+    patrolBursts: [],
   });
   window.addEventListener("error", (e) => {
     if (R.errors.length < 10) R.errors.push(String(e.message));
@@ -79,7 +80,6 @@
   /* ---------- 2) Canvas 文本记录 ---------- */
   const STATIC = new Set(["戳屏幕摸鱼", "丢梗!", "戳它 +5×点击力"]);
   const BANNER = /老板来了|假装工作|摸鱼冲刺/;
-  const floatTexts = [];
   const origFillText = CanvasRenderingContext2D.prototype.fillText;
   CanvasRenderingContext2D.prototype.fillText = function (txt, x, y) {
     const s = String(txt);
@@ -101,52 +101,61 @@
         const last = R.boss.log[R.boss.log.length - 1];
         if (!last || last.s !== s) R.boss.log.push({ t: Math.round(now), s });
         if (R.boss.log.length > 300) R.boss.log.splice(0, 100);
-        // banners 只保留变体级信息（避免每帧秒数刷新撑爆）
-        if (R.banners.length < 100 && (!last || last.s !== s)) {
-          R.banners.push({ t: Math.round(now), s });
-        }
+        if (R.banners.length < 200 && (!last || last.s !== s)) R.banners.push({ t: Math.round(now), s });
       } else if (s.length < 40) {
         if (R.texts.length > 40000) R.texts.splice(0, 15000);
-        R.texts.push({ t: performance.now(), s, x: Math.round(x), y: Math.round(y), fs: (this.font.match(/(\d+(?:\.\d+)?)px/) || [0, 0])[1] * 1 || 0 });
-        floatTexts.push(s);
+        R.texts.push({
+          t: performance.now(),
+          s,
+          x: Math.round(x),
+          y: Math.round(y),
+          fs: (this.font.match(/(\d+(?:\.\d+)?)px/) || [0, 0])[1] * 1 || 0,
+        });
       }
     } catch (_) {
       /* 记录失败不影响游戏 */
     }
     return origFillText.apply(this, arguments);
   };
-  window.__r9AllTexts = floatTexts;
 
   /* ---------- 工具：点击坐标 / 同步点击测量 ---------- */
   R.clickPoint = function () {
     const c = document.getElementById("stage");
     const r = c.getBoundingClientRect();
-    // 画布下部（避开丢梗气泡可能出现的上半区）
-    return { x: Math.round(r.left + r.width / 2), y: Math.round(r.bottom - 26) };
+    const x = r.left + r.width / 2;
+    const y = r.bottom - 26;
+    return {
+      x: Math.round(x),
+      y: Math.round(y),
+      cx: Math.round(x - r.left),
+      cy: Math.round(y - r.top),
+    };
   };
 
   R.measureClick = function (x, y, isPrimary, pointerId) {
     const c = document.getElementById("stage");
     const before = window.__MOYU__.state;
-    const ev = new PointerEvent("pointerdown", {
-      bubbles: true,
-      cancelable: true,
-      clientX: x,
-      clientY: y,
-      isPrimary: isPrimary !== false,
-      pointerId: pointerId || 1,
-      pointerType: "touch",
-      button: 0,
-      buttons: 1,
-      pressure: 0.5,
-    });
     const t = performance.now();
-    c.dispatchEvent(ev);
+    c.dispatchEvent(
+      new PointerEvent("pointerdown", {
+        bubbles: true,
+        cancelable: true,
+        clientX: x,
+        clientY: y,
+        isPrimary: isPrimary !== false,
+        pointerId: pointerId || 1,
+        pointerType: "touch",
+        button: 0,
+        buttons: 1,
+        pressure: 0.5,
+      }),
+    );
     const after = window.__MOYU__.state;
     return {
       t,
-      dMoyu: after.totalEarned - before.totalEarned,
+      dMoyu: after.totalEarned - before.totalEarned, // 原始值，不四舍五入（combo 反推用）
       dClicks: after.totalClicks - before.totalClicks,
+      totalClicks: after.totalClicks,
     };
   };
 
@@ -167,7 +176,7 @@
       if (i > 0) await R.sleep(gapMs);
       clicks.push(R.measureClick(pt.x, pt.y, true, 1));
     }
-    await R.sleep(150);
+    await R.sleep(150); // 让最后一击的飘字也画出来
     return { clicks, pt };
   };
 
@@ -189,7 +198,10 @@
     return { clicks, pt, cps, jitter };
   };
 
-  /** 连击窗口探针：seed 3 连后停 gap 再点，用收入反推 combo */
+  /**
+   * 连击窗口探针：seed 3 连（间隔 100ms）后停 gap 再点，用收入反推 combo。
+   * 关键：最后一击 seed 后不再 sleep(100)，实测停顿时长从最后一击算起。
+   */
   R.comboProbe = async function (gaps) {
     const pt = R.clickPoint();
     const out = [];
@@ -197,21 +209,20 @@
       await R.sleep(1750); // > 1.5s 断点，确保清零
       const seed = [];
       for (let i = 0; i < 3; i++) {
+        if (i > 0) await R.sleep(100);
         seed.push(R.measureClick(pt.x, pt.y, true, 1));
-        await R.sleep(100);
       }
-      const beforeT = performance.now();
       await R.sleep(gap * 1000);
       const c = R.measureClick(pt.x, pt.y, true, 1);
+      const combo = c.dClicks === 1 ? Math.round((c.dMoyu - 1) / 0.02) : null;
       out.push({
         requestedGap: gap,
         actualGap: r1((c.t - seed[2].t) / 1000),
-        seedGains: seed.map((s) => r1(s.dMoyu)),
-        gain: r1(c.dMoyu),
+        seedCombos: seed.map((s) => Math.round((s.dMoyu - 1) / 0.02)),
+        gain: c.dMoyu,
         dClicks: c.dClicks,
-        combo: c.dClicks === 1 ? Math.round((c.dMoyu - 1) / 0.02) : null,
+        combo,
       });
-      void beforeT;
     }
     return out;
   };
@@ -259,15 +270,23 @@
         text: firstText ? firstText.s : null,
         fs: firstText ? firstText.fs : null,
         frameLat: firstFrame ? r1(firstFrame - c.t) : null,
-        gain: r1(c.dMoyu),
+        gain: c.dMoyu,
         dClicks: c.dClicks,
       };
     });
   };
 
-  /** 飘字重叠：按绘制批次（同帧 <=3ms 连续）分组，统计同批条数 / 相邻竖距 / 重叠对 */
-  R.textStats = function (a, b, fontPx) {
-    const list = R.texts.filter((e) => e.t >= a && e.t <= b);
+  /**
+   * 飘字重叠：按绘制批次（同帧 <=3ms 连续）分组。
+   * 只统计"点击列"的飘字（x 与点击点一致、y 在点击点上方 70px 内），
+   * 排除段位/图鉴 toast（固定 y≈canvasH*0.22）等干扰。
+   */
+  R.textStats = function (a, b, pt, fontPx) {
+    const list = R.texts.filter((e) => {
+      if (e.t < a || e.t > b) return false;
+      if (!pt) return true;
+      return Math.abs(e.x - pt.cx) <= 4 && e.y > pt.cy - 70 && e.y < pt.cy + 12;
+    });
     const draws = [];
     let cur = [];
     let last = -1e9;
@@ -302,11 +321,8 @@
         minGap = Math.min(minGap, g);
         if (g < overlapTh) overlapPairs++;
       }
-      if (samples.length < 40) samples.push({ t: Math.round(d[0].t), n, ys });
+      if (samples.length < 30) samples.push({ t: Math.round(d[0].t), n, ys });
     }
-    const texts = draws.map((d) =>
-      d.map((e) => ({ t: Math.round(e.t), s: e.s, x: e.x, y: e.y })),
-    );
     return {
       draws: draws.length,
       avgN: draws.length ? r1(sumN / draws.length) : 0,
@@ -319,17 +335,54 @@
       comboDraws,
       fontPx: fontPx || 30,
       samples,
-      drawsSample: texts.slice(-6),
     };
   };
 
-  /** 连击文案序列（按出现顺序去重相邻重复） */
+  /** 连击文案：每个 ×N 首次出现时刻（去掉重复重绘） */
   R.comboTexts = function (a, b) {
+    const firstAt = {};
+    for (const e of R.texts) {
+      if (e.t < a || e.t > b) continue;
+      const m = e.s.match(/连击×(\d+)/);
+      if (!m) continue;
+      const n = Number(m[1]);
+      if (!(n in firstAt)) firstAt[n] = Math.round(e.t);
+    }
+    return Object.keys(firstAt)
+      .map(Number)
+      .sort((x, y) => x - y)
+      .map((n) => ({ n, t: firstAt[n] }));
+  };
+
+  /**
+   * 把同一字符串的连续帧重绘折叠成"一次实例"（飘字寿命 0.9s，同字符串多实例按 y 分离）。
+   * 返回 [{s,t}]，t = 首次绘制时刻。
+   */
+  R.distinctTexts = function (a, b) {
+    const openByS = new Map();
     const out = [];
     for (const e of R.texts) {
       if (e.t < a || e.t > b) continue;
-      if (e.s.indexOf("连击") < 0) continue;
-      if (!out.length || out[out.length - 1].s !== e.s) out.push({ t: Math.round(e.t), s: e.s });
+      let arr = openByS.get(e.s);
+      if (!arr) {
+        arr = [];
+        openByS.set(e.s, arr);
+      }
+      let hit = null;
+      for (const inst of arr) {
+        if (e.t - inst.lastT < 40 && Math.abs(e.y - inst.lastY) <= 1.5) {
+          hit = inst;
+          break;
+        }
+      }
+      if (hit) {
+        hit.lastT = e.t;
+        hit.lastY = e.y;
+      } else {
+        const inst = { s: e.s, firstT: e.t, lastT: e.t, lastY: e.y };
+        arr.push(inst);
+        out.push({ s: e.s, t: Math.round(e.t) });
+      }
     }
     return out;
   };

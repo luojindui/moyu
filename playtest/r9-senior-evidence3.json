@@ -1,0 +1,122 @@
+{
+  "welcomeVisible": true,
+  "welcomeTexts": [
+    {
+      "text": "欢迎回来摸鱼",
+      "fs": 20,
+      "cr": 9.75,
+      "color": "rgb(244, 241, 232)",
+      "clipped": false,
+      "tag": "H2",
+      "id": null
+    },
+    {
+      "text": "你离开的 里，悄悄摸了",
+      "fs": 16,
+      "cr": 9.75,
+      "color": "rgb(244, 241, 232)",
+      "clipped": false,
+      "tag": "P",
+      "id": null
+    },
+    {
+      "text": "1 小时 0 分",
+      "fs": 16,
+      "cr": 9.75,
+      "color": "rgb(244, 241, 232)",
+      "clipped": false,
+      "tag": "B",
+      "id": "welcome-time"
+    },
+    {
+      "text": "摸鱼值",
+      "fs": 16,
+      "cr": 9.75,
+      "color": "rgb(244, 241, 232)",
+      "clipped": false,
+      "tag": "P",
+      "id": null
+    },
+    {
+      "text": "720.0",
+      "fs": 28,
+      "cr": 7.97,
+      "color": "rgb(255, 215, 110)",
+      "clipped": false,
+      "tag": "B",
+      "id": "welcome-gain"
+    },
+    {
+      "text": "首日全额｜8 小时封顶",
+      "fs": 11,
+      "cr": 4.22,
+      "color": "rgb(143, 159, 208)",
+      "clipped": false,
+      "tag": "P",
+      "id": "welcome-rule"
+    },
+    {
+      "text": "继续摸鱼",
+      "fs": 16,
+      "cr": 10.35,
+      "color": "rgb(16, 36, 26)",
+      "clipped": false,
+      "tag": "BUTTON",
+      "id": "welcome-ok"
+    }
+  ],
+  "welcomeBtn": {
+    "btn": {
+      "x": 59,
+      "y": 471,
+      "w": 272,
+      "h": 48,
+      "cx": 195,
+      "cy": 495
+    },
+    "panel": {
+      "w": 320,
+      "h": 241
+    }
+  },
+  "welcomeStaysOpenAfterOutsideTap": true,
+  "welcomeClosed": true,
+  "clipped390": [
+    {
+      "id": "shop-cards",
+      "text": "点了才赚咖啡续命\n        +1 点击力\n      ",
+      "sw": 1206,
+      "cw": 374
+    }
+  ],
+  "layout320": {
+    "hud": {
+      "y": 0,
+      "h": 124,
+      "bottom": 124
+    },
+    "quest": {
+      "y": 72,
+      "h": 42,
+      "bottom": 114
+    },
+    "stage": {
+      "y": 124,
+      "h": 311,
+      "bottom": 435
+    },
+    "shop": {
+      "y": 435,
+      "h": 133,
+      "bottom": 568
+    },
+    "journal": {
+      "y": 338,
+      "h": 44,
+      "bottom": 382
+    },
+    "hudSubText": "点击 +1 | 不点也 0.2/秒 | 实习生 14% | 📔",
+    "hudSubClipped": false,
+    "shopHint": "← 滑动查看更多 →"
+  }
+}

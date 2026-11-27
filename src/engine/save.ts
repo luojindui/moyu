@@ -5,6 +5,8 @@ import { restoreDaily, type DailyState } from "./daily";
 
 export const SAVE_KEY = "moyu-save";
 export const SAVE_VERSION = 1;
+/** 未来版本档的备份 key（旧客户端读到更高版本时不覆盖，先备份） */
+export const NEWER_SAVE_KEY = "moyu-save.newer.bak";
 /** 单升级等级上限（防 Infinity 污染） */
 export const MAX_LEVEL = 1000;
 
@@ -96,7 +98,11 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
   if (!raw) return { state: initialState(), offlineSeconds: 0, createdAt: now };
   try {
     const blob = JSON.parse(raw) as Partial<SaveBlob>;
-    if (blob.v !== SAVE_VERSION || typeof blob.moyu !== "number" || typeof blob.savedAt !== "number") {
+    // 迁移链：接受 v ≤ 当前版本（v1 尚无历史迁移，但拒绝未来版本避免"降级清档"）
+    if (typeof blob.v !== "number" || blob.v > SAVE_VERSION) {
+      return { state: initialState(), offlineSeconds: 0, createdAt: now };
+    }
+    if (typeof blob.moyu !== "number" || typeof blob.savedAt !== "number") {
       return { state: initialState(), offlineSeconds: 0, createdAt: now };
     }
     // levels 字段非法（非普通对象）→ 整档作废（规格：字段非法以初始状态开始）
@@ -165,6 +171,64 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
 export function clearSave(adapter: SaveAdapter): void {
   try {
     adapter.removeItem(SAVE_KEY);
+  } catch {
+    /* 忽略 */
+  }
+}
+
+/** FNV-1a 32 位校验（防手滑/截断，不承担防篡改） */
+function fnv1a(str: string): string {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = Math.imul(h, 0x01000193);
+  }
+  return (h >>> 0).toString(36);
+}
+
+function toBase64Url(s: string): string {
+  const b64 = btoa(unescape(encodeURIComponent(s)));
+  return b64.replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+
+function fromBase64Url(code: string): string {
+  const b64 = code.replace(/-/g, "+").replace(/_/g, "/");
+  const padded = b64 + "=".repeat((4 - (b64.length % 4)) % 4);
+  return decodeURIComponent(escape(atob(padded)));
+}
+
+/** 导出存档码：base64url(JSON) + "." + 校验和 */
+export function encodeSaveCode(blobJson: string): string {
+  const body = toBase64Url(blobJson);
+  return `${body}.${fnv1a(blobJson)}`;
+}
+
+/** 解析存档码：校验完整性，返回原始 blob JSON（调用方负责 restore 净化与 savedAt 重置） */
+export function decodeSaveCode(code: string): { ok: boolean; blob?: string; error?: string } {
+  const trimmed = (code ?? "").trim();
+  if (!trimmed) return { ok: false, error: "空存档码" };
+  const dot = trimmed.lastIndexOf(".");
+  if (dot <= 0) return { ok: false, error: "格式不正确" };
+  try {
+    const blob = fromBase64Url(trimmed.slice(0, dot));
+    const sum = trimmed.slice(dot + 1);
+    if (fnv1a(blob) !== sum) return { ok: false, error: "校验失败（可能复制不完整）" };
+    JSON.parse(blob); // 形状交给 restore 净化
+    return { ok: true, blob };
+  } catch {
+    return { ok: false, error: "无法解析" };
+  }
+}
+
+/** 未来版本档：写档前先备份，避免旧客户端覆盖新数据 */
+export function backupNewerSave(adapter: SaveAdapter): void {
+  try {
+    const raw = adapter.getItem(SAVE_KEY);
+    if (!raw) return;
+    const blob = JSON.parse(raw) as { v?: number };
+    if (typeof blob.v === "number" && blob.v > SAVE_VERSION) {
+      adapter.setItem(NEWER_SAVE_KEY, raw);
+    }
   } catch {
     /* 忽略 */
   }

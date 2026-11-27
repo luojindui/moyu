@@ -31,7 +31,7 @@ export const DAILY_WINDOWS_PER_DAY = 4;
 export interface GoalTemplate {
   id: string;
   desc: string;
-  kind: "click" | "meme" | "buy" | "survive";
+  kind: "click" | "meme" | "buy" | "survive" | "visit" | "idle";
   target: number;
 }
 
@@ -40,6 +40,9 @@ export const DAILY_GOAL_TEMPLATES: GoalTemplate[] = [
   { id: "meme_1", desc: "点掉 1 个同事丢来的梗", kind: "meme", target: 1 },
   { id: "buy_3", desc: "买 3 次升级", kind: "buy", target: 3 },
   { id: "survive_2", desc: "老板巡逻时忍住不点，1 次", kind: "survive", target: 1 },
+  // R9 佛系：两个"零操作可完成"目标（开页/挂机自动达成），保证不点屏幕也能推进日报
+  { id: "visit_1", desc: "今天上线看一眼", kind: "visit", target: 1 },
+  { id: "idle_earn", desc: "什么都不点，等摸鱼值自己涨", kind: "idle", target: 1 },
 ];
 
 /** 奖励 = max(500, 600 × 挂机秒收益)：R7 上调 10×，让日报在后期仍有意义（原 60× 仅占日收入 0.14%） */
@@ -111,12 +114,25 @@ export function rollDaily(date: string, rng: () => number, prevStreak = 0): Dail
 export function ensureDaily(state: GameState, date: string, rng: () => number, window = 0): GameState {
   const d = state.daily;
   if (d && d.date === date) {
-    // 同日但跨时段：重掷目标（保留 streak 与当日领取次数）
+    // 同日但跨时段：重掷目标，但保留同 id 目标已达成的进度（佛系：避免重掷清零）
     if ((d.window ?? 0) !== window) {
       const rerolled = rollDaily(date, rng, d.streak);
+      const progressById = new Map(d.goals.map((g) => [g.id, g]));
+      rerolled.goals = rerolled.goals.map((g) => {
+        const old = progressById.get(g.id);
+        if (!old) return g;
+        const progress = Math.min(g.target, old.progress);
+        return { ...g, progress, done: progress >= g.target };
+      });
       return {
         ...state,
-        daily: { ...rerolled, window, claimsToday: d.claimsToday, lastCompleteDate: d.lastCompleteDate, streak: d.streak },
+        daily: {
+          ...rerolled,
+          window,
+          claimsToday: d.claimsToday,
+          lastCompleteDate: d.lastCompleteDate,
+          streak: d.streak,
+        },
       };
     }
     return state;
@@ -132,7 +148,11 @@ export function ensureDaily(state: GameState, date: string, rng: () => number, w
 }
 
 /** 行为计数：kind ∈ click/meme/buy/survive */
-export function dailyTrack(daily: DailyState, kind: "click" | "meme" | "buy" | "survive", amount = 1): DailyState {
+export function dailyTrack(
+  daily: DailyState,
+  kind: "click" | "meme" | "buy" | "survive" | "visit" | "idle",
+  amount = 1,
+): DailyState {
   const goals = daily.goals.map((g) => {
     const tpl: GoalTemplate | undefined = DAILY_GOAL_TEMPLATES.find((t) => t.id === g.id);
     if (!tpl || tpl.kind !== kind || g.done) return g;

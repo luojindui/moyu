@@ -4,7 +4,7 @@ import { doClick, buyUpgrade, clickPowerOf, COMBO_WINDOW_S, COMBO_BREAK_S, COMBO
 import { advance } from "./engine/tick";
 import { settleReturn } from "./engine/resume";
 import { CLICK_MEMES, MEME_QUOTES } from "./engine/flavor";
-import { serialize, restore, clearSave, SAVE_KEY, type SaveAdapter } from "./engine/save";
+import { serialize, restore, clearSave, encodeSaveCode, decodeSaveCode, SAVE_KEY, type SaveAdapter } from "./engine/save";
 import {
   newEventState,
   scheduleEvents,
@@ -78,6 +78,33 @@ async function boot(): Promise<void> {
         hud.refresh(state);
         journal.refresh(state, true); // 领取后立即重绘（不等 400ms 节流）
         serialize(state, localStorageAdapter, Date.now());
+      }
+    },
+    () => {
+      // 导出当前存档为存档码
+      const store = new Map<string, string>();
+      const mem: SaveAdapter = {
+        getItem: (k) => store.get(k) ?? null,
+        setItem: (k, v) => void store.set(k, v),
+        removeItem: (k) => void store.delete(k),
+      };
+      serialize(state, mem, Date.now());
+      return encodeSaveCode(store.get(SAVE_KEY) ?? "{}");
+    },
+    (code: string) => {
+      // 导入存档码：校验 → 备份旧档 → 重置 savedAt（不结算离线）→ 重新加载
+      const dec = decodeSaveCode(code);
+      if (!dec.ok) return { ok: false, message: `导入失败：${dec.error}` };
+      try {
+        const blob = JSON.parse(dec.blob!) as Record<string, unknown>;
+        blob.savedAt = Date.now(); // 防旧码反复刷离线
+        const old = localStorage.getItem(SAVE_KEY);
+        if (old) localStorage.setItem(`${SAVE_KEY}.bak`, old);
+        localStorage.setItem(SAVE_KEY, JSON.stringify(blob));
+        setTimeout(() => location.reload(), 300);
+        return { ok: true, message: "导入成功，正在重新加载…" };
+      } catch {
+        return { ok: false, message: "导入失败：存档内容损坏" };
       }
     },
     () => {
