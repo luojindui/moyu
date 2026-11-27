@@ -1,0 +1,39 @@
+{
+  "errors": [
+    "teaching: TypeError: Cannot read properties of undefined (reading 'contains')\n    at <anonymous>:1:280\n    at <anonymous>:1:365"
+  ],
+  "timeout": {
+    "open": true,
+    "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+    "after": {
+      "panel": false,
+      "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+      "toast": {
+        "text": "没来得及选…这次不算",
+        "show": true
+      },
+      "moyu": 1000000001.9865987,
+      "frames": 595
+    }
+  },
+  "canvas": {
+    "open": true,
+    "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+    "fx": [
+      {
+        "x": 182,
+        "y": 218,
+        "text": "先选应对"
+      }
+    ],
+    "delta": 0.06331992149353027,
+    "panel": true
+  },
+  "favor": {
+    "before": 0,
+    "btn": true,
+    "after": 2,
+    "hud": "生效中：老周的秘密（剩 24h）",
+    "desc": "领奖好感 +1 (卡片 desc)"
+  }
+}

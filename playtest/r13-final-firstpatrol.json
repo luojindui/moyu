@@ -1,0 +1,9 @@
+{
+ "modalAfterTaps": true,
+ "hud": "生效中：HR 约谈（剩 24h）",
+ "firstPatrol": {
+  "variant": "choice",
+  "tell": "有人过来了——脚步声又快又重，两三步就到工位",
+  "ms": 19312
+ }
+}

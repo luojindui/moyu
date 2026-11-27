@@ -1,0 +1,24 @@
+{
+  "rounds": [
+    {
+      "iter": 0,
+      "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+      "choice": "switch-screen",
+      "lineText": "新章节：303 · 新的工位",
+      "lineVisibleFromMs": 0,
+      "panelVisibleMs": 180,
+      "delta": 90.68663942813873,
+      "toastStillShownAt1800": false
+    },
+    {
+      "iter": 1,
+      "error": "no panel"
+    }
+  ],
+  "timeout": {
+    "open": null
+  },
+  "canvasTap": {
+    "open": null
+  }
+}

@@ -105,23 +105,40 @@ describe("R2-① 线索去名：横幅还能不能一眼看出答案", () => {
 });
 
 describe("R2-① 首次巡逻是否优先 choice（lead 声称的设计变更）", () => {
-  it("代码里找不到「首巡强制 choice」：0 巡逻次数时变体仍按 35/30/20/15 抽取", () => {
+  it("首巡固定 choice 已实现（patrolCount=0 → 100% choice；之后恢复 35/30/20/15 权重）", () => {
     const src = readFileSync("src/engine/events.ts", "utf8");
-    console.log(`[first] events.ts 含 forcedVariant 逻辑=${src.includes("es.forcedVariant = null")}；含"首次优先 choice"标记=${/patrolCount\s*===?\s*0[^;]*choice/.test(src)}`);
-    // 用 1000 个随机种子模拟"首次巡逻"的变体分布
-    const counts: Record<string, number> = {};
-    const rng = mulberry32(2026);
-    for (let i = 0; i < 1000; i++) {
-      const es = newEventState();
-      scheduleEvents(es, 0, rng); // 排期
-      const at = es.nextBossAt;
-      scheduleEvents(es, at, rng); // 触发首次巡逻
-      counts[es.bossVariant] = (counts[es.bossVariant] ?? 0) + 1;
-    }
-    console.log(`[first] 1000 次"首次巡逻"变体分布：${JSON.stringify(counts)}（choice 应为 ~15%，而非 100%）`);
-    expect(counts.choice).toBeGreaterThan(0);
-    expect(counts.choice).toBeLessThan(1000);
-    expect(counts.hold).toBeGreaterThan(0);
+    const first = (() => {
+      const counts: Record<string, number> = {};
+      const rng = mulberry32(2026);
+      for (let i = 0; i < 1000; i++) {
+        const es = newEventState();
+        scheduleEvents(es, 0, rng);
+        const at = es.nextBossAt;
+        scheduleEvents(es, at, rng);
+        counts[es.bossVariant] = (counts[es.bossVariant] ?? 0) + 1;
+      }
+      return counts;
+    })();
+    console.log(`[first] 1000 次"首次巡逻"变体分布：${JSON.stringify(first)}（应为 100% choice）`);
+    expect(first.choice).toBe(1000);
+    // 第二次起恢复随机权重
+    const rest = (() => {
+      const counts: Record<string, number> = {};
+      const rng = mulberry32(777);
+      for (let i = 0; i < 1000; i++) {
+        const es = newEventState();
+        es.patrolCount = 3;
+        scheduleEvents(es, 0, rng);
+        const at = es.nextBossAt;
+        scheduleEvents(es, at, rng);
+        counts[es.bossVariant] = (counts[es.bossVariant] ?? 0) + 1;
+      }
+      return counts;
+    })();
+    console.log(`[first] patrolCount=3 时变体分布：${JSON.stringify(rest)}`);
+    expect(rest.choice).toBeGreaterThan(50);
+    expect(rest.choice).toBeLessThan(250);
+    expect(src.includes('es.patrolCount === 0 ? "choice"')).toBe(true);
   });
 
   it("pickBossVariant 无 patrolCount 参数 → 无法按首巡定制", () => {

@@ -618,6 +618,8 @@ async function boot(): Promise<void> {
       // 回合制老板：同步弹层
       {
         const wasOpen = bossPanel.isOpen;
+        // 新一轮 choice 开始 → 复位"已作答"标记
+        if (!wasOpen && bossPanel.isOpen) choicePickedThisRound = false;
         bossPanel.sync(es);
         if (wasOpen && !bossPanel.isOpen && es.bossChoiceDone && es.bossUntil < 0) {
           // 只有"确实超时未作答"才提示；已作答的走面板内结果

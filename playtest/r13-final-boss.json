@@ -1,0 +1,110 @@
+{
+ "rounds": {
+  "correct": {
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "delta": 90,
+   "s1": {
+    "label": "90ms",
+    "panelOpen": true,
+    "result": {
+     "text": "王总：屏幕挺干净啊。 +90",
+     "w": 333,
+     "h": 20,
+     "panelHidden": false
+    },
+    "toast": {
+     "text": "新章节：303 · 新的工位",
+     "shown": false
+    }
+   },
+   "s2": {
+    "label": "410ms",
+    "panelOpen": false,
+    "result": {
+     "text": "王总：屏幕挺干净啊。 +90",
+     "w": 0,
+     "h": 0,
+     "panelHidden": true
+    },
+    "toast": {
+     "text": "王总：屏幕挺干净啊。 +90",
+     "shown": true
+    }
+   },
+   "finalToast": "王总：屏幕挺干净啊。 +90",
+   "showsTimeoutToast": false
+  },
+  "wrong": {
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "delta": 0,
+   "s1": {
+    "label": "90ms",
+    "panelOpen": true,
+    "result": {
+     "text": "王总：切得真快。 +0",
+     "w": 333,
+     "h": 20,
+     "panelHidden": false
+    },
+    "toast": {
+     "text": "王总：屏幕挺干净啊。 +90",
+     "shown": false
+    }
+   },
+   "s2": {
+    "label": "410ms",
+    "panelOpen": false,
+    "result": {
+     "text": "王总：切得真快。 +0",
+     "w": 0,
+     "h": 0,
+     "panelHidden": true
+    },
+    "toast": {
+     "text": "王总：切得真快。 +0",
+     "shown": true
+    }
+   },
+   "showsTimeoutToast": false
+  },
+  "keyboard": {
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "delta": 90,
+   "s1": {
+    "label": "120ms",
+    "panelOpen": true,
+    "result": {
+     "text": "王总：屏幕挺干净啊。 +90",
+     "w": 0,
+     "h": 0,
+     "panelHidden": true
+    },
+    "toast": {
+     "text": "王总：屏幕挺干净啊。 +90",
+     "shown": true
+    }
+   },
+   "settled": true,
+   "panelAfter": false
+  },
+  "timeoutAfterAnswer": {
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "text": "王总：屏幕挺干净啊。 +99",
+   "shown": false,
+   "panelOpen": false,
+   "showsTimeoutToast": false
+  }
+ },
+ "cardTap": {
+  "duringTapping": {
+   "openedWhileTapping": false,
+   "tapMs": 4495
+  },
+  "afterStop": {
+   "opened": false,
+   "delayMs": 4026,
+   "chosen": "early_leave"
+  }
+ },
+ "errors": []
+}
