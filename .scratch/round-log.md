@@ -395,3 +395,19 @@ final-hardcore / final-frag / final-quitter / final-collector / final-manager / 
 - 构建 JS 121.58kB（gzip 43.10）+ CSS 22.46kB（gzip 5.07），零运行时依赖
 - engine 零 DOM、零运行时循环依赖
 - 43 文件 / 248 例全绿
+
+---
+
+## Round 5：新增内容验证
+### 本轮新增（v0.6.0）
+1. **成就墙**：22 条成就 / 10 分类 / 永久加成 / 成就等级；新增 `bestIdleRate`/`rankIndex`/`cardsChosenTotal` 三字段（存档净化 + 转生保留）
+2. **新手引导重做**：目标链 5→9 步（戳→首购→挂机→选卡→领日报→招人→分精力→玩摸鱼站）；新手期隐藏系统角标
+3. 上轮 P1 修复：横屏 rotate-hint CSS、老板超时提示、老玩家天赋提示、save levels 过滤
+
+### 验证中
+- final-quitter 复验（原"否"，6 条 P1 修了 4 条）
+- verify-collector 终验（成就墙）
+- final-hardcore 复验（离线上限 95% + 成就是否解决 D10 长线）
+- final-audit 发布前审计（新功能正确性 + 回归）
+
+测试：44 文件 / 255 例全绿；线上包 index-Bz_Wy3UO.js 与本地一致
