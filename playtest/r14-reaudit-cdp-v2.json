@@ -1,5 +1,5 @@
 {
-  "startedAt": "2026-11-27T11:26:03.736Z",
+  "startedAt": "2026-11-27T11:29:01.394Z",
   "url": "http://127.0.0.1:5173/",
   "head": "6be96e2",
   "scenarios": {
@@ -50,7 +50,7 @@
           "h": 581
         },
         "catbed": {
-          "n": 1084,
+          "n": 1068,
           "w": 900,
           "h": 581
         }
@@ -65,68 +65,68 @@
       "poll": [
         {
           "ms": 200,
-          "moyu": 1913.79,
+          "moyu": 1913.81,
           "disabled": true
         },
         {
           "ms": 400,
-          "moyu": 2053.83,
+          "moyu": 2053.85,
           "disabled": true
         },
         {
           "ms": 600,
-          "moyu": 2193.8,
+          "moyu": 2205.51,
           "disabled": true
         },
         {
           "ms": 800,
-          "moyu": 2333.91,
+          "moyu": 2345.55,
           "disabled": true
         },
         {
           "ms": 1000,
-          "moyu": 2485.57,
+          "moyu": 2485.59,
           "disabled": true
         },
         {
           "ms": 1200,
-          "moyu": 2625.68,
+          "moyu": 2625.63,
           "disabled": true
         },
         {
           "ms": 1400,
-          "moyu": 2765.65,
+          "moyu": 2765.67,
           "disabled": true
         },
         {
           "ms": 1600,
-          "moyu": 2905.69,
+          "moyu": 2917.34,
           "disabled": true
         },
         {
           "ms": 1800,
-          "moyu": 3045.73,
+          "moyu": 3057.38,
           "disabled": true
         },
         {
           "ms": 2000,
-          "moyu": 3197.46,
+          "moyu": 3197.42,
           "disabled": false
         },
         {
           "ms": 2200,
-          "moyu": 3337.5,
+          "moyu": 3337.46,
           "disabled": false
         }
       ],
-      "moneyAtOpen": 1773.75,
+      "moneyAtOpen": 1773.77,
       "plantAtOpen": {
         "disabled": true,
         "rowDisabled": "1"
       },
       "crossed": {
         "at": 2200,
-        "moyu": 3337.5,
+        "moyu": 3337.46,
         "button": {
           "disabled": false,
           "rowDisabled": "false"
@@ -179,7 +179,7 @@
     },
     "S5": {
       "staleA": {
-        "moyu": 2017694.9196000006,
+        "moyu": 2017690.2982802673,
         "energyDate": "2026-11-27",
         "left": 100,
         "boosted": {
@@ -189,7 +189,7 @@
         }
       },
       "freshB": {
-        "moyu": 2017688.4077401338,
+        "moyu": 2017696.8801600004,
         "energyDate": "2026-11-27",
         "left": 100,
         "boosted": {
@@ -198,7 +198,7 @@
           "clickMult": 1
         }
       },
-      "ratio": 1.0000032273862713
+      "ratio": 0.9999967379244138
     },
     "S6": {
       "steps": [
@@ -297,7 +297,17 @@
         ]
       }
     },
-    "S9_cardModalSuppressed": false
+    "S9_cardModalSuppressed": false,
+    "S10_offlineRugAB": {
+      "noDecorMoyu": 2017690.5783602672,
+      "noDecorRate": 0.8004,
+      "rugMoyu": 2269767.269699739,
+      "rugRate": 0.9004,
+      "ratio": 1.12493,
+      "specExpectRate": 0.85,
+      "specExpectRatio": 1.0625,
+      "note": "visits=1 使基准离线效率 0.8；spec 期望 rug 后 0.85（+0.05），若为 0.90 则 decorBonus 被计两次"
+    }
   },
   "consoleErrors": [],
   "pageErrors": []

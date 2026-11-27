@@ -261,9 +261,31 @@ await runChrome(
       report.scenarios.S8 = s8;
       await closeTeam();
 
-      // ───── 卡片弹窗抑制（6be96e2） ─────
-      await sleep(2000);
+      // ───── S9：面板打开期间卡片弹窗抑制（6be96e2） ─────
+      await openTeam("decor");
+      await sleep(2200);
       report.scenarios.S9_cardModalSuppressed = await evj(`document.getElementById('cards').classList.contains('hidden')`);
+      await closeTeam();
+
+      // ───── S10：D11 实机 A/B —— rug 离线加成是否被计两次 ─────
+      const mkOffline = (decor) =>
+        blob({
+          moyu: 0, levels: { retire: 1 }, totalEarned: 0, lifetimeEarned: 0, decor,
+          savedAt: Date.now() - 3600_000, createdAt: Date.now() - 3 * 86400_000,
+          energy: { date: today(), left: 100, used: [], boosted: {} },
+        });
+      await seedSave(mkOffline([]));
+      const s10a = await state();
+      await seedSave(mkOffline(["rug"]));
+      const s10b = await state();
+      const rate = (moyu) => +(moyu / (700.2 * 3600)).toFixed(4); // 基准 700.2/s×1h
+      report.scenarios.S10_offlineRugAB = {
+        noDecorMoyu: s10a.moyu, noDecorRate: rate(s10a.moyu),
+        rugMoyu: s10b.moyu, rugRate: rate(s10b.moyu),
+        ratio: +(s10b.moyu / s10a.moyu).toFixed(5),
+        specExpectRate: 0.85, specExpectRatio: +(0.85 / 0.8).toFixed(5),
+        note: "visits=1 使基准离线效率 0.8；spec 期望 rug 后 0.85（+0.05），若为 0.90 则 decorBonus 被计两次",
+      };
 
       report.consoleErrors = b.errors.slice(0, 20);
       report.pageErrors = (await evj("window.__errs")) ?? [];

@@ -276,7 +276,7 @@ export class TeamPanel {
         const can = !owned && state.moyu >= d.cost;
         if (btn.disabled === can) btn.disabled = !can;
         const row = btn.closest<HTMLElement>(".row-tap");
-        if (row) row.dataset.disabled = String(owned || !can);
+        if (row) row.dataset.disabled = owned || !can ? "1" : "0";
         return;
       }
       if (btn.dataset.act === "energy") {
@@ -287,7 +287,7 @@ export class TeamPanel {
         const can = !used && !noColleagues && state.energy.left >= a.cost;
         if (btn.disabled === can) btn.disabled = !can;
         const row = btn.closest<HTMLElement>(".row-tap");
-        if (row) row.dataset.disabled = String(!can);
+        if (row) row.dataset.disabled = can ? "0" : "1";
         return;
       }
       if (btn.dataset.act === "energy-all") {
