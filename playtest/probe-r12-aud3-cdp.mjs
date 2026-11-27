@@ -66,6 +66,10 @@ const seedSave = async (blob) => {
   await reload();
   await clearSeed();
 };
+const closePanelSafe = async () => {
+  await ev(`document.getElementById('team-close').click()`);
+  await sleep(200);
+};
 const openPanel = async (tab) => {
   await ev(`document.getElementById('btn-team').click()`);
   await sleep(450);
@@ -181,7 +185,21 @@ try {
   await sleep(300);
   await openPanel("colleagues");
   const claimBtn = await evj(`(() => { const b=document.querySelector('#team-body button[data-act="claim"][data-id="zhou"]'); return b?b.innerText:null; })()`);
-  report.scenarios.T3.zeroEnds = { endsAt: st2.team.colleagues.zhou?.endsAt, claimButton: claimBtn };
+  report.scenarios.T3.zeroEnds = { missionId: st2.team.colleagues.zhou?.missionId, endsAt: st2.team.colleagues.zhou?.endsAt, claimButton: claimBtn };
+
+  // 变体：startedAt=1（极旧但 >0）→ 当前 sanitize 是否仍视为合法已完成
+  await seedSave(
+    baseBlob({
+      moyu: 1000, totalEarned: 1000, lifetimeEarned: 1000,
+      team: { colleagues: { zhou: mate(1, { missionId: "quick", startedAt: 1, endsAt: 1 + 900_000, rewardSnapshot: 5000 }) } },
+    }),
+  );
+  await sleep(300);
+  await openPanel("colleagues");
+  const st3 = await state();
+  const claimBtn2 = await evj(`(() => { const b=document.querySelector('#team-body button[data-act="claim"][data-id="zhou"]'); return b?b.innerText:null; })()`);
+  report.scenarios.T3.oldStart = { missionId: st3.team.colleagues.zhou?.missionId, endsAt: st3.team.colleagues.zhou?.endsAt, claimButton: claimBtn2 };
+  await closePanelSafe();
   console.log("[T3]", JSON.stringify(report.scenarios.T3));
 } catch (e) {
   report.scenarios.T3 = { error: String(e) };
@@ -218,7 +236,7 @@ try {
   await seedSave(
     baseBlob({
       moyu: 100, totalEarned: 100, lifetimeEarned: 100,
-      talents: { unlocked: ["click_5a", "click_5b", "click_1", "click_1", "event_5a", "event_5b"], points: 99, rankGranted: 99, dailyGiftDate: "bad" },
+      talents: { unlocked: ["click_5a", "click_5b", "click_1", "click_1", "event_5a", "event_5b"], points: 99, rankGranted: 99, dailyGiftDate: "bad", overflow: 99 },
       team: { colleagues: { zhou: mate(1, { missionId: "quick", startedAt: 0, endsAt: 0, rewardSnapshot: 1e19 }) } },
     }),
   );
@@ -229,6 +247,7 @@ try {
     rankGranted: st.talents.rankGranted,
     dailyGiftDate: st.talents.dailyGiftDate,
     rewardSnapshot: st.team.colleagues.zhou?.rewardSnapshot,
+    overflow: st.talents.overflow,
     note: "期望：互斥各留一个、去重、点数封顶 24、rank<=12、日期置空、快照<=1e18"
   };
   console.log("[T5]", JSON.stringify(report.scenarios.T5));
@@ -276,7 +295,7 @@ try {
   await ev(`window.__MOYU__.endMissions()`);
   await sleep(400);
   const idleDone = await ev(`document.getElementById('hud-idle').innerText`);
-  report.scenarios.T7 = { idleBefore, quickButtonText: quickBtn, idleAway, idleDone, note: "按钮「净 +X/h」未扣自身离岗损失；派遣中 HUD 挂机率下降，完成后恢复" };
+  report.scenarios.T7 = { idleBefore, quickButtonText: quickBtn, idleAway, idleDone, note: "按钮「净 +X/h」已按该同事本人离岗损失扣减（与引擎 X4b 一致）；派遣中 HUD 挂机率下降，完成后恢复" };
   console.log("[T7]", JSON.stringify(report.scenarios.T7));
 } catch (e) {
   report.scenarios.T7 = { error: String(e) };
@@ -288,7 +307,7 @@ try {
   await seedSave(
     baseBlob({
       moyu: 0, totalEarned: 0, lifetimeEarned: 0,
-      talents: { unlocked: ["click_1", "click_2", "click_3", "click_4"], points: 3, rankGranted: 12, dailyGiftDate: today() },
+      talents: { unlocked: ["click_1", "click_2", "click_3", "click_4"], points: 3, rankGranted: 12, dailyGiftDate: today(), overflow: 10 },
     }),
   );
   await openPanel("talents");
@@ -297,7 +316,8 @@ try {
     const row = rows.find(r=>r.innerText.includes('指尖风暴'));
     const foot = document.querySelector('#team-body .talent-progress');
     const pts = document.getElementById('team-points').innerText;
-    return { name: row?.querySelector('.talent-name')?.innerText, btn: row?.querySelector('button')?.innerText, disabled: row?.querySelector('button')?.disabled, footer: foot?.innerText, points: pts };
+    const overflowLine = [...foot?.querySelectorAll('div') ?? []].map(d=>d.innerText).find(t=>t.includes('溢出转化')) ?? '';
+    return { name: row?.querySelector('.talent-name')?.innerText, btn: row?.querySelector('button')?.innerText, disabled: row?.querySelector('button')?.disabled, footer: foot?.innerText, points: pts, overflowLine };
   })()`);
   const before = await state();
   await ev(`(() => { const rows=[...document.querySelectorAll('#team-body .talent')]; const row=rows.find(r=>r.innerText.includes('指尖风暴')); row?.querySelector('button')?.click(); })()`);

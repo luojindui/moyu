@@ -1,0 +1,1691 @@
+{
+  "meta": {
+    "url": "http://127.0.0.1:5199/",
+    "viewport": "390x844@3x",
+    "phase": "复验 2（最新版 bcb2a7b/62f1486/5a26f62+）",
+    "startedAt": "2026-11-27T09:20:16.439Z",
+    "profile": "碎片党：每次 2-3 分钟、一天 4-6 次、从不专门坐 30 分钟",
+    "git": "485191e",
+    "gitStatusAtStart": [
+      " M src/engine/save.ts",
+      " M src/engine/talents.test.ts",
+      " M src/engine/talents.ts",
+      " M src/main.ts",
+      " M src/ui/team-panel.ts"
+    ],
+    "gitRevAtEnd": "5df2f12",
+    "notes": "离开用 Date.now 偏移 + 单次 reload 模拟；偏差：headless 无法验证音效，只验证视觉提示；",
+    "snapshotNote": "隔离快照 dev 服务 5199（node_modules 软链），避免复验途中 HMR 重载；快照 = 运行时工作树",
+    "gitStatusAtEnd": []
+  },
+  "seed": {
+    "v": 2,
+    "moyu": 500000000,
+    "totalEarned": 1000000000,
+    "levels": {
+      "coffee": 12,
+      "water": 10,
+      "chair": 8,
+      "phone": 18,
+      "toilet": 16,
+      "group": 14,
+      "meeting": 10,
+      "deep": 6,
+      "retire": 2
+    },
+    "collected": {
+      "quotes": [],
+      "flavors": []
+    },
+    "daily": null,
+    "surviveStreak": 0,
+    "patrolSurvives": 0,
+    "totalClicks": 400,
+    "visits": {
+      "date": "",
+      "count": 0
+    },
+    "lifetimeEarned": 1000000000,
+    "prestige": 0,
+    "team": {
+      "colleagues": {
+        "zhou": {
+          "level": 3,
+          "missionId": "quick",
+          "startedAt": 0,
+          "endsAt": 0,
+          "favor": 30,
+          "autoRepeat": false,
+          "rewardSnapshot": 0
+        },
+        "mei": {
+          "level": 2,
+          "missionId": "chat",
+          "startedAt": 0,
+          "endsAt": 0,
+          "favor": 20,
+          "autoRepeat": false,
+          "rewardSnapshot": 0
+        },
+        "qiang": {
+          "level": 1,
+          "missionId": null,
+          "startedAt": 0,
+          "endsAt": 0,
+          "favor": 0,
+          "autoRepeat": false,
+          "rewardSnapshot": 0
+        }
+      }
+    },
+    "talents": {
+      "unlocked": [],
+      "points": 0,
+      "rankGranted": 4,
+      "dailyGiftDate": ""
+    }
+  },
+  "boot": [
+    {
+      "tag": "first-load",
+      "waitGameMs": 131
+    },
+    {
+      "tag": "seed-frag4",
+      "reloadToReadyMs": 2310,
+      "waitGameMs": 0
+    },
+    {
+      "tag": "gap+2min",
+      "reloadToReadyMs": 2204,
+      "waitGameMs": 0
+    },
+    {
+      "tag": "gap+2min",
+      "reloadToReadyMs": 2206,
+      "waitGameMs": 1
+    }
+  ],
+  "sessions": [
+    {
+      "index": 1,
+      "t0": 1795771220308,
+      "actions": [
+        {
+          "at": 0,
+          "desc": "首屏 1.2s：签到/回来提示、红点、天赋点",
+          "result": {
+            "toasts": [
+              "老周 回来了，点 👥 领取"
+            ],
+            "badge": "1",
+            "talentBadge": null,
+            "points": 1,
+            "dailyGiftDate": "2026-11-27",
+            "welcome": false,
+            "moyu": 500020781.9761716,
+            "idle": "5909.7"
+          }
+        },
+        {
+          "at": 1.4,
+          "desc": "开👥：排序 + 首屏「一键领取」+ 净/h 口径",
+          "result": {
+            "teamOpen": true,
+            "order": [
+              {
+                "name": "老周 Lv.3",
+                "progress": "✅ 溜一圈 完成",
+                "hasClaim": true
+              },
+              {
+                "name": "强哥 Lv.1",
+                "progress": null,
+                "hasClaim": false
+              },
+              {
+                "name": "小美 Lv.2",
+                "progress": "⏳ 茶水间聊八卦 进行中 · 04:56",
+                "hasClaim": false
+              },
+              {
+                "name": "小李",
+                "progress": null,
+                "hasClaim": false
+              },
+              {
+                "name": "王师傅",
+                "progress": null,
+                "hasClaim": false
+              }
+            ],
+            "summary": "已招募 3/5 · 小队挂机 +705/秒 一键领取 +9.96万",
+            "claimAll": {
+              "text": "一键领取 +9.96万",
+              "rect": {
+                "top": 176,
+                "bottom": 199,
+                "h": 23
+              }
+            },
+            "bodyRect": {
+              "x": 33.59375,
+              "y": 154.078125,
+              "width": 322.796875,
+              "height": 612.828125,
+              "top": 154.078125,
+              "right": 356.390625,
+              "bottom": 766.90625,
+              "left": 33.59375
+            },
+            "firstCardTop": 53,
+            "missionLabels": [
+              "就近溜达\n3m · +1.24万 · 净 +7.80万/h",
+              "溜一圈\n15m · +8.19万 · 净 +15.71万/h",
+              "茶水间聊八卦\n30m · +14.68万 · 净 +12.32万/h",
+              "开个会\n1h · +36.14万 · 净 +19.10万/h",
+              "长线蹲点 ★\n4h · +298.14万 · 净 +57.49万/h",
+              "楼下买咖啡\n8h · +505.94万 · 净 +46.20万/h"
+            ],
+            "badge": "1",
+            "colleagues": {
+              "zhou": {
+                "level": 3,
+                "missionId": "quick",
+                "endsAt": 1795771216897,
+                "favor": 30,
+                "autoRepeat": false
+              },
+              "mei": {
+                "level": 2,
+                "missionId": "chat",
+                "endsAt": 1795771517897,
+                "favor": 20,
+                "autoRepeat": false
+              },
+              "qiang": {
+                "level": 1,
+                "missionId": null,
+                "endsAt": 0,
+                "favor": 0,
+                "autoRepeat": false
+              }
+            }
+          }
+        },
+        {
+          "at": 2.2,
+          "desc": "一键领取（1 下）：奖励 + 是否重复提示",
+          "result": {
+            "clicked": 1,
+            "rewardExact": 104869,
+            "toasts": [],
+            "flashes": [
+              "一键领取 1 个任务 +9.96万"
+            ],
+            "duplicateFeedback": false,
+            "zhou": {
+              "level": 3,
+              "missionId": null,
+              "endsAt": 0,
+              "favor": 32,
+              "autoRepeat": false
+            },
+            "claimAllNow": null
+          }
+        },
+        {
+          "at": 3.3,
+          "desc": "派老周「就近溜达」3 分钟 + 自动重复：开",
+          "result": {
+            "clicked": 1,
+            "auto": 1,
+            "zhou": {
+              "missionId": "stroll",
+              "endsAt": 1795771376610,
+              "favor": 32,
+              "autoRepeat": true,
+              "level": 3
+            },
+            "orderAfterDispatch": [
+              {
+                "name": "强哥 Lv.1",
+                "progress": null,
+                "hasClaim": false
+              },
+              {
+                "name": "老周 Lv.3",
+                "progress": "⏳ 就近溜达 进行中 · 02:33",
+                "hasClaim": false
+              },
+              {
+                "name": "小美 Lv.2",
+                "progress": "⏳ 茶水间聊八卦 进行中 · 04:54",
+                "hasClaim": false
+              },
+              {
+                "name": "小李",
+                "progress": null,
+                "hasClaim": false
+              },
+              {
+                "name": "王师傅",
+                "progress": null,
+                "hasClaim": false
+              }
+            ]
+          }
+        },
+        {
+          "at": 4.8,
+          "desc": "等 3 分钟到点：自动领取 + 自动续班 + 提醒（页面开着）",
+          "result": {
+            "claimEvent": {
+              "at": 156.5,
+              "favorBefore": 32,
+              "favorAfter": 34,
+              "endsAtBefore": 1795771376610,
+              "endsAtAfter": 1795771529707,
+              "moyuNow": 501048955.5381524,
+              "toastAtDetect": null,
+              "flashCount": 0
+            },
+            "toasts": [
+              "王总快来了！",
+              "这次没完成，没关系～",
+              "王总快来了！",
+              "王总今天心情不错。 +23526（连胜 1）"
+            ],
+            "final": {
+              "now": 1795771412745,
+              "moyu": 501283716.5066321,
+              "zhou": {
+                "missionId": "stroll",
+                "endsAt": 1795771529707,
+                "favor": 34,
+                "autoRepeat": true,
+                "level": 3
+              },
+              "mei": {
+                "missionId": "chat",
+                "endsAt": 1795771517897,
+                "favor": 20,
+                "autoRepeat": false
+              },
+              "toast": null,
+              "badge": null,
+              "teamOpen": false,
+              "flashCount": 0
+            }
+          }
+        },
+        {
+          "at": 193.1,
+          "desc": "天赋页：签到 1 点点掉",
+          "result": {
+            "pointsBefore": 1,
+            "enabled": [
+              "click_1",
+              "idle_1",
+              "event_1"
+            ],
+            "clicked": 1,
+            "pointsAfter": 0,
+            "unlocked": [
+              "click_1"
+            ]
+          }
+        }
+      ],
+      "samples": [],
+      "notifications": [
+        {
+          "t": 1795771218380,
+          "kind": "toast",
+          "text": "老周 回来了，点 👥 领取"
+        },
+        {
+          "t": 1795771222489,
+          "kind": "flash",
+          "text": "一键领取 1 个任务 +9.96万"
+        },
+        {
+          "t": 1795771223610,
+          "kind": "announce",
+          "text": "老周 出发去派遣了"
+        },
+        {
+          "t": 1795771231846,
+          "kind": "announce",
+          "text": "老周丢来一个梗：戳亮起的黄点"
+        },
+        {
+          "t": 1795771237079,
+          "kind": "announce",
+          "text": "王总快来了"
+        },
+        {
+          "t": 1795771237130,
+          "kind": "toast",
+          "text": "王总快来了！"
+        },
+        {
+          "t": 1795771238079,
+          "kind": "announce",
+          "text": "摸鱼冲刺：8 秒内连点 16 下"
+        },
+        {
+          "t": 1795771246169,
+          "kind": "toast",
+          "text": "这次没完成，没关系～"
+        },
+        {
+          "t": 1795771305044,
+          "kind": "announce",
+          "text": "老周丢来一个梗：戳亮起的黄点"
+        },
+        {
+          "t": 1795771371244,
+          "kind": "announce",
+          "text": "王总快来了"
+        },
+        {
+          "t": 1795771371293,
+          "kind": "toast",
+          "text": "王总快来了！"
+        },
+        {
+          "t": 1795771372242,
+          "kind": "announce",
+          "text": "王总巡逻：8 秒内不要点屏幕"
+        },
+        {
+          "t": 1795771380332,
+          "kind": "toast",
+          "text": "王总今天心情不错。 +23526（连胜 1）"
+        },
+        {
+          "t": 1795771385241,
+          "kind": "announce",
+          "text": "老周丢来一个梗：戳亮起的黄点"
+        }
+      ],
+      "taps": 9,
+      "simNow": 1795771220308,
+      "durationSec": 195.5
+    },
+    {
+      "index": 2,
+      "t0": 1795771418005,
+      "actions": [
+        {
+          "at": 0,
+          "desc": "回来首屏：离线到点是否已自动领取 + 提示",
+          "result": {
+            "toasts": [
+              "小美 回来了，点 👥 领取"
+            ],
+            "welcome": true,
+            "welcomeGain": "61.50万",
+            "welcomeTime": "2 分钟",
+            "badge": "1",
+            "atLoad": {
+              "now": 1795771538412,
+              "moyu": 501946866.06809556,
+              "zhou": {
+                "missionId": "stroll",
+                "endsAt": 1795771689035,
+                "favor": 36,
+                "autoRepeat": true,
+                "level": 3
+              },
+              "mei": {
+                "missionId": "chat",
+                "endsAt": 1795771517897,
+                "favor": 20,
+                "autoRepeat": false
+              },
+              "toast": null,
+              "badge": "1",
+              "teamOpen": false,
+              "flashCount": 0
+            },
+            "after1_5s": {
+              "now": 1795771539914,
+              "moyu": 501955759.31473553,
+              "zhou": {
+                "missionId": "stroll",
+                "endsAt": 1795771689035,
+                "favor": 36,
+                "autoRepeat": true,
+                "level": 3
+              },
+              "mei": {
+                "missionId": "chat",
+                "endsAt": 1795771517897,
+                "favor": 20,
+                "autoRepeat": false
+              },
+              "toast": null,
+              "badge": "1",
+              "teamOpen": false,
+              "flashCount": 0
+            },
+            "offlineAutoClaim": false
+          }
+        },
+        {
+          "at": 2.1,
+          "desc": "关欢迎 → 开👥：排序 + 一键领取 + 净/h（有同事在岗时）",
+          "result": {
+            "teamOpen": true,
+            "order": [
+              {
+                "name": "小美 Lv.2",
+                "progress": "✅ 茶水间聊八卦 完成",
+                "hasClaim": true
+              },
+              {
+                "name": "强哥 Lv.1",
+                "progress": null,
+                "hasClaim": false
+              },
+              {
+                "name": "老周 Lv.3",
+                "progress": "⏳ 就近溜达 进行中 · 02:29",
+                "hasClaim": false
+              },
+              {
+                "name": "小李",
+                "progress": null,
+                "hasClaim": false
+              },
+              {
+                "name": "王师傅",
+                "progress": null,
+                "hasClaim": false
+              }
+            ],
+            "claimAllText": "一键领取 +16.76万",
+            "claimAllVisible": true,
+            "firstCardTop": 53,
+            "missionLabels": [
+              "就近溜达\n3m · +1.24万 · 净 +14.70万/h",
+              "溜一圈\n15m · +8.19万 · 净 +22.60万/h",
+              "茶水间聊八卦\n30m · +14.68万 · 净 +19.22万/h",
+              "开个会\n1h · +36.14万 · 净 +25.99万/h",
+              "长线蹲点 ★\n4h · +298.14万 · 净 +64.39万/h",
+              "楼下买咖啡\n8h · +505.94万 · 净 +53.10万/h"
+            ],
+            "clicked": 1,
+            "rewardExact": 172899,
+            "toasts": [],
+            "flashes": [
+              "一键领取 1 个任务 +16.76万"
+            ],
+            "duplicateFeedback": false
+          }
+        },
+        {
+          "at": 4.6,
+          "desc": "天赋页：当天第二次打开还有没有点",
+          "result": {
+            "points": 0,
+            "enabled": []
+          }
+        },
+        {
+          "at": 6.3,
+          "desc": "余下时间：还有没有别的事做",
+          "result": {
+            "samples": [
+              {
+                "at": 6.3,
+                "badge": null,
+                "claimAll": null,
+                "points": 0,
+                "journalClaim": "完成 0/3"
+              },
+              {
+                "at": 14.4,
+                "badge": null,
+                "claimAll": null,
+                "points": 0,
+                "journalClaim": "完成 0/3"
+              },
+              {
+                "at": 22.6,
+                "badge": null,
+                "claimAll": null,
+                "points": 0,
+                "journalClaim": "完成 0/3"
+              },
+              {
+                "at": 30.7,
+                "badge": null,
+                "claimAll": null,
+                "points": 0,
+                "journalClaim": "完成 0/3"
+              },
+              {
+                "at": 38.9,
+                "badge": null,
+                "claimAll": null,
+                "points": 0,
+                "journalClaim": "完成 0/3"
+              },
+              {
+                "at": 47,
+                "badge": null,
+                "claimAll": null,
+                "points": 0,
+                "journalClaim": "完成 0/3"
+              },
+              {
+                "at": 55.2,
+                "badge": null,
+                "claimAll": null,
+                "points": 0,
+                "journalClaim": "完成 0/3"
+              },
+              {
+                "at": 63.3,
+                "badge": null,
+                "claimAll": null,
+                "points": 0,
+                "journalClaim": "完成 0/3"
+              },
+              {
+                "at": 71.5,
+                "badge": null,
+                "claimAll": null,
+                "points": 0,
+                "journalClaim": "完成 0/3"
+              },
+              {
+                "at": 79.6,
+                "badge": null,
+                "claimAll": null,
+                "points": 0,
+                "journalClaim": "完成 0/3"
+              },
+              {
+                "at": 87.8,
+                "badge": null,
+                "claimAll": null,
+                "points": 0,
+                "journalClaim": "完成 0/3"
+              },
+              {
+                "at": 96,
+                "badge": null,
+                "claimAll": null,
+                "points": 0,
+                "journalClaim": "完成 0/3"
+              },
+              {
+                "at": 104.1,
+                "badge": null,
+                "claimAll": null,
+                "points": 0,
+                "journalClaim": "完成 0/3"
+              },
+              {
+                "at": 112.3,
+                "badge": null,
+                "claimAll": null,
+                "points": 0,
+                "journalClaim": "完成 0/3"
+              },
+              {
+                "at": 120.5,
+                "badge": null,
+                "claimAll": null,
+                "points": 0,
+                "journalClaim": "完成 0/3"
+              }
+            ]
+          }
+        }
+      ],
+      "samples": [
+        {
+          "at": 6.3,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 14.4,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 22.6,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 30.7,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 38.9,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 47,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 55.2,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 63.3,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 71.5,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 79.6,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 87.8,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 96,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 104.1,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 112.3,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 120.5,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        }
+      ],
+      "notifications": [
+        {
+          "t": 1795771536079,
+          "kind": "toast",
+          "text": "小美 回来了，点 👥 领取"
+        },
+        {
+          "t": 1795771541200,
+          "kind": "flash",
+          "text": "一键领取 1 个任务 +16.76万"
+        },
+        {
+          "t": 1795771555507,
+          "kind": "announce",
+          "text": "老周丢来一个梗：戳亮起的黄点"
+        },
+        {
+          "t": 1795771569105,
+          "kind": "announce",
+          "text": "王总快来了"
+        },
+        {
+          "t": 1795771569148,
+          "kind": "toast",
+          "text": "王总快来了！"
+        },
+        {
+          "t": 1795771570106,
+          "kind": "announce",
+          "text": "王总巡逻：8 秒内不要点屏幕"
+        },
+        {
+          "t": 1795771578189,
+          "kind": "toast",
+          "text": "王总今天心情不错。 +26087（连胜 2）"
+        },
+        {
+          "t": 1795771621819,
+          "kind": "announce",
+          "text": "老周丢来一个梗：戳亮起的黄点"
+        }
+      ],
+      "taps": 7,
+      "simNow": 1795771538005,
+      "durationSec": 125.1
+    },
+    {
+      "index": 3,
+      "t0": 1795771545333,
+      "actions": [
+        {
+          "at": 0,
+          "desc": "回来首屏",
+          "result": {
+            "toasts": [],
+            "badge": null,
+            "welcome": true,
+            "zhou": {
+              "missionId": "stroll",
+              "endsAt": 1795771936353,
+              "favor": 38,
+              "autoRepeat": true,
+              "level": 3
+            },
+            "mei": {
+              "missionId": null,
+              "endsAt": 0,
+              "favor": 22,
+              "autoRepeat": false
+            }
+          }
+        },
+        {
+          "at": 1.2,
+          "desc": "关欢迎 → 开👥 → 派强哥 3m → endMissions 测提醒延迟",
+          "result": {
+            "orderAtOpen": [
+              {
+                "name": "小美 Lv.2",
+                "progress": null,
+                "hasClaim": false
+              },
+              {
+                "name": "强哥 Lv.1",
+                "progress": null,
+                "hasClaim": false
+              },
+              {
+                "name": "老周 Lv.3",
+                "progress": "⏳ 就近溜达 进行中 · 02:30",
+                "hasClaim": false
+              },
+              {
+                "name": "小李",
+                "progress": null,
+                "hasClaim": false
+              },
+              {
+                "name": "王师傅",
+                "progress": null,
+                "hasClaim": false
+              }
+            ],
+            "dispatched": 1,
+            "endMissionsToast": {
+              "latencyMs": 228,
+              "text": "强哥 回来了，点 👥 领取"
+            },
+            "claimAllAfter": "一键领取 +1.24万",
+            "claimed": 1,
+            "toasts": [],
+            "flashes": [
+              "一键领取 1 个任务 +1.24万"
+            ],
+            "duplicateFeedback": false,
+            "colleaguesAfter": {
+              "zhou": {
+                "level": 3,
+                "missionId": "stroll",
+                "endsAt": 1795771941319,
+                "favor": 40,
+                "autoRepeat": true
+              },
+              "mei": {
+                "level": 2,
+                "missionId": null,
+                "endsAt": 0,
+                "favor": 22,
+                "autoRepeat": false
+              },
+              "qiang": {
+                "level": 1,
+                "missionId": null,
+                "endsAt": 0,
+                "favor": 2,
+                "autoRepeat": false
+              }
+            }
+          }
+        },
+        {
+          "at": 4.7,
+          "desc": "收尾",
+          "result": {
+            "points": 0,
+            "daily": {
+              "claimed": false,
+              "goals": [
+                {
+                  "id": "visit_1",
+                  "done": true,
+                  "progress": 1,
+                  "target": 1
+                },
+                {
+                  "id": "idle_earn",
+                  "done": true,
+                  "progress": 1,
+                  "target": 1
+                },
+                {
+                  "id": "meme_1",
+                  "done": false,
+                  "progress": 0,
+                  "target": 1
+                }
+              ]
+            },
+            "badge": null
+          }
+        }
+      ],
+      "samples": [
+        {
+          "at": 4.7,
+          "badge": null,
+          "points": 0,
+          "toast": "强哥 回来了，点 👥 领取",
+          "flashCount": 1,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 12.9,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 21,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 29.2,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 37.3,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 45.5,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 53.7,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 61.8,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 69.9,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 78.1,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 86.2,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 94.4,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        },
+        {
+          "at": 102.6,
+          "badge": null,
+          "points": 0,
+          "toast": null,
+          "flashCount": 0,
+          "claimAll": null,
+          "welcome": false,
+          "journalClaim": "完成 0/3",
+          "colleaguesBusy": 1,
+          "idle": "5928.8"
+        }
+      ],
+      "notifications": [
+        {
+          "t": 1795771787474,
+          "kind": "announce",
+          "text": "强哥 出发去派遣了"
+        },
+        {
+          "t": 1795771788398,
+          "kind": "toast",
+          "text": "强哥 回来了，点 👥 领取"
+        },
+        {
+          "t": 1795771788718,
+          "kind": "flash",
+          "text": "一键领取 1 个任务 +1.24万"
+        },
+        {
+          "t": 1795771798636,
+          "kind": "announce",
+          "text": "老周丢来一个梗：戳亮起的黄点"
+        },
+        {
+          "t": 1795771803484,
+          "kind": "announce",
+          "text": "王总快来了"
+        },
+        {
+          "t": 1795771803519,
+          "kind": "toast",
+          "text": "王总快来了！"
+        },
+        {
+          "t": 1795771804486,
+          "kind": "announce",
+          "text": "假装工作：8 秒内点 5 下"
+        },
+        {
+          "t": 1795771812557,
+          "kind": "toast",
+          "text": "这次没完成，没关系～"
+        },
+        {
+          "t": 1795771864884,
+          "kind": "announce",
+          "text": "老周丢来一个梗：戳亮起的黄点"
+        }
+      ],
+      "taps": 5,
+      "simNow": 1795771785334,
+      "durationSec": 105.4
+    }
+  ],
+  "checks": {
+    "sessions": [
+      {
+        "index": 1,
+        "simMinutes": 0,
+        "realDurationSec": 195.5,
+        "taps": 9,
+        "actions": [
+          "0s 首屏 1.2s：签到/回来提示、红点、天赋点",
+          "1.4s 开👥：排序 + 首屏「一键领取」+ 净/h 口径",
+          "2.2s 一键领取（1 下）：奖励 + 是否重复提示",
+          "3.3s 派老周「就近溜达」3 分钟 + 自动重复：开",
+          "4.8s 等 3 分钟到点：自动领取 + 自动续班 + 提醒（页面开着）",
+          "193.1s 天赋页：签到 1 点点掉"
+        ],
+        "toasts": [
+          "老周 回来了，点 👥 领取",
+          "王总快来了！",
+          "这次没完成，没关系～",
+          "王总快来了！",
+          "王总今天心情不错。 +23526（连胜 1）"
+        ],
+        "flashes": [
+          "一键领取 1 个任务 +9.96万"
+        ]
+      },
+      {
+        "index": 2,
+        "simMinutes": 5.29,
+        "realDurationSec": 125.1,
+        "taps": 7,
+        "actions": [
+          "0s 回来首屏：离线到点是否已自动领取 + 提示",
+          "2.1s 关欢迎 → 开👥：排序 + 一键领取 + 净/h（有同事在岗时）",
+          "4.6s 天赋页：当天第二次打开还有没有点",
+          "6.3s 余下时间：还有没有别的事做"
+        ],
+        "toasts": [
+          "小美 回来了，点 👥 领取",
+          "王总快来了！",
+          "王总今天心情不错。 +26087（连胜 2）"
+        ],
+        "flashes": [
+          "一键领取 1 个任务 +16.76万"
+        ]
+      },
+      {
+        "index": 3,
+        "simMinutes": 9.42,
+        "realDurationSec": 105.4,
+        "taps": 5,
+        "actions": [
+          "0s 回来首屏",
+          "1.2s 关欢迎 → 开👥 → 派强哥 3m → endMissions 测提醒延迟",
+          "4.7s 收尾"
+        ],
+        "toasts": [
+          "强哥 回来了，点 👥 领取",
+          "王总快来了！",
+          "这次没完成，没关系～"
+        ],
+        "flashes": [
+          "一键领取 1 个任务 +1.24万"
+        ]
+      }
+    ],
+    "s1": {
+      "panel": {
+        "teamOpen": true,
+        "order": [
+          {
+            "name": "老周 Lv.3",
+            "progress": "✅ 溜一圈 完成",
+            "hasClaim": true
+          },
+          {
+            "name": "强哥 Lv.1",
+            "progress": null,
+            "hasClaim": false
+          },
+          {
+            "name": "小美 Lv.2",
+            "progress": "⏳ 茶水间聊八卦 进行中 · 04:56",
+            "hasClaim": false
+          },
+          {
+            "name": "小李",
+            "progress": null,
+            "hasClaim": false
+          },
+          {
+            "name": "王师傅",
+            "progress": null,
+            "hasClaim": false
+          }
+        ],
+        "summary": "已招募 3/5 · 小队挂机 +705/秒 一键领取 +9.96万",
+        "claimAll": {
+          "text": "一键领取 +9.96万",
+          "rect": {
+            "top": 176,
+            "bottom": 199,
+            "h": 23
+          }
+        },
+        "bodyRect": {
+          "x": 33.59375,
+          "y": 154.078125,
+          "width": 322.796875,
+          "height": 612.828125,
+          "top": 154.078125,
+          "right": 356.390625,
+          "bottom": 766.90625,
+          "left": 33.59375
+        },
+        "firstCardTop": 53,
+        "missionLabels": [
+          "就近溜达\n3m · +1.24万 · 净 +7.80万/h",
+          "溜一圈\n15m · +8.19万 · 净 +15.71万/h",
+          "茶水间聊八卦\n30m · +14.68万 · 净 +12.32万/h",
+          "开个会\n1h · +36.14万 · 净 +19.10万/h",
+          "长线蹲点 ★\n4h · +298.14万 · 净 +57.49万/h",
+          "楼下买咖啡\n8h · +505.94万 · 净 +46.20万/h"
+        ],
+        "badge": "1",
+        "colleagues": {
+          "zhou": {
+            "level": 3,
+            "missionId": "quick",
+            "endsAt": 1795771216897,
+            "favor": 30,
+            "autoRepeat": false
+          },
+          "mei": {
+            "level": 2,
+            "missionId": "chat",
+            "endsAt": 1795771517897,
+            "favor": 20,
+            "autoRepeat": false
+          },
+          "qiang": {
+            "level": 1,
+            "missionId": null,
+            "endsAt": 0,
+            "favor": 0,
+            "autoRepeat": false
+          }
+        }
+      },
+      "claim": {
+        "teamOpen": true,
+        "order": [
+          {
+            "name": "老周 Lv.3",
+            "progress": "✅ 溜一圈 完成",
+            "hasClaim": true
+          },
+          {
+            "name": "强哥 Lv.1",
+            "progress": null,
+            "hasClaim": false
+          },
+          {
+            "name": "小美 Lv.2",
+            "progress": "⏳ 茶水间聊八卦 进行中 · 04:56",
+            "hasClaim": false
+          },
+          {
+            "name": "小李",
+            "progress": null,
+            "hasClaim": false
+          },
+          {
+            "name": "王师傅",
+            "progress": null,
+            "hasClaim": false
+          }
+        ],
+        "summary": "已招募 3/5 · 小队挂机 +705/秒 一键领取 +9.96万",
+        "claimAll": {
+          "text": "一键领取 +9.96万",
+          "rect": {
+            "top": 176,
+            "bottom": 199,
+            "h": 23
+          }
+        },
+        "bodyRect": {
+          "x": 33.59375,
+          "y": 154.078125,
+          "width": 322.796875,
+          "height": 612.828125,
+          "top": 154.078125,
+          "right": 356.390625,
+          "bottom": 766.90625,
+          "left": 33.59375
+        },
+        "firstCardTop": 53,
+        "missionLabels": [
+          "就近溜达\n3m · +1.24万 · 净 +7.80万/h",
+          "溜一圈\n15m · +8.19万 · 净 +15.71万/h",
+          "茶水间聊八卦\n30m · +14.68万 · 净 +12.32万/h",
+          "开个会\n1h · +36.14万 · 净 +19.10万/h",
+          "长线蹲点 ★\n4h · +298.14万 · 净 +57.49万/h",
+          "楼下买咖啡\n8h · +505.94万 · 净 +46.20万/h"
+        ],
+        "badge": "1",
+        "colleagues": {
+          "zhou": {
+            "level": 3,
+            "missionId": "quick",
+            "endsAt": 1795771216897,
+            "favor": 30,
+            "autoRepeat": false
+          },
+          "mei": {
+            "level": 2,
+            "missionId": "chat",
+            "endsAt": 1795771517897,
+            "favor": 20,
+            "autoRepeat": false
+          },
+          "qiang": {
+            "level": 1,
+            "missionId": null,
+            "endsAt": 0,
+            "favor": 0,
+            "autoRepeat": false
+          }
+        }
+      },
+      "autoClaim": {
+        "claimEvent": {
+          "at": 156.5,
+          "favorBefore": 32,
+          "favorAfter": 34,
+          "endsAtBefore": 1795771376610,
+          "endsAtAfter": 1795771529707,
+          "moyuNow": 501048955.5381524,
+          "toastAtDetect": null,
+          "flashCount": 0
+        },
+        "toasts": [
+          "王总快来了！",
+          "这次没完成，没关系～",
+          "王总快来了！",
+          "王总今天心情不错。 +23526（连胜 1）"
+        ],
+        "final": {
+          "now": 1795771412745,
+          "moyu": 501283716.5066321,
+          "zhou": {
+            "missionId": "stroll",
+            "endsAt": 1795771529707,
+            "favor": 34,
+            "autoRepeat": true,
+            "level": 3
+          },
+          "mei": {
+            "missionId": "chat",
+            "endsAt": 1795771517897,
+            "favor": 20,
+            "autoRepeat": false
+          },
+          "toast": null,
+          "badge": null,
+          "teamOpen": false,
+          "flashCount": 0
+        }
+      },
+      "talent": {
+        "pointsBefore": 1,
+        "enabled": [
+          "click_1",
+          "idle_1",
+          "event_1"
+        ],
+        "clicked": 1,
+        "pointsAfter": 0,
+        "unlocked": [
+          "click_1"
+        ]
+      }
+    },
+    "s2": {
+      "ret": {
+        "toasts": [
+          "小美 回来了，点 👥 领取"
+        ],
+        "welcome": true,
+        "welcomeGain": "61.50万",
+        "welcomeTime": "2 分钟",
+        "badge": "1",
+        "atLoad": {
+          "now": 1795771538412,
+          "moyu": 501946866.06809556,
+          "zhou": {
+            "missionId": "stroll",
+            "endsAt": 1795771689035,
+            "favor": 36,
+            "autoRepeat": true,
+            "level": 3
+          },
+          "mei": {
+            "missionId": "chat",
+            "endsAt": 1795771517897,
+            "favor": 20,
+            "autoRepeat": false
+          },
+          "toast": null,
+          "badge": "1",
+          "teamOpen": false,
+          "flashCount": 0
+        },
+        "after1_5s": {
+          "now": 1795771539914,
+          "moyu": 501955759.31473553,
+          "zhou": {
+            "missionId": "stroll",
+            "endsAt": 1795771689035,
+            "favor": 36,
+            "autoRepeat": true,
+            "level": 3
+          },
+          "mei": {
+            "missionId": "chat",
+            "endsAt": 1795771517897,
+            "favor": 20,
+            "autoRepeat": false
+          },
+          "toast": null,
+          "badge": "1",
+          "teamOpen": false,
+          "flashCount": 0
+        },
+        "offlineAutoClaim": false
+      },
+      "panelClaim": {
+        "teamOpen": true,
+        "order": [
+          {
+            "name": "小美 Lv.2",
+            "progress": "✅ 茶水间聊八卦 完成",
+            "hasClaim": true
+          },
+          {
+            "name": "强哥 Lv.1",
+            "progress": null,
+            "hasClaim": false
+          },
+          {
+            "name": "老周 Lv.3",
+            "progress": "⏳ 就近溜达 进行中 · 02:29",
+            "hasClaim": false
+          },
+          {
+            "name": "小李",
+            "progress": null,
+            "hasClaim": false
+          },
+          {
+            "name": "王师傅",
+            "progress": null,
+            "hasClaim": false
+          }
+        ],
+        "claimAllText": "一键领取 +16.76万",
+        "claimAllVisible": true,
+        "firstCardTop": 53,
+        "missionLabels": [
+          "就近溜达\n3m · +1.24万 · 净 +14.70万/h",
+          "溜一圈\n15m · +8.19万 · 净 +22.60万/h",
+          "茶水间聊八卦\n30m · +14.68万 · 净 +19.22万/h",
+          "开个会\n1h · +36.14万 · 净 +25.99万/h",
+          "长线蹲点 ★\n4h · +298.14万 · 净 +64.39万/h",
+          "楼下买咖啡\n8h · +505.94万 · 净 +53.10万/h"
+        ],
+        "clicked": 1,
+        "rewardExact": 172899,
+        "toasts": [],
+        "flashes": [
+          "一键领取 1 个任务 +16.76万"
+        ],
+        "duplicateFeedback": false
+      },
+      "talent": {
+        "points": 0,
+        "enabled": []
+      }
+    },
+    "s3": {
+      "ret": {
+        "toasts": [],
+        "badge": null,
+        "welcome": true,
+        "zhou": {
+          "missionId": "stroll",
+          "endsAt": 1795771936353,
+          "favor": 38,
+          "autoRepeat": true,
+          "level": 3
+        },
+        "mei": {
+          "missionId": null,
+          "endsAt": 0,
+          "favor": 22,
+          "autoRepeat": false
+        }
+      },
+      "endm": {
+        "orderAtOpen": [
+          {
+            "name": "小美 Lv.2",
+            "progress": null,
+            "hasClaim": false
+          },
+          {
+            "name": "强哥 Lv.1",
+            "progress": null,
+            "hasClaim": false
+          },
+          {
+            "name": "老周 Lv.3",
+            "progress": "⏳ 就近溜达 进行中 · 02:30",
+            "hasClaim": false
+          },
+          {
+            "name": "小李",
+            "progress": null,
+            "hasClaim": false
+          },
+          {
+            "name": "王师傅",
+            "progress": null,
+            "hasClaim": false
+          }
+        ],
+        "dispatched": 1,
+        "endMissionsToast": {
+          "latencyMs": 228,
+          "text": "强哥 回来了，点 👥 领取"
+        },
+        "claimAllAfter": "一键领取 +1.24万",
+        "claimed": 1,
+        "toasts": [],
+        "flashes": [
+          "一键领取 1 个任务 +1.24万"
+        ],
+        "duplicateFeedback": false,
+        "colleaguesAfter": {
+          "zhou": {
+            "level": 3,
+            "missionId": "stroll",
+            "endsAt": 1795771941319,
+            "favor": 40,
+            "autoRepeat": true
+          },
+          "mei": {
+            "level": 2,
+            "missionId": null,
+            "endsAt": 0,
+            "favor": 22,
+            "autoRepeat": false
+          },
+          "qiang": {
+            "level": 1,
+            "missionId": null,
+            "endsAt": 0,
+            "favor": 2,
+            "autoRepeat": false
+          }
+        }
+      }
+    }
+  },
+  "errors": []
+}

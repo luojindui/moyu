@@ -1,9 +1,20 @@
 {
-  "startedAt": "2026-11-27T09:14:32.238Z",
+  "startedAt": "2026-11-27T09:26:32.531Z",
   "scenarios": {
     "T1": {
       "rates": {
         "60ms": {
+          "success": 4,
+          "trials": 5,
+          "details": [
+            "ok",
+            "ok",
+            "no-btn",
+            "ok",
+            "ok"
+          ]
+        },
+        "90ms": {
           "success": 5,
           "trials": 5,
           "details": [
@@ -14,58 +25,47 @@
             "ok"
           ]
         },
-        "90ms": {
-          "success": 3,
-          "trials": 5,
-          "details": [
-            "idle",
-            "ok",
-            "ok",
-            "idle",
-            "ok"
-          ]
-        },
         "120ms": {
-          "success": 2,
+          "success": 4,
           "trials": 5,
           "details": [
-            "idle",
-            "idle",
             "ok",
-            "idle",
+            "ok",
+            "ok",
+            "no-btn",
             "ok"
           ]
         },
         "160ms": {
-          "success": 0,
+          "success": 5,
           "trials": 5,
           "details": [
-            "idle",
-            "idle",
-            "idle",
-            "idle",
-            "idle"
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok"
           ]
         },
         "220ms": {
-          "success": 0,
+          "success": 5,
           "trials": 5,
           "details": [
-            "idle",
-            "idle",
-            "idle",
-            "idle",
-            "idle"
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok"
           ]
         }
       },
       "domMutation": {
         "idle": {
-          "childList": 10,
+          "childList": 0,
           "charData": 0
         },
         "inProgress": {
-          "childList": 13,
+          "childList": 3,
           "charData": 0
         }
       }
@@ -76,7 +76,7 @@
         "disabled": true
       },
       "after": {
-        "text": "招募 1.20万",
+        "text": "攒够再招 1.20万",
         "disabled": false
       },
       "note": "余额够后按钮应可用；若文案仍为「攒够再招」= 标签陈旧"
@@ -86,7 +86,13 @@
       "endsAt": 0,
       "pageErrors": [],
       "zeroEnds": {
-        "endsAt": 1000,
+        "missionId": null,
+        "endsAt": 0,
+        "claimButton": null
+      },
+      "oldStart": {
+        "missionId": "quick",
+        "endsAt": 900001,
         "claimButton": "领取 +5000"
       }
     },
@@ -106,30 +112,32 @@
       "rankGranted": 12,
       "dailyGiftDate": "",
       "rewardSnapshot": 1000000000000000000,
+      "overflow": 30,
       "note": "期望：互斥各留一个、去重、点数封顶 24、rank<=12、日期置空、快照<=1e18"
     },
     "T6": {
       "missionId": "quick",
       "endsAtInFuture": true,
       "favor": 2,
-      "moyu": 1053.3442579401453,
-      "domToast": "老周 回来了，点 👥 领取",
+      "moyu": 1052.7334696079988,
+      "domToast": "",
       "note": "自动续班后 missionId 应仍为 quick、endsAt 未来、好感+2、余额≥1000；toast 若提示「回来了，点领取」但与自动领取矛盾=文案误导"
     },
     "T7": {
       "idleBefore": "1.42万",
-      "quickButtonText": "溜一圈\n13m · +16.71万 · 净 +78.63万/h",
+      "quickButtonText": "溜一圈\n13m · +16.71万 · 净 +58.11万/h",
       "idleAway": "1.41万",
       "idleDone": "1.42万",
-      "note": "按钮「净 +X/h」未扣自身离岗损失；派遣中 HUD 挂机率下降，完成后恢复"
+      "note": "按钮「净 +X/h」已按该同事本人离岗损失扣减（与引擎 X4b 一致）；派遣中 HUD 挂机率下降，完成后恢复"
     },
     "T8": {
       "ultInfo": {
         "name": "指尖风暴（终极·3点）",
         "btn": "点亮 3",
         "disabled": false,
-        "footer": "点击转化：0/10500 次（当前 +0%）\n安然转化：0/30 次（当前 +0%）\n天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1；每日首开 +1（上限 24，满树需 27 点 → 必须放弃一条流派）",
-        "points": "天赋点 3"
+        "footer": "点击转化：0/10500 次（当前 +0%）\n安然转化：0/30 次（当前 +0%）\n溢出转化：10/30 点（当前 +5.0% 挂机，封顶 +15%）\n天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1；每日首开 +1（上限 24，满树需 27 点 → 终局必须放弃一条流派）",
+        "points": "天赋点 3",
+        "overflowLine": "溢出转化：10/30 点（当前 +5.0% 挂机，封顶 +15%）"
       },
       "pointsBefore": 3,
       "pointsAfter": 0,
@@ -145,10 +153,10 @@
     "T9": {
       "pointsAfterClamp": 24,
       "claimButtonText": "领取 +5000",
-      "claimDelta": 5005.048379840005,
+      "claimDelta": 5005.052420160005,
       "expectedSnapshot": 5000,
-      "idleAccrual": 5.0483798400046
+      "idleAccrual": 5.052420160004658
     }
   },
-  "finishedAt": "2026-11-27T09:15:23.948Z"
+  "finishedAt": "2026-11-27T09:27:37.118Z"
 }

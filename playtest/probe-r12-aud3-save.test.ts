@@ -58,7 +58,7 @@ describe("Z1. 存档净化（P1-2/P2-4 复验）", () => {
     console.log("[Z1b] 1e300 endsAt 已被钳制到", c.endsAt);
   });
 
-  it("Z1c 【残留】startedAt=0/endsAt=0 的篡改档仍会被钳成「已完成」→ 可白领快照（上限 1e18）", () => {
+  it("Z1c endsAt=0 白领已修：任务被清空，领取返回 null", () => {
     const a = memoryAdapter({
       [SAVE_KEY]: blob({
         moyu: 1000,
@@ -67,12 +67,26 @@ describe("Z1. 存档净化（P1-2/P2-4 复验）", () => {
       }),
     });
     const s = restore(a, NOW).state!;
+    expect(s.team.colleagues["zhou"]!.missionId).toBeNull();
+    expect(claimMission(s, "zhou", NOW, 100)).toBeNull();
+    console.log("[Z1c] endsAt=0 → 任务已清空，不能白领 ✓");
+  });
+
+  it("Z1d 变体：startedAt=1、endsAt=+15min 的篡改档是否仍可白领", () => {
+    const a = memoryAdapter({
+      [SAVE_KEY]: blob({
+        moyu: 1000,
+        totalEarned: 1000,
+        team: { colleagues: { zhou: { level: 1, missionId: "quick", startedAt: 1, endsAt: 1 + 900_000, autoRepeat: false, rewardSnapshot: 5000 } } },
+      }),
+    });
+    const s = restore(a, NOW).state!;
     const c = s.team.colleagues["zhou"]!;
-    expect(c.endsAt).toBe(1000); // max(startedAt+1s, 0)
-    expect(missionDone(s, "zhou", NOW)).toBe(true);
     const claim = claimMission(s, "zhou", NOW, 100);
-    console.log("[Z1c] 篡改档白领：", claim?.reward);
-    expect(claim?.reward).toBe(5000); // 上限被 1e18 压住，但「未派遣也能领」仍成立
+    console.log("[Z1d] startedAt=1 → missionId=", c.missionId, " endsAt=", c.endsAt, " claim=", claim?.reward);
+    // 记录当前行为：只校验 startedAt>0 与 ≤now+60s，未设「最早不得早于 now-9h」→ 极旧 startedAt 仍被视为合法已完成
+    expect(c.missionId).toBe("quick");
+    expect(claim?.reward).toBe(5000);
   });
 
   it("Z2 天赋净化：去重 + 互斥只留一个 + 点数/rankGranted/dailyGiftDate 钳制 + 快照上限", () => {
@@ -157,7 +171,7 @@ describe("Z2. 未来版本备份（P1-3 复验）", () => {
     let s = withColleagues(withLevels(rich(1e6), { retire: 3 }), ["zhou"], 2);
     s = {
       ...s,
-      team: { colleagues: { zhou: { ...s.team.colleagues["zhou"]!, missionId: "quick", autoRepeat: true, rewardSnapshot: 777 } } },
+      team: { colleagues: { zhou: { ...s.team.colleagues["zhou"]!, missionId: "quick", startedAt: T0 - 60_000, endsAt: T0 + 60_000, autoRepeat: true, rewardSnapshot: 777 } } },
       talents: { unlocked: ["click_1"], points: 5, rankGranted: 2, dailyGiftDate: "2026-11-27" },
     };
     const a = memoryAdapter();

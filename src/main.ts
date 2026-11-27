@@ -559,7 +559,8 @@ async function boot(): Promise<void> {
           if (c2?.autoRepeat) continue; // 已自动领取的不再提示
           if (!lastDoneMissions.has(cid)) {
             const name = colleagueDef(cid)?.name ?? "";
-            showToast(`${name} 回来了，点 👥 领取`);
+            if (teamPanel.isOpen) teamPanel.flash(`${name} 回来了，可领取`);
+            else showToast(`${name} 回来了，点 👥 领取`);
             playSuccess();
             break; // 一次只提示一条，避免刷屏
           }

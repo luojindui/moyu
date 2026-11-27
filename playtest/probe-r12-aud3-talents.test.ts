@@ -157,13 +157,15 @@ describe("Y3. 溢出天赋点（485191e 新机制）", () => {
     expect(effectOf(withOverflow).idleRate).toBeCloseTo(stationIdleScaled(withOverflow) + raw * teamShareRatio(withOverflow) + teamFixedRate(withOverflow), 6);
   });
 
-  it("Y9 【可用性缺陷】溢出点/加成在 UI（天赋面板/角标/main 提示）完全没有显示", () => {
+  it("Y9 溢出点已有 UI：天赋面板显示「溢出转化：N/30 点（当前 +X% 挂机）」", () => {
     const panel = readFileSync("src/ui/team-panel.ts", "utf8");
-    const main = readFileSync("src/main.ts", "utf8");
-    expect(panel.includes("overflow") || panel.includes("溢出")).toBe(false);
-    expect(main.includes("overflow") || main.includes("溢出")).toBe(false);
-    console.log("[Y9] overflow 机制无任何 UI 展示/提示（玩家无法知道溢出点带来的 +X% 挂机）");
+    expect(panel).toContain("溢出转化：");
+    expect(panel).toContain("state.talents.overflow ?? 0");
+    // 0 点引导条件包含 overflow（有溢出时不显示"还没有天赋点"）
+    expect(panel).toContain("(state.talents.overflow ?? 0) === 0");
+    console.log("[Y9] 溢出转化 UI 已接入（指数/当前百分比）");
   });
+
 
   it("Y10 idle 终极已加强：5a +20%、5b 同事 +70%", () => {
     expect(TALENTS.find((t) => t.id === "idle_5a")!.value).toBe(0.2);

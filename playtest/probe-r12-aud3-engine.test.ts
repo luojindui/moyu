@@ -66,7 +66,7 @@ describe("X2. share 已改为「未放大工位」基数（P2-2 复验）", () =
     const share1 = raw0 * teamShareRatio(t);
     console.log("[X2] share(无天赋)=", share0.toFixed(1), " share(有 idle_1)=", share1.toFixed(1), " 比值=", (share1 / share0).toFixed(4));
     expect(share1 / share0).toBeCloseTo(1, 10); // 不再被 idleMult 放大
-    expect(stationIdleScaled(t) / stationIdleScaled(base)).toBeCloseTo(1.06, 6); // 工位本身仍吃天赋
+    expect(stationIdleScaled(t) / stationIdleScaled(base)).toBeCloseTo(1.04, 6); // 工位本身仍吃天赋（idle_1 最终值 +4%）
     // effectOf 拆解：teamShare 用 rawStation
     const idle = effectOf(t).idleRate;
     const fixed = teamFixedRate(t) * 1 * favorBonuses(t).idleMult * 1;
@@ -132,22 +132,26 @@ describe("X4. 派遣公式（含同事贡献 ×2）与净收益展示", () => {
     expect(d.team.colleagues["zhou"]!.rewardSnapshot).toBe(expected);
   });
 
-  it("X4b 【展示偏差】面板「净 +X/h」未扣除该同事派遣后的离岗损失（预览按在家状态算）", () => {
+  it("X4b 净收益预览=毛收益/h−该同事本人离岗损失（与实派后一致，误差<2%）", () => {
     const s = withColleagues(withLevels(rich(), { retire: 10 }), ["zhou"], 5);
     const st = stationIdleScaled(s);
     const m = MISSIONS.find((x) => x.id === "quick")!;
     const snapshot = dispatch(s, "zhou", "quick", 0, st)!.team.colleagues["zhou"]!.rewardSnapshot;
     const perHour = snapshot / (m.seconds / 3600);
-    // 面板 lostPerHour = (idleIfHome - effectOf(state))*3600；在家状态 → 0
-    const lostPreview = Math.max(0, idleIfHome(s) - effectOf(s).idleRate) * 3600;
-    const netPreview = perHour - lostPreview;
+    // 面板公式（team-panel.ts:319）
+    const def = COLLEAGUES.find((c) => c.id === "zhou")!;
+    const cur = s.team.colleagues["zhou"]!;
+    const mult = 1; // prestige 0
+    const colIdlePerSec = (def.idlePerLevel * cur.level * mult + st * def.sharePerLevel * cur.level) * 0.15;
+    const netPreview = perHour - colIdlePerSec * 3600;
+    // 实派后真实净收益
     const d = dispatch(s, "zhou", "quick", Date.now(), st)!;
-    const lostActual = Math.max(0, idleIfHome(s) - effectOf(d).idleRate) * 3600;
-    const netActual = perHour - lostActual;
-    console.log("[X4b] 预览展示净=", Math.round(netPreview), "/h 实际净=", Math.round(netActual), "/h 差额=", Math.round(netPreview - netActual));
-    expect(lostPreview).toBe(0);
-    expect(netPreview - netActual).toBeGreaterThan(0); // 预览高估了净收益（未扣自己离岗损失）
+    const lossActual = Math.max(0, idleIfHome(s) - effectOf(d).idleRate) * 3600;
+    const netActual = perHour - lossActual;
+    console.log("[X4b] 预览净=", Math.round(netPreview), "/h 实际净=", Math.round(netActual), "/h 偏差=", (Math.abs(netPreview - netActual) / netActual * 100).toFixed(2), "%");
+    expect(Math.abs(netPreview - netActual) / netActual).toBeLessThan(0.02);
   });
+
 });
 
 describe("X5. 自动排班 autoRepeat / 领取快照", () => {
@@ -181,36 +185,35 @@ describe("X5. 自动排班 autoRepeat / 领取快照", () => {
 });
 
 describe("X6. 文档与代码一致性（附录 v2 数值）", () => {
-  it("X6 文档附录与代码一致性：多数一致，但「上限」仍写 27（代码已改 24）、event_5b 额外效果未写", () => {
+  it("X6 文档附录与代码一致性：上限 24 / 溢出 / event_5b +10s 已同步", () => {
     const doc = readFileSync("docs/spec-batch1.md", "utf8");
     expect(doc).toContain("v2 实际生效数值");
     for (const v of ["12,000", "500,000", "8,000,000", "60,000,000", "400,000,000"]) expect(doc).toContain(v);
     expect(doc).toContain("AWAY_IDLE_FACTOR = 0.85");
-    expect(doc).toContain("每日首次打开 +1");
-    expect(doc).toContain("就近溜达");
-    // 【不一致】文档仍写「全树 27 点 / 上限 27」，代码已把上限改为 24
-    expect(doc).toContain("全树 27 点");
-    expect(doc).toContain("上限 27");
+    expect(doc).toContain("上限 24");
+    expect(doc).toContain("溢出转化");
+    expect(doc).toContain("每次安然额外 10 秒挂机收益");
+    expect(doc).toContain("idle 5a「挂机+20%」vs 5b「同事挂机+70%」");
+    // idle 线性最终值 +4%，与附录一致
     const talents = readFileSync("src/engine/talents.ts", "utf8");
-    expect(talents).toContain("TALENT_POINT_CAP = 24");
-    const docs = readFileSync("docs/spec-batch1.md", "utf8");
-    expect(docs.includes("溢出") || docs.includes("overflow")).toBe(false);
-    console.log("[X6] 文档「上限 27」≠ 代码「上限 24 + overflow」；溢出机制、event_5b 的 +10s 均未写入文档");
+    expect(talents).toContain('{ id: "idle_1", branch: "idle", tier: 1, name: "稳", desc: "挂机收益 +4%", value: 0.04 }');
+    expect(doc).toContain("idle 线性 t1/t3 各 +4%");
+    console.log("[X6] 文档附录与代码一致（上限 24/溢出/+10s/idle 终极/idle 线性 4%）✓");
   });
+
 
 });
 
 
-describe("X7. P1-1 复归：主循环是否仍在强刷面板", () => {
-  it("X7 【缺陷·复归】150ms HUD 循环末尾仍调用 teamPanel.refreshNow() → 面板打开时每 150ms 全量重建", () => {
+describe("X7. P1-1 复验：主循环不再强刷面板", () => {
+  it("X7 150ms HUD 循环末尾改为 teamPanel.refresh()；refreshNow 仅保留 8 处 action 回调", () => {
     const main = readFileSync("src/main.ts", "utf8");
     const hudIdx = main.indexOf("hud.refresh(state, combo);");
     expect(hudIdx).toBeGreaterThan(0);
     const seg = main.slice(hudIdx, hudIdx + 300);
     console.log("[X7] HUD 循环末尾片段:", seg.replace(/\n/g, " | ").slice(0, 160));
-    expect(seg).toContain("teamPanel.refreshNow(state);");
-    expect((main.match(/teamPanel\.refreshNow\(state\);/g) ?? []).length).toBe(9);
-    // bcb2a7b 只删了 4 处 refreshNow（每日/段位/endMissions/grant），主 HUD 这一处漏改
-    expect((main.match(/teamPanel\.refresh\(state\);/g) ?? []).length).toBe(5);
+    expect(seg).toContain("teamPanel.refresh(state);");
+    expect(seg).not.toContain("teamPanel.refreshNow(state);");
+    expect((main.match(/teamPanel\.refreshNow\(state\);/g) ?? []).length).toBe(8);
   });
 });
