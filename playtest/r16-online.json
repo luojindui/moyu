@@ -1,0 +1,103 @@
+{
+  "section": "online",
+  "url": "https://luojindui.github.io/moyu/",
+  "ts": 1795785811917,
+  "hooks": "undefined",
+  "build": "https://luojindui.github.io/moyu/assets/index-CfnizZUg.js",
+  "title": "摸鱼工位",
+  "version": null,
+  "updates": "0.5.0",
+  "fps": {
+    "frames": 120,
+    "avgFrameMs": 16.67,
+    "fps": 60
+  },
+  "audioCtx": {
+    "sr": 48000,
+    "baseLatency": 0.005333333333333333,
+    "outputLatency": 0,
+    "state": "suspended",
+    "t": 1201.5
+  },
+  "sw": 1,
+  "assets": [
+    {
+      "n": "computer.png",
+      "ok": true
+    },
+    {
+      "n": "watercooler.png",
+      "ok": true
+    },
+    {
+      "n": "worker-0.png",
+      "ok": true
+    },
+    {
+      "n": "worker-3.png",
+      "ok": true
+    },
+    {
+      "n": "worker-2.png",
+      "ok": true
+    },
+    {
+      "n": "worker-1.png",
+      "ok": true
+    }
+  ],
+  "audioBtn": "🔊",
+  "updateBar": false,
+  "click": {
+    "cap": {
+      "t": 73.6,
+      "pt": "touch"
+    },
+    "handlerMs": 11,
+    "audio": [
+      {
+        "freq": 330,
+        "dt": 83.9
+      }
+    ],
+    "hudMoyu": "1.8",
+    "hudCombo": ""
+  },
+  "arcadeMenu": {
+    "left": "今天还能玩 3/3 次 · 每局能赢摸鱼值",
+    "cards": [
+      "接咖啡 最高 0",
+      "找老板 最高 0",
+      "节奏点击 最高 0"
+    ],
+    "buttons": [
+      "开始（30 秒）",
+      "开始（30 秒内无限轮）",
+      "开始（30 秒）"
+    ]
+  },
+  "rhythmNoTapAudio": {
+    "count": 0,
+    "freqs": [],
+    "judge": "MISS",
+    "beats": 59,
+    "beatsMissed": 4
+  },
+  "rhythmJudges": [
+    "GOOD|judge-text good",
+    "GOOD|judge-text good",
+    "MISS|judge-text miss",
+    "MISS|judge-text miss"
+  ],
+  "rhythmAudioAfterTaps": {
+    "count": 4,
+    "freqs": [
+      406,
+      609,
+      406,
+      609
+    ]
+  },
+  "rhythmTimer": "25.8s",
+  "errors": []
+}

@@ -683,7 +683,7 @@ await runChrome(async ({ port }) => {
     r.expect("K7a 超上限等级被丢弃 / 负数丢弃", sX.levels.coffee === undefined && sX.levels.phone === undefined, JSON.stringify(sX.levels));
     r.expect("K7b 未知升级键应被丢弃（数据卫生）", sX.levels.hack === undefined, `实际保留 ${JSON.stringify(sX.levels)}`);
     r.expect("K8 家具只留合法 id", JSON.stringify(sX.decor) === JSON.stringify(["plant"]), JSON.stringify(sX.decor));
-    r.expect("K9 精力被推导钳制", sX.energy.left === 0 && sX.energy.used.length === 2 && sX.energy.boosted.idleMult <= 1.25 * 1.05 + 1e-9, JSON.stringify(sX.energy));
+    r.expect("K9 精力被推导钳制（focus×2/1.08 + slack 1.25 → 挂机 1.35、点击 2）", sX.energy.left === 0 && sX.energy.used.length === 2 && Math.abs(sX.energy.boosted.clickMult - 2) < 1e-9 && Math.abs(sX.energy.boosted.idleMult - 1.25 * 1.08) < 1e-9, JSON.stringify(sX.energy));
     r.expect("K10 小游戏次数钳制", sX.arcade.played === 3 && (sX.arcade.best.coffee === undefined || sX.arcade.best.coffee <= 8000), JSON.stringify(sX.arcade));
     r.expect("K11 未知同事丢弃 / 合法任务保留", sX.team.colleagues.zhang === undefined && !!sX.team.colleagues.zhou, JSON.stringify(Object.keys(sX.team.colleagues)));
     r.expect("K12 等级/任务时间被钳制", sX.team.colleagues.zhou?.level === 5 && (sX.team.colleagues.zhou?.missionId === null || sX.team.colleagues.zhou?.endsAt - sX.team.colleagues.zhou?.startedAt <= 9 * 3600 * 1000), JSON.stringify(sX.team.colleagues.zhou));

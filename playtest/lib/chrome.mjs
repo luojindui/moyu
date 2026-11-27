@@ -1,6 +1,6 @@
 // 统一的 headless Chrome 封装：无论成功/超时/异常都保证杀掉进程，避免留下孤儿进程。
 // 用法： await runChrome(async ({ port }) => { const c = await connect(port); ... });
-import { spawn } from "node:child_process";
+import { spawn, execSync } from "node:child_process";
 import { rmSync } from "node:fs";
 
 const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
@@ -27,7 +27,20 @@ export async function runChrome(fn, { timeoutMs = 60_000, port } = {}) {
     if (cleaned) return;
     cleaned = true;
     try { proc.kill("SIGKILL"); } catch { /* ignore */ }
-    try { rmSync(userDir, { recursive: true, force: true }); } catch { /* ignore */ }
+    // Chrome 会 fork 出多个渲染/GPU 子进程：只 kill 直接子进程会留下孤儿（曾导致 218 个孤儿进程）
+    // 用 user-data-dir 作为唯一指纹，杀干净所有同实例进程
+    try {
+      execSync(`pkill -9 -f "user-data-dir=${userDir}" 2>/dev/null || true`, { stdio: "ignore" });
+    } catch { /* ignore */ }
+    // 删除临时 profile 目录（Chrome 被 kill 后才会释放文件句柄）
+    for (let i = 0; i < 3; i++) {
+      try {
+        rmSync(userDir, { recursive: true, force: true });
+        break;
+      } catch {
+        execSync("sleep 0.2", { stdio: "ignore" });
+      }
+    }
   };
 
   const watchdog = setTimeout(() => {

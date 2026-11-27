@@ -13,6 +13,7 @@ export class Welcome {
     rate: number,
     onOk: () => void,
     settledSeconds?: number,
+    capHours = 12,
   ): void {
     // 显示真实离开时长；被封顶时标注实际结算时长
     this.elTime.textContent = this.describe(realSeconds);
@@ -21,7 +22,7 @@ export class Welcome {
     const capped = settledSeconds !== undefined && settledSeconds < realSeconds - 1;
     this.elRule.textContent = capped
       ? `${rateText}｜超过上限，已按上限结算 ${this.describe(settledSeconds!)}`
-      : `${rateText}｜8 小时封顶`;
+      : `${rateText}｜${capHours} 小时封顶`;
     this.root.classList.remove("hidden");
     document.getElementById("welcome-ok")!.onclick = () => {
       this.root.classList.add("hidden");

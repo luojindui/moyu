@@ -1,6 +1,6 @@
 import type { GameState } from "../engine/state";
 import { formatMoyu } from "../engine/format";
-import { stationIdleScaled } from "../engine/upgrades";
+import { collectionBonus, stationIdleOf, stationIdleScaled, teamIdleBreakdown } from "../engine/upgrades";
 import { DECOR, canBuyDecor, decorCount, decorEffects } from "../engine/decor";
 import { ENERGY_ACTIONS, ENERGY_PER_DAY } from "../engine/energy";
 import { prestigeMultiplier } from "../engine/prestige";
@@ -15,8 +15,8 @@ import {
   dispatchReward,
   missionDone,
   missionSecondsFor,
-  teamFixedRate,
-  teamShareRatio,
+  AWAY_IDLE_FACTOR,
+  favorBonuses,
   teamSize,
   upgradeCostOf,
 } from "../engine/team";
@@ -324,12 +324,16 @@ export class TeamPanel {
     const station = stationIdleScaled(state);
     const claimable = claimableTotal(state, nowMs, station);
     const size = teamSize(state);
-    const mult = prestigeMultiplier(state.prestige);
+    // 与引擎 effectOf 同口径：固定挂机吃 转生×图鉴×好感×teamIdleMult；share 以未放大工位为基数
+    const mult = prestigeMultiplier(state.prestige) * collectionBonus(state);
+    const talent = talentEffects(state.talents);
+    const favorIdle = favorBonuses(state).idleMult;
+    const rawStation = stationIdleOf(state) * mult;
     const parts: string[] = [];
 
     // 顶部汇总 + 一键领取
     parts.push(`<div class="team-summary">
-      <span>已招募 ${size}/5 · 小队挂机 +${formatMoyu(Math.round(teamFixedRate(state) + station * teamShareRatio(state)))}/秒</span>
+      <span>已招募 ${size}/5 · 小队挂机 +${formatMoyu(Math.round(teamIdleBreakdown(state).total))}/秒</span>
       ${claimable > 0 ? `<button data-act="claim-all">一键领取 +${formatMoyu(claimable)}</button>` : ""}
       <span style="width:100%;font-size:10px;color:#8f9fd0">自动重复：完成后自动领取并续班（离线回来最多补 1 轮）</span>
     </div>`);
@@ -421,7 +425,12 @@ export class TeamPanel {
         actionHtml = `<div class="mate-missions">${btns}</div>`;
       }
 
-      const idlePart = Math.round(def.idlePerLevel * cur.level * mult);
+      const away = cur.missionId !== null && Date.now() < cur.endsAt;
+      const awayFactor = away ? AWAY_IDLE_FACTOR : 1;
+      const idlePart = Math.round(
+        def.idlePerLevel * cur.level * awayFactor * mult * favorIdle * talent.teamIdleMult +
+          rawStation * def.sharePerLevel * cur.level * awayFactor * talent.teamIdleMult,
+      );
       parts.push(`<div class="mate">
         <div class="mate-top">
           <span class="mate-name">${def.name} <span class="mate-lv">Lv.${cur.level}</span></span>

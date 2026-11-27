@@ -143,11 +143,14 @@ export class Arcade {
         const tapAt = (performance.now() - startAt) / 1000;
         const tapX = (e.clientX - rect.left) / rect.width;
         const { hit } = judgeCatch(drops, tapAt, tapX);
-        if (hit && !resolved.has(hit.id)) {
+        // 落地（已过杯口 0.12s）后不可再接：视觉变暗=判定失效，避免"变暗了还能接"
+        const catchable = hit && tapAt <= hit.at + 0.12;
+        if (catchable && !resolved.has(hit.id)) {
           resolved.add(hit.id);
           caught++;
           combo++;
           maxCombo = Math.max(maxCombo, combo);
+          playClick(combo % 3 === 0 ? 4 : 2); // 接住音（连击越高越亮）
           const el = els.get(hit.id);
           if (el) {
             el.classList.add("caught");
@@ -167,6 +170,8 @@ export class Arcade {
         for (const d of drops) {
           const dt = d.at - elapsed;
           if (dt > DROP_SECONDS) continue; // 还没出现
+          // 已结算（接住/漏接）的掉落不再创建/更新 DOM，只等移除（此前每帧重建 ~27 次/帧）
+          if (resolved.has(d.id) && !els.has(d.id)) continue;
           let el = els.get(d.id);
           if (!el) {
             el = document.createElement("div");
@@ -187,6 +192,7 @@ export class Arcade {
               resolved.add(d.id);
               missed++;
               combo = 0;
+              playClick(0.5); // 漏接低音
               setTimeout(() => el!.remove(), 200);
             }
           }
@@ -235,8 +241,13 @@ export class Arcade {
           b.addEventListener("click", () => {
             if (idx === undefined) return;
             const ok = Number(b.dataset.i) === bossAt;
-            if (ok) correct++;
-            else wrong++;
+            if (ok) {
+              correct++;
+              playSuccess();
+            } else {
+              wrong++;
+              playClick(0.5);
+            }
             idx++;
             bossAt = genRound();
             renderRound();
@@ -299,9 +310,10 @@ export class Arcade {
           judgeEl.className = `judge-text ${res.kind}`;
         }
       } else {
-        // 晚按合并：若最近 0.22s 内有一个"刚被判漏拍"的节拍，视为同一次 MISS（不再额外扣分）
-        const nearMissed = beats.some((b, i) => usedBeats.has(i) && Math.abs(tapAt - b) <= 0.24);
-        if (!nearMissed) score = Math.max(0, score - 5);
+        // 晚按合并：只要落点距某个节拍 ≤0.28s（含已被判漏拍的），都视为"这次拍的 MISS"，
+        // 不再额外 -5。否则会出现"差一点 -15、完全不点只 -10"的反直觉惩罚。
+        const nearBeat = beats.some((b) => Math.abs(tapAt - b) <= 0.28);
+        if (!nearBeat) score = Math.max(0, score - 5);
         if (judgeEl) {
           judgeEl.textContent = "MISS";
           judgeEl.className = "judge-text miss";
@@ -323,6 +335,7 @@ export class Arcade {
           usedBeats.add(i);
           missedBeats++;
           score = Math.max(0, score - 10);
+          scoreEl.textContent = String(score); // 之前漏了这行：漏拍扣分不显示（假反馈）
           el.className = "beat missed";
           const judgeEl = document.getElementById("judge-text");
           if (judgeEl) {

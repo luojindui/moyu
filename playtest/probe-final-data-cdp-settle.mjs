@@ -140,13 +140,14 @@ const run = async () => {
         const t0 = performance.now();
         // 若需要二次确认（价格 >= 余额 50%？余额 1e12 不会触发），点一次即可
         card.click();
+        const moyuImmediate = window.__MOYU__.state.moyu;
         await new Promise((r) => setTimeout(r, 200));
         const elapsed = (performance.now() - t0) / 1000;
         const S1 = window.__MOYU__.state;
         const idle1 = U0.effectOf(S1).idleRate;
         return {
           price, priceText, shownDisplay, lv0: lv,
-          moyu0, moyu1: S1.moyu, delta: S1.moyu - moyu0,
+          moyu0, moyu1: S1.moyu, delta: S1.moyu - moyu0, immediateDelta: moyuImmediate - moyu0,
           idle0, idle1, elapsed,
           lv1: S1.levels.retire ?? 0,
           cardAfter: document.querySelector('.shop-card[data-upgrade="retire"] .shop-cost b').textContent,
@@ -157,14 +158,13 @@ const run = async () => {
       })()`);
       report.scenarios.buy = buy;
       report.checks.push({ panel: "商店购买", item: "卡片显示价格 = costOf", shown: buy.priceText, expected: (buy.price / 1e4).toFixed(2) + "万", engine: { price: buy.price }, ok: true });
-      const buyIdleAccrued = buy.elapsed * (buy.idle0 + buy.idle1) / 2;
       report.checks.push({
         panel: "商店购买",
-        item: "扣款 = 显示价格（扣除购买期间挂机增量）",
-        shown: Math.round(-buy.delta - buyIdleAccrued),
+        item: "扣款 = 显示价格（购买瞬间读数，不扣挂机增量）",
+        shown: -buy.immediateDelta,
         expected: buy.price,
-        engine: { rawDelta: buy.delta, idleAccrued: buyIdleAccrued, elapsed: buy.elapsed },
-        ok: Math.abs(-buy.delta - buyIdleAccrued - buy.price) <= Math.max(2, buy.price * 1e-3),
+        engine: { rawDelta: buy.delta, immediateDelta: buy.immediateDelta },
+        ok: Math.abs(-buy.immediateDelta - buy.price) <= Math.max(1, buy.price * 1e-6),
       });
       report.checks.push({ panel: "商店购买", item: "等级 +1 且卡片刷新为下一价", shown: `${buy.shownDisplay}→${buy.levelAfter} / ${buy.cardAfter}`, expected: `Lv.${buy.lv0}→Lv.${buy.lv0 + 1} / ${(buy.levelNext / 1e4).toFixed(2)}万`, ok: buy.lv1 === buy.lv0 + 1 && buy.cardAfter === (buy.levelNext / 1e4).toFixed(2) + "万" });
 
@@ -185,6 +185,9 @@ const run = async () => {
         const btnText = btn.textContent.trim();
         const info = document.getElementById('prestige-info').textContent.trim();
         btn.click();
+        const S1Immediate = window.__MOYU__.state;
+        const statsImmediate = [...document.querySelectorAll('#stats-list .stat-row')].map((x) => x.textContent.replace(/\\s+/g, ' ').trim());
+        const hudImmediate = document.getElementById('hud-moyu').textContent;
         await new Promise((r) => setTimeout(r, 500));
         const S1 = window.__MOYU__.state;
         const statsText = [...document.querySelectorAll('#stats-list .stat-row')].map((x) => x.textContent.replace(/\\s+/g, ' ').trim());
@@ -194,6 +197,8 @@ const run = async () => {
         return {
           gain, expectMult, expectLevels, btnText, info,
           before: { prestige: S0.prestige, levels: S0.levels, moyu: S0.moyu, total: S0.totalEarned, lifetime: lifetime0, talents: talents0, decor: decor0, collected: collected0 },
+          afterImmediate: { prestige: S1Immediate.prestige, moyu: S1Immediate.moyu, total: S1Immediate.totalEarned, lifetime: S1Immediate.lifetimeEarned, talents: S1Immediate.talents.points, levels: S1Immediate.levels },
+          statsImmediate, hudImmediate,
           after: { prestige: S1.prestige, levels: S1.levels, moyu: S1.moyu, total: S1.totalEarned, lifetime: S1.lifetimeEarned, talents: S1.talents.points, decor: S1.decor.length, collected: S1.collected.quotes.length + S1.collected.flavors.length, team: Object.keys(S1.team.colleagues).length, surviveStreak: S1.surviveStreak },
           hudMoyu, statsText, btnAfter,
         };
@@ -201,13 +206,12 @@ const run = async () => {
       report.scenarios.prestige = prestige;
       report.checks.push({ panel: "转生结算", item: "按钮文案 +N 点（永久 ×M）", shown: prestige.btnText, expected: `离职再就业：+${prestige.gain} 点（永久 ×${prestige.expectMult.toFixed(2)}）`, ok: String(prestige.btnText).includes(`+${prestige.gain} 点（永久 ×${prestige.expectMult.toFixed(2)}）`) });
       report.checks.push({ panel: "转生结算", item: "点数累加", shown: `${prestige.before.prestige}→${prestige.after.prestige}`, expected: `${prestige.before.prestige}→${prestige.before.prestige + prestige.gain}`, ok: prestige.after.prestige === prestige.before.prestige + prestige.gain });
-      report.checks.push({ panel: "转生结算", item: "余额/本局累计归零（允许结算后 0.5s 挂机增量，<1e6）", shown: `${Math.round(prestige.after.moyu)}/${Math.round(prestige.after.total)}`, expected: "<1e6（转生前本局 5e12）", ok: prestige.after.moyu < 1e6 && prestige.after.total < 1e6 });
-      report.checks.push({ panel: "转生结算", item: "统计面板「本局 / 往期」= 0 / 保留生涯", shown: prestige.statsText.find((x) => x.includes("本局")) || "", expected: "本局 / 往期 0 / 50000.13亿（按 formatMoyu）", ok: (prestige.statsText.find((x) => x.includes("本局")) || "").includes("本局 / 往期0 / 50000.13亿") });
+      report.checks.push({ panel: "转生结算", item: "余额/本局累计归零（点击瞬间读数）", shown: `${prestige.afterImmediate.moyu}/${prestige.afterImmediate.total}`, expected: "0/0", ok: prestige.afterImmediate.moyu === 0 && prestige.afterImmediate.total === 0 });
+      report.checks.push({ panel: "转生结算", item: "统计面板「本局 / 往期」= 0 / 保留生涯", shown: prestige.statsImmediate.find((x) => x.includes("本局")) || "", expected: "本局 / 往期0 / 50000.13亿（按 formatMoyu）", ok: (prestige.statsImmediate.find((x) => x.includes("本局")) || "").includes("本局 / 往期0 / 50000.13亿") });
       report.checks.push({ panel: "转生结算", item: "下次转生门槛随倍率涨（需 1e8×22=22 亿）", shown: prestige.btnAfter, expected: "需 22.00亿", ok: prestige.btnAfter.includes("需 22.00亿") });
       report.checks.push({ panel: "转生结算", item: "等级保留 80%（floor）", shown: JSON.stringify(prestige.after.levels), expected: JSON.stringify(prestige.expectLevels), ok: JSON.stringify(prestige.after.levels) === JSON.stringify(prestige.expectLevels) });
       report.checks.push({ panel: "转生结算", item: "保留生涯/图鉴/家具/小队/天赋点+1", shown: `${prestige.after.lifetime}|${prestige.after.collected}|${prestige.after.decor}|${prestige.after.team}|${prestige.after.talents}`, expected: `>=${prestige.before.lifetime}|${prestige.before.collected}|${prestige.before.decor}|5|${prestige.before.talents + 1}`, ok: prestige.after.lifetime >= prestige.before.lifetime && prestige.after.collected === prestige.before.collected && prestige.after.decor === prestige.before.decor && prestige.after.team === 5 && prestige.after.talents === prestige.before.talents + 1 });
-      const hudNum = prestige.hudMoyu.includes("亿") ? parseFloat(prestige.hudMoyu) * 1e8 : prestige.hudMoyu.includes("万") ? parseFloat(prestige.hudMoyu) * 1e4 : parseFloat(prestige.hudMoyu);
-      report.checks.push({ panel: "转生结算", item: "HUD 余额≈0 + 连胜清零", shown: `${prestige.hudMoyu}|${prestige.after.surviveStreak}`, expected: "<1e6|0", ok: hudNum < 1e6 && prestige.after.surviveStreak === 0 });
+      report.checks.push({ panel: "转生结算", item: "HUD 立即显示余额 0 + 连胜清零", shown: `${prestige.hudImmediate}|${prestige.after.surviveStreak}`, expected: "0|0", ok: prestige.hudImmediate === "0" && prestige.after.surviveStreak === 0 });
     } catch (e) {
       report.scenarios.error = String(e && e.stack ? e.stack : e).slice(0, 1200);
     }

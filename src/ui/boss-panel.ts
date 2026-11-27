@@ -18,6 +18,7 @@ export class BossChoicePanel {
   /** 统一的作答入口（pointer/键盘/click 共用，保证只结算一次） */
   private pick(b: HTMLButtonElement, choice: BossChoice): void {
     if (!this.shown || this.picked) return;
+    if (performance.now() - this.shownAt < 150) return; // 防开局连点（所有路径统一）
     this.picked = true;
     b.classList.add("picked");
     this.onPick(choice);
@@ -67,7 +68,8 @@ export class BossChoicePanel {
         this.pick(b, b.dataset.choice as BossChoice);
       });
       b.addEventListener("click", () => {
-        // 兜底：某些辅助技术只触发 click
+        // 兜底：某些辅助技术只触发 click —— 同样要受防误触守卫约束
+        if (performance.now() - this.shownAt < 150) return;
         this.pick(b, b.dataset.choice as BossChoice);
       });
       b.addEventListener("pointerdown", (e) => {

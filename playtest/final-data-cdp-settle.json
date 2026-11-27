@@ -1,13 +1,329 @@
 {
-  "generatedAt": "2026-11-27T13:16:50.349Z",
-  "checks": [],
+  "generatedAt": "2026-11-27T13:20:42.795Z",
+  "checks": [
+    {
+      "panel": "派遣一键领取",
+      "item": "按钮金额 = 引擎 claimableTotal（快照和）",
+      "shown": "一键领取 +1234.57万",
+      "expected": "一键领取 +1234.57万",
+      "engine": {
+        "claimableTotal": 12345678,
+        "snapshots": [
+          {
+            "id": "zhou",
+            "snap": 12345678,
+            "mission": "chat"
+          },
+          {
+            "id": "mei",
+            "snap": 0,
+            "mission": null
+          },
+          {
+            "id": "qiang",
+            "snap": 0,
+            "mission": null
+          },
+          {
+            "id": "li",
+            "snap": 0,
+            "mission": null
+          },
+          {
+            "id": "wang",
+            "snap": 0,
+            "mission": null
+          }
+        ]
+      },
+      "ok": true
+    },
+    {
+      "panel": "派遣一键领取",
+      "item": "实际到账 = 快照和（扣除 0.12s 挂机增量）",
+      "shown": 12344992,
+      "expected": 12345678,
+      "engine": {
+        "delta": 12360495.659790039,
+        "idleAccrued": 15503.898188407533
+      },
+      "ok": true
+    },
+    {
+      "panel": "派遣一键领取",
+      "item": "领后任务清空 / 好感到上限",
+      "shown": "null|100",
+      "expected": "null|100",
+      "ok": true
+    },
+    {
+      "panel": "商店购买",
+      "item": "卡片显示价格 = costOf",
+      "shown": "115.00万",
+      "expected": "115.00万",
+      "engine": {
+        "price": 1150000
+      },
+      "ok": true
+    },
+    {
+      "panel": "商店购买",
+      "item": "扣款 = 显示价格（购买瞬间读数，不扣挂机增量）",
+      "shown": 1150000,
+      "expected": 1150000,
+      "engine": {
+        "rawDelta": -1119375.2756347656,
+        "immediateDelta": -1150000
+      },
+      "ok": true
+    },
+    {
+      "panel": "商店购买",
+      "item": "等级 +1 且卡片刷新为下一价",
+      "shown": "Lv.1→Lv.2 / 132.25万",
+      "expected": "Lv.1→Lv.2 / 132.25万",
+      "ok": true
+    },
+    {
+      "panel": "转生结算",
+      "item": "按钮文案 +N 点（永久 ×M）",
+      "shown": "离职再就业：+20 点（永久 ×22.00）",
+      "expected": "离职再就业：+20 点（永久 ×22.00）",
+      "ok": true
+    },
+    {
+      "panel": "转生结算",
+      "item": "点数累加",
+      "shown": "8→28",
+      "expected": "8→28",
+      "ok": true
+    },
+    {
+      "panel": "转生结算",
+      "item": "余额/本局累计归零（点击瞬间读数）",
+      "shown": "0/0",
+      "expected": "0/0",
+      "ok": true
+    },
+    {
+      "panel": "转生结算",
+      "item": "统计面板「本局 / 往期」= 0 / 保留生涯",
+      "shown": "本局 / 往期0 / 50000.13亿",
+      "expected": "本局 / 往期0 / 50000.13亿（按 formatMoyu）",
+      "ok": true
+    },
+    {
+      "panel": "转生结算",
+      "item": "下次转生门槛随倍率涨（需 1e8×22=22 亿）",
+      "shown": "未解锁（本局累计 17.55万 / 需 22.00亿）",
+      "expected": "需 22.00亿",
+      "ok": true
+    },
+    {
+      "panel": "转生结算",
+      "item": "等级保留 80%（floor）",
+      "shown": "{\"coffee\":9,\"water\":6,\"chair\":4,\"phone\":24,\"toilet\":17,\"group\":12,\"meeting\":5,\"deep\":2,\"retire\":1}",
+      "expected": "{\"coffee\":9,\"water\":6,\"chair\":4,\"phone\":24,\"toilet\":17,\"group\":12,\"meeting\":5,\"deep\":2,\"retire\":1}",
+      "ok": true
+    },
+    {
+      "panel": "转生结算",
+      "item": "保留生涯/图鉴/家具/小队/天赋点+1",
+      "shown": "5000012816587.25|55|8|5|1",
+      "expected": ">=5000012537479.727|55|8|5|1",
+      "ok": true
+    },
+    {
+      "panel": "转生结算",
+      "item": "HUD 立即显示余额 0 + 连胜清零",
+      "shown": "0|0",
+      "expected": "0|0",
+      "ok": true
+    }
+  ],
   "scenarios": {
-    "error": "Error: boot error\n    at waitReady (file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-final-data-cdp-settle.mjs:48:24)\n    at async runChrome.timeoutMs (file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-final-data-cdp-settle.mjs:71:7)\n    at async runChrome (file:///Users/p/Desktop/workspace/code/moyu/playtest/lib/chrome.mjs:40:12)\n    at async run (file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-final-data-cdp-settle.mjs:66:3)"
+    "claim": {
+      "expect": 12345678,
+      "btnText": "一键领取 +1234.57万",
+      "perCol": [
+        {
+          "id": "zhou",
+          "snap": 12345678,
+          "mission": "chat"
+        },
+        {
+          "id": "mei",
+          "snap": 0,
+          "mission": null
+        },
+        {
+          "id": "qiang",
+          "snap": 0,
+          "mission": null
+        },
+        {
+          "id": "li",
+          "snap": 0,
+          "mission": null
+        },
+        {
+          "id": "wang",
+          "snap": 0,
+          "mission": null
+        }
+      ],
+      "moyu0": 1000000144249.7913,
+      "moyu1": 1000012504745.451,
+      "idle": 127081.13269186503,
+      "elapsed": 0.122,
+      "delta": 12360495.659790039,
+      "idleAccrued": 15503.898188407533,
+      "zhouAfter": {
+        "level": 5,
+        "missionId": null,
+        "startedAt": 0,
+        "endsAt": 0,
+        "favor": 100,
+        "autoRepeat": false,
+        "rewardSnapshot": 0
+      },
+      "favorAfter": 100,
+      "flash": "老周 回来了，点 👥 领取",
+      "claimedTotalFmt": "1234.57万"
+    },
+    "buy": {
+      "price": 1150000,
+      "priceText": "115.00万",
+      "shownDisplay": "Lv.1",
+      "lv0": 1,
+      "moyu0": 1000012506854.9978,
+      "moyu1": 1000011387479.7222,
+      "delta": -1119375.2756347656,
+      "immediateDelta": -1150000,
+      "idle0": 127081.13269186503,
+      "idle1": 141323.13961746183,
+      "elapsed": 0.20219999980926515,
+      "lv1": 2,
+      "cardAfter": "132.25万",
+      "levelAfter": "Lv.2",
+      "nextAfter": "+700/秒 · 工资？那是副业",
+      "levelNext": 1322500
+    },
+    "prestige": {
+      "gain": 20,
+      "expectMult": 22,
+      "expectLevels": {
+        "coffee": 9,
+        "water": 6,
+        "chair": 4,
+        "phone": 24,
+        "toilet": 17,
+        "group": 12,
+        "meeting": 5,
+        "deep": 2,
+        "retire": 1
+      },
+      "btnText": "离职再就业：+20 点（永久 ×22.00）",
+      "info": "已有 8 点 · 当前 ×7.00",
+      "before": {
+        "prestige": 8,
+        "levels": {
+          "coffee": 12,
+          "water": 8,
+          "chair": 5,
+          "phone": 30,
+          "toilet": 22,
+          "group": 15,
+          "meeting": 7,
+          "deep": 3,
+          "retire": 2
+        },
+        "moyu": 1000011387479.7222,
+        "total": 5000012537479.727,
+        "lifetime": 5000012537479.727,
+        "talents": 0,
+        "decor": 8,
+        "collected": 55
+      },
+      "afterImmediate": {
+        "prestige": 28,
+        "moyu": 0,
+        "total": 0,
+        "lifetime": 5000012641126.119,
+        "talents": 1,
+        "levels": {
+          "coffee": 9,
+          "water": 6,
+          "chair": 4,
+          "phone": 24,
+          "toilet": 17,
+          "group": 12,
+          "meeting": 5,
+          "deep": 2,
+          "retire": 1
+        }
+      },
+      "statsImmediate": [
+        "生涯总收入50000.13亿",
+        "本局 / 往期0 / 50000.13亿",
+        "当前余额0",
+        "累计投入21.48亿",
+        "点击力 / 挂机1746 / 35.10万每秒",
+        "累计点击3000",
+        "今日回访3/3（离线效率 95%）",
+        "连续日报0 天",
+        "图鉴55/55",
+        "转生28 点（×22.00）",
+        "纪录·最佳单日0.1（2026-11-27）",
+        "纪录·最长连签0 天",
+        "纪录·最多点击0"
+      ],
+      "hudImmediate": "0",
+      "after": {
+        "prestige": 28,
+        "levels": {
+          "coffee": 9,
+          "water": 6,
+          "chair": 4,
+          "phone": 24,
+          "toilet": 17,
+          "group": 12,
+          "meeting": 5,
+          "deep": 2,
+          "retire": 1
+        },
+        "moyu": 175461.13137793975,
+        "total": 175461.13137793975,
+        "lifetime": 5000012816587.25,
+        "talents": 1,
+        "decor": 8,
+        "collected": 55,
+        "team": 5,
+        "surviveStreak": 0
+      },
+      "hudMoyu": "17.55万",
+      "statsText": [
+        "生涯总收入50000.13亿",
+        "本局 / 往期17.55万 / 50000.13亿",
+        "当前余额17.55万",
+        "累计投入21.48亿",
+        "点击力 / 挂机1746 / 35.10万每秒",
+        "累计点击3000",
+        "今日回访3/3（离线效率 95%）",
+        "连续日报0 天",
+        "图鉴55/55",
+        "转生28 点（×22.00）",
+        "纪录·最佳单日0.1（2026-11-27）",
+        "纪录·最长连签0 天",
+        "纪录·最多点击0"
+      ],
+      "btnAfter": "未解锁（本局累计 17.55万 / 需 22.00亿）"
+    }
   },
   "defects": [],
   "summary": {
-    "total": 0,
-    "pass": 0,
+    "total": 14,
+    "pass": 14,
     "fail": 0
   }
 }

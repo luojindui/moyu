@@ -284,10 +284,14 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
       // boosted 由 used 推导（不信存档里的值，防"没用品却拿满档"）
       energy.boosted = { idleMult: 1, patrolRewardMult: 1, clickMult: 1 };
       for (const a of energy.used) {
+        // 与 energy.ts 的 useEnergy 保持同一组常量（曾因改平衡后此处没同步导致"刷新后效果被改写"）
         if (a === "slack") energy.boosted.idleMult *= 1.25;
         if (a === "social") energy.boosted.idleMult *= 1.05;
+        if (a === "focus") {
+          energy.boosted.clickMult *= 2;
+          energy.boosted.idleMult *= 1.08;
+        }
         if (a === "fake-work") energy.boosted.patrolRewardMult *= 2.2;
-        if (a === "focus") energy.boosted.clickMult *= 1.2;
       }
     }
     // 摸鱼站：日期校验、次数 0-3、最高分只接受已知游戏

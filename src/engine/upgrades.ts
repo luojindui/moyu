@@ -62,7 +62,7 @@ function effectAt(u: UpgradeDef, level: number): number {
 }
 
 /** 图鉴分段永久加成（R9）：每 5 格 +2%，55 格集满 +20%（纯挂机也能兑现 30 格的 +12%） */
-function collectionBonus(state: GameState): number {
+export function collectionBonus(state: GameState): number {
   const n = state.collected.quotes.length + state.collected.flavors.length;
   return 1 + Math.min(0.2, 0.02 * Math.floor(n / 5));
 }
@@ -122,6 +122,18 @@ export function idleIfHome(state: GameState): number {
     },
   };
   return effectOf(home).idleRate;
+}
+
+/** 同事对挂机的真实贡献（与 effectOf 同一套倍率），供面板显示，避免面板自算一套 */
+export function teamIdleBreakdown(state: GameState): { fixed: number; share: number; total: number } {
+  const mult = prestigeMultiplier(state.prestige) * collectionBonus(state);
+  const talent = talentEffects(state.talents);
+  const favorIdleBonus = favorBonuses(state).idleMult;
+  const teamMult = talent.teamIdleMult;
+  const rawStation = stationIdleOf(state) * mult;
+  const fixed = teamFixedRate(state) * mult * favorIdleBonus * teamMult;
+  const share = rawStation * teamShareRatio(state) * teamMult;
+  return { fixed, share, total: fixed + share };
 }
 
 /** 状态合计加成（含底薪/同事） */

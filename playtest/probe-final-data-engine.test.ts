@@ -647,16 +647,20 @@ describe("其它数据口径", () => {
     // 最小状态：无家具/天赋等正加成，只剩卡片的 -20% 风险
     const minimal = { ...initialState(), cards: { ...emptyCardState(TODAY), chosen: "overtime", until: NOW + 3600_000, chosenDate: TODAY } };
     const firstDay = offlineEfficiency(minimal, NOW - 3600_000, NOW);
+    const firstDayNoCard = offlineEfficiency({ ...initialState() }, NOW - 3600_000, NOW);
     const later = offlineEfficiency(minimal, NOW - 10 * DAY, NOW);
     const noCardLater = offlineEfficiency({ ...initialState() }, NOW - 10 * DAY, NOW);
     report.checks.firstDayRisk = {
       firstDayRate: firstDay,
+      firstDayNoCard,
       laterRate: later,
       noCardLaterRate: noCardLater,
       claimedRisk: 0.2,
       note: "首日 branch: 1+max(0, raise)；负风险被截断 → 首日 100%，非首日 50%（0.7-0.2）",
     };
-    expect(firstDay).toBe(1); // 风险被吃掉
+    // 首日：风险卡对离线性无影响（不论硬上限是 1.0 还是 WIP 的 0.95，首日带卡/不带卡应相同）
+    expect(firstDay).toBeCloseTo(firstDayNoCard, 12);
+    expect(firstDay).toBeGreaterThanOrEqual(0.95); // 风险被吃掉
     expect(later).toBeCloseTo(0.5, 12); // 非首日生效
     expect(noCardLater).toBeCloseTo(0.7, 12);
   });

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-27T13:19:43.858Z",
-  "nowIso": "2026-11-27T13:19:43.858Z",
+  "generatedAt": "2026-11-27T13:19:52.174Z",
+  "nowIso": "2026-11-27T13:19:52.174Z",
   "today": "2026-11-27",
   "checks": {
     "upgradePrices": [
@@ -774,6 +774,7 @@
     },
     "firstDayRisk": {
       "firstDayRate": 0.95,
+      "firstDayNoCard": 0.95,
       "laterRate": 0.49999999999999994,
       "noCardLaterRate": 0.7,
       "claimedRisk": 0.2,

@@ -4,6 +4,7 @@ import { doClick, buyUpgrade, clickPowerOf, comboMultiplier, comboCapOf, comboWi
 import { effectOf, stationIdleScaled } from "./engine/upgrades";
 import { advance } from "./engine/tick";
 import { settleReturn } from "./engine/resume";
+import { capForElapsed } from "./engine/offline";
 import { CLICK_MEMES, MEME_QUOTES } from "./engine/flavor";
 import { serialize, restore, clearSave, encodeSaveCode, decodeSaveCode, backupNewerSave, SAVE_KEY, type SaveAdapter } from "./engine/save";
 import {
@@ -22,7 +23,7 @@ import { chapterFor, zhouLine, bossOutcome, bossChoiceLine, HR_PRESTIGE_LINE } f
 import { APP_VERSION } from "./version";
 import { RECORDS_KEY, parseRecords, updateRecords, type Records } from "./engine/records";
 import { doPrestige } from "./engine/prestige";
-import { ensureDaily, dailyTrack, claimDaily } from "./engine/daily";
+import { dailyAllDone, dailyReward, ensureDaily, dailyTrack, claimDaily } from "./engine/daily";
 import { Hud } from "./ui/hud";
 import { Shop } from "./ui/shop";
 import { Welcome } from "./ui/welcome";
@@ -366,20 +367,7 @@ async function boot(): Promise<void> {
         }
         arcade.refresh(state);
         // 🎮 角标：剩余次数
-        const ab = document.getElementById("btn-arcade");
-        if (ab) {
-          const leftN = arcadeLeft(state);
-          let badge = ab.querySelector<HTMLElement>(".arcade-badge");
-          if (leftN > 0) {
-            if (!badge) {
-              badge = document.createElement("span");
-              badge.className = "arcade-badge";
-              ab.appendChild(badge);
-            }
-            badge.textContent = String(leftN);
-          } else if (badge) badge.remove();
-          ab.setAttribute("aria-label", leftN > 0 ? `摸鱼站，今天还剩 ${leftN} 次` : "摸鱼站，今天已玩完");
-        }
+        syncArcadeBadge(state);
         serialize(state, localStorageAdapter, Date.now());
         return r.reward;
       }
@@ -581,6 +569,24 @@ async function boot(): Promise<void> {
   });
   const rng = Math.random;
   let frameErrorLogged = false;
+  let lastDailyHintAt = 0;
+
+  /** 🎮 剩余次数角标：统一入口，避免多处创建导致重复角标 */
+  const syncArcadeBadge = (st: ReturnType<typeof initialState>): void => {
+    const ab = document.getElementById("btn-arcade");
+    if (!ab) return;
+    const leftN = arcadeLeft(st);
+    // 先清掉所有旧角标（历史 bug：启动/循环/结算各建一个，会出现两个"3"）
+    ab.querySelectorAll(".arcade-badge").forEach((el) => el.remove());
+    if (leftN > 0) {
+      const badge = document.createElement("span");
+      badge.className = "arcade-badge";
+      badge.textContent = String(leftN);
+      ab.appendChild(badge);
+    }
+    ab.setAttribute("aria-label", leftN > 0 ? `摸鱼站，今天还剩 ${leftN} 次` : "摸鱼站，今天已玩完");
+  };
+
   const frame = (now: number): void => {
     // 任何一帧内的异常都不允许停掉主循环（否则游戏"卡死"）
     try {
@@ -693,7 +699,7 @@ async function boot(): Promise<void> {
         if (dg.granted > 0) {
           state = { ...state, talents: dg.talents };
           teamPanel.refresh(state);
-          showToast("送你 1 个天赋点，点 👥 看看");
+          showToast("戳屏幕摸鱼，攒够 15 解锁第一件升级");
         }
       }
       // 段位天赋点：按生涯段位发放（幂等）
@@ -751,20 +757,7 @@ async function boot(): Promise<void> {
         }
         arcade.refresh(state);
         // 🎮 角标同步（跨日后次数会回满，角标必须跟着更新）
-        const ab = document.getElementById("btn-arcade");
-        if (ab) {
-          const leftN = arcadeLeft(state);
-          let badge = ab.querySelector<HTMLElement>(".arcade-badge");
-          if (leftN > 0) {
-            if (!badge) {
-              badge = document.createElement("span");
-              badge.className = "arcade-badge";
-              ab.appendChild(badge);
-            }
-            badge.textContent = String(leftN);
-          } else if (badge) badge.remove();
-          ab.setAttribute("aria-label", leftN > 0 ? `摸鱼站，今天还剩 ${leftN} 次` : "摸鱼站，今天已玩完");
-        }
+        syncArcadeBadge(state);
       }
       // 每日精力：跨日重置
       {
@@ -854,6 +847,17 @@ async function boot(): Promise<void> {
           pBadge.remove();
         }
       }
+      // 日报可领时给一次显性提示（新手不知道角落红星点得动）
+      {
+        const d = state.daily;
+        const canClaim = !!d && d.date === today() && !d.claimed && dailyAllDone(d);
+        if (canClaim && lastDailyHintAt < Date.now() - 90_000) {
+          lastDailyHintAt = Date.now();
+          const rw = formatMoyu(dailyReward(state));
+          showToast(`日报可领 +${rw}，点右下 📔`);
+          announce(`日报有奖励可领，加 ${rw}`, 0);
+        }
+      }
       hud.refresh(state, combo);
       shop.refresh(state);
       journal.refresh(state);
@@ -920,7 +924,7 @@ async function boot(): Promise<void> {
       shop.refresh(state);
       if (r.showPanel) {
         const realSeconds = Math.max(0, (Date.now() - lastActiveMs) / 1000);
-        welcome.show(realSeconds, r.earned, currentOfflineRate(), () => undefined, r.applied);
+        welcome.show(realSeconds, r.earned, currentOfflineRate(), () => undefined, r.applied, Math.round(capForElapsed(Date.now() - lastActiveMs) / 3600));
       }
     }
     lastActiveMs = Date.now();
@@ -939,7 +943,14 @@ async function boot(): Promise<void> {
     setTimeout(() => showToast("新的一天：精力已回满 100"), 1200);
   }
   if (offline.earned > 0 && offline.showPanel) {
-    welcome.show(restored.offlineSeconds, offline.earned, currentOfflineRate(), () => undefined, offline.applied);
+    welcome.show(
+      restored.offlineSeconds,
+      offline.earned,
+      currentOfflineRate(),
+      () => undefined,
+      offline.applied,
+      Math.round(capForElapsed(Date.now() - lastActiveMs) / 3600),
+    );
   }
 
   // 6) agent 试玩调试钩子：仅开发/测试构建暴露，生产包剥离（防止 rewindSave 刷离线作弊）
@@ -1090,17 +1101,7 @@ async function boot(): Promise<void> {
   shop.refresh(state);
 
   // 🎮 剩余次数角标（启动时就显示，不只玩过之后）
-  {
-    const ab = document.getElementById("btn-arcade");
-    const leftN = arcadeLeft(state);
-    if (ab && leftN > 0) {
-      const badge = document.createElement("span");
-      badge.className = "arcade-badge";
-      badge.textContent = String(leftN);
-      ab.appendChild(badge);
-      ab.setAttribute("aria-label", `摸鱼站，今天还剩 ${leftN} 次`);
-    }
-  }
+  syncArcadeBadge(state);
 
   // 音效开关
   const muteBtn = document.getElementById("btn-mute");
