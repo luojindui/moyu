@@ -98,6 +98,11 @@ export class TeamPanel {
 
   show(): void {
     this.root.classList.remove("hidden");
+    try {
+      localStorage.setItem("moyu-team-seen", "1");
+    } catch {
+      /* 忽略 */
+    }
     if (this.lastState) this.render(this.lastState, true);
     this.timer ??= window.setInterval(() => {
       if (this.lastState && this.isOpen) this.refresh(this.lastState);

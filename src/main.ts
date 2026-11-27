@@ -497,7 +497,7 @@ async function boot(): Promise<void> {
         if (dg.granted > 0) {
           state = { ...state, talents: dg.talents };
           teamPanel.refresh(state);
-          showToast("今日签到：天赋点 +1");
+          showToast("送你 1 个天赋点，点 👥 看看");
         }
       }
       // 段位天赋点：按生涯段位发放（幂等）
@@ -566,7 +566,8 @@ async function boot(): Promise<void> {
       const teamBtn = document.getElementById("btn-team");
       if (teamBtn) {
         const pBadge = teamBtn.querySelector<HTMLElement>(".talent-badge");
-        if (state.talents.points > 0) {
+        const seenTeam = localStorage.getItem("moyu-team-seen") === "1";
+        if (state.talents.points > 0 && seenTeam) {
           if (!pBadge) {
             const el = document.createElement("span");
             el.className = "talent-badge";

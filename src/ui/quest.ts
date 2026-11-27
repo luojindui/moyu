@@ -7,6 +7,8 @@ import type { GameState } from "../engine/state";
 interface Step {
   id: string;
   text: (state?: unknown) => string;
+  /** 完成时显示的文案（不能用剩余指令） */
+  doneText: string;
   /** 判定是否完成：基于状态与上一帧状态 */
   done: (state: GameState, prev: GameState | null) => boolean;
   /** 进度 0..1 */
@@ -22,6 +24,7 @@ export class Quest {
   private steps: Step[] = [
     {
       id: "click10",
+      doneText: "戳屏幕完成！",
       // 用真实差价换算"还差几下"，与商店卡显示一致（避免 10 vs 15 冲突）
       text: (s?: unknown) => {
         const st = s as GameState | undefined;
@@ -36,24 +39,28 @@ export class Quest {
     },
     {
       id: "buyCoffee",
+      doneText: "咖啡续命 已解锁",
       text: () => "买下点亮的「咖啡续命」卡片",
       done: (s) => (s.levels["coffee"] ?? 0) > 0,
       progress: (s) => ((s.levels["coffee"] ?? 0) > 0 ? 1 : 0),
     },
     {
       id: "click25",
+      doneText: "攒钱完成！",
       text: () => "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
       done: (s) => s.totalClicks - (this.base?.totalClicks ?? 0) >= 25,
       progress: (s) => Math.min(1, (s.totalClicks - (this.base?.totalClicks ?? 0)) / 25),
     },
     {
       id: "buyPhone",
+      doneText: "刷手机 已解锁",
       text: () => "买下「刷手机」：之后每秒自动赚钱",
       done: (s) => (s.levels["phone"] ?? 0) > 0,
       progress: (s) => ((s.levels["phone"] ?? 0) > 0 ? 1 : 0),
     },
     {
       id: "idle",
+      doneText: "挂机收入 已到手",
       text: () => "什么都不点，等 10 秒看挂机收益",
       done: (s) => s.totalEarned - (this.base?.totalEarned ?? 0) >= 10 * Math.max(1, s.levels["phone"] ?? 1),
       progress: (s, prev) =>
@@ -77,7 +84,7 @@ export class Quest {
     const step = this.steps[this.idx]!;
     if (this.base === null) this.base = { ...state };
     if (step.done(state, prev)) {
-      this.onComplete(`✓ ${step.text(state)}`);
+      this.onComplete(`✓ ${step.doneText}`);
       this.idx += 1;
       this.base = { ...state }; // 下一步进度从此刻算
       if (this.idx >= this.steps.length) {
