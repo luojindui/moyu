@@ -28,7 +28,7 @@ import { Welcome } from "./ui/welcome";
 import { Journal } from "./ui/journal";
 import { Quest } from "./ui/quest";
 import { TeamPanel } from "./ui/team-panel";
-import { claimMission, colleagueDef, recruit, upgradeColleague, dispatch as dispatchMission } from "./engine/team";
+import { claimMission, colleagueDef, recruit, upgradeColleague, dispatch as dispatchMission , setAutoRepeat } from "./engine/team";
 import { grantRankTalents, resetTalents, unlockTalent } from "./engine/talents";
 import { initAudio, playClick, playBreak, playSuccess, toggleMute, isMuted } from "./ui/audio";
 import { Scene, SPRITE_MAP } from "./render/scene";
@@ -146,7 +146,7 @@ async function boot(): Promise<void> {
         state = next;
         hud.refresh(state);
         shop.refresh(state);
-        teamPanel.refresh(state);
+        teamPanel.refreshNow(state);
         announce(`招募成功：${colleagueDef(id)?.name ?? ""}`);
         serialize(state, localStorageAdapter, Date.now());
       }
@@ -157,7 +157,7 @@ async function boot(): Promise<void> {
         state = next;
         hud.refresh(state);
         shop.refresh(state);
-        teamPanel.refresh(state);
+        teamPanel.refreshNow(state);
         serialize(state, localStorageAdapter, Date.now());
       }
     },
@@ -165,7 +165,7 @@ async function boot(): Promise<void> {
       const next = dispatchMission(state, id, missionId, Date.now(), stationIdleScaled(state));
       if (next) {
         state = next;
-        teamPanel.refresh(state);
+        teamPanel.refreshNow(state);
         announce(`${colleagueDef(id)?.name ?? ""} 出发去派遣了`);
         serialize(state, localStorageAdapter, Date.now());
       }
@@ -176,8 +176,40 @@ async function boot(): Promise<void> {
         state = r.state;
         hud.refresh(state);
         shop.refresh(state);
-        teamPanel.refresh(state);
+        teamPanel.refreshNow(state);
+        teamPanel.flash(`任务完成 +${Math.round(r.reward)}`);
         toast(`任务完成 +${Math.round(r.reward)}`);
+        serialize(state, localStorageAdapter, Date.now());
+      }
+    },
+    onClaimAll: () => {
+      const now = Date.now();
+      const station = stationIdleScaled(state);
+      let total = 0;
+      let count = 0;
+      for (const def of ["zhou", "mei", "qiang", "li", "wang"]) {
+        const r = claimMission(state, def, now, station);
+        if (r) {
+          state = r.state;
+          total += r.reward;
+          count++;
+        }
+      }
+      if (count > 0) {
+        hud.refresh(state);
+        shop.refresh(state);
+        teamPanel.refreshNow(state);
+        teamPanel.flash(`一键领取 ${count} 个任务 +${Math.round(total)}`);
+        toast(`一键领取 ${count} 个任务 +${Math.round(total)}`);
+        playSuccess();
+        serialize(state, localStorageAdapter, Date.now());
+      }
+    },
+    onToggleAuto: (id, on) => {
+      const next = setAutoRepeat(state, id, on);
+      if (next) {
+        state = next;
+        teamPanel.refreshNow(state);
         serialize(state, localStorageAdapter, Date.now());
       }
     },
@@ -186,14 +218,15 @@ async function boot(): Promise<void> {
       if (next) {
         state = next;
         hud.refresh(state);
-        teamPanel.refresh(state);
+        teamPanel.refreshNow(state);
         serialize(state, localStorageAdapter, Date.now());
       }
     },
     onResetTalents: () => {
+      if (!confirm("确定重置全部天赋？会返还全部已用点数。")) return;
       state = resetTalents(state);
       hud.refresh(state);
-      teamPanel.refresh(state);
+      teamPanel.refreshNow(state);
       serialize(state, localStorageAdapter, Date.now());
       toast("天赋已重置，点数已返还");
     },
@@ -423,7 +456,7 @@ async function boot(): Promise<void> {
         if (g.granted > 0) {
           state = { ...state, talents: g.talents };
           toast(`段位奖励：天赋点 +${g.granted}`);
-          teamPanel.refresh(state);
+          teamPanel.refreshNow(state);
           serialize(state, localStorageAdapter, Date.now());
         }
       }
@@ -444,10 +477,15 @@ async function boot(): Promise<void> {
       const cCount = state.collected.quotes.length + state.collected.flavors.length;
       if (cCount > lastCollectionCount) toast(`图鉴 +${cCount - lastCollectionCount}（${cCount}/55）`);
       lastCollectionCount = cCount;
+      // 连击超时归零（不点后 HUD 不该一直显示连点）
+      if (combo > 0 && (performance.now() - lastClickAt) / 1000 > COMBO_BREAK_S) {
+        combo = 0;
+        playBreak();
+      }
       hud.refresh(state, combo);
       shop.refresh(state);
       journal.refresh(state);
-      teamPanel.refresh(state);
+      teamPanel.refreshNow(state);
     }
     requestAnimationFrame(frame);
   };
@@ -526,6 +564,17 @@ async function boot(): Promise<void> {
     get state(): unknown {
       return JSON.parse(JSON.stringify(state));
     },
+    /** 仅 dev：把所有进行中的派遣直接快进到"已完成"（试玩/测试用） */
+    endMissions(): void {
+      const now = Date.now();
+      const cols = { ...state.team.colleagues };
+      for (const id of Object.keys(cols)) {
+        const c = cols[id]!;
+        if (c.missionId) cols[id] = { ...c, startedAt: now - 1000, endsAt: now - 1 };
+      }
+      state = { ...state, team: { colleagues: cols } };
+      teamPanel.refreshNow(state);
+    },
     get fps(): number {
       return debug.fps;
     },
@@ -557,7 +606,7 @@ async function boot(): Promise<void> {
       state = gain(state, Math.max(0, n));
       hud.refresh(state);
       shop.refresh(state);
-      teamPanel.refresh(state);
+      teamPanel.refreshNow(state);
       journal.refresh(state, true);
     },
     reset(): void {

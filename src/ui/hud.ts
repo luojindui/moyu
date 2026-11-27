@@ -31,7 +31,7 @@ export class Hud {
     this.elRank.title = rank.next ? `${rank.current} → ${rank.next.name}` : rank.current;
     // 连击常驻显示（从 2 连起，断连隐藏）
     if (combo >= 2) {
-      this.elCombo.textContent = `连点×${combo}`;
+      this.elCombo.textContent = `连×${combo}`;
       this.elCombo.classList.remove("hidden");
     } else {
       this.elCombo.classList.add("hidden");

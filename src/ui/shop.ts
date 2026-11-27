@@ -63,7 +63,8 @@ export class Shop {
         // 大额（价格 ≥ 当前余额 50%）才要求确认
         if (this.lastState && this.lastState.moyu >= 1) {
           const price = Number(card.dataset.price ?? 0);
-          if (Number.isFinite(price) && price >= this.lastState.moyu * 0.5) {
+          // 首购/小额（<200）不确认，避免"点了像没反应"；只对大额（余额一半以上且≥200）确认
+          if (Number.isFinite(price) && price >= 200 && price >= this.lastState.moyu * 0.5) {
             this.pending.set(u.id, now);
             card.classList.add("confirming");
             this.onBlocked(`再点一次确认：花 ${card.querySelector(".shop-cost b")!.textContent} 摸鱼值买「${u.name}」`);

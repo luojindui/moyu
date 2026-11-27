@@ -1060,3 +1060,34 @@ body {
   background: #43435c;
   border-color: #55557a;
 }
+
+/* 购买二次确认态：卡片自身可见变化 + 文字提示（不再只靠画面飘字） */
+.shop-card.confirming {
+  border-color: #ffd76e;
+  box-shadow: 0 0 0 3px rgba(255, 215, 110, 0.45);
+  animation: cardConfirm 0.5s ease-in-out infinite alternate;
+}
+.shop-card.confirming .shop-buy::after {
+  content: "再点一次确认";
+  display: block;
+  margin-top: 3px;
+  font-size: 10px;
+  color: #ffd76e;
+}
+@keyframes cardConfirm {
+  from { filter: brightness(1); }
+  to { filter: brightness(1.22); }
+}
+
+.team-hint {
+  padding: 12px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #e8e2d0;
+  background: #262636;
+  border: 2px dashed #7ec8ff;
+  border-radius: 6px;
+}
+.team-hint b {
+  color: #ffd76e;
+}

@@ -1,0 +1,5581 @@
+{
+  "meta": {
+    "url": "http://127.0.0.1:5173/",
+    "viewport": "390x844@3x",
+    "startedAt": "2026-11-27T08:22:49.613Z",
+    "profile": "碎片党：每次 2-3 分钟，一天 4-6 次，从不专门坐 30 分钟"
+  },
+  "seed": {
+    "kind": "mid（lifetime 1e8，等级中段，未招募）",
+    "bootSeed": 2308
+  },
+  "boot": [
+    {
+      "tag": "first-load",
+      "waitGameMs": 136
+    },
+    {
+      "tag": "seed-mid",
+      "reloadToReadyMs": 2308,
+      "waitGameMs": 0,
+      "seeded": "mid"
+    },
+    {
+      "tag": "gap+4min",
+      "reloadToReadyMs": 2003,
+      "waitGameMs": 1
+    },
+    {
+      "tag": "gap+6min",
+      "reloadToReadyMs": 2006,
+      "waitGameMs": 0
+    },
+    {
+      "tag": "gap+6min",
+      "reloadToReadyMs": 2007,
+      "waitGameMs": 1
+    },
+    {
+      "tag": "seed-all5",
+      "reloadToReadyMs": 2305,
+      "waitGameMs": 1,
+      "seeded": "all5"
+    }
+  ],
+  "sessions": [
+    {
+      "index": 1,
+      "t0": 1795767773412,
+      "actions": [
+        {
+          "at": 0,
+          "desc": "首屏：看 HUD / 红点 / 段位（等 1.2s 让天赋点发放飘字出现）",
+          "result": {
+            "badge": null,
+            "welcome": false,
+            "rank": "传说 0%",
+            "hudIdle": "5179.4",
+            "announces": [
+              "段位奖励：天赋点 +2"
+            ]
+          }
+        },
+        {
+          "at": 0.2,
+          "desc": "__MOYU__.grant(1e9)（模拟几天积累，跳过早期）",
+          "result": {
+            "hudMoyu": "10.00亿",
+            "rank": "之神 7%",
+            "announces": [
+              "段位奖励：天赋点 +2",
+              "段位晋升：摸鱼之神"
+            ]
+          }
+        },
+        {
+          "at": 3.2,
+          "desc": "量挂机速率 2s",
+          "result": {
+            "from": 1000138235.532934,
+            "to": 1000148680.2545058,
+            "seconds": 2,
+            "idlePerSec": 5214
+          }
+        },
+        {
+          "at": 3.3,
+          "desc": "点 👥 打开摸鱼小队（同事页）",
+          "result": {
+            "teamPoints": "天赋点 2",
+            "panel": {
+              "scrollH": 537,
+              "clientH": 537,
+              "cards": 5,
+              "visibleCards": 5
+            },
+            "missionButtons": 0,
+            "recruitButtons": 5
+          }
+        },
+        {
+          "at": 4.1,
+          "desc": "招募老周（1.2万）",
+          "result": {
+            "clicked": 1,
+            "colleagues": [
+              "zhou"
+            ],
+            "announces": [
+              "段位晋升：摸鱼之神",
+              "招募成功：老周"
+            ]
+          }
+        },
+        {
+          "at": 4.8,
+          "desc": "给老周派「溜一圈」15 分钟",
+          "result": {
+            "clicked": 1,
+            "cardText": "老周 Lv.1\n八年老员工·甩锅大师\n挂机 +20/秒 · 擅长 聊八卦\n好感 0/100 · 再领 20 次解锁里程碑\n升级 Lv.2 · 6480\n⏳ 溜一圈 进行中 · 15:00",
+            "dispatchButtonsShowRewardPreview": true,
+            "announces": [
+              "招募成功：老周",
+              "老周 出发去派遣了"
+            ]
+          }
+        },
+        {
+          "at": 5.7,
+          "desc": "关面板",
+          "result": {
+            "teamOpen": false
+          }
+        },
+        {
+          "at": 6.2,
+          "desc": "再开 👥 → 切「天赋」页",
+          "result": {
+            "teamPoints": "天赋点 2",
+            "panel": {
+              "scrollH": 877,
+              "clientH": 613
+            },
+            "enabledTalentButtons": 3,
+            "totalTalentButtons": 15
+          }
+        },
+        {
+          "at": 7.3,
+          "desc": "点「点亮」第 1 点",
+          "result": {
+            "clicked": 1,
+            "talents": {
+              "unlocked": [
+                "click_1"
+              ],
+              "points": 1,
+              "rankGranted": 4
+            },
+            "teamPoints": "天赋点 1"
+          }
+        },
+        {
+          "at": 7.9,
+          "desc": "点「点亮」第 2 点",
+          "result": {
+            "clicked": 1,
+            "talents": {
+              "unlocked": [
+                "click_1",
+                "click_2"
+              ],
+              "points": 0,
+              "rankGranted": 4
+            },
+            "teamPoints": "天赋点 0"
+          }
+        },
+        {
+          "at": 8.7,
+          "desc": "关面板",
+          "result": {
+            "teamOpen": false
+          }
+        },
+        {
+          "at": 9.1,
+          "desc": "老系统：商店买 3 次升级",
+          "result": {
+            "shopAffordableBefore": 9,
+            "shopAffordableAfter": 9,
+            "daily": {
+              "window": 2,
+              "claimed": false,
+              "claimsToday": 0,
+              "goals": [
+                {
+                  "id": "visit_1",
+                  "progress": 1,
+                  "target": 1,
+                  "done": true
+                },
+                {
+                  "id": "idle_earn",
+                  "progress": 1,
+                  "target": 1,
+                  "done": true
+                },
+                {
+                  "id": "click_100",
+                  "progress": 0,
+                  "target": 100,
+                  "done": false
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "samples": [
+        {
+          "at": 10.6,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "招募成功：老周",
+            "老周 出发去派遣了"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 25.6,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "老周 出发去派遣了",
+            "王总巡逻：8 秒内不要点屏幕"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 40.6,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "王总巡逻：8 秒内不要点屏幕",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 55.6,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "王总巡逻：8 秒内不要点屏幕",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 70.6,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "王总巡逻：8 秒内不要点屏幕",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 85.6,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 100.6,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 115.6,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 130.7,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 145.7,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "王总巡逻：8 秒内不要点屏幕"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        }
+      ],
+      "taps": 12,
+      "simNow": 1795767773412,
+      "open": {
+        "badge": null,
+        "teamOpen": false,
+        "teamTab": "colleagues",
+        "teamPoints": "",
+        "panel": {
+          "scrollH": 0,
+          "clientH": 0,
+          "scrollTop": 0,
+          "cards": 0,
+          "visibleCards": 0,
+          "cardTexts": [],
+          "actionBtns": [],
+          "btnRects": []
+        },
+        "colleagues": {},
+        "talents": {
+          "unlocked": [],
+          "rankGranted": 4,
+          "points": 2
+        },
+        "daily": {
+          "window": 2,
+          "claimed": false,
+          "claimsToday": 0,
+          "goals": [
+            {
+              "id": "visit_1",
+              "progress": 1,
+              "target": 1,
+              "done": true
+            },
+            {
+              "id": "idle_earn",
+              "progress": 1,
+              "target": 1,
+              "done": true
+            },
+            {
+              "id": "click_100",
+              "progress": 0,
+              "target": 100,
+              "done": false
+            }
+          ]
+        },
+        "journalOpen": false,
+        "journalClaim": {
+          "disabled": false,
+          "text": "完成 0/3"
+        },
+        "welcomeOpen": false,
+        "welcomeGain": "0",
+        "welcomeTime": "0",
+        "shopAffordable": 7,
+        "shopTotal": 9,
+        "hudMoyu": "13.18万",
+        "hudIdle": "5179.4",
+        "hudClick": "77.3",
+        "moyuValue": 131934.30896042392,
+        "lifetimeValue": 100011934.30895996,
+        "rank": "传说 0%",
+        "streakVisible": true,
+        "announce": [
+          {
+            "t": 167,
+            "kind": "announce",
+            "text": "段位奖励：天赋点 +2"
+          }
+        ],
+        "errors": []
+      },
+      "idle": {
+        "from": 1000138235.532934,
+        "to": 1000148680.2545058,
+        "seconds": 2,
+        "idlePerSec": 5214
+      },
+      "watch": [
+        {
+          "at": 10.6,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "招募成功：老周",
+            "老周 出发去派遣了"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 25.6,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "老周 出发去派遣了",
+            "王总巡逻：8 秒内不要点屏幕"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 40.6,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "王总巡逻：8 秒内不要点屏幕",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 55.6,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "王总巡逻：8 秒内不要点屏幕",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 70.6,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "王总巡逻：8 秒内不要点屏幕",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 85.6,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 100.6,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 115.6,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 130.7,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 145.7,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "王总巡逻：8 秒内不要点屏幕"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        }
+      ],
+      "durationSec": 160.8,
+      "categorize": {
+        "samples": 10,
+        "samplesWithNewSystemAction": 0,
+        "samplesWithOldSystemAction": 10,
+        "first": {
+          "at": 10.6,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "招募成功：老周",
+            "老周 出发去派遣了"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        }
+      }
+    },
+    {
+      "index": 2,
+      "t0": 1795767937286,
+      "actions": [
+        {
+          "at": 0,
+          "desc": "回来：欢迎面板是否挡住 + 红点",
+          "result": {
+            "welcome": false,
+            "welcomeGain": "0",
+            "welcomeTime": "0",
+            "badge": null,
+            "announce": []
+          }
+        },
+        {
+          "at": 0.2,
+          "desc": "点「继续摸鱼」关掉欢迎面板（每次回来多 1 下）",
+          "result": {
+            "welcome": false
+          }
+        },
+        {
+          "at": 0.8,
+          "desc": "开 👥 看派遣进度",
+          "result": {
+            "cardText": "老周 Lv.1\n八年老员工·甩锅大师\n挂机 +20/秒 · 擅长 聊八卦\n好感 0/100 · 再领 20 次解锁里程碑\n升级 Lv.2 · 6480\n⏳ 溜一圈 进行中 · 08:20",
+            "actionBtns": [
+              {
+                "act": "upgrade",
+                "id": "zhou",
+                "mission": null,
+                "disabled": false,
+                "text": "升级 Lv.2 · 6480"
+              },
+              {
+                "act": "recruit",
+                "id": "mei",
+                "mission": null,
+                "disabled": false,
+                "text": "招募 80.00万"
+              },
+              {
+                "act": "recruit",
+                "id": "qiang",
+                "mission": null,
+                "disabled": false,
+                "text": "招募 1500.00万"
+              },
+              {
+                "act": "recruit",
+                "id": "li",
+                "mission": null,
+                "disabled": false,
+                "text": "招募 3.00亿"
+              },
+              {
+                "act": "recruit",
+                "id": "wang",
+                "mission": null,
+                "disabled": true,
+                "text": "招募 60.00亿"
+              }
+            ],
+            "badge": null
+          }
+        },
+        {
+          "at": 1.5,
+          "desc": "关面板",
+          "result": null
+        },
+        {
+          "at": 1.9,
+          "desc": "开 📔 日报看今日目标",
+          "result": {
+            "daily": {
+              "window": 2,
+              "claimed": false,
+              "claimsToday": 0,
+              "goals": [
+                {
+                  "id": "visit_1",
+                  "progress": 1,
+                  "target": 1,
+                  "done": true
+                },
+                {
+                  "id": "idle_earn",
+                  "progress": 1,
+                  "target": 1,
+                  "done": true
+                },
+                {
+                  "id": "click_100",
+                  "progress": 0,
+                  "target": 100,
+                  "done": false
+                }
+              ]
+            },
+            "journalClaim": {
+              "disabled": true,
+              "text": "完成 2/3"
+            }
+          }
+        },
+        {
+          "at": 2.7,
+          "desc": "关日报",
+          "result": null
+        },
+        {
+          "at": 3.1,
+          "desc": "手头没事：招募小美（80万）",
+          "result": {
+            "clicked": 1,
+            "colleagues": [
+              "zhou",
+              "mei"
+            ],
+            "announces": [
+              "招募成功：小美"
+            ]
+          }
+        },
+        {
+          "at": 4.3,
+          "desc": "试图给小美派活（看最短任务多久）",
+          "result": {
+            "missionOptions": [
+              "溜一圈\n15m",
+              "茶水间聊八卦\n30m",
+              "开个会\n1h ★",
+              "长线蹲点\n4h",
+              "楼下买咖啡\n8h"
+            ]
+          }
+        },
+        {
+          "at": 4.4,
+          "desc": "关面板（不派：最短 15 分钟现在派了也是等）",
+          "result": null
+        }
+      ],
+      "samples": [
+        {
+          "at": 4.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": true,
+            "text": "完成 2/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [
+            "招募成功：小美"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 16.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": true,
+            "text": "完成 2/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [
+            "招募成功：小美",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 28.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": true,
+            "text": "完成 2/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "假装工作：8 秒内点 5 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 40.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": true,
+            "text": "完成 2/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "假装工作：8 秒内点 5 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 52.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": true,
+            "text": "完成 2/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "假装工作：8 秒内点 5 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 64.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": true,
+            "text": "完成 2/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "假装工作：8 秒内点 5 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 76.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": true,
+            "text": "完成 2/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "假装工作：8 秒内点 5 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 88.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": true,
+            "text": "完成 2/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [
+            "假装工作：8 秒内点 5 下",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 100.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": true,
+            "text": "完成 2/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [
+            "假装工作：8 秒内点 5 下",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        }
+      ],
+      "taps": 8,
+      "simNow": 1795768177287,
+      "open": {
+        "badge": null,
+        "teamOpen": false,
+        "teamTab": "colleagues",
+        "teamPoints": "",
+        "panel": {
+          "scrollH": 0,
+          "clientH": 0,
+          "scrollTop": 0,
+          "cards": 0,
+          "visibleCards": 0,
+          "cardTexts": [],
+          "actionBtns": [],
+          "btnRects": []
+        },
+        "colleagues": {
+          "zhou": {
+            "level": 1,
+            "missionId": "quick",
+            "startedAt": 1795767778211,
+            "endsAt": 1795768678211,
+            "favor": 0
+          }
+        },
+        "talents": {
+          "unlocked": [
+            "click_1",
+            "click_2"
+          ],
+          "points": 0,
+          "rankGranted": 4
+        },
+        "daily": {
+          "window": 2,
+          "claimed": false,
+          "claimsToday": 0,
+          "goals": [
+            {
+              "id": "visit_1",
+              "progress": 1,
+              "target": 1,
+              "done": true
+            },
+            {
+              "id": "idle_earn",
+              "progress": 1,
+              "target": 1,
+              "done": true
+            },
+            {
+              "id": "click_100",
+              "progress": 0,
+              "target": 100,
+              "done": false
+            }
+          ]
+        },
+        "journalOpen": false,
+        "journalClaim": {
+          "disabled": false,
+          "text": "完成 0/3"
+        },
+        "welcomeOpen": false,
+        "welcomeGain": "0",
+        "welcomeTime": "0",
+        "shopAffordable": 9,
+        "shopTotal": 9,
+        "hudMoyu": "10.02亿",
+        "hudIdle": "5242.0",
+        "hudClick": "100.6",
+        "moyuValue": 1002147472.5291114,
+        "lifetimeValue": 1102039753.5295756,
+        "rank": "之神 7%",
+        "streakVisible": true,
+        "announce": [],
+        "errors": []
+      },
+      "watch": [
+        {
+          "at": 4.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": true,
+            "text": "完成 2/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [
+            "招募成功：小美"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 16.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": true,
+            "text": "完成 2/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [
+            "招募成功：小美",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 28.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": true,
+            "text": "完成 2/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "假装工作：8 秒内点 5 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 40.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": true,
+            "text": "完成 2/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "假装工作：8 秒内点 5 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 52.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": true,
+            "text": "完成 2/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "假装工作：8 秒内点 5 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 64.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": true,
+            "text": "完成 2/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "假装工作：8 秒内点 5 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 76.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": true,
+            "text": "完成 2/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "假装工作：8 秒内点 5 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 88.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": true,
+            "text": "完成 2/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [
+            "假装工作：8 秒内点 5 下",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 100.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": true,
+            "text": "完成 2/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [
+            "假装工作：8 秒内点 5 下",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        }
+      ],
+      "durationSec": 112.9,
+      "categorize": {
+        "samples": 9,
+        "samplesWithNewSystemAction": 0,
+        "samplesWithOldSystemAction": 9,
+        "first": {
+          "at": 4.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": true,
+            "text": "完成 2/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [
+            "招募成功：小美"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        }
+      }
+    },
+    {
+      "index": 3,
+      "t0": 1795768053219,
+      "actions": [
+        {
+          "at": 0,
+          "desc": "回来：欢迎面板 + 红点",
+          "result": {
+            "welcome": false,
+            "welcomeGain": "0",
+            "badge": null
+          }
+        },
+        {
+          "at": 0.2,
+          "desc": "关欢迎面板",
+          "result": null
+        },
+        {
+          "at": 0.7,
+          "desc": "开 👥 看老周还剩多久",
+          "result": {
+            "cardText": "老周 Lv.1\n八年老员工·甩锅大师\n挂机 +20/秒 · 擅长 聊八卦\n好感 0/100 · 再领 20 次解锁里程碑\n升级 Lv.2 · 6480\n⏳ 溜一圈 进行中 · 00:24",
+            "badge": null
+          }
+        },
+        {
+          "at": 1.4,
+          "desc": "关面板",
+          "result": null
+        }
+      ],
+      "samples": [
+        {
+          "at": 1.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 11.8,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 21.8,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 31.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 41.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 51.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 61.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 71.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "摸鱼冲刺：8 秒内连点 16 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 81.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "摸鱼冲刺：8 秒内连点 16 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 91.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "摸鱼冲刺：8 秒内连点 16 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 101.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "摸鱼冲刺：8 秒内连点 16 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 111.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "摸鱼冲刺：8 秒内连点 16 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 121.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "摸鱼冲刺：8 秒内连点 16 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 131.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [
+            "摸鱼冲刺：8 秒内连点 16 下",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 141.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [
+            "摸鱼冲刺：8 秒内连点 16 下",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        }
+      ],
+      "taps": 3,
+      "simNow": 1795768653219,
+      "open": {
+        "badge": null,
+        "teamOpen": false,
+        "teamTab": "colleagues",
+        "teamPoints": "",
+        "panel": {
+          "scrollH": 0,
+          "clientH": 0,
+          "scrollTop": 0,
+          "cards": 0,
+          "visibleCards": 0,
+          "cardTexts": [],
+          "actionBtns": [],
+          "btnRects": []
+        },
+        "colleagues": {
+          "zhou": {
+            "level": 1,
+            "missionId": "quick",
+            "startedAt": 1795767778211,
+            "endsAt": 1795768678211,
+            "favor": 0
+          },
+          "mei": {
+            "level": 1,
+            "missionId": null,
+            "startedAt": 0,
+            "endsAt": 0,
+            "favor": 0
+          }
+        },
+        "talents": {
+          "unlocked": [
+            "click_1",
+            "click_2"
+          ],
+          "points": 0,
+          "rankGranted": 4
+        },
+        "daily": {
+          "window": 2,
+          "claimed": false,
+          "claimsToday": 0,
+          "goals": [
+            {
+              "id": "visit_1",
+              "progress": 1,
+              "target": 1,
+              "done": true
+            },
+            {
+              "id": "idle_earn",
+              "progress": 1,
+              "target": 1,
+              "done": true
+            },
+            {
+              "id": "click_100",
+              "progress": 0,
+              "target": 100,
+              "done": false
+            }
+          ]
+        },
+        "journalOpen": false,
+        "journalClaim": {
+          "disabled": false,
+          "text": "完成 0/3"
+        },
+        "welcomeOpen": false,
+        "welcomeGain": "0",
+        "welcomeTime": "0",
+        "shopAffordable": 9,
+        "shopTotal": 9,
+        "hudMoyu": "10.04亿",
+        "hudIdle": "5389.4",
+        "hudClick": "100.6",
+        "moyuValue": 1003873766.7181699,
+        "lifetimeValue": 1104566047.7190783,
+        "rank": "之神 7%",
+        "streakVisible": true,
+        "announce": [],
+        "errors": []
+      },
+      "watch": [
+        {
+          "at": 1.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 11.8,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 21.8,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 31.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 41.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 51.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 61.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 71.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "摸鱼冲刺：8 秒内连点 16 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 81.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "摸鱼冲刺：8 秒内连点 16 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 91.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "摸鱼冲刺：8 秒内连点 16 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 101.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "摸鱼冲刺：8 秒内连点 16 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 111.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "摸鱼冲刺：8 秒内连点 16 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 121.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点",
+            "摸鱼冲刺：8 秒内连点 16 下"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 131.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [
+            "摸鱼冲刺：8 秒内连点 16 下",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 141.8,
+          "badge": "1",
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5399.8",
+          "announces": [
+            "摸鱼冲刺：8 秒内连点 16 下",
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        }
+      ],
+      "completionWhileOpen": {
+        "at": 31.8,
+        "badge": "1",
+        "teamPoints": "",
+        "shopAffordable": 9,
+        "daily": {
+          "window": 2,
+          "claimed": false,
+          "claimsToday": 0,
+          "goals": [
+            {
+              "id": "visit_1",
+              "progress": 1,
+              "target": 1,
+              "done": true
+            },
+            {
+              "id": "idle_earn",
+              "progress": 1,
+              "target": 1,
+              "done": true
+            },
+            {
+              "id": "click_100",
+              "progress": 0,
+              "target": 100,
+              "done": false
+            }
+          ]
+        },
+        "journalClaim": {
+          "disabled": false,
+          "text": "完成 0/3"
+        },
+        "welcome": false,
+        "hudIdle": "5399.8",
+        "announces": [],
+        "teammatesBusy": 1,
+        "teammatesDone": 0
+      },
+      "completionAnnounce": [
+        {
+          "t": 12505,
+          "kind": "announce",
+          "text": "老周丢来一个梗：戳亮起的黄点"
+        },
+        {
+          "t": 26188,
+          "kind": "announce",
+          "text": "摸鱼冲刺：8 秒内连点 16 下"
+        },
+        {
+          "t": 90135,
+          "kind": "announce",
+          "text": "老周丢来一个梗：戳亮起的黄点"
+        }
+      ],
+      "durationSec": 151.9,
+      "categorize": {
+        "samples": 15,
+        "samplesWithNewSystemAction": 12,
+        "samplesWithOldSystemAction": 15,
+        "first": {
+          "at": 1.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        }
+      }
+    },
+    {
+      "index": 4,
+      "t0": 1795768208174,
+      "actions": [
+        {
+          "at": 0,
+          "desc": "回来：不点 👥，先看 HUD 上有没有任务完成提示",
+          "result": {
+            "badge": "1",
+            "welcome": false,
+            "announceOnReturn": [],
+            "toastTextOnScreen": null
+          }
+        },
+        {
+          "at": 0.2,
+          "desc": "关欢迎面板",
+          "result": null
+        },
+        {
+          "at": 0.7,
+          "desc": "开 👥 领老周奖励",
+          "result": {
+            "claimButtonText": "领取 +6.41万",
+            "clicked": 1,
+            "favorAfter": {
+              "level": 1,
+              "missionId": null,
+              "startedAt": 0,
+              "endsAt": 0,
+              "favor": 2
+            },
+            "announces": [
+              "任务完成 +61530"
+            ],
+            "moyuBefore": 1006620229.6533352,
+            "moyuAfter": 1006685539.5138227,
+            "rewardExact": 65310,
+            "hudMoyu": "10.07亿"
+          }
+        },
+        {
+          "at": 2.1,
+          "desc": "再派老周「溜一圈」15 分钟",
+          "result": {
+            "clicked": 1,
+            "cardText": "老周 Lv.1\n八年老员工·甩锅大师\n挂机 +20/秒 · 擅长 聊八卦\n好感 2/100 · 再领 18 次解锁里程碑\n升级 Lv.2 · 6480\n⏳ 溜一圈 进行中 · 12:45"
+          }
+        },
+        {
+          "at": 2.8,
+          "desc": "关面板",
+          "result": null
+        },
+        {
+          "at": 3.2,
+          "desc": "天赋页：确认没有可点的（点数为 0）",
+          "result": {
+            "teamPoints": "天赋点 0",
+            "enabledTalentButtons": 0
+          }
+        },
+        {
+          "at": 4.5,
+          "desc": "【实验】页面开着时任务到点：只快进时钟，看有没有提示",
+          "result": {
+            "badge": null,
+            "announces": [],
+            "welcome": false
+          }
+        }
+      ],
+      "samples": [
+        {
+          "at": 6.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 16.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 26.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 36.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 46.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 56.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 66.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 76.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 86.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 96.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 106.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 116.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 126.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 136.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 146.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        }
+      ],
+      "taps": 8,
+      "simNow": 1795769168174,
+      "open": {
+        "badge": "1",
+        "teamOpen": false,
+        "teamTab": "colleagues",
+        "teamPoints": "",
+        "panel": {
+          "scrollH": 0,
+          "clientH": 0,
+          "scrollTop": 0,
+          "cards": 0,
+          "visibleCards": 0,
+          "cardTexts": [],
+          "actionBtns": [],
+          "btnRects": []
+        },
+        "colleagues": {
+          "zhou": {
+            "level": 1,
+            "missionId": "quick",
+            "startedAt": 1795767778211,
+            "endsAt": 1795768678211,
+            "favor": 0
+          },
+          "mei": {
+            "level": 1,
+            "missionId": null,
+            "startedAt": 0,
+            "endsAt": 0,
+            "favor": 0
+          }
+        },
+        "talents": {
+          "unlocked": [
+            "click_1",
+            "click_2"
+          ],
+          "points": 0,
+          "rankGranted": 4
+        },
+        "daily": {
+          "window": 2,
+          "claimed": false,
+          "claimsToday": 0,
+          "goals": [
+            {
+              "id": "visit_1",
+              "progress": 1,
+              "target": 1,
+              "done": true
+            },
+            {
+              "id": "idle_earn",
+              "progress": 1,
+              "target": 1,
+              "done": true
+            },
+            {
+              "id": "click_100",
+              "progress": 0,
+              "target": 100,
+              "done": false
+            }
+          ]
+        },
+        "journalOpen": false,
+        "journalClaim": {
+          "disabled": false,
+          "text": "完成 0/3"
+        },
+        "welcomeOpen": false,
+        "welcomeGain": "0",
+        "welcomeTime": "0",
+        "shopAffordable": 9,
+        "shopTotal": 9,
+        "hudMoyu": "10.07亿",
+        "hudIdle": "5399.8",
+        "hudClick": "100.6",
+        "moyuValue": 1006613930.2458428,
+        "lifetimeValue": 1107306211.246143,
+        "rank": "之神 7%",
+        "streakVisible": true,
+        "announce": [],
+        "errors": []
+      },
+      "watch": [
+        {
+          "at": 6.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 16.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 26.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 36.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 46.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 56.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 66.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [
+            "老周丢来一个梗：戳亮起的黄点"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 76.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 86.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 96.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 106.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 116.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 126.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 136.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        },
+        {
+          "at": 146.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        }
+      ],
+      "durationSec": 156.6,
+      "categorize": {
+        "samples": 15,
+        "samplesWithNewSystemAction": 0,
+        "samplesWithOldSystemAction": 15,
+        "first": {
+          "at": 6.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        }
+      }
+    }
+  ],
+  "measurements": {
+    "idlePerSecMeasured": 5214,
+    "idleHudText": "5179.4",
+    "claimButtonText": "领取 +6.41万",
+    "rewardExactMeasured": 65310,
+    "dispatchFormulaCheck": {
+      "expected": 61942.31999999999,
+      "measured": 65310,
+      "note": "老周 lv1 + 溜一圈 15 分钟（不匹配，倍率 1.2）；实测含 0.7s 挂机误差",
+      "measuredMinutesOfIdle": 0.21
+    },
+    "missionValueTable": [
+      {
+        "label": "溜一圈 15m（lv1 不匹配）",
+        "seconds": 900,
+        "combinedMult": 1.2,
+        "reward": 61942,
+        "pctOfSameDurationIdle": 1.3,
+        "idleSecondsEquivalent": 12
+      },
+      {
+        "label": "溜一圈 15m（lv5+匹配+好感100）",
+        "seconds": 900,
+        "combinedMult": 5.4,
+        "reward": 278740,
+        "pctOfSameDurationIdle": 5.9,
+        "idleSecondsEquivalent": 53
+      },
+      {
+        "label": "楼下买咖啡 8h（lv1 不匹配）",
+        "seconds": 28800,
+        "combinedMult": 2.8,
+        "reward": 4625026,
+        "pctOfSameDurationIdle": 3.1,
+        "idleSecondsEquivalent": 887
+      },
+      {
+        "label": "楼下买咖啡 8h（lv5+匹配+好感100）",
+        "seconds": 28800,
+        "combinedMult": 12.6,
+        "reward": 20812619,
+        "pctOfSameDurationIdle": 13.9,
+        "idleSecondsEquivalent": 3992
+      }
+    ],
+    "sessionTimeline": [
+      {
+        "session": 1,
+        "simMinutesFromStart": 0,
+        "realDurationSec": 160.8,
+        "taps": 12,
+        "actions": 12,
+        "badgesSeen": [
+          null
+        ],
+        "claimableSamples": 0,
+        "sampleCount": 10
+      },
+      {
+        "session": 2,
+        "simMinutesFromStart": 6.73,
+        "realDurationSec": 112.9,
+        "taps": 8,
+        "actions": 9,
+        "badgesSeen": [
+          null
+        ],
+        "claimableSamples": 0,
+        "sampleCount": 9
+      },
+      {
+        "session": 3,
+        "simMinutesFromStart": 14.66,
+        "realDurationSec": 151.9,
+        "taps": 3,
+        "actions": 4,
+        "badgesSeen": [
+          null,
+          "1"
+        ],
+        "claimableSamples": 12,
+        "sampleCount": 15
+      },
+      {
+        "session": 4,
+        "simMinutesFromStart": 23.25,
+        "realDurationSec": 156.6,
+        "taps": 8,
+        "actions": 7,
+        "badgesSeen": [
+          null
+        ],
+        "claimableSamples": 0,
+        "sampleCount": 15
+      }
+    ],
+    "newSystemActionBySession": [
+      {
+        "session": 1,
+        "samples": 10,
+        "samplesWithNewSystemAction": 0,
+        "samplesWithOldSystemAction": 10,
+        "first": {
+          "at": 10.6,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5242.0",
+          "announces": [
+            "招募成功：老周",
+            "老周 出发去派遣了"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        }
+      },
+      {
+        "session": 2,
+        "samples": 9,
+        "samplesWithNewSystemAction": 0,
+        "samplesWithOldSystemAction": 9,
+        "first": {
+          "at": 4.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": true,
+            "text": "完成 2/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [
+            "招募成功：小美"
+          ],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        }
+      },
+      {
+        "session": 3,
+        "samples": 15,
+        "samplesWithNewSystemAction": 12,
+        "samplesWithOldSystemAction": 15,
+        "first": {
+          "at": 1.8,
+          "badge": null,
+          "teamPoints": "天赋点 0",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5389.4",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        }
+      },
+      {
+        "session": 4,
+        "samples": 15,
+        "samplesWithNewSystemAction": 0,
+        "samplesWithOldSystemAction": 15,
+        "first": {
+          "at": 6.6,
+          "badge": null,
+          "teamPoints": "",
+          "shopAffordable": 9,
+          "daily": {
+            "window": 2,
+            "claimed": false,
+            "claimsToday": 0,
+            "goals": [
+              {
+                "id": "visit_1",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "progress": 1,
+                "target": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "progress": 0,
+                "target": 100,
+                "done": false
+              }
+            ]
+          },
+          "journalClaim": {
+            "disabled": false,
+            "text": "完成 0/3"
+          },
+          "welcome": false,
+          "hudIdle": "5368.5",
+          "announces": [],
+          "teammatesBusy": 1,
+          "teammatesDone": 0
+        }
+      }
+    ],
+    "completionWhileOpen": {
+      "at": 31.8,
+      "badge": "1",
+      "teamPoints": "",
+      "shopAffordable": 9,
+      "daily": {
+        "window": 2,
+        "claimed": false,
+        "claimsToday": 0,
+        "goals": [
+          {
+            "id": "visit_1",
+            "progress": 1,
+            "target": 1,
+            "done": true
+          },
+          {
+            "id": "idle_earn",
+            "progress": 1,
+            "target": 1,
+            "done": true
+          },
+          {
+            "id": "click_100",
+            "progress": 0,
+            "target": 100,
+            "done": false
+          }
+        ]
+      },
+      "journalClaim": {
+        "disabled": false,
+        "text": "完成 0/3"
+      },
+      "welcome": false,
+      "hudIdle": "5399.8",
+      "announces": [],
+      "teammatesBusy": 1,
+      "teammatesDone": 0
+    },
+    "completionAnnounce": [
+      {
+        "t": 12505,
+        "kind": "announce",
+        "text": "老周丢来一个梗：戳亮起的黄点"
+      },
+      {
+        "t": 26188,
+        "kind": "announce",
+        "text": "摸鱼冲刺：8 秒内连点 16 下"
+      },
+      {
+        "t": 90135,
+        "kind": "announce",
+        "text": "老周丢来一个梗：戳亮起的黄点"
+      }
+    ]
+  },
+  "phaseF": {
+    "colleaguesPanel": {
+      "cards": 5,
+      "scrollH": 1187,
+      "clientH": 613,
+      "screens": 0.94,
+      "visibleCardsAtTop": 2,
+      "dispatchButtons": 25,
+      "missionButtonRects": [
+        {
+          "w": 301,
+          "h": 36
+        },
+        {
+          "w": 97,
+          "h": 45
+        },
+        {
+          "w": 97,
+          "h": 45
+        },
+        {
+          "w": 97,
+          "h": 45
+        },
+        {
+          "w": 148,
+          "h": 45
+        },
+        {
+          "w": 148,
+          "h": 45
+        },
+        {
+          "w": 301,
+          "h": 36
+        },
+        {
+          "w": 97,
+          "h": 45
+        },
+        {
+          "w": 97,
+          "h": 45
+        },
+        {
+          "w": 97,
+          "h": 45
+        }
+      ],
+      "afterScrolls": {
+        "scrollTop": 574,
+        "scrollH": 1187,
+        "clientH": 613
+      }
+    },
+    "swipe1": {
+      "scrollTop": 365,
+      "visible": 2
+    },
+    "swipe2": {
+      "scrollTop": 574,
+      "visible": 2
+    },
+    "talentsPanel": {
+      "scrollH": 1000,
+      "clientH": 613,
+      "screens": 0.63,
+      "teamPoints": "天赋点 2",
+      "talentRows": 16,
+      "enabled": 3,
+      "scrolledToBottom": {
+        "scrollTop": 387,
+        "endText": "5%\n点亮\n3\n人脉 丢梗奖励 +15%\n点亮\n4\n预警 巡逻横幅提前 2s + 奖励再 +5%\n点亮\n5\n摸鱼气场 每次安然巡逻 → 挂机 +1%（封顶 +30%）\n点亮\n5\n老板眼线 巡逻与丢梗奖励 ×2\n点亮\n重置天赋（返还全部点数）"
+      }
+    }
+  },
+  "errors": []
+}

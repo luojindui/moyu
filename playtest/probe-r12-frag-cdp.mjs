@@ -10,6 +10,7 @@
  * 产出：playtest/probe-r12-frag-evidence.json、/tmp/frag-*.png
  */
 import { writeFileSync } from "node:fs";
+import { execSync } from "node:child_process";
 import { openBrowser, setupMobilePage, sleep } from "./r9-cdp-lib.mjs";
 
 const PORT = 9533;
@@ -119,7 +120,7 @@ function seedBlob(kind) {
     talents: { unlocked: [], points: 0, rankGranted: -1 },
   };
   if (kind === "all5") {
-    const c = (level, favor) => ({ level, missionId: null, startedAt: 0, endsAt: 0, favor });
+    const c = (level, favor) => ({ level, missionId: null, startedAt: 0, endsAt: 0, favor, autoRepeat: false, rewardSnapshot: 0 });
     base.team = {
       colleagues: {
         zhou: c(3, 30),
@@ -138,7 +139,15 @@ function seedBlob(kind) {
 /* ---------------- 启动浏览器 ---------------- */
 const b = await openBrowser({ port: PORT, tag: "frag" });
 const out = {
-  meta: { url: URL_, viewport: "390x844@3x", startedAt: new Date().toISOString(), profile: "碎片党：每次 2-3 分钟，一天 4-6 次，从不专门坐 30 分钟" },
+  meta: {
+    url: URL_,
+    viewport: "390x844@3x",
+    startedAt: new Date().toISOString(),
+    profile: "碎片党：每次 2-3 分钟，一天 4-6 次，从不专门坐 30 分钟",
+    git: (() => { try { return execSync("git rev-parse --short HEAD", { encoding: "utf8" }).trim(); } catch { return null; } })(),
+    gitStatusAtStart: (() => { try { return execSync("git status --porcelain", { encoding: "utf8" }).trim().split("\n").filter((x) => x.startsWith(" M src") || x.startsWith("?? src")); } catch { return []; } })(),
+    gitRevAtEnd: null,
+  },
   seed: null,
   boot: [],
   sessions: [],
@@ -332,16 +341,25 @@ try {
     return { clicked, colleagues: Object.keys(s.colleagues), announces: (s.announce || []).map((x) => x.text).slice(-2) };
   });
   await act("给老周派「溜一圈」15 分钟", async () => {
+    const before = await snap();
+    const buttonsBefore = before.panel ? before.panel.actionBtns.filter((x) => x.act === "dispatch" && x.id === "zhou").map((x) => x.text) : [];
     const clicked = await tapExpr(`(() => { const el = document.querySelector('#team-body button[data-act="dispatch"][data-id="zhou"][data-mission="quick"]'); if (!el) return 0; el.click(); return 1; })()`);
     await sleep(700);
     const s = await snap();
     await shot("/tmp/frag-s1-dispatch.png");
     return {
       clicked,
-      cardText: s.panel && s.panel.cardTexts[0],
-      dispatchButtonsShowRewardPreview: /\+|奖励/.test((s.panel && s.panel.cardTexts[0]) || ""),
+      missionButtonLabels: buttonsBefore,
+      countdownText: s.panel && s.panel.cardTexts[0],
+      buttonsShowRewardPreview: /\+|奖励/.test(buttonsBefore.join(" ")),
       announces: (s.announce || []).map((x) => x.text).slice(-2),
     };
+  });
+  await act("打开老周「自动重复」（排班层：领奖后自动再派）", async () => {
+    const clicked = await tapExpr(`(() => { const el = document.querySelector('#team-body button[data-act="auto"][data-id="zhou"]'); if (!el) return 0; el.click(); return 1; })()`);
+    await sleep(500);
+    const s = await snap();
+    return { clicked, zhou: s.colleagues && s.colleagues.zhou, autoButtonText: s.panel ? (s.panel.actionBtns.find((x) => x.act === "auto" && x.id === "zhou") || {}).text : null };
   });
   await act("关面板", async () => {
     await tap("#team-close");
@@ -471,9 +489,9 @@ try {
   log(`S2 结束 ${cur.durationSec}s taps=${cur.taps}`);
 
   /* ================= 间隔 6 分钟 → 会话 3（t≈14min，145s，任务在会话内完成） ================= */
-  await ev(`window.__MOYU__.saveNow(); window.__frag.jump(6 * 60 * 1000); 1`);
+  await ev(`window.__MOYU__.saveNow(); window.__frag.jump(4 * 60 * 1000); 1`);
   await sleep(500);
-  await reloadReady("gap+6min");
+  await reloadReady("gap+4min");
   await sleep(500);
   cur = startSession(3);
   cur.simNow = (await ev("Date.now()")) || 0;
@@ -536,19 +554,21 @@ try {
     await sleep(300);
     return null;
   });
-  await act("开 👥 领老周奖励", async () => {
+  await act("开 👥：看顶部「一键领取」→ 一键领取", async () => {
     await tap("#btn-team");
-    await sleep(500);
+    await sleep(600);
     const before = await snap();
-    const claimBtn = before.panel ? before.panel.actionBtns.find((x) => x.act === "claim") : null;
-    const clicked = await tapExpr(`(() => { const el = document.querySelector('#team-body button[data-act="claim"]'); if (!el) return 0; el.click(); return 1; })()`);
-    await sleep(700);
+    const claimAllBtn = before.panel ? before.panel.actionBtns.find((x) => x.act === "claim-all") : null;
+    const singleClaim = before.panel ? before.panel.actionBtns.find((x) => x.act === "claim") : null;
+    const clicked = await tapExpr(`(() => { const el = document.querySelector('#team-body button[data-act="claim-all"]') || document.querySelector('#team-body button[data-act="claim"]'); if (!el) return 0; el.click(); return 1; })()`);
+    await sleep(800);
     const s = await snap();
     await shot("/tmp/frag-s4-claim.png");
     return {
-      claimButtonText: claimBtn ? claimBtn.text : null,
+      claimAllButtonText: claimAllBtn ? claimAllBtn.text : null,
+      singleClaimText: singleClaim ? singleClaim.text : null,
       clicked,
-      favorAfter: s.colleagues && s.colleagues.zhou,
+      afterClaim: s.colleagues,
       announces: (s.announce || []).map((x) => x.text).slice(-2),
       moyuBefore: before.moyuValue,
       moyuAfter: s.moyuValue,
@@ -556,11 +576,19 @@ try {
       hudMoyu: s.hudMoyu,
     };
   });
-  await act("再派老周「溜一圈」15 分钟", async () => {
-    const clicked = await tapExpr(`(() => { const el = document.querySelector('#team-body button[data-act="dispatch"][data-id="zhou"][data-mission="quick"]'); if (!el) return 0; el.click(); return 1; })()`);
-    await sleep(600);
+  await act("领奖后：确认自动重复是否已经重新派出去（0 下操作）", async () => {
     const s = await snap();
-    return { clicked, cardText: s.panel && s.panel.cardTexts[0] };
+    const zhou = s.colleagues && s.colleagues.zhou;
+    const clicked = await tapExpr(`(() => { const el = document.querySelector('#team-body button[data-act="dispatch"][data-id="zhou"][data-mission="quick"]'); if (!el) return -1; el.click(); return 1; })()`);
+    await sleep(500);
+    const s2 = await snap();
+    return {
+      zhouAfterClaim: zhou,
+      couldManualDispatch: clicked,
+      missionButtonsStillShown: clicked === 1,
+      countdownText: s.panel && s.panel.cardTexts[0],
+      summaryText: s.panel && s.panel.cardTexts.length ? null : null,
+    };
   });
   await act("关面板", async () => {
     await tap("#team-close");
@@ -703,6 +731,10 @@ try {
     completionAnnounce: out.sessions[2] ? out.sessions[2].completionAnnounce : null,
   };
 
+  try {
+    out.meta.gitRevAtEnd = execSync("git rev-parse --short HEAD", { encoding: "utf8" }).trim();
+    out.meta.gitStatusAtEnd = execSync("git status --porcelain", { encoding: "utf8" }).trim().split("\n").filter((x) => x.startsWith(" M src") || x.startsWith("?? src"));
+  } catch { /* ignore */ }
   writeFileSync(EVIDENCE, JSON.stringify(out, null, 2));
   log(`已写 ${EVIDENCE}`);
   console.log("SESSIONS", JSON.stringify(out.sessions.map((s) => ({ i: s.index, dur: s.durationSec, taps: s.taps, actions: s.actions.length })), null, 0));
