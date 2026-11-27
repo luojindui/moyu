@@ -171,14 +171,20 @@ export class TeamPanel {
         actionHtml = `<div class="mate-missions">${btns}</div>`;
       }
 
+      const nextMilestone = favor < 20 ? 20 : favor < 40 ? 40 : favor < 60 ? 60 : favor < 80 ? 80 : favor < 100 ? 100 : 0;
+      const milestoneHint =
+        nextMilestone > 0
+          ? `好感 ${favor}/100 · 再领 ${nextMilestone - favor} 次解锁里程碑`
+          : `好感 100/100 · 满级情报`;
       parts.push(`<div class="mate">
         <div class="mate-top">
           <span class="mate-name">${def.name} <span class="mate-lv">Lv.${cur.level}</span></span>
           <span class="mate-role">${def.role}</span>
         </div>
         <div class="mate-skill">挂机 +${formatMoyu(def.idlePerLevel * cur.level)}/秒 · 擅长 ${SKILL_LABEL[def.skill]}</div>
-        <div class="mate-favor" title="好感 ${favor}/100">
+        <div class="mate-favor" title="${milestoneHint}">
           <div class="favor-track"><div class="favor-bar" style="width:${favor}%"></div></div>
+          <div style="font-size:10px;color:#a8a493;margin-top:3px">${milestoneHint}</div>
         </div>
         <div class="mate-actions">
           <button data-act="upgrade" data-id="${def.id}" ${cur.level >= MAX_COLLEAGUE_LEVEL || state.moyu < upCost ? "disabled" : ""}>
