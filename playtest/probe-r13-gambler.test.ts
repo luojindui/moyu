@@ -1,11 +1,11 @@
 /**
- * R13 赌徒党引擎探针（针对 2026-11-27 17:56 后的当前工作区版本重写）：
- * 核对开发组刚合的修复是否真的落地，并继续找"赌"的问题。
+ * R13 赌徒党 · 第二轮复验探针（HEAD e4464d9 + round-2 修复）
+ * 核对：线索去名 / 赔率 1.8:1.0 盲猜负期望 / 16 张卡池 / 跳过即关 / 1.2s 防误触 / 跨天再选 / 首次巡逻是否优先 choice
  * 只读 src/，不改 src/。
  */
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
-import { initialState, gain } from "../src/engine/state";
+import { initialState } from "../src/engine/state";
 import {
   CARDS,
   CARD_DURATION,
@@ -26,15 +26,7 @@ import {
   CHOICE_CORRECT_MULT,
   CHOICE_WRONG_PENALTY_RATIO,
 } from "../src/engine/boss-choice";
-import {
-  newEventState,
-  scheduleEvents,
-  finishPatrol,
-  onBossChoice,
-  bossSurviveReward,
-} from "../src/engine/events";
-import { surviveStreakMult } from "../src/engine/events";
-import { serialize, restore, SAVE_KEY, type SaveAdapter } from "../src/engine/save";
+import { newEventState, scheduleEvents, finishPatrol, onBossChoice, pickBossVariant } from "../src/engine/events";
 
 const DAY = 86_400_000;
 
@@ -49,7 +41,7 @@ function mulberry32(seed: number): () => number {
   };
 }
 
-function cardsState(id: string, until: number, extra: Partial<{ date: string; nextDayGuaranteed: string | null; dismissed: boolean }> = {}) {
+function cardState(id: string | null, until: number, extra: Partial<{ date: string; chosenDate: string; nextDayGuaranteed: string | null; dismissed: boolean }> = {}) {
   return {
     date: extra.date ?? "2026-11-27",
     offers: ["overtime", "coffee_day", "quiet_day"],
@@ -57,148 +49,95 @@ function cardsState(id: string, until: number, extra: Partial<{ date: string; ne
     until,
     nextDayGuaranteed: extra.nextDayGuaranteed ?? null,
     dismissed: extra.dismissed ?? false,
+    chosenDate: extra.chosenDate ?? "",
   };
 }
 
-function stateWithCard(id: string, until = Date.now() + 3600_000) {
-  return { ...initialState(), cards: cardsState(id, until) };
-}
-
-function memAdapter(): { adapter: SaveAdapter; mem: Map<string, string> } {
-  const mem = new Map<string, string>();
-  return {
-    mem,
-    adapter: {
-      getItem: (k) => mem.get(k) ?? null,
-      setItem: (k, v) => void mem.set(k, v),
-      removeItem: (k) => void mem.delete(k),
-    },
-  };
-}
-
-describe("R13 修复核对：稀有卡风险现在真的算了（24h 内离线 -20%）", () => {
-  it("通宵摸鱼：离线效率从 0.7 掉到 0.5（-0.2 生效）", () => {
-    const base = initialState();
-    const now = Date.now();
-    const createdAt = now - 5 * DAY;
-    const noCard = offlineEfficiency(base, createdAt, now);
-    const withOvertime = offlineEfficiency(stateWithCard("overtime", now + DAY), createdAt, now);
-    console.log(`[risk] 不选卡离线效率=${noCard.toFixed(3)} / 通宵摸鱼=${withOvertime.toFixed(3)}（差 ${(noCard - withOvertime).toFixed(3)}）`);
-    expect(cardEffects(stateWithCard("overtime"), now).riskPenalty).toBe(0.2);
-    expect(noCard - withOvertime).toBeCloseTo(0.2, 5);
+describe("R2-① 线索去名：横幅还能不能一眼看出答案", () => {
+  it("tell 里不再包含性格名；但行为描述仍与答案近似一一映射", () => {
+    const src = readFileSync("src/ui/boss-panel.ts", "utf8");
+    console.log(`[clue] 面板模板含「有人过来了——」=${src.includes("有人过来了——")}；含 p.name=${src.includes("${p.name}走过来了")}`);
+    expect(src.includes("有人过来了——")).toBe(true);
+    expect(src.includes("${p.name}走过来了")).toBe(false);
+    const names = ["安总", "王总", "老李"];
+    for (const p of PERSONALITIES) {
+      const label = CHOICES.find((c) => c.id === p.correct)!.label;
+      const leaks = names.filter((n) => p.tell.includes(n));
+      console.log(`[clue] 行为线索=「${p.tell}」 → 正确应对【${label}】（含名字泄露=${leaks.length}）`);
+      expect(leaks.length).toBe(0);
+    }
+    // 行为→答案的语义接近直译：盯屏幕→切屏、快步→装忙、看手机发呆→继续摸鱼
+    console.log("[clue] 推断难度：仍需 1 步联想，但三个线索与三个答案几乎一一对应 → 学 1 次后仍是确定题");
+    console.log("[clue] 唯一泄露：结算台词（选后才出现）「王总：屏幕挺干净啊。」会在答完后揭露名字");
   });
 
-  it("但新手首日（建档 <24h）离线效率恒为 1 → 首日稀有卡是纯收益、零风险", () => {
-    const s = stateWithCard("overtime");
-    const now = Date.now();
-    const firstDay = offlineEfficiency(s, now - 1000, now);
-    console.log(`[risk] 建档 1 秒的玩家选通宵摸鱼：离线效率=${firstDay}（-20% 被首日保护吃掉）`);
-    expect(firstDay).toBe(1);
+  it("5 秒窗口 / 赔率 1.8 : 1.0（盲猜期望 = -0.067，负期望）", () => {
+    console.log(`[odds] 正确 ×${CHOICE_CORRECT_MULT} / 错误 ×${CHOICE_WRONG_PENALTY_RATIO}`);
+    const blind = (1 / 3) * CHOICE_CORRECT_MULT - (2 / 3) * CHOICE_WRONG_PENALTY_RATIO;
+    console.log(`[odds] 盲猜 3 选 1 期望 = ${blind.toFixed(4)} × base（<0 盲猜亏）`);
+    console.log(`[odds] 但超时=0（不选不亏）→ 最优策略是"没读准就等它过"，赌是被惩罚的选项`);
+    expect(CHOICE_CORRECT_MULT).toBe(1.8);
+    expect(CHOICE_WRONG_PENALTY_RATIO).toBe(1.0);
+    expect(blind).toBeLessThan(0);
+    expect(CHOICE_SECONDS).toBe(5);
   });
 
-  it("通宵摸鱼 +60% 挂机确实生效（好处立刻到手）", () => {
-    const base = initialState();
-    const withCard = stateWithCard("overtime");
-    const r0 = effectOf(base).idleRate;
-    const r1 = effectOf(withCard).idleRate;
-    console.log(`[idle] 不选卡=${r0.toFixed(3)}/s 选通宵摸鱼=${r1.toFixed(3)}/s（×${(r1 / r0).toFixed(2)}）`);
-    expect(r1 / r0).toBeCloseTo(1.6, 3);
+  it("实扣金额：base=50 时 选对 +90 / 选错 -50 / 超时 0", () => {
+    const s = { ...initialState(), moyu: 1e6 };
+    const right = resolveBossChoice(s, "hasty", "act-busy", 50);
+    const wrong = resolveBossChoice(s, "hasty", "keep-slacking", 50);
+    console.log(`[odds] base=50 → 选对 +${right.delta} / 选错 ${wrong.delta} / 超时 0（_ratio 1.0 = 扣掉一次"安然"的全部收益）`);
+    expect(right.delta).toBe(90);
+    expect(wrong.delta).toBe(-50);
+  });
+
+  it("新手前 3 次巡逻选错仍免罚（教学），第 4 次起真扣", () => {
+    const es = { ...newEventState(), bossVariant: "choice" as const, bossUntil: 1e9, patrolCount: 2 };
+    const s = { ...initialState(), moyu: 1000 };
+    const rookie = onBossChoice(s, es, "keep-slacking", 1000);
+    console.log(`[rookie] patrolCount=2 选错：delta=${rookie!.delta}（免罚，只丢连胜）`);
+    expect(Math.abs(rookie!.delta)).toBe(0);
+    const es4 = { ...newEventState(), bossVariant: "choice" as const, bossUntil: 1e9, patrolCount: 4 };
+    const late = onBossChoice(s, es4, "keep-slacking", 1000);
+    console.log(`[rookie] patrolCount=4 选错：delta=${late!.delta}（真扣）`);
+    expect(late!.delta).toBeLessThan(0);
   });
 });
 
-describe("R13 修复核对：巡逻密度现在吃卡了（eventRateMult）", () => {
-  it("全员大会 eventRateMult=2 → 巡逻间隔减半", () => {
-    const mk = (rate: number) => {
+describe("R2-① 首次巡逻是否优先 choice（lead 声称的设计变更）", () => {
+  it("代码里找不到"首巡强制 choice"：0 巡逻次数时变体仍按 35/30/20/15 抽取", () => {
+    const src = readFileSync("src/engine/events.ts", "utf8");
+    console.log(`[first] events.ts 含 forcedVariant 逻辑=${src.includes("es.forcedVariant = null")}；含"首次优先 choice"标记=${/patrolCount\s*===?\s*0[^;]*choice/.test(src)}`);
+    // 用 1000 个随机种子模拟"首次巡逻"的变体分布
+    const counts: Record<string, number> = {};
+    const rng = mulberry32(2026);
+    for (let i = 0; i < 1000; i++) {
       const es = newEventState();
-      const rng = mulberry32(2024);
-      scheduleEvents(es, 0, rng, rate);
-      return es.nextBossAt;
-    };
-    const normal = mk(1);
-    const dense = mk(2);
-    console.log(`[density] 正常首巡=${normal.toFixed(2)}s / 全员大会=${dense.toFixed(2)}s（×${(normal / dense).toFixed(2)}）`);
-    expect(normal / dense).toBeCloseTo(2, 5);
-    const src = readFileSync("src/main.ts", "utf8");
-    console.log(`[density] main.ts 是否把 cardEffects.eventRateMult 传给调度: ${src.includes("cardEffects(state, Date.now()).eventRateMult")}`);
-    expect(src.includes("cardEffects(state, Date.now()).eventRateMult")).toBe(true);
+      scheduleEvents(es, 0, rng); // 排期
+      const at = es.nextBossAt;
+      scheduleEvents(es, at, rng); // 触发首次巡逻
+      counts[es.bossVariant] = (counts[es.bossVariant] ?? 0) + 1;
+    }
+    console.log(`[first] 1000 次"首次巡逻"变体分布：${JSON.stringify(counts)}（choice 应为 ~15%，而非 100%）`);
+    expect(counts.choice).toBeGreaterThan(0);
+    expect(counts.choice).toBeLessThan(1000);
+    expect(counts.hold).toBeGreaterThan(0);
   });
 
-  it("全员大会 + 连胜 4 + 选对：单次选对 = 220+（这里是真的爽点）", () => {
-    const s = { ...stateWithCard("big_meeting"), surviveStreak: 4 };
-    const es = { ...newEventState(), bossVariant: "choice" as const, surviveStreak: 4, patrolCount: 10 };
-    const base = bossSurviveReward(s, { ...es, bossCaught: false });
-    const correct = Math.floor(base * CHOICE_CORRECT_MULT);
-    console.log(`[reward] 全员大会下 base=${Math.round(base)}（=50×连胜×2）选对=+${correct}，选错=-${Math.floor(base * 0.6)}`);
-    expect(surviveStreakMult(4)).toBeCloseTo(1.4, 5);
-    expect(correct).toBeGreaterThan(220);
+  it("pickBossVariant 无 patrolCount 参数 → 无法按首巡定制", () => {
+    console.log(`[first] pickBossVariant.length=${pickBossVariant.length}（只收 rng，无首巡分支）`);
+    expect(pickBossVariant.length).toBe(1);
   });
 });
 
-describe("R13 修复核对：卡的 24h 时长 / 跳过 / HUD / 到期边界", () => {
-  it("24h 内跨天不清卡（只更新 date），不再零点清零", () => {
-    const now = Date.now();
-    const s = { ...initialState(), cards: cardsState("overtime", now + 20 * 3600_000) };
-    const nextDay = ensureCards(s, "2026-11-28", mulberry32(1), now);
-    console.log(`[duration] 跨天但未到 24h：chosen=${nextDay.cards.chosen} date=${nextDay.cards.date}`);
-    expect(nextDay.cards.chosen).toBe("overtime");
-    expect(nextDay.cards.date).toBe("2026-11-28");
-    // 24h 到期后换池
-    const expired = ensureCards(s, "2026-11-29", mulberry32(2), now + 25 * 3600_000);
-    console.log(`[duration] 超过 24h 后：chosen=${expired.cards.chosen}（换新卡池）`);
-    expect(expired.cards.chosen).toBe(null);
-  });
+describe("R2-⑤ 卡池 10 → 16：多样性到底改善多少", () => {
+  it("16 张卡（普通 8 / 稀有 6 / 剧情 2），抽卡分布重新算", () => {
+    const byRarity: Record<string, number> = {};
+    CARDS.forEach((c) => (byRarity[c.rarity] = (byRarity[c.rarity] ?? 0) + 1));
+    console.log(`[pool] 卡池共 ${CARDS.length} 张：${JSON.stringify(byRarity)}；新增=${CARDS.filter((c) => ["ac_broken", "canteen_gift", "remote_day", "intern_ask", "office_move", "deadline"].includes(c.id)).map((c) => c.name).join("/")}`);
+    expect(CARDS.length).toBe(16);
+    expect(new Set(CARDS.map((c) => c.id)).size).toBe(16);
 
-  it("P1 边界漏洞：同一自然日卡到期后重载，会重弹「同一批旧卡」再选一次", () => {
-    const now = Date.now();
-    const { adapter, mem } = memAdapter();
-    const s = { ...initialState(), cards: cardsState("overtime", now - 1000) }; // 已过期
-    serialize(s, adapter, now);
-    // 模拟 restore 时把已过期选择清掉
-    const blob = JSON.parse(mem.get(SAVE_KEY)!);
-    blob.cards.until = now - 1000;
-    mem.set(SAVE_KEY, JSON.stringify(blob));
-    const restored = restore(adapter, now);
-    console.log(`[expiry] restore 后 chosen=${restored.state.cards?.chosen} offers=${restored.state.cards?.offers.length}`);
-    expect(restored.state.cards?.chosen).toBe(null);
-    const again = ensureCards(restored.state, "2026-11-27", mulberry32(3), now);
-    const modalWouldShow = !!(again.cards && !again.cards.chosen && !again.cards.dismissed && again.cards.offers.length > 0);
-    console.log(`[expiry] 同日再 ensureCards：offers=${again.cards?.offers.join(",")} → 弹窗会重新出现=${modalWouldShow}（可再选一张）`);
-    expect(modalWouldShow).toBe(true);
-  });
-
-  it("HUD 现在常驻显示今日卡（修复了选完就看不见）", () => {
-    const hud = readFileSync("src/ui/hud.ts", "utf8");
-    expect(hud.includes("今日卡：")).toBe(true);
-    expect(hud.includes("elCard")).toBe(true);
-    console.log("[hud] hud.ts 含『今日卡：』常驻文本 = true（但只有名字，没有剩余时长/效果）");
-  });
-
-  it("跳过：dismissCards 置位后不再自动弹出（但关闭面板=丢当天卡，且无重新打开入口）", () => {
-    const s = { ...initialState(), cards: cardsState("", 0, { date: "2026-11-27" }) };
-    s.cards.chosen = null;
-    s.cards.offers = ["overtime", "coffee_day", "quiet_day"];
-    const skipped = dismissCards(s);
-    expect(skipped.cards.dismissed).toBe(true);
-    const panel = readFileSync("src/ui/card-panel.ts", "utf8");
-    console.log(`[skip] card-panel 检查 dismissed: ${panel.includes("cs.dismissed")}；main.ts 是否有"重新打开卡面板"的按钮: ${readFileSync("src/main.ts", "utf8").includes("cardPanel.show(")}`);
-    expect(panel.includes("cs.dismissed")).toBe(true);
-    // 全仓除 maybeShow 外没有任何 cardPanel.show 调用 → 跳过/选完后无法再查看卡详情
-    const main = readFileSync("src/main.ts", "utf8");
-    const showCalls = (main.match(/cardPanel\.show\(/g) ?? []).length;
-    console.log(`[skip] main.ts 中 cardPanel.show() 调用次数=${showCalls}（0 = 跳过/选完无入口查看/反悔）`);
-    expect(showCalls).toBe(0);
-  });
-
-  it("首日不拦：需戳 8 下或开页 12 秒后才弹卡（修复了一进来就被弹窗拦住）", () => {
-    const panel = readFileSync("src/ui/card-panel.ts", "utf8");
-    console.log(`[onboard] 首日门槛存在=${panel.includes("totalClicks < 8")}，12s 门槛存在=${panel.includes("12_000")}`);
-    expect(panel.includes("totalClicks < 8")).toBe(true);
-    expect(panel.includes("12_000")).toBe(true);
-  });
-});
-
-describe("R13 每日卡池：开箱手感（10 张池的随机寿命）", () => {
-  it("10000 天抽卡分布 + 10 张池多久见完", () => {
     const rng = mulberry32(42);
     const rarityOf = new Map(CARDS.map((c) => [c.id, c.rarity]));
     const N = 10000;
@@ -214,10 +153,14 @@ describe("R13 每日卡池：开箱手感（10 张池的随机寿命）", () => 
       if (rs.includes("event")) hasEvent++;
       if (cs.offers.includes("overtime")) hasOvertime++;
     }
-    console.log(
-      `[roll] 全普通 ${(allCommon / N * 100).toFixed(1)}% | 至少 1 稀有/剧情 ${(hasRareOrEvent / N * 100).toFixed(1)}% | 有剧情 ${(hasEvent / N * 100).toFixed(1)}% | 有通宵摸鱼 ${(hasOvertime / N * 100).toFixed(1)}%`,
-    );
-    const seenByDay = [1, 3, 5, 8].map((d) => {
+    console.log(`[pool] 全普通天 ${(allCommon / N * 100).toFixed(1)}% | 至少 1 稀有/剧情 ${(hasRareOrEvent / N * 100).toFixed(1)}% | 有剧情 ${(hasEvent / N * 100).toFixed(1)}% | 有通宵摸鱼 ${(hasOvertime / N * 100).toFixed(1)}%`);
+    console.log(`[pool] 注：普通卡张数 5→8（权重 15→24），稀有 3→6（权重 3→6）→ 全普通天反而变多`);
+    expect(allCommon / N).toBeGreaterThan(0.33);
+  });
+
+  it("卡池寿命：第 8 天全旧卡概率、多久见完 16 张", () => {
+    const rng = mulberry32(99);
+    const seenByDay = [1, 3, 5, 8, 12].map((d) => {
       const r = mulberry32(100 + d);
       let sum = 0;
       const M = 2000;
@@ -226,9 +169,9 @@ describe("R13 每日卡池：开箱手感（10 张池的随机寿命）", () => 
         for (let day = 0; day < d; day++) rollOffers("2026-11-27", r, null).offers.forEach((id) => seen.add(id));
         sum += seen.size;
       }
-      return `第${d}天 ${(sum / M).toFixed(1)}/10`;
+      return `第${d}天 ${(sum / M).toFixed(1)}/16`;
     });
-    console.log(`[roll] 平均已见卡: ${seenByDay.join(" | ")}`);
+    console.log(`[pool] 平均已见卡：${seenByDay.join(" | ")}`);
     let repeat = 0;
     {
       const r = mulberry32(777);
@@ -244,75 +187,79 @@ describe("R13 每日卡池：开箱手感（10 张池的随机寿命）", () => 
         if (rep) repeat++;
       }
     }
-    console.log(`[roll] 第 8 天 3 张全是旧卡的概率 ≈ ${(repeat / 3000 * 100).toFixed(1)}%`);
-    expect(allCommon / N).toBeGreaterThan(0.3);
-    expect(hasRareOrEvent / N).toBeGreaterThan(0.55);
+    console.log(`[pool] 第 8 天 3 张全旧卡概率 ≈ ${(repeat / 3000 * 100).toFixed(1)}%（10 张池时为 74.6%）`);
+    expect(repeat / 3000).toBeLessThan(0.6);
+    void rng;
   });
 
-  it("稀有度 ≠ 价值：早期 3 张里可能 2 张无收益（无同事→派遣卡；不关机→离线卡）", () => {
+  it("新稀有卡的"风险"是真实数值（不是文案）：部门搬家/截止日/空调坏了", () => {
     const s = initialState();
-    console.log(`[trap] 初始同事数=${Object.keys(s.team.colleagues).length}；此阶段『团建吃饭/老周的秘密』派遣加成为 0；『提前下班』只在离线时结算`);
-    expect(Object.keys(s.team.colleagues).length).toBe(0);
-  });
-
-  it("HR约谈文案已改成『明天卡池保证出一张稀有卡』，与实现一致", () => {
-    const desc = CARDS.find((c) => c.id === "hr_talk")!.desc;
-    console.log(`[story] HR约谈 desc = ${desc}`);
-    expect(desc.includes("稀有卡")).toBe(true);
-    const s = { ...initialState(), cards: { ...cardsState(null as unknown as string, Date.now() + DAY, { nextDayGuaranteed: "secret_project" }) } };
-    s.cards.chosen = null;
-    s.cards.offers = ["hr_talk", "coffee_day", "quiet_day"];
-    const p = chooseCard(s, "hr_talk", Date.now());
-    expect(p).not.toBeNull();
-    const next = ensureCards(p!, "2026-11-28", mulberry32(9), Date.now() + 25 * 3600_000);
-    console.log(`[story] 次日保底卡：${next.cards.offers.map((id) => CARDS.find((c) => c.id === id)?.name).join(" / ")}`);
-    expect(next.cards.offers).toContain("secret_project");
+    const now = Date.now();
+    const createdAt = now - 5 * DAY;
+    const noCard = offlineEfficiency(s, createdAt, now);
+    const acBroken = offlineEfficiency({ ...s, cards: cardState("ac_broken", now + DAY) }, createdAt, now);
+    const deadline = offlineEfficiency({ ...s, cards: cardState("deadline", now + DAY) }, createdAt, now);
+    const move = { ...s, cards: cardState("office_move", now + DAY) };
+    console.log(`[newcard] 离线效率：无卡 ${noCard.toFixed(2)} / 空调坏了 ${acBroken.toFixed(2)}(-5%) / 截止日 ${deadline.toFixed(2)}(-10%)`);
+    console.log(`[newcard] 部门搬家 idleMult=${cardEffects(move, now).idleMult}(-10%) patrolRewardMult=${cardEffects(move, now).patrolRewardMult}(+80%) → 真有取舍`);
+    console.log(`[newcard] 远程办公日 eventRateMult=${cardEffects({ ...s, cards: cardState("remote_day", now + DAY) }, now).eventRateMult}(巡逻减半)`);
+    expect(noCard - acBroken).toBeCloseTo(0.05, 5);
+    expect(noCard - deadline).toBeCloseTo(0.1, 5);
+    expect(cardEffects(move, now).idleMult).toBeCloseTo(0.9, 5);
+    expect(cardEffects(move, now).patrolRewardMult).toBe(1.8);
   });
 });
 
-describe("R13 回合制老板：赌博结构（5s 窗口 / 新手宽限 / 迟到点击无效）", () => {
-  it("窗口常量=5s，但读屏播报还写着 4 秒（文案不一致）", () => {
-    const src = readFileSync("src/main.ts", "utf8");
-    console.log(`[a11y] CHOICE_SECONDS=${CHOICE_SECONDS}；main.ts 播报含"4 秒"=${src.includes("在 4 秒内选对应对")}`);
-    expect(CHOICE_SECONDS).toBe(5);
-    expect(src.includes("在 4 秒内选对应对")).toBe(true);
+describe("R2-⑦ 跨天：抽新卡 + 旧 buff 保留 24h + 每天可再选一次", () => {
+  it("跨天后 offers 换新、chosen/until 保留、今天可再选且只能选一次", () => {
+    const now = Date.now();
+    const s = {
+      ...initialState(),
+      cards: cardState("overtime", now + 5 * 3600_000, { date: "2026-11-26", chosenDate: "2026-11-26" }),
+    };
+    const nextDay = ensureCards(s, "2026-11-27", mulberry32(3), now);
+    console.log(`[cross] 跨天：date=${nextDay.cards.date} chosen=${nextDay.cards.chosen} (until 剩余 ${((nextDay.cards.until - now) / 3600_000).toFixed(1)}h) 新 offers=${nextDay.cards.offers.join(",")}`);
+    expect(nextDay.cards.chosen).toBe("overtime");
+    expect(nextDay.cards.date).toBe("2026-11-27");
+    expect(nextDay.cards.offers).not.toEqual(["overtime", "coffee_day", "quiet_day"]);
+    expect(cardEffects(nextDay, now).idleMult).toBe(1.6); // 旧 buff 仍在
+
+    const picked = chooseCard(nextDay, nextDay.cards.offers[0]!, now);
+    expect(picked).not.toBeNull();
+    console.log(`[cross] 今天再选：${nextDay.cards.offers[0]} → chosen=${picked!.cards.chosen}（旧 buff 被替换，不叠加）`);
+    expect(picked!.cards.chosen).toBe(nextDay.cards.offers[0]!);
+    const again = chooseCard(picked!, nextDay.cards.offers[1]!, now);
+    console.log(`[cross] 同一天选第二次：${again}（应为 null）`);
+    expect(again).toBe(null);
+  });
+});
+
+describe("R2-③④ 跳过即关 / 防误触 1.2s（源码级）", () => {
+  it("onSkip 现在会 hide；防误触 400ms → 1200ms", () => {
+    const main = readFileSync("src/main.ts", "utf8");
+    const panel = readFileSync("src/ui/card-panel.ts", "utf8");
+    console.log(`[ui] main.ts onSkip 含 cardPanel.hide()=${main.includes("cardPanel.hide();")}`);
+    console.log(`[ui] 防误触 1200ms=${panel.includes("< 1200")}；400ms=${panel.includes("< 400")}`);
+    expect(main.includes("cardPanel.hide();")).toBe(true);
+    expect(panel.includes("< 1200")).toBe(true);
   });
 
-  it("线索=答案：性格名直接包含答案关键词（无需推断，也不是赌）", () => {
-    for (const p of PERSONALITIES) {
-      const label = CHOICES.find((c) => c.id === p.correct)!.label;
-      console.log(`[clue] ${p.name}（${p.tell}）→ 【${label}】`);
-    }
-    expect(new Set(PERSONALITIES.map((p) => p.correct)).size).toBe(3);
+  it("跳过当天不再弹 / 跳到次日卡池正常出现", () => {
+    const now = Date.now();
+    const s = { ...initialState(), cards: { ...cardState(null, 0), offers: ["overtime", "coffee_day", "quiet_day"] } };
+    const skipped = dismissCards(s);
+    expect(skipped.cards.dismissed).toBe(true);
+    // 同日 ensureCards 不动
+    expect(ensureCards(skipped, "2026-11-27", mulberry32(1), now)).toBe(skipped);
+    // 次日新卡池 dismissed 复位
+    const next = ensureCards(skipped, "2026-11-28", mulberry32(1), now + 20 * 3600_000);
+    console.log(`[skip] 跳过：同日不重抽；次日 dismissed=${next.cards.dismissed} offers=${next.cards.offers.length} 张`);
+    expect(next.cards.dismissed).toBe(false);
   });
+});
 
-  it("新手前 3 次巡逻选错不扣钱（只丢连胜）；老玩家选错 -0.6×base", () => {
-    const es = { ...newEventState(), bossVariant: "choice" as const, bossUntil: 100000, patrolCount: 2, surviveStreak: 3 };
-    const s = { ...initialState(), moyu: 1000, surviveStreak: 3 };
-    const rookie = onBossChoice(s, es, "keep-slacking", 1000);
-    console.log(`[rookie] 第 3 次巡逻选错（宽限内）：delta=${rookie!.delta} 连胜 ${rookie!.state.surviveStreak}`);
-    expect(Math.abs(rookie!.delta)).toBe(0); // -0 也算 0
-    expect(rookie!.state.surviveStreak).toBe(0);
-    const vetEs = { ...newEventState(), bossVariant: "choice" as const, bossUntil: 999, patrolCount: 10 };
-    const vet = resolveBossChoice({ ...s, moyu: 1e6 }, "hasty", "keep-slacking", 100);
-    console.log(`[vet] base=100 选错：${vet.delta}（-60）`);
-    expect(vet.delta).toBe(-60);
-  });
-
-  it("窗口外迟到点击不再结算（5s 过后点了也不算）", () => {
-    const es = { ...newEventState(), bossVariant: "choice" as const, bossUntil: 100 };
-    const late = onBossChoice({ ...initialState(), moyu: 100 }, es, "act-busy", 101);
-    console.log(`[window] now=101 > bossUntil=100 → 结算结果=${late}`);
-    expect(late).toBe(null);
-  });
-
-  it("选择期间点画布不再按偷点罚款（bossPanel.isOpen 直接吞掉 canvas 点击）", () => {
-    const src = readFileSync("src/main.ts", "utf8");
-    console.log(`[tap] doTap 里拦截选择中画布点击=${src.includes("if (bossPanel.isOpen) return;")}`);
-    expect(src.includes("if (bossPanel.isOpen) return;")).toBe(true);
-  });
-
-  it("超时：无奖、不罚、连胜不变，现在有『没来得及选…这次不算』提示", () => {
+describe("R2 保底：超时/窗口校验/画布不罚仍成立", () => {
+  it("超时 0 奖 0 罚；迟到点击不结算", () => {
     const es = { ...newEventState(), bossVariant: "choice" as const, bossUntil: 100, surviveStreak: 4 };
     scheduleEvents(es, 101, mulberry32(11));
     const s = { ...initialState(), moyu: 500, surviveStreak: 4 };
@@ -320,14 +267,19 @@ describe("R13 回合制老板：赌博结构（5s 窗口 / 新手宽限 / 迟到
     console.log(`[timeout] 奖励=${r.reward} 余额变化=${r.state.moyu - s.moyu} 连胜=${r.state.surviveStreak}`);
     expect(r.reward).toBe(0);
     expect(r.state.moyu).toBe(s.moyu);
-    const main = readFileSync("src/main.ts", "utf8");
-    console.log(`[timeout] 超时提示存在=${main.includes("没来得及选…这次不算")}`);
-    expect(main.includes("没来得及选…这次不算")).toBe(true);
+    const es2 = { ...newEventState(), bossVariant: "choice" as const, bossUntil: 100 };
+    const late = onBossChoice({ ...initialState(), moyu: 100 }, es2, "act-busy", 101);
+    expect(late).toBe(null);
   });
 
-  it("赌博期望：盲猜 3 选 1 期望仍为正（+0.33×base），赌不亏", () => {
-    const ev = (CHOICE_CORRECT_MULT - 2 * CHOICE_WRONG_PENALTY_RATIO) / 3;
-    console.log(`[ev] 盲猜期望=${ev.toFixed(3)}×base（>0，赌不亏；且前 3 次选错免费）`);
-    expect(ev).toBeGreaterThan(0);
+  it("选择的奖励走完整倍率（卡/天赋/连胜），大额时扣款也同步放大", () => {
+    const s = { ...initialState(), moyu: 1e6, surviveStreak: 4 };
+    const es = { ...newEventState(), bossVariant: "choice" as const, bossUntil: 1e9, surviveStreak: 4, patrolCount: 10 };
+    const base = 50 * 1.4;
+    const right = resolveBossChoice(s, "forgetful", "keep-slacking", base);
+    const wrong = resolveBossChoice(s, "forgetful", "keep-slacking", base);
+    console.log(`[reward] base=${base} 时 选对 +${right.delta} / 选错 ${wrong.delta}（错的代价随连胜一起变大）`);
+    expect(right.delta).toBe(Math.floor(base * 1.8));
+    expect(wrong.delta).toBe(-base);
   });
 });
