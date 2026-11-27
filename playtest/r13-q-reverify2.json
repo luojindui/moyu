@@ -1,0 +1,77 @@
+{
+  "liveMask": {
+    "openBefore": true,
+    "openAfterMask": true,
+    "openAfter3s": true,
+    "skipBtn": true
+  },
+  "devBoss": {
+    "tests": [
+      {
+        "name": "T1-timeout",
+        "clue": "多疑·王总走过来了——他一路盯着别人屏幕走过来",
+        "opts": [
+          "立刻装忙",
+          "切到工作界面",
+          "继续摸鱼"
+        ],
+        "windowMs": 4915,
+        "toastsSeen": [
+          {
+            "at": 4915,
+            "text": "没来得及选…这次不算"
+          }
+        ],
+        "toastAfter": "没来得及选…这次不算",
+        "toastAfterShown": true,
+        "moyuDelta": 1.11,
+        "patrolSurvives": 0,
+        "streak": 0
+      },
+      {
+        "name": "T2-wrong-rookie",
+        "clue": "多疑·王总走过来了——他一路盯着别人屏幕走过来",
+        "picked": "立刻装忙",
+        "toast": "王总：切得真快。 +0",
+        "moyuDelta": 0.25,
+        "streak": 0,
+        "patrolSurvives": 0
+      },
+      {
+        "name": "T3-correct",
+        "clue": "多疑·王总走过来了——他一路盯着别人屏幕走过来",
+        "picked": "切到工作界面",
+        "toast": "王总：屏幕挺干净啊。 +110",
+        "moyuDelta": 110.26,
+        "streak": 1,
+        "patrolSurvives": 1
+      },
+      {
+        "name": "T4-wrong-late",
+        "clue": "健忘·老李走过来了——他边走边看手机，眼神是散的",
+        "picked": "立刻装忙",
+        "toast": "老李：你刚才是不是在摸鱼？算了。 -33",
+        "moyuDelta": -32.6
+      },
+      {
+        "name": "T5-tap-in-window",
+        "clue": "健忘·老李走过来了——他边走边看手机，眼神是散的",
+        "moyuMid": 89.12,
+        "moyuAfter": 89.2,
+        "deltaTap": 0.08,
+        "panelStillOpen": true
+      },
+      {
+        "name": "T6-modal-block",
+        "journalOpen": true,
+        "bossWhileJournalOpen": false,
+        "bossOpenedAfterCloseMs": 167
+      }
+    ],
+    "cardModal": {
+      "openedAfter8Taps": true,
+      "jumpBtn": true,
+      "closedByEsc": true
+    }
+  }
+}

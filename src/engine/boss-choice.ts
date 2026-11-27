@@ -18,8 +18,8 @@ export interface PersonalityDef {
 }
 
 export const PERSONALITIES: PersonalityDef[] = [
-  { id: "hasty", name: "急性子·安总", tell: "他走路带风，两三步就到工位", correct: "act-busy" },
-  { id: "suspicious", name: "多疑·王总", tell: "他一路盯着别人屏幕走过来", correct: "switch-screen" },
+  { id: "hasty", name: "急性子·安总", tell: "脚步声又快又重，两三步就到工位", correct: "act-busy" },
+  { id: "suspicious", name: "多疑·王总", tell: "他一路盯着别人的屏幕走过来", correct: "switch-screen" },
   { id: "forgetful", name: "健忘·老李", tell: "他边走边看手机，眼神是散的", correct: "keep-slacking" },
 ];
 
@@ -32,9 +32,9 @@ export const CHOICES: { id: BossChoice; label: string }[] = [
 /** 决策窗口（秒）：3 秒决策 + 1 秒缓冲（移动端可读性） */
 export const CHOICE_SECONDS = 5;
 /** 选对奖励 = 安然巡逻奖励 × 该倍率 */
-export const CHOICE_CORRECT_MULT = 2.2;
+export const CHOICE_CORRECT_MULT = 1.8;
 /** 选错罚款 = 安然奖励的该比例（比被抓好一点） */
-export const CHOICE_WRONG_PENALTY_RATIO = 0.6;
+export const CHOICE_WRONG_PENALTY_RATIO = 1.0; // 盲猜期望为负：1/3×1.8 − 2/3×1.0 < 0
 
 export function personalityDef(id: BossPersonality): PersonalityDef {
   return PERSONALITIES.find((p) => p.id === id) ?? PERSONALITIES[0]!;

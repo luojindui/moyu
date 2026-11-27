@@ -256,6 +256,7 @@ async function boot(): Promise<void> {
     },
     () => {
       state = dismissCards(state);
+      cardPanel.hide();
       serialize(state, localStorageAdapter, Date.now());
     },
   );

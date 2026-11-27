@@ -53,7 +53,7 @@ export class CardPanel {
     this.body.querySelectorAll<HTMLElement>(".card").forEach((el) => {
       el.addEventListener("click", () => {
         // 防误触：弹窗刚出现的 400ms 内忽略点击（玩家可能正连点屏幕）
-        if (performance.now() - this.shownAt < 400) return;
+        if (performance.now() - this.shownAt < 1200) return; // 1.2s 防误触（玩家连点节奏）
         const id = el.dataset.id!;
         this.onChoose(id);
         this.hide();

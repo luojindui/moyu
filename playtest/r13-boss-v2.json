@@ -1,0 +1,257 @@
+{
+ "sampledAt": "2026-11-27T10:00:50.519Z",
+ "ready": true,
+ "trials": [
+  {
+   "i": 1,
+   "strategy": "blind",
+   "tell": "急性子·安总走过来了——他走路带风，两三步就到工位",
+   "clueAnswer": "act-busy",
+   "picked": "keep-slacking",
+   "reactionMs": 148,
+   "correct": false,
+   "toast": "安总：这表格昨天就这数吧？ +0",
+   "delta": 0,
+   "streakBefore": 6,
+   "streakAfter": 0,
+   "panelGone": true
+  },
+  {
+   "i": 2,
+   "strategy": "blind",
+   "tell": "多疑·王总走过来了——他一路盯着别人屏幕走过来",
+   "clueAnswer": "switch-screen",
+   "picked": "act-busy",
+   "reactionMs": 109,
+   "correct": false,
+   "toast": "王总：切得真快。 +0",
+   "delta": 0,
+   "streakBefore": 0,
+   "streakAfter": 0,
+   "panelGone": true
+  },
+  {
+   "i": 3,
+   "strategy": "blind",
+   "tell": "健忘·老李走过来了——他边走边看手机，眼神是散的",
+   "clueAnswer": "keep-slacking",
+   "picked": "switch-screen",
+   "reactionMs": 117,
+   "correct": false,
+   "toast": "老李：你刚才是不是在摸鱼？算了。 +0",
+   "delta": 0,
+   "streakBefore": 0,
+   "streakAfter": 0,
+   "panelGone": true
+  },
+  {
+   "i": 4,
+   "strategy": "clue",
+   "tell": "急性子·安总走过来了——他走路带风，两三步就到工位",
+   "clueAnswer": "act-busy",
+   "picked": "act-busy",
+   "reactionMs": 146,
+   "correct": true,
+   "toast": "安总：嗯，忙你的。 +110",
+   "delta": 110,
+   "streakBefore": 0,
+   "streakAfter": 1,
+   "panelGone": true
+  },
+  {
+   "i": 5,
+   "strategy": "clue",
+   "tell": "急性子·安总走过来了——他走路带风，两三步就到工位",
+   "clueAnswer": "act-busy",
+   "picked": "act-busy",
+   "reactionMs": 111,
+   "correct": true,
+   "toast": "安总：嗯，忙你的。 +121",
+   "delta": 121,
+   "streakBefore": 1,
+   "streakAfter": 2,
+   "panelGone": true
+  },
+  {
+   "i": 6,
+   "strategy": "clue",
+   "tell": "急性子·安总走过来了——他走路带风，两三步就到工位",
+   "clueAnswer": "act-busy",
+   "picked": "act-busy",
+   "reactionMs": 31,
+   "correct": true,
+   "toast": "安总：嗯，忙你的。 +132",
+   "delta": 132,
+   "streakBefore": 2,
+   "streakAfter": 3,
+   "panelGone": true
+  },
+  {
+   "i": 7,
+   "strategy": "clue",
+   "tell": "多疑·王总走过来了——他一路盯着别人屏幕走过来",
+   "clueAnswer": "switch-screen",
+   "picked": "switch-screen",
+   "reactionMs": 29,
+   "correct": true,
+   "toast": "王总：屏幕挺干净啊。 +143",
+   "delta": 143,
+   "streakBefore": 3,
+   "streakAfter": 4,
+   "panelGone": true
+  },
+  {
+   "i": 8,
+   "strategy": "clue",
+   "tell": "健忘·老李走过来了——他边走边看手机，眼神是散的",
+   "clueAnswer": "keep-slacking",
+   "picked": "keep-slacking",
+   "reactionMs": 148,
+   "correct": true,
+   "toast": "老李：……我刚才要说什么来着？ +154",
+   "delta": 154,
+   "streakBefore": 4,
+   "streakAfter": 5,
+   "panelGone": true
+  },
+  {
+   "i": 9,
+   "strategy": "clue",
+   "tell": "急性子·安总走过来了——他走路带风，两三步就到工位",
+   "clueAnswer": "act-busy",
+   "picked": "act-busy",
+   "reactionMs": 162,
+   "correct": true,
+   "toast": "安总：嗯，忙你的。 +165",
+   "delta": 165,
+   "streakBefore": 5,
+   "streakAfter": 6,
+   "panelGone": true
+  },
+  {
+   "i": 10,
+   "strategy": "clue",
+   "tell": "急性子·安总走过来了——他走路带风，两三步就到工位",
+   "clueAnswer": "act-busy",
+   "picked": "act-busy",
+   "reactionMs": 101,
+   "correct": true,
+   "toast": "安总：嗯，忙你的。 +165",
+   "delta": 165,
+   "streakBefore": 6,
+   "streakAfter": 7,
+   "panelGone": true
+  },
+  {
+   "i": 11,
+   "strategy": "clue",
+   "tell": "健忘·老李走过来了——他边走边看手机，眼神是散的",
+   "clueAnswer": "keep-slacking",
+   "picked": "keep-slacking",
+   "reactionMs": 183,
+   "correct": true,
+   "toast": "老李：……我刚才要说什么来着？ +165",
+   "delta": 165,
+   "streakBefore": 7,
+   "streakAfter": 8,
+   "panelGone": true
+  },
+  {
+   "i": 12,
+   "strategy": "clue",
+   "tell": "健忘·老李走过来了——他边走边看手机，眼神是散的",
+   "clueAnswer": "keep-slacking",
+   "picked": "keep-slacking",
+   "reactionMs": 92,
+   "correct": true,
+   "toast": "老李：……我刚才要说什么来着？ +165",
+   "delta": 165,
+   "streakBefore": 8,
+   "streakAfter": 9,
+   "panelGone": true
+  },
+  {
+   "i": 13,
+   "strategy": "clue",
+   "tell": "多疑·王总走过来了——他一路盯着别人屏幕走过来",
+   "clueAnswer": "switch-screen",
+   "picked": "switch-screen",
+   "reactionMs": 134,
+   "correct": true,
+   "toast": "王总：屏幕挺干净啊。 +165",
+   "delta": 165,
+   "streakBefore": 9,
+   "streakAfter": 10,
+   "panelGone": true
+  },
+  {
+   "i": 14,
+   "strategy": "clue",
+   "tell": "多疑·王总走过来了——他一路盯着别人屏幕走过来",
+   "clueAnswer": "switch-screen",
+   "picked": "switch-screen",
+   "reactionMs": 57,
+   "correct": true,
+   "toast": "王总：屏幕挺干净啊。 +165",
+   "delta": 165,
+   "streakBefore": 10,
+   "streakAfter": 11,
+   "panelGone": true
+  }
+ ],
+ "extras": {
+  "firstCards": null,
+  "personalityDistribution": {
+   "hasty": 6,
+   "suspicious": 4,
+   "forgetful": 4
+  },
+  "canvasTapIrrelevant": {
+   "tell": "多疑·王总走过来了——他一路盯着别人屏幕走过来",
+   "delta": 0.4,
+   "panelStillOpen": true,
+   "toast": "王总：屏幕挺干净啊。 +165"
+  },
+  "timeout": {
+   "tell": "多疑·王总走过来了——他一路盯着别人屏幕走过来",
+   "clueAnswer": "switch-screen",
+   "panelHidden": true,
+   "hideMs": 4906,
+   "toast": {
+    "text": "没来得及选…这次不算",
+    "shown": true
+   },
+   "delta": 1.01,
+   "streakSame": true
+  }
+ },
+ "errors": [],
+ "summary": {
+  "trials": 14,
+  "clueCorrect": "11/11",
+  "blindCorrect": "0/3",
+  "clueAlwaysContainsAnswer": true,
+  "reactionMsRange": [
+   29,
+   183
+  ],
+  "correctDeltas": [
+   110,
+   121,
+   132,
+   143,
+   154,
+   165,
+   165,
+   165,
+   165,
+   165,
+   165
+  ],
+  "wrongDeltas": [
+   0,
+   0,
+   0
+  ]
+ }
+}

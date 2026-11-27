@@ -25,7 +25,8 @@ export class BossChoicePanel {
 
   private show(es: EventState): void {
     const p = personalityDef(es.bossPersonality);
-    this.elTell.textContent = `${p.name}走过来了——${p.tell}`;
+    // 只给"观察到的行为"，不直接报性格名，让玩家真的要推断
+    this.elTell.textContent = `有人过来了——${p.tell}`;
     this.elOpts.innerHTML = CHOICES.map(
       (c) => `<button data-choice="${c.id}">${c.label}</button>`,
     ).join("");

@@ -1,0 +1,361 @@
+{
+  "A_liveSkip": {
+    "log": [
+      {
+        "tap": 1,
+        "cardsOpen": false
+      },
+      {
+        "tap": 2,
+        "cardsOpen": false
+      },
+      {
+        "tap": 3,
+        "cardsOpen": false
+      },
+      {
+        "tap": 4,
+        "cardsOpen": false
+      },
+      {
+        "tap": 5,
+        "cardsOpen": false
+      },
+      {
+        "tap": 6,
+        "cardsOpen": false
+      },
+      {
+        "tap": 7,
+        "cardsOpen": false
+      },
+      {
+        "tap": 8,
+        "cardsOpen": true
+      }
+    ],
+    "initial": {
+      "cardsOpen": false,
+      "skipBtn": false,
+      "cardTexts": [],
+      "cardRects": [],
+      "bossOpen": false,
+      "tell": "",
+      "opts": [],
+      "timerW": "",
+      "journalOpen": false,
+      "toast": "送你 1 个天赋点，点 👥 看看",
+      "toastShown": false,
+      "hudCard": {
+        "text": "",
+        "hidden": true
+      },
+      "moyu": "0.4",
+      "clicks": "1"
+    },
+    "initialAtS": 2.5,
+    "tapTrigger": 8,
+    "cardsAfterTaps": {
+      "open": true,
+      "atS": 7.9,
+      "skipBtn": true,
+      "texts": [
+        "普通 | 老板出差 | 今天巡逻奖励 +50%，且巡逻来得多 30% | 王总的工位空了，但没人敢摸得太明显。",
+        "剧情 | 老周的秘密 | 今天派遣奖励 ×1.8，且领奖好感 +1 | 他说他其实写过一个小说，主角是我们部门。",
+        "剧情 | HR 约谈 | 今天挂机 -10%，明天卡池保证出一张稀有卡 | 小美说：别紧张，就是随便聊聊。"
+      ]
+    },
+    "afterAppear": {
+      "cardsOpen": true,
+      "skipBtn": true,
+      "cardTexts": [
+        "普通 | 老板出差 | 今天巡逻奖励 +50%，且巡逻来得多 30% | 王总的工位空了，但没人敢摸得太明显。",
+        "剧情 | 老周的秘密 | 今天派遣奖励 ×1.8，且领奖好感 +1 | 他说他其实写过一个小说，主角是我们部门。",
+        "剧情 | HR 约谈 | 今天挂机 -10%，明天卡池保证出一张稀有卡 | 小美说：别紧张，就是随便聊聊。"
+      ],
+      "cardRects": [
+        [
+          34,
+          282,
+          323,
+          87
+        ],
+        [
+          34,
+          379,
+          323,
+          87
+        ],
+        [
+          34,
+          476,
+          323,
+          87
+        ]
+      ],
+      "bossOpen": false,
+      "tell": "",
+      "opts": [],
+      "timerW": "",
+      "journalOpen": false,
+      "toast": "送你 1 个天赋点，点 👥 看看",
+      "toastShown": false,
+      "hudCard": {
+        "text": "",
+        "hidden": true
+      },
+      "moyu": "9.8",
+      "clicks": "1"
+    },
+    "skipRect": {
+      "x": 194.9921875,
+      "y": 595.5,
+      "w": 322.796875,
+      "h": 42
+    },
+    "afterSkip": {
+      "cardsOpen": true,
+      "skipBtn": true,
+      "cardTexts": [
+        "普通 | 老板出差 | 今天巡逻奖励 +50%，且巡逻来得多 30% | 王总的工位空了，但没人敢摸得太明显。",
+        "剧情 | 老周的秘密 | 今天派遣奖励 ×1.8，且领奖好感 +1 | 他说他其实写过一个小说，主角是我们部门。",
+        "剧情 | HR 约谈 | 今天挂机 -10%，明天卡池保证出一张稀有卡 | 小美说：别紧张，就是随便聊聊。"
+      ],
+      "cardRects": [
+        [
+          34,
+          282,
+          323,
+          87
+        ],
+        [
+          34,
+          379,
+          323,
+          87
+        ],
+        [
+          34,
+          476,
+          323,
+          87
+        ]
+      ],
+      "bossOpen": false,
+      "tell": "",
+      "opts": [],
+      "timerW": "",
+      "journalOpen": false,
+      "toast": "送你 1 个天赋点，点 👥 看看",
+      "toastShown": false,
+      "hudCard": {
+        "text": "",
+        "hidden": true
+      },
+      "moyu": "10.0",
+      "clicks": "1"
+    },
+    "reopenedAfterSkip": true,
+    "reopenSamples": 45,
+    "hudCardAfterSkip": {
+      "text": "",
+      "hidden": true
+    }
+  },
+  "B_liveChoose": {
+    "log": [
+      {
+        "tap": 1,
+        "cardsOpen": false
+      },
+      {
+        "tap": 2,
+        "cardsOpen": false
+      },
+      {
+        "tap": 3,
+        "cardsOpen": false
+      },
+      {
+        "tap": 4,
+        "cardsOpen": false
+      },
+      {
+        "tap": 5,
+        "cardsOpen": false
+      },
+      {
+        "tap": 6,
+        "cardsOpen": false
+      },
+      {
+        "tap": 7,
+        "cardsOpen": false
+      },
+      {
+        "tap": 8,
+        "cardsOpen": true
+      }
+    ],
+    "tapTrigger": 8,
+    "afterEarlyTap": {
+      "open": false,
+      "tapDelayMs": 330
+    },
+    "afterChoose": {
+      "cardsOpen": false,
+      "skipBtn": false,
+      "cardTexts": [
+        " |           稀有 |           全员大会 |           今天巡逻奖励 ×2，且巡逻明显变密 |           会议室里没人听，全在底下摸鱼。 |         ",
+        " |           普通 |           手速上头 |           今天点击力 +80% |           键盘声比平时快了三个度，隔壁老周抬头看了你一眼。 |         ",
+        " |           稀有 |           秘密项目 |           今天点击力 ×2，派遣奖励 +30% |           没人知道你在做什么，但看起来很重要。 |         "
+      ],
+      "cardRects": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "bossOpen": false,
+      "tell": "",
+      "opts": [],
+      "timerW": "",
+      "journalOpen": false,
+      "toast": "今日卡：手速上头",
+      "toastShown": true,
+      "hudCard": {
+        "text": "今日卡：手速上头",
+        "hidden": false
+      },
+      "moyu": "11.7",
+      "clicks": "1.8"
+    },
+    "chooseAtS": 8.7,
+    "toastAfter2s": {
+      "cardsOpen": false,
+      "skipBtn": false,
+      "cardTexts": [
+        " |           稀有 |           全员大会 |           今天巡逻奖励 ×2，且巡逻明显变密 |           会议室里没人听，全在底下摸鱼。 |         ",
+        " |           普通 |           手速上头 |           今天点击力 +80% |           键盘声比平时快了三个度，隔壁老周抬头看了你一眼。 |         ",
+        " |           稀有 |           秘密项目 |           今天点击力 ×2，派遣奖励 +30% |           没人知道你在做什么，但看起来很重要。 |         "
+      ],
+      "cardRects": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "bossOpen": false,
+      "tell": "",
+      "opts": [],
+      "timerW": "",
+      "journalOpen": false,
+      "toast": "今日卡：手速上头",
+      "toastShown": false,
+      "hudCard": {
+        "text": "今日卡：手速上头",
+        "hidden": false
+      },
+      "moyu": "12.1",
+      "clicks": "1.8"
+    },
+    "hudAfter7s": {
+      "text": "今日卡：手速上头",
+      "hidden": false
+    }
+  },
+  "C_liveFallbackEsc": {
+    "appearAtS": 12.6,
+    "appearFound": true,
+    "tapTrigger": "0 taps (wait fallback)",
+    "skipBtn": true,
+    "afterEsc": {
+      "open": false
+    },
+    "reopenedAfterEsc": false
+  },
+  "D_devBoss": {
+    "tests": [
+      {
+        "name": "T1-timeout",
+        "clue": "",
+        "opts": [],
+        "windowMs": 5,
+        "toastsSeen": [],
+        "toastAtClose": "送你 1 个天赋点，点 👥 看看",
+        "toastShown": false,
+        "moyuDelta": 0.61,
+        "patrolSurvives": 0
+      },
+      {
+        "name": "T2-wrong-rookie",
+        "clue": "",
+        "picked": "立刻装忙",
+        "toast": "送你 1 个天赋点，点 👥 看看",
+        "moyuDelta": 0.72,
+        "streakAfter": 0,
+        "patrolSurvives": 0
+      },
+      {
+        "name": "T3-correct",
+        "clue": "",
+        "picked": "继续摸鱼",
+        "toast": "送你 1 个天赋点，点 👥 看看",
+        "moyuDelta": 0.7,
+        "streakAfter": 0
+      },
+      {
+        "name": "T4-wrong-late",
+        "clue": "",
+        "picked": "立刻装忙",
+        "toast": "送你 1 个天赋点，点 👥 看看",
+        "moyuDelta": 0.75
+      },
+      {
+        "name": "T5-tap-in-window",
+        "clue": "",
+        "moyuBefore": 12.58,
+        "moyuMid": 13.32,
+        "moyuAfter": 13.39,
+        "deltaTap": 0.07,
+        "panelStillOpen": false,
+        "toast": "今日卡：老板出差"
+      },
+      {
+        "name": "T6-modal-block",
+        "journalOpen": false,
+        "bossOpenWhileJournal": true,
+        "bossOpenedAfterCloseMs": 2
+      }
+    ],
+    "cardSkipOk": false
+  }
+}

@@ -133,6 +133,17 @@ export async function freshDay(b, { waitMs = 2600 } = {}) {
   await b.send("Page.reload", { ignoreCache: false });
   await sleep(400); // 等旧上下文销毁，避免 waitFor 读到旧页面
   await b.waitFor("!!window.__MOYU__ && !!window.__MOYU__.state", 12000);
-  await sleep(waitMs);
+  // 首日不拦：把 boot-ms 拨到 20 秒前，让卡面板立即弹出（真实玩家要戳 8 下或等 12 秒）
+  await b.ev("sessionStorage.setItem('moyu-boot-ms', String(Date.now() - 20000))");
+  await sleep(800);
   return b.ev(READ_CARDS);
+}
+
+/** 真实触摸点画布中心（用于首日"戳 8 下"与"选择期间点屏幕"测试） */
+export async function tapCanvas(b, n = 1, { x = 195, y = 300, gap = 90 } = {}) {
+  for (let i = 0; i < n; i++) {
+    await b.send("Input.dispatchMouseEvent", { type: "mousePressed", x, y, button: "left", clickCount: 1 });
+    await b.send("Input.dispatchMouseEvent", { type: "mouseReleased", x, y, button: "left", clickCount: 1 });
+    await sleep(gap);
+  }
 }

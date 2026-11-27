@@ -13,21 +13,21 @@ describe("回合制老板", () => {
     }
   });
 
-  it("选对：奖励 = 基础 × 2.2 且入账", () => {
+  it("选对：奖励 = 基础 × 1.8 且入账", () => {
     const s = base();
     const r = resolveBossChoice(s, "suspicious", "switch-screen", 1000);
     expect(r.correct).toBe(true);
-    expect(r.delta).toBe(2200);
-    expect(r.state.moyu).toBe(s.moyu + 2200);
-    expect(r.state.lifetimeEarned).toBe(s.lifetimeEarned + 2200);
+    expect(r.delta).toBe(1800);
+    expect(r.state.moyu).toBe(s.moyu + 1800);
+    expect(r.state.lifetimeEarned).toBe(s.lifetimeEarned + 1800);
   });
 
-  it("选错：罚款 = 基础 × 0.6（不超余额）", () => {
+  it("选错：罚款 = 基础 × 1.0（不超余额）", () => {
     const s = base();
     const r = resolveBossChoice(s, "hasty", "keep-slacking", 1000);
     expect(r.correct).toBe(false);
-    expect(r.delta).toBe(-600);
-    expect(r.state.moyu).toBe(s.moyu - 600);
+    expect(r.delta).toBe(-1000);
+    expect(r.state.moyu).toBe(s.moyu - 1000);
   });
 
   it("选错时余额不足只扣到 0", () => {
