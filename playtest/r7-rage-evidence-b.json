@@ -1,43 +1,150 @@
 {
   "phase": "B",
   "note": "rAF 时间戳每帧 +125ms（≈7.5 倍速），用于把 90-150s 才出现的巡逻压缩到 12-20s；游戏内数值仍是真实逻辑",
-  "balanceBeforeBoss": 28.54309999999989,
-  "gameSecondsAtStart": 203,
+  "balanceBeforeBoss": 4.057439999961844,
+  "gameSecondsAtStart": 163,
   "patrols": [
     {
       "round": 1,
-      "banner": "⚠ 老板来了！忍住别点 (8s)",
+      "banner": "⚠ 老板来了！忍住别点，点了会罚 (8s)",
       "variant": "hold",
-      "realMsAtDetect": 15132
+      "realMsAtDetect": 16846,
+      "tap": {
+        "moyuBefore": 29.9,
+        "moyuAfter": 30.4,
+        "netDelta": 0.5,
+        "totalEarnedBefore": 29.9,
+        "totalEarnedAfter": 30.4,
+        "floatTexts": [
+          "⚠ 老板来了！忍住别点，点了会罚 (3s)",
+          "⚠ 老板来了！忍住别点，点了会罚 (4s)",
+          "⚠ 老板来了！忍住别点，点了会罚 (5s)",
+          "⚠ 老板来了！忍住别点，点了会罚 (6s)"
+        ],
+        "hudMoyuAfter": "30.4"
+      }
+    },
+    {
+      "round": 2,
+      "banner": "⚠ 老板来了！忍住别点，点了会罚 (3s)",
+      "variant": "hold",
+      "realMsAtDetect": 0,
+      "tap": {
+        "moyuBefore": 30.6,
+        "moyuAfter": 81.2,
+        "netDelta": 50.5,
+        "totalEarnedBefore": 30.6,
+        "totalEarnedAfter": 81.2,
+        "floatTexts": [
+          "安然度过 +50（连胜 1）",
+          "⚠ 老板来了！忍住别点，点了会罚 (1s)",
+          "⚠ 老板来了！忍住别点，点了会罚 (2s)"
+        ],
+        "hudMoyuAfter": "81.1"
+      }
+    },
+    {
+      "round": 3,
+      "banner": "⚠ 老板来了！忍住别点，点了会罚 (1s)",
+      "variant": "hold",
+      "realMsAtDetect": 0,
+      "tap": {
+        "moyuBefore": 81.4,
+        "moyuAfter": 81.9,
+        "netDelta": 0.5,
+        "totalEarnedBefore": 81.4,
+        "totalEarnedAfter": 81.9,
+        "floatTexts": [
+          "安然度过 +50（连胜 1）"
+        ],
+        "hudMoyuAfter": "81.9"
+      }
+    },
+    {
+      "round": 4,
+      "banner": "⚠ 老板来了！忍住别点，点了会罚 (8s)",
+      "variant": "hold",
+      "realMsAtDetect": 14561,
+      "tap": {
+        "moyuBefore": 104,
+        "moyuAfter": 104.5,
+        "netDelta": 0.5,
+        "totalEarnedBefore": 104,
+        "totalEarnedAfter": 104.5,
+        "floatTexts": [
+          "⚠ 老板来了！忍住别点，点了会罚 (5s)",
+          "⚠ 老板来了！忍住别点，点了会罚 (6s)",
+          "⚠ 老板来了！忍住别点，点了会罚 (7s)"
+        ],
+        "hudMoyuAfter": "104.5"
+      }
+    },
+    {
+      "round": 5,
+      "banner": "⚠ 老板来了！忍住别点，点了会罚 (5s)",
+      "variant": "hold",
+      "realMsAtDetect": 0,
+      "tap": {
+        "moyuBefore": 104.7,
+        "moyuAfter": 105.2,
+        "netDelta": 0.5,
+        "totalEarnedBefore": 104.7,
+        "totalEarnedAfter": 105.2,
+        "floatTexts": [
+          "⚠ 老板来了！忍住别点，点了会罚 (1s)",
+          "⚠ 老板来了！忍住别点，点了会罚 (2s)",
+          "⚠ 老板来了！忍住别点，点了会罚 (3s)",
+          "⚠ 老板来了！忍住别点，点了会罚 (4s)"
+        ],
+        "hudMoyuAfter": "105.2"
+      }
+    },
+    {
+      "round": 6,
+      "banner": "⚠ 老板来了！忍住别点，点了会罚 (1s)",
+      "variant": "hold",
+      "realMsAtDetect": 0,
+      "tap": {
+        "moyuBefore": 160.5,
+        "moyuAfter": 161,
+        "netDelta": 0.5,
+        "totalEarnedBefore": 160.5,
+        "totalEarnedAfter": 161,
+        "floatTexts": [
+          "安然度过 +55（连胜 2）"
+        ],
+        "hudMoyuAfter": "161.0"
+      }
+    },
+    {
+      "round": 7,
+      "banner": "⚠ 老板来了！忍住别点，点了会罚 (1s)",
+      "variant": "hold",
+      "realMsAtDetect": 0,
+      "tap": {
+        "moyuBefore": 161.2,
+        "moyuAfter": 161.7,
+        "netDelta": 0.5,
+        "totalEarnedBefore": 161.2,
+        "totalEarnedAfter": 161.7,
+        "floatTexts": [
+          "安然度过 +55（连胜 2）"
+        ],
+        "hudMoyuAfter": "161.7"
+      }
+    },
+    {
+      "round": 8,
+      "banner": "假装工作！点 0/5 (8s)",
+      "variant": "type",
+      "realMsAtDetect": 13586
     }
   ],
-  "punish": {
-    "banner": "⚠ 老板来了！忍住别点 (8s)",
-    "variant": "hold",
-    "moyuBefore": 51.7,
-    "moyuAfter": 43.3,
-    "netDelta": -8.5,
-    "totalEarnedBefore": 51.7,
-    "totalEarnedAfter": 43.3,
-    "surviveStreakAfter": 0,
-    "floatTexts": [
-      "偷点被逮！+1 -10",
-      "⚠ 老板来了！忍住别点 (3s)",
-      "⚠ 老板来了！忍住别点 (4s)",
-      "⚠ 老板来了！忍住别点 (5s)",
-      "⚠ 老板来了！忍住别点 (6s)"
-    ],
-    "hudMoyuAfter": "43.6",
-    "hudRankAfter": "实习生 0%",
-    "shots": {
-      "boss": "/tmp/rage-3-boss.png",
-      "penalty": "/tmp/rage-4-penalty.png"
-    }
-  },
-  "gameSecondsElapsed": 1164,
+  "punish": null,
+  "gameSecondsElapsed": 3181,
   "finalState": {
-    "moyu": 43.56809999999852,
-    "totalEarned": 43.56809999999852,
+    "moyu": 184.50743999997223,
+    "totalEarned": 184.50743999997223,
     "levels": {},
     "collected": {
       "quotes": [],
@@ -46,6 +153,12 @@
     "daily": {
       "date": "2026-11-27",
       "goals": [
+        {
+          "id": "click_100",
+          "target": 100,
+          "progress": 0,
+          "done": false
+        },
         {
           "id": "meme_1",
           "target": 1,
@@ -57,20 +170,14 @@
           "target": 3,
           "progress": 0,
           "done": false
-        },
-        {
-          "id": "click_100",
-          "target": 100,
-          "progress": 21,
-          "done": false
         }
       ],
       "streak": 0,
       "lastCompleteDate": null,
       "claimed": false
     },
-    "surviveStreak": 0,
-    "totalClicks": 20,
+    "surviveStreak": 2,
+    "totalClicks": 0,
     "visits": {
       "date": "2026-11-27",
       "count": 1

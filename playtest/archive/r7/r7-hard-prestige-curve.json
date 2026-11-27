@@ -1,0 +1,728 @@
+{
+  "snapshots": [
+    {
+      "hours": 1,
+      "totalEarned": 5566855.404000021,
+      "moyu": 181805.40399999992,
+      "idleRate": 6352.2,
+      "clickPower": 1,
+      "levels": {
+        "phone": 38,
+        "toilet": 27,
+        "group": 21,
+        "meeting": 17,
+        "deep": 10
+      },
+      "totalLevels": 113,
+      "unlocked": 5,
+      "collection": 18,
+      "quotes": 0,
+      "flavors": 18,
+      "totalClicks": 0,
+      "rankIdx": 3,
+      "rankName": "摸鱼大师",
+      "rankProgress": 0.04612985256565677,
+      "toNextRank": 94433144.59599999,
+      "blockIncome": 5566855.404000021,
+      "blockGrowth": null,
+      "income": {
+        "idle": 5383806.000000001,
+        "click": 0,
+        "event": 183049.4040000002
+      },
+      "purchases": {
+        "coffee": 0,
+        "water": 0,
+        "chair": 0,
+        "phone": 38,
+        "toilet": 27,
+        "group": 21,
+        "meeting": 17,
+        "deep": 10,
+        "retire": 0
+      },
+      "bestIdleRoi": 0.0007,
+      "items": [
+        {
+          "id": "coffee",
+          "name": "咖啡续命",
+          "isClick": true,
+          "level": 0,
+          "cost": 15,
+          "dIdle": 0,
+          "dClick": 1,
+          "idleRoi": 0,
+          "clickRoi": 0.06666666666666667
+        },
+        {
+          "id": "water",
+          "name": "带薪喝水",
+          "isClick": true,
+          "level": 0,
+          "cost": 100,
+          "dIdle": 0,
+          "dClick": 2,
+          "idleRoi": 0,
+          "clickRoi": 0.02
+        },
+        {
+          "id": "chair",
+          "name": "人体工学椅",
+          "isClick": true,
+          "level": 0,
+          "cost": 800,
+          "dIdle": 0,
+          "dClick": 5,
+          "idleRoi": 0,
+          "clickRoi": 0.00625
+        },
+        {
+          "id": "phone",
+          "name": "刷手机",
+          "isClick": false,
+          "level": 38,
+          "cost": 10128,
+          "dIdle": 4,
+          "dClick": 0,
+          "idleRoi": 0.00039494470774091627,
+          "clickRoi": 0
+        },
+        {
+          "id": "toilet",
+          "name": "带薪蹲坑",
+          "isClick": false,
+          "level": 27,
+          "cost": 26122,
+          "dIdle": 10,
+          "dClick": 0,
+          "idleRoi": 0.0003828190797029324,
+          "clickRoi": 0
+        },
+        {
+          "id": "group",
+          "name": "摸鱼群聊",
+          "isClick": false,
+          "level": 21,
+          "cost": 75287,
+          "dIdle": 30,
+          "dClick": 0,
+          "idleRoi": 0.0003984751683557586,
+          "clickRoi": 0
+        },
+        {
+          "id": "meeting",
+          "name": "无用会议",
+          "isClick": false,
+          "level": 17,
+          "cost": 269032,
+          "dIdle": 100,
+          "dClick": 0,
+          "idleRoi": 0.0003717029944393232,
+          "clickRoi": 0
+        },
+        {
+          "id": "deep",
+          "name": "深度摸鱼",
+          "isClick": false,
+          "level": 10,
+          "cost": 606834,
+          "dIdle": 360,
+          "dClick": 0,
+          "idleRoi": 0.0005932429626553555,
+          "clickRoi": 0
+        },
+        {
+          "id": "retire",
+          "name": "退休式躺平",
+          "isClick": false,
+          "level": 0,
+          "cost": 1000000,
+          "dIdle": 700,
+          "dClick": 0,
+          "idleRoi": 0.0007,
+          "clickRoi": 0
+        }
+      ]
+    },
+    {
+      "hours": 6,
+      "totalEarned": 1015431206.7238917,
+      "moyu": 1989247.7239974886,
+      "idleRate": 87728.2,
+      "clickPower": 1,
+      "levels": {
+        "phone": 73,
+        "toilet": 57,
+        "group": 51,
+        "meeting": 47,
+        "deep": 43,
+        "retire": 30
+      },
+      "totalLevels": 301,
+      "unlocked": 6,
+      "collection": 27,
+      "quotes": 0,
+      "flavors": 27,
+      "totalClicks": 0,
+      "rankIdx": 5,
+      "rankName": "摸鱼之神",
+      "rankProgress": 0.010287471149261157,
+      "toNextRank": 1484568793.2761083,
+      "blockIncome": 1009864351.3198917,
+      "blockGrowth": 36.281321429482844,
+      "income": {
+        "idle": 982041785.9999026,
+        "click": 0,
+        "event": 33389420.724000093
+      },
+      "purchases": {
+        "coffee": 0,
+        "water": 0,
+        "chair": 0,
+        "phone": 73,
+        "toilet": 57,
+        "group": 51,
+        "meeting": 47,
+        "deep": 43,
+        "retire": 30
+      },
+      "bestIdleRoi": 0.000021144276277638363,
+      "items": [
+        {
+          "id": "coffee",
+          "name": "咖啡续命",
+          "isClick": true,
+          "level": 0,
+          "cost": 15,
+          "dIdle": 0,
+          "dClick": 1,
+          "idleRoi": 0,
+          "clickRoi": 0.06666666666666667
+        },
+        {
+          "id": "water",
+          "name": "带薪喝水",
+          "isClick": true,
+          "level": 0,
+          "cost": 100,
+          "dIdle": 0,
+          "dClick": 2,
+          "idleRoi": 0,
+          "clickRoi": 0.02
+        },
+        {
+          "id": "chair",
+          "name": "人体工学椅",
+          "isClick": true,
+          "level": 0,
+          "cost": 800,
+          "dIdle": 0,
+          "dClick": 5,
+          "idleRoi": 0,
+          "clickRoi": 0.00625
+        },
+        {
+          "id": "phone",
+          "name": "刷手机",
+          "isClick": false,
+          "level": 73,
+          "cost": 1348691,
+          "dIdle": 16,
+          "dClick": 0,
+          "idleRoi": 0.000011863354912281613,
+          "clickRoi": 0
+        },
+        {
+          "id": "toilet",
+          "name": "带薪蹲坑",
+          "isClick": false,
+          "level": 57,
+          "cost": 1729531,
+          "dIdle": 20,
+          "dClick": 0,
+          "idleRoi": 0.00001156382857549243,
+          "clickRoi": 0
+        },
+        {
+          "id": "group",
+          "name": "摸鱼群聊",
+          "isClick": false,
+          "level": 51,
+          "cost": 4984825,
+          "dIdle": 60,
+          "dClick": 0,
+          "idleRoi": 0.000012036530871194074,
+          "clickRoi": 0
+        },
+        {
+          "id": "meeting",
+          "name": "无用会议",
+          "isClick": false,
+          "level": 47,
+          "cost": 17813059,
+          "dIdle": 200,
+          "dClick": 0,
+          "idleRoi": 0.00001122771782207649,
+          "clickRoi": 0
+        },
+        {
+          "id": "deep",
+          "name": "深度摸鱼",
+          "isClick": false,
+          "level": 43,
+          "cost": 61108046,
+          "dIdle": 720,
+          "dClick": 0,
+          "idleRoi": 0.000011782409144615752,
+          "clickRoi": 0
+        },
+        {
+          "id": "retire",
+          "name": "退休式躺平",
+          "isClick": false,
+          "level": 30,
+          "cost": 66211772,
+          "dIdle": 1400,
+          "dClick": 0,
+          "idleRoi": 0.000021144276277638363,
+          "clickRoi": 0
+        }
+      ]
+    },
+    {
+      "hours": 24,
+      "totalEarned": 15408599559.536457,
+      "moyu": 881467867.5399019,
+      "idleRate": 267264.2,
+      "clickPower": 1,
+      "levels": {
+        "phone": 92,
+        "toilet": 76,
+        "group": 70,
+        "meeting": 66,
+        "deep": 62,
+        "retire": 49
+      },
+      "totalLevels": 415,
+      "unlocked": 6,
+      "collection": 29,
+      "quotes": 0,
+      "flavors": 29,
+      "totalClicks": 0,
+      "rankIdx": 8,
+      "rankName": "摸鱼星人",
+      "rankProgress": 0.5408599559536457,
+      "toNextRank": 4591400440.463543,
+      "blockIncome": 14393168352.812565,
+      "blockGrowth": 3.959048871266915,
+      "income": {
+        "idle": 14901933809.992825,
+        "click": 0,
+        "event": 506665749.5400215
+      },
+      "purchases": {
+        "coffee": 0,
+        "water": 0,
+        "chair": 0,
+        "phone": 92,
+        "toilet": 76,
+        "group": 70,
+        "meeting": 66,
+        "deep": 62,
+        "retire": 49
+      },
+      "bestIdleRoi": 0.000002971418711897438,
+      "items": [
+        {
+          "id": "coffee",
+          "name": "咖啡续命",
+          "isClick": true,
+          "level": 0,
+          "cost": 15,
+          "dIdle": 0,
+          "dClick": 1,
+          "idleRoi": 0,
+          "clickRoi": 0.06666666666666667
+        },
+        {
+          "id": "water",
+          "name": "带薪喝水",
+          "isClick": true,
+          "level": 0,
+          "cost": 100,
+          "dIdle": 0,
+          "dClick": 2,
+          "idleRoi": 0,
+          "clickRoi": 0.02
+        },
+        {
+          "id": "chair",
+          "name": "人体工学椅",
+          "isClick": true,
+          "level": 0,
+          "cost": 800,
+          "dIdle": 0,
+          "dClick": 5,
+          "idleRoi": 0,
+          "clickRoi": 0.00625
+        },
+        {
+          "id": "phone",
+          "name": "刷手机",
+          "isClick": false,
+          "level": 92,
+          "cost": 19194258,
+          "dIdle": 32,
+          "dClick": 0,
+          "idleRoi": 0.0000016671652532752242,
+          "clickRoi": 0
+        },
+        {
+          "id": "toilet",
+          "name": "带薪蹲坑",
+          "isClick": false,
+          "level": 76,
+          "cost": 24614279,
+          "dIdle": 40,
+          "dClick": 0,
+          "idleRoi": 0.000001625072991169069,
+          "clickRoi": 0
+        },
+        {
+          "id": "group",
+          "name": "摸鱼群聊",
+          "isClick": false,
+          "level": 70,
+          "cost": 70942881,
+          "dIdle": 120,
+          "dClick": 0,
+          "idleRoi": 0.0000016915016462328333,
+          "clickRoi": 0
+        },
+        {
+          "id": "meeting",
+          "name": "无用会议",
+          "isClick": false,
+          "level": 66,
+          "cost": 253511388,
+          "dIdle": 400,
+          "dClick": 0,
+          "idleRoi": 0.0000015778383888616475,
+          "clickRoi": 0
+        },
+        {
+          "id": "deep",
+          "name": "深度摸鱼",
+          "isClick": false,
+          "level": 62,
+          "cost": 869675752,
+          "dIdle": 1440,
+          "dClick": 0,
+          "idleRoi": 0.0000016557895246457326,
+          "clickRoi": 0
+        },
+        {
+          "id": "retire",
+          "name": "退休式躺平",
+          "isClick": false,
+          "level": 49,
+          "cost": 942310819,
+          "dIdle": 2800,
+          "dClick": 0,
+          "idleRoi": 0.000002971418711897438,
+          "clickRoi": 0
+        }
+      ]
+    },
+    {
+      "hours": 72,
+      "totalEarned": 101196694087.3522,
+      "moyu": 4165400595.4139943,
+      "idleRate": 663392.2,
+      "clickPower": 1,
+      "levels": {
+        "phone": 101,
+        "toilet": 90,
+        "group": 84,
+        "meeting": 80,
+        "deep": 75,
+        "retire": 63
+      },
+      "totalLevels": 493,
+      "unlocked": 6,
+      "collection": 30,
+      "quotes": 0,
+      "flavors": 30,
+      "totalClicks": 0,
+      "rankIdx": 11,
+      "rankName": "摸鱼奇点",
+      "rankProgress": 0.26495867609190255,
+      "toNextRank": 58803305912.6478,
+      "blockIncome": 85788094527.81575,
+      "blockGrowth": 2.235125349704151,
+      "income": {
+        "idle": 97869143217.9459,
+        "click": 0,
+        "event": 3327550869.4098377
+      },
+      "purchases": {
+        "coffee": 0,
+        "water": 0,
+        "chair": 0,
+        "phone": 101,
+        "toilet": 90,
+        "group": 84,
+        "meeting": 80,
+        "deep": 75,
+        "retire": 63
+      },
+      "bestIdleRoi": 8.398932378529582e-7,
+      "items": [
+        {
+          "id": "coffee",
+          "name": "咖啡续命",
+          "isClick": true,
+          "level": 0,
+          "cost": 15,
+          "dIdle": 0,
+          "dClick": 1,
+          "idleRoi": 0,
+          "clickRoi": 0.06666666666666667
+        },
+        {
+          "id": "water",
+          "name": "带薪喝水",
+          "isClick": true,
+          "level": 0,
+          "cost": 100,
+          "dIdle": 0,
+          "dClick": 2,
+          "idleRoi": 0,
+          "clickRoi": 0.02
+        },
+        {
+          "id": "chair",
+          "name": "人体工学椅",
+          "isClick": true,
+          "level": 0,
+          "cost": 800,
+          "dIdle": 0,
+          "dClick": 5,
+          "idleRoi": 0,
+          "clickRoi": 0.00625
+        },
+        {
+          "id": "phone",
+          "name": "刷手机",
+          "isClick": false,
+          "level": 101,
+          "cost": 67523024,
+          "dIdle": 32,
+          "dClick": 0,
+          "idleRoi": 4.7391242430137606e-7,
+          "clickRoi": 0
+        },
+        {
+          "id": "toilet",
+          "name": "带薪蹲坑",
+          "isClick": false,
+          "level": 90,
+          "cost": 174163396,
+          "dIdle": 80,
+          "dClick": 0,
+          "idleRoi": 4.593387694392454e-7,
+          "clickRoi": 0
+        },
+        {
+          "id": "group",
+          "name": "摸鱼群聊",
+          "isClick": false,
+          "level": 84,
+          "cost": 501970947,
+          "dIdle": 240,
+          "dClick": 0,
+          "idleRoi": 4.781153200884353e-7,
+          "clickRoi": 0
+        },
+        {
+          "id": "meeting",
+          "name": "无用会议",
+          "isClick": false,
+          "level": 80,
+          "cost": 1793771986,
+          "dIdle": 800,
+          "dClick": 0,
+          "idleRoi": 4.459875648877482e-7,
+          "clickRoi": 0
+        },
+        {
+          "id": "deep",
+          "name": "深度摸鱼",
+          "isClick": false,
+          "level": 75,
+          "cost": 5350930197,
+          "dIdle": 2880,
+          "dClick": 0,
+          "idleRoi": 5.382241767262582e-7,
+          "clickRoi": 0
+        },
+        {
+          "id": "retire",
+          "name": "退休式躺平",
+          "isClick": false,
+          "level": 63,
+          "cost": 6667514093,
+          "dIdle": 5600,
+          "dClick": 0,
+          "idleRoi": 8.398932378529582e-7,
+          "clickRoi": 0
+        }
+      ]
+    },
+    {
+      "hours": 200,
+      "totalEarned": 494465715047.7765,
+      "moyu": 2385266863.6237884,
+      "idleRate": 1131584.2,
+      "clickPower": 1,
+      "levels": {
+        "phone": 116,
+        "toilet": 105,
+        "group": 98,
+        "meeting": 94,
+        "deep": 87,
+        "retire": 73
+      },
+      "totalLevels": 573,
+      "unlocked": 6,
+      "collection": 30,
+      "quotes": 0,
+      "flavors": 30,
+      "totalClicks": 0,
+      "rankIdx": 13,
+      "rankName": "摸鱼宇宙尽头·终",
+      "rankProgress": 1,
+      "toNextRank": 0,
+      "blockIncome": 393269020960.4243,
+      "blockGrowth": 1.7190716692319334,
+      "income": {
+        "idle": 478206687667.7548,
+        "click": 0,
+        "event": 16259027380.646946
+      },
+      "purchases": {
+        "coffee": 0,
+        "water": 0,
+        "chair": 0,
+        "phone": 116,
+        "toilet": 105,
+        "group": 98,
+        "meeting": 94,
+        "deep": 87,
+        "retire": 73
+      },
+      "bestIdleRoi": 2.0760876318687744e-7,
+      "items": [
+        {
+          "id": "coffee",
+          "name": "咖啡续命",
+          "isClick": true,
+          "level": 0,
+          "cost": 15,
+          "dIdle": 0,
+          "dClick": 1,
+          "idleRoi": 0,
+          "clickRoi": 0.06666666666666667
+        },
+        {
+          "id": "water",
+          "name": "带薪喝水",
+          "isClick": true,
+          "level": 0,
+          "cost": 100,
+          "dIdle": 0,
+          "dClick": 2,
+          "idleRoi": 0,
+          "clickRoi": 0.02
+        },
+        {
+          "id": "chair",
+          "name": "人体工学椅",
+          "isClick": true,
+          "level": 0,
+          "cost": 800,
+          "dIdle": 0,
+          "dClick": 5,
+          "idleRoi": 0,
+          "clickRoi": 0.00625
+        },
+        {
+          "id": "phone",
+          "name": "刷手机",
+          "isClick": false,
+          "level": 116,
+          "cost": 549439003,
+          "dIdle": 64,
+          "dClick": 0,
+          "idleRoi": 1.1648244782505912e-7,
+          "clickRoi": 0
+        },
+        {
+          "id": "toilet",
+          "name": "带薪蹲坑",
+          "isClick": false,
+          "level": 105,
+          "cost": 1417178280,
+          "dIdle": 160,
+          "dClick": 0,
+          "idleRoi": 1.1290040375160139e-7,
+          "clickRoi": 0
+        },
+        {
+          "id": "group",
+          "name": "摸鱼群聊",
+          "isClick": false,
+          "level": 98,
+          "cost": 3551798717,
+          "dIdle": 480,
+          "dClick": 0,
+          "idleRoi": 1.3514279334089865e-7,
+          "clickRoi": 0
+        },
+        {
+          "id": "meeting",
+          "name": "无用会议",
+          "isClick": false,
+          "level": 94,
+          "cost": 12692202775,
+          "dIdle": 1600,
+          "dClick": 0,
+          "idleRoi": 1.2606164811292972e-7,
+          "clickRoi": 0
+        },
+        {
+          "id": "deep",
+          "name": "深度摸鱼",
+          "isClick": false,
+          "level": 87,
+          "cost": 28628814848,
+          "dIdle": 5760,
+          "dClick": 0,
+          "idleRoi": 2.0119589408719067e-7,
+          "clickRoi": 0
+        },
+        {
+          "id": "retire",
+          "name": "退休式躺平",
+          "isClick": false,
+          "level": 73,
+          "cost": 26973813215,
+          "dIdle": 5600,
+          "dClick": 0,
+          "idleRoi": 2.0760876318687744e-7,
+          "clickRoi": 0
+        }
+      ]
+    }
+  ]
+}

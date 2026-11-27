@@ -472,6 +472,12 @@ async function phaseB() {
   try {
     await setupPage(b, true);
     await waitInteractive(b);
+    // 加速模式同样会弹首次教程：必须先点「开始摸鱼」，否则后续所有点击都被遮罩吞掉
+    {
+      const tutOk = JSON.parse(await b.ev("JSON.stringify((()=>{const t=document.getElementById('tutorial');if(!t||t.classList.contains('hidden'))return null;const r=document.getElementById('tutorial-ok').getBoundingClientRect();return {x:Math.round(r.x+r.width/2),y:Math.round(r.y+r.height/2)};})())"));
+      if (tutOk) { await b.tap(tutOk.x, tutOk.y); await sleep(320); }
+      out.tutorialDismissed = await b.ev("!document.getElementById('tutorial') || document.getElementById('tutorial').classList.contains('hidden')");
+    }
     // 先攒一点余额，让罚款有东西可扣
     for (let i = 0; i < 20; i++) {
       await b.tap(195, 420);
@@ -540,8 +546,88 @@ async function phaseB() {
   console.log(JSON.stringify(out, null, 1));
 }
 
+/* ================= 阶段 C：新手保护 3 次之后，第 4 次巡逻偷点是否真的罚 ================= */
+async function phaseC() {
+  const b = await openBrowser({ port: 9566, accelerate: true });
+  const out = { phase: "C", note: "加速 7.5x；每段巡逻结束并空窗后再计下一段，避免重复识别同一段" };
+  try {
+    await setupPage(b, true);
+    await waitInteractive(b);
+    // 加速模式同样会弹首次教程：必须先点「开始摸鱼」，否则后续所有点击都被遮罩吞掉
+    {
+      const tutOk = JSON.parse(await b.ev("JSON.stringify((()=>{const t=document.getElementById('tutorial');if(!t||t.classList.contains('hidden'))return null;const r=document.getElementById('tutorial-ok').getBoundingClientRect();return {x:Math.round(r.x+r.width/2),y:Math.round(r.y+r.height/2)};})())"));
+      if (tutOk) { await b.tap(tutOk.x, tutOk.y); await sleep(320); }
+      out.tutorialDismissed = await b.ev("!document.getElementById('tutorial') || document.getElementById('tutorial').classList.contains('hidden')");
+    }
+    for (let i = 0; i < 20; i++) {
+      await b.tap(195, 420);
+      await sleep(70);
+    }
+    out.balanceBeforeFirstPatrol = Math.round((await readState(b)).moyu * 10) / 10;
+    const patrols = [];
+    let caught = null;
+    for (let round = 0; round < 7 && !caught; round++) {
+      let banner = null;
+      const t0 = Date.now();
+      while (Date.now() - t0 < 40000) {
+        const texts = JSON.parse(await b.ev("JSON.stringify(__probe.recent(performance.now() - 400, 400))"));
+        const hit = texts.find((t) => /老板来了|假装工作|摸鱼冲刺/.test(t.txt));
+        if (hit) { banner = hit.txt; break; }
+        await sleep(80);
+      }
+      if (!banner) break;
+      const variant = /老板来了/.test(banner) ? "hold" : /假装工作/.test(banner) ? "type" : "blitz";
+      const rec = { round: round + 1, banner, variant, waitMs: Date.now() - t0 };
+      if (variant === "hold") {
+        await sleep(150);
+        const st0 = await readState(b);
+        const mark = await pageNow(b);
+        await b.tap(195, 430);
+        await sleep(350);
+        const st1 = await readState(b);
+        const texts = JSON.parse(await b.ev(`JSON.stringify(__probe.recent(${mark - 5}, 2000))`));
+        rec.tap = {
+          moyuBefore: Math.round(st0.moyu * 10) / 10,
+          moyuAfter: Math.round(st1.moyu * 10) / 10,
+          netDelta: Math.round((st1.moyu - st0.moyu) * 10) / 10,
+          totalEarnedBefore: Math.round(st0.totalEarned * 10) / 10,
+          totalEarnedAfter: Math.round(st1.totalEarned * 10) / 10,
+          floatTexts: texts.map((t) => t.txt),
+          hudMoyuAfter: await b.ev("document.getElementById('hud-moyu').textContent"),
+        };
+        if (texts.some((t) => /被逮/.test(t.txt))) {
+          await b.shot("/tmp/rage-4-penalty.png");
+          writeFileSync(`${SHOTS}/penalty.png`, Buffer.from((await b.send("Page.captureScreenshot", { format: "png", captureBeyondViewport: false })).data, "base64"));
+          caught = rec;
+        }
+      } else {
+        const n = variant === "type" ? 5 : 20;
+        for (let i = 0; i < n; i++) { await b.tap(195, 430); await sleep(40); }
+      }
+      patrols.push(rec);
+      // 等这段巡逻完全结束（横幅消失）再进入下一段
+      const tEnd = Date.now();
+      while (Date.now() - tEnd < 30000) {
+        const texts = JSON.parse(await b.ev("JSON.stringify(__probe.recent(performance.now() - 700, 700))"));
+        const active = texts.some((t) => /老板来了|假装工作|摸鱼冲刺/.test(t.txt));
+        if (!active) break;
+        await sleep(150);
+      }
+      await sleep(900);
+    }
+    out.patrols = patrols;
+    out.caught = caught;
+    out.finalState = await readState(b);
+  } finally {
+    b.close();
+  }
+  writeFileSync(EVIDENCE.replace(".json", "-c.json"), JSON.stringify(out, null, 2));
+  console.log(JSON.stringify(out, null, 1));
+}
+
 const which = process.argv[2] || "a";
 if (which === "a") await phaseA();
 else if (which === "b") await phaseB();
+else if (which === "c") await phaseC();
 else throw new Error("usage: node playtest/probe-r7-rage.mjs [a|b]");
 process.exit(0);

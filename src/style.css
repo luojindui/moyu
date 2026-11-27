@@ -534,3 +534,82 @@ body {
   border-radius: 4px;
   font-family: inherit;
 }
+
+/* ---------- 转生 ---------- */
+.journal-prestige {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid #43435c;
+}
+.prestige-desc {
+  margin: 6px 0 8px;
+  font-size: 11px;
+  color: #a8a493;
+  line-height: 1.4;
+}
+#prestige-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #10241a;
+  background: #ffd76e;
+  border: 3px solid #a8862c;
+  border-radius: 4px;
+  font-family: inherit;
+}
+#prestige-btn:disabled {
+  background: #43435c;
+  color: #a8a493;
+  border-color: #55557a;
+}
+
+/* ---------- 新手目标条（替代挡屏教程） ---------- */
+#quest {
+  margin-top: 6px;
+  padding: 6px 8px;
+  background: #2f3d34;
+  border: 2px solid #4c9e52;
+  border-radius: 4px;
+}
+#quest.hidden {
+  display: none;
+}
+#quest-text {
+  font-size: 12px;
+  color: #d6f0d6;
+  display: block;
+  margin-bottom: 4px;
+}
+.quest-track {
+  height: 5px;
+  background: #24302a;
+  border-radius: 3px;
+  overflow: hidden;
+}
+#quest-bar {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: #8be28b;
+  transition: width 0.2s;
+}
+@keyframes cardPop {
+  0% { transform: scale(1); }
+  45% { transform: scale(1.07); box-shadow: 0 0 14px rgba(139, 226, 139, 0.85); }
+  100% { transform: scale(1); }
+}
+.shop-card.just-unlocked {
+  animation: cardPop 0.55s ease-out;
+  border-color: #8be28b;
+}
+
+@keyframes cardShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+.shop-card.shake {
+  animation: cardShake 0.25s;
+  border-color: #b3413c;
+}

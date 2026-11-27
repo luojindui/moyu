@@ -19,7 +19,7 @@ export class Hud {
     this.elClick.textContent = String(clickPowerOf(state));
     // 底薪 0.2/s 恒存在，不再有"未解锁"态
     this.elIdle.textContent = formatMoyu(effectOf(state).idleRate);
-    const rank = rankFor(state.totalEarned);
+    const rank = rankFor(state.lifetimeEarned);
     // 窄屏友好：短段位名 + 进度百分比（长段位名会截断进度）
     const shortName = rank.current.replace(/^带薪/, "").replace(/^摸鱼/, "");
     this.elRank.textContent = rank.next
@@ -36,6 +36,10 @@ export class Hud {
       this.elStreak.classList.remove("hidden");
     } else {
       this.elStreak.classList.add("hidden");
+    }
+    if (state.prestige > 0) {
+      this.elStreak.textContent = `♻ 转生×${state.prestige}`;
+      this.elStreak.classList.remove("hidden");
     }
   }
 }

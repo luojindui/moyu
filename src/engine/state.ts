@@ -20,6 +20,10 @@ export interface GameState {
   totalClicks: number;
   /** 今日回访计数（回访可把离线效率从 0.7 挣回 1.0） */
   visits: { date: string; count: number };
+  /** 历史累计（跨转生不清零，用于段位） */
+  lifetimeEarned: number;
+  /** 转生点（每点永久 ×1.08） */
+  prestige: number;
 }
 
 export function initialState(): GameState {
@@ -32,13 +36,20 @@ export function initialState(): GameState {
     surviveStreak: 0,
     totalClicks: 0,
     visits: { date: "", count: 0 },
+    lifetimeEarned: 0,
+    prestige: 0,
   };
 }
 
-/** 统一的进账入口：余额与累计同步增加（惩罚只扣余额） */
+/** 统一的进账入口：余额与累计同步增加（惩罚只扣余额）；lifetimeEarned 跨转生累计 */
 export function gain(state: GameState, amount: number): GameState {
   if (amount <= 0) return state;
-  return { ...state, moyu: state.moyu + amount, totalEarned: state.totalEarned + amount };
+  return {
+    ...state,
+    moyu: state.moyu + amount,
+    totalEarned: state.totalEarned + amount,
+    lifetimeEarned: state.lifetimeEarned + amount,
+  };
 }
 
 /**
@@ -53,6 +64,7 @@ export function lose(state: GameState, amount: number): { state: GameState; lost
       ...state,
       moyu: state.moyu - lost,
       totalEarned: Math.max(0, state.totalEarned - lost),
+      lifetimeEarned: Math.max(0, state.lifetimeEarned - lost),
     },
     lost,
   };

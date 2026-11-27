@@ -10,6 +10,7 @@ import { describe, it, expect } from "vitest";
 import { writeFileSync } from "node:fs";
 import {
   DEFAULT_HARD_CFG,
+  RANKS,
   TOTAL_ITEMS,
   collectionGap,
   formatMoyu,
@@ -27,7 +28,7 @@ function base(over: Partial<HardConfig>): HardConfig {
 }
 
 function row(s: Snapshot): string {
-  return `| ${s.hours.toFixed(0).padStart(3)}h | ${formatMoyu(s.totalEarned).padStart(9)} | ${formatMoyu(s.idleRate).padStart(8)}/s | ${s.rankName}(${s.rankIdx + 1}/7) | 图鉴 ${s.collection}/${TOTAL_ITEMS} | 解锁 ${s.unlocked}/9 | Lv合计 ${s.totalLevels} | 本段收入 ${formatMoyu(s.blockIncome).padStart(9)} | 环比 ${s.blockGrowth ? s.blockGrowth.toFixed(2) + "×" : "-"} |`;
+  return `| ${s.hours.toFixed(0).padStart(3)}h | ${formatMoyu(s.totalEarned).padStart(9)} | ${formatMoyu(s.idleRate).padStart(8)}/s | ${s.rankName}(${s.rankIdx + 1}/${RANKS.length}) | 图鉴 ${s.collection}/${TOTAL_ITEMS} | 解锁 ${s.unlocked}/9 | Lv合计 ${s.totalLevels} | 本段收入 ${formatMoyu(s.blockIncome).padStart(9)} | 环比 ${s.blockGrowth ? s.blockGrowth.toFixed(2) + "×" : "-"} |`;
 }
 
 describe("R7 硬核 · 1h/6h/24h/72h 收入曲线", () => {
@@ -68,44 +69,67 @@ describe("R7 硬核 · 1h/6h/24h/72h 收入曲线", () => {
     writeFileSync(OUT, JSON.stringify({ a: sim, ms }, null, 2));
   });
 
-  it("对照：点击/半挂机/活跃点击/攒钱策略敏感度（72h）", () => {
-    const cases: { name: string; cfg: HardConfig }[] = [
-      { name: "纯挂机 cps=0", cfg: base({ hours: 72, cps: 0 }) },
-      { name: "半挂机 cps=1", cfg: base({ hours: 72, cps: 1 }) },
-      { name: "活跃 cps=3", cfg: base({ hours: 72, cps: 3 }) },
-      { name: "纯挂机+攒钱60s", cfg: base({ hours: 72, cps: 0, saveWatchSeconds: 60 }) },
-      { name: "纯挂机+攒钱300s", cfg: base({ hours: 72, cps: 0, saveWatchSeconds: 300 }) },
-      { name: "纯挂机+攒钱900s", cfg: base({ hours: 72, cps: 0, saveWatchSeconds: 900 }) },
-      { name: "纯挂机+攒钱1800s", cfg: base({ hours: 72, cps: 0, saveWatchSeconds: 1800 }) },
-      { name: "纯挂机+攒钱3600s", cfg: base({ hours: 72, cps: 0, saveWatchSeconds: 3600 }) },
-      { name: "纯挂机+只买最优", cfg: base({ hours: 72, cps: 0, saveWatchSeconds: 1e9 }) },
-      { name: "事件党 cps=0.2", cfg: base({ hours: 72, cps: 0.2 }) },
-      { name: "事件党+攒钱3600s", cfg: base({ hours: 72, cps: 0.2, saveWatchSeconds: 3600 }) },
+  it("对照：购买策略敏感度 + 点击意愿敏感度（72h）", () => {
+    console.log("\n### B1. 购买策略敏感度（cps=0，72h）：硬核 optimizer 的「攒钱等里程碑」值多少");
+    console.log("| 策略 | 72h 累计收入 | 72h 挂机率 | 相对「有闲钱就买」 |");
+    console.log("|---|---|---|---|");
+    const strategies: { name: string; cfg: HardConfig }[] = [
+      { name: "有闲钱就买（贪心 ROI）", cfg: base({ hours: 72, cps: 0 }) },
+      { name: "攒钱 3600s 窗口", cfg: base({ hours: 72, cps: 0, saveWatchSeconds: 3600 }) },
+      { name: "只买全局最优（ratio=1）", cfg: base({ hours: 72, cps: 0, roiRatio: 1 }) },
+      { name: "ROI 门槛 0.6（近最优基线）", cfg: base({ hours: 72, cps: 0, roiRatio: 0.6 }) },
     ];
-    console.log("\n### B. 策略/点击敏感度对照（72h）");
-    console.log("| 策略 | 72h 累计收入 | 72h 挂机率 | 段位 | 图鉴 | Lv合计 | 事件占比 |");
-    console.log("|---|---|---|---|---|---|---|");
-    const results: Record<string, unknown>[] = [];
-    for (const c of cases) {
+    let greedyTotal = 0;
+    const s1: Record<string, unknown>[] = [];
+    for (const c of strategies) {
       const sim = runSim(c.cfg);
       const s = sim.snapshots[sim.snapshots.length - 1]!;
-      const evShare = ((sim.income.event / sim.state.totalEarned) * 100).toFixed(1);
-      console.log(
-        `| ${c.name} | ${formatMoyu(s.totalEarned)} | ${formatMoyu(s.idleRate)}/s | ${s.rankName}(${s.rankIdx + 1}/7) | ${s.collection}/${TOTAL_ITEMS} | ${s.totalLevels} | ${evShare}% |`,
-      );
-      results.push({
-        name: c.name,
-        totalEarned: s.totalEarned,
-        idleRate: s.idleRate,
-        rankIdx: s.rankIdx,
-        collection: s.collection,
-        levels: s.levels,
-        income: sim.income,
-        firstBuys: sim.firstBuys.slice(0, 10),
-      });
+      if (!greedyTotal) greedyTotal = s.totalEarned;
+      console.log(`| ${c.name} | ${formatMoyu(s.totalEarned)} | ${formatMoyu(s.idleRate)}/s | ${((s.totalEarned / greedyTotal) * 100).toFixed(1)}% |`);
+      s1.push({ name: c.name, totalEarned: s.totalEarned, idleRate: s.idleRate, levels: s.levels });
     }
-    writeFileSync(OUT.replace(".json", "-sensitivity.json"), JSON.stringify(results, null, 2));
-    expect(results.length).toBe(cases.length);
+
+    console.log("\n### B2. 点击意愿敏感度（同一近最优策略 roiRatio=0.6，72h）");
+    console.log("| 持续 cps | 72h 累计收入 | 相对纯挂机 | 图鉴 | 点击线等级合计 | 备注 |");
+    console.log("|---|---|---|---|---|---|");
+    const cpsList = [0, 0.2, 1, 3];
+    let zero = 0;
+    const s2: Record<string, unknown>[] = [];
+    for (const cps of cpsList) {
+      const sim = runSim(base({ hours: 72, cps, dt: 0.5, roiRatio: 0.6 }));
+      const s = sim.snapshots[sim.snapshots.length - 1]!;
+      if (!zero) zero = s.totalEarned;
+      const clickLevels = (s.levels["coffee"] ?? 0) + (s.levels["water"] ?? 0) + (s.levels["chair"] ?? 0);
+      const note = cps === 0 ? "纯挂机" : cps === 0.2 ? "5.18 万次点击/72h（可做到）" : cps === 1 ? "25.9 万次（不现实）" : "77.8 万次（不可能）";
+      console.log(`| ${cps} | ${formatMoyu(s.totalEarned)} | ${((s.totalEarned / zero) * 100).toFixed(1)}% | ${s.collection}/55 | ${clickLevels} | ${note} |`);
+      s2.push({ cps, totalEarned: s.totalEarned, collection: s.collection, clickLevels, clicks: sim.totalClicks });
+    }
+    writeFileSync(OUT.replace(".json", "-sensitivity.json"), JSON.stringify({ strategies: s1, click: s2 }, null, 2));
+    expect(s1.length).toBe(4);
+    expect(s2.length).toBe(4);
+  });
+
+  it("图鉴 55/55 达成条件：点击线靠累计点击数（2 万）+ 挂机线 Lv50", () => {
+    // 挂机老玩家会为了「图鉴 55/55 → 挂机 ×1.2」专门补点击：用低 cps 触发点击线彩蛋
+    const sim = runSim(base({ hours: 48, cps: 0.2, dt: 0.5, roiRatio: 0.6, snapshotHours: [3, 6, 9, 12, 18, 24, 36] }));
+    console.log("\n### D. 图鉴 55/55 达成节奏（cps=0.2：72h 内共 5.18 万次普通点击）");
+    console.log("| 时点 | 图鉴 | 语录 | 挂机线彩蛋 | 点击线彩蛋 | 普通点击数 | 挂机率 |");
+    console.log("|---|---|---|---|---|---|---|");
+    const CLICK_TIERS = [100, 500, 3000, 8000, 20000]; // collection.ts CLICK_TIER_THRESHOLDS
+    for (const s of sim.snapshots) {
+      const tiers = CLICK_TIERS.filter((th) => s.totalClicks >= th).length;
+      const clickF = tiers * 3; // 3 个点击项共享同一组点击门槛
+      const idleF = s.flavors - clickF;
+      console.log(`| ${s.hours}h | ${s.collection}/55 | ${s.quotes}/10 | ${idleF}/30 | ${clickF}/15 | ${s.totalClicks} | ${formatMoyu(s.idleRate)}/s |`);
+    }
+    console.log("点击线彩蛋门槛：100 / 500 / 3000 / 8000 / 20000 次普通点击（3 项共 15 格）；挂机线为等级 Lv1/5/10/20/50。");
+    console.log("=> 55/55 需要「2 万次普通点击 + 6 项挂机线各 Lv50」；纯挂机 0 点击永远停在 40/55，拿不到 ×1.2。");
+    // 纯挂机对照
+    const pure = runSim(base({ hours: 72, cps: 0, dt: 0.5, roiRatio: 0.6 }));
+    const ps = pure.snapshots[pure.snapshots.length - 1]!;
+    console.log(`纯挂机 72h 图鉴上限：${ps.collection}/55（语录 ${ps.quotes}/10，点击线彩蛋 0/15），点击次数 ${ps.totalClicks}`);
+    expect(ps.collection).toBe(40);
+    expect(ps.totalClicks).toBe(0);
   });
 
   it("长跑：终档 2.5e9 何时达成 / 图鉴 55 何时集满（30 天）", () => {
@@ -124,6 +148,7 @@ describe("R7 硬核 · 1h/6h/24h/72h 收入曲线", () => {
     console.log("30 天途中快照：" + sim.snapshots.map((s) => `${s.hours}h 收 ${formatMoyu(s.totalEarned)} ${s.rankName}`).join(" | "));
     console.log("每 6h 块（长跑后半）：" + sim.blocks.slice(-8).map((b) => `${b.fromHours}-${b.toHours}h 收${formatMoyu(b.income)} ${b.growth ? b.growth.toFixed(2) + "×" : "-"}`).join(" | "));
     writeFileSync(OUT.replace(".json", "-longrun.json"), JSON.stringify({ last, rank7AtHours, gap, income: sim.income, blocks: sim.blocks, blocksAll: sim.blocks.length }, null, 2));
-    expect(rank7AtHours).toBeNull();
+    expect(rank7AtHours).not.toBeNull();
+    expect(rank7AtHours!).toBeGreaterThan(100);
   });
 });

@@ -1,0 +1,121 @@
+{
+  "phase": "C",
+  "note": "加速 7.5x；每段巡逻结束并空窗后再计下一段，避免重复识别同一段",
+  "tutorialDismissed": true,
+  "balanceBeforeFirstPatrol": 27.9,
+  "patrols": [
+    {
+      "round": 1,
+      "banner": "摸鱼冲刺！连点 0/20 奖×1.5 (8s)",
+      "variant": "blitz",
+      "waitMs": 13853
+    },
+    {
+      "round": 2,
+      "banner": "假装工作！点 0/5 (8s)",
+      "variant": "type",
+      "waitMs": 10313
+    },
+    {
+      "round": 3,
+      "banner": "摸鱼冲刺！连点 0/20 奖×1.5 (8s)",
+      "variant": "blitz",
+      "waitMs": 15177
+    },
+    {
+      "round": 4,
+      "banner": "摸鱼冲刺！连点 0/20 奖×1.5 (8s)",
+      "variant": "blitz",
+      "waitMs": 11406
+    },
+    {
+      "round": 5,
+      "banner": "假装工作！点 0/5 (8s)",
+      "variant": "type",
+      "waitMs": 10822
+    },
+    {
+      "round": 6,
+      "banner": "⚠ 老板来了！忍住别点，点了会罚 (8s)",
+      "variant": "hold",
+      "waitMs": 12442,
+      "tap": {
+        "moyuBefore": 235.6,
+        "moyuAfter": 227.2,
+        "netDelta": -8.4,
+        "totalEarnedBefore": 235.6,
+        "totalEarnedAfter": 227.2,
+        "floatTexts": [
+          "偷点被逮！+1 -10",
+          "⚠ 老板来了！忍住别点，点了会罚 (4s)",
+          "⚠ 老板来了！忍住别点，点了会罚 (5s)",
+          "⚠ 老板来了！忍住别点，点了会罚 (6s)",
+          "⚠ 老板来了！忍住别点，点了会罚 (7s)"
+        ],
+        "hudMoyuAfter": "227.2"
+      }
+    }
+  ],
+  "caught": {
+    "round": 6,
+    "banner": "⚠ 老板来了！忍住别点，点了会罚 (8s)",
+    "variant": "hold",
+    "waitMs": 12442,
+    "tap": {
+      "moyuBefore": 235.6,
+      "moyuAfter": 227.2,
+      "netDelta": -8.4,
+      "totalEarnedBefore": 235.6,
+      "totalEarnedAfter": 227.2,
+      "floatTexts": [
+        "偷点被逮！+1 -10",
+        "⚠ 老板来了！忍住别点，点了会罚 (4s)",
+        "⚠ 老板来了！忍住别点，点了会罚 (5s)",
+        "⚠ 老板来了！忍住别点，点了会罚 (6s)",
+        "⚠ 老板来了！忍住别点，点了会罚 (7s)"
+      ],
+      "hudMoyuAfter": "227.2"
+    }
+  },
+  "finalState": {
+    "moyu": 230.49520000002462,
+    "totalEarned": 230.49520000002462,
+    "levels": {},
+    "collected": {
+      "quotes": [],
+      "flavors": []
+    },
+    "daily": {
+      "date": "2026-11-27",
+      "goals": [
+        {
+          "id": "meme_1",
+          "target": 1,
+          "progress": 0,
+          "done": false
+        },
+        {
+          "id": "buy_3",
+          "target": 3,
+          "progress": 0,
+          "done": false
+        },
+        {
+          "id": "click_100",
+          "target": 100,
+          "progress": 91,
+          "done": false
+        }
+      ],
+      "streak": 0,
+      "lastCompleteDate": null,
+      "claimed": false
+    },
+    "surviveStreak": 0,
+    "totalClicks": 50,
+    "visits": {
+      "date": "2026-11-27",
+      "count": 1
+    }
+  }
+}

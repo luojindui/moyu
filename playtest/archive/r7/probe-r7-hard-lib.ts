@@ -19,7 +19,7 @@
 import { initialState, gain, type GameState } from "../src/engine/state";
 import { buyUpgrade, clickPowerOf } from "../src/engine/actions";
 import { advance } from "../src/engine/tick";
-import { UPGRADES, costOf, effectOf, marginalEffect, MILESTONE_LEVELS } from "../src/engine/upgrades";
+import { UPGRADES, costOf, effectOf, marginalEffect, milestoneGap, valueScoreOf, MILESTONE_LEVELS } from "../src/engine/upgrades";
 import {
   newEventState,
   scheduleEvents,
@@ -35,7 +35,7 @@ import { MEME_QUOTES } from "../src/engine/flavor";
 import { rankFor, RANKS } from "../src/engine/titles";
 import { formatMoyu } from "../src/engine/format";
 
-export { TOTAL_ITEMS, RANKS, formatMoyu, UPGRADES, costOf, effectOf, marginalEffect, MILESTONE_LEVELS, collectionCount, initialState };
+export { TOTAL_ITEMS, RANKS, formatMoyu, UPGRADES, costOf, effectOf, marginalEffect, milestoneGap, valueScoreOf, MILESTONE_LEVELS, collectionCount, initialState };
 export type { GameState };
 
 export const HOUR = 3600;
@@ -73,6 +73,8 @@ export interface HardConfig {
   cps: number;
   /** 事件是否全勤（type 打满 / blitz 打满 / hold 忍） */
   doEvents: boolean;
+  /** 是否购买点击线升级（false = 验证「点击项是不是陷阱」：只靠点击收入，不买点击项） */
+  buyClickItems?: boolean;
   /** 攒钱窗口（秒）：全局最优项 ≤N 秒收入即可及时，等它；0 = 有就买 */
   saveWatchSeconds: number;
   /**
@@ -223,9 +225,14 @@ export function marginalTable(state: GameState, clickValue: number): ItemSpend[]
   });
 }
 
-function bestPurchase(state: GameState, clickValue: number): { id: string; cost: number; roi: number } | null {
+function skipClick(cfg: HardConfig, u: { clickPower?: number }): boolean {
+  return cfg.buyClickItems === false && !!u.clickPower;
+}
+
+function bestPurchase(state: GameState, clickValue: number, cfg: HardConfig): { id: string; cost: number; roi: number } | null {
   let best: { id: string; cost: number; roi: number } | null = null;
   for (const u of UPGRADES) {
+    if (skipClick(cfg, u)) continue;
     const lv = state.levels[u.id] ?? 0;
     const m = marginalEffect(u.id, lv);
     const val = m.idleRate + m.clickPower * clickValue;
@@ -237,9 +244,10 @@ function bestPurchase(state: GameState, clickValue: number): { id: string; cost:
   return best;
 }
 
-function bestAffordable(state: GameState, clickValue: number): { id: string; cost: number; roi: number } | null {
+function bestAffordable(state: GameState, clickValue: number, cfg: HardConfig): { id: string; cost: number; roi: number } | null {
   let best: { id: string; cost: number; roi: number } | null = null;
   for (const u of UPGRADES) {
+    if (skipClick(cfg, u)) continue;
     const lv = state.levels[u.id] ?? 0;
     const m = marginalEffect(u.id, lv);
     const val = m.idleRate + m.clickPower * clickValue;
@@ -270,13 +278,13 @@ function buyItem(sim: HardSim, id: string, roi: number): void {
 export function buyTick(sim: HardSim): void {
   const cv = clickValueOf(sim.cfg.cps);
   for (let guard = 0; guard < 500; guard++) {
-    const best = bestPurchase(sim.state, cv);
+    const best = bestPurchase(sim.state, cv, sim.cfg);
     if (!best) return;
     if (sim.state.moyu >= best.cost) {
       buyItem(sim, best.id, best.roi);
       continue;
     }
-    const aff = bestAffordable(sim.state, cv);
+    const aff = bestAffordable(sim.state, cv, sim.cfg);
     if (!aff) return;
     if (sim.cfg.roiRatio !== undefined) {
       if (aff.roi >= sim.cfg.roiRatio * best.roi) {
@@ -348,7 +356,7 @@ export function snapshotOf(sim: HardSim): Snapshot {
     if (lv > 0) unlocked++;
   }
   const cv = clickValueOf(sim.cfg.cps);
-  const best = bestPurchase(s, cv);
+  const best = bestPurchase(s, cv, sim.cfg);
   return {
     hours: sim.t / HOUR,
     totalEarned: s.totalEarned,

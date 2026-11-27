@@ -1,6 +1,7 @@
 import type { GameState } from "../engine/state";
 import { UPGRADES, costOf, marginalEffect, milestoneGap, valueScoreOf } from "../engine/upgrades";
 import { formatMoyu } from "../engine/format";
+import { clickPowerOf } from "../engine/actions";
 import { flavorFor } from "../engine/flavor";
 
 /** 展示顺序：点击线与挂机线交错，保证首屏就能看到挂机卡（挂机是核心卖点） */
@@ -9,6 +10,8 @@ const DISPLAY_ORDER = ["coffee", "phone", "water", "toilet", "chair", "group", "
 /** 升级商店：卡片 + 可购态刷新 + 性价比提示 + 购买回调 */
 export class Shop {
   private container = document.getElementById("shop-cards")!;
+  /** 记录已解锁（可用）状态，用于首次可买时的弹入动画 */
+  private unlockedOnce = new Map<string, boolean>();
   private buttons = new Map<string, HTMLButtonElement>();
   private costs = new Map<string, HTMLElement>();
 
@@ -35,6 +38,15 @@ export class Shop {
         <span class="shop-remain"></span>
         <span class="shop-level"></span>`;
       card.addEventListener("click", () => onBuy(u.id));
+      // disabled 按钮会吞掉 click：用父容器捕获 pointerdown 给「还差」反馈
+      card.addEventListener(
+        "pointerdown",
+        () => {
+          if (card.disabled) card.classList.add("shake");
+        },
+        { passive: true },
+      );
+      card.addEventListener("animationend", () => card.classList.remove("shake"));
       this.container.appendChild(card);
       this.buttons.set(u.id, card);
       this.costs.set(u.id, card.querySelector(".shop-cost b")!);
@@ -81,9 +93,22 @@ export class Shop {
       const dim = u.clickPower ? `${score.click.toFixed(0)}/万` : `${score.idle.toFixed(1)}/万`;
       btn.querySelector(".shop-value")!.textContent = `${isBest ? "★ " : ""}${dim}`;
       btn.disabled = state.moyu < price;
-      btn.classList.toggle("affordable", state.moyu >= price);
+      const affordable = state.moyu >= price;
+      btn.classList.toggle("affordable", affordable);
+      if (affordable && this.unlockedOnce.get(u.id) !== true) {
+        this.unlockedOnce.set(u.id, true);
+        btn.classList.remove("just-unlocked");
+        void btn.offsetWidth; // 重启动画
+        btn.classList.add("just-unlocked");
+      }
       const remain = btn.querySelector(".shop-remain")!;
-      remain.textContent = state.moyu < price ? `还差 ${formatMoyu(price - state.moyu)}` : "";
+      if (state.moyu < price) {
+        const gapVal = price - state.moyu;
+        const perTap = Math.max(1, clickPowerOf(state));
+        remain.textContent = u.clickPower ? `再戳 ${Math.ceil(gapVal / perTap)} 下` : `还差 ${formatMoyu(gapVal)}`;
+      } else {
+        remain.textContent = "";
+      }
     }
   }
 }

@@ -1,4 +1,5 @@
 import type { GameState } from "./state";
+import { prestigeMultiplier } from "./prestige";
 
 export interface UpgradeDef {
   id: string;
@@ -72,7 +73,8 @@ export function effectOf(state: GameState): { clickPower: number; idleRate: numb
     if (u.clickPower) clickPower += effectAt(u, lv);
     if (u.idleRate) idleRate += effectAt(u, lv);
   }
-  return { clickPower, idleRate: idleRate * collectionBonus(state) };
+  const mult = prestigeMultiplier(state.prestige) * collectionBonus(state);
+  return { clickPower: clickPower * mult, idleRate: idleRate * mult };
 }
 
 /** 下一级（level → level+1）的即时效果增量（含里程碑跳变） */

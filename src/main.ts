@@ -16,11 +16,13 @@ import {
 import { collectQuote, syncFlavorCollection } from "./engine/collection";
 import { ensureVisits, offlineEfficiency } from "./engine/progression";
 import { rankFor } from "./engine/titles";
+import { doPrestige } from "./engine/prestige";
 import { ensureDaily, dailyTrack, claimDaily } from "./engine/daily";
 import { Hud } from "./ui/hud";
 import { Shop } from "./ui/shop";
 import { Welcome } from "./ui/welcome";
 import { Journal } from "./ui/journal";
+import { Quest } from "./ui/quest";
 import { Scene, SPRITE_MAP } from "./render/scene";
 import { SpriteGrid, frameActivity } from "./render/sprites";
 
@@ -67,34 +69,35 @@ async function boot(): Promise<void> {
   // 读档迁移：补齐历史彩蛋档 + 保证今日日报存在
   state = syncFlavorCollection(state);
   state = ensureDaily(state, today(), Math.random);
-  // 首次进入：三步新手引导（只显示一次）
-  const TUTORIAL_KEY = "moyu-tutorial-v1";
-  try {
-    if (!localStorage.getItem(TUTORIAL_KEY)) {
-      const t = document.getElementById("tutorial")!;
-      t.classList.remove("hidden");
-      document.getElementById("tutorial-ok")!.addEventListener("click", () => {
-        t.classList.add("hidden");
-        try {
-          localStorage.setItem(TUTORIAL_KEY, "1");
-        } catch {
-          /* 隐私模式忽略 */
-        }
-      });
-    }
-  } catch {
-    /* localStorage 不可用则跳过 */
-  }
-
-  const journal = new Journal(() => {
-    const r = claimDaily(state, today());
-    if (r.claimedReward !== null) {
+  const journal = new Journal(
+    () => {
+      const r = claimDaily(state, today());
+      if (r.claimedReward !== null) {
+        state = r.state;
+        hud.refresh(state);
+        journal.refresh(state, true); // 领取后立即重绘（不等 400ms 节流）
+        serialize(state, localStorageAdapter, Date.now());
+      }
+    },
+    () => {
+      // 离职再就业：确认后重置本局
+      const r = doPrestige(state);
+      if (!r) return;
       state = r.state;
+      es.bossUntil = -1;
+      es.memeUntil = -1;
+      es.nextBossAt = Infinity;
+      es.nextMemeAt = Infinity;
+      es.bossCaught = false;
+      es.bossPenaltyTotal = 0;
+      prevBossActive = false;
+      scene.gameTime = 0;
       hud.refresh(state);
-      journal.refresh(state, true); // 领取后立即重绘（不等 400ms 节流）
+      shop.refresh(state);
+      journal.refresh(state, true);
       serialize(state, localStorageAdapter, Date.now());
-    }
-  });
+    },
+  );
   const shop = new Shop((id) => {
     const next = buyUpgrade(state, id);
     if (next) {
@@ -190,6 +193,7 @@ async function boot(): Promise<void> {
   let fpsFrames = 0;
   let lastHud = 0;
   let prevBossActive = false;
+  const quest = new Quest((text) => toast(text));
   let lastRankName = "";
   let lastCollectionCount = state.collected.quotes.length + state.collected.flavors.length;
   const toast = (text: string): void => {
@@ -245,6 +249,7 @@ async function boot(): Promise<void> {
     if (now - lastHud >= 150) {
       lastHud = now;
       scene.hideHint = state.totalEarned > 500;
+      quest.tick(state, null);
       // 段位晋升提示（让"新变化"被看见，而不是只藏在 HUD 一行）
       const rankNow = rankFor(state.totalEarned).current;
       if (lastRankName && rankNow !== lastRankName) toast(`段位晋升：${rankNow}`);

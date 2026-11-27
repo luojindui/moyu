@@ -1,0 +1,86 @@
+{
+  "strategies": [
+    {
+      "name": "有闲钱就买（贪心 ROI）",
+      "totalEarned": 73613064772.34357,
+      "idleRate": 463600.2,
+      "levels": {
+        "phone": 125,
+        "toilet": 107,
+        "group": 93,
+        "meeting": 80,
+        "deep": 67,
+        "retire": 54
+      }
+    },
+    {
+      "name": "攒钱 3600s 窗口",
+      "totalEarned": 86005213721.663,
+      "idleRate": 479712.2,
+      "levels": {
+        "phone": 123,
+        "toilet": 105,
+        "group": 92,
+        "meeting": 79,
+        "deep": 72,
+        "retire": 58
+      }
+    },
+    {
+      "name": "只买全局最优（ratio=1）",
+      "totalEarned": 98074110777.79051,
+      "idleRate": 665648.2,
+      "levels": {
+        "phone": 99,
+        "toilet": 87,
+        "group": 82,
+        "meeting": 77,
+        "deep": 73,
+        "retire": 65
+      }
+    },
+    {
+      "name": "ROI 门槛 0.6（近最优基线）",
+      "totalEarned": 101474764253.67358,
+      "idleRate": 663392.2,
+      "levels": {
+        "phone": 101,
+        "toilet": 90,
+        "group": 84,
+        "meeting": 80,
+        "deep": 75,
+        "retire": 63
+      }
+    }
+  ],
+  "click": [
+    {
+      "cps": 0,
+      "totalEarned": 101474764253.67358,
+      "collection": 40,
+      "clickLevels": 0,
+      "clicks": 0
+    },
+    {
+      "cps": 0.2,
+      "totalEarned": 124417594852.31502,
+      "collection": 55,
+      "clickLevels": 257,
+      "clicks": 51839
+    },
+    {
+      "cps": 1,
+      "totalEarned": 131361741773.50299,
+      "collection": 55,
+      "clickLevels": 310,
+      "clicks": 259200
+    },
+    {
+      "cps": 3,
+      "totalEarned": 159179898429.07526,
+      "collection": 55,
+      "clickLevels": 342,
+      "clicks": 777600
+    }
+  ]
+}

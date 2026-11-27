@@ -52,12 +52,11 @@ await sleep(1500);
 const out = {};
 
 // 0) 首次进入的新手教程：先点「开始摸鱼」关掉（等同真实玩家一进来先点掉弹窗）
-const tut = JSON.parse(await ev("JSON.stringify((()=>{const t=document.getElementById(tutorial);if(!t)return null;const b=document.getElementById(tutorial-ok);const r=b.getBoundingClientRect();return {visible:!t.classList.contains(hidden),x:Math.round(r.x+r.width/2),y:Math.round(r.y+r.height/2),text:b.textContent,panel:[Math.round(t.querySelector(.tutorial-panel).getBoundingClientRect().x),Math.round(t.querySelector(.tutorial-panel).getBoundingClientRect().y),Math.round(t.querySelector(.tutorial-panel).getBoundingClientRect().width),Math.round(t.querySelector(.tutorial-panel).getBoundingClientRect().height)]};})())"));
+// 0) 首次进入的新手教程：先点「开始摸鱼」关掉（等同真实玩家一进来先点掉弹窗）
+const tut = JSON.parse(await ev("JSON.stringify((()=>{const t=document.getElementById('tutorial');if(!t)return null;const b=document.getElementById('tutorial-ok');const p=t.querySelector('.tutorial-panel');const r=b.getBoundingClientRect();const pr=p?p.getBoundingClientRect():null;return {visible:!t.classList.contains('hidden'),x:Math.round(r.x+r.width/2),y:Math.round(r.y+r.height/2),text:b.textContent,panel:pr?[Math.round(pr.x),Math.round(pr.y),Math.round(pr.width),Math.round(pr.height)]:null};})())"));
 out.tutorial = tut;
 if (tut && tut.visible) { await tap(tut.x, tut.y); await sleep(350); }
-out.tutorialClosed = await ev("!!document.getElementById(tutorial) && document.getElementById(tutorial).classList.contains(hidden)");
-
-// 1) 点灰色（disabled）商店卡：咖啡续命中心
+out.tutorialClosed = await ev("!!document.getElementById('tutorial') && document.getElementById('tutorial').classList.contains('hidden')");
 const cardRect = JSON.parse(await ev("JSON.stringify((()=>{const c=document.querySelector('[data-upgrade=coffee]');const r=c.getBoundingClientRect();return {x:Math.round(r.x+r.width/2),y:Math.round(r.y+r.height/2),disabled:c.disabled};})())"));
 const s0 = await state();
 const mark0 = await ev("performance.now()");

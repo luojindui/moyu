@@ -4,6 +4,7 @@ import { collectionCount, collectionRows, TOTAL_ITEMS } from "../engine/collecti
 import { MEME_QUOTES, UPGRADE_FLAVOR } from "../engine/flavor";
 import { UPGRADES } from "../engine/upgrades";
 import { formatMoyu } from "../engine/format";
+import { canPrestige, prestigeGain } from "../engine/prestige";
 
 /** 日报 + 图鉴面板（收集党：差距可见、每日有仪式） */
 export class Journal {
@@ -23,9 +24,16 @@ export class Journal {
   /** 上一次刷新时间（节流：面板关闭时零开销） */
   private lastRefreshAt = 0;
 
-  constructor(private onClaim: () => void) {
+  private elPrestigeBtn = document.getElementById("prestige-btn") as HTMLButtonElement;
+  private elPrestigeInfo = document.getElementById("prestige-info")!;
+
+  constructor(
+    private onClaim: () => void,
+    private onPrestige: () => void,
+  ) {
     document.getElementById("journal-close")!.addEventListener("click", () => this.hide());
     this.elClaim.addEventListener("click", () => this.onClaim());
+    this.elPrestigeBtn.addEventListener("click", () => this.onPrestige());
     document.getElementById("btn-journal")!.addEventListener("click", () => this.toggle());
   }
 
@@ -96,6 +104,15 @@ export class Journal {
         )
         .join("");
     }
+
+    // 转生信息
+    const gain = prestigeGain(state);
+    const unlocked = canPrestige(state);
+    this.elPrestigeBtn.disabled = !unlocked;
+    this.elPrestigeBtn.textContent = unlocked
+      ? `离职再就业：+${gain} 点（永久 ×${(1.08 ** (state.prestige + gain)).toFixed(2)}）`
+      : `未解锁（本局累计 ${formatMoyu(state.totalEarned)} / 1亿）`;
+    this.elPrestigeInfo.textContent = state.prestige > 0 ? `已有 ${state.prestige} 点 · 当前 ×${(1.08 ** state.prestige).toFixed(2)}` : "";
 
     // 最新收集（彩蛋优先展示文本）
     const latestFlavor = state.collected.flavors.at(-1);

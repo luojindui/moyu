@@ -1,0 +1,79 @@
+[
+  {
+    "e": 0.3,
+    "k": 2,
+    "unlock": 100000000,
+    "bonus": 0.1,
+    "mode": "add",
+    "capHours": 3,
+    "runs": 51,
+    "totalHours": 119.35859685015171,
+    "finalMult": 52.400000000000006
+  },
+  {
+    "e": 0.4,
+    "k": 2,
+    "unlock": 100000000,
+    "bonus": 0.05,
+    "mode": "add",
+    "capHours": 3,
+    "runs": 61,
+    "totalHours": 137.8008001823935,
+    "finalMult": 51.550000000000004
+  },
+  {
+    "e": 0.4,
+    "k": 3,
+    "unlock": 100000000,
+    "bonus": 0.05,
+    "mode": "add",
+    "capHours": 3,
+    "runs": 42,
+    "totalHours": 95.11857458093661,
+    "finalMult": 52.1
+  },
+  {
+    "e": 0.5,
+    "k": 2,
+    "unlock": 100000000,
+    "bonus": 0.05,
+    "mode": "add",
+    "capHours": 3,
+    "runs": 41,
+    "totalHours": 91.11167968825599,
+    "finalMult": 53.6
+  },
+  {
+    "e": 0.5,
+    "k": 2,
+    "unlock": 100000000,
+    "bonus": 0.08,
+    "mode": "mul",
+    "capHours": 3,
+    "runs": 10,
+    "totalHours": 19.758846193314238,
+    "finalMult": 16270.21123379027
+  },
+  {
+    "e": 0.4,
+    "k": 2,
+    "unlock": 100000000,
+    "bonus": 0.08,
+    "mode": "mul",
+    "capHours": 3,
+    "runs": 11,
+    "totalHours": 21.813893420293773,
+    "finalMult": 202.4133387977757
+  },
+  {
+    "e": 0.4,
+    "k": 2,
+    "unlock": 100000000,
+    "bonus": 0.1,
+    "mode": "mul",
+    "capHours": 3,
+    "runs": 9,
+    "totalHours": 19.07729856988803,
+    "finalMult": 304.48163954141955
+  }
+]

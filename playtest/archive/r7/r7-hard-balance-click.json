@@ -1,0 +1,38 @@
+[
+  {
+    "cps": 0.2,
+    "buy": true,
+    "total": 124417594852.31502,
+    "clickShare": 0.0033094416673985377,
+    "collection": 55,
+    "clickLevels": 257,
+    "idle": 811085.0399999999
+  },
+  {
+    "cps": 0.2,
+    "buy": false,
+    "total": 123611671503.41078,
+    "clickShare": 4.1937787402296974e-7,
+    "collection": 55,
+    "clickLevels": 0,
+    "idle": 811085.0399999999
+  },
+  {
+    "cps": 2.5,
+    "buy": true,
+    "total": 151592330589.79095,
+    "clickShare": 0.13518197291603587,
+    "collection": 55,
+    "clickLevels": 339,
+    "idle": 819187.44
+  },
+  {
+    "cps": 2.5,
+    "buy": false,
+    "total": 125671156372.83498,
+    "clickShare": 0.000006393829922450668,
+    "collection": 55,
+    "clickLevels": 0,
+    "idle": 817843.44
+  }
+]

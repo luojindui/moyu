@@ -29,13 +29,13 @@ export interface RankInfo {
   progress: number;
 }
 
-export function rankFor(totalEarned: number): RankInfo {
+export function rankFor(lifetimeEarned: number): RankInfo {
   let idx = 0;
   for (let i = 0; i < RANKS.length; i++) {
-    if (totalEarned >= RANKS[i]!.at) idx = i;
+    if (lifetimeEarned >= RANKS[i]!.at) idx = i;
   }
   const current = RANKS[idx]!;
   const next = idx + 1 < RANKS.length ? RANKS[idx + 1]! : null;
-  const progress = next ? (totalEarned - current.at) / (next.at - current.at) : 1;
+  const progress = next ? (lifetimeEarned - current.at) / (next.at - current.at) : 1;
   return { current: current.name, next, progress: Math.min(1, Math.max(0, progress)) };
 }

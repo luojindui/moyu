@@ -79,7 +79,9 @@
       "visits": {
         "date": "",
         "count": 0
-      }
+      },
+      "lifetimeEarned": 101474764253.67358,
+      "prestige": 0
     },
     "es": {
       "nextBossAt": 259235.71827996057,
@@ -7506,5 +7508,5 @@
     "totalClicks": 0,
     "clickDebt": 0
   },
-  "ms": 2125
+  "ms": 1673
 }
