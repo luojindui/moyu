@@ -1,0 +1,320 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "phases": {
+    "ready": true,
+    "quitMidGame": {
+      "started": {
+        "started": true,
+        "html": "\n          29.9s\n          0\n          找出王总（红色「王」）· 已找 0\n   ",
+        "played": 0,
+        "left": "今天还能玩 3/3 次"
+      },
+      "liveScoreIncludingTimeBonus": {
+        "score": "344",
+        "timer": "29.4s"
+      },
+      "settled": {
+        "arcade": {
+          "date": "2026-11-27",
+          "played": 1,
+          "best": {
+            "findboss": 50
+          }
+        },
+        "closed": true,
+        "toasts": [
+          {
+            "t": 1479,
+            "text": "摸鱼站 +3（得分 50）"
+          }
+        ]
+      },
+      "expectedSettledScore": 50,
+      "expectedReward": 3
+    },
+    "coffeeStarted": {
+      "started": true,
+      "html": "\n        29.9s\n        0\n        咖啡落到杯口时点它 ☕\n        \n      ",
+      "played": 0,
+      "left": "今天还能玩 3/3 次"
+    },
+    "coffee": {
+      "scoreText": "0 分",
+      "rewardText": "本局 0 分，次数已扣 1 次",
+      "detail": "历史最高 0 | 接住 0 · 漏接 28 · 最高连击 0",
+      "result": "接咖啡 结束 0 分 本局 0 分，次数已扣 1 次 历史最高 0 接住 0 · 漏接 28 · 最高连击 0 返回摸鱼站",
+      "played": 1,
+      "best": {},
+      "toasts": [
+        {
+          "t": 1479,
+          "text": "摸鱼站 +3（得分 50）"
+        },
+        {
+          "t": 2170,
+          "text": "送你 1 个天赋点，点 👥 看看"
+        },
+        {
+          "t": 32603,
+          "text": "得分 0，没拿到奖励"
+        }
+      ],
+      "score": 0,
+      "rewardExpected": 0,
+      "auto": {
+        "seen": 28,
+        "tapped": 25,
+        "tops": [
+          {
+            "t": 26,
+            "rel": 72.2
+          },
+          {
+            "t": 226,
+            "rel": 78
+          },
+          {
+            "t": 426,
+            "rel": 83.8
+          },
+          {
+            "t": 626,
+            "rel": 89.6
+          },
+          {
+            "t": 826,
+            "rel": 91.2
+          },
+          {
+            "t": 1026,
+            "rel": 91.2
+          },
+          {
+            "t": 1226,
+            "rel": 91.2
+          }
+        ]
+      }
+    },
+    "findboss": {
+      "started": {
+        "started": true,
+        "html": "\n          29.9s\n          0\n          找出王总（红色「王」）· 已找 0\n   ",
+        "played": 0,
+        "left": "今天还能玩 3/3 次"
+      },
+      "durationMs": 30395,
+      "scoreAtStart": {
+        "score": "0",
+        "timer": "29.3s"
+      },
+      "liveMid": {
+        "score": "1512",
+        "timer": "30.0s",
+        "clicks": 25
+      },
+      "scoreText": "12200 分",
+      "rewardText": "本局奖励 +30 摸鱼值",
+      "detail": "接住 244 · 漏接 0",
+      "result": "找老板 结束 12200 分 本局奖励 +30 摸鱼值 🎉 新纪录！（旧 0） 接住 244 · 漏接 0 返回摸鱼站",
+      "played": 1,
+      "best": {
+        "findboss": 8000
+      },
+      "toasts": [
+        {
+          "t": 1479,
+          "text": "摸鱼站 +3（得分 50）"
+        },
+        {
+          "t": 2170,
+          "text": "送你 1 个天赋点，点 👥 看看"
+        },
+        {
+          "t": 32603,
+          "text": "得分 0，没拿到奖励"
+        },
+        {
+          "t": 33270,
+          "text": "送你 1 个天赋点，点 👥 看看"
+        },
+        {
+          "t": 63700,
+          "text": "摸鱼站 +30（得分 12200）"
+        }
+      ],
+      "score": 12200,
+      "rewardExpected": 30,
+      "clicks": 244
+    },
+    "rhythmSpam": {
+      "started": {
+        "started": true,
+        "html": "\n      29.9s\n      0\n      跟着节拍点！\n      \n      \n    ",
+        "played": 0,
+        "left": "今天还能玩 3/3 次"
+      },
+      "score": "15",
+      "timer": "23.9s",
+      "after": {
+        "arcade": {
+          "date": "2026-11-27",
+          "played": 1,
+          "best": {
+            "rhythm": 15
+          }
+        },
+        "toasts": [
+          {
+            "t": 1479,
+            "text": "摸鱼站 +3（得分 50）"
+          },
+          {
+            "t": 2170,
+            "text": "送你 1 个天赋点，点 👥 看看"
+          },
+          {
+            "t": 32603,
+            "text": "得分 0，没拿到奖励"
+          },
+          {
+            "t": 33270,
+            "text": "送你 1 个天赋点，点 👥 看看"
+          },
+          {
+            "t": 63700,
+            "text": "摸鱼站 +30（得分 12200）"
+          },
+          {
+            "t": 64435,
+            "text": "送你 1 个天赋点，点 👥 看看"
+          },
+          {
+            "t": 71123,
+            "text": "摸鱼站 +1（得分 15）"
+          }
+        ]
+      },
+      "expectedReward": 1
+    },
+    "rhythmPerfect": {
+      "started": {
+        "started": true,
+        "html": "\n      29.9s\n      0\n      跟着节拍点！\n      \n      \n    ",
+        "played": 0,
+        "left": "今天还能玩 3/3 次"
+      },
+      "scoreText": null,
+      "rewardText": null,
+      "detail": "",
+      "result": "",
+      "played": 0,
+      "best": {},
+      "score": null,
+      "rewardExpected": 0
+    },
+    "exhausted": {
+      "played": 3,
+      "leftText": "今天玩完了，明天再来",
+      "locked": 3,
+      "buttons": [
+        {
+          "g": "coffee",
+          "text": "明天再来",
+          "disabled": true
+        },
+        {
+          "g": "findboss",
+          "text": "明天再来",
+          "disabled": true
+        },
+        {
+          "g": "rhythm",
+          "text": "明天再来",
+          "disabled": true
+        }
+      ]
+    }
+  },
+  "consoleErrors": [],
+  "initial": {
+    "arcade": {
+      "date": "2026-11-27",
+      "played": 0,
+      "best": {}
+    },
+    "hud": "0.2"
+  },
+  "rewardVerification": {
+    "assumedStationIdle": 0.2,
+    "formula": "reward = max(floor(idle*25*min(1,score/600)), ceil(30*min(1,score/600)))",
+    "coffee": {
+      "score": 0,
+      "expected": 0,
+      "toasts": [
+        {
+          "t": 1479,
+          "text": "摸鱼站 +3（得分 50）"
+        },
+        {
+          "t": 32603,
+          "text": "得分 0，没拿到奖励"
+        }
+      ]
+    },
+    "findboss": {
+      "score": 12200,
+      "expected": 30,
+      "toasts": [
+        {
+          "t": 1479,
+          "text": "摸鱼站 +3（得分 50）"
+        },
+        {
+          "t": 32603,
+          "text": "得分 0，没拿到奖励"
+        },
+        {
+          "t": 63700,
+          "text": "摸鱼站 +30（得分 12200）"
+        }
+      ]
+    },
+    "rhythmPerfect": {
+      "score": null,
+      "expected": 0,
+      "toasts": []
+    },
+    "rhythmSpam": {
+      "score": 15,
+      "expected": 1,
+      "toasts": [
+        {
+          "t": 1479,
+          "text": "摸鱼站 +3（得分 50）"
+        },
+        {
+          "t": 32603,
+          "text": "得分 0，没拿到奖励"
+        },
+        {
+          "t": 63700,
+          "text": "摸鱼站 +30（得分 12200）"
+        },
+        {
+          "t": 71123,
+          "text": "摸鱼站 +1（得分 15）"
+        }
+      ]
+    },
+    "quitMidGame": {
+      "expected": 3,
+      "toasts": [
+        {
+          "t": 1479,
+          "text": "摸鱼站 +3（得分 50）"
+        }
+      ]
+    }
+  }
+}

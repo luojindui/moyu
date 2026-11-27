@@ -1,0 +1,47 @@
+{
+  "phase": "s6-latest",
+  "hashesBefore": {
+    "src/ui/arcade.ts": "d8ab4124066d",
+    "src/engine/minigames.ts": "9255e0ae843a",
+    "src/style.css": "8c7f8e06938b",
+    "src/main.ts": "0d4f04472d10",
+    "index.html": "432f4b73d496"
+  },
+  "steps": [],
+  "leftTextAtOpenImmediate": "今天还能玩 3/3 次",
+  "leftTextAfter900ms": "今天还能玩 3/3 次",
+  "findbossScoreDisplay": {
+    "score": "1278",
+    "hint": "找出王总（红色「王」）· 已找 20",
+    "timer": "30.0s"
+  },
+  "bossDeferred": {
+    "appearedWithin6s": false,
+    "bossOpen": false,
+    "arcadeOpen": true,
+    "timer": "21.7s"
+  },
+  "quitMidGame": {
+    "playedBefore": 0,
+    "playedAfter": 1,
+    "closed": true,
+    "toast": {
+      "text": "摸鱼站 +30（得分 4400）",
+      "show": true
+    },
+    "resultShown": false,
+    "left": "今天还能玩 2/3 次"
+  },
+  "reopen": {
+    "left": "今天还能玩 2/3 次",
+    "body": "接咖啡 最高 0\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 4400\n在一堆同事脸里找出王总，越快越好\n开始（30 秒内无限轮）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n开始（30 秒）",
+    "played": 1
+  },
+  "hashesAfter": {
+    "src/ui/arcade.ts": "d8ab4124066d",
+    "src/engine/minigames.ts": "9255e0ae843a",
+    "src/style.css": "8c7f8e06938b",
+    "src/main.ts": "0d4f04472d10",
+    "index.html": "432f4b73d496"
+  }
+}

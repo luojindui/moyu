@@ -249,6 +249,7 @@ export class Arcade {
     const usedBeats = new Set<number>();
     let score = 0;
     let perfect = 0;
+    let missedBeats = 0;
     this.body.innerHTML = `<div class="arcade-play" id="play-area">
       <div class="arcade-timer" id="play-timer">${def.duration}s</div>
       <div class="arcade-score" id="play-score">0</div>
@@ -300,6 +301,7 @@ export class Arcade {
         // 漏拍惩罚：节拍过去 0.22s 仍未打 → 记 miss 并扣 10（防"只打一半拍零风险"）
         if (elapsed > b + 0.22) {
           usedBeats.add(i);
+          missedBeats++;
           score = Math.max(0, score - 10);
           el.className = "beat missed";
           const judgeEl = document.getElementById("judge-text");
@@ -314,7 +316,7 @@ export class Arcade {
       if (leftS > 0) this.play!.raf = requestAnimationFrame(tick);
       else {
         area.removeEventListener("pointerdown", onTap);
-        this.finish(def, score, { caught: perfect, missed: 0 });
+        this.finish(def, score, { caught: perfect, missed: missedBeats });
       }
     };
     this.play = {
@@ -331,9 +333,15 @@ export class Arcade {
     const best = this.lastState?.arcade.best[def.id] ?? 0;
     const record = Math.floor(score) > best;
     const gotReward = this.onFinish(def.id, Math.max(0, Math.floor(score)));
+    const label = (k: string): string => {
+      if (def.id === "coffee") return k === "caught" ? "接住" : k === "missed" ? "漏接" : "最高连击";
+      if (def.id === "findboss") return k === "caught" ? "找对" : "找错";
+      return k === "caught" ? "perfect" : "漏拍";
+    };
     const detailText = detail
       ? Object.entries(detail)
-          .map(([k, v]) => `${k === "caught" ? "接住" : k === "missed" ? "漏接" : "最高连击"} ${v}`)
+          .filter(([, v]) => v !== undefined)
+          .map(([k, v]) => `${label(k)} ${v}`)
           .join(" · ")
       : "";
     this.body.innerHTML = `<div class="arcade-play">
