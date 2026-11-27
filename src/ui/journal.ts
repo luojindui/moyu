@@ -8,6 +8,7 @@ import { CLICK_MEMES } from "../engine/flavor";
 import { clickPowerOf } from "../engine/actions";
 import { canPrestige, prestigeGain, prestigeMultiplier, prestigeThreshold } from "../engine/prestige";
 import { computeStats } from "../engine/stats";
+import { offlineEfficiency } from "../engine/progression";
 import { APP_VERSION, APP_UPDATED_AT } from "../version";
 import { RECORDS_KEY, parseRecords, emptyRecords } from "../engine/records";
 
@@ -174,6 +175,16 @@ export class Journal {
     document.getElementById("about-today")!.textContent = `今日工位梗：${pool[dayIdx]}`;
 
     // 数据统计（全部由现有字段推导）
+    const createdAtOf = (): number => {
+      try {
+        const raw = localStorage.getItem("moyu-save");
+        if (!raw) return Date.now();
+        const b = JSON.parse(raw) as { createdAt?: number };
+        return typeof b.createdAt === "number" ? b.createdAt : Date.now();
+      } catch {
+        return Date.now();
+      }
+    };
     let rec = emptyRecords();
     try {
       rec = parseRecords(localStorage.getItem(RECORDS_KEY));
@@ -188,7 +199,7 @@ export class Journal {
       ["累计投入", formatMoyu(st.invested)],
       ["点击力 / 挂机", `${clickPowerOf(state).toFixed(0)} / ${formatMoyu(st.idleRate)}每秒`],
       ["累计点击", String(st.totalClicks)],
-      ["今日回访", `${st.visits}/3（离线效率 ${Math.round((0.7 + Math.min(3, st.visits) * 0.1) * 100)}%）`],
+      ["今日回访", `${st.visits}/3（离线效率 ${Math.round(offlineEfficiency(state, createdAtOf(), Date.now()) * 100)}%）`],
       ["连续日报", `${st.streak} 天`],
       ["图鉴", `${st.collection}/${st.collectionTotal}`],
       ["转生", `${st.prestige} 点（×${st.prestigeMult.toFixed(2)}）`],

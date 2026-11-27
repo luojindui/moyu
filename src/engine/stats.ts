@@ -2,6 +2,7 @@ import type { GameState } from "./state";
 import { effectOf, costOf, UPGRADES } from "./upgrades";
 import { rankFor } from "./titles";
 import { prestigeMultiplier } from "./prestige";
+import { COLLEAGUES, upgradeCostOf } from "./team";
 import { collectionCount, TOTAL_ITEMS } from "./collection";
 import { emptyRecords, type Records } from "./records";
 
@@ -26,12 +27,19 @@ export interface Stats {
   records: Records;
 }
 
-/** 已投入摸鱼值 = Σ 每个升级历次购买价格 */
+/** 已投入摸鱼值 = Σ 升级历次购买价格 + Σ 同事招募/升级价格 */
 export function investedOf(state: GameState): number {
   let sum = 0;
   for (const u of UPGRADES) {
     const lv = state.levels[u.id] ?? 0;
     for (let i = 0; i < lv; i++) sum += costOf(u.id, i);
+  }
+  // 同事投入（招募 + 已升等级）
+  for (const def of COLLEAGUES) {
+    const cur = state.team.colleagues[def.id];
+    if (!cur) continue;
+    sum += def.cost;
+    for (let lv = 1; lv < cur.level; lv++) sum += upgradeCostOf(def, lv);
   }
   return sum;
 }

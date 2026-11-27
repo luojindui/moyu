@@ -23,6 +23,10 @@ export interface ColleagueDef {
   idlePerLevel: number;
   /** 每级占工位挂机的比例 */
   sharePerLevel: number;
+  /** 独特被动（解决"派谁都一样"） */
+  trait: string;
+  /** 被动数值 */
+  traitValue: number;
 }
 
 export interface MissionDef {
@@ -40,6 +44,10 @@ export interface ColleagueState {
   endsAt: number;
   /** 好感度 0-100（领奖 +2，匹配任务 +3） */
   favor: number;
+  /** 自动重复：领奖后自动再派同一任务（排班层） */
+  autoRepeat: boolean;
+  /** 派单时快照的奖励（防"先升级再领"放大） */
+  rewardSnapshot: number;
 }
 
 export interface TeamState {
@@ -50,6 +58,28 @@ export interface TeamState {
 export const MAX_COLLEAGUE_LEVEL = 5;
 /** 匹配任务加成 */
 export const SKILL_MATCH_BONUS = 0.5;
+/** 全队被动汇总（只算已招募的同事） */
+export function teamTraits(state: GameState): { offlineEfficiency: number; penaltyReduction: number } {
+  let offlineEfficiency = 0;
+  let penaltyReduction = 0;
+  for (const def of COLLEAGUES) {
+    const cur = state.team.colleagues[def.id];
+    if (!cur) continue;
+    if (def.trait === "离线效率") offlineEfficiency += def.traitValue;
+    if (def.trait === "罚款减免") penaltyReduction += def.traitValue;
+  }
+  return { offlineEfficiency, penaltyReduction };
+}
+
+/** 某任务在该同事手上的实际时长（老周 -15%） */
+export function missionSecondsFor(id: string, missionId: string): number {
+  const def = colleagueDef(id);
+  const m = missionDef(missionId);
+  if (!def || !m) return 0;
+  const speed = def.trait === "派遣速度" ? 1 - def.traitValue : 1;
+  return Math.round(m.seconds * speed);
+}
+
 /** 升级价 = cost × 0.4 × 1.35^当前等级 */
 export const UPGRADE_COEF = 0.4;
 export const UPGRADE_BASE = 1.35;
@@ -64,12 +94,36 @@ export const FAVOR_MATCH_BONUS = 1;
 /** 同事挂机进离线比例 */
 export const TEAM_OFFLINE_SHARE = 0.5;
 
+/**
+ * 5 个同事各有独特被动，且 sharePerLevel 递增（修正"只招老周最优"）：
+ * 满级 share 合计 = (0.008+0.010+0.012+0.014+0.016)*5 = 30% 工位挂机
+ */
 export const COLLEAGUES: ColleagueDef[] = [
-  { id: "zhou", name: "老周", role: "八年老员工·甩锅大师", skill: "chat", cost: 12_000, idlePerLevel: 20, sharePerLevel: 0.008 },
-  { id: "mei", name: "小美", role: "HR·知道所有八卦", skill: "meeting", cost: 800_000, idlePerLevel: 100, sharePerLevel: 0.008 },
-  { id: "qiang", name: "强哥", role: "厕所隔间所长", skill: "toilet", cost: 15_000_000, idlePerLevel: 200, sharePerLevel: 0.008 },
-  { id: "li", name: "小李", role: "实习生·精力旺盛", skill: "errand", cost: 300_000_000, idlePerLevel: 300, sharePerLevel: 0.008 },
-  { id: "wang", name: "王师傅", role: "快退休·深藏功与名", skill: "coffee", cost: 6_000_000_000, idlePerLevel: 400, sharePerLevel: 0.008 },
+  {
+    id: "zhou", name: "老周", role: "八年老员工·甩锅大师", skill: "chat",
+    cost: 12_000, idlePerLevel: 20, sharePerLevel: 0.008,
+    trait: "派遣速度", traitValue: 0.15, // 他的任务时长 -15%
+  },
+  {
+    id: "mei", name: "小美", role: "HR·知道所有八卦", skill: "meeting",
+    cost: 500_000, idlePerLevel: 100, sharePerLevel: 0.010,
+    trait: "离线效率", traitValue: 0.02, // 在队期间离线基础效率 +2%
+  },
+  {
+    id: "qiang", name: "强哥", role: "厕所隔间所长", skill: "toilet",
+    cost: 8_000_000, idlePerLevel: 200, sharePerLevel: 0.012,
+    trait: "罚款减免", traitValue: 0.1, // 在队期间偷点罚款 -10%
+  },
+  {
+    id: "li", name: "小李", role: "实习生·精力旺盛", skill: "errand",
+    cost: 60_000_000, idlePerLevel: 300, sharePerLevel: 0.014,
+    trait: "短任务加成", traitValue: 0.5, // 1 小时以内任务奖励 +50%
+  },
+  {
+    id: "wang", name: "王师傅", role: "快退休·深藏功与名", skill: "coffee",
+    cost: 400_000_000, idlePerLevel: 400, sharePerLevel: 0.016,
+    trait: "长任务加成", traitValue: 0.5, // 4 小时以上任务奖励 +50%
+  },
 ];
 
 export const MISSIONS: MissionDef[] = [
@@ -80,10 +134,10 @@ export const MISSIONS: MissionDef[] = [
   { id: "coffee", name: "楼下买咖啡", type: "coffee", seconds: 8 * 60 * 60, mult: 2.8 },
 ];
 
-/** 内联扣钱（避免 state↔team 循环依赖） */
+/** 内联扣钱（与商店 buyUpgrade 口径一致：只扣余额，totalEarned 是"本局累计毛收入"） */
 function pay(state: GameState, amount: number): GameState {
   const paid = Math.min(amount, state.moyu);
-  return { ...state, moyu: state.moyu - paid, totalEarned: Math.max(0, state.totalEarned - paid) };
+  return { ...state, moyu: state.moyu - paid };
 }
 
 function earn(state: GameState, amount: number): GameState {
@@ -127,13 +181,17 @@ export function favorTier(state: GameState): number {
   return 0;
 }
 
-/** 已招募同事的固定挂机总和（未乘倍率） */
+/** 派遣在外的挂机折损（制造"派他还是留他"的取舍） */
+export const AWAY_IDLE_FACTOR = 0.5;
+
+/** 已招募同事的固定挂机总和（未乘倍率；在外派遣的只算 50%） */
 export function teamFixedRate(state: GameState): number {
   let sum = 0;
   for (const def of COLLEAGUES) {
     const c = state.team.colleagues[def.id];
     if (!c) continue;
-    sum += def.idlePerLevel * c.level;
+    const factor = c.missionId !== null ? AWAY_IDLE_FACTOR : 1;
+    sum += def.idlePerLevel * c.level * factor;
   }
   return sum;
 }
@@ -144,7 +202,8 @@ export function teamShareRatio(state: GameState): number {
   for (const def of COLLEAGUES) {
     const c = state.team.colleagues[def.id];
     if (!c) continue;
-    sum += def.sharePerLevel * c.level;
+    const factor = c.missionId !== null ? AWAY_IDLE_FACTOR : 1;
+    sum += def.sharePerLevel * c.level * factor;
   }
   return sum;
 }
@@ -169,7 +228,7 @@ export function recruit(state: GameState, id: string): GameState | null {
     team: {
       colleagues: {
         ...state.team.colleagues,
-        [id]: { level: 1, missionId: null, startedAt: 0, endsAt: 0, favor: 0 },
+        [id]: { level: 1, missionId: null, startedAt: 0, endsAt: 0, favor: 0, autoRepeat: false, rewardSnapshot: 0 },
       },
     },
   };
@@ -193,16 +252,29 @@ export function canDispatch(state: GameState, id: string): boolean {
   return !!cur && cur.missionId === null;
 }
 
-export function dispatch(state: GameState, id: string, missionId: string, nowMs: number): GameState | null {
+export function dispatch(
+  state: GameState,
+  id: string,
+  missionId: string,
+  nowMs: number,
+  stationIdle: number,
+): GameState | null {
   const cur = state.team.colleagues[id];
   const m = missionDef(missionId);
   if (!cur || !m || !canDispatch(state, id)) return null;
+  const seconds = missionSecondsFor(id, missionId);
+  // 快照：派遣瞬间按当前工位挂机率结算，之后升级不放大这笔奖励
+  const probe: GameState = {
+    ...state,
+    team: { colleagues: { ...state.team.colleagues, [id]: { ...cur, missionId: m.id } } },
+  };
+  const snapshot = dispatchReward(probe, id, stationIdle);
   return {
     ...state,
     team: {
       colleagues: {
         ...state.team.colleagues,
-        [id]: { ...cur, missionId: m.id, startedAt: nowMs, endsAt: nowMs + m.seconds * 1000 },
+        [id]: { ...cur, missionId: m.id, startedAt: nowMs, endsAt: nowMs + seconds * 1000, rewardSnapshot: snapshot },
       },
     },
   };
@@ -227,7 +299,11 @@ export function dispatchReward(state: GameState, id: string, stationIdle: number
   const match = def.skill === m.type ? 1 + SKILL_MATCH_BONUS : 1;
   const levelFactor = 1 + DISPATCH_LEVEL_FACTOR * ((cur.level - 1) / (MAX_COLLEAGUE_LEVEL - 1));
   const favorBonus = cur.favor >= 100 ? 1.5 : 1;
-  return Math.floor(base * m.mult * match * levelFactor * favorBonus);
+  // 独特被动：小李短任务 +50% / 王师傅长任务 +50%
+  let traitMult = 1;
+  if (def.trait === "短任务加成" && m.seconds <= 3600) traitMult += def.traitValue;
+  if (def.trait === "长任务加成" && m.seconds >= 4 * 3600) traitMult += def.traitValue;
+  return Math.floor(base * m.mult * match * levelFactor * favorBonus * traitMult);
 }
 
 /** 领取派遣奖励（好感 +2，匹配任务 +3） */
@@ -241,9 +317,25 @@ export function claimMission(
   const def = colleagueDef(id)!;
   const cur = state.team.colleagues[id]!;
   const m = missionDef(cur.missionId!)!;
-  const reward = dispatchReward(state, id, stationIdle);
+  // 优先用派单时快照（防放大）；旧存档无快照则按当前结算
+  const reward = cur.rewardSnapshot > 0 ? cur.rewardSnapshot : dispatchReward(state, id, stationIdle);
   const next = earn(state, reward);
   const favorGain = FAVOR_PER_CLAIM + (def.skill === m.type ? FAVOR_MATCH_BONUS : 0);
+  const favor = Math.min(100, cur.favor + favorGain);
+  // 排班层：开启自动重复则立刻再派同一任务（并用当前工位重算快照）
+  let autoNext = { missionId: null as string | null, startedAt: 0, endsAt: 0, rewardSnapshot: 0 };
+  if (cur.autoRepeat) {
+    const probe: GameState = {
+      ...state,
+      team: { colleagues: { ...state.team.colleagues, [id]: { ...cur, missionId: m.id } } },
+    };
+    autoNext = {
+      missionId: m.id,
+      startedAt: nowMs,
+      endsAt: nowMs + missionSecondsFor(id, m.id) * 1000,
+      rewardSnapshot: dispatchReward(probe, id, stationIdle),
+    };
+  }
   return {
     reward,
     state: {
@@ -251,17 +343,27 @@ export function claimMission(
       team: {
         colleagues: {
           ...next.team.colleagues,
-          [id]: {
-            ...cur,
-            missionId: null,
-            startedAt: 0,
-            endsAt: 0,
-            favor: Math.min(100, cur.favor + favorGain),
-          },
+          [id]: { ...cur, ...autoNext, favor },
         },
       },
     },
   };
+}
+
+/** 开关自动重复（排班层） */
+export function setAutoRepeat(state: GameState, id: string, on: boolean): GameState | null {
+  const cur = state.team.colleagues[id];
+  if (!cur) return null;
+  return { ...state, team: { colleagues: { ...state.team.colleagues, [id]: { ...cur, autoRepeat: on } } } };
+}
+
+/** 当前可领奖励总和（一键领取用） */
+export function claimableTotal(state: GameState, nowMs: number, stationIdle: number): number {
+  let sum = 0;
+  for (const def of COLLEAGUES) {
+    if (missionDone(state, def.id, nowMs)) sum += dispatchReward(state, def.id, stationIdle);
+  }
+  return sum;
 }
 
 /** 可领任务数（HUD 红点） */

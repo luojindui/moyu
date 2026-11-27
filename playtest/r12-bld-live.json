@@ -1,0 +1,218 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "checks": {
+    "loaded": {
+      "talents": {
+        "unlocked": [],
+        "points": 15,
+        "rankGranted": 12
+      },
+      "hud": {
+        "click": "327.4",
+        "idle": "367.4",
+        "btn": "👥",
+        "badge": false
+      }
+    },
+    "talentPanel": {
+      "text": "摸鱼小队\n✕\n同事\n天赋\n天赋点 15\n点击流 · 手速摸鱼 （0/5 · 点击力 ×1.00）\n1\n手速 点击力 +25%\n点亮\n2\n连击窗口 连击窗口 0.5s → 0.6s\n点亮\n3\n连击上限 连击上限 20 → 30（倍率 1.36）\n点亮\n4\n暴击 每 20 次点击必暴击 ×5（巡逻偷点不触发）\n点亮\n5\n摸鱼转正 每 300 次累计点击 → 挂机 +1%（封顶 +35%）\n点亮\n挂机流 · 稳如老狗 （0/5 · 挂机 ×1.00）\n1\n稳 挂机收益 +5%\n点亮\n2\n离线扩容 离线封顶 +2h（12→14h）\n点亮\n3\n更稳 挂机收益 +5%\n点亮\n4\n离线效率 离线基础效率 +0.05\n点亮\n5\n最稳 挂机收益 +5%\n点亮\n事件流 · 摸鱼情报 （0/5 · 巡逻奖 ×1.00）\n1\n情报 安然巡逻奖励 +15%\n点亮\n2\n反侦察 偷点罚款 -35%\n点亮\n3\n人脉 丢梗奖励 +10%\n点亮\n4\n预警 巡逻横幅提前 2s + 奖励再 +5%\n点亮\n5\n摸鱼气场 每次安然巡逻 → 挂机 +1%（封顶 +30%）\n点亮\n重置天赋（返还全部点数）",
+      "points": "天赋点 15",
+      "btns": [
+        {
+          "t": "点亮",
+          "act": "talent",
+          "dis": false
+        },
+        {
+          "t": "点亮",
+          "act": "talent",
+          "dis": true
+        },
+        {
+          "t": "点亮",
+          "act": "talent",
+          "dis": true
+        },
+        {
+          "t": "点亮",
+          "act": "talent",
+          "dis": true
+        },
+        {
+          "t": "点亮",
+          "act": "talent",
+          "dis": true
+        },
+        {
+          "t": "点亮",
+          "act": "talent",
+          "dis": false
+        },
+        {
+          "t": "点亮",
+          "act": "talent",
+          "dis": true
+        },
+        {
+          "t": "点亮",
+          "act": "talent",
+          "dis": true
+        },
+        {
+          "t": "点亮",
+          "act": "talent",
+          "dis": true
+        },
+        {
+          "t": "点亮",
+          "act": "talent",
+          "dis": true
+        },
+        {
+          "t": "点亮",
+          "act": "talent",
+          "dis": false
+        },
+        {
+          "t": "点亮",
+          "act": "talent",
+          "dis": true
+        },
+        {
+          "t": "点亮",
+          "act": "talent",
+          "dis": true
+        },
+        {
+          "t": "点亮",
+          "act": "talent",
+          "dis": true
+        },
+        {
+          "t": "点亮",
+          "act": "talent",
+          "dis": true
+        },
+        {
+          "t": "重置天赋（返还全部点数）",
+          "act": "reset-talents",
+          "dis": false
+        }
+      ]
+    },
+    "unlockClick1": {
+      "talents": {
+        "unlocked": [
+          "click_1"
+        ],
+        "points": 14,
+        "rankGranted": 12
+      },
+      "hudClick": "409.3"
+    },
+    "reset": {
+      "beforeReset": {
+        "unlocked": [
+          "click_1"
+        ],
+        "points": 14,
+        "rankGranted": 12
+      },
+      "afterReset": {
+        "talents": {
+          "unlocked": [],
+          "points": 15,
+          "rankGranted": 12
+        },
+        "toast": "",
+        "dialogs": 1
+      }
+    },
+    "tap": {
+      "noTalent": {
+        "label": "无点击天赋",
+        "clickPower": 321,
+        "idle": 0.2,
+        "gained": 11133.049958467484,
+        "predicted": 11210.059599999999,
+        "ratio": 0.9931303093578098,
+        "ratioWithCrit": 0.8276085911315082,
+        "hudCombo": "连点×20",
+        "taps": 30
+      },
+      "withDeadTalents": {
+        "label": "点击流1-4（含连击上限/暴击）",
+        "clickPower": 401.25,
+        "idle": 0.2,
+        "gained": 13916.096658945084,
+        "predicted": 14012.364199999998,
+        "ratio": 0.9931298145208848,
+        "ratioWithCrit": 0.8276081787674039,
+        "hudCombo": "连点×20",
+        "taps": 30
+      },
+      "verdict": "收入比值 0.993 vs 0.993（暴击若生效应≈1.2 且两者明显分叉）；连击显示上限 连点×20/连点×20（连击上限天赋应到 30）"
+    },
+    "branchHud": [
+      {
+        "label": "基线",
+        "hudClick": "327.4",
+        "hudIdle": "367.4",
+        "clickMul": 1,
+        "idleMul": 1
+      },
+      {
+        "label": "点击流满级",
+        "hudClick": "433.3",
+        "hudIdle": "525.2",
+        "clickMul": 1.323,
+        "idleMul": 1.429
+      },
+      {
+        "label": "挂机流满级",
+        "hudClick": "327.4",
+        "hudIdle": "422.5",
+        "clickMul": 1,
+        "idleMul": 1.15
+      },
+      {
+        "label": "事件流满级(未攒安然)",
+        "hudClick": "327.4",
+        "hudIdle": "367.4",
+        "clickMul": 1,
+        "idleMul": 1
+      },
+      {
+        "label": "事件流满级(30安然)",
+        "hudClick": "327.4",
+        "hudIdle": "477.6",
+        "clickMul": 1,
+        "idleMul": 1.3
+      },
+      {
+        "label": "满树15点",
+        "hudClick": "433.3",
+        "hudIdle": "738.2",
+        "clickMul": 1.323,
+        "idleMul": 2.009
+      }
+    ],
+    "rankGrant": {
+      "talents": {
+        "unlocked": [],
+        "rankGranted": 2,
+        "points": 1
+      },
+      "badge": false,
+      "hudAll": "10.10万摸鱼值\n点击 +327.4\n不点也 367.4/秒\n资深摸鱼 11%\n👥\n🔊\n📔\n攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）"
+    }
+  },
+  "shots": [
+    "/tmp/r12-bld-colleagues.png",
+    "/tmp/r12-bld-talents-15.png",
+    "/tmp/r12-bld-talents-unlocked.png",
+    "/tmp/r12-bld-talents-reset.png",
+    "/tmp/r12-bld-combo.png",
+    "/tmp/r12-bld-hud-points.png"
+  ]
+}

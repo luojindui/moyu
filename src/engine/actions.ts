@@ -12,9 +12,19 @@ export const COMBO_WINDOW_S = 0.5; // R9：0.4→0.5（2.5cps 抖动也能连上
 export const COMBO_BREAK_S = 1.0; // R9：漏两拍才断（1.5→1.0）
 export const COMBO_MAX = 20; // R9：12→20 连
 
-export function comboMultiplier(combo: number): number {
-  // 每连 0.012，封顶 ×1.24（经济不变，20 连才到顶）
-  return 1 + 0.012 * Math.min(Math.max(0, combo), COMBO_MAX);
+export function comboMultiplier(combo: number, maxCombo: number = COMBO_MAX, perCombo = 0.012): number {
+  // 每连 0.012，封顶 ×1.24（天赋 click_3 可提到 30 连）
+  return 1 + perCombo * Math.min(Math.max(0, combo), maxCombo);
+}
+
+/** 天赋感知的连击上限（click_3：+10） */
+export function comboCapOf(state: GameState): number {
+  return COMBO_MAX + talentEffects(state.talents).comboMaxBonus;
+}
+
+/** 天赋感知的连击窗口（click_2：+0.15s） */
+export function comboWindowOf(state: GameState): number {
+  return COMBO_WINDOW_S + talentEffects(state.talents).comboWindowBonus;
 }
 
 /** 当前总点击力（基础点击力也吃转生倍率） */
@@ -26,7 +36,7 @@ export function clickPowerOf(state: GameState): number {
 
 /** 点击一次（combo 为当前连击数）：返回新状态 */
 export function doClick(state: GameState, combo = 0): GameState {
-  return { ...gain(state, clickPowerOf(state) * comboMultiplier(combo)), totalClicks: state.totalClicks + 1 };
+  return { ...gain(state, clickPowerOf(state) * comboMultiplier(combo, comboCapOf(state))), totalClicks: state.totalClicks + 1 };
 }
 
 /**

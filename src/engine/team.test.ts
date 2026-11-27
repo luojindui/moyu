@@ -71,7 +71,7 @@ describe("摸鱼小队（第二玩法）", () => {
   it("派遣：占用同事、到点可领、领完恢复空闲", () => {
     let s = recruit(rich(), "zhou")!;
     const m = MISSIONS[1]!; // 开会 1h
-    s = dispatch(s, "zhou", m.id, NOW)!;
+    s = dispatch(s, "zhou", m.id, NOW, 1000)!;
     expect(s.team.colleagues["zhou"]!.missionId).toBe(m.id);
     expect(missionDone(s, "zhou", NOW + 1000)).toBe(false);
     expect(claimMission(s, "zhou", NOW + 1000, 100)).toBeNull();
@@ -84,15 +84,15 @@ describe("摸鱼小队（第二玩法）", () => {
 
   it("派遣中不能再次派遣", () => {
     let s = recruit(rich(), "zhou")!;
-    s = dispatch(s, "zhou", MISSIONS[0]!.id, NOW)!;
-    expect(dispatch(s, "zhou", MISSIONS[2]!.id, NOW)).toBeNull();
+    s = dispatch(s, "zhou", MISSIONS[0]!.id, NOW, 1000)!;
+    expect(dispatch(s, "zhou", MISSIONS[2]!.id, NOW, 1000)).toBeNull();
   });
 
   it("技能匹配 +50% 奖励（老周擅长 chat）", () => {
     const s = recruit(rich(), "zhou")!;
     // 用同一任务、人为把同事技能改成不匹配来对比，隔离时长/倍率影响
     const chatMission = MISSIONS.find((m) => m.type === "chat")!;
-    const matched = dispatch(s, "zhou", chatMission.id, NOW)!;
+    const matched = dispatch(s, "zhou", chatMission.id, NOW, 1000)!;
     const stationIdle = 1000;
     const withMatch = dispatchReward(matched, "zhou", stationIdle);
     // 直接计算：max(300, 1000×秒×0.011) × mult × 匹配1.5 × 等级系数1（lv1） × 好感1
@@ -106,9 +106,9 @@ describe("摸鱼小队（第二玩法）", () => {
     let s = recruit(rich(), "zhou")!;
     const short = MISSIONS[0]!;
     const long = MISSIONS[2]!;
-    const withShort = dispatch(s, "zhou", short.id, NOW)!;
+    const withShort = dispatch(s, "zhou", short.id, NOW, 1000)!;
     const rShort = dispatchReward(withShort, "zhou", 1000);
-    const withLong = dispatch(s, "zhou", long.id, NOW)!;
+    const withLong = dispatch(s, "zhou", long.id, NOW, 1000)!;
     const rLong = dispatchReward(withLong, "zhou", 1000);
     expect(rLong).toBeGreaterThan(rShort);
   });
@@ -116,8 +116,8 @@ describe("摸鱼小队（第二玩法）", () => {
   it("claimableCount 统计可领数量", () => {
     let s = recruit(rich(), "zhou")!;
     s = recruit(s, "mei")!;
-    s = dispatch(s, "zhou", MISSIONS[0]!.id, NOW)!;
-    s = dispatch(s, "mei", MISSIONS[0]!.id, NOW)!;
+    s = dispatch(s, "zhou", MISSIONS[0]!.id, NOW, 1000)!;
+    s = dispatch(s, "mei", MISSIONS[0]!.id, NOW, 1000)!;
     expect(claimableCount(s, NOW + 1000)).toBe(0);
     expect(claimableCount(s, NOW + MISSIONS[0]!.seconds * 1000)).toBe(2);
   });

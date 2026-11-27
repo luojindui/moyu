@@ -1,6 +1,6 @@
 import "./style.css";
 import { initialState, gain } from "./engine/state";
-import { doClick, buyUpgrade, clickPowerOf, COMBO_WINDOW_S, COMBO_BREAK_S, COMBO_MAX } from "./engine/actions";
+import { doClick, buyUpgrade, clickPowerOf, comboMultiplier, comboCapOf, comboWindowOf, COMBO_BREAK_S } from "./engine/actions";
 import { effectOf, stationIdleScaled } from "./engine/upgrades";
 import { advance } from "./engine/tick";
 import { settleReturn } from "./engine/resume";
@@ -162,7 +162,7 @@ async function boot(): Promise<void> {
       }
     },
     onDispatch: (id, missionId) => {
-      const next = dispatchMission(state, id, missionId, Date.now());
+      const next = dispatchMission(state, id, missionId, Date.now(), stationIdleScaled(state));
       if (next) {
         state = next;
         teamPanel.refresh(state);
@@ -258,7 +258,10 @@ async function boot(): Promise<void> {
     // 连击链更新
     const gap = (nowMs - lastClickAt) / 1000;
     const prevCombo = combo;
-    combo = gap < COMBO_WINDOW_S ? Math.min(COMBO_MAX, combo + 1) : gap > COMBO_BREAK_S ? 0 : combo;
+    // 天赋 click_2/click_3：窗口 +0.15s、上限 +10
+    const comboWin = comboWindowOf(state);
+    const comboCap = comboCapOf(state);
+    combo = gap < comboWin ? Math.min(comboCap, combo + 1) : gap > COMBO_BREAK_S ? 0 : combo;
     if (prevCombo >= 2 && combo === 0) playBreak();
     lastClickAt = nowMs;
 
@@ -294,7 +297,7 @@ async function boot(): Promise<void> {
       journal.refresh(state);
       return;
     }
-    const gained = clickPowerOf(state) * (1 + 0.02 * Math.min(combo, COMBO_MAX));
+    const gained = clickPowerOf(state) * comboMultiplier(combo, comboCapOf(state));
     state = doClick(state, combo);
     trackDaily("click");
     if (state.totalClicks % 25 === 0) state = syncFlavorCollection(state); // 点击线彩蛋按累计点击数解锁

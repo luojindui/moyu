@@ -1,0 +1,127 @@
+{
+  "startedAt": "2026-11-27T08:24:03.036Z",
+  "scenarios": {
+    "S1": {
+      "beforeMoyu": 20000.12331999999,
+      "lockedDisabled": [
+        {
+          "id": "zhou",
+          "disabled": false,
+          "text": "招募 1.20万"
+        },
+        {
+          "id": "mei",
+          "disabled": true,
+          "text": "招募 80.00万"
+        },
+        {
+          "id": "qiang",
+          "disabled": true,
+          "text": "招募 1500.00万"
+        },
+        {
+          "id": "li",
+          "disabled": true,
+          "text": "招募 3.00亿"
+        },
+        {
+          "id": "wang",
+          "disabled": true,
+          "text": "招募 60.00亿"
+        }
+      ],
+      "afterRecruitMoyu": 8006.2771199999825,
+      "recruitOk": true,
+      "panelShowsName": true,
+      "dispatchMissionId": "quick",
+      "countdownText": "⏳ 溜一圈 进行中 · 15:00",
+      "busyMissionButtons": 0,
+      "saveBlobVersion": 2,
+      "saveBlobColleague": {
+        "level": 1,
+        "missionId": "quick",
+        "startedAt": 1795767846471,
+        "endsAt": 1795768746471,
+        "favor": 0
+      },
+      "afterReloadColleague": {
+        "level": 1,
+        "missionId": "quick",
+        "startedAt": 1795767846471,
+        "endsAt": 1795768746471,
+        "favor": 0
+      },
+      "afterReloadMissionId": "quick",
+      "countdownReload": "⏳ 溜一圈 进行中 · 14:58",
+      "note": "真实点击招募/派遣；刷新后 mission 仍在（真实时间推进）"
+    },
+    "S2": {
+      "badge": {
+        "text": "1"
+      },
+      "claimBtnText": "领取 +24.06万",
+      "moyuBefore": 35549.29097615999,
+      "moyuAfter": 161866.41896015994,
+      "delta": 126317.12798399995,
+      "expectActual": 124743,
+      "favor": 2,
+      "missionCleared": true,
+      "badgeAfter": null,
+      "idleDuringWaitApprox": 1574.127983999948,
+      "note": "按钮文案（effectOf 口径）应显著大于实际到账（stationIdleScaled 口径）"
+    },
+    "S3": {
+      "metrics": {
+        "bodyClientH": 613,
+        "bodyScrollH": 1187,
+        "panelTop": 59.078125,
+        "panelBottom": 784.90625,
+        "innerH": 844,
+        "lastCardBottom": 1341.078125,
+        "cardCount": 5
+      },
+      "afterScrollTop": 574,
+      "lastVisible": {
+        "lastCardBottom": 767.078125,
+        "panelBottom": 784.90625,
+        "lastBtnVisible": true
+      },
+      "headerText": "摸鱼小队\n✕",
+      "hasSummary": false,
+      "longCountdown": "⏳ 楼下买咖啡 进行中 · 480:00",
+      "note": "滚动可用性 / 顶部无「已招募人数·小队总挂机」汇总 / 8h 任务显示 480:00 而非 hh:mm"
+    },
+    "S4": {
+      "pointsLabel": "天赋点 6",
+      "tier1Enabled": true,
+      "tier2Disabled": true,
+      "unlockOk": [
+        "click_1"
+      ],
+      "pointsLabelAfter": "天赋点 5",
+      "talentsAfterReload": {
+        "unlocked": [
+          "click_1"
+        ],
+        "points": 5,
+        "rankGranted": 2
+      },
+      "resetUnlocked": [],
+      "resetPoints": 6,
+      "confirmCalls": 0,
+      "note": "重置一键生效：confirmCalls=0（平衡决策书要求二次确认）"
+    },
+    "S5": {
+      "claimText": "领取 +0",
+      "errors": [
+        "Uncaught TypeError: Cannot read properties of undefined (reading 'type')"
+      ],
+      "favorBefore": 0,
+      "favorAfter": 0,
+      "missionStill": "ghost_mission",
+      "note": "存档中未知 missionId → 领取按钮存在但点击抛 TypeError，状态不变，无法恢复"
+    }
+  },
+  "console": [],
+  "finishedAt": "2026-11-27T08:24:25.320Z"
+}

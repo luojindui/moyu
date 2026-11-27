@@ -1,0 +1,60 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "at": "2026-11-27T08:27:07.817Z",
+  "steps": {
+    "teamPanelMateText": "挂机 +20/秒 · 擅长 聊八卦",
+    "buyPhone": 60,
+    "recruit": "clicked",
+    "afterRecruit": {
+      "moyu": 99998527569.98862,
+      "run": 99999988600.98862,
+      "lifetime": 100000000600.98862,
+      "idleText": "514.1",
+      "hasZhou": true,
+      "colleag": {
+        "level": 1,
+        "missionId": null,
+        "startedAt": 0,
+        "endsAt": 0,
+        "favor": 0
+      },
+      "levelsPhone": 60
+    },
+    "dispatch": "clicked",
+    "timeFastForward": "ok",
+    "dispatchReward": {
+      "panelPreviewText": "领取 +45.60万",
+      "panelPreviewNumberGuess": 45.6,
+      "actualMoyuDelta": 434834.88583374023,
+      "actualLifetimeDelta": 434834.88583374023,
+      "actualRunDelta": 434834.88583374023
+    },
+    "statsRows": [
+      "生涯总收入1000.00亿",
+      "本局 / 往期1000.00亿 / 1.20万",
+      "当前余额999.99亿",
+      "累计投入146.10万",
+      "点击力 / 挂机1 / 514.1每秒",
+      "累计点击0",
+      "今日回访2/3（离线效率 90%）",
+      "连续日报0 天",
+      "图鉴5/55",
+      "转生0 点（×1.00）",
+      "纪录·最佳单日0.5（2026-11-27）",
+      "纪录·最长连签0 天",
+      "纪录·最多点击0"
+    ],
+    "journalClass": "",
+    "statsHtmlLen": 788,
+    "stateAfter": {
+      "moyu": 99998963989.9659,
+      "run": 100000425020.9659,
+      "lifetime": 100000437020.9659,
+      "prestige": 0,
+      "team": [
+        "zhou"
+      ],
+      "levelsPhone": 60
+    }
+  }
+}
