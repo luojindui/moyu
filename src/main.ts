@@ -358,6 +358,9 @@ async function boot(): Promise<void> {
         if (r.reward > 0) {
           showToast(`摸鱼站 +${formatMoyu(r.reward)}（得分 ${score}）`);
           announce(`摸鱼站得分 ${score}，获得 ${formatMoyu(r.reward)}`, 1);
+        } else if (playedSeconds < 2) {
+          showToast("这次不算：次数已退还");
+          announce("这次不算，次数已退还", 1);
         } else {
           showToast(`得分 ${score}，没拿到奖励`);
         }
@@ -733,6 +736,21 @@ async function boot(): Promise<void> {
           serialize(state, localStorageAdapter, Date.now());
         }
         arcade.refresh(state);
+        // 🎮 角标同步（跨日后次数会回满，角标必须跟着更新）
+        const ab = document.getElementById("btn-arcade");
+        if (ab) {
+          const leftN = arcadeLeft(state);
+          let badge = ab.querySelector<HTMLElement>(".arcade-badge");
+          if (leftN > 0) {
+            if (!badge) {
+              badge = document.createElement("span");
+              badge.className = "arcade-badge";
+              ab.appendChild(badge);
+            }
+            badge.textContent = String(leftN);
+          } else if (badge) badge.remove();
+          ab.setAttribute("aria-label", leftN > 0 ? `摸鱼站，今天还剩 ${leftN} 次` : "摸鱼站，今天已玩完");
+        }
       }
       // 每日精力：跨日重置
       {
