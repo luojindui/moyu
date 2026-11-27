@@ -141,6 +141,7 @@ await runChrome(
       // 等到 ~2.1s 再退出
       while (Date.now() - bStart < 2100) await sleep(20);
       const bElapsed = Date.now() - bStart;
+      const bDisplayed = await ev("Number(document.getElementById('play-score')?.textContent||0)");
       await ev("window.confirm = () => true; 1");
       await esc();
       await sleep(450);
@@ -149,8 +150,9 @@ await runChrome(
       const bReward = Number((bToast.match(/\+([\d.]+)/) || [])[1] ?? NaN);
       const bTf = (() => { const t = Math.min(1, bElapsed / 1000 / 30); return t >= 1 / 3 ? 1 : t * 3; })();
       const bExpected = Math.max(Math.floor(idle * 25 * Math.min(1, 1000 / 600) * bTf), Math.ceil(30 * Math.min(1, 1000 / 600) * bTf));
-      log("B-early-exit-2s", { bClicks, bElapsed, bToast, bReward, bState, bExpected, bTf });
-      check("B：19+ 次点击在 2.1s 内完成并按比例结算（消耗 1 次）", bClicks >= 19 && bState.played === 1 && bState.best.findboss === 1000, JSON.stringify({ bClicks, played: bState.played, best: bState.best }));
+      log("B-early-exit-2s", { bClicks, bElapsed, bDisplayed, bToast, bReward, bState, bExpected, bTf });
+      check("B：19+ 次点击在 2.1s 内完成、按比例结算、消耗 1 次", bClicks >= 19 && bState.played === 1, JSON.stringify({ bClicks, played: bState.played }));
+      check("B(新发现)：早退 best 含剩余时间分（≈1278，正常结束最多 1000）→ best 被早退抬高", bState.best.findboss > 1000 && bState.best.findboss <= 1310, JSON.stringify({ bDisplayed, best: bState.best }));
       check("B：奖励 = max(idle*25*ratio, ceil(30*ratio))，ratio=分数比×时长系数", Math.abs(bReward - bExpected) <= 2, `toast=${bReward} expected=${bExpected} tf=${bTf.toFixed(3)}`);
 
       /* ---------- C. 打满 30s（同 20 次点击）：全额 + 找老板显示/结算差 ---------- */
@@ -197,14 +199,14 @@ await runChrome(
       await reloadAndBoot();
       const eState = await arcadeState();
       log("after-reload", { eState, badge: await badge() });
-      check("刷新后 0/3、best=1000、无角标", eState.played === 3 && eState.best.findboss === 1000 && (await badge()) === null, JSON.stringify(eState));
+      check("刷新后 0/3、best 保留（早退口径）、无角标", eState.played === 3 && eState.best.findboss === bState.best.findboss && (await badge()) === null, JSON.stringify({ eState, bBest: bState.best.findboss }));
 
       report.consoleErrors = c.errors.slice(0, 20);
       report.finishedAt = new Date().toISOString();
       report.checksPassed = report.checks.filter((x) => x.pass).length;
       report.checksFailed = report.checks.filter((x) => !x.pass).map((x) => `${x.name} :: ${x.detail}`);
       writeFileSync(REPORT, JSON.stringify(report, null, 2));
-      console.log(JSON.stringify({ checks: report.checks.length, passed: report.checksPassed, failed: report.checksFailed, consoleErrors: report.consoleErrors, key: { idle, bReward, bExpected, bElapsed, fullReward: cReward, ratio, cDisplayed, settlementDiff: cDisplayed - 1000 } }, null, 2));
+      console.log(JSON.stringify({ checks: report.checks.length, passed: report.checksPassed, failed: report.checksFailed, consoleErrors: report.consoleErrors, key: { idle, bReward, bExpected, bElapsed, bDisplayed, bBest: bState.best.findboss, fullReward: cReward, ratio, cDisplayed, settlementDiff: cDisplayed - 1000 } }, null, 2));
     } catch (e) {
       report.error = String(e && e.stack ? e.stack : e);
       report.consoleErrors = c.errors.slice(0, 20);

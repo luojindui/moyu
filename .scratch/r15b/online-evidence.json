@@ -1,0 +1,266 @@
+{
+  "steps": {
+    "about": "ok",
+    "bootBadge": "ok",
+    "coffee": "ok"
+  },
+  "errors": [],
+  "coffee": {
+    "midFall": {
+      "t": "28.8s",
+      "err": null,
+      "sample": {
+        "t": 1.2,
+        "tops": [
+          88,
+          70.7,
+          45.2,
+          21.1
+        ]
+      }
+    },
+    "caughtShot": true,
+    "done": true,
+    "result": {
+      "bodyText": "接咖啡 结束\n496 分\n本局奖励 +25 摸鱼值\n🎉 新纪录！（旧 0）\n接住 25 · 漏接 2 · 最高连击 25\n再来一局 返回摸鱼站",
+      "record": "🎉 新纪录！（旧 0）",
+      "reward": "本局奖励 +25 摸鱼值",
+      "score": "496 分",
+      "hints": [
+        "接住 25 · 漏接 2 · 最高连击 25"
+      ],
+      "hasAgain": true,
+      "hasBack": true
+    },
+    "toast": "摸鱼站 +25（得分 496）",
+    "save": {
+      "date": "2026-11-27",
+      "played": 1,
+      "best": {
+        "coffee": 496
+      }
+    },
+    "taps": [
+      {
+        "t": 2.52,
+        "top": 84.3,
+        "cls": "drop caught"
+      },
+      {
+        "t": 3.36,
+        "top": 84.7,
+        "cls": "drop caught"
+      },
+      {
+        "t": 4.4,
+        "top": 84.8,
+        "cls": "drop caught"
+      },
+      {
+        "t": 5.24,
+        "top": 85.4,
+        "cls": "drop caught"
+      },
+      {
+        "t": 6.08,
+        "top": 84.3,
+        "cls": "drop caught"
+      }
+    ],
+    "tapCount": 25,
+    "catchCount": 25,
+    "trail": [
+      {
+        "t": 0.04,
+        "tops": [
+          65.7,
+          37,
+          11.4
+        ]
+      },
+      {
+        "t": 0.4,
+        "tops": [
+          76,
+          47.2,
+          21.7
+        ]
+      },
+      {
+        "t": 0.76,
+        "tops": [
+          86.7,
+          58,
+          32.5,
+          8.4
+        ]
+      },
+      {
+        "t": 1.04,
+        "tops": [
+          88,
+          66.3,
+          40.8,
+          16.7
+        ]
+      },
+      {
+        "t": 1.4,
+        "tops": [
+          88,
+          76.6,
+          51,
+          27
+        ]
+      },
+      {
+        "t": 1.76,
+        "tops": [
+          87.3,
+          61.8,
+          37.7,
+          7.5
+        ]
+      },
+      {
+        "t": 2.04,
+        "tops": [
+          88,
+          70.1,
+          46.1,
+          15.8
+        ]
+      },
+      {
+        "t": 2.4,
+        "tops": [
+          80.4,
+          56.3,
+          26.1,
+          1.8
+        ]
+      },
+      {
+        "t": 2.76,
+        "tops": [
+          67.1,
+          36.9,
+          12.5
+        ]
+      },
+      {
+        "t": 3.04,
+        "tops": [
+          75.4,
+          45.2,
+          20.8
+        ]
+      }
+    ],
+    "landedCount": 73,
+    "menuAfter": {
+      "left": "今天还能玩 2/3 次 · 每局能赢摸鱼值",
+      "cards": [
+        {
+          "name": "接咖啡 最高 496",
+          "btn": "开始（30 秒）",
+          "disabled": false
+        },
+        {
+          "name": "找老板 最高 0",
+          "btn": "开始（30 秒内无限轮）",
+          "disabled": false
+        },
+        {
+          "name": "节奏点击 最高 0",
+          "btn": "开始（30 秒）",
+          "disabled": false
+        }
+      ],
+      "buttons": [
+        {
+          "text": "开始（30 秒）",
+          "disabled": false
+        },
+        {
+          "text": "开始（30 秒内无限轮）",
+          "disabled": false
+        },
+        {
+          "text": "开始（30 秒）",
+          "disabled": false
+        }
+      ]
+    },
+    "badgeAfter": {
+      "badge": "2",
+      "aria": "摸鱼站，今天还剩 2 次"
+    }
+  },
+  "findboss": {},
+  "rhythm": {},
+  "limit": {},
+  "persist": {},
+  "noRecord": {},
+  "refund": {},
+  "exit": {},
+  "exitConfirm": {},
+  "page": {
+    "href": "https://luojindui.github.io/moyu/",
+    "scripts": [
+      "https://luojindui.github.io/moyu/assets/index-BBwfk3ie.js"
+    ],
+    "title": "摸鱼工位",
+    "hasDevHook": false
+  },
+  "about": {
+    "version": "v0.5.0 · 2026-11-27",
+    "notes": "新增：摸鱼小队（招募/派遣/好感）+ 天赋树（18 天赋/27 点）；新增：每日摸鱼卡（16 张，选 1 生效 24h）；新增：回合制老板（3 性格，看线索选应对）；新增：工位经营（8 件家具，买完看得见）+ 每日精力（4 档取舍）",
+    "journalOpen": true
+  },
+  "boot": {
+    "badge": {
+      "badge": "3",
+      "aria": "摸鱼站，今天还剩 3 次"
+    },
+    "arcade": {
+      "date": "2026-11-27",
+      "played": 0,
+      "best": {}
+    }
+  },
+  "menuBoot": {
+    "left": "今天还能玩 3/3 次 · 每局能赢摸鱼值",
+    "cards": [
+      {
+        "name": "接咖啡 最高 0",
+        "btn": "开始（30 秒）",
+        "disabled": false
+      },
+      {
+        "name": "找老板 最高 0",
+        "btn": "开始（30 秒内无限轮）",
+        "disabled": false
+      },
+      {
+        "name": "节奏点击 最高 0",
+        "btn": "开始（30 秒）",
+        "disabled": false
+      }
+    ],
+    "buttons": [
+      {
+        "text": "开始（30 秒）",
+        "disabled": false
+      },
+      {
+        "text": "开始（30 秒内无限轮）",
+        "disabled": false
+      },
+      {
+        "text": "开始（30 秒）",
+        "disabled": false
+      }
+    ]
+  }
+}

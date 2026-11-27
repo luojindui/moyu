@@ -237,7 +237,7 @@ export class Arcade {
             renderRound();
             // 局部更新分数（renderRound 会重置 DOM，这里立刻补上真实值）
             const se = document.getElementById("play-score");
-            if (se) se.textContent = String(findScore(correct, wrong, Math.max(0, def.duration - (performance.now() - startAt) / 1000)));
+            if (se) se.textContent = String(findScore(correct, wrong, 0));
           });
         });
       };
@@ -253,12 +253,8 @@ export class Arcade {
           this.finish(def, findScore(correct, wrong, 0), { caught: correct, missed: wrong });
         }
       };
-      // 屏幕分 = 结算分：都含剩余时间奖励（之前屏幕含时间项、结算不含，差 299）
-      this.play = {
-        raf: requestAnimationFrame(tick),
-        cleanup: () => undefined,
-        score: () => findScore(correct, wrong, Math.max(0, def.duration - (performance.now() - startAt) / 1000)),
-      };
+      // 统一口径：屏幕分 / 自然结算 / 早退 best 全部不含"剩余时间"项（否则早退会抬高 best）
+      this.play = { raf: requestAnimationFrame(tick), cleanup: () => undefined, score: () => findScore(correct, wrong, 0) };
       return;
     }
 

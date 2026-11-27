@@ -1,0 +1,221 @@
+{
+  "url": "http://127.0.0.1:5199/",
+  "phases": {
+    "boot": {
+      "badge": "3",
+      "aria": "摸鱼站，今天还剩 3 次",
+      "hud": "0.2"
+    },
+    "menu": {
+      "left": "今天还能玩 3/3 次 · 每局能赢摸鱼值",
+      "body": "接咖啡 最高 0 咖啡掉下来时点住它——掉地上就没了 满分 ≈ 25 秒挂机收益（新号保底 30） 开始（30 秒） 找老板 最高 0 在一堆同事脸里找出王总，越快越好 满分 ≈ 25 秒挂机收益（新号保底 30） 开始（30 秒内无限轮） 节奏点击 最高 0 跟着节拍点屏幕，越准分越高 满分 ≈ 25 秒挂机收益（新号保底 30） 开始（30 秒）"
+    },
+    "exitUnder2s": {
+      "arcade": {
+        "date": "2026-11-27",
+        "played": 0,
+        "best": {}
+      },
+      "hidden": true,
+      "toasts": [
+        {
+          "t": 2137,
+          "text": "得分 0，没拿到奖励"
+        }
+      ]
+    },
+    "exitAt3s": {
+      "preExit": {
+        "clicks": 12,
+        "timer": "28.0s",
+        "liveScore": "885",
+        "confirmCount": true
+      },
+      "playedSeconds": 2,
+      "settledScoreExpected": 600,
+      "rewardExpected": 6,
+      "after": {
+        "arcade": {
+          "date": "2026-11-27",
+          "played": 1,
+          "best": {
+            "findboss": 600
+          }
+        },
+        "hidden": true,
+        "toasts": [
+          {
+            "t": 3062,
+            "text": "摸鱼站 +7（得分 600）"
+          }
+        ]
+      }
+    },
+    "coffee": {
+      "scoreText": "494 分",
+      "rewardText": "本局奖励 +25 摸鱼值",
+      "detail": "接住 25 · 漏接 3 · 最高连击 25",
+      "result": "接咖啡 结束 494 分 本局奖励 +25 摸鱼值 🎉 新纪录！（旧 0） 接住 25 · 漏接 3 · 最高连击 25 再来一局 返回摸鱼站",
+      "arcade": {
+        "date": "2026-11-27",
+        "played": 2,
+        "best": {
+          "findboss": 600,
+          "coffee": 494
+        }
+      },
+      "toasts": [
+        {
+          "t": 31065,
+          "text": "摸鱼站 +25（得分 494）"
+        }
+      ],
+      "score": 494,
+      "rewardExpected": 25,
+      "auto": {
+        "seen": 28,
+        "tapped": 25,
+        "tops": [
+          {
+            "t": 27,
+            "rel": 68.6
+          },
+          {
+            "t": 226,
+            "rel": 74.4
+          },
+          {
+            "t": 426,
+            "rel": 80.2
+          },
+          {
+            "t": 626,
+            "rel": 86
+          },
+          {
+            "t": 826,
+            "rel": 91.2
+          },
+          {
+            "t": 1026,
+            "rel": 91.2
+          },
+          {
+            "t": 1226,
+            "rel": 91.2
+          }
+        ]
+      }
+    },
+    "rhythmPerfect": {
+      "scoreText": "1180 分",
+      "rewardText": "本局奖励 +30 摸鱼值",
+      "detail": "perfect 59 · 漏拍 0",
+      "result": "节奏点击 结束 1180 分 本局奖励 +30 摸鱼值 🎉 新纪录！（旧 0） perfect 59 · 漏拍 0 再来一局 返回摸鱼站",
+      "arcade": {
+        "date": "2026-11-27",
+        "played": 3,
+        "best": {
+          "coffee": 494,
+          "findboss": 600,
+          "rhythm": 1180
+        }
+      },
+      "toasts": [
+        {
+          "t": 31070,
+          "text": "摸鱼站 +30（得分 1180）"
+        }
+      ],
+      "score": 1180,
+      "rewardExpected": 30
+    },
+    "afterAll": {
+      "arcade": {
+        "date": "2026-11-27",
+        "played": 3,
+        "best": {
+          "coffee": 494,
+          "findboss": 600,
+          "rhythm": 1180
+        }
+      },
+      "badge": null,
+      "aria": "摸鱼站，今天已玩完"
+    }
+  },
+  "consoleErrors": [],
+  "rewardVerification": {
+    "assumedStationIdle": 0.2,
+    "exitUnder2s": {
+      "arcade": {
+        "date": "2026-11-27",
+        "played": 0,
+        "best": {}
+      },
+      "expected": "played 不变（退还）",
+      "toasts": [
+        {
+          "t": 2137,
+          "text": "得分 0，没拿到奖励"
+        }
+      ]
+    },
+    "exitAt3s": {
+      "playedSeconds": 2,
+      "settledScore": 600,
+      "expected": 6,
+      "arcade": {
+        "date": "2026-11-27",
+        "played": 1,
+        "best": {
+          "findboss": 600
+        }
+      },
+      "toasts": [
+        {
+          "t": 3062,
+          "text": "摸鱼站 +7（得分 600）"
+        }
+      ]
+    },
+    "coffee": {
+      "score": 494,
+      "expected": 25,
+      "detail": "接住 25 · 漏接 3 · 最高连击 25",
+      "arcade": {
+        "date": "2026-11-27",
+        "played": 2,
+        "best": {
+          "findboss": 600,
+          "coffee": 494
+        }
+      },
+      "toasts": [
+        {
+          "t": 31065,
+          "text": "摸鱼站 +25（得分 494）"
+        }
+      ]
+    },
+    "rhythm": {
+      "score": 1180,
+      "expected": 30,
+      "arcade": {
+        "date": "2026-11-27",
+        "played": 3,
+        "best": {
+          "coffee": 494,
+          "findboss": 600,
+          "rhythm": 1180
+        }
+      },
+      "toasts": [
+        {
+          "t": 31070,
+          "text": "摸鱼站 +30（得分 1180）"
+        }
+      ]
+    }
+  }
+}

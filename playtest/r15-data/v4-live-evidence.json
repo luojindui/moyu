@@ -1,0 +1,103 @@
+{
+  "url": "http://127.0.0.1:5199/",
+  "phases": {
+    "ready": false,
+    "boot": {
+      "arcadeBtn": "🎮3",
+      "badge": "3",
+      "aria": "摸鱼站，今天还剩 3 次"
+    },
+    "menu": {
+      "left": "今天还能玩 3/3 次 · 每局能赢摸鱼值",
+      "body": "接咖啡 最高 0 咖啡掉下来时点住它——掉地上就没了 满分 ≈ 25 秒挂机收益（新号保底 30） 开始（30 秒） 找老板 最高 0 在一堆同事脸里找出王总，越快越好 满分 ≈ 25 秒挂机收益（新号保底 30） 开始（30 秒内无限轮） 节奏点击 最高 0 跟着节拍点屏幕，越准分越高 满分 ≈ 25 秒挂机收益（新号保底 30） 开始（30 秒）"
+    },
+    "exitUnder2s": {
+      "__err": "{\"exceptionId\":2,\"text\":\"Uncaught\",\"lineNumber\":1,\"columnNumber\":14,\"scriptId\":\"15\",\"stackTrace\":{\"callFrames\":[{\"functionName\":\"\",\"scriptId\":\"15\",\"url\":\"\",\"lineNumber\":1,\"columnNumber\":14}]},\"excepti"
+    },
+    "exitAt3s": {
+      "preExit": {
+        "clicks": 12,
+        "timer": "28.0s",
+        "liveScore": "885"
+      },
+      "playedSeconds": 2,
+      "settledScoreExpected": 600,
+      "rewardExpected": 6,
+      "after": {
+        "__err": "{\"exceptionId\":4,\"text\":\"Uncaught\",\"lineNumber\":1,\"columnNumber\":14,\"scriptId\":\"15\",\"stackTrace\":{\"callFrames\":[{\"functionName\":\"\",\"scriptId\":\"15\",\"url\":\"\",\"lineNumber\":1,\"columnNumber\":14}]},\"excepti"
+      }
+    },
+    "coffee": {
+      "__err": "{\"exceptionId\":6,\"text\":\"Uncaught\",\"lineNumber\":1,\"columnNumber\":18,\"scriptId\":\"21\",\"stackTrace\":{\"callFrames\":[{\"functionName\":\"\",\"scriptId\":\"21\",\"url\":\"\",\"lineNumber\":1,\"columnNumber\":18},{\"function",
+      "score": null,
+      "rewardExpected": 0,
+      "auto": {
+        "seen": 27,
+        "tapped": 24,
+        "tops": [
+          {
+            "t": 28,
+            "rel": 68.5
+          },
+          {
+            "t": 226,
+            "rel": 74.3
+          },
+          {
+            "t": 427,
+            "rel": 80
+          },
+          {
+            "t": 628,
+            "rel": 85.8
+          },
+          {
+            "t": 827,
+            "rel": 91.2
+          },
+          {
+            "t": 1027,
+            "rel": 91.2
+          },
+          {
+            "t": 1227,
+            "rel": 91.2
+          }
+        ]
+      }
+    },
+    "rhythmPerfect": {
+      "__err": "{\"exceptionId\":8,\"text\":\"Uncaught\",\"lineNumber\":1,\"columnNumber\":18,\"scriptId\":\"21\",\"stackTrace\":{\"callFrames\":[{\"functionName\":\"\",\"scriptId\":\"21\",\"url\":\"\",\"lineNumber\":1,\"columnNumber\":18},{\"function",
+      "score": null,
+      "rewardExpected": 0
+    },
+    "afterAll": {
+      "__err": "{\"exceptionId\":9,\"text\":\"Uncaught\",\"lineNumber\":1,\"columnNumber\":14,\"scriptId\":\"24\",\"stackTrace\":{\"callFrames\":[{\"functionName\":\"\",\"scriptId\":\"24\",\"url\":\"\",\"lineNumber\":1,\"columnNumber\":14}]},\"excepti"
+    }
+  },
+  "consoleErrors": [],
+  "rewardVerification": {
+    "assumedStationIdle": 0.2,
+    "formula": "ratio = min(1,score/600) * (playedSec>=10 ? 1 : playedSec/10)；reward = max(floor(0.2*25*ratio), ceil(30*ratio))",
+    "exitUnder2s": {
+      "expectedPlayed": 0,
+      "toasts": []
+    },
+    "exitAt3s": {
+      "playedSeconds": 2,
+      "settledScore": 600,
+      "expected": 6,
+      "toasts": []
+    },
+    "coffee": {
+      "score": null,
+      "expected": 0,
+      "toasts": []
+    },
+    "rhythm": {
+      "score": null,
+      "expected": 0,
+      "toasts": []
+    }
+  }
+}
