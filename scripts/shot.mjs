@@ -6,6 +6,11 @@
 import { spawn } from "node:child_process";
 import { writeFileSync } from "node:fs";
 
+process.on("uncaughtException", (e) => {
+  console.error("shot.mjs 异常：", e?.message ?? e);
+  process.exit(1);
+});
+
 const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 const URL_ = process.argv[2] || "http://127.0.0.1:5173/";
 const OUT = process.argv[3] || "/tmp/moyu-shot.png";
@@ -69,6 +74,18 @@ const send = (method, params = {}) => {
   return new Promise((resolve, reject) => pending.set(i, { resolve, reject }));
 };
 
+// 硬超时：40 秒未完成则强制退出，避免留下孤儿 Chrome/node
+const watchdog = setTimeout(() => {
+  try {
+    proc.kill("SIGKILL");
+  } catch {
+    /* 忽略 */
+  }
+  console.error("shot.mjs 超时，已强杀 Chrome");
+  process.exit(1);
+}, 40_000);
+watchdog.unref?.();
+
 await send("Emulation.setDeviceMetricsOverride", {
   width: W,
   height: H,
@@ -87,5 +104,6 @@ const metrics = await send("Runtime.evaluate", {
   returnByValue: true,
 });
 console.log(OUT, metrics.result.value);
-proc.kill();
+clearTimeout(watchdog);
+proc.kill("SIGKILL");
 process.exit(0);
