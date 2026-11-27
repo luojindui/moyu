@@ -1595,19 +1595,29 @@ body.onboarding #btn-arcade .arcade-badge {
   font-size: 15px;
   text-align: center;
 }
-.ach-info { flex: 1; min-width: 0; }
+.ach-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
 .ach-name {
+  display: block;
   font-size: 13px;
   font-weight: 700;
   color: #f4f1e8;
 }
 .ach-desc {
+  display: block;
   font-size: 11px;
   color: #b8b39c;
 }
 .ach-progress {
+  display: block;
+  width: 100%;
   margin-top: 3px;
-  height: 4px;
+  height: 5px;
   background: #262636;
   border-radius: 2px;
   overflow: hidden;

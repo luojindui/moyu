@@ -528,7 +528,7 @@ export class TeamPanel {
     const eff = decorEffects(state);
     const parts: string[] = [];
     parts.push(`<div class="team-summary">
-      <span>已装修 ${decorCount(state)}/8 · 挂机 ×${eff.idleMult.toFixed(2)} · 点击 ×${eff.clickMult.toFixed(2)} · 离线 +${(eff.offlineBonus * 100).toFixed(0)}%</span>
+      <span>已装修 ${decorCount(state)}/8 · 挂机 ×${eff.idleMult.toFixed(2)} · 点击 ×${eff.clickMult.toFixed(2)} · 离线收益 ×${eff.offlineIncomeMult.toFixed(2)}</span>
     </div>`);
 
     // 每日精力

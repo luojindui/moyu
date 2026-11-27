@@ -24,6 +24,7 @@ import { APP_VERSION } from "./version";
 import { RECORDS_KEY, parseRecords, updateRecords, type Records } from "./engine/records";
 import { doPrestige } from "./engine/prestige";
 import { dailyAllDone, dailyReward, ensureDaily, dailyTrack, claimDaily } from "./engine/daily";
+import { ACHIEVEMENTS, achDone } from "./engine/achievements";
 import { Hud } from "./ui/hud";
 import { Shop } from "./ui/shop";
 import { Welcome } from "./ui/welcome";
@@ -570,6 +571,7 @@ async function boot(): Promise<void> {
   const rng = Math.random;
   let frameErrorLogged = false;
   let lastDailyHintAt = 0;
+  let doneAch = new Set<string>();
   // 新手期：目标链未走完前，隐藏系统入口角标（避免首分钟就被"作业墙"劝退）
   let onboardingActive = true;
   const updateOnboarding = (): void => {
@@ -874,6 +876,17 @@ async function boot(): Promise<void> {
           const rw = formatMoyu(dailyReward(state));
           showToast(`日报可领 +${rw}，点右下 📔`);
           announce(`日报有奖励可领，加 ${rw}`, 0);
+        }
+      }
+      // 成就解锁提示（收集党需要"解锁瞬间"的反馈）
+      for (const a of ACHIEVEMENTS) {
+        if (!doneAch.has(a.id) && achDone(a, state)) {
+          doneAch.add(a.id);
+          // 首次填充时不刷屏（启动时把已完成的先记下）
+          if (doneAch.size > 1 || state.totalClicks > 0) {
+            showToast(`🏆 成就解锁：${a.name}`);
+            announce(`成就解锁：${a.name}`, 1);
+          }
         }
       }
       // 成就用：记录历史最高挂机/秒 & 段位

@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-27T14:14:31.059Z",
+ "generatedAt": "2026-11-27T14:16:18.779Z",
  "seeds": [
   7,
   11,
@@ -41,19 +41,19 @@
     {
      "rank": "带薪摸鱼传说",
      "idle": 1148.0304000000003,
-     "moyu": 171934573.17489284,
+     "moyu": 173457326.0140244,
      "codex": 29
     },
     {
      "rank": "带薪摸鱼传说",
      "idle": 1148.0304000000003,
-     "moyu": 171936921.00947154,
+     "moyu": 173459597.1678423,
      "codex": 29
     },
     {
      "rank": "带薪摸鱼传说",
      "idle": 1148.0304000000003,
-     "moyu": 170640353.977408,
+     "moyu": 171739927.81980523,
      "codex": 28
     }
    ]
@@ -93,19 +93,19 @@
     {
      "rank": "带薪摸鱼传说",
      "idle": 1084.1947200000002,
-     "moyu": 167068450.47559816,
+     "moyu": 168146251.3777529,
      "codex": 24
     },
     {
      "rank": "带薪摸鱼传说",
      "idle": 1084.1947200000002,
-     "moyu": 166810871.67297813,
+     "moyu": 167950969.8533662,
      "codex": 24
     },
     {
      "rank": "带薪摸鱼传说",
      "idle": 1084.1947200000002,
-     "moyu": 166352920.5802783,
+     "moyu": 167346599.12892383,
      "codex": 23
     }
    ]
@@ -353,10 +353,10 @@
        "newFlavors": 1,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
-       "sessionEarned": 176788.28238422144,
-       "moyuEnd": 2551824.290784186,
+       "sessionEarned": 176760.7076002108,
+       "moyuEnd": 2551796.7160001756,
        "idleRateEnd": 1011.4520000000001,
-       "clickPowerEnd": 23.076480000000004,
+       "clickPowerEnd": 22.624000000000002,
        "interesting": true,
        "stale": false
       },
@@ -413,10 +413,10 @@
        "newFlavors": 1,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
-       "sessionEarned": 191651.5763796959,
-       "moyuEnd": 15253505.655163882,
+       "sessionEarned": 191503.2486393582,
+       "moyuEnd": 15253329.752639534,
        "idleRateEnd": 1062.16272,
-       "clickPowerEnd": 27.987168,
+       "clickPowerEnd": 27.4384,
        "interesting": true,
        "stale": false
       }
@@ -429,7 +429,7 @@
        "weekday": "周四",
        "offlineSeconds": 46020,
        "offlineRate": 0.8,
-       "offlineEarned": 37102418.8416,
+       "offlineEarned": 37469769.523200005,
        "welcome": true,
        "goals": [
         {
@@ -477,10 +477,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 229270.54798334837,
-       "moyuEnd": 129538129.57035516,
+       "sessionEarned": 228733.74600212276,
+       "moyuEnd": 130654470.06605875,
        "idleRateEnd": 1088.60112,
-       "clickPowerEnd": 98.77598400000001,
+       "clickPowerEnd": 96.8392,
        "interesting": true,
        "stale": false
       },
@@ -491,7 +491,7 @@
        "weekday": "周四",
        "offlineSeconds": 6720,
        "offlineRate": 0.9,
-       "offlineEarned": 6519311.93088,
+       "offlineEarned": 6583859.573759999,
        "welcome": true,
        "goals": [
         {
@@ -537,10 +537,10 @@
        "newFlavors": 4,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 242594.6469347775,
-       "moyuEnd": 136295727.14816993,
+       "sessionEarned": 241887.89711475372,
+       "moyuEnd": 137475908.5369335,
        "idleRateEnd": 1122.2244,
-       "clickPowerEnd": 141.78612,
+       "clickPowerEnd": 139.006,
        "interesting": true,
        "stale": false
       },
@@ -551,7 +551,7 @@
        "weekday": "周四",
        "offlineSeconds": 8520,
        "offlineRate": 0.95,
-       "offlineEarned": 8994232.4868,
+       "offlineEarned": 9083284.2936,
        "welcome": true,
        "goals": [
         {
@@ -597,10 +597,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 247643.45671328902,
-       "moyuEnd": 145532337.09168324,
+       "sessionEarned": 246761.5769584179,
+       "moyuEnd": 146800688.40749192,
        "idleRateEnd": 1130.0784,
-       "clickPowerEnd": 158.95272000000003,
+       "clickPowerEnd": 155.836,
        "interesting": true,
        "stale": false
       },
@@ -611,7 +611,7 @@
        "weekday": "周四",
        "offlineSeconds": 11220,
        "offlineRate": 0.95,
-       "offlineEarned": 11927412.472800002,
+       "offlineEarned": 12045505.665600002,
        "welcome": true,
        "goals": [
         {
@@ -657,10 +657,10 @@
        "newFlavors": 1,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 259605.84449839592,
-       "moyuEnd": 157713151.40898162,
+       "sessionEarned": 258656.17252227664,
+       "moyuEnd": 159098646.2456142,
        "idleRateEnd": 1140.1764000000003,
-       "clickPowerEnd": 171.54156,
+       "clickPowerEnd": 168.178,
        "interesting": true,
        "stale": false
       },
@@ -671,7 +671,7 @@
        "weekday": "周四",
        "offlineSeconds": 13020,
        "offlineRate": 0.95,
-       "offlineEarned": 13964578.735800002,
+       "offlineEarned": 14102841.891600003,
        "welcome": true,
        "goals": [
         {
@@ -717,10 +717,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 264207.03011122346,
-       "moyuEnd": 171934573.17489284,
+       "sessionEarned": 263201.87681019306,
+       "moyuEnd": 173457326.0140244,
        "idleRateEnd": 1148.0304000000003,
-       "clickPowerEnd": 186.41928000000001,
+       "clickPowerEnd": 182.764,
        "interesting": true,
        "stale": true
       }
@@ -964,10 +964,10 @@
        "newFlavors": 1,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
-       "sessionEarned": 181331.90568022104,
-       "moyuEnd": 2556292.017280186,
+       "sessionEarned": 181297.43720020866,
+       "moyuEnd": 2556257.5488001737,
        "idleRateEnd": 1011.4520000000001,
-       "clickPowerEnd": 23.076480000000004,
+       "clickPowerEnd": 22.624000000000002,
        "interesting": true,
        "stale": false
       },
@@ -1024,10 +1024,10 @@
        "newFlavors": 1,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
-       "sessionEarned": 197391.55011044443,
-       "moyuEnd": 15263713.35539063,
+       "sessionEarned": 197253.4702069927,
+       "moyuEnd": 15263540.807007167,
        "idleRateEnd": 1062.16272,
-       "clickPowerEnd": 27.987168,
+       "clickPowerEnd": 27.4384,
        "interesting": true,
        "stale": false
       }
@@ -1040,7 +1040,7 @@
        "weekday": "周四",
        "offlineSeconds": 46020,
        "offlineRate": 0.8,
-       "offlineEarned": 37102418.8416,
+       "offlineEarned": 37469769.523200005,
        "welcome": true,
        "goals": [
         {
@@ -1088,10 +1088,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 230940.75065539777,
-       "moyuEnd": 129544643.541545,
+       "sessionEarned": 230371.19960218668,
+       "moyuEnd": 130660958.2594343,
        "idleRateEnd": 1088.60112,
-       "clickPowerEnd": 98.77598400000001,
+       "clickPowerEnd": 96.8392,
        "interesting": true,
        "stale": false
       },
@@ -1102,7 +1102,7 @@
        "weekday": "周四",
        "offlineSeconds": 6720,
        "offlineRate": 0.9,
-       "offlineEarned": 6519311.93088,
+       "offlineEarned": 6583859.573759999,
        "welcome": true,
        "goals": [
         {
@@ -1148,10 +1148,10 @@
        "newFlavors": 4,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 241154.3455939591,
-       "moyuEnd": 136300800.81801897,
+       "sessionEarned": 240478.30747693777,
+       "moyuEnd": 137480987.14067122,
        "idleRateEnd": 1122.2244,
-       "clickPowerEnd": 141.78612,
+       "clickPowerEnd": 139.006,
        "interesting": true,
        "stale": false
       },
@@ -1162,7 +1162,7 @@
        "weekday": "周四",
        "offlineSeconds": 8520,
        "offlineRate": 0.95,
-       "offlineEarned": 8994232.4868,
+       "offlineEarned": 9083284.2936,
        "welcome": true,
        "goals": [
         {
@@ -1208,10 +1208,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 247617.0888156891,
-       "moyuEnd": 145537384.39363468,
+       "sessionEarned": 246735.72607845068,
+       "moyuEnd": 146805741.16034967,
        "idleRateEnd": 1130.0784,
-       "clickPowerEnd": 158.95272000000003,
+       "clickPowerEnd": 155.836,
        "interesting": true,
        "stale": true
       },
@@ -1222,7 +1222,7 @@
        "weekday": "周四",
        "offlineSeconds": 11220,
        "offlineRate": 0.95,
-       "offlineEarned": 11927412.472800002,
+       "offlineEarned": 12045505.665600002,
        "welcome": true,
        "goals": [
         {
@@ -1268,10 +1268,10 @@
        "newFlavors": 1,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 260889.6729655862,
-       "moyuEnd": 157719482.53940028,
+       "sessionEarned": 259914.82788226008,
+       "moyuEnd": 159104957.65383193,
        "idleRateEnd": 1140.1764000000003,
-       "clickPowerEnd": 171.54156,
+       "clickPowerEnd": 168.178,
        "interesting": true,
        "stale": false
       },
@@ -1282,7 +1282,7 @@
        "weekday": "周四",
        "offlineSeconds": 13020,
        "offlineRate": 0.95,
-       "offlineEarned": 13964578.735800002,
+       "offlineEarned": 14102841.891600003,
        "welcome": true,
        "goals": [
         {
@@ -1328,10 +1328,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 260223.73427125812,
-       "moyuEnd": 171936921.00947154,
+       "sessionEarned": 259161.622410357,
+       "moyuEnd": 173459597.1678423,
        "idleRateEnd": 1148.0304000000003,
-       "clickPowerEnd": 186.41928000000001,
+       "clickPowerEnd": 182.764,
        "interesting": true,
        "stale": true
       }
@@ -1575,10 +1575,10 @@
        "newFlavors": 1,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
-       "sessionEarned": 180328.0724643753,
-       "moyuEnd": 2499146.2584643443,
+       "sessionEarned": 180309.11480036797,
+       "moyuEnd": 2499127.300800337,
        "idleRateEnd": 1011.4520000000001,
-       "clickPowerEnd": 23.076480000000004,
+       "clickPowerEnd": 22.624000000000002,
        "interesting": true,
        "stale": false
       },
@@ -1635,10 +1635,10 @@
        "newFlavors": 1,
        "rankBefore": "摸鱼大师",
        "rankAfter": "摸鱼大师",
-       "sessionEarned": 190863.2463959884,
-       "moyuEnd": 15200039.292860333,
+       "sessionEarned": 190715.38540759683,
+       "moyuEnd": 15199872.474207934,
        "idleRateEnd": 1022.0520000000001,
-       "clickPowerEnd": 27.487776000000004,
+       "clickPowerEnd": 26.948800000000002,
        "interesting": true,
        "stale": false
       }
@@ -1651,7 +1651,7 @@
        "weekday": "周四",
        "offlineSeconds": 46020,
        "offlineRate": 0.8,
-       "offlineEarned": 37102418.8416,
+       "offlineEarned": 37469769.523200005,
        "welcome": true,
        "goals": [
         {
@@ -1699,10 +1699,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 223659.12243139744,
-       "moyuEnd": 128255425.41382402,
+       "sessionEarned": 223104.536882177,
+       "moyuEnd": 128948640.1970686,
        "idleRateEnd": 1088.60112,
-       "clickPowerEnd": 98.77598400000001,
+       "clickPowerEnd": 96.8392,
        "interesting": true,
        "stale": false
       },
@@ -1713,7 +1713,7 @@
        "weekday": "周四",
        "offlineSeconds": 6720,
        "offlineRate": 0.9,
-       "offlineEarned": 6519311.93088,
+       "offlineEarned": 6583859.573759999,
        "welcome": true,
        "goals": [
         {
@@ -1759,10 +1759,10 @@
        "newFlavors": 4,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 235090.01554262638,
-       "moyuEnd": 135005518.36024666,
+       "sessionEarned": 234395.33332556486,
+       "moyuEnd": 135762586.10415417,
        "idleRateEnd": 1122.2244,
-       "clickPowerEnd": 141.78612,
+       "clickPowerEnd": 139.006,
        "interesting": true,
        "stale": false
       },
@@ -1773,7 +1773,7 @@
        "weekday": "周四",
        "offlineSeconds": 8520,
        "offlineRate": 0.95,
-       "offlineEarned": 8994232.4868,
+       "offlineEarned": 9083284.2936,
        "welcome": true,
        "goals": [
         {
@@ -1819,10 +1819,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 247524.209084481,
-       "moyuEnd": 144242009.05613115,
+       "sessionEarned": 246644.6675184369,
+       "moyuEnd": 145087249.0652726,
        "idleRateEnd": 1130.0784,
-       "clickPowerEnd": 158.95272000000003,
+       "clickPowerEnd": 155.836,
        "interesting": true,
        "stale": true
       },
@@ -1833,7 +1833,7 @@
        "weekday": "周四",
        "offlineSeconds": 11220,
        "offlineRate": 0.95,
-       "offlineEarned": 11927412.472800002,
+       "offlineEarned": 12045505.665600002,
        "welcome": true,
        "goals": [
         {
@@ -1879,10 +1879,10 @@
        "newFlavors": 1,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 260393.30016559362,
-       "moyuEnd": 156423610.82909673,
+       "sessionEarned": 259419.262922287,
+       "moyuEnd": 157385969.9937949,
        "idleRateEnd": 1140.1764000000003,
-       "clickPowerEnd": 171.54156,
+       "clickPowerEnd": 168.178,
        "interesting": true,
        "stale": false
       },
@@ -1893,7 +1893,7 @@
        "weekday": "周四",
        "offlineSeconds": 13020,
        "offlineRate": 0.95,
-       "offlineEarned": 13964578.735800002,
+       "offlineEarned": 14102841.891600003,
        "welcome": true,
        "goals": [
         {
@@ -1939,10 +1939,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 259528.41251125932,
-       "moyuEnd": 170640353.977408,
+       "sessionEarned": 258479.93441033363,
+       "moyuEnd": 171739927.81980523,
        "idleRateEnd": 1148.0304000000003,
-       "clickPowerEnd": 186.41928000000001,
+       "clickPowerEnd": 182.764,
        "interesting": true,
        "stale": true
       }
@@ -2257,7 +2257,7 @@
        "weekday": "周四",
        "offlineSeconds": 46020,
        "offlineRate": 0.8,
-       "offlineEarned": 36574646.169599995,
+       "offlineEarned": 36936771.3792,
        "welcome": true,
        "goals": [
         {
@@ -2303,10 +2303,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 198369.90978603065,
-       "moyuEnd": 126618431.63216516,
+       "sessionEarned": 198255.89515128732,
+       "moyuEnd": 127304691.97956134,
        "idleRateEnd": 1070.9755200000002,
-       "clickPowerEnd": 67.31428800000002,
+       "clickPowerEnd": 65.99440000000001,
        "interesting": true,
        "stale": false
       },
@@ -2317,7 +2317,7 @@
        "weekday": "周四",
        "offlineSeconds": 6720,
        "offlineRate": 0.9,
-       "offlineEarned": 6413757.396480001,
+       "offlineEarned": 6477259.94496,
        "welcome": true,
        "goals": [
         {
@@ -2361,10 +2361,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 208561.16030859947,
-       "moyuEnd": 133239736.18895508,
+       "sessionEarned": 208375.95646566153,
+       "moyuEnd": 133989313.88098681,
        "idleRateEnd": 1075.38192,
-       "clickPowerEnd": 71.80881600000001,
+       "clickPowerEnd": 70.4008,
        "interesting": true,
        "stale": false
       },
@@ -2375,7 +2375,7 @@
        "weekday": "周四",
        "offlineSeconds": 8520,
        "offlineRate": 0.95,
-       "offlineEarned": 8618806.542240001,
+       "offlineEarned": 8704141.26048,
        "welcome": true,
        "goals": [
         {
@@ -2419,10 +2419,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 203856.53360655904,
-       "moyuEnd": 142061177.26480165,
+       "sessionEarned": 203655.24211266637,
+       "moyuEnd": 142895888.38357946,
        "idleRateEnd": 1077.5851200000002,
-       "clickPowerEnd": 78.55060800000003,
+       "clickPowerEnd": 77.01040000000002,
        "interesting": true,
        "stale": true
       },
@@ -2433,7 +2433,7 @@
        "weekday": "周四",
        "offlineSeconds": 11220,
        "offlineRate": 0.95,
-       "offlineEarned": 11373372.14904,
+       "offlineEarned": 11485979.79408,
        "welcome": true,
        "goals": [
         {
@@ -2477,10 +2477,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 205551.1720404923,
-       "moyuEnd": 153638615.58588216,
+       "sessionEarned": 205327.45234251022,
+       "moyuEnd": 154585710.63000196,
        "idleRateEnd": 1079.7883200000003,
-       "clickPowerEnd": 85.2924,
+       "clickPowerEnd": 83.62,
        "interesting": true,
        "stale": true
       },
@@ -2491,7 +2491,7 @@
        "weekday": "周四",
        "offlineSeconds": 13020,
        "offlineRate": 0.95,
-       "offlineEarned": 13224961.517040003,
+       "offlineEarned": 13355901.730080003,
        "welcome": true,
        "goals": [
         {
@@ -2535,10 +2535,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 206644.3726759851,
-       "moyuEnd": 167068450.47559816,
+       "sessionEarned": 206410.01767092943,
+       "moyuEnd": 168146251.3777529,
        "idleRateEnd": 1084.1947200000002,
-       "clickPowerEnd": 89.78692800000002,
+       "clickPowerEnd": 88.02640000000001,
        "interesting": true,
        "stale": false
       }
@@ -2848,7 +2848,7 @@
        "weekday": "周四",
        "offlineSeconds": 46020,
        "offlineRate": 0.8,
-       "offlineEarned": 36574646.169599995,
+       "offlineEarned": 36936771.3792,
        "welcome": true,
        "goals": [
         {
@@ -2894,10 +2894,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 205112.8916837573,
-       "moyuEnd": 126353225.91909423,
+       "sessionEarned": 204992.65883769095,
+       "moyuEnd": 127101797.64097947,
        "idleRateEnd": 1070.9755200000002,
-       "clickPowerEnd": 67.31428800000002,
+       "clickPowerEnd": 65.99440000000001,
        "interesting": true,
        "stale": false
       },
@@ -2908,7 +2908,7 @@
        "weekday": "周四",
        "offlineSeconds": 6720,
        "offlineRate": 0.9,
-       "offlineEarned": 6413757.396480001,
+       "offlineEarned": 6477259.94496,
        "welcome": true,
        "goals": [
         {
@@ -2952,10 +2952,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 209120.56584589183,
-       "moyuEnd": 132975089.88142012,
+       "sessionEarned": 208932.81035363674,
+       "moyuEnd": 133786976.3962929,
        "idleRateEnd": 1075.38192,
-       "clickPowerEnd": 71.80881600000001,
+       "clickPowerEnd": 70.4008,
        "interesting": true,
        "stale": true
       },
@@ -2966,7 +2966,7 @@
        "weekday": "周四",
        "offlineSeconds": 8520,
        "offlineRate": 0.95,
-       "offlineEarned": 8618806.542240001,
+       "offlineEarned": 8704141.26048,
        "welcome": true,
        "goals": [
         {
@@ -3010,10 +3010,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 204124.43934506178,
-       "moyuEnd": 141796798.8630052,
+       "sessionEarned": 203917.89479747415,
+       "moyuEnd": 142693813.55157036,
        "idleRateEnd": 1077.5851200000002,
-       "clickPowerEnd": 78.55060800000003,
+       "clickPowerEnd": 77.01040000000002,
        "interesting": true,
        "stale": true
       },
@@ -3024,7 +3024,7 @@
        "weekday": "周四",
        "offlineSeconds": 11220,
        "offlineRate": 0.95,
-       "offlineEarned": 11373372.14904,
+       "offlineEarned": 11485979.79408,
        "welcome": true,
        "goals": [
         {
@@ -3068,10 +3068,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 212009.60161691904,
-       "moyuEnd": 153380695.61366212,
+       "sessionEarned": 211786.27996492386,
+       "moyuEnd": 154390094.62561527,
        "idleRateEnd": 1079.7883200000003,
-       "clickPowerEnd": 85.2924,
+       "clickPowerEnd": 83.62,
        "interesting": true,
        "stale": true
       },
@@ -3082,7 +3082,7 @@
        "weekday": "周四",
        "offlineSeconds": 13020,
        "offlineRate": 0.95,
-       "offlineEarned": 13224961.517040003,
+       "offlineEarned": 13355901.730080003,
        "welcome": true,
        "goals": [
         {
@@ -3126,10 +3126,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 206985.54227599502,
-       "moyuEnd": 166810871.67297813,
+       "sessionEarned": 206744.4976709187,
+       "moyuEnd": 167950969.8533662,
        "idleRateEnd": 1084.1947200000002,
-       "clickPowerEnd": 89.78692800000002,
+       "clickPowerEnd": 88.02640000000001,
        "interesting": true,
        "stale": true
       }
@@ -3439,7 +3439,7 @@
        "weekday": "周四",
        "offlineSeconds": 46020,
        "offlineRate": 0.8,
-       "offlineEarned": 36574646.169599995,
+       "offlineEarned": 36936771.3792,
        "welcome": true,
        "goals": [
         {
@@ -3485,10 +3485,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 198355.27254775167,
-       "moyuEnd": 125902520.78061946,
+       "sessionEarned": 198241.54491768777,
+       "moyuEnd": 126504665.51847628,
        "idleRateEnd": 1070.9755200000002,
-       "clickPowerEnd": 67.31428800000002,
+       "clickPowerEnd": 65.99440000000001,
        "interesting": true,
        "stale": false
       },
@@ -3499,7 +3499,7 @@
        "weekday": "周四",
        "offlineSeconds": 6720,
        "offlineRate": 0.9,
-       "offlineEarned": 6413757.396480001,
+       "offlineEarned": 6477259.94496,
        "welcome": true,
        "goals": [
         {
@@ -3543,10 +3543,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 202695.68131138384,
-       "moyuEnd": 132517959.85841084,
+       "sessionEarned": 202507.64762698114,
+       "moyuEnd": 133183419.11106333,
        "idleRateEnd": 1075.38192,
-       "clickPowerEnd": 71.80881600000001,
+       "clickPowerEnd": 70.4008,
        "interesting": true,
        "stale": true
       },
@@ -3557,7 +3557,7 @@
        "weekday": "周四",
        "offlineSeconds": 8520,
        "offlineRate": 0.95,
-       "offlineEarned": 8618806.542240001,
+       "offlineEarned": 8704141.26048,
        "welcome": true,
        "goals": [
         {
@@ -3601,10 +3601,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 204076.45458254218,
-       "moyuEnd": 141339620.85523337,
+       "sessionEarned": 203870.85091266036,
+       "moyuEnd": 142090209.22245598,
        "idleRateEnd": 1077.5851200000002,
-       "clickPowerEnd": 78.55060800000003,
+       "clickPowerEnd": 77.01040000000002,
        "interesting": true,
        "stale": true
       },
@@ -3615,7 +3615,7 @@
        "weekday": "周四",
        "offlineSeconds": 11220,
        "offlineRate": 0.95,
-       "offlineEarned": 11373372.14904,
+       "offlineEarned": 11485979.79408,
        "welcome": true,
        "goals": [
         {
@@ -3659,10 +3659,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 211577.68628892303,
-       "moyuEnd": 152923085.6905623,
+       "sessionEarned": 211354.36463692784,
+       "moyuEnd": 153786058.3811729,
        "idleRateEnd": 1079.7883200000003,
-       "clickPowerEnd": 85.2924,
+       "clickPowerEnd": 83.62,
        "interesting": true,
        "stale": true
       },
@@ -3673,7 +3673,7 @@
        "weekday": "周四",
        "offlineSeconds": 13020,
        "offlineRate": 0.95,
-       "offlineEarned": 13224961.517040003,
+       "offlineEarned": 13355901.730080003,
        "welcome": true,
        "goals": [
         {
@@ -3717,10 +3717,10 @@
        "newFlavors": 0,
        "rankBefore": "带薪摸鱼传说",
        "rankAfter": "带薪摸鱼传说",
-       "sessionEarned": 206644.3726759851,
-       "moyuEnd": 166352920.5802783,
+       "sessionEarned": 206410.01767092943,
+       "moyuEnd": 167346599.12892383,
        "idleRateEnd": 1084.1947200000002,
-       "clickPowerEnd": 89.78692800000002,
+       "clickPowerEnd": 88.02640000000001,
        "interesting": true,
        "stale": true
       }

@@ -1,11 +1,12 @@
 {
   "summary": {
     "name": "新手引导 v0.6.1",
-    "pass": 2,
-    "total": 4,
+    "pass": 5,
+    "total": 8,
     "failed": [
       "H3 目标链可完整走通（无重载时）",
-      "ONB:EXCEPTION"
+      "H8 跳过每日卡会卡在「选卡」步骤（当天无法补选）",
+      "H9 老玩家（lifetime 50 万，已有小队/家具/精力/卡）不应被当新手"
     ],
     "checks": [
       {
@@ -21,29 +22,48 @@
       {
         "id": "H3 目标链可完整走通（无重载时）",
         "ok": false,
-        "detail": "{\"seen\":5,\"reloads\":1}"
+        "detail": "{\"seen\":6,\"reloads\":1}"
       },
       {
-        "id": "ONB:EXCEPTION",
+        "id": "H8 跳过每日卡会卡在「选卡」步骤（当天无法补选）",
         "ok": false,
-        "detail": "ev 异常 ({\n    hidden: document.getElementById(\"quest\").classList.contains(\"hidden\"),\n  : {\"exceptionId\":1,\"text\":\"Uncaught\",\"lineNumber\":1,\"columnNumber\":44,\"scriptId\":\"51\",\"exception\":{\"type\":\"object\",\"subtype\":\"error\",\"className\":\"TypeError\",\"description\":\"TypeError: Cannot read propert"
+        "detail": "{\"skipped\":false,\"stuckObserved\":true,\"text\":\"选一张「今日摸鱼卡」：24 小时有效，HUD 会显示\",\"onboarding\":true,\"seen\":6}"
+      },
+      {
+        "id": "H9 老玩家（lifetime 50 万，已有小队/家具/精力/卡）不应被当新手",
+        "ok": false,
+        "detail": "onboarding=true quest=\"买下点亮的「咖啡续命」卡片\" badges={\"arcade\":\"none\",\"energy\":\"none\",\"talent\":\"none\"}"
+      },
+      {
+        "id": "H10 lifetime >100 万不触发新手引导",
+        "ok": true,
+        "detail": "{\"hidden\":true,\"text\":\"\",\"onboarding\":false}"
+      },
+      {
+        "id": "H11 转生玩家不触发新手引导",
+        "ok": true,
+        "detail": "{\"hidden\":true,\"text\":\"\",\"onboarding\":false}"
+      },
+      {
+        "id": "H12 无 JS 异常",
+        "ok": true,
+        "detail": "[]"
       }
     ],
-    "ms": 236893
+    "ms": 65218
   },
   "runs": [
     {
       "scenario": "happy-attempt1",
-      "finished": false,
+      "reloaded": true,
       "seen": [
         "再戳 15 下 → 解锁「咖啡续命」",
         "买下点亮的「咖啡续命」卡片",
         "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
         "买下「刷手机」：之后每秒自动赚钱",
-        "什么都不点，等 10 秒看挂机收益",
-        "选一张「今日摸鱼卡」：24 小时有效，HUD 会显示"
+        "什么都不点，等 10 秒看挂机收益"
       ],
-      "ms": 150204
+      "reloads": 1
     },
     {
       "scenario": "happy-attempt2",
@@ -53,8 +73,7 @@
         "买下点亮的「咖啡续命」卡片",
         "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
         "买下「刷手机」：之后每秒自动赚钱",
-        "什么都不点，等 10 秒看挂机收益",
-        "选一张「今日摸鱼卡」：24 小时有效，HUD 会显示"
+        "什么都不点，等 10 秒看挂机收益"
       ],
       "reloads": 1
     },
@@ -66,9 +85,36 @@
         "买下点亮的「咖啡续命」卡片",
         "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
         "买下「刷手机」：之后每秒自动赚钱",
-        "什么都不点，等 10 秒看挂机收益"
+        "什么都不点，等 10 秒看挂机收益",
+        "选一张「今日摸鱼卡」：24 小时有效，HUD 会显示"
       ],
       "reloads": 1
+    },
+    {
+      "scenario": "skipCard",
+      "seen": [
+        "再戳 15 下 → 解锁「咖啡续命」",
+        "买下点亮的「咖啡续命」卡片",
+        "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "买下「刷手机」：之后每秒自动赚钱",
+        "什么都不点，等 10 秒看挂机收益",
+        "选一张「今日摸鱼卡」：24 小时有效，HUD 会显示"
+      ],
+      "skipped": false,
+      "stuckText": "选一张「今日摸鱼卡」：24 小时有效，HUD 会显示",
+      "onboarding": true,
+      "text": "选一张「今日摸鱼卡」：24 小时有效，HUD 会显示",
+      "reload2": false
+    },
+    {
+      "scenario": "veteran500k",
+      "onboarding": true,
+      "text": "买下点亮的「咖啡续命」卡片",
+      "badges": {
+        "arcade": "none",
+        "energy": "none",
+        "talent": "none"
+      }
     }
   ]
 }

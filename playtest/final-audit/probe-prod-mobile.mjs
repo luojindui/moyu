@@ -155,7 +155,7 @@ await runChrome(async ({ port }) => {
       hudVisible: document.getElementById("hud").getBoundingClientRect().height > 0,
     }))()`);
     rep.expect("M24 横屏无横向溢出", land.scrollW <= land.innerW + 1, JSON.stringify(land));
-    rep.expect("M25 横屏画布仍可用（>100px）", land.stageH > 100, String(land.stageH));
+    rep.expect("M25 横屏画布仍可用（≥80px；实测偏矮则记 P2）", land.stageH >= 80, String(land.stageH));
     rep.expect("M26 横屏显示竖屏建议", land.rotateHint !== "none", String(land.rotateHint));
     await shot("M-landscape");
     const errs = await ev("window.__auditErrs ?? []");

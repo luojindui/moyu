@@ -108,7 +108,8 @@ export function stationIdleScaled(state: GameState): number {
     (1 + talent.overflowIdleBonus) *
     cardEffects(state, Date.now()).idleMult *
     decorEffects(state).idleMult *
-    energyEffects(state).idleMult
+    energyEffects(state).idleMult *
+    achEffects(state).idleMult
   );
 }
 

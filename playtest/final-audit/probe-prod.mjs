@@ -94,7 +94,7 @@ await runChrome(async ({ port }) => {
     await click("#btn-journal");
     await wait(`document.getElementById("journal").classList.contains("hidden") === false`, 4000);
     const ver = await text("#about-version");
-    rep.expect("P10 关于面板版本 v0.5.0", /v0\.5\.0/.test(ver ?? ""), ver ?? "null");
+    rep.expect("P10 关于面板版本为 v0.6.x", /v0\.6\.\d/.test(ver ?? ""), ver ?? "null");
     rep.expect("P11 存档码框存在", (await count("#savecode")) === 1);
     rep.expect("P12 导出 JSON 按钮存在", (await count("#stats-export")) === 1);
     await click("#journal-close");
