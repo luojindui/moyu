@@ -1,277 +1,443 @@
 import { describe, it, expect } from "vitest";
+import { writeFileSync } from "node:fs";
 import { initialState } from "../src/engine/state";
-import { effectOf, UPGRADES, costOf, valueScoreOf, milestoneGap } from "../src/engine/upgrades";
+import { effectOf, UPGRADES, valueScoreOf, milestoneGap } from "../src/engine/upgrades";
 import { syncFlavorCollection, collectionCount, TOTAL_ITEMS } from "../src/engine/collection";
-import { DAILY_GOAL_TEMPLATES, DAILY_WINDOWS_PER_DAY } from "../src/engine/daily";
-import { OFFLINE_CAP_SECONDS, capForElapsed } from "../src/engine/offline";
+import { DAILY_GOAL_TEMPLATES } from "../src/engine/daily";
+import { capForElapsed } from "../src/engine/offline";
 import { formatMoyu } from "../src/engine/format";
 import {
   simulate,
   analyzeSchedule,
+  optimalPurchases,
   IDLE_IDS,
-  DAY_MS,
-  EPOCH,
   HOUR,
-  SESSION_SECONDS,
-  OFFLINE_CAP_H,
   type PolicyName,
   type SimResult,
 } from "./probe-r11-calc-lib";
 
 /**
- * R11 计算器党探针：
- * ① 每天只开 1 次、只购买 —— 7 天策略对比（贪心 / 攒钱 / 均衡 / 单卡 / 攒里程碑）
- * ② 1 次 vs 3 次回访的离线收益差（效率 0.8→1.0 + 8h 封顶）
- * ③ 离线规则对"只离线党"是否公平（封顶 / 效率 / streak / 日报可达性 / 图鉴）
+ * R11 计算器党/Excel 玩家探针（只读 src/，不修改任何游戏文件）：
+ * ① 每天只开 1 次、只购买 —— 7 天购买策略对比（理论最优背包 / 整包启发 / 逐级贪心 / 攒钱 / 均衡 / 单卡）+ 购买顺序
+ * ② 1 次 vs 2 次 vs 3 次回访的离线收益差（效率 0.8→1.0 + 8h 封顶）
+ * ③ 离线规则对"只离线党"是否公平（封顶 / 效率 / streak / 日报可达性 / 图鉴 / 转生）
+ * ④ 10 秒操作值不值得优化（错误策略的 7 天代价）
+ *
+ * 运行：npx vitest run --config playtest/vitest.r11-calc.config.ts
  */
 
 const DAYS = 7;
-const DAILY_OPEN = [21 * 60]; // 每天 21:00 开一次，每次 10s
+const DAILY_OPEN = [21 * 60]; // 每天 21:00 开一次，每次 10s，只买不点
 const pct = (x: number): string => `${(x * 100).toFixed(1)}%`;
-const x = (a: number, b: number): string => `${(a / b).toFixed(2)}×`;
+const mul = (a: number, b: number): string => `${(a / b).toFixed(2)}×`;
+const pad = (s: string, n: number): string => {
+  // 中文按 2 列宽补齐（终端输出对齐用）
+  let w = 0;
+  for (const ch of s) w += /[\u4e00-\u9fff]/.test(ch) ? 2 : 1;
+  return s + " ".repeat(Math.max(0, n - w));
+};
 
-function fmtHours(h: number): string {
-  return `${h.toFixed(2)}h（${pct(h / 24)} 的 24h）`;
-}
+const EVIDENCE: Record<string, unknown> = {};
 
-/* ============================ ② 打开节律 ============================ */
+/* ========================= ① 7 天购买策略 ========================= */
 
-describe("② 打开节律：1 次 vs 3 次回访", () => {
-  it("稳态等效收益：间隔封顶 + 回访效率（真实引擎 capForElapsed）", () => {
+describe("① 每天 1 次、只购买：7 天策略对比", () => {
+  const policies: PolicyName[] = [
+    "knapsack",
+    "hybrid",
+    "greedy",
+    "milestone-pack",
+    "balanced",
+    "hoard-big",
+    "phone-only",
+  ];
+
+  it("7 天离线总收入：理论最优 > 整包启发 >> 逐级贪心 >> 攒钱/均衡（含日报）", () => {
+    const runs: SimResult[] = policies.map((p) =>
+      simulate({ days: DAYS, opens: DAILY_OPEN, policy: p, daily: true, prestige: "never", seed: 20261101 }),
+    );
+    const best = Math.max(...runs.map((r) => r.totalOffline));
+    console.log("\n① 7 天策略对比（每天 21:00 开 10 秒、只购买、不转生）");
+    console.log(
+      pad("策略", 34) +
+        pad("D2 离线", 12) +
+        pad("D7 离线", 13) +
+        pad("7 天累计", 13) +
+        pad("D7 关页 idle", 15) +
+        "相对最优",
+    );
+    runs.forEach((r) => {
+      const d2 = r.days[1]!.offlineEarned;
+      const d7 = r.days[6]!.offlineEarned;
+      console.log(
+        pad(r.label, 34) +
+          pad(formatMoyu(d2), 12) +
+          pad(formatMoyu(d7), 13) +
+          pad(formatMoyu(r.totalOffline), 13) +
+          pad(`${r.day7Idle.toFixed(0)}/s`, 15) +
+          `${((r.totalOffline / best - 1) * 100).toFixed(1)}%`,
+      );
+    });
+    const byLabel = Object.fromEntries(runs.map((r) => [r.policy, r]));
+    console.log(
+      `\n最优=背包 ${formatMoyu(byLabel.knapsack!.totalOffline)}｜整包启发差 ${pct(byLabel.hybrid!.totalOffline / byLabel.knapsack!.totalOffline - 1)}｜逐级贪心差 ${pct(byLabel.greedy!.totalOffline / byLabel.knapsack!.totalOffline - 1)}｜攒整包差 ${pct(byLabel["milestone-pack"]!.totalOffline / byLabel.knapsack!.totalOffline - 1)}｜均衡差 ${pct(byLabel.balanced!.totalOffline / byLabel.knapsack!.totalOffline - 1)}`,
+    );
+    // 日报：纯离线党 7 天只有 0 次可领（每天 5%，见 ③）
+    const claims = byLabel.knapsack!.opens.filter((o) => o.dailyClaimed !== null).length;
+    console.log(`最优策略 7 天日报领取次数：${claims}（纯离线每天只有 5% 可达，见 ③）`);
+
+    EVIDENCE.policies = runs.map((r) => ({
+      policy: r.policy,
+      label: r.label,
+      total: r.totalOffline,
+      daily: r.dailyOffline,
+      day7Idle: r.day7Idle,
+      ratios: r.totalOffline / byLabel.knapsack!.totalOffline,
+    }));
+
+    // 结论性断言
+    expect(byLabel.knapsack!.totalOffline).toBeGreaterThan(byLabel.hybrid!.totalOffline);
+    expect(byLabel.hybrid!.totalOffline / byLabel.knapsack!.totalOffline).toBeGreaterThan(0.99); // 整包启发 ≈ 最优
+    expect(byLabel.greedy!.totalOffline / byLabel.knapsack!.totalOffline).toBeLessThan(0.7); // 逐级贪心 -30% 以上
+    expect(byLabel.greedy!.totalOffline).toBeGreaterThan(byLabel.balanced!.totalOffline);
+    expect(byLabel["milestone-pack"]!.totalOffline).toBeGreaterThan(byLabel.balanced!.totalOffline);
+    expect(byLabel.balanced!.totalOffline).toBeGreaterThan(byLabel["phone-only"]!.totalOffline);
+    expect(byLabel["phone-only"]!.totalOffline).toBeGreaterThan(byLabel["hoard-big"]!.totalOffline);
+  });
+
+  it("最优购买顺序：先吃 ×2 里程碑整包，不是逐级摊；点击线一律不买", () => {
+    const r = simulate({ days: DAYS, opens: DAILY_OPEN, policy: "knapsack", daily: true, prestige: "never" });
+    console.log("\n① 理论最优（背包）逐日购买 → 关页等级（p=刷手机 t=蹲坑 g=群聊 m=会议 d=深度 r=躺平）");
+    r.days.forEach((d) => {
+      const last = r.opens.filter((o) => o.day === d.day).slice(-1)[0]!;
+      const lv = IDLE_IDS.map((id) => `${id[0]}${last.levels[id] ?? 0}`).join(" ");
+      const bought = Object.entries(d.purchases)
+        .map(([id, n]) => `${id[0]}+${n}`)
+        .join(" ");
+      console.log(
+        `  D${d.day} 买 ${pad(bought || "（没钱）", 46)} → ${pad(lv, 40)} 关页 idle ${d.idleEnd.toFixed(0)}/s`,
+      );
+    });
+    console.log("\n① 第一笔钱（D2 打开时余额 5762 = 离线 5760 + 10 秒被动）怎么花：");
+    const st = { ...initialState(), moyu: 5762 };
+    console.log(`  背包解：${optimalPurchases(st, st.moyu).join(",")}`);
+    console.log("  各档 Lv.0→1 性价比（每万摸鱼值换 idle/s）与首次 ×2 位置：");
+    UPGRADES.filter((u) => u.idleRate).forEach((u) => {
+      console.log(
+        `    ${pad(u.name, 10)} ${String(u.idleRate).padStart(3)}/s 价 ${String(u.baseCost).padStart(8)} → ${valueScoreOf(u.id, 0).idle.toFixed(1)}/万  首次×2 在 Lv.${milestoneGap(u.id, 0)}`,
+      );
+    });
+    // 断言：第一次点满的钱先给刷手机（Lv.5 就有 ×2，是全场最高性价比）
+    const firstBuy = Object.keys(r.days[1]!.purchases);
+    expect(firstBuy).toContain("phone");
+    expect(firstBuy).toContain("toilet");
+    expect(r.days[1]!.purchases.phone).toBeGreaterThanOrEqual(10);
+
+    EVIDENCE.buyPlan = r.days.map((d) => ({
+      day: d.day,
+      purchases: d.purchases,
+      idleEnd: d.idleEnd,
+      offlineEarned: d.offlineEarned,
+      balanceEnd: d.balanceEnd,
+    }));
+    const lastOpen = r.opens[r.opens.length - 1]!;
+    EVIDENCE.day7Levels = lastOpen.levels;
+    EVIDENCE.day7Idle = r.day7Idle;
+    EVIDENCE.knapsackTotal = r.totalOffline;
+  });
+
+  it("转生是比购买顺序更大的杠杆：D5 首次达标 1e8，早转 7 天 ×4", () => {
+    const never = simulate({ days: DAYS, opens: DAILY_OPEN, policy: "knapsack", daily: true, prestige: "never", label: "不转生" });
+    const early = simulate({ days: DAYS, opens: DAILY_OPEN, policy: "knapsack", daily: true, prestige: "on-threshold", label: "能转就转" });
+    const hoard8 = simulate({ days: DAYS, opens: DAILY_OPEN, policy: "knapsack", daily: true, prestige: "hoard-8", label: "攒 8 点再转" });
+    console.log("\n① 转生时机（最优购买，7 天窗口）");
+    for (const r of [never, early, hoard8]) {
+      const pres = r.days.filter((d) => d.prestigePoints > 0).map((d) => `D${d.day}+${d.prestigePoints}pt`);
+      console.log(
+        `  ${pad(r.label, 12)} 7 天离线 ${pad(formatMoyu(r.totalOffline), 10)} 转生点 ${String(r.prestigePoints).padStart(3)}  D7 idle ${r.day7Idle.toFixed(0)}/s  转生：${pres.join(" ") || "无"}`,
+      );
+    }
+    const d5 = early.days[4]!;
+    console.log(
+      `  首次转生在 D5（本局累计跨过 1e8 → +${d5.prestigePoints} 点，倍率 ×${(1 + 0.75 * d5.prestigePoints).toFixed(2)}）；早转 ${formatMoyu(early.totalOffline)} vs 不转 ${formatMoyu(never.totalOffline)} = ${mul(early.totalOffline, never.totalOffline)}`,
+    );
+    console.log(`  攒够 8 点再转（D6）：${formatMoyu(hoard8.totalOffline)}，反而只有早转的 ${pct(hoard8.totalOffline / early.totalOffline)}（7 天窗口内"能转就转"更优）`);
+    EVIDENCE.prestige = {
+      never: never.totalOffline,
+      early: early.totalOffline,
+      hoard8: hoard8.totalOffline,
+      earlyPoints: early.prestigePoints,
+      firstPrestigeDay: 5,
+    };
+    expect(d5.prestigePoints).toBeGreaterThan(0);
+    expect(early.totalOffline).toBeGreaterThan(never.totalOffline * 2);
+    expect(hoard8.totalOffline).toBeLessThan(early.totalOffline);
+  });
+});
+
+/* ========================= ② 打开节律 ========================= */
+
+describe("② 1 次 vs 2 次 vs 3 次回访", () => {
+  it("稳态等效收益：回访效率 + 8h 封顶（真实引擎 capForElapsed 计算）", () => {
     const schedules: { name: string; opens: number[] }[] = [
-      { name: "每天 1 次（21:00）", opens: [21 * 60] },
-      { name: "每天 1 次（00:05，跨零点）", opens: [0 * 60 + 5] },
-      { name: "每天 2 次（09:00 / 20:00）", opens: [9 * 60, 20 * 60] },
-      { name: "每天 2 次（00:00 / 16:00，长间隔压后）", opens: [0, 16 * 60] },
-      { name: "每天 3 次（09:00 / 13:00 / 20:00）", opens: [9 * 60, 13 * 60, 20 * 60] },
-      { name: "每天 3 次（00:05 / 08:05 / 16:05，8h 均分）", opens: [5, 8 * 60 + 5, 16 * 60 + 5] },
-      { name: "每天 3 次（21:00 连开 3 下 +10s/+20s）", opens: [21 * 60, 21 * 60 + 10, 21 * 60 + 20] },
-      { name: "每天 4 次（每 6h）", opens: [0, 6 * 60, 12 * 60, 18 * 60] },
+      { name: "1 次/天（21:00）", opens: [21 * 60] },
+      { name: "2 次/天（09:00 / 20:00）", opens: [9 * 60, 20 * 60] },
+      { name: "2 次/天（00:00 / 16:00，长间隔压到当天最后一次）", opens: [0, 16 * 60] },
+      { name: "3 次/天（09:00 / 13:00 / 20:00，常见作息）", opens: [9 * 60, 13 * 60, 20 * 60] },
+      { name: "3 次/天（00:05 / 08:05 / 16:05，每 8h）", opens: [5, 8 * 60 + 5, 16 * 60 + 5] },
+      { name: "3 次/天（21:00 一口气连开 3 下）", opens: [21 * 60, 21 * 60 + 10, 21 * 60 + 20] },
+      { name: "4 次/天（每 6h）", opens: [0, 6 * 60, 12 * 60, 18 * 60] },
     ];
-    const rows = schedules.map((s) => analyzeSchedule(s.opens));
+    const rows = schedules.map((s) => ({ ...analyzeSchedule(s.opens), name: s.name }));
     const base = rows[0]!.effectiveHoursPerDay;
-    console.log("\n② 稳态：每天离线结算的等效满速小时（rate × applied）");
-    console.log("节律".padEnd(52) + " | 间隔(h)".padEnd(24) + " | 效率".padEnd(20) + " | 等效(h)".padEnd(22) + " | vs 1次");
+    console.log("\n② 稳态单日：离线结算的等效满速小时（applied × rate）");
+    console.log(pad("节律", 46) + pad("间隔(h)", 20) + pad("效率", 14) + pad("等效(h)", 20) + "vs 1 次");
     rows.forEach((r) => {
       const gaps = r.perOpen.map((p) => p.gapHours.toFixed(1)).join(",");
       const rates = r.perOpen.map((p) => p.rate.toFixed(1)).join(",");
       console.log(
-        r.label.padEnd(42) +
-          ` | ${gaps}`.padEnd(16) +
-          ` | ${rates}`.padEnd(14) +
-          ` | ${r.effectiveHoursPerDay.toFixed(2)}h (${pct(r.effectiveHoursPerDay / 24)} 24h)`.padEnd(26) +
-          ` | ${(r.effectiveHoursPerDay / base).toFixed(3)}×`,
+        pad(r.name, 46) +
+          pad(gaps, 20) +
+          pad(rates, 14) +
+          pad(`${r.effectiveHoursPerDay.toFixed(2)}h（${pct(r.effectiveHoursPerDay / 24)} 24h）`, 26) +
+          mul(r.effectiveHoursPerDay, base),
       );
     });
-    // 引擎断言：8h 封顶、24h 间隔只结算 8h
-    expect(capForElapsed(24 * HOUR)).toBe(OFFLINE_CAP_SECONDS);
-    expect(capForElapsed(13 * HOUR)).toBe(OFFLINE_CAP_SECONDS);
-    expect(capForElapsed(2 * 24 * HOUR)).toBe(OFFLINE_CAP_SECONDS);
+    console.log(
+      `\n结论：1 次/天 = 6.40h 等效（24h 的 ${pct(6.4 / 24)}，因为 24h 间隔只结算 8h × 效率 0.8）\n` +
+        `      2 次/天 = 13.60h（+112.5%）；3 次常见作息 = 17.00h（+165.6%）；3 次每 8h = 21.60h（+237.5%，上限）\n` +
+        `      连开 3 下只 +${pct(6.72 / 6.4 - 1)}（效率加成只作用在 10 分钟短间隔上，几乎白给）`,
+    );
+    EVIDENCE.schedules = rows.map((r) => ({
+      name: r.name,
+      effectiveHoursPerDay: r.effectiveHoursPerDay,
+      perOpen: r.perOpen,
+    }));
+
+    // 引擎事实：24h/48h 间隔都被 8h 封顶；≥7 天 24h；≥30 天 48h
+    expect(capForElapsed(24 * HOUR)).toBe(8 * HOUR);
+    expect(capForElapsed(48 * HOUR)).toBe(8 * HOUR);
     expect(capForElapsed(7 * 24 * HOUR)).toBe(24 * HOUR);
-    const one = rows[0]!.perOpen[0]!;
-    expect(one.rate).toBeCloseTo(0.8, 10); // 先 ensureVisits 再算效率：当天第一次打开已 +0.1
-    expect(one.effectiveHours).toBeCloseTo(6.4, 10);
-    expect(rows[5]!.effectiveHoursPerDay).toBeCloseTo(21.6, 10); // 3 次 8h 均分上限
-    expect(rows[6]!.effectiveHoursPerDay - base).toBeLessThan(0.5); // 连开 3 下仅 +<0.5h
-    expect(rows[5]!.effectiveHoursPerDay / base).toBeCloseTo(3.375, 6);
+    expect(capForElapsed(30 * 24 * HOUR)).toBe(48 * HOUR);
+    // 1 次/天：先 ensureVisits 再算效率 → 当天首开就是 0.8（不是 0.7）
+    expect(rows[0]!.perOpen[0]!.rate).toBeCloseTo(0.8, 10);
+    expect(rows[0]!.perOpen[0]!.effectiveHours).toBeCloseTo(6.4, 10);
+    expect(rows[4]!.effectiveHoursPerDay).toBeCloseTo(21.6, 10);
+    expect(rows[1]!.effectiveHoursPerDay).toBeCloseTo(13.6, 10);
+    expect(rows[3]!.effectiveHoursPerDay).toBeCloseTo(17, 10);
+    expect(rows[5]!.effectiveHoursPerDay).toBeCloseTo(6.7166667, 6);
   });
 
-  it("7 天引擎模拟：1 次 vs 3 次（贪心，纯离线收益对比，不含日报）", () => {
+  it("7 天引擎模拟：3 次/天在成长期被复利放大（1 次 = 61.6 亿，3 次 = 1606.7 亿）", () => {
     const runs = [
       simulate({ days: DAYS, opens: [21 * 60], policy: "greedy", daily: false, prestige: "never", label: "1 次 21:00" }),
       simulate({ days: DAYS, opens: [9 * 60, 20 * 60], policy: "greedy", daily: false, prestige: "never", label: "2 次 9/20" }),
-      simulate({ days: DAYS, opens: [9 * 60, 13 * 60, 20 * 60], policy: "greedy", daily: false, prestige: "never", label: "3 次 9/13/20" }),
+      simulate({
+        days: DAYS,
+        opens: [9 * 60, 13 * 60, 20 * 60],
+        policy: "greedy",
+        daily: false,
+        prestige: "never",
+        label: "3 次 9/13/20",
+      }),
       simulate({
         days: DAYS,
         opens: [5, 8 * 60 + 5, 16 * 60 + 5],
         policy: "greedy",
         daily: false,
         prestige: "never",
-        label: "3 次 8h 均分",
+        label: "3 次 每 8h",
       }),
     ];
     const base = runs[0]!.totalOffline;
-    console.log("\n② 7 天引擎模拟（只买不点、贪心购买、不含日报/转生）");
-    console.log("节律".padEnd(20) + " | 7天离线总收入".padEnd(24) + " | 第7天 idle/s".padEnd(16) + " | 倍率");
+    console.log("\n② 7 天引擎模拟（只买不点、逐级贪心、不含日报/转生）");
+    console.log(pad("节律", 20) + pad("7 天离线累计", 18) + pad("D7 离线单日", 16) + "倍率");
     runs.forEach((r) => {
       console.log(
-        r.label.padEnd(18) +
-          ` | ${formatMoyu(r.totalOffline).padEnd(20)} (${r.totalOffline.toExponential(2)})` +
-          ` | ${r.day7Idle.toFixed(1)}`.padEnd(18) +
-          ` | ${(r.totalOffline / base).toFixed(2)}×`,
+        pad(r.label, 20) +
+          pad(formatMoyu(r.totalOffline), 18) +
+          pad(formatMoyu(r.days[6]!.offlineEarned), 16) +
+          mul(r.totalOffline, base),
       );
     });
+    console.log(
+      `  注：7 天累计倍率（${mul(runs[3]!.totalOffline, base)}）远大于稳态倍率（3.375×），因为 idle 指数成长被"早买一天"复利放大；\n  看"多开值不值"应以稳态等效小时（②第一张表）为准。`,
+    );
+    EVIDENCE.periodSim = runs.map((r) => ({ label: r.label, total: r.totalOffline, d7: r.days[6]!.offlineEarned }));
     expect(runs[3]!.totalOffline).toBeGreaterThan(runs[2]!.totalOffline);
-    expect(runs[2]!.totalOffline).toBeGreaterThan(runs[0]!.totalOffline);
+    expect(runs[2]!.totalOffline).toBeGreaterThan(runs[1]!.totalOffline);
+    expect(runs[1]!.totalOffline).toBeGreaterThan(runs[0]!.totalOffline);
   });
 });
 
-/* ============================ ① 7 天购买策略 ============================ */
+/* ========================= ③ 公平性 ========================= */
 
-describe("① 每天 1 次、只购买：7 天策略对比", () => {
-  it("贪心 vs 攒钱 vs 均衡 vs 单卡 vs 攒里程碑", () => {
-    const policies: PolicyName[] = ["greedy", "balanced", "hoard-big", "phone-only", "milestone-pack"];
-    const runs: SimResult[] = policies.map((p) =>
-      simulate({ days: DAYS, opens: DAILY_OPEN, policy: p, daily: true, prestige: "never", seed: 20261101 }),
-    );
-    const base = runs[0]!.totalOffline;
-    console.log("\n① 7 天模拟（每天 21:00 开 10s、只购买、含日报）");
-    console.log(
-      "策略".padEnd(34) +
-        " | 7天离线收入".padEnd(24) +
-        " | 第7天 idle/s".padEnd(15) +
-        " | 7天在线(日报)".padEnd(14) +
-        " | vs 贪心",
-    );
-    runs.forEach((r) => {
-      console.log(
-        r.label.padEnd(32) +
-          ` | ${formatMoyu(r.totalOffline).padEnd(20)}` +
-          ` | ${r.day7Idle.toFixed(1)}`.padEnd(17) +
-          ` | ${formatMoyu(r.dailyOffline.reduce((a, b) => a + b, 0) * 0).padEnd(10)}` +
-          ` | ${((r.totalOffline / base - 1) * 100).toFixed(1)}%`,
-      );
-    });
-    // 每日明细
-    console.log("\n逐日离线进账（第 1 天=新建档，无离线）");
-    const header = ["策略".padEnd(16)].concat(runs[0]!.days.map((d) => `D${d.day}`.padEnd(12))).join(" | ");
-    console.log(header);
-    runs.forEach((r) => {
-      console.log(
-        r.label.slice(0, 14).padEnd(14) +
-          " | " +
-          r.days.map((d) => formatMoyu(d.offlineEarned).padEnd(10)).join(" | "),
-      );
-    });
-    console.log("\n每日购买（贪心）");
-    runs[0]!.days.forEach((d) => {
-      const parts = Object.entries(d.purchases).map(([id, n]) => `${id}×${n}`);
-      console.log(
-        `  D${d.day}: 结算 ${(d.appliedSeconds / 3600).toFixed(1)}h × ${d.rateFirst.toFixed(1)} → +${formatMoyu(d.offlineEarned)}；买 ${parts.join(" ")}；日终 idle ${d.idleEnd.toFixed(1)}/s`,
-      );
-    });
-    // 贪心到底买了什么（7 天累计）
-    const totals: Record<string, number> = {};
-    runs[0]!.days.forEach((d) => {
-      for (const [id, n] of Object.entries(d.purchases)) totals[id] = (totals[id] ?? 0) + n;
-    });
-    console.log("\n贪心 7 天累计购买：", JSON.stringify(totals));
-    console.log(
-      "贪心第 7 天各档等级：",
-      JSON.stringify(
-        Object.fromEntries(IDLE_IDS.map((id) => [id, runs[0]!.opens[runs[0]!.opens.length - 1]!.purchases[id] ? 0 : 0])),
-      ),
-    );
-    console.log("贪心 7 天日报领取次数：", runs[0]!.opens.filter((o) => o.dailyClaimed !== null).length);
-    expect(runs[0]!.totalOffline).toBeGreaterThan(runs[1]!.totalOffline);
-    expect(runs[0]!.totalOffline).toBeGreaterThan(runs[2]!.totalOffline);
-    expect(runs[0]!.totalOffline).toBeGreaterThan(runs[4]!.totalOffline);
+describe("③ 离线规则对只离线党是否公平", () => {
+  it("8h 封顶 vs 24h 真实离线：每天只拿回 1/3 时间，等效 26.7%", () => {
+    console.log("\n③ 封顶与效率");
+    console.log(`  每天离线 24h → 只结算 ${capForElapsed(24 * HOUR) / HOUR}h（${pct(8 / 24)} 的离线时间被捡回）`);
+    console.log(`  × 全天首次回访效率 0.8 → 等效 ${(8 * 0.8).toFixed(2)}h = 24h 的 ${pct(6.4 / 24)}`);
+    console.log(`  隔 1 天（48h）回来 → 仍只结算 ${capForElapsed(48 * HOUR) / HOUR}h → 日均等效 ${(8 * 0.8 / 2).toFixed(2)}h（比天天开少 ${pct(1 - 0.5)}）`);
+    console.log(`  隔 6 天回来 → 仍 8h → 日均 ${(6.4 / 7).toFixed(2)}h（-${pct(1 - 1 / 7)}）`);
+    console.log(`  隔 7 天回来 → 24h 封顶 + 强制 100% 效率 → ${(24).toFixed(0)}h，日均 ${(24 / 7).toFixed(2)}h（天天开 6.4h 的 ${pct((24 / 7) / 6.4)}）`);
+    console.log(`  隔 30 天回来 → 48h 封顶 → 日均 ${(48 / 30).toFixed(2)}h`);
+    console.log(`  效率事实：基础 0.7，但打开会先记一次回访 +0.1 → 当天首开实际 0.8；3 次/天第 3 次才到 1.0`);
+    EVIDENCE.cap = {
+      cap8h: capForElapsed(24 * HOUR),
+      cap2d: capForElapsed(48 * HOUR),
+      cap7d: capForElapsed(7 * 24 * HOUR),
+      cap30d: capForElapsed(30 * 24 * HOUR),
+      dailyEquivalentHours: 6.4,
+    };
+    expect(capForElapsed(48 * HOUR)).toBe(8 * HOUR); // 隔一天不补，整天白丢
+    expect(capForElapsed(6 * 24 * HOUR)).toBe(8 * HOUR); // 6 天不玩也只给 8h
   });
 
-  it("贪心购买顺序（按性价比排序的实际序列，前 30 笔）", () => {
-    // 只跑 3 天看前几天的购买顺序（长序列在第 1 周就会出现里程碑跳变）
-    const r = simulate({ days: 7, opens: [21 * 60], policy: "greedy", daily: false, prestige: "never" });
-    const seq: { day: number; idle: number; tier: string }[] = [];
-    r.days.forEach((d, i) => {
-      const ids: string[] = [];
-      for (const [id, n] of Object.entries(d.purchases)) for (let k = 0; k < n; k++) ids.push(id);
-      ids.forEach((id) => seq.push({ day: d.day, idle: d.idleEnd, tier: id }));
-    });
-    console.log("\n贪心 7 天购买明细（按天汇总）");
-    r.days.forEach((d) => {
-      const parts = Object.entries(d.purchases).map(([id, n]) => `${id}×${n}`).join(", ");
-      console.log(`  D${d.day}: ${parts || "（没钱，空手）"}  → 日终 idle ${d.idleEnd.toFixed(1)}/s，余额 ${formatMoyu(d.balanceEnd)}`);
-    });
-    // 初始各档的边际性价比（排序依据）
-    console.log("\n各档 Lv.0→1 边际性价比（每 1 万摸鱼值换到的 idle/s）与首次 ×2 里程碑");
-    const s = initialState();
-    UPGRADES.filter((u) => u.idleRate).forEach((u) => {
-      const score = valueScoreOf(u.id, 0).idle;
-      const gap = milestoneGap(u.id, 0);
-      console.log(
-        `  ${u.name.padEnd(6)} 基础 ${String(u.idleRate).padStart(3)}/s 价 ${String(u.baseCost).padStart(8)} → ${score.toFixed(1)}/万  | 距首次×2 ${gap} 级 (到 Lv.${gap})`,
-      );
-    });
-    expect(seq.length).toBeGreaterThan(5);
-    // 首笔必须是刷手机（Lv.4→5 的 ×2 跳变性价比最高）
-    expect(seq[0]!.tier).toBe("phone");
-  });
-});
-
-/* ============================ ③ 公平性 ============================ */
-
-describe("③ 离线党公平性", () => {
-  it("8h 封顶 vs 24h 真实离线：离线党只拿到 1/3 时间", () => {
-    const dailyGapH = 24;
-    const appliedH = capForElapsed(dailyGapH * HOUR) / HOUR;
-    console.log(`\n③ 每天离线 24h：真实 ${dailyGapH}h → 结算 ${appliedH}h（${pct(appliedH / dailyGapH)}）`);
-    console.log(`   1 次/天效率 0.8 → 等效 ${(appliedH * 0.8).toFixed(2)}h = ${pct((appliedH * 0.8) / 24)} 的 24h`);
-    console.log(`   48h 回来（隔一天）：仍只结算 ${capForElapsed(48 * HOUR) / HOUR}h → 平均每天 ${((capForElapsed(48 * HOUR) / HOUR) / 2).toFixed(1)}h 等效 ${(6.4 / 2).toFixed(2)}h`);
-    console.log(`   7 天回来：结算 ${capForElapsed(7 * 24 * HOUR) / HOUR}h 且效率强制 1.0 → ${(24 * 1.0).toFixed(1)}h，日均 ${(24 / 7).toFixed(1)}h vs 每天开 ${(6.4).toFixed(1)}h`);
-    console.log(`   30 天回来：结算 ${capForElapsed(30 * 24 * HOUR) / HOUR}h × 1.0 → 日均 ${(48 / 30).toFixed(2)}h`);
-    expect(capForElapsed(24 * HOUR)).toBe(8 * HOUR);
-    expect(capForElapsed(48 * HOUR)).toBe(8 * HOUR); // 隔一天不补，白白损失一整天
-    expect(capForElapsed(7 * 24 * HOUR)).toBe(24 * HOUR);
-    expect(capForElapsed(30 * 24 * HOUR)).toBe(48 * HOUR);
-  });
-
-  it("离线党的日报/streak 可达性：3 个目标全部零操作才可能完成", () => {
-    // 6 个目标池抽 3 个不重复 → 共 C(6,3)=20 种；10s 会话永远到不了首次巡逻(20-35s)，也不会点击/收梗
+  it("日报/streak 对纯离线基本锁死：每天只有 5% 可达", () => {
     const zeroOp = new Set(["visit_1", "idle_earn", "buy_3"]);
-    const templates = DAILY_GOAL_TEMPLATES;
+    const t = DAILY_GOAL_TEMPLATES;
     const combos: string[][] = [];
-    for (let a = 0; a < templates.length; a++)
-      for (let b = a + 1; b < templates.length; b++)
-        for (let c = b + 1; c < templates.length; c++) combos.push([templates[a]!.id, templates[b]!.id, templates[c]!.id]);
-    const completable = combos.filter((c) => c.every((id) => zeroOp.has(id)));
-    const reachable = completable.length / combos.length;
-    console.log(`\n③ 日报目标池 6 个抽 3 个 = ${combos.length} 种组合`);
-    console.log(`   10 秒纯离线可完成（必须全在 visit/idle/buy 里）的组合数：${completable.length} → ${pct(reachable)}/天`);
-    console.log(`   连续 7 天都完成才能 streak+1 → 概率 ${(reachable ** 7).toExponential(2)}（每 7 天 +0.05 效率基本拿不到）`);
-    console.log(`   click_100 / meme_1 / survive_2 对离线党是死目标（不点屏幕；首次巡逻在 20-35s，10s 会话遇不到）`);
-    // 期望：每天 5% 能领日报
-    expect(reachable).toBeCloseTo(1 / 20, 10);
+    for (let a = 0; a < t.length; a++)
+      for (let b = a + 1; b < t.length; b++)
+        for (let c = b + 1; c < t.length; c++) combos.push([t[a]!.id, t[b]!.id, t[c]!.id]);
+    const ok = combos.filter((c) => c.every((id) => zeroOp.has(id)));
+    const p = ok.length / combos.length;
+    console.log("\n③ 日报可达性（10 秒纯离线：不点屏幕）");
+    console.log(`  目标池 6 抽 3 = ${combos.length} 种组合；可完成（必须全在 visit/idle/buy 内）= ${ok.length} 种 → ${pct(p)}/天`);
+    console.log(`  streak 每 7 连天才 +0.05 效率 → 连 7 天概率 ${(p ** 7).toExponential(2)}，实际拿不到；\n` +
+      `  也就是说"每 7 天 +0.05、封顶 +0.15"这条长线对离线党是空头支票（+0.15 = +18.75% 离线效率）`);
+    console.log(`  click_100 / meme_1 / survive_2 是死目标：不点屏幕；首次巡逻在 20-35s，而 10s 会话永远遇不到`);
+    EVIDENCE.daily = {
+      combos: combos.length,
+      completable: ok.length,
+      rate: p,
+      streak7Prob: p ** 7,
+      dailyRewardValue: 600, // ≈ 600×idleRate（与日离线收入 2.6% 量级）
+    };
+    expect(p).toBeCloseTo(1 / 20, 10);
   });
 
-  it("离线党图鉴上限：30/55 → +12%，拿不到点击线 15 格与 ×1.2 集满奖励", () => {
+  it("图鉴上限 30/55 → +12%；「55/55 ×1.2」在引擎里其实没落地", () => {
     const idleIds = new Set(IDLE_IDS);
-    const clickItems = UPGRADES.filter((u) => !idleIds.has(u.id)).length * 5; // 3 档 × 5
-    const quotes = 10; // 丢梗语录，毛都不点拿不到
-    const offlineMax = UPGRADES.length * 5 - clickItems - quotes; // 6 档挂机线 × 5
+    const clickItems = UPGRADES.filter((u) => !idleIds.has(u.id)).length * 5;
+    const quotes = 10;
+    const max = TOTAL_ITEMS - clickItems - quotes;
     const s = initialState();
-    const c30 = collectionCount(syncFlavorCollection({ ...s, levels: Object.fromEntries(IDLE_IDS.map((id) => [id, 50])) }));
+    const c30 = collectionCount(
+      syncFlavorCollection({ ...s, levels: Object.fromEntries(IDLE_IDS.map((id) => [id, 50])) }),
+    );
     const bonus = (n: number): number => 1 + Math.min(0.2, 0.02 * Math.floor(n / 5));
-    console.log(`\n③ 只离线：累计点击 0 → 点击线彩蛋 0/${clickItems}，语录 0/${quotes}；上限 ${offlineMax}/${TOTAL_ITEMS}`);
-    console.log(`   图鉴加成：离线 ${c30} 格 → ×${bonus(c30).toFixed(2)}；活跃玩家 55 格 → ×1.20（差 ${pct(bonus(55) / bonus(c30) - 1)}）`);
-    console.log(`   （注：collection.ts 导出了 COLLECTION_BONUS=1.2 但升级公式里未使用，README 的"集满 ×1.2"实际未落地）`);
+    console.log("\n③ 图鉴（累计点击 0 的离线党）");
+    console.log(`  点击线 15 格 + 语录 10 格永远拿不到 → 上限 ${max}/${TOTAL_ITEMS} 格`);
+    console.log(`  图鉴加成：离线满配 ${c30} 格 → ×${bonus(c30).toFixed(2)}；活跃玩家 55 格 → ×${bonus(55).toFixed(2)}（差 ${pct(bonus(55) / bonus(c30) - 1)}）`);
+    console.log(`  注：collection.ts 导出 COLLECTION_BONUS=1.2，但 upgrades.ts 的 collectionBonus 未引用它 → README 的"集满 ×1.2"实际未生效（额外小问题）`);
+    EVIDENCE.collection = { offlineMax: c30, activeMax: 55, offlineBonus: bonus(c30), activeBonus: bonus(55) };
     expect(c30).toBe(30);
     expect(bonus(c30)).toBeCloseTo(1.12, 10);
-    expect(bonus(55)).toBeCloseTo(1.2, 10);
   });
 
-  it("回访效率机制的实际价值：连开 3 下只多 5%", () => {
-    const burst = analyzeSchedule([21 * 60, 21 * 60 + 10, 21 * 60 + 20]);
-    const once = analyzeSchedule([21 * 60]);
-    const gain = burst.effectiveHoursPerDay / once.effectiveHoursPerDay - 1;
-    console.log(`\n③ 同一天 21:00/21:10/21:20 连开 3 次：等效 ${burst.effectiveHoursPerDay.toFixed(2)}h vs 1 次 ${once.effectiveHoursPerDay.toFixed(2)}h → +${pct(gain)}`);
-    console.log(`   效率 0.9/1.0 只作用在 10 分钟的短间隔上，回访加成几乎白给`);
-    expect(gain).toBeLessThan(0.06);
-    expect(gain).toBeGreaterThan(0.03);
+  it("离线党拿不到的还有：点击线（0 收益）、巡逻/丢梗奖励、连击、每日领奖", () => {
+    // 离线收益 = idleRate × applied × rate，只吃挂机线；点击线对次日离线 0 贡献
+    const s = initialState();
+    const withClick = { ...s, levels: { coffee: 50, water: 50, chair: 50 } };
+    console.log("\n③ 点击线对离线收益的贡献：" + (effectOf(withClick).idleRate - effectOf(s).idleRate).toFixed(2) + "（0 = 点击线对离线党完全无用）");
+    expect(effectOf(withClick).idleRate).toBeCloseTo(effectOf(s).idleRate, 10);
   });
 });
 
-/* ============================ ④ 10 秒操作优化空间 ============================ */
+/* ========================= ④ 10 秒操作 ========================= */
 
-describe("④ 10 秒操作：不同策略的 7 天差距（用来量化一键最优购买的价值）", () => {
-  it("一次买错 = 一整天离线收益打折", () => {
-    const greedy = simulate({ days: 7, opens: [21 * 60], policy: "greedy", daily: true, prestige: "never" });
-    const balanced = simulate({ days: 7, opens: [21 * 60], policy: "balanced", daily: true, prestige: "never" });
-    const hoard = simulate({ days: 7, opens: [21 * 60], policy: "hoard-big", daily: true, prestige: "never" });
-    console.log(`\n④ 7 天对比：贪心 ${formatMoyu(greedy.totalOffline)}｜均衡 ${formatMoyu(balanced.totalOffline)}（${pct(balanced.totalOffline / greedy.totalOffline - 1)}）｜攒大卡 ${formatMoyu(hoard.totalOffline)}（${pct(hoard.totalOffline / greedy.totalOffline - 1)}）`);
-    expect(greedy.totalOffline).toBeGreaterThanOrEqual(balanced.totalOffline);
-    expect(greedy.totalOffline).toBeGreaterThan(hoard.totalOffline);
-    // 第 7 天 idle 差距（关页快照直接决定次日收益）
-    console.log(`   第 7 天关页 idle：贪心 ${greedy.day7Idle.toFixed(1)}/s vs 均衡 ${balanced.day7Idle.toFixed(1)}/s vs 攒大卡 ${hoard.day7Idle.toFixed(1)}/s`);
-    console.log(`   即：如果 D7 买错，D8 的离线收益直接差 ${pct(balanced.day7Idle / greedy.day7Idle - 1)} / ${pct(hoard.day7Idle / greedy.day7Idle - 1)}`);
+describe("④ 10 秒操作值不值得优化", () => {
+  it("买错一天的代价：D7 关页 idle 差 16.5%（次日离线收益同比例差）", () => {
+    const knap = simulate({ days: DAYS, opens: DAILY_OPEN, policy: "knapsack", daily: true, prestige: "never" });
+    const greedy = simulate({ days: DAYS, opens: DAILY_OPEN, policy: "greedy", daily: true, prestige: "never" });
+    const balanced = simulate({ days: DAYS, opens: DAILY_OPEN, policy: "balanced", daily: true, prestige: "never" });
+    console.log("\n④ 10 秒操作的价值");
+    console.log(`  D7 关页 idle：最优 ${knap.day7Idle.toFixed(0)}/s｜逐级贪心 ${greedy.day7Idle.toFixed(0)}/s（${pct(greedy.day7Idle / knap.day7Idle - 1)}）｜均衡 ${balanced.day7Idle.toFixed(0)}/s（${pct(balanced.day7Idle / knap.day7Idle - 1)}）`);
+    console.log(`  离线收益只取决于"关页瞬间的 idle 快照"，买错一次 = 接下来 24h 的离线收入同步打折`);
+    console.log(`  7 天累计差距：贪心 ${pct(greedy.totalOffline / knap.totalOffline - 1)}｜均衡 ${pct(balanced.totalOffline / knap.totalOffline - 1)}`);
+    EVIDENCE.wrongBuy = {
+      day7Idle: { knap: knap.day7Idle, greedy: greedy.day7Idle, balanced: balanced.day7Idle },
+      total: { knap: knap.totalOffline, greedy: greedy.totalOffline, balanced: balanced.totalOffline },
+    };
+    expect(greedy.day7Idle / knap.day7Idle).toBeLessThan(0.9);
+  });
+});
+
+/* ========================= ⑤ 建议数值验证 ========================= */
+
+/** 用同一套节律模型算"若封顶改为 capH 小时"的等效满速小时（仅假设推演，不改 src） */
+function effectiveHoursWithCap(opens: number[], capH: number): number {
+  const sorted = [...opens].sort((a, b) => a - b);
+  let sum = 0;
+  for (let i = 0; i < sorted.length; i++) {
+    const m = sorted[i]!;
+    const prev = i === 0 ? sorted[sorted.length - 1]! - 24 * 60 : sorted[i - 1]!;
+    const gapH = (m - prev) / 60;
+    const rate = Math.min(1, 0.7 + Math.min(i + 1, 3) * 0.1);
+    sum += Math.min(gapH, capH) * rate; // 引擎：applied = min(elapsed, cap)
+  }
+  return sum;
+}
+
+describe("⑤ 建议的数值验证", () => {
+  it("建议1：8h→12h 封顶（保留 ≥7 天 24h / ≥30 天 48h）", () => {
+    const cases: { name: string; opens: number[] }[] = [
+      { name: "1 次/天（21:00）", opens: [21 * 60] },
+      { name: "2 次/天（09:00/20:00）", opens: [9 * 60, 20 * 60] },
+      { name: "3 次/天（09:00/13:00/20:00）", opens: [9 * 60, 13 * 60, 20 * 60] },
+      { name: "3 次/天（每 8h）", opens: [5, 8 * 60 + 5, 16 * 60 + 5] },
+    ];
+    console.log("\n⑤ 建议 1：封顶 8h → 12h");
+    console.log(pad("节律", 30) + pad("现 8h 等效", 16) + pad("建议 12h 等效", 18) + "变化");
+    for (const c of cases) {
+      const now = effectiveHoursWithCap(c.opens, 8);
+      const next = effectiveHoursWithCap(c.opens, 12);
+      console.log(pad(c.name, 30) + pad(now.toFixed(2) + "h", 16) + pad(next.toFixed(2) + "h", 18) + `+${pct(next / now - 1)}`);
+    }
+    const dailyNow = effectiveHoursWithCap([21 * 60], 8);
+    const dailyNext = effectiveHoursWithCap([21 * 60], 12);
+    const x3Now = effectiveHoursWithCap([9 * 60, 13 * 60, 20 * 60], 8);
+    const x3Next = effectiveHoursWithCap([9 * 60, 13 * 60, 20 * 60], 12);
+    console.log(
+      `  1 次/天 ${dailyNow.toFixed(2)}h → ${dailyNext.toFixed(2)}h（+${pct(dailyNext / dailyNow - 1)}）；3 次/天优势 ${mul(x3Now, dailyNow)} → ${mul(x3Next, dailyNext)}；隔一天回来日均 ${(8 * 0.8 / 2).toFixed(2)}h → ${(12 * 0.8 / 2).toFixed(2)}h`,
+    );
+    EVIDENCE.suggestionCap12h = {
+      daily8: dailyNow,
+      daily12: dailyNext,
+      x3_8: x3Now,
+      x3_12: x3Next,
+    };
+    expect(dailyNext / dailyNow).toBeCloseTo(1.5, 6);
+    expect(x3Next / dailyNext).toBeLessThan(x3Now / dailyNow); // 多开优势被削弱
+  });
+
+  it("建议2：日报/streak 对离线可达后的收益", () => {
+    // 日奖励 = max(500, 600×idleRate)；日离线 = 28800s × 0.8 × idleRate
+    const idle = 1000; // 中期示例
+    const reward = Math.max(500, 600 * idle);
+    const dailyOffline = 28800 * 0.8 * idle;
+    const streakBonus = 0.15; // 4 周连续后封顶（每 7 天 +0.05）
+    console.log("\n⑤ 建议 2：日报零操作可达");
+    console.log(`  idle=${idle}/s 示例：日奖励 ${formatMoyu(reward)} = 当天离线 ${formatMoyu(dailyOffline)} 的 ${pct(reward / dailyOffline)}`);
+    console.log(`  streak 4 周后 +0.15 效率：0.8→0.95 = +${pct(0.95 / 0.8 - 1)}（1 次/天 6.40h→7.60h；叠加 12h 封顶 9.60→11.40h）`);
+    EVIDENCE.suggestionDaily = { reward, dailyOffline, rewardRatio: reward / dailyOffline, streakGain: 0.95 / 0.8 - 1 };
+    expect(reward / dailyOffline).toBeCloseTo(600 / (28800 * 0.8), 10);
+    expect(0.95 / 0.8 - 1).toBeCloseTo(streakBonus / 0.8, 10);
+  });
+});
+
+/* ========================= 落盘 ========================= */
+
+describe("落盘证据", () => {
+  it("写 playtest/r11-calc-report.json", () => {
+    EVIDENCE.meta = {
+      head: "4610c76",
+      generatedAt: new Date().toISOString(),
+      note: "R11 计算器党探针：只用 src/engine 纯函数模拟，不点屏幕；每次开页复刻 main.ts boot 链路",
+    };
+    // 延迟 import 避免顶部依赖顺序问题
+    writeFileSync(new URL("./r11-calc-report.json", import.meta.url), JSON.stringify(EVIDENCE, null, 2));
+    expect(true).toBe(true);
   });
 });

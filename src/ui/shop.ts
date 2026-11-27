@@ -141,6 +141,7 @@ export class Shop {
       btn.disabled = state.moyu < price;
       const affordable = state.moyu >= price;
       btn.classList.toggle("affordable", affordable);
+      if (!affordable) btn.classList.remove("just-unlocked"); // 变回不可买时清掉绿框（避免误导）
       if (affordable && this.unlockedOnce.get(u.id) !== true) {
         this.unlockedOnce.set(u.id, true);
         btn.classList.remove("just-unlocked");

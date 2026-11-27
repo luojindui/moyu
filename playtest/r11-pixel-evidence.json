@@ -1,0 +1,49 @@
+{
+  "head": "4610c76 (+ r11 working tree)",
+  "probes": ["playtest/r11-pixel-analyze.mjs", "playtest/r11-pixel-scan.mjs", "playtest/r11-event-capture.mjs", "playtest/r11-pixel-probe.mjs"],
+  "viewport_390x844": { "css": [390, 552], "bitmap": [1170, 1656], "dpr": 3, "sceneScale": 3, "devicePxPerVirtualPixel": 9 },
+  "viewport_375x667": { "sceneScale": 3 },
+  "viewport_768x1024": { "css": [768, 732], "sceneScale": 5, "U": 15 },
+  "assets": { "worker": "error", "computer": "loaded", "cooler": "loaded" },
+  "assetRootCause": "src/main.ts:498 loads ./assets/sprites/worker.png (only worker-0..3.png exist since commit 6b71c0e renamed worker.png->worker-0.png); dev server SPA fallback returns index.html (text/html) with status 200 -> Image decode fails -> assets.worker='error' -> beige #e8c8a8 placeholder",
+  "palette": { "intended": 71, "rendered": 1827, "colors_ge_1000px": 62, "colors_lt_10px": 1435, "offPaletteSharePct": 33.3 },
+  "gridLeak": { "cellDevicePx": 9, "cells": 23920, "mixedCells": 3841, "mixedRatioPct": 16.06 },
+  "scans": {
+    "wallFloorBoundary": "groundY=116.8 virtual -> 1051.2 device; row 1444 blended (46,51,77)->(81,66,58)->(76,63,55)",
+    "floorBrickLines": "every 16 virtual px (=144 device) line; 16 solid + 1 blend row top + 1 blend row bottom; line height 1.92 virtual px",
+    "deskTopEdge": "deskY=84.8 -> 763.2 device; row 763 blended #9d7c59",
+    "windowEdge": "winX=25.6 -> 230.4 device; cols 223 / 230 blended",
+    "lampCord": "x=63.88 virtual (1 virtual px wide) -> 574.9 device; 1 blended column"
+  },
+  "spriteEdges": {
+    "computer": { "deviceX": 513, "deviceY": 1005, "edgesPx": [513, 558, 567, 576, 612, 621, 648, 657], "allModulo9": true, "note": "integer scale, no interpolation, hard 9px blocks" },
+    "cooler": { "virtualX": 99.6, "deviceX": 896.4, "contentFirstCol": 923, "colModulo9": 5, "note": "sprite interior still hard, but whole sprite off the virtual-pixel grid by 5 device px; bottom sits 0.8 virtual px above floor line (floating)" }
+  },
+  "dpr": {
+    "dpr2": "bitmap 780 = CSS*2, 1:1 sharp",
+    "dpr3": "bitmap 1170 = CSS*3, 1:1 sharp",
+    "dpr4": "bitmap still 1170 (min(3,dpr) cap) but displayed at 1560 -> 1.33x bilinear; every sprite pixel edge gains 2 interpolated px, runs 10/12 px uneven",
+    "dpr2_625": "U=7.875 non-integer -> same sprite pixel columns alternate 7/8 device px (scan runs 8,16,47,8,47,32)"
+  },
+  "animation": {
+    "screen_2fps": "500.0 +-1 ms, 5-frame cycle OK",
+    "cooler_3fps": "333 +-3 ms, 7-frame cycle OK",
+    "staticWall": "hash constant over 4.2 s (no shimmer / no dropped frames)",
+    "worker_typing_7fps": "not observable: worker sprite missing; sampled region only changes at 2 fps from overlapping monitor",
+    "drink_easter_egg": "DRINK_EVERY=22s / DRINK_FOR=2.5s switches sprite row to 5, but no sprite loaded; isDrinking() defined scene.ts:87 and never called anywhere -> easter egg fully invisible"
+  },
+  "regionUniqueColors": {
+    "clock": 636, "plant": 100, "carpet": 304, "hint_text": 317, "hint_text_rare_lt8px": 218,
+    "wall": 381, "screen_sprite": 21, "worker_slot": 6, "cooler": 55, "window": 145, "board": 99
+  },
+  "nonPixelPrimitives": {
+    "arcs": 9, "fillTextSites": 6,
+    "subUnitAlphaLayers": ["0.05 wall stripes", "0.5 carpet", "0.13 light cone"]
+  },
+  "ui": {
+    "domFont": "system-ui",
+    "borderRadii": "4 / 6 / 10 px",
+    "emojiIcons": ["🔊", "📔", "🔥"],
+    "kenneyPixelUIPack": "public/assets/ui/*.png (48x48, 5 colors) shipped but referenced nowhere in src/style.css -> unused"
+  }
+}

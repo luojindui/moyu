@@ -1,0 +1,449 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "startedAt": "2026-11-27T04:32:37.375Z",
+  "keyboardFocus": [
+    {
+      "tag": "BUTTON",
+      "id": "btn-mute",
+      "cls": "",
+      "outline": "auto 1px rgb(238, 238, 238)",
+      "boxShadow": "none"
+    },
+    {
+      "tag": "BUTTON",
+      "id": "btn-journal",
+      "cls": "",
+      "outline": "auto 1px rgb(238, 238, 238)",
+      "boxShadow": "none"
+    },
+    {
+      "tag": "CANVAS",
+      "id": "stage",
+      "cls": "",
+      "outline": "auto 1px rgb(238, 238, 238)",
+      "boxShadow": "none"
+    },
+    {
+      "tag": "BUTTON",
+      "id": "",
+      "cls": "shop-card pixel-panel affordable just-un",
+      "outline": "auto 1px rgb(238, 238, 238)",
+      "boxShadow": "none"
+    },
+    {
+      "tag": "BUTTON",
+      "id": "",
+      "cls": "shop-card pixel-panel affordable just-un",
+      "outline": "auto 1px rgb(238, 238, 238)",
+      "boxShadow": "none"
+    }
+  ],
+  "anim": {
+    "hasReward": true,
+    "animationName": "journalPulse",
+    "animationDuration": "1.4s",
+    "animationIterationCount": "infinite",
+    "anims": [
+      {
+        "name": "journalPulse",
+        "state": "running"
+      }
+    ],
+    "cardAnim": "cardPop",
+    "animCount": 1
+  },
+  "animAfter300ms": {
+    "animCount": 0,
+    "names": []
+  },
+  "afterBuyWater": {
+    "moyu": 60.92328720000134,
+    "cards": [
+      {
+        "id": "coffee",
+        "disabled": false,
+        "cls": "affordable just-unlocked",
+        "border": "rgb(139, 226, 139)",
+        "remain": ""
+      },
+      {
+        "id": "phone",
+        "disabled": false,
+        "cls": "affordable just-unlocked",
+        "border": "rgb(139, 226, 139)",
+        "remain": ""
+      },
+      {
+        "id": "water",
+        "disabled": true,
+        "cls": "just-unlocked",
+        "border": "rgb(139, 226, 139)",
+        "remain": "再戳 19 下"
+      },
+      {
+        "id": "toilet",
+        "disabled": true,
+        "cls": "",
+        "border": "rgb(74, 74, 102)",
+        "remain": "还差 539.1"
+      },
+      {
+        "id": "chair",
+        "disabled": true,
+        "cls": "",
+        "border": "rgb(74, 74, 102)",
+        "remain": "再戳 247 下"
+      },
+      {
+        "id": "group",
+        "disabled": true,
+        "cls": "",
+        "border": "rgb(74, 74, 102)",
+        "remain": "还差 3939.1"
+      },
+      {
+        "id": "meeting",
+        "disabled": true,
+        "cls": "",
+        "border": "rgb(74, 74, 102)",
+        "remain": "还差 2.49万"
+      },
+      {
+        "id": "deep",
+        "disabled": true,
+        "cls": "",
+        "border": "rgb(74, 74, 102)",
+        "remain": "还差 14.99万"
+      },
+      {
+        "id": "retire",
+        "disabled": true,
+        "cls": "",
+        "border": "rgb(74, 74, 102)",
+        "remain": "还差 99.99万"
+      }
+    ]
+  },
+  "reduced": {
+    "reduce": true,
+    "frames": 364,
+    "framesBefore": 364,
+    "particleCode": "Fx.floatText 每次点击 push 5 个粒子 + 飘字（无 reduce 分支）",
+    "cssMedia": []
+  },
+  "reducedFrames": {
+    "before": 297,
+    "after": 364
+  },
+  "patrolAX": {
+    "axNodesWithPatrol": [],
+    "canvasTextContent": "",
+    "canvasAriaLabel": "点击摸鱼",
+    "canvasAriaDescription": null,
+    "canvasRole": "button",
+    "patrolPixel": "[58,63,92,255]",
+    "allAXTexts": [
+      {
+        "role": "RootWebArea",
+        "name": "摸鱼工位",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "点击 +",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "不点也 ",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "/秒",
+        "desc": ""
+      },
+      {
+        "role": "button",
+        "name": "音效开关",
+        "desc": ""
+      },
+      {
+        "role": "button",
+        "name": "日报与图鉴",
+        "desc": "日报与图鉴"
+      },
+      {
+        "role": "button",
+        "name": "点击摸鱼",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "摸鱼值",
+        "desc": ""
+      },
+      {
+        "role": "InlineTextBox",
+        "name": "点击 +",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "3",
+        "desc": ""
+      },
+      {
+        "role": "InlineTextBox",
+        "name": "不点也 ",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "0.2",
+        "desc": ""
+      },
+      {
+        "role": "InlineTextBox",
+        "name": "/秒",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "实习生 2%",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "🔊",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "📔",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "85.0",
+        "desc": ""
+      },
+      {
+        "role": "InlineTextBox",
+        "name": "摸鱼值",
+        "desc": ""
+      },
+      {
+        "role": "InlineTextBox",
+        "name": "3",
+        "desc": ""
+      },
+      {
+        "role": "InlineTextBox",
+        "name": "0.2",
+        "desc": ""
+      },
+      {
+        "role": "InlineTextBox",
+        "name": "实习生 2%",
+        "desc": ""
+      },
+      {
+        "role": "InlineTextBox",
+        "name": "🔊",
+        "desc": ""
+      },
+      {
+        "role": "InlineTextBox",
+        "name": "📔",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "买下点亮的「咖啡续命」卡片",
+        "desc": ""
+      },
+      {
+        "role": "button",
+        "name": "点了才赚 咖啡续命 +1 点击力 ★ 点击最优 15 摸鱼值",
+        "desc": ""
+      },
+      {
+        "role": "button",
+        "name": "会自动赚 刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值",
+        "desc": ""
+      },
+      {
+        "role": "button",
+        "name": "点了才赚 带薪喝水 +2 点击力 · 工位饮水机守望者 115 摸鱼值 再戳 10 下 Lv.1",
+        "desc": ""
+      },
+      {
+        "role": "button",
+        "name": "会自动赚 带薪蹲坑 +5/秒 600 摸鱼值 还差 515.0",
+        "desc": ""
+      },
+      {
+        "role": "button",
+        "name": "点了才赚 人体工学椅 +5 点击力 800 摸鱼值 再戳 239 下",
+        "desc": ""
+      },
+      {
+        "role": "button",
+        "name": "会自动赚 摸鱼群聊 +15/秒 4000 摸鱼值 还差 3915.0",
+        "desc": ""
+      },
+      {
+        "role": "button",
+        "name": "会自动赚 无用会议 +50/秒 2.50万 摸鱼值 还差 2.49万",
+        "desc": ""
+      },
+      {
+        "role": "button",
+        "name": "会自动赚 深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 14.99万",
+        "desc": ""
+      },
+      {
+        "role": "button",
+        "name": "会自动赚 退休式躺平 +700/秒 100.00万 摸鱼值 还差 99.99万",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "← 滑动查看更多 →",
+        "desc": ""
+      },
+      {
+        "role": "InlineTextBox",
+        "name": "85.0",
+        "desc": ""
+      },
+      {
+        "role": "InlineTextBox",
+        "name": "买下点亮的「咖啡续命」卡片",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "点了才赚",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "咖啡续命",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "+1 点击力",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "★ 点击最优",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "15",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": " 摸鱼值",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "会自动赚",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "刷手机",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "+1/秒 · ×2差5级",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "★ 挂机最优",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "50",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": " 摸鱼值",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "点了才赚",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "带薪喝水",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "+2 点击力 · 工位饮水机守望者",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "115",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": " 摸鱼值",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "再戳 10 下",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "Lv.1",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "会自动赚",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "带薪蹲坑",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "+5/秒",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": "600",
+        "desc": ""
+      },
+      {
+        "role": "StaticText",
+        "name": " 摸鱼值",
+        "desc": ""
+      }
+    ]
+  },
+  "finishedAt": "2026-11-27T04:33:10.615Z"
+}

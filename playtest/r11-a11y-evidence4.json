@@ -1,0 +1,34 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "startedAt": "2026-11-27T04:33:58.499Z",
+  "claimable": {
+    "hasReward": true,
+    "title": "日报奖励可领取",
+    "reduce": true,
+    "animationName": "journalPulse",
+    "animationIterationCount": "infinite",
+    "anims": [
+      {
+        "name": "journalPulse",
+        "state": "running"
+      }
+    ]
+  },
+  "patrol": {
+    "found": {
+      "active": true,
+      "waitedMs": 20989,
+      "pixel": [
+        47,
+        122,
+        79,
+        255
+      ]
+    },
+    "axPatrolTexts": [],
+    "liveRegions": 0,
+    "canvasLabel": "点击摸鱼",
+    "axTextCount": 143
+  },
+  "finishedAt": "2026-11-27T04:34:28.201Z"
+}

@@ -13,7 +13,7 @@ npm install
 npm run dev        # http://127.0.0.1:5173
 
 npm run build      # 类型检查 + 生产构建 → dist/
-npm test           # 引擎单测 + 平衡红线探针（103 例）
+npm test           # 引擎单测 + 平衡红线探针（159 例）
 npm run preview    # 预览生产构建
 ```
 
@@ -76,6 +76,22 @@ __MOYU__.reset()    // 清档重开
 ```
 
 引擎级批处理模拟：`npx vitest run playtest/simulate.test.ts`（4 类玩家画像 ×180 分钟，输出 `playtest/report.json`）。
+
+## 版本与更新
+
+当前 **v0.4.0**（2026-11-27）。游戏内 📔 →「关于」显示版本号与最近更新；`public/updates.json` 是更新日志（静态托管即可，零后端）。Service Worker 更新后会在顶部提示"点此更新"，不会静默替换。
+
+## 数据安全
+
+- 存档在浏览器 localStorage；**📔 → 存档码**可导出/导入（换设备用），导入前自动备份旧档。
+- Safari 7 天不访问会清站点存储：游戏会请求持久化并提示"添加到主屏幕"；建议定期导出存档码。
+- 离线结算：日常 12 小时封顶、7 天 24h、30 天 48h；≥7 天回归首次结算 100% 效率。
+
+## 测试与试玩
+
+- `npm test`：159 个用例（引擎/存档/日报/事件/转生/离线/UI 数据一致性 + 三条平衡红线）
+- `playtest/simulate.test.ts`：4 类玩家画像 ×180 分钟模拟
+- 十轮 subagent 试玩记录见 `.scratch/round-log.md`（每轮 ≥5 个不同画像）
 
 ## 素材与许可
 

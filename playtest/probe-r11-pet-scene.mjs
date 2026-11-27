@@ -148,4 +148,5 @@ out.codeFacts = {
 
 writeFileSync("playtest/r11-pet-scene.json", JSON.stringify(out, null, 2));
 console.log(JSON.stringify(out, null, 2));
+try{b.close();}catch(e){}
 process.exit(0);

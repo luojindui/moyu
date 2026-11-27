@@ -1,0 +1,49 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "startedAt": "2026-11-27T04:35:14.712Z",
+  "journalBtn": {
+    "hasReward": true,
+    "position": "relative",
+    "rect": {
+      "x": 232,
+      "y": -141,
+      "w": 44,
+      "h": 44,
+      "right": 276,
+      "bottom": -97
+    },
+    "viewport": {
+      "w": 390,
+      "h": 844
+    },
+    "inViewport": false,
+    "elementAtDot": "CANVAS#stage.",
+    "muteRect": {
+      "x": 340,
+      "y": 566,
+      "w": 40,
+      "h": 40
+    },
+    "hudSub": {
+      "scrollWidth": 366,
+      "clientWidth": 366,
+      "overflow": "hidden"
+    },
+    "dotRect": {
+      "content": "\"\"",
+      "position": "absolute",
+      "w": "9px"
+    }
+  },
+  "journalBtnNoReward": {
+    "position": "relative",
+    "rect": {
+      "x": 232,
+      "y": -141,
+      "w": 44,
+      "h": 44
+    },
+    "inViewport": true
+  },
+  "finishedAt": "2026-11-27T04:35:21.252Z"
+}

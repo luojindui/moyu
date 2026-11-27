@@ -148,7 +148,10 @@ async function boot(): Promise<void> {
       serialize(state, localStorageAdapter, Date.now());
       }
     },
-    (msg) => scene.fx.floatText(scene.w / 2, scene.h * 0.58, msg),
+    (msg) => {
+      scene.fx.floatText(scene.w / 2, scene.h * 0.58, msg);
+      announce(msg);
+    },
   );
 
   const fit = (): void => {
@@ -261,9 +264,22 @@ async function boot(): Promise<void> {
   let lastRankName = "";
   let lastChapterId = "";
   let lastCollectionCount = state.collected.quotes.length + state.collected.flavors.length;
+  const srLive = document.getElementById("sr-live");
+  const announce = (text: string): void => {
+    if (srLive) srLive.textContent = text; // aria-live 区域：读屏可听到关键事件
+  };
   const toast = (text: string): void => {
     scene.fx.floatText(scene.w / 2, scene.h * 0.22, text);
+    announce(text);
   };
+  // 模态：Esc 关闭 + 打开时把焦点移入面板
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    const j = document.getElementById("journal")!;
+    const w = document.getElementById("welcome")!;
+    if (!j.classList.contains("hidden")) journal.hide();
+    else if (!w.classList.contains("hidden")) w.classList.add("hidden");
+  });
   const rng = Math.random;
   const frame = (now: number): void => {
     const dt = Math.min(1, (now - last) / 1000);
@@ -277,12 +293,23 @@ async function boot(): Promise<void> {
     const memeWasIdle = es.memeUntil < 0;
     scheduleEvents(es, scene.gameTime, rng);
     if (memeWasIdle && es.memeUntil > 0) {
+      announce("老周丢来一个梗：戳亮起的黄点");
       const vh = scene.h / scene.scale;
       const yMax = Math.min(10 * 16, Math.max(6 * 16, vh - 6 * 16));
       scene.memePos = {
         x: 4 * 16 + Math.random() * ((scene.w / scene.scale) - 8 * 16),
         y: 4 * 16 + Math.random() * (yMax - 4 * 16),
       };
+    }
+    // 巡逻开启瞬间播报规则（读屏用户需要知道要"忍住"）
+    if (!prevBossActive && es.bossUntil > scene.gameTime) {
+      announce(
+        es.bossVariant === "hold"
+          ? "王总巡逻：8 秒内不要点屏幕"
+          : es.bossVariant === "blitz"
+            ? "摸鱼冲刺：8 秒内连点 16 下"
+            : "假装工作：8 秒内点 5 下",
+      );
     }
     // 巡逻结束：安然 → 发奖（含连胜乘数）并推进连胜；被抓 → 0 奖清零
     const bossActive = es.bossUntil > scene.gameTime;
@@ -496,10 +523,29 @@ async function boot(): Promise<void> {
   };
   const probe = document.createElement("canvas");
   await Promise.allSettled([
-    load("worker", "./assets/sprites/worker.png", 4, 10),
     load("computer", "./assets/sprites/computer.png", 5, 10),
     load("cooler", "./assets/sprites/watercooler.png", 7, 1),
   ]);
+  // 4 套职员配色（章节视觉变化）：并行加载，失败降级
+  const workerSheets: SpriteGrid[] = [];
+  await Promise.allSettled(
+    [0, 1, 2, 3].map(async (i) => {
+      try {
+        const grid = await withTimeout(
+          SpriteGrid.load({ src: `./assets/sprites/worker-${i}.png`, cols: 4, rows: 10, frame: 16 }),
+          LOAD_TIMEOUT_MS,
+        );
+        workerSheets[i] = grid;
+        debug.assets[`worker-${i}`] = "loaded";
+      } catch {
+        debug.assets[`worker-${i}`] = "error";
+      }
+    }),
+  );
+  const workerGrids = workerSheets.filter(Boolean);
+  if (workerGrids.length > 0) {
+    scene.sprites = { ...scene.sprites, worker: workerGrids[0]!, workers: workerGrids };
+  }
   debug.spriteMap = SPRITE_MAP;
   if (scene.sprites.worker) debug.activity.worker = await frameActivity(scene.sprites.worker, probe).catch(() => []);
   if (scene.sprites.computer) debug.activity.computer = await frameActivity(scene.sprites.computer, probe).catch(() => []);

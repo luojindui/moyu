@@ -22,8 +22,8 @@ describe("离线收益", () => {
   it("离线 24 小时封顶 8 小时", () => {
     const s = idleState();
     const r = offlineEarn(s, 24 * 3600);
-    expect(r.applied).toBe(8 * 3600);
-    expect(r.earned).toBeCloseTo(10.2 * 8 * 3600, 6);
+    expect(r.applied).toBe(12 * 3600);
+    expect(r.earned).toBeCloseTo(10.2 * 12 * 3600, 6);
   });
 
   it("非首日按 70% 效率结算（防首夜跳档）", () => {
@@ -46,9 +46,9 @@ describe("离线收益", () => {
 });
 
 describe("R10 回归补偿：阶梯封顶", () => {
-  it("离开 <7 天封顶 8h；7-30 天 24h；≥30 天 48h", async () => {
+  it("离开 <7 天封顶 12h；7-30 天 24h；≥30 天 48h", async () => {
     const { capForElapsed } = await import("./offline");
-    expect(capForElapsed(6 * 86400)).toBe(8 * 3600);
+    expect(capForElapsed(6 * 86400)).toBe(12 * 3600);
     expect(capForElapsed(7 * 86400)).toBe(24 * 3600);
     expect(capForElapsed(29 * 86400)).toBe(24 * 3600);
     expect(capForElapsed(30 * 86400)).toBe(48 * 3600);

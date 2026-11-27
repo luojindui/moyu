@@ -30,8 +30,6 @@ export function isClickLine(id: string): boolean {
   const u = UPGRADES.find((x) => x.id === id);
   return !!u?.clickPower;
 }
-/** 图鉴集满的永久挂机加成 */
-export const COLLECTION_BONUS = 1.2;
 
 function tierFor(level: number): number {
   let t = -1;

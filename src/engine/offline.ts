@@ -2,7 +2,7 @@ import type { GameState } from "./state";
 import { gain } from "./state";
 import { effectOf } from "./upgrades";
 
-export const OFFLINE_CAP_SECONDS = 8 * 3600;
+export const OFFLINE_CAP_SECONDS = 12 * 3600; // R11：8h→12h（每天开机一次也能拿满一天的大半）
 export const OFFLINE_CAP_WEEK = 24 * 3600;
 export const OFFLINE_CAP_MONTH = 48 * 3600;
 

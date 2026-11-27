@@ -67,7 +67,15 @@ export function dayWindowAt(ms: number): number {
  *  购买策略：返回"本次打开按顺序要买的升级 id 列表"
  * ------------------------------------------------------------------ */
 
-export type PolicyName = "greedy" | "balanced" | "hoard-big" | "phone-only" | "milestone-pack";
+export type PolicyName =
+  | "greedy"
+  | "balanced"
+  | "hoard-big"
+  | "phone-only"
+  | "milestone-pack"
+  | "hybrid"
+  | "unlock-first"
+  | "knapsack";
 
 export const POLICY_LABEL: Record<PolicyName, string> = {
   greedy: "贪心（边际挂机/单价最高）",
@@ -75,6 +83,9 @@ export const POLICY_LABEL: Record<PolicyName, string> = {
   "hoard-big": "攒钱（只买 ≥2.5 万的会议/深度/躺平）",
   "phone-only": "单卡（只升刷手机）",
   "milestone-pack": "攒里程碑（够整包就买到下次 ×2）",
+  hybrid: "混合（单买 vs 里程碑整包，取效率高者）",
+  "unlock-first": "解锁优先（先每档各买 1 级）",
+  knapsack: "理论最优（每次关页做背包：余额→最大 idle）",
 };
 
 const BASE_COST = new Map(UPGRADES.map((u) => [u.id, u.baseCost]));
@@ -86,13 +97,69 @@ export function milestonePackage(id: string, level: number): { cost: number; gai
   let gain = 0;
   for (let i = 0; i < gap; i++) {
     cost += costOf(id, level + i);
-    gain += marginalEffect(id, level + i).idle;
+    gain += marginalEffect(id, level + i).idleRate;
   }
   return { cost, gain, levels: gap };
 }
 
+
+/**
+ * 单次会话的精确最优购买：在余额约束下最大化"关页瞬间 idleRate"。
+ * 6 个挂机档各自只能按前缀购买（等级连续），做 Pareto 前沿背包：
+ * 每档的选项 = 买到下一次 ×2 之前的任意前缀；合并 6 档后按 (cost 升, gain 降) 剪枝。
+ */
+/** 诊断：Pareto 前沿最大规模（安全阀 60000；远小于则说明背包是精确解） */
+export let KNAPSACK_MAX_FRONTIER = 0;
+
+export function optimalPurchases(state: GameState, budget: number): string[] {
+  const tiers = IDLE_IDS;
+  type Node = { cost: number; gain: number; take: number[] };
+  let frontier: Node[] = [{ cost: 0, gain: 0, take: tiers.map(() => 0) }];
+  for (let ti = 0; ti < tiers.length; ti++) {
+    const id = tiers[ti]!;
+    const lv0 = state.levels[id] ?? 0;
+    const opts: { cost: number; gain: number; k: number }[] = [{ cost: 0, gain: 0, k: 0 }];
+    let cost = 0;
+    let gain = 0;
+    for (let k = 1; k <= MAX_LEVEL - lv0; k++) {
+      cost += costOf(id, lv0 + k - 1);
+      if (cost > budget) break;
+      gain += marginalEffect(id, lv0 + k - 1).idleRate;
+      opts.push({ cost, gain, k });
+    }
+    const next: Node[] = [];
+    for (const f of frontier) {
+      for (const o of opts) {
+        if (f.cost + o.cost > budget) continue;
+        const take = f.take.slice();
+        take[ti] = o.k;
+        next.push({ cost: f.cost + o.cost, gain: f.gain + o.gain, take });
+      }
+    }
+    next.sort((a, b) => a.cost - b.cost || b.gain - a.gain);
+    const pruned: Node[] = [];
+    let bestGain = -Infinity;
+    for (const n of next) {
+      if (n.gain > bestGain + 1e-12) {
+        pruned.push(n);
+        bestGain = n.gain;
+      }
+      if (pruned.length > 60_000) break; // 安全阀：极端余额下仍有可行解
+    }
+    frontier = pruned;
+    if (frontier.length > KNAPSACK_MAX_FRONTIER) KNAPSACK_MAX_FRONTIER = frontier.length;
+  }
+  const best = frontier[frontier.length - 1]!;
+  const out: string[] = [];
+  tiers.forEach((id, i) => {
+    for (let k = 0; k < (best.take[i] ?? 0); k++) out.push(id);
+  });
+  return out;
+}
+
 /** 在内存副本上离线推演购买序列（与真实 buyUpgrade/扣钱同规则） */
 export function planPurchases(state: GameState, policy: PolicyName): string[] {
+  if (policy === "knapsack") return optimalPurchases(state, state.moyu);
   const lv: Record<string, number> = { ...state.levels };
   let money = state.moyu;
   const out: string[] = [];
@@ -143,6 +210,59 @@ export function planPurchases(state: GameState, policy: PolicyName): string[] {
       }
     } else if (policy === "phone-only") {
       if (afford("phone")) pick = "phone";
+    } else if (policy === "hybrid") {
+      // 单买 vs 里程碑整包：整包买得起且平均效率 ≥ 当前最优单买，就一次买完整包
+      let bestSingle: string | null = null;
+      let bestSingleScore = -1;
+      for (const id of IDLE_IDS) {
+        if (!afford(id)) continue;
+        const score = valueScoreOf(id, levelOf(id)).idle;
+        if (score > bestSingleScore) {
+          bestSingleScore = score;
+          bestSingle = id;
+        }
+      }
+      let bestPkg: string | null = null;
+      let bestPkgRatio = -1;
+      for (const id of IDLE_IDS) {
+        if (levelOf(id) >= MAX_LEVEL) continue;
+        const pkg = milestonePackage(id, levelOf(id));
+        if (money < pkg.cost || pkg.levels <= 0) continue;
+        const ratio = (pkg.gain / pkg.cost) * 10_000;
+        if (ratio > bestPkgRatio) {
+          bestPkgRatio = ratio;
+          bestPkg = id;
+        }
+      }
+      if (bestPkg && bestPkgRatio >= bestSingleScore) {
+        const n = milestonePackage(bestPkg, levelOf(bestPkg)).levels;
+        for (let i = 0; i < n; i++) {
+          money -= costOf(bestPkg, levelOf(bestPkg));
+          lv[bestPkg] = levelOf(bestPkg) + 1;
+          out.push(bestPkg);
+        }
+        continue;
+      }
+      pick = bestSingle;
+    } else if (policy === "unlock-first") {
+      // 图鉴动机：先把每一档各解锁 1 级（拿图鉴格），之后转贪心
+      let unlock: string | null = null;
+      for (const id of IDLE_IDS) {
+        if (levelOf(id) !== 0 || !afford(id)) continue;
+        if (!unlock || priceOf(id) < priceOf(unlock)) unlock = id;
+      }
+      if (unlock) pick = unlock;
+      else {
+        let bestScore = -1;
+        for (const id of IDLE_IDS) {
+          if (!afford(id)) continue;
+          const score = valueScoreOf(id, levelOf(id)).idle;
+          if (score > bestScore) {
+            bestScore = score;
+            pick = id;
+          }
+        }
+      }
     } else {
       // milestone-pack：只看"够买到下一次 ×2"的整包，谁收益/成本最高买谁；都买不起就攒
       let bestRatio = -1;
@@ -203,6 +323,7 @@ export interface OpenLog {
   dailyGoals: string[];
   dailyRewardValue: number;
   prestiged: number;
+  levels: Record<string, number>;
   streak: number;
   collection: number;
   /** 本局累计（转生重置） */
@@ -232,7 +353,7 @@ export interface SimOptions {
   /** 是否结算日报（纯离线收益对比时可关掉以隔离） */
   daily: boolean;
   /** 转生策略：never / on-threshold（达标即转） */
-  prestige: "never" | "on-threshold";
+  prestige: "never" | "on-threshold" | "hoard-8";
   seed?: number;
   label?: string;
 }
@@ -328,7 +449,13 @@ export function simulate(opts: SimOptions): SimResult {
       }
       // ---- 转生（达标即转，放在购买之后；转生清余额） ----
       let gainedPts = 0;
-      if (opts.prestige === "on-threshold" && canPrestige(state)) {
+      const shouldPrestige =
+        opts.prestige === "on-threshold"
+          ? canPrestige(state)
+          : opts.prestige === "hoard-8"
+            ? canPrestige(state) && prestigeGain(state) >= 8
+            : false;
+      if (shouldPrestige) {
         const r = doPrestige(state);
         if (r) {
           state = r.state;
@@ -361,6 +488,7 @@ export function simulate(opts: SimOptions): SimResult {
         dailyGoals: goals,
         dailyRewardValue: rewardValue,
         prestiged: gainedPts,
+        levels: { ...state.levels },
         streak: state.daily?.streak ?? 0,
         collection: collectionCount(state),
         totalEarned: state.totalEarned,
@@ -419,7 +547,7 @@ export function analyzeSchedule(opens: number[]): ScheduleRow {
     const gapHours = gapMin / 60;
     const visits = i + 1; // 当天第几次打开（跨零点后的第一次=1）
     const rate = Math.min(1, 0.7 + Math.min(visits, 3) * 0.1);
-    const appliedHours = capForElapsed(gapHours * 3600) / 3600;
+    const appliedHours = Math.min(gapHours, capForElapsed(gapHours * 3600) / 3600);
     perOpen.push({ gapHours, appliedHours, rate, effectiveHours: appliedHours * rate });
   }
   const effectiveHoursPerDay = perOpen.reduce((a, x) => a + x.effectiveHours, 0);

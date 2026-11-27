@@ -208,3 +208,15 @@ describe("R8 时段刷新（碎片回访有事可做）", () => {
     expect(b).toBe(a);
   });
 });
+
+describe("R11 离线可达日报（保证零操作也能 3/3）", () => {
+  it("每次重掷必含 visit + idle 两个自动目标", () => {
+    for (let seed = 0; seed < 20; seed++) {
+      const d = rollDaily("2026-11-27", () => (seed % 19) / 19);
+      const ids = d.goals.map((g) => g.id);
+      expect(ids).toContain("visit_1");
+      expect(ids).toContain("idle_earn");
+      expect(ids).toHaveLength(3);
+    }
+  });
+});

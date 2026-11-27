@@ -26,9 +26,9 @@ describe("切后台回归结算", () => {
     expect(r.showPanel).toBe(false);
   });
 
-  it("超长离开按 8h 封顶", () => {
+  it("超长离开按日封顶（12h）", () => {
     const r = settleReturn(idleState(), 0, 24 * 3600 * 1000);
-    expect(r.applied).toBe(8 * 3600);
+    expect(r.applied).toBe(12 * 3600);
   });
 
   it("时钟回拨（now < last）按 0 处理", () => {

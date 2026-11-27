@@ -1,0 +1,84 @@
+{
+  "tight": {
+    "sc": 3,
+    "duration": 18,
+    "regions": {
+      "workerHead": {
+        "changes": 0,
+        "distinct": 1
+      },
+      "monitorTop": {
+        "changes": 35,
+        "distinct": 5
+      },
+      "clock": {
+        "changes": 0,
+        "distinct": 1
+      },
+      "plantLeaf": {
+        "changes": 0,
+        "distinct": 1
+      }
+    }
+  },
+  "whatif": "/tmp/r11-whatif.png",
+  "palette": [
+    {
+      "lifetime": 0.6332936000000003,
+      "assets": {
+        "worker": "error",
+        "cooler": "loaded",
+        "computer": "loaded"
+      },
+      "workerAvg": [
+        218,
+        188,
+        158
+      ],
+      "noteAvg": [
+        188,
+        162,
+        121
+      ],
+      "screenshot": "/tmp/r11-ch1.png"
+    },
+    {
+      "lifetime": 100000000.63331378,
+      "assets": {
+        "worker": "error",
+        "computer": "loaded",
+        "cooler": "loaded"
+      },
+      "workerAvg": [
+        218,
+        188,
+        158
+      ],
+      "noteAvg": [
+        188,
+        162,
+        121
+      ],
+      "screenshot": "/tmp/r11-ch4.png"
+    },
+    {
+      "lifetime": 320000000000.6304,
+      "assets": {
+        "worker": "error",
+        "computer": "loaded",
+        "cooler": "loaded"
+      },
+      "workerAvg": [
+        218,
+        188,
+        158
+      ],
+      "noteAvg": [
+        188,
+        162,
+        121
+      ],
+      "screenshot": "/tmp/r11-ch6.png"
+    }
+  ]
+}

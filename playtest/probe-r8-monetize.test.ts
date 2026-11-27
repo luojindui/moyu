@@ -72,7 +72,8 @@ describe("R8① 离线 8h 封顶的经济权重（→ 卖「离线扩容」值�
       });
       console.log(`  D${n}：${row.join("  ")}  → 8h 封顶在 13h 离场下少结算 ${pct((13 - 8) / 13)}`);
     }
-    expect(sum12 / sumIncome).toBeGreaterThan(0.05);
+    // R11：基础封顶已从 8h 提到 12h → "12h 相对基线"的增益归零，改为验证 24h 相对 12h 仍有增益
+    expect(sum24 / sumIncome).toBeGreaterThan(0.001);
   });
 
   it("0.7 → 1.0 离线效率的权重（这是现有留存把戏，不是付费点）", () => {

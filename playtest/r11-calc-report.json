@@ -1,0 +1,443 @@
+{
+  "policies": [
+    {
+      "policy": "knapsack",
+      "label": "knapsack",
+      "total": 9445921551.36,
+      "daily": [
+        0,
+        5760,
+        1156608,
+        54421585.91999999,
+        771035811.84,
+        2946295756.8,
+        5673006028.8
+      ],
+      "day7Idle": 312945.82000000007,
+      "ratios": 1
+    },
+    {
+      "policy": "hybrid",
+      "label": "hybrid",
+      "total": 9417115192.32,
+      "daily": [
+        0,
+        5760,
+        1156608,
+        54955284.47999999,
+        770587914.24,
+        2931596236.8,
+        5658813388.8
+      ],
+      "day7Idle": 312893.02,
+      "ratios": 0.9969503918825312
+    },
+    {
+      "policy": "greedy",
+      "label": "greedy",
+      "total": 6161427624.959999,
+      "daily": [
+        0,
+        5760,
+        1156608,
+        36402462.72,
+        430982000.64000005,
+        1905671116.8,
+        3787209676.7999997
+      ],
+      "day7Idle": 261421.82000000004,
+      "ratios": 0.6522844374112859
+    },
+    {
+      "policy": "milestone-pack",
+      "label": "milestone-pack",
+      "total": 4893532554.24,
+      "daily": [
+        0,
+        5760,
+        235007.99999999997,
+        13165148.160000002,
+        164611860.48,
+        1458298828.8,
+        3257215948.7999997
+      ],
+      "day7Idle": 250712.22000000003,
+      "ratios": 0.5180577170403708
+    },
+    {
+      "policy": "balanced",
+      "label": "balanced",
+      "total": 4519297059.84,
+      "daily": [
+        0,
+        5760,
+        857087.9999999999,
+        25883320.32,
+        336032686.08000004,
+        1664691056.6399999,
+        2491827148.7999997
+      ],
+      "day7Idle": 240139.02000000002,
+      "ratios": 0.478438978692272
+    },
+    {
+      "policy": "hoard-big",
+      "label": "hoard-big",
+      "total": 28800,
+      "daily": [
+        0,
+        5760,
+        4608,
+        4608,
+        4608,
+        4608,
+        4608
+      ],
+      "day7Idle": 50.2,
+      "ratios": 0.00000304893491263999
+    },
+    {
+      "policy": "phone-only",
+      "label": "phone-only",
+      "total": 135939363.84,
+      "daily": [
+        0,
+        5760,
+        926207.9999999999,
+        10533058.559999999,
+        27829647.36,
+        31213762.56,
+        65430927.36
+      ],
+      "day7Idle": 3003.084,
+      "ratios": 0.014391328903258548
+    }
+  ],
+  "buyPlan": [
+    {
+      "day": 1,
+      "purchases": {},
+      "idleEnd": 0.2,
+      "offlineEarned": 0,
+      "balanceEnd": 2
+    },
+    {
+      "day": 2,
+      "purchases": {
+        "phone": 15,
+        "toilet": 4
+      },
+      "idleEnd": 50.2,
+      "offlineEarned": 5760,
+      "balanceEnd": 381
+    },
+    {
+      "day": 3,
+      "purchases": {
+        "phone": 14,
+        "toilet": 16,
+        "group": 7,
+        "meeting": 1,
+        "deep": 5
+      },
+      "idleEnd": 2362.048,
+      "offlineEarned": 1156608,
+      "balanceEnd": 1898
+    },
+    {
+      "day": 4,
+      "purchases": {
+        "phone": 18,
+        "toilet": 11,
+        "group": 28,
+        "meeting": 29,
+        "deep": 20,
+        "retire": 6
+      },
+      "idleEnd": 33465.096000000005,
+      "offlineEarned": 54421585.91999999,
+      "balanceEnd": 4248.399999983609
+    },
+    {
+      "day": 5,
+      "purchases": {
+        "phone": 7,
+        "toilet": 12,
+        "group": 1,
+        "meeting": 20,
+        "deep": 20,
+        "retire": 14
+      },
+      "idleEnd": 127877.42000000001,
+      "offlineEarned": 771035811.84,
+      "balanceEnd": 8295.200000047684
+    },
+    {
+      "day": 6,
+      "purchases": {
+        "phone": 31,
+        "toilet": 23,
+        "group": 39,
+        "meeting": 2,
+        "deep": 2,
+        "retire": 20
+      },
+      "idleEnd": 246224.22000000003,
+      "offlineEarned": 2946295756.8,
+      "balanceEnd": 5337885.199999809
+    },
+    {
+      "day": 7,
+      "purchases": {
+        "phone": 8,
+        "toilet": 16,
+        "meeting": 18,
+        "deep": 7,
+        "retire": 4
+      },
+      "idleEnd": 312945.82000000007,
+      "offlineEarned": 5673006028.8,
+      "balanceEnd": 5313783.199999809
+    }
+  ],
+  "day7Levels": {
+    "phone": 93,
+    "toilet": 82,
+    "group": 75,
+    "meeting": 70,
+    "deep": 54,
+    "retire": 44
+  },
+  "day7Idle": 312945.82000000007,
+  "knapsackTotal": 9445921551.36,
+  "prestige": {
+    "never": 9445921551.36,
+    "early": 37816476687.36,
+    "hoard8": 26321016130.56,
+    "earlyPoints": 25,
+    "firstPrestigeDay": 5
+  },
+  "schedules": [
+    {
+      "name": "1 次/天（21:00）",
+      "effectiveHoursPerDay": 6.3999999999999995,
+      "perOpen": [
+        {
+          "gapHours": 24,
+          "appliedHours": 8,
+          "rate": 0.7999999999999999,
+          "effectiveHours": 6.3999999999999995
+        }
+      ]
+    },
+    {
+      "name": "2 次/天（09:00 / 20:00）",
+      "effectiveHoursPerDay": 13.599999999999998,
+      "perOpen": [
+        {
+          "gapHours": 13,
+          "appliedHours": 8,
+          "rate": 0.7999999999999999,
+          "effectiveHours": 6.3999999999999995
+        },
+        {
+          "gapHours": 11,
+          "appliedHours": 8,
+          "rate": 0.8999999999999999,
+          "effectiveHours": 7.199999999999999
+        }
+      ]
+    },
+    {
+      "name": "2 次/天（00:00 / 16:00，长间隔压到当天最后一次）",
+      "effectiveHoursPerDay": 13.599999999999998,
+      "perOpen": [
+        {
+          "gapHours": 8,
+          "appliedHours": 8,
+          "rate": 0.7999999999999999,
+          "effectiveHours": 6.3999999999999995
+        },
+        {
+          "gapHours": 16,
+          "appliedHours": 8,
+          "rate": 0.8999999999999999,
+          "effectiveHours": 7.199999999999999
+        }
+      ]
+    },
+    {
+      "name": "3 次/天（09:00 / 13:00 / 20:00，常见作息）",
+      "effectiveHoursPerDay": 17,
+      "perOpen": [
+        {
+          "gapHours": 13,
+          "appliedHours": 8,
+          "rate": 0.7999999999999999,
+          "effectiveHours": 6.3999999999999995
+        },
+        {
+          "gapHours": 4,
+          "appliedHours": 4,
+          "rate": 0.8999999999999999,
+          "effectiveHours": 3.5999999999999996
+        },
+        {
+          "gapHours": 7,
+          "appliedHours": 7,
+          "rate": 1,
+          "effectiveHours": 7
+        }
+      ]
+    },
+    {
+      "name": "3 次/天（00:05 / 08:05 / 16:05，每 8h）",
+      "effectiveHoursPerDay": 21.599999999999998,
+      "perOpen": [
+        {
+          "gapHours": 8,
+          "appliedHours": 8,
+          "rate": 0.7999999999999999,
+          "effectiveHours": 6.3999999999999995
+        },
+        {
+          "gapHours": 8,
+          "appliedHours": 8,
+          "rate": 0.8999999999999999,
+          "effectiveHours": 7.199999999999999
+        },
+        {
+          "gapHours": 8,
+          "appliedHours": 8,
+          "rate": 1,
+          "effectiveHours": 8
+        }
+      ]
+    },
+    {
+      "name": "3 次/天（21:00 一口气连开 3 下）",
+      "effectiveHoursPerDay": 6.716666666666667,
+      "perOpen": [
+        {
+          "gapHours": 23.666666666666668,
+          "appliedHours": 8,
+          "rate": 0.7999999999999999,
+          "effectiveHours": 6.3999999999999995
+        },
+        {
+          "gapHours": 0.16666666666666666,
+          "appliedHours": 0.16666666666666666,
+          "rate": 0.8999999999999999,
+          "effectiveHours": 0.14999999999999997
+        },
+        {
+          "gapHours": 0.16666666666666666,
+          "appliedHours": 0.16666666666666666,
+          "rate": 1,
+          "effectiveHours": 0.16666666666666666
+        }
+      ]
+    },
+    {
+      "name": "4 次/天（每 6h）",
+      "effectiveHoursPerDay": 22.2,
+      "perOpen": [
+        {
+          "gapHours": 6,
+          "appliedHours": 6,
+          "rate": 0.7999999999999999,
+          "effectiveHours": 4.8
+        },
+        {
+          "gapHours": 6,
+          "appliedHours": 6,
+          "rate": 0.8999999999999999,
+          "effectiveHours": 5.3999999999999995
+        },
+        {
+          "gapHours": 6,
+          "appliedHours": 6,
+          "rate": 1,
+          "effectiveHours": 6
+        },
+        {
+          "gapHours": 6,
+          "appliedHours": 6,
+          "rate": 1,
+          "effectiveHours": 6
+        }
+      ]
+    }
+  ],
+  "periodSim": [
+    {
+      "label": "1 次 21:00",
+      "total": 6161427624.959999,
+      "d7": 3787209676.7999997
+    },
+    {
+      "label": "2 次 9/20",
+      "total": 76199273233.92,
+      "d7": 25263323043.839996
+    },
+    {
+      "label": "3 次 9/13/20",
+      "total": 160666811200.17203,
+      "d7": 47059058811.744
+    },
+    {
+      "label": "3 次 每 8h",
+      "total": 229392733050.404,
+      "d7": 62055109216.352005
+    }
+  ],
+  "cap": {
+    "cap8h": 28800,
+    "cap2d": 28800,
+    "cap7d": 86400,
+    "cap30d": 172800,
+    "dailyEquivalentHours": 6.4
+  },
+  "daily": {
+    "combos": 20,
+    "completable": 1,
+    "rate": 0.05,
+    "streak7Prob": 7.812500000000003e-10,
+    "dailyRewardValue": 600
+  },
+  "collection": {
+    "offlineMax": 30,
+    "activeMax": 55,
+    "offlineBonus": 1.12,
+    "activeBonus": 1.2
+  },
+  "wrongBuy": {
+    "day7Idle": {
+      "knap": 312945.82000000007,
+      "greedy": 261421.82000000004,
+      "balanced": 240139.02000000002
+    },
+    "total": {
+      "knap": 9445921551.36,
+      "greedy": 6161427624.959999,
+      "balanced": 4519297059.84
+    }
+  },
+  "suggestionCap12h": {
+    "daily8": 6.3999999999999995,
+    "daily12": 9.6,
+    "x3_8": 17,
+    "x3_12": 20.2
+  },
+  "suggestionDaily": {
+    "reward": 600000,
+    "dailyOffline": 23040000,
+    "rewardRatio": 0.026041666666666668,
+    "streakGain": 0.18749999999999978
+  },
+  "meta": {
+    "head": "4610c76",
+    "generatedAt": "2026-11-27T04:36:17.923Z",
+    "note": "R11 计算器党探针：只用 src/engine 纯函数模拟，不点屏幕；每次开页复刻 main.ts boot 链路"
+  }
+}

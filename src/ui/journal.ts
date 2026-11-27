@@ -86,7 +86,10 @@ export class Journal {
 
   toggle(): void {
     this.root.classList.toggle("hidden");
-    if (this.isOpen && this.lastState) this.refresh(this.lastState, true);
+    if (this.isOpen) {
+      if (this.lastState) this.refresh(this.lastState, true);
+      document.getElementById("journal-close")?.focus();
+    }
   }
 
   hide(): void {

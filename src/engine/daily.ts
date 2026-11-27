@@ -100,8 +100,10 @@ export function restoreDaily(raw: unknown): DailyState | null {
 
 /** 掷出当日目标（3 个不重复，继承 streak 基础） */
 export function rollDaily(date: string, rng: () => number, prevStreak = 0): DailyState {
-  const pool = [...DAILY_GOAL_TEMPLATES];
-  const goals: DailyGoal[] = [];
+  // 固定两个"自动完成"目标（上线/挂机到账），保证离线/零操作玩家也能 3/3 领奖
+  const auto = DAILY_GOAL_TEMPLATES.filter((t) => t.kind === "visit" || t.kind === "idle");
+  const pool = DAILY_GOAL_TEMPLATES.filter((t) => !auto.includes(t));
+  const goals: DailyGoal[] = auto.map((t) => ({ id: t.id, target: t.target, progress: 0, done: false }));
   while (goals.length < 3 && pool.length > 0) {
     const i = Math.floor(rng() * pool.length);
     const t = pool.splice(i, 1)[0]!;

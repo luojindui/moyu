@@ -43,7 +43,7 @@ const evalJs = async (expression) => {
   return r.result.value;
 };
 
-await send("Emulation.setDeviceMetricsOverride", { width: W, height: H, deviceScaleFactor: 3, mobile: true, screenWidth: W, screenHeight: H });
+await send("Emulation.setDeviceMetricsOverride", { width: W, height: H, deviceScaleFactor: Number(process.env.DPR || 3), mobile: true, screenWidth: W, screenHeight: H });
 await send("Emulation.setTouchEmulationEnabled", { enabled: true, maxTouchPoints: 5 });
 await send("Page.navigate", { url: "http://127.0.0.1:5173/" });
 await sleep(WAIT);

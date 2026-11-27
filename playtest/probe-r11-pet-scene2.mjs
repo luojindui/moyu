@@ -92,4 +92,5 @@ for (const [lifetime, tag] of [[0, "ch1"], [1e8, "ch4"], [3.2e11, "ch6"]]) {
 
 writeFileSync("playtest/r11-pet-scene2.json", JSON.stringify(out, null, 2));
 console.log(JSON.stringify(out, null, 2));
+try{b.close();}catch(e){}
 process.exit(0);
