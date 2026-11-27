@@ -27,6 +27,10 @@ export class Shop {
       const hide = (): void => hint.classList.add("hidden");
       this.container.addEventListener("scroll", hide, { once: true, passive: true });
       setTimeout(hide, 8000);
+      // 宽屏能一屏放下时不需要"滑动"提示
+      requestAnimationFrame(() => {
+        if (this.container.scrollWidth <= this.container.clientWidth + 2) hide();
+      });
     }
     const ordered = [...UPGRADES].sort(
       (a, b) => DISPLAY_ORDER.indexOf(a.id) - DISPLAY_ORDER.indexOf(b.id),

@@ -1,0 +1,774 @@
+{
+ "logs": [
+  {
+   "tag": "t=4.5s 首屏",
+   "hud": "0.9摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 0%\n🔊\n📔\n再戳 15 下 → 解锁「咖啡续命」",
+   "shop": "点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n再戳 15 下\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机最优\n50 摸鱼值\n还差 49.1\n点了才赚\n带薪喝水\n+2 点击力\n100 摸鱼值\n再戳 100 下\n会自动赚\n带薪蹲坑\n+5/秒\n600 摸鱼值\n还差 599.1\n点了才赚\n人体工学椅\n+5 点击力\n800 摸鱼值\n再戳 800 下\n会自动赚\n摸鱼群聊\n+15/秒\n4000 摸鱼值\n还差 3999.1\n会自动赚\n无用会议\n+50/秒\n2.50万 摸鱼值\n还差 2.50万\n会自动赚\n深度摸鱼\n+180/秒 · ×2差5级\n15.00万 摸鱼值\n还差 15.00万\n会自动赚\n退休式躺平\n+700/秒\n100.00万 摸鱼值\n还差 100.00万\n← 滑动查看更多 →",
+   "quest": "再戳 15 下 → 解锁「咖啡续命」",
+   "journalOpen": false,
+   "welcomeOpen": false,
+   "state": {
+    "moyu": 0.8866404000000013,
+    "totalEarned": 0.8866404000000013,
+    "levels": {},
+    "collected": {
+     "quotes": [],
+     "flavors": []
+    },
+    "daily": {
+     "date": "2026-11-27",
+     "goals": [
+      {
+       "id": "click_100",
+       "target": 100,
+       "progress": 0,
+       "done": false
+      },
+      {
+       "id": "survive_2",
+       "target": 1,
+       "progress": 0,
+       "done": false
+      },
+      {
+       "id": "visit_1",
+       "target": 1,
+       "progress": 0,
+       "done": false
+      }
+     ],
+     "streak": 0,
+     "lastCompleteDate": null,
+     "claimed": false,
+     "window": 2,
+     "claimsToday": 0
+    },
+    "surviveStreak": 0,
+    "totalClicks": 0,
+    "visits": {
+     "date": "2026-11-27",
+     "count": 1
+    },
+    "lifetimeEarned": 0.8866404000000013,
+    "prestige": 0
+   }
+  },
+  {
+   "tag": "t=170s 3 分钟后",
+   "hud": "546.1摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 5%\n连点×3\n🔥连胜 1\n🔊\n📔\n买下点亮的「咖啡续命」卡片",
+   "shop": "点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机最优\n50 摸鱼值\n点了才赚\n带薪喝水\n+2 点击力\n100 摸鱼值\n会自动赚\n带薪蹲坑\n+5/秒\n600 摸鱼值\n还差 53.9\n点了才赚\n人体工学椅\n+5 点击力\n800 摸鱼值\n再戳 254 下\n会自动赚\n摸鱼群聊\n+15/秒\n4000 摸鱼值\n还差 3453.9\n会自动赚\n无用会议\n+50/秒\n2.50万 摸鱼值\n还差 2.45万\n会自动赚\n深度摸鱼\n+180/秒 · ×2差5级\n15.00万 摸鱼值\n还差 14.95万\n会自动赚\n退休式躺平\n+700/秒\n100.00万 摸鱼值\n还差 99.95万\n← 滑动查看更多 →",
+   "quest": "买下点亮的「咖啡续命」卡片",
+   "journalOpen": false,
+   "welcomeOpen": false,
+   "state": {
+    "moyu": 546.0977517360323,
+    "levels": {},
+    "totalEarned": 546.0977517360323,
+    "collected": {
+     "quotes": [
+      6,
+      9
+     ],
+     "flavors": [
+      0,
+      5,
+      10
+     ]
+    },
+    "daily": {
+     "date": "2026-11-27",
+     "goals": [
+      {
+       "id": "click_100",
+       "target": 100,
+       "progress": 100,
+       "done": true
+      },
+      {
+       "id": "survive_2",
+       "target": 1,
+       "progress": 1,
+       "done": true
+      },
+      {
+       "id": "visit_1",
+       "target": 1,
+       "progress": 0,
+       "done": false
+      }
+     ],
+     "streak": 0,
+     "lastCompleteDate": null,
+     "claimed": false,
+     "window": 2,
+     "claimsToday": 0
+    },
+    "surviveStreak": 1,
+    "totalClicks": 415,
+    "visits": {
+     "date": "2026-11-27",
+     "count": 4
+    },
+    "lifetimeEarned": 546.0977517360323,
+    "prestige": 0
+   }
+  }
+ ],
+ "timeline": [
+  {
+   "tag": "t=1s",
+   "hud": "5.3摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 0%\n连点×3\n🔊\n📔\n再戳 10 下 → 解锁「咖啡续命」",
+   "shop": "点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n再戳 10 下\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机最优\n50 摸鱼值\n还差 44.7\n点了才赚\n带薪喝水\n+2 点击力\n100 摸鱼值\n再戳 95 下\n会自动赚\n带薪蹲坑\n+5/秒\n600 摸鱼值\n还差 594.7\n点了才赚\n人体工学椅\n+5 点击力\n800 摸鱼值\n再戳 795 下\n会自动赚\n摸鱼群聊\n+15/秒\n4000 摸鱼值\n还差 3994.7\n会自动赚\n无用会议\n+50/秒\n2.50万 摸鱼值\n还差 2.50万\n会自动赚\n深度摸鱼\n+180/秒 · ×2差5级\n15.00万 摸鱼值\n还差 15.00万\n会自动赚\n退休式躺平\n+700/秒\n100.00万 摸鱼值\n还差 100.00万\n← 滑动查看更多 →",
+   "quest": "再戳 10 下 → 解锁「咖啡续命」",
+   "journalOpen": false,
+   "welcomeOpen": false,
+   "state": {
+    "moyu": 5.2719603999999975,
+    "totalEarned": 5.2719603999999975,
+    "levels": {},
+    "collected": {
+     "quotes": [],
+     "flavors": []
+    },
+    "daily": {
+     "date": "2026-11-27",
+     "goals": [
+      {
+       "id": "click_100",
+       "target": 100,
+       "progress": 4,
+       "done": false
+      },
+      {
+       "id": "survive_2",
+       "target": 1,
+       "progress": 0,
+       "done": false
+      },
+      {
+       "id": "visit_1",
+       "target": 1,
+       "progress": 0,
+       "done": false
+      }
+     ],
+     "streak": 0,
+     "lastCompleteDate": null,
+     "claimed": false,
+     "window": 2,
+     "claimsToday": 0
+    },
+    "surviveStreak": 0,
+    "totalClicks": 4,
+    "visits": {
+     "date": "2026-11-27",
+     "count": 1
+    },
+    "lifetimeEarned": 5.2719603999999975,
+    "prestige": 0
+   }
+  },
+  {
+   "tag": "t=20s",
+   "hud": "63.1摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 1%\n连点×3\n🔊\n📔\n买下点亮的「咖啡续命」卡片",
+   "shop": "点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机最优\n50 摸鱼值\n点了才赚\n带薪喝水\n+2 点击力\n100 摸鱼值\n再戳 37 下\n会自动赚\n带薪蹲坑\n+5/秒\n600 摸鱼值\n还差 536.9\n点了才赚\n人体工学椅\n+5 点击力\n800 摸鱼值\n再戳 737 下\n会自动赚\n摸鱼群聊\n+15/秒\n4000 摸鱼值\n还差 3936.9\n会自动赚\n无用会议\n+50/秒\n2.50万 摸鱼值\n还差 2.49万\n会自动赚\n深度摸鱼\n+180/秒 · ×2差5级\n15.00万 摸鱼值\n还差 14.99万\n会自动赚\n退休式躺平\n+700/秒\n100.00万 摸鱼值\n还差 99.99万\n← 滑动查看更多 →",
+   "quest": "买下点亮的「咖啡续命」卡片",
+   "journalOpen": false,
+   "welcomeOpen": false,
+   "state": {
+    "moyu": 63.13646040000121,
+    "totalEarned": 63.13646040000121,
+    "levels": {},
+    "collected": {
+     "quotes": [
+      6
+     ],
+     "flavors": []
+    },
+    "daily": {
+     "date": "2026-11-27",
+     "goals": [
+      {
+       "id": "click_100",
+       "target": 100,
+       "progress": 51,
+       "done": false
+      },
+      {
+       "id": "survive_2",
+       "target": 1,
+       "progress": 0,
+       "done": false
+      },
+      {
+       "id": "visit_1",
+       "target": 1,
+       "progress": 0,
+       "done": false
+      }
+     ],
+     "streak": 0,
+     "lastCompleteDate": null,
+     "claimed": false,
+     "window": 2,
+     "claimsToday": 0
+    },
+    "surviveStreak": 0,
+    "totalClicks": 52,
+    "visits": {
+     "date": "2026-11-27",
+     "count": 1
+    },
+    "lifetimeEarned": 63.13646040000121,
+    "prestige": 0
+   }
+  },
+  {
+   "tag": "t=40s",
+   "hud": "191.5摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 2%\n连点×3\n🔥连胜 1\n🔊\n📔\n买下点亮的「咖啡续命」卡片",
+   "shop": "点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机最优\n50 摸鱼值\n点了才赚\n带薪喝水\n+2 点击力\n100 摸鱼值\n会自动赚\n带薪蹲坑\n+5/秒\n600 摸鱼值\n还差 408.5\n点了才赚\n人体工学椅\n+5 点击力\n800 摸鱼值\n再戳 609 下\n会自动赚\n摸鱼群聊\n+15/秒\n4000 摸鱼值\n还差 3808.5\n会自动赚\n无用会议\n+50/秒\n2.50万 摸鱼值\n还差 2.48万\n会自动赚\n深度摸鱼\n+180/秒 · ×2差5级\n15.00万 摸鱼值\n还差 14.98万\n会自动赚\n退休式躺平\n+700/秒\n100.00万 摸鱼值\n还差 99.98万\n← 滑动查看更多 →",
+   "quest": "买下点亮的「咖啡续命」卡片",
+   "journalOpen": false,
+   "welcomeOpen": false,
+   "state": {
+    "moyu": 191.47966039999952,
+    "totalEarned": 191.47966039999952,
+    "levels": {},
+    "collected": {
+     "quotes": [
+      6
+     ],
+     "flavors": [
+      0,
+      5,
+      10
+     ]
+    },
+    "daily": {
+     "date": "2026-11-27",
+     "goals": [
+      {
+       "id": "click_100",
+       "target": 100,
+       "progress": 99,
+       "done": false
+      },
+      {
+       "id": "survive_2",
+       "target": 1,
+       "progress": 1,
+       "done": true
+      },
+      {
+       "id": "visit_1",
+       "target": 1,
+       "progress": 0,
+       "done": false
+      }
+     ],
+     "streak": 0,
+     "lastCompleteDate": null,
+     "claimed": false,
+     "window": 2,
+     "claimsToday": 0
+    },
+    "surviveStreak": 1,
+    "totalClicks": 100,
+    "visits": {
+     "date": "2026-11-27",
+     "count": 1
+    },
+    "lifetimeEarned": 191.47966039999952,
+    "prestige": 0
+   }
+  },
+  {
+   "tag": "t=41s",
+   "hud": "195.8摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 2%\n连点×3\n🔥连胜 1\n🔊\n📔\n买下点亮的「咖啡续命」卡片",
+   "shop": "点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机最优\n50 摸鱼值\n点了才赚\n带薪喝水\n+2 点击力\n100 摸鱼值\n会自动赚\n带薪蹲坑\n+5/秒\n600 摸鱼值\n还差 404.2\n点了才赚\n人体工学椅\n+5 点击力\n800 摸鱼值\n再戳 605 下\n会自动赚\n摸鱼群聊\n+15/秒\n4000 摸鱼值\n还差 3804.2\n会自动赚\n无用会议\n+50/秒\n2.50万 摸鱼值\n还差 2.48万\n会自动赚\n深度摸鱼\n+180/秒 · ×2差5级\n15.00万 摸鱼值\n还差 14.98万\n会自动赚\n退休式躺平\n+700/秒\n100.00万 摸鱼值\n还差 99.98万\n← 滑动查看更多 →",
+   "quest": "买下点亮的「咖啡续命」卡片",
+   "journalOpen": false,
+   "welcomeOpen": false,
+   "state": {
+    "moyu": 195.79830039999985,
+    "totalEarned": 195.79830039999985,
+    "levels": {},
+    "collected": {
+     "quotes": [
+      6
+     ],
+     "flavors": [
+      0,
+      5,
+      10
+     ]
+    },
+    "daily": {
+     "date": "2026-11-27",
+     "goals": [
+      {
+       "id": "click_100",
+       "target": 100,
+       "progress": 100,
+       "done": true
+      },
+      {
+       "id": "survive_2",
+       "target": 1,
+       "progress": 1,
+       "done": true
+      },
+      {
+       "id": "visit_1",
+       "target": 1,
+       "progress": 0,
+       "done": false
+      }
+     ],
+     "streak": 0,
+     "lastCompleteDate": null,
+     "claimed": false,
+     "window": 2,
+     "claimsToday": 0
+    },
+    "surviveStreak": 1,
+    "totalClicks": 104,
+    "visits": {
+     "date": "2026-11-27",
+     "count": 1
+    },
+    "lifetimeEarned": 195.79830039999985,
+    "prestige": 0
+   }
+  },
+  {
+   "tag": "t=60s",
+   "hud": "249.0摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 2%\n连点×3\n🔥连胜 1\n🔊\n📔\n买下点亮的「咖啡续命」卡片",
+   "shop": "点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机最优\n50 摸鱼值\n点了才赚\n带薪喝水\n+2 点击力\n100 摸鱼值\n会自动赚\n带薪蹲坑\n+5/秒\n600 摸鱼值\n还差 351.0\n点了才赚\n人体工学椅\n+5 点击力\n800 摸鱼值\n再戳 551 下\n会自动赚\n摸鱼群聊\n+15/秒\n4000 摸鱼值\n还差 3751.0\n会自动赚\n无用会议\n+50/秒\n2.50万 摸鱼值\n还差 2.48万\n会自动赚\n深度摸鱼\n+180/秒 · ×2差5级\n15.00万 摸鱼值\n还差 14.98万\n会自动赚\n退休式躺平\n+700/秒\n100.00万 摸鱼值\n还差 99.98万\n← 滑动查看更多 →",
+   "quest": "买下点亮的「咖啡续命」卡片",
+   "journalOpen": false,
+   "welcomeOpen": false,
+   "state": {
+    "moyu": 249.03482040000551,
+    "totalEarned": 249.03482040000551,
+    "levels": {},
+    "collected": {
+     "quotes": [
+      6
+     ],
+     "flavors": [
+      0,
+      5,
+      10
+     ]
+    },
+    "daily": {
+     "date": "2026-11-27",
+     "goals": [
+      {
+       "id": "click_100",
+       "target": 100,
+       "progress": 100,
+       "done": true
+      },
+      {
+       "id": "survive_2",
+       "target": 1,
+       "progress": 1,
+       "done": true
+      },
+      {
+       "id": "visit_1",
+       "target": 1,
+       "progress": 0,
+       "done": false
+      }
+     ],
+     "streak": 0,
+     "lastCompleteDate": null,
+     "claimed": false,
+     "window": 2,
+     "claimsToday": 0
+    },
+    "surviveStreak": 1,
+    "totalClicks": 152,
+    "visits": {
+     "date": "2026-11-27",
+     "count": 1
+    },
+    "lifetimeEarned": 249.03482040000551,
+    "prestige": 0
+   }
+  },
+  {
+   "tag": "t=80s",
+   "hud": "302.2摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 3%\n连点×3\n🔥连胜 1\n🔊\n📔\n买下点亮的「咖啡续命」卡片",
+   "shop": "点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机最优\n50 摸鱼值\n点了才赚\n带薪喝水\n+2 点击力\n100 摸鱼值\n会自动赚\n带薪蹲坑\n+5/秒\n600 摸鱼值\n还差 297.8\n点了才赚\n人体工学椅\n+5 点击力\n800 摸鱼值\n再戳 498 下\n会自动赚\n摸鱼群聊\n+15/秒\n4000 摸鱼值\n还差 3697.8\n会自动赚\n无用会议\n+50/秒\n2.50万 摸鱼值\n还差 2.47万\n会自动赚\n深度摸鱼\n+180/秒 · ×2差5级\n15.00万 摸鱼值\n还差 14.97万\n会自动赚\n退休式躺平\n+700/秒\n100.00万 摸鱼值\n还差 99.97万\n← 滑动查看更多 →",
+   "quest": "买下点亮的「咖啡续命」卡片",
+   "journalOpen": false,
+   "welcomeOpen": false,
+   "state": {
+    "moyu": 302.2100003999825,
+    "totalEarned": 302.2100003999825,
+    "levels": {},
+    "collected": {
+     "quotes": [
+      6
+     ],
+     "flavors": [
+      0,
+      5,
+      10
+     ]
+    },
+    "daily": {
+     "date": "2026-11-27",
+     "goals": [
+      {
+       "id": "click_100",
+       "target": 100,
+       "progress": 100,
+       "done": true
+      },
+      {
+       "id": "survive_2",
+       "target": 1,
+       "progress": 1,
+       "done": true
+      },
+      {
+       "id": "visit_1",
+       "target": 1,
+       "progress": 0,
+       "done": false
+      }
+     ],
+     "streak": 0,
+     "lastCompleteDate": null,
+     "claimed": false,
+     "window": 2,
+     "claimsToday": 0
+    },
+    "surviveStreak": 1,
+    "totalClicks": 200,
+    "visits": {
+     "date": "2026-11-27",
+     "count": 1
+    },
+    "lifetimeEarned": 302.2100003999825,
+    "prestige": 0
+   }
+  },
+  {
+   "tag": "t=101s",
+   "hud": "363.9摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 4%\n连点×3\n🔥连胜 1\n🔊\n📔\n买下点亮的「咖啡续命」卡片",
+   "shop": "点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机最优\n50 摸鱼值\n点了才赚\n带薪喝水\n+2 点击力\n100 摸鱼值\n会自动赚\n带薪蹲坑\n+5/秒\n600 摸鱼值\n还差 236.1\n点了才赚\n人体工学椅\n+5 点击力\n800 摸鱼值\n再戳 437 下\n会自动赚\n摸鱼群聊\n+15/秒\n4000 摸鱼值\n还差 3636.1\n会自动赚\n无用会议\n+50/秒\n2.50万 摸鱼值\n还差 2.46万\n会自动赚\n深度摸鱼\n+180/秒 · ×2差5级\n15.00万 摸鱼值\n还差 14.96万\n会自动赚\n退休式躺平\n+700/秒\n100.00万 摸鱼值\n还差 99.96万\n← 滑动查看更多 →",
+   "quest": "买下点亮的「咖啡续命」卡片",
+   "journalOpen": false,
+   "welcomeOpen": false,
+   "state": {
+    "moyu": 363.88963159997206,
+    "totalEarned": 363.88963159997206,
+    "levels": {},
+    "collected": {
+     "quotes": [
+      6,
+      9
+     ],
+     "flavors": [
+      0,
+      5,
+      10
+     ]
+    },
+    "daily": {
+     "date": "2026-11-27",
+     "goals": [
+      {
+       "id": "click_100",
+       "target": 100,
+       "progress": 100,
+       "done": true
+      },
+      {
+       "id": "survive_2",
+       "target": 1,
+       "progress": 1,
+       "done": true
+      },
+      {
+       "id": "visit_1",
+       "target": 1,
+       "progress": 0,
+       "done": false
+      }
+     ],
+     "streak": 0,
+     "lastCompleteDate": null,
+     "claimed": false,
+     "window": 2,
+     "claimsToday": 0
+    },
+    "surviveStreak": 1,
+    "totalClicks": 252,
+    "visits": {
+     "date": "2026-11-27",
+     "count": 1
+    },
+    "lifetimeEarned": 363.88963159997206,
+    "prestige": 0
+   }
+  },
+  {
+   "tag": "t=120s",
+   "hud": "422.0摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 4%\n连点×3\n🔥连胜 1\n🔊\n📔\n买下点亮的「咖啡续命」卡片",
+   "shop": "点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机最优\n50 摸鱼值\n点了才赚\n带薪喝水\n+2 点击力\n100 摸鱼值\n会自动赚\n带薪蹲坑\n+5/秒\n600 摸鱼值\n还差 178.0\n点了才赚\n人体工学椅\n+5 点击力\n800 摸鱼值\n再戳 379 下\n会自动赚\n摸鱼群聊\n+15/秒\n4000 摸鱼值\n还差 3578.0\n会自动赚\n无用会议\n+50/秒\n2.50万 摸鱼值\n还差 2.46万\n会自动赚\n深度摸鱼\n+180/秒 · ×2差5级\n15.00万 摸鱼值\n还差 14.96万\n会自动赚\n退休式躺平\n+700/秒\n100.00万 摸鱼值\n还差 99.96万\n← 滑动查看更多 →",
+   "quest": "买下点亮的「咖啡续命」卡片",
+   "journalOpen": false,
+   "welcomeOpen": false,
+   "state": {
+    "moyu": 421.9996751999713,
+    "totalEarned": 421.9996751999713,
+    "levels": {},
+    "collected": {
+     "quotes": [
+      6,
+      9
+     ],
+     "flavors": [
+      0,
+      5,
+      10
+     ]
+    },
+    "daily": {
+     "date": "2026-11-27",
+     "goals": [
+      {
+       "id": "click_100",
+       "target": 100,
+       "progress": 100,
+       "done": true
+      },
+      {
+       "id": "survive_2",
+       "target": 1,
+       "progress": 1,
+       "done": true
+      },
+      {
+       "id": "visit_1",
+       "target": 1,
+       "progress": 0,
+       "done": false
+      }
+     ],
+     "streak": 0,
+     "lastCompleteDate": null,
+     "claimed": false,
+     "window": 2,
+     "claimsToday": 0
+    },
+    "surviveStreak": 1,
+    "totalClicks": 304,
+    "visits": {
+     "date": "2026-11-27",
+     "count": 1
+    },
+    "lifetimeEarned": 421.9996751999713,
+    "prestige": 0
+   }
+  },
+  {
+   "tag": "t=140s",
+   "hud": "475.0摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 5%\n连点×3\n🔥连胜 1\n🔊\n📔\n买下点亮的「咖啡续命」卡片",
+   "shop": "点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机最优\n50 摸鱼值\n点了才赚\n带薪喝水\n+2 点击力\n100 摸鱼值\n会自动赚\n带薪蹲坑\n+5/秒\n600 摸鱼值\n还差 125.0\n点了才赚\n人体工学椅\n+5 点击力\n800 摸鱼值\n再戳 326 下\n会自动赚\n摸鱼群聊\n+15/秒\n4000 摸鱼值\n还差 3525.0\n会自动赚\n无用会议\n+50/秒\n2.50万 摸鱼值\n还差 2.45万\n会自动赚\n深度摸鱼\n+180/秒 · ×2差5级\n15.00万 摸鱼值\n还差 14.95万\n会自动赚\n退休式躺平\n+700/秒\n100.00万 摸鱼值\n还差 99.95万\n← 滑动查看更多 →",
+   "quest": "买下点亮的「咖啡续命」卡片",
+   "journalOpen": false,
+   "welcomeOpen": false,
+   "state": {
+    "moyu": 474.9962909359706,
+    "levels": {},
+    "totalEarned": 474.9962909359706,
+    "collected": {
+     "quotes": [
+      6,
+      9
+     ],
+     "flavors": [
+      0,
+      5,
+      10
+     ]
+    },
+    "daily": {
+     "date": "2026-11-27",
+     "goals": [
+      {
+       "id": "click_100",
+       "target": 100,
+       "progress": 100,
+       "done": true
+      },
+      {
+       "id": "survive_2",
+       "target": 1,
+       "progress": 1,
+       "done": true
+      },
+      {
+       "id": "visit_1",
+       "target": 1,
+       "progress": 0,
+       "done": false
+      }
+     ],
+     "streak": 0,
+     "lastCompleteDate": null,
+     "claimed": false,
+     "window": 2,
+     "claimsToday": 0
+    },
+    "surviveStreak": 1,
+    "totalClicks": 351,
+    "visits": {
+     "date": "2026-11-27",
+     "count": 3
+    },
+    "lifetimeEarned": 474.9962909359706,
+    "prestige": 0
+   }
+  },
+  {
+   "tag": "t=141s",
+   "hud": "479.4摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 5%\n连点×3\n🔥连胜 1\n🔊\n📔\n买下点亮的「咖啡续命」卡片",
+   "shop": "点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机最优\n50 摸鱼值\n点了才赚\n带薪喝水\n+2 点击力\n100 摸鱼值\n会自动赚\n带薪蹲坑\n+5/秒\n600 摸鱼值\n还差 120.6\n点了才赚\n人体工学椅\n+5 点击力\n800 摸鱼值\n再戳 321 下\n会自动赚\n摸鱼群聊\n+15/秒\n4000 摸鱼值\n还差 3520.6\n会自动赚\n无用会议\n+50/秒\n2.50万 摸鱼值\n还差 2.45万\n会自动赚\n深度摸鱼\n+180/秒 · ×2差5级\n15.00万 摸鱼值\n还差 14.95万\n会自动赚\n退休式躺平\n+700/秒\n100.00万 摸鱼值\n还差 99.95万\n← 滑动查看更多 →",
+   "quest": "买下点亮的「咖啡续命」卡片",
+   "journalOpen": false,
+   "welcomeOpen": false,
+   "state": {
+    "moyu": 479.4252909359705,
+    "levels": {},
+    "totalEarned": 479.4252909359705,
+    "collected": {
+     "quotes": [
+      6,
+      9
+     ],
+     "flavors": [
+      0,
+      5,
+      10
+     ]
+    },
+    "daily": {
+     "date": "2026-11-27",
+     "goals": [
+      {
+       "id": "click_100",
+       "target": 100,
+       "progress": 100,
+       "done": true
+      },
+      {
+       "id": "survive_2",
+       "target": 1,
+       "progress": 1,
+       "done": true
+      },
+      {
+       "id": "visit_1",
+       "target": 1,
+       "progress": 0,
+       "done": false
+      }
+     ],
+     "streak": 0,
+     "lastCompleteDate": null,
+     "claimed": false,
+     "window": 2,
+     "claimsToday": 0
+    },
+    "surviveStreak": 1,
+    "totalClicks": 355,
+    "visits": {
+     "date": "2026-11-27",
+     "count": 3
+    },
+    "lifetimeEarned": 479.4252909359705,
+    "prestige": 0
+   }
+  },
+  {
+   "tag": "t=161s",
+   "hud": "532.8摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 5%\n连点×6\n🔥连胜 1\n🔊\n📔\n买下点亮的「咖啡续命」卡片",
+   "shop": "点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机最优\n50 摸鱼值\n点了才赚\n带薪喝水\n+2 点击力\n100 摸鱼值\n会自动赚\n带薪蹲坑\n+5/秒\n600 摸鱼值\n还差 67.2\n点了才赚\n人体工学椅\n+5 点击力\n800 摸鱼值\n再戳 268 下\n会自动赚\n摸鱼群聊\n+15/秒\n4000 摸鱼值\n还差 3467.2\n会自动赚\n无用会议\n+50/秒\n2.50万 摸鱼值\n还差 2.45万\n会自动赚\n深度摸鱼\n+180/秒 · ×2差5级\n15.00万 摸鱼值\n还差 14.95万\n会自动赚\n退休式躺平\n+700/秒\n100.00万 摸鱼值\n还差 99.95万\n← 滑动查看更多 →",
+   "quest": "买下点亮的「咖啡续命」卡片",
+   "journalOpen": false,
+   "welcomeOpen": false,
+   "state": {
+    "moyu": 532.775585736038,
+    "levels": {},
+    "totalEarned": 532.775585736038,
+    "collected": {
+     "quotes": [
+      6,
+      9
+     ],
+     "flavors": [
+      0,
+      5,
+      10
+     ]
+    },
+    "daily": {
+     "date": "2026-11-27",
+     "goals": [
+      {
+       "id": "click_100",
+       "target": 100,
+       "progress": 100,
+       "done": true
+      },
+      {
+       "id": "survive_2",
+       "target": 1,
+       "progress": 1,
+       "done": true
+      },
+      {
+       "id": "visit_1",
+       "target": 1,
+       "progress": 0,
+       "done": false
+      }
+     ],
+     "streak": 0,
+     "lastCompleteDate": null,
+     "claimed": false,
+     "window": 2,
+     "claimsToday": 0
+    },
+    "surviveStreak": 1,
+    "totalClicks": 403,
+    "visits": {
+     "date": "2026-11-27",
+     "count": 4
+    },
+    "lifetimeEarned": 532.775585736038,
+    "prestige": 0
+   }
+  }
+ ],
+ "journal": "摸鱼日报\n✕\n\n2026-11-27 · 🔥 连续 0 天（今天未领）\n\n✓\n戳 100 下\n100/100\n✓\n老板巡逻时忍住不点，1 次\n1/1\n○\n今天上线看一眼\n0/1\n完成 2/3\n摸鱼数据\n摸鱼实习生\n生涯总收入\n546.2\n本局 / 往期\n546.2 / 0\n当前余额\n546.2\n累计投入\n0\n点击力 / 挂机\n1 / 0.2每秒\n累计点击\n415\n今日回访\n4/3（离线效率 100%）\n连续日报\n0 天\n图鉴\n5/55\n转生\n0 点（×1.00）\n纪录·最佳单日\n0\n纪录·最长连签\n0 天\n纪录·最多点击\n0\n导出存档 JSON\n存档码（换设备用）\n\n复制这串码到新设备「导入」，进度就能带过去（防手滑，非防篡改）。\n\n复制/生成存档码\n导入存档码\n\n摸鱼图鉴\n5/55\n梗语录 2/10\n升级彩蛋 3/45\n\n最新彩蛋「人体工学椅」：腰不酸了，腿不麻了\n\n离职再就业\n\n重置余额与 20% 等级，换永久点数：总倍率 = 1 + 0.75 × 累计点数（线性）；图鉴/日报/段位/历史累计保留。建议攒够多点再转。\n\n未解锁（本局累计 546.2 / 需 1.00亿）\n???\n???\n???\n???\n???\n???\n语录 7\n底层逻辑\n???\n???\n语录 10\n组合拳\n咖啡续命 · Lv.1\n第一杯，回魂\n???\n???\n???\n???\n带薪喝水 · Lv.1\n工位饮水机守望者\n???\n???\n???\n???\n人体工学椅 · Lv.1\n腰不酸了，腿不麻了\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???",
+ "shots": {
+  "canvasRect": {
+   "x": 0,
+   "y": 134,
+   "w": 390,
+   "h": 566
+  },
+  "dpr": 3
+ },
+ "tapCount": 416
+}

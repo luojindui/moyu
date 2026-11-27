@@ -7,7 +7,10 @@ import { spawn } from "node:child_process";
 import { writeFileSync, readFileSync, mkdirSync } from "node:fs";
 
 const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
-const PORT = 9591;
+const PORT = Number(process.env.MOYU_CDP_PORT ?? 9591);
+const BASE = process.env.MOYU_BASE ?? "http://127.0.0.1:5173/";
+const OUT = process.env.MOYU_OUT ?? "playtest/r10-returner-live.json";
+const SHOT_PREFIX = process.env.MOYU_SHOT_PREFIX ?? "r10";
 const W = 390;
 const H = 844;
 const DAY_MS = 86_400_000;
@@ -74,7 +77,7 @@ const ev = async (expr) => {
 const evJson = async (expr) => JSON.parse(await ev(`JSON.stringify(${expr})`));
 const shot = async (name) => {
   const r = await send("Page.captureScreenshot", { format: "png", captureBeyondViewport: false });
-  writeFileSync(`playtest/r10-screens/${name}.png`, Buffer.from(r.data, "base64"));
+  writeFileSync(`playtest/r10-screens/${SHOT_PREFIX}-${name}.png`, Buffer.from(r.data, "base64"));
 };
 const tap = async (x, y) => {
   await send("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: [{ x, y, id: 1, radiusX: 10, radiusY: 10, force: 1 }] });
@@ -86,7 +89,11 @@ await send("Page.enable");
 await send("Runtime.enable");
 await send("Emulation.setDeviceMetricsOverride", { width: W, height: H, deviceScaleFactor: 3, mobile: true, screenWidth: W, screenHeight: H });
 await send("Emulation.setTouchEmulationEnabled", { enabled: true, maxTouchPoints: 5 });
-await send("Page.navigate", { url: "http://127.0.0.1:5173/" });
+// 固定随机数：让「日报目标」可复现，稳定覆盖 visit/idle 两类“零操作”目标（复现种子见报告）
+await send("Page.addScriptToEvaluateOnNewDocument", {
+  source: `(() => { let a = 1 >>> 0; Math.random = function () { a = (a + 0x6d2b79f5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; })();`,
+});
+await send("Page.navigate", { url: BASE });
 await sleep(2600);
 
 const out = { generatedAt: new Date().toISOString(), head: "999b0f4", seed: { day3End: evidence.day3End, returnAt: evidence.returnAt }, steps: {} };
@@ -129,7 +136,7 @@ out.realRateCheck = {
   idleRate: out.afterBootState ? null : null,
 };
 
-await shot("r10-welcome-30d");
+await shot("welcome-30d");
 
 // 欢迎面板本身是否可点、点完是否只剩正常首屏
 await tap(W / 2, H / 2); // 兜底：先点面板外（应无效）
@@ -158,7 +165,7 @@ out.firstScreenText = await evJson(`(() => {
   const g = (sel) => { const e = document.querySelector(sel); return e ? e.textContent.trim().replace(/\\s+/g,' ').slice(0,120) : null; };
   return { hud: g('#hud'), shopHint: g('#shop-hint'), welcome: g('#welcome') };
 })()`);
-await shot("r10-firstscreen-30d");
+await shot("firstscreen-30d");
 
 // ---------- 3) 打开 📔 日报：目标 / streak / 回访 ----------
 const jrect = await evJson(`(()=>{const r=document.getElementById('btn-journal').getBoundingClientRect();return {cx:r.x+r.width/2,cy:r.y+r.height/2};})()`);
@@ -179,7 +186,7 @@ out.journal = await evJson(`(() => {
   };
 })()`);
 out.dailyBefore = await evJson("__MOYU__.state.daily");
-await shot("r10-journal-30d");
+await shot("journal-30d");
 
 // 关面板，戳 30 下 + 等 6 秒，看「今天上线看一眼 / 等摸鱼值自己涨」是否推进
 const closeRect = await evJson(`(()=>{const r=document.getElementById('journal-close').getBoundingClientRect();return {cx:r.x+r.width/2,cy:r.y+r.height/2};})()`);
@@ -200,7 +207,7 @@ out.dailyKindCheck = (() => {
     return { id: g.id, kind: kinds[g.id], before: g.progress, after: a ? a.progress : null, done: g.done };
   });
 })();
-await shot("r10-after-taps");
+await shot("after-taps");
 
 // ---------- 4) 模拟存档被 Safari/清缓存清掉：清档并重载（reset() 清存档+内存，等效 ITP 清档后的冷启动） ----------
 await ev(`__MOYU__.reset(); localStorage.removeItem('moyu-save'); "cleared"`);
@@ -216,11 +223,12 @@ out.afterCleared = await evJson(`(() => {
     bodyText: document.body.innerText.replace(/\\s+/g,' ').slice(0, 220),
   };
 })()`);
-await shot("r10-save-cleared-fresh");
+await shot("save-cleared-fresh");
 
-out.devServer = "http://127.0.0.1:5173/";
+out.devServer = BASE;
+ out.headNote = process.env.MOYU_HEAD_NOTE ?? "";
 out.initialSaveExists = initialSaveExists;
-writeFileSync("playtest/r10-returner-live.json", JSON.stringify(out, null, 2));
+writeFileSync(OUT, JSON.stringify(out, null, 2));
 console.log(JSON.stringify(out, null, 2));
 proc.kill("SIGTERM");
 ws.close();

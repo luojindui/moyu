@@ -16,6 +16,7 @@ import {
 import { collectQuote, syncFlavorCollection } from "./engine/collection";
 import { ensureVisits, offlineEfficiency } from "./engine/progression";
 import { rankFor } from "./engine/titles";
+import { chapterFor, zhouLine, bossOutcome, HR_PRESTIGE_LINE } from "./engine/story";
 import { RECORDS_KEY, parseRecords, updateRecords, type Records } from "./engine/records";
 import { doPrestige } from "./engine/prestige";
 import { ensureDaily, dailyTrack, claimDaily } from "./engine/daily";
@@ -129,6 +130,7 @@ async function boot(): Promise<void> {
       hud.refresh(state);
       shop.refresh(state);
       journal.refresh(state, true);
+      toast(HR_PRESTIGE_LINE);
       serialize(state, localStorageAdapter, Date.now());
     },
   );
@@ -178,12 +180,12 @@ async function boot(): Promise<void> {
     if (state.daily) state = { ...state, daily: dailyTrack(state.daily, kind, n) };
   };
   let lastPointerAt = 0;
-  canvas.addEventListener("pointerdown", (e) => {
+  const doTap = (clientX: number, clientY: number): void => {
     const nowMs = performance.now();
     // 允许双指连点（音游常用），但两次点击至少间隔 80ms 防作弊
     if (nowMs - lastPointerAt < 80) return;
     lastPointerAt = nowMs;
-    const p = scene.toVirtual(e.clientX, e.clientY, canvas);
+    const p = scene.toVirtual(clientX, clientY, canvas);
     // 连击链更新
     const gap = (nowMs - lastClickAt) / 1000;
     const prevCombo = combo;
@@ -217,7 +219,7 @@ async function boot(): Promise<void> {
       const qi = Math.floor(Math.random() * MEME_QUOTES.length);
       state = collectQuote(r.state, qi).state;
       trackDaily("meme");
-      const quote = MEME_QUOTES[qi];
+      const quote = MEME_QUOTES[qi] ? zhouLine(MEME_QUOTES[qi]!) : "";
       scene.fx.floatText(p.x, p.y - 24, quote ?? "");
       scene.fx.floatText(p.x, p.y, `梗收了 +${Math.round(r.earned)}`);
       journal.refresh(state);
@@ -232,6 +234,15 @@ async function boot(): Promise<void> {
     const text =
       combo >= 6 ? `连点×${combo} +${Math.round(gained)}` : Math.random() < 0.22 && meme ? meme : `+${Math.round(gained)}`;
     scene.fx.floatText(p.x, p.y, text);
+  };
+  canvas.addEventListener("pointerdown", (e) => doTap(e.clientX, e.clientY));
+  // 键盘（桌面）：空格/回车 = 点一下场景中心
+  canvas.addEventListener("keydown", (e) => {
+    if (e.key === " " || e.key === "Enter") {
+      e.preventDefault();
+      const r = canvas.getBoundingClientRect();
+      doTap(r.left + r.width / 2, r.top + r.height / 2);
+    }
   });
 
   // 4) 主循环（资产未到也照跑，占位色块兜底）
@@ -244,6 +255,7 @@ async function boot(): Promise<void> {
   let prevBossActive = false;
   const quest = new Quest((text) => toast(text));
   let lastRankName = "";
+  let lastChapterId = "";
   let lastCollectionCount = state.collected.quotes.length + state.collected.flavors.length;
   const toast = (text: string): void => {
     scene.fx.floatText(scene.w / 2, scene.h * 0.22, text);
@@ -276,7 +288,7 @@ async function boot(): Promise<void> {
       if (r.reward > 0) {
         trackDaily("survive");
         playSuccess();
-        const label = es.bossVariant === "blitz" ? "冲刺成功 ×1.5" : es.bossVariant === "type" ? "假装工作成功" : "安然度过";
+        const label = es.bossVariant === "blitz" ? "冲刺成功 ×1.5" : es.bossVariant === "type" ? "假装工作成功" : bossOutcome(false);
         scene.fx.floatText(scene.w / 2, scene.h * 0.3, `${label} +${Math.round(r.reward)}（连胜 ${es.surviveStreak}）`);
       } else if (es.bossVariant === "type" || es.bossVariant === "blitz") {
         // 点击任务变体未达标：鼓励语气，不责备
@@ -306,6 +318,12 @@ async function boot(): Promise<void> {
     if (now - lastHud >= 150) {
       lastHud = now;
       scene.hideHint = state.totalEarned > 500;
+      // 剧情章节：便签 + 职员配色随生涯进度变化（零新美术）
+      const ch = chapterFor(state.lifetimeEarned);
+      scene.note = ch.title;
+      scene.palette = ch.palette;
+      if (lastChapterId && ch.id !== lastChapterId) toast(`新章节：${ch.title}`);
+      lastChapterId = ch.id;
       quest.tick(state, null);
       // 段位晋升提示（让"新变化"被看见，而不是只藏在 HUD 一行）
       const rankNow = rankFor(state.lifetimeEarned).current;

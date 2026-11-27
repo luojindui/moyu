@@ -1,6 +1,7 @@
 import { SpriteGrid } from "./sprites";
 import { Fx } from "./fx";
 import type { EventState } from "../engine/events";
+import { bossLine } from "../engine/story";
 import {
   MEME_REWARD_CLICKS,
   BOSS_TYPE_TARGET,
@@ -23,6 +24,8 @@ const DRINK_FOR = 2.5;
 
 export interface SceneSprites {
   worker?: SpriteGrid;
+  /** 4 套职员配色（章节视觉变化，零新美术） */
+  workers?: SpriteGrid[];
   computer?: SpriteGrid;
   cooler?: SpriteGrid;
 }
@@ -46,6 +49,10 @@ export class Scene {
   events: EventState | null = null;
   /** 当前事件时钟（游戏秒） */
   gameTime = 0;
+  /** 当前职员配色索引（由章节驱动） */
+  palette = 0;
+  /** 公告板便签文本（章节驱动） */
+  note = "";
   /** 累计摸鱼值达标后隐藏新手引导字 */
   hideHint = false;
   /** 丢梗目标位置（虚拟坐标），由 main 设置 */
@@ -56,7 +63,10 @@ export class Scene {
   resize(cssW: number, cssH: number): void {
     this.w = cssW;
     this.h = cssH;
-    this.scale = Math.max(2, Math.min(6, Math.round(cssW / 130)));
+    // 宽高双重约束：工位场景至少需要 ~124 虚拟单位高，否则横屏/桌面会裁掉角色
+    const byWidth = Math.round(cssW / 130);
+    const byHeight = Math.floor(cssH / 124);
+    this.scale = Math.max(2, Math.min(6, Math.min(byWidth, byHeight)));
   }
 
   update(dt: number): void {
@@ -163,8 +173,14 @@ export class Scene {
     R(boardX + 0.25 * u, boardY + 0.28 * u, 0.75 * u, 0.18 * u, "#c05a4a");
     R(boardX + 0.25 * u, boardY + 0.6 * u, 1.3 * u, 0.11 * u, "#8a7a58");
     R(boardX + 0.25 * u, boardY + 0.8 * u, 1 * u, 0.11 * u, "#8a7a58");
-    R(boardX + 1.55 * u, boardY + 0.3 * u, 0.45 * u, 0.4 * u, "#f3e27a"); // 便签
+    R(boardX + 1.55 * u, boardY + 0.3 * u, 0.75 * u, 0.55 * u, "#f3e27a"); // 便签
     R(boardX + 1.62 * u, boardY + 0.85 * u, 0.4 * u, 0.36 * u, "#9fe0a0");
+    if (this.note) {
+      ctx.fillStyle = "#3a3020";
+      ctx.font = `${Math.max(9, 1.6 * s)}px system-ui`;
+      ctx.textAlign = "left";
+      ctx.fillText(this.note.slice(0, 8), (boardX + 1.6 * u) * s, (boardY + 0.62 * u) * s);
+    }
 
     // 吊灯
     R(vw / 2 - 0.07 * u, 0, 0.14 * u, 1 * u, "#262b42");
@@ -222,8 +238,9 @@ export class Scene {
     const row = this.drinkUntil >= 0 ? SPRITE_MAP.worker.drinkingRow : SPRITE_MAP.worker.typingRow;
     const wkrX = vw / 2 - u / 2;
     const wkrY = deskY - 1.55 * u;
-    if (worker) {
-      worker.draw(ctx, this.workerCol, row, wkrX, wkrY, s);
+    const activeWorker = this.sprites.workers?.[this.palette % (this.sprites.workers.length || 1)] ?? worker;
+    if (activeWorker) {
+      activeWorker.draw(ctx, this.workerCol, row, wkrX, wkrY, s);
     } else {
       R(wkrX, wkrY, u, 1.05 * u, "#e8c8a8");
     }
@@ -306,7 +323,5 @@ export class Scene {
 
 /** 巡逻变体横幅文案 */
 export function bossBannerText(variant: BossVariant, remain: number, taps: number): string {
-  if (variant === "type") return `假装工作！点 ${Math.min(taps, BOSS_TYPE_TARGET)}/${BOSS_TYPE_TARGET} (${remain}s)`;
-  if (variant === "blitz") return `摸鱼冲刺！连点 ${Math.min(taps, BOSS_BLITZ_TARGET)}/${BOSS_BLITZ_TARGET} 奖×1.5 (${remain}s)`;
-  return `⚠ 老板来了！忍住别点，点了会罚 (${remain}s)`;
+  return bossLine(variant, remain, Math.min(taps, variant === "blitz" ? BOSS_BLITZ_TARGET : BOSS_TYPE_TARGET));
 }

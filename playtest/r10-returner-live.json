@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T04:20:06.446Z",
+  "generatedAt": "2026-11-27T04:21:33.850Z",
   "head": "999b0f4",
   "seed": {
     "day3End": "2026-10-30T12:05:00.000Z",
@@ -7,7 +7,7 @@
   },
   "steps": {
     "seed": {
-      "savedAt": 1793161206466,
+      "savedAt": 1793161293935,
       "blobKeys": [
         "v",
         "moyu",
@@ -36,9 +36,9 @@
     }
   },
   "bootState": {
-    "moyu": 0.49664000000000036,
+    "moyu": 0.5133000000000002,
+    "totalEarned": 0.5133000000000002,
     "levels": {},
-    "totalEarned": 0.49664000000000036,
     "collected": {
       "quotes": [],
       "flavors": []
@@ -47,19 +47,19 @@
       "date": "2026-11-27",
       "goals": [
         {
-          "id": "visit_1",
+          "id": "survive_2",
           "target": 1,
           "progress": 0,
           "done": false
         },
         {
-          "id": "buy_3",
-          "target": 3,
+          "id": "click_100",
+          "target": 100,
           "progress": 0,
           "done": false
         },
         {
-          "id": "survive_2",
+          "id": "visit_1",
           "target": 1,
           "progress": 0,
           "done": false
@@ -75,9 +75,9 @@
     "totalClicks": 0,
     "visits": {
       "date": "2026-11-27",
-      "count": 2
+      "count": 1
     },
-    "lifetimeEarned": 0.49664000000000036,
+    "lifetimeEarned": 0.5133000000000002,
     "prestige": 0
   },
   "welcome": {
@@ -90,7 +90,7 @@
     "anyOtherOverlay": false
   },
   "afterBootState": {
-    "moyu": 7563174152.155264,
+    "moyu": 7563176774.966877,
     "levels": {
       "coffee": 1,
       "phone": 95,
@@ -102,7 +102,7 @@
       "deep": 61,
       "retire": 53
     },
-    "totalEarned": 26564989604.15314,
+    "totalEarned": 26564992226.96475,
     "collected": {
       "quotes": [
         0,
@@ -162,7 +162,7 @@
       "date": "2026-11-27",
       "goals": [
         {
-          "id": "visit_1",
+          "id": "survive_2",
           "target": 1,
           "progress": 0,
           "done": false
@@ -174,7 +174,7 @@
           "done": false
         },
         {
-          "id": "survive_2",
+          "id": "visit_1",
           "target": 1,
           "progress": 0,
           "done": false
@@ -192,7 +192,7 @@
       "date": "2026-11-27",
       "count": 1
     },
-    "lifetimeEarned": 26564989604.15314,
+    "lifetimeEarned": 26564992226.96475,
     "prestige": 0
   },
   "realRateCheck": {
@@ -231,9 +231,9 @@
     "date": "2026-11-27",
     "streak": "🔥 连续 0 天（今天未领）",
     "goals": [
-      "○ 今天上线看一眼 0/1",
+      "○ 老板巡逻时忍住不点，1 次 0/1",
       "○ 戳 100 下 0/100",
-      "○ 老板巡逻时忍住不点，1 次 0/1"
+      "○ 今天上线看一眼 0/1"
     ],
     "claimText": "完成 0/3",
     "claimDisabled": true,
@@ -247,7 +247,10 @@
       "今日回访1/3（离线效率 80%）",
       "连续日报0 天",
       "图鉴49/55",
-      "转生0 点（×1.00）"
+      "转生0 点（×1.00）",
+      "纪录·最佳单日0.5（2026-11-27）",
+      "纪录·最长连签0 天",
+      "纪录·最多点击0"
     ],
     "prestigeBtn": "离职再就业：+20 点（永久 ×16.00）",
     "savecode": "空"
@@ -256,7 +259,7 @@
     "date": "2026-11-27",
     "goals": [
       {
-        "id": "visit_1",
+        "id": "survive_2",
         "target": 1,
         "progress": 0,
         "done": false
@@ -268,7 +271,7 @@
         "done": false
       },
       {
-        "id": "survive_2",
+        "id": "visit_1",
         "target": 1,
         "progress": 0,
         "done": false
@@ -284,7 +287,7 @@
     "date": "2026-11-27",
     "goals": [
       {
-        "id": "visit_1",
+        "id": "survive_2",
         "target": 1,
         "progress": 0,
         "done": false
@@ -296,7 +299,7 @@
         "done": false
       },
       {
-        "id": "survive_2",
+        "id": "visit_1",
         "target": 1,
         "progress": 0,
         "done": false
@@ -310,8 +313,8 @@
   },
   "dailyKindCheck": [
     {
-      "id": "visit_1",
-      "kind": "visit",
+      "id": "survive_2",
+      "kind": "survive",
       "before": 0,
       "after": 0,
       "done": false
@@ -324,8 +327,8 @@
       "done": false
     },
     {
-      "id": "survive_2",
-      "kind": "survive",
+      "id": "visit_1",
+      "kind": "visit",
       "before": 0,
       "after": 0,
       "done": false
@@ -335,14 +338,14 @@
     "welcomeVisible": false,
     "hasSave": true,
     "stateLoaded": {
-      "totalEarned": 26570301518.856754,
-      "lifetimeEarned": 26570301518.856754,
-      "rank": "黑洞 33%",
-      "moyu": 7568486066.858729
+      "totalEarned": 0.5133200000381467,
+      "lifetimeEarned": 0.5133200000381467,
+      "rank": "实习生 0%",
+      "moyu": 0.5133200000381467
     },
     "anyLossNotice": false,
-    "bodyText": "75.68亿摸鱼值 点击 +10.4 不点也 32.79万/秒 黑洞 33% ♻ 可离职再就业 🔊 📔 点了才赚 咖啡续命 +1 点击力 · 第一杯，回魂 ★ 点击最优 18 摸鱼值 Lv.1 会自动赚 刷手机 +32/秒 · 小说连载追完三部 2919.21万 摸鱼值 Lv.95 点了才赚 带薪喝水 +2 点击力 · 工位饮水机守望者 115 摸鱼值 Lv.1 会自动赚 带薪蹲坑 +40/秒 · ×2差2级 · 蹲出了禅意 325"
+    "bodyText": "0.5摸鱼值 点击 +1 不点也 0.2/秒 实习生 0% 🔊 📔 再戳 15 下 → 解锁「咖啡续命」 点了才赚 咖啡续命 +1 点击力 ★ 点击最优 15 摸鱼值 再戳 15 下 会自动赚 刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值 还差 49.5 点了才赚 带薪喝水 +2 点击力 100 摸鱼值 再戳 100 下 会自动赚 带薪蹲坑 +5/秒 600 摸鱼值 还差 599.5 点了才赚 人体工学椅 +5 点击"
   },
   "devServer": "http://127.0.0.1:5173/",
-  "initialSaveExists": true
+  "initialSaveExists": false
 }
