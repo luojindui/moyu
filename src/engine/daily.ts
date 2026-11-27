@@ -35,9 +35,9 @@ export const DAILY_GOAL_TEMPLATES: GoalTemplate[] = [
   { id: "survive_2", desc: "应付 1 次巡逻（忍住或点满都算）", kind: "survive", target: 1 },
 ];
 
-/** 奖励 = max(500, 60 × 挂机秒收益) */
+/** 奖励 = max(500, 600 × 挂机秒收益)：R7 上调 10×，让日报在后期仍有意义（原 60× 仅占日收入 0.14%） */
 export function dailyReward(state: GameState): number {
-  return Math.max(500, 60 * effectOf(state).idleRate);
+  return Math.max(500, 600 * effectOf(state).idleRate);
 }
 
 /** 本地日期格式化（避免 toISOString 在非 UTC 时区跨日错位） */

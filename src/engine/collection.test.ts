@@ -47,12 +47,12 @@ describe("摸鱼图鉴（收集）", () => {
     expect(UPGRADE_FLAVOR["retire"]).toHaveLength(5);
   });
 
-  it("syncFlavorCollection：按当前等级补齐历史档（coffee Lv22 → 1/5/10/20 四档）", () => {
+  it("syncFlavorCollection：挂机线按等级补齐历史档（phone Lv22 → 4 档）；点击线按点击数", () => {
     let s = initialState();
-    s.levels["coffee" as string] = 22;
+    s.levels["phone" as string] = 22;
     s = syncFlavorCollection(s);
-    const coffeeIdx = UPGRADES.findIndex((u) => u.id === "coffee")! * 5;
-    expect(s.collected.flavors).toEqual([coffeeIdx + 0, coffeeIdx + 1, coffeeIdx + 2, coffeeIdx + 3]);
+    const phoneIdx = UPGRADES.findIndex((u) => u.id === "phone")! * 5;
+    expect(s.collected.flavors).toEqual([phoneIdx + 0, phoneIdx + 1, phoneIdx + 2, phoneIdx + 3]);
     // 幂等：再跑一遍不变
     const again = syncFlavorCollection(s);
     expect(again.collected.flavors).toHaveLength(4);

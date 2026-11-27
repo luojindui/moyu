@@ -60,7 +60,7 @@ describe("每日摸鱼日报", () => {
     expect(s3.daily!.goals.every((g) => g.progress === 0 && !g.done)).toBe(true);
   });
 
-  it("claimDaily：全完成才可领，奖励 = max(500, 60×挂机)；streak 推进", () => {
+  it("claimDaily：全完成才可领，奖励 = max(500, 600×挂机)；streak 推进", () => {
     let s = initialState();
     s.levels["phone" as string] = 5; // 10.2/s → 60×10.2 = 612
     s = ensureDaily(s, "2026-11-26", rng);
@@ -71,8 +71,8 @@ describe("每日摸鱼日报", () => {
       g.done = true;
     });
     const r = claimDaily(s, "2026-11-26");
-    // 独立推定：max(500, 60 × 10.2) = 612
-    expect(r.claimedReward).toBe(612);
+    // 独立推定：R7 上调 10× → max(500, 600 × 10.2) = 6120
+    expect(r.claimedReward).toBe(6120);
     expect(r.state.daily!.claimed).toBe(true);
     expect(r.state.daily!.streak).toBe(1);
     // 次日完成 → streak 2

@@ -1,0 +1,183 @@
+{
+  "canvasBefore": {
+    "canvasCssH": 643,
+    "wrapH": 601,
+    "overflowPx": 42,
+    "canvasAttr": {
+      "w": 780,
+      "h": 1286
+    },
+    "dpr": 3
+  },
+  "canvasAfterResize": {
+    "canvasCssH": 601,
+    "wrapH": 601,
+    "overflowPx": 0,
+    "canvasAttr": {
+      "w": 780,
+      "h": 1202
+    }
+  },
+  "disabledCardTap": {
+    "before": {
+      "disabled": true,
+      "moyu": 0.45180040003814725,
+      "cost": "15 摸鱼值",
+      "x": 67,
+      "y": 764
+    },
+    "after": {
+      "moyu": 0.5117804000381473,
+      "levels": {},
+      "hud": "0.5"
+    },
+    "tappedButNoChange": false
+  },
+  "badgeBeforeClaim": {
+    "hasReward": true,
+    "badge": "\"\"",
+    "title": "日报奖励可领取"
+  },
+  "claimBefore": {
+    "text": "领取 +500",
+    "disabled": false,
+    "badge": true
+  },
+  "claimTimeline": [
+    {
+      "t": 0,
+      "text": "今日已领",
+      "disabled": true,
+      "hasReward": false,
+      "badge": "none",
+      "hudMoyu": "800.3",
+      "claimed": true
+    },
+    {
+      "t": 60,
+      "text": "今日已领",
+      "disabled": true,
+      "hasReward": false,
+      "badge": "none",
+      "hudMoyu": "800.3",
+      "claimed": true
+    },
+    {
+      "t": 120,
+      "text": "今日已领",
+      "disabled": true,
+      "hasReward": false,
+      "badge": "none",
+      "hudMoyu": "800.3",
+      "claimed": true
+    },
+    {
+      "t": 200,
+      "text": "今日已领",
+      "disabled": true,
+      "hasReward": false,
+      "badge": "none",
+      "hudMoyu": "800.3",
+      "claimed": true
+    },
+    {
+      "t": 300,
+      "text": "今日已领",
+      "disabled": true,
+      "hasReward": false,
+      "badge": "none",
+      "hudMoyu": "800.3",
+      "claimed": true
+    },
+    {
+      "t": 420,
+      "text": "今日已领",
+      "disabled": true,
+      "hasReward": false,
+      "badge": "none",
+      "hudMoyu": "800.3",
+      "claimed": true
+    },
+    {
+      "t": 600,
+      "text": "今日已领",
+      "disabled": true,
+      "hasReward": false,
+      "badge": "none",
+      "hudMoyu": "800.4",
+      "claimed": true
+    },
+    {
+      "t": 900,
+      "text": "今日已领",
+      "disabled": true,
+      "hasReward": false,
+      "badge": "none",
+      "hudMoyu": "800.5",
+      "claimed": true
+    }
+  ],
+  "claimFastBefore": {
+    "text": "领取 +500",
+    "disabled": false,
+    "hasReward": true
+  },
+  "claimTimelineFast": [
+    {
+      "t": 0,
+      "text": "领取 +500",
+      "disabled": false,
+      "hasReward": false,
+      "hudMoyu": "800.2",
+      "claimed": true
+    },
+    {
+      "t": 80,
+      "text": "领取 +500",
+      "disabled": false,
+      "hasReward": false,
+      "hudMoyu": "800.2",
+      "claimed": true
+    },
+    {
+      "t": 160,
+      "text": "领取 +500",
+      "disabled": false,
+      "hasReward": false,
+      "hudMoyu": "800.2",
+      "claimed": true
+    },
+    {
+      "t": 260,
+      "text": "领取 +500",
+      "disabled": false,
+      "hasReward": false,
+      "hudMoyu": "800.2",
+      "claimed": true
+    },
+    {
+      "t": 380,
+      "text": "领取 +500",
+      "disabled": false,
+      "hasReward": false,
+      "hudMoyu": "800.3",
+      "claimed": true
+    },
+    {
+      "t": 520,
+      "text": "今日已领",
+      "disabled": true,
+      "hasReward": false,
+      "hudMoyu": "800.3",
+      "claimed": true
+    },
+    {
+      "t": 700,
+      "text": "今日已领",
+      "disabled": true,
+      "hasReward": false,
+      "hudMoyu": "800.3",
+      "claimed": true
+    }
+  ]
+}

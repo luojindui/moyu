@@ -1,0 +1,7466 @@
+{
+  "generatedAt": "2026-11-27T02:59:32.056Z",
+  "app": "http://127.0.0.1:5173/",
+  "chrome": "Chrome/158.0.8127.37",
+  "viewports": [
+    {
+      "label": "390x844",
+      "size": {
+        "w": 390,
+        "h": 844
+      },
+      "boot": {
+        "nav": 25,
+        "ready": 81,
+        "load": 87,
+        "fcp": 92
+      },
+      "fps": 62,
+      "layout": {
+        "viewport": {
+          "w": 390,
+          "h": 844,
+          "dpr": 3,
+          "visualScale": 1
+        },
+        "doc": {
+          "scrollW": 390,
+          "scrollH": 844,
+          "bodyScrollW": 390,
+          "bodyScrollH": 844,
+          "horizontalOverflow": 0
+        },
+        "meta": {
+          "viewportMeta": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover",
+          "manifest": "/manifest.webmanifest",
+          "lang": "zh-CN",
+          "title": "摸鱼工位",
+          "bodyTouchAction": "manipulation",
+          "canvasTouchAction": "none"
+        },
+        "app": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 390,
+            "h": 844,
+            "right": 390,
+            "bottom": 844
+          },
+          "padding": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          }
+        },
+        "named": {
+          "hud": {
+            "x": 0,
+            "y": 0,
+            "w": 390,
+            "h": 81,
+            "right": 390,
+            "bottom": 81
+          },
+          "stageWrap": {
+            "x": 0,
+            "y": 81,
+            "w": 390,
+            "h": 601,
+            "right": 390,
+            "bottom": 682
+          },
+          "stage": {
+            "x": 0,
+            "y": 81,
+            "w": 390,
+            "h": 643,
+            "right": 390,
+            "bottom": 724
+          },
+          "shop": {
+            "x": 0,
+            "y": 682,
+            "w": 390,
+            "h": 162,
+            "right": 390,
+            "bottom": 844
+          },
+          "journalBtn": {
+            "x": 339,
+            "y": 45,
+            "w": 39,
+            "h": 26,
+            "right": 378,
+            "bottom": 71
+          }
+        },
+        "outOfViewport": {
+          "hud": {
+            "right": 0,
+            "bottom": -763,
+            "left": 0,
+            "top": 0,
+            "any": false
+          },
+          "stageWrap": {
+            "right": 0,
+            "bottom": -162,
+            "left": 0,
+            "top": -81,
+            "any": false
+          },
+          "stage": {
+            "right": 0,
+            "bottom": -120,
+            "left": 0,
+            "top": -81,
+            "any": false
+          },
+          "shop": {
+            "right": 0,
+            "bottom": 0,
+            "left": 0,
+            "top": -682,
+            "any": false
+          },
+          "journalBtn": {
+            "right": -12,
+            "bottom": -773,
+            "left": -339,
+            "top": -45,
+            "any": false
+          }
+        },
+        "overlaps": [
+          {
+            "a": "hud",
+            "b": "journalBtn",
+            "w": 39,
+            "h": 26,
+            "area": 1014
+          },
+          {
+            "a": "stageWrap",
+            "b": "stage",
+            "w": 390,
+            "h": 601,
+            "area": 234390
+          },
+          {
+            "a": "stage",
+            "b": "shop",
+            "w": 390,
+            "h": 42,
+            "area": 16380
+          }
+        ],
+        "hud": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 390,
+            "h": 81,
+            "right": 390,
+            "bottom": 81
+          },
+          "sub": {
+            "rect": {
+              "x": 12,
+              "y": 45,
+              "w": 366,
+              "h": 26,
+              "right": 378,
+              "bottom": 71
+            },
+            "scrollW": 366,
+            "clientW": 366,
+            "clipped": false
+          },
+          "parts": [
+            {
+              "sel": "#hud-moyu",
+              "text": "0.2",
+              "rect": {
+                "x": 12,
+                "y": 7,
+                "w": 46.5,
+                "h": 35,
+                "right": 58.5,
+                "bottom": 42
+              },
+              "hidden": false,
+              "lines": 1,
+              "scrollW": 0,
+              "clientW": 0,
+              "clippedX": false,
+              "hitCoverage": 1
+            },
+            {
+              "sel": ".hud-moyu small",
+              "text": "摸鱼值",
+              "rect": {
+                "x": 64.5,
+                "y": 23,
+                "w": 39,
+                "h": 16,
+                "right": 103.5,
+                "bottom": 39
+              },
+              "hidden": false,
+              "lines": 1,
+              "scrollW": 0,
+              "clientW": 0,
+              "clippedX": false,
+              "hitCoverage": 1
+            },
+            {
+              "sel": "#hud-click",
+              "text": "1",
+              "rect": {
+                "x": 46.9,
+                "y": 50.5,
+                "w": 6.1,
+                "h": 15,
+                "right": 53.1,
+                "bottom": 65.5
+              },
+              "hidden": false,
+              "lines": 1,
+              "scrollW": 0,
+              "clientW": 0,
+              "clippedX": false,
+              "hitCoverage": 1
+            },
+            {
+              "sel": "#hud-idle",
+              "text": "0.2",
+              "rect": {
+                "x": 90.5,
+                "y": 50.5,
+                "w": 19.4,
+                "h": 15,
+                "right": 109.8,
+                "bottom": 65.5
+              },
+              "hidden": false,
+              "lines": 1,
+              "scrollW": 0,
+              "clientW": 0,
+              "clippedX": false,
+              "hitCoverage": 1
+            },
+            {
+              "sel": "#hud-rank",
+              "text": "实习生 0%",
+              "rect": {
+                "x": 135.5,
+                "y": 49.5,
+                "w": 58,
+                "h": 17,
+                "right": 193.5,
+                "bottom": 66.5
+              },
+              "hidden": false,
+              "lines": 1,
+              "scrollW": 58,
+              "clientW": 58,
+              "clippedX": false,
+              "hitCoverage": 1
+            },
+            {
+              "sel": "#hud-streak",
+              "text": "",
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "w": 0,
+                "h": 0,
+                "right": 0,
+                "bottom": 0
+              },
+              "hidden": true,
+              "lines": 0,
+              "scrollW": 0,
+              "clientW": 0,
+              "clippedX": false,
+              "hitCoverage": 0
+            },
+            {
+              "sel": "#btn-journal",
+              "text": "📔",
+              "rect": {
+                "x": 339,
+                "y": 45,
+                "w": 39,
+                "h": 26,
+                "right": 378,
+                "bottom": 71
+              },
+              "hidden": false,
+              "lines": 1,
+              "scrollW": 35,
+              "clientW": 35,
+              "clippedX": false,
+              "hitCoverage": 1
+            }
+          ]
+        },
+        "stage": {
+          "rect": {
+            "x": 0,
+            "y": 81,
+            "w": 390,
+            "h": 643,
+            "right": 390,
+            "bottom": 724
+          },
+          "attrW": 780,
+          "attrH": 1286,
+          "clientW": 390,
+          "clientH": 643
+        },
+        "shop": {
+          "rect": {
+            "x": 0,
+            "y": 682,
+            "w": 390,
+            "h": 162,
+            "right": 390,
+            "bottom": 844
+          },
+          "cards": {
+            "rect": {
+              "x": 8,
+              "y": 692,
+              "w": 374,
+              "h": 144,
+              "right": 382,
+              "bottom": 836
+            },
+            "scrollW": 1126,
+            "clientW": 374,
+            "scrollLeft": 0,
+            "maxScrollLeft": 752
+          },
+          "cardCount": 9,
+          "list": [
+            {
+              "id": "coffee",
+              "rect": {
+                "x": 8,
+                "y": 692,
+                "w": 118,
+                "h": 144,
+                "right": 126,
+                "bottom": 836
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "咖啡续命",
+              "cost": "15 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "water",
+              "rect": {
+                "x": 134,
+                "y": 692,
+                "w": 118,
+                "h": 144,
+                "right": 252,
+                "bottom": 836
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "带薪喝水",
+              "cost": "100 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "chair",
+              "rect": {
+                "x": 260,
+                "y": 692,
+                "w": 118,
+                "h": 144,
+                "right": 378,
+                "bottom": 836
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "人体工学椅",
+              "cost": "800 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "phone",
+              "rect": {
+                "x": 386,
+                "y": 692,
+                "w": 118,
+                "h": 144,
+                "right": 504,
+                "bottom": 836
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "刷手机",
+              "cost": "50 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "toilet",
+              "rect": {
+                "x": 512,
+                "y": 692,
+                "w": 118,
+                "h": 144,
+                "right": 630,
+                "bottom": 836
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "带薪蹲坑",
+              "cost": "600 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "group",
+              "rect": {
+                "x": 638,
+                "y": 692,
+                "w": 118,
+                "h": 144,
+                "right": 756,
+                "bottom": 836
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "摸鱼群聊",
+              "cost": "4000 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "meeting",
+              "rect": {
+                "x": 764,
+                "y": 692,
+                "w": 118,
+                "h": 144,
+                "right": 882,
+                "bottom": 836
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "无用会议",
+              "cost": "2.50万 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "deep",
+              "rect": {
+                "x": 890,
+                "y": 692,
+                "w": 118,
+                "h": 144,
+                "right": 1008,
+                "bottom": 836
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "深度摸鱼",
+              "cost": "15.00万 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "retire",
+              "rect": {
+                "x": 1016,
+                "y": 692,
+                "w": 118,
+                "h": 144,
+                "right": 1134,
+                "bottom": 836
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "退休式躺平",
+              "cost": "100.00万 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            }
+          ]
+        },
+        "journalBtn": {
+          "rect": {
+            "x": 339,
+            "y": 45,
+            "w": 39,
+            "h": 26,
+            "right": 378,
+            "bottom": 71
+          },
+          "hasReward": false,
+          "aria": "日报与图鉴",
+          "title": "日报与图鉴",
+          "badgeContent": "normal",
+          "badgeW": "39px"
+        }
+      },
+      "cardsVisibility": [
+        {
+          "i": 0,
+          "id": "coffee",
+          "visibleW": 118,
+          "full": true,
+          "ratio": 1
+        },
+        {
+          "i": 1,
+          "id": "water",
+          "visibleW": 118,
+          "full": true,
+          "ratio": 1
+        },
+        {
+          "i": 2,
+          "id": "chair",
+          "visibleW": 118,
+          "full": true,
+          "ratio": 1
+        },
+        {
+          "i": 3,
+          "id": "phone",
+          "visibleW": 0,
+          "full": false,
+          "ratio": 0
+        },
+        {
+          "i": 4,
+          "id": "toilet",
+          "visibleW": 0,
+          "full": false,
+          "ratio": 0
+        },
+        {
+          "i": 5,
+          "id": "group",
+          "visibleW": 0,
+          "full": false,
+          "ratio": 0
+        },
+        {
+          "i": 6,
+          "id": "meeting",
+          "visibleW": 0,
+          "full": false,
+          "ratio": 0
+        },
+        {
+          "i": 7,
+          "id": "deep",
+          "visibleW": 0,
+          "full": false,
+          "ratio": 0
+        },
+        {
+          "i": 8,
+          "id": "retire",
+          "visibleW": 0,
+          "full": false,
+          "ratio": 0
+        }
+      ],
+      "shopScroll": {
+        "before": {
+          "scrollLeft": 0,
+          "scrollW": 1126,
+          "clientW": 374
+        },
+        "after": {
+          "scrollLeft": 752,
+          "maxScrollLeft": 752,
+          "atEnd": true,
+          "lastCardRight": 382,
+          "containerRight": 382,
+          "lastCardFullyVisible": true,
+          "lastCardLeft": 264
+        },
+        "firstCardLeft": -744,
+        "restored": 0
+      },
+      "journal": {
+        "open": true,
+        "overlay": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 390,
+            "h": 844,
+            "right": 390,
+            "bottom": 844
+          },
+          "bg": "rgba(10, 10, 18, 0.72)"
+        },
+        "panel": {
+          "rect": {
+            "x": 25,
+            "y": 91,
+            "w": 340,
+            "h": 662,
+            "right": 365,
+            "bottom": 753
+          },
+          "scrollH": 654,
+          "clientH": 654,
+          "scrollable": false,
+          "scrollW": 332,
+          "clientW": 332,
+          "horizontalOverflow": 0
+        },
+        "close": {
+          "rect": {
+            "x": 331.3,
+            "y": 113,
+            "w": 13.7,
+            "h": 21,
+            "right": 345,
+            "bottom": 134
+          },
+          "hitCoverage": 1,
+          "aria": "关闭"
+        },
+        "goals": [
+          {
+            "cls": "goal",
+            "text": "○ 应付 1 次巡逻（忍住或点满都算） 0/1"
+          },
+          {
+            "cls": "goal",
+            "text": "○ 买 3 次升级 0/3"
+          },
+          {
+            "cls": "goal",
+            "text": "○ 收 1 个梗 0/1"
+          }
+        ],
+        "claim": {
+          "rect": {
+            "x": 45,
+            "y": 302,
+            "w": 300,
+            "h": 47,
+            "right": 345,
+            "bottom": 349
+          },
+          "text": "完成 0/3",
+          "disabled": true,
+          "hitCoverage": 1,
+          "fullyVisibleInPanel": false,
+          "visibleInViewport": false
+        },
+        "grid": {
+          "rect": {
+            "x": 45,
+            "y": 446,
+            "w": 300,
+            "h": 287,
+            "right": 345,
+            "bottom": 733
+          },
+          "count": 55,
+          "columns": 2,
+          "columnXs": [
+            45,
+            198
+          ],
+          "firstRowY": [
+            446,
+            446
+          ],
+          "scrollTop": 0,
+          "scrollH": 779,
+          "clientH": 287,
+          "afterScroll": {
+            "scrollTop": 492,
+            "maxScrollTop": 492,
+            "lastItemVisible": true
+          },
+          "itemsOverflowEach": [
+            false,
+            false,
+            false
+          ]
+        },
+        "collectText": "梗语录 0/10 升级彩蛋 0/45",
+        "total": "0/55",
+        "latest": "买升级、收线索，开始收集摸鱼彩蛋",
+        "badgeAfter": "normal",
+        "openedByTap": {
+          "x": 358.5,
+          "y": 58
+        },
+        "closeTap": {
+          "x": 338.1328125,
+          "y": 123.515625
+        },
+        "closedAfterTap": true
+      },
+      "screenshots": {
+        "main": "playtest/r6-screens/390x844-main.png",
+        "journal": "playtest/r6-screens/390x844-journal.png"
+      },
+      "typographyComputed": [
+        {
+          "sel": "#hud-moyu",
+          "label": "HUD 摸鱼值数值",
+          "fs": 30,
+          "lh": "33px",
+          "fw": "800",
+          "color": "rgb(255, 215, 110)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 11.19,
+          "rect": {
+            "x": 12,
+            "y": 7,
+            "w": 46.5,
+            "h": 35,
+            "right": 58.5,
+            "bottom": 42
+          },
+          "lines": 1,
+          "text": "0.2",
+          "hidden": false
+        },
+        {
+          "sel": ".hud-moyu small",
+          "label": "HUD 摸鱼值标签",
+          "fs": 13,
+          "lh": "14.3px",
+          "fw": "600",
+          "color": "rgb(189, 184, 159)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 7.75,
+          "rect": {
+            "x": 64.5,
+            "y": 23,
+            "w": 39,
+            "h": 16,
+            "right": 103.5,
+            "bottom": 39
+          },
+          "lines": 1,
+          "text": "摸鱼值",
+          "hidden": false
+        },
+        {
+          "sel": ".hud-sub > span:nth-child(1)",
+          "label": "HUD 点击+文案",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(168, 164, 147)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 6.18,
+          "rect": {
+            "x": 12,
+            "y": 49.5,
+            "w": 41.1,
+            "h": 17,
+            "right": 53.1,
+            "bottom": 66.5
+          },
+          "lines": 3,
+          "text": "点击 +1",
+          "hidden": false
+        },
+        {
+          "sel": "#hud-click",
+          "label": "HUD 点击力数值",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "700",
+          "color": "rgb(139, 226, 139)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 9.83,
+          "rect": {
+            "x": 46.9,
+            "y": 50.5,
+            "w": 6.1,
+            "h": 15,
+            "right": 53.1,
+            "bottom": 65.5
+          },
+          "lines": 1,
+          "text": "1",
+          "hidden": false
+        },
+        {
+          "sel": ".hud-sub > span:nth-child(2)",
+          "label": "HUD 挂机/秒文案",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(168, 164, 147)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 6.18,
+          "rect": {
+            "x": 63.1,
+            "y": 49.5,
+            "w": 62.4,
+            "h": 17,
+            "right": 125.5,
+            "bottom": 66.5
+          },
+          "lines": 4,
+          "text": "挂机 0.2/秒",
+          "hidden": false
+        },
+        {
+          "sel": "#hud-idle",
+          "label": "HUD 挂机数值",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "700",
+          "color": "rgb(139, 226, 139)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 9.83,
+          "rect": {
+            "x": 90.5,
+            "y": 50.5,
+            "w": 19.4,
+            "h": 15,
+            "right": 109.8,
+            "bottom": 65.5
+          },
+          "lines": 1,
+          "text": "0.2",
+          "hidden": false
+        },
+        {
+          "sel": "#hud-rank",
+          "label": "HUD 段位+百分比",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(168, 164, 147)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 6.18,
+          "rect": {
+            "x": 135.5,
+            "y": 49.5,
+            "w": 58,
+            "h": 17,
+            "right": 193.5,
+            "bottom": 66.5
+          },
+          "lines": 1,
+          "text": "实习生 0%",
+          "hidden": false
+        },
+        {
+          "sel": "#hud-streak",
+          "label": "HUD 连胜",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "700",
+          "color": "rgb(255, 215, 110)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 11.19,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "lines": 0,
+          "text": "",
+          "hidden": true
+        },
+        {
+          "sel": ".shop-card .shop-name",
+          "label": "商店卡名称",
+          "fs": 14,
+          "lh": "normal",
+          "fw": "700",
+          "color": "rgb(244, 241, 232)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 4.31,
+          "rect": {
+            "x": 19,
+            "y": 703,
+            "w": 96,
+            "h": 20,
+            "right": 115,
+            "bottom": 723
+          },
+          "lines": 1,
+          "text": "咖啡续命",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card .shop-desc",
+          "label": "商店卡描述",
+          "fs": 11,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(184, 179, 156)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 2.7,
+          "rect": {
+            "x": 19,
+            "y": 726,
+            "w": 96,
+            "h": 16,
+            "right": 115,
+            "bottom": 742
+          },
+          "lines": 1,
+          "text": "点击力 +1",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card .shop-next",
+          "label": "商店卡下级增量/里程碑",
+          "fs": 10,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(184, 224, 255)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 3.68,
+          "rect": {
+            "x": 19,
+            "y": 745,
+            "w": 96,
+            "h": 28,
+            "right": 115,
+            "bottom": 773
+          },
+          "lines": 2,
+          "text": "+1 点击力｜×2还差20级",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card .shop-value",
+          "label": "商店卡性价比",
+          "fs": 10,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(255, 215, 110)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 3.66,
+          "rect": {
+            "x": 19,
+            "y": 776,
+            "w": 96,
+            "h": 14,
+            "right": 115,
+            "bottom": 790
+          },
+          "lines": 1,
+          "text": "★ 点击 667/万",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card .shop-cost",
+          "label": "商店卡价格",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(255, 215, 110)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 3.66,
+          "rect": {
+            "x": 19,
+            "y": 793,
+            "w": 96,
+            "h": 17,
+            "right": 115,
+            "bottom": 810
+          },
+          "lines": 3,
+          "text": "15 摸鱼值",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card .shop-flavor",
+          "label": "商店卡彩蛋文案",
+          "fs": 10,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(143, 159, 208)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 2.33,
+          "rect": {
+            "x": 19,
+            "y": 813,
+            "w": 96,
+            "h": 12,
+            "right": 115,
+            "bottom": 825
+          },
+          "lines": 0,
+          "text": "",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card .shop-level",
+          "label": "商店卡等级",
+          "fs": 10,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(139, 226, 139)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 3.32,
+          "rect": {
+            "x": 117,
+            "y": 699,
+            "w": 0,
+            "h": 0,
+            "right": 117,
+            "bottom": 699
+          },
+          "lines": 0,
+          "text": "",
+          "hidden": true
+        },
+        {
+          "sel": ".shop-card:not(.affordable) .shop-name",
+          "label": "商店卡名称(不可买 opacity .55)",
+          "fs": 14,
+          "lh": "normal",
+          "fw": "700",
+          "color": "rgb(244, 241, 232)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 4.31,
+          "rect": {
+            "x": 19,
+            "y": 703,
+            "w": 96,
+            "h": 20,
+            "right": 115,
+            "bottom": 723
+          },
+          "lines": 1,
+          "text": "咖啡续命",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card:not(.affordable) .shop-desc",
+          "label": "商店卡描述(不可买 opacity .55)",
+          "fs": 11,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(184, 179, 156)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 2.7,
+          "rect": {
+            "x": 19,
+            "y": 726,
+            "w": 96,
+            "h": 16,
+            "right": 115,
+            "bottom": 742
+          },
+          "lines": 1,
+          "text": "点击力 +1",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card:not(.affordable) .shop-cost",
+          "label": "商店卡价格(不可买 opacity .55)",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(255, 215, 110)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 3.66,
+          "rect": {
+            "x": 19,
+            "y": 793,
+            "w": 96,
+            "h": 17,
+            "right": 115,
+            "bottom": 810
+          },
+          "lines": 3,
+          "text": "15 摸鱼值",
+          "hidden": false
+        }
+      ],
+      "typographyPixels": {
+        "image": {
+          "w": 1170,
+          "h": 2532
+        },
+        "items": [
+          {
+            "sel": "#hud-moyu",
+            "label": "HUD 摸鱼值数值",
+            "text": "0.3",
+            "fs": 30,
+            "computedColor": "rgb(255, 215, 110)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(255, 215, 110)",
+            "pixelContrast": 11.19,
+            "fgPixels": 3970,
+            "samples": 14805,
+            "boxPx": {
+              "w": 141,
+              "h": 105
+            }
+          },
+          {
+            "sel": ".hud-moyu small",
+            "label": "HUD 摸鱼值标签",
+            "text": "摸鱼值",
+            "fs": 13,
+            "computedColor": "rgb(189, 184, 159)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(189, 184, 159)",
+            "pixelContrast": 7.75,
+            "fgPixels": 1831,
+            "samples": 5616,
+            "boxPx": {
+              "w": 117,
+              "h": 48
+            }
+          },
+          {
+            "sel": ".hud-sub > span:nth-child(1)",
+            "label": "HUD 点击+文案",
+            "text": "点击 +1",
+            "fs": 12,
+            "computedColor": "rgb(168, 164, 147)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(139, 226, 139)",
+            "pixelContrast": 9.83,
+            "fgPixels": 156,
+            "samples": 5704,
+            "boxPx": {
+              "w": 124,
+              "h": 46
+            }
+          },
+          {
+            "sel": "#hud-click",
+            "label": "HUD 点击力数值",
+            "text": "1",
+            "fs": 12,
+            "computedColor": "rgb(139, 226, 139)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(139, 226, 139)",
+            "pixelContrast": 9.83,
+            "fgPixels": 156,
+            "samples": 920,
+            "boxPx": {
+              "w": 20,
+              "h": 46
+            }
+          },
+          {
+            "sel": ".hud-sub > span:nth-child(2)",
+            "label": "HUD 挂机/秒文案",
+            "text": "挂机 0.2/秒",
+            "fs": 12,
+            "computedColor": "rgb(168, 164, 147)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(139, 226, 139)",
+            "pixelContrast": 9.83,
+            "fgPixels": 528,
+            "samples": 8648,
+            "boxPx": {
+              "w": 188,
+              "h": 46
+            }
+          },
+          {
+            "sel": "#hud-idle",
+            "label": "HUD 挂机数值",
+            "text": "0.2",
+            "fs": 12,
+            "computedColor": "rgb(139, 226, 139)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(139, 226, 139)",
+            "pixelContrast": 9.83,
+            "fgPixels": 528,
+            "samples": 2714,
+            "boxPx": {
+              "w": 59,
+              "h": 46
+            }
+          },
+          {
+            "sel": "#hud-rank",
+            "label": "HUD 段位+百分比",
+            "text": "实习生 0%",
+            "fs": 12,
+            "computedColor": "rgb(168, 164, 147)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(168, 164, 147)",
+            "pixelContrast": 6.18,
+            "fgPixels": 1037,
+            "samples": 8050,
+            "boxPx": {
+              "w": 175,
+              "h": 46
+            }
+          },
+          {
+            "sel": "#hud-streak",
+            "label": "HUD 连胜",
+            "hidden": true
+          },
+          {
+            "sel": ".shop-card .shop-name",
+            "label": "商店卡名称",
+            "text": "咖啡续命",
+            "fs": 14,
+            "computedColor": "rgb(244, 241, 232)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(72, 64, 73)",
+            "pixelFg": "rgb(182, 172, 161)",
+            "pixelContrast": 4.47,
+            "fgPixels": 363,
+            "samples": 8568,
+            "boxPx": {
+              "w": 168,
+              "h": 51
+            }
+          },
+          {
+            "sel": ".shop-card .shop-desc",
+            "label": "商店卡描述",
+            "text": "点击力 +1",
+            "fs": 11,
+            "computedColor": "rgb(184, 179, 156)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(117, 114, 108)",
+            "pixelContrast": 2.72,
+            "fgPixels": 678,
+            "samples": 5655,
+            "boxPx": {
+              "w": 145,
+              "h": 39
+            }
+          },
+          {
+            "sel": ".shop-card .shop-next",
+            "label": "商店卡下级增量/里程碑",
+            "text": "+1 点击力｜×2还差20级",
+            "fs": 10,
+            "computedColor": "rgb(184, 224, 255)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(117, 139, 163)",
+            "pixelContrast": 3.71,
+            "fgPixels": 1515,
+            "samples": 20358,
+            "boxPx": {
+              "w": 261,
+              "h": 78
+            }
+          },
+          {
+            "sel": ".shop-card .shop-value",
+            "label": "商店卡性价比",
+            "text": "★ 点击 667/万",
+            "fs": 10,
+            "computedColor": "rgb(255, 215, 110)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(156, 134, 83)",
+            "pixelContrast": 3.69,
+            "fgPixels": 1026,
+            "samples": 7344,
+            "boxPx": {
+              "w": 204,
+              "h": 36
+            }
+          },
+          {
+            "sel": ".shop-card .shop-cost",
+            "label": "商店卡价格",
+            "text": "15 摸鱼值",
+            "fs": 12,
+            "computedColor": "rgb(255, 215, 110)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(156, 134, 83)",
+            "pixelContrast": 3.69,
+            "fgPixels": 1407,
+            "samples": 7245,
+            "boxPx": {
+              "w": 161,
+              "h": 45
+            }
+          },
+          {
+            "sel": ".shop-card .shop-flavor",
+            "label": "商店卡彩蛋文案",
+            "empty": true
+          },
+          {
+            "sel": ".shop-card .shop-level",
+            "label": "商店卡等级",
+            "hidden": true
+          },
+          {
+            "sel": ".shop-card:not(.affordable) .shop-name",
+            "label": "商店卡名称(不可买 opacity .55)",
+            "text": "咖啡续命",
+            "fs": 14,
+            "computedColor": "rgb(244, 241, 232)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(72, 64, 73)",
+            "pixelFg": "rgb(182, 172, 161)",
+            "pixelContrast": 4.47,
+            "fgPixels": 363,
+            "samples": 8568,
+            "boxPx": {
+              "w": 168,
+              "h": 51
+            }
+          },
+          {
+            "sel": ".shop-card:not(.affordable) .shop-desc",
+            "label": "商店卡描述(不可买 opacity .55)",
+            "text": "点击力 +1",
+            "fs": 11,
+            "computedColor": "rgb(184, 179, 156)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(117, 114, 108)",
+            "pixelContrast": 2.72,
+            "fgPixels": 678,
+            "samples": 5655,
+            "boxPx": {
+              "w": 145,
+              "h": 39
+            }
+          },
+          {
+            "sel": ".shop-card:not(.affordable) .shop-cost",
+            "label": "商店卡价格(不可买 opacity .55)",
+            "text": "15 摸鱼值",
+            "fs": 12,
+            "computedColor": "rgb(255, 215, 110)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(156, 134, 83)",
+            "pixelContrast": 3.69,
+            "fgPixels": 1407,
+            "samples": 7245,
+            "boxPx": {
+              "w": 161,
+              "h": 45
+            }
+          }
+        ]
+      },
+      "journalTypographyPixels": {
+        "image": {
+          "w": 1170,
+          "h": 2532
+        },
+        "items": [
+          {
+            "sel": ".journal-head h2",
+            "label": "日报标题",
+            "text": "摸鱼日报",
+            "fs": 18,
+            "computedColor": "rgb(244, 241, 232)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(244, 241, 232)",
+            "pixelContrast": 11.54,
+            "fgPixels": 4497,
+            "samples": 13824,
+            "boxPx": {
+              "w": 216,
+              "h": 64
+            }
+          },
+          {
+            "sel": "#journal-close",
+            "label": "日报关闭按钮",
+            "text": "✕",
+            "fs": 18,
+            "computedColor": "rgb(168, 164, 147)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(168, 164, 147)",
+            "pixelContrast": 5.21,
+            "fgPixels": 397,
+            "samples": 2688,
+            "boxPx": {
+              "w": 42,
+              "h": 64
+            }
+          },
+          {
+            "sel": ".journal-meta",
+            "label": "日报日期/连胜",
+            "text": "2026-11-27 · 🔥 连续 0 天（今天未领）",
+            "fs": 12,
+            "computedColor": "rgb(168, 164, 147)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(168, 164, 147)",
+            "pixelContrast": 5.21,
+            "fgPixels": 3308,
+            "samples": 29992,
+            "boxPx": {
+              "w": 652,
+              "h": 46
+            }
+          },
+          {
+            "sel": ".goal .goal-desc",
+            "label": "日报目标文案",
+            "text": "应付 1 次巡逻（忍住或点满都算）",
+            "fs": 13,
+            "computedColor": "rgb(244, 241, 232)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(58, 58, 82)",
+            "pixelFg": "rgb(244, 241, 232)",
+            "pixelContrast": 9.75,
+            "fgPixels": 4565,
+            "samples": 28714,
+            "boxPx": {
+              "w": 586,
+              "h": 49
+            }
+          },
+          {
+            "sel": ".goal .goal-progress",
+            "label": "日报目标进度",
+            "text": "0/1",
+            "fs": 12,
+            "computedColor": "rgb(255, 215, 110)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(58, 58, 82)",
+            "pixelFg": "rgb(255, 215, 110)",
+            "pixelContrast": 7.97,
+            "fgPixels": 314,
+            "samples": 2346,
+            "boxPx": {
+              "w": 51,
+              "h": 46
+            }
+          },
+          {
+            "sel": "#journal-claim",
+            "label": "日报领取按钮",
+            "text": "完成 0/3",
+            "fs": 15,
+            "computedColor": "rgb(168, 164, 147)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(85, 85, 122)",
+            "pixelFg": "rgb(168, 164, 147)",
+            "pixelContrast": 2.83,
+            "fgPixels": 2525,
+            "samples": 9680,
+            "boxPx": {
+              "w": 176,
+              "h": 55
+            }
+          },
+          {
+            "sel": ".journal-panel h3",
+            "label": "图鉴标题",
+            "text": "摸鱼图鉴 0/55",
+            "fs": 15,
+            "computedColor": "rgb(244, 241, 232)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(244, 241, 232)",
+            "pixelContrast": 11.54,
+            "fgPixels": 3425,
+            "samples": 49500,
+            "boxPx": {
+              "w": 900,
+              "h": 55
+            }
+          },
+          {
+            "sel": ".journal-panel h3 small",
+            "label": "图鉴总数",
+            "text": "0/55",
+            "fs": 12,
+            "computedColor": "rgb(255, 215, 110)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(255, 215, 110)",
+            "pixelContrast": 9.43,
+            "fgPixels": 883,
+            "samples": 3910,
+            "boxPx": {
+              "w": 85,
+              "h": 46
+            }
+          },
+          {
+            "sel": ".journal-collect span",
+            "label": "图鉴分类进度",
+            "text": "梗语录 0/10",
+            "fs": 13,
+            "computedColor": "rgb(184, 179, 156)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(126, 200, 255)",
+            "pixelContrast": 7.2,
+            "fgPixels": 975,
+            "samples": 10486,
+            "boxPx": {
+              "w": 214,
+              "h": 49
+            }
+          },
+          {
+            "sel": "#journal-latest",
+            "label": "最新彩蛋",
+            "text": "买升级、收线索，开始收集摸鱼彩蛋",
+            "fs": 11,
+            "computedColor": "rgb(143, 159, 208)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(143, 159, 208)",
+            "pixelContrast": 4.99,
+            "fgPixels": 3524,
+            "samples": 21120,
+            "boxPx": {
+              "w": 528,
+              "h": 40
+            }
+          },
+          {
+            "sel": ".c-item.on .c-label",
+            "label": "图鉴格标签(已解锁)",
+            "missing": true
+          },
+          {
+            "sel": ".c-item.on .c-text",
+            "label": "图鉴格内容(已解锁)",
+            "missing": true
+          },
+          {
+            "sel": ".c-item.off .c-label",
+            "label": "图鉴格标签(未解锁)",
+            "text": "???",
+            "fs": 9,
+            "computedColor": "rgb(143, 159, 208)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(44, 44, 64)",
+            "pixelFg": "rgb(99, 108, 145)",
+            "pixelContrast": 2.65,
+            "fgPixels": 141,
+            "samples": 1496,
+            "boxPx": {
+              "w": 44,
+              "h": 34
+            }
+          },
+          {
+            "sel": ".c-item.off .c-text",
+            "label": "图鉴格内容(未解锁)",
+            "hidden": true
+          }
+        ]
+      },
+      "derived": {
+        "stageCanvasOverflowPx": null,
+        "stageCanvasAttr": {
+          "attrW": 780,
+          "attrH": 1286,
+          "cssW": 390,
+          "cssH": 643
+        },
+        "canvasDprMismatch": 2,
+        "claimVisibleInPanel": true,
+        "claimVisibleInViewport": true,
+        "smallFonts": [
+          {
+            "label": "商店卡描述",
+            "sel": ".shop-card .shop-desc",
+            "fs": 11,
+            "text": "点击力 +1"
+          },
+          {
+            "label": "商店卡下级增量/里程碑",
+            "sel": ".shop-card .shop-next",
+            "fs": 10,
+            "text": "+1 点击力｜×2还差20级"
+          },
+          {
+            "label": "商店卡性价比",
+            "sel": ".shop-card .shop-value",
+            "fs": 10,
+            "text": "★ 点击 667/万"
+          },
+          {
+            "label": "商店卡彩蛋文案",
+            "sel": ".shop-card .shop-flavor",
+            "fs": 10,
+            "text": ""
+          },
+          {
+            "label": "商店卡描述(不可买 opacity .55)",
+            "sel": ".shop-card:not(.affordable) .shop-desc",
+            "fs": 11,
+            "text": "点击力 +1"
+          }
+        ],
+        "lowContrast": [
+          {
+            "label": "商店卡名称",
+            "sel": ".shop-card .shop-name",
+            "fs": 14,
+            "contrast": 4.31,
+            "opacity": 0.55,
+            "text": "咖啡续命"
+          },
+          {
+            "label": "商店卡描述",
+            "sel": ".shop-card .shop-desc",
+            "fs": 11,
+            "contrast": 2.7,
+            "opacity": 0.55,
+            "text": "点击力 +1"
+          },
+          {
+            "label": "商店卡下级增量/里程碑",
+            "sel": ".shop-card .shop-next",
+            "fs": 10,
+            "contrast": 3.68,
+            "opacity": 0.55,
+            "text": "+1 点击力｜×2还差20级"
+          },
+          {
+            "label": "商店卡性价比",
+            "sel": ".shop-card .shop-value",
+            "fs": 10,
+            "contrast": 3.66,
+            "opacity": 0.55,
+            "text": "★ 点击 667/万"
+          },
+          {
+            "label": "商店卡价格",
+            "sel": ".shop-card .shop-cost",
+            "fs": 12,
+            "contrast": 3.66,
+            "opacity": 0.55,
+            "text": "15 摸鱼值"
+          },
+          {
+            "label": "商店卡彩蛋文案",
+            "sel": ".shop-card .shop-flavor",
+            "fs": 10,
+            "contrast": 2.33,
+            "opacity": 0.55,
+            "text": ""
+          },
+          {
+            "label": "商店卡名称(不可买 opacity .55)",
+            "sel": ".shop-card:not(.affordable) .shop-name",
+            "fs": 14,
+            "contrast": 4.31,
+            "opacity": 0.55,
+            "text": "咖啡续命"
+          },
+          {
+            "label": "商店卡描述(不可买 opacity .55)",
+            "sel": ".shop-card:not(.affordable) .shop-desc",
+            "fs": 11,
+            "contrast": 2.7,
+            "opacity": 0.55,
+            "text": "点击力 +1"
+          },
+          {
+            "label": "商店卡价格(不可买 opacity .55)",
+            "sel": ".shop-card:not(.affordable) .shop-cost",
+            "fs": 12,
+            "contrast": 3.66,
+            "opacity": 0.55,
+            "text": "15 摸鱼值"
+          }
+        ],
+        "touchTargets": [
+          {
+            "name": "📔 日报按钮",
+            "w": 39,
+            "h": 26,
+            "pass44": false
+          },
+          {
+            "name": "商店卡",
+            "w": 118,
+            "h": 144,
+            "pass44": true
+          },
+          {
+            "name": "场景画布",
+            "w": 390,
+            "h": 643,
+            "pass44": true
+          },
+          {
+            "name": "日报关闭 ✕",
+            "w": 13.7,
+            "h": 21,
+            "pass44": false
+          },
+          {
+            "name": "日报领取按钮",
+            "w": 300,
+            "h": 47,
+            "pass44": true
+          }
+        ]
+      }
+    },
+    {
+      "label": "375x667",
+      "size": {
+        "w": 375,
+        "h": 667
+      },
+      "boot": {
+        "nav": 4,
+        "ready": 25,
+        "load": 22,
+        "fcp": 32
+      },
+      "fps": 62,
+      "layout": {
+        "viewport": {
+          "w": 375,
+          "h": 667,
+          "dpr": 3,
+          "visualScale": 1
+        },
+        "doc": {
+          "scrollW": 375,
+          "scrollH": 667,
+          "bodyScrollW": 375,
+          "bodyScrollH": 667,
+          "horizontalOverflow": 0
+        },
+        "meta": {
+          "viewportMeta": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover",
+          "manifest": "/manifest.webmanifest",
+          "lang": "zh-CN",
+          "title": "摸鱼工位",
+          "bodyTouchAction": "manipulation",
+          "canvasTouchAction": "none"
+        },
+        "app": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 375,
+            "h": 667,
+            "right": 375,
+            "bottom": 667
+          },
+          "padding": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          }
+        },
+        "named": {
+          "hud": {
+            "x": 0,
+            "y": 0,
+            "w": 375,
+            "h": 81,
+            "right": 375,
+            "bottom": 81
+          },
+          "stageWrap": {
+            "x": 0,
+            "y": 81,
+            "w": 375,
+            "h": 424,
+            "right": 375,
+            "bottom": 505
+          },
+          "stage": {
+            "x": 0,
+            "y": 81,
+            "w": 375,
+            "h": 466,
+            "right": 375,
+            "bottom": 547
+          },
+          "shop": {
+            "x": 0,
+            "y": 505,
+            "w": 375,
+            "h": 162,
+            "right": 375,
+            "bottom": 667
+          },
+          "journalBtn": {
+            "x": 324,
+            "y": 45,
+            "w": 39,
+            "h": 26,
+            "right": 363,
+            "bottom": 71
+          }
+        },
+        "outOfViewport": {
+          "hud": {
+            "right": 0,
+            "bottom": -586,
+            "left": 0,
+            "top": 0,
+            "any": false
+          },
+          "stageWrap": {
+            "right": 0,
+            "bottom": -162,
+            "left": 0,
+            "top": -81,
+            "any": false
+          },
+          "stage": {
+            "right": 0,
+            "bottom": -120,
+            "left": 0,
+            "top": -81,
+            "any": false
+          },
+          "shop": {
+            "right": 0,
+            "bottom": 0,
+            "left": 0,
+            "top": -505,
+            "any": false
+          },
+          "journalBtn": {
+            "right": -12,
+            "bottom": -596,
+            "left": -324,
+            "top": -45,
+            "any": false
+          }
+        },
+        "overlaps": [
+          {
+            "a": "hud",
+            "b": "journalBtn",
+            "w": 39,
+            "h": 26,
+            "area": 1014
+          },
+          {
+            "a": "stageWrap",
+            "b": "stage",
+            "w": 375,
+            "h": 424,
+            "area": 159000
+          },
+          {
+            "a": "stage",
+            "b": "shop",
+            "w": 375,
+            "h": 42,
+            "area": 15750
+          }
+        ],
+        "hud": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 375,
+            "h": 81,
+            "right": 375,
+            "bottom": 81
+          },
+          "sub": {
+            "rect": {
+              "x": 12,
+              "y": 45,
+              "w": 351,
+              "h": 26,
+              "right": 363,
+              "bottom": 71
+            },
+            "scrollW": 351,
+            "clientW": 351,
+            "clipped": false
+          },
+          "parts": [
+            {
+              "sel": "#hud-moyu",
+              "text": "0.7",
+              "rect": {
+                "x": 12,
+                "y": 7,
+                "w": 45,
+                "h": 35,
+                "right": 57,
+                "bottom": 42
+              },
+              "hidden": false,
+              "lines": 1,
+              "scrollW": 0,
+              "clientW": 0,
+              "clippedX": false,
+              "hitCoverage": 1
+            },
+            {
+              "sel": ".hud-moyu small",
+              "text": "摸鱼值",
+              "rect": {
+                "x": 63,
+                "y": 23,
+                "w": 39,
+                "h": 16,
+                "right": 102,
+                "bottom": 39
+              },
+              "hidden": false,
+              "lines": 1,
+              "scrollW": 0,
+              "clientW": 0,
+              "clippedX": false,
+              "hitCoverage": 1
+            },
+            {
+              "sel": "#hud-click",
+              "text": "1",
+              "rect": {
+                "x": 46.9,
+                "y": 50.5,
+                "w": 6.1,
+                "h": 15,
+                "right": 53.1,
+                "bottom": 65.5
+              },
+              "hidden": false,
+              "lines": 1,
+              "scrollW": 0,
+              "clientW": 0,
+              "clippedX": false,
+              "hitCoverage": 1
+            },
+            {
+              "sel": "#hud-idle",
+              "text": "0.2",
+              "rect": {
+                "x": 90.5,
+                "y": 50.5,
+                "w": 19.4,
+                "h": 15,
+                "right": 109.8,
+                "bottom": 65.5
+              },
+              "hidden": false,
+              "lines": 1,
+              "scrollW": 0,
+              "clientW": 0,
+              "clippedX": false,
+              "hitCoverage": 1
+            },
+            {
+              "sel": "#hud-rank",
+              "text": "实习生 0%",
+              "rect": {
+                "x": 135.5,
+                "y": 49.5,
+                "w": 58,
+                "h": 17,
+                "right": 193.5,
+                "bottom": 66.5
+              },
+              "hidden": false,
+              "lines": 1,
+              "scrollW": 58,
+              "clientW": 58,
+              "clippedX": false,
+              "hitCoverage": 1
+            },
+            {
+              "sel": "#hud-streak",
+              "text": "",
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "w": 0,
+                "h": 0,
+                "right": 0,
+                "bottom": 0
+              },
+              "hidden": true,
+              "lines": 0,
+              "scrollW": 0,
+              "clientW": 0,
+              "clippedX": false,
+              "hitCoverage": 0
+            },
+            {
+              "sel": "#btn-journal",
+              "text": "📔",
+              "rect": {
+                "x": 324,
+                "y": 45,
+                "w": 39,
+                "h": 26,
+                "right": 363,
+                "bottom": 71
+              },
+              "hidden": false,
+              "lines": 1,
+              "scrollW": 35,
+              "clientW": 35,
+              "clippedX": false,
+              "hitCoverage": 1
+            }
+          ]
+        },
+        "stage": {
+          "rect": {
+            "x": 0,
+            "y": 81,
+            "w": 375,
+            "h": 466,
+            "right": 375,
+            "bottom": 547
+          },
+          "attrW": 750,
+          "attrH": 932,
+          "clientW": 375,
+          "clientH": 466
+        },
+        "shop": {
+          "rect": {
+            "x": 0,
+            "y": 505,
+            "w": 375,
+            "h": 162,
+            "right": 375,
+            "bottom": 667
+          },
+          "cards": {
+            "rect": {
+              "x": 8,
+              "y": 515,
+              "w": 359,
+              "h": 144,
+              "right": 367,
+              "bottom": 659
+            },
+            "scrollW": 1126,
+            "clientW": 359,
+            "scrollLeft": 0,
+            "maxScrollLeft": 767
+          },
+          "cardCount": 9,
+          "list": [
+            {
+              "id": "coffee",
+              "rect": {
+                "x": 8,
+                "y": 515,
+                "w": 118,
+                "h": 144,
+                "right": 126,
+                "bottom": 659
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "咖啡续命",
+              "cost": "15 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "water",
+              "rect": {
+                "x": 134,
+                "y": 515,
+                "w": 118,
+                "h": 144,
+                "right": 252,
+                "bottom": 659
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "带薪喝水",
+              "cost": "100 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "chair",
+              "rect": {
+                "x": 260,
+                "y": 515,
+                "w": 118,
+                "h": 144,
+                "right": 378,
+                "bottom": 659
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "人体工学椅",
+              "cost": "800 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "phone",
+              "rect": {
+                "x": 386,
+                "y": 515,
+                "w": 118,
+                "h": 144,
+                "right": 504,
+                "bottom": 659
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "刷手机",
+              "cost": "50 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "toilet",
+              "rect": {
+                "x": 512,
+                "y": 515,
+                "w": 118,
+                "h": 144,
+                "right": 630,
+                "bottom": 659
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "带薪蹲坑",
+              "cost": "600 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "group",
+              "rect": {
+                "x": 638,
+                "y": 515,
+                "w": 118,
+                "h": 144,
+                "right": 756,
+                "bottom": 659
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "摸鱼群聊",
+              "cost": "4000 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "meeting",
+              "rect": {
+                "x": 764,
+                "y": 515,
+                "w": 118,
+                "h": 144,
+                "right": 882,
+                "bottom": 659
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "无用会议",
+              "cost": "2.50万 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "deep",
+              "rect": {
+                "x": 890,
+                "y": 515,
+                "w": 118,
+                "h": 144,
+                "right": 1008,
+                "bottom": 659
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "深度摸鱼",
+              "cost": "15.00万 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "retire",
+              "rect": {
+                "x": 1016,
+                "y": 515,
+                "w": 118,
+                "h": 144,
+                "right": 1134,
+                "bottom": 659
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "退休式躺平",
+              "cost": "100.00万 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            }
+          ]
+        },
+        "journalBtn": {
+          "rect": {
+            "x": 324,
+            "y": 45,
+            "w": 39,
+            "h": 26,
+            "right": 363,
+            "bottom": 71
+          },
+          "hasReward": false,
+          "aria": "日报与图鉴",
+          "title": "日报与图鉴",
+          "badgeContent": "normal",
+          "badgeW": "39px"
+        }
+      },
+      "cardsVisibility": [
+        {
+          "i": 0,
+          "id": "coffee",
+          "visibleW": 118,
+          "full": true,
+          "ratio": 1
+        },
+        {
+          "i": 1,
+          "id": "water",
+          "visibleW": 118,
+          "full": true,
+          "ratio": 1
+        },
+        {
+          "i": 2,
+          "id": "chair",
+          "visibleW": 107,
+          "full": false,
+          "ratio": 0.91
+        },
+        {
+          "i": 3,
+          "id": "phone",
+          "visibleW": 0,
+          "full": false,
+          "ratio": 0
+        },
+        {
+          "i": 4,
+          "id": "toilet",
+          "visibleW": 0,
+          "full": false,
+          "ratio": 0
+        },
+        {
+          "i": 5,
+          "id": "group",
+          "visibleW": 0,
+          "full": false,
+          "ratio": 0
+        },
+        {
+          "i": 6,
+          "id": "meeting",
+          "visibleW": 0,
+          "full": false,
+          "ratio": 0
+        },
+        {
+          "i": 7,
+          "id": "deep",
+          "visibleW": 0,
+          "full": false,
+          "ratio": 0
+        },
+        {
+          "i": 8,
+          "id": "retire",
+          "visibleW": 0,
+          "full": false,
+          "ratio": 0
+        }
+      ],
+      "shopScroll": {
+        "before": {
+          "scrollLeft": 0,
+          "scrollW": 1126,
+          "clientW": 359
+        },
+        "after": {
+          "scrollLeft": 767,
+          "maxScrollLeft": 767,
+          "atEnd": true,
+          "lastCardRight": 367,
+          "containerRight": 367,
+          "lastCardFullyVisible": true,
+          "lastCardLeft": 249
+        },
+        "firstCardLeft": -759,
+        "restored": 0
+      },
+      "journal": {
+        "open": true,
+        "overlay": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 375,
+            "h": 667,
+            "right": 375,
+            "bottom": 667
+          },
+          "bg": "rgba(10, 10, 18, 0.72)"
+        },
+        "panel": {
+          "rect": {
+            "x": 22.5,
+            "y": 60,
+            "w": 330,
+            "h": 546.9,
+            "right": 352.5,
+            "bottom": 607
+          },
+          "scrollH": 594,
+          "clientH": 539,
+          "scrollable": true,
+          "scrollW": 322,
+          "clientW": 322,
+          "horizontalOverflow": 0
+        },
+        "close": {
+          "rect": {
+            "x": 318.8,
+            "y": 82,
+            "w": 13.7,
+            "h": 21,
+            "right": 332.5,
+            "bottom": 103
+          },
+          "hitCoverage": 1,
+          "aria": "关闭"
+        },
+        "goals": [
+          {
+            "cls": "goal",
+            "text": "○ 应付 1 次巡逻（忍住或点满都算） 0/1"
+          },
+          {
+            "cls": "goal",
+            "text": "○ 买 3 次升级 0/3"
+          },
+          {
+            "cls": "goal",
+            "text": "○ 收 1 个梗 0/1"
+          }
+        ],
+        "claim": {
+          "rect": {
+            "x": 42.5,
+            "y": 271,
+            "w": 290,
+            "h": 47,
+            "right": 332.5,
+            "bottom": 318
+          },
+          "text": "完成 0/3",
+          "disabled": true,
+          "hitCoverage": 1,
+          "fullyVisibleInPanel": false,
+          "visibleInViewport": false
+        },
+        "grid": {
+          "rect": {
+            "x": 42.5,
+            "y": 415,
+            "w": 290,
+            "h": 226.8,
+            "right": 332.5,
+            "bottom": 641.8
+          },
+          "count": 55,
+          "columns": 2,
+          "columnXs": [
+            43,
+            190
+          ],
+          "firstRowY": [
+            415,
+            415
+          ],
+          "scrollTop": 0,
+          "scrollH": 779,
+          "clientH": 227,
+          "afterScroll": {
+            "scrollTop": 552,
+            "maxScrollTop": 552,
+            "lastItemVisible": true
+          },
+          "itemsOverflowEach": [
+            false,
+            false,
+            false
+          ]
+        },
+        "collectText": "梗语录 0/10 升级彩蛋 0/45",
+        "total": "0/55",
+        "latest": "买升级、收线索，开始收集摸鱼彩蛋",
+        "badgeAfter": "normal",
+        "openedByTap": {
+          "x": 343.5,
+          "y": 58
+        },
+        "closeTap": {
+          "x": 325.6328125,
+          "y": 92.53125
+        },
+        "closedAfterTap": true
+      },
+      "screenshots": {
+        "main": "playtest/r6-screens/375x667-main.png",
+        "journal": "playtest/r6-screens/375x667-journal.png"
+      },
+      "typographyComputed": [
+        {
+          "sel": "#hud-moyu",
+          "label": "HUD 摸鱼值数值",
+          "fs": 30,
+          "lh": "33px",
+          "fw": "800",
+          "color": "rgb(255, 215, 110)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 11.19,
+          "rect": {
+            "x": 12,
+            "y": 7,
+            "w": 45,
+            "h": 35,
+            "right": 57,
+            "bottom": 42
+          },
+          "lines": 1,
+          "text": "0.7",
+          "hidden": false
+        },
+        {
+          "sel": ".hud-moyu small",
+          "label": "HUD 摸鱼值标签",
+          "fs": 13,
+          "lh": "14.3px",
+          "fw": "600",
+          "color": "rgb(189, 184, 159)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 7.75,
+          "rect": {
+            "x": 63,
+            "y": 23,
+            "w": 39,
+            "h": 16,
+            "right": 102,
+            "bottom": 39
+          },
+          "lines": 1,
+          "text": "摸鱼值",
+          "hidden": false
+        },
+        {
+          "sel": ".hud-sub > span:nth-child(1)",
+          "label": "HUD 点击+文案",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(168, 164, 147)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 6.18,
+          "rect": {
+            "x": 12,
+            "y": 49.5,
+            "w": 41.1,
+            "h": 17,
+            "right": 53.1,
+            "bottom": 66.5
+          },
+          "lines": 3,
+          "text": "点击 +1",
+          "hidden": false
+        },
+        {
+          "sel": "#hud-click",
+          "label": "HUD 点击力数值",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "700",
+          "color": "rgb(139, 226, 139)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 9.83,
+          "rect": {
+            "x": 46.9,
+            "y": 50.5,
+            "w": 6.1,
+            "h": 15,
+            "right": 53.1,
+            "bottom": 65.5
+          },
+          "lines": 1,
+          "text": "1",
+          "hidden": false
+        },
+        {
+          "sel": ".hud-sub > span:nth-child(2)",
+          "label": "HUD 挂机/秒文案",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(168, 164, 147)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 6.18,
+          "rect": {
+            "x": 63.1,
+            "y": 49.5,
+            "w": 62.4,
+            "h": 17,
+            "right": 125.5,
+            "bottom": 66.5
+          },
+          "lines": 4,
+          "text": "挂机 0.2/秒",
+          "hidden": false
+        },
+        {
+          "sel": "#hud-idle",
+          "label": "HUD 挂机数值",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "700",
+          "color": "rgb(139, 226, 139)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 9.83,
+          "rect": {
+            "x": 90.5,
+            "y": 50.5,
+            "w": 19.4,
+            "h": 15,
+            "right": 109.8,
+            "bottom": 65.5
+          },
+          "lines": 1,
+          "text": "0.2",
+          "hidden": false
+        },
+        {
+          "sel": "#hud-rank",
+          "label": "HUD 段位+百分比",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(168, 164, 147)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 6.18,
+          "rect": {
+            "x": 135.5,
+            "y": 49.5,
+            "w": 58,
+            "h": 17,
+            "right": 193.5,
+            "bottom": 66.5
+          },
+          "lines": 1,
+          "text": "实习生 0%",
+          "hidden": false
+        },
+        {
+          "sel": "#hud-streak",
+          "label": "HUD 连胜",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "700",
+          "color": "rgb(255, 215, 110)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 11.19,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "lines": 0,
+          "text": "",
+          "hidden": true
+        },
+        {
+          "sel": ".shop-card .shop-name",
+          "label": "商店卡名称",
+          "fs": 14,
+          "lh": "normal",
+          "fw": "700",
+          "color": "rgb(244, 241, 232)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 4.31,
+          "rect": {
+            "x": 19,
+            "y": 526,
+            "w": 96,
+            "h": 20,
+            "right": 115,
+            "bottom": 546
+          },
+          "lines": 1,
+          "text": "咖啡续命",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card .shop-desc",
+          "label": "商店卡描述",
+          "fs": 11,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(184, 179, 156)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 2.7,
+          "rect": {
+            "x": 19,
+            "y": 549,
+            "w": 96,
+            "h": 16,
+            "right": 115,
+            "bottom": 565
+          },
+          "lines": 1,
+          "text": "点击力 +1",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card .shop-next",
+          "label": "商店卡下级增量/里程碑",
+          "fs": 10,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(184, 224, 255)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 3.68,
+          "rect": {
+            "x": 19,
+            "y": 568,
+            "w": 96,
+            "h": 28,
+            "right": 115,
+            "bottom": 596
+          },
+          "lines": 2,
+          "text": "+1 点击力｜×2还差20级",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card .shop-value",
+          "label": "商店卡性价比",
+          "fs": 10,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(255, 215, 110)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 3.66,
+          "rect": {
+            "x": 19,
+            "y": 599,
+            "w": 96,
+            "h": 14,
+            "right": 115,
+            "bottom": 613
+          },
+          "lines": 1,
+          "text": "★ 点击 667/万",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card .shop-cost",
+          "label": "商店卡价格",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(255, 215, 110)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 3.66,
+          "rect": {
+            "x": 19,
+            "y": 616,
+            "w": 96,
+            "h": 17,
+            "right": 115,
+            "bottom": 633
+          },
+          "lines": 3,
+          "text": "15 摸鱼值",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card .shop-flavor",
+          "label": "商店卡彩蛋文案",
+          "fs": 10,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(143, 159, 208)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 2.33,
+          "rect": {
+            "x": 19,
+            "y": 636,
+            "w": 96,
+            "h": 12,
+            "right": 115,
+            "bottom": 648
+          },
+          "lines": 0,
+          "text": "",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card .shop-level",
+          "label": "商店卡等级",
+          "fs": 10,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(139, 226, 139)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 3.32,
+          "rect": {
+            "x": 117,
+            "y": 522,
+            "w": 0,
+            "h": 0,
+            "right": 117,
+            "bottom": 522
+          },
+          "lines": 0,
+          "text": "",
+          "hidden": true
+        },
+        {
+          "sel": ".shop-card:not(.affordable) .shop-name",
+          "label": "商店卡名称(不可买 opacity .55)",
+          "fs": 14,
+          "lh": "normal",
+          "fw": "700",
+          "color": "rgb(244, 241, 232)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 4.31,
+          "rect": {
+            "x": 19,
+            "y": 526,
+            "w": 96,
+            "h": 20,
+            "right": 115,
+            "bottom": 546
+          },
+          "lines": 1,
+          "text": "咖啡续命",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card:not(.affordable) .shop-desc",
+          "label": "商店卡描述(不可买 opacity .55)",
+          "fs": 11,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(184, 179, 156)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 2.7,
+          "rect": {
+            "x": 19,
+            "y": 549,
+            "w": 96,
+            "h": 16,
+            "right": 115,
+            "bottom": 565
+          },
+          "lines": 1,
+          "text": "点击力 +1",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card:not(.affordable) .shop-cost",
+          "label": "商店卡价格(不可买 opacity .55)",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(255, 215, 110)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 3.66,
+          "rect": {
+            "x": 19,
+            "y": 616,
+            "w": 96,
+            "h": 17,
+            "right": 115,
+            "bottom": 633
+          },
+          "lines": 3,
+          "text": "15 摸鱼值",
+          "hidden": false
+        }
+      ],
+      "typographyPixels": {
+        "image": {
+          "w": 1125,
+          "h": 2001
+        },
+        "items": [
+          {
+            "sel": "#hud-moyu",
+            "label": "HUD 摸鱼值数值",
+            "text": "0.7",
+            "fs": 30,
+            "computedColor": "rgb(255, 215, 110)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(255, 215, 110)",
+            "pixelContrast": 11.19,
+            "fgPixels": 3559,
+            "samples": 14175,
+            "boxPx": {
+              "w": 135,
+              "h": 105
+            }
+          },
+          {
+            "sel": ".hud-moyu small",
+            "label": "HUD 摸鱼值标签",
+            "text": "摸鱼值",
+            "fs": 13,
+            "computedColor": "rgb(189, 184, 159)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(189, 184, 159)",
+            "pixelContrast": 7.75,
+            "fgPixels": 1821,
+            "samples": 5616,
+            "boxPx": {
+              "w": 117,
+              "h": 48
+            }
+          },
+          {
+            "sel": ".hud-sub > span:nth-child(1)",
+            "label": "HUD 点击+文案",
+            "text": "点击 +1",
+            "fs": 12,
+            "computedColor": "rgb(168, 164, 147)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(139, 226, 139)",
+            "pixelContrast": 9.83,
+            "fgPixels": 156,
+            "samples": 5704,
+            "boxPx": {
+              "w": 124,
+              "h": 46
+            }
+          },
+          {
+            "sel": "#hud-click",
+            "label": "HUD 点击力数值",
+            "text": "1",
+            "fs": 12,
+            "computedColor": "rgb(139, 226, 139)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(139, 226, 139)",
+            "pixelContrast": 9.83,
+            "fgPixels": 156,
+            "samples": 920,
+            "boxPx": {
+              "w": 20,
+              "h": 46
+            }
+          },
+          {
+            "sel": ".hud-sub > span:nth-child(2)",
+            "label": "HUD 挂机/秒文案",
+            "text": "挂机 0.2/秒",
+            "fs": 12,
+            "computedColor": "rgb(168, 164, 147)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(139, 226, 139)",
+            "pixelContrast": 9.83,
+            "fgPixels": 528,
+            "samples": 8648,
+            "boxPx": {
+              "w": 188,
+              "h": 46
+            }
+          },
+          {
+            "sel": "#hud-idle",
+            "label": "HUD 挂机数值",
+            "text": "0.2",
+            "fs": 12,
+            "computedColor": "rgb(139, 226, 139)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(139, 226, 139)",
+            "pixelContrast": 9.83,
+            "fgPixels": 528,
+            "samples": 2714,
+            "boxPx": {
+              "w": 59,
+              "h": 46
+            }
+          },
+          {
+            "sel": "#hud-rank",
+            "label": "HUD 段位+百分比",
+            "text": "实习生 0%",
+            "fs": 12,
+            "computedColor": "rgb(168, 164, 147)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(168, 164, 147)",
+            "pixelContrast": 6.18,
+            "fgPixels": 1037,
+            "samples": 8050,
+            "boxPx": {
+              "w": 175,
+              "h": 46
+            }
+          },
+          {
+            "sel": "#hud-streak",
+            "label": "HUD 连胜",
+            "hidden": true
+          },
+          {
+            "sel": ".shop-card .shop-name",
+            "label": "商店卡名称",
+            "text": "咖啡续命",
+            "fs": 14,
+            "computedColor": "rgb(244, 241, 232)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(72, 64, 73)",
+            "pixelFg": "rgb(182, 172, 161)",
+            "pixelContrast": 4.47,
+            "fgPixels": 363,
+            "samples": 8568,
+            "boxPx": {
+              "w": 168,
+              "h": 51
+            }
+          },
+          {
+            "sel": ".shop-card .shop-desc",
+            "label": "商店卡描述",
+            "text": "点击力 +1",
+            "fs": 11,
+            "computedColor": "rgb(184, 179, 156)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(117, 114, 108)",
+            "pixelContrast": 2.72,
+            "fgPixels": 678,
+            "samples": 5655,
+            "boxPx": {
+              "w": 145,
+              "h": 39
+            }
+          },
+          {
+            "sel": ".shop-card .shop-next",
+            "label": "商店卡下级增量/里程碑",
+            "text": "+1 点击力｜×2还差20级",
+            "fs": 10,
+            "computedColor": "rgb(184, 224, 255)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(117, 139, 163)",
+            "pixelContrast": 3.71,
+            "fgPixels": 1515,
+            "samples": 20358,
+            "boxPx": {
+              "w": 261,
+              "h": 78
+            }
+          },
+          {
+            "sel": ".shop-card .shop-value",
+            "label": "商店卡性价比",
+            "text": "★ 点击 667/万",
+            "fs": 10,
+            "computedColor": "rgb(255, 215, 110)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(156, 134, 83)",
+            "pixelContrast": 3.69,
+            "fgPixels": 1026,
+            "samples": 7344,
+            "boxPx": {
+              "w": 204,
+              "h": 36
+            }
+          },
+          {
+            "sel": ".shop-card .shop-cost",
+            "label": "商店卡价格",
+            "text": "15 摸鱼值",
+            "fs": 12,
+            "computedColor": "rgb(255, 215, 110)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(156, 134, 83)",
+            "pixelContrast": 3.69,
+            "fgPixels": 1407,
+            "samples": 7245,
+            "boxPx": {
+              "w": 161,
+              "h": 45
+            }
+          },
+          {
+            "sel": ".shop-card .shop-flavor",
+            "label": "商店卡彩蛋文案",
+            "empty": true
+          },
+          {
+            "sel": ".shop-card .shop-level",
+            "label": "商店卡等级",
+            "hidden": true
+          },
+          {
+            "sel": ".shop-card:not(.affordable) .shop-name",
+            "label": "商店卡名称(不可买 opacity .55)",
+            "text": "咖啡续命",
+            "fs": 14,
+            "computedColor": "rgb(244, 241, 232)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(72, 64, 73)",
+            "pixelFg": "rgb(182, 172, 161)",
+            "pixelContrast": 4.47,
+            "fgPixels": 363,
+            "samples": 8568,
+            "boxPx": {
+              "w": 168,
+              "h": 51
+            }
+          },
+          {
+            "sel": ".shop-card:not(.affordable) .shop-desc",
+            "label": "商店卡描述(不可买 opacity .55)",
+            "text": "点击力 +1",
+            "fs": 11,
+            "computedColor": "rgb(184, 179, 156)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(117, 114, 108)",
+            "pixelContrast": 2.72,
+            "fgPixels": 678,
+            "samples": 5655,
+            "boxPx": {
+              "w": 145,
+              "h": 39
+            }
+          },
+          {
+            "sel": ".shop-card:not(.affordable) .shop-cost",
+            "label": "商店卡价格(不可买 opacity .55)",
+            "text": "15 摸鱼值",
+            "fs": 12,
+            "computedColor": "rgb(255, 215, 110)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(156, 134, 83)",
+            "pixelContrast": 3.69,
+            "fgPixels": 1407,
+            "samples": 7245,
+            "boxPx": {
+              "w": 161,
+              "h": 45
+            }
+          }
+        ]
+      },
+      "journalTypographyPixels": {
+        "image": {
+          "w": 1125,
+          "h": 2001
+        },
+        "items": [
+          {
+            "sel": ".journal-head h2",
+            "label": "日报标题",
+            "text": "摸鱼日报",
+            "fs": 18,
+            "computedColor": "rgb(244, 241, 232)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(244, 241, 232)",
+            "pixelContrast": 11.54,
+            "fgPixels": 4489,
+            "samples": 13888,
+            "boxPx": {
+              "w": 217,
+              "h": 64
+            }
+          },
+          {
+            "sel": "#journal-close",
+            "label": "日报关闭按钮",
+            "text": "✕",
+            "fs": 18,
+            "computedColor": "rgb(168, 164, 147)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(168, 164, 147)",
+            "pixelContrast": 5.21,
+            "fgPixels": 381,
+            "samples": 2688,
+            "boxPx": {
+              "w": 42,
+              "h": 64
+            }
+          },
+          {
+            "sel": ".journal-meta",
+            "label": "日报日期/连胜",
+            "text": "2026-11-27 · 🔥 连续 0 天（今天未领）",
+            "fs": 12,
+            "computedColor": "rgb(168, 164, 147)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(168, 164, 147)",
+            "pixelContrast": 5.21,
+            "fgPixels": 3230,
+            "samples": 30038,
+            "boxPx": {
+              "w": 653,
+              "h": 46
+            }
+          },
+          {
+            "sel": ".goal .goal-desc",
+            "label": "日报目标文案",
+            "text": "应付 1 次巡逻（忍住或点满都算）",
+            "fs": 13,
+            "computedColor": "rgb(244, 241, 232)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(58, 58, 82)",
+            "pixelFg": "rgb(244, 241, 232)",
+            "pixelContrast": 9.75,
+            "fgPixels": 4573,
+            "samples": 28714,
+            "boxPx": {
+              "w": 586,
+              "h": 49
+            }
+          },
+          {
+            "sel": ".goal .goal-progress",
+            "label": "日报目标进度",
+            "text": "0/1",
+            "fs": 12,
+            "computedColor": "rgb(255, 215, 110)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(58, 58, 82)",
+            "pixelFg": "rgb(255, 215, 110)",
+            "pixelContrast": 7.97,
+            "fgPixels": 340,
+            "samples": 2346,
+            "boxPx": {
+              "w": 51,
+              "h": 46
+            }
+          },
+          {
+            "sel": "#journal-claim",
+            "label": "日报领取按钮",
+            "text": "完成 0/3",
+            "fs": 15,
+            "computedColor": "rgb(168, 164, 147)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(85, 85, 122)",
+            "pixelFg": "rgb(168, 164, 147)",
+            "pixelContrast": 2.83,
+            "fgPixels": 2552,
+            "samples": 9625,
+            "boxPx": {
+              "w": 175,
+              "h": 55
+            }
+          },
+          {
+            "sel": ".journal-panel h3",
+            "label": "图鉴标题",
+            "text": "摸鱼图鉴 0/55",
+            "fs": 15,
+            "computedColor": "rgb(244, 241, 232)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(244, 241, 232)",
+            "pixelContrast": 11.54,
+            "fgPixels": 3412,
+            "samples": 47905,
+            "boxPx": {
+              "w": 871,
+              "h": 55
+            }
+          },
+          {
+            "sel": ".journal-panel h3 small",
+            "label": "图鉴总数",
+            "text": "0/55",
+            "fs": 12,
+            "computedColor": "rgb(255, 215, 110)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(255, 215, 110)",
+            "pixelContrast": 9.43,
+            "fgPixels": 890,
+            "samples": 3910,
+            "boxPx": {
+              "w": 85,
+              "h": 46
+            }
+          },
+          {
+            "sel": ".journal-collect span",
+            "label": "图鉴分类进度",
+            "text": "梗语录 0/10",
+            "fs": 13,
+            "computedColor": "rgb(184, 179, 156)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(126, 200, 255)",
+            "pixelContrast": 7.2,
+            "fgPixels": 1002,
+            "samples": 10486,
+            "boxPx": {
+              "w": 214,
+              "h": 49
+            }
+          },
+          {
+            "sel": "#journal-latest",
+            "label": "最新彩蛋",
+            "text": "买升级、收线索，开始收集摸鱼彩蛋",
+            "fs": 11,
+            "computedColor": "rgb(143, 159, 208)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(143, 159, 208)",
+            "pixelContrast": 4.99,
+            "fgPixels": 3503,
+            "samples": 21160,
+            "boxPx": {
+              "w": 529,
+              "h": 40
+            }
+          },
+          {
+            "sel": ".c-item.on .c-label",
+            "label": "图鉴格标签(已解锁)",
+            "missing": true
+          },
+          {
+            "sel": ".c-item.on .c-text",
+            "label": "图鉴格内容(已解锁)",
+            "missing": true
+          },
+          {
+            "sel": ".c-item.off .c-label",
+            "label": "图鉴格标签(未解锁)",
+            "text": "???",
+            "fs": 9,
+            "computedColor": "rgb(143, 159, 208)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(44, 44, 64)",
+            "pixelFg": "rgb(99, 108, 145)",
+            "pixelContrast": 2.65,
+            "fgPixels": 141,
+            "samples": 1496,
+            "boxPx": {
+              "w": 44,
+              "h": 34
+            }
+          },
+          {
+            "sel": ".c-item.off .c-text",
+            "label": "图鉴格内容(未解锁)",
+            "hidden": true
+          }
+        ]
+      },
+      "derived": {
+        "stageCanvasOverflowPx": null,
+        "stageCanvasAttr": {
+          "attrW": 750,
+          "attrH": 932,
+          "cssW": 375,
+          "cssH": 466
+        },
+        "canvasDprMismatch": 2,
+        "claimVisibleInPanel": true,
+        "claimVisibleInViewport": true,
+        "smallFonts": [
+          {
+            "label": "商店卡描述",
+            "sel": ".shop-card .shop-desc",
+            "fs": 11,
+            "text": "点击力 +1"
+          },
+          {
+            "label": "商店卡下级增量/里程碑",
+            "sel": ".shop-card .shop-next",
+            "fs": 10,
+            "text": "+1 点击力｜×2还差20级"
+          },
+          {
+            "label": "商店卡性价比",
+            "sel": ".shop-card .shop-value",
+            "fs": 10,
+            "text": "★ 点击 667/万"
+          },
+          {
+            "label": "商店卡彩蛋文案",
+            "sel": ".shop-card .shop-flavor",
+            "fs": 10,
+            "text": ""
+          },
+          {
+            "label": "商店卡描述(不可买 opacity .55)",
+            "sel": ".shop-card:not(.affordable) .shop-desc",
+            "fs": 11,
+            "text": "点击力 +1"
+          }
+        ],
+        "lowContrast": [
+          {
+            "label": "商店卡名称",
+            "sel": ".shop-card .shop-name",
+            "fs": 14,
+            "contrast": 4.31,
+            "opacity": 0.55,
+            "text": "咖啡续命"
+          },
+          {
+            "label": "商店卡描述",
+            "sel": ".shop-card .shop-desc",
+            "fs": 11,
+            "contrast": 2.7,
+            "opacity": 0.55,
+            "text": "点击力 +1"
+          },
+          {
+            "label": "商店卡下级增量/里程碑",
+            "sel": ".shop-card .shop-next",
+            "fs": 10,
+            "contrast": 3.68,
+            "opacity": 0.55,
+            "text": "+1 点击力｜×2还差20级"
+          },
+          {
+            "label": "商店卡性价比",
+            "sel": ".shop-card .shop-value",
+            "fs": 10,
+            "contrast": 3.66,
+            "opacity": 0.55,
+            "text": "★ 点击 667/万"
+          },
+          {
+            "label": "商店卡价格",
+            "sel": ".shop-card .shop-cost",
+            "fs": 12,
+            "contrast": 3.66,
+            "opacity": 0.55,
+            "text": "15 摸鱼值"
+          },
+          {
+            "label": "商店卡彩蛋文案",
+            "sel": ".shop-card .shop-flavor",
+            "fs": 10,
+            "contrast": 2.33,
+            "opacity": 0.55,
+            "text": ""
+          },
+          {
+            "label": "商店卡名称(不可买 opacity .55)",
+            "sel": ".shop-card:not(.affordable) .shop-name",
+            "fs": 14,
+            "contrast": 4.31,
+            "opacity": 0.55,
+            "text": "咖啡续命"
+          },
+          {
+            "label": "商店卡描述(不可买 opacity .55)",
+            "sel": ".shop-card:not(.affordable) .shop-desc",
+            "fs": 11,
+            "contrast": 2.7,
+            "opacity": 0.55,
+            "text": "点击力 +1"
+          },
+          {
+            "label": "商店卡价格(不可买 opacity .55)",
+            "sel": ".shop-card:not(.affordable) .shop-cost",
+            "fs": 12,
+            "contrast": 3.66,
+            "opacity": 0.55,
+            "text": "15 摸鱼值"
+          }
+        ],
+        "touchTargets": [
+          {
+            "name": "📔 日报按钮",
+            "w": 39,
+            "h": 26,
+            "pass44": false
+          },
+          {
+            "name": "商店卡",
+            "w": 118,
+            "h": 144,
+            "pass44": true
+          },
+          {
+            "name": "场景画布",
+            "w": 375,
+            "h": 466,
+            "pass44": true
+          },
+          {
+            "name": "日报关闭 ✕",
+            "w": 13.7,
+            "h": 21,
+            "pass44": false
+          },
+          {
+            "name": "日报领取按钮",
+            "w": 290,
+            "h": 47,
+            "pass44": true
+          }
+        ]
+      }
+    },
+    {
+      "label": "360x740",
+      "size": {
+        "w": 360,
+        "h": 740
+      },
+      "boot": {
+        "nav": 6,
+        "ready": 37,
+        "load": 32,
+        "fcp": 44
+      },
+      "fps": 60,
+      "layout": {
+        "viewport": {
+          "w": 360,
+          "h": 740,
+          "dpr": 3,
+          "visualScale": 1
+        },
+        "doc": {
+          "scrollW": 360,
+          "scrollH": 740,
+          "bodyScrollW": 360,
+          "bodyScrollH": 740,
+          "horizontalOverflow": 0
+        },
+        "meta": {
+          "viewportMeta": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover",
+          "manifest": "/manifest.webmanifest",
+          "lang": "zh-CN",
+          "title": "摸鱼工位",
+          "bodyTouchAction": "manipulation",
+          "canvasTouchAction": "none"
+        },
+        "app": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 360,
+            "h": 740,
+            "right": 360,
+            "bottom": 740
+          },
+          "padding": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          }
+        },
+        "named": {
+          "hud": {
+            "x": 0,
+            "y": 0,
+            "w": 360,
+            "h": 81,
+            "right": 360,
+            "bottom": 81
+          },
+          "stageWrap": {
+            "x": 0,
+            "y": 81,
+            "w": 360,
+            "h": 497,
+            "right": 360,
+            "bottom": 578
+          },
+          "stage": {
+            "x": 0,
+            "y": 81,
+            "w": 360,
+            "h": 539,
+            "right": 360,
+            "bottom": 620
+          },
+          "shop": {
+            "x": 0,
+            "y": 578,
+            "w": 360,
+            "h": 162,
+            "right": 360,
+            "bottom": 740
+          },
+          "journalBtn": {
+            "x": 309,
+            "y": 45,
+            "w": 39,
+            "h": 26,
+            "right": 348,
+            "bottom": 71
+          }
+        },
+        "outOfViewport": {
+          "hud": {
+            "right": 0,
+            "bottom": -659,
+            "left": 0,
+            "top": 0,
+            "any": false
+          },
+          "stageWrap": {
+            "right": 0,
+            "bottom": -162,
+            "left": 0,
+            "top": -81,
+            "any": false
+          },
+          "stage": {
+            "right": 0,
+            "bottom": -120,
+            "left": 0,
+            "top": -81,
+            "any": false
+          },
+          "shop": {
+            "right": 0,
+            "bottom": 0,
+            "left": 0,
+            "top": -578,
+            "any": false
+          },
+          "journalBtn": {
+            "right": -12,
+            "bottom": -669,
+            "left": -309,
+            "top": -45,
+            "any": false
+          }
+        },
+        "overlaps": [
+          {
+            "a": "hud",
+            "b": "journalBtn",
+            "w": 39,
+            "h": 26,
+            "area": 1014
+          },
+          {
+            "a": "stageWrap",
+            "b": "stage",
+            "w": 360,
+            "h": 497,
+            "area": 178920
+          },
+          {
+            "a": "stage",
+            "b": "shop",
+            "w": 360,
+            "h": 42,
+            "area": 15120
+          }
+        ],
+        "hud": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 360,
+            "h": 81,
+            "right": 360,
+            "bottom": 81
+          },
+          "sub": {
+            "rect": {
+              "x": 12,
+              "y": 45,
+              "w": 336,
+              "h": 26,
+              "right": 348,
+              "bottom": 71
+            },
+            "scrollW": 336,
+            "clientW": 336,
+            "clipped": false
+          },
+          "parts": [
+            {
+              "sel": "#hud-moyu",
+              "text": "1.0",
+              "rect": {
+                "x": 12,
+                "y": 7,
+                "w": 42.8,
+                "h": 35,
+                "right": 54.8,
+                "bottom": 42
+              },
+              "hidden": false,
+              "lines": 1,
+              "scrollW": 0,
+              "clientW": 0,
+              "clippedX": false,
+              "hitCoverage": 1
+            },
+            {
+              "sel": ".hud-moyu small",
+              "text": "摸鱼值",
+              "rect": {
+                "x": 60.8,
+                "y": 23,
+                "w": 39,
+                "h": 16,
+                "right": 99.8,
+                "bottom": 39
+              },
+              "hidden": false,
+              "lines": 1,
+              "scrollW": 0,
+              "clientW": 0,
+              "clippedX": false,
+              "hitCoverage": 1
+            },
+            {
+              "sel": "#hud-click",
+              "text": "1",
+              "rect": {
+                "x": 46.9,
+                "y": 50.5,
+                "w": 6.1,
+                "h": 15,
+                "right": 53.1,
+                "bottom": 65.5
+              },
+              "hidden": false,
+              "lines": 1,
+              "scrollW": 0,
+              "clientW": 0,
+              "clippedX": false,
+              "hitCoverage": 1
+            },
+            {
+              "sel": "#hud-idle",
+              "text": "0.2",
+              "rect": {
+                "x": 90.5,
+                "y": 50.5,
+                "w": 19.4,
+                "h": 15,
+                "right": 109.8,
+                "bottom": 65.5
+              },
+              "hidden": false,
+              "lines": 1,
+              "scrollW": 0,
+              "clientW": 0,
+              "clippedX": false,
+              "hitCoverage": 1
+            },
+            {
+              "sel": "#hud-rank",
+              "text": "实习生 0%",
+              "rect": {
+                "x": 135.5,
+                "y": 49.5,
+                "w": 58,
+                "h": 17,
+                "right": 193.5,
+                "bottom": 66.5
+              },
+              "hidden": false,
+              "lines": 1,
+              "scrollW": 58,
+              "clientW": 58,
+              "clippedX": false,
+              "hitCoverage": 1
+            },
+            {
+              "sel": "#hud-streak",
+              "text": "",
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "w": 0,
+                "h": 0,
+                "right": 0,
+                "bottom": 0
+              },
+              "hidden": true,
+              "lines": 0,
+              "scrollW": 0,
+              "clientW": 0,
+              "clippedX": false,
+              "hitCoverage": 0
+            },
+            {
+              "sel": "#btn-journal",
+              "text": "📔",
+              "rect": {
+                "x": 309,
+                "y": 45,
+                "w": 39,
+                "h": 26,
+                "right": 348,
+                "bottom": 71
+              },
+              "hidden": false,
+              "lines": 1,
+              "scrollW": 35,
+              "clientW": 35,
+              "clippedX": false,
+              "hitCoverage": 1
+            }
+          ]
+        },
+        "stage": {
+          "rect": {
+            "x": 0,
+            "y": 81,
+            "w": 360,
+            "h": 539,
+            "right": 360,
+            "bottom": 620
+          },
+          "attrW": 720,
+          "attrH": 1078,
+          "clientW": 360,
+          "clientH": 539
+        },
+        "shop": {
+          "rect": {
+            "x": 0,
+            "y": 578,
+            "w": 360,
+            "h": 162,
+            "right": 360,
+            "bottom": 740
+          },
+          "cards": {
+            "rect": {
+              "x": 8,
+              "y": 588,
+              "w": 344,
+              "h": 144,
+              "right": 352,
+              "bottom": 732
+            },
+            "scrollW": 1126,
+            "clientW": 344,
+            "scrollLeft": 0,
+            "maxScrollLeft": 782
+          },
+          "cardCount": 9,
+          "list": [
+            {
+              "id": "coffee",
+              "rect": {
+                "x": 8,
+                "y": 588,
+                "w": 118,
+                "h": 144,
+                "right": 126,
+                "bottom": 732
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "咖啡续命",
+              "cost": "15 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "water",
+              "rect": {
+                "x": 134,
+                "y": 588,
+                "w": 118,
+                "h": 144,
+                "right": 252,
+                "bottom": 732
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "带薪喝水",
+              "cost": "100 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "chair",
+              "rect": {
+                "x": 260,
+                "y": 588,
+                "w": 118,
+                "h": 144,
+                "right": 378,
+                "bottom": 732
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "人体工学椅",
+              "cost": "800 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "phone",
+              "rect": {
+                "x": 386,
+                "y": 588,
+                "w": 118,
+                "h": 144,
+                "right": 504,
+                "bottom": 732
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "刷手机",
+              "cost": "50 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "toilet",
+              "rect": {
+                "x": 512,
+                "y": 588,
+                "w": 118,
+                "h": 144,
+                "right": 630,
+                "bottom": 732
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "带薪蹲坑",
+              "cost": "600 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "group",
+              "rect": {
+                "x": 638,
+                "y": 588,
+                "w": 118,
+                "h": 144,
+                "right": 756,
+                "bottom": 732
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "摸鱼群聊",
+              "cost": "4000 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "meeting",
+              "rect": {
+                "x": 764,
+                "y": 588,
+                "w": 118,
+                "h": 144,
+                "right": 882,
+                "bottom": 732
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "无用会议",
+              "cost": "2.50万 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "deep",
+              "rect": {
+                "x": 890,
+                "y": 588,
+                "w": 118,
+                "h": 144,
+                "right": 1008,
+                "bottom": 732
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "深度摸鱼",
+              "cost": "15.00万 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            },
+            {
+              "id": "retire",
+              "rect": {
+                "x": 1016,
+                "y": 588,
+                "w": 118,
+                "h": 144,
+                "right": 1134,
+                "bottom": 732
+              },
+              "disabled": true,
+              "affordable": false,
+              "name": "退休式躺平",
+              "cost": "100.00万 摸鱼值",
+              "level": "",
+              "scrollH": 138,
+              "clientH": 138,
+              "contentOverflow": false,
+              "fs": {
+                "name": 14,
+                "desc": 11
+              }
+            }
+          ]
+        },
+        "journalBtn": {
+          "rect": {
+            "x": 309,
+            "y": 45,
+            "w": 39,
+            "h": 26,
+            "right": 348,
+            "bottom": 71
+          },
+          "hasReward": false,
+          "aria": "日报与图鉴",
+          "title": "日报与图鉴",
+          "badgeContent": "normal",
+          "badgeW": "39px"
+        }
+      },
+      "cardsVisibility": [
+        {
+          "i": 0,
+          "id": "coffee",
+          "visibleW": 118,
+          "full": true,
+          "ratio": 1
+        },
+        {
+          "i": 1,
+          "id": "water",
+          "visibleW": 118,
+          "full": true,
+          "ratio": 1
+        },
+        {
+          "i": 2,
+          "id": "chair",
+          "visibleW": 92,
+          "full": false,
+          "ratio": 0.78
+        },
+        {
+          "i": 3,
+          "id": "phone",
+          "visibleW": 0,
+          "full": false,
+          "ratio": 0
+        },
+        {
+          "i": 4,
+          "id": "toilet",
+          "visibleW": 0,
+          "full": false,
+          "ratio": 0
+        },
+        {
+          "i": 5,
+          "id": "group",
+          "visibleW": 0,
+          "full": false,
+          "ratio": 0
+        },
+        {
+          "i": 6,
+          "id": "meeting",
+          "visibleW": 0,
+          "full": false,
+          "ratio": 0
+        },
+        {
+          "i": 7,
+          "id": "deep",
+          "visibleW": 0,
+          "full": false,
+          "ratio": 0
+        },
+        {
+          "i": 8,
+          "id": "retire",
+          "visibleW": 0,
+          "full": false,
+          "ratio": 0
+        }
+      ],
+      "shopScroll": {
+        "before": {
+          "scrollLeft": 0,
+          "scrollW": 1126,
+          "clientW": 344
+        },
+        "after": {
+          "scrollLeft": 782,
+          "maxScrollLeft": 782,
+          "atEnd": true,
+          "lastCardRight": 352,
+          "containerRight": 352,
+          "lastCardFullyVisible": true,
+          "lastCardLeft": 234
+        },
+        "firstCardLeft": -774,
+        "restored": 0
+      },
+      "journal": {
+        "open": true,
+        "overlay": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 360,
+            "h": 740,
+            "right": 360,
+            "bottom": 740
+          },
+          "bg": "rgba(10, 10, 18, 0.72)"
+        },
+        "panel": {
+          "rect": {
+            "x": 21.6,
+            "y": 66.6,
+            "w": 316.8,
+            "h": 606.8,
+            "right": 338.4,
+            "bottom": 673.4
+          },
+          "scrollH": 619,
+          "clientH": 599,
+          "scrollable": true,
+          "scrollW": 309,
+          "clientW": 309,
+          "horizontalOverflow": 0
+        },
+        "close": {
+          "rect": {
+            "x": 304.7,
+            "y": 88.6,
+            "w": 13.7,
+            "h": 21,
+            "right": 318.4,
+            "bottom": 109.6
+          },
+          "hitCoverage": 1,
+          "aria": "关闭"
+        },
+        "goals": [
+          {
+            "cls": "goal",
+            "text": "○ 应付 1 次巡逻（忍住或点满都算） 0/1"
+          },
+          {
+            "cls": "goal",
+            "text": "○ 买 3 次升级 0/3"
+          },
+          {
+            "cls": "goal",
+            "text": "○ 收 1 个梗 0/1"
+          }
+        ],
+        "claim": {
+          "rect": {
+            "x": 41.6,
+            "y": 277.6,
+            "w": 276.8,
+            "h": 47,
+            "right": 318.4,
+            "bottom": 324.6
+          },
+          "text": "完成 0/3",
+          "disabled": true,
+          "hitCoverage": 1,
+          "fullyVisibleInPanel": false,
+          "visibleInViewport": false
+        },
+        "grid": {
+          "rect": {
+            "x": 41.6,
+            "y": 421.6,
+            "w": 276.8,
+            "h": 251.6,
+            "right": 318.4,
+            "bottom": 673.2
+          },
+          "count": 55,
+          "columns": 2,
+          "columnXs": [
+            42,
+            182
+          ],
+          "firstRowY": [
+            422,
+            422
+          ],
+          "scrollTop": 0,
+          "scrollH": 779,
+          "clientH": 252,
+          "afterScroll": {
+            "scrollTop": 527,
+            "maxScrollTop": 527,
+            "lastItemVisible": true
+          },
+          "itemsOverflowEach": [
+            false,
+            false,
+            false
+          ]
+        },
+        "collectText": "梗语录 0/10 升级彩蛋 0/45",
+        "total": "0/55",
+        "latest": "买升级、收线索，开始收集摸鱼彩蛋",
+        "badgeAfter": "normal",
+        "openedByTap": {
+          "x": 328.5,
+          "y": 58
+        },
+        "closeTap": {
+          "x": 311.5234375,
+          "y": 99.09375
+        },
+        "closedAfterTap": true
+      },
+      "screenshots": {
+        "main": "playtest/r6-screens/360x740-main.png",
+        "journal": "playtest/r6-screens/360x740-journal.png"
+      },
+      "typographyComputed": [
+        {
+          "sel": "#hud-moyu",
+          "label": "HUD 摸鱼值数值",
+          "fs": 30,
+          "lh": "33px",
+          "fw": "800",
+          "color": "rgb(255, 215, 110)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 11.19,
+          "rect": {
+            "x": 12,
+            "y": 7,
+            "w": 42.8,
+            "h": 35,
+            "right": 54.8,
+            "bottom": 42
+          },
+          "lines": 1,
+          "text": "1.0",
+          "hidden": false
+        },
+        {
+          "sel": ".hud-moyu small",
+          "label": "HUD 摸鱼值标签",
+          "fs": 13,
+          "lh": "14.3px",
+          "fw": "600",
+          "color": "rgb(189, 184, 159)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 7.75,
+          "rect": {
+            "x": 60.8,
+            "y": 23,
+            "w": 39,
+            "h": 16,
+            "right": 99.8,
+            "bottom": 39
+          },
+          "lines": 1,
+          "text": "摸鱼值",
+          "hidden": false
+        },
+        {
+          "sel": ".hud-sub > span:nth-child(1)",
+          "label": "HUD 点击+文案",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(168, 164, 147)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 6.18,
+          "rect": {
+            "x": 12,
+            "y": 49.5,
+            "w": 41.1,
+            "h": 17,
+            "right": 53.1,
+            "bottom": 66.5
+          },
+          "lines": 3,
+          "text": "点击 +1",
+          "hidden": false
+        },
+        {
+          "sel": "#hud-click",
+          "label": "HUD 点击力数值",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "700",
+          "color": "rgb(139, 226, 139)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 9.83,
+          "rect": {
+            "x": 46.9,
+            "y": 50.5,
+            "w": 6.1,
+            "h": 15,
+            "right": 53.1,
+            "bottom": 65.5
+          },
+          "lines": 1,
+          "text": "1",
+          "hidden": false
+        },
+        {
+          "sel": ".hud-sub > span:nth-child(2)",
+          "label": "HUD 挂机/秒文案",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(168, 164, 147)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 6.18,
+          "rect": {
+            "x": 63.1,
+            "y": 49.5,
+            "w": 62.4,
+            "h": 17,
+            "right": 125.5,
+            "bottom": 66.5
+          },
+          "lines": 4,
+          "text": "挂机 0.2/秒",
+          "hidden": false
+        },
+        {
+          "sel": "#hud-idle",
+          "label": "HUD 挂机数值",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "700",
+          "color": "rgb(139, 226, 139)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 9.83,
+          "rect": {
+            "x": 90.5,
+            "y": 50.5,
+            "w": 19.4,
+            "h": 15,
+            "right": 109.8,
+            "bottom": 65.5
+          },
+          "lines": 1,
+          "text": "0.2",
+          "hidden": false
+        },
+        {
+          "sel": "#hud-rank",
+          "label": "HUD 段位+百分比",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(168, 164, 147)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 6.18,
+          "rect": {
+            "x": 135.5,
+            "y": 49.5,
+            "w": 58,
+            "h": 17,
+            "right": 193.5,
+            "bottom": 66.5
+          },
+          "lines": 1,
+          "text": "实习生 0%",
+          "hidden": false
+        },
+        {
+          "sel": "#hud-streak",
+          "label": "HUD 连胜",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "700",
+          "color": "rgb(255, 215, 110)",
+          "bgColor": "rgb(35, 35, 50)",
+          "opacity": 1,
+          "effOpacity": 1,
+          "contrastComputed": 11.19,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "lines": 0,
+          "text": "",
+          "hidden": true
+        },
+        {
+          "sel": ".shop-card .shop-name",
+          "label": "商店卡名称",
+          "fs": 14,
+          "lh": "normal",
+          "fw": "700",
+          "color": "rgb(244, 241, 232)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 4.31,
+          "rect": {
+            "x": 19,
+            "y": 599,
+            "w": 96,
+            "h": 20,
+            "right": 115,
+            "bottom": 619
+          },
+          "lines": 1,
+          "text": "咖啡续命",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card .shop-desc",
+          "label": "商店卡描述",
+          "fs": 11,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(184, 179, 156)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 2.7,
+          "rect": {
+            "x": 19,
+            "y": 622,
+            "w": 96,
+            "h": 16,
+            "right": 115,
+            "bottom": 638
+          },
+          "lines": 1,
+          "text": "点击力 +1",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card .shop-next",
+          "label": "商店卡下级增量/里程碑",
+          "fs": 10,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(184, 224, 255)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 3.68,
+          "rect": {
+            "x": 19,
+            "y": 641,
+            "w": 96,
+            "h": 28,
+            "right": 115,
+            "bottom": 669
+          },
+          "lines": 2,
+          "text": "+1 点击力｜×2还差20级",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card .shop-value",
+          "label": "商店卡性价比",
+          "fs": 10,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(255, 215, 110)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 3.66,
+          "rect": {
+            "x": 19,
+            "y": 672,
+            "w": 96,
+            "h": 14,
+            "right": 115,
+            "bottom": 686
+          },
+          "lines": 1,
+          "text": "★ 点击 667/万",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card .shop-cost",
+          "label": "商店卡价格",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(255, 215, 110)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 3.66,
+          "rect": {
+            "x": 19,
+            "y": 689,
+            "w": 96,
+            "h": 17,
+            "right": 115,
+            "bottom": 706
+          },
+          "lines": 3,
+          "text": "15 摸鱼值",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card .shop-flavor",
+          "label": "商店卡彩蛋文案",
+          "fs": 10,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(143, 159, 208)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 2.33,
+          "rect": {
+            "x": 19,
+            "y": 709,
+            "w": 96,
+            "h": 12,
+            "right": 115,
+            "bottom": 721
+          },
+          "lines": 0,
+          "text": "",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card .shop-level",
+          "label": "商店卡等级",
+          "fs": 10,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(139, 226, 139)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 3.32,
+          "rect": {
+            "x": 117,
+            "y": 595,
+            "w": 0,
+            "h": 0,
+            "right": 117,
+            "bottom": 595
+          },
+          "lines": 0,
+          "text": "",
+          "hidden": true
+        },
+        {
+          "sel": ".shop-card:not(.affordable) .shop-name",
+          "label": "商店卡名称(不可买 opacity .55)",
+          "fs": 14,
+          "lh": "normal",
+          "fw": "700",
+          "color": "rgb(244, 241, 232)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 4.31,
+          "rect": {
+            "x": 19,
+            "y": 599,
+            "w": 96,
+            "h": 20,
+            "right": 115,
+            "bottom": 619
+          },
+          "lines": 1,
+          "text": "咖啡续命",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card:not(.affordable) .shop-desc",
+          "label": "商店卡描述(不可买 opacity .55)",
+          "fs": 11,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(184, 179, 156)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 2.7,
+          "rect": {
+            "x": 19,
+            "y": 622,
+            "w": 96,
+            "h": 16,
+            "right": 115,
+            "bottom": 638
+          },
+          "lines": 1,
+          "text": "点击力 +1",
+          "hidden": false
+        },
+        {
+          "sel": ".shop-card:not(.affordable) .shop-cost",
+          "label": "商店卡价格(不可买 opacity .55)",
+          "fs": 12,
+          "lh": "normal",
+          "fw": "400",
+          "color": "rgb(255, 215, 110)",
+          "bgColor": "rgb(58, 58, 82)",
+          "opacity": 1,
+          "effOpacity": 0.55,
+          "contrastComputed": 3.66,
+          "rect": {
+            "x": 19,
+            "y": 689,
+            "w": 96,
+            "h": 17,
+            "right": 115,
+            "bottom": 706
+          },
+          "lines": 3,
+          "text": "15 摸鱼值",
+          "hidden": false
+        }
+      ],
+      "typographyPixels": {
+        "image": {
+          "w": 1080,
+          "h": 2220
+        },
+        "items": [
+          {
+            "sel": "#hud-moyu",
+            "label": "HUD 摸鱼值数值",
+            "text": "1.1",
+            "fs": 30,
+            "computedColor": "rgb(255, 215, 110)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(255, 215, 110)",
+            "pixelContrast": 11.19,
+            "fgPixels": 2522,
+            "samples": 11655,
+            "boxPx": {
+              "w": 111,
+              "h": 105
+            }
+          },
+          {
+            "sel": ".hud-moyu small",
+            "label": "HUD 摸鱼值标签",
+            "text": "摸鱼值",
+            "fs": 13,
+            "computedColor": "rgb(189, 184, 159)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(189, 184, 159)",
+            "pixelContrast": 7.75,
+            "fgPixels": 1831,
+            "samples": 5664,
+            "boxPx": {
+              "w": 118,
+              "h": 48
+            }
+          },
+          {
+            "sel": ".hud-sub > span:nth-child(1)",
+            "label": "HUD 点击+文案",
+            "text": "点击 +1",
+            "fs": 12,
+            "computedColor": "rgb(168, 164, 147)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(139, 226, 139)",
+            "pixelContrast": 9.83,
+            "fgPixels": 156,
+            "samples": 5704,
+            "boxPx": {
+              "w": 124,
+              "h": 46
+            }
+          },
+          {
+            "sel": "#hud-click",
+            "label": "HUD 点击力数值",
+            "text": "1",
+            "fs": 12,
+            "computedColor": "rgb(139, 226, 139)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(139, 226, 139)",
+            "pixelContrast": 9.83,
+            "fgPixels": 156,
+            "samples": 920,
+            "boxPx": {
+              "w": 20,
+              "h": 46
+            }
+          },
+          {
+            "sel": ".hud-sub > span:nth-child(2)",
+            "label": "HUD 挂机/秒文案",
+            "text": "挂机 0.2/秒",
+            "fs": 12,
+            "computedColor": "rgb(168, 164, 147)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(139, 226, 139)",
+            "pixelContrast": 9.83,
+            "fgPixels": 528,
+            "samples": 8648,
+            "boxPx": {
+              "w": 188,
+              "h": 46
+            }
+          },
+          {
+            "sel": "#hud-idle",
+            "label": "HUD 挂机数值",
+            "text": "0.2",
+            "fs": 12,
+            "computedColor": "rgb(139, 226, 139)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(139, 226, 139)",
+            "pixelContrast": 9.83,
+            "fgPixels": 528,
+            "samples": 2714,
+            "boxPx": {
+              "w": 59,
+              "h": 46
+            }
+          },
+          {
+            "sel": "#hud-rank",
+            "label": "HUD 段位+百分比",
+            "text": "实习生 0%",
+            "fs": 12,
+            "computedColor": "rgb(168, 164, 147)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(35, 35, 50)",
+            "pixelFg": "rgb(168, 164, 147)",
+            "pixelContrast": 6.18,
+            "fgPixels": 1037,
+            "samples": 8050,
+            "boxPx": {
+              "w": 175,
+              "h": 46
+            }
+          },
+          {
+            "sel": "#hud-streak",
+            "label": "HUD 连胜",
+            "hidden": true
+          },
+          {
+            "sel": ".shop-card .shop-name",
+            "label": "商店卡名称",
+            "text": "咖啡续命",
+            "fs": 14,
+            "computedColor": "rgb(244, 241, 232)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(72, 64, 73)",
+            "pixelFg": "rgb(182, 172, 161)",
+            "pixelContrast": 4.47,
+            "fgPixels": 363,
+            "samples": 8568,
+            "boxPx": {
+              "w": 168,
+              "h": 51
+            }
+          },
+          {
+            "sel": ".shop-card .shop-desc",
+            "label": "商店卡描述",
+            "text": "点击力 +1",
+            "fs": 11,
+            "computedColor": "rgb(184, 179, 156)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(117, 114, 108)",
+            "pixelContrast": 2.72,
+            "fgPixels": 678,
+            "samples": 5655,
+            "boxPx": {
+              "w": 145,
+              "h": 39
+            }
+          },
+          {
+            "sel": ".shop-card .shop-next",
+            "label": "商店卡下级增量/里程碑",
+            "text": "+1 点击力｜×2还差20级",
+            "fs": 10,
+            "computedColor": "rgb(184, 224, 255)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(117, 139, 163)",
+            "pixelContrast": 3.71,
+            "fgPixels": 1515,
+            "samples": 20358,
+            "boxPx": {
+              "w": 261,
+              "h": 78
+            }
+          },
+          {
+            "sel": ".shop-card .shop-value",
+            "label": "商店卡性价比",
+            "text": "★ 点击 667/万",
+            "fs": 10,
+            "computedColor": "rgb(255, 215, 110)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(156, 134, 83)",
+            "pixelContrast": 3.69,
+            "fgPixels": 1026,
+            "samples": 7344,
+            "boxPx": {
+              "w": 204,
+              "h": 36
+            }
+          },
+          {
+            "sel": ".shop-card .shop-cost",
+            "label": "商店卡价格",
+            "text": "15 摸鱼值",
+            "fs": 12,
+            "computedColor": "rgb(255, 215, 110)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(156, 134, 83)",
+            "pixelContrast": 3.69,
+            "fgPixels": 1407,
+            "samples": 7245,
+            "boxPx": {
+              "w": 161,
+              "h": 45
+            }
+          },
+          {
+            "sel": ".shop-card .shop-flavor",
+            "label": "商店卡彩蛋文案",
+            "empty": true
+          },
+          {
+            "sel": ".shop-card .shop-level",
+            "label": "商店卡等级",
+            "hidden": true
+          },
+          {
+            "sel": ".shop-card:not(.affordable) .shop-name",
+            "label": "商店卡名称(不可买 opacity .55)",
+            "text": "咖啡续命",
+            "fs": 14,
+            "computedColor": "rgb(244, 241, 232)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(72, 64, 73)",
+            "pixelFg": "rgb(182, 172, 161)",
+            "pixelContrast": 4.47,
+            "fgPixels": 363,
+            "samples": 8568,
+            "boxPx": {
+              "w": 168,
+              "h": 51
+            }
+          },
+          {
+            "sel": ".shop-card:not(.affordable) .shop-desc",
+            "label": "商店卡描述(不可买 opacity .55)",
+            "text": "点击力 +1",
+            "fs": 11,
+            "computedColor": "rgb(184, 179, 156)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(117, 114, 108)",
+            "pixelContrast": 2.72,
+            "fgPixels": 678,
+            "samples": 5655,
+            "boxPx": {
+              "w": 145,
+              "h": 39
+            }
+          },
+          {
+            "sel": ".shop-card:not(.affordable) .shop-cost",
+            "label": "商店卡价格(不可买 opacity .55)",
+            "text": "15 摸鱼值",
+            "fs": 12,
+            "computedColor": "rgb(255, 215, 110)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(156, 134, 83)",
+            "pixelContrast": 3.69,
+            "fgPixels": 1407,
+            "samples": 7245,
+            "boxPx": {
+              "w": 161,
+              "h": 45
+            }
+          }
+        ]
+      },
+      "journalTypographyPixels": {
+        "image": {
+          "w": 1080,
+          "h": 2220
+        },
+        "items": [
+          {
+            "sel": ".journal-head h2",
+            "label": "日报标题",
+            "text": "摸鱼日报",
+            "fs": 18,
+            "computedColor": "rgb(244, 241, 232)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(244, 241, 232)",
+            "pixelContrast": 11.54,
+            "fgPixels": 4559,
+            "samples": 13888,
+            "boxPx": {
+              "w": 217,
+              "h": 64
+            }
+          },
+          {
+            "sel": "#journal-close",
+            "label": "日报关闭按钮",
+            "text": "✕",
+            "fs": 18,
+            "computedColor": "rgb(168, 164, 147)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(168, 164, 147)",
+            "pixelContrast": 5.21,
+            "fgPixels": 394,
+            "samples": 2752,
+            "boxPx": {
+              "w": 43,
+              "h": 64
+            }
+          },
+          {
+            "sel": ".journal-meta",
+            "label": "日报日期/连胜",
+            "text": "2026-11-27 · 🔥 连续 0 天（今天未领）",
+            "fs": 12,
+            "computedColor": "rgb(168, 164, 147)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(168, 164, 147)",
+            "pixelContrast": 5.21,
+            "fgPixels": 3311,
+            "samples": 30038,
+            "boxPx": {
+              "w": 653,
+              "h": 46
+            }
+          },
+          {
+            "sel": ".goal .goal-desc",
+            "label": "日报目标文案",
+            "text": "应付 1 次巡逻（忍住或点满都算）",
+            "fs": 13,
+            "computedColor": "rgb(244, 241, 232)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(58, 58, 82)",
+            "pixelFg": "rgb(244, 241, 232)",
+            "pixelContrast": 9.75,
+            "fgPixels": 4530,
+            "samples": 28763,
+            "boxPx": {
+              "w": 587,
+              "h": 49
+            }
+          },
+          {
+            "sel": ".goal .goal-progress",
+            "label": "日报目标进度",
+            "text": "0/1",
+            "fs": 12,
+            "computedColor": "rgb(255, 215, 110)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(58, 58, 82)",
+            "pixelFg": "rgb(255, 215, 110)",
+            "pixelContrast": 7.97,
+            "fgPixels": 313,
+            "samples": 2392,
+            "boxPx": {
+              "w": 52,
+              "h": 46
+            }
+          },
+          {
+            "sel": "#journal-claim",
+            "label": "日报领取按钮",
+            "text": "完成 0/3",
+            "fs": 15,
+            "computedColor": "rgb(168, 164, 147)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(85, 85, 122)",
+            "pixelFg": "rgb(168, 164, 147)",
+            "pixelContrast": 2.83,
+            "fgPixels": 2545,
+            "samples": 9680,
+            "boxPx": {
+              "w": 176,
+              "h": 55
+            }
+          },
+          {
+            "sel": ".journal-panel h3",
+            "label": "图鉴标题",
+            "text": "摸鱼图鉴 0/55",
+            "fs": 15,
+            "computedColor": "rgb(244, 241, 232)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(244, 241, 232)",
+            "pixelContrast": 11.54,
+            "fgPixels": 3417,
+            "samples": 45760,
+            "boxPx": {
+              "w": 832,
+              "h": 55
+            }
+          },
+          {
+            "sel": ".journal-panel h3 small",
+            "label": "图鉴总数",
+            "text": "0/55",
+            "fs": 12,
+            "computedColor": "rgb(255, 215, 110)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(255, 215, 110)",
+            "pixelContrast": 9.43,
+            "fgPixels": 890,
+            "samples": 3956,
+            "boxPx": {
+              "w": 86,
+              "h": 46
+            }
+          },
+          {
+            "sel": ".journal-collect span",
+            "label": "图鉴分类进度",
+            "text": "梗语录 0/10",
+            "fs": 13,
+            "computedColor": "rgb(184, 179, 156)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(126, 200, 255)",
+            "pixelContrast": 7.2,
+            "fgPixels": 986,
+            "samples": 10535,
+            "boxPx": {
+              "w": 215,
+              "h": 49
+            }
+          },
+          {
+            "sel": "#journal-latest",
+            "label": "最新彩蛋",
+            "text": "买升级、收线索，开始收集摸鱼彩蛋",
+            "fs": 11,
+            "computedColor": "rgb(143, 159, 208)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(47, 47, 68)",
+            "pixelFg": "rgb(143, 159, 208)",
+            "pixelContrast": 4.99,
+            "fgPixels": 3505,
+            "samples": 21160,
+            "boxPx": {
+              "w": 529,
+              "h": 40
+            }
+          },
+          {
+            "sel": ".c-item.on .c-label",
+            "label": "图鉴格标签(已解锁)",
+            "missing": true
+          },
+          {
+            "sel": ".c-item.on .c-text",
+            "label": "图鉴格内容(已解锁)",
+            "missing": true
+          },
+          {
+            "sel": ".c-item.off .c-label",
+            "label": "图鉴格标签(未解锁)",
+            "text": "???",
+            "fs": 9,
+            "computedColor": "rgb(143, 159, 208)",
+            "computedOpacity": 1,
+            "pixelBg": "rgb(44, 44, 64)",
+            "pixelFg": "rgb(99, 108, 145)",
+            "pixelContrast": 2.65,
+            "fgPixels": 141,
+            "samples": 1496,
+            "boxPx": {
+              "w": 44,
+              "h": 34
+            }
+          },
+          {
+            "sel": ".c-item.off .c-text",
+            "label": "图鉴格内容(未解锁)",
+            "hidden": true
+          }
+        ]
+      },
+      "derived": {
+        "stageCanvasOverflowPx": null,
+        "stageCanvasAttr": {
+          "attrW": 720,
+          "attrH": 1078,
+          "cssW": 360,
+          "cssH": 539
+        },
+        "canvasDprMismatch": 2,
+        "claimVisibleInPanel": true,
+        "claimVisibleInViewport": true,
+        "smallFonts": [
+          {
+            "label": "商店卡描述",
+            "sel": ".shop-card .shop-desc",
+            "fs": 11,
+            "text": "点击力 +1"
+          },
+          {
+            "label": "商店卡下级增量/里程碑",
+            "sel": ".shop-card .shop-next",
+            "fs": 10,
+            "text": "+1 点击力｜×2还差20级"
+          },
+          {
+            "label": "商店卡性价比",
+            "sel": ".shop-card .shop-value",
+            "fs": 10,
+            "text": "★ 点击 667/万"
+          },
+          {
+            "label": "商店卡彩蛋文案",
+            "sel": ".shop-card .shop-flavor",
+            "fs": 10,
+            "text": ""
+          },
+          {
+            "label": "商店卡描述(不可买 opacity .55)",
+            "sel": ".shop-card:not(.affordable) .shop-desc",
+            "fs": 11,
+            "text": "点击力 +1"
+          }
+        ],
+        "lowContrast": [
+          {
+            "label": "商店卡名称",
+            "sel": ".shop-card .shop-name",
+            "fs": 14,
+            "contrast": 4.31,
+            "opacity": 0.55,
+            "text": "咖啡续命"
+          },
+          {
+            "label": "商店卡描述",
+            "sel": ".shop-card .shop-desc",
+            "fs": 11,
+            "contrast": 2.7,
+            "opacity": 0.55,
+            "text": "点击力 +1"
+          },
+          {
+            "label": "商店卡下级增量/里程碑",
+            "sel": ".shop-card .shop-next",
+            "fs": 10,
+            "contrast": 3.68,
+            "opacity": 0.55,
+            "text": "+1 点击力｜×2还差20级"
+          },
+          {
+            "label": "商店卡性价比",
+            "sel": ".shop-card .shop-value",
+            "fs": 10,
+            "contrast": 3.66,
+            "opacity": 0.55,
+            "text": "★ 点击 667/万"
+          },
+          {
+            "label": "商店卡价格",
+            "sel": ".shop-card .shop-cost",
+            "fs": 12,
+            "contrast": 3.66,
+            "opacity": 0.55,
+            "text": "15 摸鱼值"
+          },
+          {
+            "label": "商店卡彩蛋文案",
+            "sel": ".shop-card .shop-flavor",
+            "fs": 10,
+            "contrast": 2.33,
+            "opacity": 0.55,
+            "text": ""
+          },
+          {
+            "label": "商店卡名称(不可买 opacity .55)",
+            "sel": ".shop-card:not(.affordable) .shop-name",
+            "fs": 14,
+            "contrast": 4.31,
+            "opacity": 0.55,
+            "text": "咖啡续命"
+          },
+          {
+            "label": "商店卡描述(不可买 opacity .55)",
+            "sel": ".shop-card:not(.affordable) .shop-desc",
+            "fs": 11,
+            "contrast": 2.7,
+            "opacity": 0.55,
+            "text": "点击力 +1"
+          },
+          {
+            "label": "商店卡价格(不可买 opacity .55)",
+            "sel": ".shop-card:not(.affordable) .shop-cost",
+            "fs": 12,
+            "contrast": 3.66,
+            "opacity": 0.55,
+            "text": "15 摸鱼值"
+          }
+        ],
+        "touchTargets": [
+          {
+            "name": "📔 日报按钮",
+            "w": 39,
+            "h": 26,
+            "pass44": false
+          },
+          {
+            "name": "商店卡",
+            "w": 118,
+            "h": 144,
+            "pass44": true
+          },
+          {
+            "name": "场景画布",
+            "w": 360,
+            "h": 539,
+            "pass44": true
+          },
+          {
+            "name": "日报关闭 ✕",
+            "w": 13.7,
+            "h": 21,
+            "pass44": false
+          },
+          {
+            "name": "日报领取按钮",
+            "w": 276.8,
+            "h": 47,
+            "pass44": true
+          }
+        ]
+      }
+    }
+  ],
+  "interactions": {
+    "boot": {
+      "nav": 7,
+      "ready": 29,
+      "load": 30,
+      "fcp": 32
+    },
+    "before": {
+      "state": {
+        "moyu": 1.4955067999236982,
+        "levels": {},
+        "totalEarned": 1.4955067999236982,
+        "collected": {
+          "quotes": [],
+          "flavors": []
+        },
+        "daily": {
+          "date": "2026-11-27",
+          "goals": [
+            {
+              "id": "survive_2",
+              "target": 1,
+              "progress": 0,
+              "done": false
+            },
+            {
+              "id": "buy_3",
+              "target": 3,
+              "progress": 0,
+              "done": false
+            },
+            {
+              "id": "meme_1",
+              "target": 1,
+              "progress": 0,
+              "done": false
+            }
+          ],
+          "streak": 0,
+          "lastCompleteDate": null,
+          "claimed": false
+        },
+        "surviveStreak": 0
+      },
+      "hud": {
+        "moyu": "1.5",
+        "click": "1",
+        "idle": "0.2",
+        "rank": "实习生 0%"
+      },
+      "fps": 61,
+      "scrollY": 0,
+      "visualScale": 1
+    },
+    "tapPoint": {
+      "x": 335,
+      "y": 270
+    },
+    "afterTapState": {
+      "moyu": 2.5655067999236985,
+      "fps": 61,
+      "frames": 94
+    },
+    "diff": {
+      "region": {
+        "x": 324,
+        "y": 195,
+        "w": 66,
+        "h": 145
+      },
+      "changedPx": 4019,
+      "brightPxBefore": 0,
+      "brightPxAfter": 1269,
+      "brightBox": {
+        "x0": 324,
+        "y0": 244,
+        "x1": 348,
+        "y1": 266
+      }
+    },
+    "screenshots": {
+      "tapBefore": "playtest/r6-screens/390x844-tap-before.png",
+      "tapAfter": "playtest/r6-screens/390x844-tap-after.png",
+      "affordable": "playtest/r6-screens/390x844-shop-affordable.png"
+    },
+    "afterClicks": {
+      "state": {
+        "moyu": 26.578806799923704,
+        "levels": {},
+        "totalEarned": 26.578806799923704,
+        "collected": {
+          "quotes": [],
+          "flavors": []
+        },
+        "daily": {
+          "date": "2026-11-27",
+          "goals": [
+            {
+              "id": "survive_2",
+              "target": 1,
+              "progress": 0,
+              "done": false
+            },
+            {
+              "id": "buy_3",
+              "target": 3,
+              "progress": 0,
+              "done": false
+            },
+            {
+              "id": "meme_1",
+              "target": 1,
+              "progress": 0,
+              "done": false
+            }
+          ],
+          "streak": 0,
+          "lastCompleteDate": null,
+          "claimed": false
+        },
+        "surviveStreak": 0
+      },
+      "fps": 60,
+      "frames": 254,
+      "hudMoyu": "26.6",
+      "hudClick": "1",
+      "tapLog": {
+        "events": [
+          {
+            "type": "pointerdown",
+            "t": 1343.1,
+            "ts": 1327.7
+          },
+          {
+            "type": "touchstart",
+            "t": 1343.8,
+            "ts": 1327.7
+          },
+          {
+            "type": "pointerup",
+            "t": 1377.1,
+            "ts": 1370.4
+          },
+          {
+            "type": "mousedown",
+            "t": 1377.2,
+            "ts": 1370.4
+          },
+          {
+            "type": "click",
+            "t": 1377.3,
+            "ts": 1370.4
+          },
+          {
+            "type": "pointerdown",
+            "t": 1625.8,
+            "ts": 1617.1
+          },
+          {
+            "type": "touchstart",
+            "t": 1625.8,
+            "ts": 1617.1
+          },
+          {
+            "type": "pointerup",
+            "t": 1660,
+            "ts": 1652.4
+          },
+          {
+            "type": "mousedown",
+            "t": 1660.2,
+            "ts": 1652.4
+          },
+          {
+            "type": "click",
+            "t": 1660.2,
+            "ts": 1652.4
+          },
+          {
+            "type": "pointerdown",
+            "t": 1743.4,
+            "ts": 1731.7
+          },
+          {
+            "type": "touchstart",
+            "t": 1743.4,
+            "ts": 1731.7
+          },
+          {
+            "type": "pointerup",
+            "t": 1776,
+            "ts": 1770
+          },
+          {
+            "type": "mousedown",
+            "t": 1776.2,
+            "ts": 1770
+          },
+          {
+            "type": "click",
+            "t": 1776.2,
+            "ts": 1770
+          },
+          {
+            "type": "pointerdown",
+            "t": 1860.5,
+            "ts": 1847.9
+          },
+          {
+            "type": "touchstart",
+            "t": 1860.5,
+            "ts": 1847.9
+          },
+          {
+            "type": "pointerup",
+            "t": 1892.7,
+            "ts": 1887.3
+          },
+          {
+            "type": "mousedown",
+            "t": 1892.9,
+            "ts": 1887.3
+          },
+          {
+            "type": "click",
+            "t": 1892.9,
+            "ts": 1887.3
+          },
+          {
+            "type": "pointerdown",
+            "t": 1976.2,
+            "ts": 1963.9
+          },
+          {
+            "type": "touchstart",
+            "t": 1976.3,
+            "ts": 1963.9
+          },
+          {
+            "type": "pointerup",
+            "t": 2011,
+            "ts": 2003
+          },
+          {
+            "type": "mousedown",
+            "t": 2011.2,
+            "ts": 2003
+          },
+          {
+            "type": "click",
+            "t": 2011.2,
+            "ts": 2003
+          },
+          {
+            "type": "pointerdown",
+            "t": 2093.4,
+            "ts": 2082.9
+          },
+          {
+            "type": "touchstart",
+            "t": 2093.5,
+            "ts": 2082.9
+          },
+          {
+            "type": "pointerup",
+            "t": 2125.9,
+            "ts": 2119.4
+          },
+          {
+            "type": "mousedown",
+            "t": 2126,
+            "ts": 2119.4
+          },
+          {
+            "type": "click",
+            "t": 2126.1,
+            "ts": 2119.4
+          },
+          {
+            "type": "pointerdown",
+            "t": 2209.2,
+            "ts": 2196.5
+          },
+          {
+            "type": "touchstart",
+            "t": 2209.3,
+            "ts": 2196.5
+          },
+          {
+            "type": "pointerup",
+            "t": 2242.3,
+            "ts": 2235.8
+          },
+          {
+            "type": "mousedown",
+            "t": 2242.5,
+            "ts": 2235.8
+          },
+          {
+            "type": "click",
+            "t": 2242.5,
+            "ts": 2235.8
+          },
+          {
+            "type": "pointerdown",
+            "t": 2326.8,
+            "ts": 2314.1
+          },
+          {
+            "type": "touchstart",
+            "t": 2326.8,
+            "ts": 2314.1
+          },
+          {
+            "type": "pointerup",
+            "t": 2360.2,
+            "ts": 2353.4
+          },
+          {
+            "type": "mousedown",
+            "t": 2360.4,
+            "ts": 2353.4
+          },
+          {
+            "type": "click",
+            "t": 2360.4,
+            "ts": 2353.4
+          },
+          {
+            "type": "pointerdown",
+            "t": 2443.7,
+            "ts": 2432.1
+          },
+          {
+            "type": "touchstart",
+            "t": 2443.8,
+            "ts": 2432.1
+          },
+          {
+            "type": "pointerup",
+            "t": 2476.8,
+            "ts": 2470.4
+          },
+          {
+            "type": "mousedown",
+            "t": 2477,
+            "ts": 2470.4
+          },
+          {
+            "type": "click",
+            "t": 2477,
+            "ts": 2470.4
+          },
+          {
+            "type": "pointerdown",
+            "t": 2559.4,
+            "ts": 2548.6
+          },
+          {
+            "type": "touchstart",
+            "t": 2559.4,
+            "ts": 2548.6
+          },
+          {
+            "type": "pointerup",
+            "t": 2592.6,
+            "ts": 2586
+          },
+          {
+            "type": "mousedown",
+            "t": 2592.8,
+            "ts": 2586
+          },
+          {
+            "type": "click",
+            "t": 2592.8,
+            "ts": 2586
+          },
+          {
+            "type": "pointerdown",
+            "t": 2676.3,
+            "ts": 2664.5
+          },
+          {
+            "type": "touchstart",
+            "t": 2676.3,
+            "ts": 2664.5
+          },
+          {
+            "type": "pointerup",
+            "t": 2710.1,
+            "ts": 2703
+          },
+          {
+            "type": "mousedown",
+            "t": 2711.1,
+            "ts": 2703
+          },
+          {
+            "type": "click",
+            "t": 2711.1,
+            "ts": 2703
+          },
+          {
+            "type": "pointerdown",
+            "t": 2794.7,
+            "ts": 2783
+          },
+          {
+            "type": "touchstart",
+            "t": 2794.7,
+            "ts": 2783
+          },
+          {
+            "type": "pointerup",
+            "t": 2826.2,
+            "ts": 2821.8
+          },
+          {
+            "type": "mousedown",
+            "t": 2826.3,
+            "ts": 2821.8
+          },
+          {
+            "type": "click",
+            "t": 2826.4,
+            "ts": 2821.8
+          },
+          {
+            "type": "pointerdown",
+            "t": 2909.6,
+            "ts": 2898.1
+          },
+          {
+            "type": "touchstart",
+            "t": 2909.6,
+            "ts": 2898.1
+          },
+          {
+            "type": "pointerup",
+            "t": 2944,
+            "ts": 2935.5
+          },
+          {
+            "type": "mousedown",
+            "t": 2944.2,
+            "ts": 2935.5
+          },
+          {
+            "type": "click",
+            "t": 2944.2,
+            "ts": 2935.5
+          },
+          {
+            "type": "pointerdown",
+            "t": 3026.2,
+            "ts": 3016.2
+          },
+          {
+            "type": "touchstart",
+            "t": 3026.4,
+            "ts": 3016.2
+          },
+          {
+            "type": "pointerup",
+            "t": 3060.4,
+            "ts": 3053
+          },
+          {
+            "type": "mousedown",
+            "t": 3060.6,
+            "ts": 3053
+          },
+          {
+            "type": "click",
+            "t": 3060.6,
+            "ts": 3053
+          },
+          {
+            "type": "pointerdown",
+            "t": 3143.5,
+            "ts": 3132.3
+          },
+          {
+            "type": "touchstart",
+            "t": 3143.5,
+            "ts": 3132.3
+          },
+          {
+            "type": "pointerup",
+            "t": 3176,
+            "ts": 3169.4
+          },
+          {
+            "type": "mousedown",
+            "t": 3176.1,
+            "ts": 3169.4
+          },
+          {
+            "type": "click",
+            "t": 3176.2,
+            "ts": 3169.4
+          },
+          {
+            "type": "pointerdown",
+            "t": 3259.5,
+            "ts": 3247.8
+          },
+          {
+            "type": "touchstart",
+            "t": 3259.5,
+            "ts": 3247.8
+          },
+          {
+            "type": "pointerup",
+            "t": 3293,
+            "ts": 3286.2
+          },
+          {
+            "type": "mousedown",
+            "t": 3293.1,
+            "ts": 3286.2
+          },
+          {
+            "type": "click",
+            "t": 3293.2,
+            "ts": 3286.2
+          },
+          {
+            "type": "pointerdown",
+            "t": 3376.3,
+            "ts": 3364.8
+          },
+          {
+            "type": "touchstart",
+            "t": 3376.3,
+            "ts": 3364.8
+          },
+          {
+            "type": "pointerup",
+            "t": 3411.5,
+            "ts": 3403
+          },
+          {
+            "type": "mousedown",
+            "t": 3411.8,
+            "ts": 3403
+          },
+          {
+            "type": "click",
+            "t": 3411.9,
+            "ts": 3403
+          },
+          {
+            "type": "pointerdown",
+            "t": 3493.3,
+            "ts": 3484
+          },
+          {
+            "type": "touchstart",
+            "t": 3493.4,
+            "ts": 3484
+          },
+          {
+            "type": "pointerup",
+            "t": 3526.7,
+            "ts": 3519.6
+          },
+          {
+            "type": "mousedown",
+            "t": 3526.9,
+            "ts": 3519.6
+          },
+          {
+            "type": "click",
+            "t": 3526.9,
+            "ts": 3519.6
+          },
+          {
+            "type": "pointerdown",
+            "t": 3609.7,
+            "ts": 3598.5
+          },
+          {
+            "type": "touchstart",
+            "t": 3609.7,
+            "ts": 3598.5
+          },
+          {
+            "type": "pointerup",
+            "t": 3642.8,
+            "ts": 3636.3
+          },
+          {
+            "type": "mousedown",
+            "t": 3643,
+            "ts": 3636.3
+          },
+          {
+            "type": "click",
+            "t": 3643,
+            "ts": 3636.3
+          },
+          {
+            "type": "pointerdown",
+            "t": 3727.2,
+            "ts": 3714.7
+          },
+          {
+            "type": "touchstart",
+            "t": 3727.2,
+            "ts": 3714.7
+          },
+          {
+            "type": "pointerup",
+            "t": 3760.4,
+            "ts": 3753.9
+          },
+          {
+            "type": "mousedown",
+            "t": 3760.6,
+            "ts": 3753.9
+          },
+          {
+            "type": "click",
+            "t": 3760.6,
+            "ts": 3753.9
+          },
+          {
+            "type": "pointerdown",
+            "t": 3843.8,
+            "ts": 3833
+          },
+          {
+            "type": "touchstart",
+            "t": 3843.9,
+            "ts": 3833
+          },
+          {
+            "type": "pointerup",
+            "t": 3878.6,
+            "ts": 3870.8
+          },
+          {
+            "type": "mousedown",
+            "t": 3878.9,
+            "ts": 3870.8
+          },
+          {
+            "type": "click",
+            "t": 3878.9,
+            "ts": 3870.8
+          }
+        ],
+        "dbl": 7
+      },
+      "fps2": 60
+    },
+    "clicksWallMs": 2638,
+    "tapDelays": [
+      {
+        "downToUp": 42.7,
+        "downToClick": 42.7
+      },
+      {
+        "downToUp": 35.3,
+        "downToClick": 35.3
+      },
+      {
+        "downToUp": 38.3,
+        "downToClick": 38.3
+      },
+      {
+        "downToUp": 39.4,
+        "downToClick": 39.4
+      },
+      {
+        "downToUp": 39.1,
+        "downToClick": 39.1
+      },
+      {
+        "downToUp": 36.5,
+        "downToClick": 36.5
+      },
+      {
+        "downToUp": 39.3,
+        "downToClick": 39.3
+      },
+      {
+        "downToUp": 39.3,
+        "downToClick": 39.3
+      },
+      {
+        "downToUp": 38.3,
+        "downToClick": 38.3
+      },
+      {
+        "downToUp": 37.4,
+        "downToClick": 37.4
+      },
+      {
+        "downToUp": 38.5,
+        "downToClick": 38.5
+      },
+      {
+        "downToUp": 38.8,
+        "downToClick": 38.8
+      },
+      {
+        "downToUp": 37.4,
+        "downToClick": 37.4
+      },
+      {
+        "downToUp": 36.8,
+        "downToClick": 36.8
+      },
+      {
+        "downToUp": 37.1,
+        "downToClick": 37.1
+      },
+      {
+        "downToUp": 38.4,
+        "downToClick": 38.4
+      },
+      {
+        "downToUp": 38.2,
+        "downToClick": 38.2
+      },
+      {
+        "downToUp": 35.6,
+        "downToClick": 35.6
+      },
+      {
+        "downToUp": 37.8,
+        "downToClick": 37.8
+      },
+      {
+        "downToUp": 39.2,
+        "downToClick": 39.2
+      },
+      {
+        "downToUp": 37.8,
+        "downToClick": 37.8
+      }
+    ],
+    "doubleTap": {
+      "before": 1,
+      "scale": 1,
+      "dblclicks": 8,
+      "innerW": 390,
+      "innerH": 844,
+      "visualW": 390
+    },
+    "affordableState": {
+      "affordableCount": 1,
+      "firstId": "coffee",
+      "firstOpacity": "1",
+      "className": "shop-card pixel-panel affordable",
+      "moyu": 26.578806799923704
+    },
+    "affordableTypographyPixels": {
+      "image": {
+        "w": 1170,
+        "h": 2532
+      },
+      "items": [
+        {
+          "sel": ".shop-card.affordable .shop-name",
+          "label": "可买卡名称",
+          "text": "咖啡续命",
+          "fs": 14,
+          "computedColor": "rgb(244, 241, 232)",
+          "computedOpacity": 1,
+          "pixelBg": "rgb(61, 74, 107)",
+          "pixelFg": "rgb(244, 241, 232)",
+          "pixelContrast": 7.78,
+          "fgPixels": 2744,
+          "samples": 8568,
+          "boxPx": {
+            "w": 168,
+            "h": 51
+          }
+        },
+        {
+          "sel": ".shop-card.affordable .shop-desc",
+          "label": "可买卡描述",
+          "text": "点击力 +1",
+          "fs": 11,
+          "computedColor": "rgb(184, 179, 156)",
+          "computedOpacity": 1,
+          "pixelBg": "rgb(61, 74, 107)",
+          "pixelFg": "rgb(184, 179, 156)",
+          "pixelContrast": 4.17,
+          "fgPixels": 678,
+          "samples": 5655,
+          "boxPx": {
+            "w": 145,
+            "h": 39
+          }
+        },
+        {
+          "sel": ".shop-card.affordable .shop-next",
+          "label": "可买卡增量/里程碑",
+          "text": "+1 点击力｜×2还差20级",
+          "fs": 10,
+          "computedColor": "rgb(184, 224, 255)",
+          "computedOpacity": 1,
+          "pixelBg": "rgb(61, 74, 107)",
+          "pixelFg": "rgb(184, 224, 255)",
+          "pixelContrast": 6.34,
+          "fgPixels": 1515,
+          "samples": 20358,
+          "boxPx": {
+            "w": 261,
+            "h": 78
+          }
+        },
+        {
+          "sel": ".shop-card.affordable .shop-value",
+          "label": "可买卡性价比",
+          "text": "★ 点击 667/万",
+          "fs": 10,
+          "computedColor": "rgb(255, 215, 110)",
+          "computedOpacity": 1,
+          "pixelBg": "rgb(61, 74, 107)",
+          "pixelFg": "rgb(255, 215, 110)",
+          "pixelContrast": 6.36,
+          "fgPixels": 1026,
+          "samples": 7344,
+          "boxPx": {
+            "w": 204,
+            "h": 36
+          }
+        },
+        {
+          "sel": ".shop-card.affordable .shop-cost",
+          "label": "可买卡价格",
+          "text": "15 摸鱼值",
+          "fs": 12,
+          "computedColor": "rgb(255, 215, 110)",
+          "computedOpacity": 1,
+          "pixelBg": "rgb(61, 74, 107)",
+          "pixelFg": "rgb(255, 215, 110)",
+          "pixelContrast": 6.36,
+          "fgPixels": 1407,
+          "samples": 7245,
+          "boxPx": {
+            "w": 161,
+            "h": 45
+          }
+        },
+        {
+          "sel": ".shop-card.affordable .shop-flavor",
+          "label": "可买卡彩蛋",
+          "empty": true
+        }
+      ]
+    },
+    "shopSwipe": {
+      "startScrollLeft": 0,
+      "afterScrollLeft": 181,
+      "moved": true,
+      "gestureError": null
+    },
+    "buy": {
+      "before": {
+        "idx": 0,
+        "id": "coffee",
+        "center": {
+          "x": 67,
+          "y": 764
+        },
+        "cost": "15 摸鱼值",
+        "level": "",
+        "disabled": false,
+        "affordable": true,
+        "state": {
+          "moyu": 29.362126799923736,
+          "levels": {},
+          "totalEarned": 29.362126799923736,
+          "collected": {
+            "quotes": [],
+            "flavors": []
+          },
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "survive_2",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "buy_3",
+                "target": 3,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "meme_1",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              }
+            ],
+            "streak": 0,
+            "lastCompleteDate": null,
+            "claimed": false
+          },
+          "surviveStreak": 0
+        }
+      },
+      "immediate": {
+        "cost": "18 摸鱼值",
+        "level": "Lv.1",
+        "disabled": true,
+        "affordable": false
+      },
+      "immediateMs": 84,
+      "after": {
+        "cost": "18 摸鱼值",
+        "level": "Lv.1",
+        "disabled": true,
+        "affordable": false,
+        "state": {
+          "moyu": 14.402126799923742,
+          "levels": {
+            "coffee": 1
+          },
+          "totalEarned": 29.40212679992374,
+          "collected": {
+            "quotes": [],
+            "flavors": [
+              0
+            ]
+          },
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "survive_2",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "buy_3",
+                "target": 3,
+                "progress": 1,
+                "done": false
+              },
+              {
+                "id": "meme_1",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              }
+            ],
+            "streak": 0,
+            "lastCompleteDate": null,
+            "claimed": false
+          },
+          "surviveStreak": 0
+        },
+        "hudMoyu": "14.4"
+      },
+      "wallMs": 205
+    },
+    "fpsSamples": [
+      {
+        "fps": 60,
+        "frames": 417,
+        "dpr": 3
+      },
+      {
+        "fps": 60,
+        "frames": 477,
+        "dpr": 3
+      },
+      {
+        "fps": 60,
+        "frames": 537,
+        "dpr": 3
+      },
+      {
+        "fps": 60,
+        "frames": 597,
+        "dpr": 3
+      },
+      {
+        "fps": 60,
+        "frames": 657,
+        "dpr": 3
+      },
+      {
+        "fps": 60,
+        "frames": 718,
+        "dpr": 3
+      },
+      {
+        "fps": 60,
+        "frames": 778,
+        "dpr": 3
+      },
+      {
+        "fps": 60,
+        "frames": 838,
+        "dpr": 3
+      },
+      {
+        "fps": 60,
+        "frames": 898,
+        "dpr": 3
+      },
+      {
+        "fps": 60,
+        "frames": 958,
+        "dpr": 3
+      }
+    ],
+    "perfNav": {
+      "navigation": {
+        "domInteractive": 7,
+        "domContentLoaded": 25,
+        "load": 30,
+        "transferSize": 2969
+      },
+      "paints": [
+        {
+          "name": "first-paint",
+          "t": 32
+        },
+        {
+          "name": "first-contentful-paint",
+          "t": 32
+        }
+      ],
+      "ready": {
+        "nav": 7,
+        "ready": 29,
+        "load": 30,
+        "fcp": 32
+      },
+      "canvas": {
+        "w": 780,
+        "h": 1286,
+        "cw": 390,
+        "ch": 643,
+        "dpr": 3
+      },
+      "assets": {
+        "cooler": "loaded",
+        "computer": "loaded",
+        "worker": "loaded"
+      },
+      "domNodes": 142
+    },
+    "tapLogInstalled": true
+  },
+  "daily": {
+    "forged": {
+      "today": "2026-11-27",
+      "raw": {
+        "v": 1,
+        "moyu": 300,
+        "totalEarned": 300,
+        "levels": {
+          "coffee": 1
+        },
+        "savedAt": 1795748396893,
+        "createdAt": 1795744796893,
+        "collected": {
+          "quotes": [
+            0,
+            1
+          ],
+          "flavors": [
+            0
+          ]
+        },
+        "daily": {
+          "date": "2026-11-27",
+          "goals": [
+            {
+              "id": "click_100",
+              "target": 100,
+              "progress": 100,
+              "done": true
+            },
+            {
+              "id": "meme_1",
+              "target": 1,
+              "progress": 1,
+              "done": true
+            },
+            {
+              "id": "buy_3",
+              "target": 3,
+              "progress": 3,
+              "done": true
+            }
+          ],
+          "streak": 2,
+          "lastCompleteDate": null,
+          "claimed": false
+        },
+        "surviveStreak": 0
+      }
+    },
+    "beforeOpen": {
+      "hasReward": true,
+      "afterContent": "\"\"",
+      "afterW": "9px",
+      "afterH": "9px",
+      "afterBg": "rgb(255, 90, 90)",
+      "title": "日报奖励可领取",
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "click_100",
+            "target": 100,
+            "progress": 100,
+            "done": true
+          },
+          {
+            "id": "meme_1",
+            "target": 1,
+            "progress": 1,
+            "done": true
+          },
+          {
+            "id": "buy_3",
+            "target": 3,
+            "progress": 3,
+            "done": true
+          }
+        ],
+        "streak": 2,
+        "lastCompleteDate": null,
+        "claimed": false
+      },
+      "hudStreak": ""
+    },
+    "opened": {
+      "open": true,
+      "overlay": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 844,
+          "right": 390,
+          "bottom": 844
+        },
+        "bg": "rgba(10, 10, 18, 0.72)"
+      },
+      "panel": {
+        "rect": {
+          "x": 25,
+          "y": 91,
+          "w": 340,
+          "h": 662,
+          "right": 365,
+          "bottom": 753
+        },
+        "scrollH": 654,
+        "clientH": 654,
+        "scrollable": false,
+        "scrollW": 332,
+        "clientW": 332,
+        "horizontalOverflow": 0
+      },
+      "close": {
+        "rect": {
+          "x": 331.3,
+          "y": 113,
+          "w": 13.7,
+          "h": 21,
+          "right": 345,
+          "bottom": 134
+        },
+        "hitCoverage": 1,
+        "aria": "关闭"
+      },
+      "goals": [
+        {
+          "cls": "goal done",
+          "text": "✓ 点 100 下 100/100"
+        },
+        {
+          "cls": "goal done",
+          "text": "✓ 收 1 个梗 1/1"
+        },
+        {
+          "cls": "goal done",
+          "text": "✓ 买 3 次升级 3/3"
+        }
+      ],
+      "claim": {
+        "rect": {
+          "x": 45,
+          "y": 302,
+          "w": 300,
+          "h": 47,
+          "right": 345,
+          "bottom": 349
+        },
+        "text": "领取 +500",
+        "disabled": false,
+        "hitCoverage": 1,
+        "fullyVisibleInPanel": false,
+        "visibleInViewport": false
+      },
+      "grid": {
+        "rect": {
+          "x": 45,
+          "y": 446,
+          "w": 300,
+          "h": 287,
+          "right": 345,
+          "bottom": 733
+        },
+        "count": 55,
+        "columns": 2,
+        "columnXs": [
+          45,
+          198
+        ],
+        "firstRowY": [
+          446,
+          446
+        ],
+        "scrollTop": 0,
+        "scrollH": 808,
+        "clientH": 287,
+        "afterScroll": {
+          "scrollTop": 521,
+          "maxScrollTop": 521,
+          "lastItemVisible": true
+        },
+        "itemsOverflowEach": [
+          false,
+          false,
+          false
+        ]
+      },
+      "collectText": "梗语录 2/10 升级彩蛋 1/45",
+      "total": "3/55",
+      "latest": "最新彩蛋「咖啡续命」：第一杯，回魂",
+      "badgeAfter": "normal"
+    },
+    "afterClaim": {
+      "hasReward": false,
+      "afterContent": "none",
+      "claimText": "领取 +500",
+      "claimDisabled": false,
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "click_100",
+            "target": 100,
+            "progress": 100,
+            "done": true
+          },
+          {
+            "id": "meme_1",
+            "target": 1,
+            "progress": 1,
+            "done": true
+          },
+          {
+            "id": "buy_3",
+            "target": 3,
+            "progress": 3,
+            "done": true
+          }
+        ],
+        "streak": 3,
+        "lastCompleteDate": "2026-11-27",
+        "claimed": true
+      },
+      "hudMoyu": "800.6",
+      "goals": [
+        "✓ 点 100 下 100/100",
+        "✓ 收 1 个梗 1/1",
+        "✓ 买 3 次升级 3/3"
+      ]
+    },
+    "claimWallMs": 237,
+    "gridSwipe": {
+      "startScrollTop": 0,
+      "maxScrollTop": 521,
+      "afterScrollTop": 138,
+      "moved": true,
+      "gestureError": null
+    },
+    "journalTypographyPixels": {
+      "image": {
+        "w": 1170,
+        "h": 2532
+      },
+      "items": [
+        {
+          "sel": ".journal-head h2",
+          "label": "日报标题",
+          "text": "摸鱼日报",
+          "fs": 18,
+          "computedColor": "rgb(244, 241, 232)",
+          "computedOpacity": 1,
+          "pixelBg": "rgb(47, 47, 68)",
+          "pixelFg": "rgb(244, 241, 232)",
+          "pixelContrast": 11.54,
+          "fgPixels": 4497,
+          "samples": 13824,
+          "boxPx": {
+            "w": 216,
+            "h": 64
+          }
+        },
+        {
+          "sel": "#journal-close",
+          "label": "日报关闭按钮",
+          "text": "✕",
+          "fs": 18,
+          "computedColor": "rgb(168, 164, 147)",
+          "computedOpacity": 1,
+          "pixelBg": "rgb(47, 47, 68)",
+          "pixelFg": "rgb(168, 164, 147)",
+          "pixelContrast": 5.21,
+          "fgPixels": 397,
+          "samples": 2688,
+          "boxPx": {
+            "w": 42,
+            "h": 64
+          }
+        },
+        {
+          "sel": ".journal-meta",
+          "label": "日报日期/连胜",
+          "text": "2026-11-27 · 🔥 连续 2 天（今天未领）",
+          "fs": 12,
+          "computedColor": "rgb(168, 164, 147)",
+          "computedOpacity": 1,
+          "pixelBg": "rgb(47, 47, 68)",
+          "pixelFg": "rgb(168, 164, 147)",
+          "pixelContrast": 5.21,
+          "fgPixels": 3295,
+          "samples": 29946,
+          "boxPx": {
+            "w": 651,
+            "h": 46
+          }
+        },
+        {
+          "sel": ".goal .goal-desc",
+          "label": "日报目标文案",
+          "text": "点 100 下",
+          "fs": 13,
+          "computedColor": "rgb(244, 241, 232)",
+          "computedOpacity": 1,
+          "pixelBg": "rgb(51, 68, 58)",
+          "pixelFg": "rgb(244, 241, 232)",
+          "pixelContrast": 9.17,
+          "fgPixels": 1016,
+          "samples": 8183,
+          "boxPx": {
+            "w": 167,
+            "h": 49
+          }
+        },
+        {
+          "sel": ".goal .goal-progress",
+          "label": "日报目标进度",
+          "text": "100/100",
+          "fs": 12,
+          "computedColor": "rgb(255, 215, 110)",
+          "computedOpacity": 1,
+          "pixelBg": "rgb(51, 68, 58)",
+          "pixelFg": "rgb(255, 215, 110)",
+          "pixelContrast": 7.49,
+          "fgPixels": 918,
+          "samples": 6256,
+          "boxPx": {
+            "w": 136,
+            "h": 46
+          }
+        },
+        {
+          "sel": "#journal-claim",
+          "label": "日报领取按钮",
+          "text": "领取 +500",
+          "fs": 15,
+          "computedColor": "rgb(16, 36, 26)",
+          "computedOpacity": 1,
+          "pixelBg": "rgb(139, 226, 139)",
+          "pixelFg": "rgb(16, 36, 26)",
+          "pixelContrast": 10.35,
+          "fgPixels": 3179,
+          "samples": 12100,
+          "boxPx": {
+            "w": 220,
+            "h": 55
+          }
+        },
+        {
+          "sel": ".journal-panel h3",
+          "label": "图鉴标题",
+          "text": "摸鱼图鉴 3/55",
+          "fs": 15,
+          "computedColor": "rgb(244, 241, 232)",
+          "computedOpacity": 1,
+          "pixelBg": "rgb(47, 47, 68)",
+          "pixelFg": "rgb(244, 241, 232)",
+          "pixelContrast": 11.54,
+          "fgPixels": 3425,
+          "samples": 49500,
+          "boxPx": {
+            "w": 900,
+            "h": 55
+          }
+        },
+        {
+          "sel": ".journal-panel h3 small",
+          "label": "图鉴总数",
+          "text": "3/55",
+          "fs": 12,
+          "computedColor": "rgb(255, 215, 110)",
+          "computedOpacity": 1,
+          "pixelBg": "rgb(47, 47, 68)",
+          "pixelFg": "rgb(255, 215, 110)",
+          "pixelContrast": 9.43,
+          "fgPixels": 845,
+          "samples": 3864,
+          "boxPx": {
+            "w": 84,
+            "h": 46
+          }
+        },
+        {
+          "sel": ".journal-collect span",
+          "label": "图鉴分类进度",
+          "text": "梗语录 2/10",
+          "fs": 13,
+          "computedColor": "rgb(184, 179, 156)",
+          "computedOpacity": 1,
+          "pixelBg": "rgb(47, 47, 68)",
+          "pixelFg": "rgb(126, 200, 255)",
+          "pixelContrast": 7.2,
+          "fgPixels": 962,
+          "samples": 10388,
+          "boxPx": {
+            "w": 212,
+            "h": 49
+          }
+        },
+        {
+          "sel": "#journal-latest",
+          "label": "最新彩蛋",
+          "text": "最新彩蛋「咖啡续命」：第一杯，回魂",
+          "fs": 11,
+          "computedColor": "rgb(143, 159, 208)",
+          "computedOpacity": 1,
+          "pixelBg": "rgb(47, 47, 68)",
+          "pixelFg": "rgb(143, 159, 208)",
+          "pixelContrast": 4.99,
+          "fgPixels": 3403,
+          "samples": 21800,
+          "boxPx": {
+            "w": 545,
+            "h": 40
+          }
+        },
+        {
+          "sel": ".c-item.on .c-label",
+          "label": "图鉴格标签(已解锁)",
+          "text": "语录 1",
+          "fs": 9,
+          "computedColor": "rgb(143, 159, 208)",
+          "computedOpacity": 1,
+          "pixelBg": "rgb(47, 61, 52)",
+          "pixelFg": "rgb(143, 159, 208)",
+          "pixelContrast": 4.37,
+          "fgPixels": 332,
+          "samples": 2584,
+          "boxPx": {
+            "w": 76,
+            "h": 34
+          }
+        },
+        {
+          "sel": ".c-item.on .c-text",
+          "label": "图鉴格内容(已解锁)",
+          "text": "在吗？帮个忙",
+          "fs": 10,
+          "computedColor": "rgb(244, 241, 232)",
+          "computedOpacity": 1,
+          "pixelBg": "rgb(47, 61, 52)",
+          "pixelFg": "rgb(244, 241, 232)",
+          "pixelContrast": 10.12,
+          "fgPixels": 834,
+          "samples": 6660,
+          "boxPx": {
+            "w": 180,
+            "h": 37
+          }
+        },
+        {
+          "sel": ".c-item.off .c-label",
+          "label": "图鉴格标签(未解锁)",
+          "text": "???",
+          "fs": 9,
+          "computedColor": "rgb(143, 159, 208)",
+          "computedOpacity": 1,
+          "pixelBg": "rgb(44, 44, 64)",
+          "pixelFg": "rgb(99, 108, 145)",
+          "pixelContrast": 2.65,
+          "fgPixels": 141,
+          "samples": 1496,
+          "boxPx": {
+            "w": 44,
+            "h": 34
+          }
+        },
+        {
+          "sel": ".c-item.off .c-text",
+          "label": "图鉴格内容(未解锁)",
+          "hidden": true
+        }
+      ]
+    },
+    "screenshot": "playtest/r6-screens/390x844-journal-claimable.png"
+  },
+  "stressHud": {
+    "at360": {
+      "viewport": {
+        "w": 360,
+        "h": 740
+      },
+      "hud": {
+        "x": 0,
+        "y": 0,
+        "w": 360,
+        "h": 81,
+        "right": 360,
+        "bottom": 81
+      },
+      "sub": {
+        "rect": {
+          "x": 12,
+          "y": 45,
+          "w": 336,
+          "h": 26,
+          "right": 348,
+          "bottom": 71
+        },
+        "scrollW": 336,
+        "clientW": 336,
+        "clipped": false
+      },
+      "parts": [
+        {
+          "sel": "#hud-moyu",
+          "text": "9.88亿",
+          "rect": {
+            "x": 12,
+            "y": 7,
+            "w": 98.1,
+            "h": 35,
+            "right": 110.1,
+            "bottom": 42
+          },
+          "scrollW": 0,
+          "clientW": 0,
+          "clipped": false,
+          "hidden": false
+        },
+        {
+          "sel": ".hud-moyu small",
+          "text": "摸鱼值",
+          "rect": {
+            "x": 116.1,
+            "y": 23,
+            "w": 39,
+            "h": 16,
+            "right": 155.1,
+            "bottom": 39
+          },
+          "scrollW": 0,
+          "clientW": 0,
+          "clipped": false,
+          "hidden": false
+        },
+        {
+          "sel": "#hud-click",
+          "text": "10",
+          "rect": {
+            "x": 46.9,
+            "y": 50.5,
+            "w": 14.4,
+            "h": 15,
+            "right": 61.3,
+            "bottom": 65.5
+          },
+          "scrollW": 0,
+          "clientW": 0,
+          "clipped": false,
+          "hidden": false
+        },
+        {
+          "sel": "#hud-idle",
+          "text": "14.00万",
+          "rect": {
+            "x": 98.7,
+            "y": 50.5,
+            "w": 46.2,
+            "h": 15,
+            "right": 144.9,
+            "bottom": 65.5
+          },
+          "scrollW": 0,
+          "clientW": 0,
+          "clipped": false,
+          "hidden": false
+        },
+        {
+          "sel": "#hud-rank",
+          "text": "宇宙尽头",
+          "rect": {
+            "x": 170.6,
+            "y": 49.5,
+            "w": 48,
+            "h": 17,
+            "right": 218.6,
+            "bottom": 66.5
+          },
+          "scrollW": 48,
+          "clientW": 48,
+          "clipped": false,
+          "hidden": false
+        },
+        {
+          "sel": "#hud-streak",
+          "text": "🔥连胜 12",
+          "rect": {
+            "x": 228.6,
+            "y": 48,
+            "w": 56,
+            "h": 20,
+            "right": 284.5,
+            "bottom": 68
+          },
+          "scrollW": 56,
+          "clientW": 56,
+          "clipped": false,
+          "hidden": false
+        },
+        {
+          "sel": "#btn-journal",
+          "text": "📔",
+          "rect": {
+            "x": 309,
+            "y": 45,
+            "w": 39,
+            "h": 26,
+            "right": 348,
+            "bottom": 71
+          },
+          "scrollW": 35,
+          "clientW": 35,
+          "clipped": false,
+          "hidden": false
+        }
+      ],
+      "state": {
+        "moyu": 987810645.2233198,
+        "totalEarned": 2500156324.223316,
+        "surviveStreak": 12
+      },
+      "hudTexts": {
+        "moyu": "9.88亿",
+        "rank": "宇宙尽头",
+        "idle": "14.00万",
+        "streak": "🔥连胜 12"
+      },
+      "docScrollW": 360,
+      "rankTitle": "摸鱼宇宙尽头",
+      "screenshot": "playtest/r6-screens/360x740-hud-stress.png"
+    },
+    "at390": {
+      "viewport": {
+        "w": 390,
+        "h": 844
+      },
+      "hud": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 81,
+        "right": 390,
+        "bottom": 81
+      },
+      "sub": {
+        "rect": {
+          "x": 12,
+          "y": 45,
+          "w": 366,
+          "h": 26,
+          "right": 378,
+          "bottom": 71
+        },
+        "scrollW": 366,
+        "clientW": 366,
+        "clipped": false
+      },
+      "parts": [
+        {
+          "sel": "#hud-moyu",
+          "text": "9.88亿",
+          "rect": {
+            "x": 12,
+            "y": 7,
+            "w": 98.1,
+            "h": 35,
+            "right": 110.1,
+            "bottom": 42
+          },
+          "scrollW": 0,
+          "clientW": 0,
+          "clipped": false,
+          "hidden": false
+        },
+        {
+          "sel": ".hud-moyu small",
+          "text": "摸鱼值",
+          "rect": {
+            "x": 116.1,
+            "y": 23,
+            "w": 39,
+            "h": 16,
+            "right": 155.1,
+            "bottom": 39
+          },
+          "scrollW": 0,
+          "clientW": 0,
+          "clipped": false,
+          "hidden": false
+        },
+        {
+          "sel": "#hud-click",
+          "text": "10",
+          "rect": {
+            "x": 46.9,
+            "y": 50.5,
+            "w": 14.4,
+            "h": 15,
+            "right": 61.3,
+            "bottom": 65.5
+          },
+          "scrollW": 0,
+          "clientW": 0,
+          "clipped": false,
+          "hidden": false
+        },
+        {
+          "sel": "#hud-idle",
+          "text": "14.00万",
+          "rect": {
+            "x": 98.7,
+            "y": 50.5,
+            "w": 46.2,
+            "h": 15,
+            "right": 144.9,
+            "bottom": 65.5
+          },
+          "scrollW": 0,
+          "clientW": 0,
+          "clipped": false,
+          "hidden": false
+        },
+        {
+          "sel": "#hud-rank",
+          "text": "宇宙尽头",
+          "rect": {
+            "x": 170.6,
+            "y": 49.5,
+            "w": 48,
+            "h": 17,
+            "right": 218.6,
+            "bottom": 66.5
+          },
+          "scrollW": 48,
+          "clientW": 48,
+          "clipped": false,
+          "hidden": false
+        },
+        {
+          "sel": "#hud-streak",
+          "text": "🔥连胜 12",
+          "rect": {
+            "x": 228.6,
+            "y": 48,
+            "w": 56,
+            "h": 20,
+            "right": 284.5,
+            "bottom": 68
+          },
+          "scrollW": 56,
+          "clientW": 56,
+          "clipped": false,
+          "hidden": false
+        },
+        {
+          "sel": "#btn-journal",
+          "text": "📔",
+          "rect": {
+            "x": 339,
+            "y": 45,
+            "w": 39,
+            "h": 26,
+            "right": 378,
+            "bottom": 71
+          },
+          "scrollW": 35,
+          "clientW": 35,
+          "clipped": false,
+          "hidden": false
+        }
+      ],
+      "state": {
+        "moyu": 987880631.3232996,
+        "totalEarned": 2500226310.3232946,
+        "surviveStreak": 12
+      },
+      "hudTexts": {
+        "moyu": "9.88亿",
+        "rank": "宇宙尽头",
+        "idle": "14.00万",
+        "streak": "🔥连胜 12"
+      },
+      "docScrollW": 390,
+      "rankTitle": "摸鱼宇宙尽头",
+      "screenshot": "playtest/r6-screens/390x844-hud-stress.png"
+    }
+  },
+  "perf": {
+    "note": "首屏 timing 取自每次 navigateFresh 后 __UXBOOT__（Vite dev server warm）；10s 帧率取自 interactionsTest",
+    "coldBoot": {
+      "nav": 25,
+      "ready": 81,
+      "load": 87,
+      "fcp": 92
+    },
+    "warmBoot": [
+      {
+        "nav": 4,
+        "ready": 25,
+        "load": 22,
+        "fcp": 32
+      },
+      {
+        "nav": 6,
+        "ready": 37,
+        "load": 32,
+        "fcp": 44
+      }
+    ],
+    "fpsSamples": [
+      {
+        "fps": 60,
+        "frames": 417,
+        "dpr": 3
+      },
+      {
+        "fps": 60,
+        "frames": 477,
+        "dpr": 3
+      },
+      {
+        "fps": 60,
+        "frames": 537,
+        "dpr": 3
+      },
+      {
+        "fps": 60,
+        "frames": 597,
+        "dpr": 3
+      },
+      {
+        "fps": 60,
+        "frames": 657,
+        "dpr": 3
+      },
+      {
+        "fps": 60,
+        "frames": 718,
+        "dpr": 3
+      },
+      {
+        "fps": 60,
+        "frames": 778,
+        "dpr": 3
+      },
+      {
+        "fps": 60,
+        "frames": 838,
+        "dpr": 3
+      },
+      {
+        "fps": 60,
+        "frames": 898,
+        "dpr": 3
+      },
+      {
+        "fps": 60,
+        "frames": 958,
+        "dpr": 3
+      }
+    ]
+  },
+  "console": {
+    "consoleErrors": [],
+    "consoleWarns": [
+      "[log] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "[log] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "[log] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "[log] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "[log] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "[log] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "[log] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently"
+    ],
+    "exceptions": [],
+    "failedReq": []
+  },
+  "safeArea": {
+    "supported": true,
+    "appPadding": {
+      "top": "59px",
+      "right": "0px",
+      "bottom": "34px",
+      "left": "0px"
+    },
+    "appRect": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "right": 390,
+      "bottom": 844
+    },
+    "hud": {
+      "x": 0,
+      "y": 59,
+      "w": 390,
+      "h": 81,
+      "right": 390,
+      "bottom": 140
+    },
+    "stage": {
+      "x": 0,
+      "y": 140,
+      "w": 390,
+      "h": 506,
+      "right": 390,
+      "bottom": 646
+    },
+    "shop": {
+      "x": 0,
+      "y": 646,
+      "w": 390,
+      "h": 164,
+      "right": 390,
+      "bottom": 810
+    },
+    "docScrollH": 844
+  }
+}

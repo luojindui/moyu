@@ -23,6 +23,15 @@ export function flavorIndex(upgradeId: string, tier: number): number {
 
 /** 档位阈值（Lv.1/5/10/20/50）对应的 tier 序号 */
 const TIER_LEVELS = [1, 5, 10, 20, 50];
+/** 点击线彩蛋改用累计点击数解锁（解除"后期点击力无用→彩蛋死锁"） */
+export const CLICK_TIER_THRESHOLDS = [100, 500, 3000, 8000, 20000];
+/** 点击线（有 clickPower 的升级）判定 */
+export function isClickLine(id: string): boolean {
+  const u = UPGRADES.find((x) => x.id === id);
+  return !!u?.clickPower;
+}
+/** 图鉴集满的永久挂机加成 */
+export const COLLECTION_BONUS = 1.2;
 
 function tierFor(level: number): number {
   let t = -1;
@@ -54,19 +63,21 @@ export function collectFlavor(state: GameState, upgradeId: string, tier: number)
   };
 }
 
-/** 按当前等级补齐历史彩蛋档（读档迁移/购买后调用，幂等） */
+/** 按当前进度补齐历史彩蛋档（读档迁移/点击/购买后调用，幂等）：
+ *  点击线按累计点击数阈值解锁（修复后期纯挂机导致的高档彩蛋死锁）；挂机线按等级解锁。 */
 export function syncFlavorCollection(state: GameState): GameState {
   const missing: number[] = [];
   for (const u of UPGRADES) {
-    const lv = state.levels[u.id] ?? 0;
-    const maxTier = tierFor(lv);
+    const maxTier = isClickLine(u.id)
+      ? CLICK_TIER_THRESHOLDS.filter((th) => state.totalClicks >= th).length - 1
+      : tierFor(state.levels[u.id] ?? 0);
     for (let t = 0; t <= maxTier; t++) {
       const idx = flavorIndex(u.id, t);
       if (!state.collected.flavors.includes(idx)) missing.push(idx);
     }
   }
-  if (missing.length === 0) return state;
-  return { ...state, collected: { ...state.collected, flavors: [...state.collected.flavors, ...missing] } };
+  const collected = missing.length === 0 ? state.collected : { ...state.collected, flavors: [...state.collected.flavors, ...missing] };
+  return collected === state.collected ? state : { ...state, collected };
 }
 
 /** 已收集总数（图鉴 x/55）：按去重后的合法条目计数，篡改档自动收敛 */

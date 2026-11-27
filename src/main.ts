@@ -14,6 +14,7 @@ import {
   type EventState,
 } from "./engine/events";
 import { collectQuote, syncFlavorCollection } from "./engine/collection";
+import { ensureVisits, offlineEfficiency } from "./engine/progression";
 import { ensureDaily, dailyTrack, claimDaily } from "./engine/daily";
 import { Hud } from "./ui/hud";
 import { Shop } from "./ui/shop";
@@ -50,7 +51,8 @@ async function boot(): Promise<void> {
   // 1) 状态与离线结算（不依赖任何资产）；离线效率现算：建档 24h 内全额，之后 70%
   const restored = restore(localStorageAdapter, Date.now());
   let state = restored.state ?? initialState();
-  const currentOfflineRate = (): number => (Date.now() - restored.createdAt < 86_400_000 ? 1 : 0.7);
+  state = ensureVisits(state, Date.now()); // 本次打开算一次回访（可把离线效率挣回 1.0）
+  const currentOfflineRate = (): number => offlineEfficiency(state, restored.createdAt, Date.now());
   const offline = settleReturn(state, Date.now() - restored.offlineSeconds * 1000, Date.now(), currentOfflineRate());
   state = offline.state;
 
@@ -150,6 +152,7 @@ async function boot(): Promise<void> {
     const gained = clickPowerOf(state) * (1 + 0.02 * Math.min(combo, COMBO_MAX));
     state = doClick(state, combo);
     trackDaily("click");
+    if (state.totalClicks % 25 === 0) state = syncFlavorCollection(state); // 点击线彩蛋按累计点击数解锁
     const meme = CLICK_MEMES[Math.floor(Math.random() * CLICK_MEMES.length)];
     const text = combo >= 6 ? `连击×${combo} +${Math.round(gained)}` : Math.random() < 0.22 && meme ? meme : `+${Math.round(gained)}`;
     scene.fx.floatText(p.x, p.y, text);

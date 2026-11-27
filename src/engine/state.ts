@@ -16,10 +16,23 @@ export interface GameState {
   daily: DailyState | null;
   /** 连续安然巡逻次数（入档持久化，被抓清零） */
   surviveStreak: number;
+  /** 累计点击次数（点击线彩蛋按此解锁，解除高级彩蛋死锁） */
+  totalClicks: number;
+  /** 今日回访计数（回访可把离线效率从 0.7 挣回 1.0） */
+  visits: { date: string; count: number };
 }
 
 export function initialState(): GameState {
-  return { moyu: 0, totalEarned: 0, levels: {}, collected: emptyCollected(), daily: null, surviveStreak: 0 };
+  return {
+    moyu: 0,
+    totalEarned: 0,
+    levels: {},
+    collected: emptyCollected(),
+    daily: null,
+    surviveStreak: 0,
+    totalClicks: 0,
+    visits: { date: "", count: 0 },
+  };
 }
 
 /** 统一的进账入口：余额与累计同步增加（惩罚只扣余额） */

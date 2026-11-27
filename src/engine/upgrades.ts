@@ -55,6 +55,13 @@ function effectAt(u: UpgradeDef, level: number): number {
   return (u.clickPower ?? u.idleRate ?? 0) * level * milestoneMult(level, MILESTONE_OFFSET[u.id] ?? 0);
 }
 
+/** 图鉴集满 55/55 的永久挂机加成（1.2×） */
+const COLLECTION_TOTAL = 55;
+function collectionBonus(state: GameState): number {
+  const n = state.collected.quotes.length + state.collected.flavors.length;
+  return n >= COLLECTION_TOTAL ? 1.2 : 1;
+}
+
 /** 状态合计加成（含底薪） */
 export function effectOf(state: GameState): { clickPower: number; idleRate: number } {
   let clickPower = 0;
@@ -65,7 +72,7 @@ export function effectOf(state: GameState): { clickPower: number; idleRate: numb
     if (u.clickPower) clickPower += effectAt(u, lv);
     if (u.idleRate) idleRate += effectAt(u, lv);
   }
-  return { clickPower, idleRate };
+  return { clickPower, idleRate: idleRate * collectionBonus(state) };
 }
 
 /** 下一级（level → level+1）的即时效果增量（含里程碑跳变） */

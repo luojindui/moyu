@@ -1,0 +1,2558 @@
+{
+  "phase": "A",
+  "shots": {
+    "ready": "playtest/r7-screens/first-ready.png",
+    "at3s": "/tmp/rage-1.png",
+    "afterTaps": "/tmp/rage-2.png"
+  },
+  "ready": {
+    "snap": {
+      "hookAt": 74,
+      "firstFrameAt": 74.4,
+      "assetsAt": null,
+      "paints": {},
+      "lcp": null,
+      "errors": [],
+      "navAt": 13.3
+    },
+    "wall": {
+      "hook": 71,
+      "firstFrame": 71
+    },
+    "pollMs": 71
+  },
+  "earlyTaps": [
+    {
+      "atPageMs": 802,
+      "moyuBefore": 0.1,
+      "moyuAfter": 1.2,
+      "delta": 1.1,
+      "floatTexts": [
+        "这波不亏"
+      ]
+    },
+    {
+      "atPageMs": 1502,
+      "moyuBefore": 1.3,
+      "moyuAfter": 2.3,
+      "delta": 1.1,
+      "floatTexts": [
+        "+1",
+        "这波不亏"
+      ]
+    },
+    {
+      "atPageMs": 2201,
+      "moyuBefore": 2.4,
+      "moyuAfter": 3.5,
+      "delta": 1.1,
+      "floatTexts": [
+        "+1"
+      ]
+    }
+  ],
+  "audit": {
+    "vw": 390,
+    "vh": 844,
+    "dpr": 3,
+    "canvas": [
+      0,
+      81,
+      390,
+      643
+    ],
+    "items": [
+      {
+        "txt": "3.6",
+        "tag": "span",
+        "cls": "",
+        "fontSize": 30,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          12,
+          7,
+          47,
+          35
+        ],
+        "visible": true
+      },
+      {
+        "txt": "摸鱼值",
+        "tag": "small",
+        "cls": "",
+        "fontSize": 13,
+        "color": "rgb(189, 184, 159)",
+        "opacity": "1",
+        "rect": [
+          65,
+          23,
+          39,
+          16
+        ],
+        "visible": true
+      },
+      {
+        "txt": "点击 +",
+        "tag": "span",
+        "cls": "",
+        "fontSize": 12,
+        "color": "rgb(168, 164, 147)",
+        "opacity": "1",
+        "rect": [
+          12,
+          50,
+          41,
+          17
+        ],
+        "visible": true
+      },
+      {
+        "txt": "1",
+        "tag": "b",
+        "cls": "",
+        "fontSize": 12,
+        "color": "rgb(139, 226, 139)",
+        "opacity": "1",
+        "rect": [
+          47,
+          51,
+          6,
+          15
+        ],
+        "visible": true
+      },
+      {
+        "txt": "挂机",
+        "tag": "span",
+        "cls": "",
+        "fontSize": 12,
+        "color": "rgb(168, 164, 147)",
+        "opacity": "1",
+        "rect": [
+          63,
+          50,
+          62,
+          17
+        ],
+        "visible": true
+      },
+      {
+        "txt": "0.2",
+        "tag": "b",
+        "cls": "",
+        "fontSize": 12,
+        "color": "rgb(139, 226, 139)",
+        "opacity": "1",
+        "rect": [
+          90,
+          51,
+          19,
+          15
+        ],
+        "visible": true
+      },
+      {
+        "txt": "/秒",
+        "tag": "span",
+        "cls": "",
+        "fontSize": 12,
+        "color": "rgb(168, 164, 147)",
+        "opacity": "1",
+        "rect": [
+          63,
+          50,
+          62,
+          17
+        ],
+        "visible": true
+      },
+      {
+        "txt": "实习生 0%",
+        "tag": "span",
+        "cls": "",
+        "fontSize": 12,
+        "color": "rgb(168, 164, 147)",
+        "opacity": "1",
+        "rect": [
+          135,
+          50,
+          58,
+          17
+        ],
+        "visible": true
+      },
+      {
+        "txt": "📔",
+        "tag": "button",
+        "cls": "",
+        "fontSize": 15,
+        "color": "rgb(244, 241, 232)",
+        "opacity": "1",
+        "rect": [
+          339,
+          45,
+          39,
+          26
+        ],
+        "visible": true
+      },
+      {
+        "txt": "咖啡续命",
+        "tag": "span",
+        "cls": "shop-name",
+        "fontSize": 14,
+        "color": "rgb(244, 241, 232)",
+        "opacity": "1",
+        "rect": [
+          19,
+          703,
+          96,
+          20
+        ],
+        "visible": true
+      },
+      {
+        "txt": "点击力 +1",
+        "tag": "span",
+        "cls": "shop-desc",
+        "fontSize": 11,
+        "color": "rgb(184, 179, 156)",
+        "opacity": "1",
+        "rect": [
+          19,
+          726,
+          96,
+          16
+        ],
+        "visible": true
+      },
+      {
+        "txt": "+1 点击力｜×2还差20级",
+        "tag": "span",
+        "cls": "shop-next",
+        "fontSize": 10,
+        "color": "rgb(184, 224, 255)",
+        "opacity": "1",
+        "rect": [
+          19,
+          745,
+          96,
+          28
+        ],
+        "visible": true
+      },
+      {
+        "txt": "★ 点击 667/万",
+        "tag": "span",
+        "cls": "shop-value",
+        "fontSize": 10,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          19,
+          776,
+          96,
+          14
+        ],
+        "visible": true
+      },
+      {
+        "txt": "15",
+        "tag": "b",
+        "cls": "",
+        "fontSize": 12,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          19,
+          794,
+          14,
+          15
+        ],
+        "visible": true
+      },
+      {
+        "txt": "摸鱼值",
+        "tag": "span",
+        "cls": "shop-cost",
+        "fontSize": 12,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          19,
+          793,
+          96,
+          17
+        ],
+        "visible": true
+      },
+      {
+        "txt": "带薪喝水",
+        "tag": "span",
+        "cls": "shop-name",
+        "fontSize": 14,
+        "color": "rgb(244, 241, 232)",
+        "opacity": "1",
+        "rect": [
+          145,
+          703,
+          96,
+          20
+        ],
+        "visible": true
+      },
+      {
+        "txt": "点击力 +2",
+        "tag": "span",
+        "cls": "shop-desc",
+        "fontSize": 11,
+        "color": "rgb(184, 179, 156)",
+        "opacity": "1",
+        "rect": [
+          145,
+          726,
+          96,
+          16
+        ],
+        "visible": true
+      },
+      {
+        "txt": "+2 点击力｜×2还差15级",
+        "tag": "span",
+        "cls": "shop-next",
+        "fontSize": 10,
+        "color": "rgb(184, 224, 255)",
+        "opacity": "1",
+        "rect": [
+          145,
+          745,
+          96,
+          28
+        ],
+        "visible": true
+      },
+      {
+        "txt": "点击 200/万",
+        "tag": "span",
+        "cls": "shop-value",
+        "fontSize": 10,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          145,
+          776,
+          96,
+          14
+        ],
+        "visible": true
+      },
+      {
+        "txt": "100",
+        "tag": "b",
+        "cls": "",
+        "fontSize": 12,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          145,
+          794,
+          23,
+          15
+        ],
+        "visible": true
+      },
+      {
+        "txt": "摸鱼值",
+        "tag": "span",
+        "cls": "shop-cost",
+        "fontSize": 12,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          145,
+          793,
+          96,
+          17
+        ],
+        "visible": true
+      },
+      {
+        "txt": "人体工学椅",
+        "tag": "span",
+        "cls": "shop-name",
+        "fontSize": 14,
+        "color": "rgb(244, 241, 232)",
+        "opacity": "1",
+        "rect": [
+          271,
+          703,
+          96,
+          20
+        ],
+        "visible": true
+      },
+      {
+        "txt": "点击力 +5",
+        "tag": "span",
+        "cls": "shop-desc",
+        "fontSize": 11,
+        "color": "rgb(184, 179, 156)",
+        "opacity": "1",
+        "rect": [
+          271,
+          726,
+          96,
+          16
+        ],
+        "visible": true
+      },
+      {
+        "txt": "+5 点击力｜×2还差10级",
+        "tag": "span",
+        "cls": "shop-next",
+        "fontSize": 10,
+        "color": "rgb(184, 224, 255)",
+        "opacity": "1",
+        "rect": [
+          271,
+          745,
+          96,
+          28
+        ],
+        "visible": true
+      },
+      {
+        "txt": "点击 63/万",
+        "tag": "span",
+        "cls": "shop-value",
+        "fontSize": 10,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          271,
+          776,
+          96,
+          14
+        ],
+        "visible": true
+      },
+      {
+        "txt": "800",
+        "tag": "b",
+        "cls": "",
+        "fontSize": 12,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          271,
+          794,
+          25,
+          15
+        ],
+        "visible": true
+      },
+      {
+        "txt": "摸鱼值",
+        "tag": "span",
+        "cls": "shop-cost",
+        "fontSize": 12,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          271,
+          793,
+          96,
+          17
+        ],
+        "visible": true
+      },
+      {
+        "txt": "刷手机",
+        "tag": "span",
+        "cls": "shop-name",
+        "fontSize": 14,
+        "color": "rgb(244, 241, 232)",
+        "opacity": "1",
+        "rect": [
+          397,
+          703,
+          96,
+          20
+        ],
+        "visible": true
+      },
+      {
+        "txt": "挂机 +1/秒",
+        "tag": "span",
+        "cls": "shop-desc",
+        "fontSize": 11,
+        "color": "rgb(184, 179, 156)",
+        "opacity": "1",
+        "rect": [
+          397,
+          726,
+          96,
+          16
+        ],
+        "visible": true
+      },
+      {
+        "txt": "+1/秒｜×2还差5级",
+        "tag": "span",
+        "cls": "shop-next",
+        "fontSize": 10,
+        "color": "rgb(184, 224, 255)",
+        "opacity": "1",
+        "rect": [
+          397,
+          745,
+          96,
+          14
+        ],
+        "visible": true
+      },
+      {
+        "txt": "★ 挂机 200.0/万",
+        "tag": "span",
+        "cls": "shop-value",
+        "fontSize": 10,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          397,
+          762,
+          96,
+          14
+        ],
+        "visible": true
+      },
+      {
+        "txt": "50",
+        "tag": "b",
+        "cls": "",
+        "fontSize": 12,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          397,
+          794,
+          16,
+          15
+        ],
+        "visible": true
+      },
+      {
+        "txt": "摸鱼值",
+        "tag": "span",
+        "cls": "shop-cost",
+        "fontSize": 12,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          397,
+          793,
+          96,
+          17
+        ],
+        "visible": true
+      },
+      {
+        "txt": "带薪蹲坑",
+        "tag": "span",
+        "cls": "shop-name",
+        "fontSize": 14,
+        "color": "rgb(244, 241, 232)",
+        "opacity": "1",
+        "rect": [
+          523,
+          703,
+          96,
+          20
+        ],
+        "visible": true
+      },
+      {
+        "txt": "挂机 +5/秒",
+        "tag": "span",
+        "cls": "shop-desc",
+        "fontSize": 11,
+        "color": "rgb(184, 179, 156)",
+        "opacity": "1",
+        "rect": [
+          523,
+          726,
+          96,
+          16
+        ],
+        "visible": true
+      },
+      {
+        "txt": "+5/秒｜×2还差20级",
+        "tag": "span",
+        "cls": "shop-next",
+        "fontSize": 10,
+        "color": "rgb(184, 224, 255)",
+        "opacity": "1",
+        "rect": [
+          523,
+          745,
+          96,
+          14
+        ],
+        "visible": true
+      },
+      {
+        "txt": "挂机 83.3/万",
+        "tag": "span",
+        "cls": "shop-value",
+        "fontSize": 10,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          523,
+          762,
+          96,
+          14
+        ],
+        "visible": true
+      },
+      {
+        "txt": "600",
+        "tag": "b",
+        "cls": "",
+        "fontSize": 12,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          523,
+          794,
+          25,
+          15
+        ],
+        "visible": true
+      },
+      {
+        "txt": "摸鱼值",
+        "tag": "span",
+        "cls": "shop-cost",
+        "fontSize": 12,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          523,
+          793,
+          96,
+          17
+        ],
+        "visible": true
+      },
+      {
+        "txt": "摸鱼群聊",
+        "tag": "span",
+        "cls": "shop-name",
+        "fontSize": 14,
+        "color": "rgb(244, 241, 232)",
+        "opacity": "1",
+        "rect": [
+          649,
+          703,
+          96,
+          20
+        ],
+        "visible": true
+      },
+      {
+        "txt": "挂机 +15/秒",
+        "tag": "span",
+        "cls": "shop-desc",
+        "fontSize": 11,
+        "color": "rgb(184, 179, 156)",
+        "opacity": "1",
+        "rect": [
+          649,
+          726,
+          96,
+          16
+        ],
+        "visible": true
+      },
+      {
+        "txt": "+15/秒｜×2还差15级",
+        "tag": "span",
+        "cls": "shop-next",
+        "fontSize": 10,
+        "color": "rgb(184, 224, 255)",
+        "opacity": "1",
+        "rect": [
+          649,
+          745,
+          96,
+          14
+        ],
+        "visible": true
+      },
+      {
+        "txt": "挂机 37.5/万",
+        "tag": "span",
+        "cls": "shop-value",
+        "fontSize": 10,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          649,
+          762,
+          96,
+          14
+        ],
+        "visible": true
+      },
+      {
+        "txt": "4000",
+        "tag": "b",
+        "cls": "",
+        "fontSize": 12,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          649,
+          794,
+          33,
+          15
+        ],
+        "visible": true
+      },
+      {
+        "txt": "摸鱼值",
+        "tag": "span",
+        "cls": "shop-cost",
+        "fontSize": 12,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          649,
+          793,
+          96,
+          17
+        ],
+        "visible": true
+      },
+      {
+        "txt": "无用会议",
+        "tag": "span",
+        "cls": "shop-name",
+        "fontSize": 14,
+        "color": "rgb(244, 241, 232)",
+        "opacity": "1",
+        "rect": [
+          775,
+          703,
+          96,
+          20
+        ],
+        "visible": true
+      },
+      {
+        "txt": "挂机 +50/秒",
+        "tag": "span",
+        "cls": "shop-desc",
+        "fontSize": 11,
+        "color": "rgb(184, 179, 156)",
+        "opacity": "1",
+        "rect": [
+          775,
+          726,
+          96,
+          16
+        ],
+        "visible": true
+      },
+      {
+        "txt": "+50/秒｜×2还差10级",
+        "tag": "span",
+        "cls": "shop-next",
+        "fontSize": 10,
+        "color": "rgb(184, 224, 255)",
+        "opacity": "1",
+        "rect": [
+          775,
+          745,
+          96,
+          28
+        ],
+        "visible": true
+      },
+      {
+        "txt": "挂机 20.0/万",
+        "tag": "span",
+        "cls": "shop-value",
+        "fontSize": 10,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          775,
+          776,
+          96,
+          14
+        ],
+        "visible": true
+      },
+      {
+        "txt": "2.50万",
+        "tag": "b",
+        "cls": "",
+        "fontSize": 12,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          775,
+          794,
+          40,
+          15
+        ],
+        "visible": true
+      },
+      {
+        "txt": "摸鱼值",
+        "tag": "span",
+        "cls": "shop-cost",
+        "fontSize": 12,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          775,
+          793,
+          96,
+          17
+        ],
+        "visible": true
+      },
+      {
+        "txt": "深度摸鱼",
+        "tag": "span",
+        "cls": "shop-name",
+        "fontSize": 14,
+        "color": "rgb(244, 241, 232)",
+        "opacity": "1",
+        "rect": [
+          901,
+          703,
+          96,
+          20
+        ],
+        "visible": true
+      },
+      {
+        "txt": "挂机 +180/秒",
+        "tag": "span",
+        "cls": "shop-desc",
+        "fontSize": 11,
+        "color": "rgb(184, 179, 156)",
+        "opacity": "1",
+        "rect": [
+          901,
+          726,
+          96,
+          16
+        ],
+        "visible": true
+      },
+      {
+        "txt": "+180/秒｜×2还差5级",
+        "tag": "span",
+        "cls": "shop-next",
+        "fontSize": 10,
+        "color": "rgb(184, 224, 255)",
+        "opacity": "1",
+        "rect": [
+          901,
+          745,
+          96,
+          28
+        ],
+        "visible": true
+      },
+      {
+        "txt": "挂机 12.0/万",
+        "tag": "span",
+        "cls": "shop-value",
+        "fontSize": 10,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          901,
+          776,
+          96,
+          14
+        ],
+        "visible": true
+      },
+      {
+        "txt": "15.00万",
+        "tag": "b",
+        "cls": "",
+        "fontSize": 12,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          901,
+          794,
+          46,
+          15
+        ],
+        "visible": true
+      },
+      {
+        "txt": "摸鱼值",
+        "tag": "span",
+        "cls": "shop-cost",
+        "fontSize": 12,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          901,
+          793,
+          96,
+          17
+        ],
+        "visible": true
+      },
+      {
+        "txt": "退休式躺平",
+        "tag": "span",
+        "cls": "shop-name",
+        "fontSize": 14,
+        "color": "rgb(244, 241, 232)",
+        "opacity": "1",
+        "rect": [
+          1027,
+          703,
+          96,
+          20
+        ],
+        "visible": true
+      },
+      {
+        "txt": "挂机 +700/秒",
+        "tag": "span",
+        "cls": "shop-desc",
+        "fontSize": 11,
+        "color": "rgb(184, 179, 156)",
+        "opacity": "1",
+        "rect": [
+          1027,
+          726,
+          96,
+          16
+        ],
+        "visible": true
+      },
+      {
+        "txt": "+700/秒｜×2还差20级",
+        "tag": "span",
+        "cls": "shop-next",
+        "fontSize": 10,
+        "color": "rgb(184, 224, 255)",
+        "opacity": "1",
+        "rect": [
+          1027,
+          745,
+          96,
+          28
+        ],
+        "visible": true
+      },
+      {
+        "txt": "挂机 7.0/万",
+        "tag": "span",
+        "cls": "shop-value",
+        "fontSize": 10,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          1027,
+          776,
+          96,
+          14
+        ],
+        "visible": true
+      },
+      {
+        "txt": "100.00万",
+        "tag": "b",
+        "cls": "",
+        "fontSize": 12,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          1027,
+          794,
+          54,
+          15
+        ],
+        "visible": true
+      },
+      {
+        "txt": "摸鱼值",
+        "tag": "span",
+        "cls": "shop-cost",
+        "fontSize": 12,
+        "color": "rgb(255, 215, 110)",
+        "opacity": "1",
+        "rect": [
+          1027,
+          793,
+          96,
+          17
+        ],
+        "visible": true
+      }
+    ],
+    "shop": {
+      "scrollWidth": 1126,
+      "clientWidth": 374,
+      "cards": [
+        {
+          "i": 0,
+          "id": "coffee",
+          "disabled": true,
+          "cls": "shop-card pixel-panel",
+          "fullyVisible": true,
+          "rect": [
+            8,
+            692,
+            118,
+            144
+          ],
+          "text": "咖啡续命 | 点击力 +1 | +1 点击力｜×2还差20级 | ★ 点击 667/万 | 15 摸鱼值"
+        },
+        {
+          "i": 1,
+          "id": "water",
+          "disabled": true,
+          "cls": "shop-card pixel-panel",
+          "fullyVisible": true,
+          "rect": [
+            134,
+            692,
+            118,
+            144
+          ],
+          "text": "带薪喝水 | 点击力 +2 | +2 点击力｜×2还差15级 | 点击 200/万 | 100 摸鱼值"
+        },
+        {
+          "i": 2,
+          "id": "chair",
+          "disabled": true,
+          "cls": "shop-card pixel-panel",
+          "fullyVisible": true,
+          "rect": [
+            260,
+            692,
+            118,
+            144
+          ],
+          "text": "人体工学椅 | 点击力 +5 | +5 点击力｜×2还差10级 | 点击 63/万 | 800 摸鱼值"
+        },
+        {
+          "i": 3,
+          "id": "phone",
+          "disabled": true,
+          "cls": "shop-card pixel-panel",
+          "fullyVisible": false,
+          "rect": [
+            386,
+            692,
+            118,
+            144
+          ],
+          "text": "刷手机 | 挂机 +1/秒 | +1/秒｜×2还差5级 | ★ 挂机 200.0/万 | 50 摸鱼值"
+        },
+        {
+          "i": 4,
+          "id": "toilet",
+          "disabled": true,
+          "cls": "shop-card pixel-panel",
+          "fullyVisible": false,
+          "rect": [
+            512,
+            692,
+            118,
+            144
+          ],
+          "text": "带薪蹲坑 | 挂机 +5/秒 | +5/秒｜×2还差20级 | 挂机 83.3/万 | 600 摸鱼值"
+        },
+        {
+          "i": 5,
+          "id": "group",
+          "disabled": true,
+          "cls": "shop-card pixel-panel",
+          "fullyVisible": false,
+          "rect": [
+            638,
+            692,
+            118,
+            144
+          ],
+          "text": "摸鱼群聊 | 挂机 +15/秒 | +15/秒｜×2还差15级 | 挂机 37.5/万 | 4000 摸鱼值"
+        },
+        {
+          "i": 6,
+          "id": "meeting",
+          "disabled": true,
+          "cls": "shop-card pixel-panel",
+          "fullyVisible": false,
+          "rect": [
+            764,
+            692,
+            118,
+            144
+          ],
+          "text": "无用会议 | 挂机 +50/秒 | +50/秒｜×2还差10级 | 挂机 20.0/万 | 2.50万 摸鱼值"
+        },
+        {
+          "i": 7,
+          "id": "deep",
+          "disabled": true,
+          "cls": "shop-card pixel-panel",
+          "fullyVisible": false,
+          "rect": [
+            890,
+            692,
+            118,
+            144
+          ],
+          "text": "深度摸鱼 | 挂机 +180/秒 | +180/秒｜×2还差5级 | 挂机 12.0/万 | 15.00万 摸鱼值"
+        },
+        {
+          "i": 8,
+          "id": "retire",
+          "disabled": true,
+          "cls": "shop-card pixel-panel",
+          "fullyVisible": false,
+          "rect": [
+            1016,
+            692,
+            118,
+            144
+          ],
+          "text": "退休式躺平 | 挂机 +700/秒 | +700/秒｜×2还差20级 | 挂机 7.0/万 | 100.00万 摸鱼值"
+        }
+      ]
+    },
+    "hud": {
+      "moyu": "3.6",
+      "click": "1",
+      "idle": "0.2",
+      "rank": "实习生 0%",
+      "rankTitle": "摸鱼实习生 → 摸鱼学徒"
+    },
+    "journalBtn": {
+      "text": "📔",
+      "w": 39,
+      "h": 26,
+      "cls": ""
+    },
+    "welcomeVisible": false,
+    "bodyInnerText": "3.6摸鱼值\n点击 +1\n挂机 0.2/秒\n实习生 0%\n📔\n咖啡续命\n点击力 +1\n+1 点击力｜×2还差20级\n★ 点击 667/万\n15 摸鱼值\n带薪喝水\n点击力 +2\n+2 点击力｜×2还差15级\n点击 200/万\n100 摸鱼值\n人体工学椅\n点击力 +5\n+5 点击力｜×2还差10级\n点击 63/万\n800 摸鱼值\n刷手机\n挂机 +1/秒\n+1/秒｜×2还差5级\n★ 挂机 200.0/万\n50 摸鱼值\n带薪蹲坑\n挂机 +5/秒\n+5/秒｜×2还差20级\n挂机 83.3/万\n600 摸鱼值\n摸鱼群聊\n挂机 +15/秒\n+15/秒｜×2还差15级\n挂机 37.5/万\n4000 摸鱼值\n无用会议\n挂机 +50/秒\n+50/秒｜×2还差10级\n挂机 20.0/万\n2.50万 摸鱼值\n深度摸鱼\n挂机 +180/秒\n+180/秒｜×2还差5级\n挂机 12.0/万\n15.00万 摸鱼值\n退休式躺平\n挂机 +700/秒\n+700/秒｜×2还差20级\n挂机 7.0/万\n100.00万 摸鱼值"
+  },
+  "hint": {
+    "hintCount": 190,
+    "firstDrawnAtMs": 75,
+    "lastDrawnAtMs": 3216,
+    "logical": {
+      "x": 195,
+      "y": 576
+    },
+    "pagePx": {
+      "x": 195,
+      "y": 657
+    },
+    "canvasCss": [
+      390,
+      643
+    ],
+    "canvasDpr": 2,
+    "bgLum": 0.074,
+    "textLum": 0.424,
+    "contrast": 3.81,
+    "textRowsDevice": 18,
+    "textCssHeight": 9,
+    "textCssWidth": 48,
+    "textPixelCount": 1301,
+    "sourceFontPx": 10
+  },
+  "at3s": {
+    "pageMs": 3222,
+    "state": {
+      "moyu": 3.6299604000000043,
+      "totalEarned": 3.6299604000000043,
+      "levels": {},
+      "collected": {
+        "quotes": [],
+        "flavors": []
+      },
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "click_100",
+            "target": 100,
+            "progress": 3,
+            "done": false
+          },
+          {
+            "id": "buy_3",
+            "target": 3,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "survive_2",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          }
+        ],
+        "streak": 0,
+        "lastCompleteDate": null,
+        "claimed": false
+      },
+      "surviveStreak": 0,
+      "totalClicks": 3,
+      "visits": {
+        "date": "2026-11-27",
+        "count": 1
+      }
+    },
+    "fps": 60,
+    "assets": "{\"computer\":\"loaded\",\"worker\":\"loaded\",\"cooler\":\"loaded\"}",
+    "navTiming": {
+      "responseEnd": 9,
+      "dcl": 74,
+      "load": 83,
+      "resources": 31
+    }
+  },
+  "taps": [
+    {
+      "i": 1,
+      "gapMs": 1073,
+      "pageMs": 4297,
+      "tap": [
+        289,
+        176
+      ],
+      "moyuBefore": 3.8,
+      "moyuAfter": 4.9,
+      "delta": 1.1,
+      "floatTexts": [
+        "老板没看见"
+      ],
+      "feedback": true
+    },
+    {
+      "i": 2,
+      "gapMs": 1926,
+      "pageMs": 6523,
+      "tap": [
+        318,
+        380
+      ],
+      "moyuBefore": 5.3,
+      "moyuAfter": 6.3,
+      "delta": 1.1,
+      "floatTexts": [
+        "+1"
+      ],
+      "feedback": true
+    },
+    {
+      "i": 3,
+      "gapMs": 914,
+      "pageMs": 7765,
+      "tap": [
+        80,
+        366
+      ],
+      "moyuBefore": 6.5,
+      "moyuAfter": 7.6,
+      "delta": 1.1,
+      "floatTexts": [
+        "+1"
+      ],
+      "feedback": true
+    },
+    {
+      "i": 4,
+      "gapMs": 1650,
+      "pageMs": 9717,
+      "tap": [
+        288,
+        175
+      ],
+      "moyuBefore": 7.9,
+      "moyuAfter": 9,
+      "delta": 1.1,
+      "floatTexts": [
+        "+1"
+      ],
+      "feedback": true
+    },
+    {
+      "i": 5,
+      "gapMs": 585,
+      "pageMs": 10600,
+      "tap": [
+        234,
+        596
+      ],
+      "moyuBefore": 9.1,
+      "moyuAfter": 10.2,
+      "delta": 1.1,
+      "floatTexts": [
+        "+1"
+      ],
+      "feedback": true
+    },
+    {
+      "i": 6,
+      "gapMs": 285,
+      "pageMs": 11185,
+      "tap": [
+        246,
+        541
+      ],
+      "moyuBefore": 10.2,
+      "moyuAfter": 11.3,
+      "delta": 1.1,
+      "floatTexts": [
+        "+1"
+      ],
+      "feedback": true
+    },
+    {
+      "i": 7,
+      "gapMs": 271,
+      "pageMs": 11752,
+      "tap": [
+        226,
+        503
+      ],
+      "moyuBefore": 11.3,
+      "moyuAfter": 12.4,
+      "delta": 1.1,
+      "floatTexts": [
+        "+1"
+      ],
+      "feedback": true
+    },
+    {
+      "i": 8,
+      "gapMs": 364,
+      "pageMs": 12411,
+      "tap": [
+        61,
+        594
+      ],
+      "moyuBefore": 12.5,
+      "moyuAfter": 13.5,
+      "delta": 1.1,
+      "floatTexts": [
+        "+1"
+      ],
+      "feedback": true
+    },
+    {
+      "i": 9,
+      "gapMs": 471,
+      "pageMs": 13168,
+      "tap": [
+        296,
+        322
+      ],
+      "moyuBefore": 13.6,
+      "moyuAfter": 14.7,
+      "delta": 1.1,
+      "floatTexts": [
+        "+1"
+      ],
+      "feedback": true
+    },
+    {
+      "i": 10,
+      "gapMs": 564,
+      "pageMs": 14028,
+      "tap": [
+        220,
+        669
+      ],
+      "moyuBefore": 14.8,
+      "moyuAfter": 15.8,
+      "delta": 1.1,
+      "floatTexts": [
+        "+1"
+      ],
+      "feedback": true
+    }
+  ],
+  "afterTaps": {
+    "pageMs": 14499,
+    "state": {
+      "moyu": 15.886520400000014,
+      "totalEarned": 15.886520400000014,
+      "levels": {},
+      "collected": {
+        "quotes": [],
+        "flavors": []
+      },
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "click_100",
+            "target": 100,
+            "progress": 13,
+            "done": false
+          },
+          {
+            "id": "buy_3",
+            "target": 3,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "survive_2",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          }
+        ],
+        "streak": 0,
+        "lastCompleteDate": null,
+        "claimed": false
+      },
+      "surviveStreak": 0,
+      "totalClicks": 13,
+      "visits": {
+        "date": "2026-11-27",
+        "count": 1
+      }
+    },
+    "fps": 60,
+    "audit": {
+      "vw": 390,
+      "vh": 844,
+      "dpr": 3,
+      "canvas": [
+        0,
+        81,
+        390,
+        643
+      ],
+      "items": [
+        {
+          "txt": "15.9",
+          "tag": "span",
+          "cls": "",
+          "fontSize": 30,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            12,
+            7,
+            62,
+            35
+          ],
+          "visible": true
+        },
+        {
+          "txt": "摸鱼值",
+          "tag": "small",
+          "cls": "",
+          "fontSize": 13,
+          "color": "rgb(189, 184, 159)",
+          "opacity": "1",
+          "rect": [
+            80,
+            23,
+            39,
+            16
+          ],
+          "visible": true
+        },
+        {
+          "txt": "点击 +",
+          "tag": "span",
+          "cls": "",
+          "fontSize": 12,
+          "color": "rgb(168, 164, 147)",
+          "opacity": "1",
+          "rect": [
+            12,
+            50,
+            41,
+            17
+          ],
+          "visible": true
+        },
+        {
+          "txt": "1",
+          "tag": "b",
+          "cls": "",
+          "fontSize": 12,
+          "color": "rgb(139, 226, 139)",
+          "opacity": "1",
+          "rect": [
+            47,
+            51,
+            6,
+            15
+          ],
+          "visible": true
+        },
+        {
+          "txt": "挂机",
+          "tag": "span",
+          "cls": "",
+          "fontSize": 12,
+          "color": "rgb(168, 164, 147)",
+          "opacity": "1",
+          "rect": [
+            63,
+            50,
+            62,
+            17
+          ],
+          "visible": true
+        },
+        {
+          "txt": "0.2",
+          "tag": "b",
+          "cls": "",
+          "fontSize": 12,
+          "color": "rgb(139, 226, 139)",
+          "opacity": "1",
+          "rect": [
+            90,
+            51,
+            19,
+            15
+          ],
+          "visible": true
+        },
+        {
+          "txt": "/秒",
+          "tag": "span",
+          "cls": "",
+          "fontSize": 12,
+          "color": "rgb(168, 164, 147)",
+          "opacity": "1",
+          "rect": [
+            63,
+            50,
+            62,
+            17
+          ],
+          "visible": true
+        },
+        {
+          "txt": "实习生 0%",
+          "tag": "span",
+          "cls": "",
+          "fontSize": 12,
+          "color": "rgb(168, 164, 147)",
+          "opacity": "1",
+          "rect": [
+            135,
+            50,
+            58,
+            17
+          ],
+          "visible": true
+        },
+        {
+          "txt": "📔",
+          "tag": "button",
+          "cls": "",
+          "fontSize": 15,
+          "color": "rgb(244, 241, 232)",
+          "opacity": "1",
+          "rect": [
+            339,
+            45,
+            39,
+            26
+          ],
+          "visible": true
+        },
+        {
+          "txt": "咖啡续命",
+          "tag": "span",
+          "cls": "shop-name",
+          "fontSize": 14,
+          "color": "rgb(244, 241, 232)",
+          "opacity": "1",
+          "rect": [
+            19,
+            703,
+            96,
+            20
+          ],
+          "visible": true
+        },
+        {
+          "txt": "点击力 +1",
+          "tag": "span",
+          "cls": "shop-desc",
+          "fontSize": 11,
+          "color": "rgb(184, 179, 156)",
+          "opacity": "1",
+          "rect": [
+            19,
+            726,
+            96,
+            16
+          ],
+          "visible": true
+        },
+        {
+          "txt": "+1 点击力｜×2还差20级",
+          "tag": "span",
+          "cls": "shop-next",
+          "fontSize": 10,
+          "color": "rgb(184, 224, 255)",
+          "opacity": "1",
+          "rect": [
+            19,
+            745,
+            96,
+            28
+          ],
+          "visible": true
+        },
+        {
+          "txt": "★ 点击 667/万",
+          "tag": "span",
+          "cls": "shop-value",
+          "fontSize": 10,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            19,
+            776,
+            96,
+            14
+          ],
+          "visible": true
+        },
+        {
+          "txt": "15",
+          "tag": "b",
+          "cls": "",
+          "fontSize": 12,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            19,
+            794,
+            14,
+            15
+          ],
+          "visible": true
+        },
+        {
+          "txt": "摸鱼值",
+          "tag": "span",
+          "cls": "shop-cost",
+          "fontSize": 12,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            19,
+            793,
+            96,
+            17
+          ],
+          "visible": true
+        },
+        {
+          "txt": "带薪喝水",
+          "tag": "span",
+          "cls": "shop-name",
+          "fontSize": 14,
+          "color": "rgb(244, 241, 232)",
+          "opacity": "1",
+          "rect": [
+            145,
+            703,
+            96,
+            20
+          ],
+          "visible": true
+        },
+        {
+          "txt": "点击力 +2",
+          "tag": "span",
+          "cls": "shop-desc",
+          "fontSize": 11,
+          "color": "rgb(184, 179, 156)",
+          "opacity": "1",
+          "rect": [
+            145,
+            726,
+            96,
+            16
+          ],
+          "visible": true
+        },
+        {
+          "txt": "+2 点击力｜×2还差15级",
+          "tag": "span",
+          "cls": "shop-next",
+          "fontSize": 10,
+          "color": "rgb(184, 224, 255)",
+          "opacity": "1",
+          "rect": [
+            145,
+            745,
+            96,
+            28
+          ],
+          "visible": true
+        },
+        {
+          "txt": "点击 200/万",
+          "tag": "span",
+          "cls": "shop-value",
+          "fontSize": 10,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            145,
+            776,
+            96,
+            14
+          ],
+          "visible": true
+        },
+        {
+          "txt": "100",
+          "tag": "b",
+          "cls": "",
+          "fontSize": 12,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            145,
+            794,
+            23,
+            15
+          ],
+          "visible": true
+        },
+        {
+          "txt": "摸鱼值",
+          "tag": "span",
+          "cls": "shop-cost",
+          "fontSize": 12,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            145,
+            793,
+            96,
+            17
+          ],
+          "visible": true
+        },
+        {
+          "txt": "人体工学椅",
+          "tag": "span",
+          "cls": "shop-name",
+          "fontSize": 14,
+          "color": "rgb(244, 241, 232)",
+          "opacity": "1",
+          "rect": [
+            271,
+            703,
+            96,
+            20
+          ],
+          "visible": true
+        },
+        {
+          "txt": "点击力 +5",
+          "tag": "span",
+          "cls": "shop-desc",
+          "fontSize": 11,
+          "color": "rgb(184, 179, 156)",
+          "opacity": "1",
+          "rect": [
+            271,
+            726,
+            96,
+            16
+          ],
+          "visible": true
+        },
+        {
+          "txt": "+5 点击力｜×2还差10级",
+          "tag": "span",
+          "cls": "shop-next",
+          "fontSize": 10,
+          "color": "rgb(184, 224, 255)",
+          "opacity": "1",
+          "rect": [
+            271,
+            745,
+            96,
+            28
+          ],
+          "visible": true
+        },
+        {
+          "txt": "点击 63/万",
+          "tag": "span",
+          "cls": "shop-value",
+          "fontSize": 10,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            271,
+            776,
+            96,
+            14
+          ],
+          "visible": true
+        },
+        {
+          "txt": "800",
+          "tag": "b",
+          "cls": "",
+          "fontSize": 12,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            271,
+            794,
+            25,
+            15
+          ],
+          "visible": true
+        },
+        {
+          "txt": "摸鱼值",
+          "tag": "span",
+          "cls": "shop-cost",
+          "fontSize": 12,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            271,
+            793,
+            96,
+            17
+          ],
+          "visible": true
+        },
+        {
+          "txt": "刷手机",
+          "tag": "span",
+          "cls": "shop-name",
+          "fontSize": 14,
+          "color": "rgb(244, 241, 232)",
+          "opacity": "1",
+          "rect": [
+            397,
+            703,
+            96,
+            20
+          ],
+          "visible": true
+        },
+        {
+          "txt": "挂机 +1/秒",
+          "tag": "span",
+          "cls": "shop-desc",
+          "fontSize": 11,
+          "color": "rgb(184, 179, 156)",
+          "opacity": "1",
+          "rect": [
+            397,
+            726,
+            96,
+            16
+          ],
+          "visible": true
+        },
+        {
+          "txt": "+1/秒｜×2还差5级",
+          "tag": "span",
+          "cls": "shop-next",
+          "fontSize": 10,
+          "color": "rgb(184, 224, 255)",
+          "opacity": "1",
+          "rect": [
+            397,
+            745,
+            96,
+            14
+          ],
+          "visible": true
+        },
+        {
+          "txt": "★ 挂机 200.0/万",
+          "tag": "span",
+          "cls": "shop-value",
+          "fontSize": 10,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            397,
+            762,
+            96,
+            14
+          ],
+          "visible": true
+        },
+        {
+          "txt": "50",
+          "tag": "b",
+          "cls": "",
+          "fontSize": 12,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            397,
+            794,
+            16,
+            15
+          ],
+          "visible": true
+        },
+        {
+          "txt": "摸鱼值",
+          "tag": "span",
+          "cls": "shop-cost",
+          "fontSize": 12,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            397,
+            793,
+            96,
+            17
+          ],
+          "visible": true
+        },
+        {
+          "txt": "带薪蹲坑",
+          "tag": "span",
+          "cls": "shop-name",
+          "fontSize": 14,
+          "color": "rgb(244, 241, 232)",
+          "opacity": "1",
+          "rect": [
+            523,
+            703,
+            96,
+            20
+          ],
+          "visible": true
+        },
+        {
+          "txt": "挂机 +5/秒",
+          "tag": "span",
+          "cls": "shop-desc",
+          "fontSize": 11,
+          "color": "rgb(184, 179, 156)",
+          "opacity": "1",
+          "rect": [
+            523,
+            726,
+            96,
+            16
+          ],
+          "visible": true
+        },
+        {
+          "txt": "+5/秒｜×2还差20级",
+          "tag": "span",
+          "cls": "shop-next",
+          "fontSize": 10,
+          "color": "rgb(184, 224, 255)",
+          "opacity": "1",
+          "rect": [
+            523,
+            745,
+            96,
+            14
+          ],
+          "visible": true
+        },
+        {
+          "txt": "挂机 83.3/万",
+          "tag": "span",
+          "cls": "shop-value",
+          "fontSize": 10,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            523,
+            762,
+            96,
+            14
+          ],
+          "visible": true
+        },
+        {
+          "txt": "600",
+          "tag": "b",
+          "cls": "",
+          "fontSize": 12,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            523,
+            794,
+            25,
+            15
+          ],
+          "visible": true
+        },
+        {
+          "txt": "摸鱼值",
+          "tag": "span",
+          "cls": "shop-cost",
+          "fontSize": 12,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            523,
+            793,
+            96,
+            17
+          ],
+          "visible": true
+        },
+        {
+          "txt": "摸鱼群聊",
+          "tag": "span",
+          "cls": "shop-name",
+          "fontSize": 14,
+          "color": "rgb(244, 241, 232)",
+          "opacity": "1",
+          "rect": [
+            649,
+            703,
+            96,
+            20
+          ],
+          "visible": true
+        },
+        {
+          "txt": "挂机 +15/秒",
+          "tag": "span",
+          "cls": "shop-desc",
+          "fontSize": 11,
+          "color": "rgb(184, 179, 156)",
+          "opacity": "1",
+          "rect": [
+            649,
+            726,
+            96,
+            16
+          ],
+          "visible": true
+        },
+        {
+          "txt": "+15/秒｜×2还差15级",
+          "tag": "span",
+          "cls": "shop-next",
+          "fontSize": 10,
+          "color": "rgb(184, 224, 255)",
+          "opacity": "1",
+          "rect": [
+            649,
+            745,
+            96,
+            14
+          ],
+          "visible": true
+        },
+        {
+          "txt": "挂机 37.5/万",
+          "tag": "span",
+          "cls": "shop-value",
+          "fontSize": 10,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            649,
+            762,
+            96,
+            14
+          ],
+          "visible": true
+        },
+        {
+          "txt": "4000",
+          "tag": "b",
+          "cls": "",
+          "fontSize": 12,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            649,
+            794,
+            33,
+            15
+          ],
+          "visible": true
+        },
+        {
+          "txt": "摸鱼值",
+          "tag": "span",
+          "cls": "shop-cost",
+          "fontSize": 12,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            649,
+            793,
+            96,
+            17
+          ],
+          "visible": true
+        },
+        {
+          "txt": "无用会议",
+          "tag": "span",
+          "cls": "shop-name",
+          "fontSize": 14,
+          "color": "rgb(244, 241, 232)",
+          "opacity": "1",
+          "rect": [
+            775,
+            703,
+            96,
+            20
+          ],
+          "visible": true
+        },
+        {
+          "txt": "挂机 +50/秒",
+          "tag": "span",
+          "cls": "shop-desc",
+          "fontSize": 11,
+          "color": "rgb(184, 179, 156)",
+          "opacity": "1",
+          "rect": [
+            775,
+            726,
+            96,
+            16
+          ],
+          "visible": true
+        },
+        {
+          "txt": "+50/秒｜×2还差10级",
+          "tag": "span",
+          "cls": "shop-next",
+          "fontSize": 10,
+          "color": "rgb(184, 224, 255)",
+          "opacity": "1",
+          "rect": [
+            775,
+            745,
+            96,
+            28
+          ],
+          "visible": true
+        },
+        {
+          "txt": "挂机 20.0/万",
+          "tag": "span",
+          "cls": "shop-value",
+          "fontSize": 10,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            775,
+            776,
+            96,
+            14
+          ],
+          "visible": true
+        },
+        {
+          "txt": "2.50万",
+          "tag": "b",
+          "cls": "",
+          "fontSize": 12,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            775,
+            794,
+            40,
+            15
+          ],
+          "visible": true
+        },
+        {
+          "txt": "摸鱼值",
+          "tag": "span",
+          "cls": "shop-cost",
+          "fontSize": 12,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            775,
+            793,
+            96,
+            17
+          ],
+          "visible": true
+        },
+        {
+          "txt": "深度摸鱼",
+          "tag": "span",
+          "cls": "shop-name",
+          "fontSize": 14,
+          "color": "rgb(244, 241, 232)",
+          "opacity": "1",
+          "rect": [
+            901,
+            703,
+            96,
+            20
+          ],
+          "visible": true
+        },
+        {
+          "txt": "挂机 +180/秒",
+          "tag": "span",
+          "cls": "shop-desc",
+          "fontSize": 11,
+          "color": "rgb(184, 179, 156)",
+          "opacity": "1",
+          "rect": [
+            901,
+            726,
+            96,
+            16
+          ],
+          "visible": true
+        },
+        {
+          "txt": "+180/秒｜×2还差5级",
+          "tag": "span",
+          "cls": "shop-next",
+          "fontSize": 10,
+          "color": "rgb(184, 224, 255)",
+          "opacity": "1",
+          "rect": [
+            901,
+            745,
+            96,
+            28
+          ],
+          "visible": true
+        },
+        {
+          "txt": "挂机 12.0/万",
+          "tag": "span",
+          "cls": "shop-value",
+          "fontSize": 10,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            901,
+            776,
+            96,
+            14
+          ],
+          "visible": true
+        },
+        {
+          "txt": "15.00万",
+          "tag": "b",
+          "cls": "",
+          "fontSize": 12,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            901,
+            794,
+            46,
+            15
+          ],
+          "visible": true
+        },
+        {
+          "txt": "摸鱼值",
+          "tag": "span",
+          "cls": "shop-cost",
+          "fontSize": 12,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            901,
+            793,
+            96,
+            17
+          ],
+          "visible": true
+        },
+        {
+          "txt": "退休式躺平",
+          "tag": "span",
+          "cls": "shop-name",
+          "fontSize": 14,
+          "color": "rgb(244, 241, 232)",
+          "opacity": "1",
+          "rect": [
+            1027,
+            703,
+            96,
+            20
+          ],
+          "visible": true
+        },
+        {
+          "txt": "挂机 +700/秒",
+          "tag": "span",
+          "cls": "shop-desc",
+          "fontSize": 11,
+          "color": "rgb(184, 179, 156)",
+          "opacity": "1",
+          "rect": [
+            1027,
+            726,
+            96,
+            16
+          ],
+          "visible": true
+        },
+        {
+          "txt": "+700/秒｜×2还差20级",
+          "tag": "span",
+          "cls": "shop-next",
+          "fontSize": 10,
+          "color": "rgb(184, 224, 255)",
+          "opacity": "1",
+          "rect": [
+            1027,
+            745,
+            96,
+            28
+          ],
+          "visible": true
+        },
+        {
+          "txt": "挂机 7.0/万",
+          "tag": "span",
+          "cls": "shop-value",
+          "fontSize": 10,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            1027,
+            776,
+            96,
+            14
+          ],
+          "visible": true
+        },
+        {
+          "txt": "100.00万",
+          "tag": "b",
+          "cls": "",
+          "fontSize": 12,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            1027,
+            794,
+            54,
+            15
+          ],
+          "visible": true
+        },
+        {
+          "txt": "摸鱼值",
+          "tag": "span",
+          "cls": "shop-cost",
+          "fontSize": 12,
+          "color": "rgb(255, 215, 110)",
+          "opacity": "1",
+          "rect": [
+            1027,
+            793,
+            96,
+            17
+          ],
+          "visible": true
+        }
+      ],
+      "shop": {
+        "scrollWidth": 1126,
+        "clientWidth": 374,
+        "cards": [
+          {
+            "i": 0,
+            "id": "coffee",
+            "disabled": false,
+            "cls": "shop-card pixel-panel affordable",
+            "fullyVisible": true,
+            "rect": [
+              8,
+              692,
+              118,
+              144
+            ],
+            "text": "咖啡续命 | 点击力 +1 | +1 点击力｜×2还差20级 | ★ 点击 667/万 | 15 摸鱼值"
+          },
+          {
+            "i": 1,
+            "id": "water",
+            "disabled": true,
+            "cls": "shop-card pixel-panel",
+            "fullyVisible": true,
+            "rect": [
+              134,
+              692,
+              118,
+              144
+            ],
+            "text": "带薪喝水 | 点击力 +2 | +2 点击力｜×2还差15级 | 点击 200/万 | 100 摸鱼值"
+          },
+          {
+            "i": 2,
+            "id": "chair",
+            "disabled": true,
+            "cls": "shop-card pixel-panel",
+            "fullyVisible": true,
+            "rect": [
+              260,
+              692,
+              118,
+              144
+            ],
+            "text": "人体工学椅 | 点击力 +5 | +5 点击力｜×2还差10级 | 点击 63/万 | 800 摸鱼值"
+          },
+          {
+            "i": 3,
+            "id": "phone",
+            "disabled": true,
+            "cls": "shop-card pixel-panel",
+            "fullyVisible": false,
+            "rect": [
+              386,
+              692,
+              118,
+              144
+            ],
+            "text": "刷手机 | 挂机 +1/秒 | +1/秒｜×2还差5级 | ★ 挂机 200.0/万 | 50 摸鱼值"
+          },
+          {
+            "i": 4,
+            "id": "toilet",
+            "disabled": true,
+            "cls": "shop-card pixel-panel",
+            "fullyVisible": false,
+            "rect": [
+              512,
+              692,
+              118,
+              144
+            ],
+            "text": "带薪蹲坑 | 挂机 +5/秒 | +5/秒｜×2还差20级 | 挂机 83.3/万 | 600 摸鱼值"
+          },
+          {
+            "i": 5,
+            "id": "group",
+            "disabled": true,
+            "cls": "shop-card pixel-panel",
+            "fullyVisible": false,
+            "rect": [
+              638,
+              692,
+              118,
+              144
+            ],
+            "text": "摸鱼群聊 | 挂机 +15/秒 | +15/秒｜×2还差15级 | 挂机 37.5/万 | 4000 摸鱼值"
+          },
+          {
+            "i": 6,
+            "id": "meeting",
+            "disabled": true,
+            "cls": "shop-card pixel-panel",
+            "fullyVisible": false,
+            "rect": [
+              764,
+              692,
+              118,
+              144
+            ],
+            "text": "无用会议 | 挂机 +50/秒 | +50/秒｜×2还差10级 | 挂机 20.0/万 | 2.50万 摸鱼值"
+          },
+          {
+            "i": 7,
+            "id": "deep",
+            "disabled": true,
+            "cls": "shop-card pixel-panel",
+            "fullyVisible": false,
+            "rect": [
+              890,
+              692,
+              118,
+              144
+            ],
+            "text": "深度摸鱼 | 挂机 +180/秒 | +180/秒｜×2还差5级 | 挂机 12.0/万 | 15.00万 摸鱼值"
+          },
+          {
+            "i": 8,
+            "id": "retire",
+            "disabled": true,
+            "cls": "shop-card pixel-panel",
+            "fullyVisible": false,
+            "rect": [
+              1016,
+              692,
+              118,
+              144
+            ],
+            "text": "退休式躺平 | 挂机 +700/秒 | +700/秒｜×2还差20级 | 挂机 7.0/万 | 100.00万 摸鱼值"
+          }
+        ]
+      },
+      "hud": {
+        "moyu": "15.9",
+        "click": "1",
+        "idle": "0.2",
+        "rank": "实习生 0%",
+        "rankTitle": "摸鱼实习生 → 摸鱼学徒"
+      },
+      "journalBtn": {
+        "text": "📔",
+        "w": 39,
+        "h": 26,
+        "cls": ""
+      },
+      "welcomeVisible": false,
+      "bodyInnerText": "15.9摸鱼值\n点击 +1\n挂机 0.2/秒\n实习生 0%\n📔\n咖啡续命\n点击力 +1\n+1 点击力｜×2还差20级\n★ 点击 667/万\n15 摸鱼值\n带薪喝水\n点击力 +2\n+2 点击力｜×2还差15级\n点击 200/万\n100 摸鱼值\n人体工学椅\n点击力 +5\n+5 点击力｜×2还差10级\n点击 63/万\n800 摸鱼值\n刷手机\n挂机 +1/秒\n+1/秒｜×2还差5级\n★ 挂机 200.0/万\n50 摸鱼值\n带薪蹲坑\n挂机 +5/秒\n+5/秒｜×2还差20级\n挂机 83.3/万\n600 摸鱼值\n摸鱼群聊\n挂机 +15/秒\n+15/秒｜×2还差15级\n挂机 37.5/万\n4000 摸鱼值\n无用会议\n挂机 +50/秒\n+50/秒｜×2还差10级\n挂机 20.0/万\n2.50万 摸鱼值\n深度摸鱼\n挂机 +180/秒\n+180/秒｜×2还差5级\n挂机 12.0/万\n15.00万 摸鱼值\n退休式躺平\n挂机 +700/秒\n+700/秒｜×2还差20级\n挂机 7.0/万\n100.00万 摸鱼值"
+    },
+    "allCanvasTextsSeen": [
+      "这波不亏",
+      "+1",
+      "老板没看见"
+    ],
+    "hintStillDrawn": {
+      "count": 867,
+      "last": 14498
+    }
+  }
+}

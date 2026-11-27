@@ -29,6 +29,10 @@ interface SaveBlob {
   daily?: DailyState | null;
   /** 连续安然连胜（旧档为 0） */
   surviveStreak?: number;
+  /** 累计点击（点击线彩蛋解锁用；旧档为 0） */
+  totalClicks?: number;
+  /** 今日回访计数 */
+  visits?: { date: string; count: number };
 }
 
 /** 序列化并写入（savedAt=毫秒时间戳） */
@@ -57,6 +61,8 @@ export function serialize(state: GameState, adapter: SaveAdapter, savedAt: numbe
     collected: state.collected,
     daily: state.daily,
     surviveStreak: state.surviveStreak,
+    totalClicks: state.totalClicks,
+    visits: state.visits,
   };
   try {
     adapter.setItem(SAVE_KEY, JSON.stringify(blob));
@@ -111,13 +117,22 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
       typeof blob.surviveStreak === "number" && Number.isInteger(blob.surviveStreak) && blob.surviveStreak >= 0
         ? blob.surviveStreak
         : 0;
+    const totalClicks =
+      typeof blob.totalClicks === "number" && Number.isInteger(blob.totalClicks) && blob.totalClicks >= 0
+        ? blob.totalClicks
+        : 0;
+    const v = blob.visits as { date?: unknown; count?: unknown } | undefined;
+    const visits =
+      v && typeof v.date === "string" && typeof v.count === "number" && Number.isInteger(v.count) && v.count >= 0
+        ? { date: v.date, count: v.count }
+        : { date: "", count: 0 };
     // createdAt 钳制：缺失默认 savedAt（不重发首日）；越界（未来/NaN）按 savedAt收敛，堵离线分级绕过
     const clampCreatedAt = (ca: unknown): number => {
       if (typeof ca !== "number" || !Number.isFinite(ca) || ca > now) return savedAtMs;
       return Math.max(ca, savedAtMs - 365 * 86_400_000);
     };
     return {
-      state: { moyu, levels, totalEarned, collected, daily, surviveStreak },
+      state: { moyu, levels, totalEarned, collected, daily, surviveStreak, totalClicks, visits },
       offlineSeconds,
       createdAt: clampCreatedAt(blob.createdAt),
     };
