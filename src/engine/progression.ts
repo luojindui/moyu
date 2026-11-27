@@ -39,13 +39,10 @@ export function offlineEfficiency(state: GameState, createdAtMs: number, nowMs: 
   const favorBase = favorTier(state) >= 2 ? 0.03 : 0;
   // 小美被动：在队期间离线基础效率 +2%
   const ce = cardEffects(state, Date.now());
-  const teamBase = teamTraits(state).offlineEfficiency + ce.offlineBonus - ce.riskPenalty + decorEffects(state).offlineBonus;
-  // idle_4：离线效率上限可超过 100%（上限随天赋 +talentBase 提高）
-  // 上限随「天赋 + 今日卡 + 工位家具」一起抬高（否则这些加成会被 100% 截断而失效）
+  const teamBase = teamTraits(state).offlineEfficiency + ce.offlineBonus - ce.riskPenalty;
   const decorBase = decorEffects(state).offlineBonus;
-  const capRaise = talentBase + eventBonus + decorBase;
-  return Math.min(
-    1 + capRaise,
-    0.7 + capRaise + favorBase + teamBase + visits * VISIT_BONUS_STEP + streakBonus,
-  );
+  // 「可突破 100% 的加成」= 天赋 + 今日卡 + 工位家具；它们同时抬高上限与基数（各计一次）
+  const raise = talentBase + eventBonus + decorBase;
+  const raw = 0.7 + favorBase + teamBase + visits * VISIT_BONUS_STEP + streakBonus;
+  return Math.min(1 + raise, raw + raise);
 }

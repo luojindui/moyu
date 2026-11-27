@@ -377,8 +377,9 @@ export class Scene {
 
     // 鱼缸（左墙，绿植上方）
     if (has("aquarium")) {
-      const ax = vw - 2.9 * u;
-      // 高度自适应：矮屏（桌面横屏）时贴着护墙板上方，避免画到画布外
+      // 高度自适应：矮屏时向左让开右墙公告板，避免重叠
+      const shortView = groundY < 90;
+      const ax = shortView ? vw - 6.9 * u : vw - 2.9 * u;
       const ay = Math.max(0.6 * u, Math.min(groundY - 6.1 * u, groundY - 4.6 * u));
       R(ax, ay, 1.5 * u, 1.1 * u, "#3f6f8a"); // 水
       R(ax - 0.07 * u, ay - 0.1 * u, 1.64 * u, 0.12 * u, "#8a9aa5"); // 上框

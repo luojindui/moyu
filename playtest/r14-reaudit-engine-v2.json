@@ -1,6 +1,6 @@
 {
   "commit": "7857cf1",
-  "generatedAt": "2026-11-27T11:31:06.600Z",
+  "generatedAt": "2026-11-27T11:32:01.531Z",
   "wiring": {
     "idle": {
       "base": 0.2,
@@ -18,6 +18,13 @@
       "lamp": 1.15,
       "aquarium": 1.1,
       "focus": 1.2
+    },
+    "offline": {
+      "base": 0.7,
+      "rug": 0.8,
+      "chair": 0.8599999999999999,
+      "catbed": 0.8999999999999999,
+      "allThree": 1.16
     },
     "offlineStation": {
       "station": 0.22999999999999998,
@@ -126,19 +133,15 @@
       "allSpec": 0.93
     },
     {
-      "id": "D12",
-      "where": "src/ui/team-panel.ts:526,280",
-      "detail": "「省心组合」按钮禁用条件 left>=145（四项总和），正常 100 点永远禁用 → 死按钮；onUseAllEnergy 逻辑已按 100 组合实现却点不到"
-    },
-    {
-      "id": "D13",
-      "where": "src/ui/team-panel.ts:512-527,258-272",
-      "detail": "social 无同事时 UI 按钮/整行仍显示可点，点击静默无效（引擎正确返回 null，UI 未同步禁用）"
+      "id": "D17",
+      "where": "src/render/scene.ts:378-386",
+      "detail": "矮屏自适应把鱼缸压到 ay=max(0.6u,groundY-6.1u) 后，与右墙公告板（y 7.65-33.25u）及挂钟（y 20.5-43.5u）重叠；drawDecor 后画 → 鱼缸覆盖公告板右半与挂钟左上",
+      "evidence": "playtest/r14-reaudit-s1-scene-1280.png"
     },
     {
       "id": "D14",
-      "where": "src/engine/energy.ts:4,76",
-      "detail": "头部注释仍写「3 种行为」；social 处注释「好感 +3」实际 +5（doc-only）"
+      "where": "src/engine/energy.ts:76、src/render/scene.ts:378",
+      "detail": "注释残留：social 处「好感 +3」实际 +5；鱼缸注释「左墙」实际画右墙（energy.ts:4 头部注释已在 658a610 修正）"
     },
     {
       "id": "D15",
@@ -152,5 +155,9 @@
       "where": "src/render/scene.ts:342-343",
       "detail": "台灯 lx=vw/2-1.5u 移到桌面左侧，与 spec「桌面右侧灯杆+灯罩+光锥」不符（为避让公告板改位置，但文档未同步）"
     }
-  ]
+  ],
+  "fixed": {
+    "D12": "658a610 修复（CDP S8：left=100 按钮可用，点击后 left=0/used=3）",
+    "D13": "658a610 修复（CDP S7：rowDataDisabled=1、btnDisabled=true、点击无消耗）"
+  }
 }

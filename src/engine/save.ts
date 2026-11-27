@@ -6,7 +6,7 @@ import { COLLEAGUES, MAX_COLLEAGUE_LEVEL, MISSIONS, emptyTeam, type TeamState } 
 import { TALENTS, emptyTalents, type TalentState } from "./talents";
 import { CARDS, emptyCardState, type CardState } from "./cards";
 import { DECOR } from "./decor";
-import { ENERGY_PER_DAY, emptyEnergy, type EnergyAction, type EnergyState } from "./energy";
+import { ENERGY_ACTIONS as ENERGY_ACTIONS_CACHE, ENERGY_PER_DAY, emptyEnergy, type EnergyAction, type EnergyState } from "./energy";
 
 export const SAVE_KEY = "moyu-save";
 export const SAVE_VERSION = 2; // v2：加入 team/talents/patrolSurvives
@@ -271,6 +271,12 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
       energy.used = Array.isArray(rawEnergy.used)
         ? [...new Set(rawEnergy.used.filter((x): x is EnergyAction => x === "slack" || x === "fake-work" || x === "social" || x === "focus"))]
         : [];
+      // left 也由 used 重算（防"used 已用满却仍报 100 点"→ 继续超额使用）
+      const spent = energy.used.reduce((sum, a) => {
+        const def = ENERGY_ACTIONS_CACHE.find((x) => x.id === a);
+        return sum + (def?.cost ?? 0);
+      }, 0);
+      energy.left = Math.max(0, Math.min(energy.left, ENERGY_PER_DAY - spent));
       // boosted 由 used 推导（不信存档里的值，防"没用品却拿满档"）
       energy.boosted = { idleMult: 1, patrolRewardMult: 1, clickMult: 1 };
       for (const a of energy.used) {

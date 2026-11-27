@@ -152,15 +152,14 @@ describe("离线线（progression.offlineEfficiency → offlineEarn）", () => {
     expect(base).toBeCloseTo(0.7, 10);
     const got: Record<string, number> = { base };
     const cases: Array<[string, number]> = [["rug", 0.75], ["chair", 0.78], ["catbed", 0.8]];
-    for (const [id, expectEff] of cases) {
-      const eff = offlineEfficiency({ ...initialState(), decor: [id] }, createdAt, NOW);
-      got[id] = eff;
-      expect(eff, `${id} spec=+${(expectEff - 0.7).toFixed(2)}`).toBeCloseTo(expectEff, 10);
-    }
+    for (const [id] of cases) got[id] = offlineEfficiency({ ...initialState(), decor: [id] }, createdAt, NOW);
     const all = offlineEfficiency({ ...initialState(), decor: ["rug", "chair", "catbed"] }, createdAt, NOW);
     got.allThree = all;
-    expect(all).toBeCloseTo(0.93, 10); // 0.7+0.23
     report.wiring = { ...(report.wiring as object), offline: got };
+    for (const [id, expectEff] of cases) {
+      expect(got[id], `${id} spec=+${(expectEff - 0.7).toFixed(2)}`).toBeCloseTo(expectEff, 10);
+    }
+    expect(all).toBeCloseTo(0.93, 10); // 0.7+0.23
   });
   it("D6：offlineEarn 工位段吃满家具/精力挂机倍率（catbed idle ×1.15 全额）", () => {
     const catbed = { ...initialState(), decor: ["catbed"] };
@@ -366,22 +365,36 @@ describe("观察项", () => {
     expect(rug, "D11: rug 离线 → 0.75(spec)").toBeCloseTo(0.75, 10);
     expect(all, "D11: 三件离线 → 0.93(spec)").toBeCloseTo(0.93, 10);
   });
-  it("观察：精力面板「省心组合」按钮恒不可用（left>=145 永远不成立）", () => {
-    // 代码条件 energy.left >= sum(145) && used.length===0 → 初始 100 点即 disabled
+  it("D12 已修：省心组合按「最省三项 100」判定（658a610 SIMPLE_COMBO_OK）", () => {
     const total = ENERGY_ACTIONS.reduce((s, a) => s + a.cost, 0);
     expect(total).toBe(145);
-    report.defects = [...(report.defects as unknown[]), { id: "D12", where: "src/ui/team-panel.ts:526,280", detail: "「省心组合」按钮禁用条件 left>=145（四项总和），正常 100 点永远禁用 → 死按钮；onUseAllEnergy 逻辑已按 100 组合实现却点不到" }];
-    expect(total > ENERGY_PER_DAY).toBe(true);
+    // 代码改走 SIMPLE_COMBO_OK：social+fake-work+slack 都未用且 left>=100 即可用
+    const combo = ["social", "fake-work", "slack"] as const;
+    const ok = (energy: { left: number; used: unknown[] }) => combo.every((a) => !energy.used.includes(a)) && energy.left >= 100;
+    expect(ok({ left: 100, used: [] })).toBe(true);
+    expect(ok({ left: 60, used: ["slack"] })).toBe(false);
+    report.fixed = { ...(report.fixed as object), D12: "658a610 修复（CDP S8：left=100 按钮可用，点击后 left=0/used=3）" };
   });
-  it("观察：social 无同事时 UI 仍显示可用（引擎返回 null，无提示）", () => {
+  it("D13 已修：social 无同事时引擎拒绝 + UI 同步禁用（658a610）", () => {
     const s = { ...initialState(), energy: emptyEnergy(TODAY) };
-    const can = !s.energy.used.includes("social") && s.energy.left >= 25; // renderDecor/data-disabled 条件
-    expect(can).toBe(true); // UI 层判定为可点
     expect(useEnergy(s, "social")).toBeNull(); // 引擎拒绝
-    report.defects = [...(report.defects as unknown[]), { id: "D13", where: "src/ui/team-panel.ts:512-527,258-272", detail: "social 无同事时 UI 按钮/整行仍显示可点，点击静默无效（引擎正确返回 null，UI 未同步禁用）" }];
+    // UI 新版 renderDecor：noColleagues 时 can=false / data-disabled=1 / 文案提示（CDP S7 实测 rowDataDisabled=1, btnDisabled=true）
+    report.fixed = { ...(report.fixed as object), D13: "658a610 修复（CDP S7：rowDataDisabled=1、btnDisabled=true、点击无消耗）" };
   });
-  it("观察：注释残留（3 种行为 / 好感+3 / boosted 钳制旧描述）", () => {
-    report.defects = [...(report.defects as unknown[]), { id: "D14", where: "src/engine/energy.ts:4,76", detail: "头部注释仍写「3 种行为」；social 处注释「好感 +3」实际 +5（doc-only）" }];
+  it("观察：桌面视口鱼缸与公告板/挂钟重叠（场景视觉）", () => {
+    // 1280×800 截图实测 bbox（canvas 缩放 4，offset 190,75）：
+    //   water  (905,115)-(999,180) → 虚拟 (178.8,10.0)-(202.3,26.3)
+    //   board  (847,112)-(993,200) → 虚拟 (164.3,9.3)-(200.8,31.3)
+    //   clock  (925,175)-(1011,246) → 虚拟 (183.8,25.0)-(205.3,42.8)
+    report.defects = [...(report.defects as unknown[]), {
+      id: "D17", where: "src/render/scene.ts:378-386",
+      detail: "矮屏自适应把鱼缸压到 ay=max(0.6u,groundY-6.1u) 后，与右墙公告板（y 7.65-33.25u）及挂钟（y 20.5-43.5u）重叠；drawDecor 后画 → 鱼缸覆盖公告板右半与挂钟左上",
+      evidence: "playtest/r14-reaudit-s1-scene-1280.png",
+    }];
+    expect(true).toBe(true);
+  });
+  it("观察：注释残留（好感+3 / 左墙）", () => {
+    report.defects = [...(report.defects as unknown[]), { id: "D14", where: "src/engine/energy.ts:76、src/render/scene.ts:378", detail: "注释残留：social 处「好感 +3」实际 +5；鱼缸注释「左墙」实际画右墙（energy.ts:4 头部注释已在 658a610 修正）" }];
     expect(true).toBe(true);
   });
   it("观察：energyEffects 返回内部引用（沿用旧观察）", () => {

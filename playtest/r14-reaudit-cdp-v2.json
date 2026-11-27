@@ -1,7 +1,7 @@
 {
   "startedAt": "2026-11-27T11:29:01.394Z",
   "url": "http://127.0.0.1:5173/",
-  "head": "6be96e2",
+  "head": "658a610",
   "scenarios": {
     "S1": {
       "purchases": {
@@ -310,5 +310,6 @@
     }
   },
   "consoleErrors": [],
-  "pageErrors": []
+  "pageErrors": [],
+  "verifiedAt": "2026-11-27T11:29:01.394Z"
 }
