@@ -1,0 +1,88 @@
+{
+ "instantTap": {
+  "stillOpen": true,
+  "chosen": null,
+  "toast": "送你 1 个天赋点，点 👥 看看"
+ },
+ "afterGuardTap": {
+  "closed": true,
+  "chosen": "canteen_gift",
+  "toast": "今日卡：食堂加菜"
+ },
+ "hud": {
+  "cardText": "卡·食堂加菜",
+  "hidden": false,
+  "card": {
+   "x": 243,
+   "right": 306,
+   "w": 64,
+   "y": 47
+  },
+  "vw": 390,
+  "hudH": 131,
+  "spans": [
+   {
+    "id": "SPAN",
+    "text": "点击 +1",
+    "x": 12,
+    "right": 59,
+    "y": 45
+   },
+   {
+    "id": "SPAN",
+    "text": "不点也 0.2/秒",
+    "x": 69,
+    "right": 156,
+    "y": 45
+   },
+   {
+    "id": "hud-rank",
+    "text": "实习生 0%",
+    "x": 166,
+    "right": 233,
+    "y": 45
+   },
+   {
+    "id": "hud-card",
+    "text": "卡·食堂加菜",
+    "x": 243,
+    "right": 306,
+    "y": 47
+   },
+   {
+    "id": "hud-combo",
+    "text": "连×6",
+    "x": 0,
+    "right": 0,
+    "y": 0
+   },
+   {
+    "id": "hud-streak",
+    "text": "",
+    "x": 0,
+    "right": 0,
+    "y": 0
+   }
+  ]
+ },
+ "newDay": {
+  "cardsVisible": true,
+  "hud": "卡·食堂加菜"
+ },
+ "skipButton": {
+  "text": "今天先不选",
+  "closed": true,
+  "dismissed": true,
+  "reopened": false,
+  "noPromptAfterReload": true
+ },
+ "firstPatrolMs": -1,
+ "fourthPatrolCanvasTap": {
+  "fx": [
+   "先选应对"
+  ],
+  "delta": 0.05,
+  "toast": "王总：屏幕挺干净啊。 +99"
+ },
+ "errors": []
+}

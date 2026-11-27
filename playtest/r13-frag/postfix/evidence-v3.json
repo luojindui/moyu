@@ -1,0 +1,188 @@
+{
+ "A": {
+  "boot": {
+   "bootMs": 382,
+   "wallMs": 783
+  },
+  "cardsAtBoot": false,
+  "hudCardAtBoot": {
+   "text": "",
+   "hidden": true
+  },
+  "cardsRightAfter8Taps": false,
+  "cardsAppearAfterStopMs": 765,
+  "cardsFacts": {
+   "skipText": "今天先不选",
+   "skipH": 42,
+   "panel": {
+    "w": 359,
+    "h": 425
+   },
+   "closeButtons": 1,
+   "shown": true
+  },
+  "afterMaskSkip": {
+   "hidden": true,
+   "dismissed": true
+  },
+  "reopenedAfterSkip": false
+ },
+ "B0": {
+  "boot": {
+   "bootMs": 323,
+   "wallMs": 726
+  },
+  "cardsVisible": false,
+  "hudCard": {
+   "text": "",
+   "hidden": true
+  }
+ },
+ "B": {
+  "firstPatrol": {
+   "appearAfterBootMs": 23880,
+   "wallMs": 23880
+  },
+  "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+  "bossGeo": {
+   "w": 359,
+   "h": 227,
+   "btns": [
+    {
+     "text": "立刻装忙",
+     "w": 333,
+     "h": 48
+    },
+    {
+     "text": "切到工作界面",
+     "w": 333,
+     "h": 48
+    },
+    {
+     "text": "继续摸鱼",
+     "w": 333,
+     "h": 48
+    }
+   ],
+   "timerW": "99.2%"
+  },
+  "timeout": {
+   "visibleMs": 4841,
+   "wallMs": 4963,
+   "toast": "没来得及选…这次不算",
+   "toastShown": true,
+   "moyu": 15.94
+  },
+  "wrongPatrol2": {
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "picked": "立刻装忙",
+   "resultInPanel": "王总：切得真快。 +0",
+   "panelVisible": true,
+   "delta": 0.11,
+   "toast": "王总：切得真快。 +0"
+  },
+  "correctPatrol3": {
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "delta": 0.1,
+   "toast": "王总：切得真快。 +0",
+   "resultInPanel": "王总：切得真快。 +0"
+  },
+  "wrongPatrol4": {
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "delta": -16.78,
+   "toast": "王总：切得真快。 -17"
+  },
+  "journalExclusion": {
+   "bossWhileJournal": false,
+   "journalOpen": true,
+   "appearAfterCloseMs": 1669
+  }
+ },
+ "C": {
+  "savePrep": {
+   "ok": true,
+   "cards": {
+    "date": "2026-11-26",
+    "offers": [],
+    "chosen": null,
+    "chosenDate": "",
+    "until": 0,
+    "nextDayGuaranteed": null,
+    "dismissed": false
+   },
+   "savedAt": 1795765062413
+  },
+  "boot": {
+   "bootMs": 86,
+   "wallMs": 489
+  },
+  "atReturn": {
+   "welcomeVisible": true,
+   "cardsVisible": false,
+   "both": false,
+   "welcomeGain": "2160.0"
+  },
+  "cardsAfterWelcomeMs": 975,
+  "cardsAfterWelcome": {
+   "welcomeHidden": true,
+   "cardsVisible": true
+  },
+  "chosen": {
+   "toast": "今日卡：手速上头",
+   "chosenId": "click_frenzy",
+   "chosenDate": "2026-11-27"
+  },
+  "hudCard": {
+   "__err": "SyntaxError: Invalid regular expression: missing /"
+  },
+  "toastIsChinese": true,
+  "reload": {
+   "boot": {
+    "bootMs": 130,
+    "wallMs": 531
+   },
+   "cardsVisible": false,
+   "hudCard": {
+    "text": "生效中：手速上头（剩 24h）",
+    "hidden": false
+   }
+  },
+  "crossDay": {
+   "ok": true,
+   "cards": {
+    "date": "2026-11-26",
+    "offers": [
+     "click_frenzy",
+     "intern_ask",
+     "canteen_gift"
+    ],
+    "chosen": "click_frenzy",
+    "until": 1795862266144,
+    "nextDayGuaranteed": null,
+    "dismissed": false,
+    "chosenDate": "2026-11-26"
+   },
+   "savedAt": 1795775867412,
+   "boot": {
+    "bootMs": 94,
+    "wallMs": 496
+   },
+   "hudCard": {
+    "text": "生效中：手速上头（剩 24h）",
+    "hidden": false
+   },
+   "cardsAfterStop": 0
+  },
+  "esc": {
+   "hidden": true,
+   "dismissed": true,
+   "reopened": false,
+   "reloadBoot": {
+    "bootMs": 139,
+    "wallMs": 541
+   },
+   "cardsAfterReload": false
+  }
+ },
+ "errors": []
+}

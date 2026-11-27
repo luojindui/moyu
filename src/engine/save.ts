@@ -5,6 +5,8 @@ import { restoreDaily, type DailyState } from "./daily";
 import { COLLEAGUES, MAX_COLLEAGUE_LEVEL, MISSIONS, emptyTeam, type TeamState } from "./team";
 import { TALENTS, emptyTalents, type TalentState } from "./talents";
 import { CARDS, emptyCardState, type CardState } from "./cards";
+import { DECOR } from "./decor";
+import { ENERGY_PER_DAY, emptyEnergy, type EnergyAction, type EnergyState } from "./energy";
 
 export const SAVE_KEY = "moyu-save";
 export const SAVE_VERSION = 2; // v2：加入 team/talents/patrolSurvives
@@ -38,6 +40,10 @@ interface SaveBlob {
   patrolSurvives?: number;
   /** 每日事件卡 */
   cards?: CardState;
+  /** 工位家具 */
+  decor?: string[];
+  /** 每日精力 */
+  energy?: EnergyState;
   /** 累计点击（点击线彩蛋解锁用；旧档为 0） */
   totalClicks?: number;
   /** 今日回访计数 */
@@ -80,6 +86,8 @@ export function serialize(state: GameState, adapter: SaveAdapter, savedAt: numbe
     surviveStreak: state.surviveStreak,
     patrolSurvives: state.patrolSurvives,
     cards: state.cards,
+    decor: state.decor,
+    energy: state.energy,
     totalClicks: state.totalClicks,
     visits: state.visits,
     lifetimeEarned: state.lifetimeEarned,
@@ -247,6 +255,31 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
           ? rawCards.nextDayGuaranteed
           : null;
     }
+    // 家具：只接受已知 id、去重
+    const decor = Array.isArray(blob.decor)
+      ? [...new Set(blob.decor.filter((x): x is string => typeof x === "string" && DECOR.some((d) => d.id === x)))]
+      : [];
+    // 精力：日期合法、剩余 0-100、已用行为去重
+    const energy: EnergyState = emptyEnergy();
+    const rawEnergy = blob.energy as Partial<EnergyState> | undefined;
+    if (rawEnergy && typeof rawEnergy === "object") {
+      energy.date = typeof rawEnergy.date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(rawEnergy.date) ? rawEnergy.date : "";
+      energy.left =
+        typeof rawEnergy.left === "number" && Number.isFinite(rawEnergy.left)
+          ? Math.max(0, Math.min(ENERGY_PER_DAY, Math.floor(rawEnergy.left)))
+          : ENERGY_PER_DAY;
+      energy.used = Array.isArray(rawEnergy.used)
+        ? [...new Set(rawEnergy.used.filter((x): x is EnergyAction => x === "slack" || x === "fake-work" || x === "social"))]
+        : [];
+      const b = rawEnergy.boosted;
+      energy.boosted = {
+        idleMult: typeof b?.idleMult === "number" && Number.isFinite(b.idleMult) ? Math.max(1, Math.min(2, b.idleMult)) : 1,
+        patrolRewardMult:
+          typeof b?.patrolRewardMult === "number" && Number.isFinite(b.patrolRewardMult)
+            ? Math.max(1, Math.min(3, b.patrolRewardMult))
+            : 1,
+      };
+    }
     const patrolSurvives =
       typeof blob.patrolSurvives === "number" && Number.isInteger(blob.patrolSurvives) && blob.patrolSurvives >= 0
         ? blob.patrolSurvives
@@ -292,7 +325,7 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
       return Math.max(ca, savedAtMs - 365 * 86_400_000);
     };
     return {
-      state: { moyu, levels, totalEarned, collected, daily, surviveStreak, totalClicks, visits, lifetimeEarned, prestige, team, talents, patrolSurvives, cards },
+      state: { moyu, levels, totalEarned, collected, daily, surviveStreak, totalClicks, visits, lifetimeEarned, prestige, team, talents, patrolSurvives, cards, decor, energy },
       offlineSeconds,
       createdAt: clampCreatedAt(blob.createdAt),
     };

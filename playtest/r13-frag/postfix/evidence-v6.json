@@ -1,0 +1,43 @@
+{
+ "cardsAppearMs": 12152,
+ "mutex": {
+  "bossWhileCards": false,
+  "cardsStill": true
+ },
+ "skipSamples": [
+  {
+   "at": 0,
+   "open": false
+  },
+  {
+   "at": 60,
+   "open": false
+  },
+  {
+   "at": 150,
+   "open": false
+  },
+  {
+   "at": 400,
+   "open": false
+  },
+  {
+   "at": 900,
+   "open": false
+  }
+ ],
+ "skipState": {
+  "dismissed": true
+ },
+ "bossAfterSkipMs": 3489,
+ "correct": {
+  "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+  "want": "切到工作界面",
+  "result": "王总：屏幕挺干净啊。 +90",
+  "delta": 90.26,
+  "toast": "王总：屏幕挺干净啊。 +90",
+  "toastAfter6s": "王总：屏幕挺干净啊。 +90",
+  "panelAfter6s": false
+ },
+ "errors": []
+}

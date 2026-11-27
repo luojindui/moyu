@@ -1,6 +1,8 @@
 import type { GameState } from "../engine/state";
 import { formatMoyu } from "../engine/format";
 import { stationIdleScaled } from "../engine/upgrades";
+import { DECOR, canBuyDecor, decorCount, decorEffects } from "../engine/decor";
+import { ENERGY_ACTIONS, ENERGY_PER_DAY } from "../engine/energy";
 import { prestigeMultiplier } from "../engine/prestige";
 import {
   COLLEAGUES,
@@ -71,6 +73,8 @@ export interface TeamCallbacks {
   onToggleAuto: (id: string, on: boolean) => void;
   onUnlockTalent: (id: string) => void;
   onResetTalents: () => void;
+  onBuyDecor: (id: string) => void;
+  onUseEnergy: (id: string) => void;
 }
 
 /** 摸鱼小队面板（同事 / 天赋 两页） */
@@ -80,7 +84,8 @@ export class TeamPanel {
   private elPoints = document.getElementById("team-points")!;
   private tabColleagues = document.getElementById("tab-colleagues") as HTMLButtonElement;
   private tabTalents = document.getElementById("tab-talents") as HTMLButtonElement;
-  private tab: "colleagues" | "talents" = "colleagues";
+  private tabDecor = document.getElementById("tab-decor") as HTMLButtonElement;
+  private tab: "colleagues" | "talents" | "decor" = "colleagues";
   private lastState: GameState | null = null;
   private lastAt = 0;
   /** 上次渲染的结构签名（只有结构变化才整块重绘，避免点空） */
@@ -95,6 +100,7 @@ export class TeamPanel {
     });
     this.tabColleagues.addEventListener("click", () => this.setTab("colleagues"));
     this.tabTalents.addEventListener("click", () => this.setTab("talents"));
+    this.tabDecor.addEventListener("click", () => this.setTab("decor"));
   }
 
   get isOpen(): boolean {
@@ -127,10 +133,11 @@ export class TeamPanel {
     }
   }
 
-  setTab(tab: "colleagues" | "talents"): void {
+  setTab(tab: "colleagues" | "talents" | "decor"): void {
     this.tab = tab;
     this.tabColleagues.classList.toggle("active", tab === "colleagues");
     this.tabTalents.classList.toggle("active", tab === "talents");
+    this.tabDecor.classList.toggle("active", tab === "decor");
     if (this.lastState) this.render(this.lastState, true);
   }
 
@@ -204,7 +211,8 @@ export class TeamPanel {
     this.lastSig = sig;
     this.elPoints.textContent = `天赋点 ${state.talents.points}`;
     if (this.tab === "colleagues") this.renderColleagues(state, Date.now());
-    else this.renderTalents(state);
+    else if (this.tab === "talents") this.renderTalents(state);
+    else this.renderDecor(state);
   }
 
   /** 只更新倒计时文本与按钮可用态（不重绘 DOM，避免按钮被替换导致点空） */
@@ -428,6 +436,50 @@ export class TeamPanel {
     this.bindActions();
   }
 
+  /** 工位页：装修 + 每日精力 */
+  private renderDecor(state: GameState): void {
+    const eff = decorEffects(state);
+    const parts: string[] = [];
+    parts.push(`<div class="team-summary">
+      <span>已装修 ${decorCount(state)}/8 · 挂机 ×${eff.idleMult.toFixed(2)} · 点击 ×${eff.clickMult.toFixed(2)} · 离线 +${(eff.offlineBonus * 100).toFixed(0)}%</span>
+    </div>`);
+
+    // 每日精力
+    const energy = state.energy;
+    parts.push(`<div class="branch">
+      <h3>今日精力 <small style="color:#8f9fd0">（剩 ${energy.left}/${ENERGY_PER_DAY}）</small></h3>
+      ${ENERGY_ACTIONS.map((a) => {
+        const used = energy.used.includes(a.id);
+        const can = !used && energy.left >= a.cost;
+        return `<div class="talent ${used ? "on" : ""}">
+          <span class="talent-dot">${used ? "✓" : a.cost}</span>
+          <span class="talent-info">
+            <span class="talent-name">${a.name}</span>
+            <span class="talent-desc">${a.desc}</span>
+          </span>
+          ${used ? "" : `<button data-act="energy" data-id="${a.id}" ${can ? "" : "disabled"}>使用</button>`}
+        </div>`;
+      }).join("")}
+      <div style="font-size:11px;color:#a8a493;margin-top:6px">每天 100 点，效果持续到当天结束</div>
+    </div>`);
+
+    // 家具
+    for (const d of DECOR) {
+      const owned = state.decor.includes(d.id);
+      const can = canBuyDecor(state, d.id);
+      parts.push(`<div class="talent ${owned ? "on" : ""}">
+        <span class="talent-dot">${owned ? "✓" : ""}</span>
+        <span class="talent-info">
+          <span class="talent-name">${d.name}</span>
+          <span class="talent-desc">${d.desc}</span>
+        </span>
+        ${owned ? "" : `<button data-act="decor" data-id="${d.id}" ${can ? "" : "disabled"}>${formatMoyu(d.cost)}</button>`}
+      </div>`);
+    }
+    this.body.innerHTML = parts.join("");
+    this.bindActions();
+  }
+
   private bindActions(): void {
     this.body.querySelectorAll<HTMLButtonElement>("button[data-act]").forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -441,6 +493,8 @@ export class TeamPanel {
         else if (act === "auto") this.cb.onToggleAuto(id, btn.dataset.on !== "1");
         else if (act === "talent") this.cb.onUnlockTalent(id);
         else if (act === "reset-talents") this.cb.onResetTalents();
+        else if (act === "decor") this.cb.onBuyDecor(id);
+        else if (act === "energy") this.cb.onUseEnergy(id as never);
       });
     });
   }

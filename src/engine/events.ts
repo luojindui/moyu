@@ -4,6 +4,7 @@ import { clickPowerOf, doClick, comboMultiplier } from "./actions";
 import { effectOf } from "./upgrades";
 import { talentEffects } from "./talents";
 import { cardEffects } from "./cards";
+import { energyEffects } from "./energy";
 import { CHOICE_SECONDS, PERSONALITIES, resolveBossChoice, type BossChoice, type BossPersonality } from "./boss-choice";
 import { favorBonuses, teamTraits } from "./team";
 
@@ -286,7 +287,13 @@ export function bossSurviveReward(state: GameState, es?: EventState): number {
   const { idleRate } = effectOf(state);
   const base = Math.max(BOSS_REWARD_MIN, BOSS_REWARD_IDLE_SECONDS * idleRate);
   const talent = talentEffects(state.talents);
-  return base * surviveStreakMult(es?.surviveStreak ?? 0) * talent.patrolRewardMult * cardEffects(state, Date.now()).patrolRewardMult;
+  return (
+    base *
+    surviveStreakMult(es?.surviveStreak ?? 0) *
+    talent.patrolRewardMult *
+    cardEffects(state, Date.now()).patrolRewardMult *
+    energyEffects(state).patrolRewardMult
+  );
 }
 
 /** 丢梗点击奖励：5 × 点击力（仅窗口内有效） */

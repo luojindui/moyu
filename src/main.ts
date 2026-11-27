@@ -33,6 +33,8 @@ import { CardPanel } from "./ui/card-panel";
 import { BossChoicePanel } from "./ui/boss-panel";
 import { CARDS, chooseCard, dismissCards, ensureCards } from "./engine/cards";
 import { onBossChoice } from "./engine/events";
+import { buyDecor, decorDef } from "./engine/decor";
+import { energyActionDef, ensureEnergy, useEnergy } from "./engine/energy";
 import { CHOICE_SECONDS } from "./engine/boss-choice";
 import { cardEffects } from "./engine/cards";
 import { claimMission, colleagueDef, recruit, upgradeColleague, dispatch as dispatchMission , setAutoRepeat, favorTier } from "./engine/team";
@@ -232,6 +234,26 @@ async function boot(): Promise<void> {
         state = next;
         hud.refresh(state);
         teamPanel.refreshNow(state);
+        serialize(state, localStorageAdapter, Date.now());
+      }
+    },
+    onBuyDecor: (id) => {
+      const next = buyDecor(state, id);
+      if (next) {
+        state = next;
+        hud.refresh(state);
+        teamPanel.refreshNow(state);
+        showToast(`已装修：${decorDef(id)?.name ?? ""}`);
+        serialize(state, localStorageAdapter, Date.now());
+      }
+    },
+    onUseEnergy: (id) => {
+      const next = useEnergy(state, id as never);
+      if (next) {
+        state = next;
+        hud.refresh(state);
+        teamPanel.refreshNow(state);
+        showToast(`精力已使用：${energyActionDef(id as never)?.name ?? ""}`);
         serialize(state, localStorageAdapter, Date.now());
       }
     },
@@ -607,6 +629,15 @@ async function boot(): Promise<void> {
       if (combo > 0 && (performance.now() - lastClickAt) / 1000 > COMBO_BREAK_S) {
         combo = 0;
         playBreak();
+      }
+      // 每日精力：跨日重置
+      {
+        const today = new Date().toLocaleDateString("sv-SE");
+        const withEnergy = ensureEnergy(state, today);
+        if (withEnergy !== state) {
+          state = withEnergy;
+          serialize(state, localStorageAdapter, Date.now());
+        }
       }
       // 每日事件卡：跨日刷新 + 未选时弹窗
       {

@@ -1,5 +1,6 @@
 import type { GameState } from "./state";
 import { cardEffects } from "./cards";
+import { decorEffects } from "./decor";
 
 /**
  * 摸鱼小队（第二玩法维度，R12）：招募同事 → 派遣任务 → 回来领奖励。
@@ -326,7 +327,16 @@ export function dispatchReward(state: GameState, id: string, stationIdle: number
   let traitMult = 1;
   if (def.trait === "短任务加成" && m.seconds <= 3600) traitMult += def.traitValue;
   if (def.trait === "长任务加成" && m.seconds >= 4 * 3600) traitMult += def.traitValue;
-  return Math.floor(base * m.mult * match * levelFactor * favorBonus * traitMult * cardEffects(state, Date.now()).dispatchRewardMult);
+  return Math.floor(
+    base *
+      m.mult *
+      match *
+      levelFactor *
+      favorBonus *
+      traitMult *
+      cardEffects(state, Date.now()).dispatchRewardMult *
+      decorEffects(state).dispatchRewardMult,
+  );
 }
 
 /** 领取派遣奖励（好感 +2，匹配任务 +3） */

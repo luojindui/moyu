@@ -5,6 +5,8 @@ import type { TeamState } from "./team";
 import { emptyTeam } from "./team";
 import type { TalentState } from "./talents";
 import type { CardState } from "./cards";
+import type { EnergyState } from "./energy";
+import { emptyEnergy } from "./energy";
 import { emptyCardState } from "./cards";
 import { emptyTalents } from "./talents";
 
@@ -38,6 +40,10 @@ export interface GameState {
   patrolSurvives: number;
   /** 每日事件卡 */
   cards: CardState;
+  /** 已购工位家具 id */
+  decor: string[];
+  /** 每日精力 */
+  energy: EnergyState;
 }
 
 export function initialState(): GameState {
@@ -56,6 +62,8 @@ export function initialState(): GameState {
     talents: emptyTalents(),
     patrolSurvives: 0,
     cards: emptyCardState(),
+    decor: [],
+    energy: emptyEnergy(),
   };
 }
 

@@ -1,0 +1,92 @@
+{
+ "boot": {
+  "bootMs": 232,
+  "wall": 534
+ },
+ "cardsAfterIdle": {
+  "appearMs": 11665,
+  "skipped": {
+   "hidden": false,
+   "dismissed": true
+  }
+ },
+ "bossAppearMs": 25053,
+ "firstBoss": {
+  "tell": "有人过来了——脚步声又快又重，两三步就到工位",
+  "w": 359,
+  "h": 227,
+  "btns": [
+   {
+    "t": "立刻装忙",
+    "h": 48
+   },
+   {
+    "t": "切到工作界面",
+    "h": 48
+   },
+   {
+    "t": "继续摸鱼",
+    "h": 48
+   }
+  ]
+ },
+ "answer": {
+  "want": "继续摸鱼",
+  "resultInPanel": "安总：这表格昨天就这数吧？（新手保护，这次不扣钱）",
+  "panelVisible": true,
+  "delta": 0.15,
+  "toast": "安总：这表格昨天就这数吧？（新手保护，这次不扣钱）",
+  "toastAfter6s": "安总：这表格昨天就这数吧？（新手保护，这次不扣钱）",
+  "panelAfter6s": false,
+  "moyuAfter6s": 6.42
+ },
+ "hud": {
+  "reloadBoot": {
+   "bootMs": 109,
+   "wall": 410
+  },
+  "cardsAppearMs": 3,
+  "afterChoose": {
+   "closed": true,
+   "chosen": "ac_broken",
+   "toast": "今日卡：空调坏了",
+   "cardName": "空调坏了"
+  },
+  "layout": {
+   "cardText": "卡·空调坏了",
+   "cardRect": {
+    "x": 243,
+    "right": 301,
+    "w": 58,
+    "y": 47
+   },
+   "subRect": {
+    "w": 366,
+    "h": 20
+   },
+   "buttons": [
+    {
+     "id": "btn-team",
+     "x": 336,
+     "right": 380,
+     "y": 510
+    },
+    {
+     "id": "btn-mute",
+     "x": 336,
+     "right": 380,
+     "y": 562
+    },
+    {
+     "id": "btn-journal",
+     "x": 336,
+     "right": 380,
+     "y": 614
+    }
+   ],
+   "vw": 390,
+   "hudH": 131
+  }
+ },
+ "errors": []
+}

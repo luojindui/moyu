@@ -70,6 +70,8 @@ export function doPrestige(state: GameState): { state: GameState; gained: number
       talents: grantPrestigeTalentPoints(state.talents),
       patrolSurvives: state.patrolSurvives,
       cards: state.cards,
+      decor: state.decor, // 装修保留（看得见的成长）
+      energy: state.energy,
     },
   };
 }

@@ -4,6 +4,7 @@ import { effectOf, costOf, UPGRADES } from "./upgrades";
 import { prestigeMultiplier } from "./prestige";
 import { talentEffects } from "./talents";
 import { cardEffects } from "./cards";
+import { decorEffects } from "./decor";
 
 /** 初始点击力（未买任何升级时） */
 export const BASE_CLICK_POWER = 1;
@@ -32,7 +33,12 @@ export function comboWindowOf(state: GameState): number {
 export function clickPowerOf(state: GameState): number {
   const base = BASE_CLICK_POWER * prestigeMultiplier(state.prestige) + effectOf(state).clickPower;
   // 天赋：点击流「手速」
-  return base * talentEffects(state.talents).clickMult * cardEffects(state, Date.now()).clickMult;
+  return (
+    base *
+    talentEffects(state.talents).clickMult *
+    cardEffects(state, Date.now()).clickMult *
+    decorEffects(state).clickMult
+  );
 }
 
 /** 点击一次（combo 为当前连击数）：返回新状态 */
