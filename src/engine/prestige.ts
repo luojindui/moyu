@@ -20,16 +20,21 @@ export const PRESTIGE_TUNING = {
 };
 export const PRESTIGE_GAIN_PER_POINT = 0.5;
 
+/** 解锁门槛随当前倍率增长：倍率越高，一次转生需要赚得越多（防止 1e8 无限刷） */
+export function prestigeThreshold(state: GameState): number {
+  return PRESTIGE_UNLOCK * prestigeMultiplier(state.prestige);
+}
+
 export function canPrestige(state: GameState): boolean {
-  return state.totalEarned >= PRESTIGE_UNLOCK;
+  return state.totalEarned >= prestigeThreshold(state);
 }
 
 /** 本次转生可得点数（未达标 0）：floor(3×(本局/1e8)^0.3)，早期就给足，避免"越早转越亏" */
 export function prestigeGain(state: GameState): number {
   if (!canPrestige(state)) return 0;
-  const raw = Math.floor(
-    PRESTIGE_TUNING.gainA * Math.pow(state.totalEarned / PRESTIGE_UNLOCK, PRESTIGE_TUNING.gainB),
-  );
+  // 归一化本局收入（除以当前倍率），使"刷到刚好解锁就转"只能拿到 0~1 点
+  const normalized = state.totalEarned / (PRESTIGE_UNLOCK * prestigeMultiplier(state.prestige));
+  const raw = Math.floor(PRESTIGE_TUNING.gainA * Math.pow(normalized, PRESTIGE_TUNING.gainB));
   return Math.max(1, Math.min(PRESTIGE_POINT_CAP, raw));
 }
 

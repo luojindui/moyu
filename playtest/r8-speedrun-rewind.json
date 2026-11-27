@@ -1,0 +1,15 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "hookType": "function",
+  "savedAtBefore": null,
+  "savedAtAfter": 1795722317979,
+  "rewoundSeconds": null,
+  "moyuBefore": 0.3799740000000001,
+  "moyuAfter": 5760.873294000005,
+  "gainFromReload": 5760.493320000005,
+  "expected8hAtBaseIdle": 5760,
+  "lifetimeBefore": 0.3799740000000001,
+  "lifetimeAfter": 5760.873294000005,
+  "welcomePanelShown": true,
+  "note": "首日离线效率 1.0；每次回拨+刷新即 +8h 挂机收益，可无限循环（8h/次）"
+}

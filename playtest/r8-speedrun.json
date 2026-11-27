@@ -1,0 +1,351 @@
+{
+  "meta": {
+    "head": "c26c18a",
+    "generatedAt": "2026-11-27T03:44:12.489Z"
+  },
+  "routes": {
+    "A_idle": {
+      "timeH": 225.65,
+      "timeMin": 13538.9,
+      "nodes": {
+        "1.0e+4": "10.8min",
+        "1.0e+5": "19.3min",
+        "1.0e+6": "39.8min",
+        "1.0e+7": "85.3min",
+        "1.0e+8": "185min",
+        "1.0e+9": "455min",
+        "2.5e+9": "697.1min",
+        "5.0e+9": "983.6min",
+        "1.0e+10": "1403.9min",
+        "2.0e+10": "1980.3min",
+        "4.0e+10": "13538.9min",
+        "8.0e+10": "13538.9min",
+        "1.6e+11": "13538.9min",
+        "3.2e+11": "13538.9min"
+      },
+      "notes": "单局直达，无转生"
+    },
+    "A_c5": {
+      "timeH": 202.96
+    },
+    "A_c1000": {
+      "timeH": 2.3
+    },
+    "B_idle": {
+      "timeH": 7.42,
+      "theta": 100000000,
+      "n": 134,
+      "prestige": 402,
+      "multiplier": 302.5,
+      "farmMin": 402.8,
+      "finalMin": 42.7,
+      "nodes": {
+        "1.0e+8": "186min",
+        "1.0e+9": "288.1min",
+        "1.0e+10": "389.9min",
+        "1.0e+11": "414.9min",
+        "3.2e+11": "445.5min"
+      }
+    },
+    "C_c5": {
+      "timeH": 4.07,
+      "theta": 100000000,
+      "n": 185,
+      "prestige": 555,
+      "farmMin": 216.7,
+      "finalMin": 27.6,
+      "nodes": {
+        "1.0e+8": "75min",
+        "1.0e+9": "137.6min",
+        "1.0e+10": "200min",
+        "1.0e+11": "224.1min",
+        "3.2e+11": "244.2min"
+      }
+    },
+    "C_c8": {
+      "timeH": 3.17,
+      "theta": 100000000,
+      "n": 203,
+      "prestige": 609
+    },
+    "C_c20": {
+      "timeH": 1.62
+    },
+    "C_c100": {
+      "timeH": 0.27
+    },
+    "C_c1000": {
+      "timeH": 0.03
+    },
+    "legacy": {
+      "A": 225.65,
+      "B": 13.81,
+      "C5": 5.4,
+      "C8": 4.04,
+      "B_theta": 100000000,
+      "B_n": 52
+    }
+  },
+  "collection": {
+    "idleCost": 8514379149,
+    "idleCostPer": {
+      "phone": 360912,
+      "toilet": 4330655,
+      "group": 28870895,
+      "meeting": 180442928,
+      "deep": 1082657462,
+      "retire": 7217716297
+    },
+    "bestIdle": {
+      "timeH": 6.35,
+      "theta": 100000000,
+      "n": 30,
+      "farmMin": 336.7
+    },
+    "bestClick5": {
+      "timeH": 3.41,
+      "theta": 100000000,
+      "n": 43
+    },
+    "clicksNeeded": 20000,
+    "clickMinAt5cps": 66.7,
+    "clickMinAt8cps": 41.7,
+    "quote": {
+      "meanMin": 29.2,
+      "p90Min": 44
+    }
+  },
+  "shortcuts": {
+    "rewind": {
+      "cycles": 151,
+      "wallMin": 7.6,
+      "gameHours": 1208,
+      "perCycleSeconds": 3
+    },
+    "autoclicker": {
+      "cps20": 1.62,
+      "cps100": 0.27,
+      "cps1000": 0.03,
+      "noPrestige1000": 2.3
+    },
+    "collectionBonus": {
+      "withCollectH": 6.19,
+      "withoutH": 7.42,
+      "savedMin": 74.2
+    },
+    "eventBonus": {
+      "idlePct": 5,
+      "clickPct": 1.9,
+      "savedMin": 22.3
+    },
+    "dailyReward": {
+      "note": "600×idleRate ≈ 10 分钟挂机收益/天；claim 时可在大 idleRate 时领"
+    },
+    "offlineEff": {
+      "note": "首日 1.0；之后 0.7 + 3 回访 +0.1 + streak +0.15 → 封顶 1.0"
+    }
+  },
+  "prestigeCurve": {
+    "current": {
+      "model": "linear+75%/pt, keep80%",
+      "rows": [
+        {
+          "index": 1,
+          "runMin": 186,
+          "points": 3,
+          "cumPoints": 3,
+          "mult": 1,
+          "cumMin": 186
+        },
+        {
+          "index": 2,
+          "runMin": 30.6,
+          "points": 3,
+          "cumPoints": 6,
+          "mult": 3.25,
+          "cumMin": 216.6
+        },
+        {
+          "index": 3,
+          "runMin": 18,
+          "points": 3,
+          "cumPoints": 9,
+          "mult": 5.5,
+          "cumMin": 234.7
+        },
+        {
+          "index": 4,
+          "runMin": 12.8,
+          "points": 3,
+          "cumPoints": 12,
+          "mult": 7.75,
+          "cumMin": 247.5
+        },
+        {
+          "index": 5,
+          "runMin": 9.9,
+          "points": 3,
+          "cumPoints": 15,
+          "mult": 10,
+          "cumMin": 257.4
+        },
+        {
+          "index": 6,
+          "runMin": 8.1,
+          "points": 3,
+          "cumPoints": 18,
+          "mult": 12.25,
+          "cumMin": 265.5
+        },
+        {
+          "index": 7,
+          "runMin": 6.8,
+          "points": 3,
+          "cumPoints": 21,
+          "mult": 14.5,
+          "cumMin": 272.3
+        },
+        {
+          "index": 8,
+          "runMin": 5.9,
+          "points": 3,
+          "cumPoints": 24,
+          "mult": 16.75,
+          "cumMin": 278.2
+        },
+        {
+          "index": 9,
+          "runMin": 5.2,
+          "points": 3,
+          "cumPoints": 27,
+          "mult": 19,
+          "cumMin": 283.5
+        },
+        {
+          "index": 10,
+          "runMin": 4.7,
+          "points": 3,
+          "cumPoints": 30,
+          "mult": 21.25,
+          "cumMin": 288.1
+        }
+      ],
+      "bestTheta": 100000000,
+      "n": 134
+    },
+    "legacy": {
+      "rows": [
+        {
+          "index": 1,
+          "runMin": 186,
+          "points": 2,
+          "cumPoints": 2,
+          "mult": 1,
+          "cumMin": 186
+        },
+        {
+          "index": 2,
+          "runMin": 79.1,
+          "points": 2,
+          "cumPoints": 4,
+          "mult": 1.1664,
+          "cumMin": 265.1
+        },
+        {
+          "index": 3,
+          "runMin": 52.5,
+          "points": 2,
+          "cumPoints": 6,
+          "mult": 1.3604889600000003,
+          "cumMin": 317.7
+        },
+        {
+          "index": 4,
+          "runMin": 38.9,
+          "points": 2,
+          "cumPoints": 8,
+          "mult": 1.5868743229440005,
+          "cumMin": 356.5
+        },
+        {
+          "index": 5,
+          "runMin": 31.6,
+          "points": 2,
+          "cumPoints": 10,
+          "mult": 1.8509302102818825,
+          "cumMin": 388.1
+        },
+        {
+          "index": 6,
+          "runMin": 26,
+          "points": 2,
+          "cumPoints": 12,
+          "mult": 2.158924997272788,
+          "cumMin": 414.2
+        },
+        {
+          "index": 7,
+          "runMin": 22.1,
+          "points": 2,
+          "cumPoints": 14,
+          "mult": 2.5181701168189803,
+          "cumMin": 436.3
+        },
+        {
+          "index": 8,
+          "runMin": 19.2,
+          "points": 2,
+          "cumPoints": 16,
+          "mult": 2.937193624257659,
+          "cumMin": 455.5
+        },
+        {
+          "index": 9,
+          "runMin": 17,
+          "points": 2,
+          "cumPoints": 18,
+          "mult": 3.425942643334134,
+          "cumMin": 472.5
+        },
+        {
+          "index": 10,
+          "runMin": 15.3,
+          "points": 2,
+          "cumPoints": 20,
+          "mult": 3.9960194991849343,
+          "cumMin": 487.8
+        }
+      ],
+      "bestTheta": 100000000,
+      "n": 52
+    }
+  },
+  "humanClick": {
+    "firstRunClickMin": 75,
+    "firstRunIdleMin": 186,
+    "estimatedH": 5.57
+  },
+  "collectionThenFinish": {
+    "idle": {
+      "collectMin": 381.1,
+      "finishMin": 124.8,
+      "totalMin": 505.9
+    },
+    "click5": {
+      "collectMin": 204.7,
+      "finishMin": 62.1,
+      "totalMin": 266.7
+    }
+  },
+  "friction": {
+    "prestigesB": 134,
+    "prestigesC5": 185,
+    "prestigesC1000": 351,
+    "uiSecondsPerPrestige": 1.5,
+    "uiOverheadMinB": 3.4,
+    "uiOverheadMinC1000": 8.8,
+    "dailyWindowsPerDay": 4,
+    "dailyClaimsInRoute": 2,
+    "journalOpenIncomeThrottle": "open journal → frameSkip 1/3, dt discarded (income ~1/3 while panel open)"
+  }
+}

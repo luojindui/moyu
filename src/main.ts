@@ -201,19 +201,12 @@ async function boot(): Promise<void> {
     scene.fx.floatText(scene.w / 2, scene.h * 0.22, text);
   };
   const rng = Math.random;
-  let frameSkip = 0;
   const frame = (now: number): void => {
     const dt = Math.min(1, (now - last) / 1000);
     last = now;
-    // 面板打开 / 页面不可见时降帧（移动端省电；浏览器后台本身会暂停 rAF）
+    // 面板打开 / 页面不可见时降帧：只减少绘制，状态仍按真实 dt 推进（否则开面板时收入变 1/3）
     const overlayOpen = !document.getElementById("journal")!.classList.contains("hidden");
-    if (overlayOpen || document.visibilityState === "hidden") {
-      frameSkip += 1;
-      if (frameSkip % 3 !== 0) {
-        requestAnimationFrame(frame);
-        return;
-      }
-    }
+    const throttleDraw = overlayOpen || document.visibilityState === "hidden";
     lastActiveMs = Date.now();
     scene.gameTime += dt;
     // 随机事件调度（丢梗位置：每次窗口随机出现在场景上半区，并按视口高度防裁剪）
@@ -250,8 +243,10 @@ async function boot(): Promise<void> {
     }
     state = advance(state, dt);
     scene.update(dt);
-    scene.draw(ctx);
-    debug.frames++;
+    if (!throttleDraw) {
+      scene.draw(ctx);
+      debug.frames++;
+    }
     fpsFrames++;
     if (now - fpsWindowStart >= 1000) {
       debug.fps = Math.round((fpsFrames * 1000) / (now - fpsWindowStart));
@@ -313,8 +308,8 @@ async function boot(): Promise<void> {
     welcome.show(offline.applied, offline.earned, currentOfflineRate(), () => undefined);
   }
 
-  // 6) agent 试玩调试钩子（先注册，资产加载不阻塞探测）
-  (window as unknown as Record<string, unknown>).__MOYU__ = {
+  // 6) agent 试玩调试钩子：仅开发/测试构建暴露，生产包剥离（防止 rewindSave 刷离线作弊）
+  if (import.meta.env.DEV) (window as unknown as Record<string, unknown>).__MOYU__ = {
     get state(): unknown {
       return JSON.parse(JSON.stringify(state));
     },

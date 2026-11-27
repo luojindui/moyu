@@ -56,11 +56,17 @@ export interface RunOpts {
   cps?: number;
   collectFull?: boolean;
   maxSeconds?: number;
+  /** 每买一次后检查：满足即停（图鉴 Lv50 等用） */
+  stopWhen?: (levels: Levels) => boolean;
+  /** 记录本局累计跨过这些阈值的时间点 */
+  checkpoints?: number[];
 }
 
 export interface RunResult {
   time: number;
   reached: boolean;
+  earned: number;
+  checkpointTimes?: number[];
   levels: Levels;
   idleRate: number;
   clickRate: number;
@@ -102,6 +108,9 @@ export function runFrom(o: RunOpts): RunResult {
   let earned = 0;
   let spent = 0;
   let purchases = 0;
+  const checkpointTimes: number[] = [];
+  const cps_ = o.checkpoints ?? [];
+  let cpIdx = 0;
 
   // 复用同一个 state 对象：effectOf 只读 levels/collected/prestige
   while (earned < o.target && t < maxT) {
@@ -136,6 +145,13 @@ export function runFrom(o: RunOpts): RunResult {
       let next = worth[0]!;
       for (const c of worth) if (c.c - moyu < next.c - moyu) next = c;
       const wait = Math.max(1e-9, (next.c - moyu) / rate);
+      // 等待期间可能跨过 checkpoint
+      let remainingWait = wait;
+      while (cpIdx < cps_.length && earned + rate * remainingWait >= cps_[cpIdx]!) {
+        const need = Math.max(0, (cps_[cpIdx]! - earned) / rate);
+        checkpointTimes.push(t + need);
+        cpIdx++;
+      }
       t += wait;
       moyu += rate * wait;
       earned += rate * wait;
@@ -145,15 +161,22 @@ export function runFrom(o: RunOpts): RunResult {
     spent += choice.c;
     levels[choice.id] = (levels[choice.id] ?? 0) + 1;
     purchases++;
+    if (o.stopWhen && o.stopWhen(levels)) break;
   }
 
   st.moyu = moyu;
   st.totalEarned = earned;
   const eff = effectOf(st);
   const cp = 1 * M + eff.clickPower;
+  while (cpIdx < cps_.length) {
+    checkpointTimes.push(t);
+    cpIdx++;
+  }
   return {
     time: t,
     reached: earned >= o.target,
+    earned,
+    checkpointTimes,
     levels,
     idleRate: eff.idleRate,
     clickRate: cps > 0 ? cps * cp * combo : 0,
@@ -162,7 +185,7 @@ export function runFrom(o: RunOpts): RunResult {
   };
 }
 
-function applyPrestige(levels: Levels, model: PrestigeModel): Levels {
+export function applyPrestige(levels: Levels, model: PrestigeModel): Levels {
   const next: Levels = {};
   for (const [k, v] of Object.entries(levels)) next[k] = Math.floor(v * model.keepRatio);
   return next;

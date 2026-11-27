@@ -1,12 +1,15 @@
 import { describe, it, expect } from "vitest";
 import { initialState, gain } from "./state";
-import { canPrestige, prestigeGain, doPrestige, prestigeMultiplier, PRESTIGE_UNLOCK, PRESTIGE_POINT_CAP } from "./prestige";
+import { canPrestige, prestigeGain, doPrestige, prestigeMultiplier, prestigeThreshold, PRESTIGE_UNLOCK, PRESTIGE_POINT_CAP } from "./prestige";
 import { effectOf } from "./upgrades";
 import { doClick } from "./actions";
 
 describe("离职再就业（转生层）", () => {
-  it("解锁门槛 1e8；未达标不可转生", () => {
+  it("解锁门槛 1e8×当前倍率；未达标不可转生", () => {
     expect(PRESTIGE_UNLOCK).toBe(1e8);
+    // 有转生点后门槛提高
+    const p3 = { ...initialState(), prestige: 3 };
+    expect(prestigeThreshold(p3)).toBeCloseTo(1e8 * 3.25, 5);
     const s = gain(initialState(), 9e7);
     expect(canPrestige(s)).toBe(false);
     expect(prestigeGain(s)).toBe(0);
@@ -48,9 +51,10 @@ describe("离职再就业（转生层）", () => {
   it("历史累计跨转生累加（段位不倒退）", () => {
     let s = gain(initialState(), 2e8);
     const first = doPrestige(s)!;
-    s = gain(first.state, 1e8);
+    // 转生后门槛随倍率提高（1e8×M），需赚更多才能再转
+    s = gain(first.state, 4e8);
     const second = doPrestige(s)!;
-    expect(second.state.lifetimeEarned).toBe(3e8);
+    expect(second.state.lifetimeEarned).toBe(6e8);
     expect(second.state.prestige).toBe(first.state.prestige + second.gained);
   });
 

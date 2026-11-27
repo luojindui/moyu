@@ -1,3 +1,6 @@
 node_modules/
 dist/
 .DS_Store
+
+# 本地凭证（绝不提交）
+.secrets/
