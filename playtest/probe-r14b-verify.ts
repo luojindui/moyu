@@ -98,7 +98,10 @@ function actionValue(base: GameState, subset: EnergyAction[], p: Prof, visits: n
   const idleDelta = (effectOf(E).idleRate - effectOf(base).idleRate) * p.activeSeconds;
   const clickDelta = (clickPowerOf(E) - clickPowerOf(base)) * p.cps * p.combo * p.clickSeconds;
   const dispatchDelta = p.dispatch ? (dispatchRate(E) - dispatchRate(base)) * p.activeSeconds : 0;
-  const offlineDelta = offlineEarn(E, p.offlineSeconds, effRate).earned - offlineEarn(base, p.offlineSeconds, effRate).earned;
+  // 注意：P0-2 修复后，隔夜离线结算前会先重置精力 → 隔夜离线吃不到当日精力加成。
+  // 只有"同日内切后台再回来"的短离线能吃到，保守按 0 计（另存乐观值 offOpt 供参考）。
+  const offOpt = offlineEarn(E, p.offlineSeconds, effRate).earned - offlineEarn(base, p.offlineSeconds, effRate).earned;
+  const offlineDelta = 0;
   const patrolDelta = (bossSurviveReward(E, ES_BASE) - bossSurviveReward(base, ES_BASE)) * VARIANT_AVG * (p.activeSeconds / 120);
   // social 的好感：按"到 100 的终局日价值 / 剩余天数"摊薄
   let favor = 0;
@@ -115,6 +118,7 @@ function actionValue(base: GameState, subset: EnergyAction[], p: Prof, visits: n
       favor = (idleF + dispF + offF + memeF) / days;
     }
   }
+  void offOpt;
   return { idle: idleDelta, click: clickDelta, dispatch: dispatchDelta, offline: offlineDelta, patrol: patrolDelta, favor, total: idleDelta + clickDelta + dispatchDelta + offlineDelta + patrolDelta + favor };
 }
 
@@ -271,6 +275,14 @@ log("\n\n================ ③ 家具离线效率是否真生效 ================
   const stat0 = stationIdleScaled(mid);
   const expect = stat0 * 0.05 * 43200 * eBase;
   log(`  P2-1 复验（绿萝 +5% 工位在 12h 离线的增量）：实测=${sci(real)}，理论(吃满)=${sci(expect)} → ${fmt((real / expect) * 100, 1)}%`);
+  // 首日（建档 24h 内）离线效率直接返回 1.0，家具离线加成无效
+  {
+    const eDay1 = offlineEfficiency(mid, NOW - 3600_000, NOW);
+    const rugDay1 = withDecor(mid, "rug");
+    const eRugDay1 = offlineEfficiency(rugDay1, NOW - 3600_000, NOW);
+    const d1 = offlineEarn(rugDay1, 43200, eRugDay1).earned - offlineEarn(mid, 43200, eDay1).earned;
+    log(`  首日边界：建档 1h（<24h）时离线效率=${eDay1.toFixed(3)}，地毯后=${eRugDay1.toFixed(3)}，12h 离线增量=${sci(d1)}（地毯/按摩椅的离线部分在首日完全无效）`);
+  }
   // 集齐 8 件
   const all = withDecor(mid, ...DECOR.map((d) => d.id));
   const idleAll = effectOf(all).idleRate / effectOf(mid).idleRate;

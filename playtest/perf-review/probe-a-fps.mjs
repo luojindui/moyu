@@ -42,7 +42,9 @@ const T0 = Date.now();
 
 await runChrome(async ({ port }) => {
   const c = await connect(port);
-  const send = c.send, ev = c.ev;
+  const send = c.send;
+  const rawEv = c.ev;
+  const ev = (expr) => Promise.race([rawEv(expr), new Promise((r) => setTimeout(() => r({ __timeout: true }), 8000))]);
   log("connected");
   await send("Page.enable");
   await send("Runtime.enable");

@@ -1,0 +1,443 @@
+{
+ "dev": {
+  "startup": {
+   "readyAtMs_node": 97,
+   "moyuReadyMs_node": 97,
+   "ttfb": 4.2,
+   "domInteractive": 10.8,
+   "domContentLoaded": 86.9,
+   "loadEventEnd": 98.8,
+   "firstRafAt": 87.60000038146973,
+   "firstDrawAt": 88.19999980926514,
+   "fcp": 48,
+   "transfer": 7398,
+   "resources": 50,
+   "bootToMoyu": null
+  },
+  "tapsTotal": 0,
+  "idle": {
+   "rafPerSec": 60,
+   "drawPerSec": 4560,
+   "fps": 60,
+   "appFrames": 374,
+   "rafActiveEnd": 1,
+   "si": 2,
+   "st": 7,
+   "textsEnd": 0,
+   "taps": 0,
+   "longtasks": 0,
+   "frameGaps": {
+    "n": 301,
+    "avg": 16.7,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 16.8,
+    "max": 16.8,
+    "over33": 0,
+    "over50": 0
+   }
+  },
+  "click8": {
+   "rafPerSec": 58.8,
+   "drawPerSec": 5827.8,
+   "fps": 60,
+   "appFrames": 669,
+   "rafActiveEnd": 1,
+   "si": 3,
+   "st": 0,
+   "textsEnd": 6,
+   "taps": 40,
+   "longtasks": 1,
+   "frameGaps": {
+    "n": 294,
+    "avg": 17,
+    "p50": 16.7,
+    "p95": 16.7,
+    "p99": 16.8,
+    "max": 100,
+    "over33": 1,
+    "over50": 1
+   }
+  },
+  "click20": {
+   "rafPerSec": 60,
+   "drawPerSec": 6369,
+   "fps": 60,
+   "appFrames": 969,
+   "rafActiveEnd": 1,
+   "si": 3,
+   "st": 1,
+   "textsEnd": 6,
+   "taps": 139,
+   "longtasks": 0,
+   "frameGaps": {
+    "n": 301,
+    "avg": 16.7,
+    "p50": 16.7,
+    "p95": 16.7,
+    "p99": 16.8,
+    "max": 16.8,
+    "over33": 0,
+    "over50": 0
+   }
+  },
+  "journalOPEN": {
+   "rafPerSec": -202,
+   "drawPerSec": -19387.3,
+   "fps": 60,
+   "appFrames": 210,
+   "rafActiveEnd": 1,
+   "si": 2,
+   "st": 7,
+   "textsEnd": 0,
+   "taps": 0,
+   "longtasks": -1,
+   "frameGaps": null
+  },
+  "teamOPEN": {
+   "rafPerSec": 60,
+   "drawPerSec": 4560,
+   "fps": 60,
+   "appFrames": 481,
+   "rafActiveEnd": 1,
+   "si": 3,
+   "st": 0,
+   "textsEnd": 0,
+   "taps": 0,
+   "longtasks": 0,
+   "frameGaps": {
+    "n": 240,
+    "avg": 16.7,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 16.8,
+    "max": 16.8,
+    "over33": 0,
+    "over50": 0
+   }
+  },
+  "arcadeOPEN": {
+   "rafPerSec": 60,
+   "drawPerSec": 4560,
+   "fps": 60,
+   "appFrames": 751,
+   "rafActiveEnd": 1,
+   "si": 2,
+   "st": 0,
+   "textsEnd": 0,
+   "taps": 0,
+   "longtasks": 0,
+   "frameGaps": {
+    "n": 240,
+    "avg": 16.7,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 16.8,
+    "max": 16.8,
+    "over33": 0,
+    "over50": 0
+   }
+  },
+  "cpu_idle": [
+   {
+    "k": "(idle) @ ",
+    "ms": 4147.4
+   },
+   {
+    "k": "(program) @ ",
+    "ms": 826.6
+   },
+   {
+    "k": "draw @ /src/render/scene.ts",
+    "ms": 7.9
+   },
+   {
+    "k": "R @ /src/render/scene.ts",
+    "ms": 5.6
+   },
+   {
+    "k": "fillText @ ",
+    "ms": 4.3
+   },
+   {
+    "k": "today @ /src/main.ts",
+    "ms": 4.2
+   },
+   {
+    "k": "frame @ /src/main.ts",
+    "ms": 4.1
+   },
+   {
+    "k": "fillRect @ ",
+    "ms": 3.8
+   },
+   {
+    "k": "drawImage @ ",
+    "ms": 3.2
+   },
+   {
+    "k": "(garbage collector) @ ",
+    "ms": 2.9
+   },
+   {
+    "k": "tick @ ",
+    "ms": 2.8
+   },
+   {
+    "k": "refresh @ /src/ui/shop.ts",
+    "ms": 1.8
+   },
+   {
+    "k": "fill @ ",
+    "ms": 1.6
+   },
+   {
+    "k": "proto.fillRect @ ",
+    "ms": 1.3
+   },
+   {
+    "k": "update @ /src/render/fx.ts",
+    "ms": 1.3
+   },
+   {
+    "k": "querySelector @ ",
+    "ms": 1.3
+   },
+   {
+    "k": "refresh @ /src/ui/hud.ts",
+    "ms": 1.2
+   },
+   {
+    "k": "tick @ /src/ui/quest.ts",
+    "ms": 0.9
+   },
+   {
+    "k": "requestAnimationFrame @ ",
+    "ms": 0.9
+   },
+   {
+    "k": "contains @ ",
+    "ms": 0.9
+   },
+   {
+    "k": "effectOf @ /src/engine/upgrades.ts",
+    "ms": 0.6
+   },
+   {
+    "k": "stroke @ ",
+    "ms": 0.6
+   }
+  ],
+  "cpu_journalOpen": [
+   {
+    "k": "(idle) @ ",
+    "ms": 722.2
+   },
+   {
+    "k": "(program) @ ",
+    "ms": 88.1
+   },
+   {
+    "k": "frame @ /src/main.ts",
+    "ms": 6.8
+   },
+   {
+    "k": "draw @ /src/render/scene.ts",
+    "ms": 2.2
+   },
+   {
+    "k": "fillText @ ",
+    "ms": 2
+   },
+   {
+    "k": "tick @ ",
+    "ms": 1.4
+   },
+   {
+    "k": "setTransform @ ",
+    "ms": 1.3
+   },
+   {
+    "k": "refresh @ /src/ui/shop.ts",
+    "ms": 1.3
+   },
+   {
+    "k": "fit @ /src/main.ts",
+    "ms": 1.2
+   },
+   {
+    "k": "boot @ /src/main.ts",
+    "ms": 1.2
+   },
+   {
+    "k": "(garbage collector) @ ",
+    "ms": 1.2
+   },
+   {
+    "k": "R @ /src/render/scene.ts",
+    "ms": 0.9
+   },
+   {
+    "k": "(anonymous) @ /src/main.ts",
+    "ms": 0.8
+   },
+   {
+    "k": "frameActivity @ /src/render/sprites.ts",
+    "ms": 0.7
+   },
+   {
+    "k": "drawImage @ ",
+    "ms": 0.6
+   },
+   {
+    "k": "appendChild @ ",
+    "ms": 0.5
+   },
+   {
+    "k": "tick @ /src/ui/quest.ts",
+    "ms": 0.5
+   },
+   {
+    "k": "normalizeModuleRunnerTransport @ /@vite/client",
+    "ms": 0.5
+   },
+   {
+    "k": "connect @ /@vite/client",
+    "ms": 0.4
+   },
+   {
+    "k": "persist @ ",
+    "ms": 0.4
+   },
+   {
+    "k": "load @ /src/main.ts",
+    "ms": 0.3
+   },
+   {
+    "k": "scheduleEvents @ /src/engine/events.ts",
+    "ms": 0.3
+   }
+  ],
+  "cpu_shopDOM": [
+   {
+    "k": "(idle) @ ",
+    "ms": 4512.5
+   },
+   {
+    "k": "(program) @ ",
+    "ms": 469.1
+   },
+   {
+    "k": "frame @ /src/main.ts",
+    "ms": 3.7
+   },
+   {
+    "k": "refresh @ /src/ui/shop.ts",
+    "ms": 2.4
+   },
+   {
+    "k": "R @ /src/render/scene.ts",
+    "ms": 2.2
+   },
+   {
+    "k": "draw @ /src/render/scene.ts",
+    "ms": 1.8
+   },
+   {
+    "k": "fillText @ ",
+    "ms": 1.5
+   },
+   {
+    "k": "drawImage @ ",
+    "ms": 1.2
+   },
+   {
+    "k": "(garbage collector) @ ",
+    "ms": 1
+   },
+   {
+    "k": "getElementById @ ",
+    "ms": 1
+   },
+   {
+    "k": "fillRect @ ",
+    "ms": 0.9
+   },
+   {
+    "k": "update @ /src/render/fx.ts",
+    "ms": 0.9
+   },
+   {
+    "k": "teamShareRatio @ /src/engine/team.ts",
+    "ms": 0.9
+   },
+   {
+    "k": "effectOf @ /src/engine/upgrades.ts",
+    "ms": 0.9
+   },
+   {
+    "k": "proto.fillRect @ ",
+    "ms": 0.9
+   },
+   {
+    "k": "arc @ ",
+    "ms": 0.8
+   },
+   {
+    "k": "today @ /src/main.ts",
+    "ms": 0.6
+   },
+   {
+    "k": "refresh @ /src/ui/hud.ts",
+    "ms": 0.6
+   },
+   {
+    "k": "tick @ ",
+    "ms": 0.6
+   },
+   {
+    "k": "flavorFor @ /src/engine/flavor.ts",
+    "ms": 0.4
+   },
+   {
+    "k": "favorTier @ /src/engine/team.ts",
+    "ms": 0.3
+   },
+   {
+    "k": "chapterFor @ /src/engine/story.ts",
+    "ms": 0.3
+   }
+  ],
+  "minigameCoffee": {
+   "rafActive": 2,
+   "elapsed": 2.5,
+   "rafPerSec": 120.4
+  },
+  "afterMinigame": {
+   "rafTotal": 724,
+   "rafActive": 1,
+   "draw": 43579,
+   "gapsLen": 574,
+   "fps": 60,
+   "frames": 571,
+   "si": 2,
+   "st": 1,
+   "longtasks": 0,
+   "texts": 0,
+   "taps": 0
+  }
+ },
+ "errors": [],
+ "meta": {
+  "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.0.0 Safari/537.36",
+  "dpr": 3,
+  "canvasW": 1170,
+  "canvasH": 1656,
+  "cssW": 390,
+  "cssH": 552,
+  "mem": {
+   "used": 3508199,
+   "total": 6476623
+  }
+ }
+}

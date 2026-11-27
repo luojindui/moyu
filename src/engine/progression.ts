@@ -28,7 +28,14 @@ export function ensureVisits(state: GameState, nowMs: number): GameState {
 
 /** 当前离线效率：首日 1.0；之后 0.7 + 回访加成 + streak 加成，封顶 1.0 */
 export function offlineEfficiency(state: GameState, createdAtMs: number, nowMs: number): number {
-  if (nowMs - createdAtMs < FIRST_DAY_MS) return 1;
+  // 首日：基础效率本就 100%，但家具/天赋/卡的加成仍应生效（否则首日买的地毯完全白买）
+  const firstDayRaise =
+    talentEffects(state.talents).offlineBaseBonus +
+    talentEffects(state.talents).offlineEfficiencyBonus +
+    decorEffects(state).offlineBonus +
+    cardEffects(state, Date.now()).offlineBonus -
+    cardEffects(state, Date.now()).riskPenalty;
+  if (nowMs - createdAtMs < FIRST_DAY_MS) return 1 + Math.max(0, firstDayRaise);
   const visits = Math.min(state.visits.count, VISIT_BONUS_MAX_VISITS);
   const streakDays = state.daily?.streak ?? 0;
   const streakBonus = Math.min(STREAK_BONUS_MAX, STREAK_BONUS_STEP * Math.floor(streakDays / STREAK_BONUS_DAYS));

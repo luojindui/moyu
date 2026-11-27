@@ -1,0 +1,1592 @@
+{
+  "1920x1080": {
+    "viewport": {
+      "label": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "dsf": 1,
+      "mobile": false
+    },
+    "decor": [
+      "plant",
+      "lamp",
+      "rug",
+      "fridge",
+      "chair",
+      "aquarium",
+      "projector",
+      "catbed"
+    ],
+    "geo": {
+      "canvasCss": {
+        "w": 900,
+        "h": 861
+      },
+      "stagePx": {
+        "w": 900,
+        "h": 861
+      },
+      "scale": 6,
+      "dpr": 1,
+      "vw": 150,
+      "vh": 143.5,
+      "groundY": 76.3,
+      "shortView": true,
+      "furniture": {
+        "plant": {
+          "x": 96,
+          "y": 208.2,
+          "w": 129.6,
+          "h": 249.6
+        },
+        "lamp": {
+          "x": 238.8,
+          "y": 93,
+          "w": 172.8,
+          "h": 211.2
+        },
+        "rug": {
+          "x": 152.4,
+          "y": 563.4,
+          "w": 595.2,
+          "h": 144
+        },
+        "fridge": {
+          "x": 0,
+          "y": 256.2,
+          "w": 96,
+          "h": 201.6
+        },
+        "chair": {
+          "x": 594,
+          "y": 246.6,
+          "w": 129.6,
+          "h": 163.2
+        },
+        "aquarium": {
+          "x": 230.9,
+          "y": 48,
+          "w": 170.9,
+          "h": 144
+        },
+        "projector": {
+          "x": 512.4,
+          "y": 14.4,
+          "w": 201.6,
+          "h": 168
+        },
+        "catbed": {
+          "x": 392.4,
+          "y": 381,
+          "w": 144,
+          "h": 76.8
+        }
+      },
+      "props": {
+        "window": {
+          "x": 120,
+          "y": 100.8,
+          "w": 412.8,
+          "h": 297.6
+        },
+        "clock": {
+          "x": 648.5,
+          "y": 122.9,
+          "w": 138.2,
+          "h": 138.2
+        },
+        "board": {
+          "x": 525.6,
+          "y": 35.4,
+          "w": 240,
+          "h": 153.6
+        },
+        "cooler": {
+          "x": 717.6,
+          "y": 357,
+          "w": 96,
+          "h": 96
+        },
+        "pendant": {
+          "x": 363.6,
+          "y": 96,
+          "w": 172.8,
+          "h": 40.3
+        },
+        "desk": {
+          "x": 248.4,
+          "y": 265.8,
+          "w": 403.2,
+          "h": 48
+        },
+        "rugZone": {
+          "x": 152.4,
+          "y": 563.4,
+          "w": 595.2,
+          "h": 144
+        }
+      },
+      "clipped": {},
+      "overlaps": [
+        {
+          "a": "lamp",
+          "b": "window",
+          "w": 172.8,
+          "h": 203.4,
+          "area": 35148,
+          "pctOfFurniture": 96.3
+        },
+        {
+          "a": "projector",
+          "b": "board",
+          "w": 188.4,
+          "h": 147,
+          "area": 27695,
+          "pctOfFurniture": 81.8
+        },
+        {
+          "a": "plant",
+          "b": "window",
+          "w": 105.6,
+          "h": 190.2,
+          "area": 20085,
+          "pctOfFurniture": 62.1
+        },
+        {
+          "a": "lamp",
+          "b": "aquarium",
+          "w": 163,
+          "h": 99,
+          "area": 16137,
+          "pctOfA": 44.2
+        },
+        {
+          "a": "aquarium",
+          "b": "window",
+          "w": 170.9,
+          "h": 91.2,
+          "area": 15586,
+          "pctOfFurniture": 63.3
+        },
+        {
+          "a": "lamp",
+          "b": "desk",
+          "w": 163.2,
+          "h": 38.4,
+          "area": 6267,
+          "pctOfFurniture": 17.2
+        },
+        {
+          "a": "projector",
+          "b": "clock",
+          "w": 65.5,
+          "h": 59.5,
+          "area": 3897,
+          "pctOfFurniture": 11.5
+        },
+        {
+          "a": "chair",
+          "b": "desk",
+          "w": 57.6,
+          "h": 48,
+          "area": 2765,
+          "pctOfFurniture": 13.1
+        },
+        {
+          "a": "catbed",
+          "b": "window",
+          "w": 140.4,
+          "h": 17.4,
+          "area": 2443,
+          "pctOfFurniture": 22.1
+        },
+        {
+          "a": "lamp",
+          "b": "pendant",
+          "w": 48,
+          "h": 40.3,
+          "area": 1934,
+          "pctOfFurniture": 5.3
+        },
+        {
+          "a": "projector",
+          "b": "window",
+          "w": 20.4,
+          "h": 81.6,
+          "area": 1665,
+          "pctOfFurniture": 4.9
+        },
+        {
+          "a": "aquarium",
+          "b": "pendant",
+          "w": 38.2,
+          "h": 40.3,
+          "area": 1539,
+          "pctOfFurniture": 6.3
+        },
+        {
+          "a": "chair",
+          "b": "clock",
+          "w": 75.1,
+          "h": 14.5,
+          "area": 1089,
+          "pctOfFurniture": 5.1
+        },
+        {
+          "a": "projector",
+          "b": "pendant",
+          "w": 24,
+          "h": 40.3,
+          "area": 967,
+          "pctOfFurniture": 2.9
+        },
+        {
+          "a": "chair",
+          "b": "cooler",
+          "w": 6,
+          "h": 52.8,
+          "area": 317,
+          "pctOfFurniture": 1.5
+        }
+      ]
+    },
+    "panelSummary": "已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23%",
+    "hud": {
+      "idle": "0.3",
+      "click": "1.3"
+    },
+    "errors": []
+  },
+  "1440x900": {
+    "viewport": {
+      "label": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "dsf": 1,
+      "mobile": false
+    },
+    "decor": [
+      "plant",
+      "lamp",
+      "rug",
+      "fridge",
+      "chair",
+      "aquarium",
+      "projector",
+      "catbed"
+    ],
+    "geo": {
+      "canvasCss": {
+        "w": 900,
+        "h": 681
+      },
+      "stagePx": {
+        "w": 900,
+        "h": 681
+      },
+      "scale": 5,
+      "dpr": 1,
+      "vw": 180,
+      "vh": 136.2,
+      "groundY": 69,
+      "shortView": true,
+      "furniture": {
+        "plant": {
+          "x": 80,
+          "y": 137,
+          "w": 108,
+          "h": 208
+        },
+        "lamp": {
+          "x": 274,
+          "y": 41,
+          "w": 144,
+          "h": 176
+        },
+        "rug": {
+          "x": 202,
+          "y": 433,
+          "w": 496,
+          "h": 120
+        },
+        "fridge": {
+          "x": 0,
+          "y": 177,
+          "w": 80,
+          "h": 168
+        },
+        "chair": {
+          "x": 570,
+          "y": 169,
+          "w": 108,
+          "h": 136
+        },
+        "aquarium": {
+          "x": 342.4,
+          "y": 40,
+          "w": 142.4,
+          "h": 120
+        },
+        "projector": {
+          "x": 502,
+          "y": 12,
+          "w": 168,
+          "h": 140
+        },
+        "catbed": {
+          "x": 402,
+          "y": 281,
+          "w": 120,
+          "h": 64
+        }
+      },
+      "props": {
+        "window": {
+          "x": 100,
+          "y": 84,
+          "w": 344,
+          "h": 248
+        },
+        "clock": {
+          "x": 690.4,
+          "y": 102.4,
+          "w": 115.2,
+          "h": 115.2
+        },
+        "board": {
+          "x": 588,
+          "y": -7,
+          "w": 200,
+          "h": 128
+        },
+        "cooler": {
+          "x": 748,
+          "y": 261,
+          "w": 80,
+          "h": 80
+        },
+        "pendant": {
+          "x": 378,
+          "y": 80,
+          "w": 144,
+          "h": 33.6
+        },
+        "desk": {
+          "x": 282,
+          "y": 185,
+          "w": 336,
+          "h": 40
+        },
+        "rugZone": {
+          "x": 202,
+          "y": 433,
+          "w": 496,
+          "h": 120
+        }
+      },
+      "clipped": {},
+      "overlaps": [
+        {
+          "a": "lamp",
+          "b": "window",
+          "w": 144,
+          "h": 133,
+          "area": 19152,
+          "pctOfFurniture": 75.6
+        },
+        {
+          "a": "plant",
+          "b": "window",
+          "w": 88,
+          "h": 195,
+          "area": 17160,
+          "pctOfFurniture": 76.4
+        },
+        {
+          "a": "lamp",
+          "b": "aquarium",
+          "w": 75.6,
+          "h": 119,
+          "area": 8996,
+          "pctOfA": 35.5
+        },
+        {
+          "a": "projector",
+          "b": "board",
+          "w": 82,
+          "h": 109,
+          "area": 8938,
+          "pctOfFurniture": 38
+        },
+        {
+          "a": "aquarium",
+          "b": "window",
+          "w": 101.6,
+          "h": 76,
+          "area": 7722,
+          "pctOfFurniture": 45.2
+        },
+        {
+          "a": "lamp",
+          "b": "desk",
+          "w": 136,
+          "h": 32,
+          "area": 4352,
+          "pctOfFurniture": 17.2
+        },
+        {
+          "a": "aquarium",
+          "b": "pendant",
+          "w": 106.8,
+          "h": 33.6,
+          "area": 3588,
+          "pctOfFurniture": 21
+        },
+        {
+          "a": "catbed",
+          "b": "window",
+          "w": 42,
+          "h": 51,
+          "area": 2142,
+          "pctOfFurniture": 27.9
+        },
+        {
+          "a": "chair",
+          "b": "desk",
+          "w": 48,
+          "h": 40,
+          "area": 1920,
+          "pctOfFurniture": 13.1
+        },
+        {
+          "a": "lamp",
+          "b": "pendant",
+          "w": 40,
+          "h": 33.6,
+          "area": 1344,
+          "pctOfFurniture": 5.3
+        },
+        {
+          "a": "projector",
+          "b": "pendant",
+          "w": 20,
+          "h": 33.6,
+          "area": 672,
+          "pctOfFurniture": 2.9
+        }
+      ]
+    },
+    "panelSummary": "已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23%",
+    "hud": {
+      "idle": "0.3",
+      "click": "1.3"
+    },
+    "errors": []
+  },
+  "1280x800": {
+    "viewport": {
+      "label": "1280x800",
+      "width": 1280,
+      "height": 800,
+      "dsf": 1,
+      "mobile": false
+    },
+    "decor": [
+      "plant",
+      "lamp",
+      "rug",
+      "fridge",
+      "chair",
+      "aquarium",
+      "projector",
+      "catbed"
+    ],
+    "geo": {
+      "canvasCss": {
+        "w": 900,
+        "h": 581
+      },
+      "stagePx": {
+        "w": 900,
+        "h": 581
+      },
+      "scale": 4,
+      "dpr": 1,
+      "vw": 225,
+      "vh": 145.3,
+      "groundY": 78,
+      "shortView": true,
+      "furniture": {
+        "plant": {
+          "x": 64,
+          "y": 145.8,
+          "w": 86.4,
+          "h": 166.4
+        },
+        "lamp": {
+          "x": 309.2,
+          "y": 69,
+          "w": 115.2,
+          "h": 140.8
+        },
+        "rug": {
+          "x": 251.6,
+          "y": 382.6,
+          "w": 396.8,
+          "h": 96
+        },
+        "fridge": {
+          "x": 0,
+          "y": 177.8,
+          "w": 64,
+          "h": 134.4
+        },
+        "chair": {
+          "x": 546,
+          "y": 171.4,
+          "w": 86.4,
+          "h": 108.8
+        },
+        "aquarium": {
+          "x": 453.9,
+          "y": 32,
+          "w": 113.9,
+          "h": 96
+        },
+        "projector": {
+          "x": 491.6,
+          "y": 9.6,
+          "w": 134.4,
+          "h": 112
+        },
+        "catbed": {
+          "x": 411.6,
+          "y": 261,
+          "w": 96,
+          "h": 51.2
+        }
+      },
+      "props": {
+        "window": {
+          "x": 80,
+          "y": 67.2,
+          "w": 275.2,
+          "h": 198.4
+        },
+        "clock": {
+          "x": 732.3,
+          "y": 81.9,
+          "w": 92.2,
+          "h": 92.2
+        },
+        "board": {
+          "x": 650.4,
+          "y": 30.6,
+          "w": 160,
+          "h": 102.4
+        },
+        "cooler": {
+          "x": 778.4,
+          "y": 245,
+          "w": 64,
+          "h": 64
+        },
+        "pendant": {
+          "x": 392.4,
+          "y": 64,
+          "w": 115.2,
+          "h": 26.9
+        },
+        "desk": {
+          "x": 315.6,
+          "y": 184.2,
+          "w": 268.8,
+          "h": 32
+        },
+        "rugZone": {
+          "x": 251.6,
+          "y": 382.6,
+          "w": 396.8,
+          "h": 96
+        }
+      },
+      "clipped": {},
+      "overlaps": [
+        {
+          "a": "plant",
+          "b": "window",
+          "w": 70.4,
+          "h": 119.8,
+          "area": 8434,
+          "pctOfFurniture": 58.7
+        },
+        {
+          "a": "aquarium",
+          "b": "projector",
+          "w": 76.2,
+          "h": 89.6,
+          "area": 6828,
+          "pctOfA": 62.4
+        },
+        {
+          "a": "lamp",
+          "b": "window",
+          "w": 46,
+          "h": 140.8,
+          "area": 6477,
+          "pctOfFurniture": 39.9
+        },
+        {
+          "a": "lamp",
+          "b": "desk",
+          "w": 108.8,
+          "h": 25.6,
+          "area": 2785,
+          "pctOfFurniture": 17.2
+        },
+        {
+          "a": "aquarium",
+          "b": "pendant",
+          "w": 53.7,
+          "h": 26.9,
+          "area": 1445,
+          "pctOfFurniture": 13.2
+        },
+        {
+          "a": "chair",
+          "b": "desk",
+          "w": 38.4,
+          "h": 32,
+          "area": 1229,
+          "pctOfFurniture": 13.1
+        },
+        {
+          "a": "lamp",
+          "b": "pendant",
+          "w": 32,
+          "h": 21.9,
+          "area": 701,
+          "pctOfFurniture": 4.3
+        },
+        {
+          "a": "projector",
+          "b": "pendant",
+          "w": 16,
+          "h": 26.9,
+          "area": 430,
+          "pctOfFurniture": 2.9
+        }
+      ]
+    },
+    "panelSummary": "已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23%",
+    "hud": {
+      "idle": "0.3",
+      "click": "1.3"
+    },
+    "errors": []
+  },
+  "1024x768": {
+    "viewport": {
+      "label": "1024x768",
+      "width": 1024,
+      "height": 768,
+      "dsf": 1,
+      "mobile": true
+    },
+    "decor": [
+      "plant",
+      "lamp",
+      "rug",
+      "fridge",
+      "chair",
+      "aquarium",
+      "projector",
+      "catbed"
+    ],
+    "geo": {
+      "canvasCss": {
+        "w": 900,
+        "h": 549
+      },
+      "stagePx": {
+        "w": 900,
+        "h": 549
+      },
+      "scale": 4,
+      "dpr": 1,
+      "vw": 225,
+      "vh": 137.3,
+      "groundY": 70,
+      "shortView": true,
+      "furniture": {
+        "plant": {
+          "x": 64,
+          "y": 113.8,
+          "w": 86.4,
+          "h": 166.4
+        },
+        "lamp": {
+          "x": 309.2,
+          "y": 37,
+          "w": 115.2,
+          "h": 140.8
+        },
+        "rug": {
+          "x": 251.6,
+          "y": 350.6,
+          "w": 396.8,
+          "h": 96
+        },
+        "fridge": {
+          "x": 0,
+          "y": 145.8,
+          "w": 64,
+          "h": 134.4
+        },
+        "chair": {
+          "x": 546,
+          "y": 139.4,
+          "w": 86.4,
+          "h": 108.8
+        },
+        "aquarium": {
+          "x": 453.9,
+          "y": 32,
+          "w": 113.9,
+          "h": 96
+        },
+        "projector": {
+          "x": 491.6,
+          "y": 9.6,
+          "w": 134.4,
+          "h": 112
+        },
+        "catbed": {
+          "x": 411.6,
+          "y": 229,
+          "w": 96,
+          "h": 51.2
+        }
+      },
+      "props": {
+        "window": {
+          "x": 80,
+          "y": 67.2,
+          "w": 275.2,
+          "h": 198.4
+        },
+        "clock": {
+          "x": 732.3,
+          "y": 81.9,
+          "w": 92.2,
+          "h": 92.2
+        },
+        "board": {
+          "x": 650.4,
+          "y": -1.4,
+          "w": 160,
+          "h": 102.4
+        },
+        "cooler": {
+          "x": 778.4,
+          "y": 213,
+          "w": 64,
+          "h": 64
+        },
+        "pendant": {
+          "x": 392.4,
+          "y": 64,
+          "w": 115.2,
+          "h": 26.9
+        },
+        "desk": {
+          "x": 315.6,
+          "y": 152.2,
+          "w": 268.8,
+          "h": 32
+        },
+        "rugZone": {
+          "x": 251.6,
+          "y": 350.6,
+          "w": 396.8,
+          "h": 96
+        }
+      },
+      "clipped": {},
+      "overlaps": [
+        {
+          "a": "plant",
+          "b": "window",
+          "w": 70.4,
+          "h": 151.8,
+          "area": 10687,
+          "pctOfFurniture": 74.3
+        },
+        {
+          "a": "aquarium",
+          "b": "projector",
+          "w": 76.2,
+          "h": 89.6,
+          "area": 6828,
+          "pctOfA": 62.4
+        },
+        {
+          "a": "lamp",
+          "b": "window",
+          "w": 46,
+          "h": 110.6,
+          "area": 5088,
+          "pctOfFurniture": 31.4
+        },
+        {
+          "a": "lamp",
+          "b": "desk",
+          "w": 108.8,
+          "h": 25.6,
+          "area": 2785,
+          "pctOfFurniture": 17.2
+        },
+        {
+          "a": "aquarium",
+          "b": "pendant",
+          "w": 53.7,
+          "h": 26.9,
+          "area": 1445,
+          "pctOfFurniture": 13.2
+        },
+        {
+          "a": "chair",
+          "b": "desk",
+          "w": 38.4,
+          "h": 32,
+          "area": 1229,
+          "pctOfFurniture": 13.1
+        },
+        {
+          "a": "lamp",
+          "b": "pendant",
+          "w": 32,
+          "h": 26.9,
+          "area": 861,
+          "pctOfFurniture": 5.3
+        },
+        {
+          "a": "projector",
+          "b": "pendant",
+          "w": 16,
+          "h": 26.9,
+          "area": 430,
+          "pctOfFurniture": 2.9
+        }
+      ]
+    },
+    "panelSummary": "已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23%",
+    "hud": {
+      "idle": "0.3",
+      "click": "1.3"
+    },
+    "errors": []
+  },
+  "768x1024": {
+    "viewport": {
+      "label": "768x1024",
+      "width": 768,
+      "height": 1024,
+      "dsf": 1,
+      "mobile": true
+    },
+    "decor": [
+      "plant",
+      "lamp",
+      "rug",
+      "fridge",
+      "chair",
+      "aquarium",
+      "projector",
+      "catbed"
+    ],
+    "geo": {
+      "canvasCss": {
+        "w": 768,
+        "h": 805
+      },
+      "stagePx": {
+        "w": 768,
+        "h": 805
+      },
+      "scale": 6,
+      "dpr": 1,
+      "vw": 128,
+      "vh": 134.2,
+      "groundY": 67,
+      "shortView": true,
+      "furniture": {
+        "plant": {
+          "x": 96,
+          "y": 152.2,
+          "w": 129.6,
+          "h": 249.6
+        },
+        "lamp": {
+          "x": 172.8,
+          "y": 37,
+          "w": 172.8,
+          "h": 211.2
+        },
+        "rug": {
+          "x": 86.4,
+          "y": 507.4,
+          "w": 595.2,
+          "h": 144
+        },
+        "fridge": {
+          "x": 0,
+          "y": 200.2,
+          "w": 96,
+          "h": 201.6
+        },
+        "chair": {
+          "x": 528,
+          "y": 190.6,
+          "w": 129.6,
+          "h": 163.2
+        },
+        "aquarium": {
+          "x": 98.9,
+          "y": 48,
+          "w": 170.9,
+          "h": 144
+        },
+        "projector": {
+          "x": 446.4,
+          "y": 14.4,
+          "w": 201.6,
+          "h": 168
+        },
+        "catbed": {
+          "x": 326.4,
+          "y": 325,
+          "w": 144,
+          "h": 76.8
+        }
+      },
+      "props": {
+        "window": {
+          "x": 120,
+          "y": 100.8,
+          "w": 412.8,
+          "h": 297.6
+        },
+        "clock": {
+          "x": 516.5,
+          "y": 122.9,
+          "w": 138.2,
+          "h": 138.2
+        },
+        "board": {
+          "x": 393.6,
+          "y": -20.6,
+          "w": 240,
+          "h": 153.6
+        },
+        "cooler": {
+          "x": 585.6,
+          "y": 301,
+          "w": 96,
+          "h": 96
+        },
+        "pendant": {
+          "x": 297.6,
+          "y": 96,
+          "w": 172.8,
+          "h": 40.3
+        },
+        "desk": {
+          "x": 182.4,
+          "y": 209.8,
+          "w": 403.2,
+          "h": 48
+        },
+        "rugZone": {
+          "x": 86.4,
+          "y": 507.4,
+          "w": 595.2,
+          "h": 144
+        }
+      },
+      "clipped": {},
+      "overlaps": [
+        {
+          "a": "plant",
+          "b": "window",
+          "w": 105.6,
+          "h": 246.2,
+          "area": 25999,
+          "pctOfFurniture": 80.4
+        },
+        {
+          "a": "lamp",
+          "b": "window",
+          "w": 172.8,
+          "h": 147.4,
+          "area": 25471,
+          "pctOfFurniture": 69.8
+        },
+        {
+          "a": "projector",
+          "b": "board",
+          "w": 187.2,
+          "h": 118.6,
+          "area": 22202,
+          "pctOfFurniture": 65.6
+        },
+        {
+          "a": "lamp",
+          "b": "aquarium",
+          "w": 97,
+          "h": 144,
+          "area": 13968,
+          "pctOfA": 38.3
+        },
+        {
+          "a": "aquarium",
+          "b": "window",
+          "w": 149.8,
+          "h": 91.2,
+          "area": 13662,
+          "pctOfFurniture": 55.5
+        },
+        {
+          "a": "catbed",
+          "b": "window",
+          "w": 144,
+          "h": 73.4,
+          "area": 10570,
+          "pctOfFurniture": 95.6
+        },
+        {
+          "a": "chair",
+          "b": "clock",
+          "w": 126.7,
+          "h": 70.5,
+          "area": 8932,
+          "pctOfFurniture": 42.2
+        },
+        {
+          "a": "projector",
+          "b": "clock",
+          "w": 131.5,
+          "h": 59.5,
+          "area": 7824,
+          "pctOfFurniture": 23.1
+        },
+        {
+          "a": "projector",
+          "b": "window",
+          "w": 86.4,
+          "h": 81.6,
+          "area": 7050,
+          "pctOfFurniture": 20.8
+        },
+        {
+          "a": "lamp",
+          "b": "desk",
+          "w": 163.2,
+          "h": 38.4,
+          "area": 6267,
+          "pctOfFurniture": 17.2
+        },
+        {
+          "a": "plant",
+          "b": "lamp",
+          "w": 52.8,
+          "h": 96,
+          "area": 5069,
+          "pctOfA": 15.7
+        },
+        {
+          "a": "plant",
+          "b": "aquarium",
+          "w": 126.7,
+          "h": 39.8,
+          "area": 5043,
+          "pctOfA": 15.6
+        },
+        {
+          "a": "chair",
+          "b": "cooler",
+          "w": 72,
+          "h": 52.8,
+          "area": 3802,
+          "pctOfFurniture": 18
+        },
+        {
+          "a": "chair",
+          "b": "desk",
+          "w": 57.6,
+          "h": 48,
+          "area": 2765,
+          "pctOfFurniture": 13.1
+        },
+        {
+          "a": "plant",
+          "b": "desk",
+          "w": 43.2,
+          "h": 48,
+          "area": 2074,
+          "pctOfFurniture": 6.4
+        },
+        {
+          "a": "lamp",
+          "b": "pendant",
+          "w": 48,
+          "h": 40.3,
+          "area": 1934,
+          "pctOfFurniture": 5.3
+        },
+        {
+          "a": "projector",
+          "b": "pendant",
+          "w": 24,
+          "h": 40.3,
+          "area": 967,
+          "pctOfFurniture": 2.9
+        },
+        {
+          "a": "chair",
+          "b": "window",
+          "w": 4.8,
+          "h": 163.2,
+          "area": 783,
+          "pctOfFurniture": 3.7
+        }
+      ]
+    },
+    "panelSummary": "已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23%",
+    "hud": {
+      "idle": "0.3",
+      "click": "1.3"
+    },
+    "errors": []
+  },
+  "390x844": {
+    "viewport": {
+      "label": "390x844",
+      "width": 390,
+      "height": 844,
+      "dsf": 2,
+      "mobile": true
+    },
+    "decor": [
+      "plant",
+      "lamp",
+      "rug",
+      "fridge",
+      "chair",
+      "aquarium",
+      "projector",
+      "catbed"
+    ],
+    "geo": {
+      "canvasCss": {
+        "w": 390,
+        "h": 625
+      },
+      "stagePx": {
+        "w": 780,
+        "h": 1250
+      },
+      "scale": 3,
+      "dpr": 2,
+      "vw": 130,
+      "vh": 208.3,
+      "groundY": 141.1,
+      "shortView": false,
+      "furniture": {
+        "plant": {
+          "x": 96,
+          "y": 597.2,
+          "w": 129.6,
+          "h": 249.6
+        },
+        "lamp": {
+          "x": 178.8,
+          "y": 482,
+          "w": 172.8,
+          "h": 211.2
+        },
+        "rug": {
+          "x": 92.4,
+          "y": 952.4,
+          "w": 595.2,
+          "h": 144
+        },
+        "fridge": {
+          "x": 0,
+          "y": 645.2,
+          "w": 96,
+          "h": 201.6
+        },
+        "chair": {
+          "x": 534,
+          "y": 635.6,
+          "w": 129.6,
+          "h": 163.2
+        },
+        "aquarium": {
+          "x": 494.9,
+          "y": 251.6,
+          "w": 170.9,
+          "h": 144
+        },
+        "projector": {
+          "x": 452.4,
+          "y": 14.4,
+          "w": 201.6,
+          "h": 168
+        },
+        "catbed": {
+          "x": 332.4,
+          "y": 770,
+          "w": 144,
+          "h": 76.8
+        }
+      },
+      "props": {
+        "window": {
+          "x": 120,
+          "y": 100.8,
+          "w": 412.8,
+          "h": 297.6
+        },
+        "clock": {
+          "x": 528.5,
+          "y": 122.9,
+          "w": 138.2,
+          "h": 138.2
+        },
+        "board": {
+          "x": 405.6,
+          "y": 424.4,
+          "w": 240,
+          "h": 153.6
+        },
+        "cooler": {
+          "x": 597.6,
+          "y": 746,
+          "w": 96,
+          "h": 96
+        },
+        "pendant": {
+          "x": 303.6,
+          "y": 96,
+          "w": 172.8,
+          "h": 40.3
+        },
+        "desk": {
+          "x": 188.4,
+          "y": 654.8,
+          "w": 403.2,
+          "h": 48
+        },
+        "rugZone": {
+          "x": 92.4,
+          "y": 952.4,
+          "w": 595.2,
+          "h": 144
+        }
+      },
+      "clipped": {},
+      "overlaps": [
+        {
+          "a": "projector",
+          "b": "clock",
+          "w": 125.5,
+          "h": 59.5,
+          "area": 7467,
+          "pctOfFurniture": 22
+        },
+        {
+          "a": "projector",
+          "b": "window",
+          "w": 80.4,
+          "h": 81.6,
+          "area": 6561,
+          "pctOfFurniture": 19.4
+        },
+        {
+          "a": "lamp",
+          "b": "desk",
+          "w": 163.2,
+          "h": 38.4,
+          "area": 6267,
+          "pctOfFurniture": 17.2
+        },
+        {
+          "a": "aquarium",
+          "b": "window",
+          "w": 37.9,
+          "h": 144,
+          "area": 5458,
+          "pctOfFurniture": 22.2
+        },
+        {
+          "a": "plant",
+          "b": "lamp",
+          "w": 46.8,
+          "h": 96,
+          "area": 4493,
+          "pctOfA": 13.9
+        },
+        {
+          "a": "chair",
+          "b": "cooler",
+          "w": 66,
+          "h": 52.8,
+          "area": 3485,
+          "pctOfFurniture": 16.5
+        },
+        {
+          "a": "chair",
+          "b": "desk",
+          "w": 57.6,
+          "h": 48,
+          "area": 2765,
+          "pctOfFurniture": 13.1
+        },
+        {
+          "a": "plant",
+          "b": "desk",
+          "w": 37.2,
+          "h": 48,
+          "area": 1786,
+          "pctOfFurniture": 5.5
+        },
+        {
+          "a": "aquarium",
+          "b": "clock",
+          "w": 137.3,
+          "h": 9.5,
+          "area": 1304,
+          "pctOfFurniture": 5.3
+        },
+        {
+          "a": "projector",
+          "b": "pendant",
+          "w": 24,
+          "h": 40.3,
+          "area": 967,
+          "pctOfFurniture": 2.9
+        }
+      ]
+    },
+    "panelSummary": "已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23%",
+    "hud": {
+      "idle": "0.3",
+      "click": "1.3"
+    },
+    "errors": []
+  },
+  "320x568": {
+    "viewport": {
+      "label": "320x568",
+      "width": 320,
+      "height": 568,
+      "dsf": 2,
+      "mobile": true
+    },
+    "decor": [
+      "plant",
+      "lamp",
+      "rug",
+      "fridge",
+      "chair",
+      "aquarium",
+      "projector",
+      "catbed"
+    ],
+    "geo": {
+      "canvasCss": {
+        "w": 320,
+        "h": 349
+      },
+      "stagePx": {
+        "w": 640,
+        "h": 698
+      },
+      "scale": 2,
+      "dpr": 2,
+      "vw": 160,
+      "vh": 174.5,
+      "groundY": 107.3,
+      "shortView": false,
+      "furniture": {
+        "plant": {
+          "x": 64,
+          "y": 262.8,
+          "w": 86.4,
+          "h": 166.4
+        },
+        "lamp": {
+          "x": 179.2,
+          "y": 186,
+          "w": 115.2,
+          "h": 140.8
+        },
+        "rug": {
+          "x": 121.6,
+          "y": 499.6,
+          "w": 396.8,
+          "h": 96
+        },
+        "fridge": {
+          "x": 0,
+          "y": 294.8,
+          "w": 64,
+          "h": 134.4
+        },
+        "chair": {
+          "x": 416,
+          "y": 288.4,
+          "w": 86.4,
+          "h": 108.8
+        },
+        "aquarium": {
+          "x": 449.9,
+          "y": 32.4,
+          "w": 113.9,
+          "h": 96
+        },
+        "projector": {
+          "x": 361.6,
+          "y": 9.6,
+          "w": 134.4,
+          "h": 112
+        },
+        "catbed": {
+          "x": 281.6,
+          "y": 378,
+          "w": 96,
+          "h": 51.2
+        }
+      },
+      "props": {
+        "window": {
+          "x": 80,
+          "y": 67.2,
+          "w": 275.2,
+          "h": 198.4
+        },
+        "clock": {
+          "x": 472.3,
+          "y": 81.9,
+          "w": 92.2,
+          "h": 92.2
+        },
+        "board": {
+          "x": 390.4,
+          "y": 147.6,
+          "w": 160,
+          "h": 102.4
+        },
+        "cooler": {
+          "x": 518.4,
+          "y": 362,
+          "w": 64,
+          "h": 64
+        },
+        "pendant": {
+          "x": 262.4,
+          "y": 64,
+          "w": 115.2,
+          "h": 26.9
+        },
+        "desk": {
+          "x": 185.6,
+          "y": 301.2,
+          "w": 268.8,
+          "h": 32
+        },
+        "rugZone": {
+          "x": 121.6,
+          "y": 499.6,
+          "w": 396.8,
+          "h": 96
+        }
+      },
+      "clipped": {},
+      "overlaps": [
+        {
+          "a": "lamp",
+          "b": "window",
+          "w": 115.2,
+          "h": 79.6,
+          "area": 9170,
+          "pctOfFurniture": 56.5
+        },
+        {
+          "a": "aquarium",
+          "b": "clock",
+          "w": 91.5,
+          "h": 46.5,
+          "area": 4255,
+          "pctOfFurniture": 38.9
+        },
+        {
+          "a": "aquarium",
+          "b": "projector",
+          "w": 46.1,
+          "h": 89.2,
+          "area": 4112,
+          "pctOfA": 37.6
+        },
+        {
+          "a": "lamp",
+          "b": "desk",
+          "w": 108.8,
+          "h": 25.6,
+          "area": 2785,
+          "pctOfFurniture": 17.2
+        },
+        {
+          "a": "chair",
+          "b": "desk",
+          "w": 38.4,
+          "h": 32,
+          "area": 1229,
+          "pctOfFurniture": 13.1
+        },
+        {
+          "a": "projector",
+          "b": "clock",
+          "w": 23.7,
+          "h": 39.7,
+          "area": 941,
+          "pctOfFurniture": 6.3
+        },
+        {
+          "a": "projector",
+          "b": "pendant",
+          "w": 16,
+          "h": 26.9,
+          "area": 430,
+          "pctOfFurniture": 2.9
+        },
+        {
+          "a": "plant",
+          "b": "window",
+          "w": 70.4,
+          "h": 2.8,
+          "area": 197,
+          "pctOfFurniture": 1.4
+        }
+      ]
+    },
+    "panelSummary": "已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23%",
+    "hud": {
+      "idle": "0.3",
+      "click": "1.3"
+    },
+    "errors": []
+  }
+}

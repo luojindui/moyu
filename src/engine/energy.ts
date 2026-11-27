@@ -20,7 +20,7 @@ export const ENERGY_ACTIONS: EnergyActionDef[] = [
   { id: "slack", name: "认真摸鱼", desc: "今天挂机 +25%", cost: 40 },
   { id: "fake-work", name: "假装工作", desc: "今天巡逻奖励 ×2.2", cost: 35 },
   { id: "social", name: "跟同事聊天", desc: "全体好感 +5，且今天挂机 +5%", cost: 25 },
-  { id: "focus", name: "专注点击", desc: "今天点击力 +20%", cost: 45 },
+  { id: "focus", name: "专注点击", desc: "今天点击力 ×2，且挂机 +8%", cost: 45 },
 ];
 /** 四项合计 145 > 100 精力 → 每天必须取舍（不是"全点"） */
 
@@ -67,9 +67,10 @@ export function useEnergy(state: GameState, action: EnergyAction): GameState | n
         idleMult:
           state.energy.boosted.idleMult *
           (action === "slack" ? 1.25 : 1) *
-          (action === "social" ? 1.05 : 1),
+          (action === "social" ? 1.05 : 1) *
+          (action === "focus" ? 1.08 : 1),
         patrolRewardMult: state.energy.boosted.patrolRewardMult * (action === "fake-work" ? 2.2 : 1),
-        clickMult: state.energy.boosted.clickMult * (action === "focus" ? 1.2 : 1),
+        clickMult: state.energy.boosted.clickMult * (action === "focus" ? 2 : 1),
       },
     },
   };

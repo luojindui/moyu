@@ -51,6 +51,10 @@ export const INSTRUMENT = String.raw`
   try { new PerformanceObserver((l) => { for (const e of l.getEntries()) P.longtasks.push({ start: +e.startTime.toFixed(0), dur: +e.duration.toFixed(1) }); }).observe({ entryTypes: ['longtask'] }); } catch {}
   try { new PerformanceObserver((l) => { for (const e of l.getEntries()) if (e.name === 'first-contentful-paint') P.firstContentfulPaint = +e.startTime.toFixed(1); }).observe({ entryTypes: ['paint'] }); } catch {}
   // 记录 pointerdown 派发时间（测点击响应）
+  // headless 探针：confirm/alert 会阻塞渲染线程 -> 自动应答（不改业务逻辑，仅探针便利）
+  window.confirm = () => true;
+  window.alert = () => undefined;
+  window.print = () => undefined;
   window.__probeTaps = 0;
   window.addEventListener('pointerdown', () => { window.__probeTaps++; }, true);
 })();

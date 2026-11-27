@@ -9,21 +9,21 @@
         "social"
       ],
       "cost": 100,
-      "value": 429156.78631905874,
+      "value": 124596.78631905874,
       "second": [
         "slack",
-        "social"
+        "fake-work"
       ],
-      "secondValue": 377670.61764705874,
+      "secondValue": 106823.03243670586,
       "singles": {
         "slack": {
           "idle": 50759.99999999998,
           "click": 0,
           "dispatch": 2409.4117647058865,
-          "offline": 243648.00000000047,
+          "offline": 0,
           "patrol": 3096.3599999999965,
           "favor": 0,
-          "total": 299913.7717647063
+          "total": 56265.77176470586
         },
         "fake-work": {
           "idle": 0,
@@ -38,10 +38,10 @@
           "idle": 10151.999999999975,
           "click": 0,
           "dispatch": 481.764705882356,
-          "offline": 48729.59999999986,
+          "offline": 0,
           "patrol": 619.2720000000027,
           "favor": 2715.1529411764714,
-          "total": 62697.78964705867
+          "total": 13968.189647058805
         },
         "focus": {
           "idle": 0,
@@ -63,21 +63,21 @@
         "social"
       ],
       "cost": 100,
-      "value": 429156.78631905874,
+      "value": 124596.78631905874,
       "second": [
         "slack",
-        "social"
+        "fake-work"
       ],
-      "secondValue": 377670.61764705874,
+      "secondValue": 106823.03243670586,
       "singles": {
         "slack": {
           "idle": 50759.99999999998,
           "click": 0,
           "dispatch": 2409.4117647058865,
-          "offline": 243648.00000000047,
+          "offline": 0,
           "patrol": 3096.3599999999965,
           "favor": 0,
-          "total": 299913.7717647063
+          "total": 56265.77176470586
         },
         "fake-work": {
           "idle": 0,
@@ -92,10 +92,10 @@
           "idle": 10151.999999999975,
           "click": 0,
           "dispatch": 481.764705882356,
-          "offline": 48729.59999999986,
+          "offline": 0,
           "patrol": 619.2720000000027,
           "favor": 2715.1529411764714,
-          "total": 62697.78964705867
+          "total": 13968.189647058805
         },
         "focus": {
           "idle": 0,
@@ -117,21 +117,21 @@
         "social"
       ],
       "cost": 100,
-      "value": 315534.60155600007,
+      "value": 10974.601556000016,
       "second": [
         "slack",
-        "social"
+        "fake-work"
       ],
-      "secondValue": 311244.0875,
+      "secondValue": 8701.135056,
       "singles": {
         "slack": {
           "idle": 4229.999999999998,
           "click": 0,
           "dispatch": 0,
-          "offline": 243648.00000000047,
+          "offline": 0,
           "patrol": 258.02999999999975,
           "favor": 0,
-          "total": 248136.03000000046
+          "total": 4488.029999999998
         },
         "fake-work": {
           "idle": 0,
@@ -146,10 +146,10 @@
           "idle": 845.999999999998,
           "click": 0,
           "dispatch": 0,
-          "offline": 48729.59999999986,
+          "offline": 0,
           "patrol": 51.60600000000022,
           "favor": 1074.05,
-          "total": 50701.25599999986
+          "total": 1971.6559999999981
         },
         "focus": {
           "idle": 0,
@@ -171,21 +171,21 @@
         "social"
       ],
       "cost": 100,
-      "value": 54207926.816610195,
+      "value": 12603896.816610198,
       "second": [
         "slack",
-        "social"
+        "fake-work"
       ],
-      "secondValue": 51170890.1754902,
+      "secondValue": 10307696.138414118,
       "singles": {
         "slack": {
           "idle": 6163560.000000001,
           "click": 0,
           "dispatch": 843915.4852941177,
-          "offline": 33283224.00000003,
+          "offline": 0,
           "patrol": 375977.1600000002,
           "favor": 0,
-          "total": 40666676.64529415
+          "total": 7383452.645294119
         },
         "fake-work": {
           "idle": 0,
@@ -200,10 +200,10 @@
           "idle": 1232712.0000000002,
           "click": 0,
           "dispatch": 168782.91176470576,
-          "offline": 6656644.799999982,
+          "offline": 0,
           "patrol": 75195.43200000015,
           "favor": 300622.9105392184,
-          "total": 8433958.054303907
+          "total": 1777313.2543039245
         },
         "focus": {
           "idle": 0,
@@ -225,21 +225,21 @@
         "social"
       ],
       "cost": 100,
-      "value": 54207926.816610195,
+      "value": 12603896.816610198,
       "second": [
         "slack",
-        "social"
+        "fake-work"
       ],
-      "secondValue": 51170890.1754902,
+      "secondValue": 10307696.138414118,
       "singles": {
         "slack": {
           "idle": 6163560.000000001,
           "click": 0,
           "dispatch": 843915.4852941177,
-          "offline": 33283224.00000003,
+          "offline": 0,
           "patrol": 375977.1600000002,
           "favor": 0,
-          "total": 40666676.64529415
+          "total": 7383452.645294119
         },
         "fake-work": {
           "idle": 0,
@@ -254,10 +254,10 @@
           "idle": 1232712.0000000002,
           "click": 0,
           "dispatch": 168782.91176470576,
-          "offline": 6656644.799999982,
+          "offline": 0,
           "patrol": 75195.43200000015,
           "favor": 300622.9105392184,
-          "total": 8433958.054303907
+          "total": 1777313.2543039245
         },
         "focus": {
           "idle": 0,
@@ -279,21 +279,21 @@
         "social"
       ],
       "cost": 100,
-      "value": 42634524.34092667,
+      "value": 1030494.3409266692,
       "second": [
         "slack",
-        "social"
+        "fake-work"
       ],
-      "secondValue": 42381437.95416667,
+      "secondValue": 788648.3877600002,
       "singles": {
         "slack": {
           "idle": 513630.0000000001,
           "click": 0,
           "dispatch": 0,
-          "offline": 33283224.00000003,
+          "offline": 0,
           "patrol": 31331.43000000002,
           "favor": 0,
-          "total": 33828185.43000003
+          "total": 544961.4300000002
         },
         "fake-work": {
           "idle": 0,
@@ -308,10 +308,10 @@
           "idle": 102726.00000000003,
           "click": 0,
           "dispatch": 0,
-          "offline": 6656644.799999982,
+          "offline": 0,
           "patrol": 6266.286000000013,
           "favor": 96206.16666666917,
-          "total": 6861843.252666651
+          "total": 205198.4526666692
         },
         "focus": {
           "idle": 0,
@@ -333,21 +333,21 @@
         "social"
       ],
       "cost": 100,
-      "value": 880788555.4432046,
+      "value": 211185855.44320464,
       "second": [
         "slack",
-        "social"
+        "fake-work"
       ],
-      "secondValue": 839998664.3617647,
+      "secondValue": 175472864.17402822,
       "singles": {
         "slack": {
           "idle": 89280359.99999997,
           "click": 0,
           "dispatch": 41590341.72058825,
-          "offline": 535682160,
+          "offline": 0,
           "patrol": 5446101.959999999,
           "favor": 0,
-          "total": 671998963.6805882
+          "total": 136316803.68058822
         },
         "fake-work": {
           "idle": 0,
@@ -362,10 +362,10 @@
           "idle": 17856072.000000015,
           "click": 0,
           "dispatch": 8318076.117647061,
-          "offline": 107136432,
+          "offline": 0,
           "patrol": 1089220.392000004,
           "favor": 0,
-          "total": 134399800.50964707
+          "total": 27263368.50964708
         },
         "focus": {
           "idle": 0,
@@ -387,21 +387,21 @@
         "social"
       ],
       "cost": 100,
-      "value": 880788555.4432046,
+      "value": 211185855.44320464,
       "second": [
         "slack",
-        "social"
+        "fake-work"
       ],
-      "secondValue": 839998664.3617647,
+      "secondValue": 175472864.17402822,
       "singles": {
         "slack": {
           "idle": 89280359.99999997,
           "click": 0,
           "dispatch": 41590341.72058825,
-          "offline": 535682160,
+          "offline": 0,
           "patrol": 5446101.959999999,
           "favor": 0,
-          "total": 671998963.6805882
+          "total": 136316803.68058822
         },
         "fake-work": {
           "idle": 0,
@@ -416,10 +416,10 @@
           "idle": 17856072.000000015,
           "click": 0,
           "dispatch": 8318076.117647061,
-          "offline": 107136432,
+          "offline": 0,
           "patrol": 1089220.392000004,
           "favor": 0,
-          "total": 134399800.50964707
+          "total": 27263368.50964708
         },
         "focus": {
           "idle": 0,
@@ -441,21 +441,21 @@
         "social"
       ],
       "cost": 100,
-      "value": 682869197.37762,
+      "value": 13266497.377619997,
       "second": [
         "slack",
-        "social"
+        "fake-work"
       ],
-      "secondValue": 679470039.7875,
+      "secondValue": 11156876.871119998,
       "singles": {
         "slack": {
           "idle": 7440029.999999997,
           "click": 0,
           "dispatch": 0,
-          "offline": 535682160,
+          "offline": 0,
           "patrol": 453841.8299999999,
           "favor": 0,
-          "total": 543576031.83
+          "total": 7893871.829999997
         },
         "fake-work": {
           "idle": 0,
@@ -470,10 +470,10 @@
           "idle": 1488006.0000000012,
           "click": 0,
           "dispatch": 0,
-          "offline": 107136432,
+          "offline": 0,
           "patrol": 90768.36600000033,
           "favor": 0,
-          "total": 108715206.366
+          "total": 1578774.3660000016
         },
         "focus": {
           "idle": 0,
@@ -499,16 +499,16 @@
         "slack",
         "focus"
       ],
-      "secondValue": 1792475.9999999998,
+      "secondValue": 1790423.9999999998,
       "singles": {
         "slack": {
           "idle": 359.99999999999994,
           "click": 0,
           "dispatch": 0,
-          "offline": 2052,
+          "offline": 0,
           "patrol": 0,
           "favor": 0,
-          "total": 2412
+          "total": 359.99999999999994
         },
         "fake-work": {
           "idle": 0,
@@ -534,25 +534,25 @@
       "state": "全新号(0升级)",
       "profile": "idle",
       "best": [
-        "slack",
-        "fake-work"
-      ],
-      "cost": 75,
-      "value": 8676,
-      "second": [
         "fake-work",
         "focus"
       ],
-      "secondValue": 7332,
+      "cost": 80,
+      "value": 7332,
+      "second": [
+        "slack",
+        "fake-work"
+      ],
+      "secondValue": 6948,
       "singles": {
         "slack": {
           "idle": 359.99999999999994,
           "click": 0,
           "dispatch": 0,
-          "offline": 1728.000000000001,
+          "offline": 0,
           "patrol": 0,
           "favor": 0,
-          "total": 2088.000000000001
+          "total": 359.99999999999994
         },
         "fake-work": {
           "idle": 0,
@@ -587,16 +587,16 @@
         "slack",
         "fake-work"
       ],
-      "secondValue": 8676,
+      "secondValue": 6948,
       "singles": {
         "slack": {
           "idle": 359.99999999999994,
           "click": 0,
           "dispatch": 0,
-          "offline": 1728.000000000001,
+          "offline": 0,
           "patrol": 0,
           "favor": 0,
-          "total": 2088.000000000001
+          "total": 359.99999999999994
         },
         "fake-work": {
           "idle": 0,
@@ -626,20 +626,20 @@
         "fake-work"
       ],
       "cost": 75,
-      "value": 2307.000000000001,
+      "value": 579,
       "second": [
-        "slack"
+        "fake-work"
       ],
-      "secondValue": 1758.000000000001,
+      "secondValue": 549,
       "singles": {
         "slack": {
           "idle": 29.999999999999993,
           "click": 0,
           "dispatch": 0,
-          "offline": 1728.000000000001,
+          "offline": 0,
           "patrol": 0,
           "favor": 0,
-          "total": 1758.000000000001
+          "total": 29.999999999999993
         },
         "fake-work": {
           "idle": 0,
