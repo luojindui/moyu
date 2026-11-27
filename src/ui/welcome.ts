@@ -20,7 +20,7 @@ export class Welcome {
     const rateText = rate >= 1 ? "首日全额" : `离线效率 ${Math.round(rate * 100)}%`;
     const capped = settledSeconds !== undefined && settledSeconds < realSeconds - 1;
     this.elRule.textContent = capped
-      ? `${rateText}｜按上限结算 ${this.describe(settledSeconds!)}（封顶 8 小时）`
+      ? `${rateText}｜超过上限，已按上限结算 ${this.describe(settledSeconds!)}`
       : `${rateText}｜8 小时封顶`;
     this.root.classList.remove("hidden");
     document.getElementById("welcome-ok")!.onclick = () => {

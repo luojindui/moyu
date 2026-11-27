@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T04:19:32.325Z",
+  "generatedAt": "2026-11-27T04:23:52.094Z",
   "head": "999b0f4",
   "profile": "回归老玩家：3 天 × 3 次 × 5 分钟 → 停 30 天 → 回来开一次",
   "day1": "2026-10-28T01:00:00.000Z",
@@ -282,6 +282,44 @@
     "totalClicks": true,
     "createdAt": true
   },
+  "gapCurve": [
+    {
+      "gapHours": 1,
+      "rate": 1,
+      "appliedHours": 1,
+      "effectiveHours": 1
+    },
+    {
+      "gapHours": 8,
+      "rate": 0.7999999999999999,
+      "appliedHours": 8,
+      "effectiveHours": 6.4
+    },
+    {
+      "gapHours": 12,
+      "rate": 0.7999999999999999,
+      "appliedHours": 8,
+      "effectiveHours": 6.4
+    },
+    {
+      "gapHours": 24,
+      "rate": 0.7999999999999999,
+      "appliedHours": 8,
+      "effectiveHours": 6.4
+    },
+    {
+      "gapHours": 168,
+      "rate": 0.7999999999999999,
+      "appliedHours": 8,
+      "effectiveHours": 6.4
+    },
+    {
+      "gapHours": 720,
+      "rate": 0.7999999999999999,
+      "appliedHours": 8,
+      "effectiveHours": 6.4
+    }
+  ],
   "saveCleared": {
     "stateIsNull": false,
     "lifetime": 0,

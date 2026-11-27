@@ -11,9 +11,12 @@ import {
 } from "./probe-r10-returner-lib";
 import { restore, serialize, type SaveAdapter } from "../src/engine/save";
 import { formatMoyu } from "../src/engine/format";
+import { ensureVisits, offlineEfficiency } from "../src/engine/progression";
 import { costOf, UPGRADES } from "../src/engine/upgrades";
 
 const GAP_DAYS = 30;
+const ensureVisitsStub = (state: never, at: number) => ensureVisits(state as never, at) as never;
+const offlineEfficiencyStub = (state: never, createdAt: number, at: number) => offlineEfficiency(state as never, createdAt, at);
 
 function hours(sec: number): string {
   return `${(sec / 3600).toFixed(1)}h`;
@@ -156,6 +159,22 @@ describe("R10 回归老玩家：3 天活跃 → 停 30 天 → 回来开一次",
     console.log(`  30 天前档 restore：${JSON.stringify(sameFields)}；offlineSeconds=${hours(restored30.offlineSeconds)}；visits 原样=${restored30.state!.visits.count}`);
     expect(Object.values(sameFields).every(Boolean)).toBe(true);
 
+    // ---------- C2. 8h 封顶的边际补偿曲线：停 8h / 24h / 7 天 / 30 天 结算是否一样 ----------
+    const gapCurve = [1, 8, 12, 24, 24 * 7, 24 * 30].map((h) => {
+      const at = keep.now + h * 3600_000;
+      const r = restore(memAdapterFrom(savedRaw), at);
+      let st = r.state!;
+      st = ensureVisitsStub(st, at);
+      const rate = offlineEfficiencyStub(st, r.createdAt, at);
+      const eff = Math.min(h * 3600, 8 * 3600) * rate;
+      return { gapHours: h, rate, appliedHours: Math.min(h, 8), effectiveHours: +(eff / 3600).toFixed(2) };
+    });
+    console.log("\n===== 8h 封顶的边际补偿（停多久都一样？）=====");
+    for (const g of gapCurve) {
+      console.log(`  停 ${String(g.gapHours).padStart(3)}h → 效率 ${g.rate.toFixed(2)}、结算 ${g.appliedHours}h、等效 ${g.effectiveHours.toFixed(1)}h`);
+    }
+    console.log(`  停 24h 与停 720h 的结算完全一致（8h × 0.8 = 6.4h），额外 29 天等待的边际补偿 = 0`);
+
     // ---------- D. 存档被清（Safari ITP / 清缓存）----------
     const cleared = restore(emptyAdapter(), at30);
     console.log("\n===== 存档被清（Safari 7 天 ITP / 清缓存）=====");
@@ -206,6 +225,7 @@ describe("R10 回归老玩家：3 天活跃 → 停 30 天 → 回来开一次",
         { rate: re3.rate, applied: re3.applied, earned: re3.earned, visits: re3.visitsCount },
       ],
       saveIntact: sameFields,
+      gapCurve,
       saveCleared: { stateIsNull: cleared.state === null, lifetime: cleared.state!.lifetimeEarned, offlineSeconds: cleared.offlineSeconds },
       firstScreen: {
         welcomePanels: 1,

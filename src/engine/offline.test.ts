@@ -44,3 +44,23 @@ describe("离线收益", () => {
     expect(r.applied).toBe(0);
   });
 });
+
+describe("R10 回归补偿：阶梯封顶", () => {
+  it("离开 <7 天封顶 8h；7-30 天 24h；≥30 天 48h", async () => {
+    const { capForElapsed } = await import("./offline");
+    expect(capForElapsed(6 * 86400)).toBe(8 * 3600);
+    expect(capForElapsed(7 * 86400)).toBe(24 * 3600);
+    expect(capForElapsed(29 * 86400)).toBe(24 * 3600);
+    expect(capForElapsed(30 * 86400)).toBe(48 * 3600);
+  });
+
+  it("回归越久结算越多（原实现 8h/12h/24h/7d/30d 完全一样）", async () => {
+    const { offlineEarn } = await import("./offline");
+    const s = { ...initialState(), levels: { phone: 5 } };
+    const a = offlineEarn(s, 12 * 3600).earned;
+    const b = offlineEarn(s, 8 * 86400).earned;
+    const c = offlineEarn(s, 35 * 86400).earned;
+    expect(b).toBeGreaterThan(a);
+    expect(c).toBeGreaterThan(b);
+  });
+});

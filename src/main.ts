@@ -1,6 +1,7 @@
 import "./style.css";
 import { initialState } from "./engine/state";
 import { doClick, buyUpgrade, clickPowerOf, COMBO_WINDOW_S, COMBO_BREAK_S, COMBO_MAX } from "./engine/actions";
+import { effectOf } from "./engine/upgrades";
 import { advance } from "./engine/tick";
 import { settleReturn } from "./engine/resume";
 import { CLICK_MEMES, MEME_QUOTES } from "./engine/flavor";
@@ -176,9 +177,11 @@ async function boot(): Promise<void> {
   scene.events = es;
   let combo = 0; // 连击链（间隔 <0.4s 累积，>3s 断）
   let lastClickAt = 0;
-  const trackDaily = (kind: "click" | "meme" | "buy" | "survive", n = 1): void => {
+  const trackDaily = (kind: "click" | "meme" | "buy" | "survive" | "visit" | "idle", n = 1): void => {
     if (state.daily) state = { ...state, daily: dailyTrack(state.daily, kind, n) };
   };
+  // 上线即记一次 visit 目标（否则"今天上线看一眼"永远 0/1）
+  trackDaily("visit");
   let lastPointerAt = 0;
   const doTap = (clientX: number, clientY: number): void => {
     const nowMs = performance.now();
@@ -318,6 +321,8 @@ async function boot(): Promise<void> {
     if (now - lastHud >= 150) {
       lastHud = now;
       scene.hideHint = state.totalEarned > 500;
+      // 挂机目标：只要在自动收入就记（佛系零操作也能完成）
+      if (effectOf(state).idleRate > 0.5) trackDaily("idle");
       // 剧情章节：便签 + 职员配色随生涯进度变化（零新美术）
       const ch = chapterFor(state.lifetimeEarned);
       scene.note = ch.title;
@@ -509,6 +514,18 @@ async function boot(): Promise<void> {
     muteBtn.addEventListener("click", () => {
       muteBtn.textContent = toggleMute() ? "🔇" : "🔊";
     });
+  }
+
+  // 数据保留：请求持久化存储 + 一次性提醒（Safari 7 天无交互会清 localStorage）
+  try {
+    void navigator.storage?.persist?.();
+    const HINT_KEY = "moyu-persist-hint-v1";
+    if (!localStorage.getItem(HINT_KEY) && state.visits.count >= 2) {
+      localStorage.setItem(HINT_KEY, "1");
+      setTimeout(() => scene.fx.floatText(scene.w / 2, scene.h * 0.2, "提示：添加到主屏幕可避免 7 天未玩被清档"), 2500);
+    }
+  } catch {
+    /* 忽略 */
   }
 
   // 离线可用：注册 Service Worker（仅生产/支持时；失败静默）

@@ -24,7 +24,9 @@ export function settleReturn(state: GameState, lastActiveMs: number, nowMs: numb
   if (gap < RESUME_SETTLE_THRESHOLD_SECONDS) {
     return { applied: 0, earned: 0, showPanel: false, state };
   }
-  const r = offlineEarn(state, gap, rate);
+  // 回归首开（≥7 天）强制全额效率，让"回来了"有实感
+  const effectiveRate = gap >= 7 * 86400 ? 1 : rate;
+  const r = offlineEarn(state, gap, effectiveRate);
   return {
     applied: r.applied,
     earned: r.earned,
