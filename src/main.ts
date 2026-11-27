@@ -571,8 +571,7 @@ async function boot(): Promise<void> {
       const teamBtn = document.getElementById("btn-team");
       if (teamBtn) {
         const pBadge = teamBtn.querySelector<HTMLElement>(".talent-badge");
-        const seenTeam = localStorage.getItem("moyu-team-seen") === "1";
-        if (state.talents.points > 0 && seenTeam) {
+        if (state.talents.points > 0) {
           if (!pBadge) {
             const el = document.createElement("span");
             el.className = "talent-badge";

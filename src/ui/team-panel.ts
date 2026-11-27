@@ -247,6 +247,7 @@ export class TeamPanel {
     parts.push(`<div class="team-summary">
       <span>已招募 ${size}/5 · 小队挂机 +${formatMoyu(Math.round(teamFixedRate(state) + station * teamShareRatio(state)))}/秒</span>
       ${claimable > 0 ? `<button data-act="claim-all">一键领取 +${formatMoyu(claimable)}</button>` : ""}
+      <span style="width:100%;font-size:10px;color:#8f9fd0">自动重复：完成后自动领取并续班（离线回来最多补 1 轮）</span>
     </div>`);
 
     // 新号引导

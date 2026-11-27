@@ -143,7 +143,7 @@ export const COLLEAGUES: ColleagueDef[] = [
 
 export const MISSIONS: MissionDef[] = [
   // 3 分钟档：让"打开→派→领"能在一次碎片会话内闭环
-  { id: "stroll", name: "就近溜达", type: "errand", seconds: 3 * 60, mult: 1.1 },
+  { id: "stroll", name: "就近溜达", type: "errand", seconds: 3 * 60, mult: 2.2 }, // 碎片补贴：per-hour 接近 8h 档
   { id: "quick", name: "溜一圈", type: "errand", seconds: 15 * 60, mult: 1.45 },
   { id: "chat", name: "茶水间聊八卦", type: "chat", seconds: 30 * 60, mult: 1.3 },
   { id: "meeting", name: "开个会", type: "meeting", seconds: 60 * 60, mult: 1.6 },
