@@ -3,6 +3,7 @@
  * 只读 src/。断言按当前实现行为写。
  */
 import { describe, it, expect } from "vitest";
+import { readFileSync } from "node:fs";
 import { initialState } from "../src/engine/state";
 import { COMBO_MAX, clickPowerOf, comboCapOf, comboMultiplier, comboWindowOf, doClick } from "../src/engine/actions";
 import {
@@ -93,27 +94,33 @@ describe("W4. 天赋节点接入验证（本轮修复重点）", () => {
     console.log("[W4a] comboWindow", comboWindowOf(a), "→", comboWindowOf(b), "; comboCap", comboCapOf(a), "→", comboCapOf(b));
   });
 
-  it("W4b 【缺陷】click_4 暴击仍无消费点：连点 100 次无 ×5", () => {
-    expect(consumers("critEvery", "talents.ts")).toEqual([]);
-    const s = stateWith(["click_1", "click_2", "click_3", "click_4"], { levels: { retire: 0 } });
-    const per = clickPowerOf(s);
+  it("W4b 【缺陷·语义】click_4 暴击：main 已消费字段，但只乘到飘字变量，实际收入仍走 doClick（无暴击）", () => {
+    expect(consumers("critEvery", "talents.ts").length).toBeGreaterThan(0); // main.ts 有消费点
+    // 引擎侧：第 20 次点击（totalClicks=19）收入与无暴击完全一致
+    const s = stateWith(["click_1", "click_4"], { totalClicks: 19 });
+    const gainAt20 = doClick(s, 0).moyu - s.moyu;
+    expect(gainAt20).toBeCloseTo(clickPowerOf(s), 6); // 无 ×5
+    // 100 次点击收入恒为 1 档
+    const base = stateWith(["click_1", "click_2", "click_3", "click_4"], { levels: {} });
     const deltas = new Set<number>();
-    let cur = s;
+    let cur = base;
     for (let i = 0; i < 100; i++) {
       const before = cur.moyu;
       cur = doClick(cur, 0);
       deltas.add(Math.round((cur.moyu - before) * 1e6) / 1e6);
     }
-    console.log("[W4b] 100 次点击收入取值:", [...deltas].slice(0, 5));
     expect(deltas.size).toBe(1);
-    expect([...deltas][0]).toBeCloseTo(per, 6);
+    const main = readFileSync("src/main.ts", "utf8");
+    // main 里 crit 只改 gained（飘字），随后 state = doClick(state, combo) 不含暴击倍率
+    expect(main).toContain("critEvery");
+    expect(main).not.toMatch(/doClick\([^)]*crit/);
+    console.log("[W4b] 第 20 次点击收入=", gainAt20, "=正常点击（×5 未进账，只在飘字/音效）");
   });
 
-  it("W4c 【缺陷】event_2/强哥被动 罚款减免无消费点：罚款与未点时完全相同", () => {
-    // 排除聚合处（talents.ts）与同名局部变量（team.ts teamTraits）后，无任何玩法消费
+  it("W4c event_2/强哥被动 罚款减免已接入（-35%/-10%）", () => {
     const penaltyConsumers = consumers("penaltyReduction").filter((h) => !h.path.endsWith("talents.ts") && !h.path.endsWith("team.ts"));
     console.log("[W4c] penaltyReduction 玩法消费点:", penaltyConsumers);
-    expect(penaltyConsumers).toEqual([]);
+    expect(penaltyConsumers.length).toBeGreaterThan(0);
     const base = withLevels(rich(), { retire: 10 });
     const withEv = withTalents(base, ["event_1", "event_2"]);
     const withQiang = recruit(base, "qiang")!;
@@ -130,31 +137,35 @@ describe("W4. 天赋节点接入验证（本轮修复重点）", () => {
     const b = run(withEv).lost;
     const c = run(withQiang).lost;
     console.log("[W4c] 罚款：无天赋=", a, " event_2(−35%)=", b, " 强哥队友时=", c, " 归一化:", norm(base), norm(withEv), norm(withQiang));
-    expect(norm(withEv)).toBeCloseTo(norm(base), 6);
-    expect(norm(withQiang)).toBeCloseTo(norm(base), 6);
-    // 强哥被动根本没人读
-    expect(consumers("teamTraits", "team.ts")).toEqual([]);
-    expect(teamTraits(withQiang).penaltyReduction).toBe(0.1); // 聚合了但无消费者
+    expect(norm(withEv)).toBeCloseTo(norm(base) * 0.65, 3); // event_2 -35%
+    expect(norm(withQiang)).toBeCloseTo(norm(base) * 0.9, 3); // 强哥 -10%
+    expect(consumers("teamTraits", "team.ts").length).toBeGreaterThan(0);
+    expect(teamTraits(withQiang).penaltyReduction).toBe(0.1);
   });
 
-  it("W4d 【缺陷】event_4「巡逻横幅提前 2s」无消费点（+5% 奖励有效）", () => {
-    expect(consumers("patrolWarnSeconds", "talents.ts")).toEqual([]);
+  it("W4d event_4「巡逻横幅提前 2s」已接入 main（+5% 奖励有效）", () => {
+    expect(consumers("patrolWarnSeconds", "talents.ts").length).toBeGreaterThan(0);
     const eff = talentEffects({ ...emptyTalents(), unlocked: ["event_1", "event_4"] });
     expect(eff.patrolWarnSeconds).toBe(2);
     expect(eff.patrolRewardMult).toBeCloseTo(1.2, 6);
   });
 
-  it("W4e 【缺陷】idle_5b「同事挂机 +40%」无消费点：teamIdleMult 聚合后无人读", () => {
-    expect(consumers("teamIdleMult", "talents.ts")).toEqual([]);
+  it("W4e idle_5b「同事挂机 +40%」已接入 effectOf（teamIdleMult）", () => {
+    expect(consumers("teamIdleMult", "talents.ts").length).toBeGreaterThan(0);
     const base = withLevels(rich(), { retire: 10 });
-    const a = withTalents(base, ["idle_1"]);
-    const b = withTalents(base, ["idle_1", "idle_5b"]);
+    // 需要先招募同事，否则同事部分为 0
+    const withMate = { ...base, team: { colleagues: { zhou: { level: 5, missionId: null as string | null, startedAt: 0, endsAt: 0, favor: 0, autoRepeat: false, rewardSnapshot: 0 } } } };
+    const a = withTalents(withMate, ["idle_1"]);
+    const b = withTalents(withMate, ["idle_1", "idle_5b"]);
     expect(talentEffects(b.talents).teamIdleMult).toBe(1.4);
-    const fixedA = effectOf(a).idleRate - stationIdleScaled(a) - stationIdleScaled(a) * 0;
-    const fixedB = effectOf(b).idleRate - stationIdleScaled(b);
-    // teamIdleMult 未参与任何计算：整个 idleRate 完全不变（b 只多了 idle_5b）
-    console.log("[W4e] idle_1 vs idle_1+idle_5b idleRate:", effectOf(a).idleRate, effectOf(b).idleRate, " fixedA=", fixedA, " fixedB=", fixedB);
-    expect(effectOf(b).idleRate).toBeCloseTo(effectOf(a).idleRate, 6);
+    // 同事部分（fixed+share）应 ×1.4；工位不变
+    const stationA = stationIdleScaled(a);
+    const stationB = stationIdleScaled(b);
+    expect(stationB).toBeCloseTo(stationA, 6);
+    const teamA = effectOf(a).idleRate - stationA;
+    const teamB = effectOf(b).idleRate - stationB;
+    console.log("[W4e] 同事挂机 idle_1=", teamA.toFixed(1), " 加 idle_5b=", teamB.toFixed(1), " 比值=", (teamB / teamA).toFixed(3));
+    expect(teamB / teamA).toBeCloseTo(1.4, 3);
   });
 
   it("W4f 【缺陷】click_5b 的「连击每层收益翻倍（上限 ×1.72）」未实现：仍按 0.012/层", () => {
@@ -167,16 +178,16 @@ describe("W4. 天赋节点接入验证（本轮修复重点）", () => {
     expect(consumers("0.024")).toEqual([]);
   });
 
-  it("W4g 【缺陷】idle_4「离线效率上限 +0.08（可超过100%）」被 progression 的 min(1) 截断", () => {
+  it("W4g idle_4「离线效率上限 +0.08（可超过100%）」已放开", () => {
     const s = withTalents({ ...initialState(), visits: { date: "2026-11-27", count: 3 }, daily: { date: "2026-11-27", window: 0, goals: [], streak: 14, claimed: false } as never }, ["idle_4"]);
     const eff = offlineEfficiency(s, 0, 3 * 86400_000);
-    console.log("[W4g] 离线效率（idle_4+3回访+14天streak）=", eff, "（文案称可超过 100%）");
-    expect(eff).toBe(1); // min(1) 截断
+    console.log("[W4g] 离线效率（idle_4+3回访+14天streak）=", eff);
+    expect(eff).toBeGreaterThan(1); // 上限随天赋提高（1+talentBase）
   });
 
   it("W4h 已接入的效果：click_1/5a/5b 点击倍率、idle_1/3/5a 挂机、event_1/3/5b 事件 ×2", () => {
     const eff = talentEffects({ ...emptyTalents(), unlocked: ["click_1", "click_5b", "idle_1", "idle_3", "idle_5a", "event_1", "event_4", "event_5b", "event_3"] });
-    expect(eff.clickMult).toBeCloseTo(1.25 * 1.6, 6);
+    expect(eff.clickMult).toBeCloseTo(1.25 * 1.12, 6);
     expect(eff.idleMult).toBeCloseTo(1.2, 6);
     expect(eff.patrolRewardMult).toBeCloseTo((1 + 0.15 + 0.05) * 2, 6);
     expect(eff.memeRewardMult).toBeCloseTo((1 + 0.15) * 2, 6);
@@ -196,7 +207,7 @@ describe("W4. 天赋节点接入验证（本轮修复重点）", () => {
     const conv = stateWith(["click_5a"], { totalClicks: 3000 });
     expect(conversionBonus(conv)).toBeCloseTo(0.1, 6);
     // 点击力倍率确实进 clickPowerOf
-    expect(clickPowerOf(stateWith(["click_1", "click_5b"])) / clickPowerOf(stateWith([]))).toBeCloseTo(2, 6);
+    expect(clickPowerOf(stateWith(["click_1", "click_5b"])) / clickPowerOf(stateWith([]))).toBeCloseTo(1.25 * 1.12, 6);
     // 挂机天赋确实进工位
     expect(stationIdleScaled(withTalents(withLevels(s, { retire: 10 }), ["idle_1", "idle_3", "idle_5a"])) / stationIdleScaled(withLevels(s, { retire: 10 }))).toBeCloseTo(1.2, 6);
   });

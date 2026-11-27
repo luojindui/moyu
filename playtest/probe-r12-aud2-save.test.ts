@@ -60,21 +60,19 @@ describe("R1. v1→v2 迁移 / v2 roundtrip", () => {
   });
 });
 
-describe("R3. 本轮新缺陷：18 点天赋被存档按 15 截断", () => {
-  it("R3 存 18 点 → 读回 15 点（正常玩法可触发，点数永久丢失）", () => {
+describe("R3. 18 点天赋存档上限（420f89a 修复复验）", () => {
+  it("R3 存 16/17/18 点 → 原样读回（不再截断到 15）", () => {
     expect(TALENT_POINT_CAP).toBe(18);
     for (const pts of [16, 17, 18]) {
       const s = { ...initialState(), moyu: 0, totalEarned: 0, lifetimeEarned: 0, talents: { unlocked: [], points: pts, rankGranted: 12 } };
       const a = memoryAdapter();
       serialize(s, a, T0);
       const back = restore(a, NOW).state!;
-      console.log(`[R3] 存档 ${pts} 点 → 读回 ${back.talents.points} 点（丢失 ${pts - back.talents.points}）`);
-      expect(back.talents.points).toBe(15);
+      console.log(`[R3] 存档 ${pts} 点 → 读回 ${back.talents.points} 点`);
+      expect(back.talents.points).toBe(pts);
     }
-    // save.ts 里的上限是硬编码 15，而非 TALENT_POINT_CAP
     const src = consumers("TALENT_POINT_CAP");
     console.log("[R3] TALENT_POINT_CAP 消费点:", src);
-    expect(src.some((h) => h.path.endsWith("save.ts"))).toBe(false);
   });
 });
 
@@ -149,7 +147,7 @@ describe("R6. 天赋净化与新字段边界", () => {
     expect(exclusiveTaken(s.talents, "click_ult")).toBe("click_5a"); // 两个互斥终极同时存在
     const eff = talentEffects(s.talents);
     expect(eff.clickToIdleStep).toBe(300); // 5a 生效
-    expect(eff.clickMult).toBeCloseTo(1.25 * 1.6, 6); // 5b 也生效 → 互斥被篡改破坏
+    expect(eff.clickMult).toBeCloseTo(1.25 * 1.12, 6); // 5b 也生效（+12%）→ 互斥被篡改破坏
     expect(branchTier(s.talents, "click")).toBe(5);
     console.log("[R6] 篡改档可同时点亮 click_5a+click_5b（互斥仅在 canUnlock 生效，restore 不校验）");
   });

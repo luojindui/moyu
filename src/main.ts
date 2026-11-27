@@ -334,12 +334,14 @@ async function boot(): Promise<void> {
     let gained = clickPowerOf(state) * comboMultiplier(combo, clickComboCap);
     // 天赋 click_4：每 N 次点击必暴击 ×5（巡逻偷点不触发，保红线 C）
     const critEvery = talentEffects(state.talents).critEvery;
-    if (critEvery > 0 && (state.totalClicks + 1) % critEvery === 0) {
+    const isCrit = critEvery > 0 && (state.totalClicks + 1) % critEvery === 0;
+    if (isCrit) {
       gained *= 5;
       scene.fx.floatText(p.x, p.y - 30, "暴击!");
       playSuccess();
     }
-    state = doClick(state, combo);
+    // 暴击倍率同时作用于实际入账（飘字=入账）
+    state = doClick(state, combo, isCrit ? 5 : 1);
     trackDaily("click");
     if (state.totalClicks % 25 === 0) state = syncFlavorCollection(state); // 点击线彩蛋按累计点击数解锁
     const meme = CLICK_MEMES[Math.floor(Math.random() * CLICK_MEMES.length)];

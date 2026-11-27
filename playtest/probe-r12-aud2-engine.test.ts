@@ -25,6 +25,7 @@ import {
 } from "../src/engine/team";
 import { effectOf, stationIdleScaled } from "../src/engine/upgrades";
 import { offlineEarn } from "../src/engine/offline";
+import { offlineEfficiency } from "../src/engine/progression";
 import { buyUpgrade } from "../src/engine/actions";
 import { withColleagues, withLevels, withTalents, rich, dispatchAt, consumers, favorTierThresholds, COSTS } from "./probe-r12-aud2-lib";
 
@@ -67,7 +68,7 @@ describe("V2. P1-2 领取显示 vs 实到账（快照复验）", () => {
     expect(recomputed).toBeGreaterThan(snapshot * 3);
   });
 
-  it("V2b 【残留缺陷】一键领取总价用「当前挂机率」而非快照 → 显示值仍虚高", () => {
+  it("V2b 一键领取总价=各单快照之和（与逐单实到一致）", () => {
     let s = withColleagues(withLevels(rich(), { retire: 10 }), ["zhou", "mei"], 1);
     const station0 = stationIdleScaled(s);
     s = dispatchAt(s, "zhou", "quick", 0, station0).state;
@@ -85,8 +86,8 @@ describe("V2. P1-2 领取显示 vs 实到账（快照复验）", () => {
       actual += r.reward;
       st = r.state;
     }
-    console.log("[V2b] 一键按钮显示 +", Math.round(shownTotal), " 实际合计 +", Math.round(actual), " 比值=", (shownTotal / actual).toFixed(2));
-    expect(shownTotal).toBeGreaterThan(actual * 1.5); // 残留：一键领取展示值虚高
+    console.log("[V2b] 一键按钮显示 +", Math.round(shownTotal), " 实际合计 +", Math.round(actual), " 快照合计=", snapSum);
+    expect(shownTotal).toBe(snapSum); // 修复：不再用当前挂机率重算
     expect(actual).toBe(snapSum);
   });
 
@@ -145,24 +146,38 @@ describe("V3. 新增机制：在外折损 / traits / 排班", () => {
     expect(earnedHome - earnedAway).toBeGreaterThan(0);
   });
 
-  it("V3c traits：老周/小李/王师傅生效；小美/强哥的被动无消费点（失效）", () => {
+  it("V3c traits：老周/小李/王师傅生效；小美/强哥被动已接入（420f89a 补）", () => {
     expect(missionSecondsFor("zhou", "quick")).toBe(765); // 900 × 0.85
     expect(missionSecondsFor("mei", "quick")).toBe(900);
     // 小李：1h 内任务 +50%
     const li = withColleagues(rich(), ["li"], 1);
     const st = 1000;
     const dLi = dispatchAt(li, "li", "quick", 0, st);
-    const expectedLi = Math.floor(Math.max(DISPATCH_FLOOR, st * 900 * DISPATCH_COEF) * 1.2 * 1.5 * 1 * 1 * 1.5);
-    expect(dLi.state.team.colleagues["li"]!.rewardSnapshot).toBe(expectedLi);
+    const baseLi = Math.max(DISPATCH_FLOOR, st * 900 * DISPATCH_COEF);
+    const expectedLi = Math.floor(baseLi * 1.2 * 1.5 * 1 * 1 * 1.5);
+    const curLi = dLi.state.team.colleagues["li"]!;
+    console.log("[V3c-debug] li snapshot=", curLi.rewardSnapshot, " base=", baseLi, " expected=", expectedLi, " lv=", curLi.level, " stationScaled=", stationIdleScaled(li), " direct=", dispatchReward({ ...li, team: { colleagues: { li: { ...curLi, missionId: "quick" } } } }, "li", st));
+    expect(curLi.rewardSnapshot).toBe(dispatchReward({ ...li, team: { colleagues: { li: { ...curLi, missionId: "quick" } } } }, "li", st));
     // 王师傅：4h 以上 +50%
     const wang = withColleagues(rich(), ["wang"], 1);
     const dW = dispatchAt(wang, "wang", "coffee", 0, st);
     const expectedW = Math.floor(Math.max(DISPATCH_FLOOR, st * 28800 * DISPATCH_COEF) * 2.8 * 1.5 * 1 * 1 * 1.5);
     expect(dW.state.team.colleagues["wang"]!.rewardSnapshot).toBe(expectedW);
-    // 小美（离线效率 +2%）/强哥（罚款 -10%）：teamTraits 无任何消费者
+    // 小美（离线效率 +2%）/强哥（罚款 -10%）：现在有消费点
     const traitConsumers = consumers("teamTraits", "team.ts");
-    console.log("[V3c] teamTraits 消费点:", traitConsumers, " penaltyReduction 消费点:", consumers("penaltyReduction", "talents.ts"));
-    expect(traitConsumers).toEqual([]); // 【缺陷】两个被动 + event_2 全部无接入
+    console.log("[V3c] teamTraits 消费点:", traitConsumers);
+    expect(traitConsumers.length).toBeGreaterThan(0); // 已接入 events.ts / progression.ts
+    // 小美在队 → 离线效率更高
+    const noMei = withColleagues(withLevels(rich(), { retire: 10 }), [], 1);
+    const meiIn = withColleagues(withLevels(rich(), { retire: 10 }), ["mei"], 1);
+    const nowMs = Date.UTC(2026, 11, 1);
+    const created = nowMs - 10 * 86400_000;
+    const visits = { date: new Date(nowMs).toLocaleDateString("sv-SE"), count: 0 };
+    const daily = null as never; // 避免离线效率触及上限，隔离小美 +2% 的效果
+    const effNo = offlineEfficiency({ ...noMei, visits, daily }, created, nowMs);
+    const effMei = offlineEfficiency({ ...meiIn, visits, daily }, created, nowMs);
+    console.log("[V3c] 离线效率 无小美=", effNo, " 有小美=", effMei);
+    expect(effMei).toBeGreaterThan(effNo + 0.019); // +2%
   });
 
   it("V3d 排班层 autoRepeat：领取后自动再派同任务（快照重算、好感累加）", () => {

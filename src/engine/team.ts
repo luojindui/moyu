@@ -117,7 +117,7 @@ export const COLLEAGUES: ColleagueDef[] = [
   {
     id: "li", name: "小李", role: "实习生·精力旺盛", skill: "errand",
     cost: 60_000_000, idlePerLevel: 300, sharePerLevel: 0.014,
-    trait: "短任务加成", traitValue: 0.5, // 1 小时以内任务奖励 +50%
+    trait: "短任务加成", traitValue: 0.6, // 1 小时以内任务奖励 +60%
   },
   {
     id: "wang", name: "王师傅", role: "快退休·深藏功与名", skill: "coffee",
@@ -127,7 +127,7 @@ export const COLLEAGUES: ColleagueDef[] = [
 ];
 
 export const MISSIONS: MissionDef[] = [
-  { id: "quick", name: "溜一圈", type: "errand", seconds: 15 * 60, mult: 1.2 },
+  { id: "quick", name: "溜一圈", type: "errand", seconds: 15 * 60, mult: 1.3 },
   { id: "chat", name: "茶水间聊八卦", type: "chat", seconds: 30 * 60, mult: 1.3 },
   { id: "meeting", name: "开个会", type: "meeting", seconds: 60 * 60, mult: 1.6 },
   { id: "toilet", name: "长线蹲点", type: "toilet", seconds: 4 * 60 * 60, mult: 2.2 },
@@ -357,11 +357,13 @@ export function setAutoRepeat(state: GameState, id: string, on: boolean): GameSt
   return { ...state, team: { colleagues: { ...state.team.colleagues, [id]: { ...cur, autoRepeat: on } } } };
 }
 
-/** 当前可领奖励总和（一键领取用） */
+/** 当前可领奖励总和（一键领取用）：按各单快照求和，与逐单领取一致 */
 export function claimableTotal(state: GameState, nowMs: number, stationIdle: number): number {
   let sum = 0;
   for (const def of COLLEAGUES) {
-    if (missionDone(state, def.id, nowMs)) sum += dispatchReward(state, def.id, stationIdle);
+    if (!missionDone(state, def.id, nowMs)) continue;
+    const cur = state.team.colleagues[def.id]!;
+    sum += cur.rewardSnapshot > 0 ? cur.rewardSnapshot : dispatchReward(state, def.id, stationIdle);
   }
   return sum;
 }

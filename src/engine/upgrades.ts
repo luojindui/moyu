@@ -85,6 +85,10 @@ export function conversionBonus(state: GameState): number {
   if (talent.surviveToIdle) {
     bonus += Math.min(0.3, state.patrolSurvives * 0.01);
   }
+  // click_5b：立即 +12%，每 1000 点击再 +1%（封顶 +20%）
+  if (talent.clickUltBase > 0) {
+    bonus += Math.min(0.2, talent.clickUltBase + Math.floor(state.totalClicks / 1000) * talent.clickUltPerK);
+  }
   return bonus;
 }
 

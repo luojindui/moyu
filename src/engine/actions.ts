@@ -35,8 +35,9 @@ export function clickPowerOf(state: GameState): number {
 }
 
 /** 点击一次（combo 为当前连击数）：返回新状态 */
-export function doClick(state: GameState, combo = 0): GameState {
-  return { ...gain(state, clickPowerOf(state) * comboMultiplier(combo, comboCapOf(state))), totalClicks: state.totalClicks + 1 };
+export function doClick(state: GameState, combo = 0, critMult = 1): GameState {
+  const income = clickPowerOf(state) * comboMultiplier(combo, comboCapOf(state)) * Math.max(1, critMult);
+  return { ...gain(state, income), totalClicks: state.totalClicks + 1 };
 }
 
 /**

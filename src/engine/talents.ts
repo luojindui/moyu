@@ -42,7 +42,7 @@ export const TALENTS: TalentDef[] = [
   { id: "click_3", branch: "click", tier: 3, name: "连击上限", desc: "连击上限 20 → 30（最高 ×1.36）", value: 10 },
   { id: "click_4", branch: "click", tier: 4, name: "暴击", desc: "每 20 次点击必暴击 ×5（巡逻偷点不触发）", value: 20 },
   { id: "click_5a", branch: "click", tier: 5, name: "摸鱼转正", desc: "每 300 次累计点击 → 挂机 +1%（封顶 +35%）", value: 300, exclusive: "click_ult" },
-  { id: "click_5b", branch: "click", tier: 5, name: "指尖风暴", desc: "点击力再 +60%，连击每层收益翻倍（上限 ×1.72）", value: 0.6, exclusive: "click_ult" },
+  { id: "click_5b", branch: "click", tier: 5, name: "指尖风暴", desc: "立即 +12% 挂机；此后每 1000 次累计点击再 +1%（封顶 +20%）+ 点击力 +60%", value: 0.12, exclusive: "click_ult" },
 
   // ---------- 挂机流 ----------
   { id: "idle_1", branch: "idle", tier: 1, name: "稳", desc: "挂机收益 +6%", value: 0.06 },
@@ -58,7 +58,7 @@ export const TALENTS: TalentDef[] = [
   { id: "event_3", branch: "event", tier: 3, name: "人脉", desc: "丢梗奖励 +15%", value: 0.15 },
   { id: "event_4", branch: "event", tier: 4, name: "预警", desc: "巡逻横幅提前 2s + 奖励再 +5%", value: 0.05 },
   { id: "event_5a", branch: "event", tier: 5, name: "摸鱼气场", desc: "每次安然巡逻 → 挂机 +1%（封顶 +30%）", value: 1, exclusive: "event_ult" },
-  { id: "event_5b", branch: "event", tier: 5, name: "老板眼线", desc: "巡逻与丢梗奖励 ×2", value: 2, exclusive: "event_ult" },
+  { id: "event_5b", branch: "event", tier: 5, name: "老板眼线", desc: "巡逻与丢梗奖励 ×2，且每次安然巡逻额外 +10 秒挂机收益", value: 2, exclusive: "event_ult" },
 ];
 
 export interface TalentState {
@@ -188,8 +188,14 @@ export interface TalentEffects {
   memeRewardMult: number;
   /** 巡逻横幅提前秒数 */
   patrolWarnSeconds: number;
-  /** 每次安然巡逻 → 挂机 +1%（Lv5） */
+  /** 每次安然巡逻 → 挂机 +1%（Lv5a） */
   surviveToIdle: boolean;
+  /** click_5b：立即挂机加成（0.12） */
+  clickUltBase: number;
+  /** click_5b：每 1000 点击再 +1%（封顶 0.08） */
+  clickUltPerK: number;
+  /** event_5b：每次安然巡逻额外给的挂机秒数 */
+  surviveBonusIdleSeconds: number;
 }
 
 /** 汇总当前已点天赋的效果 */
@@ -198,7 +204,7 @@ export function talentEffects(talents: TalentState): TalentEffects {
   const v = (id: string): number => talentDef(id)?.value ?? 0;
   const idleLinear = (has("idle_1") ? v("idle_1") : 0) + (has("idle_3") ? v("idle_3") : 0) + (has("idle_5a") ? v("idle_5a") : 0);
   return {
-    clickMult: (has("click_1") ? 1 + v("click_1") : 1) * (has("click_5b") ? 1 + v("click_5b") : 1),
+    clickMult: (has("click_1") ? 1 + v("click_1") : 1) * (has("click_5b") ? 1.6 : 1), // 5b 点击力 +60%（固定）
     comboWindowBonus: has("click_2") ? v("click_2") : 0,
     comboMaxBonus: has("click_3") ? v("click_3") : 0,
     critEvery: has("click_4") ? v("click_4") : 0,
@@ -212,5 +218,8 @@ export function talentEffects(talents: TalentState): TalentEffects {
     memeRewardMult: (1 + (has("event_3") ? v("event_3") : 0)) * (has("event_5b") ? v("event_5b") : 1),
     patrolWarnSeconds: has("event_4") ? 2 : 0,
     surviveToIdle: has("event_5a"),
+    clickUltBase: has("click_5b") ? v("click_5b") : 0,
+    clickUltPerK: has("click_5b") ? 0.01 : 0,
+    surviveBonusIdleSeconds: has("event_5b") ? 10 : 0,
   };
 }

@@ -214,6 +214,11 @@ export function finishPatrol(state: GameState, es: EventState): { state: GameSta
   } else {
     reward = bossSurviveReward(state, es); // hold：忍住才有奖，被抓为 0
   }
+  // event_5b：安然额外给 10 秒挂机收益
+  const bonusIdleSec = talentEffects(state.talents).surviveBonusIdleSeconds;
+  if (reward > 0 && bonusIdleSec > 0) {
+    reward += bonusIdleSec * effectOf(state).idleRate;
+  }
   const next = gain(state, reward);
   if (reward > 0 && !es.bossCaught) es.surviveStreak += 1;
   es.bossCaught = false;
