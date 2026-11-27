@@ -511,24 +511,27 @@ describe("R14-4 协同深度 & 跨日", () => {
     const base = mkState({ phone: 4, toilet: 3, group: 2 }, { zhou: col(3) });
     const now = Date.now();
     const yesterday = new Date(now - 24 * 3600 * 1000).toLocaleDateString("sv-SE");
-    // 情形 A：昨天用了 slack，今天首次打开（精力 date=昨天，buff 仍在 state 里）
-    const used = useEnergy({ ...base, energy: emptyEnergy(yesterday) }, "slack")!;
-    // main.ts 顺序：restore → settleReturn(离线结算) → 循环内 ensureEnergy(跨日重置)
-    const settledA = settleReturn(used, now - 8 * 3600 * 1000, now, 1);
-    // 情形 B：没有 buff
+    const today = new Date(now).toLocaleDateString("sv-SE");
+    const yesterdayState = useEnergy({ ...base, energy: emptyEnergy(yesterday) }, "slack")!;
+    // 旧顺序（先结算离线、后重置）→ 昨日 buff 漏进今日离线
+    const settledA = settleReturn(yesterdayState, now - 8 * 3600 * 1000, now, 1);
+    const resetA = ensureEnergy(settledA.state, today);
+    // 新顺序（docs/spec-batch3.md 要求、main.ts 现状：先按今天重置，再结算离线）→ 不漏
+    const resetFirst = ensureEnergy(yesterdayState, today);
+    const settledC = settleReturn(resetFirst, now - 8 * 3600 * 1000, now, 1);
     const settledB = settleReturn({ ...base, energy: emptyEnergy(yesterday) }, now - 8 * 3600 * 1000, now, 1);
-    const resetA = ensureEnergy(settledA.state, new Date(now).toLocaleDateString("sv-SE"));
     note("energy_offline_leak", {
       idleRate: round(effectOf(base).idleRate, 4),
-      offlineEarnWithYesterdaySlack: Math.round(settledA.earned),
-      offlineEarnWithoutBuff: Math.round(settledB.earned),
-      extra: Math.round(settledA.earned - settledB.earned),
+      legacyOrder_withBuff: Math.round(settledA.earned),
+      legacyOrder_extra: Math.round(settledA.earned - settledB.earned),
+      specOrder_resetFirst: Math.round(settledC.earned),
+      specOrder_extra: Math.round(settledC.earned - settledB.earned),
       energyDateAfterReset: resetA.energy.date,
       resetLeft: resetA.energy.left,
-      note: "离线结算发生在 ensureEnergy 重置之前 → 昨天的 +25% 会结算进今天凌晨的离线收益",
+      note: "旧顺序会把昨日 +25% 结算进今日凌晨离线（漏洞）；main.ts 现已 ensureEnergy 先于 settleReturn → 已按 spec 修复",
     });
-    expect(settledA.earned).toBeGreaterThan(settledB.earned);
-    // 文案说"效果持续到当天结束"，实际跨日离线仍享受 → 规格不一致（利好玩家的漏洞）
+    expect(settledA.earned).toBeGreaterThan(settledB.earned); // 旧顺序确有漏洞
+    expect(settledC.earned).toBe(settledB.earned); // 新顺序无漏
   });
 
   it("天赋：每日 1 点 + 免费重置 → 决策是否有承诺成本", () => {

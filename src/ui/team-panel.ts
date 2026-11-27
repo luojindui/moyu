@@ -523,9 +523,9 @@ export class TeamPanel {
         </div>`;
       }).join("")}
       <div class="mate-actions" style="margin-top:8px">
-        <button class="ghost" data-act="energy-all" ${energy.left >= 100 ? "" : "disabled"}>一键全用（3 项，共 100 精力）</button>
+        <button class="ghost" data-act="energy-all" ${energy.left >= ENERGY_ACTIONS.reduce((s, a) => s + a.cost, 0) && energy.used.length === 0 ? "" : "disabled"}>省心组合：摸鱼+假装工作+社交（100 精力）</button>
       </div>
-      <div style="font-size:11px;color:#a8a493;margin-top:6px">每天 100 点，效果持续到当天结束；3 项合计正好 100</div>
+      <div style="font-size:11px;color:#a8a493;margin-top:6px">每天 100 点；4 项合计 145，必须放弃至少 1 项（含「专注点击」45 点时只剩 55）</div>
     </div>`);
 
     // 家具（标题 + 列表语义，便于读屏跳转）

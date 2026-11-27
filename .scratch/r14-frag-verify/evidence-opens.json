@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "url": "https://luojindui.github.io/moyu/",
+    "note": "同一 Chrome profile / 同一存档，连续 reload 3 次"
+  },
+  "opens": [
+    {
+      "name": "打开1（首开）",
+      "steps": [
+        "看到 HUD 「精力 精力 100」角标",
+        "点 👥（落同事页）",
+        "点「工位」",
+        "摸鱼卡盖住工位 → 点「今天先不选」（+1 步）",
+        "点「一键全用」（1 步）"
+      ],
+      "notes": [],
+      "boot": {
+        "boot": {
+          "ok": true,
+          "ms": 1131
+        },
+        "ms": 2488
+      },
+      "hudBefore": {
+        "energyBadge": "精力 100",
+        "badgeRect": {
+          "x": 290,
+          "y": 552,
+          "w": 51,
+          "h": 16
+        },
+        "aria": "摸鱼小队，还有精力 100",
+        "overlays": {
+          "cards": false,
+          "team": false,
+          "welcome": false,
+          "boss": false
+        }
+      },
+      "decorOnEnter": {
+        "activeTab": "工位",
+        "enabledActions": 3,
+        "energyLine": "今日精力 （剩 100/100）",
+        "oneClick": "一键全用（3 项，共 100 精力）",
+        "onCount": 0,
+        "summary": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%"
+      },
+      "cardInterrupt": true,
+      "cardStack": {
+        "teamStillOpen": true,
+        "hit": "cards-panel"
+      },
+      "oneClick": {
+        "tapOk": true,
+        "text": "一键全用（3 项，共 100 精力）",
+        "after": {
+          "activeTab": "工位",
+          "enabledActions": 0,
+          "energyLine": "今日精力 （剩 0/100）",
+          "oneClick": "一键全用（3 项，共 100 精力）",
+          "onCount": 3,
+          "summary": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%"
+        },
+        "toast": {
+          "text": "已使用 3 项精力（剩余 0 点）",
+          "visible": true
+        },
+        "hudAfter": {
+          "energyBadge": null,
+          "badgeRect": null,
+          "aria": "摸鱼小队",
+          "overlays": {
+            "cards": false,
+            "team": true,
+            "welcome": false,
+            "boss": false
+          }
+        }
+      },
+      "tapsTarget": 3,
+      "tapsActual": 4,
+      "msTotal": 14220
+    },
+    {
+      "name": "打开2（同日稍后）",
+      "steps": [],
+      "boot": {
+        "boot": {
+          "ok": true,
+          "ms": 112
+        },
+        "ms": 1019
+      },
+      "hudBefore": {
+        "energyBadge": null,
+        "badgeRect": null,
+        "aria": "摸鱼小队",
+        "overlays": {
+          "cards": false,
+          "team": false,
+          "welcome": false,
+          "boss": false
+        }
+      },
+      "decor": {
+        "activeTab": "工位",
+        "enabledActions": 0,
+        "energyLine": "今日精力 （剩 0/100）",
+        "oneClick": "一键全用（3 项，共 100 精力）",
+        "onCount": 3,
+        "summary": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%"
+      },
+      "cardInterrupt": false,
+      "meaningfulActions": 0,
+      "taps": 2,
+      "msTotal": 2254
+    },
+    {
+      "name": "打开3（同日第 3 次）",
+      "steps": [],
+      "boot": {
+        "boot": {
+          "ok": true,
+          "ms": 14
+        },
+        "ms": 921
+      },
+      "hudBefore": {
+        "energyBadge": null,
+        "badgeRect": null,
+        "aria": "摸鱼小队",
+        "overlays": {
+          "cards": false,
+          "team": false,
+          "welcome": false,
+          "boss": false
+        }
+      },
+      "decor": {
+        "activeTab": "工位",
+        "enabledActions": 0,
+        "energyLine": "今日精力 （剩 0/100）",
+        "oneClick": "一键全用（3 项，共 100 精力）",
+        "onCount": 3,
+        "summary": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%"
+      },
+      "meaningfulActions": 0,
+      "taps": 2,
+      "msTotal": 2111
+    }
+  ]
+}

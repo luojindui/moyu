@@ -236,7 +236,7 @@ await runChrome(async ({ port, proc }) => {
       focusRes, afterFocus: afterFocus.energy, btnsAfterFocus, energyAllAfterFocus,
       slackRes, afterFocusSlack: afterFocusSlack.energy, btnsAfterFocusSlack,
     });
-    EVIDENCE.asserts.focusPathLeavesOnlyOneMore = afterFocus.energy.left === 55 && btnsAfterFocusSlack.length === 0;
+    EVIDENCE.asserts.focusPathLeavesOnlyOneMore = afterFocus.energy.left === 55 && afterFocusSlack.energy.left === 15 && btnsAfterFocusSlack.length === 2 && btnsAfterFocusSlack.every((b) => b.disabled);
     await shot("04-focus-path");
 
     // ============ 3b. 重置今日精力 → 验证「一键全用」是否仍锁死旧三档 ============
@@ -437,9 +437,10 @@ await runChrome(async ({ port, proc }) => {
     const allLogs = await readLogs();
     log("A17 第二天工位页 + 一键全用", { day2FirstTab, day2EnergyText, day2EnergyBtns, day2EnergyAll, allRes, energy: afterAllEnergy.energy, hudIdle: afterAllEnergy.hudIdle, toast: allLogs.toasts.at(-1)?.text ?? null, announces: allLogs.announces.slice(-2) });
     EVIDENCE.asserts.oneClickAllEnergy = afterAllEnergy.energy.used.length === 3 && afterAllEnergy.energy.left === 0;
+    EVIDENCE.asserts.oneClickButtonDisabled = day2EnergyAll.disabled === true;
     await shot("14-day2-oneclick-all");
     EVIDENCE.asserts.day2FirstTab = day2FirstTab;
-    EVIDENCE.asserts.day2EnergyUsable = day2EnergyBtns.length === 3 && day2EnergyBtns.every((b) => b.disabled === false);
+    EVIDENCE.asserts.day2EnergyUsable = day2EnergyBtns.length === 4 && day2EnergyBtns.every((b) => b.disabled === false);
     await shot("13-next-day-decor");
 
     EVIDENCE.asserts.energyTabsAndTaps = { firstOpenDefaultTab: EVIDENCE.asserts.firstOpenDefaultTab, tapsToEnergyFromNewSession: 2 };

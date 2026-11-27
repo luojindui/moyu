@@ -726,7 +726,7 @@
   "decor_after_buy_all": {
     "count": 8,
     "effects": {
-      "idleMult": 1.4345100000000002,
+      "idleMult": 1.5779610000000004,
       "clickMult": 1.265,
       "offlineBonus": 0.23,
       "dispatchRewardMult": 1.3
@@ -736,7 +736,7 @@
   "decor_totals": {
     "totalCost": 2234743000,
     "totalCostText": "22.35亿",
-    "idleMult": 1.4345,
+    "idleMult": 1.578,
     "clickMult": 1.265,
     "offlineBonus": 0.23,
     "dispatchRewardMult": 1.3,
@@ -3061,8 +3061,8 @@
       "stationIdle": 99.2,
       "teamIdle": 163.3728,
       "stationShare": 0.3778,
-      "decorFullTotalIdleGainPct": 16.42,
-      "decorFullStationOnlyGainPct": 43.45,
+      "decorFullTotalIdleGainPct": 21.84,
+      "decorFullStationOnlyGainPct": 57.8,
       "slackTotalIdleGainPct": 9.44,
       "slackStationOnlyGainPct": 25
     },
@@ -3072,8 +3072,8 @@
       "stationIdle": 631.2,
       "teamIdle": 4160.3248,
       "stationShare": 0.1317,
-      "decorFullTotalIdleGainPct": 5.72,
-      "decorFullStationOnlyGainPct": 43.45,
+      "decorFullTotalIdleGainPct": 7.61,
+      "decorFullStationOnlyGainPct": 57.8,
       "slackTotalIdleGainPct": 3.29,
       "slackStationOnlyGainPct": 25
     }
@@ -3082,16 +3082,16 @@
     {
       "stage": "mid",
       "dispatchRewardNoDecor": 248328,
-      "dispatchRewardAllDecor": 387940,
-      "dispatchMultiplier": 1.562,
+      "dispatchRewardAllDecor": 409437,
+      "dispatchMultiplier": 1.649,
       "offlineBonusFromDecor": 0.23,
       "offlineEfficiencyDeltaPct": 23
     },
     {
       "stage": "late",
       "dispatchRewardNoDecor": 1173149,
-      "dispatchRewardAllDecor": 2037446,
-      "dispatchMultiplier": 1.737,
+      "dispatchRewardAllDecor": 2206596,
+      "dispatchMultiplier": 1.881,
       "offlineBonusFromDecor": 0.23,
       "offlineEfficiencyDeltaPct": 23
     }
@@ -3138,12 +3138,13 @@
   },
   "energy_offline_leak": {
     "idleRate": 110.3808,
-    "offlineEarnWithYesterdaySlack": 2652204,
-    "offlineEarnWithoutBuff": 2297964,
-    "extra": 354240,
+    "legacyOrder_withBuff": 2652204,
+    "legacyOrder_extra": 354240,
+    "specOrder_resetFirst": 2297964,
+    "specOrder_extra": 0,
     "energyDateAfterReset": "2026-11-27",
     "resetLeft": 100,
-    "note": "离线结算发生在 ensureEnergy 重置之前 → 昨天的 +25% 会结算进今天凌晨的离线收益"
+    "note": "旧顺序会把昨日 +25% 结算进今日凌晨离线（漏洞）；main.ts 现已 ensureEnergy 先于 settleReturn → 已按 spec 修复"
   },
   "talent_branch_cost": {
     "branches": [

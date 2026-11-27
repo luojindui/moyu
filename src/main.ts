@@ -33,7 +33,7 @@ import { CardPanel } from "./ui/card-panel";
 import { BossChoicePanel } from "./ui/boss-panel";
 import { CARDS, chooseCard, dismissCards, ensureCards } from "./engine/cards";
 import { onBossChoice } from "./engine/events";
-import { DECOR, buyDecor, decorDef } from "./engine/decor";
+import { DECOR, buyDecor, decorComplete, decorDef } from "./engine/decor";
 import { energyActionDef, ensureEnergy, useEnergy } from "./engine/energy";
 import { CHOICE_SECONDS } from "./engine/boss-choice";
 import { cardEffects } from "./engine/cards";
@@ -246,9 +246,16 @@ async function boot(): Promise<void> {
         hud.refresh(state);
         teamPanel.refreshNow(state);
         const def = decorDef(id);
-        const msg = `已装修：${def?.name ?? ""}（${def?.desc ?? ""}）`;
+        const done = decorComplete(state);
+        const msg = done
+          ? `工位装修完成！全部 8 件，挂机额外 +10%`
+          : `已装修：${def?.name ?? ""}（${def?.desc ?? ""}）`;
         showToast(msg);
         announce(msg, 1);
+        if (done) {
+          playSuccess();
+          showToast("🎉 工位装修完成：挂机 +10%");
+        }
         serialize(state, localStorageAdapter, Date.now());
       }
     },
@@ -270,7 +277,8 @@ async function boot(): Promise<void> {
     },
     onUseAllEnergy: () => {
       let used = 0;
-      for (const a of ["slack", "fake-work", "social"] as const) {
+      // 省心组合 = 最便宜的三项（social 25 + fake-work 35 + slack 40 = 100）
+      for (const a of ["social", "fake-work", "slack"] as const) {
         const next = useEnergy(state, a);
         if (next) {
           state = next;

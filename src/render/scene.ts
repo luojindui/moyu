@@ -163,9 +163,10 @@ export class Scene {
 
     // 地毯（桌下，锚定工位；需购买「毛绒地毯」）
     if (this.decor.includes("rug")) {
-      ctx.globalAlpha = 0.5;
-      R(vw / 2 - 3.1 * u, groundY + 1.1 * u, 6.2 * u, 1.5 * u, "#6b4f43");
-      R(vw / 2 - 2.6 * u, groundY + 1.25 * u, 5.2 * u, 1.2 * u, "#7c5c4c");
+      ctx.globalAlpha = 0.82;
+      R(vw / 2 - 3.1 * u, groundY + 1.1 * u, 6.2 * u, 1.5 * u, "#8a5f4a"); // 外沿
+      R(vw / 2 - 2.6 * u, groundY + 1.25 * u, 5.2 * u, 1.2 * u, "#a97556"); // 毯面
+      R(vw / 2 - 2.3 * u, groundY + 1.45 * u, 4.6 * u, 0.16 * u, "#c08a63"); // 花纹
       ctx.globalAlpha = 1;
     }
 
@@ -205,7 +206,7 @@ export class Scene {
 
     // 绿植（左下）：矮圆盆 + 分叶（需购买「绿萝」）
     if (this.decor.includes("plant")) {
-    const plantX = 0.9 * u;
+    const plantX = 1.15 * u;
     const potTop = groundY - 0.85 * u; // 盆口
     R(plantX, potTop, 1.05 * u, 0.85 * u, "#a4643f"); // 盆身
     R(plantX - 0.08 * u, potTop - 0.14 * u, 1.21 * u, 0.18 * u, "#8a4f2f"); // 盆沿
@@ -339,8 +340,8 @@ export class Scene {
 
     // 护眼台灯（桌面上方，挂在桌板右侧）
     if (has("lamp")) {
-      const lx = vw / 2 + 1.2 * u;
-      const ly = groundY - 3.3 * u;
+      const lx = vw / 2 - 1.5 * u;
+      const ly = groundY - 3.35 * u;
       R(lx, ly, 0.18 * u, 1.2 * u, "#8a8f9c"); // 灯杆
       R(lx - 0.25 * u, ly - 0.3 * u, 0.72 * u, 0.32 * u, "#ffd76e"); // 灯罩
       ctx.globalAlpha = 0.12;
@@ -357,18 +358,18 @@ export class Scene {
 
     // 迷你冰箱（右墙脚，饮水机左侧）
     if (has("fridge")) {
-      const fx = 0.2 * u;
+      const fx = 0.1 * u;
       const fy = groundY - 2.05 * u;
-      R(fx, fy, 1.0 * u, 2.05 * u, "#d8e3ea");
-      R(fx, fy + 0.85 * u, 1.0 * u, 0.09 * u, "#9fb0bb");
-      R(fx + 0.78 * u, fy + 0.3 * u, 0.11 * u, 0.35 * u, "#8a9aa5"); // 上把手
-      R(fx + 0.78 * u, fy + 1.05 * u, 0.11 * u, 0.45 * u, "#8a9aa5"); // 下把手
+      R(fx, fy, 0.78 * u, 2.05 * u, "#d8e3ea");
+      R(fx, fy + 0.85 * u, 0.78 * u, 0.09 * u, "#9fb0bb");
+      R(fx + 0.62 * u, fy + 0.3 * u, 0.1 * u, 0.35 * u, "#8a9aa5"); // 上把手
+      R(fx + 0.62 * u, fy + 1.05 * u, 0.1 * u, 0.45 * u, "#8a9aa5"); // 下把手
     }
 
     // 按摩椅（桌子右侧地面）
     if (has("chair")) {
-      const cx = vw / 2 + 1.95 * u;
-      const cy = groundY - 1.45 * u;
+      const cx = vw / 2 + 1.55 * u;
+      const cy = groundY - 2.0 * u;
       R(cx, cy, 1.25 * u, 1.45 * u, "#4a3b52"); // 椅背
       R(cx + 0.08 * u, cy + 0.55 * u, 1.1 * u, 0.55 * u, "#5d4a66"); // 坐垫
       R(cx + 0.12 * u, cy - 0.16 * u, 1.0 * u, 0.2 * u, "#6b5680"); // 头枕
@@ -389,7 +390,7 @@ export class Scene {
 
     // 投影仪（吊在天花板）
     if (has("projector")) {
-      const px = vw / 2 - 0.6 * u;
+      const px = vw / 2 + 1.4 * u;
       R(px, 0.2 * u, 0.45 * u, 1.0 * u, "#55596b"); // 吊杆
       R(px - 0.7 * u, 1.1 * u, 2.0 * u, 0.75 * u, "#6f7488"); // 机身
       R(px + 1.0 * u, 1.25 * u, 0.35 * u, 0.4 * u, "#9fe0ff"); // 镜头

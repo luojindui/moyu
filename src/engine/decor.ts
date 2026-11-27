@@ -58,6 +58,14 @@ export interface DecorEffects {
   dispatchRewardMult: number;
 }
 
+/** 集齐 8 件的完成奖励（挂机 +10%） */
+export const DECOR_COMPLETE_BONUS = 0.1;
+
+/** 是否已集齐全部家具 */
+export function decorComplete(state: GameState): boolean {
+  return DECOR.every((d) => state.decor.includes(d.id));
+}
+
 /** 已购家具的加成汇总 */
 export function decorEffects(state: GameState): DecorEffects {
   const out: DecorEffects = { idleMult: 1, clickMult: 1, offlineBonus: 0, dispatchRewardMult: 1 };
@@ -69,6 +77,7 @@ export function decorEffects(state: GameState): DecorEffects {
     if (def.effects.offlineBonus) out.offlineBonus += def.effects.offlineBonus;
     if (def.effects.dispatchRewardMult) out.dispatchRewardMult *= def.effects.dispatchRewardMult;
   }
+  if (decorComplete(state)) out.idleMult *= 1 + DECOR_COMPLETE_BONUS;
   return out;
 }
 
