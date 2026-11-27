@@ -576,7 +576,15 @@ async function boot(): Promise<void> {
   let onboardingActive = true;
   const updateOnboarding = (): void => {
     if (!onboardingActive) return;
-    if (quest.finished || state.prestige > 0 || state.lifetimeEarned > 1e6) {
+    const notNewbie =
+      state.prestige > 0 ||
+      state.lifetimeEarned > 1e6 ||
+      Object.keys(state.team.colleagues).length > 0 ||
+      state.decor.length > 0 ||
+      state.energy.used.length > 0 ||
+      !!state.cards?.chosenDate ||
+      (state.arcade?.played ?? 0) > 0;
+    if (quest.finished || notNewbie) {
       onboardingActive = false;
       syncArcadeBadge(state);
       document.body.classList.remove("onboarding");
@@ -898,6 +906,9 @@ async function boot(): Promise<void> {
         if (state.surviveStreak > state.bestSurviveStreak) {
           state = { ...state, bestSurviveStreak: state.surviveStreak };
         }
+        if (state.talents.unlocked.length > state.bestTalentsUnlocked) {
+          state = { ...state, bestTalentsUnlocked: state.talents.unlocked.length };
+        }
         const ri = RANKS.findIndex((r) => r.name === rankFor(state.lifetimeEarned).current) + 1;
         if (ri > state.rankIndex) state = { ...state, rankIndex: ri };
       }
@@ -1144,7 +1155,16 @@ async function boot(): Promise<void> {
   shop.refresh(state);
 
   // 新手期不显示角标；老玩家（已进阶/已招募）直接显示
-  if (state.prestige === 0 && state.lifetimeEarned <= 1e6) document.body.classList.add("onboarding");
+  // 老玩家判定：除了累计/转生，还要看是否已用过新系统（同事/家具/精力/卡/小游戏）
+  const looksNewbie =
+    state.prestige === 0 &&
+    state.lifetimeEarned <= 1e6 &&
+    Object.keys(state.team.colleagues).length === 0 &&
+    state.decor.length === 0 &&
+    state.energy.used.length === 0 &&
+    !state.cards?.chosenDate &&
+    (state.arcade?.played ?? 0) === 0;
+  if (looksNewbie) document.body.classList.add("onboarding");
   // 🎮 剩余次数角标（启动时就显示，不只玩过之后）
   syncArcadeBadge(state);
 

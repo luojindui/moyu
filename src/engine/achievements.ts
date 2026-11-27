@@ -59,8 +59,8 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   { id: "team_5", name: "满编小队", desc: "招募全部 5 位同事", category: "team", target: 5, progress: (s) => Object.keys(s.team.colleagues).length, reward: { idleBonus: 0.04 } },
   { id: "team_lv5", name: "资深团队", desc: "任一同事升到 5 级", category: "team", target: 5, progress: maxColleagueLevel, reward: { idleBonus: 0.03 } },
   // 天赋
-  { id: "talent_6", name: "初窥门径", desc: "解锁 6 个天赋", category: "talent", target: 6, progress: (s) => s.talents.unlocked.length, reward: { idleBonus: 0.02 } },
-  { id: "talent_18", name: "天赋满树", desc: "解锁 13 个天赋（24 点数可达上限）", category: "talent", target: 13, progress: (s) => s.talents.unlocked.length, reward: { idleBonus: 0.05 } },
+  { id: "talent_6", name: "初窥门径", desc: "解锁 6 个天赋", category: "talent", target: 6, progress: (s) => Math.max(s.talents.unlocked.length, s.bestTalentsUnlocked ?? 0), reward: { idleBonus: 0.02 } },
+  { id: "talent_18", name: "天赋满树", desc: "解锁 13 个天赋（24 点数可达上限）", category: "talent", target: 13, progress: (s) => Math.max(s.talents.unlocked.length, s.bestTalentsUnlocked ?? 0), reward: { idleBonus: 0.05 } },
   // 段位
   { id: "rank_7", name: "中层摸鱼", desc: "达到第 7 段位", category: "rank", target: 7, progress: (s) => s.rankIndex ?? 0, reward: { idleBonus: 0.02 } },
   { id: "rank_14", name: "宇宙尽头", desc: "达到第 14 段位（最高档）", category: "rank", target: 14, progress: (s) => s.rankIndex ?? 0, reward: { idleBonus: 0.05 } },

@@ -56,6 +56,8 @@ export interface GameState {
   cardsChosenTotal: number;
   /** 历史最高巡逻连胜（成就用，转生不清） */
   bestSurviveStreak: number;
+  /** 历史最高天赋解锁数（成就用；重置天赋不回退） */
+  bestTalentsUnlocked: number;
 }
 
 export function initialState(): GameState {
@@ -81,6 +83,7 @@ export function initialState(): GameState {
     rankIndex: 0,
     cardsChosenTotal: 0,
     bestSurviveStreak: 0,
+    bestTalentsUnlocked: 0,
   };
 }
 

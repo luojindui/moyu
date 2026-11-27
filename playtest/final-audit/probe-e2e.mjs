@@ -227,6 +227,17 @@ await runChrome(async ({ port }) => {
     await openPanel(c, "#btn-team", "#team");
     await click(c, "#tab-decor");
     await waitFor(c, `document.getElementById("team-body").textContent.includes("工位家具")`, 3000);
+    // 购买前安装 toast 观察器（装修完成提示可能被后续成就提示覆盖，需要捕获历史）
+    await ev(c, `(() => {
+      window.__decorToasts = [];
+      const el = document.getElementById("dom-toast");
+      const sr = document.getElementById("sr-live");
+      new MutationObserver(() => { if ((el.textContent || "").length) window.__decorToasts.push("toast:" + el.textContent); })
+        .observe(el, { childList: true, characterData: true, subtree: true });
+      new MutationObserver(() => { if ((sr.textContent || "").length) window.__decorToasts.push("sr:" + sr.textContent); })
+        .observe(sr, { childList: true, characterData: true, subtree: true });
+      return true;
+    })()`);
     const ids = ["plant", "lamp", "rug", "fridge", "chair", "aquarium", "projector", "catbed"];
     for (const id of ids) {
       const res = await click(c, `button[data-act="decor"][data-id="${id}"]`);
@@ -236,14 +247,16 @@ await runChrome(async ({ port }) => {
     }
     const s = await state(c);
     r.expect("D1 8 件集齐", s.decor.length === 8, JSON.stringify(s.decor));
-    let evid = "";
-    for (let i = 0; i < 40; i++) {
-      const tob = (await text(c, "#dom-toast")) ?? "";
-      const srt = (await text(c, "#sr-live")) ?? "";
-      if (/装修完成|装修已全部完成|全部 8 件/.test(tob + srt)) { evid = tob || srt; break; }
-      await sleep(60);
-    }
+    await sleep(1200);
+    const logs = (await ev(c, `window.__decorToasts ?? []`)) ?? [];
+    const completionLogs = logs.filter((x) => /装修完成|全部 8 件/.test(x));
+    const evid = completionLogs[0] ?? "";
+    const overwritten = (() => {
+      const idx = logs.findIndex((x) => /装修完成/.test(x));
+      return idx >= 0 && logs.slice(idx + 1).some((x) => /成就解锁/.test(x));
+    })();
     r.expect("D2 完成提示出现", /装修完成|全部 8 件/.test(evid), evid || "未捕获到提示");
+    r.expect("D2b 完成提示未被成就提示立即覆盖（可读性）", overwritten === false, `覆盖=${overwritten}；尾部=${JSON.stringify(logs.slice(-4))}`);
     const summary = await text(c, "#decor-summary");
     const names = ["绿萝", "护眼台灯", "毛绒地毯", "迷你冰箱", "按摩椅", "鱼缸", "投影仪", "工位猫窝"];
     r.expect("D3 读屏摘要含全部 8 件", names.every((n) => (summary ?? "").includes(n)), (summary ?? "").slice(0, 80));

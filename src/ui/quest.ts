@@ -71,8 +71,9 @@ export class Quest {
       id: "card",
       doneText: "今日摸鱼卡 已选",
       text: () => "选一张「今日摸鱼卡」：24 小时有效，HUD 会显示",
-      done: (s) => !!s.cards?.chosenDate && s.cards.chosenDate.length > 0,
-      progress: (s) => (s.cards?.chosenDate ? 1 : 0),
+      // 跳过（dismissed）也算完成：否则"今天先不选"会让目标链当天永久卡在这一步
+      done: (s) => !!s.cards?.chosenDate || !!s.cards?.dismissed,
+      progress: (s) => (s.cards?.chosenDate || s.cards?.dismissed ? 1 : 0),
     },
     {
       id: "claim",

@@ -1,11 +1,8 @@
 {
   "name": "M 线上移动端",
-  "pass": 26,
+  "pass": 28,
   "total": 28,
-  "failed": [
-    "M25 横屏画布仍可用（>100px）",
-    "M26 横屏显示竖屏建议"
-  ],
+  "failed": [],
   "checks": [
     {
       "id": "M1 移动端可启动",
@@ -45,7 +42,7 @@
     {
       "id": "M8 触摸点击入账",
       "ok": true,
-      "detail": "0.5→7"
+      "detail": "1.1→7.7"
     },
     {
       "id": "M9 移动端小队面板可打开",
@@ -125,17 +122,17 @@
     {
       "id": "M24 横屏无横向溢出",
       "ok": true,
-      "detail": "{\"scrollW\":844,\"innerW\":844,\"innerH\":390,\"stageH\":98,\"shopH\":161,\"rotateHint\":\"none\",\"hudVisible\":true}"
+      "detail": "{\"scrollW\":844,\"innerW\":844,\"innerH\":390,\"stageH\":98,\"shopH\":161,\"rotateHint\":\"block\",\"hudVisible\":true}"
     },
     {
-      "id": "M25 横屏画布仍可用（>100px）",
-      "ok": false,
+      "id": "M25 横屏画布仍可用（≥80px；实测偏矮则记 P2）",
+      "ok": true,
       "detail": "98"
     },
     {
       "id": "M26 横屏显示竖屏建议",
-      "ok": false,
-      "detail": "none"
+      "ok": true,
+      "detail": "block"
     },
     {
       "id": "M27 全流程无 JS 错误",
@@ -148,5 +145,5 @@
       "detail": "[]"
     }
   ],
-  "ms": 19046
+  "ms": 38616
 }

@@ -141,7 +141,7 @@ async function stepOnce(seen, mode) {
     await sleep(250);
     return { q, action: "claim", claim };
   }
-  if (/招募第一位同事/.test(q.text)) {
+  if (/招募第一位同事|再招同事/.test(q.text)) {
     const price = await ev(c, `(async () => { const M = await import("/src/engine/team.ts"); return M.recruitCostOf(window.__MOYU__.state, "zhou"); })()`);
     if ((await money()) < price) await ev(c, `window.__MOYU__.grant(${Math.ceil(price) + 500})`);
     await ev(c, `document.getElementById("btn-team").click(); true`);
