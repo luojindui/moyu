@@ -271,7 +271,8 @@ async function boot(): Promise<void> {
         trackDaily("survive");
       }
       const line = bossChoiceLine(es.bossPersonality, r.correct);
-      showToast(`${line} ${r.delta >= 0 ? "+" : ""}${Math.round(r.delta)}`);
+      const text = `${line} ${r.delta >= 0 ? "+" : ""}${Math.round(r.delta)}`;
+      bossPanel.showResult(r.correct, text);
       announce(r.correct ? "应对正确" : "应对错误");
       serialize(state, localStorageAdapter, Date.now());
     }
@@ -331,7 +332,8 @@ async function boot(): Promise<void> {
   const doTap = (clientX: number, clientY: number): void => {
     // 回合制老板窗口内画布点击不处理（避免"边思考边被罚偷点"）
     if (bossPanel.isOpen) {
-      scene.fx.floatText(clientX, clientY, "先选应对");
+      const vp = scene.toVirtual(clientX, clientY, canvas);
+      scene.fx.floatText(vp.x, vp.y, "先选应对");
       return;
     }
     const nowMs = performance.now();

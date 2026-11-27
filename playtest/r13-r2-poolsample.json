@@ -1,0 +1,495 @@
+{
+ "rolls": [
+  {
+   "dom": [
+    "手速上头|普通",
+    "提前下班|普通",
+    "HR 约谈|剧情"
+   ],
+   "stateOffers": [
+    "click_frenzy",
+    "early_leave",
+    "hr_talk"
+   ]
+  },
+  {
+   "dom": [
+    "秘密项目|稀有",
+    "咖啡管够|普通",
+    "老板出差|普通"
+   ],
+   "stateOffers": [
+    "secret_project",
+    "coffee_day",
+    "quiet_day"
+   ]
+  },
+  {
+   "dom": [
+    "远程办公日|稀有",
+    "食堂加菜|普通",
+    "提前下班|普通"
+   ],
+   "stateOffers": [
+    "remote_day",
+    "canteen_gift",
+    "early_leave"
+   ]
+  },
+  {
+   "dom": [
+    "空调坏了|普通",
+    "远程办公日|稀有",
+    "团建吃饭|普通"
+   ],
+   "stateOffers": [
+    "ac_broken",
+    "remote_day",
+    "team_bond"
+   ]
+  },
+  {
+   "dom": [
+    "老板出差|普通",
+    "食堂加菜|普通",
+    "截止日逼近|稀有"
+   ],
+   "stateOffers": [
+    "quiet_day",
+    "canteen_gift",
+    "deadline"
+   ]
+  },
+  {
+   "dom": [
+    "提前下班|普通",
+    "咖啡管够|普通",
+    "手速上头|普通"
+   ],
+   "stateOffers": [
+    "early_leave",
+    "coffee_day",
+    "click_frenzy"
+   ]
+  },
+  {
+   "dom": [
+    "通宵摸鱼|稀有",
+    "团建吃饭|普通",
+    "食堂加菜|普通"
+   ],
+   "stateOffers": [
+    "overtime",
+    "team_bond",
+    "canteen_gift"
+   ]
+  },
+  {
+   "dom": [
+    "远程办公日|稀有",
+    "手速上头|普通",
+    "部门搬家|稀有"
+   ],
+   "stateOffers": [
+    "remote_day",
+    "click_frenzy",
+    "office_move"
+   ]
+  },
+  {
+   "dom": [
+    "空调坏了|普通",
+    "食堂加菜|普通",
+    "提前下班|普通"
+   ],
+   "stateOffers": [
+    "ac_broken",
+    "canteen_gift",
+    "early_leave"
+   ]
+  },
+  {
+   "dom": [
+    "手速上头|普通",
+    "老周的秘密|剧情",
+    "咖啡管够|普通"
+   ],
+   "stateOffers": [
+    "click_frenzy",
+    "old_zhou_secret",
+    "coffee_day"
+   ]
+  },
+  {
+   "dom": [
+    "提前下班|普通",
+    "秘密项目|稀有",
+    "团建吃饭|普通"
+   ],
+   "stateOffers": [
+    "early_leave",
+    "secret_project",
+    "team_bond"
+   ]
+  },
+  {
+   "dom": [
+    "通宵摸鱼|稀有",
+    "食堂加菜|普通",
+    "HR 约谈|剧情"
+   ],
+   "stateOffers": [
+    "overtime",
+    "canteen_gift",
+    "hr_talk"
+   ]
+  },
+  {
+   "dom": [
+    "秘密项目|稀有",
+    "食堂加菜|普通",
+    "截止日逼近|稀有"
+   ],
+   "stateOffers": [
+    "secret_project",
+    "canteen_gift",
+    "deadline"
+   ]
+  },
+  {
+   "dom": [
+    "老板出差|普通",
+    "实习生来请教|普通",
+    "提前下班|普通"
+   ],
+   "stateOffers": [
+    "quiet_day",
+    "intern_ask",
+    "early_leave"
+   ]
+  },
+  {
+   "dom": [
+    "咖啡管够|普通",
+    "老板出差|普通",
+    "实习生来请教|普通"
+   ],
+   "stateOffers": [
+    "coffee_day",
+    "quiet_day",
+    "intern_ask"
+   ]
+  },
+  {
+   "dom": [
+    "食堂加菜|普通",
+    "手速上头|普通",
+    "老板出差|普通"
+   ],
+   "stateOffers": [
+    "canteen_gift",
+    "click_frenzy",
+    "quiet_day"
+   ]
+  },
+  {
+   "dom": [
+    "老板出差|普通",
+    "团建吃饭|普通",
+    "空调坏了|普通"
+   ],
+   "stateOffers": [
+    "quiet_day",
+    "team_bond",
+    "ac_broken"
+   ]
+  },
+  {
+   "dom": [
+    "提前下班|普通",
+    "全员大会|稀有",
+    "手速上头|普通"
+   ],
+   "stateOffers": [
+    "early_leave",
+    "big_meeting",
+    "click_frenzy"
+   ]
+  },
+  {
+   "dom": [
+    "手速上头|普通",
+    "实习生来请教|普通",
+    "咖啡管够|普通"
+   ],
+   "stateOffers": [
+    "click_frenzy",
+    "intern_ask",
+    "coffee_day"
+   ]
+  },
+  {
+   "dom": [
+    "老板出差|普通",
+    "团建吃饭|普通",
+    "食堂加菜|普通"
+   ],
+   "stateOffers": [
+    "quiet_day",
+    "team_bond",
+    "canteen_gift"
+   ]
+  },
+  {
+   "dom": [
+    "截止日逼近|稀有",
+    "提前下班|普通",
+    "咖啡管够|普通"
+   ],
+   "stateOffers": [
+    "deadline",
+    "early_leave",
+    "coffee_day"
+   ]
+  },
+  {
+   "dom": [
+    "咖啡管够|普通",
+    "团建吃饭|普通",
+    "实习生来请教|普通"
+   ],
+   "stateOffers": [
+    "coffee_day",
+    "team_bond",
+    "intern_ask"
+   ]
+  },
+  {
+   "dom": [
+    "团建吃饭|普通",
+    "实习生来请教|普通",
+    "老周的秘密|剧情"
+   ],
+   "stateOffers": [
+    "team_bond",
+    "intern_ask",
+    "old_zhou_secret"
+   ]
+  },
+  {
+   "dom": [
+    "手速上头|普通",
+    "老板出差|普通",
+    "实习生来请教|普通"
+   ],
+   "stateOffers": [
+    "click_frenzy",
+    "quiet_day",
+    "intern_ask"
+   ]
+  },
+  {
+   "dom": [
+    "空调坏了|普通",
+    "提前下班|普通",
+    "咖啡管够|普通"
+   ],
+   "stateOffers": [
+    "ac_broken",
+    "early_leave",
+    "coffee_day"
+   ]
+  },
+  {
+   "dom": [
+    "截止日逼近|稀有",
+    "咖啡管够|普通",
+    "团建吃饭|普通"
+   ],
+   "stateOffers": [
+    "deadline",
+    "coffee_day",
+    "team_bond"
+   ]
+  },
+  {
+   "dom": [
+    "团建吃饭|普通",
+    "HR 约谈|剧情",
+    "咖啡管够|普通"
+   ],
+   "stateOffers": [
+    "team_bond",
+    "hr_talk",
+    "coffee_day"
+   ]
+  },
+  {
+   "dom": [
+    "老板出差|普通",
+    "食堂加菜|普通",
+    "提前下班|普通"
+   ],
+   "stateOffers": [
+    "quiet_day",
+    "canteen_gift",
+    "early_leave"
+   ]
+  },
+  {
+   "dom": [
+    "手速上头|普通",
+    "部门搬家|稀有",
+    "HR 约谈|剧情"
+   ],
+   "stateOffers": [
+    "click_frenzy",
+    "office_move",
+    "hr_talk"
+   ]
+  },
+  {
+   "dom": [
+    "截止日逼近|稀有",
+    "老周的秘密|剧情",
+    "咖啡管够|普通"
+   ],
+   "stateOffers": [
+    "deadline",
+    "old_zhou_secret",
+    "coffee_day"
+   ]
+  },
+  {
+   "dom": [
+    "提前下班|普通",
+    "咖啡管够|普通",
+    "老板出差|普通"
+   ],
+   "stateOffers": [
+    "early_leave",
+    "coffee_day",
+    "quiet_day"
+   ]
+  },
+  {
+   "dom": [
+    "远程办公日|稀有",
+    "团建吃饭|普通",
+    "老周的秘密|剧情"
+   ],
+   "stateOffers": [
+    "remote_day",
+    "team_bond",
+    "old_zhou_secret"
+   ]
+  },
+  {
+   "dom": [
+    "全员大会|稀有",
+    "食堂加菜|普通",
+    "老板出差|普通"
+   ],
+   "stateOffers": [
+    "big_meeting",
+    "canteen_gift",
+    "quiet_day"
+   ]
+  },
+  {
+   "dom": [
+    "实习生来请教|普通",
+    "秘密项目|稀有",
+    "食堂加菜|普通"
+   ],
+   "stateOffers": [
+    "intern_ask",
+    "secret_project",
+    "canteen_gift"
+   ]
+  },
+  {
+   "dom": [
+    "实习生来请教|普通",
+    "咖啡管够|普通",
+    "HR 约谈|剧情"
+   ],
+   "stateOffers": [
+    "intern_ask",
+    "coffee_day",
+    "hr_talk"
+   ]
+  },
+  {
+   "dom": [
+    "手速上头|普通",
+    "食堂加菜|普通",
+    "老周的秘密|剧情"
+   ],
+   "stateOffers": [
+    "click_frenzy",
+    "canteen_gift",
+    "old_zhou_secret"
+   ]
+  },
+  {
+   "dom": [
+    "团建吃饭|普通",
+    "老周的秘密|剧情",
+    "咖啡管够|普通"
+   ],
+   "stateOffers": [
+    "team_bond",
+    "old_zhou_secret",
+    "coffee_day"
+   ]
+  },
+  {
+   "dom": [
+    "实习生来请教|普通",
+    "空调坏了|普通",
+    "食堂加菜|普通"
+   ],
+   "stateOffers": [
+    "intern_ask",
+    "ac_broken",
+    "canteen_gift"
+   ]
+  },
+  {
+   "dom": [
+    "团建吃饭|普通",
+    "空调坏了|普通",
+    "实习生来请教|普通"
+   ],
+   "stateOffers": [
+    "team_bond",
+    "ac_broken",
+    "intern_ask"
+   ]
+  },
+  {
+   "dom": [
+    "通宵摸鱼|稀有",
+    "咖啡管够|普通",
+    "手速上头|普通"
+   ],
+   "stateOffers": [
+    "overtime",
+    "coffee_day",
+    "click_frenzy"
+   ]
+  }
+ ],
+ "stats": {
+  "days": 40,
+  "counts": {
+   "common": 89,
+   "rare": 20,
+   "event": 11
+  },
+  "allCommon": 15,
+  "anyNonCommon": 25,
+  "mismatch": 0
+ }
+}

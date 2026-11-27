@@ -1,5 +1,5 @@
 import type { GameState } from "../engine/state";
-import { CARDS, activeCard } from "../engine/cards";
+import { CARDS, activeCard, shouldPromptCards } from "../engine/cards";
 
 const RARITY_LABEL: Record<string, string> = { common: "普通", rare: "稀有", event: "剧情" };
 
@@ -26,9 +26,8 @@ export class CardPanel {
   /** 有未选卡时自动弹出（首日不拦：需先完成"戳 15 下"这一步；每天只弹一次） */
   maybeShow(state: GameState): void {
     if (this.isOpen) return;
-    const cs = state.cards;
-    if (!cs || cs.chosen || cs.dismissed) return;
-    if (cs.offers.length === 0) return;
+    const today = new Date().toLocaleDateString("sv-SE");
+    if (!shouldPromptCards(state.cards, today)) return;
     // 首日不拦：先让玩家摸到游戏（戳 8 下），或开页 12 秒后再给决策
     const bootMs = Number(sessionStorage.getItem("moyu-boot-ms") ?? "0");
     const waited = bootMs > 0 && Date.now() - bootMs > 12_000;

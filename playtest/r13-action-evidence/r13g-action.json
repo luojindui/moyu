@@ -1,0 +1,125 @@
+{
+ "active": {
+  "before": {
+   "transform": "none",
+   "filter": "none",
+   "transition": "0.08s, 0.08s"
+  },
+  "duringGuard": {
+   "transform": "none",
+   "filter": "none",
+   "panelOpen": false,
+   "ptr": {
+    "t": 4693.300000190735,
+    "choice": "switch-screen",
+    "tag": "BUTTON",
+    "open": true
+   }
+  },
+  "afterGuardHold": {
+   "open": false,
+   "ptr": [
+    {
+     "t": 4693.300000190735,
+     "choice": "switch-screen",
+     "tag": "BUTTON",
+     "open": true
+    }
+   ]
+  },
+  "stillOpenAfterRelease": false,
+  "delta": null,
+  "fx": [],
+  "note": "250ms 内按下被守卫吞掉时按钮仍显示 :active（可通过按住看到）"
+ },
+ "guard": {
+  "pressedAtMs": 180,
+  "panelStillOpen": true,
+  "delta": 0.2,
+  "fxNew": [],
+  "toastBefore": "王总：屏幕挺干净啊。 +90",
+  "toastAfter": "王总：屏幕挺干净啊。 +90",
+  "note": "守卫吞按后玩家看不到任何提示，需要再按一次"
+ },
+ "gapDetail": [
+  {
+   "name": "行1-行2间隙",
+   "rep": 1,
+   "x": 195,
+   "y": 509,
+   "domTarget": "DIV/-",
+   "ptrChoice": "switch-screen",
+   "correct": "keep-slacking",
+   "isRight": false,
+   "delta": 0.2,
+   "closed": true,
+   "toast": "老李：你刚才是不是在摸鱼？算了。 +0"
+  },
+  {
+   "name": "行1-行2间隙",
+   "rep": 2,
+   "x": 195,
+   "y": 509,
+   "domTarget": "DIV/-",
+   "ptrChoice": "switch-screen",
+   "correct": "switch-screen",
+   "isRight": true,
+   "delta": 90.2,
+   "closed": true,
+   "toast": "王总：屏幕挺干净啊。 +90"
+  },
+  {
+   "name": "行1上内边距(盒顶-6px)",
+   "rep": 1,
+   "x": 195,
+   "y": 450,
+   "domTarget": "DIV/-",
+   "ptrChoice": "act-busy",
+   "correct": "keep-slacking",
+   "isRight": false,
+   "delta": -54.8,
+   "closed": true,
+   "toast": "老李：你刚才是不是在摸鱼？算了。 -55"
+  },
+  {
+   "name": "行1上内边距(盒顶-6px)",
+   "rep": 2,
+   "x": 195,
+   "y": 450,
+   "domTarget": "DIV/-",
+   "ptrChoice": "act-busy",
+   "correct": "act-busy",
+   "isRight": true,
+   "delta": 90.2,
+   "closed": true,
+   "toast": "安总：嗯，忙你的。 +90"
+  },
+  {
+   "name": "行3下内边距(盒底-6px)",
+   "rep": 1,
+   "x": 195,
+   "y": 626,
+   "domTarget": "I/-",
+   "ptrChoice": "keep-slacking",
+   "correct": "act-busy",
+   "isRight": false,
+   "delta": -54.9,
+   "closed": true,
+   "toast": "安总：这表格昨天就这数吧？ -55"
+  },
+  {
+   "name": "行3下内边距(盒底-6px)",
+   "rep": 2,
+   "x": 195,
+   "y": 626,
+   "domTarget": "I/-",
+   "ptrChoice": "keep-slacking",
+   "correct": "switch-screen",
+   "isRight": false,
+   "delta": -49.9,
+   "closed": true,
+   "toast": "王总：切得真快。 -50"
+  }
+ ],
+ "errors": []
+}

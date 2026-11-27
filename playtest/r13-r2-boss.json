@@ -1,0 +1,348 @@
+{
+ "sampledAt": "2026-11-27T10:18:17.868Z",
+ "trials": [
+  {
+   "i": 1,
+   "strategy": "blind",
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "tellHasPersonalityName": false,
+   "inferred": "switch-screen",
+   "picked": "switch-screen",
+   "reactionMs": 466,
+   "correct": true,
+   "toast": "王总：屏幕挺干净啊。 +90",
+   "delta": 90,
+   "streak": 1,
+   "panelGone": true,
+   "buttonHeights": [
+    48,
+    48,
+    48
+   ]
+  },
+  {
+   "i": 2,
+   "strategy": "blind",
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "tellHasPersonalityName": false,
+   "inferred": "switch-screen",
+   "picked": "act-busy",
+   "reactionMs": 538,
+   "correct": false,
+   "toast": "王总：切得真快。 +0",
+   "delta": 0,
+   "streak": 0,
+   "panelGone": true,
+   "buttonHeights": [
+    48,
+    48,
+    48
+   ]
+  },
+  {
+   "i": 3,
+   "strategy": "blind",
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "tellHasPersonalityName": false,
+   "inferred": "switch-screen",
+   "picked": "keep-slacking",
+   "reactionMs": 651,
+   "correct": false,
+   "toast": "王总：切得真快。 +0",
+   "delta": 0,
+   "streak": 0,
+   "panelGone": true,
+   "buttonHeights": [
+    48,
+    48,
+    48
+   ]
+  },
+  {
+   "i": 4,
+   "strategy": "blind-ungraced",
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "tellHasPersonalityName": false,
+   "inferred": "switch-screen",
+   "picked": "act-busy",
+   "reactionMs": 1487,
+   "correct": false,
+   "toast": "王总：切得真快。 -50",
+   "delta": -50,
+   "streak": 0,
+   "panelGone": true,
+   "buttonHeights": [
+    48,
+    48,
+    48
+   ]
+  },
+  {
+   "i": 5,
+   "strategy": "blind-ungraced",
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "tellHasPersonalityName": false,
+   "inferred": "switch-screen",
+   "picked": "keep-slacking",
+   "reactionMs": 485,
+   "correct": false,
+   "toast": "王总：切得真快。 -50",
+   "delta": -50,
+   "streak": 0,
+   "panelGone": true,
+   "buttonHeights": [
+    48,
+    48,
+    48
+   ]
+  },
+  {
+   "i": 6,
+   "strategy": "blind-ungraced",
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "tellHasPersonalityName": false,
+   "inferred": "switch-screen",
+   "picked": "keep-slacking",
+   "reactionMs": 487,
+   "correct": false,
+   "toast": "王总：切得真快。 -50",
+   "delta": -50,
+   "streak": 0,
+   "panelGone": true,
+   "buttonHeights": [
+    48,
+    48,
+    48
+   ]
+  },
+  {
+   "i": 7,
+   "strategy": "infer",
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "tellHasPersonalityName": false,
+   "inferred": "switch-screen",
+   "picked": "switch-screen",
+   "reactionMs": 653,
+   "correct": true,
+   "toast": "王总：屏幕挺干净啊。 +90",
+   "delta": 90,
+   "streak": 1,
+   "panelGone": true,
+   "buttonHeights": [
+    48,
+    48,
+    48
+   ]
+  },
+  {
+   "i": 8,
+   "strategy": "infer",
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "tellHasPersonalityName": false,
+   "inferred": "switch-screen",
+   "picked": "switch-screen",
+   "reactionMs": 421,
+   "correct": true,
+   "toast": "王总：屏幕挺干净啊。 +99",
+   "delta": 99,
+   "streak": 2,
+   "panelGone": true,
+   "buttonHeights": [
+    48,
+    48,
+    48
+   ]
+  },
+  {
+   "i": 9,
+   "strategy": "infer",
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "tellHasPersonalityName": false,
+   "inferred": "switch-screen",
+   "picked": "switch-screen",
+   "reactionMs": 449,
+   "correct": true,
+   "toast": "王总：屏幕挺干净啊。 +108",
+   "delta": 108,
+   "streak": 3,
+   "panelGone": true,
+   "buttonHeights": [
+    48,
+    48,
+    48
+   ]
+  },
+  {
+   "i": 10,
+   "strategy": "infer",
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "tellHasPersonalityName": false,
+   "inferred": "switch-screen",
+   "picked": "switch-screen",
+   "reactionMs": 460,
+   "correct": true,
+   "toast": "王总：屏幕挺干净啊。 +117",
+   "delta": 117,
+   "streak": 4,
+   "panelGone": true,
+   "buttonHeights": [
+    48,
+    48,
+    48
+   ]
+  },
+  {
+   "i": 11,
+   "strategy": "infer",
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "tellHasPersonalityName": false,
+   "inferred": "switch-screen",
+   "picked": "switch-screen",
+   "reactionMs": 633,
+   "correct": true,
+   "toast": "王总：屏幕挺干净啊。 +126",
+   "delta": 126,
+   "streak": 5,
+   "panelGone": true,
+   "buttonHeights": [
+    48,
+    48,
+    48
+   ]
+  },
+  {
+   "i": 12,
+   "strategy": "infer",
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "tellHasPersonalityName": false,
+   "inferred": "switch-screen",
+   "picked": "switch-screen",
+   "reactionMs": 482,
+   "correct": true,
+   "toast": "王总：屏幕挺干净啊。 +135",
+   "delta": 135,
+   "streak": 6,
+   "panelGone": true,
+   "buttonHeights": [
+    48,
+    48,
+    48
+   ]
+  },
+  {
+   "i": 13,
+   "strategy": "infer",
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "tellHasPersonalityName": false,
+   "inferred": "switch-screen",
+   "picked": "switch-screen",
+   "reactionMs": 375,
+   "correct": true,
+   "toast": "王总：屏幕挺干净啊。 +135",
+   "delta": 135,
+   "streak": 7,
+   "panelGone": true,
+   "buttonHeights": [
+    48,
+    48,
+    48
+   ]
+  },
+  {
+   "i": 14,
+   "strategy": "infer",
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "tellHasPersonalityName": false,
+   "inferred": "switch-screen",
+   "picked": "switch-screen",
+   "reactionMs": 370,
+   "correct": true,
+   "toast": "王总：屏幕挺干净啊。 +135",
+   "delta": 135,
+   "streak": 8,
+   "panelGone": true,
+   "buttonHeights": [
+    48,
+    48,
+    48
+   ]
+  }
+ ],
+ "extras": {
+  "firstCards": [
+   "老板出差/普通",
+   "提前下班/普通",
+   "团建吃饭/普通"
+  ],
+  "baseCard": "early_leave",
+  "timeout": {
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "panelHidden": true,
+   "hideMs": 4788,
+   "toast": {
+    "text": "没来得及选…这次不算",
+    "shown": true
+   },
+   "delta": 0.99,
+   "streakSame": true
+  },
+  "canvasTap": {
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "delta": 0.07,
+   "fx": [
+    {
+     "x": 201,
+     "y": 243,
+     "text": "先选应对"
+    }
+   ],
+   "panelStillOpen": true
+  },
+  "keyboard": {
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "clickResolved": false,
+   "panelAfterClick": true,
+   "enterResolved": false,
+   "note": "click/Enter 若不结算 → 键盘/读屏用户无法作答"
+  }
+ },
+ "errors": [],
+ "summary": {
+  "trials": 14,
+  "inferCorrect": "8/8",
+  "inferAllCorrect": true,
+  "tellNeverHasName": true,
+  "tellSamples": [
+   "有人过来了——他一路盯着别人的屏幕走过来"
+  ],
+  "blindRookieDeltas": [
+   90,
+   0,
+   0
+  ],
+  "blindUngracedDeltas": [
+   -50,
+   -50,
+   -50
+  ],
+  "inferDeltas": [
+   90,
+   99,
+   108,
+   117,
+   126,
+   135,
+   135,
+   135
+  ],
+  "reactionRange": [
+   370,
+   1487
+  ],
+  "buttonHeights": [
+   48,
+   48,
+   48
+  ]
+ }
+}

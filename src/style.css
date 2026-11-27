@@ -1241,9 +1241,20 @@ body {
   border: 2px solid #a8862c;
   border-radius: 5px;
 }
-.boss-opts button:active {
-  transform: scale(0.97);
-  filter: brightness(0.9);
+.boss-opts button {
+  touch-action: manipulation;
+}
+.boss-opts button.picked {
+  filter: brightness(1.15);
+  transform: scale(0.98);
+}
+.boss-opts button.shake {
+  animation: bossShake 0.2s ease-in-out;
+}
+@keyframes bossShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
 }
 /* 回合制窗口内：屏蔽商店/画布误触（避免"边选边买"） */
 body.choice-open #shop-cards,

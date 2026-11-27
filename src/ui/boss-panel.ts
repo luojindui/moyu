@@ -13,6 +13,17 @@ export class BossChoicePanel {
 
   constructor(private onPick: (choice: BossChoice) => void) {}
 
+  /** 就地显示结果（选中行变色 + 台词），180ms 后收起 */
+  showResult(correct: boolean, text: string): void {
+    if (!this.shown) return;
+    const el = document.createElement("div");
+    el.className = "boss-result";
+    el.style.color = correct ? "#8be28b" : "#ff8a8a";
+    el.textContent = text;
+    this.elOpts.appendChild(el);
+    setTimeout(() => this.hide(), 220);
+  }
+
   get isOpen(): boolean {
     return this.shown;
   }
@@ -34,10 +45,17 @@ export class BossChoicePanel {
     this.elOpts.querySelectorAll<HTMLButtonElement>("button").forEach((b) => {
       // pointerdown 结算：比 click（touchend）更快、手感和误触都更好
       b.addEventListener("pointerdown", (e) => {
-        e.preventDefault();
-        if (performance.now() - this.shownAt < 250) return; // 防开局连点误选
+        // 只接受落在按钮本身上的按下（绕开 touch-adjust 吸附到间隙）
+        if (!(e.target as HTMLElement).closest("button")) return;
+        if (performance.now() - this.shownAt < 150) {
+          // 守卫期被吞：给一次可见反馈，而不是静默
+          b.classList.add("shake");
+          setTimeout(() => b.classList.remove("shake"), 200);
+          return;
+        }
+        b.classList.add("picked");
         this.onPick(b.dataset.choice as BossChoice);
-        this.hide();
+        // 不在这里 hide：由 showResult 负责（保证结果可见）
       });
     });
     this.root.classList.remove("hidden");

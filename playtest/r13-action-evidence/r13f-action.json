@@ -1,0 +1,314 @@
+{
+ "meta": {
+  "url": "http://127.0.0.1:5181/",
+  "navs": 1,
+  "panelfails": 0
+ },
+ "trials": [
+  {
+   "name": "快按1",
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "pressAtMs": null,
+   "isRight": true,
+   "delta": 126.1,
+   "streakAfter": 5,
+   "toast": "王总：屏幕挺干净啊。 +126"
+  },
+  {
+   "name": "快按2",
+   "tell": "有人过来了——脚步声又快又重，两三步就到工位",
+   "pressAtMs": null,
+   "isRight": true,
+   "delta": 135.1,
+   "streakAfter": 6,
+   "toast": "安总：嗯，忙你的。 +135"
+  },
+  {
+   "name": "快按3",
+   "tell": "有人过来了——他边走边看手机，眼神是散的",
+   "pressAtMs": null,
+   "isRight": true,
+   "delta": 135.1,
+   "streakAfter": 7,
+   "toast": "老李：……我刚才要说什么来着？ +135"
+  },
+  {
+   "name": "快按4",
+   "tell": "有人过来了——他边走边看手机，眼神是散的",
+   "pressAtMs": null,
+   "isRight": true,
+   "delta": 135.1,
+   "streakAfter": 8,
+   "toast": "老李：……我刚才要说什么来着？ +135"
+  },
+  {
+   "name": "快按5",
+   "tell": "有人过来了——脚步声又快又重，两三步就到工位",
+   "pressAtMs": null,
+   "isRight": true,
+   "delta": 135.1,
+   "streakAfter": 9,
+   "toast": "安总：嗯，忙你的。 +135"
+  },
+  {
+   "name": "快按6",
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "pressAtMs": null,
+   "isRight": true,
+   "delta": 135.1,
+   "streakAfter": 10,
+   "toast": "王总：屏幕挺干净啊。 +135"
+  },
+  {
+   "name": "快按7",
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "pressAtMs": null,
+   "isRight": true,
+   "delta": 135.1,
+   "streakAfter": 11,
+   "toast": "王总：屏幕挺干净啊。 +135"
+  },
+  {
+   "name": "快按8",
+   "tell": "有人过来了——脚步声又快又重，两三步就到工位",
+   "pressAtMs": null,
+   "isRight": true,
+   "delta": 135.2,
+   "streakAfter": 12,
+   "toast": "安总：嗯，忙你的。 +135"
+  },
+  {
+   "name": "慢读2600",
+   "pressAtMs": null,
+   "isRight": true,
+   "delta": 135.6,
+   "streakAfter": 13
+  },
+  {
+   "name": "慢读3200",
+   "pressAtMs": null,
+   "isRight": true,
+   "delta": 135.7,
+   "streakAfter": 14
+  },
+  {
+   "name": "故意错1",
+   "isRight": false,
+   "delta": -74.9,
+   "streakAfter": 0,
+   "toast": "老李：你刚才是不是在摸鱼？算了。 -75"
+  },
+  {
+   "name": "故意错2",
+   "isRight": false,
+   "delta": -49.9,
+   "streakAfter": 0,
+   "toast": "安总：这表格昨天就这数吧？ -50"
+  }
+ ],
+ "special": {
+  "geometry": {
+   "box": {
+    "x": 15.6,
+    "y": 417,
+    "w": 358.8,
+    "h": 227
+   },
+   "opts": {
+    "x": 28.6,
+    "y": 456,
+    "w": 332.8,
+    "h": 164
+   },
+   "flexDir": "column",
+   "gap": "10px",
+   "btns": [
+    {
+     "choice": "act-busy",
+     "label": "立刻装忙",
+     "x": 28.6,
+     "y": 456,
+     "w": 332.8,
+     "h": 48
+    },
+    {
+     "choice": "switch-screen",
+     "label": "切到工作界面",
+     "x": 28.6,
+     "y": 514,
+     "w": 332.8,
+     "h": 48
+    },
+    {
+     "choice": "keep-slacking",
+     "label": "继续摸鱼",
+     "x": 28.6,
+     "y": 572,
+     "w": 332.8,
+     "h": 48
+    }
+   ],
+   "btnH": 48,
+   "btnW": 332.8,
+   "verticalGaps": [
+    10,
+    10
+   ],
+   "tell": "有人过来了——脚步声又快又重，两三步就到工位",
+   "tellLen": 22,
+   "srLive": "回合制老板：看线索，在 5 秒内选对应对",
+   "bodyChoiceOpen": true,
+   "shopPointerEvents": {
+    "pe": "none",
+    "opacity": "0.55"
+   },
+   "boxTopY": 417,
+   "boxBottomY": 644
+  },
+  "gap-行1-行2间隙(中点)": {
+   "x": 195,
+   "y": 509,
+   "radius": 3,
+   "domTarget": "DIV/-/立刻装忙切到",
+   "pointerTarget": "BUTTON/switch-screen",
+   "resolvedChoice": "switch-screen",
+   "correct": "switch-screen",
+   "isRight": true,
+   "delta": 90.3,
+   "panelClosedAfterOnePress": true
+  },
+  "gap-行间隙+大指腹": {
+   "x": 195,
+   "y": 509,
+   "radius": 16,
+   "domTarget": "DIV/-/立刻装忙切到",
+   "pointerTarget": "BUTTON/switch-screen",
+   "resolvedChoice": "switch-screen",
+   "correct": "keep-slacking",
+   "isRight": false,
+   "delta": 0.1,
+   "panelClosedAfterOnePress": true
+  },
+  "gap-行1上缘外2px": {
+   "x": 195,
+   "y": 454,
+   "radius": 3,
+   "domTarget": "DIV/-/\n     ",
+   "pointerTarget": "BUTTON/act-busy",
+   "resolvedChoice": "act-busy",
+   "correct": "keep-slacking",
+   "isRight": false,
+   "delta": -49.8,
+   "panelClosedAfterOnePress": true
+  },
+  "gap-行3下缘外2px": {
+   "x": 195,
+   "y": 622,
+   "radius": 3,
+   "domTarget": "DIV/-/\n     ",
+   "pointerTarget": "BUTTON/keep-slacking",
+   "resolvedChoice": "keep-slacking",
+   "correct": "switch-screen",
+   "isRight": false,
+   "delta": -49.9,
+   "panelClosedAfterOnePress": true
+  },
+  "pressFeedback": {
+   "before": {
+    "transform": "none",
+    "filter": "none",
+    "bg": "rgb(255, 215, 110)"
+   },
+   "during": {
+    "transform": "none",
+    "filter": "none",
+    "bg": "rgb(255, 215, 110)",
+    "open": false,
+    "ptr": {
+     "t": 13558.599999427795,
+     "choice": "switch-screen",
+     "tag": "BUTTON",
+     "open": true
+    }
+   },
+   "panelStillOpenDuringPress": false,
+   "openAfter180msHold": false,
+   "pointerdownChoice": "switch-screen",
+   "pressToHideMs": 386.5,
+   "delta": -49.8,
+   "resolvedOnPress": true
+  },
+  "guard-100ms": {
+   "targetDelay": 100,
+   "pressedAtMs": 137,
+   "resolved": false,
+   "delta": 0.1,
+   "fx": []
+  },
+  "guard-180ms": {
+   "targetDelay": 180,
+   "pressedAtMs": 204,
+   "resolved": false,
+   "delta": 0.1,
+   "fx": []
+  },
+  "guard-420ms": {
+   "targetDelay": 420,
+   "pressedAtMs": 454,
+   "resolved": true,
+   "delta": 108.1,
+   "fx": []
+  },
+  "shopBlocked": {
+   "shopPointerEventsDuringWindow": {
+    "pe": "none",
+    "opacity": "0.55"
+   },
+   "card": {
+    "id": "coffee",
+    "x": 8,
+    "y": 710,
+    "w": 140,
+    "h": 105
+   },
+   "delta": 0.2
+  },
+  "canvasHint": {
+   "tapAt": {
+    "x": 195,
+    "y": 300
+   },
+   "fxNew": [
+    {
+     "x": 186,
+     "y": 295,
+     "text": "先选应对"
+    }
+   ],
+   "delta": 0.2,
+   "panelStillOpen": true,
+   "canvasRect": {
+    "x": 0,
+    "y": 75
+   }
+  },
+  "timeout": {
+   "windowMs": 5049,
+   "delta": 1.1,
+   "streak": [
+    0,
+    0
+   ],
+   "toast": "没来得及选…这次不算",
+   "toastAtShow": {
+    "x": 98,
+    "y": 108,
+    "w": 195,
+    "h": 61,
+    "text": "安总：这表格昨天就这数吧？ -50",
+    "show": true
+   }
+  }
+ },
+ "errors": []
+}

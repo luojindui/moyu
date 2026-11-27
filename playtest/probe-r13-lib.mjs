@@ -102,13 +102,13 @@ export async function launch({ port, width = 390, height = 844, url = "http://12
     errors,
     ready,
     proc,
-    close() {
+    close(exitProcess = true) {
       try {
         proc.kill("SIGKILL");
       } catch {
         /* ignore */
       }
-      process.exit(0);
+      if (exitProcess) process.exit(0);
     },
   };
 }

@@ -1,0 +1,11 @@
+[
+ {
+  "port": 9855,
+  "first": {
+   "text": "choice-panel:有人过来了——他一路盯着别人的屏幕走过来",
+   "ms": 15627
+  },
+  "clicks": 8,
+  "skipped": true
+ }
+]

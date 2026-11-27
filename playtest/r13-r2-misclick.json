@@ -1,0 +1,15 @@
+{
+ "A_open": {
+  "clicks": 8,
+  "openedAt": 1795774821227
+ },
+ "A_pickMs": 1259,
+ "A_chosen": "overtime",
+ "A_cards": null,
+ "B_open": {
+  "clicks": 1,
+  "openedAt": 1795774827157
+ },
+ "B_chosenAfterStop": null,
+ "B_hidden": false
+}

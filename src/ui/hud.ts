@@ -35,7 +35,8 @@ export class Hud {
     if (state.cards?.chosen) {
       const def = CARDS.find((x) => x.id === state.cards!.chosen);
       if (def && Date.now() < state.cards.until) {
-        this.elCard.textContent = `今日卡：${def.name}`;
+        const leftH = Math.max(0, Math.ceil((state.cards.until - Date.now()) / 3600_000));
+        this.elCard.textContent = `生效中：${def.name}（剩 ${leftH}h）`;
         this.elCard.classList.remove("hidden");
       } else {
         this.elCard.classList.add("hidden");

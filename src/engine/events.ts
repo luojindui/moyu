@@ -151,7 +151,6 @@ export function scheduleEvents(es: EventState, now: number, rng: () => number, e
       es.bossPersonality = PERSONALITIES[Math.floor(rng() * PERSONALITIES.length)]!.id;
     }
     es.bossUntil = now + (es.bossVariant === "choice" ? CHOICE_SECONDS : BOSS_DURATION);
-    es.bossPersonality = PERSONALITIES[Math.floor(rng() * PERSONALITIES.length)]!.id;
     es.bossChoiceDone = false;
     es.bossTaps = 0;
     es.bossPenaltyTotal = 0;

@@ -263,6 +263,15 @@ export function chooseCard(state: GameState, id: string, nowMs: number): GameSta
   };
 }
 
+/** 今天是否应弹卡（每天一次；已选过今天的不弹；跳过的当天不弹） */
+export function shouldPromptCards(cards: CardState | undefined, today: string): boolean {
+  if (!cards) return false;
+  if (cards.offers.length === 0) return false;
+  if (cards.dismissed) return false;
+  if (cards.chosenDate === today) return false;
+  return true;
+}
+
 /** 玩家选择"今天先不选" */
 export function dismissCards(state: GameState): GameState {
   if (!state.cards) return state;
@@ -305,7 +314,13 @@ export function cardEffects(state: GameState, nowMs: number): CardEffects {
 /** 每天首次打开时刷新卡池（幂等） */
 export function ensureCards(state: GameState, today: string, rng: () => number, nowMs: number): GameState {
   const cs = state.cards;
-  if (cs && cs.date === today) return state; // 同日不重抽
+  if (cs && cs.date === today) {
+    // 同日：若已选卡已过期，清掉选择（否则"占掉一天"且 HUD 仍显示）
+    if (cs.chosen && cs.until <= nowMs) {
+      return { ...state, cards: { ...cs, chosen: null, until: 0, chosenDate: "" } };
+    }
+    return state;
+  }
   const guaranteed = cs?.nextDayGuaranteed ?? null;
   const fresh = rollOffers(today, rng, guaranteed);
   // 旧卡若仍在 24h 内，buff 继续生效（chosen/until 保留），但今天可以重新选
