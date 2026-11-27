@@ -1,0 +1,296 @@
+{
+  "errors": [],
+  "skip": {
+    "panelShown": true,
+    "before": {
+      "cards": true,
+      "boss": false,
+      "toast": {
+        "text": "段位奖励：天赋点 +2",
+        "show": false
+      },
+      "sr": "段位奖励：天赋点 +2",
+      "hudCard": "",
+      "hudHidden": true
+    },
+    "dom": [
+      {
+        "rarity": "剧情",
+        "name": "HR 约谈",
+        "desc": "今天挂机 -10%，明天卡池保证出一张稀有卡",
+        "flavor": "小美说：别紧张，就是随便聊聊。"
+      },
+      {
+        "rarity": "普通",
+        "name": "咖啡管够",
+        "desc": "今天挂机 +15%",
+        "flavor": "行政说咖啡机修好了，全组沸腾。"
+      },
+      {
+        "rarity": "稀有",
+        "name": "通宵摸鱼",
+        "desc": "今天挂机 +60%，代价是接下来 24h 离线效率 -20%",
+        "flavor": "公司网速最快的时段，只有你知道。"
+      }
+    ],
+    "afterSkip": {
+      "cards": false,
+      "boss": false,
+      "toast": {
+        "text": "段位奖励：天赋点 +2",
+        "show": false
+      },
+      "sr": "段位奖励：天赋点 +2",
+      "hudCard": "",
+      "hudHidden": true
+    },
+    "after2s": {
+      "cards": false,
+      "boss": false,
+      "toast": {
+        "text": "段位奖励：天赋点 +2",
+        "show": false
+      },
+      "sr": "段位奖励：天赋点 +2",
+      "hudCard": "",
+      "hudHidden": true
+    },
+    "saved": {
+      "date": "2026-11-27",
+      "offers": [
+        "hr_talk",
+        "coffee_day",
+        "overtime"
+      ],
+      "chosen": null,
+      "until": 0,
+      "nextDayGuaranteed": null,
+      "dismissed": true,
+      "chosenDate": ""
+    },
+    "afterReload": {
+      "cards": false,
+      "boss": false,
+      "toast": {
+        "text": "",
+        "show": false
+      },
+      "sr": "",
+      "hudCard": "",
+      "hudHidden": true
+    }
+  },
+  "esc": {
+    "before": true,
+    "after": {
+      "cards": false,
+      "boss": false,
+      "toast": {
+        "text": "段位奖励：天赋点 +2",
+        "show": false
+      },
+      "sr": "段位奖励：天赋点 +2",
+      "hudCard": "",
+      "hudHidden": true
+    },
+    "after2s": {
+      "cards": false,
+      "boss": false,
+      "toast": {
+        "text": "段位奖励：天赋点 +2",
+        "show": false
+      },
+      "sr": "段位奖励：天赋点 +2",
+      "hudCard": "",
+      "hudHidden": true
+    },
+    "saved": {
+      "date": "2026-11-27",
+      "offers": [
+        "hr_talk",
+        "coffee_day",
+        "overtime"
+      ],
+      "chosen": null,
+      "until": 0,
+      "nextDayGuaranteed": null,
+      "dismissed": true,
+      "chosenDate": ""
+    }
+  },
+  "backdrop": {
+    "before": true,
+    "after": {
+      "cards": false,
+      "boss": false,
+      "toast": {
+        "text": "段位奖励：天赋点 +2",
+        "show": false
+      },
+      "sr": "段位奖励：天赋点 +2",
+      "hudCard": "",
+      "hudHidden": true
+    },
+    "after15": {
+      "cards": false,
+      "boss": false,
+      "toast": {
+        "text": "段位奖励：天赋点 +2",
+        "show": false
+      },
+      "sr": "段位奖励：天赋点 +2",
+      "hudCard": "",
+      "hudHidden": true
+    }
+  },
+  "choose": {
+    "panel": true,
+    "after": {
+      "cards": false,
+      "boss": false,
+      "toast": {
+        "text": "今日卡：HR 约谈",
+        "show": true
+      },
+      "sr": "段位奖励：天赋点 +2",
+      "hudCard": "生效中：HR 约谈（剩 24h）",
+      "hudHidden": false
+    },
+    "flavorReReadable": false,
+    "descReReadable": false,
+    "hudOnly": "生效中：HR 约谈（剩 24h）",
+    "afterReload": {
+      "cards": false,
+      "boss": false,
+      "toast": {
+        "text": "",
+        "show": false
+      },
+      "sr": "",
+      "hudCard": "生效中：HR 约谈（剩 24h）",
+      "hudHidden": false
+    },
+    "afterReloadFlavor": false
+  },
+  "favor": {
+    "before": 0,
+    "hudCard": "生效中：老周的秘密（剩 24h）",
+    "claimBtn": true,
+    "after": 2,
+    "toast": "老周 回来了，点 👥 领取"
+  },
+  "newCards": {
+    "panel": true,
+    "dom": [
+      {
+        "rarity": "稀有",
+        "name": "截止日逼近",
+        "desc": "今天点击力 ×1.6，离线效率 -10%",
+        "flavor": "群里最后一条消息是三天前那句「我先走了」。"
+      },
+      {
+        "rarity": "普通",
+        "name": "实习生来请教",
+        "desc": "今天点击力 +40%，派遣奖励 +20%",
+        "flavor": "小李问了你三个问题，你一个都没答上来。"
+      },
+      {
+        "rarity": "稀有",
+        "name": "远程办公日",
+        "desc": "今天挂机 +25%，巡逻少一半",
+        "flavor": "在家穿拖鞋上班，效率这东西谁说得清。"
+      }
+    ]
+  },
+  "boss": [
+    {
+      "iter": 0,
+      "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+      "nameLeak": false,
+      "chosen": "switch-screen",
+      "toast": "没来得及选…这次不算"
+    },
+    {
+      "iter": 1,
+      "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+      "nameLeak": false,
+      "chosen": "switch-screen",
+      "toast": "没来得及选…这次不算"
+    },
+    {
+      "iter": 2,
+      "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+      "nameLeak": false,
+      "chosen": "switch-screen",
+      "toast": "没来得及选…这次不算"
+    },
+    {
+      "iter": 3,
+      "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+      "nameLeak": false,
+      "chosen": "switch-screen",
+      "toast": "没来得及选…这次不算"
+    },
+    {
+      "iter": 4,
+      "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+      "nameLeak": false,
+      "chosen": "act-busy",
+      "toast": "没来得及选…这次不算"
+    },
+    {
+      "iter": 5,
+      "error": "low"
+    },
+    {
+      "iter": 6,
+      "error": "low"
+    },
+    {
+      "iter": 7,
+      "error": "low"
+    },
+    {
+      "iter": 8,
+      "error": "low"
+    }
+  ],
+  "canvasTap": {
+    "fx": [
+      {
+        "x": 182,
+        "y": 223,
+        "text": "+1"
+      }
+    ],
+    "delta": 1.0699999332427979,
+    "panel": false
+  },
+  "timeout": {
+    "cards": true,
+    "boss": false,
+    "toast": {
+      "text": "没来得及选…这次不算",
+      "show": false
+    },
+    "sr": "老周丢来一个梗：戳亮起的黄点",
+    "hudCard": "",
+    "hudHidden": true
+  },
+  "hrChain": {
+    "state": {
+      "date": "2026-11-27",
+      "offers": [
+        "secret_project",
+        "intern_ask",
+        "team_bond"
+      ],
+      "chosen": null,
+      "until": 0,
+      "nextDayGuaranteed": null,
+      "dismissed": false,
+      "chosenDate": ""
+    },
+    "bodyHasXiaomei": false
+  }
+}

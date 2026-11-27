@@ -145,7 +145,8 @@ export function scheduleEvents(es: EventState, now: number, rng: () => number, e
     es.bossStartAt = now;
     es.bossCaught = false;
     const forced = es.forcedVariant;
-    es.bossVariant = forced ?? pickBossVariant(rng);
+    // 首次巡逻固定为回合制老板（教学：让新玩家第一次遇巡逻就见到新玩法）
+    es.bossVariant = forced ?? (es.patrolCount === 0 ? "choice" : pickBossVariant(rng));
     es.forcedVariant = null;
     if (forced !== "choice") {
       es.bossPersonality = PERSONALITIES[Math.floor(rng() * PERSONALITIES.length)]!.id;

@@ -285,6 +285,7 @@ describe("巡逻变体（variety #1：拆掉同 pattern 重复）", () => {
     const rng = seededRng3(9);
     for (let i = 0; i < 4000; i++) {
       const es = newEventState();
+      es.patrolCount = 5; // 跳过"首巡固定为 choice"的教学规则
       // 直接把巡逻排到当前时刻
       es.nextBossAt = 0;
       es.nextMemeAt = Infinity;

@@ -8,6 +8,7 @@ export class CardPanel {
   private root = document.getElementById("cards")!;
   private body = document.getElementById("cards-body")!;
   private shownAt = 0;
+  private lastPointerAt = 0;
 
   constructor(
     private onChoose: (id: string) => void,
@@ -17,6 +18,14 @@ export class CardPanel {
       if (e.target === this.root) this.onSkip();
     });
     document.getElementById("cards-skip")!.addEventListener("click", () => this.onSkip());
+    // 记录最近一次玩家点击：正在连点时不要弹卡（避免"弹窗吃掉连点"造成误选）
+    document.addEventListener(
+      "pointerdown",
+      () => {
+        this.lastPointerAt = performance.now();
+      },
+      { passive: true, capture: true },
+    );
   }
 
   get isOpen(): boolean {
@@ -28,6 +37,8 @@ export class CardPanel {
     if (this.isOpen) return;
     const today = new Date().toLocaleDateString("sv-SE");
     if (!shouldPromptCards(state.cards, today)) return;
+    // 玩家正在连点时不弹（停手 800ms 再弹，避免误选）
+    if (performance.now() - this.lastPointerAt < 800) return;
     // 首日不拦：先让玩家摸到游戏（戳 8 下），或开页 12 秒后再给决策
     const bootMs = Number(sessionStorage.getItem("moyu-boot-ms") ?? "0");
     const waited = bootMs > 0 && Date.now() - bootMs > 12_000;

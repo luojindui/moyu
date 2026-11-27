@@ -1,0 +1,335 @@
+{
+  "rounds": [
+    {
+      "iter": 0,
+      "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+      "choice": "switch-screen",
+      "nameLeak": false,
+      "resultText": null,
+      "panelVisibleMs": 0,
+      "before": {
+        "panel": true,
+        "optsText": "立刻装忙\n切到工作界面\n继续摸鱼",
+        "timer": "90.7%",
+        "toast": {
+          "text": "新章节：303 · 新的工位",
+          "show": true
+        },
+        "moyu": 1000000000.9566082
+      },
+      "samples": [
+        {
+          "ms": 0,
+          "panel": false,
+          "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +90",
+          "timer": "67.1%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +90",
+            "show": true
+          },
+          "moyu": 1000000091.2032882
+        },
+        {
+          "ms": 40,
+          "panel": false,
+          "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +90",
+          "timer": "67.1%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +90",
+            "show": true
+          },
+          "moyu": 1000000091.2266082
+        },
+        {
+          "ms": 80,
+          "panel": false,
+          "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +90",
+          "timer": "67.1%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +90",
+            "show": true
+          },
+          "moyu": 1000000091.2466081
+        },
+        {
+          "ms": 120,
+          "panel": false,
+          "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +90",
+          "timer": "67.1%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +90",
+            "show": true
+          },
+          "moyu": 1000000091.2566081
+        },
+        {
+          "ms": 160,
+          "panel": false,
+          "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +90",
+          "timer": "67.1%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +90",
+            "show": true
+          },
+          "moyu": 1000000091.2699481
+        },
+        {
+          "ms": 200,
+          "panel": false,
+          "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +90",
+          "timer": "67.1%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +90",
+            "show": true
+          },
+          "moyu": 1000000091.2799281
+        },
+        {
+          "ms": 240,
+          "panel": false,
+          "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +90",
+          "timer": "67.1%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +90",
+            "show": true
+          },
+          "moyu": 1000000091.2866081
+        },
+        {
+          "ms": 280,
+          "panel": false,
+          "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +90",
+          "timer": "67.1%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +90",
+            "show": true
+          },
+          "moyu": 1000000091.2965881
+        },
+        {
+          "ms": 320,
+          "panel": false,
+          "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +90",
+          "timer": "67.1%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +90",
+            "show": true
+          },
+          "moyu": 1000000091.3032681
+        },
+        {
+          "ms": 360,
+          "panel": false,
+          "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +90",
+          "timer": "67.1%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +90",
+            "show": true
+          },
+          "moyu": 1000000091.3132681
+        },
+        {
+          "ms": 400,
+          "panel": false,
+          "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +90",
+          "timer": "67.1%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +90",
+            "show": true
+          },
+          "moyu": 1000000091.323268
+        },
+        {
+          "ms": 440,
+          "panel": false,
+          "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +90",
+          "timer": "67.1%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +90",
+            "show": true
+          },
+          "moyu": 1000000091.329928
+        }
+      ]
+    },
+    {
+      "iter": 1,
+      "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+      "choice": "switch-screen",
+      "nameLeak": false,
+      "resultText": "王总：屏幕挺干净啊。 +99",
+      "panelVisibleMs": 120,
+      "before": {
+        "panel": true,
+        "optsText": "立刻装忙\n切到工作界面\n继续摸鱼",
+        "timer": "93.4%",
+        "toast": {
+          "text": "王总：屏幕挺干净啊。 +90",
+          "show": false
+        },
+        "moyu": 1000000091.9199076
+      },
+      "samples": [
+        {
+          "ms": 0,
+          "panel": true,
+          "optsText": "立刻装忙\n切到工作界面\n继续摸鱼\n王总：屏幕挺干净啊。 +99",
+          "timer": "92.1%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +90",
+            "show": false
+          },
+          "moyu": 1000000190.9332476
+        },
+        {
+          "ms": 40,
+          "panel": true,
+          "optsText": "立刻装忙\n切到工作界面\n继续摸鱼\n王总：屏幕挺干净啊。 +99",
+          "timer": "91.1%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +90",
+            "show": false
+          },
+          "moyu": 1000000190.9432476
+        },
+        {
+          "ms": 80,
+          "panel": true,
+          "optsText": "立刻装忙\n切到工作界面\n继续摸鱼\n王总：屏幕挺干净啊。 +99",
+          "timer": "89.7%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +90",
+            "show": false
+          },
+          "moyu": 1000000190.9565675
+        },
+        {
+          "ms": 120,
+          "panel": true,
+          "optsText": "立刻装忙\n切到工作界面\n继续摸鱼\n王总：屏幕挺干净啊。 +99",
+          "timer": "88.4%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +90",
+            "show": false
+          },
+          "moyu": 1000000190.9699075
+        },
+        {
+          "ms": 160,
+          "panel": false,
+          "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +99",
+          "timer": "87.7%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +99",
+            "show": true
+          },
+          "moyu": 1000000190.9832475
+        },
+        {
+          "ms": 200,
+          "panel": false,
+          "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +99",
+          "timer": "87.7%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +99",
+            "show": true
+          },
+          "moyu": 1000000190.9932275
+        },
+        {
+          "ms": 240,
+          "panel": false,
+          "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +99",
+          "timer": "87.7%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +99",
+            "show": true
+          },
+          "moyu": 1000000191.0032275
+        },
+        {
+          "ms": 280,
+          "panel": false,
+          "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +99",
+          "timer": "87.7%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +99",
+            "show": true
+          },
+          "moyu": 1000000191.0132475
+        },
+        {
+          "ms": 320,
+          "panel": false,
+          "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +99",
+          "timer": "87.7%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +99",
+            "show": true
+          },
+          "moyu": 1000000191.0999074
+        },
+        {
+          "ms": 360,
+          "panel": false,
+          "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +99",
+          "timer": "87.7%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +99",
+            "show": true
+          },
+          "moyu": 1000000191.1265674
+        },
+        {
+          "ms": 400,
+          "panel": false,
+          "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +99",
+          "timer": "87.7%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +99",
+            "show": true
+          },
+          "moyu": 1000000191.1598873
+        },
+        {
+          "ms": 440,
+          "panel": false,
+          "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +99",
+          "timer": "87.7%",
+          "toast": {
+            "text": "王总：屏幕挺干净啊。 +99",
+            "show": true
+          },
+          "moyu": 1000000191.1699073
+        }
+      ]
+    },
+    {
+      "iter": 2,
+      "error": "no panel"
+    }
+  ],
+  "timeout": {
+    "panel": false,
+    "optsText": "立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +99",
+    "timer": "87.7%",
+    "toast": {
+      "text": "王总：屏幕挺干净啊。 +99",
+      "show": false
+    },
+    "moyu": 1000000195.1397233,
+    "tell": null
+  },
+  "canvasTap": {
+    "tell": null,
+    "fx": [
+      {
+        "x": 206,
+        "y": 199,
+        "text": "+1"
+      }
+    ],
+    "delta": 1.073319911956787,
+    "panel": false
+  }
+}

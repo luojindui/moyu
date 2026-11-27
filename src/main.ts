@@ -261,9 +261,11 @@ async function boot(): Promise<void> {
       serialize(state, localStorageAdapter, Date.now());
     },
   );
+  let choicePickedThisRound = false;
   const bossPanel = new BossChoicePanel((choice) => {
     const r = onBossChoice(state, es, choice, scene.gameTime);
     if (r) {
+      choicePickedThisRound = true;
       state = r.state;
       hud.refresh(state);
       if (r.correct) {
@@ -273,6 +275,8 @@ async function boot(): Promise<void> {
       const line = bossChoiceLine(es.bossPersonality, r.correct);
       const text = `${line} ${r.delta >= 0 ? "+" : ""}${Math.round(r.delta)}`;
       bossPanel.showResult(r.correct, text);
+      // 兜底：面板内结果在低帧率下可能一闪而过，顶部再给一次短提示
+      setTimeout(() => showToast(text), 280);
       announce(r.correct ? "应对正确" : "应对错误");
       serialize(state, localStorageAdapter, Date.now());
     }
@@ -616,7 +620,9 @@ async function boot(): Promise<void> {
         const wasOpen = bossPanel.isOpen;
         bossPanel.sync(es);
         if (wasOpen && !bossPanel.isOpen && es.bossChoiceDone && es.bossUntil < 0) {
-          showToast("没来得及选…这次不算");
+          // 只有"确实超时未作答"才提示；已作答的走面板内结果
+          if (!choicePickedThisRound) showToast("没来得及选…这次不算");
+          choicePickedThisRound = false;
         }
       }
 

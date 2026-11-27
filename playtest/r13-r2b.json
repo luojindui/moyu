@@ -1,0 +1,50 @@
+{
+ "sampledAt": "2026-11-27T10:24:31.865Z",
+ "errors": [],
+ "crossDay": {
+  "firstOffers": [
+   "空调坏了",
+   "咖啡管够",
+   "老板出差"
+  ],
+  "chosen": "ac_broken",
+  "afterReload": {
+   "date": "2026-11-27",
+   "chosen": "ac_broken",
+   "chosenDate": "2026-11-26",
+   "offers": [
+    "canteen_gift",
+    "deadline",
+    "overtime"
+   ],
+   "modalOpen": false,
+   "hud": "生效中：空调坏了（剩 24h）"
+  },
+  "promptCards": null
+ },
+ "result": {
+  "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+  "panelOpenAt40ms": false,
+  "resultElAt40ms": {
+   "text": "王总：屏幕挺干净啊。 +90",
+   "opacity": "1"
+  },
+  "toastAt40ms": "没来得及选…这次不算",
+  "panelOpenAt540ms": false,
+  "resultElAt540ms": true,
+  "delta": 91
+ },
+ "keyboard": {
+  "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+  "enterDelta": 0,
+  "panelStillOpen": true,
+  "focused": "BUTTON:act-busy"
+ },
+ "skip": {
+  "before": true,
+  "after": {
+   "hidden": true,
+   "dismissed": true
+  }
+ }
+}
