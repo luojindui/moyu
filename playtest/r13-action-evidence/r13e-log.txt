@@ -1,0 +1,12 @@
+[r13e] NAV http://127.0.0.1:5180/
+[r13e] openChoice attempt=1 shown=true tell="有人过来了——他边走边看手机，眼神是散的" modals={"cards":false,"journal":false,"team":false,"welcome":false,"fb":"choice"}
+[r13e] openChoice attempt=1 shown=true tell="有人过来了——他一路盯着别人的屏幕走过来" modals={"cards":false,"journal":false,"team":false,"welcome":false,"fb":"choice"}
+[r13e] openChoice attempt=1 shown=true tell="有人过来了——他边走边看手机，眼神是散的" modals={"cards":false,"journal":false,"team":false,"welcome":false,"fb":"choice"}
+[r13e] openChoice attempt=1 shown=true tell="有人过来了——他一路盯着别人的屏幕走过来" modals={"cards":false,"journal":false,"team":false,"welcome":false,"fb":"choice"}
+[r13e] openChoice attempt=1 shown=true tell="有人过来了——他一路盯着别人的屏幕走过来" modals={"cards":false,"journal":false,"team":false,"welcome":false,"fb":"choice"}
+[r13e] openChoice attempt=1 shown=true tell="有人过来了——他边走边看手机，眼神是散的" modals={"cards":false,"journal":false,"team":false,"welcome":false,"fb":"choice"}
+[r13e] openChoice attempt=1 shown=true tell="有人过来了——他一路盯着别人的屏幕走过来" modals={"cards":false,"journal":false,"team":false,"welcome":false,"fb":"choice"}
+[r13e] openChoice attempt=1 shown=true tell="有人过来了——他边走边看手机，眼神是散的" modals={"cards":false,"journal":false,"team":false,"welcome":false,"fb":"choice"}
+[r13e] openChoice attempt=1 shown=true tell="有人过来了——脚步声又快又重，两三步就到工位" modals={"cards":false,"journal":false,"team":false,"welcome":false,"fb":"choice"}
+[r13e] openChoice attempt=1 shown=true tell="有人过来了——他边走边看手机，眼神是散的" modals={"cards":false,"journal":false,"team":false,"welcome":false,"fb":"choice"}
+[r13e] openChoice attempt=1 shown=true tell="有人过来了——脚步声又快又重，两三步就到工位" modals={"cards":false,"journal":false,"team":false,"welcome":false,"fb":"choice"}

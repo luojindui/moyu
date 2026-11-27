@@ -330,7 +330,10 @@ async function boot(): Promise<void> {
   let lastPointerAt = 0;
   const doTap = (clientX: number, clientY: number): void => {
     // 回合制老板窗口内画布点击不处理（避免"边思考边被罚偷点"）
-    if (bossPanel.isOpen) return;
+    if (bossPanel.isOpen) {
+      scene.fx.floatText(clientX, clientY, "先选应对");
+      return;
+    }
     const nowMs = performance.now();
     // 允许双指连点（音游常用），但两次点击至少间隔 80ms 防作弊
     if (nowMs - lastPointerAt < 80) return;

@@ -1,0 +1,150 @@
+{
+ "trials": [
+  {
+   "name": "慢读2400",
+   "tell": "有人过来了——他边走边看手机，眼神是散的",
+   "windowUsedMs": 2857,
+   "isRight": true,
+   "delta": 90.6,
+   "streakAfter": 1
+  },
+  {
+   "name": "慢读2800",
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+   "windowUsedMs": 2953,
+   "isRight": true,
+   "delta": -54.4,
+   "streakAfter": 0
+  }
+ ],
+ "special": {
+  "skipButton": {
+   "appeared": false
+  },
+  "timeout": {
+   "windowMs": 5051,
+   "delta": 1.1,
+   "streak": [
+    0,
+    0
+   ],
+   "toast": "没来得及选…这次不算",
+   "toastShown": true
+  },
+  "lateClick": {
+   "afterTimeoutDelta": 1.1,
+   "tapDelta": 1.1,
+   "streak": [
+    0,
+    0
+   ],
+   "toast": "没来得及选…这次不算"
+  },
+  "canvasTapDuringWindow": {
+   "deltaDuring": 0.4,
+   "fxNew": [],
+   "panelStillOpen": null,
+   "streakAfterAll": 0,
+   "totalDelta": -49.4,
+   "tell": "有人过来了——他一路盯着别人的屏幕走过来"
+  },
+  "precision-间隙正中": {
+   "x": 138.5,
+   "radius": 3,
+   "domTarget": "DIV/-/立刻装忙切到",
+   "resolved": "switch-screen",
+   "correct": "keep-slacking",
+   "isRight": false,
+   "delta": -49.9,
+   "oneTapResolvedPanelClosed": true
+  },
+  "precision-按钮1左边缘": {
+   "x": 141.5,
+   "radius": 3,
+   "domTarget": "BUTTON/switch-screen/切到工作界面",
+   "resolved": "switch-screen",
+   "correct": "switch-screen",
+   "isRight": true,
+   "delta": 90.1,
+   "oneTapResolvedPanelClosed": true
+  },
+  "precision-按钮1内3px": {
+   "x": 144.5,
+   "radius": 3,
+   "domTarget": "BUTTON/switch-screen/切到工作界面",
+   "resolved": "switch-screen",
+   "correct": "keep-slacking",
+   "isRight": false,
+   "delta": -54.9,
+   "oneTapResolvedPanelClosed": true
+  },
+  "precision-间隙+大指腹": {
+   "x": 138.5,
+   "radius": 14,
+   "domTarget": "DIV/-/立刻装忙切到",
+   "resolved": "switch-screen",
+   "correct": "act-busy",
+   "isRight": false,
+   "delta": -49.9,
+   "oneTapResolvedPanelClosed": true
+  },
+  "feel": {
+   "press": {
+    "before": {
+     "bg": "rgb(255, 215, 110)",
+     "transform": "none",
+     "filter": "none"
+    },
+    "during": {
+     "bg": "rgb(255, 215, 110)",
+     "transform": "none",
+     "filter": "none",
+     "clicks": 0,
+     "open": true
+    }
+   },
+   "boxAnim": "none",
+   "boxTransition": "0s",
+   "srLiveAtShow": "回合制老板：看线索，在 5 秒内选对应对",
+   "tell": "有人过来了——他边走边看手机，眼神是散的",
+   "tellLen": 20,
+   "toastRect": {
+    "x": 98,
+    "y": 108,
+    "w": 195,
+    "h": 61,
+    "text": "安总：这表格昨天就这数吧？ -50",
+    "show": true
+   },
+   "box": {
+    "x": 15.6,
+    "y": 535,
+    "w": 358.8,
+    "h": 109
+   },
+   "btn": {
+    "choice": "act-busy",
+    "label": "立刻装忙",
+    "x": 28.6,
+    "y": 574,
+    "w": 106.9,
+    "h": 46
+   },
+   "gapPx": 6,
+   "panelToShopGap": 66,
+   "shopCard": {
+    "id": "coffee",
+    "x": 8,
+    "y": 710,
+    "w": 140,
+    "h": 105,
+    "txt": "点了才赚咖啡续命\n "
+   },
+   "shopTapDuringWindowDelta": -14.7
+  }
+ },
+ "errors": [],
+ "meta": {
+  "cardSkipped": "no-panel"
+ }
+}

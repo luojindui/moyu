@@ -1,0 +1,19 @@
+[r13d] NAV http://127.0.0.1:5173/
+[r13d] A1-故意选错 814 ✗ 0.2 老李：你刚才是不是在摸鱼？算了。 +0
+[r13d] A2-故意选错 572 ✗ 0.2 老李：你刚才是不是在摸鱼？算了。 +0
+[r13d] A3-故意选错 747 ✗ 0.2 老李：你刚才是不是在摸鱼？算了。 +0
+[r13d] A4-故意选错 570 ✗ -29.8 王总：切得真快。 -30
+[r13d] B1-熟练快按 420 ✓ 110.1 安总：嗯，忙你的。 +110
+[r13d] B2-熟练快按 455 ✓ 121.1 王总：屏幕挺干净啊。 +121
+[r13d] B3-熟练快按 453 ✓ 132.1 安总：嗯，忙你的。 +132
+[r13d] B4-熟练快按 402 ✓ 143.1 老李：……我刚才要说什么来着？ +143
+[r13d] B5-熟练快按 519 ✓ 154.1 安总：嗯，忙你的。 +154
+[r13d] B6-熟练快按 453 ✓ 165.1 安总：嗯，忙你的。 +165
+file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-r13d-action.mjs:165
+  await tap(b.x+b.w/2,b.y+b.h/2);
+              ^
+
+TypeError: Cannot read properties of undefined (reading 'x')
+    at file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-r13d-action.mjs:165:15
+
+Node.js v22.23.2

@@ -9,6 +9,7 @@ export class BossChoicePanel {
   private elTimer = document.getElementById("boss-timer")!;
   private timer: number | null = null;
   private shown = false;
+  private shownAt = 0;
 
   constructor(private onPick: (choice: BossChoice) => void) {}
 
@@ -31,13 +32,18 @@ export class BossChoicePanel {
       (c) => `<button data-choice="${c.id}">${c.label}</button>`,
     ).join("");
     this.elOpts.querySelectorAll<HTMLButtonElement>("button").forEach((b) => {
-      b.addEventListener("click", () => {
+      // pointerdown 结算：比 click（touchend）更快、手感和误触都更好
+      b.addEventListener("pointerdown", (e) => {
+        e.preventDefault();
+        if (performance.now() - this.shownAt < 250) return; // 防开局连点误选
         this.onPick(b.dataset.choice as BossChoice);
         this.hide();
       });
     });
     this.root.classList.remove("hidden");
+    document.body.classList.add("choice-open");
     this.shown = true;
+    this.shownAt = performance.now();
     // 倒计时条
     const start = performance.now();
     const total = CHOICE_SECONDS * 1000;
@@ -53,6 +59,7 @@ export class BossChoicePanel {
 
   hide(): void {
     this.root.classList.add("hidden");
+    document.body.classList.remove("choice-open");
     this.shown = false;
     if (this.timer !== null) {
       cancelAnimationFrame(this.timer);
