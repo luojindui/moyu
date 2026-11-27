@@ -1,0 +1,50 @@
+import { writeFileSync } from "node:fs";
+import { runChrome, connect, sleep } from "./lib/chrome.mjs";
+const URL="http://127.0.0.1:5173/", DIR="/Users/p/Desktop/workspace/code/moyu/playtest/";
+const report={snapshot:"HEAD bfbfc46", steps:[], checks:[]};
+await runChrome(async ({port}) => {
+  const c=await connect(port); const send=c.send;
+  const ev=async(e)=>{ const v=await c.ev(e); if(v&&typeof v==="object"&&"__err" in v) throw new Error(JSON.stringify(v).slice(0,200)); return v; };
+  const waitFor=async(expr,t=25000,i=80)=>{ const t0=Date.now(); while(Date.now()-t0<t){ try{ if(await ev(expr)) return; }catch{} await sleep(i);} throw new Error("waitFor "+expr); };
+  const esc=()=>ev("document.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',code:'Escape',bubbles:true,cancelable:true})); 1");
+  const boot=async()=>{ await waitFor("!!window.__MOYU__ && window.__MOYU__.frames>20"); await ev("(()=>{ window.confirm=()=>true; const w=document.getElementById('welcome'); if(w&&!w.classList.contains('hidden')) document.getElementById('welcome-ok')?.click(); const cc=document.getElementById('cards'); if(cc&&!cc.classList.contains('hidden')) document.getElementById('cards-skip')?.click(); return 1; })()"); await sleep(200); };
+  await send("Page.enable"); await send("Runtime.enable");
+  await send("Page.navigate",{url:URL}); await boot();
+  // 注入全新档：best 空、played 0
+  await ev(`(()=>{ window.__origSet=Storage.prototype.setItem; Storage.prototype.setItem=function(){}; const raw=JSON.parse(localStorage.getItem('moyu-save')||'null')||{v:2,moyu:0,totalEarned:0,lifetimeEarned:0,levels:{},savedAt:Date.now(),createdAt:Date.now()}; raw.levels={}; raw.arcade={date:new Date().toLocaleDateString('sv-SE'),played:0,best:{}}; raw.moyu=0; raw.totalEarned=0; raw.lifetimeEarned=0; raw.savedAt=Date.now(); raw.createdAt=Date.now(); window.__origSet.call(localStorage,'moyu-save',JSON.stringify(raw)); return 1; })()`);
+  await ev("window.__navNonce='x'; 1"); await send("Page.reload",{ignoreCache:true});
+  await waitFor("(typeof window.__navNonce==='undefined') && !!window.__MOYU__ && window.__MOYU__.frames>20");
+  await boot();
+  await ev("document.getElementById('btn-arcade').click(); 1"); await sleep(200);
+  await ev(`document.querySelector('button[data-game="findboss"]').click(); 1`);
+  await waitFor("document.getElementById('play-grid')"); await sleep(100);
+  for (let i=0;i<5;i++){ await ev("document.querySelector('.face.boss')?.click(); 1"); await sleep(90); }
+  const displayed=await ev("Number(document.getElementById('play-score')?.textContent||0)");
+  const t0=Date.now();
+  await waitFor("!!document.getElementById('arcade-back')",40000,150);
+  const result=await ev(`(()=>({ score:document.querySelector('.arcade-play .arcade-score')?.textContent, record:(document.querySelector('.arcade-record')||{}).textContent||'', hint:(document.querySelector('.arcade-hint')||{}).textContent||'', reward:(document.querySelector('.arcade-reward')||{}).textContent||'', again:!!document.getElementById('arcade-again'), back:!!document.getElementById('arcade-back'), left:document.getElementById('arcade-left').textContent, toast:document.getElementById('dom-toast')?.textContent||'' }))()`);
+  const naturalMs=Date.now()-t0;
+  const state1=await ev("window.__MOYU__.state.arcade");
+  await send("Page.captureScreenshot",{format:"png"}).then(r=>writeFileSync(DIR+"r15-record-banner.png",Buffer.from(r.data,"base64")));
+  // 再来一局
+  await ev("document.getElementById('arcade-again').click(); 1");
+  await waitFor("document.getElementById('play-grid')",3000);
+  const againStarted=await ev("({ grid:!!document.getElementById('play-grid'), title:document.getElementById('arcade-title')?.textContent })");
+  await esc(); await sleep(400);
+  const state2=await ev("window.__MOYU__.state.arcade");
+  report.steps.push({step:"findboss-natural",data:{displayed,naturalMs,result,state1,againStarted,state2}});
+  const checks=report.checks;
+  const P=(n,ok,d)=>{checks.push({name:n,pass:ok,detail:d}); if(!ok) console.error("  ✗",n,"::",d);};
+  P("找老板实时比分显示（5 次点击后 >400）",displayed>400,`displayed=${displayed}`);
+  P("单局自然时长 ≈30s",naturalMs>28000&&naturalMs<34000,`naturalMs=${naturalMs}`);
+  P("最终分 = 5×50 = 250：显示中的剩余时间分结算被丢弃",String(result.score)==="250 分",`score=${result.score} displayed=${displayed}`);
+  P("新纪录横幅显示（旧 best=0）",/新纪录/.test(result.record),JSON.stringify(result.record));
+  P("结算屏奖励行 +13（idle 0.2、score 250）",/\+13/.test(result.reward),result.reward);
+  P("结算屏有「再来一局」按钮",result.again===true,String(result.again));
+  P("点「再来一局」直接重开同一游戏",againStarted.grid===true&&againStarted.title==="找老板",JSON.stringify(againStarted));
+  P("再来一局后 Esc 早退扣 1 次（played 1→2）",state2.played===2,JSON.stringify(state2));
+  report.checksPassed=checks.filter(x=>x.pass).length; report.checksFailed=checks.filter(x=>!x.pass).map(x=>x.name+" :: "+x.detail);
+  writeFileSync(DIR+"r15-final2-report.json",JSON.stringify(report,null,2));
+  console.log(JSON.stringify(report.checksFailed.length?{failed:report.checksFailed}:{allPass:checks.length, steps:report.steps},null,2));
+  c.close();
+},{timeoutMs:120000});

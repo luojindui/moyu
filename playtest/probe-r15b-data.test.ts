@@ -571,7 +571,8 @@ describe("R15b-6 三游戏期望奖励对齐", () => {
     expect(544).toBeLessThan(FULL);
   });
 });
-\ndescribe("R15b 汇总落盘", () => {
+
+describe("R15b 汇总落盘", () => {
   it("写入 v2 证据 JSON", () => {
     writeFileSync(`${OUT}/v2-engine-evidence.json`, JSON.stringify(ev, null, 2));
     expect(Object.keys(ev).length).toBeGreaterThan(8);

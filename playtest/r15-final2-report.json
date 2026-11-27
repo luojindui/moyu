@@ -1,0 +1,84 @@
+{
+  "snapshot": "HEAD bfbfc46",
+  "steps": [
+    {
+      "step": "findboss-natural",
+      "data": {
+        "displayed": 545,
+        "naturalMs": 29505,
+        "result": {
+          "score": "250 分",
+          "record": "🎉 新纪录！（旧 0）",
+          "hint": "找对 5 · 找错 0",
+          "reward": "本局奖励 +13 摸鱼值",
+          "again": true,
+          "back": true,
+          "left": "今天还能玩 2/3 次 · 每局能赢摸鱼值",
+          "toast": "摸鱼站 +13（得分 250）"
+        },
+        "state1": {
+          "date": "2026-11-27",
+          "played": 1,
+          "best": {
+            "findboss": 250
+          }
+        },
+        "againStarted": {
+          "grid": true,
+          "title": "找老板"
+        },
+        "state2": {
+          "date": "2026-11-27",
+          "played": 2,
+          "best": {
+            "findboss": 250
+          }
+        }
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "找老板实时比分显示（5 次点击后 >400）",
+      "pass": true,
+      "detail": "displayed=545"
+    },
+    {
+      "name": "单局自然时长 ≈30s",
+      "pass": true,
+      "detail": "naturalMs=29505"
+    },
+    {
+      "name": "最终分 = 5×50 = 250：显示中的剩余时间分结算被丢弃",
+      "pass": true,
+      "detail": "score=250 分 displayed=545"
+    },
+    {
+      "name": "新纪录横幅显示（旧 best=0）",
+      "pass": true,
+      "detail": "\"🎉 新纪录！（旧 0）\""
+    },
+    {
+      "name": "结算屏奖励行 +13（idle 0.2、score 250）",
+      "pass": true,
+      "detail": "本局奖励 +13 摸鱼值"
+    },
+    {
+      "name": "结算屏有「再来一局」按钮",
+      "pass": true,
+      "detail": "true"
+    },
+    {
+      "name": "点「再来一局」直接重开同一游戏",
+      "pass": true,
+      "detail": "{\"grid\":true,\"title\":\"找老板\"}"
+    },
+    {
+      "name": "再来一局后 Esc 早退扣 1 次（played 1→2）",
+      "pass": true,
+      "detail": "{\"date\":\"2026-11-27\",\"played\":2,\"best\":{\"findboss\":250}}"
+    }
+  ],
+  "checksPassed": 8,
+  "checksFailed": []
+}

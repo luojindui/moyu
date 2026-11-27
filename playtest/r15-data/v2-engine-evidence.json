@@ -63,7 +63,7 @@
         "clicksPerSec": 2,
         "correctIn30s": 60,
         "rawScore": 3000,
-        "cappedByMaxScore": 2000,
+        "cappedByMaxScore": 3000,
         "timeToReachRefSec": 6,
         "rewardAtMidIdle": 25000
       },
@@ -71,7 +71,7 @@
         "clicksPerSec": 3,
         "correctIn30s": 90,
         "rawScore": 4500,
-        "cappedByMaxScore": 2000,
+        "cappedByMaxScore": 4500,
         "timeToReachRefSec": 4,
         "rewardAtMidIdle": 25000
       },
@@ -79,7 +79,7 @@
         "clicksPerSec": 4,
         "correctIn30s": 120,
         "rawScore": 6000,
-        "cappedByMaxScore": 2000,
+        "cappedByMaxScore": 6000,
         "timeToReachRefSec": 3,
         "rewardAtMidIdle": 25000
       },
@@ -87,7 +87,7 @@
         "clicksPerSec": 6,
         "correctIn30s": 180,
         "rawScore": 9000,
-        "cappedByMaxScore": 2000,
+        "cappedByMaxScore": 8000,
         "timeToReachRefSec": 2,
         "rewardAtMidIdle": 25000
       },
@@ -95,7 +95,7 @@
         "clicksPerSec": 8,
         "correctIn30s": 240,
         "rawScore": 12000,
-        "cappedByMaxScore": 2000,
+        "cappedByMaxScore": 8000,
         "timeToReachRefSec": 1.5,
         "rewardAtMidIdle": 25000
       }
@@ -420,11 +420,11 @@
   },
   "coffeeReach600Probability": 0.0018,
   "capAndExploit": {
-    "maxScore": 2000,
-    "raw9000_bestRecorded": 2000,
+    "maxScore": 8000,
+    "raw9000_bestRecorded": 8000,
     "raw9000_reward": 25000,
     "raw1e9_rewardEquals9000": true,
-    "raw1e9_bestRecorded": 2000,
+    "raw1e9_bestRecorded": 8000,
     "zeroConsumes": true,
     "negConsumes": true,
     "nanConsumes": true,
@@ -482,5 +482,164 @@
       }
     ],
     "note": "开局 0.2/s 时 30 摸鱼值 = 150 秒挂机（5×同局时长）；idle≥1.2 后恒为 25s"
+  },
+  "rhythmStrategies": {
+    "完美正拍(±0ms)": {
+      "taps": 59,
+      "hits": 59,
+      "perfect": 59,
+      "spurious": 0,
+      "missedBeats": 0,
+      "score": 1180,
+      "rewardAtMidIdle": 25000,
+      "reachesRef": true
+    },
+    "全 good(晚 0.12s)": {
+      "taps": 59,
+      "hits": 59,
+      "perfect": 0,
+      "spurious": 0,
+      "missedBeats": 0,
+      "score": 590,
+      "rewardAtMidIdle": 24583,
+      "reachesRef": false
+    },
+    "只打偶数拍(隔拍)": {
+      "taps": 30,
+      "hits": 30,
+      "perfect": 30,
+      "spurious": 0,
+      "missedBeats": 29,
+      "score": 310,
+      "rewardAtMidIdle": 12916,
+      "reachesRef": false
+    },
+    "乱点 100ms": {
+      "taps": 300,
+      "hits": 59,
+      "perfect": 0,
+      "spurious": 241,
+      "missedBeats": 0,
+      "score": 0,
+      "rewardAtMidIdle": 0,
+      "reachesRef": false
+    },
+    "乱点 250ms": {
+      "taps": 120,
+      "hits": 59,
+      "perfect": 0,
+      "spurious": 61,
+      "missedBeats": 0,
+      "score": 295,
+      "rewardAtMidIdle": 12291,
+      "reachesRef": false
+    },
+    "乱点 400ms": {
+      "taps": 76,
+      "hits": 44,
+      "perfect": 15,
+      "spurious": 32,
+      "missedBeats": 15,
+      "score": 295,
+      "rewardAtMidIdle": 12291,
+      "reachesRef": false
+    },
+    "随机 2 次/秒": {
+      "taps": 60,
+      "hits": 27,
+      "perfect": 15,
+      "spurious": 33,
+      "missedBeats": 32,
+      "score": 0,
+      "rewardAtMidIdle": 0,
+      "reachesRef": false
+    },
+    "随机 4 次/秒": {
+      "taps": 120,
+      "hits": 45,
+      "perfect": 20,
+      "spurious": 75,
+      "missedBeats": 14,
+      "score": 145,
+      "rewardAtMidIdle": 6041,
+      "reachesRef": false
+    },
+    "完美但漏最后 5 拍": {
+      "taps": 54,
+      "hits": 54,
+      "perfect": 54,
+      "spurious": 0,
+      "missedBeats": 5,
+      "score": 1030,
+      "rewardAtMidIdle": 25000,
+      "reachesRef": true
+    }
+  },
+  "expectationAligned": {
+    "idle": 1000,
+    "findboss": {
+      "score": 600,
+      "reward": 25000,
+      "idleSecEq": 25,
+      "effort": "12 个正确（2~6 秒）"
+    },
+    "rhythmRows": [
+      {
+        "score": 590,
+        "reward": 24583,
+        "idleSecEq": 24.6
+      },
+      {
+        "score": 800,
+        "reward": 25000,
+        "idleSecEq": 25
+      },
+      {
+        "score": 1000,
+        "reward": 25000,
+        "idleSecEq": 25
+      },
+      {
+        "score": 1180,
+        "reward": 25000,
+        "idleSecEq": 25
+      }
+    ],
+    "coffeeRows": [
+      {
+        "catchRate": 0.5,
+        "expectedScore": 138.7,
+        "reward": 5791,
+        "idleSecEq": 5.8
+      },
+      {
+        "catchRate": 0.7,
+        "expectedScore": 245.8,
+        "reward": 10250,
+        "idleSecEq": 10.3
+      },
+      {
+        "catchRate": 0.85,
+        "expectedScore": 365,
+        "reward": 15208,
+        "idleSecEq": 15.2
+      },
+      {
+        "catchRate": 0.95,
+        "expectedScore": 479.9,
+        "reward": 20000,
+        "idleSecEq": 20
+      },
+      {
+        "catchRate": 1,
+        "expectedScore": 544.7,
+        "reward": 22708,
+        "idleSecEq": 22.7
+      }
+    ],
+    "fullRewardIdleSecEq": 25,
+    "coffeeMaxIdleSecEq": 22.7,
+    "rhythmGoodIdleSecEq": 24.58,
+    "gapCoffeeVsFullPct": 9.3
   }
 }

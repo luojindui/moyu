@@ -1,0 +1,101 @@
+{
+  "phase": "o4",
+  "steps": [],
+  "bundle": [
+    "index-8jx3HlVx.js"
+  ],
+  "under2s": {
+    "before": {
+      "played": 0,
+      "open": true,
+      "timer": "29.2s"
+    },
+    "confirmMsgs": [],
+    "after": {
+      "open": false,
+      "played": 1,
+      "left": "今天还能玩 2/3 次 · 每局能赢摸鱼值",
+      "toast": {
+        "text": "得分 0，没拿到奖励",
+        "show": true
+      },
+      "resultShown": false,
+      "badge": {
+        "text": "2",
+        "aria": "摸鱼站，今天还剩 2 次"
+      }
+    }
+  },
+  "over2sCancel": {
+    "before": {
+      "played": 1,
+      "timer": "27.4s",
+      "open": true
+    },
+    "confirmMsgs": [
+      "本局已玩 3 秒，结束会按已完成比例结算并消耗 1 次机会。确定结束？"
+    ],
+    "after": {
+      "open": true,
+      "played": 1,
+      "timer": "26.9s",
+      "toast": {
+        "text": "得分 0，没拿到奖励",
+        "show": false
+      }
+    },
+    "timerContinues": "25.3s"
+  },
+  "over2sAccept": {
+    "confirmMsgs": [
+      "本局已玩 5 秒，结束会按已完成比例结算并消耗 1 次机会。确定结束？"
+    ],
+    "open": false,
+    "played": 2,
+    "left": "今天还能玩 1/3 次 · 每局能赢摸鱼值",
+    "toast": {
+      "text": "得分 0，没拿到奖励",
+      "show": true
+    },
+    "resultShown": false,
+    "ghostAfter5s": {
+      "played": 2,
+      "open": false,
+      "toast": {
+        "text": "得分 0，没拿到奖励",
+        "show": false
+      }
+    }
+  },
+  "under2sX": {
+    "confirmMsgs": [],
+    "before": {
+      "played": 2
+    },
+    "after": {
+      "open": false,
+      "played": 3,
+      "left": "今天玩完了，明天再来",
+      "toast": {
+        "text": "得分 0，没拿到奖励",
+        "show": true
+      },
+      "badge": {
+        "text": null,
+        "aria": "摸鱼站，今天已玩完"
+      }
+    }
+  },
+  "finalEntry": {
+    "badge": {
+      "text": null,
+      "aria": "摸鱼站，今天已玩完"
+    },
+    "saveArcade": {
+      "date": "2026-11-27",
+      "played": 3,
+      "best": {}
+    }
+  },
+  "durationMs": 0
+}

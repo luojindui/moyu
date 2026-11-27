@@ -1,0 +1,15 @@
+[0.4s] o2: 线上移动端 回访
+[3.7s] shot o2-01-first-screen
+[4.1s] shot o2-02-menu
+[4.1s] step findboss live score + full 30s
+[10.6s] shot o2-03-findboss-mid
+[34.2s] shot o2-04-findboss-result
+[34.5s] step rhythm judge text + on-beat 4s
+[38.5s] shot o2-05-rhythm-judge
+[38.5s] step mid-game exit: confirm cancel then accept
+[39.1s] shot o2-06-exit-cancel
+[39.7s] shot o2-07-exit-accept
+[45.7s] step third attempt → locked
+[50.1s] shot o2-08-locked
+[50.1s] evidence -> playtest/r15-frag-online-o2.json
+DONE o2

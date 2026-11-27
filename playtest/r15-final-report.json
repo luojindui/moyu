@@ -1,0 +1,209 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "snapshot": "HEAD bfbfc46 / arcade d68cbadf / minigames b95b8374 / main 7aa8c2c4 / save 9b2a5452 / spec 5a517f15",
+  "startedAt": "2026-11-27T12:13:02.085Z",
+  "steps": [
+    {
+      "step": "setup",
+      "at": 1795781584542,
+      "data": {
+        "idle": 10.2,
+        "state": {
+          "date": "2026-11-27",
+          "played": 0,
+          "best": {}
+        }
+      }
+    },
+    {
+      "step": "early-exit-wiring",
+      "at": 1795781585687,
+      "data": {
+        "clicks": 45,
+        "aClickMs": 475,
+        "aElapsed": 882,
+        "aToast": "摸鱼站 +254（得分 2250）",
+        "aState": {
+          "date": "2026-11-27",
+          "played": 1,
+          "best": {
+            "findboss": 2250
+          }
+        },
+        "aReward": 254,
+        "wiredReward": 22
+      }
+    },
+    {
+      "step": "confirm-flow",
+      "at": 1795781589547,
+      "data": {
+        "bReject": {
+          "hidden": false,
+          "playArea": true,
+          "played": 1,
+          "timer": "27.1s"
+        },
+        "bTimerLater": "26.7s",
+        "bAccept": {
+          "date": "2026-11-27",
+          "played": 2,
+          "best": {
+            "findboss": 2250
+          }
+        }
+      }
+    },
+    {
+      "step": "zero-early-exit",
+      "at": 1795781590195,
+      "data": {
+        "cState": {
+          "date": "2026-11-27",
+          "played": 3,
+          "best": {
+            "findboss": 2250
+          }
+        },
+        "cToast": "得分 0，没拿到奖励"
+      }
+    },
+    {
+      "step": "menu-0-of-3",
+      "at": 1795781590196,
+      "data": {
+        "left": "今天玩完了，明天再来",
+        "cards": [],
+        "state": {
+          "date": "2026-11-27",
+          "played": 3,
+          "best": {
+            "findboss": 2250
+          }
+        }
+      }
+    },
+    {
+      "step": "after-reload",
+      "at": 1795781590884,
+      "data": {
+        "dState": {
+          "date": "2026-11-27",
+          "played": 3,
+          "best": {
+            "findboss": 2250
+          }
+        }
+      }
+    },
+    {
+      "step": "sanitize",
+      "at": 1795781591721,
+      "data": {
+        "eState": {
+          "date": "2026-11-27",
+          "played": 3,
+          "best": {
+            "coffee": 9999
+          }
+        },
+        "eMenu": {
+          "left": "今天玩完了，明天再来",
+          "coffee": "接咖啡 最高 9999"
+        }
+      }
+    },
+    {
+      "step": "sanitize-bad-date",
+      "at": 1795781592389,
+      "data": {
+        "fState": {
+          "date": "2026-11-27",
+          "played": 0,
+          "best": {}
+        }
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "注入档 idle≈10.2",
+      "pass": true,
+      "detail": "idle=10.2"
+    },
+    {
+      "name": "无对局时按钮无次数角标（初始不显示）",
+      "pass": true,
+      "detail": "badge=null"
+    },
+    {
+      "name": "≥40 次正确点击在 <2s 内完成（早退路径）",
+      "pass": true,
+      "detail": "clicks=45 elapsed=882"
+    },
+    {
+      "name": "早退分数满 ratio（best=45×50=2250）",
+      "pass": true,
+      "detail": "{\"date\":\"2026-11-27\",\"played\":1,\"best\":{\"findboss\":2250}}"
+    },
+    {
+      "name": "BUG：早退奖励按满 30s 结算（应≈22，实测满额 254）→ playedSeconds 未接线",
+      "pass": true,
+      "detail": "toast=摸鱼站 +254（得分 2250） reward=254 ifWired=22"
+    },
+    {
+      "name": "结算后按钮出现次数角标 = 剩余 2",
+      "pass": true,
+      "detail": "badge=2"
+    },
+    {
+      "name": "confirm 拒绝：面板不关、不结算、次数不变、游戏继续",
+      "pass": true,
+      "detail": "{\"bReject\":{\"hidden\":false,\"playArea\":true,\"played\":1,\"timer\":\"27.1s\"},\"bTimerLater\":\"26.7s\"}"
+    },
+    {
+      "name": "confirm 接受：退出结算、次数 +1",
+      "pass": true,
+      "detail": "{\"date\":\"2026-11-27\",\"played\":2,\"best\":{\"findboss\":2250}}"
+    },
+    {
+      "name": "0 分 0.4s 手滑退出：仍扣 1 次（'前2秒豁免'仅免确认，注释与实现不符）",
+      "pass": true,
+      "detail": "[{\"date\":\"2026-11-27\",\"played\":3,\"best\":{\"findboss\":2250}},\"得分 0，没拿到奖励\"]"
+    },
+    {
+      "name": "次数用尽后角标移除",
+      "pass": true,
+      "detail": "badge=null"
+    },
+    {
+      "name": "0/3 文案与 3 卡禁用",
+      "pass": true,
+      "detail": "{\"left\":\"今天玩完了，明天再来\",\"cards\":[],\"state\":{\"date\":\"2026-11-27\",\"played\":3,\"best\":{\"findboss\":2250}}}"
+    },
+    {
+      "name": "刷新后 0/3 与 best 保留",
+      "pass": true,
+      "detail": "{\"date\":\"2026-11-27\",\"played\":3,\"best\":{\"findboss\":2250}}"
+    },
+    {
+      "name": "净化：played 99→3、ghost 丢弃、coffee 1e9→9999、date 合法保留",
+      "pass": true,
+      "detail": "{\"date\":\"2026-11-27\",\"played\":3,\"best\":{\"coffee\":9999}}"
+    },
+    {
+      "name": "净化后菜单显示最高 9999 且禁用",
+      "pass": true,
+      "detail": "{\"name\":\"接咖啡 最高 9999\",\"game\":\"coffee\",\"btnText\":\"明天再来\",\"disabled\":true}"
+    },
+    {
+      "name": "非法 date → 今日、played 归 0、ghost 丢弃",
+      "pass": true,
+      "detail": "{\"date\":\"2026-11-27\",\"played\":0,\"best\":{}}"
+    }
+  ],
+  "consoleErrors": [],
+  "finishedAt": "2026-11-27T12:13:12.389Z",
+  "checksPassed": 15,
+  "checksFailed": []
+}

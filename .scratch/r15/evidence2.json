@@ -1,0 +1,903 @@
+{
+  "steps": {
+    "seed": "ok",
+    "coffee": "ok",
+    "findboss": "ok",
+    "rhythm": "ok",
+    "persist": "ok",
+    "noRecord": "ok"
+  },
+  "coffee": {
+    "start": {
+      "ok": true,
+      "rect": {
+        "left": 478,
+        "top": 329,
+        "width": 324,
+        "height": 300
+      }
+    },
+    "midFall": {
+      "t": 1.08,
+      "drops": [
+        {
+          "top": 88,
+          "cls": "drop landed"
+        },
+        {
+          "top": 66.07,
+          "cls": "drop"
+        },
+        {
+          "top": 35.85,
+          "cls": "drop"
+        },
+        {
+          "top": 5.64,
+          "cls": "drop"
+        }
+      ]
+    },
+    "landedEarly": [
+      {
+        "t": 0.84,
+        "top": 88
+      },
+      {
+        "t": 0.88,
+        "top": 88
+      },
+      {
+        "t": 0.92,
+        "top": 88
+      },
+      {
+        "t": 0.96,
+        "top": 88
+      },
+      {
+        "t": 1,
+        "top": 88
+      },
+      {
+        "t": 1.04,
+        "top": 88
+      },
+      {
+        "t": 1.08,
+        "top": 88
+      },
+      {
+        "t": 1.12,
+        "top": 88
+      },
+      {
+        "t": 1.16,
+        "top": 88
+      },
+      {
+        "t": 1.2,
+        "top": 88
+      },
+      {
+        "t": 1.24,
+        "top": 88
+      },
+      {
+        "t": 1.28,
+        "top": 88
+      },
+      {
+        "t": 1.32,
+        "top": 88
+      },
+      {
+        "t": 1.36,
+        "top": 88
+      },
+      {
+        "t": 1.4,
+        "top": 88
+      }
+    ],
+    "caughtShot": true,
+    "done": true,
+    "result": {
+      "bodyText": "接咖啡 结束\n516 分\n本局奖励 +26 摸鱼值\n🎉 新纪录！（旧 100）\n接住 26 · 漏接 2 · 最高连击 26\n再来一局 返回摸鱼站",
+      "record": "🎉 新纪录！（旧 100）",
+      "reward": "本局奖励 +26 摸鱼值",
+      "score": "516 分",
+      "hints": [
+        "接住 26 · 漏接 2 · 最高连击 26"
+      ],
+      "hasAgain": true
+    },
+    "toast": "摸鱼站 +26（得分 516）",
+    "arcade": {
+      "date": "2026-11-27",
+      "played": 1,
+      "best": {
+        "coffee": 516
+      }
+    },
+    "save": {
+      "date": "2026-11-27",
+      "played": 1,
+      "best": {
+        "coffee": 516
+      }
+    },
+    "taps": [
+      {
+        "tapAt": 2.761,
+        "visualTop": 84.7,
+        "nearestDropAt": 2.86,
+        "delta": -0.099,
+        "clsAfter": "drop caught"
+      },
+      {
+        "tapAt": 3.8,
+        "visualTop": 85.3,
+        "nearestDropAt": 3.89,
+        "delta": -0.09,
+        "clsAfter": "drop caught"
+      },
+      {
+        "tapAt": 4.801,
+        "visualTop": 84.4,
+        "nearestDropAt": 4.92,
+        "delta": -0.119,
+        "clsAfter": "drop caught"
+      },
+      {
+        "tapAt": 5.842,
+        "visualTop": 84.2,
+        "nearestDropAt": 5.96,
+        "delta": -0.118,
+        "clsAfter": "drop caught"
+      },
+      {
+        "tapAt": 6.882,
+        "visualTop": 84.8,
+        "nearestDropAt": 6.99,
+        "delta": -0.108,
+        "clsAfter": "drop caught"
+      },
+      {
+        "tapAt": 7.921,
+        "visualTop": 84.9,
+        "nearestDropAt": 8.02,
+        "delta": -0.099,
+        "clsAfter": "drop caught"
+      },
+      {
+        "tapAt": 26.481,
+        "visualTop": 85.4,
+        "nearestDropAt": 26.57,
+        "delta": -0.089,
+        "clsAfter": "drop caught"
+      },
+      {
+        "tapAt": 27.481,
+        "visualTop": 84.2,
+        "nearestDropAt": 27.61,
+        "delta": -0.129,
+        "clsAfter": "drop caught"
+      },
+      {
+        "tapAt": 28.521,
+        "visualTop": 84.3,
+        "nearestDropAt": 28.64,
+        "delta": -0.119,
+        "clsAfter": "drop caught"
+      }
+    ],
+    "tapCount": 26,
+    "tapDeltaStats": {
+      "n": 26,
+      "min": "0.089",
+      "max": "0.129",
+      "avg": "0.110"
+    },
+    "catchEvents": [
+      {
+        "t": 2.76,
+        "top": 84.7,
+        "bg": "rgb(139, 226, 139)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      {
+        "t": 3.8,
+        "top": 85.3,
+        "bg": "rgb(139, 226, 139)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      {
+        "t": 4.8,
+        "top": 84.4,
+        "bg": "rgb(139, 226, 139)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      {
+        "t": 5.84,
+        "top": 84.2,
+        "bg": "rgb(139, 226, 139)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      {
+        "t": 6.88,
+        "top": 84.8,
+        "bg": "rgb(139, 226, 139)",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      }
+    ],
+    "catchEventCount": 26,
+    "fallTrajectory": [
+      {
+        "t": 0.04,
+        "tops": [
+          65.51,
+          35.3,
+          5.09
+        ]
+      },
+      {
+        "t": 0.28,
+        "tops": [
+          72.83,
+          42.61,
+          12.4
+        ]
+      },
+      {
+        "t": 0.52,
+        "tops": [
+          79.65,
+          49.43,
+          19.22
+        ]
+      },
+      {
+        "t": 0.76,
+        "tops": [
+          86.49,
+          56.28,
+          26.07
+        ]
+      },
+      {
+        "t": 1,
+        "tops": [
+          63.62,
+          33.4,
+          3.19
+        ]
+      },
+      {
+        "t": 1.24,
+        "tops": [
+          70.46,
+          40.24,
+          10.03
+        ]
+      },
+      {
+        "t": 1.48,
+        "tops": [
+          77.8,
+          47.59,
+          17.37
+        ]
+      },
+      {
+        "t": 1.72,
+        "tops": [
+          84.66,
+          54.44,
+          24.23
+        ]
+      },
+      {
+        "t": 1.96,
+        "tops": [
+          61.27,
+          31.06,
+          0.84
+        ]
+      },
+      {
+        "t": 2.2,
+        "tops": [
+          68.62,
+          38.4,
+          8.19
+        ]
+      }
+    ],
+    "landedCount": 74,
+    "resultAfter": {
+      "bodyText": "接咖啡 结束\n516 分\n本局奖励 +26 摸鱼值\n🎉 新纪录！（旧 100）\n接住 26 · 漏接 2 · 最高连击 26\n再来一局 返回摸鱼站",
+      "record": "🎉 新纪录！（旧 100）",
+      "reward": "本局奖励 +26 摸鱼值",
+      "score": "516 分",
+      "hints": [
+        "接住 26 · 漏接 2 · 最高连击 26"
+      ],
+      "hasAgain": true
+    },
+    "menuAfter": {
+      "title": "摸鱼站",
+      "left": "今天还能玩 2/3 次 · 每局能赢摸鱼值",
+      "cards": [
+        {
+          "name": "接咖啡",
+          "small": "最高 516",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        },
+        {
+          "name": "找老板",
+          "small": "最高 0",
+          "btn": "开始（30 秒内无限轮）",
+          "disabled": false,
+          "locked": false
+        },
+        {
+          "name": "节奏点击",
+          "small": "最高 0",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        }
+      ],
+      "bodyText": "接咖啡 最高 516\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 0\n在一堆同事脸里找出王总，越快越好\n开始（30 秒内无限轮）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n开始（30 秒）"
+    },
+    "badgeAfter": {
+      "badge": "2",
+      "aria": "摸鱼站，今天还剩 2 次"
+    }
+  },
+  "findboss": {
+    "midPlay": {
+      "timer": "24.9s",
+      "score": "2999",
+      "hint": "找出王总（红色「王」）· 已找 55",
+      "grid": true
+    },
+    "done": true,
+    "samples": [
+      {
+        "timer": "30.0s",
+        "score": "838",
+        "hint": "找出王总（红色「王」）· 已找 11"
+      },
+      {
+        "timer": "27.9s",
+        "score": "1378",
+        "hint": "找出王总（红色「王」）· 已找 22"
+      },
+      {
+        "timer": "26.9s",
+        "score": "1919",
+        "hint": "找出王总（红色「王」）· 已找 33"
+      },
+      {
+        "timer": "25.9s",
+        "score": "2459",
+        "hint": "找出王总（红色「王」）· 已找 44"
+      },
+      {
+        "timer": "24.9s",
+        "score": "2999",
+        "hint": "找出王总（红色「王」）· 已找 55"
+      },
+      {
+        "timer": "23.9s",
+        "score": "3539",
+        "hint": "找出王总（红色「王」）· 已找 66"
+      },
+      {
+        "timer": "22.9s",
+        "score": "4079",
+        "hint": "找出王总（红色「王」）· 已找 77"
+      },
+      {
+        "timer": "21.9s",
+        "score": "4619",
+        "hint": "找出王总（红色「王」）· 已找 88"
+      },
+      {
+        "timer": "30.0s",
+        "score": "5208",
+        "hint": "找出王总（红色「王」）· 已找 100"
+      },
+      {
+        "timer": "19.9s",
+        "score": "5748",
+        "hint": "找出王总（红色「王」）· 已找 111"
+      },
+      {
+        "timer": "18.9s",
+        "score": "6288",
+        "hint": "找出王总（红色「王」）· 已找 122"
+      },
+      {
+        "timer": "17.9s",
+        "score": "6829",
+        "hint": "找出王总（红色「王」）· 已找 133"
+      },
+      {
+        "timer": "16.9s",
+        "score": "7369",
+        "hint": "找出王总（红色「王」）· 已找 144"
+      },
+      {
+        "timer": "15.9s",
+        "score": "7909",
+        "hint": "找出王总（红色「王」）· 已找 155"
+      },
+      {
+        "timer": "14.9s",
+        "score": "8449",
+        "hint": "找出王总（红色「王」）· 已找 166"
+      },
+      {
+        "timer": "13.9s",
+        "score": "8989",
+        "hint": "找出王总（红色「王」）· 已找 177"
+      },
+      {
+        "timer": "12.9s",
+        "score": "9529",
+        "hint": "找出王总（红色「王」）· 已找 188"
+      },
+      {
+        "timer": "30.0s",
+        "score": "10118",
+        "hint": "找出王总（红色「王」）· 已找 200"
+      },
+      {
+        "timer": "10.9s",
+        "score": "10658",
+        "hint": "找出王总（红色「王」）· 已找 211"
+      },
+      {
+        "timer": "9.9s",
+        "score": "11198",
+        "hint": "找出王总（红色「王」）· 已找 222"
+      },
+      {
+        "timer": "8.9s",
+        "score": "11739",
+        "hint": "找出王总（红色「王」）· 已找 233"
+      },
+      {
+        "timer": "7.9s",
+        "score": "12279",
+        "hint": "找出王总（红色「王」）· 已找 244"
+      },
+      {
+        "timer": "6.9s",
+        "score": "12819",
+        "hint": "找出王总（红色「王」）· 已找 255"
+      },
+      {
+        "timer": "5.9s",
+        "score": "13359",
+        "hint": "找出王总（红色「王」）· 已找 266"
+      },
+      {
+        "timer": "4.9s",
+        "score": "13899",
+        "hint": "找出王总（红色「王」）· 已找 277"
+      },
+      {
+        "timer": "3.9s",
+        "score": "14439",
+        "hint": "找出王总（红色「王」）· 已找 288"
+      },
+      {
+        "timer": "30.0s",
+        "score": "15028",
+        "hint": "找出王总（红色「王」）· 已找 300"
+      },
+      {
+        "timer": "1.9s",
+        "score": "15568",
+        "hint": "找出王总（红色「王」）· 已找 311"
+      },
+      {
+        "timer": "0.9s",
+        "score": "16108",
+        "hint": "找出王总（红色「王」）· 已找 322"
+      },
+      {
+        "hint": "找对 332 · 找错 0"
+      }
+    ],
+    "clicks": 332,
+    "result": {
+      "bodyText": "找老板 结束\n16600 分\n本局奖励 +30 摸鱼值\n🎉 新纪录！（旧 0）\n找对 332 · 找错 0\n再来一局 返回摸鱼站",
+      "record": "🎉 新纪录！（旧 0）",
+      "reward": "本局奖励 +30 摸鱼值",
+      "score": "16600 分",
+      "hints": [
+        "找对 332 · 找错 0"
+      ],
+      "hasAgain": true
+    },
+    "toast": "摸鱼站 +30（得分 16600）",
+    "arcade": {
+      "date": "2026-11-27",
+      "played": 2,
+      "best": {
+        "coffee": 516,
+        "findboss": 8000
+      }
+    },
+    "menuAfter": {
+      "title": "摸鱼站",
+      "left": "今天还能玩 1/3 次 · 每局能赢摸鱼值",
+      "cards": [
+        {
+          "name": "接咖啡",
+          "small": "最高 516",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        },
+        {
+          "name": "找老板",
+          "small": "最高 8000",
+          "btn": "开始（30 秒内无限轮）",
+          "disabled": false,
+          "locked": false
+        },
+        {
+          "name": "节奏点击",
+          "small": "最高 0",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        }
+      ],
+      "bodyText": "接咖啡 最高 516\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 8000\n在一堆同事脸里找出王总，越快越好\n开始（30 秒内无限轮）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n开始（30 秒）"
+    }
+  },
+  "rhythm": {
+    "judgeEarly": [
+      {
+        "t": 0.25,
+        "text": "",
+        "cls": "judge-text",
+        "score": "0"
+      },
+      {
+        "t": 0.5,
+        "text": "",
+        "cls": "judge-text",
+        "score": "0"
+      },
+      {
+        "t": 0.78,
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "20"
+      },
+      {
+        "t": 1,
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "20"
+      },
+      {
+        "t": 1.25,
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "40"
+      },
+      {
+        "t": 1.5,
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "40"
+      },
+      {
+        "t": 1.75,
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "60"
+      }
+    ],
+    "judgeMid": {
+      "text": "PERFECT",
+      "cls": "judge-text perfect",
+      "score": "155"
+    },
+    "done": true,
+    "result": {
+      "bodyText": "节奏点击 结束\n1065 分\n本局奖励 +30 摸鱼值\n🎉 新纪录！（旧 0）\nperfect 56 · 漏拍 3\n再来一局 返回摸鱼站",
+      "record": "🎉 新纪录！（旧 0）",
+      "reward": "本局奖励 +30 摸鱼值",
+      "score": "1065 分",
+      "hints": [
+        "perfect 56 · 漏拍 3"
+      ],
+      "hasAgain": true
+    },
+    "toast": "摸鱼站 +30（得分 1065）",
+    "arcade": {
+      "date": "2026-11-27",
+      "played": 3,
+      "best": {
+        "coffee": 516,
+        "findboss": 8000,
+        "rhythm": 1065
+      }
+    },
+    "judgeSamples": [
+      {
+        "t": 27.25,
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "1055"
+      },
+      {
+        "t": 27.5,
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "1055"
+      },
+      {
+        "t": 27.75,
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "1075"
+      },
+      {
+        "t": 28,
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "1075"
+      },
+      {
+        "t": 28.25,
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "1095"
+      },
+      {
+        "t": 28.5,
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "1095"
+      },
+      {
+        "t": 28.75,
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "1095"
+      },
+      {
+        "t": 29,
+        "text": "MISS",
+        "cls": "judge-text miss",
+        "score": "1095"
+      },
+      {
+        "t": 29.25,
+        "text": "MISS",
+        "cls": "judge-text miss",
+        "score": "1095"
+      },
+      {
+        "t": 29.5,
+        "text": "MISS",
+        "cls": "judge-text miss",
+        "score": "1095"
+      },
+      {
+        "t": 29.75,
+        "text": "MISS",
+        "cls": "judge-text miss",
+        "score": "1095"
+      },
+      {
+        "t": 30,
+        "text": "MISS",
+        "cls": "judge-text miss",
+        "score": "1095"
+      }
+    ],
+    "missedDots": 0
+  },
+  "limit": {
+    "menu": {
+      "title": "摸鱼站",
+      "left": "今天玩完了，明天再来",
+      "cards": [
+        {
+          "name": "接咖啡",
+          "small": "最高 516",
+          "btn": "明天再来",
+          "disabled": true,
+          "locked": true
+        },
+        {
+          "name": "找老板",
+          "small": "最高 8000",
+          "btn": "明天再来",
+          "disabled": true,
+          "locked": true
+        },
+        {
+          "name": "节奏点击",
+          "small": "最高 1065",
+          "btn": "明天再来",
+          "disabled": true,
+          "locked": true
+        }
+      ],
+      "bodyText": "接咖啡 最高 516\n咖啡掉下来时点住它——掉地上就没了\n明天再来\n找老板 最高 8000\n在一堆同事脸里找出王总，越快越好\n明天再来\n节奏点击 最高 1065\n跟着节拍点屏幕，越准分越高\n明天再来"
+    },
+    "badge": {
+      "badge": null,
+      "aria": "摸鱼站，今天已玩完"
+    },
+    "buttons": [
+      {
+        "game": "coffee",
+        "text": "明天再来",
+        "disabled": true
+      },
+      {
+        "game": "findboss",
+        "text": "明天再来",
+        "disabled": true
+      },
+      {
+        "game": "rhythm",
+        "text": "明天再来",
+        "disabled": true
+      }
+    ]
+  },
+  "persist": {
+    "menu": {
+      "title": "摸鱼站",
+      "left": "今天玩完了，明天再来",
+      "cards": [
+        {
+          "name": "接咖啡",
+          "small": "最高 516",
+          "btn": "明天再来",
+          "disabled": true,
+          "locked": true
+        },
+        {
+          "name": "找老板",
+          "small": "最高 8000",
+          "btn": "明天再来",
+          "disabled": true,
+          "locked": true
+        },
+        {
+          "name": "节奏点击",
+          "small": "最高 1065",
+          "btn": "明天再来",
+          "disabled": true,
+          "locked": true
+        }
+      ],
+      "bodyText": "接咖啡 最高 516\n咖啡掉下来时点住它——掉地上就没了\n明天再来\n找老板 最高 8000\n在一堆同事脸里找出王总，越快越好\n明天再来\n节奏点击 最高 1065\n跟着节拍点屏幕，越准分越高\n明天再来"
+    },
+    "badge": {
+      "badge": null,
+      "aria": "摸鱼站小游戏"
+    },
+    "arcade": {
+      "date": "2026-11-27",
+      "played": 3,
+      "best": {
+        "coffee": 516,
+        "findboss": 8000,
+        "rhythm": 1065
+      }
+    }
+  },
+  "record": {},
+  "noRecord": {
+    "done": true,
+    "result": {
+      "bodyText": "节奏点击 结束\n0 分\n本局 0 分，次数已扣 1 次\n历史最高 9999\nperfect 0 · 漏拍 59\n再来一局 返回摸鱼站",
+      "record": null,
+      "reward": "本局 0 分，次数已扣 1 次",
+      "score": "0 分",
+      "hints": [
+        "历史最高 9999",
+        "perfect 0 · 漏拍 59"
+      ],
+      "hasAgain": true
+    },
+    "toast": "得分 0，没拿到奖励",
+    "arcade": {
+      "date": "2026-11-27",
+      "played": 1,
+      "best": {
+        "coffee": 516,
+        "findboss": 8000,
+        "rhythm": 9999
+      }
+    },
+    "menu": {
+      "title": "摸鱼站",
+      "left": "今天还能玩 2/3 次 · 每局能赢摸鱼值",
+      "cards": [
+        {
+          "name": "接咖啡",
+          "small": "最高 516",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        },
+        {
+          "name": "找老板",
+          "small": "最高 8000",
+          "btn": "开始（30 秒内无限轮）",
+          "disabled": false,
+          "locked": false
+        },
+        {
+          "name": "节奏点击",
+          "small": "最高 9999",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        }
+      ],
+      "bodyText": "接咖啡 最高 516\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 8000\n在一堆同事脸里找出王总，越快越好\n开始（30 秒内无限轮）\n节奏点击 最高 9999\n跟着节拍点屏幕，越准分越高\n开始（30 秒）"
+    }
+  },
+  "exit": {},
+  "errors": [],
+  "today": "2026-11-27",
+  "expected": {
+    "coffeeDrops": 28,
+    "rhythmBeats": 59
+  },
+  "seed": {
+    "menu": {
+      "title": "摸鱼站",
+      "left": "今天还能玩 3/3 次 · 每局能赢摸鱼值",
+      "cards": [
+        {
+          "name": "接咖啡",
+          "small": "最高 100",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        },
+        {
+          "name": "找老板",
+          "small": "最高 0",
+          "btn": "开始（30 秒内无限轮）",
+          "disabled": false,
+          "locked": false
+        },
+        {
+          "name": "节奏点击",
+          "small": "最高 0",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        }
+      ],
+      "bodyText": "接咖啡 最高 100\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 0\n在一堆同事脸里找出王总，越快越好\n开始（30 秒内无限轮）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n开始（30 秒）"
+    },
+    "badge": {
+      "badge": null,
+      "aria": "摸鱼站小游戏"
+    }
+  }
+}

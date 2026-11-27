@@ -1,0 +1,162 @@
+{
+  "phase": "o3",
+  "meta": {
+    "startedAt": "2026-11-27T12:13:59.244Z",
+    "url": "https://luojindui.github.io/moyu/",
+    "finishedAt": "2026-11-27T12:14:46.627Z"
+  },
+  "errors": [],
+  "steps": [
+    {
+      "t": 6.9,
+      "s": "findboss early-exit reward scaling"
+    },
+    {
+      "t": 15.5,
+      "s": "coffee 0-score settlement (30s no tap)"
+    }
+  ],
+  "bundle": [
+    "index-8jx3HlVx.js"
+  ],
+  "hasDevHook": "undefined",
+  "versionText": "",
+  "firstScreen": {
+    "viewport": {
+      "w": 1280,
+      "h": 800
+    },
+    "btn": {
+      "label": "摸鱼站小游戏",
+      "rect": {
+        "x": 1226,
+        "y": 414,
+        "w": 44,
+        "h": 44
+      }
+    },
+    "centerHitIsSelf": true,
+    "overlapStageRatio": 0,
+    "bodyHasArcadeWord": {
+      "摸鱼站": false,
+      "小游戏": false,
+      "游戏": false
+    },
+    "hasBadge": false,
+    "badgeText": null
+  },
+  "version": "",
+  "entry": {
+    "steps": 1,
+    "left": "今天还能玩 3/3 次 · 每局能赢摸鱼值",
+    "body": "接咖啡 最高 0\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 0\n在一堆同事脸里找出王总，越快越好\n开始（30 秒内无限轮）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n开始（30 秒）",
+    "badge": {
+      "text": null,
+      "aria": "摸鱼站小游戏"
+    }
+  },
+  "earlyExit": {
+    "scoreBeforeExit": "1975",
+    "playedBefore": 0,
+    "timer": "30.0s",
+    "cancel": {
+      "msgs": [
+        "本局已玩 7 秒，结束会按已完成比例结算并消耗 1 次机会。确定结束？"
+      ],
+      "stillOpen": true,
+      "playedAfter": 0
+    },
+    "accept": {
+      "msgs": [
+        "本局已玩 8 秒，结束会按已完成比例结算并消耗 1 次机会。确定结束？"
+      ],
+      "closed": true,
+      "playedAfter": 1,
+      "toast": {
+        "text": "摸鱼站 +30（得分 1750）",
+        "show": true
+      },
+      "left": "今天还能玩 2/3 次 · 每局能赢摸鱼值",
+      "badge": {
+        "text": "2",
+        "aria": "摸鱼站，今天还剩 2 次"
+      }
+    }
+  },
+  "zeroMenu": {
+    "left": "今天还能玩 2/3 次 · 每局能赢摸鱼值",
+    "body": "接咖啡 最高 0\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 1750\n在一堆同事脸里找出王总，越快越好\n开始（30 秒内无限轮）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n开始（30 秒）"
+  },
+  "zeroScore": {
+    "body": "接咖啡 结束\n0 分\n本局 0 分，次数已扣 1 次\n历史最高 0\n接住 0 · 漏接 27 · 最高连击 0\n再来一局 返回摸鱼站",
+    "fields": {
+      "score": "0",
+      "reward": null,
+      "zeroText": true,
+      "best": "0",
+      "detail": [
+        "0",
+        "27",
+        "0"
+      ]
+    },
+    "toast": {
+      "text": "得分 0，没拿到奖励",
+      "show": true
+    },
+    "left": "今天还能玩 1/3 次 · 每局能赢摸鱼值",
+    "saveArcade": {
+      "date": "2026-11-27",
+      "played": 2,
+      "best": {
+        "findboss": 1750
+      }
+    },
+    "bossDuring": [
+      {
+        "boss": false,
+        "cards": true
+      },
+      {
+        "boss": false,
+        "cards": true
+      },
+      {
+        "boss": false,
+        "cards": true
+      },
+      {
+        "boss": false,
+        "cards": true
+      },
+      {
+        "boss": false,
+        "cards": true
+      },
+      {
+        "boss": false,
+        "cards": true
+      },
+      {
+        "boss": false,
+        "cards": true
+      },
+      {
+        "boss": false,
+        "cards": true
+      },
+      {
+        "boss": false,
+        "cards": true
+      },
+      {
+        "boss": false,
+        "cards": true
+      }
+    ],
+    "bossAppearedDuring30s": false,
+    "cardsAppearedDuring30s": true
+  },
+  "aboutVersion": "v0.5.0 · 2026-11-27",
+  "durationMs": 47345
+}

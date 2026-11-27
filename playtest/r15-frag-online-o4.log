@@ -1,0 +1,9 @@
+[3.9s] A: 0.8s backdrop tap
+[5.3s] shot o4-01-under2s-backdrop
+[5.3s] B: 2.5s backdrop tap, cancel
+[8.8s] shot o4-02-2s-backdrop-cancel
+[10.4s] C: backdrop tap, accept
+[10.9s] shot o4-03-2s-backdrop-accept
+[16.0s] D: 1.2s X close
+[18.0s] shot o4-04-under2s-x-close
+DONE o4

@@ -1,0 +1,13 @@
+[0.5s] o1: 线上移动端 390x844 全新档
+[3.7s] shot o1-01-first-screen
+[4.4s] shot o1-02-menu
+[5.4s] shot o1-03-menu-900ms
+[5.4s] step coffee start
+[5.9s] shot o1-04-coffee-start
+[6.9s] shot o1-05-coffee-fall1
+[7.9s] shot o1-06-coffee-fall2
+[33.9s] shot o1-07-coffee-autoplay
+[35.5s] shot o1-08-coffee-result
+[36.0s] shot o1-09-menu-after
+[36.0s] evidence -> playtest/r15-frag-online-o1.json
+DONE o1

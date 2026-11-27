@@ -350,8 +350,8 @@ async function boot(): Promise<void> {
     }
   });
 
-  const arcade = new Arcade((game, score) => {
-      const r = finishGame(state, game, score, stationIdleScaled(state));
+  const arcade = new Arcade((game, score, playedSeconds) => {
+      const r = finishGame(state, game, score, stationIdleScaled(state), playedSeconds);
       if (r) {
         state = r.state;
         hud.refresh(state);

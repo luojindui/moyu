@@ -1,0 +1,12 @@
+[0.4s] o3: 线上桌面 1280x800（清档模拟新手）
+[4.5s] shot o3-01-first-screen
+[6.9s] shot o3-02-menu
+[6.9s] step findboss early-exit reward scaling
+[14.9s] shot o3-03-exit-cancel
+[15.5s] shot o3-04-exit-accept
+[15.5s] step coffee 0-score settlement (30s no tap)
+[16.3s] shot o3-05-coffee-notap-start
+[46.4s] shot o3-06-coffee-zero-result
+[47.3s] shot o3-07-journal-version
+[47.4s] evidence -> playtest/r15-frag-online-o3.json
+DONE o3

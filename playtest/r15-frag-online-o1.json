@@ -1,0 +1,728 @@
+{
+  "phase": "o1",
+  "meta": {
+    "startedAt": "2026-11-27T12:11:32.976Z",
+    "url": "https://luojindui.github.io/moyu/",
+    "finishedAt": "2026-11-27T12:12:09.005Z"
+  },
+  "errors": [],
+  "steps": [
+    {
+      "t": 5.4,
+      "s": "coffee start"
+    }
+  ],
+  "bundle": [
+    "index-8jx3HlVx.js"
+  ],
+  "hasDevHook": "undefined",
+  "versionText": "",
+  "firstScreen": {
+    "viewport": {
+      "w": 390,
+      "h": 844
+    },
+    "btn": {
+      "label": "摸鱼站小游戏",
+      "rect": {
+        "x": 336,
+        "y": 458,
+        "w": 44,
+        "h": 44
+      }
+    },
+    "centerHitIsSelf": true,
+    "overlapStageRatio": 0.009,
+    "bodyHasArcadeWord": {
+      "摸鱼站": false,
+      "小游戏": false,
+      "游戏": false
+    },
+    "hasBadge": false,
+    "badgeText": null
+  },
+  "version": "",
+  "before": {
+    "saveArcade": {
+      "date": "2026-11-27",
+      "played": 0,
+      "best": {}
+    },
+    "moyu": 0,
+    "hudMoyu": "0.5",
+    "hudIdle": "0.2",
+    "leftText": "",
+    "open": false,
+    "title": "摸鱼站",
+    "body": "",
+    "resultShown": false,
+    "bossOpen": false,
+    "cardsOpen": false,
+    "badge": {
+      "text": null,
+      "aria": "摸鱼站小游戏"
+    },
+    "toast": {
+      "text": "送你 1 个天赋点，点 👥 看看",
+      "show": false
+    }
+  },
+  "entry": {
+    "steps": 1,
+    "open": true,
+    "left": "今天还能玩 3/3 次 · 每局能赢摸鱼值",
+    "body": "接咖啡 最高 0\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 0\n在一堆同事脸里找出王总，越快越好\n开始（30 秒内无限轮）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n开始（30 秒）",
+    "badge": {
+      "text": null,
+      "aria": "摸鱼站小游戏"
+    },
+    "title": "摸鱼站"
+  },
+  "menu": {
+    "leftText": "今天还能玩 3/3 次 · 每局能赢摸鱼值",
+    "cards": [
+      {
+        "name": "接咖啡 最高 0",
+        "desc": "咖啡掉下来时点住它——掉地上就没了",
+        "btn": "开始（30 秒）",
+        "disabled": false,
+        "locked": false
+      },
+      {
+        "name": "找老板 最高 0",
+        "desc": "在一堆同事脸里找出王总，越快越好",
+        "btn": "开始（30 秒内无限轮）",
+        "disabled": false,
+        "locked": false
+      },
+      {
+        "name": "节奏点击 最高 0",
+        "desc": "跟着节拍点屏幕，越准分越高",
+        "btn": "开始（30 秒）",
+        "disabled": false,
+        "locked": false
+      }
+    ],
+    "panelText": "摸鱼站\n✕\n今天还能玩 3/3 次 · 每局能赢摸鱼值\n接咖啡 最高 0\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 0\n在一堆同事脸里找出王总，越快越好\n开始（30 秒内无限轮）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n开始（30 秒）",
+    "showsRewardHint": true
+  },
+  "menuLeftAfter900ms": "今天还能玩 3/3 次 · 每局能赢摸鱼值",
+  "coffeeStart": {
+    "title": "接咖啡",
+    "hint": "咖啡落到杯口时点它 ☕",
+    "timer": "29.6s",
+    "cupLine": {
+      "x": 54.71875,
+      "y": 559.484375,
+      "w": 280.546875,
+      "h": 4,
+      "vis": true,
+      "text": ""
+    },
+    "playArea": {
+      "x": 33.59375,
+      "y": 301,
+      "w": 322.796875,
+      "h": 300,
+      "vis": true,
+      "text": "\n        29.6s\n        0\n        咖啡落到杯口时点它 ☕\n        \n        \n      "
+    }
+  },
+  "coffeeMotion": [
+    {
+      "t": 0,
+      "timer": "29.5s",
+      "drops": [
+        "78.7571%",
+        "50.8904%",
+        "19.2104%"
+      ]
+    },
+    {
+      "t": 1,
+      "timer": "29.2s",
+      "drops": [
+        "87.5571%",
+        "59.6904%",
+        "28.0104%"
+      ]
+    },
+    {
+      "t": 2,
+      "timer": "28.9s",
+      "drops": [
+        "88%",
+        "68.9803%",
+        "37.3003%",
+        "5.32693%"
+      ]
+    },
+    {
+      "t": 3,
+      "timer": "28.6s",
+      "drops": [
+        "77.7832%",
+        "46.1032%",
+        "14.1299%"
+      ]
+    },
+    {
+      "t": 4,
+      "timer": "28.2s",
+      "drops": [
+        "88%",
+        "57.3467%",
+        "25.3733%"
+      ]
+    },
+    {
+      "t": 5,
+      "timer": "27.9s",
+      "drops": [
+        "88%",
+        "66.6365%",
+        "34.6632%",
+        "7.3832%"
+      ]
+    },
+    {
+      "t": 6,
+      "timer": "27.6s",
+      "drops": [
+        "75.4365%",
+        "43.4632%",
+        "16.1832%"
+      ]
+    },
+    {
+      "t": 7,
+      "timer": "27.2s",
+      "drops": [
+        "86.68%",
+        "54.7067%",
+        "27.4267%"
+      ]
+    },
+    {
+      "t": 8,
+      "timer": "26.9s",
+      "drops": [
+        "88%",
+        "63.9936%",
+        "36.7136%"
+      ]
+    },
+    {
+      "t": 9,
+      "timer": "26.6s",
+      "drops": [
+        "88%",
+        "72.7907%",
+        "45.5107%",
+        "6.79067%"
+      ]
+    }
+  ],
+  "coffeeDropTopRange": {
+    "min": 5.3,
+    "max": 88,
+    "n": 33
+  },
+  "coffeeSamples": [
+    {
+      "t": 0,
+      "timer": "26.3s",
+      "score": "0",
+      "drops": [
+        "81.5936%",
+        "54.3136%",
+        "15.5936%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 0.7,
+      "timer": "25.6s",
+      "score": "4",
+      "drops": [
+        "75.3368%",
+        "36.6168%",
+        "1.71013%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 1.4,
+      "timer": "24.9s",
+      "score": "15",
+      "drops": [
+        "57.6371%",
+        "22.7304%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 2.1,
+      "timer": "24.1s",
+      "score": "15",
+      "drops": [
+        "78.6603%",
+        "43.7536%",
+        "6.20693%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 2.8,
+      "timer": "23.4s",
+      "score": "27",
+      "drops": [
+        "64.2899%",
+        "26.7432%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 3.6,
+      "timer": "22.7s",
+      "score": "40",
+      "drops": [
+        "47.7635%",
+        "19.0168%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 4.3,
+      "timer": "22.0s",
+      "score": "40",
+      "drops": [
+        "69.2736%",
+        "40.5269%",
+        "15.5936%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 5,
+      "timer": "21.3s",
+      "score": "51",
+      "drops": [
+        "61.0749%",
+        "36.1416%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 5.7,
+      "timer": "20.6s",
+      "score": "63",
+      "drops": [
+        "81.5936%",
+        "56.6603%",
+        "19.1136%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 6.4,
+      "timer": "19.9s",
+      "score": "63",
+      "drops": [
+        "77.6835%",
+        "40.1368%",
+        "15.4968%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 7.1,
+      "timer": "19.2s",
+      "score": "74",
+      "drops": [
+        "60.6672%",
+        "36.0272%",
+        "3.76053%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 7.8,
+      "timer": "18.5s",
+      "score": "86",
+      "drops": [
+        "81.2064%",
+        "56.5664%",
+        "24.2997%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 8.5,
+      "timer": "17.8s",
+      "score": "86",
+      "drops": [
+        "77.0968%",
+        "44.8301%",
+        "13.4435%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 9.2,
+      "timer": "17.1s",
+      "score": "97",
+      "drops": [
+        "65.8533%",
+        "34.4667%",
+        "10.7067%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 9.9,
+      "timer": "16.4s",
+      "score": "108",
+      "drops": [
+        "54.9971%",
+        "31.2371%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 10.6,
+      "timer": "15.7s",
+      "score": "108",
+      "drops": [
+        "75.5304%",
+        "51.7704%",
+        "19.2104%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 11.3,
+      "timer": "15.0s",
+      "score": "120",
+      "drops": [
+        "72.3067%",
+        "39.7467%",
+        "3.37333%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 12,
+      "timer": "14.2s",
+      "score": "138",
+      "drops": [
+        "60.7669%",
+        "24.3936%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 12.7,
+      "timer": "13.5s",
+      "score": "150",
+      "drops": [
+        "81.3003%",
+        "44.9269%",
+        "19.9936%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 13.4,
+      "timer": "12.8s",
+      "score": "150",
+      "drops": [
+        "65.4603%",
+        "40.5269%",
+        "9.72693%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 14.2,
+      "timer": "12.1s",
+      "score": "162",
+      "drops": [
+        "61.0573%",
+        "30.2573%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 14.9,
+      "timer": "11.4s",
+      "score": "174",
+      "drops": [
+        "81.5936%",
+        "50.7936%",
+        "14.1269%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 15.6,
+      "timer": "10.7s",
+      "score": "174",
+      "drops": [
+        "71.8256%",
+        "35.1589%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 16.3,
+      "timer": "10.0s",
+      "score": "186",
+      "drops": [
+        "55.6805%",
+        "18.7205%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 17,
+      "timer": "9.3s",
+      "score": "186",
+      "drops": [
+        "76.2139%",
+        "39.2539%",
+        "15.2005%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 17.7,
+      "timer": "8.6s",
+      "score": "206",
+      "drops": [
+        "59.7872%",
+        "35.7339%",
+        "9.33387%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 18.4,
+      "timer": "7.9s",
+      "score": "228",
+      "drops": [
+        "80.3235%",
+        "56.2701%",
+        "29.8701%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 19.1,
+      "timer": "7.2s",
+      "score": "228",
+      "drops": [
+        "77.2963%",
+        "50.8963%",
+        "13.9363%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 19.8,
+      "timer": "6.5s",
+      "score": "250",
+      "drops": [
+        "71.4267%",
+        "34.4667%",
+        "0.733333%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 20.5,
+      "timer": "5.8s",
+      "score": "274",
+      "drops": [
+        "54.9971%",
+        "21.2637%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 21.2,
+      "timer": "5.1s",
+      "score": "274",
+      "drops": [
+        "75.5275%",
+        "41.7941%",
+        "13.0475%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 21.9,
+      "timer": "4.4s",
+      "score": "298",
+      "drops": [
+        "62.8203%",
+        "34.0736%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 22.6,
+      "timer": "3.7s",
+      "score": "324",
+      "drops": [
+        "83.3565%",
+        "54.6099%",
+        "17.6499%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 23.3,
+      "timer": "3.0s",
+      "score": "324",
+      "drops": [
+        "75.1403%",
+        "38.1803%"
+      ],
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 24,
+      "timer": "2.3s",
+      "score": "339",
+      "drops": [
+        "58.7165%"
+      ],
+      "boss": false,
+      "cards": false
+    }
+  ],
+  "coffeeBossAppeared": false,
+  "coffeeCardsAppeared": false,
+  "coffeeEnd": {
+    "body": "接咖啡 结束\n354 分\n本局奖励 +18 摸鱼值\n🎉 新纪录！（旧 0）\n接住 24 · 漏接 3 · 最高连击 10\n再来一局 返回摸鱼站",
+    "resultShown": true,
+    "toast": {
+      "text": "摸鱼站 +18（得分 354）",
+      "show": true
+    },
+    "left": "今天还能玩 2/3 次 · 每局能赢摸鱼值",
+    "saveArcade": {
+      "date": "2026-11-27",
+      "played": 1,
+      "best": {
+        "coffee": 354
+      }
+    },
+    "badge": {
+      "text": "2",
+      "aria": "摸鱼站，今天还剩 2 次"
+    },
+    "bossOpen": false,
+    "cardsOpen": false,
+    "buttons": [
+      {
+        "id": "arcade-again",
+        "text": "再来一局",
+        "h": 44
+      },
+      {
+        "id": "arcade-back",
+        "text": "返回摸鱼站",
+        "h": 44
+      }
+    ],
+    "fields": {
+      "score": "354",
+      "reward": "18",
+      "zeroText": false,
+      "record": null,
+      "best": null,
+      "detail": [
+        "24",
+        "3",
+        "10"
+      ],
+      "hintText": false
+    }
+  },
+  "afterCoffeeMenu": {
+    "leftText": "今天还能玩 2/3 次 · 每局能赢摸鱼值",
+    "cards": [
+      {
+        "name": "接咖啡 最高 354",
+        "desc": "咖啡掉下来时点住它——掉地上就没了",
+        "btn": "开始（30 秒）",
+        "disabled": false,
+        "locked": false
+      },
+      {
+        "name": "找老板 最高 0",
+        "desc": "在一堆同事脸里找出王总，越快越好",
+        "btn": "开始（30 秒内无限轮）",
+        "disabled": false,
+        "locked": false
+      },
+      {
+        "name": "节奏点击 最高 0",
+        "desc": "跟着节拍点屏幕，越准分越高",
+        "btn": "开始（30 秒）",
+        "disabled": false,
+        "locked": false
+      }
+    ],
+    "panelText": "摸鱼站\n✕\n今天还能玩 2/3 次 · 每局能赢摸鱼值\n接咖啡 最高 354\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 0\n在一堆同事脸里找出王总，越快越好\n开始（30 秒内无限轮）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n开始（30 秒）",
+    "showsRewardHint": true
+  },
+  "durationMs": 35975,
+  "saveAfter": {
+    "moyu": 24.816400000000066,
+    "arcade": {
+      "date": "2026-11-27",
+      "played": 1,
+      "best": {
+        "coffee": 354
+      }
+    },
+    "savedAt": 1795781528365
+  }
+}

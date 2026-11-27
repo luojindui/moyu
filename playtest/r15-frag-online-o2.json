@@ -1,0 +1,317 @@
+{
+  "phase": "o2",
+  "meta": {
+    "startedAt": "2026-11-27T12:12:22.963Z",
+    "url": "https://luojindui.github.io/moyu/",
+    "finishedAt": "2026-11-27T12:13:13.065Z"
+  },
+  "errors": [],
+  "steps": [
+    {
+      "t": 4.1,
+      "s": "findboss live score + full 30s"
+    },
+    {
+      "t": 34.5,
+      "s": "rhythm judge text + on-beat 4s"
+    },
+    {
+      "t": 38.5,
+      "s": "mid-game exit: confirm cancel then accept"
+    },
+    {
+      "t": 45.7,
+      "s": "third attempt → locked"
+    }
+  ],
+  "bundle": [
+    "index-8jx3HlVx.js"
+  ],
+  "hasDevHook": "undefined",
+  "versionText": "",
+  "firstScreen": {
+    "viewport": {
+      "w": 390,
+      "h": 844
+    },
+    "btn": {
+      "label": "摸鱼站小游戏",
+      "rect": {
+        "x": 336,
+        "y": 458,
+        "w": 44,
+        "h": 44
+      }
+    },
+    "centerHitIsSelf": true,
+    "overlapStageRatio": 0.009,
+    "bodyHasArcadeWord": {
+      "摸鱼站": false,
+      "小游戏": false,
+      "游戏": false
+    },
+    "hasBadge": false,
+    "badgeText": null
+  },
+  "before": {
+    "saveArcade": {
+      "date": "2026-11-27",
+      "played": 0,
+      "best": {}
+    },
+    "moyu": 0,
+    "hudMoyu": "0.5",
+    "hudIdle": "0.2",
+    "leftText": "",
+    "open": false,
+    "title": "摸鱼站",
+    "body": "",
+    "resultShown": false,
+    "bossOpen": false,
+    "cardsOpen": false,
+    "badge": {
+      "text": null,
+      "aria": "摸鱼站小游戏"
+    },
+    "toast": {
+      "text": "送你 1 个天赋点，点 👥 看看",
+      "show": false
+    }
+  },
+  "entry": {
+    "steps": 1,
+    "left": "今天还能玩 3/3 次 · 每局能赢摸鱼值",
+    "body": "接咖啡 最高 0\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 0\n在一堆同事脸里找出王总，越快越好\n开始（30 秒内无限轮）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n开始（30 秒）",
+    "badge": {
+      "text": null,
+      "aria": "摸鱼站小游戏"
+    }
+  },
+  "findbossStart": {
+    "timer": "29.6s",
+    "score": "0",
+    "body": "29.6s\n0\n找出王总（红色「王」）· 已找 0\n员\n员\n员\n员\n员\n员\n员\n王\n员"
+  },
+  "findbossLive": [
+    {
+      "t": 0,
+      "timer": "30.0s",
+      "score": "583",
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 1,
+      "timer": "30.0s",
+      "score": "871",
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 2,
+      "timer": "30.0s",
+      "score": "1159",
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 3,
+      "timer": "24.8s",
+      "score": "1447",
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 4,
+      "timer": "23.6s",
+      "score": "1735",
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 5,
+      "timer": "22.3s",
+      "score": "2023",
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 6,
+      "timer": "21.0s",
+      "score": "2311",
+      "boss": false,
+      "cards": false
+    },
+    {
+      "t": 7,
+      "timer": "19.8s",
+      "score": "2599",
+      "boss": false,
+      "cards": false
+    }
+  ],
+  "findbossEnd": {
+    "body": "找老板 结束\n7350 分\n本局奖励 +30 摸鱼值\n🎉 新纪录！（旧 0）\n找对 147 · 找错 0\n再来一局 返回摸鱼站",
+    "toast": {
+      "text": "摸鱼站 +30（得分 7350）",
+      "show": true
+    },
+    "left": "今天还能玩 2/3 次 · 每局能赢摸鱼值",
+    "saveArcade": {
+      "date": "2026-11-27",
+      "played": 1,
+      "best": {
+        "findboss": 7350
+      }
+    },
+    "fields": {
+      "score": "7350",
+      "reward": "30",
+      "detail": [
+        "147",
+        "0"
+      ],
+      "record": null
+    }
+  },
+  "rhythm": {
+    "judgeText": "PERFECT",
+    "judgeClass": "judge-text perfect",
+    "score": "140",
+    "beatsOn": 0,
+    "beatsPerfect": 7,
+    "beatsGood": 0,
+    "beatsMissed": 0,
+    "timer": "26.1s",
+    "boss": false
+  },
+  "exitCancel": {
+    "msgs": [
+      "本局已玩 4 秒，结束会按已完成比例结算并消耗 1 次机会。确定结束？"
+    ],
+    "stillOpen": true,
+    "playedBefore": 1,
+    "playedAfter": 1,
+    "toast": {
+      "text": "摸鱼站 +30（得分 7350）",
+      "show": false
+    }
+  },
+  "exitAccept": {
+    "msgs": [
+      "本局已玩 5 秒，结束会按已完成比例结算并消耗 1 次机会。确定结束？"
+    ],
+    "closed": true,
+    "playedBefore": 1,
+    "playedAfter": 2,
+    "toast": {
+      "text": "摸鱼站 +7（得分 130）",
+      "show": true
+    },
+    "left": "今天还能玩 1/3 次 · 每局能赢摸鱼值",
+    "badge": {
+      "text": "1",
+      "aria": "摸鱼站，今天还剩 1 次"
+    },
+    "resultShown": false,
+    "ghostAfter6s": {
+      "played": 2,
+      "open": false,
+      "toast": {
+        "text": "摸鱼站 +7（得分 130）",
+        "show": false
+      }
+    }
+  },
+  "thirdMenu": {
+    "left": "今天还能玩 1/3 次 · 每局能赢摸鱼值",
+    "body": "接咖啡 最高 0\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 7350\n在一堆同事脸里找出王总，越快越好\n开始（30 秒内无限轮）\n节奏点击 最高 130\n跟着节拍点屏幕，越准分越高\n开始（30 秒）",
+    "badge": {
+      "text": "1",
+      "aria": "摸鱼站，今天还剩 1 次"
+    }
+  },
+  "locked": {
+    "menu": {
+      "leftText": "今天玩完了，明天再来",
+      "cards": [
+        {
+          "name": "接咖啡 最高 0",
+          "desc": "咖啡掉下来时点住它——掉地上就没了",
+          "btn": "明天再来",
+          "disabled": true,
+          "locked": true
+        },
+        {
+          "name": "找老板 最高 7350",
+          "desc": "在一堆同事脸里找出王总，越快越好",
+          "btn": "明天再来",
+          "disabled": true,
+          "locked": true
+        },
+        {
+          "name": "节奏点击 最高 130",
+          "desc": "跟着节拍点屏幕，越准分越高",
+          "btn": "明天再来",
+          "disabled": true,
+          "locked": true
+        }
+      ],
+      "panelText": "摸鱼站\n✕\n今天玩完了，明天再来\n接咖啡 最高 0\n咖啡掉下来时点住它——掉地上就没了\n明天再来\n找老板 最高 7350\n在一堆同事脸里找出王总，越快越好\n明天再来\n节奏点击 最高 130\n跟着节拍点屏幕，越准分越高\n明天再来",
+      "showsRewardHint": false
+    },
+    "snap": {
+      "saveArcade": {
+        "date": "2026-11-27",
+        "played": 3,
+        "best": {
+          "findboss": 7350,
+          "rhythm": 130
+        }
+      },
+      "moyu": 46.19962000000141,
+      "hudMoyu": "46.6",
+      "hudIdle": "0.2",
+      "leftText": "今天玩完了，明天再来",
+      "open": true,
+      "title": "摸鱼站",
+      "body": "接咖啡 最高 0\n咖啡掉下来时点住它——掉地上就没了\n明天再来\n找老板 最高 7350\n在一堆同事脸里找出王总，越快越好\n明天再来\n节奏点击 最高 130\n跟着节拍点屏幕，越准分越高\n明天再来",
+      "resultShown": false,
+      "bossOpen": false,
+      "cardsOpen": true,
+      "badge": {
+        "text": null,
+        "aria": "摸鱼站，今天已玩完"
+      },
+      "toast": {
+        "text": "得分 0，没拿到奖励",
+        "show": false
+      }
+    },
+    "leftAfter900ms": "今天玩完了，明天再来",
+    "disabledButtons": [
+      {
+        "text": "明天再来",
+        "disabled": true
+      },
+      {
+        "text": "明天再来",
+        "disabled": true
+      },
+      {
+        "text": "明天再来",
+        "disabled": true
+      }
+    ],
+    "badge": {
+      "text": null,
+      "aria": "摸鱼站，今天已玩完"
+    },
+    "afterTapDisabled": {
+      "title": "摸鱼站",
+      "played": 3,
+      "open": true
+    }
+  },
+  "durationMs": 50058
+}

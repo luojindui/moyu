@@ -66,6 +66,13 @@ const fresh = () => ({ ...gain(initialState(), 0), arcade: emptyArcade(TODAY) })
   const rCap = finishGame(fresh(), "rhythm", 1e9, 1000)!;
   out.scoreCap = { MAX_SCORE, REF_SCORE, bestOn1e9: rCap.state.arcade.best.rhythm, rewardOn1e9: rCap.reward };
   check("MAX_SCORE=8000 生效：1e9 分 → best=8000、ratio 封顶", rCap.state.arcade.best.rhythm === MAX_SCORE && rCap.reward === 25000, JSON.stringify(out.scoreCap));
+  // 早退折算（引擎层）：playedSeconds 默认 30；界面是否接线见界面探针
+  const full = finishGame(fresh(), "rhythm", REF_SCORE, 1000)!;
+  const early2s = finishGame(fresh(), "rhythm", REF_SCORE, 1000, 2)!;
+  const earlyHalf = finishGame(fresh(), "rhythm", REF_SCORE, 1000, 15)!;
+  out.playedSecondsScaling = { full: full.reward, at2s: early2s.reward, at15s: earlyHalf.reward };
+  check("引擎支持 playedSeconds 早退折算（2s≈1/5 奖励、15s 全额）", early2s.reward === Math.floor(1000 * 25 * 0.2) && earlyHalf.reward === 25000, JSON.stringify(out.playedSecondsScaling));
+
   // best 只增不减
   let s2 = finishGame(fresh(), "coffee", 120, 100)!.state;
   s2 = finishGame(s2, "coffee", 30, 100)!.state;
