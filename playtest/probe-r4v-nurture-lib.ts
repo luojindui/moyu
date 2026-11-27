@@ -82,6 +82,7 @@ export function simulateSession(start: GameState, opts: SessionOpts): SessionRes
   let prevBossActive = false;
   let doneAtSec: number | null = null;
   let claimedReward: number | null = null;
+  const goalDoneAtSec: Record<string, number> = {};
   const counters = { clicks: 0, memes: 0, memeWindows: 0, bossWindows: 0, buys: 0, survives: 0 };
 
   const track = (kind: "click" | "meme" | "buy" | "survive", n = 1): void => {
@@ -148,6 +149,11 @@ export function simulateSession(start: GameState, opts: SessionOpts): SessionRes
 
     state = advance(state, DT);
 
+    if (state.daily) {
+      for (const g of state.daily.goals) {
+        if (g.done && goalDoneAtSec[g.id] === undefined) goalDoneAtSec[g.id] = t;
+      }
+    }
     if (doneAtSec === null && state.daily && dailyAllDone(state.daily)) doneAtSec = t;
   }
 
@@ -163,6 +169,7 @@ export function simulateSession(start: GameState, opts: SessionOpts): SessionRes
     doneAtSec,
     ...counters,
     claimedReward,
+    goalDoneAtSec,
     endGoals: (state.daily?.goals ?? []).map((g) => ({
       id: g.id,
       progress: g.progress,
