@@ -133,7 +133,7 @@ export class Scene {
     R(winX + winW + 0.05 * u, winY - 0.5 * u, 0.7 * u, winH + 0.9 * u, "#9d4e4b"); // 右帘
 
     // 挂钟（右上）
-    const clockX = vw - 2.4 * u;
+    const clockX = vw - 1.9 * u;
     const clockY = 2 * u;
     ctx.fillStyle = "#e8e2d0";
     ctx.beginPath();
@@ -180,18 +180,25 @@ export class Scene {
     ctx.fill();
     ctx.globalAlpha = 1;
 
-    // 绿植（左下）
-    const plantX = 0.8 * u;
-    R(plantX, groundY - 1.5 * u, 0.85 * u, 1.5 * u, "#8a5a3c");
-    R(plantX - 0.08 * u, groundY - 1.62 * u, 1.01 * u, 0.18 * u, "#6f452c");
-    ctx.fillStyle = "#4d8a50";
+    // 绿植（左下）：矮圆盆 + 分叶
+    const plantX = 0.9 * u;
+    const potTop = groundY - 0.85 * u; // 盆口
+    R(plantX, potTop, 1.05 * u, 0.85 * u, "#a4643f"); // 盆身
+    R(plantX - 0.08 * u, potTop - 0.14 * u, 1.21 * u, 0.18 * u, "#8a4f2f"); // 盆沿
+    R(plantX + 0.14 * u, potTop + 0.06 * u, 0.77 * u, 0.1 * u, "#4a3021"); // 土
+    ctx.fillStyle = "#4f8f53";
+    // 叶簇：以盆口中心为锚点向上堆叠
+    const cx = plantX + 0.52 * u;
     for (const [dx, dy, r] of [
-      [0.42, 2.15, 0.5],
-      [0.12, 2.45, 0.38],
-      [0.72, 2.42, 0.4],
+      [0, 0.55, 0.3],
+      [-0.3, 0.85, 0.27],
+      [0.3, 0.85, 0.27],
+      [-0.14, 1.15, 0.25],
+      [0.18, 1.12, 0.25],
+      [0.02, 1.42, 0.22],
     ] as const) {
       ctx.beginPath();
-      ctx.arc((plantX + dx) * s, (groundY - dy * u) * s, r * u * s, 0, Math.PI * 2);
+      ctx.arc((cx + dx * u) * s, (potTop - dy * u) * s, r * u * s, 0, Math.PI * 2);
       ctx.fill();
     }
 
@@ -204,7 +211,7 @@ export class Scene {
 
     // 饮水机（右墙脚，桌子右侧）
     const coolerX = vw - 1.9 * u;
-    const coolerY = groundY - 2 * u;
+    const coolerY = groundY - 1.05 * u; // 落地（原来悬空）
     if (cooler) {
       cooler.draw(ctx, this.coolerCol, SPRITE_MAP.cooler.row, coolerX, coolerY, s);
     } else {
@@ -253,14 +260,14 @@ export class Scene {
       // 老板巡逻：变体决定横幅文案与玩法
       const remain = Math.ceil(this.events.bossUntil - this.gameTime);
       const { bossVariant, bossTaps } = this.events;
-      const bx = 0.6 * u;
+      const bw = vw * 0.72;
+      const bx = (vw - bw) / 2;
       const by = 0.5 * u;
-      const bw = vw - 1.2 * u;
-      R(bx, by, bw, 2.1 * u, bossVariant === "hold" ? "#b3413c" : "#2f7a4f");
-      R(bx, by, bw, 0.14 * u, bossVariant === "hold" ? "#d4564f" : "#3f9563");
+      R(bx, by, bw, 1.5 * u, bossVariant === "hold" ? "#b3413c" : "#2f7a4f");
+      R(bx, by, bw, 0.12 * u, bossVariant === "hold" ? "#d4564f" : "#3f9563");
       ctx.fillStyle = "#fff";
-      ctx.font = `bold ${Math.max(12, 2.6 * s)}px system-ui`;
-      ctx.fillText(bossBannerText(bossVariant, remain, bossTaps), (vw / 2) * s, (by + 1.35 * u) * s);
+      ctx.font = `bold ${Math.max(11, 2.2 * s)}px system-ui`;
+      ctx.fillText(bossBannerText(bossVariant, remain, bossTaps), (vw / 2) * s, (by + 0.98 * u) * s);
     } else if (this.events && this.events.memeUntil > this.gameTime) {
       // 同事丢梗：气泡目标
       const mx = this.memePos.x * s;
@@ -268,7 +275,7 @@ export class Scene {
       const bob = Math.sin(this.gameTime * 6) * 2 * s;
       ctx.fillStyle = "#ffd76e";
       ctx.beginPath();
-      ctx.arc(mx, my + bob, 1.5 * u * s, 0, Math.PI * 2);
+      ctx.arc(mx, my + bob, 0.95 * u * s, 0, Math.PI * 2);
       ctx.fill();
       ctx.strokeStyle = "#8a6b1f";
       ctx.lineWidth = Math.max(2, s);

@@ -1,0 +1,1493 @@
+{
+ "meta": {
+  "generatedAt": "2026-11-27T03:23:54.267Z",
+  "chrome": "[1127/112353.989979:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:208] open /Users/p/Library/Application Support/Google/Chrome/Crashpad/settings.dat: Operation not permitted (1)\n[1127",
+  "dpr": 3,
+  "cpuThrottle": 4,
+  "width": 375,
+  "height": 667
+ },
+ "devLoad": {
+  "url": "http://127.0.0.1:5173/",
+  "bootMs": 297,
+  "readyMs": 309,
+  "nav": {
+   "dcl": 271,
+   "load": 1357,
+   "fcp": 1352,
+   "respEnd": 6
+  },
+  "net": {
+   "count": 34,
+   "totalBytes": 488323,
+   "byType": {
+    "Document": {
+     "n": 1,
+     "bytes": 3505
+    },
+    "Script": {
+     "n": 27,
+     "bytes": 477891
+    },
+    "Manifest": {
+     "n": 1,
+     "bytes": 821
+    },
+    "Image": {
+     "n": 3,
+     "bytes": 3428
+    },
+    "Other": {
+     "n": 2,
+     "bytes": 2678
+    }
+   },
+   "resources": [
+    {
+     "url": "/@vite/client",
+     "type": "Script",
+     "bytes": 182908,
+     "status": 200
+    },
+    {
+     "url": "/src/main.ts?t=1795749657501",
+     "type": "Script",
+     "bytes": 47909,
+     "status": 200
+    },
+    {
+     "url": "/src/render/scene.ts?t=1795749454154",
+     "type": "Script",
+     "bytes": 37350,
+     "status": 200
+    },
+    {
+     "url": "/src/engine/events.ts?t=1795749454154",
+     "type": "Script",
+     "bytes": 23948,
+     "status": 200
+    },
+    {
+     "url": "/src/ui/journal.ts?t=1795749626518",
+     "type": "Script",
+     "bytes": 17738,
+     "status": 200
+    },
+    {
+     "url": "/src/engine/save.ts?t=1795749626518",
+     "type": "Script",
+     "bytes": 16426,
+     "status": 200
+    },
+    {
+     "url": "/src/engine/collection.ts?t=1795749454154",
+     "type": "Script",
+     "bytes": 16308,
+     "status": 200
+    },
+    {
+     "url": "/src/engine/daily.ts?t=1795749626518",
+     "type": "Script",
+     "bytes": 16266,
+     "status": 200
+    },
+    {
+     "url": "/src/ui/shop.ts?t=1795749657501",
+     "type": "Script",
+     "bytes": 15725,
+     "status": 200
+    },
+    {
+     "url": "/src/engine/upgrades.ts?t=1795749454154",
+     "type": "Script",
+     "bytes": 12794,
+     "status": 200
+    },
+    {
+     "url": "/src/style.css?t=1795749626520",
+     "type": "Script",
+     "bytes": 12287,
+     "status": 200
+    },
+    {
+     "url": "/src/ui/quest.ts",
+     "type": "Script",
+     "bytes": 9464,
+     "status": 200
+    },
+    {
+     "url": "/src/engine/flavor.ts",
+     "type": "Script",
+     "bytes": 7108,
+     "status": 200
+    },
+    {
+     "url": "/src/render/fx.ts",
+     "type": "Script",
+     "bytes": 7027,
+     "status": 200
+    },
+    {
+     "url": "/src/render/sprites.ts",
+     "type": "Script",
+     "bytes": 6888,
+     "status": 200
+    },
+    {
+     "url": "/src/ui/hud.ts?t=1795749626525",
+     "type": "Script",
+     "bytes": 6790,
+     "status": 200
+    },
+    {
+     "url": "/src/engine/state.ts?t=1795749454154",
+     "type": "Script",
+     "bytes": 5573,
+     "status": 200
+    },
+    {
+     "url": "/src/engine/actions.ts?t=1795749454154",
+     "type": "Script",
+     "bytes": 4942,
+     "status": 200
+    },
+    {
+     "url": "/src/engine/prestige.ts?t=1795749454154",
+     "type": "Script",
+     "bytes": 4896,
+     "status": 200
+    },
+    {
+     "url": "/src/engine/titles.ts?t=1795749427305",
+     "type": "Script",
+     "bytes": 4791,
+     "status": 200
+    },
+    {
+     "url": "/src/engine/progression.ts",
+     "type": "Script",
+     "bytes": 4183,
+     "status": 200
+    },
+    {
+     "url": "/node_modules/vite/dist/client/env.mjs",
+     "type": "Script",
+     "bytes": 4151,
+     "status": 200
+    },
+    {
+     "url": "/src/ui/welcome.ts",
+     "type": "Script",
+     "bytes": 3966,
+     "status": 200
+    },
+    {
+     "url": "/",
+     "type": "Document",
+     "bytes": 3505,
+     "status": 200
+    },
+    {
+     "url": "/src/engine/resume.ts?t=1795749454154",
+     "type": "Script",
+     "bytes": 3237,
+     "status": 200
+    },
+    {
+     "url": "/src/engine/offline.ts?t=1795749454154",
+     "type": "Script",
+     "bytes": 2214,
+     "status": 200
+    },
+    {
+     "url": "/assets/sprites/worker.png",
+     "type": "Image",
+     "bytes": 1655,
+     "status": 200
+    },
+    {
+     "url": "/src/engine/tick.ts?t=1795749454154",
+     "type": "Script",
+     "bytes": 1543,
+     "status": 200
+    },
+    {
+     "url": "/src/engine/format.ts",
+     "type": "Script",
+     "bytes": 1459,
+     "status": 200
+    },
+    {
+     "url": "/favicon.png",
+     "type": "Other",
+     "bytes": 1437,
+     "status": 200
+    }
+   ]
+  }
+ },
+ "layout": {
+  "viewport": {
+   "w": 375,
+   "h": 667,
+   "dpr": 3,
+   "visualH": 667
+  },
+  "doc": {
+   "scrollW": 375,
+   "scrollH": 667,
+   "bodyScrollW": 375,
+   "clientW": 375,
+   "clientH": 667
+  },
+  "abnormalOverflow": [
+   {
+    "el": ".shop-top",
+    "right": 493,
+    "left": 397
+   },
+   {
+    "el": ".shop-tag tag-idle",
+    "right": 439,
+    "left": 397
+   },
+   {
+    "el": ".shop-name",
+    "right": 493,
+    "left": 443
+   },
+   {
+    "el": ".shop-next",
+    "right": 493,
+    "left": 397
+   },
+   {
+    "el": ".shop-value",
+    "right": 493,
+    "left": 397
+   },
+   {
+    "el": ".shop-cost",
+    "right": 493,
+    "left": 397
+   },
+   {
+    "el": ".",
+    "right": 423.5,
+    "left": 397
+   },
+   {
+    "el": ".shop-remain",
+    "right": 493,
+    "left": 397
+   },
+   {
+    "el": ".shop-top",
+    "right": 619,
+    "left": 523
+   },
+   {
+    "el": ".shop-tag tag-click",
+    "right": 565,
+    "left": 523
+   },
+   {
+    "el": ".shop-name",
+    "right": 619,
+    "left": 569
+   },
+   {
+    "el": ".shop-next",
+    "right": 619,
+    "left": 523
+   }
+  ],
+  "hud": {
+   "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 375,
+    "h": 135,
+    "bottom": 135,
+    "right": 375
+   },
+   "subScrollW": 352,
+   "subClientW": 351,
+   "subOverflow": 1,
+   "rank": {
+    "x": 147.5,
+    "y": 50.5,
+    "w": 58,
+    "h": 17,
+    "bottom": 67.5,
+    "right": 205.5
+   },
+   "rankText": "实习生 0%",
+   "rankLines": 1,
+   "streak": {
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "bottom": 0,
+    "right": 0
+   },
+   "click": 12,
+   "idle": 12
+  },
+  "quest": {
+   "hidden": false,
+   "rect": {
+    "x": 12,
+    "y": 83,
+    "w": 351,
+    "h": 42,
+    "bottom": 125,
+    "right": 363
+   },
+   "text": "再戳 10 下 → 解锁「咖啡续命」"
+  },
+  "canvas": {
+   "rect": {
+    "x": 0,
+    "y": 135,
+    "w": 375,
+    "h": 382,
+    "bottom": 517,
+    "right": 375
+   },
+   "attrW": 1125,
+   "attrH": 1146
+  },
+  "shop": {
+   "rect": {
+    "x": 0,
+    "y": 517.3,
+    "w": 375,
+    "h": 149.8,
+    "bottom": 667,
+    "right": 375
+   },
+   "cards": 9,
+   "visibleCards": 2,
+   "card0": {
+    "x": 8,
+    "y": 527.3,
+    "w": 118,
+    "h": 113.8,
+    "bottom": 641,
+    "right": 126
+   },
+   "cardW": 118,
+   "cardH": 113.8,
+   "scrollW": 1134,
+   "clientW": 359,
+   "hint": {
+    "x": 8,
+    "y": 641,
+    "w": 359,
+    "h": 18,
+    "bottom": 659,
+    "right": 367
+   },
+   "tagFs": 9,
+   "nameFs": 13,
+   "nextFs": 11,
+   "costFs": 13,
+   "remainFs": 10
+  },
+  "journalBtn": {
+   "rect": {
+    "x": 324,
+    "y": 45,
+    "w": 39,
+    "h": 28,
+    "bottom": 73,
+    "right": 363
+   },
+   "distToThumb": 488.56729945832427,
+   "pseudoHotArea": {
+    "w": 45,
+    "h": 46
+   },
+   "className": "",
+   "hit": true
+  },
+  "journalPanel": {
+   "hidden": true,
+   "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "bottom": 0,
+    "right": 0
+   }
+  },
+  "welcomePanel": {
+   "hidden": true
+  },
+  "smallBtns": [
+   {
+    "id": "btn-journal",
+    "x": 324,
+    "y": 45,
+    "w": 39,
+    "h": 28,
+    "bottom": 73,
+    "right": 363
+   },
+   {
+    "id": "journal-close",
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "bottom": 0,
+    "right": 0
+   },
+   {
+    "id": "journal-claim",
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "bottom": 0,
+    "right": 0
+   },
+   {
+    "id": "prestige-btn",
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "bottom": 0,
+    "right": 0
+   },
+   {
+    "id": "welcome-ok",
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "bottom": 0,
+    "right": 0
+   }
+  ],
+  "smallTextCount": 30,
+  "smallestText": [
+   {
+    "sel": ".shop-tag tag-click",
+    "fs": 9,
+    "text": "点了才赚"
+   },
+   {
+    "sel": ".shop-next",
+    "fs": 11,
+    "text": "+1 点击力"
+   },
+   {
+    "sel": ".shop-value",
+    "fs": 11,
+    "text": "★ 当前最划算"
+   },
+   {
+    "sel": ".shop-remain",
+    "fs": 10,
+    "text": "再戳 15 下"
+   },
+   {
+    "sel": ".shop-tag tag-idle",
+    "fs": 9,
+    "text": "会自动赚"
+   },
+   {
+    "sel": ".shop-next",
+    "fs": 11,
+    "text": "+1/秒 · ×2差5级"
+   },
+   {
+    "sel": ".shop-value",
+    "fs": 11,
+    "text": "★ 当前最划算"
+   },
+   {
+    "sel": ".shop-remain",
+    "fs": 10,
+    "text": "还差 49.2"
+   },
+   {
+    "sel": ".shop-tag tag-click",
+    "fs": 9,
+    "text": "点了才赚"
+   },
+   {
+    "sel": ".shop-next",
+    "fs": 11,
+    "text": "+2 点击力"
+   }
+  ],
+  "fonts": {
+   "hudMoyu": {
+    "fs": 30,
+    "lh": "33px",
+    "color": "rgb(255, 215, 110)",
+    "bg": "rgba(0, 0, 0, 0)"
+   },
+   "questText": {
+    "fs": 12,
+    "lh": "normal",
+    "color": "rgb(214, 240, 214)",
+    "bg": "rgba(0, 0, 0, 0)"
+   },
+   "goalDesc": null,
+   "claim": {
+    "fs": 15,
+    "lh": "normal",
+    "color": "rgb(16, 36, 26)",
+    "bg": "rgb(139, 226, 139)"
+   }
+  },
+  "state": {
+   "moyu": 0.8099600000000009,
+   "totalClicks": 0,
+   "totalEarned": 0.8099600000000009,
+   "levelCount": 0
+  },
+  "fps": 60,
+  "frames": 154,
+  "assets": {
+   "worker": "loaded",
+   "computer": "loaded",
+   "cooler": "loaded"
+  },
+  "bootError": false,
+  "sw": {
+   "supported": true,
+   "controller": false
+  }
+ },
+ "perf60": {
+  "seconds": 60,
+  "fps": {
+   "avg": 59.93333333333333,
+   "min": 56,
+   "max": 60,
+   "below50": 0,
+   "samples": [
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    56,
+    60,
+    60,
+    60,
+    60,
+    60
+   ]
+  },
+  "heap": {
+   "first": 1733140,
+   "last": 2086104,
+   "max": 2156360,
+   "growthBytes": 352964,
+   "growthPct": 20.3655792376842
+  },
+  "nodes": {
+   "first": 1048,
+   "last": 1048
+  },
+  "listeners": {
+   "first": 46,
+   "last": 46
+  },
+  "frameCpu": {
+   "avgCbMs": 0.1763356826136641,
+   "maxCbMs": 1.8107143981116158,
+   "avgFrameGapMs": 16.68586904761905,
+   "maxFrameGapMs": 66.59999999999854
+  },
+  "cpu": {
+   "taskDurationPerSec": 0.04741323333333334,
+   "scriptDurationPerSec": 0.0113067,
+   "cpuPercentOfOneCore": 4.741323333333334,
+   "scriptPercentOfOneCore": 1.1306699999999998
+  },
+  "longtasks": {
+   "count": 1,
+   "totalMs": 83,
+   "maxMs": 83,
+   "list": [
+    {
+     "start": 58624.5,
+     "dur": 83,
+     "atSec": 55
+    }
+   ]
+  }
+ },
+ "journalOpen": {
+  "viewport": {
+   "w": 375,
+   "h": 667,
+   "dpr": 3,
+   "visualH": 667
+  },
+  "doc": {
+   "scrollW": 375,
+   "scrollH": 667,
+   "bodyScrollW": 375,
+   "clientW": 375,
+   "clientH": 667
+  },
+  "abnormalOverflow": [
+   {
+    "el": ".shop-top",
+    "right": -137,
+    "left": -233
+   },
+   {
+    "el": ".shop-tag tag-click",
+    "right": -191,
+    "left": -233
+   },
+   {
+    "el": ".shop-name",
+    "right": -137,
+    "left": -187
+   },
+   {
+    "el": ".shop-next",
+    "right": -137,
+    "left": -233
+   },
+   {
+    "el": ".shop-value",
+    "right": -137,
+    "left": -233
+   },
+   {
+    "el": ".shop-cost",
+    "right": -137,
+    "left": -233
+   },
+   {
+    "el": ".",
+    "right": -217.9,
+    "left": -233
+   },
+   {
+    "el": ".shop-remain",
+    "right": -137,
+    "left": -233
+   },
+   {
+    "el": ".shop-top",
+    "right": -11,
+    "left": -107
+   },
+   {
+    "el": ".shop-tag tag-idle",
+    "right": -65,
+    "left": -107
+   },
+   {
+    "el": ".shop-name",
+    "right": -22,
+    "left": -61
+   },
+   {
+    "el": ".shop-next",
+    "right": -11,
+    "left": -107
+   }
+  ],
+  "hud": {
+   "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 375,
+    "h": 135,
+    "bottom": 135,
+    "right": 375
+   },
+   "subScrollW": 352,
+   "subClientW": 351,
+   "subOverflow": 1,
+   "rank": {
+    "x": 147.5,
+    "y": 50.5,
+    "w": 58,
+    "h": 17,
+    "bottom": 67.5,
+    "right": 205.5
+   },
+   "rankText": "实习生 0%",
+   "rankLines": 1,
+   "streak": {
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "bottom": 0,
+    "right": 0
+   },
+   "click": 12,
+   "idle": 12
+  },
+  "quest": {
+   "hidden": false,
+   "rect": {
+    "x": 12,
+    "y": 83,
+    "w": 351,
+    "h": 42,
+    "bottom": 125,
+    "right": 363
+   },
+   "text": "买下点亮的「咖啡续命」卡片"
+  },
+  "canvas": {
+   "rect": {
+    "x": 0,
+    "y": 135,
+    "w": 375,
+    "h": 382,
+    "bottom": 517,
+    "right": 375
+   },
+   "attrW": 1125,
+   "attrH": 1146
+  },
+  "shop": {
+   "rect": {
+    "x": 0,
+    "y": 517.3,
+    "w": 375,
+    "h": 149.8,
+    "bottom": 667,
+    "right": 375
+   },
+   "cards": 9,
+   "visibleCards": 2,
+   "card0": {
+    "x": -244,
+    "y": 527.3,
+    "w": 118,
+    "h": 113.8,
+    "bottom": 641,
+    "right": -126
+   },
+   "cardW": 118,
+   "cardH": 113.8,
+   "scrollW": 1134,
+   "clientW": 359,
+   "hint": {
+    "x": 8,
+    "y": 641,
+    "w": 359,
+    "h": 18,
+    "bottom": 659,
+    "right": 367
+   },
+   "tagFs": 9,
+   "nameFs": 13,
+   "nextFs": 11,
+   "costFs": 13,
+   "remainFs": 10
+  },
+  "journalBtn": {
+   "rect": {
+    "x": 324,
+    "y": 45,
+    "w": 39,
+    "h": 28,
+    "bottom": 73,
+    "right": 363
+   },
+   "distToThumb": 488.56729945832427,
+   "pseudoHotArea": {
+    "w": 45,
+    "h": 46
+   },
+   "className": "",
+   "hit": true
+  },
+  "journalPanel": {
+   "rect": {
+    "x": 22.5,
+    "y": 60,
+    "w": 330,
+    "h": 546.9,
+    "bottom": 607,
+    "right": 352.5
+   },
+   "scrollH": 731,
+   "clientH": 539,
+   "claimVisible": true
+  },
+  "welcomePanel": {
+   "hidden": true
+  },
+  "smallBtns": [
+   {
+    "id": "btn-journal",
+    "x": 324,
+    "y": 45,
+    "w": 39,
+    "h": 28,
+    "bottom": 73,
+    "right": 363
+   },
+   {
+    "id": "welcome-ok",
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "bottom": 0,
+    "right": 0
+   }
+  ],
+  "smallTextCount": 29,
+  "smallestText": [
+   {
+    "sel": ".shop-tag tag-click",
+    "fs": 9,
+    "text": "点了才赚"
+   },
+   {
+    "sel": ".shop-next",
+    "fs": 11,
+    "text": "+1 点击力"
+   },
+   {
+    "sel": ".shop-value",
+    "fs": 11,
+    "text": "★ 当前最划算"
+   },
+   {
+    "sel": ".shop-tag tag-idle",
+    "fs": 9,
+    "text": "会自动赚"
+   },
+   {
+    "sel": ".shop-next",
+    "fs": 11,
+    "text": "+1/秒 · ×2差5级"
+   },
+   {
+    "sel": ".shop-value",
+    "fs": 11,
+    "text": "★ 当前最划算"
+   },
+   {
+    "sel": ".shop-remain",
+    "fs": 10,
+    "text": "还差 5.4"
+   },
+   {
+    "sel": ".shop-tag tag-click",
+    "fs": 9,
+    "text": "点了才赚"
+   },
+   {
+    "sel": ".shop-next",
+    "fs": 11,
+    "text": "+2 点击力"
+   },
+   {
+    "sel": ".shop-remain",
+    "fs": 10,
+    "text": "再戳 56 下"
+   }
+  ],
+  "fonts": {
+   "hudMoyu": {
+    "fs": 30,
+    "lh": "33px",
+    "color": "rgb(255, 215, 110)",
+    "bg": "rgba(0, 0, 0, 0)"
+   },
+   "questText": {
+    "fs": 12,
+    "lh": "normal",
+    "color": "rgb(214, 240, 214)",
+    "bg": "rgba(0, 0, 0, 0)"
+   },
+   "goalDesc": {
+    "fs": 13,
+    "lh": "normal",
+    "color": "rgb(244, 241, 232)",
+    "bg": "rgba(0, 0, 0, 0)"
+   },
+   "claim": {
+    "fs": 15,
+    "lh": "normal",
+    "color": "rgb(168, 164, 147)",
+    "bg": "rgb(85, 85, 122)"
+   }
+  },
+  "state": {
+   "moyu": 44.63608000000077,
+   "totalClicks": 26,
+   "totalEarned": 44.63608000000077,
+   "levelCount": 0
+  },
+  "fps": 57,
+  "frames": 4155,
+  "assets": {
+   "worker": "loaded",
+   "computer": "loaded",
+   "cooler": "loaded"
+  },
+  "bootError": false,
+  "sw": {
+   "supported": true,
+   "controller": false
+  }
+ },
+ "misTouch": {
+  "tap25": {
+   "clicksBefore": 0,
+   "clicksAfter": 25,
+   "delta": 25
+  },
+  "canvasSwipe": {
+   "clicksBefore": 25,
+   "clicksAfter": 26,
+   "delta": 1,
+   "note": "打算滑动/滚动时也计 1 次点击"
+  },
+  "shopSwipe": {
+   "before": {
+    "scrollLeft": 0,
+    "levels": 0,
+    "moyu": 44.28610000000064
+   },
+   "after": {
+    "scrollLeft": 252,
+    "levels": 0,
+    "moyu": 44.49608000000071
+   },
+   "scrolled": true,
+   "accidentallyBought": false
+  },
+  "modalKeepsRaf": {
+   "framesBefore": 4119,
+   "framesAfter3s": 4343,
+   "ranFrames": 224,
+   "note": "日报遮罩打开 3s 内主循环仍在跑（无暂停）"
+  },
+  "journalClosed": true
+ },
+ "hudStress": {
+  "subScrollW": 352,
+  "subClientW": 351,
+  "overflow": 1,
+  "journalBtnRight": 363,
+  "rankLines": 2
+ },
+ "distLoad": {
+  "url": "http://127.0.0.1:4189/",
+  "bootMs": 445,
+  "readyMs": 461,
+  "nav": {
+   "dcl": 409,
+   "load": 506,
+   "fcp": 468,
+   "respEnd": 10
+  },
+  "net": {
+   "count": 9,
+   "totalBytes": 56463,
+   "byType": {
+    "Document": {
+     "n": 1,
+     "bytes": 3487
+    },
+    "Script": {
+     "n": 1,
+     "bytes": 38063
+    },
+    "Stylesheet": {
+     "n": 1,
+     "bytes": 8456
+    },
+    "Image": {
+     "n": 3,
+     "bytes": 3193
+    },
+    "Manifest": {
+     "n": 1,
+     "bytes": 743
+    },
+    "Other": {
+     "n": 2,
+     "bytes": 2521
+    }
+   },
+   "resources": [
+    {
+     "url": "/assets/index-DXx4mRYA.js",
+     "type": "Script",
+     "bytes": 38063,
+     "status": 200
+    },
+    {
+     "url": "/assets/index-BzlafmH9.css",
+     "type": "Stylesheet",
+     "bytes": 8456,
+     "status": 200
+    },
+    {
+     "url": "/",
+     "type": "Document",
+     "bytes": 3487,
+     "status": 200
+    },
+    {
+     "url": "/assets/sprites/worker.png",
+     "type": "Image",
+     "bytes": 1576,
+     "status": 200
+    },
+    {
+     "url": "/favicon.png",
+     "type": "Other",
+     "bytes": 1358,
+     "status": 200
+    },
+    {
+     "url": "/icon-192.png",
+     "type": "Other",
+     "bytes": 1163,
+     "status": 200
+    },
+    {
+     "url": "/assets/sprites/computer.png",
+     "type": "Image",
+     "bytes": 985,
+     "status": 200
+    },
+    {
+     "url": "/manifest.webmanifest",
+     "type": "Manifest",
+     "bytes": 743,
+     "status": 200
+    },
+    {
+     "url": "/assets/sprites/watercooler.png",
+     "type": "Image",
+     "bytes": 632,
+     "status": 200
+    }
+   ]
+  }
+ },
+ "distLayout": {
+  "viewport": {
+   "w": 375,
+   "h": 667,
+   "dpr": 3,
+   "visualH": 667
+  },
+  "doc": {
+   "scrollW": 375,
+   "scrollH": 667,
+   "bodyScrollW": 375,
+   "clientW": 375,
+   "clientH": 667
+  },
+  "abnormalOverflow": [
+   {
+    "el": ".shop-top",
+    "right": 493,
+    "left": 397
+   },
+   {
+    "el": ".shop-tag tag-idle",
+    "right": 439,
+    "left": 397
+   },
+   {
+    "el": ".shop-name",
+    "right": 493,
+    "left": 443
+   },
+   {
+    "el": ".shop-next",
+    "right": 493,
+    "left": 397
+   },
+   {
+    "el": ".shop-value",
+    "right": 493,
+    "left": 397
+   },
+   {
+    "el": ".shop-cost",
+    "right": 493,
+    "left": 397
+   },
+   {
+    "el": ".",
+    "right": 423.5,
+    "left": 397
+   },
+   {
+    "el": ".shop-remain",
+    "right": 493,
+    "left": 397
+   },
+   {
+    "el": ".shop-top",
+    "right": 619,
+    "left": 523
+   },
+   {
+    "el": ".shop-tag tag-click",
+    "right": 565,
+    "left": 523
+   },
+   {
+    "el": ".shop-name",
+    "right": 619,
+    "left": 569
+   },
+   {
+    "el": ".shop-next",
+    "right": 619,
+    "left": 523
+   }
+  ],
+  "hud": {
+   "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 375,
+    "h": 135,
+    "bottom": 135,
+    "right": 375
+   },
+   "subScrollW": 352,
+   "subClientW": 351,
+   "subOverflow": 1,
+   "rank": {
+    "x": 147.5,
+    "y": 50.5,
+    "w": 58,
+    "h": 17,
+    "bottom": 67.5,
+    "right": 205.5
+   },
+   "rankText": "实习生 0%",
+   "rankLines": 1,
+   "streak": {
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "bottom": 0,
+    "right": 0
+   },
+   "click": 12,
+   "idle": 12
+  },
+  "quest": {
+   "hidden": false,
+   "rect": {
+    "x": 12,
+    "y": 83,
+    "w": 351,
+    "h": 42,
+    "bottom": 125,
+    "right": 363
+   },
+   "text": "再戳 10 下 → 解锁「咖啡续命」"
+  },
+  "canvas": {
+   "rect": {
+    "x": 0,
+    "y": 135,
+    "w": 375,
+    "h": 382,
+    "bottom": 517,
+    "right": 375
+   },
+   "attrW": 1125,
+   "attrH": 1146
+  },
+  "shop": {
+   "rect": {
+    "x": 0,
+    "y": 517.3,
+    "w": 375,
+    "h": 149.8,
+    "bottom": 667,
+    "right": 375
+   },
+   "cards": 9,
+   "visibleCards": 2,
+   "card0": {
+    "x": 8,
+    "y": 527.3,
+    "w": 118,
+    "h": 113.8,
+    "bottom": 641,
+    "right": 126
+   },
+   "cardW": 118,
+   "cardH": 113.8,
+   "scrollW": 1134,
+   "clientW": 359,
+   "hint": {
+    "x": 8,
+    "y": 641,
+    "w": 359,
+    "h": 18,
+    "bottom": 659,
+    "right": 367
+   },
+   "tagFs": 9,
+   "nameFs": 13,
+   "nextFs": 11,
+   "costFs": 13,
+   "remainFs": 10
+  },
+  "journalBtn": {
+   "rect": {
+    "x": 324,
+    "y": 45,
+    "w": 39,
+    "h": 28,
+    "bottom": 73,
+    "right": 363
+   },
+   "distToThumb": 488.56729945832427,
+   "pseudoHotArea": {
+    "w": 45,
+    "h": 46
+   },
+   "className": "",
+   "hit": true
+  },
+  "journalPanel": {
+   "hidden": true,
+   "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "bottom": 0,
+    "right": 0
+   }
+  },
+  "welcomePanel": {
+   "hidden": true
+  },
+  "smallBtns": [
+   {
+    "id": "btn-journal",
+    "x": 324,
+    "y": 45,
+    "w": 39,
+    "h": 28,
+    "bottom": 73,
+    "right": 363
+   },
+   {
+    "id": "journal-close",
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "bottom": 0,
+    "right": 0
+   },
+   {
+    "id": "journal-claim",
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "bottom": 0,
+    "right": 0
+   },
+   {
+    "id": "prestige-btn",
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "bottom": 0,
+    "right": 0
+   },
+   {
+    "id": "welcome-ok",
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "bottom": 0,
+    "right": 0
+   }
+  ],
+  "smallTextCount": 30,
+  "smallestText": [
+   {
+    "sel": ".shop-tag tag-click",
+    "fs": 9,
+    "text": "点了才赚"
+   },
+   {
+    "sel": ".shop-next",
+    "fs": 11,
+    "text": "+1 点击力"
+   },
+   {
+    "sel": ".shop-value",
+    "fs": 11,
+    "text": "★ 当前最划算"
+   },
+   {
+    "sel": ".shop-remain",
+    "fs": 10,
+    "text": "再戳 15 下"
+   },
+   {
+    "sel": ".shop-tag tag-idle",
+    "fs": 9,
+    "text": "会自动赚"
+   },
+   {
+    "sel": ".shop-next",
+    "fs": 11,
+    "text": "+1/秒 · ×2差5级"
+   },
+   {
+    "sel": ".shop-value",
+    "fs": 11,
+    "text": "★ 当前最划算"
+   },
+   {
+    "sel": ".shop-remain",
+    "fs": 10,
+    "text": "还差 49.1"
+   },
+   {
+    "sel": ".shop-tag tag-click",
+    "fs": 9,
+    "text": "点了才赚"
+   },
+   {
+    "sel": ".shop-next",
+    "fs": 11,
+    "text": "+2 点击力"
+   }
+  ],
+  "fonts": {
+   "hudMoyu": {
+    "fs": 30,
+    "lh": "33px",
+    "color": "rgb(255, 215, 110)",
+    "bg": "rgba(0, 0, 0, 0)"
+   },
+   "questText": {
+    "fs": 12,
+    "lh": "normal",
+    "color": "rgb(214, 240, 214)",
+    "bg": "rgba(0, 0, 0, 0)"
+   },
+   "goalDesc": null,
+   "claim": {
+    "fs": 15,
+    "lh": "normal",
+    "color": "rgb(16, 36, 26)",
+    "bg": "rgb(139, 226, 139)"
+   }
+  },
+  "state": {
+   "moyu": 0.9566400000000027,
+   "totalClicks": 0,
+   "totalEarned": 0.9566400000000027,
+   "levelCount": 0
+  },
+  "fps": 60,
+  "frames": 264,
+  "assets": {
+   "worker": "loaded",
+   "computer": "loaded",
+   "cooler": "loaded"
+  },
+  "bootError": false,
+  "sw": {
+   "supported": true,
+   "controller": false
+  }
+ },
+ "pwa": {
+  "supported": true,
+  "registrations": 0,
+  "controller": false,
+  "manifest": "http://127.0.0.1:4189/manifest.webmanifest",
+  "offlineReload": {
+   "url": "chrome-error://chromewebdata/",
+   "title": "127.0.0.1",
+   "hasApp": false,
+   "hasMoyu": false,
+   "bodyText": "点按恐龙图标即可开始玩这款游戏\n\n请试试以下办法：\n\n检查网线、调制解调器和路由器\n重新连接到 Wi-Fi 网络\nERR_INTERNET_DISCONNECTED"
+  }
+ }
+}

@@ -57,6 +57,11 @@ export class Quest {
 
   /** 每 150ms 调用；state 为当前，prev 为上一帧 */
   tick(state: GameState, prev: GameState | null): void {
+    // 已进阶（转生过/本局累计很高）则不再显示新手目标
+    if (state.prestige > 0 || state.lifetimeEarned > 1e6) {
+      this.root.classList.add("hidden");
+      return;
+    }
     if (this.idx >= this.steps.length) {
       this.root.classList.add("hidden");
       return;

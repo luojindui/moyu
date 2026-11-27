@@ -16,7 +16,7 @@ export class Hud {
 
   refresh(state: GameState): void {
     this.elMoyu.textContent = formatMoyu(state.moyu);
-    this.elClick.textContent = String(clickPowerOf(state));
+    this.elClick.textContent = formatMoyu(clickPowerOf(state));
     // 底薪 0.2/s 恒存在，不再有"未解锁"态
     this.elIdle.textContent = formatMoyu(effectOf(state).idleRate);
     const rank = rankFor(state.lifetimeEarned);

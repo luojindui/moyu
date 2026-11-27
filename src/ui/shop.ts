@@ -83,14 +83,14 @@ export class Shop {
       const flavor = flavorFor(u.id, lv);
       // 下一级即时增量 + 里程碑进度（效果 ×2 还差 N 级）
       const m = marginalEffect(u.id, lv);
-      const inc = m.clickPower > 0 ? `+${m.clickPower} 点击力` : `+${m.idleRate}/秒`;
+      const inc = m.clickPower > 0 ? `+${formatMoyu(m.clickPower)} 点击力` : `+${formatMoyu(m.idleRate)}/秒`;
       const gap = milestoneGap(u.id, lv);
       const gapText = gap <= 5 ? ` · ×2差${gap}级` : ""; // 只在快到时提示（降低噪音）
       btn.querySelector(".shop-next")!.textContent = `${inc}${gapText}${flavor ? ` · ${flavor}` : ""}`;
       // 性价比：星标当前维度最优（黑箱显性化）
       const isBest = u.clickPower ? u.id === bestClickId : u.id === bestIdleId;
       // 性价比改为可懂的说法：这一档「当前最划算」
-      const dim = isBest ? "★ 当前最划算" : "";
+      const dim = isBest ? (u.clickPower ? "★ 点击最优" : "★ 挂机最优") : "";
       btn.querySelector(".shop-value")!.textContent = dim;
       btn.disabled = state.moyu < price;
       const affordable = state.moyu >= price;

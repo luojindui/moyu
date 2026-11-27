@@ -136,9 +136,9 @@ body {
 }
 .shop-tag {
   flex: 0 0 auto;
-  padding: 0 3px;
+  padding: 0 2px;
   max-width: 100%;
-  font-size: 9px;
+  font-size: 8px;
   border-radius: 3px;
   line-height: 13px;
 }
@@ -152,7 +152,7 @@ body {
 }
 .shop-card {
   flex: 0 0 auto;
-  width: 118px;
+  width: 126px;
   min-height: 92px;
   padding: 8px 8px 6px;
   display: flex;
@@ -179,7 +179,7 @@ body {
   transform: translateY(1px);
 }
 .shop-name {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   white-space: nowrap;
   overflow: hidden;

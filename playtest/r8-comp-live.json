@@ -1,0 +1,141 @@
+{
+  "generatedAt": "2026-11-27T03:25:45.918Z",
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "dpr": 3
+  },
+  "first": {
+    "booted": true,
+    "fps": 60,
+    "assets": {
+      "worker": "loaded",
+      "computer": "loaded",
+      "cooler": "loaded"
+    },
+    "firstState": {
+      "totalEarned": 0.8799600000000019,
+      "idle": null,
+      "levels": {},
+      "clicks": 0,
+      "prestige": 0,
+      "rank": null
+    },
+    "badWordHits": [],
+    "buttons": 14,
+    "prestigeBtnText": "未解锁（本局累计需 1 亿）",
+    "prestigeDisabled": true,
+    "questVisible": true,
+    "questText": "再戳 10 下 → 解锁「咖啡续命」",
+    "hud": {
+      "moyu": "0.9",
+      "click": "1",
+      "idle": "0.2",
+      "rank": "实习生 0%"
+    },
+    "shopCards": 9,
+    "journalHasNoAd": true
+  },
+  "afterClicks": {
+    "before": {
+      "total": 0.8799600000000019,
+      "clicks": 0
+    },
+    "after": {
+      "total": 49.193300000000086,
+      "clicks": 40
+    },
+    "gained": 48.31334000000008,
+    "shop": [
+      {
+        "name": "咖啡续命",
+        "cost": "15",
+        "next": "+1 点击力",
+        "affordable": true
+      },
+      {
+        "name": "刷手机",
+        "cost": "50",
+        "next": "+1/秒 · ×2差5级",
+        "affordable": false
+      },
+      {
+        "name": "带薪喝水",
+        "cost": "100",
+        "next": "+2 点击力",
+        "affordable": false
+      },
+      {
+        "name": "带薪蹲坑",
+        "cost": "600",
+        "next": "+5/秒",
+        "affordable": false
+      },
+      {
+        "name": "人体工学椅",
+        "cost": "800",
+        "next": "+5 点击力",
+        "affordable": false
+      },
+      {
+        "name": "摸鱼群聊",
+        "cost": "4000",
+        "next": "+15/秒",
+        "affordable": false
+      },
+      {
+        "name": "无用会议",
+        "cost": "2.50万",
+        "next": "+50/秒",
+        "affordable": false
+      },
+      {
+        "name": "深度摸鱼",
+        "cost": "15.00万",
+        "next": "+180/秒 · ×2差5级",
+        "affordable": false
+      },
+      {
+        "name": "退休式躺平",
+        "cost": "100.00万",
+        "next": "+700/秒",
+        "affordable": false
+      }
+    ]
+  },
+  "offline": {
+    "before": 49.193300000000086,
+    "totalAfter": 5810.088480000008,
+    "welcomeVisible": true,
+    "welcomeGain": "5760",
+    "welcomeRule": "首日全额｜8 小时封顶",
+    "idleRate": "0.2"
+  },
+  "requests": {
+    "total": 68,
+    "external": [],
+    "sample": [
+      "http://127.0.0.1:5173/",
+      "http://127.0.0.1:5173/@vite/client",
+      "http://127.0.0.1:5173/src/main.ts?t=1795749933215",
+      "http://127.0.0.1:5173/manifest.webmanifest",
+      "http://127.0.0.1:5173/node_modules/vite/dist/client/env.mjs",
+      "http://127.0.0.1:5173/src/style.css?t=1795749626520",
+      "http://127.0.0.1:5173/src/engine/state.ts?t=1795749454154",
+      "http://127.0.0.1:5173/src/engine/actions.ts?t=1795749454154",
+      "http://127.0.0.1:5173/src/engine/tick.ts?t=1795749454154",
+      "http://127.0.0.1:5173/src/engine/resume.ts?t=1795749454154",
+      "http://127.0.0.1:5173/src/engine/flavor.ts",
+      "http://127.0.0.1:5173/src/engine/save.ts?t=1795749626518",
+      "http://127.0.0.1:5173/src/engine/events.ts?t=1795749454154",
+      "http://127.0.0.1:5173/src/engine/collection.ts?t=1795749454154",
+      "http://127.0.0.1:5173/src/engine/progression.ts",
+      "http://127.0.0.1:5173/src/engine/titles.ts?t=1795749427305",
+      "http://127.0.0.1:5173/src/engine/prestige.ts?t=1795749454154",
+      "http://127.0.0.1:5173/src/engine/daily.ts?t=1795749626518",
+      "http://127.0.0.1:5173/src/ui/hud.ts?t=1795749933215",
+      "http://127.0.0.1:5173/src/ui/shop.ts?t=1795749933215"
+    ]
+  },
+  "screenshot": "playtest/r8-comp-first-screen.png"
+}
