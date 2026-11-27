@@ -1,0 +1,536 @@
+{
+  "desktopGeo": {
+    "cssW": 900,
+    "cssH": 581,
+    "scale": 4,
+    "vw": 225,
+    "vh": 145.3,
+    "groundY": 78,
+    "status": {
+      "plant": {
+        "x": 14.4,
+        "y": 38.2,
+        "w": 16.8,
+        "h": 39.8,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "lamp": {
+        "x": 127.7,
+        "y": 20.4,
+        "w": 15.5,
+        "h": 52.8,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "rug": {
+        "x": 62.9,
+        "y": 95.7,
+        "w": 99.2,
+        "h": 24,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "fridge": {
+        "x": 3.2,
+        "y": 45.3,
+        "w": 16,
+        "h": 32.8,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "chair": {
+        "x": 143.7,
+        "y": 52.3,
+        "w": 20,
+        "h": 25.8,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "aquarium": {
+        "x": 177.5,
+        "y": -21.2,
+        "w": 26.2,
+        "h": 24,
+        "clippedTop": true,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "projector": {
+        "x": 91.7,
+        "y": 3.2,
+        "w": 32,
+        "h": 26.4,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "catbed": {
+        "x": 102.9,
+        "y": 66,
+        "w": 24,
+        "h": 12.3,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "clock": {
+        "x": 183.1,
+        "y": 20.5,
+        "w": 23,
+        "h": 23,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "board": {
+        "x": 162.6,
+        "y": 7.6,
+        "w": 40,
+        "h": 25.6,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "window": {
+        "x": 25.6,
+        "y": 22.4,
+        "w": 57.6,
+        "h": 38.4,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "pendant": {
+        "x": 98.1,
+        "y": 16,
+        "w": 28.8,
+        "h": 6.7,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      }
+    }
+  },
+  "desktopState": {
+    "decor": [
+      "plant",
+      "lamp",
+      "rug",
+      "fridge",
+      "chair",
+      "aquarium",
+      "projector",
+      "catbed"
+    ],
+    "hud": "77.65亿"
+  },
+  "tabletGeo": {
+    "cssW": 900,
+    "cssH": 581,
+    "scale": 4,
+    "vw": 225,
+    "vh": 145.3,
+    "groundY": 78,
+    "status": {
+      "plant": {
+        "x": 14.4,
+        "y": 38.2,
+        "w": 16.8,
+        "h": 39.8,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "lamp": {
+        "x": 127.7,
+        "y": 20.4,
+        "w": 15.5,
+        "h": 52.8,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "rug": {
+        "x": 62.9,
+        "y": 95.7,
+        "w": 99.2,
+        "h": 24,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "fridge": {
+        "x": 3.2,
+        "y": 45.3,
+        "w": 16,
+        "h": 32.8,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "chair": {
+        "x": 143.7,
+        "y": 52.3,
+        "w": 20,
+        "h": 25.8,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "aquarium": {
+        "x": 177.5,
+        "y": -21.2,
+        "w": 26.2,
+        "h": 24,
+        "clippedTop": true,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "projector": {
+        "x": 91.7,
+        "y": 3.2,
+        "w": 32,
+        "h": 26.4,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "catbed": {
+        "x": 102.9,
+        "y": 66,
+        "w": 24,
+        "h": 12.3,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "clock": {
+        "x": 183.1,
+        "y": 20.5,
+        "w": 23,
+        "h": 23,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "board": {
+        "x": 162.6,
+        "y": 7.6,
+        "w": 40,
+        "h": 25.6,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "window": {
+        "x": 25.6,
+        "y": 22.4,
+        "w": 57.6,
+        "h": 38.4,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "pendant": {
+        "x": 98.1,
+        "y": 16,
+        "w": 28.8,
+        "h": 6.7,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      }
+    }
+  },
+  "smallGeo": {
+    "cssW": 768,
+    "cssH": 805,
+    "scale": 6,
+    "vw": 128,
+    "vh": 134.2,
+    "groundY": 67,
+    "status": {
+      "plant": {
+        "x": 14.4,
+        "y": 27.1,
+        "w": 16.8,
+        "h": 39.8,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "lamp": {
+        "x": 79.2,
+        "y": 9.4,
+        "w": 15.5,
+        "h": 52.8,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "rug": {
+        "x": 14.4,
+        "y": 84.6,
+        "w": 99.2,
+        "h": 24,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "fridge": {
+        "x": 3.2,
+        "y": 34.2,
+        "w": 16,
+        "h": 32.8,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "chair": {
+        "x": 95.2,
+        "y": 41.2,
+        "w": 20,
+        "h": 25.8,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "aquarium": {
+        "x": 80.5,
+        "y": -32.2,
+        "w": 26.2,
+        "h": 24,
+        "clippedTop": true,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "projector": {
+        "x": 43.2,
+        "y": 3.2,
+        "w": 32,
+        "h": 26.4,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "catbed": {
+        "x": 54.4,
+        "y": 55,
+        "w": 24,
+        "h": 12.3,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "clock": {
+        "x": 86.1,
+        "y": 20.5,
+        "w": 23,
+        "h": 23,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "board": {
+        "x": 65.6,
+        "y": -3.4,
+        "w": 40,
+        "h": 25.6,
+        "clippedTop": true,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "window": {
+        "x": 25.6,
+        "y": 22.4,
+        "w": 57.6,
+        "h": 38.4,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "pendant": {
+        "x": 49.6,
+        "y": 16,
+        "w": 28.8,
+        "h": 6.7,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      }
+    }
+  },
+  "mobileGeo": {
+    "cssW": 320,
+    "cssH": 349,
+    "scale": 2,
+    "vw": 160,
+    "vh": 174.5,
+    "groundY": 107.3,
+    "status": {
+      "plant": {
+        "x": 14.4,
+        "y": 67.5,
+        "w": 16.8,
+        "h": 39.8,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "lamp": {
+        "x": 95.2,
+        "y": 49.7,
+        "w": 15.5,
+        "h": 52.8,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "rug": {
+        "x": 30.4,
+        "y": 124.9,
+        "w": 99.2,
+        "h": 24,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "fridge": {
+        "x": 3.2,
+        "y": 74.5,
+        "w": 16,
+        "h": 32.8,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "chair": {
+        "x": 111.2,
+        "y": 81.5,
+        "w": 20,
+        "h": 25.8,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "aquarium": {
+        "x": 112.5,
+        "y": 8.1,
+        "w": 26.2,
+        "h": 24,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "projector": {
+        "x": 59.2,
+        "y": 3.2,
+        "w": 32,
+        "h": 26.4,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "catbed": {
+        "x": 70.4,
+        "y": 95.3,
+        "w": 24,
+        "h": 12.3,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "clock": {
+        "x": 118.1,
+        "y": 20.5,
+        "w": 23,
+        "h": 23,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "board": {
+        "x": 97.6,
+        "y": 36.9,
+        "w": 40,
+        "h": 25.6,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "window": {
+        "x": 25.6,
+        "y": 22.4,
+        "w": 57.6,
+        "h": 38.4,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      },
+      "pendant": {
+        "x": 65.6,
+        "y": 16,
+        "w": 28.8,
+        "h": 6.7,
+        "clippedTop": false,
+        "clippedBottom": false,
+        "clippedLeft": false,
+        "clippedRight": false
+      }
+    }
+  },
+  "errors": []
+}

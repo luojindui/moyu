@@ -1,0 +1,136 @@
+{
+  "energyBefore": {
+    "date": "2026-11-27",
+    "left": 100,
+    "used": [],
+    "boosted": {
+      "idleMult": 1,
+      "patrolRewardMult": 1
+    }
+  },
+  "energyAfterUse": {
+    "date": "2026-11-27",
+    "left": 0,
+    "used": [
+      "slack",
+      "fake-work",
+      "social"
+    ],
+    "boosted": {
+      "idleMult": 1.25,
+      "patrolRewardMult": 1.8
+    }
+  },
+  "panelTextAfterUse": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0% | 今日精力 （剩 0/100） | ✓ | 认真摸鱼 今天挂机 +25% | ✓ | 假装工作 今天巡逻奖励 +80% | ✓ | 跟同事聊天 全体同事好感 +3 | 每天 100 点，效果持续到当天结束 | 绿萝 工位挂机 +5% | 3000 | 护眼台灯 点击力 +15% | 2.00万 | 毛绒地毯 离线效率 +5% | 12.00万 | 迷你冰箱 工位挂机 +8% | 60.00万 | 按摩椅 离线效率 +8% | 400.00万 | 鱼缸 挂机 +10%、点击 +10% | 3000.00万 | 投影仪 派遣奖励 +30% | 2.00亿 | 工位猫窝 挂机 +15%、离线 +10% | 20.00亿",
+  "hudAfterUse": {
+    "moyu": "1.00亿",
+    "idle": "0.3",
+    "click": "1"
+  },
+  "savedEnergy": {
+    "date": "2026-11-27",
+    "left": 0,
+    "used": [
+      "slack",
+      "fake-work",
+      "social"
+    ],
+    "boosted": {
+      "idleMult": 1.25,
+      "patrolRewardMult": 1.8
+    }
+  },
+  "patchScriptId": "1",
+  "crossday": {
+    "energy": {
+      "date": "2026-11-27",
+      "left": 100,
+      "used": [],
+      "boosted": {
+        "idleMult": 1,
+        "patrolRewardMult": 1
+      }
+    },
+    "hud": {
+      "moyu": "1.00亿",
+      "idle": "0.2",
+      "click": "1"
+    },
+    "decor": [],
+    "panelText": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0% | 今日精力 （剩 100/100） | 40 | 认真摸鱼 今天挂机 +25% · 花 40 精力 | 使用 | 35 | 假装工作 今天巡逻奖励 +80% · 花 35 精力 | 使用 | 25 | 跟同事聊天 全体同事好感 +3 · 花 25 精力 | 使用 | 一键全用（3 项，共 100 精力） | 每天 100 点，效果持续到当天结束；3 项合计正好 100 | 绿萝 工位挂机 +5% | 3000 | 护眼台灯 点击力 +15% | 2.00万 | 毛绒地毯 离线效率 +5% | 12.00万 | 迷你冰箱 工位挂机 +8% | 60.00万 | 按摩椅 离线效率 +8% | 400.00万 | 鱼缸 挂机 +10%、点击 +10% | 3000.00万 | 投影仪 派遣奖励 +30% | 2.00亿 | 工位猫窝 挂机 +15%、离线 +10% | 20.00亿"
+  },
+  "energyRepeat": {
+    "once": {
+      "date": "2026-11-27",
+      "left": 60,
+      "used": [
+        "slack"
+      ],
+      "boosted": {
+        "idleMult": 1.25,
+        "patrolRewardMult": 1
+      }
+    },
+    "slackButtonAfterUse": {
+      "exists": false
+    }
+  },
+  "overlay": {
+    "teamBg": "rgba(10, 10, 18, 0.78)",
+    "stage": {
+      "x": 0,
+      "y": 75,
+      "w": 390,
+      "h": 625
+    },
+    "panel": {
+      "x": 16,
+      "y": 59,
+      "w": 359,
+      "h": 726
+    },
+    "panelCoversStagePct": 107
+  },
+  "entries": {
+    "buttons": {
+      "btn-team": {
+        "aria": "摸鱼小队，还有精力 60",
+        "text": "👥天赋精力 60"
+      },
+      "btn-journal": {
+        "aria": "日报与图鉴",
+        "text": "📔"
+      },
+      "btn-mute": {
+        "aria": "音效开关",
+        "text": "🔊"
+      }
+    },
+    "hudText": "2.00亿摸鱼值 | 点击 +1 | 不点也 0.3/秒 | 传说 11% | ♻ 可离职再就业 | 👥 | 天赋 | 精力 60 | 🔊 | 📔",
+    "mentionsEnergy": true,
+    "hasDecorRedDot": true
+  },
+  "desktopState": {
+    "decor": [],
+    "energy": {
+      "date": "2026-11-27",
+      "left": 60,
+      "used": [
+        "slack"
+      ],
+      "boosted": {
+        "idleMult": 1.25,
+        "patrolRewardMult": 1
+      }
+    }
+  },
+  "mobile320": {
+    "cssW": 320,
+    "cssH": 349,
+    "scale": 2,
+    "vw": 160,
+    "vh": 174.5,
+    "groundY": 107.3
+  },
+  "errors": []
+}

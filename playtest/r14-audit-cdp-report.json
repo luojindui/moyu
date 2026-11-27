@@ -1,0 +1,674 @@
+{
+  "startedAt": "2026-11-27T11:05:07.722Z",
+  "url": "http://127.0.0.1:5173/",
+  "scenarios": {
+    "S0": {
+      "freshState": {
+        "decor": [],
+        "energy": {
+          "date": "2026-11-27",
+          "left": 100,
+          "used": [],
+          "boosted": {
+            "idleMult": 1,
+            "patrolRewardMult": 1
+          }
+        },
+        "moyu": 0.09667359999999997,
+        "prestige": 0
+      },
+      "hudBefore": {
+        "idle": "0.2",
+        "click": "1",
+        "moyu": "0.1"
+      },
+      "scenes": "playtest/r14-audit-empty.png"
+    },
+    "S1": {
+      "summaryBefore": "\n      已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%\n    ",
+      "hudIdleBefore": "0.2",
+      "hudClickBefore": "1",
+      "purchases": {
+        "plant": {
+          "clickRes": "ok",
+          "buttonBefore": {
+            "disabled": false,
+            "label": "3000"
+          },
+          "buttonGoneAfter": true,
+          "ownsAfter": true,
+          "decorAfter": [
+            "plant"
+          ],
+          "balanceDiff": 2999.9301,
+          "expectedCost": 3000,
+          "scenePixels": {
+            "before": 0,
+            "after": 3767,
+            "canvas": "900x581"
+          }
+        },
+        "lamp": {
+          "clickRes": "ok",
+          "buttonBefore": {
+            "disabled": false,
+            "label": "2.00万"
+          },
+          "buttonGoneAfter": true,
+          "ownsAfter": true,
+          "decorAfter": [
+            "plant",
+            "lamp"
+          ],
+          "balanceDiff": 19999.9301,
+          "expectedCost": 20000,
+          "scenePixels": {
+            "before": 0,
+            "after": 773,
+            "canvas": "900x581"
+          }
+        },
+        "rug": {
+          "clickRes": "ok",
+          "buttonBefore": {
+            "disabled": false,
+            "label": "12.00万"
+          },
+          "buttonGoneAfter": true,
+          "ownsAfter": true,
+          "decorAfter": [
+            "plant",
+            "lamp",
+            "rug"
+          ],
+          "balanceDiff": 119999.9335,
+          "expectedCost": 120000,
+          "scenePixels": {
+            "beforeMean": {
+              "r": 90.22,
+              "g": 74.19,
+              "b": 63.22,
+              "n": 33120
+            },
+            "afterMean": {
+              "r": 104.72,
+              "g": 80.83,
+              "b": 67.8,
+              "n": 33120
+            },
+            "changed": true
+          }
+        },
+        "fridge": {
+          "clickRes": "ok",
+          "buttonBefore": {
+            "disabled": false,
+            "label": "60.00万"
+          },
+          "buttonGoneAfter": true,
+          "ownsAfter": true,
+          "decorAfter": [
+            "plant",
+            "lamp",
+            "rug",
+            "fridge"
+          ],
+          "balanceDiff": 599999.9244,
+          "expectedCost": 600000,
+          "scenePixels": {
+            "before": 0,
+            "after": 5756,
+            "canvas": "900x581"
+          }
+        },
+        "chair": {
+          "clickRes": "ok",
+          "buttonBefore": {
+            "disabled": false,
+            "label": "400.00万"
+          },
+          "buttonGoneAfter": true,
+          "ownsAfter": true,
+          "decorAfter": [
+            "plant",
+            "lamp",
+            "rug",
+            "fridge",
+            "chair"
+          ],
+          "balanceDiff": 3999999.9282,
+          "expectedCost": 4000000,
+          "scenePixels": {
+            "before": 0,
+            "after": 4546,
+            "canvas": "900x581"
+          }
+        },
+        "aquarium": {
+          "clickRes": "ok",
+          "buttonBefore": {
+            "disabled": false,
+            "label": "3000.00万"
+          },
+          "buttonGoneAfter": true,
+          "ownsAfter": true,
+          "decorAfter": [
+            "plant",
+            "lamp",
+            "rug",
+            "fridge",
+            "chair",
+            "aquarium"
+          ],
+          "balanceDiff": 29999999.9211,
+          "expectedCost": 30000000,
+          "scenePixels": {
+            "before": 0,
+            "after": 0,
+            "canvas": "900x581"
+          }
+        },
+        "projector": {
+          "clickRes": "ok",
+          "buttonBefore": {
+            "disabled": false,
+            "label": "2.00亿"
+          },
+          "buttonGoneAfter": true,
+          "ownsAfter": true,
+          "decorAfter": [
+            "plant",
+            "lamp",
+            "rug",
+            "fridge",
+            "chair",
+            "aquarium",
+            "projector"
+          ],
+          "balanceDiff": 199999999.9169,
+          "expectedCost": 200000000,
+          "scenePixels": {
+            "before": 0,
+            "after": 3788,
+            "canvas": "900x581"
+          }
+        },
+        "catbed": {
+          "clickRes": "ok",
+          "buttonBefore": {
+            "disabled": false,
+            "label": "20.00亿"
+          },
+          "buttonGoneAfter": true,
+          "ownsAfter": true,
+          "decorAfter": [
+            "plant",
+            "lamp",
+            "rug",
+            "fridge",
+            "chair",
+            "aquarium",
+            "projector",
+            "catbed"
+          ],
+          "balanceDiff": 1999999999.9092,
+          "expectedCost": 2000000000,
+          "scenePixels": {
+            "before": 0,
+            "after": 1084,
+            "canvas": "900x581"
+          }
+        }
+      },
+      "costDiffs": {},
+      "afterAll": {
+        "decor": [
+          "plant",
+          "lamp",
+          "rug",
+          "fridge",
+          "chair",
+          "aquarium",
+          "projector",
+          "catbed"
+        ],
+        "decorCount": 8,
+        "totalCost": 2234743000,
+        "hudIdleAfter": "0.3",
+        "hudClickAfter": "1.3",
+        "summaryAfter": "\n      已装修 8/8 · 挂机 ×1.43 · 点击 ×1.26 · 离线 +23%\n    ",
+        "remainingDecorButtons": 0,
+        "energyPanelText": "今日精力 （剩 100/100）"
+      },
+      "sceneAfter": "playtest/r14-audit-decor-all.png",
+      "reopenSummary": "\n      已装修 8/8 · 挂机 ×1.43 · 点击 ×1.26 · 离线 +23%\n    ",
+      "reopenButtons": 0
+    },
+    "S2": {
+      "hudIdleBefore": "0.3",
+      "steps": {
+        "slack": {
+          "buttonBefore": {
+            "disabled": false
+          },
+          "clickRes": "ok",
+          "left": 60,
+          "used": [
+            "slack"
+          ],
+          "buttonGone": true,
+          "hudIdle": "0.4"
+        },
+        "fake-work": {
+          "buttonBefore": {
+            "disabled": false
+          },
+          "clickRes": "ok",
+          "left": 25,
+          "used": [
+            "slack",
+            "fake-work"
+          ],
+          "buttonGone": true,
+          "hudIdle": "0.4"
+        },
+        "social": {
+          "buttonBefore": {
+            "disabled": false
+          },
+          "clickRes": "ok",
+          "left": 0,
+          "used": [
+            "slack",
+            "fake-work",
+            "social"
+          ],
+          "buttonGone": true,
+          "hudIdle": "0.4"
+        }
+      },
+      "after": {
+        "energy": {
+          "date": "2026-11-27",
+          "left": 0,
+          "used": [
+            "slack",
+            "fake-work",
+            "social"
+          ],
+          "boosted": {
+            "idleMult": 1.25,
+            "patrolRewardMult": 1.8
+          }
+        },
+        "heading": "今日精力 （剩 0/100）",
+        "energyButtonsLeft": 0
+      }
+    },
+    "S3": {
+      "blobSaved": {
+        "decor": [
+          "plant",
+          "lamp",
+          "rug",
+          "fridge",
+          "chair",
+          "aquarium",
+          "projector",
+          "catbed"
+        ],
+        "energy": {
+          "date": "2026-11-27",
+          "left": 0,
+          "used": [
+            "slack",
+            "fake-work",
+            "social"
+          ],
+          "boosted": {
+            "idleMult": 1.25,
+            "patrolRewardMult": 1.8
+          }
+        },
+        "v": 2
+      },
+      "before": {
+        "decor": [
+          "plant",
+          "lamp",
+          "rug",
+          "fridge",
+          "chair",
+          "aquarium",
+          "projector",
+          "catbed"
+        ],
+        "energy": {
+          "date": "2026-11-27",
+          "left": 0,
+          "used": [
+            "slack",
+            "fake-work",
+            "social"
+          ],
+          "boosted": {
+            "idleMult": 1.25,
+            "patrolRewardMult": 1.8
+          }
+        }
+      },
+      "after": {
+        "decor": [
+          "plant",
+          "lamp",
+          "rug",
+          "fridge",
+          "chair",
+          "aquarium",
+          "projector",
+          "catbed"
+        ],
+        "energy": {
+          "date": "2026-11-27",
+          "left": 0,
+          "used": [
+            "slack",
+            "fake-work",
+            "social"
+          ],
+          "boosted": {
+            "idleMult": 1.25,
+            "patrolRewardMult": 1.8
+          }
+        },
+        "hudIdle": "0.4",
+        "hudClick": "1.3"
+      },
+      "decorPreserved": true,
+      "energyPreserved": true,
+      "sceneAfterReload": {
+        "plant": 3768,
+        "lamp": 630,
+        "fridge": 5756,
+        "chair": 278,
+        "aquarium": 0,
+        "projector": 3996,
+        "catbed": 1068
+      },
+      "scenes": "playtest/r14-audit-after-reload.png"
+    },
+    "S4": {
+      "beforeState": {
+        "decor": [
+          "plant",
+          "lamp",
+          "rug",
+          "fridge",
+          "chair",
+          "aquarium",
+          "projector",
+          "catbed"
+        ],
+        "energy": {
+          "date": "2026-11-27",
+          "left": 0,
+          "used": [
+            "slack",
+            "fake-work",
+            "social"
+          ],
+          "boosted": {
+            "idleMult": 1.25,
+            "patrolRewardMult": 1.8
+          }
+        },
+        "prestige": 0,
+        "totalEarned": 100000000006.0589
+      },
+      "prestigeBtn": {
+        "disabled": false,
+        "label": "离职再就业：+20 点（永久 ×16.00）"
+      },
+      "prestigeClick": "ok",
+      "afterState": {
+        "decor": [
+          "plant",
+          "lamp",
+          "rug",
+          "fridge",
+          "chair",
+          "aquarium",
+          "projector",
+          "catbed"
+        ],
+        "energy": {
+          "date": "2026-11-27",
+          "left": 0,
+          "used": [
+            "slack",
+            "fake-work",
+            "social"
+          ],
+          "boosted": {
+            "idleMult": 1.25,
+            "patrolRewardMult": 1.8
+          }
+        },
+        "prestige": 20,
+        "moyu": 4.112453268000002
+      },
+      "decorPreserved": true,
+      "afterReload": {
+        "decor": [
+          "plant",
+          "lamp",
+          "rug",
+          "fridge",
+          "chair",
+          "aquarium",
+          "projector",
+          "catbed"
+        ],
+        "prestige": 20,
+        "energy": {
+          "date": "2026-11-27",
+          "left": 0,
+          "used": [
+            "slack",
+            "fake-work",
+            "social"
+          ],
+          "boosted": {
+            "idleMult": 1.25,
+            "patrolRewardMult": 1.8
+          }
+        }
+      }
+    },
+    "S5": {
+      "state": {
+        "date": "2026-11-27",
+        "left": 100,
+        "used": [],
+        "boosted": {
+          "idleMult": 1,
+          "patrolRewardMult": 1
+        }
+      },
+      "hudIdle": "0.2",
+      "dateIsToday": true,
+      "heading": "今日精力 （剩 100/100）",
+      "buttons": [
+        {
+          "id": "slack",
+          "disabled": false
+        },
+        {
+          "id": "fake-work",
+          "disabled": false
+        },
+        {
+          "id": "social",
+          "disabled": false
+        }
+      ]
+    },
+    "S6": {
+      "buttonsBefore": [
+        {
+          "id": "slack",
+          "disabled": true
+        },
+        {
+          "id": "fake-work",
+          "disabled": true
+        },
+        {
+          "id": "social",
+          "disabled": false
+        }
+      ],
+      "afterClickDisabledSlack": {
+        "left": 30,
+        "used": []
+      },
+      "socialClick": "ok",
+      "afterSocial": {
+        "left": 5,
+        "used": [
+          "social"
+        ]
+      },
+      "buttonsAfter": [
+        {
+          "id": "slack",
+          "disabled": true
+        },
+        {
+          "id": "fake-work",
+          "disabled": true
+        }
+      ]
+    },
+    "S7": {
+      "decor": [
+        "plant",
+        "lamp"
+      ],
+      "energy": {
+        "date": "2026-11-27",
+        "left": 100,
+        "used": [
+          "slack"
+        ],
+        "boosted": {
+          "idleMult": 2,
+          "patrolRewardMult": 3
+        }
+      },
+      "hudIdle": "0.4",
+      "heading": "今日精力 （剩 100/100）",
+      "summary": "\n      已装修 2/8 · 挂机 ×1.05 · 点击 ×1.15 · 离线 +0%\n    ",
+      "buttons": [
+        {
+          "act": "energy",
+          "id": "fake-work",
+          "disabled": false,
+          "label": "使用"
+        },
+        {
+          "act": "energy",
+          "id": "social",
+          "disabled": false,
+          "label": "使用"
+        },
+        {
+          "act": "decor",
+          "id": "rug",
+          "disabled": true,
+          "label": "12.00万"
+        },
+        {
+          "act": "decor",
+          "id": "fridge",
+          "disabled": true,
+          "label": "60.00万"
+        },
+        {
+          "act": "decor",
+          "id": "chair",
+          "disabled": true,
+          "label": "400.00万"
+        },
+        {
+          "act": "decor",
+          "id": "aquarium",
+          "disabled": true,
+          "label": "3000.00万"
+        },
+        {
+          "act": "decor",
+          "id": "projector",
+          "disabled": true,
+          "label": "2.00亿"
+        },
+        {
+          "act": "decor",
+          "id": "catbed",
+          "disabled": true,
+          "label": "20.00亿"
+        }
+      ]
+    },
+    "S7b": {
+      "decor": [],
+      "energy": {
+        "date": "2026-11-27",
+        "left": 100,
+        "used": [],
+        "boosted": {
+          "idleMult": 1,
+          "patrolRewardMult": 1
+        }
+      },
+      "hudIdle": "0.2"
+    },
+    "S8": {
+      "moneyAtOpen": 9391.736639999996,
+      "plantDisabledAtOpen": null,
+      "crossed": {
+        "afterMs": 200,
+        "moyu": 10091.78,
+        "button": {
+          "disabled": false,
+          "label": "3000"
+        }
+      },
+      "poll": [
+        {
+          "t": 0,
+          "moyu": 10091.78,
+          "button": {
+            "disabled": false,
+            "label": "3000"
+          }
+        }
+      ],
+      "plantAtOpen": {
+        "disabled": false,
+        "label": "3000"
+      },
+      "staleAfterCross": false,
+      "plantAfterTabSwitch": {
+        "disabled": false,
+        "label": "3000"
+      },
+      "buyClick": "ok",
+      "decorAfterBuy": [
+        "plant"
+      ]
+    }
+  },
+  "consoleErrors": [],
+  "pageErrors": []
+}

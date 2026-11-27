@@ -885,7 +885,8 @@ body {
   margin: 8px 0 10px;
 }
 .team-tabs .tab {
-  padding: 6px 12px;
+  padding: 8px 12px;
+  min-height: 44px;
   font-size: 13px;
   font-family: inherit;
   color: #b8b39c;
@@ -1280,3 +1281,63 @@ body.choice-open .shop-row {
   white-space: nowrap;
 }
 #hud-card.hidden { display: none; }
+
+/* 整行可点（小按钮友好） */
+.row-tap {
+  cursor: pointer;
+  min-height: 46px;
+  padding: 8px 4px;
+}
+.row-tap:active {
+  background: #45455f;
+}
+.row-tap[data-disabled="1"] {
+  cursor: default;
+  opacity: 0.75;
+}
+#btn-team .energy-badge {
+  position: absolute;
+  left: -48px;
+  top: 40px;
+  padding: 2px 5px;
+  font-size: 10px;
+  line-height: 1.2;
+  color: #10241a;
+  background: #8be28b;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+/* 无障碍：工位/精力控件尺寸、对比度、动效偏好 */
+.talent button {
+  min-height: 44px;
+  min-width: 64px;
+  font-size: 12px;
+}
+.talent-dot {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  font-size: 11px;
+  line-height: 18px;
+}
+.talent-name {
+  font-size: 13px;
+}
+.talent-desc {
+  font-size: 12px;
+}
+.branch h3 small,
+#team-body small {
+  color: #a9b6dd !important; /* 对比度 4.22 → ≥6 */
+}
+.mate-actions button {
+  min-height: 44px;
+  font-size: 13px;
+}
+@media (prefers-reduced-motion: reduce) {
+  body.choice-open #shop-cards,
+  .row-tap:active {
+    transition: none;
+  }
+}

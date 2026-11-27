@@ -412,7 +412,8 @@ export class Scene {
       R(bx, by + 0.35 * u, 1.5 * u, 0.42 * u, "#a4643f"); // 窝底
       R(bx + 0.05 * u, by, 1.4 * u, 0.45 * u, "#c47a4f"); // 窝沿
       // 猫（趴着，尾巴动）
-      const wobble = Math.sin(performance.now() / 420) * 0.06;
+      const reduceMotion = typeof matchMedia === "function" && matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const wobble = reduceMotion ? 0 : Math.sin(performance.now() / 420) * 0.06;
       R(bx + 0.35 * u, by + 0.06 * u, 0.8 * u, 0.32 * u, "#f0d8b8"); // 身体
       R(bx + 0.95 * u, by - 0.02 * u, 0.35 * u, 0.3 * u, "#f0d8b8"); // 头
       R(bx + 1.02 * u, by + 0.06 * u, 0.07 * u, 0.09 * u, "#3a3020"); // 眼

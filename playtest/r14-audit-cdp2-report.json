@@ -1,0 +1,286 @@
+{
+  "startedAt": "2026-11-27T11:09:55.510Z",
+  "url": "http://127.0.0.1:5173/",
+  "scenarios": {
+    "P1": {
+      "viewport": "1280x800",
+      "colors": {
+        "plant": {
+          "count": 3768,
+          "w": 900,
+          "h": 581,
+          "cssW": 900,
+          "cssH": 581
+        },
+        "lamp": {
+          "count": 630,
+          "w": 900,
+          "h": 581,
+          "cssW": 900,
+          "cssH": 581
+        },
+        "fridge": {
+          "count": 5756,
+          "w": 900,
+          "h": 581,
+          "cssW": 900,
+          "cssH": 581
+        },
+        "chair": {
+          "count": 278,
+          "w": 900,
+          "h": 581,
+          "cssW": 900,
+          "cssH": 581
+        },
+        "aquariumWater": {
+          "count": 0,
+          "w": 900,
+          "h": 581,
+          "cssW": 900,
+          "cssH": 581
+        },
+        "aquariumFrame": {
+          "count": 11,
+          "w": 900,
+          "h": 581,
+          "cssW": 900,
+          "cssH": 581
+        },
+        "aquariumBase": {
+          "count": 0,
+          "w": 900,
+          "h": 581,
+          "cssW": 900,
+          "cssH": 581
+        },
+        "aquariumFish": {
+          "count": 0,
+          "w": 900,
+          "h": 581,
+          "cssW": 900,
+          "cssH": 581
+        },
+        "projector": {
+          "count": 3788,
+          "w": 900,
+          "h": 581,
+          "cssW": 900,
+          "cssH": 581
+        },
+        "catbed": {
+          "count": 1084,
+          "w": 900,
+          "h": 581,
+          "cssW": 900,
+          "cssH": 581
+        }
+      },
+      "canvas": {
+        "count": 0,
+        "w": 900,
+        "h": 581,
+        "cssW": 900,
+        "cssH": 581
+      },
+      "scene": "playtest/r14-audit-desktop-aquarium.png",
+      "geometry": {
+        "cssW": 900,
+        "cssH": 581,
+        "scale": 4,
+        "vh": 145.25,
+        "groundY": 78.05,
+        "aquariumY": -19.55,
+        "aquariumH": 17.6,
+        "visibleIfYge0": false
+      }
+    },
+    "P2": {
+      "viewport": "390x844",
+      "colors": {
+        "plant": {
+          "count": 2018,
+          "w": 390,
+          "h": 625,
+          "cssW": 390,
+          "cssH": 625
+        },
+        "lamp": {
+          "count": 0,
+          "w": 390,
+          "h": 625,
+          "cssW": 390,
+          "cssH": 625
+        },
+        "fridge": {
+          "count": 3164,
+          "w": 390,
+          "h": 625,
+          "cssW": 390,
+          "cssH": 625
+        },
+        "chair": {
+          "count": 0,
+          "w": 390,
+          "h": 625,
+          "cssW": 390,
+          "cssH": 625
+        },
+        "aquariumWater": {
+          "count": 593,
+          "w": 390,
+          "h": 625,
+          "cssW": 390,
+          "cssH": 625
+        },
+        "aquariumFrame": {
+          "count": 117,
+          "w": 390,
+          "h": 625,
+          "cssW": 390,
+          "cssH": 625
+        },
+        "aquariumBase": {
+          "count": 68,
+          "w": 390,
+          "h": 625,
+          "cssW": 390,
+          "cssH": 625
+        },
+        "aquariumFish": {
+          "count": 0,
+          "w": 390,
+          "h": 625,
+          "cssW": 390,
+          "cssH": 625
+        },
+        "projector": {
+          "count": 2986,
+          "w": 390,
+          "h": 625,
+          "cssW": 390,
+          "cssH": 625
+        },
+        "catbed": {
+          "count": 589,
+          "w": 390,
+          "h": 625,
+          "cssW": 390,
+          "cssH": 625
+        }
+      },
+      "scene": "playtest/r14-audit-mobile-aquarium.png",
+      "geometry": {
+        "cssW": 390,
+        "cssH": 625,
+        "scale": 3,
+        "vh": 208.33,
+        "groundY": 141.13,
+        "aquariumY": 43.53,
+        "visibleIfYge0": true
+      }
+    },
+    "P3": {
+      "poll": [
+        {
+          "ms": 200,
+          "moyu": 1994.33,
+          "disabled": true,
+          "label": "3000"
+        },
+        {
+          "ms": 400,
+          "moyu": 2134.37,
+          "disabled": true,
+          "label": "3000"
+        },
+        {
+          "ms": 600,
+          "moyu": 2274.41,
+          "disabled": true,
+          "label": "3000"
+        },
+        {
+          "ms": 800,
+          "moyu": 2414.45,
+          "disabled": true,
+          "label": "3000"
+        },
+        {
+          "ms": 1000,
+          "moyu": 2554.49,
+          "disabled": true,
+          "label": "3000"
+        },
+        {
+          "ms": 1200,
+          "moyu": 2706.16,
+          "disabled": true,
+          "label": "3000"
+        },
+        {
+          "ms": 1400,
+          "moyu": 2846.2,
+          "disabled": true,
+          "label": "3000"
+        },
+        {
+          "ms": 1600,
+          "moyu": 2986.24,
+          "disabled": true,
+          "label": "3000"
+        },
+        {
+          "ms": 1800,
+          "moyu": 3126.28,
+          "disabled": true,
+          "label": "3000"
+        },
+        {
+          "ms": 2000,
+          "moyu": 3266.32,
+          "disabled": true,
+          "label": "3000"
+        }
+      ],
+      "moneyAtOpen": 1842.6,
+      "hudIdleAtOpen": "700.2",
+      "plantAtOpen": {
+        "disabled": true,
+        "label": "3000"
+      },
+      "crossed": {
+        "ms": 2000,
+        "moyu": 3266.32,
+        "disabled": true,
+        "label": "3000"
+      },
+      "staleWhileEnough": true,
+      "plantAfterTabSwitch": {
+        "disabled": false,
+        "label": "3000"
+      },
+      "decorAfterBuy": [
+        "plant"
+      ],
+      "screenshot": "playtest/r14-audit-stale-button.png"
+    },
+    "P4": {
+      "favorBefore": 10,
+      "favorAfter": 13,
+      "energyAfter": {
+        "date": "2026-11-27",
+        "left": 75,
+        "used": [
+          "social"
+        ],
+        "boosted": {
+          "idleMult": 1,
+          "patrolRewardMult": 1
+        }
+      }
+    }
+  },
+  "consoleErrors": [],
+  "pageErrors": []
+}

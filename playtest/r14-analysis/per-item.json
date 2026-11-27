@@ -1,0 +1,367 @@
+{
+ "per_item": {
+  "plant": {
+   "noise": {
+    "changedPct": 0.0,
+    "changedPx": 0,
+    "maxDelta": 0,
+    "bbox": null
+   },
+   "behind_panel": {
+    "changedPct": 40.85,
+    "changedPx": 19255,
+    "maxDelta": 118,
+    "bbox": [
+     40,
+     19,
+     156,
+     258
+    ]
+   },
+   "cross_stage": {
+    "changedPct": 40.85,
+    "changedPx": 19255,
+    "maxDelta": 118,
+    "bbox": [
+     40,
+     19,
+     156,
+     258
+    ]
+   },
+   "whole": {
+    "changedPct": 2.02,
+    "changedPx": 19651,
+    "maxDelta": 158,
+    "bbox": [
+     78,
+     572,
+     651,
+     846
+    ]
+   }
+  },
+  "lamp": {
+   "noise": {
+    "changedPct": 2.35,
+    "changedPx": 1756,
+    "maxDelta": 193,
+    "bbox": [
+     0,
+     12,
+     42,
+     179
+    ]
+   },
+   "behind_panel": {
+    "changedPct": 19.01,
+    "changedPx": 14181,
+    "maxDelta": 193,
+    "bbox": [
+     0,
+     34,
+     143,
+     191
+    ]
+   },
+   "cross_stage": {
+    "changedPct": 19.16,
+    "changedPx": 14295,
+    "maxDelta": 193,
+    "bbox": [
+     0,
+     23,
+     143,
+     191
+    ]
+   },
+   "whole": {
+    "changedPct": 4.1,
+    "changedPx": 40003,
+    "maxDelta": 255,
+    "bbox": [
+     290,
+     197,
+     651,
+     799
+    ]
+   }
+  },
+  "rug": {
+   "noise": {
+    "changedPct": 0.0,
+    "changedPx": 0,
+    "maxDelta": 0,
+    "bbox": null
+   },
+   "behind_panel": {
+    "changedPct": 48.08,
+    "changedPx": 55477,
+    "maxDelta": 32,
+    "bbox": [
+     62,
+     20,
+     569,
+     148
+    ]
+   },
+   "cross_stage": {
+    "changedPct": 48.08,
+    "changedPx": 55477,
+    "maxDelta": 32,
+    "bbox": [
+     62,
+     20,
+     569,
+     148
+    ]
+   },
+   "whole": {
+    "changedPct": 8.82,
+    "changedPx": 85993,
+    "maxDelta": 255,
+    "bbox": [
+     135,
+     197,
+     651,
+     1081
+    ]
+   }
+  },
+  "fridge": {
+   "noise": {
+    "changedPct": 0.0,
+    "changedPx": 0,
+    "maxDelta": 0,
+    "bbox": null
+   },
+   "behind_panel": {
+    "changedPct": 46.7,
+    "changedPx": 14525,
+    "maxDelta": 176,
+    "bbox": [
+     19,
+     19,
+     115,
+     215
+    ]
+   },
+   "cross_stage": {
+    "changedPct": 46.7,
+    "changedPx": 14525,
+    "maxDelta": 176,
+    "bbox": [
+     19,
+     19,
+     115,
+     215
+    ]
+   },
+   "whole": {
+    "changedPct": 1.81,
+    "changedPx": 17657,
+    "maxDelta": 255,
+    "bbox": [
+     19,
+     512,
+     651,
+     846
+    ]
+   }
+  },
+  "chair": {
+   "noise": {
+    "changedPct": 0.23,
+    "changedPx": 72,
+    "maxDelta": 109,
+    "bbox": [
+     87,
+     112,
+     98,
+     117
+    ]
+   },
+   "behind_panel": {
+    "changedPct": 42.98,
+    "changedPx": 13534,
+    "maxDelta": 109,
+    "bbox": [
+     24,
+     28,
+     143,
+     181
+    ]
+   },
+   "cross_stage": {
+    "changedPct": 42.87,
+    "changedPx": 13498,
+    "maxDelta": 109,
+    "bbox": [
+     24,
+     28,
+     143,
+     181
+    ]
+   },
+   "whole": {
+    "changedPct": 9.71,
+    "changedPx": 94631,
+    "maxDelta": 217,
+    "bbox": [
+     109,
+     48,
+     696,
+     846
+    ]
+   }
+  },
+  "aquarium": {
+   "noise": {
+    "changedPct": 0.0,
+    "changedPx": 0,
+    "maxDelta": 0,
+    "bbox": null
+   },
+   "behind_panel": {
+    "changedPct": 54.14,
+    "changedPx": 18921,
+    "maxDelta": 187,
+    "bbox": [
+     21,
+     19,
+     179,
+     146
+    ]
+   },
+   "cross_stage": {
+    "changedPct": 54.14,
+    "changedPx": 18921,
+    "maxDelta": 187,
+    "bbox": [
+     21,
+     19,
+     179,
+     146
+    ]
+   },
+   "whole": {
+    "changedPct": 10.29,
+    "changedPx": 100281,
+    "maxDelta": 217,
+    "bbox": [
+     109,
+     48,
+     670,
+     799
+    ]
+   }
+  },
+  "projector": {
+   "noise": {
+    "changedPct": 0.0,
+    "changedPx": 0,
+    "maxDelta": 0,
+    "bbox": null
+   },
+   "behind_panel": {
+    "changedPct": 28.78,
+    "changedPx": 19795,
+    "maxDelta": 142,
+    "bbox": [
+     29,
+     19,
+     314,
+     210
+    ]
+   },
+   "cross_stage": {
+    "changedPct": 28.78,
+    "changedPx": 19795,
+    "maxDelta": 142,
+    "bbox": [
+     29,
+     19,
+     314,
+     210
+    ]
+   },
+   "whole": {
+    "changedPct": 7.11,
+    "changedPx": 69275,
+    "maxDelta": 158,
+    "bbox": [
+     265,
+     19,
+     734,
+     845
+    ]
+   }
+  },
+  "catbed": {
+   "noise": {
+    "changedPct": 1.13,
+    "changedPx": 264,
+    "maxDelta": 105,
+    "bbox": [
+     38,
+     51,
+     61,
+     65
+    ]
+   },
+   "behind_panel": {
+    "changedPct": 38.44,
+    "changedPx": 9005,
+    "maxDelta": 157,
+    "bbox": [
+     28,
+     31,
+     172,
+     96
+    ]
+   },
+   "cross_stage": {
+    "changedPct": 38.44,
+    "changedPx": 9005,
+    "maxDelta": 157,
+    "bbox": [
+     28,
+     31,
+     172,
+     96
+    ]
+   },
+   "whole": {
+    "changedPct": 1.19,
+    "changedPx": 11633,
+    "maxDelta": 255,
+    "bbox": [
+     332,
+     506,
+     651,
+     837
+    ]
+   }
+  }
+ },
+ "geometry": {
+  "mobile": {
+   "vw": 130.0,
+   "vh": 208.33333333333334,
+   "groundY": 141.13333333333333,
+   "f": 6
+  },
+  "initial": {
+   "vw": 130.0,
+   "vh": 184.0,
+   "groundY": 116.8,
+   "f": 6
+  },
+  "desktop": {
+   "vw": 225.0,
+   "vh": 145.25,
+   "groundY": 78.05,
+   "f": 4
+  }
+ }
+}

@@ -33,7 +33,7 @@ import { CardPanel } from "./ui/card-panel";
 import { BossChoicePanel } from "./ui/boss-panel";
 import { CARDS, chooseCard, dismissCards, ensureCards } from "./engine/cards";
 import { onBossChoice } from "./engine/events";
-import { buyDecor, decorDef } from "./engine/decor";
+import { DECOR, buyDecor, decorDef } from "./engine/decor";
 import { energyActionDef, ensureEnergy, useEnergy } from "./engine/energy";
 import { CHOICE_SECONDS } from "./engine/boss-choice";
 import { cardEffects } from "./engine/cards";
@@ -243,7 +243,10 @@ async function boot(): Promise<void> {
         state = next;
         hud.refresh(state);
         teamPanel.refreshNow(state);
-        showToast(`已装修：${decorDef(id)?.name ?? ""}`);
+        const def = decorDef(id);
+        const msg = `已装修：${def?.name ?? ""}（${def?.desc ?? ""}）`;
+        showToast(msg);
+        announce(msg, 1);
         serialize(state, localStorageAdapter, Date.now());
       }
     },
@@ -253,7 +256,31 @@ async function boot(): Promise<void> {
         state = next;
         hud.refresh(state);
         teamPanel.refreshNow(state);
-        showToast(`精力已使用：${energyActionDef(id as never)?.name ?? ""}`);
+        const def = energyActionDef(id as never);
+        const msg = `精力已使用：${def?.name ?? ""}（剩余 ${state.energy.left} 点）`;
+        showToast(msg);
+        announce(msg, 1);
+        if (state.energy.used.length >= 3) {
+          setTimeout(() => announce("今日精力已用完"), 400);
+        }
+        serialize(state, localStorageAdapter, Date.now());
+      }
+    },
+    onUseAllEnergy: () => {
+      let used = 0;
+      for (const a of ["slack", "fake-work", "social"] as const) {
+        const next = useEnergy(state, a);
+        if (next) {
+          state = next;
+          used++;
+        }
+      }
+      if (used > 0) {
+        hud.refresh(state);
+        teamPanel.refreshNow(state);
+        const msg = `已使用 ${used} 项精力（剩余 ${state.energy.left} 点）`;
+        showToast(msg);
+        announce(msg, 1);
         serialize(state, localStorageAdapter, Date.now());
       }
     },
@@ -472,8 +499,13 @@ async function boot(): Promise<void> {
     toastTimer = window.setTimeout(() => toastEl.classList.remove("show"), 1800);
   };
 
-  const announce = (text: string): void => {
+  let announceLockUntil = 0;
+  const announce = (text: string, priority = 0): void => {
+    const now = Date.now();
+    // 操作反馈（priority=1）锁定 500ms，避免被段位/章节等系统播报立刻覆盖
+    if (priority === 0 && now < announceLockUntil) return;
     if (srLive) srLive.textContent = text; // aria-live 区域：读屏可听到关键事件
+    if (priority === 1) announceLockUntil = now + 500;
   };
   const toast = (text: string): void => {
     // 短文本走 canvas 飘字（跟着场景），长文本走 DOM toast（不折行不截断）
@@ -614,6 +646,16 @@ async function boot(): Promise<void> {
       const ch = chapterFor(state.lifetimeEarned);
       scene.note = ch.title;
       scene.decor = state.decor; // 工位家具（看得见的成长）
+      // canvas 内容的读屏替代：装修摘要
+      {
+        const el = document.getElementById("decor-summary");
+        if (el) {
+          const names = state.decor.map((id) => DECOR.find((d) => d.id === id)).filter(Boolean);
+          el.textContent = names.length
+            ? `工位已装修：${names.map((d) => `${d!.name}（${d!.desc}）`).join("、")}`
+            : "工位尚未装修";
+        }
+      }
       scene.palette = ch.palette;
       if (lastChapterId && ch.id !== lastChapterId) toast(`新章节：${ch.title}`);
       lastChapterId = ch.id;

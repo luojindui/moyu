@@ -1,0 +1,89 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "booted": true,
+  "decorPanelText": "摸鱼小队\n✕\n同事\n天赋\n工位\n天赋点 6\n已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%\n今日精力 （剩 100/100）\n40\n认真摸鱼 今天挂机 +25% · 花 40 精力\n使用\n35\n假装工作 今天巡逻奖励 +80% · 花 35 精力\n使用\n25\n跟同事聊天 全体同事好感 +3 · 花 25 精力\n使用\n一键全用（3 项，共 100 精力）\n每天 100 点，效果持续到当天结束；3 项合计正好 100\n工位家具 （已装修 0/8）\n绿萝 工位挂机 +5%\n3000\n护眼台灯 点击力 +15%\n2.00万\n毛绒地毯 离线效率 +5%\n12.00万\n迷你冰箱 工位挂机 +8%\n60.00万\n按摩椅 离线效率 +8%\n400.00万\n鱼缸 挂机 +10%、点击 +10%\n3000.00万\n投影仪 派遣奖励 +30%\n2.00亿\n工位猫窝 挂机 +15%、离线 +10%\n20.00亿",
+  "energyButtons": [
+    {
+      "id": "slack",
+      "text": "使用",
+      "disabled": false
+    },
+    {
+      "id": "fake-work",
+      "text": "使用",
+      "disabled": false
+    },
+    {
+      "id": "social",
+      "text": "使用",
+      "disabled": false
+    }
+  ],
+  "decorButtons": [
+    {
+      "id": "plant",
+      "text": "3000",
+      "disabled": false
+    },
+    {
+      "id": "lamp",
+      "text": "2.00万",
+      "disabled": false
+    },
+    {
+      "id": "rug",
+      "text": "12.00万",
+      "disabled": false
+    },
+    {
+      "id": "fridge",
+      "text": "60.00万",
+      "disabled": false
+    },
+    {
+      "id": "chair",
+      "text": "400.00万",
+      "disabled": false
+    },
+    {
+      "id": "aquarium",
+      "text": "3000.00万",
+      "disabled": false
+    },
+    {
+      "id": "projector",
+      "text": "2.00亿",
+      "disabled": false
+    },
+    {
+      "id": "catbed",
+      "text": "20.00亿",
+      "disabled": false
+    }
+  ],
+  "energyBefore": "{\"date\":\"2026-11-27\",\"left\":100,\"used\":[],\"boosted\":{\"idleMult\":1,\"patrolRewardMult\":1}}",
+  "energyClicks": [
+    {
+      "id": "slack",
+      "action": "clicked",
+      "energy": "{\"date\":\"2026-11-27\",\"left\":60,\"used\":[\"slack\"],\"boosted\":{\"idleMult\":1.25,\"patrolRewardMult\":1}}"
+    },
+    {
+      "id": "fake-work",
+      "action": "clicked",
+      "energy": "{\"date\":\"2026-11-27\",\"left\":25,\"used\":[\"slack\",\"fake-work\"],\"boosted\":{\"idleMult\":1.25,\"patrolRewardMult\":1.8}}"
+    },
+    {
+      "id": "social",
+      "action": "clicked",
+      "energy": "{\"date\":\"2026-11-27\",\"left\":0,\"used\":[\"slack\",\"fake-work\",\"social\"],\"boosted\":{\"idleMult\":1.25,\"patrolRewardMult\":1.8}}"
+    }
+  ],
+  "energyAfterAll": "{\"date\":\"2026-11-27\",\"left\":0,\"used\":[\"slack\",\"fake-work\",\"social\"],\"boosted\":{\"idleMult\":1.25,\"patrolRewardMult\":1.8}}",
+  "energyPanelTextAfter": "",
+  "decorBuy": "clicked",
+  "decorAfterBuy": "[\"plant\"]",
+  "decorPanelTextAfterBuy": "",
+  "toast": "",
+  "consoleErrors": []
+}

@@ -75,6 +75,7 @@ export interface TeamCallbacks {
   onResetTalents: () => void;
   onBuyDecor: (id: string) => void;
   onUseEnergy: (id: string) => void;
+  onUseAllEnergy: () => void;
 }
 
 /** 摸鱼小队面板（同事 / 天赋 两页） */
@@ -90,6 +91,7 @@ export class TeamPanel {
   private lastAt = 0;
   /** 上次渲染的结构签名（只有结构变化才整块重绘，避免点空） */
   private lastSig = "";
+  private lastFocused: HTMLElement | null = null;
   private timer: number | null = null;
 
   constructor(private cb: TeamCallbacks) {
@@ -119,6 +121,11 @@ export class TeamPanel {
     } catch {
       /* 忽略 */
     }
+    // 焦点进入面板（aria-modal 要求），关闭时归还
+    this.lastFocused = document.activeElement as HTMLElement | null;
+    setTimeout(() => {
+      (this.root.querySelector(".team-tabs .tab.active") as HTMLElement | null)?.focus();
+    }, 30);
     if (this.lastState) this.render(this.lastState, true);
     this.timer ??= window.setInterval(() => {
       if (this.lastState && this.isOpen) this.refresh(this.lastState);
@@ -127,6 +134,7 @@ export class TeamPanel {
 
   hide(): void {
     this.root.classList.add("hidden");
+    this.lastFocused?.focus?.();
     if (this.timer !== null) {
       clearInterval(this.timer);
       this.timer = null;
@@ -138,6 +146,9 @@ export class TeamPanel {
     this.tabColleagues.classList.toggle("active", tab === "colleagues");
     this.tabTalents.classList.toggle("active", tab === "talents");
     this.tabDecor.classList.toggle("active", tab === "decor");
+    this.tabColleagues.setAttribute("aria-selected", String(tab === "colleagues"));
+    this.tabTalents.setAttribute("aria-selected", String(tab === "talents"));
+    this.tabDecor.setAttribute("aria-selected", String(tab === "decor"));
     if (this.lastState) this.render(this.lastState, true);
   }
 
@@ -150,13 +161,22 @@ export class TeamPanel {
     setTimeout(() => el.remove(), 1400);
   }
 
-  /** 动作后立即刷新（绕过节流） */
+  /** 动作后立即刷新（绕过节流）；会尝试把焦点还给同一控件 */
   refreshNow(state: GameState): void {
+    const active = document.activeElement as HTMLElement | null;
+    const act = active?.dataset?.act;
+    const id = active?.dataset?.id;
     this.lastState = state;
     this.lastAt = 0;
     this.lastSig = "";
     if (this.isOpen) this.render(state, true);
     else this.refresh(state);
+    // 焦点恢复：渲染后找同一 act+id 的控件（找不到就落在当前 tab）
+    if (act) {
+      const sel = id ? `[data-act="${act}"][data-id="${id}"]` : `[data-act="${act}"]`;
+      const el = this.body.querySelector<HTMLElement>(sel) ?? (this.root.querySelector(".team-tabs .tab.active") as HTMLElement | null);
+      el?.focus?.();
+    }
   }
 
   /** 主循环调用：更新角标 + 面板内容（结构变化才重绘） */
@@ -165,6 +185,7 @@ export class TeamPanel {
     const btn = document.getElementById("btn-team");
     if (btn) {
       const n = claimableCount(state, Date.now());
+      const energyLeft = state.energy.left > 0 && state.energy.used.length < 3;
       let badge = btn.querySelector(".badge") as HTMLElement | null;
       if (n > 0) {
         if (!badge) {
@@ -176,7 +197,21 @@ export class TeamPanel {
       } else if (badge) {
         badge.remove();
       }
-      btn.setAttribute("aria-label", n > 0 ? `摸鱼小队，${n} 个任务可领取` : "摸鱼小队");
+      let energyBadge = btn.querySelector<HTMLElement>(".energy-badge");
+      if (energyLeft) {
+        if (!energyBadge) {
+          energyBadge = document.createElement("span");
+          energyBadge.className = "energy-badge";
+          btn.appendChild(energyBadge);
+        }
+        energyBadge.textContent = `精力 ${state.energy.left}`;
+      } else if (energyBadge) {
+        energyBadge.remove();
+      }
+      btn.setAttribute(
+        "aria-label",
+        n > 0 ? `摸鱼小队，${n} 个任务可领取` : energyLeft ? `摸鱼小队，还有精力 ${state.energy.left}` : "摸鱼小队",
+      );
     }
     if (!this.isOpen) return;
     const now = performance.now();
@@ -451,29 +486,35 @@ export class TeamPanel {
       ${ENERGY_ACTIONS.map((a) => {
         const used = energy.used.includes(a.id);
         const can = !used && energy.left >= a.cost;
-        return `<div class="talent ${used ? "on" : ""}">
-          <span class="talent-dot">${used ? "✓" : a.cost}</span>
+        return `<div class="talent row-tap ${used ? "on" : ""}" data-act="energy" data-id="${a.id}" data-disabled="${can ? "0" : "1"}">
+          <span class="talent-dot" aria-hidden="true">${used ? "✓" : a.cost}</span>
           <span class="talent-info">
             <span class="talent-name">${a.name}</span>
-            <span class="talent-desc">${a.desc}</span>
+            <span class="talent-desc">${a.desc} · 花 ${a.cost} 精力</span>
+            ${used ? '<span class="sr-only">已使用</span>' : ""}
           </span>
-          ${used ? "" : `<button data-act="energy" data-id="${a.id}" ${can ? "" : "disabled"}>使用</button>`}
+          ${used ? "" : `<button data-act="energy" data-id="${a.id}" aria-label="使用：${a.name}（消耗 ${a.cost} 精力，${a.desc}）" ${can ? "" : "disabled"}>使用</button>`}
         </div>`;
       }).join("")}
-      <div style="font-size:11px;color:#a8a493;margin-top:6px">每天 100 点，效果持续到当天结束</div>
+      <div class="mate-actions" style="margin-top:8px">
+        <button class="ghost" data-act="energy-all" ${energy.left >= 100 ? "" : "disabled"}>一键全用（3 项，共 100 精力）</button>
+      </div>
+      <div style="font-size:11px;color:#a8a493;margin-top:6px">每天 100 点，效果持续到当天结束；3 项合计正好 100</div>
     </div>`);
 
-    // 家具
+    // 家具（标题 + 列表语义，便于读屏跳转）
+    parts.push(`<h3 style="margin-top:10px">工位家具 <small style="color:#8f9fd0">（已装修 ${decorCount(state)}/8）</small></h3>`);
     for (const d of DECOR) {
       const owned = state.decor.includes(d.id);
       const can = canBuyDecor(state, d.id);
-      parts.push(`<div class="talent ${owned ? "on" : ""}">
-        <span class="talent-dot">${owned ? "✓" : ""}</span>
+      parts.push(`<div class="talent row-tap ${owned ? "on" : ""}" data-act="decor" data-id="${d.id}" data-disabled="${owned || !can ? "1" : "0"}">
+        <span class="talent-dot" aria-hidden="true">${owned ? "✓" : ""}</span>
         <span class="talent-info">
           <span class="talent-name">${d.name}</span>
           <span class="talent-desc">${d.desc}</span>
+          ${owned ? '<span class="sr-only">已装修</span>' : ""}
         </span>
-        ${owned ? "" : `<button data-act="decor" data-id="${d.id}" ${can ? "" : "disabled"}>${formatMoyu(d.cost)}</button>`}
+        ${owned ? "" : `<button data-act="decor" data-id="${d.id}" aria-label="购买：${d.name}，${formatMoyu(d.cost)}，效果${d.desc}" ${can ? "" : "disabled"}>${formatMoyu(d.cost)}</button>`}
       </div>`);
     }
     this.body.innerHTML = parts.join("");
@@ -481,6 +522,17 @@ export class TeamPanel {
   }
 
   private bindActions(): void {
+    // 整行可点（小按钮太小，碎片党点不准）
+    this.body.querySelectorAll<HTMLElement>(".row-tap[data-act]").forEach((row) => {
+      row.addEventListener("click", (e) => {
+        if (row.dataset.disabled === "1") return;
+        if ((e.target as HTMLElement).closest("button")) return; // 按钮自己处理
+        const act = row.dataset.act;
+        const id = row.dataset.id ?? "";
+        if (act === "energy") this.cb.onUseEnergy(id);
+        else if (act === "decor") this.cb.onBuyDecor(id);
+      });
+    });
     this.body.querySelectorAll<HTMLButtonElement>("button[data-act]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const act = btn.dataset.act;
@@ -495,6 +547,7 @@ export class TeamPanel {
         else if (act === "reset-talents") this.cb.onResetTalents();
         else if (act === "decor") this.cb.onBuyDecor(id);
         else if (act === "energy") this.cb.onUseEnergy(id as never);
+        else if (act === "energy-all") this.cb.onUseAllEnergy();
       });
     });
   }

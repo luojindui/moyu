@@ -1,0 +1,1234 @@
+{
+  "meta": {
+    "geometry": {
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "dpr": 2
+      },
+      "canvas": {
+        "cssW": 390,
+        "cssH": 552,
+        "pxW": 780,
+        "pxH": 1104,
+        "scale": 3,
+        "dpr": 2,
+        "vw": 130,
+        "vh": 184,
+        "groundY": 116.8
+      },
+      "f": 6,
+      "regions": {
+        "plant": {
+          "x": 38,
+          "y": 442,
+          "w": 182,
+          "h": 259
+        },
+        "lamp": {
+          "x": 438,
+          "y": 317,
+          "w": 288,
+          "h": 259
+        },
+        "rug": {
+          "x": 73,
+          "y": 787,
+          "w": 634,
+          "h": 182
+        },
+        "fridge": {
+          "x": 0,
+          "y": 485,
+          "w": 144,
+          "h": 216
+        },
+        "chair": {
+          "x": 553,
+          "y": 518,
+          "w": 173,
+          "h": 182
+        },
+        "aquarium": {
+          "x": 473,
+          "y": 86,
+          "w": 202,
+          "h": 173
+        },
+        "projector": {
+          "x": 236,
+          "y": 0,
+          "w": 326,
+          "h": 211
+        },
+        "catbed": {
+          "x": 304,
+          "y": 595,
+          "w": 221,
+          "h": 106
+        },
+        "clock": {
+          "x": 511,
+          "y": 106,
+          "w": 182,
+          "h": 182
+        },
+        "cooler": {
+          "x": 593,
+          "y": 595,
+          "w": 106,
+          "h": 106
+        },
+        "pendant": {
+          "x": 299,
+          "y": 91,
+          "w": 182,
+          "h": 53
+        },
+        "board": {
+          "x": 406,
+          "y": 278,
+          "w": 240,
+          "h": 154
+        }
+      },
+      "overlaps": {
+        "冰箱×绿萝": {
+          "w": 4.8,
+          "h": 13.6
+        },
+        "鱼缸×挂钟": {
+          "w": 20.6,
+          "h": 21.1
+        },
+        "投影仪×吊灯": {
+          "w": 25.6,
+          "h": 5.1
+        },
+        "按摩椅×饮水机": {
+          "w": 16,
+          "h": 16
+        },
+        "猫窝×猫窝区(地面)": {
+          "w": 24,
+          "h": 12.3
+        }
+      }
+    },
+    "viewport": {
+      "w": 390,
+      "h": 844,
+      "dpr": 2
+    },
+    "errorsAfter": [],
+    "finalHud": {
+      "moyu": "77.65亿",
+      "click": "1.3",
+      "idle": "0.4",
+      "rank": "星人 0%"
+    }
+  },
+  "stages": [
+    {
+      "id": "s0-initial",
+      "label": "初始（0 装修，未加钱）",
+      "decor": [],
+      "decorCount": 0,
+      "moyu": 0.6933000000000008,
+      "hud": {
+        "moyu": "0.7",
+        "click": "1",
+        "idle": "0.2",
+        "rank": "实习生 0%"
+      },
+      "hintVisible": true
+    },
+    {
+      "id": "s1-grant-nobuy",
+      "label": "已加钱（1e10）但 0 装修",
+      "decor": [],
+      "decorCount": 0,
+      "moyu": 10000000002.00664,
+      "hud": {
+        "moyu": "100.00亿",
+        "click": "1",
+        "idle": "0.2",
+        "rank": "星人 0%"
+      },
+      "hintVisible": true
+    },
+    {
+      "id": "s3-all",
+      "label": "8 件全买",
+      "decor": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair",
+        "aquarium",
+        "projector",
+        "catbed"
+      ],
+      "decorCount": 8,
+      "moyu": 7765257010.597509,
+      "hud": {
+        "moyu": "77.65亿",
+        "click": "1.3",
+        "idle": "0.3",
+        "rank": "星人 0%"
+      },
+      "hintVisible": true
+    }
+  ],
+  "buys": [
+    {
+      "i": 1,
+      "id": "plant",
+      "btnText": "3000",
+      "buyBtnRect": {
+        "w": 50,
+        "h": 27
+      },
+      "rowH": 40,
+      "disabledBefore": false,
+      "moneyBefore": 10000000002.273293,
+      "moneyAfter": 9999997002.329288,
+      "spent": 2999.944004058838,
+      "decorBefore": [],
+      "decorAfter": [
+        "plant"
+      ],
+      "toast": {
+        "text": "已装修：绿萝",
+        "shown": true,
+        "y": 108,
+        "h": 40
+      },
+      "panelRowOwned": {
+        "dot": "✓",
+        "hasButton": false
+      },
+      "sceneCanvasBytes": {
+        "before": null,
+        "after": null
+      }
+    },
+    {
+      "i": 2,
+      "id": "lamp",
+      "btnText": "2.00万",
+      "buyBtnRect": {
+        "w": 56,
+        "h": 30
+      },
+      "rowH": 43,
+      "disabledBefore": false,
+      "moneyBefore": 9999997003.179918,
+      "moneyAfter": 9999977003.235935,
+      "spent": 19999.943983078003,
+      "decorBefore": [
+        "plant"
+      ],
+      "decorAfter": [
+        "plant",
+        "lamp"
+      ],
+      "toast": {
+        "text": "已装修：护眼台灯",
+        "shown": true,
+        "y": 108,
+        "h": 40
+      },
+      "panelRowOwned": {
+        "dot": "✓",
+        "hasButton": false
+      },
+      "sceneCanvasBytes": {
+        "before": null,
+        "after": null
+      }
+    },
+    {
+      "i": 3,
+      "id": "rug",
+      "btnText": "12.00万",
+      "buyBtnRect": {
+        "w": 62,
+        "h": 30
+      },
+      "rowH": 43,
+      "disabledBefore": false,
+      "moneyBefore": 9999977004.009544,
+      "moneyAfter": 9999857004.069048,
+      "spent": 119999.9404964447,
+      "decorBefore": [
+        "plant",
+        "lamp"
+      ],
+      "decorAfter": [
+        "plant",
+        "lamp",
+        "rug"
+      ],
+      "toast": {
+        "text": "已装修：毛绒地毯",
+        "shown": true,
+        "y": 108,
+        "h": 40
+      },
+      "panelRowOwned": {
+        "dot": "✓",
+        "hasButton": false
+      },
+      "sceneCanvasBytes": {
+        "before": null,
+        "after": null
+      }
+    },
+    {
+      "i": 4,
+      "id": "fridge",
+      "btnText": "60.00万",
+      "buyBtnRect": {
+        "w": 64,
+        "h": 30
+      },
+      "rowH": 43,
+      "disabledBefore": false,
+      "moneyBefore": 9999857004.846144,
+      "moneyAfter": 9999257004.906637,
+      "spent": 599999.9395065308,
+      "decorBefore": [
+        "plant",
+        "lamp",
+        "rug"
+      ],
+      "decorAfter": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge"
+      ],
+      "toast": {
+        "text": "已装修：迷你冰箱",
+        "shown": true,
+        "y": 108,
+        "h": 40
+      },
+      "panelRowOwned": {
+        "dot": "✓",
+        "hasButton": false
+      },
+      "sceneCanvasBytes": {
+        "before": null,
+        "after": null
+      }
+    },
+    {
+      "i": 5,
+      "id": "chair",
+      "btnText": "400.00万",
+      "buyBtnRect": {
+        "w": 71,
+        "h": 30
+      },
+      "rowH": 43,
+      "disabledBefore": false,
+      "moneyBefore": 9999257005.742067,
+      "moneyAfter": 9995257005.802538,
+      "spent": 3999999.939529419,
+      "decorBefore": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge"
+      ],
+      "decorAfter": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair"
+      ],
+      "toast": {
+        "text": "已装修：按摩椅",
+        "shown": true,
+        "y": 108,
+        "h": 40
+      },
+      "panelRowOwned": {
+        "dot": "✓",
+        "hasButton": false
+      },
+      "sceneCanvasBytes": {
+        "before": null,
+        "after": null
+      }
+    },
+    {
+      "i": 6,
+      "id": "aquarium",
+      "btnText": "3000.00万",
+      "buyBtnRect": {
+        "w": 77,
+        "h": 30
+      },
+      "rowH": 43,
+      "disabledBefore": false,
+      "moneyBefore": 9995257006.64931,
+      "moneyAfter": 9965257006.71581,
+      "spent": 29999999.933498383,
+      "decorBefore": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair"
+      ],
+      "decorAfter": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair",
+        "aquarium"
+      ],
+      "toast": {
+        "text": "已装修：鱼缸",
+        "shown": true,
+        "y": 108,
+        "h": 40
+      },
+      "panelRowOwned": {
+        "dot": "✓",
+        "hasButton": false
+      },
+      "sceneCanvasBytes": {
+        "before": null,
+        "after": null
+      }
+    },
+    {
+      "i": 7,
+      "id": "projector",
+      "btnText": "2.00亿",
+      "buyBtnRect": {
+        "w": 56,
+        "h": 30
+      },
+      "rowH": 43,
+      "disabledBefore": false,
+      "moneyBefore": 9965257007.634584,
+      "moneyAfter": 9765257007.709393,
+      "spent": 199999999.92519188,
+      "decorBefore": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair",
+        "aquarium"
+      ],
+      "decorAfter": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair",
+        "aquarium",
+        "projector"
+      ],
+      "toast": {
+        "text": "已装修：投影仪",
+        "shown": true,
+        "y": 108,
+        "h": 40
+      },
+      "panelRowOwned": {
+        "dot": "✓",
+        "hasButton": false
+      },
+      "sceneCanvasBytes": {
+        "before": null,
+        "after": null
+      }
+    },
+    {
+      "i": 8,
+      "id": "catbed",
+      "btnText": "20.00亿",
+      "buyBtnRect": {
+        "w": 63,
+        "h": 30
+      },
+      "rowH": 42,
+      "disabledBefore": false,
+      "moneyBefore": 9765257008.628141,
+      "moneyAfter": 7765257008.708824,
+      "spent": 1999999999.9193172,
+      "decorBefore": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair",
+        "aquarium",
+        "projector"
+      ],
+      "decorAfter": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair",
+        "aquarium",
+        "projector",
+        "catbed"
+      ],
+      "toast": {
+        "text": "已装修：工位猫窝",
+        "shown": true,
+        "y": 108,
+        "h": 40
+      },
+      "panelRowOwned": {
+        "dot": "✓",
+        "hasButton": false
+      },
+      "sceneCanvasBytes": {
+        "before": null,
+        "after": null
+      }
+    }
+  ],
+  "panelBefore": {
+    "summary": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%",
+    "energyTitle": "今日精力 （剩 100/100）",
+    "energy": [
+      {
+        "name": "认真摸鱼",
+        "desc": "今天挂机 +25%",
+        "dot": "40",
+        "btnText": "使用",
+        "btnDisabled": false,
+        "btnRect": {
+          "w": 44,
+          "h": 30
+        }
+      },
+      {
+        "name": "假装工作",
+        "desc": "今天巡逻奖励 +80%",
+        "dot": "35",
+        "btnText": "使用",
+        "btnDisabled": false,
+        "btnRect": {
+          "w": 44,
+          "h": 30
+        }
+      },
+      {
+        "name": "跟同事聊天",
+        "desc": "全体同事好感 +3",
+        "dot": "25",
+        "btnText": "使用",
+        "btnDisabled": false,
+        "btnRect": {
+          "w": 44,
+          "h": 30
+        }
+      }
+    ],
+    "decor": [
+      {
+        "name": "绿萝",
+        "desc": "工位挂机 +5%",
+        "dot": "",
+        "btnText": "3000",
+        "btnDisabled": true,
+        "btnRect": {
+          "w": 50,
+          "h": 27
+        }
+      },
+      {
+        "name": "护眼台灯",
+        "desc": "点击力 +15%",
+        "dot": "",
+        "btnText": "2.00万",
+        "btnDisabled": true,
+        "btnRect": {
+          "w": 56,
+          "h": 30
+        }
+      },
+      {
+        "name": "毛绒地毯",
+        "desc": "离线效率 +5%",
+        "dot": "",
+        "btnText": "12.00万",
+        "btnDisabled": true,
+        "btnRect": {
+          "w": 62,
+          "h": 30
+        }
+      },
+      {
+        "name": "迷你冰箱",
+        "desc": "工位挂机 +8%",
+        "dot": "",
+        "btnText": "60.00万",
+        "btnDisabled": true,
+        "btnRect": {
+          "w": 64,
+          "h": 30
+        }
+      },
+      {
+        "name": "按摩椅",
+        "desc": "离线效率 +8%",
+        "dot": "",
+        "btnText": "400.00万",
+        "btnDisabled": true,
+        "btnRect": {
+          "w": 71,
+          "h": 30
+        }
+      },
+      {
+        "name": "鱼缸",
+        "desc": "挂机 +10%、点击 +10%",
+        "dot": "",
+        "btnText": "3000.00万",
+        "btnDisabled": true,
+        "btnRect": {
+          "w": 77,
+          "h": 30
+        }
+      },
+      {
+        "name": "投影仪",
+        "desc": "派遣奖励 +30%",
+        "dot": "",
+        "btnText": "2.00亿",
+        "btnDisabled": true,
+        "btnRect": {
+          "w": 56,
+          "h": 30
+        }
+      },
+      {
+        "name": "工位猫窝",
+        "desc": "挂机 +15%、离线 +10%",
+        "dot": "",
+        "btnText": "20.00亿",
+        "btnDisabled": true,
+        "btnRect": {
+          "w": 63,
+          "h": 30
+        }
+      }
+    ],
+    "imagesInPanel": 0,
+    "bodyText": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0% | 今日精力 （剩 100/100） | 40 | 认真摸鱼 今天挂机 +25% | 使用 | 35 | 假装工作 今天巡逻奖励 +80% | 使用 | 25 | 跟同事聊天 全体同事好感 +3 | 使用 | 每天 100 点，效果持续到当天结束 | 绿萝 工位挂机 +5% | 3000 | 护眼台灯 点击力 +15% | 2.00万 | 毛绒地毯 离线效率 +5% | 12.00万 | 迷你冰箱 工位挂机 +8% | 60.00万 | 按摩椅 离线效率 +8% | 400.00万 | 鱼缸 挂机 +10%、点击 +10% | 3000.00万 | 投影仪 派遣奖励 +30% | 2.00亿 | 工位猫窝 挂机 +15%、离线 +10% | 20.00亿",
+    "scrollHeight": 651,
+    "clientHeight": 613
+  },
+  "panelAfter": {
+    "summary": "已装修 8/8 · 挂机 ×1.43 · 点击 ×1.26 · 离线 +23%",
+    "energyTitle": "今日精力 （剩 100/100）",
+    "energy": [
+      {
+        "name": "认真摸鱼",
+        "desc": "今天挂机 +25%",
+        "dot": "40",
+        "btnText": "使用",
+        "btnDisabled": false,
+        "btnRect": {
+          "w": 44,
+          "h": 30
+        }
+      },
+      {
+        "name": "假装工作",
+        "desc": "今天巡逻奖励 +80%",
+        "dot": "35",
+        "btnText": "使用",
+        "btnDisabled": false,
+        "btnRect": {
+          "w": 44,
+          "h": 30
+        }
+      },
+      {
+        "name": "跟同事聊天",
+        "desc": "全体同事好感 +3",
+        "dot": "25",
+        "btnText": "使用",
+        "btnDisabled": false,
+        "btnRect": {
+          "w": 44,
+          "h": 30
+        }
+      }
+    ],
+    "decor": [
+      {
+        "name": "绿萝",
+        "desc": "工位挂机 +5%",
+        "dot": "✓",
+        "btnText": null,
+        "btnDisabled": null,
+        "btnRect": null
+      },
+      {
+        "name": "护眼台灯",
+        "desc": "点击力 +15%",
+        "dot": "✓",
+        "btnText": null,
+        "btnDisabled": null,
+        "btnRect": null
+      },
+      {
+        "name": "毛绒地毯",
+        "desc": "离线效率 +5%",
+        "dot": "✓",
+        "btnText": null,
+        "btnDisabled": null,
+        "btnRect": null
+      },
+      {
+        "name": "迷你冰箱",
+        "desc": "工位挂机 +8%",
+        "dot": "✓",
+        "btnText": null,
+        "btnDisabled": null,
+        "btnRect": null
+      },
+      {
+        "name": "按摩椅",
+        "desc": "离线效率 +8%",
+        "dot": "✓",
+        "btnText": null,
+        "btnDisabled": null,
+        "btnRect": null
+      },
+      {
+        "name": "鱼缸",
+        "desc": "挂机 +10%、点击 +10%",
+        "dot": "✓",
+        "btnText": null,
+        "btnDisabled": null,
+        "btnRect": null
+      },
+      {
+        "name": "投影仪",
+        "desc": "派遣奖励 +30%",
+        "dot": "✓",
+        "btnText": null,
+        "btnDisabled": null,
+        "btnRect": null
+      },
+      {
+        "name": "工位猫窝",
+        "desc": "挂机 +15%、离线 +10%",
+        "dot": "✓",
+        "btnText": null,
+        "btnDisabled": null,
+        "btnRect": null
+      }
+    ],
+    "imagesInPanel": 0,
+    "bodyText": "已装修 8/8 · 挂机 ×1.43 · 点击 ×1.26 · 离线 +23% | 今日精力 （剩 100/100） | 40 | 认真摸鱼 今天挂机 +25% | 使用 | 35 | 假装工作 今天巡逻奖励 +80% | 使用 | 25 | 跟同事聊天 全体同事好感 +3 | 使用 | 每天 100 点，效果持续到当天结束 | ✓ | 绿萝 工位挂机 +5% | ✓ | 护眼台灯 点击力 +15% | ✓ | 毛绒地毯 离线效率 +5% | ✓ | 迷你冰箱 工位挂机 +8% | ✓ | 按摩椅 离线效率 +8% | ✓ | 鱼缸 挂机 +10%、点击 +10% | ✓ | 投影仪 派遣奖励 +30% | ✓ | 工位猫窝 挂机 +15%、离线 +10%",
+    "scrollHeight": 566,
+    "clientHeight": 566,
+    "hud": {
+      "moyu": "77.65亿",
+      "click": "1.3",
+      "idle": "0.3",
+      "rank": "星人 0%"
+    }
+  },
+  "energy": {
+    "before": {
+      "energy": {
+        "date": "2026-11-27",
+        "left": 100,
+        "used": [],
+        "boosted": {
+          "idleMult": 1,
+          "patrolRewardMult": 1
+        }
+      },
+      "hud": {
+        "moyu": "77.65亿",
+        "click": "1.3",
+        "idle": "0.3",
+        "rank": "星人 0%"
+      }
+    },
+    "actions": [
+      {
+        "act": "slack",
+        "label": "认真摸鱼",
+        "btn": {
+          "text": "使用",
+          "disabled": false,
+          "w": 44,
+          "h": 30
+        },
+        "energy": {
+          "date": "2026-11-27",
+          "left": 60,
+          "used": [
+            "slack"
+          ],
+          "boosted": {
+            "idleMult": 1.25,
+            "patrolRewardMult": 1
+          }
+        },
+        "hud": {
+          "moyu": "77.65亿",
+          "click": "1.3",
+          "idle": "0.4",
+          "rank": "星人 0%"
+        },
+        "toast": {
+          "text": "精力已使用：认真摸鱼",
+          "shown": true
+        },
+        "panelEnergyTitle": "今日精力 （剩 60/100）",
+        "energyRows": [
+          {
+            "name": "认真摸鱼",
+            "dot": "✓",
+            "btnText": null,
+            "disabled": null
+          },
+          {
+            "name": "假装工作",
+            "dot": "35",
+            "btnText": "使用",
+            "disabled": false
+          },
+          {
+            "name": "跟同事聊天",
+            "dot": "25",
+            "btnText": "使用",
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "act": "fake-work",
+        "label": "假装工作",
+        "btn": {
+          "text": "使用",
+          "disabled": false,
+          "w": 44,
+          "h": 30
+        },
+        "energy": {
+          "date": "2026-11-27",
+          "left": 25,
+          "used": [
+            "slack",
+            "fake-work"
+          ],
+          "boosted": {
+            "idleMult": 1.25,
+            "patrolRewardMult": 1.8
+          }
+        },
+        "hud": {
+          "moyu": "77.65亿",
+          "click": "1.3",
+          "idle": "0.4",
+          "rank": "星人 0%"
+        },
+        "toast": {
+          "text": "精力已使用：假装工作",
+          "shown": true
+        },
+        "panelEnergyTitle": "今日精力 （剩 25/100）",
+        "energyRows": [
+          {
+            "name": "认真摸鱼",
+            "dot": "✓",
+            "btnText": null,
+            "disabled": null
+          },
+          {
+            "name": "假装工作",
+            "dot": "✓",
+            "btnText": null,
+            "disabled": null
+          },
+          {
+            "name": "跟同事聊天",
+            "dot": "25",
+            "btnText": "使用",
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "act": "social",
+        "label": "跟同事聊天",
+        "btn": {
+          "text": "使用",
+          "disabled": false,
+          "w": 44,
+          "h": 30
+        },
+        "energy": {
+          "date": "2026-11-27",
+          "left": 0,
+          "used": [
+            "slack",
+            "fake-work",
+            "social"
+          ],
+          "boosted": {
+            "idleMult": 1.25,
+            "patrolRewardMult": 1.8
+          }
+        },
+        "hud": {
+          "moyu": "77.65亿",
+          "click": "1.3",
+          "idle": "0.4",
+          "rank": "星人 0%"
+        },
+        "toast": {
+          "text": "精力已使用：跟同事聊天",
+          "shown": true
+        },
+        "panelEnergyTitle": "今日精力 （剩 0/100）",
+        "energyRows": [
+          {
+            "name": "认真摸鱼",
+            "dot": "✓",
+            "btnText": null,
+            "disabled": null
+          },
+          {
+            "name": "假装工作",
+            "dot": "✓",
+            "btnText": null,
+            "disabled": null
+          },
+          {
+            "name": "跟同事聊天",
+            "dot": "✓",
+            "btnText": null,
+            "disabled": null
+          }
+        ]
+      }
+    ],
+    "panelScreenshotBefore": "playtest/r14-shots/panel-energy-before.png",
+    "after": {
+      "energy": {
+        "date": "2026-11-27",
+        "left": 0,
+        "used": [
+          "slack",
+          "fake-work",
+          "social"
+        ],
+        "boosted": {
+          "idleMult": 1.25,
+          "patrolRewardMult": 1.8
+        }
+      },
+      "hud": {
+        "moyu": "77.65亿",
+        "click": "1.3",
+        "idle": "0.4",
+        "rank": "星人 0%"
+      }
+    }
+  },
+  "persistence": {
+    "state": {
+      "moyu": 7765257013.157811,
+      "levels": {},
+      "totalEarned": 10000000013.15781,
+      "collected": {
+        "quotes": [],
+        "flavors": []
+      },
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "visit_1",
+            "target": 1,
+            "progress": 1,
+            "done": true
+          },
+          {
+            "id": "idle_earn",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "click_100",
+            "target": 100,
+            "progress": 0,
+            "done": false
+          }
+        ],
+        "streak": 0,
+        "lastCompleteDate": null,
+        "claimed": false,
+        "window": 3,
+        "claimsToday": 0
+      },
+      "surviveStreak": 0,
+      "totalClicks": 0,
+      "visits": {
+        "date": "2026-11-27",
+        "count": 2
+      },
+      "lifetimeEarned": 10000000013.15781,
+      "prestige": 0,
+      "team": {
+        "colleagues": {}
+      },
+      "talents": {
+        "unlocked": [],
+        "points": 5,
+        "rankGranted": 8,
+        "dailyGiftDate": "2026-11-27",
+        "overflow": 0
+      },
+      "patrolSurvives": 0,
+      "cards": {
+        "date": "2026-11-27",
+        "offers": [
+          "intern_ask",
+          "quiet_day",
+          "old_zhou_secret"
+        ],
+        "chosen": null,
+        "until": 0,
+        "nextDayGuaranteed": null,
+        "dismissed": true,
+        "chosenDate": ""
+      },
+      "decor": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair",
+        "aquarium",
+        "projector",
+        "catbed"
+      ],
+      "energy": {
+        "date": "2026-11-27",
+        "left": 0,
+        "used": [
+          "slack",
+          "fake-work",
+          "social"
+        ],
+        "boosted": {
+          "idleMult": 1.25,
+          "patrolRewardMult": 1.8
+        }
+      }
+    },
+    "hud": {
+      "moyu": "77.65亿",
+      "click": "1.3",
+      "idle": "0.4",
+      "rank": "星人 0%"
+    },
+    "decorCount": 8,
+    "energy": {
+      "date": "2026-11-27",
+      "left": 0,
+      "used": [
+        "slack",
+        "fake-work",
+        "social"
+      ],
+      "boosted": {
+        "idleMult": 1.25,
+        "patrolRewardMult": 1.8
+      }
+    }
+  },
+  "crossday": {
+    "patched": {
+      "energy": {
+        "date": "2000-01-01",
+        "left": 0,
+        "used": [
+          "slack",
+          "fake-work",
+          "social"
+        ],
+        "boosted": {
+          "idleMult": 1.25,
+          "patrolRewardMult": 1.8
+        }
+      },
+      "decor": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair",
+        "aquarium",
+        "projector",
+        "catbed"
+      ]
+    },
+    "energy": {
+      "date": "2026-11-27",
+      "left": 0,
+      "used": [
+        "slack",
+        "fake-work",
+        "social"
+      ],
+      "boosted": {
+        "idleMult": 1.25,
+        "patrolRewardMult": 1.8
+      }
+    },
+    "decor": [
+      "plant",
+      "lamp",
+      "rug",
+      "fridge",
+      "chair",
+      "aquarium",
+      "projector",
+      "catbed"
+    ],
+    "hud": {
+      "moyu": "77.65亿",
+      "click": "1.3",
+      "idle": "0.4",
+      "rank": "星人 0%"
+    }
+  },
+  "desktop": {
+    "geometry": {
+      "cssW": 900,
+      "cssH": 581,
+      "scale": 4,
+      "pxW": 900,
+      "pxH": 581
+    }
+  },
+  "errors": [],
+  "grant": {
+    "state": {
+      "moyu": 10000000001.563295,
+      "totalEarned": 10000000001.563295,
+      "levels": {},
+      "collected": {
+        "quotes": [],
+        "flavors": []
+      },
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "visit_1",
+            "target": 1,
+            "progress": 1,
+            "done": true
+          },
+          {
+            "id": "idle_earn",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "click_100",
+            "target": 100,
+            "progress": 0,
+            "done": false
+          }
+        ],
+        "streak": 0,
+        "lastCompleteDate": null,
+        "claimed": false,
+        "window": 3,
+        "claimsToday": 0
+      },
+      "surviveStreak": 0,
+      "totalClicks": 0,
+      "visits": {
+        "date": "2026-11-27",
+        "count": 1
+      },
+      "lifetimeEarned": 10000000001.563295,
+      "prestige": 0,
+      "team": {
+        "colleagues": {}
+      },
+      "talents": {
+        "unlocked": [],
+        "points": 5,
+        "rankGranted": 8,
+        "dailyGiftDate": "2026-11-27",
+        "overflow": 0
+      },
+      "patrolSurvives": 0,
+      "cards": {
+        "date": "2026-11-27",
+        "offers": [
+          "intern_ask",
+          "quiet_day",
+          "old_zhou_secret"
+        ],
+        "chosen": null,
+        "until": 0,
+        "nextDayGuaranteed": null,
+        "dismissed": false,
+        "chosenDate": ""
+      },
+      "decor": [],
+      "energy": {
+        "date": "2026-11-27",
+        "left": 100,
+        "used": [],
+        "boosted": {
+          "idleMult": 1,
+          "patrolRewardMult": 1
+        }
+      }
+    },
+    "hud": {
+      "moyu": "100.00亿",
+      "click": "1",
+      "idle": "0.2",
+      "rank": "星人 0%"
+    }
+  },
+  "stagesBuy3": {
+    "label": "买完前 3 件（绿萝/台灯/地毯）",
+    "files": [
+      "playtest/r14-shots/buy-03-rug-full.png",
+      "playtest/r14-shots/buy-03-rug-canvas-after.png"
+    ],
+    "decor": [
+      "plant",
+      "lamp",
+      "rug"
+    ]
+  }
+}

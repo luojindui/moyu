@@ -1,0 +1,154 @@
+{
+  "generatedAt": "2026-11-27T11:09:50.048Z",
+  "wiring": {
+    "idle": {
+      "base": 0.2,
+      "plant": 0.21000000000000002,
+      "fridge": 0.21600000000000003,
+      "aquarium": 0.22000000000000003,
+      "catbed": 0.22999999999999998
+    },
+    "click": {
+      "base": 1,
+      "lamp": 1.15,
+      "aquarium": 1.1,
+      "lampAquarium": 1.265
+    },
+    "offline": {
+      "base": 0.7,
+      "rug": 0.75,
+      "chair": 0.7799999999999999,
+      "catbed": 0.7999999999999999
+    },
+    "dispatch": {
+      "base": 1552,
+      "withProjector": 2017,
+      "ratio": 1.2996134020618557,
+      "realClaimBase": 1552,
+      "realClaimProjector": 2017
+    },
+    "energySlack": {
+      "idle": 0.25,
+      "mult": 1.25
+    },
+    "energyFakeWork": {
+      "base": 50,
+      "boosted": 90,
+      "mult": 1.8
+    },
+    "energySocial": {
+      "favor10to": 13,
+      "favor99to": 100
+    },
+    "allDecor": {
+      "idleMult": 1.4345100000000002,
+      "clickMult": 1.265,
+      "offlineBonus": 0.23,
+      "dispatchRewardMult": 1.3,
+      "pureIdle": 0.28690200000000005,
+      "withSlack": 0.35862750000000004
+    }
+  },
+  "boundary": {
+    "buy": {
+      "dup": null,
+      "ghost": null,
+      "poor": null,
+      "exactBalance": 0
+    },
+    "buyAll": {
+      "totalCost": 2234743000,
+      "left": 97765257000
+    },
+    "energyLoop": {
+      "left": 0,
+      "used": [
+        "fake-work",
+        "slack",
+        "social"
+      ]
+    },
+    "crossDay": {
+      "date": "2026-11-28",
+      "left": 100,
+      "used": [],
+      "boosted": {
+        "idleMult": 1,
+        "patrolRewardMult": 1
+      }
+    }
+  },
+  "save": {
+    "decorSanitize": [
+      "plant",
+      "lamp"
+    ],
+    "boostedClamp": {
+      "idleMult": 2,
+      "patrolRewardMult": 3
+    },
+    "roundtrip": {
+      "decor": [
+        "plant",
+        "lamp"
+      ],
+      "left": 60,
+      "idle": 0.2625
+    },
+    "prestige": {
+      "decor": [
+        "plant",
+        "projector"
+      ],
+      "left": 65,
+      "prestige": 5,
+      "dispatch": 1.3
+    }
+  },
+  "observations": {
+    "offlineMixedIdle": {
+      "note": "offlineEarn 把 effectOf 中非 stationIdleScaled 的挂机加成当作 teamPart，按 50% 折算；catbed idle×1.15 因此额外泄漏 +7.5% 离线收益",
+      "catbedEarned": 619.1999999999999,
+      "ifOnlyOfflineBonus": 576,
+      "leakRatio": 1.075
+    },
+    "idleScope": {
+      "note": "decor.idleMult / energy.idleMult 只乘 stationIdle，(teamFixed + teamShare) 不乘；panel 标称 ×1.05 / ×1.25",
+      "baseIdleWithZhou": 20.2016,
+      "plantTotal": 20.2116,
+      "plantObservedFactor": 1.0004950102962142,
+      "slackTotal": 20.2516,
+      "slackObservedFactor": 1.0024750514810707,
+      "bothTotal": 20.2641
+    },
+    "boostedWithoutUsed": {
+      "freeIdleMult": 2,
+      "freeIdleRate": 0.4,
+      "freePatrolMult": 3,
+      "freePatrolReward": 150
+    },
+    "leftUsedMismatch": {
+      "left": 100,
+      "used": [
+        "slack",
+        "fake-work",
+        "social"
+      ]
+    },
+    "crossDayOffline": {
+      "staleDateKeptByRestore": "2026-11-26",
+      "offlineStale": 567,
+      "offlineAfterEnsure": 503.99999999999994,
+      "ratio": 1.1250000000000002
+    },
+    "duplicateDefense": {
+      "idleMult": 1.1025
+    },
+    "socialNoColleagues": {
+      "left": 75,
+      "favor": 0
+    },
+    "saveVersion": 2,
+    "minuteGainAll": 21.517650000000003
+  }
+}

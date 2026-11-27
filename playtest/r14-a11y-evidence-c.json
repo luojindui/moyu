@@ -1,0 +1,278 @@
+{
+  "at": "2026-11-27T11:05:53.591Z",
+  "headings": [
+    {
+      "role": "heading",
+      "name": "摸鱼小队"
+    },
+    {
+      "role": "heading",
+      "name": "今日精力 （剩 100/100）"
+    }
+  ],
+  "tabAx": [
+    {
+      "role": "button",
+      "name": "同事"
+    },
+    {
+      "role": "button",
+      "name": "天赋"
+    },
+    {
+      "role": "button",
+      "name": "工位"
+    },
+    {
+      "role": "StaticText",
+      "name": "同事"
+    },
+    {
+      "role": "StaticText",
+      "name": "天赋"
+    },
+    {
+      "role": "StaticText",
+      "name": "工位"
+    },
+    {
+      "role": "StaticText",
+      "name": "天赋"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "同事"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "天赋"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "工位"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "天赋"
+    }
+  ],
+  "energyButtonsAx": [
+    {
+      "role": "button",
+      "name": "使用"
+    },
+    {
+      "role": "button",
+      "name": "使用"
+    },
+    {
+      "role": "button",
+      "name": "使用"
+    },
+    {
+      "role": "StaticText",
+      "name": "使用"
+    },
+    {
+      "role": "StaticText",
+      "name": "使用"
+    },
+    {
+      "role": "StaticText",
+      "name": "使用"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "使用"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "使用"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "使用"
+    }
+  ],
+  "decorButtonsAx": [
+    {
+      "role": "button",
+      "name": "3000"
+    },
+    {
+      "role": "button",
+      "name": "2.00万"
+    },
+    {
+      "role": "button",
+      "name": "12.00万"
+    },
+    {
+      "role": "button",
+      "name": "60.00万"
+    },
+    {
+      "role": "button",
+      "name": "400.00万"
+    },
+    {
+      "role": "button",
+      "name": "3000.00万"
+    },
+    {
+      "role": "button",
+      "name": "2.00亿"
+    },
+    {
+      "role": "button",
+      "name": "20.00亿",
+      "disabled": true
+    }
+  ],
+  "keyboardBuy": {
+    "focusPlant": {
+      "text": "3000",
+      "disabled": false,
+      "act": "decor",
+      "id": "plant",
+      "focused": true,
+      "live": "段位奖励：天赋点 +2",
+      "summary": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%"
+    },
+    "afterEnter": {
+      "live": "段位奖励：天赋点 +2",
+      "summary": "已装修 1/8 · 挂机 ×1.05 · 点击 ×1.00 · 离线 +0%",
+      "toast": "已装修：绿萝",
+      "toastCls": "show",
+      "active": {
+        "tag": "BODY",
+        "text": "段位奖励：天赋点 +2\n    \n   ",
+        "isBody": true,
+        "insideDialog": false
+      }
+    }
+  },
+  "keyboardUseEnergy": {
+    "focusUse": {
+      "text": "使用",
+      "focused": true,
+      "head": "今日精力 （剩 100/100）",
+      "live": "段位奖励：天赋点 +2"
+    },
+    "afterSpace": {
+      "live": "段位奖励：天赋点 +2",
+      "head": "今日精力 （剩 60/100）",
+      "toast": "精力已使用：认真摸鱼",
+      "toastCls": "show",
+      "active": {
+        "tag": "BODY",
+        "text": "段位奖励：天赋点 +2\n    \n   ",
+        "isBody": true,
+        "insideDialog": false
+      },
+      "remainingUseButtons": 2
+    }
+  },
+  "panelInnerText": "已装修 1/8 · 挂机 ×1.05 · 点击 ×1.00 · 离线 +0% | 今日精力 （剩 60/100） | ✓ | 认真摸鱼 今天挂机 +25% | 35 | 假装工作 今天巡逻奖励 +80% | 使用 | 25 | 跟同事聊天 全体同事好感 +3 | 使用 | 每天 100 点，效果持续到当天结束 | ✓ | 绿萝 工位挂机 +5% | 护眼台灯 点击力 +15% | 2.00万 | 毛绒地毯 离线效率 +5% | 12.00万 | 迷你冰箱 工位挂机 +8% | 60.00万 | 按摩椅 离线效率 +8% | 400.00万 | 鱼缸 挂机 +10%、点击 +10% | 3000.00万 | 投影仪 派遣奖励 +30% | 2.00亿 | 工位猫窝 挂机 +15%、离线 +10% | 20.00亿",
+  "axHeadingsAll": [
+    {
+      "role": "status",
+      "name": "",
+      "live": "polite"
+    },
+    {
+      "role": "dialog",
+      "name": "摸鱼小队"
+    },
+    {
+      "role": "heading",
+      "name": "摸鱼小队"
+    },
+    {
+      "role": "heading",
+      "name": "今日精力 （剩 60/100）"
+    }
+  ],
+  "decorSectionAria": [
+    {
+      "tag": "DIV",
+      "cls": "team-summary",
+      "role": null,
+      "label": null,
+      "heading": null,
+      "text": "已装修 1/8 · 挂机 ×1.05 · 点击 ×1.00 · 离线 +0%"
+    },
+    {
+      "tag": "DIV",
+      "cls": "branch",
+      "role": null,
+      "label": null,
+      "heading": "今日精力 （剩 60/100）",
+      "text": "今日精力 （剩 60/100） ✓ 认真摸鱼 今天挂机 +25% 35 假装工作"
+    },
+    {
+      "tag": "DIV",
+      "cls": "talent on",
+      "role": null,
+      "label": null,
+      "heading": null,
+      "text": "✓ 绿萝 工位挂机 +5%"
+    },
+    {
+      "tag": "DIV",
+      "cls": "talent ",
+      "role": null,
+      "label": null,
+      "heading": null,
+      "text": "护眼台灯 点击力 +15% 2.00万"
+    },
+    {
+      "tag": "DIV",
+      "cls": "talent ",
+      "role": null,
+      "label": null,
+      "heading": null,
+      "text": "毛绒地毯 离线效率 +5% 12.00万"
+    },
+    {
+      "tag": "DIV",
+      "cls": "talent ",
+      "role": null,
+      "label": null,
+      "heading": null,
+      "text": "迷你冰箱 工位挂机 +8% 60.00万"
+    },
+    {
+      "tag": "DIV",
+      "cls": "talent ",
+      "role": null,
+      "label": null,
+      "heading": null,
+      "text": "按摩椅 离线效率 +8% 400.00万"
+    },
+    {
+      "tag": "DIV",
+      "cls": "talent ",
+      "role": null,
+      "label": null,
+      "heading": null,
+      "text": "鱼缸 挂机 +10%、点击 +10% 3000.00万"
+    },
+    {
+      "tag": "DIV",
+      "cls": "talent ",
+      "role": null,
+      "label": null,
+      "heading": null,
+      "text": "投影仪 派遣奖励 +30% 2.00亿"
+    },
+    {
+      "tag": "DIV",
+      "cls": "talent ",
+      "role": null,
+      "label": null,
+      "heading": null,
+      "text": "工位猫窝 挂机 +15%、离线 +10% 20.00亿"
+    }
+  ]
+}

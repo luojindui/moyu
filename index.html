@@ -36,7 +36,8 @@
           <div class="quest-track"><i id="quest-bar"></i></div>
         </div>
       </header>
-      <main id="stage-wrap"><canvas id="stage" tabindex="0" role="button" aria-label="点击摸鱼"></canvas></main>
+      <main id="stage-wrap"><canvas id="stage" tabindex="0" role="button" aria-label="点击摸鱼" aria-describedby="decor-summary"></canvas>
+        <div id="decor-summary" class="sr-only">工位尚未装修</div></main>
       <footer id="shop"><div id="shop-wrap"><div id="shop-cards"></div><span id="shop-hint">← 滑动查看更多 →</span></div></footer>
     </div>
     <div id="cards" class="hidden" role="dialog" aria-modal="true" aria-labelledby="cards-title">
@@ -64,10 +65,10 @@
           <h2 id="team-title">摸鱼小队</h2>
           <button id="team-close" aria-label="关闭">✕</button>
         </div>
-        <div class="team-tabs">
-          <button id="tab-colleagues" class="tab active">同事</button>
-          <button id="tab-talents" class="tab">天赋</button>
-          <button id="tab-decor" class="tab">工位</button>
+        <div class="team-tabs" role="tablist" aria-label="小队面板">
+          <button id="tab-colleagues" class="tab active" role="tab" aria-selected="true">同事</button>
+          <button id="tab-talents" class="tab" role="tab" aria-selected="false">天赋</button>
+          <button id="tab-decor" class="tab" role="tab" aria-selected="false">工位</button>
           <span class="team-points" id="team-points"></span>
         </div>
         <div id="team-body"></div>

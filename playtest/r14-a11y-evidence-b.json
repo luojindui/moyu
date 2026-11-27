@@ -1,0 +1,452 @@
+{
+  "at": "2026-11-27T11:04:37.516Z",
+  "rows": [
+    {
+      "i": 0,
+      "name": "认真摸鱼",
+      "desc": "今天挂机 +25%",
+      "dot": {
+        "text": "40",
+        "bg": "rgb(38, 38, 54)",
+        "fs": "11px"
+      },
+      "btn": {
+        "text": "使用",
+        "disabled": true,
+        "ariaLabel": null,
+        "fs": "11px",
+        "color": "rgb(168, 164, 147)",
+        "bg": "rgb(67, 67, 92)",
+        "contrast": 3.82,
+        "w": 44,
+        "h": 30
+      }
+    },
+    {
+      "i": 1,
+      "name": "假装工作",
+      "desc": "今天巡逻奖励 +80%",
+      "dot": {
+        "text": "35",
+        "bg": "rgb(38, 38, 54)",
+        "fs": "11px"
+      },
+      "btn": {
+        "text": "使用",
+        "disabled": true,
+        "ariaLabel": null,
+        "fs": "11px",
+        "color": "rgb(168, 164, 147)",
+        "bg": "rgb(67, 67, 92)",
+        "contrast": 3.82,
+        "w": 44,
+        "h": 30
+      }
+    },
+    {
+      "i": 2,
+      "name": "跟同事聊天",
+      "desc": "全体同事好感 +3",
+      "dot": {
+        "text": "25",
+        "bg": "rgb(38, 38, 54)",
+        "fs": "11px"
+      },
+      "btn": {
+        "text": "使用",
+        "disabled": true,
+        "ariaLabel": null,
+        "fs": "11px",
+        "color": "rgb(168, 164, 147)",
+        "bg": "rgb(67, 67, 92)",
+        "contrast": 3.82,
+        "w": 44,
+        "h": 30
+      }
+    },
+    {
+      "i": 3,
+      "name": "绿萝",
+      "desc": "工位挂机 +5%",
+      "dot": {
+        "text": "",
+        "bg": "rgb(38, 38, 54)",
+        "fs": "11px"
+      },
+      "btn": {
+        "text": "3000",
+        "disabled": false,
+        "ariaLabel": null,
+        "fs": "11px",
+        "color": "rgb(16, 36, 26)",
+        "bg": "rgb(255, 215, 110)",
+        "contrast": 11.79,
+        "w": 50,
+        "h": 27
+      }
+    },
+    {
+      "i": 4,
+      "name": "护眼台灯",
+      "desc": "点击力 +15%",
+      "dot": {
+        "text": "",
+        "bg": "rgb(38, 38, 54)",
+        "fs": "11px"
+      },
+      "btn": {
+        "text": "2.00万",
+        "disabled": false,
+        "ariaLabel": null,
+        "fs": "11px",
+        "color": "rgb(16, 36, 26)",
+        "bg": "rgb(255, 215, 110)",
+        "contrast": 11.79,
+        "w": 56,
+        "h": 30
+      }
+    },
+    {
+      "i": 5,
+      "name": "毛绒地毯",
+      "desc": "离线效率 +5%",
+      "dot": {
+        "text": "",
+        "bg": "rgb(38, 38, 54)",
+        "fs": "11px"
+      },
+      "btn": {
+        "text": "12.00万",
+        "disabled": false,
+        "ariaLabel": null,
+        "fs": "11px",
+        "color": "rgb(16, 36, 26)",
+        "bg": "rgb(255, 215, 110)",
+        "contrast": 11.79,
+        "w": 62,
+        "h": 30
+      }
+    },
+    {
+      "i": 6,
+      "name": "迷你冰箱",
+      "desc": "工位挂机 +8%",
+      "dot": {
+        "text": "",
+        "bg": "rgb(38, 38, 54)",
+        "fs": "11px"
+      },
+      "btn": {
+        "text": "60.00万",
+        "disabled": false,
+        "ariaLabel": null,
+        "fs": "11px",
+        "color": "rgb(16, 36, 26)",
+        "bg": "rgb(255, 215, 110)",
+        "contrast": 11.79,
+        "w": 64,
+        "h": 30
+      }
+    },
+    {
+      "i": 7,
+      "name": "按摩椅",
+      "desc": "离线效率 +8%",
+      "dot": {
+        "text": "",
+        "bg": "rgb(38, 38, 54)",
+        "fs": "11px"
+      },
+      "btn": {
+        "text": "400.00万",
+        "disabled": false,
+        "ariaLabel": null,
+        "fs": "11px",
+        "color": "rgb(16, 36, 26)",
+        "bg": "rgb(255, 215, 110)",
+        "contrast": 11.79,
+        "w": 71,
+        "h": 30
+      }
+    },
+    {
+      "i": 8,
+      "name": "鱼缸",
+      "desc": "挂机 +10%、点击 +10%",
+      "dot": {
+        "text": "",
+        "bg": "rgb(38, 38, 54)",
+        "fs": "11px"
+      },
+      "btn": {
+        "text": "3000.00万",
+        "disabled": false,
+        "ariaLabel": null,
+        "fs": "11px",
+        "color": "rgb(16, 36, 26)",
+        "bg": "rgb(255, 215, 110)",
+        "contrast": 11.79,
+        "w": 77,
+        "h": 30
+      }
+    },
+    {
+      "i": 9,
+      "name": "投影仪",
+      "desc": "派遣奖励 +30%",
+      "dot": {
+        "text": "",
+        "bg": "rgb(38, 38, 54)",
+        "fs": "11px"
+      },
+      "btn": {
+        "text": "2.00亿",
+        "disabled": false,
+        "ariaLabel": null,
+        "fs": "11px",
+        "color": "rgb(16, 36, 26)",
+        "bg": "rgb(255, 215, 110)",
+        "contrast": 11.79,
+        "w": 56,
+        "h": 30
+      }
+    },
+    {
+      "i": 10,
+      "name": "工位猫窝",
+      "desc": "挂机 +15%、离线 +10%",
+      "dot": {
+        "text": "",
+        "bg": "rgb(38, 38, 54)",
+        "fs": "11px"
+      },
+      "btn": {
+        "text": "20.00亿",
+        "disabled": true,
+        "ariaLabel": null,
+        "fs": "11px",
+        "color": "rgb(168, 164, 147)",
+        "bg": "rgb(67, 67, 92)",
+        "contrast": 3.82,
+        "w": 63,
+        "h": 30
+      }
+    }
+  ],
+  "heading": "今日精力 （剩 20/100）",
+  "headingSmall": {
+    "text": "（剩 20/100）",
+    "fs": "11.6667px",
+    "color": "rgb(143, 159, 208)",
+    "bg": "rgb(58, 58, 82)",
+    "contrast": 4.22
+  },
+  "summary": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%",
+  "panelRect": {
+    "x": 15.59375,
+    "y": 59.078125,
+    "width": 358.796875,
+    "height": 725.828125
+  },
+  "shots": {
+    "disabled": "playtest/r14-shots/B-disabled-usage.png",
+    "energyDisabledZoom": "playtest/r14-shots/B-energy-disabled-zoom.png",
+    "focusRing": "playtest/r14-shots/B-focus-ring.png",
+    "motionA": "playtest/r14-shots/B-motion-a.png",
+    "motionB": "playtest/r14-shots/B-motion-b.png"
+  },
+  "toastOverlap": {
+    "toastRect": {
+      "x": 112.6171875,
+      "y": 100,
+      "w": 164.765625,
+      "h": 40.296875
+    },
+    "tabsRect": {
+      "x": 33.59375,
+      "y": 110.078125,
+      "w": 322.796875,
+      "h": 34
+    },
+    "overlap": true,
+    "toastZ": "45",
+    "tabsZ": "auto"
+  },
+  "tabStopsWithOutline": [
+    {
+      "tag": "BUTTON",
+      "text": "同事",
+      "id": "tab-colleagues",
+      "disabled": false,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineColor": "rgb(153, 200, 255)",
+      "boxShadow": "none",
+      "insideDialog": true
+    },
+    {
+      "tag": "BUTTON",
+      "text": "天赋",
+      "id": "tab-talents",
+      "disabled": false,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineColor": "rgb(153, 200, 255)",
+      "boxShadow": "none",
+      "insideDialog": true
+    },
+    {
+      "tag": "BUTTON",
+      "text": "工位",
+      "id": "tab-decor",
+      "disabled": false,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineColor": "rgb(153, 200, 255)",
+      "boxShadow": "none",
+      "insideDialog": true
+    },
+    {
+      "tag": "BUTTON",
+      "text": "3000",
+      "id": "",
+      "disabled": false,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineColor": "rgb(153, 200, 255)",
+      "boxShadow": "none",
+      "insideDialog": true
+    },
+    {
+      "tag": "BUTTON",
+      "text": "2.00万",
+      "id": "",
+      "disabled": false,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineColor": "rgb(153, 200, 255)",
+      "boxShadow": "none",
+      "insideDialog": true
+    },
+    {
+      "tag": "BUTTON",
+      "text": "12.00万",
+      "id": "",
+      "disabled": false,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineColor": "rgb(153, 200, 255)",
+      "boxShadow": "none",
+      "insideDialog": true
+    },
+    {
+      "tag": "BUTTON",
+      "text": "60.00万",
+      "id": "",
+      "disabled": false,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineColor": "rgb(153, 200, 255)",
+      "boxShadow": "none",
+      "insideDialog": true
+    },
+    {
+      "tag": "BUTTON",
+      "text": "400.00万",
+      "id": "",
+      "disabled": false,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineColor": "rgb(153, 200, 255)",
+      "boxShadow": "none",
+      "insideDialog": true
+    },
+    {
+      "tag": "BUTTON",
+      "text": "3000.00万",
+      "id": "",
+      "disabled": false,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineColor": "rgb(153, 200, 255)",
+      "boxShadow": "none",
+      "insideDialog": true
+    },
+    {
+      "tag": "BUTTON",
+      "text": "2.00亿",
+      "id": "",
+      "disabled": false,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineColor": "rgb(153, 200, 255)",
+      "boxShadow": "none",
+      "insideDialog": true
+    },
+    {
+      "tag": "BUTTON",
+      "text": "👥天赋",
+      "id": "btn-team",
+      "disabled": false,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineColor": "rgb(153, 200, 255)",
+      "boxShadow": "none",
+      "insideDialog": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "🔊",
+      "id": "btn-mute",
+      "disabled": false,
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineColor": "rgb(153, 200, 255)",
+      "boxShadow": "none",
+      "insideDialog": false
+    }
+  ],
+  "firstEnabledFocus": {
+    "tag": "BUTTON",
+    "text": "同事",
+    "id": "tab-colleagues",
+    "disabled": false,
+    "outlineStyle": "auto",
+    "outlineWidth": "1px",
+    "outlineColor": "rgb(153, 200, 255)",
+    "boxShadow": "none",
+    "insideDialog": true
+  },
+  "focusRing": [
+    {
+      "text": "3000",
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineColor": "rgb(153, 200, 255)",
+      "outlineOffset": "0px"
+    }
+  ],
+  "keyboardBuy": {
+    "before": {
+      "live": "段位奖励：天赋点 +2",
+      "summary": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%"
+    },
+    "after": {
+      "live": "段位奖励：天赋点 +2",
+      "summary": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%",
+      "toast": "段位奖励：天赋点 +2",
+      "active": {
+        "tag": "BUTTON",
+        "isBody": false,
+        "insideDialog": true
+      }
+    }
+  },
+  "motion": {
+    "framesBefore": 291,
+    "framesAfter": 291,
+    "framesDelta": 0,
+    "reducedBefore": false,
+    "reducedAfter": true
+  }
+}

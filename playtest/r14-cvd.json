@@ -1,0 +1,438 @@
+{
+  "pairs": {
+    "已装修✓圆点绿 vs 面板底": {
+      "normal": 8.29,
+      "deuteranopia": 7.66,
+      "protanopia": 8.41,
+      "tritanopia": 8.08,
+      "sim_rgb": {
+        "normal": [
+          139,
+          226,
+          139
+        ],
+        "deuteranopia": [
+          214,
+          198,
+          143
+        ],
+        "protanopia": [
+          231,
+          207,
+          135
+        ],
+        "tritanopia": [
+          132,
+          220,
+          199
+        ]
+      }
+    },
+    "已装修✓圆点绿 vs 空圆点底": {
+      "normal": 9.45,
+      "deuteranopia": 8.72,
+      "protanopia": 9.62,
+      "tritanopia": 9.22,
+      "sim_rgb": {
+        "normal": [
+          139,
+          226,
+          139
+        ],
+        "deuteranopia": [
+          214,
+          198,
+          143
+        ],
+        "protanopia": [
+          231,
+          207,
+          135
+        ],
+        "tritanopia": [
+          132,
+          220,
+          199
+        ]
+      }
+    },
+    "✓字符(深) vs 绿圆点": {
+      "normal": 10.35,
+      "deuteranopia": 9.76,
+      "protanopia": 10.53,
+      "tritanopia": 10.1,
+      "sim_rgb": {
+        "normal": [
+          16,
+          36,
+          26
+        ],
+        "deuteranopia": [
+          31,
+          30,
+          27
+        ],
+        "protanopia": [
+          35,
+          33,
+          26
+        ],
+        "tritanopia": [
+          13,
+          36,
+          33
+        ]
+      }
+    },
+    "家具描述字 vs 面板底": {
+      "normal": 6.19,
+      "deuteranopia": 6.26,
+      "protanopia": 6.04,
+      "tritanopia": 6.15,
+      "sim_rgb": {
+        "normal": [
+          184,
+          179,
+          156
+        ],
+        "deuteranopia": [
+          186,
+          179,
+          157
+        ],
+        "protanopia": [
+          184,
+          177,
+          155
+        ],
+        "tritanopia": [
+          189,
+          175,
+          172
+        ]
+      }
+    },
+    "精力描述字 vs 分组底": {
+      "normal": 5.23,
+      "deuteranopia": 5.3,
+      "protanopia": 5.09,
+      "tritanopia": 5.19,
+      "sim_rgb": {
+        "normal": [
+          184,
+          179,
+          156
+        ],
+        "deuteranopia": [
+          186,
+          179,
+          157
+        ],
+        "protanopia": [
+          184,
+          177,
+          155
+        ],
+        "tritanopia": [
+          189,
+          175,
+          172
+        ]
+      }
+    },
+    "精力“剩X/100”字 vs 分组底": {
+      "normal": 4.22,
+      "deuteranopia": 4.14,
+      "protanopia": 4.32,
+      "tritanopia": 4.25,
+      "sim_rgb": {
+        "normal": [
+          143,
+          159,
+          208
+        ],
+        "deuteranopia": [
+          142,
+          157,
+          207
+        ],
+        "protanopia": [
+          147,
+          162,
+          211
+        ],
+        "tritanopia": [
+          130,
+          167,
+          174
+        ]
+      }
+    },
+    "启用按钮(黄底) vs 面板底": {
+      "normal": 9.43,
+      "deuteranopia": 9.85,
+      "protanopia": 8.68,
+      "tritanopia": 8.59,
+      "sim_rgb": {
+        "normal": [
+          255,
+          215,
+          110
+        ],
+        "deuteranopia": [
+          254,
+          221,
+          113
+        ],
+        "protanopia": [
+          243,
+          209,
+          104
+        ],
+        "tritanopia": [
+          255,
+          196,
+          183
+        ]
+      }
+    },
+    "禁用按钮(灰底) vs 面板底": {
+      "normal": 1.36,
+      "deuteranopia": 1.36,
+      "protanopia": 1.37,
+      "tritanopia": 1.36,
+      "sim_rgb": {
+        "normal": [
+          67,
+          67,
+          92
+        ],
+        "deuteranopia": [
+          61,
+          68,
+          91
+        ],
+        "protanopia": [
+          62,
+          69,
+          93
+        ],
+        "tritanopia": [
+          63,
+          71,
+          75
+        ]
+      }
+    },
+    "禁用按钮文字 vs 自身底": {
+      "normal": 3.82,
+      "deuteranopia": 3.87,
+      "protanopia": 3.73,
+      "tritanopia": 3.8,
+      "sim_rgb": {
+        "normal": [
+          168,
+          164,
+          147
+        ],
+        "deuteranopia": [
+          169,
+          164,
+          147
+        ],
+        "protanopia": [
+          168,
+          163,
+          146
+        ],
+        "tritanopia": [
+          172,
+          161,
+          159
+        ]
+      }
+    },
+    "启用按钮文字 vs 黄底": {
+      "normal": 11.79,
+      "deuteranopia": 12.56,
+      "protanopia": 10.87,
+      "tritanopia": 10.73,
+      "sim_rgb": {
+        "normal": [
+          16,
+          36,
+          26
+        ],
+        "deuteranopia": [
+          31,
+          30,
+          27
+        ],
+        "protanopia": [
+          35,
+          33,
+          26
+        ],
+        "tritanopia": [
+          13,
+          36,
+          33
+        ]
+      }
+    },
+    "选中tab蓝底 vs 未选中tab底": {
+      "normal": 6.08,
+      "deuteranopia": 5.6,
+      "protanopia": 6.37,
+      "tritanopia": 6.34,
+      "sim_rgb": {
+        "normal": [
+          126,
+          200,
+          255
+        ],
+        "deuteranopia": [
+          160,
+          182,
+          254
+        ],
+        "protanopia": [
+          177,
+          197,
+          255
+        ],
+        "tritanopia": [
+          97,
+          214,
+          216
+        ]
+      }
+    },
+    "summary白字 vs 面板底": {
+      "normal": 11.54,
+      "deuteranopia": 11.63,
+      "protanopia": 11.36,
+      "tritanopia": 11.51,
+      "sim_rgb": {
+        "normal": [
+          244,
+          241,
+          232
+        ],
+        "deuteranopia": [
+          244,
+          241,
+          232
+        ],
+        "protanopia": [
+          243,
+          240,
+          232
+        ],
+        "tritanopia": [
+          246,
+          239,
+          238
+        ]
+      }
+    },
+    "黄(启用钮) vs 绿(已拥有点)": {
+      "normal": 1.14,
+      "deuteranopia": 1.29,
+      "protanopia": 1.03,
+      "tritanopia": 1.06,
+      "sim_rgb": {
+        "normal": [
+          255,
+          215,
+          110
+        ],
+        "deuteranopia": [
+          254,
+          221,
+          113
+        ],
+        "protanopia": [
+          243,
+          209,
+          104
+        ],
+        "tritanopia": [
+          255,
+          196,
+          183
+        ]
+      }
+    }
+  },
+  "matrix": {
+    "normal": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "deuteranopia": [
+      [
+        0.367322,
+        0.860646,
+        -0.227968
+      ],
+      [
+        0.280085,
+        0.672501,
+        0.047413
+      ],
+      [
+        -0.01182,
+        0.04294,
+        0.968881
+      ]
+    ],
+    "protanopia": [
+      [
+        0.152286,
+        1.052583,
+        -0.204868
+      ],
+      [
+        0.114503,
+        0.786281,
+        0.099216
+      ],
+      [
+        -0.003882,
+        -0.048116,
+        1.051998
+      ]
+    ],
+    "tritanopia": [
+      [
+        1.255528,
+        -0.076749,
+        -0.178779
+      ],
+      [
+        -0.078411,
+        0.930809,
+        0.147602
+      ],
+      [
+        0.004733,
+        0.691367,
+        0.3039
+      ]
+    ]
+  }
+}
