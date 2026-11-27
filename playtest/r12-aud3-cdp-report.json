@@ -1,0 +1,154 @@
+{
+  "startedAt": "2026-11-27T09:08:13.439Z",
+  "scenarios": {
+    "T1": {
+      "rates": {
+        "60ms": {
+          "success": 4,
+          "trials": 5,
+          "details": [
+            "ok",
+            "idle",
+            "ok",
+            "ok",
+            "ok"
+          ]
+        },
+        "90ms": {
+          "success": 2,
+          "trials": 5,
+          "details": [
+            "ok",
+            "idle",
+            "idle",
+            "idle",
+            "ok"
+          ]
+        },
+        "120ms": {
+          "success": 1,
+          "trials": 5,
+          "details": [
+            "idle",
+            "idle",
+            "ok",
+            "idle",
+            "idle"
+          ]
+        },
+        "160ms": {
+          "success": 0,
+          "trials": 5,
+          "details": [
+            "idle",
+            "idle",
+            "idle",
+            "idle",
+            "idle"
+          ]
+        },
+        "220ms": {
+          "success": 0,
+          "trials": 5,
+          "details": [
+            "idle",
+            "idle",
+            "idle",
+            "idle",
+            "idle"
+          ]
+        }
+      },
+      "domMutation": {
+        "idle": {
+          "childList": 10,
+          "charData": 0
+        },
+        "inProgress": {
+          "childList": 13,
+          "charData": 0
+        }
+      }
+    },
+    "T2": {
+      "before": {
+        "text": "攒够再招 1.20万",
+        "disabled": true
+      },
+      "after": {
+        "text": "招募 1.20万",
+        "disabled": false
+      },
+      "note": "余额够后按钮应可用；若文案仍为「攒够再招」= 标签陈旧"
+    },
+    "T3": {
+      "ghostMissionRestoredAs": null,
+      "endsAt": 0,
+      "pageErrors": [],
+      "zeroEnds": {
+        "endsAt": 1000,
+        "claimButton": "领取 +5000"
+      }
+    },
+    "T4": {
+      "bakExistsAfterBoot": true,
+      "bakEqualsFuture": true,
+      "saveVersionAfterOldClientWrite": 2,
+      "bakStillFuture": true
+    },
+    "T5": {
+      "unlocked": [
+        "click_5a",
+        "click_1",
+        "event_5a"
+      ],
+      "points": 24,
+      "rankGranted": 12,
+      "dailyGiftDate": "",
+      "rewardSnapshot": 1000000000000000000,
+      "note": "期望：互斥各留一个、去重、27 点、rank<=12、日期置空、快照<=1e18"
+    },
+    "T6": {
+      "missionId": "quick",
+      "endsAtInFuture": true,
+      "favor": 2,
+      "moyu": 1053.306174935706,
+      "domToast": "老周 回来了，点 👥 领取",
+      "note": "自动续班后 missionId 应仍为 quick、endsAt 未来、好感+2、余额≥1000；toast 若提示「回来了，点领取」但与自动领取矛盾=文案误导"
+    },
+    "T7": {
+      "idleBefore": "1.42万",
+      "quickButtonText": "溜一圈\n13m · +16.71万 · 净 +78.63万/h",
+      "idleAway": "1.41万",
+      "idleDone": "1.42万",
+      "note": "按钮「净 +X/h」未扣自身离岗损失；派遣中 HUD 挂机率下降，完成后恢复"
+    },
+    "T8": {
+      "ultInfo": {
+        "name": "指尖风暴（终极·3点）",
+        "btn": "点亮 3",
+        "disabled": false,
+        "footer": "点击转化：0/10500 次（当前 +0%）\n安然转化：0/30 次（当前 +0%）\n天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1；每日首开 +1（上限 24，满树需 27 点 → 必须放弃一条流派）",
+        "points": "天赋点 3"
+      },
+      "pointsBefore": 3,
+      "pointsAfter": 0,
+      "unlockedAfter": [
+        "click_1",
+        "click_2",
+        "click_3",
+        "click_4",
+        "click_5b"
+      ],
+      "note": "标签写「点亮 2」/「终极·2点」/底部上限 18，实际终极扣 3、上限 27"
+    },
+    "T9": {
+      "pointsAfterClamp": 24,
+      "claimButtonText": "领取 +5000",
+      "claimDelta": 5005.385746560005,
+      "expectedSnapshot": 5000,
+      "idleAccrual": 5.385746560004918
+    }
+  },
+  "finishedAt": "2026-11-27T09:09:02.937Z"
+}

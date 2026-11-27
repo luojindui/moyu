@@ -11,6 +11,8 @@ import {
   canUnlock,
   costOfTalent,
   emptyTalents,
+  grantDailyTalentPoint,
+  grantPrestigeTalentPoints,
   exclusiveTaken,
   resetTalents,
   talentEffects,
@@ -26,7 +28,7 @@ const tal = (unlocked: string[], points = 27) => ({ unlocked: [], points, rankGr
 
 describe("Y1. 27 点树：分层花费 / 逐级 / 互斥 / 重置", () => {
   it("Y1 花费：tier1-2=1、tier3-4=2、终极=3；每流派 9 点，全树 27", () => {
-    expect(TALENT_POINT_CAP).toBe(27);
+    expect(TALENT_POINT_CAP).toBe(24); // 满树需 27 → 终局必须放弃一条流派
     expect(ULTIMATE_COST).toBe(3);
     expect(costOfTalent("click_1")).toBe(1);
     expect(costOfTalent("click_2")).toBe(1);
@@ -38,8 +40,9 @@ describe("Y1. 27 点树：分层花费 / 逐级 / 互斥 / 重置", () => {
       expect(linear).toBe(6); // 1+1+2+2
       expect(linear + costOfTalent("click_5a")).toBe(9); // 每流派（取一个终极）9 点
     }
-    // 全树：3 流派 × 9 = 27（终极互斥，不能两个都点）
-    expect(3 * 9).toBe(TALENT_POINT_CAP);
+    // 全树需 27 点（终极互斥，不能两个都点）；上限 24 → 满树不可达
+    expect(3 * 9).toBe(27);
+    expect(3 * 9).toBeGreaterThan(TALENT_POINT_CAP);
   });
 
   it("Y2 点数必须够花费才能点；点亮扣除对应花费；重置全额返还", () => {
@@ -57,19 +60,25 @@ describe("Y1. 27 点树：分层花费 / 逐级 / 互斥 / 重置", () => {
   });
 
   it("Y3 互斥终极：只能选一个；重置后可改选", () => {
-    let s = S({ talents: tal([], 27) });
+    let s = S({ talents: tal([], 24) });
     for (const id of ["click_1", "click_2", "click_3", "click_4"]) s = unlockTalent(s, id)!;
-    expect(s.talents.points).toBe(27 - (1 + 1 + 2 + 2));
+    expect(s.talents.points).toBe(24 - (1 + 1 + 2 + 2));
     s = unlockTalent(s, "click_5a")!;
-    expect(s.talents.points).toBe(27 - 9);
+    expect(s.talents.points).toBe(24 - 9);
     expect(exclusiveTaken(s.talents, "click_ult")).toBe("click_5a");
     expect(canUnlock(s.talents, "click_5b")).toBe(false);
     const r = resetTalents(s);
-    expect(r.talents.points).toBe(27);
+    expect(r.talents.points).toBe(24);
   });
 });
 
 describe("Y2. 新效果与文案一致性", () => {
+  it("Y3b 发点封顶 24（转生/每日/段位）", () => {
+    expect(grantPrestigeTalentPoints({ ...emptyTalents(), points: 23 }, 5).points).toBe(24);
+    expect(grantDailyTalentPoint({ ...emptyTalents(), points: 23, dailyGiftDate: "" }, "2099-01-01").talents.points).toBe(24);
+    console.log("[Y3b] 点数上限 24 生效（满树 27 不可达）");
+  });
+
   it("Y4 click_5b 挂机转化封顶 32%（而非 20%）", () => {
     const many = S({ totalClicks: 50000, talents: { ...emptyTalents(), unlocked: ["click_5b"], points: 0, rankGranted: 12, dailyGiftDate: "" } });
     expect(conversionBonus(many)).toBeCloseTo(0.32, 6);
@@ -99,16 +108,17 @@ describe("Y2. 新效果与文案一致性", () => {
     console.log("[Y5] 巡逻奖励 无=%s 有event_5b=%s（额外 +10s 挂机收益未写在文案）", before.toFixed(1), after.toFixed(1));
   });
 
-  it("Y6 【UI 文案缺陷】天赋面板花费标签/上限仍是旧值（tier3-4 显示「点亮」实扣 2；终极显示「点亮 2」实扣 3；底部写上限 18）", () => {
+  it("Y6 天赋面板花费标签已与分层花费一致（终极 3 点、tier3-4 标 2 点、上限 24）", () => {
     const panel = readFileSync("src/ui/team-panel.ts", "utf8");
-    expect(panel).toContain("const need = t.tier >= 5 ? 2 : 1;");
-    expect(panel).toContain("（终极·2点）");
-    expect(panel).toContain("上限 18");
-    // 与引擎真实花费不一致
+    expect(panel).toContain("const need = costOfTalent(t.id);");
+    expect(panel).toContain("（终极·${need}点）");
+    expect(panel).toContain("（上限 24");
     expect(costOfTalent("click_3")).toBe(2);
     expect(costOfTalent("click_5a")).toBe(3);
-    console.log("[Y6] UI 标签需要 2、终极 2 点、上限 18；实际 tier3-4=2、终极=3、上限 27");
+    expect(TALENT_POINT_CAP).toBe(24);
+    console.log("[Y6] UI 标签与引擎花费一致 ✓（此前 2 点/上限 18 的文案已修）");
   });
+
 });
 
 function NOW() {

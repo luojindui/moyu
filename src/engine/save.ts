@@ -191,6 +191,12 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
       typeof rawTalents?.rankGranted === "number" && Number.isInteger(rawTalents.rankGranted)
         ? Math.min(12, Math.max(-1, rawTalents.rankGranted))
         : -1;
+    talents.overflow =
+      typeof (rawTalents as { overflow?: unknown })?.overflow === "number" &&
+      Number.isInteger((rawTalents as { overflow: number }).overflow) &&
+      (rawTalents as { overflow: number }).overflow >= 0
+        ? Math.min(30, (rawTalents as { overflow: number }).overflow)
+        : 0;
     {
       const d = (rawTalents as { dailyGiftDate?: unknown })?.dailyGiftDate;
       talents.dailyGiftDate = typeof d === "string" && /^\d{4}-\d{2}-\d{2}$/.test(d) ? d : "";

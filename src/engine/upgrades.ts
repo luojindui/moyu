@@ -96,7 +96,7 @@ export function conversionBonus(state: GameState): number {
 export function stationIdleScaled(state: GameState): number {
   const mult = prestigeMultiplier(state.prestige) * collectionBonus(state);
   const talent = talentEffects(state.talents);
-  return stationIdleOf(state) * mult * talent.idleMult * (1 + conversionBonus(state));
+  return stationIdleOf(state) * mult * talent.idleMult * (1 + conversionBonus(state)) * (1 + talent.overflowIdleBonus);
 }
 
 /** 假设所有同事都在家（未派遣）时的挂机收益，用于计算派遣净收益 */
@@ -125,7 +125,7 @@ export function effectOf(state: GameState): { clickPower: number; idleRate: numb
 
   // 工位部分（吃满倍率 + 天赋转化）
   const rawStation = stationIdleOf(state) * mult; // 未放大（share 基数）
-  const station = rawStation * talent.idleMult * (1 + conversionBonus(state));
+  const station = rawStation * talent.idleMult * (1 + conversionBonus(state)) * (1 + talent.overflowIdleBonus);
   // 同事固定部分（吃转生/图鉴，但不吃挂机天赋——避免双重放大）
   const favorIdleBonus = favorBonuses(state).idleMult;
   // 天赋 idle_5b：同事挂机 +40%

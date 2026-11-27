@@ -181,18 +181,34 @@ describe("X5. 自动排班 autoRepeat / 领取快照", () => {
 });
 
 describe("X6. 文档与代码一致性（附录 v2 数值）", () => {
-  it("X6 附录数值与代码一致（价格/任务/天赋点上限/离岗折损/好感表）", () => {
+  it("X6 文档附录与代码一致性：多数一致，但「上限」仍写 27（代码已改 24）、event_5b 额外效果未写", () => {
     const doc = readFileSync("docs/spec-batch1.md", "utf8");
     expect(doc).toContain("v2 实际生效数值");
     for (const v of ["12,000", "500,000", "8,000,000", "60,000,000", "400,000,000"]) expect(doc).toContain(v);
     expect(doc).toContain("AWAY_IDLE_FACTOR = 0.85");
-    expect(doc).toContain("全树 27 点");
     expect(doc).toContain("每日首次打开 +1");
     expect(doc).toContain("就近溜达");
-    // 附录说 event 5b = 事件×2 + 离线效率+20%，但代码仍保留 +10 秒挂机收益（附录未写）
+    // 【不一致】文档仍写「全树 27 点 / 上限 27」，代码已把上限改为 24
+    expect(doc).toContain("全树 27 点");
+    expect(doc).toContain("上限 27");
     const talents = readFileSync("src/engine/talents.ts", "utf8");
-    expect(talents).toContain("offlineEfficiencyBonus");
-    expect(talents).toContain("surviveBonusIdleSeconds: has(\"event_5b\") ? 10 : 0");
-    console.log("[X6] 附录与代码基本一致；仅 event_5b 代码仍多一条「+10 秒挂机收益」未写在 desc/附录");
+    expect(talents).toContain("TALENT_POINT_CAP = 24");
+    console.log("[X6] 文档「上限 27」≠ 代码「上限 24」（docs/spec-batch1.md 附录需同步）；event_5b 的 +10s 挂机收益仍未写入文案");
+  });
+
+});
+
+
+describe("X7. P1-1 复归：主循环是否仍在强刷面板", () => {
+  it("X7 【缺陷·复归】150ms HUD 循环末尾仍调用 teamPanel.refreshNow() → 面板打开时每 150ms 全量重建", () => {
+    const main = readFileSync("src/main.ts", "utf8");
+    const hudIdx = main.indexOf("hud.refresh(state, combo);");
+    expect(hudIdx).toBeGreaterThan(0);
+    const seg = main.slice(hudIdx, hudIdx + 300);
+    console.log("[X7] HUD 循环末尾片段:", seg.replace(/\n/g, " | ").slice(0, 160));
+    expect(seg).toContain("teamPanel.refreshNow(state);");
+    expect((main.match(/teamPanel\.refreshNow\(state\);/g) ?? []).length).toBe(9);
+    // bcb2a7b 只删了 4 处 refreshNow（每日/段位/endMissions/grant），主 HUD 这一处漏改
+    expect((main.match(/teamPanel\.refresh\(state\);/g) ?? []).length).toBe(5);
   });
 });

@@ -92,7 +92,7 @@ describe("Z1. 存档净化（P1-2/P2-4 复验）", () => {
     const s = restore(a, NOW).state!;
     console.log("[Z2] unlocked=", s.talents.unlocked, " points=", s.talents.points, " rankGranted=", s.talents.rankGranted, " dailyGiftDate=", JSON.stringify(s.talents.dailyGiftDate));
     expect(s.talents.unlocked).toEqual(["click_5a", "click_1"]); // 去重 + 互斥只留首个
-    expect(s.talents.points).toBe(27);
+    expect(s.talents.points).toBe(24);
     expect(s.talents.rankGranted).toBe(12);
     expect(s.talents.dailyGiftDate).toBe("");
     expect(s.team.colleagues["zhou"]!.rewardSnapshot).toBe(1e18);

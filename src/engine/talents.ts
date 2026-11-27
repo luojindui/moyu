@@ -55,8 +55,8 @@ export const TALENTS: TalentDef[] = [
   { id: "idle_2", branch: "idle", tier: 2, name: "离线扩容", desc: "离线封顶 +2h（12→14h）", value: 2 },
   { id: "idle_3", branch: "idle", tier: 3, name: "更稳", desc: "挂机收益 +6%", value: 0.06 },
   { id: "idle_4", branch: "idle", tier: 4, name: "离线效率", desc: "离线效率上限 +0.08（可超过 100%）", value: 0.08 },
-  { id: "idle_5a", branch: "idle", tier: 5, name: "最稳", desc: "挂机收益 +8%", value: 0.08, exclusive: "idle_ult" },
-  { id: "idle_5b", branch: "idle", tier: 5, name: "带队摸鱼", desc: "同事提供的挂机收益 +40%", value: 0.4, exclusive: "idle_ult" },
+  { id: "idle_5a", branch: "idle", tier: 5, name: "最稳", desc: "挂机收益 +20%", value: 0.2, exclusive: "idle_ult" },
+  { id: "idle_5b", branch: "idle", tier: 5, name: "带队摸鱼", desc: "同事提供的挂机收益 +70%", value: 0.7, exclusive: "idle_ult" },
 
   // ---------- 事件流 ----------
   { id: "event_1", branch: "event", tier: 1, name: "情报", desc: "安然巡逻奖励 +15%", value: 0.15 },
@@ -76,10 +76,12 @@ export interface TalentState {
   rankGranted: number;
   /** 最近一次"每日签到天赋点"的日期（YYYY-MM-DD） */
   dailyGiftDate: string;
+  /** 超出上限被"溢出"的天赋点（每点 = +0.5% 挂机，封顶 +15%） */
+  overflow: number;
 }
 
 export function emptyTalents(): TalentState {
-  return { unlocked: [], points: 0, rankGranted: -1, dailyGiftDate: "" };
+  return { unlocked: [], points: 0, rankGranted: -1, dailyGiftDate: "", overflow: 0 };
 }
 
 export function talentDef(id: string): TalentDef | undefined {
@@ -131,6 +133,7 @@ export function unlockTalent(state: GameState, id: string): GameState | null {
       points: state.talents.points - costOfTalent(id),
       rankGranted: state.talents.rankGranted,
       dailyGiftDate: state.talents.dailyGiftDate,
+      overflow: state.talents.overflow,
     },
   };
 }
@@ -145,13 +148,22 @@ export function resetTalents(state: GameState): GameState {
       points: Math.min(TALENT_POINT_CAP, state.talents.points + refunded),
       rankGranted: state.talents.rankGranted,
       dailyGiftDate: state.talents.dailyGiftDate,
+      overflow: state.talents.overflow,
     },
   };
 }
 
 /** 转生时加天赋点 */
+/** 加天赋点：超出上限的部分转入 overflow（每点 +0.5% 挂机，封顶 +15%） */
+export function addTalentPoints(talents: TalentState, count: number): TalentState {
+  const total = talents.points + count;
+  const points = Math.min(TALENT_POINT_CAP, total);
+  const excess = Math.max(0, total - TALENT_POINT_CAP);
+  return { ...talents, points, overflow: Math.min(30, talents.overflow + excess) };
+}
+
 export function grantPrestigeTalentPoints(talents: TalentState, count = TALENT_POINTS_PER_PRESTIGE): TalentState {
-  return { ...talents, points: Math.min(TALENT_POINT_CAP, talents.points + count) };
+  return addTalentPoints(talents, count);
 }
 
 /** 每日首次打开送 1 点（保证碎片党每次打开都有 1 个决策；上限内） */
@@ -160,13 +172,11 @@ export function grantDailyTalentPoint(
   today: string,
 ): { talents: TalentState; granted: number } {
   if (talents.dailyGiftDate === today) return { talents, granted: 0 };
+  // 已满点：仍记为"已领取"，多余点数不给（避免每天白送 overflow）
   if (talents.points >= TALENT_POINT_CAP) {
     return { talents: { ...talents, dailyGiftDate: today }, granted: 0 };
   }
-  return {
-    granted: 1,
-    talents: { ...talents, dailyGiftDate: today, points: Math.min(TALENT_POINT_CAP, talents.points + 1) },
-  };
+  return { granted: 1, talents: addTalentPoints({ ...talents, dailyGiftDate: today }, 1) };
 }
 
 /** 按生涯累计检查应发放的段位天赋点（幂等） */
@@ -182,7 +192,7 @@ export function grantRankTalents(talents: TalentState, rankIndex: number): { tal
   if (granted === 0) return { talents, granted: 0 };
   return {
     granted,
-    talents: { ...talents, rankGranted, points: Math.min(TALENT_POINT_CAP, talents.points + granted) },
+    talents: addTalentPoints({ ...talents, rankGranted }, granted),
   };
 }
 
@@ -223,6 +233,8 @@ export interface TalentEffects {
   surviveBonusIdleSeconds: number;
   /** event_5b：离线效率加成 */
   offlineEfficiencyBonus: number;
+  /** 溢出天赋点换算的挂机加成（封顶 +15%） */
+  overflowIdleBonus: number;
 }
 
 /** 汇总当前已点天赋的效果 */
@@ -249,5 +261,6 @@ export function talentEffects(talents: TalentState): TalentEffects {
     clickUltPerK: has("click_5b") ? 0.01 : 0,
     surviveBonusIdleSeconds: has("event_5b") ? 10 : 0,
     offlineEfficiencyBonus: has("event_5b") ? 0.2 : 0,
+    overflowIdleBonus: Math.min(0.15, (talents.overflow ?? 0) * 0.005),
   };
 }

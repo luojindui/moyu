@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T09:07:41.970Z",
+  "generatedAt": "2026-11-27T09:11:14.036Z",
   "engine": "HEAD 06041a1 (R7 prestige + 14 ranks)",
   "profiles": {
     "active": {
@@ -17697,9 +17697,9 @@
         {
           "day": 12,
           "date": "2026-12-08",
-          "lifetimeEnd": 2054802828433.2727,
-          "dayIncome": 256691131975.21094,
-          "idleRateEnd": 3649985.6399999997,
+          "lifetimeEnd": 2055802875960.4182,
+          "dayIncome": 257691179502.35645,
+          "idleRateEnd": 3686485.4963999996,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 50,
           "prestigeEnd": 190,
@@ -17710,14 +17710,14 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2045,
-          "offlineRatio": 0.9798524796260184
+          "offlineRatio": 0.9786805423491267
         },
         {
           "day": 13,
           "date": "2026-12-09",
-          "lifetimeEnd": 2331175322320.36,
-          "dayIncome": 276372493887.08716,
-          "idleRateEnd": 3917057.76,
+          "lifetimeEnd": 2336007300287.068,
+          "dayIncome": 280204424326.64966,
+          "idleRateEnd": 3995398.9151999997,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 50,
           "prestigeEnd": 204,
@@ -17728,14 +17728,14 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2051,
-          "offlineRatio": 0.9804512985651369
+          "offlineRatio": 0.9793166406891038
         },
         {
           "day": 14,
           "date": "2026-12-10",
-          "lifetimeEnd": 2627215005621.6587,
-          "dayIncome": 296039683301.2988,
-          "idleRateEnd": 4184129.8800000004,
+          "lifetimeEnd": 2639102978257.772,
+          "dayIncome": 303095677970.7041,
+          "idleRateEnd": 4309653.776400001,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 50,
           "prestigeEnd": 218,
@@ -17746,14 +17746,14 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2055,
-          "offlineRatio": 0.9810174623753416
+          "offlineRatio": 0.9799195300879876
         },
         {
           "day": 15,
           "date": "2026-12-11",
-          "lifetimeEnd": 2942893426298.425,
-          "dayIncome": 315678420676.7661,
-          "idleRateEnd": 4451202,
+          "lifetimeEnd": 2965453226718.4824,
+          "dayIncome": 326350248460.71045,
+          "idleRateEnd": 4629250.08,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 50,
           "prestigeEnd": 232,
@@ -17764,14 +17764,14 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2024,
-          "offlineRatio": 0.9816015506086392
+          "offlineRatio": 0.9805382444050386
         },
         {
           "day": 16,
           "date": "2026-12-12",
-          "lifetimeEnd": 3278280535673.0425,
-          "dayIncome": 335387109374.6177,
-          "idleRateEnd": 4718274.12,
+          "lifetimeEnd": 3315522094498.1074,
+          "dayIncome": 350068867779.625,
+          "idleRateEnd": 4954187.826,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 50,
           "prestigeEnd": 246,
@@ -17782,14 +17782,14 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2060,
-          "offlineRatio": 0.9819123823793664
+          "offlineRatio": 0.9808853720409774
         },
         {
           "day": 17,
           "date": "2026-12-13",
-          "lifetimeEnd": 3633332378509.8037,
-          "dayIncome": 355051842836.7612,
-          "idleRateEnd": 4985346.24,
+          "lifetimeEnd": 3689657268401.1562,
+          "dayIncome": 374135173903.0488,
+          "idleRateEnd": 5284467.014400001,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 50,
           "prestigeEnd": 260,
@@ -17800,14 +17800,14 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2045,
-          "offlineRatio": 0.9823103047547653
+          "offlineRatio": 0.9813163682904514
         },
         {
           "day": 18,
           "date": "2026-12-14",
-          "lifetimeEnd": 4008054811765.492,
-          "dayIncome": 374722433255.6885,
-          "idleRateEnd": 5252418.359999999,
+          "lifetimeEnd": 4088256859390.924,
+          "dayIncome": 398599590989.7676,
+          "idleRateEnd": 5620087.6452,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 50,
           "prestigeEnd": 274,
@@ -17818,14 +17818,14 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2056,
-          "offlineRatio": 0.9826511028359687
+          "offlineRatio": 0.9816907091951428
         },
         {
           "day": 19,
           "date": "2026-12-15",
-          "lifetimeEnd": 4402429498314.777,
-          "dayIncome": 394374686549.28516,
-          "idleRateEnd": 5519490.4799999995,
+          "lifetimeEnd": 4511693977482.426,
+          "dayIncome": 423437118091.50195,
+          "idleRateEnd": 5961049.7184,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 50,
           "prestigeEnd": 288,
@@ -17836,14 +17836,14 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2040,
-          "offlineRatio": 0.9830036102050694
+          "offlineRatio": 0.9820751394313678
         },
         {
           "day": 20,
           "date": "2026-12-16",
-          "lifetimeEnd": 4816519570584.19,
-          "dayIncome": 414090072269.4131,
-          "idleRateEnd": 5786562.600000001,
+          "lifetimeEnd": 4960427689297.054,
+          "dayIncome": 448733711814.6279,
+          "idleRateEnd": 6307353.234000001,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 50,
           "prestigeEnd": 302,
@@ -17854,14 +17854,14 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2071,
-          "offlineRatio": 0.9831727352833524
+          "offlineRatio": 0.9822788290214581
         },
         {
           "day": 21,
           "date": "2026-12-17",
-          "lifetimeEnd": 5250225648928.185,
-          "dayIncome": 433706078343.99414,
-          "idleRateEnd": 6053634.72,
+          "lifetimeEnd": 5434745419213.5205,
+          "dayIncome": 474317729916.4668,
+          "idleRateEnd": 6658998.192,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 50,
           "prestigeEnd": 316,
@@ -17872,14 +17872,14 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2035,
-          "offlineRatio": 0.9835518076918072
+          "offlineRatio": 0.9826855720247188
         },
         {
           "day": 22,
           "date": "2026-12-18",
-          "lifetimeEnd": 5703602111994.714,
-          "dayIncome": 453376463066.5293,
-          "idleRateEnd": 6320706.84,
+          "lifetimeEnd": 5935096931755.618,
+          "dayIncome": 500351512542.09766,
+          "idleRateEnd": 7015984.5924,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 50,
           "prestigeEnd": 330,
@@ -17890,14 +17890,14 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2040,
-          "offlineRatio": 0.9837800637040783
+          "offlineRatio": 0.9829444875133871
         },
         {
           "day": 23,
           "date": "2026-12-19",
-          "lifetimeEnd": 6176681918085.849,
-          "dayIncome": 473079806091.13477,
-          "idleRateEnd": 6587778.960000001,
+          "lifetimeEnd": 6461910427698.693,
+          "dayIncome": 526813495943.0752,
+          "idleRateEnd": 7378312.435200002,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 50,
           "prestigeEnd": 344,
@@ -17908,14 +17908,14 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2051,
-          "offlineRatio": 0.9839207847802545
+          "offlineRatio": 0.9831170669612506
         },
         {
           "day": 24,
           "date": "2026-12-20",
-          "lifetimeEnd": 6669421469828.692,
-          "dayIncome": 492739551742.84375,
-          "idleRateEnd": 6854851.08,
+          "lifetimeEnd": 7015531598112.966,
+          "dayIncome": 553621170414.2725,
+          "idleRateEnd": 7745981.720399999,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 50,
           "prestigeEnd": 358,
@@ -17926,14 +17926,14 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2051,
-          "offlineRatio": 0.9841373210513392
+          "offlineRatio": 0.9833618230708278
         },
         {
           "day": 25,
           "date": "2026-12-21",
-          "lifetimeEnd": 7181785523853.959,
-          "dayIncome": 512364054025.2666,
-          "idleRateEnd": 7121923.2,
+          "lifetimeEnd": 7596313487737.695,
+          "dayIncome": 580781889624.7295,
+          "idleRateEnd": 8118992.448000001,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 50,
           "prestigeEnd": 372,
@@ -17944,14 +17944,14 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2033,
-          "offlineRatio": 0.9844049496078181
+          "offlineRatio": 0.9836558692066899
         },
         {
           "day": 26,
           "date": "2026-12-22",
-          "lifetimeEnd": 7713878532345.544,
-          "dayIncome": 532093008491.58496,
-          "idleRateEnd": 7388995.319999999,
+          "lifetimeEnd": 8204763055586.337,
+          "dayIncome": 608449567848.6416,
+          "idleRateEnd": 8497344.617999999,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 50,
           "prestigeEnd": 386,
@@ -17962,14 +17962,14 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2059,
-          "offlineRatio": 0.9844595414323025
+          "offlineRatio": 0.9837431788651626
         },
         {
           "day": 27,
           "date": "2026-12-23",
-          "lifetimeEnd": 8265636392359.865,
-          "dayIncome": 551757860014.3213,
-          "idleRateEnd": 7656067.44,
+          "lifetimeEnd": 8839076949568.922,
+          "dayIncome": 634313893982.585,
+          "idleRateEnd": 8804477.556,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 50,
           "prestigeEnd": 400,
@@ -17980,14 +17980,14 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2059,
-          "offlineRatio": 0.984624609570979
+          "offlineRatio": 0.9849469301323878
         },
         {
           "day": 28,
           "date": "2026-12-24",
-          "lifetimeEnd": 8837062149280.441,
-          "dayIncome": 571425756920.5762,
-          "idleRateEnd": 7923139.5600000005,
+          "lifetimeEnd": 9496001903102.266,
+          "dayIncome": 656924953533.3438,
+          "idleRateEnd": 9111610.493999999,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 50,
           "prestigeEnd": 414,
@@ -17998,14 +17998,14 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2050,
-          "offlineRatio": 0.984773068127369
+          "offlineRatio": 0.9850948677568923
         },
         {
           "day": 29,
           "date": "2026-12-25",
-          "lifetimeEnd": 9428180481661.826,
-          "dayIncome": 591118332381.3848,
-          "idleRateEnd": 8190211.68,
+          "lifetimeEnd": 10175564208989.633,
+          "dayIncome": 679562305887.3672,
+          "idleRateEnd": 9418743.431999998,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 50,
           "prestigeEnd": 428,
@@ -18016,14 +18016,14 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2071,
-          "offlineRatio": 0.9848705281388996
+          "offlineRatio": 0.9851948409080258
         },
         {
           "day": 30,
           "date": "2026-12-26",
-          "lifetimeEnd": 10047784665385.934,
-          "dayIncome": 619604183724.1074,
-          "idleRateEnd": 8457283.8,
+          "lifetimeEnd": 10887878422854.111,
+          "dayIncome": 712314213864.4785,
+          "idleRateEnd": 9725876.37,
           "rankEnd": "摸鱼宇宙尽头·终",
           "collectionEnd": 50,
           "prestigeEnd": 442,
@@ -18034,7 +18034,7 @@
           "newContentCount": 2,
           "sessions": 2,
           "clicks": 2057,
-          "offlineRatio": 0.9709833606099196
+          "offlineRatio": 0.9712976969684498
         }
       ]
     },

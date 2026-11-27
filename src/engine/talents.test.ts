@@ -18,7 +18,7 @@ import {
 } from "./talents";
 
 function withPoints(points: number): GameState {
-  return { ...initialState(), talents: { unlocked: [], points, rankGranted: -1, dailyGiftDate: "" } };
+  return { ...initialState(), talents: { unlocked: [], points, rankGranted: -1, dailyGiftDate: "", overflow: 0 } };
 }
 
 describe("天赋树（18 个：3 流派 × 4 线性 + 2 互斥终极）", () => {
@@ -121,14 +121,14 @@ describe("天赋树（18 个：3 流派 × 4 线性 + 2 互斥终极）", () => 
     let a = withPoints(10);
     for (const id of ["idle_1", "idle_2", "idle_3", "idle_4", "idle_5a"]) a = unlockTalent(a, id)!;
     const ea = talentEffects(a.talents);
-    expect(ea.idleMult).toBeCloseTo(1 + 0.06 + 0.06 + 0.08, 6);
+    expect(ea.idleMult).toBeCloseTo(1 + 0.06 + 0.06 + 0.2, 6);
     expect(ea.offlineCapBonusHours).toBe(2);
     expect(ea.offlineBaseBonus).toBe(0.08);
     expect(ea.teamIdleMult).toBe(1);
 
     let b = withPoints(10);
     for (const id of ["idle_1", "idle_2", "idle_3", "idle_4", "idle_5b"]) b = unlockTalent(b, id)!;
-    expect(talentEffects(b.talents).teamIdleMult).toBeCloseTo(1.4, 6);
+    expect(talentEffects(b.talents).teamIdleMult).toBeCloseTo(1.7, 6);
   });
 
   it("效果：事件流 + 终极 ×2", () => {
