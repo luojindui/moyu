@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-26T12:19:47.849Z",
-  "engine": "mvp-v1 batch1（纯放置循环，无随机事件）",
+  "generatedAt": "2026-11-27T02:50:56.728Z",
+  "engine": "r3（放置+事件+里程碑错峰+底薪+段位）",
   "sessions": [
     {
       "persona": "clicker(狂点党)",
@@ -26,8 +26,8 @@
         },
         {
           "minute": 3,
-          "moyu": 6481.1,
-          "moyuText": "6481.1",
+          "moyu": 6455.1,
+          "moyuText": "6455.1",
           "clickPower": 32,
           "idleRate": 22.2,
           "levels": {
@@ -38,8 +38,8 @@
         },
         {
           "minute": 10,
-          "moyu": 111691.1,
-          "moyuText": "11.17万",
+          "moyu": 112154.5,
+          "moyuText": "11.22万",
           "clickPower": 293,
           "idleRate": 189.2,
           "levels": {
@@ -52,8 +52,8 @@
         },
         {
           "minute": 30,
-          "moyu": 52498.5,
-          "moyuText": "5.25万",
+          "moyu": 91108.1,
+          "moyuText": "9.11万",
           "clickPower": 1633,
           "idleRate": 2640.2,
           "levels": {
@@ -68,8 +68,8 @@
         },
         {
           "minute": 60,
-          "moyu": 426724,
-          "moyuText": "42.67万",
+          "moyu": 369801.8,
+          "moyuText": "36.98万",
           "clickPower": 2497,
           "idleRate": 9556.2,
           "levels": {
@@ -85,8 +85,8 @@
         },
         {
           "minute": 120,
-          "moyu": 1221112.1,
-          "moyuText": "122.11万",
+          "moyu": 410924.1,
+          "moyuText": "41.09万",
           "clickPower": 4777,
           "idleRate": 22536.2,
           "levels": {
@@ -103,8 +103,8 @@
         },
         {
           "minute": 180,
-          "moyu": 3821167,
-          "moyuText": "382.12万",
+          "moyu": 1383239.4,
+          "moyuText": "138.32万",
           "clickPower": 6401,
           "idleRate": 40272.2,
           "levels": {
@@ -122,7 +122,7 @@
       ],
       "firstPurchaseMinute": 0.08333333333333333,
       "purchases": 502,
-      "maxDeadAirSeconds": 85,
+      "maxDeadAirSeconds": 86,
       "purchaseTimeline": [
         {
           "minute": 0.1,
@@ -961,7 +961,7 @@
           "item": "带薪喝水"
         },
         {
-          "minute": 17.5,
+          "minute": 17.6,
           "item": "刷手机"
         },
         {
@@ -989,7 +989,7 @@
           "item": "带薪喝水"
         },
         {
-          "minute": 18.6,
+          "minute": 18.5,
           "item": "刷手机"
         },
         {
@@ -1001,7 +1001,7 @@
           "item": "咖啡续命"
         },
         {
-          "minute": 19,
+          "minute": 18.9,
           "item": "无用会议"
         },
         {
@@ -1009,7 +1009,7 @@
           "item": "带薪蹲坑"
         },
         {
-          "minute": 19.3,
+          "minute": 19.2,
           "item": "人体工学椅"
         },
         {
@@ -1045,11 +1045,11 @@
           "item": "带薪喝水"
         },
         {
-          "minute": 20.8,
+          "minute": 20.7,
           "item": "刷手机"
         },
         {
-          "minute": 21,
+          "minute": 20.9,
           "item": "摸鱼群聊"
         },
         {
@@ -1069,7 +1069,7 @@
           "item": "人体工学椅"
         },
         {
-          "minute": 21.8,
+          "minute": 21.9,
           "item": "带薪喝水"
         },
         {
@@ -1077,11 +1077,11 @@
           "item": "刷手机"
         },
         {
-          "minute": 22.1,
+          "minute": 22.2,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 22.4,
+          "minute": 22.3,
           "item": "咖啡续命"
         },
         {
@@ -1105,7 +1105,7 @@
           "item": "刷手机"
         },
         {
-          "minute": 23.4,
+          "minute": 23.3,
           "item": "摸鱼群聊"
         },
         {
@@ -1117,15 +1117,15 @@
           "item": "无用会议"
         },
         {
-          "minute": 23.8,
+          "minute": 23.9,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 24,
+          "minute": 24.1,
           "item": "人体工学椅"
         },
         {
-          "minute": 24.3,
+          "minute": 24.2,
           "item": "带薪喝水"
         },
         {
@@ -1137,11 +1137,11 @@
           "item": "摸鱼群聊"
         },
         {
-          "minute": 24.8,
+          "minute": 24.7,
           "item": "咖啡续命"
         },
         {
-          "minute": 25,
+          "minute": 24.9,
           "item": "无用会议"
         },
         {
@@ -1157,19 +1157,19 @@
           "item": "带薪喝水"
         },
         {
-          "minute": 25.7,
+          "minute": 25.6,
           "item": "刷手机"
         },
         {
-          "minute": 25.9,
+          "minute": 25.8,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 26.1,
+          "minute": 26,
           "item": "咖啡续命"
         },
         {
-          "minute": 26.3,
+          "minute": 26.2,
           "item": "无用会议"
         },
         {
@@ -1193,27 +1193,27 @@
           "item": "摸鱼群聊"
         },
         {
-          "minute": 27.6,
+          "minute": 27.5,
           "item": "咖啡续命"
         },
         {
-          "minute": 27.9,
+          "minute": 27.8,
           "item": "无用会议"
         },
         {
-          "minute": 28.1,
+          "minute": 28,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 28.3,
+          "minute": 28.2,
           "item": "人体工学椅"
         },
         {
-          "minute": 28.5,
+          "minute": 28.4,
           "item": "带薪喝水"
         },
         {
-          "minute": 28.7,
+          "minute": 28.6,
           "item": "刷手机"
         },
         {
@@ -1225,7 +1225,7 @@
           "item": "咖啡续命"
         },
         {
-          "minute": 29.4,
+          "minute": 29.3,
           "item": "无用会议"
         },
         {
@@ -1237,19 +1237,19 @@
           "item": "人体工学椅"
         },
         {
-          "minute": 30.1,
+          "minute": 30,
           "item": "带薪喝水"
         },
         {
-          "minute": 30.4,
+          "minute": 30.3,
           "item": "刷手机"
         },
         {
-          "minute": 30.6,
+          "minute": 30.5,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 30.9,
+          "minute": 30.8,
           "item": "咖啡续命"
         },
         {
@@ -1257,7 +1257,7 @@
           "item": "无用会议"
         },
         {
-          "minute": 31.4,
+          "minute": 31.3,
           "item": "带薪蹲坑"
         },
         {
@@ -1269,11 +1269,11 @@
           "item": "带薪喝水"
         },
         {
-          "minute": 32.2,
+          "minute": 32.1,
           "item": "刷手机"
         },
         {
-          "minute": 32.5,
+          "minute": 32.4,
           "item": "摸鱼群聊"
         },
         {
@@ -1305,19 +1305,19 @@
           "item": "深度摸鱼"
         },
         {
-          "minute": 34.8,
+          "minute": 34.7,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 35.1,
+          "minute": 35,
           "item": "咖啡续命"
         },
         {
-          "minute": 35.4,
+          "minute": 35.3,
           "item": "无用会议"
         },
         {
-          "minute": 35.7,
+          "minute": 35.6,
           "item": "带薪蹲坑"
         },
         {
@@ -1325,7 +1325,7 @@
           "item": "人体工学椅"
         },
         {
-          "minute": 36.3,
+          "minute": 36.2,
           "item": "带薪喝水"
         },
         {
@@ -1357,15 +1357,15 @@
           "item": "人体工学椅"
         },
         {
-          "minute": 38.8,
+          "minute": 38.9,
           "item": "带薪喝水"
         },
         {
-          "minute": 39.2,
+          "minute": 39.1,
           "item": "刷手机"
         },
         {
-          "minute": 39.5,
+          "minute": 39.4,
           "item": "深度摸鱼"
         },
         {
@@ -1413,7 +1413,7 @@
           "item": "无用会议"
         },
         {
-          "minute": 43.5,
+          "minute": 43.4,
           "item": "带薪蹲坑"
         },
         {
@@ -1425,7 +1425,7 @@
           "item": "带薪喝水"
         },
         {
-          "minute": 44.5,
+          "minute": 44.6,
           "item": "刷手机"
         },
         {
@@ -1445,7 +1445,7 @@
           "item": "无用会议"
         },
         {
-          "minute": 46.3,
+          "minute": 46.4,
           "item": "带薪蹲坑"
         },
         {
@@ -1457,15 +1457,15 @@
           "item": "带薪喝水"
         },
         {
-          "minute": 47.5,
+          "minute": 47.4,
           "item": "刷手机"
         },
         {
-          "minute": 47.8,
+          "minute": 47.9,
           "item": "深度摸鱼"
         },
         {
-          "minute": 48.2,
+          "minute": 48.3,
           "item": "摸鱼群聊"
         },
         {
@@ -1497,11 +1497,11 @@
           "item": "深度摸鱼"
         },
         {
-          "minute": 51.4,
+          "minute": 51.5,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 51.8,
+          "minute": 51.9,
           "item": "咖啡续命"
         },
         {
@@ -1509,11 +1509,11 @@
           "item": "无用会议"
         },
         {
-          "minute": 52.7,
+          "minute": 52.8,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 53.1,
+          "minute": 53.2,
           "item": "人体工学椅"
         },
         {
@@ -1521,15 +1521,15 @@
           "item": "带薪喝水"
         },
         {
-          "minute": 54,
+          "minute": 54.1,
           "item": "刷手机"
         },
         {
-          "minute": 54.5,
+          "minute": 54.6,
           "item": "深度摸鱼"
         },
         {
-          "minute": 54.9,
+          "minute": 55,
           "item": "摸鱼群聊"
         },
         {
@@ -1537,7 +1537,7 @@
           "item": "咖啡续命"
         },
         {
-          "minute": 55.8,
+          "minute": 55.9,
           "item": "无用会议"
         },
         {
@@ -1545,11 +1545,11 @@
           "item": "带薪蹲坑"
         },
         {
-          "minute": 56.7,
+          "minute": 56.8,
           "item": "人体工学椅"
         },
         {
-          "minute": 57.2,
+          "minute": 57.3,
           "item": "带薪喝水"
         },
         {
@@ -1565,7 +1565,7 @@
           "item": "摸鱼群聊"
         },
         {
-          "minute": 59.1,
+          "minute": 59.2,
           "item": "咖啡续命"
         },
         {
@@ -1577,31 +1577,31 @@
           "item": "带薪蹲坑"
         },
         {
-          "minute": 60.5,
+          "minute": 60.6,
           "item": "人体工学椅"
         },
         {
-          "minute": 61,
+          "minute": 61.1,
           "item": "带薪喝水"
         },
         {
-          "minute": 61.5,
+          "minute": 61.6,
           "item": "刷手机"
         },
         {
-          "minute": 62,
+          "minute": 62.1,
           "item": "深度摸鱼"
         },
         {
-          "minute": 62.5,
+          "minute": 62.6,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 63,
+          "minute": 63.1,
           "item": "咖啡续命"
         },
         {
-          "minute": 63.5,
+          "minute": 63.6,
           "item": "无用会议"
         },
         {
@@ -1609,11 +1609,11 @@
           "item": "带薪蹲坑"
         },
         {
-          "minute": 64.6,
+          "minute": 64.7,
           "item": "人体工学椅"
         },
         {
-          "minute": 65.1,
+          "minute": 65.2,
           "item": "带薪喝水"
         },
         {
@@ -1621,521 +1621,521 @@
           "item": "刷手机"
         },
         {
-          "minute": 66.2,
+          "minute": 66.3,
           "item": "深度摸鱼"
         },
         {
-          "minute": 66.8,
+          "minute": 66.9,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 67.3,
+          "minute": 67.4,
           "item": "咖啡续命"
         },
         {
-          "minute": 67.9,
+          "minute": 68,
           "item": "无用会议"
         },
         {
-          "minute": 68.5,
+          "minute": 68.6,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 69.1,
+          "minute": 69.2,
           "item": "人体工学椅"
         },
         {
-          "minute": 69.7,
+          "minute": 69.8,
           "item": "带薪喝水"
         },
         {
-          "minute": 70.3,
+          "minute": 70.4,
           "item": "刷手机"
         },
         {
-          "minute": 70.9,
+          "minute": 71,
           "item": "深度摸鱼"
         },
         {
-          "minute": 71.5,
+          "minute": 71.6,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 72.1,
+          "minute": 72.2,
           "item": "咖啡续命"
         },
         {
-          "minute": 72.8,
+          "minute": 72.9,
           "item": "无用会议"
         },
         {
-          "minute": 73.4,
+          "minute": 73.5,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 74,
+          "minute": 74.2,
           "item": "人体工学椅"
         },
         {
-          "minute": 74.6,
+          "minute": 74.7,
           "item": "带薪喝水"
         },
         {
-          "minute": 75.2,
+          "minute": 75.3,
           "item": "刷手机"
         },
         {
-          "minute": 75.8,
+          "minute": 75.9,
           "item": "深度摸鱼"
         },
         {
-          "minute": 76.4,
+          "minute": 76.5,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 77,
+          "minute": 77.1,
           "item": "咖啡续命"
         },
         {
-          "minute": 77.6,
+          "minute": 77.7,
           "item": "无用会议"
         },
         {
-          "minute": 78.2,
+          "minute": 78.4,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 78.8,
+          "minute": 79,
           "item": "人体工学椅"
         },
         {
-          "minute": 79.5,
+          "minute": 79.6,
           "item": "带薪喝水"
         },
         {
-          "minute": 80.1,
+          "minute": 80.3,
           "item": "刷手机"
         },
         {
-          "minute": 80.8,
+          "minute": 80.9,
           "item": "深度摸鱼"
         },
         {
-          "minute": 81.5,
+          "minute": 81.6,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 82.1,
+          "minute": 82.3,
           "item": "咖啡续命"
         },
         {
-          "minute": 82.7,
+          "minute": 82.9,
           "item": "无用会议"
         },
         {
-          "minute": 83.4,
+          "minute": 83.6,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 84,
+          "minute": 84.2,
           "item": "人体工学椅"
         },
         {
-          "minute": 84.7,
+          "minute": 84.9,
           "item": "退休式躺平"
         },
         {
-          "minute": 85.3,
+          "minute": 85.6,
           "item": "带薪喝水"
         },
         {
-          "minute": 86,
+          "minute": 86.2,
           "item": "刷手机"
         },
         {
-          "minute": 86.6,
+          "minute": 86.8,
           "item": "深度摸鱼"
         },
         {
-          "minute": 87.4,
+          "minute": 87.5,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 88,
+          "minute": 88.2,
           "item": "咖啡续命"
         },
         {
-          "minute": 88.7,
+          "minute": 88.8,
           "item": "无用会议"
         },
         {
-          "minute": 89.4,
+          "minute": 89.6,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 90.1,
+          "minute": 90.3,
           "item": "人体工学椅"
         },
         {
-          "minute": 90.8,
+          "minute": 91,
           "item": "退休式躺平"
         },
         {
-          "minute": 91.5,
+          "minute": 91.7,
           "item": "带薪喝水"
         },
         {
-          "minute": 92.2,
+          "minute": 92.4,
           "item": "刷手机"
         },
         {
-          "minute": 92.9,
+          "minute": 93.1,
           "item": "深度摸鱼"
         },
         {
-          "minute": 93.6,
+          "minute": 93.8,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 94.4,
+          "minute": 94.6,
           "item": "咖啡续命"
         },
         {
-          "minute": 95.1,
+          "minute": 95.3,
           "item": "无用会议"
         },
         {
-          "minute": 95.9,
+          "minute": 96.1,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 96.6,
+          "minute": 96.9,
           "item": "人体工学椅"
         },
         {
-          "minute": 97.4,
+          "minute": 97.6,
           "item": "退休式躺平"
         },
         {
-          "minute": 98.1,
+          "minute": 98.4,
           "item": "带薪喝水"
         },
         {
-          "minute": 98.9,
+          "minute": 99.2,
           "item": "刷手机"
         },
         {
-          "minute": 99.7,
+          "minute": 100,
           "item": "深度摸鱼"
         },
         {
-          "minute": 100.5,
+          "minute": 100.8,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 101.3,
+          "minute": 101.6,
           "item": "咖啡续命"
         },
         {
-          "minute": 102.1,
+          "minute": 102.4,
           "item": "无用会议"
         },
         {
-          "minute": 102.9,
+          "minute": 103.1,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 103.6,
+          "minute": 103.9,
           "item": "人体工学椅"
         },
         {
-          "minute": 104.4,
+          "minute": 104.7,
           "item": "退休式躺平"
         },
         {
-          "minute": 105.1,
+          "minute": 105.4,
           "item": "带薪喝水"
         },
         {
-          "minute": 105.9,
+          "minute": 106.2,
           "item": "刷手机"
         },
         {
-          "minute": 106.7,
+          "minute": 107,
           "item": "深度摸鱼"
         },
         {
-          "minute": 107.5,
+          "minute": 107.8,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 108.3,
+          "minute": 108.6,
           "item": "咖啡续命"
         },
         {
-          "minute": 109.1,
+          "minute": 109.4,
           "item": "无用会议"
         },
         {
-          "minute": 109.9,
+          "minute": 110.2,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 110.7,
+          "minute": 111,
           "item": "人体工学椅"
         },
         {
-          "minute": 111.6,
+          "minute": 111.9,
           "item": "退休式躺平"
         },
         {
-          "minute": 112.4,
+          "minute": 112.7,
           "item": "带薪喝水"
         },
         {
-          "minute": 113.2,
+          "minute": 113.5,
           "item": "刷手机"
         },
         {
-          "minute": 114.1,
+          "minute": 114.4,
           "item": "深度摸鱼"
         },
         {
-          "minute": 115,
+          "minute": 115.3,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 115.8,
+          "minute": 116.2,
           "item": "咖啡续命"
         },
         {
-          "minute": 116.7,
+          "minute": 117,
           "item": "无用会议"
         },
         {
-          "minute": 117.6,
+          "minute": 118,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 118.5,
+          "minute": 118.9,
           "item": "人体工学椅"
         },
         {
-          "minute": 119.5,
+          "minute": 119.8,
           "item": "退休式躺平"
         },
         {
-          "minute": 120.4,
+          "minute": 120.7,
           "item": "带薪喝水"
         },
         {
-          "minute": 121.3,
+          "minute": 121.7,
           "item": "刷手机"
         },
         {
-          "minute": 122.2,
+          "minute": 122.6,
           "item": "深度摸鱼"
         },
         {
-          "minute": 123.2,
+          "minute": 123.6,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 124.1,
+          "minute": 124.5,
           "item": "咖啡续命"
         },
         {
-          "minute": 125.1,
+          "minute": 125.5,
           "item": "无用会议"
         },
         {
-          "minute": 126.1,
+          "minute": 126.5,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 127.1,
+          "minute": 127.5,
           "item": "人体工学椅"
         },
         {
-          "minute": 128.1,
+          "minute": 128.5,
           "item": "退休式躺平"
         },
         {
-          "minute": 129,
+          "minute": 129.5,
           "item": "带薪喝水"
         },
         {
-          "minute": 130,
+          "minute": 130.4,
           "item": "刷手机"
         },
         {
-          "minute": 131,
+          "minute": 131.5,
           "item": "深度摸鱼"
         },
         {
-          "minute": 132.1,
+          "minute": 132.5,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 133.1,
+          "minute": 133.5,
           "item": "咖啡续命"
         },
         {
-          "minute": 134.1,
+          "minute": 134.6,
           "item": "无用会议"
         },
         {
-          "minute": 135.2,
+          "minute": 135.6,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 136.3,
+          "minute": 136.7,
           "item": "人体工学椅"
         },
         {
-          "minute": 137.3,
+          "minute": 137.8,
           "item": "退休式躺平"
         },
         {
-          "minute": 138.4,
+          "minute": 138.9,
           "item": "带薪喝水"
         },
         {
-          "minute": 139.5,
+          "minute": 140,
           "item": "刷手机"
         },
         {
-          "minute": 140.6,
+          "minute": 141.1,
           "item": "深度摸鱼"
         },
         {
-          "minute": 141.8,
+          "minute": 142.2,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 142.9,
+          "minute": 143.4,
           "item": "咖啡续命"
         },
         {
-          "minute": 144,
+          "minute": 144.5,
           "item": "无用会议"
         },
         {
-          "minute": 145.2,
+          "minute": 145.7,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 146.4,
+          "minute": 146.9,
           "item": "人体工学椅"
         },
         {
-          "minute": 147.6,
+          "minute": 148.1,
           "item": "退休式躺平"
         },
         {
-          "minute": 148.8,
+          "minute": 149.3,
           "item": "带薪喝水"
         },
         {
-          "minute": 149.9,
+          "minute": 150.4,
           "item": "刷手机"
         },
         {
-          "minute": 151,
+          "minute": 151.6,
           "item": "深度摸鱼"
         },
         {
-          "minute": 152.2,
+          "minute": 152.7,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 153.4,
+          "minute": 153.9,
           "item": "咖啡续命"
         },
         {
-          "minute": 154.5,
+          "minute": 155.1,
           "item": "无用会议"
         },
         {
-          "minute": 155.7,
+          "minute": 156.3,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 157,
+          "minute": 157.5,
           "item": "人体工学椅"
         },
         {
-          "minute": 158.2,
+          "minute": 158.8,
           "item": "退休式躺平"
         },
         {
-          "minute": 159.4,
+          "minute": 160,
           "item": "带薪喝水"
         },
         {
-          "minute": 160.7,
+          "minute": 161.2,
           "item": "刷手机"
         },
         {
-          "minute": 162,
+          "minute": 162.5,
           "item": "深度摸鱼"
         },
         {
-          "minute": 163.2,
+          "minute": 163.8,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 164.5,
+          "minute": 165.1,
           "item": "咖啡续命"
         },
         {
-          "minute": 165.8,
+          "minute": 166.4,
           "item": "无用会议"
         },
         {
-          "minute": 167.2,
+          "minute": 167.8,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 168.5,
+          "minute": 169.1,
           "item": "人体工学椅"
         },
         {
-          "minute": 169.9,
+          "minute": 170.5,
           "item": "退休式躺平"
         },
         {
-          "minute": 171.3,
+          "minute": 171.9,
           "item": "带薪喝水"
         },
         {
-          "minute": 172.6,
+          "minute": 173.2,
           "item": "刷手机"
         },
         {
-          "minute": 174,
+          "minute": 174.7,
           "item": "深度摸鱼"
         },
         {
-          "minute": 175.2,
+          "minute": 175.9,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 176.5,
+          "minute": 177.1,
           "item": "咖啡续命"
         },
         {
-          "minute": 177.7,
+          "minute": 178.3,
           "item": "无用会议"
         },
         {
-          "minute": 179,
+          "minute": 179.6,
           "item": "带薪蹲坑"
         }
       ],
       "bossCaughtTaps": 0,
-      "bossSurviveRewards": 6532764,
-      "memeEarnings": 3250645
+      "bossSurviveRewards": 5223736,
+      "memeEarnings": 3215050
     },
     {
       "persona": "idle(挂机党)",
@@ -2170,8 +2170,8 @@
         },
         {
           "minute": 10,
-          "moyu": 270.1,
-          "moyuText": "270.1",
+          "moyu": 300.1,
+          "moyuText": "300.1",
           "clickPower": 10,
           "idleRate": 1.2,
           "levels": {
@@ -2181,8 +2181,8 @@
         },
         {
           "minute": 30,
-          "moyu": 11293,
-          "moyuText": "1.13万",
+          "moyu": 11127.6,
+          "moyuText": "1.11万",
           "clickPower": 26,
           "idleRate": 18.2,
           "levels": {
@@ -2193,8 +2193,8 @@
         },
         {
           "minute": 60,
-          "moyu": 60041.1,
-          "moyuText": "6.00万",
+          "moyu": 59659.9,
+          "moyuText": "5.97万",
           "clickPower": 83,
           "idleRate": 41.2,
           "levels": {
@@ -2206,8 +2206,8 @@
         },
         {
           "minute": 120,
-          "moyu": 430717,
-          "moyuText": "43.07万",
+          "moyu": 426585,
+          "moyuText": "42.66万",
           "clickPower": 293,
           "idleRate": 189.2,
           "levels": {
@@ -2220,8 +2220,8 @@
         },
         {
           "minute": 180,
-          "moyu": 1389655.1,
-          "moyuText": "138.97万",
+          "moyu": 1372616.5,
+          "moyuText": "137.26万",
           "clickPower": 695,
           "idleRate": 544.2,
           "levels": {
@@ -2960,8 +2960,8 @@
         }
       ],
       "bossCaughtTaps": 0,
-      "bossSurviveRewards": 65931,
-      "memeEarnings": 204545
+      "bossSurviveRewards": 52532,
+      "memeEarnings": 200905
     },
     {
       "persona": "whale(爆肝党)",
@@ -2988,8 +2988,8 @@
         },
         {
           "minute": 3,
-          "moyu": 3048.1,
-          "moyuText": "3048.1",
+          "moyu": 4102.1,
+          "moyuText": "4102.1",
           "clickPower": 107,
           "idleRate": 61.2,
           "levels": {
@@ -3001,92 +3001,92 @@
         },
         {
           "minute": 10,
-          "moyu": 32002.7,
-          "moyuText": "3.20万",
+          "moyu": 22600.6,
+          "moyuText": "2.26万",
           "clickPower": 287,
-          "idleRate": 881.2,
+          "idleRate": 906.2,
           "levels": {
             "phone": 1,
             "water": 3,
             "chair": 28,
-            "group": 17,
+            "group": 18,
             "meeting": 7,
-            "toilet": 4
+            "toilet": 3
           }
         },
         {
           "minute": 30,
-          "moyu": 1662.6,
-          "moyuText": "1662.6",
-          "clickPower": 981,
-          "idleRate": 6421.2,
+          "moyu": 153140.4,
+          "moyuText": "15.31万",
+          "clickPower": 997,
+          "idleRate": 6181.2,
           "levels": {
             "phone": 1,
-            "water": 30,
-            "chair": 43,
-            "group": 32,
-            "meeting": 20,
-            "toilet": 47,
-            "deep": 7
+            "water": 29,
+            "chair": 44,
+            "group": 34,
+            "meeting": 21,
+            "toilet": 45,
+            "deep": 6
           }
         },
         {
           "minute": 60,
-          "moyu": 474281.5,
-          "moyuText": "47.43万",
-          "clickPower": 2473,
-          "idleRate": 10212.2,
+          "moyu": 434635.4,
+          "moyuText": "43.46万",
+          "clickPower": 2449,
+          "idleRate": 10648.2,
           "levels": {
-            "phone": 67,
+            "phone": 68,
             "water": 63,
             "chair": 48,
-            "group": 36,
+            "group": 37,
             "meeting": 24,
             "toilet": 49,
-            "deep": 10,
-            "coffee": 63
+            "deep": 11,
+            "coffee": 60
           }
         },
         {
           "minute": 120,
-          "moyu": 887650.1,
-          "moyuText": "88.77万",
-          "clickPower": 4593,
-          "idleRate": 19124.2,
+          "moyu": 601065.9,
+          "moyuText": "60.11万",
+          "clickPower": 4649,
+          "idleRate": 19840.2,
           "levels": {
-            "phone": 74,
-            "water": 69,
-            "chair": 54,
+            "phone": 75,
+            "water": 70,
+            "chair": 55,
             "group": 43,
             "meeting": 30,
             "toilet": 57,
             "deep": 17,
             "coffee": 83,
-            "retire": 3
+            "retire": 4
           }
         },
         {
           "minute": 180,
-          "moyu": 1722468.3,
-          "moyuText": "172.25万",
-          "clickPower": 4993,
-          "idleRate": 27144.2,
+          "moyu": 1675289.4,
+          "moyuText": "167.53万",
+          "clickPower": 6209,
+          "idleRate": 28220.2,
           "levels": {
-            "phone": 79,
-            "water": 74,
+            "phone": 80,
+            "water": 75,
             "chair": 60,
             "group": 48,
             "meeting": 35,
             "toilet": 62,
-            "deep": 22,
+            "deep": 23,
             "coffee": 88,
-            "retire": 8
+            "retire": 9
           }
         }
       ],
       "firstPurchaseMinute": 0.16666666666666666,
-      "purchases": 476,
-      "maxDeadAirSeconds": 98,
+      "purchases": 480,
+      "maxDeadAirSeconds": 96,
       "purchaseTimeline": [
         {
           "minute": 0.2,
@@ -3126,19 +3126,19 @@
         },
         {
           "minute": 1.7,
-          "item": "人体工学椅"
+          "item": "摸鱼群聊"
         },
         {
           "minute": 1.8,
-          "item": "摸鱼群聊"
-        },
-        {
-          "minute": 2,
           "item": "人体工学椅"
         },
         {
-          "minute": 2.2,
+          "minute": 2,
           "item": "摸鱼群聊"
+        },
+        {
+          "minute": 2.2,
+          "item": "人体工学椅"
         },
         {
           "minute": 2.3,
@@ -3150,11 +3150,11 @@
         },
         {
           "minute": 2.7,
-          "item": "人体工学椅"
+          "item": "摸鱼群聊"
         },
         {
           "minute": 2.8,
-          "item": "摸鱼群聊"
+          "item": "人体工学椅"
         },
         {
           "minute": 3,
@@ -3182,7 +3182,7 @@
         },
         {
           "minute": 4,
-          "item": "人体工学椅"
+          "item": "摸鱼群聊"
         },
         {
           "minute": 4.2,
@@ -3194,23 +3194,23 @@
         },
         {
           "minute": 4.5,
-          "item": "摸鱼群聊"
+          "item": "人体工学椅"
         },
         {
           "minute": 4.7,
-          "item": "人体工学椅"
-        },
-        {
-          "minute": 4.8,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 5,
+          "minute": 4.8,
           "item": "人体工学椅"
         },
         {
+          "minute": 5,
+          "item": "摸鱼群聊"
+        },
+        {
           "minute": 5.2,
-          "item": "无用会议"
+          "item": "人体工学椅"
         },
         {
           "minute": 5.3,
@@ -3218,7 +3218,7 @@
         },
         {
           "minute": 5.5,
-          "item": "摸鱼群聊"
+          "item": "无用会议"
         },
         {
           "minute": 5.7,
@@ -3226,7 +3226,7 @@
         },
         {
           "minute": 5.8,
-          "item": "摸鱼群聊"
+          "item": "无用会议"
         },
         {
           "minute": 6,
@@ -3234,7 +3234,7 @@
         },
         {
           "minute": 6.2,
-          "item": "人体工学椅"
+          "item": "摸鱼群聊"
         },
         {
           "minute": 6.3,
@@ -3242,7 +3242,7 @@
         },
         {
           "minute": 6.5,
-          "item": "无用会议"
+          "item": "摸鱼群聊"
         },
         {
           "minute": 6.7,
@@ -3266,7 +3266,7 @@
         },
         {
           "minute": 7.5,
-          "item": "摸鱼群聊"
+          "item": "无用会议"
         },
         {
           "minute": 7.7,
@@ -3290,43 +3290,43 @@
         },
         {
           "minute": 8.5,
-          "item": "带薪蹲坑"
+          "item": "人体工学椅"
         },
         {
           "minute": 8.7,
-          "item": "无用会议"
+          "item": "人体工学椅"
         },
         {
           "minute": 8.8,
-          "item": "人体工学椅"
+          "item": "带薪蹲坑"
         },
         {
           "minute": 9,
-          "item": "带薪蹲坑"
+          "item": "无用会议"
         },
         {
           "minute": 9.2,
-          "item": "无用会议"
-        },
-        {
-          "minute": 9.3,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 9.5,
+          "minute": 9.3,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 9.7,
+          "minute": 9.5,
           "item": "无用会议"
         },
         {
-          "minute": 9.8,
+          "minute": 9.7,
           "item": "人体工学椅"
         },
         {
-          "minute": 10,
+          "minute": 9.8,
           "item": "带薪蹲坑"
+        },
+        {
+          "minute": 10,
+          "item": "摸鱼群聊"
         },
         {
           "minute": 10.2,
@@ -3338,19 +3338,19 @@
         },
         {
           "minute": 10.5,
-          "item": "摸鱼群聊"
+          "item": "无用会议"
         },
         {
           "minute": 10.7,
-          "item": "人体工学椅"
-        },
-        {
-          "minute": 10.8,
           "item": "带薪蹲坑"
         },
         {
+          "minute": 10.8,
+          "item": "摸鱼群聊"
+        },
+        {
           "minute": 11,
-          "item": "无用会议"
+          "item": "人体工学椅"
         },
         {
           "minute": 11.2,
@@ -3362,15 +3362,15 @@
         },
         {
           "minute": 11.5,
-          "item": "人体工学椅"
+          "item": "带薪蹲坑"
         },
         {
           "minute": 11.7,
-          "item": "人体工学椅"
+          "item": "摸鱼群聊"
         },
         {
           "minute": 11.8,
-          "item": "摸鱼群聊"
+          "item": "带薪蹲坑"
         },
         {
           "minute": 12,
@@ -3378,11 +3378,11 @@
         },
         {
           "minute": 12.2,
-          "item": "带薪蹲坑"
+          "item": "无用会议"
         },
         {
           "minute": 12.3,
-          "item": "无用会议"
+          "item": "人体工学椅"
         },
         {
           "minute": 12.5,
@@ -3390,11 +3390,11 @@
         },
         {
           "minute": 12.7,
-          "item": "带薪蹲坑"
+          "item": "人体工学椅"
         },
         {
           "minute": 12.8,
-          "item": "无用会议"
+          "item": "带薪蹲坑"
         },
         {
           "minute": 13,
@@ -3402,7 +3402,7 @@
         },
         {
           "minute": 13.2,
-          "item": "人体工学椅"
+          "item": "无用会议"
         },
         {
           "minute": 13.3,
@@ -3418,11 +3418,11 @@
         },
         {
           "minute": 13.8,
-          "item": "人体工学椅"
+          "item": "摸鱼群聊"
         },
         {
           "minute": 14,
-          "item": "摸鱼群聊"
+          "item": "人体工学椅"
         },
         {
           "minute": 14.2,
@@ -3430,7 +3430,7 @@
         },
         {
           "minute": 14.3,
-          "item": "摸鱼群聊"
+          "item": "无用会议"
         },
         {
           "minute": 14.5,
@@ -3438,7 +3438,7 @@
         },
         {
           "minute": 14.7,
-          "item": "深度摸鱼"
+          "item": "无用会议"
         },
         {
           "minute": 14.8,
@@ -3446,7 +3446,7 @@
         },
         {
           "minute": 15,
-          "item": "无用会议"
+          "item": "深度摸鱼"
         },
         {
           "minute": 15.2,
@@ -3454,15 +3454,15 @@
         },
         {
           "minute": 15.3,
-          "item": "深度摸鱼"
+          "item": "摸鱼群聊"
         },
         {
           "minute": 15.5,
-          "item": "带薪蹲坑"
+          "item": "人体工学椅"
         },
         {
           "minute": 15.7,
-          "item": "无用会议"
+          "item": "人体工学椅"
         },
         {
           "minute": 15.8,
@@ -3470,35 +3470,35 @@
         },
         {
           "minute": 16,
-          "item": "摸鱼群聊"
+          "item": "无用会议"
         },
         {
           "minute": 16.2,
-          "item": "摸鱼群聊"
+          "item": "带薪蹲坑"
         },
         {
           "minute": 16.3,
-          "item": "带薪蹲坑"
-        },
-        {
-          "minute": 16.5,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 16.7,
+          "minute": 16.5,
           "item": "带薪蹲坑"
+        },
+        {
+          "minute": 16.7,
+          "item": "深度摸鱼"
         },
         {
           "minute": 16.8,
-          "item": "人体工学椅"
-        },
-        {
-          "minute": 17,
           "item": "带薪蹲坑"
         },
         {
+          "minute": 17,
+          "item": "摸鱼群聊"
+        },
+        {
           "minute": 17.2,
-          "item": "无用会议"
+          "item": "人体工学椅"
         },
         {
           "minute": 17.3,
@@ -3506,19 +3506,19 @@
         },
         {
           "minute": 17.5,
-          "item": "摸鱼群聊"
-        },
-        {
-          "minute": 17.7,
           "item": "带薪蹲坑"
         },
         {
+          "minute": 17.7,
+          "item": "无用会议"
+        },
+        {
           "minute": 17.8,
-          "item": "人体工学椅"
+          "item": "带薪蹲坑"
         },
         {
           "minute": 18,
-          "item": "人体工学椅"
+          "item": "摸鱼群聊"
         },
         {
           "minute": 18.2,
@@ -3534,15 +3534,15 @@
         },
         {
           "minute": 18.7,
-          "item": "带薪蹲坑"
+          "item": "摸鱼群聊"
         },
         {
           "minute": 18.8,
-          "item": "无用会议"
+          "item": "带薪蹲坑"
         },
         {
           "minute": 19,
-          "item": "带薪蹲坑"
+          "item": "人体工学椅"
         },
         {
           "minute": 19.2,
@@ -3550,7 +3550,7 @@
         },
         {
           "minute": 19.3,
-          "item": "无用会议"
+          "item": "人体工学椅"
         },
         {
           "minute": 19.5,
@@ -3562,7 +3562,7 @@
         },
         {
           "minute": 19.8,
-          "item": "摸鱼群聊"
+          "item": "无用会议"
         },
         {
           "minute": 20,
@@ -3570,11 +3570,11 @@
         },
         {
           "minute": 20.2,
-          "item": "深度摸鱼"
+          "item": "带薪蹲坑"
         },
         {
           "minute": 20.3,
-          "item": "带薪蹲坑"
+          "item": "摸鱼群聊"
         },
         {
           "minute": 20.5,
@@ -3586,7 +3586,7 @@
         },
         {
           "minute": 20.8,
-          "item": "摸鱼群聊"
+          "item": "人体工学椅"
         },
         {
           "minute": 21,
@@ -3598,11 +3598,11 @@
         },
         {
           "minute": 21.3,
-          "item": "带薪蹲坑"
+          "item": "深度摸鱼"
         },
         {
           "minute": 21.5,
-          "item": "人体工学椅"
+          "item": "带薪蹲坑"
         },
         {
           "minute": 21.7,
@@ -3614,7 +3614,7 @@
         },
         {
           "minute": 22,
-          "item": "带薪蹲坑"
+          "item": "深度摸鱼"
         },
         {
           "minute": 22.2,
@@ -3622,7 +3622,7 @@
         },
         {
           "minute": 22.3,
-          "item": "带薪喝水"
+          "item": "带薪蹲坑"
         },
         {
           "minute": 22.5,
@@ -3634,31 +3634,31 @@
         },
         {
           "minute": 22.8,
-          "item": "深度摸鱼"
-        },
-        {
-          "minute": 23,
-          "item": "带薪喝水"
-        },
-        {
-          "minute": 23.2,
-          "item": "人体工学椅"
-        },
-        {
-          "minute": 23.3,
-          "item": "带薪喝水"
-        },
-        {
-          "minute": 23.5,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 23.7,
+          "minute": 23,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 23.2,
           "item": "带薪喝水"
         },
         {
+          "minute": 23.3,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 23.5,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 23.7,
+          "item": "摸鱼群聊"
+        },
+        {
           "minute": 23.8,
-          "item": "无用会议"
+          "item": "带薪喝水"
         },
         {
           "minute": 24,
@@ -3666,7 +3666,7 @@
         },
         {
           "minute": 24.2,
-          "item": "带薪蹲坑"
+          "item": "无用会议"
         },
         {
           "minute": 24.3,
@@ -3674,11 +3674,11 @@
         },
         {
           "minute": 24.5,
-          "item": "带薪喝水"
+          "item": "带薪蹲坑"
         },
         {
           "minute": 24.7,
-          "item": "无用会议"
+          "item": "带薪喝水"
         },
         {
           "minute": 24.8,
@@ -3686,7 +3686,7 @@
         },
         {
           "minute": 25,
-          "item": "带薪蹲坑"
+          "item": "无用会议"
         },
         {
           "minute": 25.2,
@@ -3694,7 +3694,7 @@
         },
         {
           "minute": 25.3,
-          "item": "带薪蹲坑"
+          "item": "深度摸鱼"
         },
         {
           "minute": 25.5,
@@ -3702,15 +3702,15 @@
         },
         {
           "minute": 25.7,
-          "item": "带薪喝水"
+          "item": "人体工学椅"
         },
         {
           "minute": 25.8,
-          "item": "摸鱼群聊"
+          "item": "带薪喝水"
         },
         {
           "minute": 26,
-          "item": "带薪喝水"
+          "item": "带薪蹲坑"
         },
         {
           "minute": 26.2,
@@ -3718,15 +3718,15 @@
         },
         {
           "minute": 26.3,
-          "item": "摸鱼群聊"
-        },
-        {
-          "minute": 26.5,
           "item": "带薪喝水"
         },
         {
+          "minute": 26.5,
+          "item": "摸鱼群聊"
+        },
+        {
           "minute": 26.7,
-          "item": "深度摸鱼"
+          "item": "带薪喝水"
         },
         {
           "minute": 26.8,
@@ -3734,7 +3734,7 @@
         },
         {
           "minute": 27,
-          "item": "人体工学椅"
+          "item": "无用会议"
         },
         {
           "minute": 27.2,
@@ -3742,7 +3742,7 @@
         },
         {
           "minute": 27.3,
-          "item": "带薪蹲坑"
+          "item": "深度摸鱼"
         },
         {
           "minute": 27.5,
@@ -3754,7 +3754,7 @@
         },
         {
           "minute": 27.8,
-          "item": "深度摸鱼"
+          "item": "无用会议"
         },
         {
           "minute": 28,
@@ -3766,7 +3766,7 @@
         },
         {
           "minute": 28.3,
-          "item": "无用会议"
+          "item": "摸鱼群聊"
         },
         {
           "minute": 28.5,
@@ -3774,7 +3774,7 @@
         },
         {
           "minute": 28.7,
-          "item": "带薪蹲坑"
+          "item": "人体工学椅"
         },
         {
           "minute": 28.8,
@@ -3782,19 +3782,19 @@
         },
         {
           "minute": 29,
-          "item": "带薪喝水"
+          "item": "人体工学椅"
         },
         {
           "minute": 29.2,
-          "item": "带薪蹲坑"
-        },
-        {
-          "minute": 29.3,
           "item": "带薪喝水"
         },
         {
+          "minute": 29.3,
+          "item": "带薪蹲坑"
+        },
+        {
           "minute": 29.5,
-          "item": "人体工学椅"
+          "item": "带薪喝水"
         },
         {
           "minute": 29.7,
@@ -3802,11 +3802,11 @@
         },
         {
           "minute": 29.8,
-          "item": "带薪喝水"
+          "item": "摸鱼群聊"
         },
         {
           "minute": 30,
-          "item": "深度摸鱼"
+          "item": "带薪喝水"
         },
         {
           "minute": 30.2,
@@ -3818,7 +3818,7 @@
         },
         {
           "minute": 30.5,
-          "item": "带薪喝水"
+          "item": "深度摸鱼"
         },
         {
           "minute": 30.7,
@@ -3826,7 +3826,7 @@
         },
         {
           "minute": 30.8,
-          "item": "人体工学椅"
+          "item": "带薪喝水"
         },
         {
           "minute": 31,
@@ -3838,7 +3838,7 @@
         },
         {
           "minute": 31.3,
-          "item": "带薪喝水"
+          "item": "人体工学椅"
         },
         {
           "minute": 31.5,
@@ -3850,7 +3850,7 @@
         },
         {
           "minute": 31.8,
-          "item": "深度摸鱼"
+          "item": "带薪喝水"
         },
         {
           "minute": 32,
@@ -3858,7 +3858,7 @@
         },
         {
           "minute": 32.2,
-          "item": "带薪喝水"
+          "item": "带薪蹲坑"
         },
         {
           "minute": 32.3,
@@ -3882,11 +3882,11 @@
         },
         {
           "minute": 33.2,
-          "item": "摸鱼群聊"
+          "item": "带薪喝水"
         },
         {
           "minute": 33.3,
-          "item": "带薪喝水"
+          "item": "带薪蹲坑"
         },
         {
           "minute": 33.5,
@@ -3906,7 +3906,7 @@
         },
         {
           "minute": 34.2,
-          "item": "刷手机"
+          "item": "带薪喝水"
         },
         {
           "minute": 34.3,
@@ -3942,11 +3942,11 @@
         },
         {
           "minute": 35.7,
-          "item": "刷手机"
+          "item": "带薪喝水"
         },
         {
           "minute": 35.8,
-          "item": "带薪喝水"
+          "item": "刷手机"
         },
         {
           "minute": 36,
@@ -3966,11 +3966,11 @@
         },
         {
           "minute": 36.7,
-          "item": "刷手机"
+          "item": "带薪喝水"
         },
         {
           "minute": 36.8,
-          "item": "带薪喝水"
+          "item": "刷手机"
         },
         {
           "minute": 37,
@@ -3978,7 +3978,7 @@
         },
         {
           "minute": 37.2,
-          "item": "刷手机"
+          "item": "带薪喝水"
         },
         {
           "minute": 37.3,
@@ -3986,7 +3986,7 @@
         },
         {
           "minute": 37.5,
-          "item": "人体工学椅"
+          "item": "刷手机"
         },
         {
           "minute": 37.7,
@@ -3994,7 +3994,7 @@
         },
         {
           "minute": 37.8,
-          "item": "刷手机"
+          "item": "带薪喝水"
         },
         {
           "minute": 38,
@@ -4002,7 +4002,7 @@
         },
         {
           "minute": 38.2,
-          "item": "带薪喝水"
+          "item": "刷手机"
         },
         {
           "minute": 38.3,
@@ -4014,11 +4014,11 @@
         },
         {
           "minute": 38.7,
-          "item": "刷手机"
+          "item": "深度摸鱼"
         },
         {
           "minute": 38.8,
-          "item": "带薪喝水"
+          "item": "刷手机"
         },
         {
           "minute": 39,
@@ -4030,7 +4030,7 @@
         },
         {
           "minute": 39.3,
-          "item": "刷手机"
+          "item": "带薪喝水"
         },
         {
           "minute": 39.5,
@@ -4038,7 +4038,7 @@
         },
         {
           "minute": 39.7,
-          "item": "无用会议"
+          "item": "刷手机"
         },
         {
           "minute": 39.8,
@@ -4050,7 +4050,7 @@
         },
         {
           "minute": 40.2,
-          "item": "刷手机"
+          "item": "无用会议"
         },
         {
           "minute": 40.3,
@@ -4058,7 +4058,7 @@
         },
         {
           "minute": 40.5,
-          "item": "深度摸鱼"
+          "item": "刷手机"
         },
         {
           "minute": 40.7,
@@ -4070,7 +4070,7 @@
         },
         {
           "minute": 41,
-          "item": "刷手机"
+          "item": "带薪喝水"
         },
         {
           "minute": 41.2,
@@ -4078,7 +4078,7 @@
         },
         {
           "minute": 41.3,
-          "item": "带薪蹲坑"
+          "item": "刷手机"
         },
         {
           "minute": 41.5,
@@ -4090,7 +4090,7 @@
         },
         {
           "minute": 41.8,
-          "item": "刷手机"
+          "item": "摸鱼群聊"
         },
         {
           "minute": 42,
@@ -4098,7 +4098,7 @@
         },
         {
           "minute": 42.2,
-          "item": "带薪喝水"
+          "item": "刷手机"
         },
         {
           "minute": 42.3,
@@ -4110,7 +4110,7 @@
         },
         {
           "minute": 42.7,
-          "item": "刷手机"
+          "item": "带薪喝水"
         },
         {
           "minute": 42.8,
@@ -4118,7 +4118,7 @@
         },
         {
           "minute": 43,
-          "item": "人体工学椅"
+          "item": "刷手机"
         },
         {
           "minute": 43.2,
@@ -4130,7 +4130,7 @@
         },
         {
           "minute": 43.5,
-          "item": "刷手机"
+          "item": "深度摸鱼"
         },
         {
           "minute": 43.7,
@@ -4142,7 +4142,7 @@
         },
         {
           "minute": 44,
-          "item": "无用会议"
+          "item": "刷手机"
         },
         {
           "minute": 44.2,
@@ -4150,7 +4150,7 @@
         },
         {
           "minute": 44.3,
-          "item": "刷手机"
+          "item": "人体工学椅"
         },
         {
           "minute": 44.5,
@@ -4166,11 +4166,11 @@
         },
         {
           "minute": 45,
-          "item": "摸鱼群聊"
+          "item": "刷手机"
         },
         {
           "minute": 45.2,
-          "item": "刷手机"
+          "item": "带薪蹲坑"
         },
         {
           "minute": 45.3,
@@ -4202,7 +4202,7 @@
         },
         {
           "minute": 46.5,
-          "item": "咖啡续命"
+          "item": "刷手机"
         },
         {
           "minute": 46.7,
@@ -4210,7 +4210,7 @@
         },
         {
           "minute": 46.8,
-          "item": "咖啡续命"
+          "item": "刷手机"
         },
         {
           "minute": 47,
@@ -4218,15 +4218,15 @@
         },
         {
           "minute": 47.2,
-          "item": "咖啡续命"
-        },
-        {
-          "minute": 47.3,
           "item": "刷手机"
         },
         {
-          "minute": 47.5,
+          "minute": 47.3,
           "item": "咖啡续命"
+        },
+        {
+          "minute": 47.5,
+          "item": "刷手机"
         },
         {
           "minute": 47.7,
@@ -4234,11 +4234,11 @@
         },
         {
           "minute": 47.8,
-          "item": "刷手机"
+          "item": "咖啡续命"
         },
         {
           "minute": 48,
-          "item": "咖啡续命"
+          "item": "刷手机"
         },
         {
           "minute": 48.2,
@@ -4246,11 +4246,11 @@
         },
         {
           "minute": 48.3,
-          "item": "刷手机"
+          "item": "咖啡续命"
         },
         {
           "minute": 48.5,
-          "item": "咖啡续命"
+          "item": "刷手机"
         },
         {
           "minute": 48.7,
@@ -4258,7 +4258,7 @@
         },
         {
           "minute": 48.8,
-          "item": "刷手机"
+          "item": "咖啡续命"
         },
         {
           "minute": 49,
@@ -4266,7 +4266,7 @@
         },
         {
           "minute": 49.2,
-          "item": "咖啡续命"
+          "item": "刷手机"
         },
         {
           "minute": 49.3,
@@ -4274,7 +4274,7 @@
         },
         {
           "minute": 49.5,
-          "item": "刷手机"
+          "item": "咖啡续命"
         },
         {
           "minute": 49.7,
@@ -4282,7 +4282,7 @@
         },
         {
           "minute": 49.8,
-          "item": "咖啡续命"
+          "item": "无用会议"
         },
         {
           "minute": 50,
@@ -4290,7 +4290,7 @@
         },
         {
           "minute": 50.2,
-          "item": "摸鱼群聊"
+          "item": "咖啡续命"
         },
         {
           "minute": 50.3,
@@ -4298,7 +4298,7 @@
         },
         {
           "minute": 50.5,
-          "item": "咖啡续命"
+          "item": "人体工学椅"
         },
         {
           "minute": 50.7,
@@ -4306,7 +4306,7 @@
         },
         {
           "minute": 50.8,
-          "item": "刷手机"
+          "item": "咖啡续命"
         },
         {
           "minute": 51,
@@ -4314,7 +4314,7 @@
         },
         {
           "minute": 51.2,
-          "item": "咖啡续命"
+          "item": "刷手机"
         },
         {
           "minute": 51.3,
@@ -4326,11 +4326,11 @@
         },
         {
           "minute": 51.7,
-          "item": "无用会议"
+          "item": "咖啡续命"
         },
         {
           "minute": 51.8,
-          "item": "咖啡续命"
+          "item": "刷手机"
         },
         {
           "minute": 52,
@@ -4342,7 +4342,7 @@
         },
         {
           "minute": 52.3,
-          "item": "人体工学椅"
+          "item": "咖啡续命"
         },
         {
           "minute": 52.5,
@@ -4350,7 +4350,7 @@
         },
         {
           "minute": 52.7,
-          "item": "咖啡续命"
+          "item": "无用会议"
         },
         {
           "minute": 52.8,
@@ -4362,7 +4362,7 @@
         },
         {
           "minute": 53.2,
-          "item": "人体工学椅"
+          "item": "咖啡续命"
         },
         {
           "minute": 53.3,
@@ -4370,7 +4370,7 @@
         },
         {
           "minute": 53.5,
-          "item": "咖啡续命"
+          "item": "刷手机"
         },
         {
           "minute": 53.7,
@@ -4382,11 +4382,11 @@
         },
         {
           "minute": 54,
-          "item": "摸鱼群聊"
+          "item": "咖啡续命"
         },
         {
           "minute": 54.2,
-          "item": "咖啡续命"
+          "item": "带薪蹲坑"
         },
         {
           "minute": 54.3,
@@ -4398,7 +4398,7 @@
         },
         {
           "minute": 54.7,
-          "item": "带薪喝水"
+          "item": "咖啡续命"
         },
         {
           "minute": 54.8,
@@ -4406,7 +4406,7 @@
         },
         {
           "minute": 55,
-          "item": "咖啡续命"
+          "item": "带薪喝水"
         },
         {
           "minute": 55.2,
@@ -4418,7 +4418,7 @@
         },
         {
           "minute": 55.5,
-          "item": "带薪喝水"
+          "item": "咖啡续命"
         },
         {
           "minute": 55.7,
@@ -4426,7 +4426,7 @@
         },
         {
           "minute": 55.8,
-          "item": "咖啡续命"
+          "item": "人体工学椅"
         },
         {
           "minute": 56,
@@ -4438,11 +4438,11 @@
         },
         {
           "minute": 56.3,
-          "item": "深度摸鱼"
+          "item": "咖啡续命"
         },
         {
           "minute": 56.5,
-          "item": "咖啡续命"
+          "item": "摸鱼群聊"
         },
         {
           "minute": 56.7,
@@ -4458,11 +4458,11 @@
         },
         {
           "minute": 57.2,
-          "item": "刷手机"
+          "item": "咖啡续命"
         },
         {
           "minute": 57.3,
-          "item": "咖啡续命"
+          "item": "深度摸鱼"
         },
         {
           "minute": 57.5,
@@ -4474,7 +4474,7 @@
         },
         {
           "minute": 57.8,
-          "item": "带薪蹲坑"
+          "item": "咖啡续命"
         },
         {
           "minute": 58,
@@ -4482,7 +4482,7 @@
         },
         {
           "minute": 58.2,
-          "item": "咖啡续命"
+          "item": "深度摸鱼"
         },
         {
           "minute": 58.3,
@@ -4498,7 +4498,7 @@
         },
         {
           "minute": 58.8,
-          "item": "无用会议"
+          "item": "咖啡续命"
         },
         {
           "minute": 59,
@@ -4506,7 +4506,7 @@
         },
         {
           "minute": 59.2,
-          "item": "咖啡续命"
+          "item": "摸鱼群聊"
         },
         {
           "minute": 59.3,
@@ -4530,7 +4530,7 @@
         },
         {
           "minute": 60.2,
-          "item": "摸鱼群聊"
+          "item": "带薪蹲坑"
         },
         {
           "minute": 60.3,
@@ -4549,7 +4549,11 @@
           "item": "咖啡续命"
         },
         {
-          "minute": 61.1,
+          "minute": 61,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 61.2,
           "item": "咖啡续命"
         },
         {
@@ -4557,19 +4561,27 @@
           "item": "咖啡续命"
         },
         {
-          "minute": 61.6,
+          "minute": 61.5,
           "item": "咖啡续命"
         },
         {
-          "minute": 62,
+          "minute": 61.7,
           "item": "咖啡续命"
         },
         {
-          "minute": 62.4,
+          "minute": 61.8,
           "item": "咖啡续命"
         },
         {
-          "minute": 62.8,
+          "minute": 62.1,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 62.5,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 62.9,
           "item": "咖啡续命"
         },
         {
@@ -4585,417 +4597,421 @@
           "item": "咖啡续命"
         },
         {
-          "minute": 65.4,
-          "item": "带薪蹲坑"
-        },
-        {
-          "minute": 66.1,
-          "item": "刷手机"
-        },
-        {
-          "minute": 66.9,
-          "item": "深度摸鱼"
-        },
-        {
-          "minute": 67.7,
+          "minute": 65.5,
           "item": "咖啡续命"
         },
         {
-          "minute": 68.5,
+          "minute": 66.2,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 69.3,
+          "minute": 67.1,
           "item": "人体工学椅"
         },
         {
-          "minute": 70.2,
+          "minute": 67.9,
           "item": "带薪喝水"
         },
         {
-          "minute": 71,
+          "minute": 68.7,
           "item": "刷手机"
         },
         {
-          "minute": 71.9,
+          "minute": 69.5,
           "item": "深度摸鱼"
+        },
+        {
+          "minute": 70.4,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 71.2,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 72,
+          "item": "无用会议"
         },
         {
           "minute": 72.8,
-          "item": "摸鱼群聊"
+          "item": "带薪蹲坑"
         },
         {
-          "minute": 73.6,
-          "item": "咖啡续命"
+          "minute": 73.7,
+          "item": "人体工学椅"
         },
         {
-          "minute": 74.5,
-          "item": "无用会议"
+          "minute": 74.6,
+          "item": "带薪喝水"
         },
         {
           "minute": 75.4,
-          "item": "带薪蹲坑"
+          "item": "刷手机"
         },
         {
           "minute": 76.3,
-          "item": "人体工学椅"
+          "item": "深度摸鱼"
         },
         {
           "minute": 77.2,
-          "item": "带薪喝水"
+          "item": "咖啡续命"
         },
         {
           "minute": 78.1,
-          "item": "刷手机"
+          "item": "摸鱼群聊"
         },
         {
           "minute": 78.9,
-          "item": "深度摸鱼"
+          "item": "无用会议"
         },
         {
           "minute": 79.8,
-          "item": "摸鱼群聊"
+          "item": "带薪蹲坑"
         },
         {
           "minute": 80.7,
-          "item": "咖啡续命"
+          "item": "人体工学椅"
         },
         {
           "minute": 81.6,
-          "item": "无用会议"
+          "item": "刷手机"
         },
         {
           "minute": 82.5,
-          "item": "带薪蹲坑"
-        },
-        {
-          "minute": 83.5,
-          "item": "人体工学椅"
-        },
-        {
-          "minute": 84.5,
           "item": "带薪喝水"
+        },
+        {
+          "minute": 83.4,
+          "item": "深度摸鱼"
+        },
+        {
+          "minute": 84.4,
+          "item": "摸鱼群聊"
         },
         {
           "minute": 85.4,
-          "item": "刷手机"
+          "item": "咖啡续命"
         },
         {
           "minute": 86.4,
-          "item": "深度摸鱼"
+          "item": "无用会议"
         },
         {
-          "minute": 87.5,
-          "item": "摸鱼群聊"
+          "minute": 87.3,
+          "item": "带薪蹲坑"
         },
         {
           "minute": 88.4,
-          "item": "咖啡续命"
-        },
-        {
-          "minute": 89.4,
-          "item": "无用会议"
-        },
-        {
-          "minute": 90.4,
-          "item": "带薪蹲坑"
-        },
-        {
-          "minute": 91.3,
           "item": "人体工学椅"
         },
         {
-          "minute": 92.4,
+          "minute": 89.3,
           "item": "退休式躺平"
+        },
+        {
+          "minute": 90.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 91.2,
+          "item": "刷手机"
+        },
+        {
+          "minute": 92.2,
+          "item": "深度摸鱼"
         },
         {
           "minute": 93.3,
-          "item": "带薪喝水"
-        },
-        {
-          "minute": 94.3,
-          "item": "刷手机"
-        },
-        {
-          "minute": 95.3,
-          "item": "深度摸鱼"
-        },
-        {
-          "minute": 96.3,
           "item": "摸鱼群聊"
+        },
+        {
+          "minute": 94.2,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 95.2,
+          "item": "无用会议"
+        },
+        {
+          "minute": 96.2,
+          "item": "带薪蹲坑"
         },
         {
           "minute": 97.3,
-          "item": "咖啡续命"
+          "item": "退休式躺平"
         },
         {
-          "minute": 98.3,
-          "item": "无用会议"
+          "minute": 98.4,
+          "item": "人体工学椅"
         },
         {
           "minute": 99.4,
-          "item": "带薪蹲坑"
+          "item": "带薪喝水"
         },
         {
-          "minute": 100.4,
-          "item": "人体工学椅"
+          "minute": 100.5,
+          "item": "刷手机"
         },
         {
           "minute": 101.5,
-          "item": "退休式躺平"
+          "item": "深度摸鱼"
         },
         {
-          "minute": 102.6,
-          "item": "带薪喝水"
+          "minute": 102.5,
+          "item": "摸鱼群聊"
         },
         {
           "minute": 103.6,
-          "item": "刷手机"
-        },
-        {
-          "minute": 104.7,
-          "item": "深度摸鱼"
-        },
-        {
-          "minute": 105.8,
-          "item": "摸鱼群聊"
-        },
-        {
-          "minute": 106.9,
           "item": "咖啡续命"
         },
         {
-          "minute": 108,
+          "minute": 104.6,
           "item": "无用会议"
         },
         {
-          "minute": 109.1,
+          "minute": 105.7,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 110.2,
-          "item": "人体工学椅"
-        },
-        {
-          "minute": 111.4,
+          "minute": 106.7,
           "item": "退休式躺平"
         },
         {
-          "minute": 112.5,
-          "item": "带薪喝水"
-        },
-        {
-          "minute": 113.6,
-          "item": "刷手机"
-        },
-        {
-          "minute": 114.8,
-          "item": "深度摸鱼"
-        },
-        {
-          "minute": 115.9,
-          "item": "咖啡续命"
-        },
-        {
-          "minute": 117.2,
-          "item": "摸鱼群聊"
-        },
-        {
-          "minute": 118.3,
-          "item": "无用会议"
-        },
-        {
-          "minute": 119.4,
-          "item": "带薪蹲坑"
-        },
-        {
-          "minute": 120.5,
+          "minute": 107.8,
           "item": "人体工学椅"
         },
         {
-          "minute": 121.6,
+          "minute": 109,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 110.1,
+          "item": "刷手机"
+        },
+        {
+          "minute": 111.2,
+          "item": "深度摸鱼"
+        },
+        {
+          "minute": 112.3,
+          "item": "摸鱼群聊"
+        },
+        {
+          "minute": 113.4,
+          "item": "咖啡续命"
+        },
+        {
+          "minute": 114.5,
+          "item": "无用会议"
+        },
+        {
+          "minute": 115.5,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 116.6,
+          "item": "人体工学椅"
+        },
+        {
+          "minute": 117.6,
           "item": "退休式躺平"
         },
         {
-          "minute": 122.6,
+          "minute": 118.6,
           "item": "带薪喝水"
         },
         {
-          "minute": 123.6,
+          "minute": 119.6,
           "item": "刷手机"
         },
         {
-          "minute": 124.7,
+          "minute": 120.7,
           "item": "深度摸鱼"
         },
         {
-          "minute": 125.8,
+          "minute": 121.7,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 126.9,
+          "minute": 122.8,
           "item": "咖啡续命"
         },
         {
-          "minute": 128.1,
+          "minute": 123.8,
           "item": "无用会议"
         },
         {
-          "minute": 129.3,
-          "item": "带薪蹲坑"
-        },
-        {
-          "minute": 130.4,
+          "minute": 124.9,
           "item": "人体工学椅"
         },
         {
-          "minute": 131.6,
+          "minute": 126,
+          "item": "带薪蹲坑"
+        },
+        {
+          "minute": 127.1,
           "item": "退休式躺平"
         },
         {
-          "minute": 132.7,
+          "minute": 128.3,
           "item": "带薪喝水"
         },
         {
-          "minute": 133.9,
+          "minute": 129.4,
           "item": "刷手机"
         },
         {
-          "minute": 135.1,
+          "minute": 130.6,
           "item": "深度摸鱼"
         },
         {
-          "minute": 136.3,
+          "minute": 131.8,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 137.5,
+          "minute": 132.9,
           "item": "咖啡续命"
         },
         {
-          "minute": 138.7,
+          "minute": 134.2,
           "item": "无用会议"
         },
         {
-          "minute": 140,
+          "minute": 135.4,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 141.2,
+          "minute": 136.6,
           "item": "人体工学椅"
         },
         {
-          "minute": 142.5,
+          "minute": 137.9,
           "item": "退休式躺平"
         },
         {
-          "minute": 143.8,
+          "minute": 139.1,
           "item": "带薪喝水"
         },
         {
-          "minute": 145,
+          "minute": 140.3,
           "item": "刷手机"
         },
         {
-          "minute": 146.4,
+          "minute": 141.5,
           "item": "深度摸鱼"
         },
         {
-          "minute": 147.7,
+          "minute": 142.8,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 149,
+          "minute": 144,
           "item": "咖啡续命"
         },
         {
-          "minute": 150.3,
+          "minute": 145.3,
           "item": "无用会议"
         },
         {
-          "minute": 151.7,
+          "minute": 146.7,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 153,
+          "minute": 148,
           "item": "人体工学椅"
         },
         {
-          "minute": 154.3,
+          "minute": 149.3,
           "item": "退休式躺平"
         },
         {
-          "minute": 155.6,
+          "minute": 150.5,
           "item": "带薪喝水"
         },
         {
-          "minute": 156.9,
+          "minute": 151.8,
           "item": "刷手机"
         },
         {
-          "minute": 158.3,
+          "minute": 153.2,
           "item": "深度摸鱼"
         },
         {
-          "minute": 159.7,
+          "minute": 154.5,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 161.1,
+          "minute": 155.8,
           "item": "咖啡续命"
         },
         {
-          "minute": 162.5,
+          "minute": 157.2,
           "item": "无用会议"
         },
         {
-          "minute": 163.9,
+          "minute": 158.6,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 165.4,
+          "minute": 160.1,
           "item": "人体工学椅"
         },
         {
-          "minute": 166.9,
+          "minute": 161.4,
           "item": "退休式躺平"
         },
         {
-          "minute": 168.4,
+          "minute": 162.8,
           "item": "带薪喝水"
         },
         {
-          "minute": 169.8,
+          "minute": 164.2,
           "item": "刷手机"
         },
         {
-          "minute": 171.3,
+          "minute": 165.6,
           "item": "深度摸鱼"
         },
         {
-          "minute": 172.8,
+          "minute": 167.1,
           "item": "摸鱼群聊"
         },
         {
-          "minute": 174.3,
+          "minute": 168.5,
           "item": "咖啡续命"
         },
         {
-          "minute": 175.9,
+          "minute": 170,
           "item": "无用会议"
         },
         {
-          "minute": 177.5,
+          "minute": 171.6,
           "item": "带薪蹲坑"
         },
         {
-          "minute": 179.1,
+          "minute": 173.2,
           "item": "人体工学椅"
+        },
+        {
+          "minute": 174.7,
+          "item": "退休式躺平"
+        },
+        {
+          "minute": 176.2,
+          "item": "带薪喝水"
+        },
+        {
+          "minute": 177.7,
+          "item": "刷手机"
+        },
+        {
+          "minute": 179.2,
+          "item": "深度摸鱼"
         }
       ],
-      "bossCaughtTaps": 84,
-      "bossSurviveRewards": 0,
-      "memeEarnings": 2889570
+      "bossCaughtTaps": 222,
+      "bossSurviveRewards": 3447904,
+      "memeEarnings": 2913065
     },
     {
       "persona": "casual(休闲党)",
@@ -5020,8 +5036,8 @@
         },
         {
           "minute": 3,
-          "moyu": 610.1,
-          "moyuText": "610.1",
+          "moyu": 610,
+          "moyuText": "610.0",
           "clickPower": 7,
           "idleRate": 0.2,
           "levels": {
@@ -5030,8 +5046,8 @@
         },
         {
           "minute": 10,
-          "moyu": 5984.1,
-          "moyuText": "5984.1",
+          "moyu": 6034.1,
+          "moyuText": "6034.1",
           "clickPower": 17,
           "idleRate": 10.2,
           "levels": {
@@ -5042,8 +5058,8 @@
         },
         {
           "minute": 30,
-          "moyu": 83823.1,
-          "moyuText": "8.38万",
+          "moyu": 84273.5,
+          "moyuText": "8.43万",
           "clickPower": 83,
           "idleRate": 41.2,
           "levels": {
@@ -5055,8 +5071,8 @@
         },
         {
           "minute": 60,
-          "moyu": 513874,
-          "moyuText": "51.39万",
+          "moyu": 512445.6,
+          "moyuText": "51.24万",
           "clickPower": 293,
           "idleRate": 189.2,
           "levels": {
@@ -5069,8 +5085,8 @@
         },
         {
           "minute": 120,
-          "moyu": 3187941,
-          "moyuText": "318.79万",
+          "moyu": 3160764.8,
+          "moyuText": "316.08万",
           "clickPower": 1197,
           "idleRate": 1540.2,
           "levels": {
@@ -5085,8 +5101,8 @@
         },
         {
           "minute": 180,
-          "moyu": 2074746,
-          "moyuText": "207.47万",
+          "moyu": 1918813.2,
+          "moyuText": "191.88万",
           "clickPower": 2489,
           "idleRate": 9456.2,
           "levels": {
@@ -6547,8 +6563,8 @@
         }
       ],
       "bossCaughtTaps": 0,
-      "bossSurviveRewards": 667625,
-      "memeEarnings": 785795
+      "bossSurviveRewards": 521925,
+      "memeEarnings": 776040
     }
   ],
   "offlineCheck": {
@@ -6561,11 +6577,11 @@
       "persona": "clicker(狂点党)",
       "firstPurchaseMinute": 0.08333333333333333,
       "purchasesIn180min": 502,
-      "maxDeadAirSeconds": 85,
+      "maxDeadAirSeconds": 86,
       "endMoyu": {
         "minute": 180,
-        "moyu": 3821167,
-        "moyuText": "382.12万",
+        "moyu": 1383239.4,
+        "moyuText": "138.32万",
         "clickPower": 6401,
         "idleRate": 40272.2,
         "levels": {
@@ -6588,8 +6604,8 @@
       "maxDeadAirSeconds": 29,
       "endMoyu": {
         "minute": 180,
-        "moyu": 1389655.1,
-        "moyuText": "138.97万",
+        "moyu": 1372616.5,
+        "moyuText": "137.26万",
         "clickPower": 695,
         "idleRate": 544.2,
         "levels": {
@@ -6605,24 +6621,24 @@
     {
       "persona": "whale(爆肝党)",
       "firstPurchaseMinute": 0.16666666666666666,
-      "purchasesIn180min": 476,
-      "maxDeadAirSeconds": 98,
+      "purchasesIn180min": 480,
+      "maxDeadAirSeconds": 96,
       "endMoyu": {
         "minute": 180,
-        "moyu": 1722468.3,
-        "moyuText": "172.25万",
-        "clickPower": 4993,
-        "idleRate": 27144.2,
+        "moyu": 1675289.4,
+        "moyuText": "167.53万",
+        "clickPower": 6209,
+        "idleRate": 28220.2,
         "levels": {
-          "phone": 79,
-          "water": 74,
+          "phone": 80,
+          "water": 75,
           "chair": 60,
           "group": 48,
           "meeting": 35,
           "toilet": 62,
-          "deep": 22,
+          "deep": 23,
           "coffee": 88,
-          "retire": 8
+          "retire": 9
         }
       }
     },
@@ -6633,8 +6649,8 @@
       "maxDeadAirSeconds": 13,
       "endMoyu": {
         "minute": 180,
-        "moyu": 2074746,
-        "moyuText": "207.47万",
+        "moyu": 1918813.2,
+        "moyuText": "191.88万",
         "clickPower": 2489,
         "idleRate": 9456.2,
         "levels": {

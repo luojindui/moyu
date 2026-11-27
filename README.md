@@ -2,6 +2,8 @@
 
 一款摸鱼主题的放置/点击游戏，移动端浏览器竖屏优先，纯前端单机（localStorage 存档），零后端依赖。
 
+![游戏截图](docs/screenshot-mobile.png)
+
 ## 快速开始
 
 ```bash
