@@ -74,7 +74,7 @@ await runChrome(async ({ port }) => {
   out.dev.startup = { readyAtMs_node: readyAt, moyuReadyMs_node: moyuAt, ...navTiming };
   out.dev.tapsTotal = await ev("window.__probeTaps");
 
-  const snap = async () => ev(`(() => { const P = window.__perf; const M = window.__MOYU__; return { rafTotal: P.raf.total, rafActive: P.raf.active, draw: P.drawCalls, gapsLen: P.frameGaps.length, fps: M ? M.fps : null, frames: M ? M.frames : null, si: P.si.size, st: P.st.size, longtasks: P.longtasks.length, texts: M ? M.fxTexts().length : null, taps: window.__probeTaps }; })()`);
+  const snap = async () => ev(`(() => { const P = window.__perf; const M = window.__MOYU__; return { rafTotal: P.raf.total, rafActive: P.raf.active, draw: P.drawCalls, gapsLen: P.frameGaps.length, fps: M ? M.fps : null, frames: M ? M.frames : null, si: P.si.size, st: P.st.size, longtasks: P.longtasks.length, texts: M ? M.fxTexts().length : null, taps: window.__probeTaps, docSeq: P.docSeq, events: P.events.slice(-6), origin: performance.timeOrigin }; })()`);
   const phase = async (name, ms, fn) => {
     const a = await snap();
     const gapsA = (await ev("window.__perf.frameGaps.length"));
@@ -83,8 +83,10 @@ await runChrome(async ({ port }) => {
     const b = await snap();
     const gaps = await ev(`window.__perf.frameGaps.slice(${gapsA})`);
     out.dev[name] = {
+      docSeq: b.docSeq, events: b.events,
       rafPerSec: +(((b.rafTotal - a.rafTotal) / (ms / 1000))).toFixed(1),
-      drawPerSec: +(((b.draw - a.draw) / (ms / 1000))).toFixed(1),
+      drawCallPerSec: +(((b.draw - a.draw) / (ms / 1000))).toFixed(1),
+      drawFramesPerSec: b.frames !== null && a.frames !== null ? +(((b.frames - a.frames) / (ms / 1000))).toFixed(1) : null,
       fps: b.fps, appFrames: b.frames, rafActiveEnd: b.rafActive, si: b.si, st: b.st,
       textsEnd: b.texts, taps: b.taps, longtasks: b.longtasks - a.longtasks, frameGaps: await fgStats(gaps),
     };

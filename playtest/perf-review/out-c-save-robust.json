@@ -1,0 +1,270 @@
+{
+ "save": {
+  "fullStateJsonBytes": 2187,
+  "fullSaveBlobBytes": 2243,
+  "saveCodeChars": 2923,
+  "serializeMeanMs": 0.022,
+  "restoreMeanMs": 0.069,
+  "jsonStringifyMeanMs": 0.003,
+  "restorePctOfSerialize": 314,
+  "realAppSaveBytes": 2243,
+  "appSaveBytesBeforeBench": 1059
+ },
+ "robustness": {
+  "huge_numbers": {
+   "hudBad": false,
+   "hud": "0.8摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 0%\n🎮\n3\n👥\n天赋\n精力 100\n🔊\n📔\n再戳 15 下 → 解锁「咖啡续命」",
+   "badNumbers": [],
+   "firstDraw": 43.10000038146973,
+   "frames": 154,
+   "moyu": 0.8210999999237066,
+   "prestige": 0,
+   "rows": 222,
+   "bootErr": false,
+   "canvasColored": true,
+   "newErrors": []
+  },
+  "huge_prestige": {
+   "hudBad": false,
+   "hud": "1.3摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 0%\n🎮\n3\n👥\n天赋\n精力 100\n🔊\n📔\n再戳 14 下 → 解锁「咖啡续命」",
+   "badNumbers": [],
+   "firstDraw": 36.89999961853027,
+   "frames": 154,
+   "moyu": 1.3332200000381427,
+   "prestige": 0,
+   "rows": 222,
+   "bootErr": false,
+   "canvasColored": true,
+   "newErrors": []
+  },
+  "max_levels": {
+   "hudBad": false,
+   "hud": "1.8摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 0%\n🎮\n3\n👥\n天赋\n精力 100\n🔊\n📔\n再戳 14 下 → 解锁「咖啡续命」",
+   "badNumbers": [],
+   "firstDraw": 41.59999942779541,
+   "frames": 154,
+   "moyu": 1.8477200001525758,
+   "prestige": 0,
+   "rows": 222,
+   "bootErr": false,
+   "canvasColored": true,
+   "newErrors": []
+  },
+  "neg_and_nan_like": {
+   "hudBad": false,
+   "hud": "2.3摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 0%\n🎮\n3\n👥\n天赋\n精力 100\n🔊\n📔\n再戳 13 下 → 解锁「咖啡续命」",
+   "badNumbers": [],
+   "firstDraw": 35.19999980926514,
+   "frames": 155,
+   "moyu": 2.3643800001525785,
+   "prestige": 0,
+   "rows": 222,
+   "bootErr": false,
+   "canvasColored": true,
+   "newErrors": []
+  },
+  "offline_megagap": {
+   "hudBad": false,
+   "hud": "2.9摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 0%\n🎮\n3\n👥\n天赋\n精力 100\n🔊\n📔\n再戳 13 下 → 解锁「咖啡续命」",
+   "badNumbers": [],
+   "firstDraw": 45.30000019073486,
+   "frames": 154,
+   "moyu": 2.8761200000762943,
+   "prestige": 0,
+   "rows": 237,
+   "bootErr": false,
+   "canvasColored": true,
+   "newErrors": []
+  },
+  "future_savedAt": {
+   "hudBad": false,
+   "hud": "3.4摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 0%\n🎮\n3\n👥\n天赋\n精力 100\n🔊\n📔\n再戳 12 下 → 解锁「咖啡续命」",
+   "badNumbers": [],
+   "firstDraw": 36,
+   "frames": 154,
+   "moyu": 3.3898600000763035,
+   "prestige": 0,
+   "rows": 237,
+   "bootErr": false,
+   "canvasColored": true,
+   "newErrors": []
+  },
+  "garbage_nested": {
+   "hudBad": false,
+   "hud": "3.9摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 0%\n🎮\n3\n👥\n天赋\n精力 100\n🔊\n📔\n再戳 12 下 → 解锁「咖啡续命」",
+   "badNumbers": [],
+   "firstDraw": 43.89999961853027,
+   "frames": 154,
+   "moyu": 3.904760000000018,
+   "prestige": 0,
+   "rows": 237,
+   "bootErr": false,
+   "canvasColored": true,
+   "newErrors": []
+  },
+  "levels_proto": {
+   "hudBad": false,
+   "hud": "4.4摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 0%\n🎮\n3\n👥\n天赋\n精力 100\n🔊\n📔\n再戳 11 下 → 解锁「咖啡续命」",
+   "badNumbers": [],
+   "firstDraw": 35.80000019073486,
+   "frames": 155,
+   "moyu": 4.421399999999986,
+   "prestige": 0,
+   "rows": 237,
+   "bootErr": false,
+   "canvasColored": true,
+   "newErrors": []
+  },
+  "future_version": {
+   "hudBad": false,
+   "hud": "4.9摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 0%\n🎮\n3\n👥\n天赋\n精力 100\n🔊\n📔\n再戳 11 下 → 解锁「咖啡续命」",
+   "badNumbers": [],
+   "firstDraw": 28.5,
+   "frames": 155,
+   "moyu": 4.934919999885515,
+   "prestige": 0,
+   "rows": 237,
+   "bootErr": false,
+   "canvasColored": true,
+   "newErrors": []
+  },
+  "truncated_json": {
+   "hudBad": false,
+   "hud": "5.4摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 0%\n🎮\n3\n👥\n天赋\n精力 100\n🔊\n📔\n再戳 10 下 → 解锁「咖啡续命」",
+   "badNumbers": [],
+   "firstDraw": 37.09999942779541,
+   "frames": 154,
+   "moyu": 5.4485400000380855,
+   "prestige": 0,
+   "rows": 237,
+   "bootErr": false,
+   "canvasColored": true,
+   "newErrors": []
+  },
+  "empty": {
+   "hudBad": false,
+   "hud": "5.9摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 0%\n🎮\n3\n👥\n天赋\n精力 100\n🔊\n📔\n再戳 10 下 → 解锁「咖啡续命」",
+   "badNumbers": [],
+   "firstDraw": 48,
+   "frames": 154,
+   "moyu": 5.964120000038054,
+   "prestige": 0,
+   "rows": 237,
+   "bootErr": false,
+   "canvasColored": true,
+   "newErrors": []
+  }
+ },
+ "rapid": {
+  "before": {
+   "raf": 1,
+   "si": 2,
+   "st": 7,
+   "nodes": 487,
+   "errors": 0,
+   "heapMB": 1.75,
+   "dom": {
+    "documents": 1,
+    "nodes": 1225,
+    "jsEventListeners": 83
+   }
+  },
+  "after": {
+   "raf": 1,
+   "si": 2,
+   "st": 7,
+   "nodes": 487,
+   "errors": 0,
+   "heapMB": 1.94,
+   "dom": {
+    "documents": 1,
+    "nodes": 1371,
+    "jsEventListeners": 86
+   }
+  },
+  "openStates": {
+   "journal": false,
+   "team": false,
+   "arcade": false,
+   "cards": true,
+   "bossChoice": false,
+   "choiceOpen": false,
+   "htmlOverflow": "hidden"
+  },
+  "elapsedMs": 467,
+  "newErrors": []
+ },
+ "minigame": {
+  "available": [
+   "coffee",
+   "findboss",
+   "rhythm"
+  ],
+  "leak": [
+   {
+    "game": "coffee",
+    "rep": 0,
+    "raf": 1,
+    "si": 2,
+    "st": 8,
+    "arcadeOpen": false
+   },
+   {
+    "game": "coffee",
+    "rep": 1,
+    "raf": 1,
+    "si": 2,
+    "st": 1,
+    "arcadeOpen": false
+   },
+   {
+    "game": "findboss",
+    "rep": 0,
+    "raf": 1,
+    "si": 2,
+    "st": 1,
+    "arcadeOpen": false
+   },
+   {
+    "game": "findboss",
+    "rep": 1,
+    "raf": 1,
+    "si": 2,
+    "st": 1,
+    "arcadeOpen": false
+   },
+   {
+    "game": "rhythm",
+    "rep": 0,
+    "raf": 1,
+    "si": 2,
+    "st": 1,
+    "arcadeOpen": false
+   },
+   {
+    "game": "rhythm",
+    "rep": 1,
+    "raf": 1,
+    "si": 2,
+    "st": 1,
+    "arcadeOpen": false
+   }
+  ],
+  "after": {
+   "raf": 1,
+   "si": 2,
+   "st": 1,
+   "nodes": 486,
+   "errors": 0,
+   "heapMB": 2.02,
+   "dom": {
+    "documents": 1,
+    "nodes": 1223,
+    "jsEventListeners": 83
+   },
+   "docSeq": 13
+  },
+  "newErrors": []
+ },
+ "errors": []
+}

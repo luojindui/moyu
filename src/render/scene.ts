@@ -171,8 +171,10 @@ export class Scene {
     }
 
     // 公告板（右墙中部，避开饮水机）
+    const shortView = groundY < 90;
+    // 矮屏（桌面/平板横屏）：墙饰整体上移，把墙面下半区让给家具，避免墙饰与家具互压
     const boardX = vw - 3.9 * u;
-    const boardY = Math.min(4.6 * u, groundY - 4.4 * u); // 矮屏（375×667）不落地
+    const boardY = shortView ? 2.2 * u : Math.min(4.6 * u, groundY - 4.4 * u);
     R(boardX, boardY, 2.5 * u, 1.6 * u, "#5f4529");
     R(boardX + 0.1 * u, boardY + 0.1 * u, 2.3 * u, 1.4 * u, "#d9c9a3");
     R(boardX + 0.25 * u, boardY + 0.28 * u, 0.75 * u, 0.18 * u, "#c05a4a");
@@ -337,10 +339,11 @@ export class Scene {
     R: (x: number, y: number, w: number, h: number, color: string) => void,
   ): void {
     const has = (id: string): boolean => this.decor.includes(id);
+    const shortView = groundY < 90;
 
     // 护眼台灯（桌面上方，挂在桌板右侧）
     if (has("lamp")) {
-      const lx = vw / 2 - 1.5 * u;
+      const lx = vw / 2 + (shortView ? 1.7 * u : -1.5 * u);
       const ly = groundY - 3.35 * u;
       R(lx, ly, 0.18 * u, 1.2 * u, "#8a8f9c"); // 灯杆
       R(lx - 0.25 * u, ly - 0.3 * u, 0.72 * u, 0.32 * u, "#ffd76e"); // 灯罩
@@ -377,10 +380,9 @@ export class Scene {
 
     // 鱼缸（左墙，绿植上方）
     if (has("aquarium")) {
-      // 高度自适应：矮屏时向左让开右墙公告板，避免重叠
-      const shortView = groundY < 90;
-      const ax = shortView ? vw - 6.9 * u : vw - 2.9 * u;
-      const ay = Math.max(0.6 * u, Math.min(groundY - 6.1 * u, groundY - 4.6 * u));
+      // 高度自适应：矮屏时挂在右侧墙面下方（公告板已上移），避免与公告板/挂钟重叠
+      const ax = shortView ? vw - 3.0 * u : vw - 2.9 * u;
+      const ay = shortView ? Math.max(5.0 * u, groundY - 4.2 * u) : Math.max(0.6 * u, Math.min(groundY - 6.1 * u, groundY - 4.6 * u));
       R(ax, ay, 1.5 * u, 1.1 * u, "#3f6f8a"); // 水
       R(ax - 0.07 * u, ay - 0.1 * u, 1.64 * u, 0.12 * u, "#8a9aa5"); // 上框
       R(ax - 0.07 * u, ay + 1.06 * u, 1.64 * u, 0.16 * u, "#6b7880"); // 底座
@@ -391,10 +393,11 @@ export class Scene {
 
     // 投影仪（吊在天花板）
     if (has("projector")) {
-      const px = vw / 2 + 1.4 * u;
-      R(px, 0.2 * u, 0.45 * u, 1.0 * u, "#55596b"); // 吊杆
-      R(px - 0.7 * u, 1.1 * u, 2.0 * u, 0.75 * u, "#6f7488"); // 机身
-      R(px + 1.0 * u, 1.25 * u, 0.35 * u, 0.4 * u, "#9fe0ff"); // 镜头
+      const px = shortView ? 1.4 * u : vw / 2 + 1.4 * u;
+      const py = shortView ? 0.3 * u : 0.2 * u;
+      R(px, py, 0.45 * u, shortView ? 0.6 * u : 1.0 * u, "#55596b"); // 吊杆
+      R(px - 0.7 * u, py + (shortView ? 0.5 * u : 0.9 * u), 1.7 * u, 0.55 * u, "#6f7488"); // 机身
+      R(px + 0.85 * u, py + (shortView ? 0.6 * u : 1.02 * u), 0.3 * u, 0.3 * u, "#9fe0ff"); // 镜头
       // 投到地面的光斑
       ctx.globalAlpha = 0.08;
       ctx.fillStyle = "#cfe8ff";

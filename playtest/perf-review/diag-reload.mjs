@@ -1,0 +1,20 @@
+import { runChrome, connect, sleep } from "../lib/chrome.mjs";
+await runChrome(async ({ port }) => {
+  const c = await connect(port);
+  const send = c.send, ev = c.ev;
+  await send("Page.enable"); await send("Runtime.enable");
+  await send("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 3, mobile: true });
+  await send("Page.addScriptToEvaluateOnNewDocument", { source: `window.__marks=[];addEventListener('pagehide',()=>window.__marks.push('pagehide'));addEventListener('pageshow',e=>window.__marks.push('pageshow:'+e.persisted));window.__origTimeOrigin=performance.timeOrigin;` });
+  await send("Page.navigate", { url: "http://127.0.0.1:5173/" });
+  await sleep(3000);
+  console.log("A", await ev("({frames:__MOYU__.frames, origin:performance.timeOrigin, now:performance.now().toFixed(0), marks:window.__marks})"));
+  await ev("document.getElementById('btn-journal').click()");
+  await sleep(300);
+  console.log("B after journal click", await ev("({frames:__MOYU__?.frames, origin:performance.timeOrigin, now:performance.now().toFixed(0), marks:window.__marks, journalOpen: !document.getElementById('journal').classList.contains('hidden')})"));
+  await sleep(2000);
+  console.log("C 2s later", await ev("({frames:__MOYU__?.frames, origin:performance.timeOrigin, marks:window.__marks, journalOpen: !document.getElementById('journal').classList.contains('hidden')})"));
+  await ev("document.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape'}))");
+  await sleep(1000);
+  console.log("D after escape", await ev("({frames:__MOYU__?.frames, origin:performance.timeOrigin, marks:window.__marks, journalOpen: !document.getElementById('journal').classList.contains('hidden')})"));
+  c.close();
+}, { timeoutMs: 90000 });

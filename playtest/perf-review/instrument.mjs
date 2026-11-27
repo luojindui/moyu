@@ -1,7 +1,10 @@
 // 页面注入探针：统计 rAF/timer 活跃数、首绘时间、长任务、帧间隔、canvas 绘制次数
 export const INSTRUMENT = String.raw`
 (() => {
+  let seq = 1;
+  try { seq = Number(sessionStorage.getItem('__docSeq') || 0) + 1; sessionStorage.setItem('__docSeq', String(seq)); } catch {}
   const P = (window.__perf = {
+    docSeq: seq, events: [],
     navAt: performance.now(), firstDrawAt: null, firstRafAt: null, firstContentfulPaint: null,
     raf: { active: 0, total: 0 }, si: new Map(), st: new Map(),
     drawCalls: 0, longtasks: [], frameGaps: [],
@@ -43,14 +46,17 @@ export const INSTRUMENT = String.raw`
   // 帧间隔（独立 rAF 链，记录真实帧节奏）
   let lastT = null;
   const tick = (t) => {
-    if (lastT !== null) { P.frameGaps.push(+(t - lastT).toFixed(2)); if (P.frameGaps.length > 20000) P.frameGaps.shift(); }
+    if (lastT !== null && !P.gapsDisabled) { P.frameGaps.push(+(t - lastT).toFixed(2)); if (P.frameGaps.length > 20000) P.frameGaps.shift(); }
     lastT = t; _raf(tick);
   };
   _raf(tick);
   // 长任务 / FCP
-  try { new PerformanceObserver((l) => { for (const e of l.getEntries()) P.longtasks.push({ start: +e.startTime.toFixed(0), dur: +e.duration.toFixed(1) }); }).observe({ entryTypes: ['longtask'] }); } catch {}
+  try { new PerformanceObserver((l) => { for (const e of l.getEntries()) if (P.longtasks.length < 2000) P.longtasks.push({ start: +e.startTime.toFixed(0), dur: +e.duration.toFixed(1) }); }).observe({ entryTypes: ['longtask'] }); } catch {}
   try { new PerformanceObserver((l) => { for (const e of l.getEntries()) if (e.name === 'first-contentful-paint') P.firstContentfulPaint = +e.startTime.toFixed(1); }).observe({ entryTypes: ['paint'] }); } catch {}
   // 记录 pointerdown 派发时间（测点击响应）
+  for (const evName of ['pagehide', 'pageshow', 'visibilitychange', 'beforeunload']) {
+    window.addEventListener(evName, () => { P.events.push(evName + '@' + Math.round(performance.now())); });
+  }
   // headless 探针：confirm/alert 会阻塞渲染线程 -> 自动应答（不改业务逻辑，仅探针便利）
   window.confirm = () => true;
   window.alert = () => undefined;

@@ -1,25 +1,30 @@
 {
  "dev": {
   "startup": {
-   "readyAtMs_node": 97,
-   "moyuReadyMs_node": 97,
-   "ttfb": 4.2,
-   "domInteractive": 10.8,
-   "domContentLoaded": 86.9,
-   "loadEventEnd": 98.8,
-   "firstRafAt": 87.60000038146973,
-   "firstDrawAt": 88.19999980926514,
+   "readyAtMs_node": 94,
+   "moyuReadyMs_node": 77,
+   "ttfb": 2.2,
+   "domInteractive": 8.9,
+   "domContentLoaded": 72.9,
+   "loadEventEnd": 88.4,
+   "firstRafAt": 73.69999980926514,
+   "firstDrawAt": 74.30000019073486,
    "fcp": 48,
-   "transfer": 7398,
+   "transfer": 7382,
    "resources": 50,
    "bootToMoyu": null
   },
   "tapsTotal": 0,
   "idle": {
+   "docSeq": 1,
+   "events": [
+    "pageshow@88"
+   ],
    "rafPerSec": 60,
-   "drawPerSec": 4560,
+   "drawCallPerSec": 4560,
+   "drawFramesPerSec": 60,
    "fps": 60,
-   "appFrames": 374,
+   "appFrames": 375,
    "rafActiveEnd": 1,
    "si": 2,
    "st": 7,
@@ -27,7 +32,7 @@
    "taps": 0,
    "longtasks": 0,
    "frameGaps": {
-    "n": 301,
+    "n": 300,
     "avg": 16.7,
     "p50": 16.7,
     "p95": 16.8,
@@ -38,10 +43,15 @@
    }
   },
   "click8": {
-   "rafPerSec": 58.8,
-   "drawPerSec": 5827.8,
+   "docSeq": 1,
+   "events": [
+    "pageshow@88"
+   ],
+   "rafPerSec": 59,
+   "drawCallPerSec": 5842,
+   "drawFramesPerSec": 59,
    "fps": 60,
-   "appFrames": 669,
+   "appFrames": 670,
    "rafActiveEnd": 1,
    "si": 3,
    "st": 0,
@@ -54,21 +64,26 @@
     "p50": 16.7,
     "p95": 16.7,
     "p99": 16.8,
-    "max": 100,
+    "max": 116.7,
     "over33": 1,
     "over50": 1
    }
   },
   "click20": {
-   "rafPerSec": 60,
-   "drawPerSec": 6369,
+   "docSeq": 1,
+   "events": [
+    "pageshow@88"
+   ],
+   "rafPerSec": 60.2,
+   "drawCallPerSec": 6360.2,
+   "drawFramesPerSec": 60.2,
    "fps": 60,
-   "appFrames": 969,
+   "appFrames": 971,
    "rafActiveEnd": 1,
    "si": 3,
-   "st": 1,
-   "textsEnd": 6,
-   "taps": 139,
+   "st": 0,
+   "textsEnd": 7,
+   "taps": 140,
    "longtasks": 0,
    "frameGaps": {
     "n": 301,
@@ -82,34 +97,53 @@
    }
   },
   "journalOPEN": {
-   "rafPerSec": -202,
-   "drawPerSec": -19387.3,
-   "fps": 60,
-   "appFrames": 210,
+   "docSeq": 1,
+   "events": [
+    "pageshow@88"
+   ],
+   "rafPerSec": 60,
+   "drawCallPerSec": 0,
+   "drawFramesPerSec": 0,
+   "fps": 59,
+   "appFrames": 1019,
    "rafActiveEnd": 1,
    "si": 2,
-   "st": 7,
-   "textsEnd": 0,
-   "taps": 0,
-   "longtasks": -1,
-   "frameGaps": null
-  },
-  "teamOPEN": {
-   "rafPerSec": 60,
-   "drawPerSec": 4560,
-   "fps": 60,
-   "appFrames": 481,
-   "rafActiveEnd": 1,
-   "si": 3,
    "st": 0,
    "textsEnd": 0,
-   "taps": 0,
+   "taps": 140,
    "longtasks": 0,
    "frameGaps": {
     "n": 240,
     "avg": 16.7,
     "p50": 16.7,
-    "p95": 16.8,
+    "p95": 16.7,
+    "p99": 16.8,
+    "max": 33.3,
+    "over33": 0,
+    "over50": 0
+   }
+  },
+  "teamOPEN": {
+   "docSeq": 1,
+   "events": [
+    "pageshow@88"
+   ],
+   "rafPerSec": 60.3,
+   "drawCallPerSec": 4579,
+   "drawFramesPerSec": 60.3,
+   "fps": 60,
+   "appFrames": 1290,
+   "rafActiveEnd": 1,
+   "si": 3,
+   "st": 0,
+   "textsEnd": 0,
+   "taps": 140,
+   "longtasks": 0,
+   "frameGaps": {
+    "n": 241,
+    "avg": 16.7,
+    "p50": 16.7,
+    "p95": 16.7,
     "p99": 16.8,
     "max": 16.8,
     "over33": 0,
@@ -117,15 +151,20 @@
    }
   },
   "arcadeOPEN": {
+   "docSeq": 1,
+   "events": [
+    "pageshow@88"
+   ],
    "rafPerSec": 60,
-   "drawPerSec": 4560,
+   "drawCallPerSec": 4560,
+   "drawFramesPerSec": 60,
    "fps": 60,
-   "appFrames": 751,
+   "appFrames": 1560,
    "rafActiveEnd": 1,
    "si": 2,
    "st": 0,
    "textsEnd": 0,
-   "taps": 0,
+   "taps": 140,
    "longtasks": 0,
    "frameGaps": {
     "n": 240,
@@ -141,50 +180,222 @@
   "cpu_idle": [
    {
     "k": "(idle) @ ",
-    "ms": 4147.4
+    "ms": 4161.4
    },
    {
     "k": "(program) @ ",
-    "ms": 826.6
+    "ms": 805.5
    },
    {
     "k": "draw @ /src/render/scene.ts",
-    "ms": 7.9
-   },
-   {
-    "k": "R @ /src/render/scene.ts",
-    "ms": 5.6
+    "ms": 8.3
    },
    {
     "k": "fillText @ ",
-    "ms": 4.3
-   },
-   {
-    "k": "today @ /src/main.ts",
-    "ms": 4.2
+    "ms": 6
    },
    {
     "k": "frame @ /src/main.ts",
-    "ms": 4.1
-   },
-   {
-    "k": "fillRect @ ",
-    "ms": 3.8
+    "ms": 4.6
    },
    {
     "k": "drawImage @ ",
+    "ms": 4.4
+   },
+   {
+    "k": "R @ /src/render/scene.ts",
     "ms": 3.2
    },
    {
     "k": "(garbage collector) @ ",
-    "ms": 2.9
+    "ms": 3.1
    },
    {
     "k": "tick @ ",
     "ms": 2.8
    },
    {
+    "k": "fillRect @ ",
+    "ms": 2.8
+   },
+   {
+    "k": "today @ /src/main.ts",
+    "ms": 2.2
+   },
+   {
     "k": "refresh @ /src/ui/shop.ts",
+    "ms": 2
+   },
+   {
+    "k": "refresh @ /src/ui/hud.ts",
+    "ms": 1.5
+   },
+   {
+    "k": "fill @ ",
+    "ms": 0.9
+   },
+   {
+    "k": "requestAnimationFrame @ ",
+    "ms": 0.6
+   },
+   {
+    "k": "tick @ /src/ui/quest.ts",
+    "ms": 0.6
+   },
+   {
+    "k": "getElementById @ ",
+    "ms": 0.6
+   },
+   {
+    "k": "cardEffects @ /src/engine/cards.ts",
+    "ms": 0.4
+   },
+   {
+    "k": "querySelector @ ",
+    "ms": 0.3
+   },
+   {
+    "k": "arc @ ",
+    "ms": 0.3
+   },
+   {
+    "k": "talentEffects @ /src/engine/talents.ts",
+    "ms": 0.3
+   },
+   {
+    "k": "arcadeLeft @ /src/engine/minigames.ts",
+    "ms": 0.3
+   }
+  ],
+  "cpu_journalOpen": [
+   {
+    "k": "(idle) @ ",
+    "ms": 4583.6
+   },
+   {
+    "k": "(program) @ ",
+    "ms": 387.5
+   },
+   {
+    "k": "frame @ /src/main.ts",
+    "ms": 7
+   },
+   {
+    "k": "(garbage collector) @ ",
+    "ms": 5.8
+   },
+   {
+    "k": "refresh @ /src/ui/journal.ts",
+    "ms": 4.4
+   },
+   {
+    "k": "refresh @ /src/ui/shop.ts",
+    "ms": 3.9
+   },
+   {
+    "k": "effectOf @ /src/engine/upgrades.ts",
+    "ms": 2.6
+   },
+   {
+    "k": "today @ /src/main.ts",
+    "ms": 2.3
+   },
+   {
+    "k": "update @ /src/render/fx.ts",
+    "ms": 1.3
+   },
+   {
+    "k": "focus @ ",
+    "ms": 1.2
+   },
+   {
+    "k": "requestAnimationFrame @ ",
+    "ms": 1
+   },
+   {
+    "k": "tick @ /src/ui/quest.ts",
+    "ms": 0.7
+   },
+   {
+    "k": "refresh @ /src/ui/hud.ts",
+    "ms": 0.7
+   },
+   {
+    "k": "clickPowerOf @ /src/engine/actions.ts",
+    "ms": 0.7
+   },
+   {
+    "k": "refresh @ /src/ui/team-panel.ts",
+    "ms": 0.6
+   },
+   {
+    "k": "remove @ ",
+    "ms": 0.6
+   },
+   {
+    "k": "getElementById @ ",
+    "ms": 0.6
+   },
+   {
+    "k": "window.requestAnimationFrame @ ",
+    "ms": 0.4
+   },
+   {
+    "k": "toggle @ /src/ui/journal.ts",
+    "ms": 0.4
+   },
+   {
+    "k": "marginalEffect @ /src/engine/upgrades.ts",
+    "ms": 0.4
+   },
+   {
+    "k": "toggle @ ",
+    "ms": 0.3
+   },
+   {
+    "k": "canPrestige @ /src/engine/prestige.ts",
+    "ms": 0.3
+   }
+  ],
+  "cpu_shopDOM": [
+   {
+    "k": "(idle) @ ",
+    "ms": 4156.2
+   },
+   {
+    "k": "(program) @ ",
+    "ms": 808.7
+   },
+   {
+    "k": "frame @ /src/main.ts",
+    "ms": 6.9
+   },
+   {
+    "k": "draw @ /src/render/scene.ts",
+    "ms": 4.2
+   },
+   {
+    "k": "proto.fillRect @ ",
+    "ms": 4.1
+   },
+   {
+    "k": "fillText @ ",
+    "ms": 4
+   },
+   {
+    "k": "drawImage @ ",
+    "ms": 3.8
+   },
+   {
+    "k": "R @ /src/render/scene.ts",
+    "ms": 2.8
+   },
+   {
+    "k": "refresh @ /src/ui/shop.ts",
+    "ms": 2.4
+   },
+   {
+    "k": "today @ /src/main.ts",
     "ms": 1.8
    },
    {
@@ -192,220 +403,48 @@
     "ms": 1.6
    },
    {
-    "k": "proto.fillRect @ ",
-    "ms": 1.3
-   },
-   {
-    "k": "update @ /src/render/fx.ts",
-    "ms": 1.3
-   },
-   {
-    "k": "querySelector @ ",
-    "ms": 1.3
+    "k": "fillRect @ ",
+    "ms": 1.6
    },
    {
     "k": "refresh @ /src/ui/hud.ts",
     "ms": 1.2
    },
    {
-    "k": "tick @ /src/ui/quest.ts",
-    "ms": 0.9
+    "k": "(garbage collector) @ ",
+    "ms": 1
    },
    {
-    "k": "requestAnimationFrame @ ",
-    "ms": 0.9
+    "k": "update @ /src/render/fx.ts",
+    "ms": 1
    },
    {
-    "k": "contains @ ",
+    "k": "talentEffects @ /src/engine/talents.ts",
     "ms": 0.9
    },
    {
     "k": "effectOf @ /src/engine/upgrades.ts",
+    "ms": 0.9
+   },
+   {
+    "k": "setAttribute @ ",
     "ms": 0.6
    },
    {
     "k": "stroke @ ",
     "ms": 0.6
-   }
-  ],
-  "cpu_journalOpen": [
-   {
-    "k": "(idle) @ ",
-    "ms": 722.2
-   },
-   {
-    "k": "(program) @ ",
-    "ms": 88.1
-   },
-   {
-    "k": "frame @ /src/main.ts",
-    "ms": 6.8
-   },
-   {
-    "k": "draw @ /src/render/scene.ts",
-    "ms": 2.2
-   },
-   {
-    "k": "fillText @ ",
-    "ms": 2
-   },
-   {
-    "k": "tick @ ",
-    "ms": 1.4
-   },
-   {
-    "k": "setTransform @ ",
-    "ms": 1.3
-   },
-   {
-    "k": "refresh @ /src/ui/shop.ts",
-    "ms": 1.3
-   },
-   {
-    "k": "fit @ /src/main.ts",
-    "ms": 1.2
-   },
-   {
-    "k": "boot @ /src/main.ts",
-    "ms": 1.2
-   },
-   {
-    "k": "(garbage collector) @ ",
-    "ms": 1.2
-   },
-   {
-    "k": "R @ /src/render/scene.ts",
-    "ms": 0.9
-   },
-   {
-    "k": "(anonymous) @ /src/main.ts",
-    "ms": 0.8
-   },
-   {
-    "k": "frameActivity @ /src/render/sprites.ts",
-    "ms": 0.7
-   },
-   {
-    "k": "drawImage @ ",
-    "ms": 0.6
-   },
-   {
-    "k": "appendChild @ ",
-    "ms": 0.5
    },
    {
     "k": "tick @ /src/ui/quest.ts",
-    "ms": 0.5
-   },
-   {
-    "k": "normalizeModuleRunnerTransport @ /@vite/client",
-    "ms": 0.5
-   },
-   {
-    "k": "connect @ /@vite/client",
-    "ms": 0.4
-   },
-   {
-    "k": "persist @ ",
-    "ms": 0.4
-   },
-   {
-    "k": "load @ /src/main.ts",
-    "ms": 0.3
-   },
-   {
-    "k": "scheduleEvents @ /src/engine/events.ts",
-    "ms": 0.3
-   }
-  ],
-  "cpu_shopDOM": [
-   {
-    "k": "(idle) @ ",
-    "ms": 4512.5
-   },
-   {
-    "k": "(program) @ ",
-    "ms": 469.1
-   },
-   {
-    "k": "frame @ /src/main.ts",
-    "ms": 3.7
-   },
-   {
-    "k": "refresh @ /src/ui/shop.ts",
-    "ms": 2.4
-   },
-   {
-    "k": "R @ /src/render/scene.ts",
-    "ms": 2.2
-   },
-   {
-    "k": "draw @ /src/render/scene.ts",
-    "ms": 1.8
-   },
-   {
-    "k": "fillText @ ",
-    "ms": 1.5
-   },
-   {
-    "k": "drawImage @ ",
-    "ms": 1.2
-   },
-   {
-    "k": "(garbage collector) @ ",
-    "ms": 1
-   },
-   {
-    "k": "getElementById @ ",
-    "ms": 1
-   },
-   {
-    "k": "fillRect @ ",
-    "ms": 0.9
-   },
-   {
-    "k": "update @ /src/render/fx.ts",
-    "ms": 0.9
-   },
-   {
-    "k": "teamShareRatio @ /src/engine/team.ts",
-    "ms": 0.9
-   },
-   {
-    "k": "effectOf @ /src/engine/upgrades.ts",
-    "ms": 0.9
-   },
-   {
-    "k": "proto.fillRect @ ",
-    "ms": 0.9
-   },
-   {
-    "k": "arc @ ",
-    "ms": 0.8
-   },
-   {
-    "k": "today @ /src/main.ts",
     "ms": 0.6
    },
    {
-    "k": "refresh @ /src/ui/hud.ts",
+    "k": "requestAnimationFrame @ ",
     "ms": 0.6
    },
    {
     "k": "tick @ ",
     "ms": 0.6
-   },
-   {
-    "k": "flavorFor @ /src/engine/flavor.ts",
-    "ms": 0.4
-   },
-   {
-    "k": "favorTier @ /src/engine/team.ts",
-    "ms": 0.3
-   },
-   {
-    "k": "chapterFor @ /src/engine/story.ts",
-    "ms": 0.3
    }
   ],
   "minigameCoffee": {
@@ -414,17 +453,22 @@
    "rafPerSec": 120.4
   },
   "afterMinigame": {
-   "rafTotal": 724,
+   "rafTotal": 3113,
    "rafActive": 1,
-   "draw": 43579,
-   "gapsLen": 574,
+   "draw": 200094,
+   "gapsLen": 2962,
    "fps": 60,
-   "frames": 571,
+   "frames": 2418,
    "si": 2,
    "st": 1,
-   "longtasks": 0,
+   "longtasks": 1,
    "texts": 0,
-   "taps": 0
+   "taps": 140,
+   "docSeq": 1,
+   "events": [
+    "pageshow@88"
+   ],
+   "origin": 1795783523687.9
   }
  },
  "errors": [],
@@ -436,8 +480,8 @@
   "cssW": 390,
   "cssH": 552,
   "mem": {
-   "used": 3508199,
-   "total": 6476623
+   "used": 2924456,
+   "total": 6935596
   }
  }
 }
