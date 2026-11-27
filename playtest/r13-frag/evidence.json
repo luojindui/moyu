@@ -1,0 +1,237 @@
+{
+ "A": {
+  "boot": {
+   "bootMs": 551,
+   "wallMs": 902
+  },
+  "url": "http://127.0.0.1:5173/",
+  "firstCardsVisibleMs": 1,
+  "bootToPopup": 551,
+  "geo": {
+   "viewport": [
+    390,
+    844
+   ],
+   "panel": {
+    "w": 359,
+    "h": 371,
+    "top": 237,
+    "bottom": 608
+   },
+   "scroll": {
+    "scrollH": 363,
+    "clientH": 363,
+    "needScroll": false
+   },
+   "cards": [
+    {
+     "h": 87,
+     "w": 323,
+     "top": 309
+    },
+    {
+     "h": 87,
+     "w": 323,
+     "top": 406
+    },
+    {
+     "h": 87,
+     "w": 323,
+     "top": 503
+    }
+   ],
+   "count": 3,
+   "fonts": {
+    "name": "15px",
+    "desc": "13px",
+    "flavor": "11px"
+   },
+   "closeButtons": 0,
+   "tapTargetHeight": 87,
+   "canvasBlocked": "DIV"
+  },
+  "cards": [
+   {
+    "rarity": "普通",
+    "name": "手速上头",
+    "desc": "今天点击力 +80%",
+    "flavor": "键盘声比平时快了三个度，隔壁老周抬头看了你一眼。"
+   },
+   {
+    "rarity": "普通",
+    "name": "团建吃饭",
+    "desc": "今天派遣奖励 +40%",
+    "flavor": "饭桌上大家聊得很开心，任务也好派了。"
+   },
+   {
+    "rarity": "剧情",
+    "name": "HR 约谈",
+    "desc": "今天挂机 -10%，但明天必定出现「升职机会」卡",
+    "flavor": "小美说：别紧张，就是随便聊聊。"
+   }
+  ],
+  "chars": [
+   {
+    "name": 4,
+    "desc": 10,
+    "flavor": 24
+   },
+   {
+    "name": 4,
+    "desc": 11,
+    "flavor": 18
+   },
+   {
+    "name": 5,
+    "desc": 24,
+    "flavor": 15
+   }
+  ],
+  "totalChars": 115,
+  "skip": {
+   "outsideClickStillOpen80ms": true,
+   "outsideClickStillOpen580ms": true,
+   "escStillOpen": true
+  },
+  "afterPick": {
+   "closed": true,
+   "toast": "今日卡：click_frenzy",
+   "chosen": "click_frenzy",
+   "hudIdle": "0.2",
+   "hudClick": "1.8"
+  },
+  "hudBefore": {
+   "idle": "0.2",
+   "click": "1",
+   "moyu": "0.3"
+  },
+  "closeLatencyMs": 17,
+  "afterToastGone": {
+   "visibleCardNames": [],
+   "hudText": "0.8摸鱼值 | 点击 +1.8 | 不点也 0.2/秒 | 实习生 0% | 👥 | 天赋 | 🔊 | 📔 | 再戳 15 下 → 解锁「咖啡续命」"
+  },
+  "errorsSoFar": []
+ },
+ "B": {
+  "boot": {
+   "bootMs": 124,
+   "wallMs": 476
+  },
+  "cardsVisible": false,
+  "welcomeVisible": false,
+  "hud": {
+   "idle": "0.2",
+   "click": "1.8",
+   "moyu": "0.9"
+  },
+  "canvasTap": {
+   "before": 0.9299772000000017,
+   "after": 2.9015572000000036,
+   "gained": 1.972
+  },
+  "bossShownAfterMs": 26,
+  "bossGeo": {
+   "tell": "急性子·安总走过来了——他走路带风，两三步就到工位",
+   "box": {
+    "y": 535,
+    "w": 359,
+    "h": 109,
+    "bottom": 644
+   },
+   "btns": [
+    {
+     "text": "立刻装忙",
+     "w": 107,
+     "h": 46
+    },
+    {
+     "text": "切到工作界面",
+     "w": 107,
+     "h": 46
+    },
+    {
+     "text": "继续摸鱼",
+     "w": 107,
+     "h": 46
+    }
+   ],
+   "shopTop": 683,
+   "overlapsShop": false,
+   "timerW": "99.2%",
+   "canvasStillClickable": "stage",
+   "zBoss": "18"
+  },
+  "tapWhileBoss": {
+   "fx": [
+    "+2"
+   ],
+   "delta": 0.03
+  },
+  "journalVsBoss": {
+   "journalVisible": true,
+   "bossVisible": true,
+   "topAtBossBox": "boss",
+   "zBoss": "18",
+   "zJournal": "12"
+  },
+  "pick": {
+   "hidden": true,
+   "toast": "选对了！+110",
+   "delta": 110.05,
+   "expect": "立刻装忙"
+  },
+  "timeout": {
+   "visibleMs": 4056,
+   "wallMs": 4157,
+   "toast": "选对了！+110",
+   "toastShown": false
+  },
+  "fourthPatrolTap": {
+   "fx": [
+    "偷点被逮！+2 -10"
+   ],
+   "delta": -8.16
+  },
+  "errorsSoFar": []
+ },
+ "C": {
+  "savePrep": {
+   "ok": true,
+   "date": "2026-11-26",
+   "savedAt": 1795762166946
+  },
+  "boot": {
+   "bootMs": 56,
+   "wallMs": 409
+  },
+  "afterReturn": {
+   "cardsVisible": true,
+   "welcomeVisible": true,
+   "bothModals": true,
+   "zCards": "16",
+   "zWelcome": "10",
+   "topAtCards": "cards",
+   "welcomeGain": "2160.0",
+   "welcomeTime": "3 小时 0 分",
+   "offers": [
+    "coffee_day",
+    "early_leave",
+    "click_frenzy"
+   ]
+  },
+  "afterPick": {
+   "cardsHidden": true,
+   "welcomeStill": true,
+   "toast": "今日卡：coffee_day",
+   "chosen": "coffee_day"
+  },
+  "ready": {
+   "welcomeHidden": true,
+   "cardsHidden": true
+  },
+  "cardStillVisibleAfter": {
+   "hudText": "2172.4摸鱼值 | 点击 +1 | 不点也 0.2/秒 | 实习生 23% | 👥 | 天赋 | 🔊 | 📔 | 买下点亮的「咖啡续命」卡片"
+  }
+ },
+ "errors": []
+}

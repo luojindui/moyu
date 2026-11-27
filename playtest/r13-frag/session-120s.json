@@ -1,0 +1,65 @@
+{
+ "note": "120s 会话，每 6s 点一次屏幕；弹层一律不理会（模拟通勤时偶尔瞥一眼）",
+ "firstOpen": {
+  "hadCards": 1,
+  "chosen": "early_leave"
+ },
+ "tapsInSession": 20,
+ "announces": [
+  {
+   "t": 11422,
+   "text": "老周丢来一个梗：戳亮起的黄点"
+  },
+  {
+   "t": 12619,
+   "text": "图鉴 +1（1/55）"
+  },
+  {
+   "t": 28954,
+   "text": "✓ 戳屏幕完成！"
+  },
+  {
+   "t": 29522,
+   "text": "王总巡逻：8 秒内不要点屏幕"
+  },
+  {
+   "t": 64768,
+   "text": "老周丢来一个梗：戳亮起的黄点"
+  },
+  {
+   "t": 67533,
+   "text": "图鉴 +1（2/55）"
+  }
+ ],
+ "toasts": [
+  {
+   "t": 12619,
+   "text": "图鉴 +1（1/55）"
+  },
+  {
+   "t": 37537,
+   "text": "王总今天心情不错。 +50（连胜 1）"
+  },
+  {
+   "t": 67533,
+   "text": "图鉴 +1（2/55）"
+  }
+ ],
+ "choiceEventCount": 0,
+ "srLiveText": "图鉴 +1（2/55）",
+ "finalState": {
+  "moyu": 102,
+  "patrolSurvives": 1,
+  "surviveStreak": 1,
+  "daily": {}
+ },
+ "bossAnnounceCount": 1,
+ "bossAnnounces": [
+  {
+   "t": 29522,
+   "text": "王总巡逻：8 秒内不要点屏幕"
+  }
+ ],
+ "memeAnnounceCount": 2,
+ "toastCount": 3
+}

@@ -117,15 +117,14 @@ function nextWindow(now: number, min: number, max: number, rng: () => number): n
  * 每帧调度：窗口结束后排下一次；到期开启窗口。
  * 巡逻与丢梗互斥：仅当自然窗口与巡逻重叠时才推迟丢梗。
  */
-export function scheduleEvents(es: EventState, now: number, rng: () => number): void {
+export function scheduleEvents(es: EventState, now: number, rng: () => number, eventRateMult = 1): void {
   if (es.bossUntil > 0 && now >= es.bossUntil) es.bossUntil = -1;
   if (es.memeUntil > 0 && now >= es.memeUntil) es.memeUntil = -1;
   if (es.nextBossAt === Infinity && es.bossUntil < 0) {
     // 首次巡逻提前到 20-35s（30 秒短会话也能遇到事件）
-    es.nextBossAt =
-      es.patrolCount === 0
-        ? nextWindow(now, FIRST_BOSS_MIN, FIRST_BOSS_MAX, rng)
-        : nextWindow(now, BOSS_INTERVAL_MIN, BOSS_INTERVAL_MAX, rng);
+    const rate = Math.max(0.5, eventRateMult);
+    const gap = (lo: number, hi: number): number => (lo + rng() * (hi - lo)) / rate;
+    es.nextBossAt = es.patrolCount === 0 ? now + gap(FIRST_BOSS_MIN, FIRST_BOSS_MAX) : now + gap(BOSS_INTERVAL_MIN, BOSS_INTERVAL_MAX);
   }
   if (es.nextMemeAt === Infinity && es.memeUntil < 0) {
     let memeAt =
@@ -181,14 +180,14 @@ export function onBossTap(
     return { state: doClick(state, combo), caught: false, lost: 0, income: clickPowerOf(state) * comboMultiplier(combo) };
   }
   // 宽限只对 hold（忍住）生效；type/blitz 是"点击任务"，宽限内也要计数（否则玩家点了没反应）
-  const isTask = es.bossVariant === "type" || es.bossVariant === "blitz";
+  const isTask = es.bossVariant === "type" || es.bossVariant === "blitz" || es.bossVariant === "choice";
   if (!isTask && now < es.bossStartAt + BOSS_GRACE_SECONDS) {
     return { state, caught: false, lost: 0, income: 0 };
   }
   const income = clickPowerOf(state) * comboMultiplier(combo);
   const afterIncome = { ...gain(state, income), totalClicks: state.totalClicks + 1 }; // 偷点也是一次点击
   // type / blitz：反向玩法——点击是任务，不罚，计数
-  if (es.bossVariant === "type" || es.bossVariant === "blitz") {
+  if (es.bossVariant === "type" || es.bossVariant === "blitz" || es.bossVariant === "choice") {
     es.bossTaps += 1;
     return { state: afterIncome, caught: false, lost: 0, income };
   }
@@ -226,11 +225,14 @@ export function onBossChoice(
   state: GameState,
   es: EventState,
   choice: BossChoice,
+  now = Infinity,
 ): { state: GameState; correct: boolean; delta: number } | null {
   if (es.bossVariant !== "choice" || es.bossChoiceDone) return null;
-  const idleRate = effectOf(state).idleRate;
-  const base = Math.max(BOSS_REWARD_MIN, BOSS_REWARD_IDLE_SECONDS * idleRate);
-  const r = resolveBossChoice(state, es.bossPersonality, choice, base);
+  // 窗口校验：超时后迟到的点击不再结算
+  if (now !== Infinity && (es.bossUntil <= 0 || now > es.bossUntil)) return null;
+  // 与其它变体一致：吃巡逻奖励倍率（卡/天赋/连胜）
+  const base = bossSurviveReward(state, { ...es, bossCaught: false });
+  const r = resolveBossChoice(state, es.bossPersonality, choice, base, es.patrolCount <= BOSS_ROOKIE_PATROLS);
   es.bossChoiceDone = true;
   es.bossUntil = -1;
   es.bossCaught = !r.correct;
@@ -249,8 +251,9 @@ export { choiceLabel, isCorrect, personalityDef } from "./boss-choice";
 export function finishPatrol(state: GameState, es: EventState): { state: GameState; reward: number } {
   let reward = 0;
   if (es.bossVariant === "choice") {
-    // 未在窗口内做出选择 → 无奖（不算被抓）
-    reward = es.bossChoiceDone ? 0 : 0;
+    // 超时未选择：无奖、不算被抓；置 done 防止窗口外迟到结算
+    if (!es.bossChoiceDone) es.bossChoiceDone = true;
+    reward = 0;
   } else if (es.bossVariant === "type") {
     // 点满 N 次算达标（不罚；没点满只是没奖）
     reward = es.bossTaps >= BOSS_TYPE_TARGET ? bossSurviveReward(state, { ...es, bossCaught: false }) : 0;

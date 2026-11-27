@@ -7,22 +7,32 @@ const RARITY_LABEL: Record<string, string> = { common: "普通", rare: "稀有",
 export class CardPanel {
   private root = document.getElementById("cards")!;
   private body = document.getElementById("cards-body")!;
+  private shownAt = 0;
 
-  constructor(private onChoose: (id: string) => void) {
+  constructor(
+    private onChoose: (id: string) => void,
+    private onSkip: () => void,
+  ) {
     this.root.addEventListener("click", (e) => {
-      if (e.target === this.root) this.hide();
+      if (e.target === this.root) this.onSkip();
     });
+    document.getElementById("cards-skip")!.addEventListener("click", () => this.onSkip());
   }
 
   get isOpen(): boolean {
     return !this.root.classList.contains("hidden");
   }
 
-  /** 有未选卡时自动弹出 */
+  /** 有未选卡时自动弹出（首日不拦：需先完成"戳 15 下"这一步；每天只弹一次） */
   maybeShow(state: GameState): void {
     if (this.isOpen) return;
-    if (!state.cards || state.cards.chosen) return;
-    if (state.cards.offers.length === 0) return;
+    const cs = state.cards;
+    if (!cs || cs.chosen || cs.dismissed) return;
+    if (cs.offers.length === 0) return;
+    // 首日不拦：先让玩家摸到游戏（戳 8 下），或开页 12 秒后再给决策
+    const bootMs = Number(sessionStorage.getItem("moyu-boot-ms") ?? "0");
+    const waited = bootMs > 0 && Date.now() - bootMs > 12_000;
+    if (state.totalClicks < 8 && !waited) return;
     this.show(state);
   }
 
@@ -42,12 +52,15 @@ export class CardPanel {
       .join("");
     this.body.querySelectorAll<HTMLElement>(".card").forEach((el) => {
       el.addEventListener("click", () => {
+        // 防误触：弹窗刚出现的 400ms 内忽略点击（玩家可能正连点屏幕）
+        if (performance.now() - this.shownAt < 400) return;
         const id = el.dataset.id!;
         this.onChoose(id);
         this.hide();
       });
     });
     this.root.classList.remove("hidden");
+    this.shownAt = performance.now();
   }
 
   hide(): void {

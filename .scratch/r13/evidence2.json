@@ -1,0 +1,85 @@
+{
+  "panelAfterReload": {
+    "cards": true,
+    "boss": false,
+    "toast": {
+      "text": "段位奖励：天赋点 +2",
+      "cls": ""
+    },
+    "sr": "段位奖励：天赋点 +2"
+  },
+  "afterBackdropClick": {
+    "cards": true,
+    "boss": false,
+    "toast": {
+      "text": "段位奖励：天赋点 +2",
+      "cls": ""
+    },
+    "sr": "段位奖励：天赋点 +2"
+  },
+  "afterBackdropClickAgain": {
+    "cards": true,
+    "boss": false,
+    "toast": {
+      "text": "段位奖励：天赋点 +2",
+      "cls": ""
+    },
+    "sr": "段位奖励：天赋点 +2"
+  },
+  "cardVisibleAfterChoose": {
+    "hrInBodyText": false,
+    "flavorInBody": false,
+    "toast": {
+      "text": "今日卡：hr_talk",
+      "cls": "show"
+    }
+  },
+  "strayTapInChoice": {
+    "beforeTap": {
+      "moyu": 2000000441.9546065,
+      "patrol": 4,
+      "open": true,
+      "tell": "健忘·老李走过来了——他边走边看手机，眼神是散的"
+    },
+    "afterTap": {
+      "moyu": 2000000433.005583,
+      "delta": -8.949023485183716,
+      "open": true,
+      "toast": "选对了！+110"
+    },
+    "fx": [
+      {
+        "x": 188,
+        "y": 222,
+        "text": "偷点被逮！+1 -10"
+      }
+    ]
+  },
+  "beforeTimeoutToast": {
+    "cards": false,
+    "boss": false,
+    "toast": {
+      "text": "选错了…-30",
+      "cls": ""
+    },
+    "sr": "应对错误"
+  },
+  "timeoutBefore": {
+    "cards": false,
+    "boss": true,
+    "toast": {
+      "text": "选错了…-30",
+      "cls": ""
+    },
+    "sr": "假装工作：8 秒内点 5 下"
+  },
+  "timeoutAfter": {
+    "cards": false,
+    "boss": false,
+    "toast": {
+      "text": "选错了…-30",
+      "cls": ""
+    },
+    "sr": "老周丢来一个梗：戳亮起的黄点"
+  }
+}

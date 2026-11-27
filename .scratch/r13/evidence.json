@@ -1,0 +1,464 @@
+{
+  "cardScreens": {
+    "first": [
+      {
+        "rarity": "普通",
+        "name": "老板出差",
+        "desc": "今天巡逻奖励 +50%，但巡逻更频繁（+30%）",
+        "flavor": "王总的工位空了，但没人敢摸得太明显。"
+      },
+      {
+        "rarity": "普通",
+        "name": "提前下班",
+        "desc": "今天离线效率 +15%",
+        "flavor": "今天可以准点走——这种事要记下来。"
+      },
+      {
+        "rarity": "普通",
+        "name": "咖啡管够",
+        "desc": "今天挂机 +15%",
+        "flavor": "行政说咖啡机修好了，全组沸腾。"
+      }
+    ],
+    "storyOffer": [
+      {
+        "rarity": "剧情",
+        "name": "HR 约谈",
+        "desc": "今天挂机 -10%，但明天必定出现「升职机会」卡",
+        "flavor": "小美说：别紧张，就是随便聊聊。"
+      },
+      {
+        "rarity": "剧情",
+        "name": "老周的秘密",
+        "desc": "今天派遣奖励 ×1.8，好感获取 +1",
+        "flavor": "他说他其实写过一个小说，主角是我们部门。"
+      },
+      {
+        "rarity": "稀有",
+        "name": "通宵摸鱼",
+        "desc": "今天挂机 +60%，但明天离线效率 -20%",
+        "flavor": "公司网速最快的时段，只有你知道。"
+      }
+    ],
+    "nextDay": [
+      {
+        "rarity": "稀有",
+        "name": "秘密项目",
+        "desc": "今天点击力 ×2，派遣奖励 +30%",
+        "flavor": "没人知道你在做什么，但看起来很重要。"
+      },
+      {
+        "rarity": "普通",
+        "name": "提前下班",
+        "desc": "今天离线效率 +15%",
+        "flavor": "今天可以准点走——这种事要记下来。"
+      },
+      {
+        "rarity": "普通",
+        "name": "团建吃饭",
+        "desc": "今天派遣奖励 +40%",
+        "flavor": "饭桌上大家聊得很开心，任务也好派了。"
+      }
+    ],
+    "desktop": [
+      {
+        "rarity": "普通",
+        "name": "咖啡管够",
+        "desc": "今天挂机 +15%",
+        "flavor": "行政说咖啡机修好了，全组沸腾。"
+      },
+      {
+        "rarity": "剧情",
+        "name": "老周的秘密",
+        "desc": "今天派遣奖励 ×1.8，好感获取 +1",
+        "flavor": "他说他其实写过一个小说，主角是我们部门。"
+      },
+      {
+        "rarity": "稀有",
+        "name": "全员大会",
+        "desc": "今天事件奖励 ×2，但巡逻间隔减半（更多打断）",
+        "flavor": "会议室里没人听，全在底下摸鱼。"
+      }
+    ]
+  },
+  "toast": [
+    {
+      "step": "choose hr_talk",
+      "text": "今日卡：hr_talk",
+      "shown": true
+    },
+    {
+      "step": "choose secret_project",
+      "text": "今日卡：secret_project",
+      "shown": true
+    },
+    {
+      "step": "boss pick 0",
+      "choice": "act-busy",
+      "text": "选对了！+110",
+      "shown": true
+    },
+    {
+      "step": "boss pick 1",
+      "choice": "act-busy",
+      "text": "选错了…-30",
+      "shown": true
+    },
+    {
+      "step": "boss pick 2",
+      "choice": "switch-screen",
+      "text": "选对了！+110",
+      "shown": true
+    },
+    {
+      "step": "boss pick 3",
+      "choice": "switch-screen",
+      "text": "选对了！+110",
+      "shown": true
+    },
+    {
+      "step": "boss pick 4",
+      "choice": "switch-screen",
+      "text": "选对了！+110",
+      "shown": true
+    },
+    {
+      "step": "boss pick 5",
+      "choice": "switch-screen",
+      "text": "选对了！+110",
+      "shown": true
+    },
+    {
+      "step": "boss pick 6",
+      "choice": "keep-slacking",
+      "text": "选对了！+110",
+      "shown": true
+    },
+    {
+      "step": "boss pick 7",
+      "choice": "act-busy",
+      "text": "选对了！+110",
+      "shown": true
+    }
+  ],
+  "personalities": [
+    {
+      "iter": 0,
+      "person": "急性子·安总",
+      "tell": "急性子·安总走过来了——他走路带风，两三步就到工位",
+      "opts": [
+        {
+          "id": "act-busy",
+          "label": "立刻装忙"
+        },
+        {
+          "id": "switch-screen",
+          "label": "切到工作界面"
+        },
+        {
+          "id": "keep-slacking",
+          "label": "继续摸鱼"
+        }
+      ],
+      "chosen": "act-busy",
+      "toast": {
+        "text": "选对了！+110",
+        "shown": true
+      }
+    },
+    {
+      "iter": 1,
+      "person": "健忘·老李",
+      "tell": "健忘·老李走过来了——他边走边看手机，眼神是散的",
+      "opts": [
+        {
+          "id": "act-busy",
+          "label": "立刻装忙"
+        },
+        {
+          "id": "switch-screen",
+          "label": "切到工作界面"
+        },
+        {
+          "id": "keep-slacking",
+          "label": "继续摸鱼"
+        }
+      ],
+      "chosen": "act-busy",
+      "toast": {
+        "text": "选错了…-30",
+        "shown": true
+      }
+    },
+    {
+      "iter": 2,
+      "person": "多疑·王总",
+      "tell": "多疑·王总走过来了——他一路盯着别人屏幕走过来",
+      "opts": [
+        {
+          "id": "act-busy",
+          "label": "立刻装忙"
+        },
+        {
+          "id": "switch-screen",
+          "label": "切到工作界面"
+        },
+        {
+          "id": "keep-slacking",
+          "label": "继续摸鱼"
+        }
+      ],
+      "chosen": "switch-screen",
+      "toast": {
+        "text": "选对了！+110",
+        "shown": true
+      }
+    },
+    {
+      "iter": 3,
+      "person": "多疑·王总",
+      "tell": "多疑·王总走过来了——他一路盯着别人屏幕走过来",
+      "opts": [
+        {
+          "id": "act-busy",
+          "label": "立刻装忙"
+        },
+        {
+          "id": "switch-screen",
+          "label": "切到工作界面"
+        },
+        {
+          "id": "keep-slacking",
+          "label": "继续摸鱼"
+        }
+      ],
+      "chosen": "switch-screen",
+      "toast": {
+        "text": "选对了！+110",
+        "shown": true
+      }
+    },
+    {
+      "iter": 4,
+      "person": "多疑·王总",
+      "tell": "多疑·王总走过来了——他一路盯着别人屏幕走过来",
+      "opts": [
+        {
+          "id": "act-busy",
+          "label": "立刻装忙"
+        },
+        {
+          "id": "switch-screen",
+          "label": "切到工作界面"
+        },
+        {
+          "id": "keep-slacking",
+          "label": "继续摸鱼"
+        }
+      ],
+      "chosen": "switch-screen",
+      "toast": {
+        "text": "选对了！+110",
+        "shown": true
+      }
+    },
+    {
+      "iter": 5,
+      "person": "多疑·王总",
+      "tell": "多疑·王总走过来了——他一路盯着别人屏幕走过来",
+      "opts": [
+        {
+          "id": "act-busy",
+          "label": "立刻装忙"
+        },
+        {
+          "id": "switch-screen",
+          "label": "切到工作界面"
+        },
+        {
+          "id": "keep-slacking",
+          "label": "继续摸鱼"
+        }
+      ],
+      "chosen": "switch-screen",
+      "toast": {
+        "text": "选对了！+110",
+        "shown": true
+      }
+    },
+    {
+      "iter": 6,
+      "person": "健忘·老李",
+      "tell": "健忘·老李走过来了——他边走边看手机，眼神是散的",
+      "opts": [
+        {
+          "id": "act-busy",
+          "label": "立刻装忙"
+        },
+        {
+          "id": "switch-screen",
+          "label": "切到工作界面"
+        },
+        {
+          "id": "keep-slacking",
+          "label": "继续摸鱼"
+        }
+      ],
+      "chosen": "keep-slacking",
+      "toast": {
+        "text": "选对了！+110",
+        "shown": true
+      }
+    },
+    {
+      "iter": 7,
+      "person": "急性子·安总",
+      "tell": "急性子·安总走过来了——他走路带风，两三步就到工位",
+      "opts": [
+        {
+          "id": "act-busy",
+          "label": "立刻装忙"
+        },
+        {
+          "id": "switch-screen",
+          "label": "切到工作界面"
+        },
+        {
+          "id": "keep-slacking",
+          "label": "继续摸鱼"
+        }
+      ],
+      "chosen": "act-busy",
+      "toast": {
+        "text": "选对了！+110",
+        "shown": true
+      }
+    }
+  ],
+  "errors": [],
+  "keyData": {
+    "firstSave": {
+      "v": 2,
+      "moyu": 0,
+      "totalEarned": 0,
+      "levels": {},
+      "savedAt": 1795772851669,
+      "createdAt": 1795772851669,
+      "collected": {
+        "quotes": [],
+        "flavors": []
+      },
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "visit_1",
+            "target": 1,
+            "progress": 1,
+            "done": true
+          },
+          {
+            "id": "idle_earn",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "meme_1",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          }
+        ],
+        "streak": 0,
+        "lastCompleteDate": null,
+        "claimed": false,
+        "window": 2,
+        "claimsToday": 0
+      },
+      "surviveStreak": 0,
+      "patrolSurvives": 0,
+      "cards": {
+        "date": "2026-11-27",
+        "offers": [
+          "quiet_day",
+          "early_leave",
+          "coffee_day"
+        ],
+        "chosen": null,
+        "until": 0,
+        "nextDayGuaranteed": null
+      },
+      "totalClicks": 0,
+      "visits": {
+        "date": "2026-11-27",
+        "count": 1
+      },
+      "lifetimeEarned": 0,
+      "prestige": 0,
+      "team": {
+        "colleagues": {}
+      },
+      "talents": {
+        "unlocked": [],
+        "points": 1,
+        "rankGranted": -1,
+        "dailyGiftDate": "2026-11-27",
+        "overflow": 0
+      }
+    },
+    "today": "2026-11-27",
+    "afterCraftSave": {
+      "date": "2026-11-27",
+      "offers": [
+        "hr_talk",
+        "old_zhou_secret",
+        "overtime"
+      ],
+      "chosen": null,
+      "until": 0,
+      "nextDayGuaranteed": null
+    },
+    "afterHr": {
+      "date": "2026-11-27",
+      "offers": [
+        "hr_talk",
+        "old_zhou_secret",
+        "overtime"
+      ],
+      "chosen": "hr_talk",
+      "until": 1795859257767,
+      "nextDayGuaranteed": "secret_project"
+    },
+    "afterHrSave": {
+      "date": "2026-11-27",
+      "offers": [
+        "hr_talk",
+        "old_zhou_secret",
+        "overtime"
+      ],
+      "chosen": "hr_talk",
+      "until": 1795859257767,
+      "nextDayGuaranteed": "secret_project"
+    },
+    "nextDay": {
+      "date": "2026-11-27",
+      "offers": [
+        "secret_project",
+        "early_leave",
+        "team_bond"
+      ],
+      "chosen": null,
+      "until": 0,
+      "nextDayGuaranteed": null
+    },
+    "timeout": {
+      "before": "健忘·老李走过来了——他边走边看手机，眼神是散的",
+      "after": {
+        "open": false,
+        "toast": "选对了！+110",
+        "toastShown": ""
+      }
+    }
+  }
+}

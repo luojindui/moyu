@@ -63,15 +63,18 @@ describe("每日事件卡", () => {
   it("HR 约谈 → 次日保底剧情卡", () => {
     const s = chooseCard(withCards(), "hr_talk", NOW)!;
     expect(s.cards!.nextDayGuaranteed).toBe("secret_project");
-    const next = ensureCards(s, "2026-11-28", () => 0.3);
+    // 24h 内跨天不清卡；过了有效期才换池
+    const still = ensureCards(s, "2026-11-28", () => 0.3, NOW + 3600_000);
+    expect(still.cards!.chosen).toBe("hr_talk");
+    const next = ensureCards(s, "2026-11-28", () => 0.3, NOW + 25 * 3600_000);
     expect(next.cards!.offers).toContain("secret_project");
   });
 
   it("跨日刷新卡池（幂等）", () => {
     const s = withCards();
-    const a = ensureCards(s, "2026-11-28", () => 0.3);
+    const a = ensureCards(s, "2026-11-28", () => 0.3, NOW);
     expect(a.cards!.date).toBe("2026-11-28");
-    const b = ensureCards(a, "2026-11-28", () => 0.3);
+    const b = ensureCards(a, "2026-11-28", () => 0.3, NOW);
     expect(b).toBe(a); // 同日不重抽
   });
 });

@@ -5,6 +5,7 @@ import { effectOf } from "../engine/upgrades";
 import { rankFor } from "../engine/titles";
 import { dailyAllDone } from "../engine/daily";
 import { canPrestige } from "../engine/prestige";
+import { CARDS } from "../engine/cards";
 
 /** HUD 节流刷新（由主循环 ~150ms 调用一次） */
 export class Hud {
@@ -15,6 +16,7 @@ export class Hud {
   private elJournal = document.getElementById("btn-journal")!;
   private elStreak = document.getElementById("hud-streak")!;
   private elCombo = document.getElementById("hud-combo")!;
+  private elCard = document.getElementById("hud-card")!;
 
   refresh(state: GameState, combo = 0): void {
     this.elMoyu.textContent = formatMoyu(state.moyu);
@@ -29,6 +31,19 @@ export class Hud {
       ? `${shortName} ${(rank.progress * 100).toFixed(0)}%`
       : shortName;
     this.elRank.title = rank.next ? `${rank.current} → ${rank.next.name}` : rank.current;
+    // 今日卡常驻（让玩家知道自己今天选了什么）
+    if (state.cards?.chosen) {
+      const def = CARDS.find((x) => x.id === state.cards!.chosen);
+      if (def && Date.now() < state.cards.until) {
+        this.elCard.textContent = `今日卡：${def.name}`;
+        this.elCard.classList.remove("hidden");
+      } else {
+        this.elCard.classList.add("hidden");
+      }
+    } else {
+      this.elCard.classList.add("hidden");
+    }
+
     // 连击常驻显示（从 2 连起，断连隐藏）
     if (combo >= 2) {
       this.elCombo.textContent = `连×${combo}`;

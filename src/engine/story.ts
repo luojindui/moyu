@@ -56,5 +56,16 @@ export function bossOutcome(caught: boolean): string {
   return caught ? `${VOICES.boss}：年轻人，眼神这么飘。` : `${VOICES.boss}今天心情不错。`;
 }
 
+/** 回合制老板的结算台词（人设落地：让"读线索"变成"读人"） */
+export function bossChoiceLine(personality: string, correct: boolean): string {
+  const lines: Record<string, [string, string]> = {
+    hasty: ["安总：嗯，忙你的。", "安总：这表格昨天就这数吧？"],
+    suspicious: ["王总：屏幕挺干净啊。", "王总：切得真快。"],
+    forgetful: ["老李：……我刚才要说什么来着？", "老李：你刚才是不是在摸鱼？算了。"],
+  };
+  const pair = lines[personality] ?? lines.hasty!;
+  return correct ? pair[0] : pair[1];
+}
+
 /** HR 转生台词 */
 export const HR_PRESTIGE_LINE = `${VOICES.hr}：离职再就业流程走一下？换工位号，工龄保留。`;

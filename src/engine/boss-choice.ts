@@ -30,7 +30,7 @@ export const CHOICES: { id: BossChoice; label: string }[] = [
 ];
 
 /** 决策窗口（秒）：3 秒决策 + 1 秒缓冲（移动端可读性） */
-export const CHOICE_SECONDS = 4;
+export const CHOICE_SECONDS = 5;
 /** 选对奖励 = 安然巡逻奖励 × 该倍率 */
 export const CHOICE_CORRECT_MULT = 2.2;
 /** 选错罚款 = 安然奖励的该比例（比被抓好一点） */
@@ -65,6 +65,7 @@ export function resolveBossChoice(
   personality: BossPersonality,
   choice: BossChoice,
   baseReward: number,
+  rookieGrace = false,
 ): ChoiceOutcome {
   if (isCorrect(personality, choice)) {
     const delta = Math.floor(baseReward * CHOICE_CORRECT_MULT);
@@ -79,7 +80,8 @@ export function resolveBossChoice(
       },
     };
   }
-  const penalty = Math.floor(baseReward * CHOICE_WRONG_PENALTY_RATIO);
+  // 新手宽限：第一次选错不扣钱（只丢连胜），避免新玩家被清空余额
+  const penalty = rookieGrace ? 0 : Math.floor(baseReward * CHOICE_WRONG_PENALTY_RATIO);
   const paid = Math.min(penalty, state.moyu);
   return {
     correct: false,

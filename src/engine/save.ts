@@ -217,14 +217,26 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
     const cards: CardState = emptyCardState();
     const rawCards = blob.cards as Partial<CardState> | undefined;
     if (rawCards && typeof rawCards === "object") {
-      cards.date = typeof rawCards.date === "string" ? rawCards.date.slice(0, 10) : "";
+      const d = rawCards.date;
+      cards.date = typeof d === "string" && /^\d{4}-\d{2}-\d{2}$/.test(d) ? d : "";
+      const seenOffers = new Set<string>();
       cards.offers = Array.isArray(rawCards.offers)
-        ? rawCards.offers.filter((x): x is string => typeof x === "string" && CARDS.some((c) => c.id === x)).slice(0, 3)
+        ? rawCards.offers
+            .filter((x): x is string => typeof x === "string" && CARDS.some((c) => c.id === x))
+            .filter((x) => (seenOffers.has(x) ? false : (seenOffers.add(x), true)))
+            .slice(0, 3)
         : [];
       cards.chosen =
         typeof rawCards.chosen === "string" && cards.offers.includes(rawCards.chosen) ? rawCards.chosen : null;
       const until = typeof rawCards.until === "number" && Number.isFinite(rawCards.until) ? rawCards.until : 0;
-      cards.until = Math.max(0, Math.min(until, (Number.isFinite(now) ? now : Date.now()) + 2 * 24 * 3600 * 1000));
+      const nowRef2 = Number.isFinite(now) ? now : Date.now();
+      cards.until = Math.max(0, Math.min(until, nowRef2 + 2 * 24 * 3600 * 1000));
+      // 已选卡但已过期 → 清空选择，避免"占掉当天唯一选择权却无效果"
+      if (cards.chosen && cards.until <= nowRef2) {
+        cards.chosen = null;
+        cards.until = 0;
+      }
+      cards.dismissed = rawCards.dismissed === true;
       cards.nextDayGuaranteed =
         typeof rawCards.nextDayGuaranteed === "string" && CARDS.some((c) => c.id === rawCards.nextDayGuaranteed)
           ? rawCards.nextDayGuaranteed

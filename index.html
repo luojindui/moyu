@@ -24,6 +24,7 @@
           <span>点击 +<b id="hud-click">1</b></span>
           <span>不点也 <b id="hud-idle">0.2</b>/秒</span>
           <span id="hud-rank">摸鱼实习生</span>
+          <span id="hud-card" class="hidden"></span>
           <span id="hud-combo" class="hidden"></span>
           <span id="hud-streak" class="hidden"></span>
           <button id="btn-team" aria-label="摸鱼小队">👥</button>
@@ -42,9 +43,12 @@
       <div class="cards-panel">
         <div class="cards-head">
           <h2 id="cards-title">今日摸鱼卡</h2>
-          <span class="cards-sub">选 1 张，生效到今天结束</span>
+          <span class="cards-sub">选 1 张，生效 24 小时（跨天不清）</span>
         </div>
         <div id="cards-body"></div>
+        <div class="cards-actions">
+          <button id="cards-skip" class="ghost">今天先不选</button>
+        </div>
       </div>
     </div>
     <div id="boss-choice" class="hidden">

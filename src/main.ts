@@ -18,7 +18,7 @@ import { collectQuote, syncFlavorCollection } from "./engine/collection";
 import { ensureVisits, offlineEfficiency } from "./engine/progression";
 import { rankFor, RANKS } from "./engine/titles";
 import { formatMoyu } from "./engine/format";
-import { chapterFor, zhouLine, bossOutcome, HR_PRESTIGE_LINE } from "./engine/story";
+import { chapterFor, zhouLine, bossOutcome, bossChoiceLine, HR_PRESTIGE_LINE } from "./engine/story";
 import { APP_VERSION } from "./version";
 import { RECORDS_KEY, parseRecords, updateRecords, type Records } from "./engine/records";
 import { doPrestige } from "./engine/prestige";
@@ -31,8 +31,9 @@ import { Quest } from "./ui/quest";
 import { TeamPanel } from "./ui/team-panel";
 import { CardPanel } from "./ui/card-panel";
 import { BossChoicePanel } from "./ui/boss-panel";
-import { chooseCard, ensureCards } from "./engine/cards";
+import { CARDS, chooseCard, dismissCards, ensureCards } from "./engine/cards";
 import { onBossChoice } from "./engine/events";
+import { cardEffects } from "./engine/cards";
 import { claimMission, colleagueDef, recruit, upgradeColleague, dispatch as dispatchMission , setAutoRepeat, favorTier } from "./engine/team";
 import { grantDailyTalentPoint, grantRankTalents, resetTalents, talentEffects, unlockTalent } from "./engine/talents";
 import { initAudio, playClick, playBreak, playSuccess, toggleMute, isMuted } from "./ui/audio";
@@ -64,6 +65,11 @@ function withTimeout<T>(p: Promise<T>, ms: number): Promise<T> {
 }
 
 async function boot(): Promise<void> {
+  try {
+    if (!sessionStorage.getItem("moyu-boot-ms")) sessionStorage.setItem("moyu-boot-ms", String(Date.now()));
+  } catch {
+    /* 忽略 */
+  }
   initAudio();
   // 1) 状态与离线结算（不依赖任何资产）；离线效率现算：建档 24h 内全额，之后 70%
   const restored = restore(localStorageAdapter, Date.now());
@@ -237,22 +243,33 @@ async function boot(): Promise<void> {
       toast("天赋已重置，点数已返还");
     },
   });
-  const cardPanel = new CardPanel((id) => {
-    const next = chooseCard(state, id, Date.now());
-    if (next) {
-      state = next;
-      hud.refresh(state);
-      showToast(`今日卡：${id}`);
+  const cardPanel = new CardPanel(
+    (id) => {
+      const def = CARDS.find((c) => c.id === id);
+      const next = chooseCard(state, id, Date.now());
+      if (next) {
+        state = next;
+        hud.refresh(state);
+        showToast(`今日卡：${def?.name ?? ""}`);
+        serialize(state, localStorageAdapter, Date.now());
+      }
+    },
+    () => {
+      state = dismissCards(state);
       serialize(state, localStorageAdapter, Date.now());
-    }
-  });
+    },
+  );
   const bossPanel = new BossChoicePanel((choice) => {
-    const r = onBossChoice(state, es, choice);
+    const r = onBossChoice(state, es, choice, scene.gameTime);
     if (r) {
       state = r.state;
       hud.refresh(state);
-      playSuccess();
-      showToast(r.correct ? `选对了！+${Math.round(r.delta)}` : `选错了…${Math.round(r.delta)}`);
+      if (r.correct) {
+        playSuccess();
+        trackDaily("survive");
+      }
+      const line = bossChoiceLine(es.bossPersonality, r.correct);
+      showToast(`${line} ${r.delta >= 0 ? "+" : ""}${Math.round(r.delta)}`);
       announce(r.correct ? "应对正确" : "应对错误");
       serialize(state, localStorageAdapter, Date.now());
     }
@@ -310,6 +327,8 @@ async function boot(): Promise<void> {
   trackDaily("visit");
   let lastPointerAt = 0;
   const doTap = (clientX: number, clientY: number): void => {
+    // 回合制老板窗口内画布点击不处理（避免"边思考边被罚偷点"）
+    if (bossPanel.isOpen) return;
     const nowMs = performance.now();
     // 允许双指连点（音游常用），但两次点击至少间隔 80ms 防作弊
     if (nowMs - lastPointerAt < 80) return;
@@ -433,6 +452,10 @@ async function boot(): Promise<void> {
     const w = document.getElementById("welcome")!;
     if (!j.classList.contains("hidden")) journal.hide();
     else if (teamPanel.isOpen) teamPanel.hide();
+    else if (cardPanel.isOpen) {
+      state = dismissCards(state);
+      cardPanel.hide();
+    }
     else if (!w.classList.contains("hidden")) w.classList.add("hidden");
   });
   const rng = Math.random;
@@ -446,7 +469,15 @@ async function boot(): Promise<void> {
     scene.gameTime += dt;
     // 随机事件调度（丢梗位置：每次窗口随机出现在场景上半区，并按视口高度防裁剪）
     const memeWasIdle = es.memeUntil < 0;
-    scheduleEvents(es, scene.gameTime, rng);
+    // 任一模态打开时，把即将触发的事件往后推（避免"老板盖在日报/卡弹窗上"）
+    const anyModalOpen =
+      !document.getElementById("journal")!.classList.contains("hidden") ||
+      !document.getElementById("team")!.classList.contains("hidden") ||
+      !document.getElementById("cards")!.classList.contains("hidden");
+    if (anyModalOpen && es.bossUntil < 0 && es.nextBossAt <= scene.gameTime) {
+      es.nextBossAt = scene.gameTime + 3;
+    }
+    scheduleEvents(es, scene.gameTime, rng, cardEffects(state, Date.now()).eventRateMult);
     if (memeWasIdle && es.memeUntil > 0) {
       announce("老周丢来一个梗：戳亮起的黄点");
       const vh = scene.h / scene.scale;
@@ -476,7 +507,9 @@ async function boot(): Promise<void> {
           ? "王总巡逻：8 秒内不要点屏幕"
           : es.bossVariant === "blitz"
             ? "摸鱼冲刺：8 秒内连点 16 下"
-            : "假装工作：8 秒内点 5 下",
+            : es.bossVariant === "choice"
+              ? "回合制老板：看线索，在 4 秒内选对应对"
+              : "假装工作：8 秒内点 5 下",
       );
     }
     // 巡逻结束：安然 → 发奖（含连胜乘数）并推进连胜；被抓 → 0 奖清零
@@ -564,15 +597,21 @@ async function boot(): Promise<void> {
       // 每日事件卡：跨日刷新 + 未选时弹窗
       {
         const today = new Date().toLocaleDateString("sv-SE");
-        const withCards = ensureCards(state, today, rng);
+        const withCards = ensureCards(state, today, rng, Date.now());
         if (withCards !== state) {
           state = withCards;
           serialize(state, localStorageAdapter, Date.now());
         }
-        cardPanel.maybeShow(state);
+        if (document.getElementById("welcome")!.classList.contains("hidden")) cardPanel.maybeShow(state);
       }
       // 回合制老板：同步弹层
-      bossPanel.sync(es);
+      {
+        const wasOpen = bossPanel.isOpen;
+        bossPanel.sync(es);
+        if (wasOpen && !bossPanel.isOpen && es.bossChoiceDone && es.bossUntil < 0) {
+          showToast("没来得及选…这次不算");
+        }
+      }
 
       // 任务完成提醒（角标之外给一次明确提示）
       {

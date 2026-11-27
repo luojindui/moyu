@@ -1,0 +1,141 @@
+{
+  "tests": [
+    {
+      "name": "T1-timeout",
+      "openAfterMs": 160,
+      "tell": "健忘·老李走过来了——他边走边看手机，眼神是散的",
+      "opts": [
+        "立刻装忙",
+        "切到工作界面",
+        "继续摸鱼"
+      ],
+      "timerW": "",
+      "samples": [
+        {
+          "at": 300,
+          "timerW": "293.859px"
+        },
+        {
+          "at": 1200,
+          "timerW": "207.984px"
+        },
+        {
+          "at": 2100,
+          "timerW": "117.797px"
+        }
+      ],
+      "closedAfterMs": 3935,
+      "toastsSeen": [],
+      "afterToast": "今日卡：click_frenzy",
+      "afterToastShown": false,
+      "stateDelta": {
+        "moyu": 0.9766399999999957,
+        "totalEarned": 0.9766399999999957,
+        "patrolSurvives": 0,
+        "surviveStreak": 0,
+        "beforeStreak": 0
+      },
+      "elapsedToFirstTapMs": 4000
+    },
+    {
+      "name": "T2-correct",
+      "clue": "健忘·老李走过来了——他边走边看手机，眼神是散的",
+      "opts": [
+        "立刻装忙",
+        "切到工作界面",
+        "继续摸鱼"
+      ],
+      "inferredCorrect": "继续摸鱼",
+      "picked": "继续摸鱼",
+      "toast": "选对了！+110",
+      "moyuDelta": 110.32663999999993,
+      "stateDelta": {
+        "totalEarned": 110.32663999999993,
+        "patrolSurvives": 1,
+        "surviveStreak": 1,
+        "beforeStreak": 0
+      }
+    },
+    {
+      "name": "T3-wrong",
+      "clue": "健忘·老李走过来了——他边走边看手机，眼神是散的",
+      "opts": [
+        "立刻装忙",
+        "切到工作界面",
+        "继续摸鱼"
+      ],
+      "inferredCorrect": "继续摸鱼",
+      "picked": "立刻装忙",
+      "toast": "选错了…-30",
+      "moyuDelta": -29.770020000000144,
+      "stateDelta": {
+        "totalEarned": -29.770020000000144,
+        "patrolSurvives": 0,
+        "surviveStreak": 0,
+        "beforeStreak": 1
+      }
+    },
+    {
+      "name": "T4-tap-during-choice",
+      "clue": "急性子·安总走过来了——他走路带风，两三步就到工位",
+      "moyuBefore": 82.50321999999929,
+      "moyuAfterTap": 74.65321999999905,
+      "deltaByTap": -7.850000000000236,
+      "surviveStreakBefore": 0,
+      "surviveStreakAfterTap": 0,
+      "panelStillOpen": true,
+      "totalClicksBefore": 0,
+      "totalClicksAfter": 1
+    },
+    {
+      "name": "T5-boss-over-journal",
+      "bossOpen": true,
+      "journalOpen": true,
+      "tell": "健忘·老李走过来了——他边走边看手机，眼神是散的",
+      "appearedAfterMs": 171,
+      "journalShot": "playtest/r13-q-screens/111-T5-journal-open.png"
+    },
+    {
+      "name": "T6-reload-same-day-card",
+      "cardsOpen": false
+    }
+  ],
+  "card": {
+    "pickedAtCard": 0,
+    "rect": {
+      "x": 194.9921875,
+      "y": 352
+    }
+  },
+  "notes": [
+    {
+      "ready": true
+    }
+  ],
+  "firstSnapshot": {
+    "bossOpen": false,
+    "tell": "",
+    "opts": [],
+    "timerW": "",
+    "cardsOpen": true,
+    "journalOpen": false,
+    "toast": "送你 1 个天赋点，点 👥 看看",
+    "toastShown": true,
+    "moyu": "0.1",
+    "streak": "",
+    "streakShown": false
+  },
+  "afterCard": {
+    "bossOpen": false,
+    "tell": "",
+    "opts": [],
+    "timerW": "",
+    "cardsOpen": false,
+    "journalOpen": false,
+    "toast": "今日卡：click_frenzy",
+    "toastShown": true,
+    "moyu": "0.3",
+    "streak": "",
+    "streakShown": false
+  }
+}

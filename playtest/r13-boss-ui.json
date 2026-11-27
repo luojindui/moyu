@@ -1,0 +1,35 @@
+{
+ "panelAppeared": true,
+ "tell": "急性子·安总走过来了——他走路带风，两三步就到工位",
+ "buttons": [
+  "立刻装忙",
+  "切到工作界面",
+  "继续摸鱼"
+ ],
+ "boxRect": {
+  "top": 535,
+  "bottom": 644,
+  "left": 16,
+  "right": 374,
+  "w": 359,
+  "h": 109
+ },
+ "tellFont": {
+  "size": "13px",
+  "color": "rgb(255, 215, 110)"
+ },
+ "btnSize": {
+  "w": 107,
+  "h": 46,
+  "font": "13px"
+ },
+ "vw": 390,
+ "autoHideMs": 3862,
+ "autoHidden": true,
+ "toastAfterTimeout": {
+  "text": "新章节：303 · 新的工位",
+  "shown": false
+ },
+ "correctToast": "选对了！+110",
+ "correctDelta": 110
+}

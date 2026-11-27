@@ -45,7 +45,7 @@ export const CARDS: CardDef[] = [
   {
     id: "quiet_day",
     name: "老板出差",
-    desc: "今天巡逻奖励 +50%，但巡逻更频繁（+30%）",
+    desc: "今天巡逻奖励 +50%，且巡逻来得多 30%",
     rarity: "common",
     duration: CARD_DURATION,
     effects: { patrolRewardMult: 1.5, eventRateMult: 1.3 },
@@ -83,7 +83,7 @@ export const CARDS: CardDef[] = [
   {
     id: "overtime",
     name: "通宵摸鱼",
-    desc: "今天挂机 +60%，但明天离线效率 -20%",
+    desc: "今天挂机 +60%，代价是接下来 24h 离线效率 -20%",
     rarity: "rare",
     duration: CARD_DURATION,
     effects: { idleMult: 1.6, riskPenalty: 0.2 },
@@ -92,7 +92,7 @@ export const CARDS: CardDef[] = [
   {
     id: "big_meeting",
     name: "全员大会",
-    desc: "今天事件奖励 ×2，但巡逻间隔减半（更多打断）",
+    desc: "今天巡逻奖励 ×2，且巡逻明显变密",
     rarity: "rare",
     duration: CARD_DURATION,
     effects: { patrolRewardMult: 2, eventRateMult: 2 },
@@ -112,7 +112,7 @@ export const CARDS: CardDef[] = [
   {
     id: "hr_talk",
     name: "HR 约谈",
-    desc: "今天挂机 -10%，但明天必定出现「升职机会」卡",
+    desc: "今天挂机 -10%，明天卡池保证出一张稀有卡",
     rarity: "event",
     duration: CARD_DURATION,
     effects: { idleMult: 0.9 },
@@ -121,7 +121,7 @@ export const CARDS: CardDef[] = [
   {
     id: "old_zhou_secret",
     name: "老周的秘密",
-    desc: "今天派遣奖励 ×1.8，好感获取 +1",
+    desc: "今天派遣奖励 ×1.8，且领奖好感 +1",
     rarity: "event",
     duration: CARD_DURATION,
     effects: { dispatchRewardMult: 1.8 },
@@ -140,10 +140,12 @@ export interface CardState {
   until: number;
   /** 明天的保底卡（剧情链） */
   nextDayGuaranteed: string | null;
+  /** 当天是否已被玩家"今天先不选"（防止每帧重开） */
+  dismissed: boolean;
 }
 
 export function emptyCardState(date = ""): CardState {
-  return { date, offers: [], chosen: null, until: 0, nextDayGuaranteed: null };
+  return { date, offers: [], chosen: null, until: 0, nextDayGuaranteed: null, dismissed: false };
 }
 
 function rngPick<T>(arr: T[], rng: () => number): T {
@@ -175,7 +177,8 @@ export function rollOffers(date: string, rng: () => number, guaranteed?: string 
     offers: picks,
     chosen: null,
     until: 0,
-    nextDayGuaranteed: guaranteed === "hr_talk" ? "promotion" : null,
+    nextDayGuaranteed: guaranteed === "hr_talk" ? "secret_project" : null,
+    dismissed: false,
   };
 }
 
@@ -196,6 +199,12 @@ export function chooseCard(state: GameState, id: string, nowMs: number): GameSta
       nextDayGuaranteed: id === "hr_talk" ? "secret_project" : null,
     },
   };
+}
+
+/** 玩家选择"今天先不选" */
+export function dismissCards(state: GameState): GameState {
+  if (!state.cards) return state;
+  return { ...state, cards: { ...state.cards, dismissed: true } };
 }
 
 /** 当天生效的卡（过期返回 null） */
@@ -232,12 +241,14 @@ export function cardEffects(state: GameState, nowMs: number): CardEffects {
 }
 
 /** 每天首次打开时刷新卡池（幂等） */
-export function ensureCards(state: GameState, today: string, rng: () => number): GameState {
+export function ensureCards(state: GameState, today: string, rng: () => number, nowMs: number): GameState {
   const cs = state.cards;
-  if (!cs || cs.date !== today) {
-    const guaranteed = cs?.nextDayGuaranteed ?? null;
-    return { ...state, cards: rollOffers(today, rng, guaranteed) };
+  // 同一张已选卡 24h 内跨天仍有效：只更新 date，不重抽
+  if (cs?.chosen && cs.until > nowMs) {
+    if (cs.date === today) return state;
+    return { ...state, cards: { ...cs, date: today } };
   }
-  // 过期卡清理（保留 chosen 供 UI 显示"今日卡已生效/已过期"）
-  return state;
+  if (cs && cs.date === today) return state; // 同日不重抽
+  const guaranteed = cs?.nextDayGuaranteed ?? null;
+  return { ...state, cards: rollOffers(today, rng, guaranteed) };
 }
