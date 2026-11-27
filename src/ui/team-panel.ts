@@ -47,6 +47,13 @@ const SKILL_LABEL: Record<string, string> = {
   coffee: "买咖啡",
 };
 
+/** 「省心组合」= 最便宜三项（social+fake-work+slack=100）；只要预算够且都没用过就能点 */
+function SIMPLE_COMBO_OK(energy: { left: number; used: string[] }, hasColleagues: boolean): boolean {
+  const combo = ["social", "fake-work", "slack"] as const;
+  if (!hasColleagues) return false; // 没同事时 social 不可用，组合不成立
+  return combo.every((a) => !energy.used.includes(a as never)) && energy.left >= 100;
+}
+
 function traitLabel(trait: string): string {
   const map: Record<string, string> = {
     派遣速度: "他的任务更快",
@@ -276,13 +283,15 @@ export class TeamPanel {
         const a = ENERGY_ACTIONS.find((x) => x.id === id);
         if (!a) return;
         const used = state.energy.used.includes(id as never);
-        const can = !used && state.energy.left >= a.cost;
+        const noColleagues = id === "social" && Object.keys(state.team.colleagues).length === 0;
+        const can = !used && !noColleagues && state.energy.left >= a.cost;
         if (btn.disabled === can) btn.disabled = !can;
+        const row = btn.closest<HTMLElement>(".row-tap");
+        if (row) row.dataset.disabled = String(!can);
         return;
       }
       if (btn.dataset.act === "energy-all") {
-        const canAll = state.energy.left >= ENERGY_ACTIONS.reduce((s, a) => s + a.cost, 0);
-        btn.disabled = !canAll;
+        btn.disabled = !SIMPLE_COMBO_OK(state.energy, Object.keys(state.team.colleagues).length > 0);
         return;
       }
       const def = COLLEAGUES.find((x) => x.id === id);
@@ -514,19 +523,20 @@ export class TeamPanel {
       <h3>今日精力 <small style="color:#8f9fd0">（剩 ${energy.left}/${ENERGY_PER_DAY}）</small></h3>
       ${ENERGY_ACTIONS.map((a) => {
         const used = energy.used.includes(a.id);
-        const can = !used && energy.left >= a.cost;
+        const noColleagues = a.id === "social" && Object.keys(state.team.colleagues).length === 0;
+        const can = !used && !noColleagues && energy.left >= a.cost;
         return `<div class="talent row-tap ${used ? "on" : ""}" data-act="energy" data-id="${a.id}" data-disabled="${can ? "0" : "1"}">
           <span class="talent-dot" aria-hidden="true">${used ? "✓" : a.cost}</span>
           <span class="talent-info">
             <span class="talent-name">${a.name}</span>
-            <span class="talent-desc">${a.desc} · 花 ${a.cost} 精力</span>
+            <span class="talent-desc">${a.desc} · 花 ${a.cost} 精力${noColleagues ? " · 还没有同事，暂不可用" : ""}</span>
             ${used ? '<span class="sr-only">已使用</span>' : ""}
           </span>
           ${used ? "" : `<button data-act="energy" data-id="${a.id}" aria-label="使用：${a.name}（消耗 ${a.cost} 精力，${a.desc}）" ${can ? "" : "disabled"}>使用</button>`}
         </div>`;
       }).join("")}
       <div class="mate-actions" style="margin-top:8px">
-        <button class="ghost" data-act="energy-all" ${energy.left >= ENERGY_ACTIONS.reduce((s, a) => s + a.cost, 0) && energy.used.length === 0 ? "" : "disabled"}>省心组合：摸鱼+假装工作+社交（100 精力）</button>
+        <button class="ghost" data-act="energy-all" ${SIMPLE_COMBO_OK(energy, Object.keys(state.team.colleagues).length > 0) ? "" : "disabled"}>省心组合：摸鱼+假装工作+社交（100 精力）</button>
       </div>
       <div style="font-size:11px;color:#a8a493;margin-top:6px">每天 100 点；4 项合计 145，必须放弃至少 1 项（含「专注点击」45 点时只剩 55）</div>
     </div>`);

@@ -206,29 +206,29 @@ describe("巡逻线（fake-work ×2.2）", () => {
     expect(bossSurviveReward(initialState())).toBe(50);
     const s = energyWith(["fake-work"]);
     expect(energyEffects(s).patrolRewardMult).toBeCloseTo(2.2, 10);
-    expect(bossSurviveReward(s)).toBe(110);
+    expect(bossSurviveReward(s)).toBeCloseTo(110, 10);
     expect(finishPatrol(initialState(), newEventState()).reward).toBe(50);
-    expect(finishPatrol(s, newEventState()).reward).toBe(110);
+    expect(finishPatrol(s, newEventState()).reward).toBeCloseTo(110, 10);
     report.wiring = { ...(report.wiring as object), patrol: { base: 50, boosted: 110, mult: 110 / 50 } };
   });
 });
 
 // ── 三、精力 4 项取舍 / 边界 ──
 describe("精力（4 项 145>100）", () => {
-  it("4 项无法全点：最省三项恰好用尽 10 0点，第 4 项必然放弃", () => {
-    let s = energyWith(["social", "fake-work", "slack"]);
+  it("4 项无法全点：最省三项恰好用尽 100 点，第 4 项必然放弃", () => {
+    let s = energyWith(["social", "fake-work", "slack"], withZhou());
     expect(s.energy.left).toBe(0);
     expect(useEnergy(s, "focus")).toBeNull();
-    // 换组合也点不满 4 项
-    const orders: EnergyAction[][] = [["slack", "fake-work", "social"], ["focus", "slack", "social"], ["fake-work", "social", "slack"]];
+    // 任何顺序都点不满 4 项
+    const orders: EnergyAction[][] = [["slack", "fake-work", "social"], ["focus", "slack", "social"], ["fake-work", "social", "slack"], ["focus", "fake-work", "slack"]];
+    const counts: number[] = [];
     for (const order of orders) {
-      let t: GameState | null = { ...initialState(), energy: emptyEnergy(TODAY) };
-      let used = 0;
-      for (const a of order) t = useEnergy(t!, a);
-      used = t!.energy.used.length;
-      expect(used).toBeLessThanOrEqual(3);
+      let t: GameState | null = { ...withZhou(), energy: emptyEnergy(TODAY) };
+      for (const a of order) { const n = t ? useEnergy(t, a) : null; if (n) t = n; }
+      counts.push(t!.energy.used.length);
+      expect(t!.energy.used.length).toBeLessThanOrEqual(3);
     }
-    report.boundary = { ...(report.boundary as object), budget: { total: 145, cheapestThree: 100, leftAfter: s.energy.left } };
+    report.boundary = { ...(report.boundary as object), budget: { total: 145, cheapestThree: 100, leftAfter: s.energy.left, usedCounts: counts } };
   });
   it("同日重复 / 精力不足 / 未知 / social 无同事均返回 null", () => {
     const s = energyWith(["slack"]);
@@ -254,10 +254,10 @@ describe("精力（4 项 145>100）", () => {
     expect(next.energy.boosted).toEqual({ idleMult: 1, patrolRewardMult: 1, clickMult: 1 });
     expect(ensureEnergy(next, "2026-11-28")).toBe(next);
   });
-  it("组合上限：4 项全用后的总加成（仅作为展示上限）", () => {
-    const all = { ...energyWith(["slack", "fake-work", "focus"], withZhou()), energy: { date: TODAY, left: 0, used: ["slack", "fake-work", "social", "focus"] as EnergyAction[], boosted: { idleMult: 1.25 * 1.05, patrolRewardMult: 2.2, clickMult: 1.2 } } };
-    expect(all.energy.used).toHaveLength(4);
-    report.observations = { ...(report.observations as object), maxBoost: all.energy.boosted };
+  it("组合上限：用于展示的 4 项加成幅度（正常一天拿不到）", () => {
+    const boosted = { idleMult: 1.25 * 1.05, patrolRewardMult: 2.2, clickMult: 1.2 };
+    expect(boosted.idleMult).toBeCloseTo(1.3125, 10); // 4 项全点才可能，实际拿不到
+    report.observations = { ...(report.observations as object), maxBoost: boosted };
   });
 });
 
@@ -331,13 +331,18 @@ describe("存档：持久化 / 转生", () => {
     expect(back.decor).toEqual(DECOR.map((d) => d.id));
     expect(back.energy.left).toBe(100 - 40 - 35);
     expect(back.energy.boosted).toEqual({ idleMult: 1.25, patrolRewardMult: 2.2, clickMult: 1 });
-    expect(effectOf(back).idleRate).toBeCloseTo(0.2 * 1.43451 * 1.25, 8);
+    report.observations = { ...(report.observations as object), persistDebug: {
+      decor: back.decor, decorIdle: decorEffects(back).idleMult, stationIdleOf: stationIdleOf(back),
+      idle: stationIdleScaled(back), energy: back.energy.boosted, levels: back.levels,
+      collected: back.collected.quotes.length + back.collected.flavors.length, prestige: back.prestige,
+    } };
+    expect(stationIdleScaled(back)).toBeCloseTo(0.2 * 1.577961 * 1.25, 8);
   });
   it("转生保留 decor/energy", () => {
     let s = rich(5e8);
     s = buyDecor(s, "plant")!;
     s = buyDecor(s, "projector")!;
-    s = energyWith(["fake-work"]);
+    s = energyWith(["fake-work"], s);
     const r = doPrestige(s)!;
     expect(r.state.decor).toEqual(["plant", "projector"]);
     expect(r.state.energy.boosted.patrolRewardMult).toBeCloseTo(2.2, 10);
@@ -382,6 +387,23 @@ describe("观察项", () => {
   it("观察：energyEffects 返回内部引用（沿用旧观察）", () => {
     const s = energyWith(["slack"]);
     expect(energyEffects(s)).toBe(s.energy.boosted);
+  });
+  it("观察：8/8 集齐额外 +10% 挂机（spec 未记载、无测试）", () => {
+    const all: GameState = { ...initialState(), decor: DECOR.map((d) => d.id) };
+    const eff = decorEffects(all);
+    const specProduct = DECOR.reduce((m, d) => m * (d.effects.idleMult ?? 1), 1);
+    expect(specProduct).toBeCloseTo(1.43451, 8);
+    expect(eff.idleMult).toBeCloseTo(specProduct * 1.1, 8); // DECOR_COMPLETE_BONUS
+    report.defects = [...(report.defects as unknown[]), {
+      id: "D15", where: "src/engine/decor.ts:61-80",
+      detail: "新增「集齐 8 件挂机额外 +10%」未写入 docs/spec-batch3.md、无对应测试；全家具 idle 1.43451→1.577961（+10%），属规格外平衡改动",
+      specProduct, actualIdleMult: eff.idleMult,
+    }];
+    report.observations = { ...(report.observations as object), decorCompleteBonus: { specProduct, actualIdleMult: eff.idleMult } };
+  });
+  it("观察：台灯场景位置改为桌面左侧（spec 写「桌面右侧」）", () => {
+    report.defects = [...(report.defects as unknown[]), { id: "D16", where: "src/render/scene.ts:342-343", detail: "台灯 lx=vw/2-1.5u 移到桌面左侧，与 spec「桌面右侧灯杆+灯罩+光锥」不符（为避让公告板改位置，但文档未同步）" }];
+    expect(true).toBe(true);
   });
   it("观察：save 版本仍为 2", () => {
     expect(SAVE_VERSION).toBe(2);

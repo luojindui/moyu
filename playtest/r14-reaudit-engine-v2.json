@@ -1,6 +1,6 @@
 {
   "commit": "7857cf1",
-  "generatedAt": "2026-11-27T11:22:11.068Z",
+  "generatedAt": "2026-11-27T11:24:50.664Z",
   "wiring": {
     "idle": {
       "base": 0.2,
@@ -31,9 +31,26 @@
       "proj": 2017,
       "claimBase": 1552,
       "claimProj": 2017
+    },
+    "patrol": {
+      "base": 50,
+      "boosted": 110,
+      "mult": 2.2
     }
   },
-  "boundary": {},
+  "boundary": {
+    "budget": {
+      "total": 145,
+      "cheapestThree": 100,
+      "leftAfter": 0,
+      "usedCounts": [
+        3,
+        2,
+        3,
+        2
+      ]
+    }
+  },
   "save": {
     "boostedTamperIgnored": {
       "idleMult": 1,
@@ -47,10 +64,38 @@
       "teamPartPlant": 20.0016,
       "teamPartSlack": 20.0016
     },
+    "maxBoost": {
+      "idleMult": 1.3125,
+      "patrolRewardMult": 2.2,
+      "clickMult": 1.2
+    },
     "d5": {
       "earnedStale": 25832.015999999996,
       "earnedFresh": 25706.015999999996,
       "ratio": 1.004901576346953
+    },
+    "persistDebug": {
+      "decor": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair",
+        "aquarium",
+        "projector",
+        "catbed"
+      ],
+      "decorIdle": 1.5779610000000004,
+      "stationIdleOf": 0.2,
+      "idle": 0.39449025000000015,
+      "energy": {
+        "idleMult": 1.25,
+        "patrolRewardMult": 2.2,
+        "clickMult": 1
+      },
+      "levels": {},
+      "collected": 0,
+      "prestige": 0
     },
     "decorOfflineDouble": {
       "rugActual": 0.8,
@@ -58,6 +103,10 @@
       "allActual": 1.16,
       "allSpec": 0.93,
       "note": "progression.ts base 里 teamBase 已含 decorBonus，capRaise 又含 decorBase → 家具离线加成被计两次"
+    },
+    "decorCompleteBonus": {
+      "specProduct": 1.4345100000000002,
+      "actualIdleMult": 1.5779610000000004
     }
   },
   "defects": [
@@ -90,6 +139,18 @@
       "id": "D14",
       "where": "src/engine/energy.ts:4,76",
       "detail": "头部注释仍写「3 种行为」；social 处注释「好感 +3」实际 +5（doc-only）"
+    },
+    {
+      "id": "D15",
+      "where": "src/engine/decor.ts:61-80",
+      "detail": "新增「集齐 8 件挂机额外 +10%」未写入 docs/spec-batch3.md、无对应测试；全家具 idle 1.43451→1.577961（+10%），属规格外平衡改动",
+      "specProduct": 1.4345100000000002,
+      "actualIdleMult": 1.5779610000000004
+    },
+    {
+      "id": "D16",
+      "where": "src/render/scene.ts:342-343",
+      "detail": "台灯 lx=vw/2-1.5u 移到桌面左侧，与 spec「桌面右侧灯杆+灯罩+光锥」不符（为避让公告板改位置，但文档未同步）"
     }
   ]
 }

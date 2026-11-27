@@ -7,7 +7,8 @@ const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 let seq = 0;
 
 export async function runChrome(fn, { timeoutMs = 60_000, port } = {}) {
-  const dbgPort = port ?? 9900 + (seq++ % 90);
+  // 默认端口随机化：多个 agent 并行跑探针时不会串台（曾经都落在 9900 互相污染）
+  const dbgPort = port ?? 9100 + Math.floor(Math.random() * 800) + (seq++ % 50);
   const userDir = `/tmp/chrome-probe-${Date.now()}-${dbgPort}`;
   const proc = spawn(
     CHROME,

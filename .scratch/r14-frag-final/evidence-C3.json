@@ -1,0 +1,145 @@
+{
+  "seed": {
+    "ok": true
+  },
+  "before": {
+    "summary": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%",
+    "hudIdle": "180.2",
+    "hudMoyu": "30.00亿",
+    "onCount": 0,
+    "scrollTop": 0,
+    "bodyCh": 603,
+    "bodySh": 906
+  },
+  "buys": [
+    {
+      "name": "绿萝",
+      "hit": "talent-desc",
+      "inView": true,
+      "summaryBefore": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%",
+      "summaryAfter": "已装修 1/8 · 挂机 ×1.05 · 点击 ×1.00 · 离线 +0%",
+      "idleBefore": "180.2",
+      "idleAfter": "189.2",
+      "toast": {
+        "text": "已装修：绿萝（工位挂机 +5%）",
+        "visible": true
+      }
+    },
+    {
+      "name": "护眼台灯",
+      "hit": "talent-desc",
+      "inView": true,
+      "summaryBefore": "已装修 1/8 · 挂机 ×1.05 · 点击 ×1.00 · 离线 +0%",
+      "summaryAfter": "已装修 2/8 · 挂机 ×1.05 · 点击 ×1.15 · 离线 +0%",
+      "idleBefore": "189.2",
+      "idleAfter": "189.2",
+      "toast": {
+        "text": "已装修：护眼台灯（点击力 +15%）",
+        "visible": true
+      }
+    },
+    {
+      "name": "毛绒地毯",
+      "hit": "talent-desc",
+      "inView": true,
+      "summaryBefore": "已装修 2/8 · 挂机 ×1.05 · 点击 ×1.15 · 离线 +0%",
+      "summaryAfter": "已装修 3/8 · 挂机 ×1.05 · 点击 ×1.15 · 离线 +5%",
+      "idleBefore": "189.2",
+      "idleAfter": "189.2",
+      "toast": {
+        "text": "已装修：毛绒地毯（离线效率 +5%）",
+        "visible": true
+      }
+    },
+    {
+      "name": "迷你冰箱",
+      "hit": "talent-desc",
+      "inView": true,
+      "summaryBefore": "已装修 3/8 · 挂机 ×1.05 · 点击 ×1.15 · 离线 +5%",
+      "summaryAfter": "已装修 4/8 · 挂机 ×1.13 · 点击 ×1.15 · 离线 +5%",
+      "idleBefore": "189.2",
+      "idleAfter": "204.3",
+      "toast": {
+        "text": "已装修：迷你冰箱（工位挂机 +8%）",
+        "visible": true
+      }
+    },
+    {
+      "name": "按摩椅",
+      "hit": "talent-desc",
+      "inView": true,
+      "summaryBefore": "已装修 4/8 · 挂机 ×1.13 · 点击 ×1.15 · 离线 +5%",
+      "summaryAfter": "已装修 5/8 · 挂机 ×1.13 · 点击 ×1.15 · 离线 +13%",
+      "idleBefore": "204.3",
+      "idleAfter": "204.3",
+      "toast": {
+        "text": "已装修：按摩椅（离线效率 +8%）",
+        "visible": true
+      }
+    },
+    {
+      "name": "鱼缸",
+      "hit": "talent-desc",
+      "inView": true,
+      "summaryBefore": "已装修 5/8 · 挂机 ×1.13 · 点击 ×1.15 · 离线 +13%",
+      "summaryAfter": "已装修 6/8 · 挂机 ×1.25 · 点击 ×1.26 · 离线 +13%",
+      "idleBefore": "204.3",
+      "idleAfter": "224.8",
+      "toast": {
+        "text": "已装修：鱼缸（挂机 +10%、点击 +10%）",
+        "visible": true
+      }
+    },
+    {
+      "name": "投影仪",
+      "hit": "talent-desc",
+      "inView": true,
+      "summaryBefore": "已装修 6/8 · 挂机 ×1.25 · 点击 ×1.26 · 离线 +13%",
+      "summaryAfter": "已装修 7/8 · 挂机 ×1.25 · 点击 ×1.26 · 离线 +13%",
+      "idleBefore": "224.8",
+      "idleAfter": "224.8",
+      "toast": {
+        "text": "已装修：投影仪（派遣奖励 +30%）",
+        "visible": true
+      }
+    },
+    {
+      "name": "工位猫窝",
+      "hit": "talent-desc",
+      "inView": true,
+      "summaryBefore": "已装修 7/8 · 挂机 ×1.25 · 点击 ×1.26 · 离线 +13%",
+      "summaryAfter": "已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23%",
+      "idleBefore": "224.8",
+      "idleAfter": "284.3",
+      "toast": {
+        "text": "🎉 工位装修完成：挂机 +10%",
+        "visible": true
+      }
+    }
+  ],
+  "at7": {
+    "summary": "已装修 7/8 · 挂机 ×1.25 · 点击 ×1.26 · 离线 +13%",
+    "hudIdle": "224.8",
+    "toast": {
+      "text": "已装修：投影仪（派遣奖励 +30%）",
+      "visible": true
+    }
+  },
+  "at8": {
+    "summary": "已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23%",
+    "hudIdle": "284.3",
+    "toast": {
+      "text": "🎉 工位装修完成：挂机 +10%",
+      "visible": true
+    }
+  },
+  "final": {
+    "summary": "已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23%",
+    "hudIdle": "284.3",
+    "hudMoyu": "7.65亿",
+    "onCount": 8,
+    "scrollTop": 303,
+    "bodyCh": 603,
+    "bodySh": 906
+  }
+}

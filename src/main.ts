@@ -688,7 +688,12 @@ async function boot(): Promise<void> {
         const today = new Date().toLocaleDateString("sv-SE");
         const withEnergy = ensureEnergy(state, today);
         if (withEnergy !== state) {
+          const isFirstReset = state.energy.date !== "" && state.energy.date !== today;
           state = withEnergy;
+          if (isFirstReset) {
+            showToast("新的一天：精力已回满 100");
+            announce("新的一天，精力回满 100", 1);
+          }
           serialize(state, localStorageAdapter, Date.now());
         }
       }

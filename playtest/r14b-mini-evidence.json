@@ -1,0 +1,314 @@
+{
+  "at": "2026-11-27T11:27:31.714Z",
+  "noColleague": {
+    "tab": "工位",
+    "before": {
+      "live": "",
+      "head": "今日精力 （剩 100/100）",
+      "decor": "工位尚未装修",
+      "toast": "送你 1 个天赋点，点 👥 看看",
+      "toastCls": "show",
+      "active": {
+        "tag": "BUTTON",
+        "role": "tab",
+        "text": "工位",
+        "act": null,
+        "isBody": false,
+        "insideDialog": true
+      }
+    },
+    "socialBtn": {
+      "disabled": true,
+      "aria": "使用：跟同事聊天（消耗 25 精力，全体好感 +5，且今天挂机 +5%）"
+    },
+    "clicked": true,
+    "after": {
+      "live": "",
+      "head": "今日精力 （剩 100/100）",
+      "decor": "工位尚未装修",
+      "toast": "送你 1 个天赋点，点 👥 看看",
+      "toastCls": "",
+      "active": {
+        "tag": "BODY",
+        "role": null,
+        "text": "0.5摸鱼值\n        \n        ",
+        "act": null,
+        "isBody": true,
+        "insideDialog": false
+      }
+    },
+    "buttonsAfter": [
+      {
+        "text": "使用",
+        "disabled": false
+      },
+      {
+        "text": "使用",
+        "disabled": false
+      },
+      {
+        "text": "使用",
+        "disabled": true
+      },
+      {
+        "text": "使用",
+        "disabled": false
+      },
+      {
+        "text": "省心组合：摸鱼+假装工作+社交（100 精力）",
+        "disabled": true
+      }
+    ]
+  },
+  "withColleague": {
+    "tab": "工位",
+    "before": {
+      "live": "",
+      "head": "今日精力 （剩 100/100）",
+      "decor": "工位尚未装修",
+      "toast": "",
+      "toastCls": "",
+      "active": {
+        "tag": "BUTTON",
+        "role": "tab",
+        "text": "工位",
+        "act": null,
+        "isBody": false,
+        "insideDialog": true
+      }
+    },
+    "socialBtn": {
+      "disabled": true,
+      "aria": "使用：跟同事聊天（消耗 25 精力，全体好感 +5，且今天挂机 +5%）"
+    },
+    "uses": [
+      {
+        "id": "social",
+        "snap": {
+          "live": "",
+          "head": "今日精力 （剩 100/100）",
+          "decor": "工位尚未装修",
+          "toast": "",
+          "toastCls": "",
+          "active": {
+            "tag": "BODY",
+            "role": null,
+            "text": "1.0摸鱼值\n        \n        ",
+            "act": null,
+            "isBody": true,
+            "insideDialog": false
+          }
+        }
+      },
+      {
+        "id": "fake-work",
+        "snap": {
+          "live": "精力已使用：假装工作（剩余 65 点）",
+          "head": "今日精力 （剩 65/100）",
+          "decor": "工位尚未装修",
+          "toast": "精力已使用：假装工作（剩余 65 点）",
+          "toastCls": "show",
+          "active": {
+            "tag": "BODY",
+            "role": null,
+            "text": "精力已使用：假装工作（剩余 65 点）\n    ",
+            "act": null,
+            "isBody": true,
+            "insideDialog": false
+          }
+        }
+      },
+      {
+        "id": "slack",
+        "snap": {
+          "live": "精力已使用：认真摸鱼（剩余 25 点）",
+          "head": "今日精力 （剩 25/100）",
+          "decor": "工位尚未装修",
+          "toast": "精力已使用：认真摸鱼（剩余 25 点）",
+          "toastCls": "show",
+          "active": {
+            "tag": "BODY",
+            "role": null,
+            "text": "精力已使用：认真摸鱼（剩余 25 点）\n    ",
+            "act": null,
+            "isBody": true,
+            "insideDialog": false
+          }
+        }
+      }
+    ],
+    "samples": [
+      {
+        "ms": 100,
+        "live": "精力已使用：认真摸鱼（剩余 25 点）"
+      },
+      {
+        "ms": 300,
+        "live": "精力已使用：认真摸鱼（剩余 25 点）"
+      },
+      {
+        "ms": 420,
+        "live": "精力已使用：认真摸鱼（剩余 25 点）"
+      },
+      {
+        "ms": 480,
+        "live": "精力已使用：认真摸鱼（剩余 25 点）"
+      },
+      {
+        "ms": 560,
+        "live": "精力已使用：认真摸鱼（剩余 25 点）"
+      },
+      {
+        "ms": 750,
+        "live": "精力已使用：认真摸鱼（剩余 25 点）"
+      },
+      {
+        "ms": 1100,
+        "live": "精力已使用：认真摸鱼（剩余 25 点）"
+      }
+    ],
+    "combo": {
+      "text": "省心组合：摸鱼+假装工作+社交（100 精力）",
+      "disabled": true
+    },
+    "finalHead": "今日精力 （剩 25/100）",
+    "buttons": [
+      {
+        "text": "使用",
+        "disabled": true
+      },
+      {
+        "text": "使用",
+        "disabled": true
+      },
+      {
+        "text": "省心组合：摸鱼+假装工作+社交（100 精力）",
+        "disabled": true
+      }
+    ]
+  },
+  "comboFresh": {
+    "tab": "工位",
+    "combo": {
+      "text": "省心组合：摸鱼+假装工作+社交（100 精力）",
+      "disabled": true,
+      "h": 44,
+      "aria": null
+    },
+    "head": "今日精力 （剩 25/100）",
+    "after": {
+      "live": "",
+      "head": "今日精力 （剩 25/100）",
+      "decor": "工位尚未装修",
+      "toast": "",
+      "toastCls": "",
+      "active": {
+        "tag": "BODY",
+        "role": null,
+        "text": "2.2摸鱼值\n        \n        ",
+        "act": null,
+        "isBody": true,
+        "insideDialog": false
+      }
+    }
+  },
+  "mouse": {
+    "tab": "工位",
+    "duringPress": {
+      "tag": "BODY",
+      "role": null,
+      "text": "2.6摸鱼值\n        \n        ",
+      "act": null,
+      "isBody": true,
+      "insideDialog": false
+    },
+    "after": {
+      "snap": {
+        "live": "",
+        "head": "今日精力 （剩 25/100）",
+        "decor": "工位尚未装修",
+        "toast": "",
+        "toastCls": "",
+        "active": {
+          "tag": "BODY",
+          "role": null,
+          "text": "2.8摸鱼值\n        \n        ",
+          "act": null,
+          "isBody": true,
+          "insideDialog": false
+        }
+      },
+      "active": {
+        "tag": "BODY",
+        "role": null,
+        "text": "2.8摸鱼值\n        \n        ",
+        "act": null,
+        "isBody": true,
+        "insideDialog": false
+      }
+    },
+    "rowInfo": {
+      "tag": "DIV",
+      "tabIndex": -1,
+      "focusable": false,
+      "cls": "talent row-tap "
+    }
+  },
+  "kb": {
+    "tab": "同事",
+    "focused": null,
+    "after": {
+      "snap": {
+        "live": "",
+        "decor": "工位尚未装修",
+        "toast": "",
+        "toastCls": "",
+        "active": {
+          "tag": "BODY",
+          "role": null,
+          "text": "3.7摸鱼值\n        \n        ",
+          "act": null,
+          "isBody": true,
+          "insideDialog": false
+        }
+      },
+      "active": {
+        "tag": "BODY",
+        "role": null,
+        "text": "3.7摸鱼值\n        \n        ",
+        "act": null,
+        "isBody": true,
+        "insideDialog": false
+      }
+    }
+  },
+  "closed": {
+    "hidden": true,
+    "active": {
+      "tag": "BODY",
+      "role": null,
+      "text": "3.8摸鱼值\n        \n        ",
+      "act": null,
+      "isBody": true,
+      "insideDialog": false
+    },
+    "decor": "工位尚未装修"
+  },
+  "canvasAx": [
+    {
+      "role": "button",
+      "name": "点击摸鱼",
+      "description": "工位尚未装修"
+    }
+  ],
+  "decorSummaryInAx": [
+    {
+      "role": "StaticText",
+      "name": "工位尚未装修"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "工位尚未装修"
+    }
+  ]
+}
