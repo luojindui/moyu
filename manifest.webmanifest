@@ -1,0 +1,16 @@
+{
+  "name": "摸鱼工位",
+  "short_name": "摸鱼工位",
+  "description": "摸鱼主题放置/点击游戏：戳屏幕攒摸鱼值，买升级，安然躲老板",
+  "lang": "zh-CN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#2b2b3a",
+  "theme_color": "#2b2b3a",
+  "icons": [
+    { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

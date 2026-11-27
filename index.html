@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#2b2b3a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./favicon.png" />
+    <link rel="apple-touch-icon" href="./icon-192.png" />
+    <title>摸鱼工位</title>
+    <script type="module" crossorigin src="./assets/index-CpVp_C8B.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CW3mdf5g.css">
+  </head>
+  <body>
+    <div id="sr-live" class="sr-only" role="status" aria-live="polite"></div>
+    <div id="app">
+      <header id="hud">
+        <div class="hud-moyu"><span id="hud-moyu">0</span><small>摸鱼值</small></div>
+        <div class="hud-sub">
+          <span>点击 +<b id="hud-click">1</b></span>
+          <span>不点也 <b id="hud-idle">0.2</b>/秒</span>
+          <span id="hud-rank">摸鱼实习生</span>
+          <span id="hud-card" class="hidden"></span>
+          <span id="hud-combo" class="hidden"></span>
+          <span id="hud-streak" class="hidden"></span>
+          <button id="btn-arcade" aria-label="摸鱼站小游戏">🎮</button>
+          <button id="btn-team" aria-label="摸鱼小队">👥</button>
+          <button id="btn-mute" aria-label="音效开关">🔊</button>
+          <button id="btn-journal" aria-label="日报与图鉴">📔</button>
+        </div>
+        <div id="quest" class="hidden">
+          <span id="quest-text"></span>
+          <div class="quest-track"><i id="quest-bar"></i></div>
+        </div>
+      </header>
+      <main id="stage-wrap"><canvas id="stage" tabindex="0" role="button" aria-label="点击摸鱼" aria-describedby="decor-summary"></canvas>
+        <div id="decor-summary" class="sr-only">工位尚未装修</div></main>
+      <footer id="shop"><div id="shop-wrap"><div id="shop-cards"></div><span id="shop-hint">← 滑动查看更多 →</span></div></footer>
+    </div>
+    <div id="arcade" class="hidden" role="dialog" aria-modal="true" aria-labelledby="arcade-title">
+      <div class="arcade-panel">
+        <div class="arcade-head">
+          <h2 id="arcade-title">摸鱼站</h2>
+          <button id="arcade-close" aria-label="关闭">✕</button>
+        </div>
+        <div class="arcade-left" id="arcade-left"></div>
+        <div id="arcade-body"></div>
+      </div>
+    </div>
+    <div id="cards" class="hidden" role="dialog" aria-modal="true" aria-labelledby="cards-title">
+      <div class="cards-panel">
+        <div class="cards-head">
+          <h2 id="cards-title">今日摸鱼卡</h2>
+          <span class="cards-sub">选 1 张，生效 24 小时（跨天不清）</span>
+        </div>
+        <div id="cards-body"></div>
+        <div class="cards-actions">
+          <button id="cards-skip" class="ghost">今天先不选</button>
+        </div>
+      </div>
+    </div>
+    <div id="boss-choice" class="hidden">
+      <div class="boss-box">
+        <div class="boss-tell" id="boss-tell"></div>
+        <div class="boss-opts" id="boss-opts"></div>
+        <div class="boss-timer" id="boss-timer"></div>
+      </div>
+    </div>
+    <div id="team" class="hidden" role="dialog" aria-modal="true" aria-labelledby="team-title">
+      <div class="team-panel">
+        <div class="team-head">
+          <h2 id="team-title">摸鱼小队</h2>
+          <button id="team-close" aria-label="关闭">✕</button>
+        </div>
+        <div class="team-tabs" role="tablist" aria-label="小队面板">
+          <button id="tab-colleagues" class="tab active" role="tab" aria-selected="true">同事</button>
+          <button id="tab-talents" class="tab" role="tab" aria-selected="false">天赋</button>
+          <button id="tab-decor" class="tab" role="tab" aria-selected="false">工位</button>
+          <span class="team-points" id="team-points"></span>
+        </div>
+        <div id="team-body"></div>
+      </div>
+    </div>
+    <div id="journal" class="hidden" role="dialog" aria-modal="true" aria-labelledby="journal-title">
+      <div class="journal-panel">
+        <div class="journal-head">
+          <h2 id="journal-title">摸鱼日报</h2>
+          <button id="journal-close" aria-label="关闭">✕</button>
+        </div>
+        <p class="journal-meta"><span id="journal-date"></span> · <span id="journal-streak"></span></p>
+        <ul id="journal-goals"></ul>
+        <button id="journal-claim">完成 0/3</button>
+        <h3>摸鱼数据 <small id="stats-rank"></small></h3>
+        <div class="stats-list" id="stats-list"></div>
+        <button id="stats-export">导出存档 JSON</button>
+        <div class="savecode-box">
+          <h3>存档码（换设备用）</h3>
+          <p class="prestige-desc">复制这串码到新设备「导入」，进度就能带过去（防手滑，非防篡改）。</p>
+          <textarea id="savecode" class="savecode" rows="3" placeholder="存档码会显示在这里；粘贴旧码后点导入"></textarea>
+          <div class="savecode-btns">
+            <button id="savecode-copy">复制/生成存档码</button>
+            <button id="savecode-import">导入存档码</button>
+          </div>
+          <p class="prestige-desc" id="savecode-msg"></p>
+        </div>
+        <h3>摸鱼图鉴 <small id="journal-total">0/55</small></h3>
+        <div class="journal-collect">
+          <span>梗语录 <b id="journal-quote">0/10</b></span>
+          <span>升级彩蛋 <b id="journal-flavor">0/45</b></span>
+        </div>
+        <p class="journal-latest" id="journal-latest"></p>
+        <h3>成就墙 <small id="ach-summary">0/22 · Lv.1</small></h3>
+        <div class="ach-summary" id="ach-categories"></div>
+        <div class="ach-list" id="ach-list"></div>
+        <div class="about-box">
+          <h3>关于 <small id="about-version"></small></h3>
+          <p class="prestige-desc" id="about-notes"></p>
+          <p class="prestige-desc" id="about-today"></p>
+        </div>
+        <div class="journal-prestige">
+          <h3>离职再就业 <small id="prestige-info"></small></h3>
+          <p class="prestige-desc">重置余额与 20% 等级，换永久点数：总倍率 = 1 + 0.75 × 累计点数（线性）；图鉴/日报/段位/历史累计保留。建议攒够多点再转。</p>
+          <button id="prestige-btn" disabled>未解锁（本局累计需 1 亿）</button>
+        </div>
+        <div class="journal-grid" id="journal-grid"></div>
+      </div>
+    </div>
+    <div id="rotate-hint">横屏下场景较矮，建议竖屏游玩</div>
+    <div id="welcome" class="hidden" role="dialog" aria-modal="true" aria-labelledby="welcome-title">
+      <div class="welcome-panel">
+        <h2 id="welcome-title">欢迎回来摸鱼</h2>
+        <p>你离开的 <b id="welcome-time">0</b> 里，悄悄摸了</p>
+        <p class="welcome-gain"><b id="welcome-gain">0</b> 摸鱼值</p>
+        <p class="welcome-rule" id="welcome-rule"></p>
+        <button id="welcome-ok">继续摸鱼</button>
+      </div>
+    </div>
+  </body>
+</html>
