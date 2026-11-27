@@ -1,5 +1,5 @@
 import "./style.css";
-import { initialState } from "./engine/state";
+import { initialState, gain } from "./engine/state";
 import { doClick, buyUpgrade, clickPowerOf, COMBO_WINDOW_S, COMBO_BREAK_S, COMBO_MAX } from "./engine/actions";
 import { effectOf, stationIdleScaled } from "./engine/upgrades";
 import { advance } from "./engine/tick";
@@ -548,6 +548,14 @@ async function boot(): Promise<void> {
     },
     saveNow(): void {
       saveNow();
+    },
+    /** 仅 dev：注入摸鱼值（验证/试玩用，生产包不含） */
+    grant(n: number): void {
+      state = gain(state, Math.max(0, n));
+      hud.refresh(state);
+      shop.refresh(state);
+      teamPanel.refresh(state);
+      journal.refresh(state, true);
     },
     reset(): void {
       clearSave(localStorageAdapter);
