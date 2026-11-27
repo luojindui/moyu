@@ -1496,3 +1496,10 @@ body.choice-open .shop-row {
   border: 2px solid #6a6a8a;
   border-radius: 5px;
 }
+
+.arcade-reward {
+  margin: 6px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #7ec8ff;
+}

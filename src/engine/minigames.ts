@@ -32,6 +32,8 @@ export const REF_SCORE = 600;
 export const TARGET_IDLE_SECONDS = 25;
 /** 分数硬上限（防篡改） */
 export const MAX_SCORE = 2000;
+/** 早期保底奖励（满分时；新号一局 ≈ 一次首购） */
+export const EARLY_FLOOR = 30;
 
 export interface ArcadeState {
   date: string;
@@ -71,7 +73,8 @@ export function finishGame(
   // 奖励 = 满分的 0..1 比例 × 「目标挂机秒数」
   // 用比例×秒数而不是固定 +20，避免跨阶段漂移（早期曾达 300 倍）
   const ratio = Math.min(1, capped / REF_SCORE); // REF_SCORE 分 = 打满
-  const reward = Math.floor(idleRate * TARGET_IDLE_SECONDS * ratio);
+  // 双轨：后期按 25 秒挂机收益；早期保底 30（≈ 一次首购），否则新号玩 30 秒只得 +3 没人玩
+  const reward = Math.max(Math.floor(idleRate * TARGET_IDLE_SECONDS * ratio), Math.ceil(EARLY_FLOOR * ratio));
   const best = Math.max(state.arcade.best[game] ?? 0, capped);
   return {
     reward,

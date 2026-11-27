@@ -1,13 +1,13 @@
 import { describe, it, expect } from "vitest";
 import { initialState } from "../src/engine/state";
-import { emptyArcade, finishGame, REF_SCORE, TARGET_IDLE_SECONDS, MAX_SCORE } from "../src/engine/minigames";
+import { emptyArcade, finishGame, REF_SCORE, TARGET_IDLE_SECONDS, MAX_SCORE, EARLY_FLOOR } from "../src/engine/minigames";
 
 const TODAY = "2026-11-27";
 const st = () => ({ ...initialState(), arcade: emptyArcade(TODAY) });
 
 describe("批次4 回归：奖励跨阶段不漂移", () => {
-  it("满分奖励 ≈ TARGET_IDLE_SECONDS 秒挂机收益（早期/中期/后期一致）", () => {
-    for (const idle of [1, 1000, 100000]) {
+  it("满分奖励：中后期 = TARGET_IDLE_SECONDS 秒挂机收益", () => {
+    for (const idle of [1000, 100000]) {
       const r = finishGame(st(), "rhythm", REF_SCORE, idle)!;
       expect(r.reward).toBe(Math.floor(idle * TARGET_IDLE_SECONDS));
     }
@@ -25,8 +25,16 @@ describe("批次4 回归：奖励跨阶段不漂移", () => {
     expect(MAX_SCORE).toBeGreaterThanOrEqual(REF_SCORE);
   });
 
-  it("早期不再出现 300 倍异常（idle=0.2 时满分奖励 = 5）", () => {
+  it("早期有保底（新号满分 ≈ 30，不是 +3 也不是 +241）", () => {
+    for (const idle of [0.2, 1]) {
+      const r = finishGame(st(), "rhythm", REF_SCORE, idle)!;
+      expect(r.reward).toBe(EARLY_FLOOR);
+      expect(r.reward).toBeLessThan(100); // 不会像旧版 +241 那样跳过首购
+    }
+  });
+
+  it("早期不会出现旧版 300 倍异常（idle=0.2 满分奖励 ≤ 30）", () => {
     const r = finishGame(st(), "rhythm", REF_SCORE, 0.2)!;
-    expect(r.reward).toBe(Math.floor(0.2 * TARGET_IDLE_SECONDS));
+    expect(r.reward).toBeLessThanOrEqual(30);
   });
 });

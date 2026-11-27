@@ -22,7 +22,7 @@ export class Arcade {
   private lastState: GameState | null = null;
   private currentGame: GameId | null = null;
 
-  constructor(private onFinish: (game: GameId, score: number) => void) {
+  constructor(private onFinish: (game: GameId, score: number) => number) {
     document.getElementById("btn-arcade")!.addEventListener("click", () => this.toggle());
     document.getElementById("arcade-close")!.addEventListener("click", () => this.close());
     this.root.addEventListener("click", (e) => {
@@ -74,14 +74,14 @@ export class Arcade {
     this.elTitle.textContent = "摸鱼站";
     const state = this.lastState;
     const left = state ? arcadeLeft(state) : ARCADE_DAILY_LIMIT;
-    this.elLeft.textContent = `今天还能玩 ${left}/${ARCADE_DAILY_LIMIT} 次`;
+    this.elLeft.textContent = left > 0 ? `今天还能玩 ${left}/${ARCADE_DAILY_LIMIT} 次 · 每局能赢摸鱼值` : "今天玩完了，明天再来";
     this.body.innerHTML = GAMES.map((g) => {
       const best = state?.arcade.best[g.id] ?? 0;
       const can = left > 0;
       return `<div class="arcade-card ${can ? "" : "locked"}">
         <div class="arcade-name">${g.name} <small>最高 ${best}</small></div>
         <div class="arcade-desc">${g.desc}</div>
-        <button data-game="${g.id}" ${can ? "" : "disabled"}>开始（${g.duration} 秒）</button>
+        <button data-game="${g.id}" ${can ? "" : "disabled"}>${can ? `开始（${g.id === "findboss" ? "30 秒内无限轮" : `${g.duration} 秒`}）` : "明天再来"}</button>
       </div>`;
     }).join("");
     this.body.querySelectorAll<HTMLButtonElement>("button[data-game]").forEach((b) => {
@@ -297,7 +297,7 @@ export class Arcade {
   private finish(def: (typeof GAMES)[number], score: number, detail?: Record<string, number>): void {
     this.stopPlay();
     this.currentGame = null;
-    this.onFinish(def.id, Math.max(0, Math.floor(score)));
+    const gotReward = this.onFinish(def.id, Math.max(0, Math.floor(score)));
     // 显示结算
     const state = this.lastState;
     const best = state?.arcade.best[def.id] ?? 0;
@@ -310,6 +310,7 @@ export class Arcade {
     this.body.innerHTML = `<div class="arcade-play">
       <div class="arcade-name">${def.name} 结束</div>
       <div class="arcade-score">${Math.floor(score)} 分</div>
+      <div class="arcade-reward">${gotReward > 0 ? `本局奖励 +${gotReward} 摸鱼值` : "本局 0 分，次数已扣 1 次"}</div>
       ${record ? `<div class="arcade-record">🎉 新纪录！（旧 ${best}）</div>` : `<div class="arcade-hint">历史最高 ${best}</div>`}
       ${detailText ? `<div class="arcade-hint">${detailText}</div>` : ""}
       <button class="ghost arcade-back-btn" id="arcade-back">返回摸鱼站</button>

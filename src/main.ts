@@ -363,7 +363,9 @@ async function boot(): Promise<void> {
         }
         arcade.refresh(state);
         serialize(state, localStorageAdapter, Date.now());
+        return r.reward;
       }
+      return 0;
   });
 
   const shop = new Shop(
