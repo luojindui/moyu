@@ -18,7 +18,7 @@ import { loadScenes, stateFrom, openHold, simulatePatrolHour, lcg, stateFrom as 
 
 /**
  * 验收-③ 安然连胜 surviveStreak：
- * 连续安然 N 次奖励 ×(1+0.1N) 封顶 ×2；被抓清零；达意 1 小时奖励占比应 <10% 挂机收入。
+ * 连续安然 N 次奖励 ×(1+0.1N) 封顶 ×1.5（R5）；被抓清零；1 小时奖励占比应 <10% 挂机收入。
  * 另外检查：连胜是否入档（重开页面是否清零）→ 影响"长期目标"是否成立。
  */
 
@@ -28,16 +28,16 @@ function baseReward(state: ReturnType<typeof stateFrom>): number {
 }
 
 describe("验收-③ 安然连胜", () => {
-  it("乘数曲线：×(1+0.1N)，N≥10 封顶 ×2", () => {
+  it("乘数曲线：×(1+0.1N)，N≥5 封顶 ×1.5（R5 控事件占比）", () => {
     const rows: Record<string, unknown>[] = [];
     for (let n = 0; n <= 14; n++) rows.push({ 连续安然N: n, 乘数: +surviveStreakMult(n).toFixed(2) });
     console.table(rows);
     expect(surviveStreakMult(0)).toBe(1);
     expect(surviveStreakMult(1)).toBeCloseTo(1.1, 10);
-    expect(surviveStreakMult(9)).toBeCloseTo(1.9, 10);
-    expect(surviveStreakMult(10)).toBe(2);
-    expect(surviveStreakMult(11)).toBe(2);
-    expect(surviveStreakMult(SURVIVE_STREAK_CAP + 5)).toBe(2);
+    expect(surviveStreakMult(4)).toBeCloseTo(1.4, 10);
+    expect(surviveStreakMult(5)).toBe(1.5); // 封顶 ×1.5
+    expect(surviveStreakMult(9)).toBe(1.5);
+    expect(surviveStreakMult(SURVIVE_STREAK_CAP + 5)).toBe(1.5);
   });
 
   it("连续 12 次安然（引擎 finishPatrol 实跑）：奖励序列 ×(1+0.1N) 并封顶", () => {
@@ -64,7 +64,7 @@ describe("验收-③ 安然连胜", () => {
       expect(got[i]).toBeCloseTo(base * (1 + 0.1 * Math.min(i, SURVIVE_STREAK_CAP)), 6);
       expect(streaks[i]).toBe(i + 1);
     }
-    expect(got[11] / base).toBeCloseTo(2, 10); // 第 12 次安然拿满 ×2
+    expect(got[11] / base).toBeCloseTo(1.5, 10); // R5：第 6 次起封顶 ×1.5
     console.log(`基础奖励 ${r1(base)}（5×idleRate），满乘数需连续安然 11 次（约 22 分钟不刷新）`);
   });
 

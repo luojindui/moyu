@@ -72,7 +72,11 @@ export function syncFlavorCollection(state: GameState): GameState {
 /** 已收集总数（图鉴 x/55）：按去重后的合法条目计数，篡改档自动收敛 */
 export function collectionCount(state: GameState): number {
   const quotes = new Set(state.collected.quotes.filter((i) => Number.isInteger(i) && i >= 0 && i < MEME_QUOTES.length));
-  const flavors = new Set(state.collected.flavors.filter((i) => Number.isInteger(i) && i >= 0 && i < TOTAL_ITEMS));
+  const flavors = new Set(
+    state.collected.flavors.filter(
+      (i) => Number.isInteger(i) && i >= 0 && i < UPGRADES.length * 5, // 彩蛋上界 45（不是 55）
+    ),
+  );
   return quotes.size + Math.min(flavors.size, UPGRADES.length * 5);
 }
 

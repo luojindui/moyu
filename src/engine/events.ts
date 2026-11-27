@@ -1,5 +1,5 @@
 import type { GameState } from "./state";
-import { gain } from "./state";
+import { gain, lose } from "./state";
 import { clickPowerOf, doClick, comboMultiplier } from "./actions";
 import { effectOf } from "./upgrades";
 
@@ -11,16 +11,16 @@ export const BOSS_PENALTY_RATE = 0.05;
 export const BOSS_PENALTY_MIN = 10;
 /** 罚款封顶：10 秒挂机收益（防后期洗劫，保"早期罚轻、后期不伤筋骨"） */
 export const BOSS_PENALTY_CAP_IDLE_SECONDS = 10;
-export const BOSS_REWARD_IDLE_SECONDS = 8;
+export const BOSS_REWARD_IDLE_SECONDS = 4; // 事件经济红线 <10%：奖励回到 4×挂机秒
 export const BOSS_REWARD_MIN = 50;
 /** 反应宽限：横幅弹出到此时间内点击免罚（半空中的手指不算顶风作案）；宽限内不给收入 */
 export const BOSS_GRACE_SECONDS = 0.8;
 /** 偷点每击罚款 = 0.5 × 挂机秒收益（早期按下限 10）：轻罚但连续偷点会累积，交叉点落在 4-6cps */
-export const BOSS_STEAL_PENALTY_IDLE_SECONDS = 0.5;
+export const BOSS_STEAL_PENALTY_IDLE_SECONDS = 0.6;
 /** 单次巡逻偷点罚款总封顶 = 6 × 挂机秒收益（防无限罚，仍让 8cps 有赌点） */
-export const BOSS_STEAL_CAP_IDLE_SECONDS = 6;
+export const BOSS_STEAL_CAP_IDLE_SECONDS = 10;
 /** 安然连胜：连续安然 N 次奖励 ×(1+0.1N)，封顶 ×2 */
-export const SURVIVE_STREAK_CAP = 10;
+export const SURVIVE_STREAK_CAP = 5; // 连胜封顶 ×1.5（原 ×2 使事件占比超 10%）
 
 /** 巡逻变体（variety #1）：拆掉"同 pattern 忍住 ×N"的重复感 */
 export type BossVariant = "hold" | "type" | "blitz";
@@ -153,11 +153,13 @@ export function onBossTap(
   if (es.bossPenaltyTotal >= cap) {
     return { state: afterIncome, caught: false, lost: 0, income }; // 已罚满封顶
   }
-  const lost = Math.min(perTap, cap - es.bossPenaltyTotal, afterIncome.moyu);
+  const due = Math.min(perTap, cap - es.bossPenaltyTotal);
+  // 扣款同时扣回累计值（防"零余额偷点刷段位"）；连胜清零立即写回 GameState（防刷新规避）
+  const { state: paid, lost } = lose({ ...afterIncome, surviveStreak: 0 }, due);
   es.bossCaught = true;
-  es.surviveStreak = 0; // 被抓清零连胜
-  es.bossPenaltyTotal += lost;
-  return { state: { ...afterIncome, moyu: afterIncome.moyu - lost }, caught: true, lost, income };
+  es.surviveStreak = 0;
+  es.bossPenaltyTotal += lost; // 按实收累计封顶：余额不足时继续从后续收入抵扣（防零余额免罚）
+  return { state: paid, caught: true, lost, income };
 }
 
 /**

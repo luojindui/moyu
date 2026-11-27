@@ -143,3 +143,32 @@ describe("日报结构净化和跨日（nurture 验收 #3/#5）", () => {
     expect(restoreDaily({ date: "2026-11-27", goals: [{ id: "x", target: 1, progress: 1, done: true }], claimed: false })).toBeNull();
   });
 });
+
+describe("restoreDaily 严格度（final-collect 建议 #2）", () => {
+  const ok = { date: "2026-11-27", goals: [
+    { id: "click_100", target: 100, progress: 100, done: true },
+    { id: "meme_1", target: 1, progress: 1, done: true },
+    { id: "buy_3", target: 3, progress: 3, done: true },
+  ], claimed: false, streak: 2, lastCompleteDate: null };
+
+  it("合法日报通过", () => {
+    expect(restoreDaily(ok)).not.toBeNull();
+  });
+
+  it("非整数 streak → 整档拒绝（不再静默收敛）", () => {
+    expect(restoreDaily({ ...ok, streak: 1.5 })).toBeNull();
+    expect(restoreDaily({ ...ok, streak: -1 })).toBeNull();
+    expect(restoreDaily({ ...ok, streak: "2" })).toBeNull();
+  });
+
+  it("done 与 progress 不一致 → 拒绝（防 done:true/progress:0 白嫖）", () => {
+    const bad = { ...ok, goals: ok.goals.map((g, i) => (i === 0 ? { ...g, progress: 0, done: true } : g)) };
+    expect(restoreDaily(bad)).toBeNull();
+  });
+
+  it("progress 超过 target → 钳制到 target", () => {
+    const over = { ...ok, goals: ok.goals.map((g) => ({ ...g, progress: g.target * 3, done: true })) };
+    const d = restoreDaily(over)!;
+    expect(d.goals.every((g) => g.progress === g.target)).toBe(true);
+  });
+});

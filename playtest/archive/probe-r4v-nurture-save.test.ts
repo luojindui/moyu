@@ -235,10 +235,11 @@ describe("存档迁移·非法字段安全降级", () => {
       }),
     });
     const r = restore(adapter, NOW);
+    log("缺 streak 存档", { daily: r.state!.daily });
+    // ✅ R5 收紧：缺 streak 整档拒绝（不再产出 NaN 或静默收敛）
+    expect(r.state!.daily).toBeNull();
     const claimed = claimDaily(r.state!, TODAY);
-    log("缺 streak", { parsedStreak: String(r.state!.daily?.streak), afterClaim: String(claimed.state.daily!.streak) });
-    expect(typeof claimed.state.daily!.streak).toBe("number");
-    expect(Number.isFinite(claimed.state.daily!.streak)).toBe(true);
+    expect(claimed.claimedReward).toBeNull();
   });
 
   it("✅ 已修复回归（原缺陷）：日报 goals 含非数字 progress（字符串）→ dailyTrack 产出 NaN 进度", () => {

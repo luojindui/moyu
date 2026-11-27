@@ -13,7 +13,7 @@
     },
     {
       "k": "2",
-      "pct": 1.7
+      "pct": 0.6
     },
     {
       "k": "3",
@@ -21,27 +21,27 @@
     },
     {
       "k": "4",
-      "pct": 3.9
+      "pct": 3.6
     },
     {
       "k": "5+",
-      "pct": 90.3
+      "pct": 91.7
     }
   ],
   "starChurn": {
-    "idleSwitches": 47,
-    "clickSwitches": 61,
-    "per10minIdle": 15.7,
-    "per10minClick": 20.3,
+    "idleSwitches": 46,
+    "clickSwitches": 62,
+    "per10minIdle": 15.3,
+    "per10minClick": 20.7,
     "top3Changes": 37,
     "per10minTop3": 12.3
   },
   "starHolders": {
     "phone": "31.6%",
     "toilet": "8.3%",
-    "group": "18.8%",
-    "meeting": "9.1%",
-    "deep": "32.1%"
+    "group": "18.3%",
+    "meeting": "6.6%",
+    "deep": "35.2%"
   },
   "milestoneJumps": [
     {
@@ -111,8 +111,8 @@
   "strategyCompare": [
     {
       "strategy": "cheapest",
-      "endTotalEarned": 1115873,
-      "endMoyu": 546042,
+      "endTotalEarned": 1107464,
+      "endMoyu": 537633,
       "levels": {
         "coffee": 49,
         "phone": 41,
@@ -124,33 +124,33 @@
     },
     {
       "strategy": "dearest",
-      "endTotalEarned": 2774105,
-      "endMoyu": 12983,
+      "endTotalEarned": 2692731,
+      "endMoyu": 14101,
       "levels": {
         "coffee": 2,
-        "phone": 29,
-        "water": 49,
-        "toilet": 36,
+        "phone": 30,
+        "water": 48,
+        "toilet": 35,
         "chair": 34,
         "group": 22,
-        "meeting": 8
+        "meeting": 9
       }
     },
     {
       "strategy": "value",
-      "endTotalEarned": 1421236,
-      "endMoyu": 9057,
+      "endTotalEarned": 1392672,
+      "endMoyu": 54671,
       "levels": {
-        "coffee": 36,
+        "coffee": 37,
         "phone": 38,
         "water": 28,
         "toilet": 27,
         "group": 21,
         "chair": 20,
-        "meeting": 9,
+        "meeting": 8,
         "deep": 1
       }
     }
   ],
-  "strategySpreadPct": 148.6
+  "strategySpreadPct": 143.1
 }

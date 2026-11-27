@@ -73,12 +73,16 @@ export function restoreDaily(raw: unknown): DailyState | null {
     if (typeof gg.target !== "number" || !Number.isFinite(gg.target) || gg.target <= 0) return null;
     if (typeof gg.progress !== "number" || !Number.isFinite(gg.progress) || gg.progress < 0) return null;
     if (typeof gg.done !== "boolean") return null;
-    goals.push({ id: gg.id, target: gg.target, progress: Math.min(gg.progress, gg.target), done: gg.done });
+    const progress = Math.min(gg.progress, gg.target);
+    // done 必须与进度一致（防 done:true/progress:0 直接白嫖）
+    if (gg.done && progress < gg.target) return null;
+    goals.push({ id: gg.id, target: gg.target, progress, done: gg.done });
   }
-  const streak =
-    typeof d.streak === "number" && Number.isInteger(d.streak) && d.streak >= 0 ? d.streak : 0;
+  // streak 必须是非负整数；非法即整档拒绝（不再静默收敛为 0）
+  const streakRaw = d.streak;
+  if (typeof streakRaw !== "number" || !Number.isInteger(streakRaw) || streakRaw < 0) return null;
   const lastCompleteDate = typeof d.lastCompleteDate === "string" ? d.lastCompleteDate : null;
-  return { date: d.date, goals, streak, lastCompleteDate, claimed: d.claimed };
+  return { date: d.date, goals, streak: streakRaw, lastCompleteDate, claimed: d.claimed };
 }
 
 /** 掷出当日目标（3 个不重复，继承 streak 基础） */

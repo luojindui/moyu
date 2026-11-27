@@ -1,0 +1,1322 @@
+{
+ "generatedAt": "2026-11-27",
+ "head": "cf9be52 (src 与 d2b5876 相同，仅 .scratch 规格文档追加)",
+ "dev": {
+  "label": "dev",
+  "base": "http://127.0.0.1:5173/",
+  "startedAt": "2026-11-27T02:28:03.081Z",
+  "checks": {
+   "dev:baseline": {
+    "mobile": {
+     "url": "http://127.0.0.1:5173/",
+     "innerWidth": 390,
+     "innerHeight": 844,
+     "dpr": 2,
+     "readyState": "complete",
+     "appHeight": 844,
+     "hud": {
+      "moyu": "0.2",
+      "click": "1",
+      "idle": "0.2",
+      "rank": "摸鱼实习生（升 摸鱼学徒 0%）",
+      "streak": "",
+      "streakHidden": true
+     },
+     "canvas": {
+      "attrW": 780,
+      "attrH": 1272,
+      "clientW": 390,
+      "clientH": 636,
+      "rect": {
+       "x": 0,
+       "y": 91,
+       "w": 390,
+       "h": 636,
+       "right": 390,
+       "bottom": 727
+      }
+     },
+     "shop": {
+      "cards": 9,
+      "ids": [
+       "coffee",
+       "water",
+       "chair",
+       "phone",
+       "toilet",
+       "group",
+       "meeting",
+       "deep",
+       "retire"
+      ],
+      "containerScrollW": 1126,
+      "containerClientW": 374,
+      "overflowX": "auto",
+      "cardRect": {
+       "x": 8,
+       "y": 692,
+       "w": 118,
+       "h": 144,
+       "right": 126,
+       "bottom": 836
+      }
+     },
+     "journal": {
+      "hiddenClass": true,
+      "display": "none",
+      "total": "0/55",
+      "quote": "0/10",
+      "flavor": "0/45"
+     },
+     "btnJournal": {
+      "rect": {
+       "x": 339,
+       "y": 45,
+       "w": 39,
+       "h": 36,
+       "right": 378,
+       "bottom": 81
+      },
+      "hasReward": false
+     },
+     "hudOverflow": [],
+     "docScrollW": 390,
+     "bodyScrollW": 390,
+     "viewportMeta": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover",
+     "themeColor": "#2b2b3a",
+     "appleCapable": "yes",
+     "manifestHref": "http://127.0.0.1:5173/manifest.webmanifest",
+     "appleTouchHref": "http://127.0.0.1:5173/icon-192.png",
+     "faviconHref": "http://127.0.0.1:5173/favicon.png",
+     "moyuFrames": 77,
+     "moyuFps": 62
+    },
+    "journal": {
+     "hiddenClass": false,
+     "panelRect": {
+      "x": 25,
+      "y": 91,
+      "w": 340,
+      "h": 662,
+      "right": 365,
+      "bottom": 753
+     },
+     "panelWithinViewport": true,
+     "panelScrollable": false,
+     "panelOverflowY": "auto",
+     "date": "2026-11-27",
+     "streakText": "🔥 连续 0 天（今天未领）",
+     "goals": [
+      {
+       "cls": "goal",
+       "text": "○\n        收 1 个梗\n        0/1"
+      },
+      {
+       "cls": "goal",
+       "text": "○\n        应付 2 次巡逻（忍住或点满都算）\n        0/2"
+      },
+      {
+       "cls": "goal",
+       "text": "○\n        点 100 下\n        0/100"
+      }
+     ],
+     "claim": {
+      "text": "完成 0/3",
+      "disabled": true
+     },
+     "counters": {
+      "quote": "0/10",
+      "flavor": "0/45",
+      "total": "0/55"
+     },
+     "latest": "买升级、收线索，开始收集摸鱼彩蛋",
+     "grid": {
+      "items": 55,
+      "on": 0,
+      "off": 55,
+      "lockedAllQuestionLabel": true,
+      "lockedLabels": [
+       "???"
+      ],
+      "lockedTexts": [
+       ""
+      ],
+      "onLabels": [],
+      "columns": 2,
+      "scrollHeight": 779,
+      "clientHeight": 287,
+      "scrollable": true
+     },
+     "btnAfter": {
+      "content": "none",
+      "width": "auto",
+      "height": "auto",
+      "background": "rgba(0, 0, 0, 0)"
+     },
+     "hudStreak": {
+      "text": "",
+      "hidden": true
+     }
+    },
+    "closed": {
+     "hidden": true,
+     "display": "none"
+    },
+    "screenshot": "/tmp/final-collect-ui/dev-journal-390.png"
+   },
+   "dev:assets": {
+    "manifest": {
+     "url": "http://127.0.0.1:5173/manifest.webmanifest",
+     "status": 200,
+     "type": "application/manifest+json"
+    },
+    "manifestJson": {
+     "name": "摸鱼工位",
+     "short_name": "摸鱼工位",
+     "display": "standalone",
+     "orientation": "portrait",
+     "start_url": "./",
+     "scope": "./",
+     "theme_color": "#2b2b3a",
+     "background_color": "#2b2b3a",
+     "icons": [
+      {
+       "src": "./icon-192.png",
+       "sizes": "192x192",
+       "type": "image/png",
+       "purpose": "any"
+      },
+      {
+       "src": "./icon-512.png",
+       "sizes": "512x512",
+       "type": "image/png",
+       "purpose": "any"
+      }
+     ]
+    },
+    "appleTouch": {
+     "url": "http://127.0.0.1:5173/icon-192.png",
+     "status": 200,
+     "type": "image/png"
+    },
+    "favicon": {
+     "url": "http://127.0.0.1:5173/favicon.png",
+     "status": 200,
+     "type": "image/png"
+    },
+    "appleTouchImage": {
+     "w": 192,
+     "h": 192
+    }
+   },
+   "dev:seeded": {
+    "seededDate": {
+     "today": "2026-11-27",
+     "saved": {
+      "v": 1,
+      "moyu": 100,
+      "totalEarned": 100,
+      "levels": {
+       "coffee": 1
+      },
+      "savedAt": 1795746486986,
+      "createdAt": 1795746486986,
+      "collected": {
+       "quotes": [
+        0,
+        1
+       ],
+       "flavors": [
+        0
+       ]
+      },
+      "daily": {
+       "date": "2026-11-27",
+       "goals": [
+        {
+         "id": "click_100",
+         "target": 100,
+         "progress": 100,
+         "done": true
+        },
+        {
+         "id": "meme_1",
+         "target": 1,
+         "progress": 1,
+         "done": true
+        },
+        {
+         "id": "buy_3",
+         "target": 3,
+         "progress": 3,
+         "done": true
+        }
+       ],
+       "streak": 1,
+       "lastCompleteDate": "2026-11-26",
+       "claimed": false
+      },
+      "surviveStreak": 3
+     }
+    },
+    "before": {
+     "url": "http://127.0.0.1:5173/",
+     "innerWidth": 390,
+     "innerHeight": 844,
+     "dpr": 2,
+     "readyState": "complete",
+     "appHeight": 844,
+     "hud": {
+      "moyu": "100.4",
+      "click": "2",
+      "idle": "0.2",
+      "rank": "摸鱼实习生（升 摸鱼学徒 1%）",
+      "streak": "🔥连胜 3",
+      "streakHidden": false
+     },
+     "canvas": {
+      "attrW": 780,
+      "attrH": 1272,
+      "clientW": 390,
+      "clientH": 636,
+      "rect": {
+       "x": 0,
+       "y": 94,
+       "w": 390,
+       "h": 636,
+       "right": 390,
+       "bottom": 730
+      }
+     },
+     "shop": {
+      "cards": 9,
+      "ids": [
+       "coffee",
+       "water",
+       "chair",
+       "phone",
+       "toilet",
+       "group",
+       "meeting",
+       "deep",
+       "retire"
+      ],
+      "containerScrollW": 1126,
+      "containerClientW": 374,
+      "overflowX": "auto",
+      "cardRect": {
+       "x": 8,
+       "y": 690,
+       "w": 118,
+       "h": 146,
+       "right": 126,
+       "bottom": 836
+      }
+     },
+     "journal": {
+      "hiddenClass": true,
+      "display": "none",
+      "total": "0/55",
+      "quote": "0/10",
+      "flavor": "0/45"
+     },
+     "btnJournal": {
+      "rect": {
+       "x": 339,
+       "y": 45,
+       "w": 39,
+       "h": 39,
+       "right": 378,
+       "bottom": 84
+      },
+      "hasReward": true
+     },
+     "hudOverflow": [],
+     "docScrollW": 390,
+     "bodyScrollW": 390,
+     "viewportMeta": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover",
+     "themeColor": "#2b2b3a",
+     "appleCapable": "yes",
+     "manifestHref": "http://127.0.0.1:5173/manifest.webmanifest",
+     "appleTouchHref": "http://127.0.0.1:5173/icon-192.png",
+     "faviconHref": "http://127.0.0.1:5173/favicon.png",
+     "moyuFrames": 132,
+     "moyuFps": 60
+    },
+    "opened": {
+     "hiddenClass": false,
+     "panelRect": {
+      "x": 25,
+      "y": 91,
+      "w": 340,
+      "h": 662,
+      "right": 365,
+      "bottom": 753
+     },
+     "panelWithinViewport": true,
+     "panelScrollable": false,
+     "panelOverflowY": "auto",
+     "date": "2026-11-27",
+     "streakText": "🔥 连续 1 天（今天未领）",
+     "goals": [
+      {
+       "cls": "goal done",
+       "text": "✓\n        点 100 下\n        100/100"
+      },
+      {
+       "cls": "goal done",
+       "text": "✓\n        收 1 个梗\n        1/1"
+      },
+      {
+       "cls": "goal done",
+       "text": "✓\n        买 3 次升级\n        3/3"
+      }
+     ],
+     "claim": {
+      "text": "领取 +500",
+      "disabled": false
+     },
+     "counters": {
+      "quote": "2/10",
+      "flavor": "1/45",
+      "total": "3/55"
+     },
+     "latest": "最新彩蛋「咖啡续命」：第一杯，回魂",
+     "grid": {
+      "items": 55,
+      "on": 3,
+      "off": 52,
+      "lockedAllQuestionLabel": true,
+      "lockedLabels": [
+       "???"
+      ],
+      "lockedTexts": [
+       ""
+      ],
+      "onLabels": [
+       {
+        "label": "语录 1",
+        "text": "在吗？帮个忙"
+       },
+       {
+        "label": "语录 2",
+        "text": "这个需求很简单"
+       },
+       {
+        "label": "咖啡续命 · Lv.1",
+        "text": "第一杯，回魂"
+       }
+      ],
+      "columns": 2,
+      "scrollHeight": 808,
+      "clientHeight": 287,
+      "scrollable": true
+     },
+     "btnAfter": {
+      "content": "\"\"",
+      "width": "9px",
+      "height": "9px",
+      "background": "rgb(255, 90, 90)"
+     },
+     "hudStreak": {
+      "text": "🔥连胜 3",
+      "hidden": false
+     }
+    },
+    "claimed": {
+     "hudMoyu": "600.7",
+     "claimText": "今日已领",
+     "claimDisabled": true,
+     "journalStreak": "🔥 连续 2 天",
+     "hudStreak": {
+      "text": "🔥连胜 3",
+      "hidden": false
+     },
+     "surviveStreak": 3,
+     "daily": {
+      "date": "2026-11-27",
+      "goals": [
+       {
+        "id": "click_100",
+        "target": 100,
+        "progress": 100,
+        "done": true
+       },
+       {
+        "id": "meme_1",
+        "target": 1,
+        "progress": 1,
+        "done": true
+       },
+       {
+        "id": "buy_3",
+        "target": 3,
+        "progress": 3,
+        "done": true
+       }
+      ],
+      "streak": 2,
+      "lastCompleteDate": "2026-11-27",
+      "claimed": true
+     },
+     "savedDaily": {
+      "date": "2026-11-27",
+      "goals": [
+       {
+        "id": "click_100",
+        "target": 100,
+        "progress": 100,
+        "done": true
+       },
+       {
+        "id": "meme_1",
+        "target": 1,
+        "progress": 1,
+        "done": true
+       },
+       {
+        "id": "buy_3",
+        "target": 3,
+        "progress": 3,
+        "done": true
+       }
+      ],
+      "streak": 2,
+      "lastCompleteDate": "2026-11-27",
+      "claimed": true
+     },
+     "savedMoyu": 600.563459999847,
+     "hasRewardAfterClaim": false
+    },
+    "screenshots": [
+     "/tmp/final-collect-ui/dev-seeded-journal-390.png",
+     "/tmp/final-collect-ui/dev-seeded-claimed-390.png"
+    ]
+   },
+   "dev:late": {
+    "mobile": {
+     "url": "http://127.0.0.1:5173/",
+     "innerWidth": 390,
+     "innerHeight": 844,
+     "dpr": 2,
+     "readyState": "complete",
+     "appHeight": 844,
+     "hud": {
+      "moyu": "5.00亿",
+      "click": "41",
+      "idle": "16.41万",
+      "rank": "带薪摸鱼传说（升 摸鱼之神 44%）",
+      "streak": "🔥连胜 7",
+      "streakHidden": false
+     },
+     "canvas": {
+      "attrW": 780,
+      "attrH": 1272,
+      "clientW": 390,
+      "clientH": 636,
+      "rect": {
+       "x": 0,
+       "y": 109,
+       "w": 390,
+       "h": 636,
+       "right": 390,
+       "bottom": 745
+      }
+     },
+     "shop": {
+      "cards": 9,
+      "ids": [
+       "coffee",
+       "water",
+       "chair",
+       "phone",
+       "toilet",
+       "group",
+       "meeting",
+       "deep",
+       "retire"
+      ],
+      "containerScrollW": 1126,
+      "containerClientW": 374,
+      "overflowX": "auto",
+      "cardRect": {
+       "x": 8,
+       "y": 676,
+       "w": 118,
+       "h": 160,
+       "right": 126,
+       "bottom": 836
+      }
+     },
+     "journal": {
+      "hiddenClass": true,
+      "display": "none",
+      "total": "0/55",
+      "quote": "0/10",
+      "flavor": "0/45"
+     },
+     "btnJournal": {
+      "rect": {
+       "x": 339,
+       "y": 45,
+       "w": 39,
+       "h": 54,
+       "right": 378,
+       "bottom": 99
+      },
+      "hasReward": false
+     },
+     "hudOverflow": [],
+     "docScrollW": 390,
+     "bodyScrollW": 390,
+     "viewportMeta": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover",
+     "themeColor": "#2b2b3a",
+     "appleCapable": "yes",
+     "manifestHref": "http://127.0.0.1:5173/manifest.webmanifest",
+     "appleTouchHref": "http://127.0.0.1:5173/icon-192.png",
+     "faviconHref": "http://127.0.0.1:5173/favicon.png",
+     "moyuFrames": 108,
+     "moyuFps": 61
+    },
+    "screenshot": "/tmp/final-collect-ui/dev-late-hud-390.png"
+   },
+   "dev:375x667": {
+    "mobile": {
+     "url": "http://127.0.0.1:5173/",
+     "innerWidth": 375,
+     "innerHeight": 667,
+     "dpr": 2,
+     "readyState": "complete",
+     "appHeight": 667,
+     "hud": {
+      "moyu": "0.4",
+      "click": "1",
+      "idle": "0.2",
+      "rank": "摸鱼实习生（升 摸鱼学徒 0%）",
+      "streak": "",
+      "streakHidden": true
+     },
+     "canvas": {
+      "attrW": 750,
+      "attrH": 918,
+      "clientW": 375,
+      "clientH": 459,
+      "rect": {
+       "x": 0,
+       "y": 91,
+       "w": 375,
+       "h": 459,
+       "right": 375,
+       "bottom": 550
+      }
+     },
+     "shop": {
+      "cards": 9,
+      "ids": [
+       "coffee",
+       "water",
+       "chair",
+       "phone",
+       "toilet",
+       "group",
+       "meeting",
+       "deep",
+       "retire"
+      ],
+      "containerScrollW": 1126,
+      "containerClientW": 359,
+      "overflowX": "auto",
+      "cardRect": {
+       "x": 8,
+       "y": 515,
+       "w": 118,
+       "h": 144,
+       "right": 126,
+       "bottom": 659
+      }
+     },
+     "journal": {
+      "hiddenClass": true,
+      "display": "none",
+      "total": "0/55",
+      "quote": "0/10",
+      "flavor": "0/45"
+     },
+     "btnJournal": {
+      "rect": {
+       "x": 324,
+       "y": 45,
+       "w": 39,
+       "h": 36,
+       "right": 363,
+       "bottom": 81
+      },
+      "hasReward": false
+     },
+     "hudOverflow": [],
+     "docScrollW": 375,
+     "bodyScrollW": 375,
+     "viewportMeta": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover",
+     "themeColor": "#2b2b3a",
+     "appleCapable": "yes",
+     "manifestHref": "http://127.0.0.1:5173/manifest.webmanifest",
+     "appleTouchHref": "http://127.0.0.1:5173/icon-192.png",
+     "faviconHref": "http://127.0.0.1:5173/favicon.png",
+     "moyuFrames": 109,
+     "moyuFps": 61
+    },
+    "opened": {
+     "hiddenClass": false,
+     "panelRect": {
+      "x": 22.5,
+      "y": 60,
+      "w": 330,
+      "h": 546.9,
+      "right": 352.5,
+      "bottom": 607
+     },
+     "panelWithinViewport": true,
+     "panelScrollable": true,
+     "panelOverflowY": "auto",
+     "date": "2026-11-27",
+     "streakText": "🔥 连续 0 天（今天未领）",
+     "goals": [
+      {
+       "cls": "goal",
+       "text": "○\n        点 100 下\n        0/100"
+      },
+      {
+       "cls": "goal",
+       "text": "○\n        应付 2 次巡逻（忍住或点满都算）\n        0/2"
+      },
+      {
+       "cls": "goal",
+       "text": "○\n        买 3 次升级\n        0/3"
+      }
+     ],
+     "claim": {
+      "text": "完成 0/3",
+      "disabled": true
+     },
+     "counters": {
+      "quote": "0/10",
+      "flavor": "0/45",
+      "total": "0/55"
+     },
+     "latest": "买升级、收线索，开始收集摸鱼彩蛋",
+     "grid": {
+      "items": 55,
+      "on": 0,
+      "off": 55,
+      "lockedAllQuestionLabel": true,
+      "lockedLabels": [
+       "???"
+      ],
+      "lockedTexts": [
+       ""
+      ],
+      "onLabels": [],
+      "columns": 2,
+      "scrollHeight": 779,
+      "clientHeight": 227,
+      "scrollable": true
+     },
+     "btnAfter": {
+      "content": "none",
+      "width": "auto",
+      "height": "auto",
+      "background": "rgba(0, 0, 0, 0)"
+     },
+     "hudStreak": {
+      "text": "",
+      "hidden": true
+     }
+    },
+    "screenshot": "/tmp/final-collect-ui/dev-journal-375x667.png"
+   }
+  },
+  "errors": []
+ },
+ "preview": {
+  "label": "preview",
+  "base": "http://127.0.0.1:4175/",
+  "startedAt": "2026-11-27T02:25:55.348Z",
+  "checks": {
+   "preview:baseline": {
+    "mobile": {
+     "url": "http://127.0.0.1:4175/",
+     "innerWidth": 390,
+     "innerHeight": 844,
+     "dpr": 2,
+     "readyState": "complete",
+     "appHeight": 844,
+     "hud": {
+      "moyu": "0.2",
+      "click": "1",
+      "idle": "0.2",
+      "rank": "摸鱼实习生（升 摸鱼学徒 0%）",
+      "streak": "",
+      "streakHidden": true
+     },
+     "canvas": {
+      "attrW": 780,
+      "attrH": 1272,
+      "clientW": 390,
+      "clientH": 636,
+      "rect": {
+       "x": 0,
+       "y": 91,
+       "w": 390,
+       "h": 636,
+       "right": 390,
+       "bottom": 727
+      }
+     },
+     "shop": {
+      "cards": 9,
+      "ids": [
+       "coffee",
+       "water",
+       "chair",
+       "phone",
+       "toilet",
+       "group",
+       "meeting",
+       "deep",
+       "retire"
+      ],
+      "containerScrollW": 1126,
+      "containerClientW": 374,
+      "overflowX": "auto",
+      "cardRect": {
+       "x": 8,
+       "y": 692,
+       "w": 118,
+       "h": 144,
+       "right": 126,
+       "bottom": 836
+      }
+     },
+     "journal": {
+      "hiddenClass": true,
+      "display": "none",
+      "total": "0/55",
+      "quote": "0/10",
+      "flavor": "0/45"
+     },
+     "btnJournal": {
+      "rect": {
+       "x": 339,
+       "y": 45,
+       "w": 39,
+       "h": 36,
+       "right": 378,
+       "bottom": 81
+      },
+      "hasReward": false
+     },
+     "hudOverflow": [],
+     "docScrollW": 390,
+     "bodyScrollW": 390,
+     "viewportMeta": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover",
+     "themeColor": "#2b2b3a",
+     "appleCapable": "yes",
+     "manifestHref": "http://127.0.0.1:4175/manifest.webmanifest",
+     "appleTouchHref": "http://127.0.0.1:4175/icon-192.png",
+     "faviconHref": "http://127.0.0.1:4175/favicon.png",
+     "moyuFrames": 79,
+     "moyuFps": 63
+    },
+    "journal": {
+     "hiddenClass": false,
+     "panelRect": {
+      "x": 25,
+      "y": 91,
+      "w": 340,
+      "h": 662,
+      "right": 365,
+      "bottom": 753
+     },
+     "panelWithinViewport": true,
+     "panelScrollable": false,
+     "panelOverflowY": "auto",
+     "date": "2026-11-27",
+     "streakText": "🔥 连续 0 天（今天未领）",
+     "goals": [
+      {
+       "cls": "goal",
+       "text": "○\n        点 100 下\n        0/100"
+      },
+      {
+       "cls": "goal",
+       "text": "○\n        买 3 次升级\n        0/3"
+      },
+      {
+       "cls": "goal",
+       "text": "○\n        应付 2 次巡逻（忍住或点满都算）\n        0/2"
+      }
+     ],
+     "claim": {
+      "text": "完成 0/3",
+      "disabled": true
+     },
+     "counters": {
+      "quote": "0/10",
+      "flavor": "0/45",
+      "total": "0/55"
+     },
+     "latest": "买升级、收线索，开始收集摸鱼彩蛋",
+     "grid": {
+      "items": 55,
+      "on": 0,
+      "off": 55,
+      "lockedAllQuestionLabel": true,
+      "lockedLabels": [
+       "???"
+      ],
+      "lockedTexts": [
+       ""
+      ],
+      "onLabels": [],
+      "columns": 2,
+      "scrollHeight": 779,
+      "clientHeight": 287,
+      "scrollable": true
+     },
+     "btnAfter": {
+      "content": "none",
+      "width": "auto",
+      "height": "auto",
+      "background": "rgba(0, 0, 0, 0)"
+     },
+     "hudStreak": {
+      "text": "",
+      "hidden": true
+     }
+    },
+    "closed": {
+     "hidden": true,
+     "display": "none"
+    },
+    "screenshot": "/tmp/final-collect-ui/preview-journal-390.png"
+   },
+   "preview:assets": {
+    "manifest": {
+     "url": "http://127.0.0.1:4175/manifest.webmanifest",
+     "status": 200,
+     "type": "application/manifest+json"
+    },
+    "manifestJson": {
+     "name": "摸鱼工位",
+     "short_name": "摸鱼工位",
+     "display": "standalone",
+     "orientation": "portrait",
+     "start_url": "./",
+     "scope": "./",
+     "theme_color": "#2b2b3a",
+     "background_color": "#2b2b3a",
+     "icons": [
+      {
+       "src": "./icon-192.png",
+       "sizes": "192x192",
+       "type": "image/png",
+       "purpose": "any"
+      },
+      {
+       "src": "./icon-512.png",
+       "sizes": "512x512",
+       "type": "image/png",
+       "purpose": "any"
+      }
+     ]
+    },
+    "appleTouch": {
+     "url": "http://127.0.0.1:4175/icon-192.png",
+     "status": 200,
+     "type": "image/png"
+    },
+    "favicon": {
+     "url": "http://127.0.0.1:4175/favicon.png",
+     "status": 200,
+     "type": "image/png"
+    },
+    "appleTouchImage": {
+     "w": 192,
+     "h": 192
+    }
+   },
+   "preview:seeded": {
+    "seededDate": {
+     "today": "2026-11-27",
+     "saved": {
+      "v": 1,
+      "moyu": 100,
+      "totalEarned": 100,
+      "levels": {
+       "coffee": 1
+      },
+      "savedAt": 1795746358672,
+      "createdAt": 1795746358672,
+      "collected": {
+       "quotes": [
+        0,
+        1
+       ],
+       "flavors": [
+        0
+       ]
+      },
+      "daily": {
+       "date": "2026-11-27",
+       "goals": [
+        {
+         "id": "click_100",
+         "target": 100,
+         "progress": 100,
+         "done": true
+        },
+        {
+         "id": "meme_1",
+         "target": 1,
+         "progress": 1,
+         "done": true
+        },
+        {
+         "id": "buy_3",
+         "target": 3,
+         "progress": 3,
+         "done": true
+        }
+       ],
+       "streak": 1,
+       "lastCompleteDate": "2026-11-26",
+       "claimed": false
+      },
+      "surviveStreak": 3
+     }
+    },
+    "before": {
+     "url": "http://127.0.0.1:4175/",
+     "innerWidth": 390,
+     "innerHeight": 844,
+     "dpr": 2,
+     "readyState": "complete",
+     "appHeight": 844,
+     "hud": {
+      "moyu": "100.4",
+      "click": "2",
+      "idle": "0.2",
+      "rank": "摸鱼实习生（升 摸鱼学徒 1%）",
+      "streak": "🔥连胜 3",
+      "streakHidden": false
+     },
+     "canvas": {
+      "attrW": 780,
+      "attrH": 1272,
+      "clientW": 390,
+      "clientH": 636,
+      "rect": {
+       "x": 0,
+       "y": 94,
+       "w": 390,
+       "h": 636,
+       "right": 390,
+       "bottom": 730
+      }
+     },
+     "shop": {
+      "cards": 9,
+      "ids": [
+       "coffee",
+       "water",
+       "chair",
+       "phone",
+       "toilet",
+       "group",
+       "meeting",
+       "deep",
+       "retire"
+      ],
+      "containerScrollW": 1126,
+      "containerClientW": 374,
+      "overflowX": "auto",
+      "cardRect": {
+       "x": 8,
+       "y": 690,
+       "w": 118,
+       "h": 146,
+       "right": 126,
+       "bottom": 836
+      }
+     },
+     "journal": {
+      "hiddenClass": true,
+      "display": "none",
+      "total": "0/55",
+      "quote": "0/10",
+      "flavor": "0/45"
+     },
+     "btnJournal": {
+      "rect": {
+       "x": 339,
+       "y": 45,
+       "w": 39,
+       "h": 39,
+       "right": 378,
+       "bottom": 84
+      },
+      "hasReward": true
+     },
+     "hudOverflow": [],
+     "docScrollW": 390,
+     "bodyScrollW": 390,
+     "viewportMeta": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover",
+     "themeColor": "#2b2b3a",
+     "appleCapable": "yes",
+     "manifestHref": "http://127.0.0.1:4175/manifest.webmanifest",
+     "appleTouchHref": "http://127.0.0.1:4175/icon-192.png",
+     "faviconHref": "http://127.0.0.1:4175/favicon.png",
+     "moyuFrames": 135,
+     "moyuFps": 60
+    },
+    "opened": {
+     "hiddenClass": false,
+     "panelRect": {
+      "x": 25,
+      "y": 91,
+      "w": 340,
+      "h": 662,
+      "right": 365,
+      "bottom": 753
+     },
+     "panelWithinViewport": true,
+     "panelScrollable": false,
+     "panelOverflowY": "auto",
+     "date": "2026-11-27",
+     "streakText": "🔥 连续 1 天（今天未领）",
+     "goals": [
+      {
+       "cls": "goal done",
+       "text": "✓\n        点 100 下\n        100/100"
+      },
+      {
+       "cls": "goal done",
+       "text": "✓\n        收 1 个梗\n        1/1"
+      },
+      {
+       "cls": "goal done",
+       "text": "✓\n        买 3 次升级\n        3/3"
+      }
+     ],
+     "claim": {
+      "text": "领取 +500",
+      "disabled": false
+     },
+     "counters": {
+      "quote": "2/10",
+      "flavor": "1/45",
+      "total": "3/55"
+     },
+     "latest": "最新彩蛋「咖啡续命」：第一杯，回魂",
+     "grid": {
+      "items": 55,
+      "on": 3,
+      "off": 52,
+      "lockedAllQuestionLabel": true,
+      "lockedLabels": [
+       "???"
+      ],
+      "lockedTexts": [
+       ""
+      ],
+      "onLabels": [
+       {
+        "label": "语录 1",
+        "text": "在吗？帮个忙"
+       },
+       {
+        "label": "语录 2",
+        "text": "这个需求很简单"
+       },
+       {
+        "label": "咖啡续命 · Lv.1",
+        "text": "第一杯，回魂"
+       }
+      ],
+      "columns": 2,
+      "scrollHeight": 808,
+      "clientHeight": 287,
+      "scrollable": true
+     },
+     "btnAfter": {
+      "content": "\"\"",
+      "width": "9px",
+      "height": "9px",
+      "background": "rgb(255, 90, 90)"
+     },
+     "hudStreak": {
+      "text": "🔥连胜 3",
+      "hidden": false
+     }
+    },
+    "claimed": {
+     "hudMoyu": "600.7",
+     "claimText": "今日已领",
+     "claimDisabled": true,
+     "journalStreak": "🔥 连续 2 天",
+     "hudStreak": {
+      "text": "🔥连胜 3",
+      "hidden": false
+     },
+     "surviveStreak": 3,
+     "daily": {
+      "date": "2026-11-27",
+      "goals": [
+       {
+        "id": "click_100",
+        "target": 100,
+        "progress": 100,
+        "done": true
+       },
+       {
+        "id": "meme_1",
+        "target": 1,
+        "progress": 1,
+        "done": true
+       },
+       {
+        "id": "buy_3",
+        "target": 3,
+        "progress": 3,
+        "done": true
+       }
+      ],
+      "streak": 2,
+      "lastCompleteDate": "2026-11-27",
+      "claimed": true
+     },
+     "savedDaily": {
+      "date": "2026-11-27",
+      "goals": [
+       {
+        "id": "click_100",
+        "target": 100,
+        "progress": 100,
+        "done": true
+       },
+       {
+        "id": "meme_1",
+        "target": 1,
+        "progress": 1,
+        "done": true
+       },
+       {
+        "id": "buy_3",
+        "target": 3,
+        "progress": 3,
+        "done": true
+       }
+      ],
+      "streak": 2,
+      "lastCompleteDate": "2026-11-27",
+      "claimed": true
+     },
+     "savedMoyu": 600.5732999999996,
+     "hasRewardAfterClaim": false
+    },
+    "screenshots": [
+     "/tmp/final-collect-ui/preview-seeded-journal-390.png",
+     "/tmp/final-collect-ui/preview-seeded-claimed-390.png"
+    ]
+   },
+   "preview:late": {
+    "mobile": {
+     "url": "http://127.0.0.1:4175/",
+     "innerWidth": 390,
+     "innerHeight": 844,
+     "dpr": 2,
+     "readyState": "complete",
+     "appHeight": 844,
+     "hud": {
+      "moyu": "5.00亿",
+      "click": "41",
+      "idle": "16.41万",
+      "rank": "带薪摸鱼传说（升 摸鱼之神 44%）",
+      "streak": "🔥连胜 7",
+      "streakHidden": false
+     },
+     "canvas": {
+      "attrW": 780,
+      "attrH": 1272,
+      "clientW": 390,
+      "clientH": 636,
+      "rect": {
+       "x": 0,
+       "y": 109,
+       "w": 390,
+       "h": 636,
+       "right": 390,
+       "bottom": 745
+      }
+     },
+     "shop": {
+      "cards": 9,
+      "ids": [
+       "coffee",
+       "water",
+       "chair",
+       "phone",
+       "toilet",
+       "group",
+       "meeting",
+       "deep",
+       "retire"
+      ],
+      "containerScrollW": 1126,
+      "containerClientW": 374,
+      "overflowX": "auto",
+      "cardRect": {
+       "x": 8,
+       "y": 676,
+       "w": 118,
+       "h": 160,
+       "right": 126,
+       "bottom": 836
+      }
+     },
+     "journal": {
+      "hiddenClass": true,
+      "display": "none",
+      "total": "0/55",
+      "quote": "0/10",
+      "flavor": "0/45"
+     },
+     "btnJournal": {
+      "rect": {
+       "x": 339,
+       "y": 45,
+       "w": 39,
+       "h": 54,
+       "right": 378,
+       "bottom": 99
+      },
+      "hasReward": false
+     },
+     "hudOverflow": [],
+     "docScrollW": 390,
+     "bodyScrollW": 390,
+     "viewportMeta": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover",
+     "themeColor": "#2b2b3a",
+     "appleCapable": "yes",
+     "manifestHref": "http://127.0.0.1:4175/manifest.webmanifest",
+     "appleTouchHref": "http://127.0.0.1:4175/icon-192.png",
+     "faviconHref": "http://127.0.0.1:4175/favicon.png",
+     "moyuFrames": 109,
+     "moyuFps": 62
+    },
+    "screenshot": "/tmp/final-collect-ui/preview-late-hud-390.png"
+   }
+  },
+  "errors": []
+ }
+}

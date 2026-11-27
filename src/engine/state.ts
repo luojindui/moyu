@@ -27,3 +27,20 @@ export function gain(state: GameState, amount: number): GameState {
   if (amount <= 0) return state;
   return { ...state, moyu: state.moyu + amount, totalEarned: state.totalEarned + amount };
 }
+
+/**
+ * 惩罚扣款：从余额扣除，并从累计值同步扣回（这笔钱从未真正落袋）。
+ * 返回实际扣除额，余额不为负。防止"零余额偷点刷段位"。
+ */
+export function lose(state: GameState, amount: number): { state: GameState; lost: number } {
+  if (amount <= 0) return { state, lost: 0 };
+  const lost = Math.min(amount, state.moyu);
+  return {
+    state: {
+      ...state,
+      moyu: state.moyu - lost,
+      totalEarned: Math.max(0, state.totalEarned - lost),
+    },
+    lost,
+  };
+}

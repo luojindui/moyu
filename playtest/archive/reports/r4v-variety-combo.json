@@ -4,7 +4,7 @@
     {
       "persona": "variety(多玩法党)",
       "baseTps": 2.2,
-      "comboUpliftPct": 11.14,
+      "comboUpliftPct": 11.48,
       "avgCombo": 11.84,
       "pctComboGE6": 98.9,
       "maxCombo": 12
@@ -12,7 +12,7 @@
     {
       "persona": "clicker(狂点党)",
       "baseTps": 3.2,
-      "comboUpliftPct": 12.78,
+      "comboUpliftPct": 13.58,
       "avgCombo": 12.05,
       "pctComboGE6": 100.5,
       "maxCombo": 12
@@ -20,7 +20,7 @@
     {
       "persona": "casual(休闲党)",
       "baseTps": 1,
-      "comboUpliftPct": 4.64,
+      "comboUpliftPct": 4.71,
       "avgCombo": 2.96,
       "pctComboGE6": 14.9,
       "maxCombo": 12

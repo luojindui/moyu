@@ -61,9 +61,17 @@ body {
 }
 .hud-sub {
   display: flex;
-  gap: 16px;
-  font-size: 13px;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
   color: #a8a493;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#hud-rank {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
 .hud-sub b {
   color: #8be28b;
@@ -227,6 +235,9 @@ body {
 /* ---------- 日报 / 图鉴 ---------- */
 #btn-journal {
   margin-left: auto;
+  flex: 0 0 auto;
+  height: 26px;
+  line-height: 1;
   padding: 2px 8px;
   font-size: 15px;
   background: #3a3a52;

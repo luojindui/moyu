@@ -1,0 +1,2598 @@
+{
+  "initial": {
+    "viewport": {
+      "w": 390,
+      "h": 844,
+      "dpr": 3
+    },
+    "doc": {
+      "scrollW": 390,
+      "scrollH": 844
+    },
+    "hud": {
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 81,
+        "bottom": 81,
+        "right": 390
+      },
+      "text": "0.3摸鱼值 | 点击 +1 | 挂机 0.2/秒 | 摸鱼实习生（升 摸鱼学徒 0%） | 📔",
+      "subScrollW": 366,
+      "subClientW": 366,
+      "rankLines": 1,
+      "clickLines": 1,
+      "idleLines": 1
+    },
+    "canvas": {
+      "attrW": 780,
+      "attrH": 1286,
+      "rect": {
+        "x": 0,
+        "y": 81,
+        "w": 390,
+        "h": 643,
+        "bottom": 724,
+        "right": 390
+      }
+    },
+    "shop": {
+      "rect": {
+        "x": 0,
+        "y": 682,
+        "w": 390,
+        "h": 162,
+        "bottom": 844,
+        "right": 390
+      },
+      "cards": 9,
+      "cardRects": [
+        {
+          "id": "coffee",
+          "x": 8,
+          "y": 692,
+          "w": 118,
+          "h": 144,
+          "bottom": 836,
+          "right": 126,
+          "disabled": true,
+          "cost": "15 摸鱼值"
+        },
+        {
+          "id": "water",
+          "x": 134,
+          "y": 692,
+          "w": 118,
+          "h": 144,
+          "bottom": 836,
+          "right": 252,
+          "disabled": true,
+          "cost": "100 摸鱼值"
+        },
+        {
+          "id": "chair",
+          "x": 260,
+          "y": 692,
+          "w": 118,
+          "h": 144,
+          "bottom": 836,
+          "right": 378,
+          "disabled": true,
+          "cost": "800 摸鱼值"
+        },
+        {
+          "id": "phone",
+          "x": 386,
+          "y": 692,
+          "w": 118,
+          "h": 144,
+          "bottom": 836,
+          "right": 504,
+          "disabled": true,
+          "cost": "50 摸鱼值"
+        },
+        {
+          "id": "toilet",
+          "x": 512,
+          "y": 692,
+          "w": 118,
+          "h": 144,
+          "bottom": 836,
+          "right": 630,
+          "disabled": true,
+          "cost": "600 摸鱼值"
+        },
+        {
+          "id": "group",
+          "x": 638,
+          "y": 692,
+          "w": 118,
+          "h": 144,
+          "bottom": 836,
+          "right": 756,
+          "disabled": true,
+          "cost": "4000 摸鱼值"
+        },
+        {
+          "id": "meeting",
+          "x": 764,
+          "y": 692,
+          "w": 118,
+          "h": 144,
+          "bottom": 836,
+          "right": 882,
+          "disabled": true,
+          "cost": "2.50万 摸鱼值"
+        },
+        {
+          "id": "deep",
+          "x": 890,
+          "y": 692,
+          "w": 118,
+          "h": 144,
+          "bottom": 836,
+          "right": 1008,
+          "disabled": true,
+          "cost": "15.00万 摸鱼值"
+        },
+        {
+          "id": "retire",
+          "x": 1016,
+          "y": 692,
+          "w": 118,
+          "h": 144,
+          "bottom": 836,
+          "right": 1134,
+          "disabled": true,
+          "cost": "100.00万 摸鱼值"
+        }
+      ]
+    },
+    "journal": {
+      "hidden": true,
+      "total": "0/55",
+      "goals": 0,
+      "grid": 0,
+      "claim": "完成 0/3",
+      "panel": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "bottom": 0,
+        "right": 0
+      },
+      "gridScrollH": 0,
+      "gridClientH": 0
+    },
+    "welcome": {
+      "hidden": true,
+      "time": "0",
+      "gain": "0",
+      "rule": "",
+      "panel": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "bottom": 0,
+        "right": 0
+      }
+    },
+    "hudValues": {
+      "moyu": "0.3",
+      "click": "1",
+      "idle": "0.2",
+      "rank": "摸鱼实习生（升 摸鱼学徒 0%）",
+      "streak": ""
+    },
+    "journalBadge": "",
+    "bootError": false,
+    "state": {
+      "moyu": 0.2733136000000001,
+      "totalEarned": 0.2733136000000001,
+      "levels": {},
+      "collected": {
+        "quotes": [],
+        "flavors": []
+      },
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "meme_1",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "survive_2",
+            "target": 2,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "buy_3",
+            "target": 3,
+            "progress": 0,
+            "done": false
+          }
+        ],
+        "streak": 0,
+        "lastCompleteDate": null,
+        "claimed": false
+      },
+      "surviveStreak": 0
+    },
+    "fps": 62,
+    "frames": 83,
+    "assets": {
+      "worker": "loaded",
+      "cooler": "loaded",
+      "computer": "loaded"
+    }
+  },
+  "tap": {
+    "before": 0.2999736000000001,
+    "after": 1.3766535999999985,
+    "hudNow": "1.4"
+  },
+  "afterTaps": {
+    "state": {
+      "moyu": 30.283313600000014,
+      "totalEarned": 30.283313600000014,
+      "levels": {},
+      "collected": {
+        "quotes": [],
+        "flavors": []
+      },
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "meme_1",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "survive_2",
+            "target": 2,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "buy_3",
+            "target": 3,
+            "progress": 0,
+            "done": false
+          }
+        ],
+        "streak": 0,
+        "lastCompleteDate": null,
+        "claimed": false
+      },
+      "surviveStreak": 0
+    },
+    "shop": [
+      {
+        "id": "coffee",
+        "disabled": false,
+        "cost": "15 摸鱼值"
+      },
+      {
+        "id": "water",
+        "disabled": true,
+        "cost": "100 摸鱼值"
+      },
+      {
+        "id": "chair",
+        "disabled": true,
+        "cost": "800 摸鱼值"
+      },
+      {
+        "id": "phone",
+        "disabled": true,
+        "cost": "50 摸鱼值"
+      }
+    ]
+  },
+  "buy": {
+    "wasDisabled": false
+  },
+  "afterBuy": {
+    "viewport": {
+      "w": 390,
+      "h": 844,
+      "dpr": 3
+    },
+    "doc": {
+      "scrollW": 390,
+      "scrollH": 844
+    },
+    "hud": {
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 81,
+        "bottom": 81,
+        "right": 390
+      },
+      "text": "15.4摸鱼值 | 点击 +2 | 挂机 0.2/秒 | 摸鱼实习生（升 摸鱼学徒 0%） | 📔",
+      "subScrollW": 366,
+      "subClientW": 366,
+      "rankLines": 1,
+      "clickLines": 1,
+      "idleLines": 1
+    },
+    "canvas": {
+      "attrW": 780,
+      "attrH": 1286,
+      "rect": {
+        "x": 0,
+        "y": 81,
+        "w": 390,
+        "h": 643,
+        "bottom": 724,
+        "right": 390
+      }
+    },
+    "shop": {
+      "rect": {
+        "x": 0,
+        "y": 680,
+        "w": 390,
+        "h": 164,
+        "bottom": 844,
+        "right": 390
+      },
+      "cards": 9,
+      "cardRects": [
+        {
+          "id": "coffee",
+          "x": 8,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 126,
+          "disabled": true,
+          "cost": "18 摸鱼值"
+        },
+        {
+          "id": "water",
+          "x": 134,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 252,
+          "disabled": true,
+          "cost": "100 摸鱼值"
+        },
+        {
+          "id": "chair",
+          "x": 260,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 378,
+          "disabled": true,
+          "cost": "800 摸鱼值"
+        },
+        {
+          "id": "phone",
+          "x": 386,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 504,
+          "disabled": true,
+          "cost": "50 摸鱼值"
+        },
+        {
+          "id": "toilet",
+          "x": 512,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 630,
+          "disabled": true,
+          "cost": "600 摸鱼值"
+        },
+        {
+          "id": "group",
+          "x": 638,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 756,
+          "disabled": true,
+          "cost": "4000 摸鱼值"
+        },
+        {
+          "id": "meeting",
+          "x": 764,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 882,
+          "disabled": true,
+          "cost": "2.50万 摸鱼值"
+        },
+        {
+          "id": "deep",
+          "x": 890,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 1008,
+          "disabled": true,
+          "cost": "15.00万 摸鱼值"
+        },
+        {
+          "id": "retire",
+          "x": 1016,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 1134,
+          "disabled": true,
+          "cost": "100.00万 摸鱼值"
+        }
+      ]
+    },
+    "journal": {
+      "hidden": true,
+      "total": "0/55",
+      "goals": 0,
+      "grid": 0,
+      "claim": "完成 0/3",
+      "panel": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "bottom": 0,
+        "right": 0
+      },
+      "gridScrollH": 0,
+      "gridClientH": 0
+    },
+    "welcome": {
+      "hidden": true,
+      "time": "0",
+      "gain": "0",
+      "rule": "",
+      "panel": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "bottom": 0,
+        "right": 0
+      }
+    },
+    "hudValues": {
+      "moyu": "15.4",
+      "click": "2",
+      "idle": "0.2",
+      "rank": "摸鱼实习生（升 摸鱼学徒 0%）",
+      "streak": ""
+    },
+    "journalBadge": "",
+    "bootError": false,
+    "state": {
+      "moyu": 15.379953600000013,
+      "totalEarned": 30.37995360000002,
+      "levels": {
+        "coffee": 1
+      },
+      "collected": {
+        "quotes": [],
+        "flavors": [
+          0
+        ]
+      },
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "meme_1",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "survive_2",
+            "target": 2,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "buy_3",
+            "target": 3,
+            "progress": 1,
+            "done": false
+          }
+        ],
+        "streak": 0,
+        "lastCompleteDate": null,
+        "claimed": false
+      },
+      "surviveStreak": 0
+    },
+    "fps": 60,
+    "frames": 283,
+    "assets": {
+      "worker": "loaded",
+      "cooler": "loaded",
+      "computer": "loaded"
+    }
+  },
+  "hudStress": {
+    "before": {
+      "rank": "摸鱼实习生（升 摸鱼学徒 0%）",
+      "h": 81
+    },
+    "after": {
+      "rank": "带薪摸鱼传说（升 摸鱼之神 100%）",
+      "h": 81,
+      "docScrollW": 390
+    }
+  },
+  "hudStressLines": {
+    "viewport": {
+      "w": 390,
+      "h": 844,
+      "dpr": 3
+    },
+    "doc": {
+      "scrollW": 390,
+      "scrollH": 844
+    },
+    "hud": {
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 81,
+        "bottom": 81,
+        "right": 390
+      },
+      "text": "15.4摸鱼值 | 点击 +2 | 挂机 0.2/秒 | 摸鱼实习生（升 摸鱼学徒 0%） | 📔",
+      "subScrollW": 366,
+      "subClientW": 366,
+      "rankLines": 1,
+      "clickLines": 1,
+      "idleLines": 1
+    },
+    "canvas": {
+      "attrW": 780,
+      "attrH": 1286,
+      "rect": {
+        "x": 0,
+        "y": 81,
+        "w": 390,
+        "h": 643,
+        "bottom": 724,
+        "right": 390
+      }
+    },
+    "shop": {
+      "rect": {
+        "x": 0,
+        "y": 680,
+        "w": 390,
+        "h": 164,
+        "bottom": 844,
+        "right": 390
+      },
+      "cards": 9,
+      "cardRects": [
+        {
+          "id": "coffee",
+          "x": 8,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 126,
+          "disabled": true,
+          "cost": "18 摸鱼值"
+        },
+        {
+          "id": "water",
+          "x": 134,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 252,
+          "disabled": true,
+          "cost": "100 摸鱼值"
+        },
+        {
+          "id": "chair",
+          "x": 260,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 378,
+          "disabled": true,
+          "cost": "800 摸鱼值"
+        },
+        {
+          "id": "phone",
+          "x": 386,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 504,
+          "disabled": true,
+          "cost": "50 摸鱼值"
+        },
+        {
+          "id": "toilet",
+          "x": 512,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 630,
+          "disabled": true,
+          "cost": "600 摸鱼值"
+        },
+        {
+          "id": "group",
+          "x": 638,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 756,
+          "disabled": true,
+          "cost": "4000 摸鱼值"
+        },
+        {
+          "id": "meeting",
+          "x": 764,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 882,
+          "disabled": true,
+          "cost": "2.50万 摸鱼值"
+        },
+        {
+          "id": "deep",
+          "x": 890,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 1008,
+          "disabled": true,
+          "cost": "15.00万 摸鱼值"
+        },
+        {
+          "id": "retire",
+          "x": 1016,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 1134,
+          "disabled": true,
+          "cost": "100.00万 摸鱼值"
+        }
+      ]
+    },
+    "journal": {
+      "hidden": true,
+      "total": "0/55",
+      "goals": 0,
+      "grid": 0,
+      "claim": "完成 0/3",
+      "panel": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "bottom": 0,
+        "right": 0
+      },
+      "gridScrollH": 0,
+      "gridClientH": 0
+    },
+    "welcome": {
+      "hidden": true,
+      "time": "0",
+      "gain": "0",
+      "rule": "",
+      "panel": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "bottom": 0,
+        "right": 0
+      }
+    },
+    "hudValues": {
+      "moyu": "15.4",
+      "click": "2",
+      "idle": "0.2",
+      "rank": "摸鱼实习生（升 摸鱼学徒 0%）",
+      "streak": "🔥连胜 10"
+    },
+    "journalBadge": "",
+    "bootError": false,
+    "state": {
+      "moyu": 15.463293600000014,
+      "totalEarned": 30.46329360000003,
+      "levels": {
+        "coffee": 1
+      },
+      "collected": {
+        "quotes": [],
+        "flavors": [
+          0
+        ]
+      },
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "meme_1",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "survive_2",
+            "target": 2,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "buy_3",
+            "target": 3,
+            "progress": 1,
+            "done": false
+          }
+        ],
+        "streak": 0,
+        "lastCompleteDate": null,
+        "claimed": false
+      },
+      "surviveStreak": 0
+    },
+    "fps": 60,
+    "frames": 308,
+    "assets": {
+      "worker": "loaded",
+      "cooler": "loaded",
+      "computer": "loaded"
+    }
+  },
+  "realPlay90s": {
+    "start": {
+      "moyu": 15.489953600000014,
+      "totalEarned": 30.48995360000003,
+      "levels": {
+        "coffee": 1
+      },
+      "collected": {
+        "quotes": [],
+        "flavors": [
+          0
+        ]
+      },
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "meme_1",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "survive_2",
+            "target": 2,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "buy_3",
+            "target": 3,
+            "progress": 1,
+            "done": false
+          }
+        ],
+        "streak": 0,
+        "lastCompleteDate": null,
+        "claimed": false
+      },
+      "surviveStreak": 0
+    },
+    "end": {
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "dpr": 3
+      },
+      "doc": {
+        "scrollW": 390,
+        "scrollH": 844
+      },
+      "hud": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 81,
+          "bottom": 81,
+          "right": 390
+        },
+        "text": "29.5摸鱼值 | 点击 +17 | 挂机 4.2/秒 | 摸鱼实习生（升 摸鱼学徒 10%） | 📔",
+        "subScrollW": 366,
+        "subClientW": 366,
+        "rankLines": 1,
+        "clickLines": 1,
+        "idleLines": 1
+      },
+      "canvas": {
+        "attrW": 780,
+        "attrH": 1286,
+        "rect": {
+          "x": 0,
+          "y": 81,
+          "w": 390,
+          "h": 643,
+          "bottom": 724,
+          "right": 390
+        }
+      },
+      "shop": {
+        "rect": {
+          "x": 0,
+          "y": 680,
+          "w": 390,
+          "h": 164,
+          "bottom": 844,
+          "right": 390
+        },
+        "cards": 9,
+        "cardRects": [
+          {
+            "id": "coffee",
+            "x": 8,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 126,
+            "disabled": true,
+            "cost": "107 摸鱼值"
+          },
+          {
+            "id": "water",
+            "x": 134,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 252,
+            "disabled": true,
+            "cost": "115 摸鱼值"
+          },
+          {
+            "id": "chair",
+            "x": 260,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 378,
+            "disabled": true,
+            "cost": "800 摸鱼值"
+          },
+          {
+            "id": "phone",
+            "x": 386,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 504,
+            "disabled": true,
+            "cost": "88 摸鱼值"
+          },
+          {
+            "id": "toilet",
+            "x": 512,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 630,
+            "disabled": true,
+            "cost": "600 摸鱼值"
+          },
+          {
+            "id": "group",
+            "x": 638,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 756,
+            "disabled": true,
+            "cost": "4000 摸鱼值"
+          },
+          {
+            "id": "meeting",
+            "x": 764,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 882,
+            "disabled": true,
+            "cost": "2.50万 摸鱼值"
+          },
+          {
+            "id": "deep",
+            "x": 890,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 1008,
+            "disabled": true,
+            "cost": "15.00万 摸鱼值"
+          },
+          {
+            "id": "retire",
+            "x": 1016,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 1134,
+            "disabled": true,
+            "cost": "100.00万 摸鱼值"
+          }
+        ]
+      },
+      "journal": {
+        "hidden": true,
+        "total": "0/55",
+        "goals": 0,
+        "grid": 0,
+        "claim": "完成 0/3",
+        "panel": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "bottom": 0,
+          "right": 0
+        },
+        "gridScrollH": 0,
+        "gridClientH": 0
+      },
+      "welcome": {
+        "hidden": true,
+        "time": "0",
+        "gain": "0",
+        "rule": "",
+        "panel": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "bottom": 0,
+          "right": 0
+        }
+      },
+      "hudValues": {
+        "moyu": "29.5",
+        "click": "17",
+        "idle": "4.2",
+        "rank": "摸鱼实习生（升 摸鱼学徒 10%）",
+        "streak": "🔥连胜 10"
+      },
+      "journalBadge": "",
+      "bootError": false,
+      "state": {
+        "moyu": 46.55547360000099,
+        "totalEarned": 1011.555473600021,
+        "levels": {
+          "coffee": 14,
+          "phone": 4,
+          "water": 1
+        },
+        "collected": {
+          "quotes": [],
+          "flavors": [
+            0,
+            1,
+            15,
+            2,
+            5
+          ]
+        },
+        "daily": {
+          "date": "2026-11-27",
+          "goals": [
+            {
+              "id": "meme_1",
+              "target": 1,
+              "progress": 0,
+              "done": false
+            },
+            {
+              "id": "survive_2",
+              "target": 2,
+              "progress": 0,
+              "done": false
+            },
+            {
+              "id": "buy_3",
+              "target": 3,
+              "progress": 3,
+              "done": true
+            }
+          ],
+          "streak": 0,
+          "lastCompleteDate": null,
+          "claimed": false
+        },
+        "surviveStreak": 0
+      },
+      "fps": 60,
+      "frames": 5717,
+      "assets": {
+        "worker": "loaded",
+        "cooler": "loaded",
+        "computer": "loaded"
+      }
+    },
+    "taps": 90
+  },
+  "journalOpen": {
+    "viewport": {
+      "w": 390,
+      "h": 844,
+      "dpr": 3
+    },
+    "doc": {
+      "scrollW": 390,
+      "scrollH": 844
+    },
+    "hud": {
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 81,
+        "bottom": 81,
+        "right": 390
+      },
+      "text": "49.1摸鱼值 | 点击 +17 | 挂机 4.2/秒 | 摸鱼实习生（升 摸鱼学徒 10%） | 📔",
+      "subScrollW": 366,
+      "subClientW": 366,
+      "rankLines": 1,
+      "clickLines": 1,
+      "idleLines": 1
+    },
+    "canvas": {
+      "attrW": 780,
+      "attrH": 1286,
+      "rect": {
+        "x": 0,
+        "y": 81,
+        "w": 390,
+        "h": 643,
+        "bottom": 724,
+        "right": 390
+      }
+    },
+    "shop": {
+      "rect": {
+        "x": 0,
+        "y": 680,
+        "w": 390,
+        "h": 164,
+        "bottom": 844,
+        "right": 390
+      },
+      "cards": 9,
+      "cardRects": [
+        {
+          "id": "coffee",
+          "x": 8,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 126,
+          "disabled": true,
+          "cost": "107 摸鱼值"
+        },
+        {
+          "id": "water",
+          "x": 134,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 252,
+          "disabled": true,
+          "cost": "115 摸鱼值"
+        },
+        {
+          "id": "chair",
+          "x": 260,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 378,
+          "disabled": true,
+          "cost": "800 摸鱼值"
+        },
+        {
+          "id": "phone",
+          "x": 386,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 504,
+          "disabled": true,
+          "cost": "88 摸鱼值"
+        },
+        {
+          "id": "toilet",
+          "x": 512,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 630,
+          "disabled": true,
+          "cost": "600 摸鱼值"
+        },
+        {
+          "id": "group",
+          "x": 638,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 756,
+          "disabled": true,
+          "cost": "4000 摸鱼值"
+        },
+        {
+          "id": "meeting",
+          "x": 764,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 882,
+          "disabled": true,
+          "cost": "2.50万 摸鱼值"
+        },
+        {
+          "id": "deep",
+          "x": 890,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 1008,
+          "disabled": true,
+          "cost": "15.00万 摸鱼值"
+        },
+        {
+          "id": "retire",
+          "x": 1016,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 1134,
+          "disabled": true,
+          "cost": "100.00万 摸鱼值"
+        }
+      ]
+    },
+    "journal": {
+      "hidden": false,
+      "total": "5/55",
+      "goals": 3,
+      "grid": 55,
+      "claim": "完成 1/3",
+      "panel": {
+        "x": 25,
+        "y": 91,
+        "w": 340,
+        "h": 662,
+        "bottom": 753,
+        "right": 365
+      },
+      "gridScrollH": 837,
+      "gridClientH": 287
+    },
+    "welcome": {
+      "hidden": true,
+      "time": "0",
+      "gain": "0",
+      "rule": "",
+      "panel": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "bottom": 0,
+        "right": 0
+      }
+    },
+    "hudValues": {
+      "moyu": "49.1",
+      "click": "17",
+      "idle": "4.2",
+      "rank": "摸鱼实习生（升 摸鱼学徒 10%）",
+      "streak": "🔥连胜 10"
+    },
+    "journalBadge": "",
+    "bootError": false,
+    "state": {
+      "moyu": 49.21533360000101,
+      "totalEarned": 1014.2153336000223,
+      "levels": {
+        "coffee": 14,
+        "phone": 4,
+        "water": 1
+      },
+      "collected": {
+        "quotes": [],
+        "flavors": [
+          0,
+          1,
+          15,
+          2,
+          5
+        ]
+      },
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "meme_1",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "survive_2",
+            "target": 2,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "buy_3",
+            "target": 3,
+            "progress": 3,
+            "done": true
+          }
+        ],
+        "streak": 0,
+        "lastCompleteDate": null,
+        "claimed": false
+      },
+      "surviveStreak": 0
+    },
+    "fps": 58,
+    "frames": 5753,
+    "assets": {
+      "worker": "loaded",
+      "cooler": "loaded",
+      "computer": "loaded"
+    }
+  },
+  "offlineFirstDay": {
+    "reloadMs": 1632,
+    "market": {
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "dpr": 3
+      },
+      "doc": {
+        "scrollW": 390,
+        "scrollH": 844
+      },
+      "hud": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 81,
+          "bottom": 81,
+          "right": 390
+        },
+        "text": "7617.2摸鱼值 | 点击 +17 | 挂机 4.2/秒 | 摸鱼实习生（升 摸鱼学徒 86%） | 📔",
+        "subScrollW": 366,
+        "subClientW": 366,
+        "rankLines": 1,
+        "clickLines": 1,
+        "idleLines": 1
+      },
+      "canvas": {
+        "attrW": 780,
+        "attrH": 1286,
+        "rect": {
+          "x": 0,
+          "y": 81,
+          "w": 390,
+          "h": 643,
+          "bottom": 724,
+          "right": 390
+        }
+      },
+      "shop": {
+        "rect": {
+          "x": 0,
+          "y": 680,
+          "w": 390,
+          "h": 164,
+          "bottom": 844,
+          "right": 390
+        },
+        "cards": 9,
+        "cardRects": [
+          {
+            "id": "coffee",
+            "x": 8,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 126,
+            "disabled": false,
+            "cost": "107 摸鱼值"
+          },
+          {
+            "id": "water",
+            "x": 134,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 252,
+            "disabled": false,
+            "cost": "115 摸鱼值"
+          },
+          {
+            "id": "chair",
+            "x": 260,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 378,
+            "disabled": false,
+            "cost": "800 摸鱼值"
+          },
+          {
+            "id": "phone",
+            "x": 386,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 504,
+            "disabled": false,
+            "cost": "88 摸鱼值"
+          },
+          {
+            "id": "toilet",
+            "x": 512,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 630,
+            "disabled": false,
+            "cost": "600 摸鱼值"
+          },
+          {
+            "id": "group",
+            "x": 638,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 756,
+            "disabled": false,
+            "cost": "4000 摸鱼值"
+          },
+          {
+            "id": "meeting",
+            "x": 764,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 882,
+            "disabled": true,
+            "cost": "2.50万 摸鱼值"
+          },
+          {
+            "id": "deep",
+            "x": 890,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 1008,
+            "disabled": true,
+            "cost": "15.00万 摸鱼值"
+          },
+          {
+            "id": "retire",
+            "x": 1016,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 1134,
+            "disabled": true,
+            "cost": "100.00万 摸鱼值"
+          }
+        ]
+      },
+      "journal": {
+        "hidden": true,
+        "total": "0/55",
+        "goals": 0,
+        "grid": 0,
+        "claim": "完成 0/3",
+        "panel": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "bottom": 0,
+          "right": 0
+        },
+        "gridScrollH": 0,
+        "gridClientH": 0
+      },
+      "welcome": {
+        "hidden": false,
+        "time": "30 分钟",
+        "gain": "7560.1",
+        "rule": "首日全额｜8 小时封顶",
+        "panel": {
+          "x": 35,
+          "y": 302,
+          "w": 320,
+          "h": 241,
+          "bottom": 543,
+          "right": 355
+        }
+      },
+      "hudValues": {
+        "moyu": "7617.2",
+        "click": "17",
+        "idle": "4.2",
+        "rank": "摸鱼实习生（升 摸鱼学徒 86%）",
+        "streak": ""
+      },
+      "journalBadge": "",
+      "bootError": false,
+      "state": {
+        "moyu": 7617.3419136000075,
+        "levels": {
+          "coffee": 14,
+          "phone": 4,
+          "water": 1
+        },
+        "totalEarned": 8582.341913599997,
+        "collected": {
+          "quotes": [],
+          "flavors": [
+            0,
+            1,
+            2,
+            5,
+            15
+          ]
+        },
+        "daily": {
+          "date": "2026-11-27",
+          "goals": [
+            {
+              "id": "meme_1",
+              "target": 1,
+              "progress": 0,
+              "done": false
+            },
+            {
+              "id": "survive_2",
+              "target": 2,
+              "progress": 0,
+              "done": false
+            },
+            {
+              "id": "buy_3",
+              "target": 3,
+              "progress": 3,
+              "done": true
+            }
+          ],
+          "streak": 0,
+          "lastCompleteDate": null,
+          "claimed": false
+        },
+        "surviveStreak": 0
+      },
+      "fps": 61,
+      "frames": 93,
+      "assets": {
+        "worker": "loaded",
+        "computer": "loaded",
+        "cooler": "loaded"
+      }
+    },
+    "saved": {
+      "savedAt": 1795744976296,
+      "createdAt": 1795746684305,
+      "moyu": 50.755473600001004,
+      "levels": {
+        "coffee": 14,
+        "phone": 4,
+        "water": 1
+      }
+    }
+  },
+  "afterWelcomeClose": {
+    "viewport": {
+      "w": 390,
+      "h": 844,
+      "dpr": 3
+    },
+    "doc": {
+      "scrollW": 390,
+      "scrollH": 844
+    },
+    "hud": {
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 81,
+        "bottom": 81,
+        "right": 390
+      },
+      "text": "7619.1摸鱼值 | 点击 +17 | 挂机 4.2/秒 | 摸鱼实习生（升 摸鱼学徒 86%） | 📔",
+      "subScrollW": 366,
+      "subClientW": 366,
+      "rankLines": 1,
+      "clickLines": 1,
+      "idleLines": 1
+    },
+    "canvas": {
+      "attrW": 780,
+      "attrH": 1286,
+      "rect": {
+        "x": 0,
+        "y": 81,
+        "w": 390,
+        "h": 643,
+        "bottom": 724,
+        "right": 390
+      }
+    },
+    "shop": {
+      "rect": {
+        "x": 0,
+        "y": 680,
+        "w": 390,
+        "h": 164,
+        "bottom": 844,
+        "right": 390
+      },
+      "cards": 9,
+      "cardRects": [
+        {
+          "id": "coffee",
+          "x": 8,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 126,
+          "disabled": false,
+          "cost": "107 摸鱼值"
+        },
+        {
+          "id": "water",
+          "x": 134,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 252,
+          "disabled": false,
+          "cost": "115 摸鱼值"
+        },
+        {
+          "id": "chair",
+          "x": 260,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 378,
+          "disabled": false,
+          "cost": "800 摸鱼值"
+        },
+        {
+          "id": "phone",
+          "x": 386,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 504,
+          "disabled": false,
+          "cost": "88 摸鱼值"
+        },
+        {
+          "id": "toilet",
+          "x": 512,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 630,
+          "disabled": false,
+          "cost": "600 摸鱼值"
+        },
+        {
+          "id": "group",
+          "x": 638,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 756,
+          "disabled": false,
+          "cost": "4000 摸鱼值"
+        },
+        {
+          "id": "meeting",
+          "x": 764,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 882,
+          "disabled": true,
+          "cost": "2.50万 摸鱼值"
+        },
+        {
+          "id": "deep",
+          "x": 890,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 1008,
+          "disabled": true,
+          "cost": "15.00万 摸鱼值"
+        },
+        {
+          "id": "retire",
+          "x": 1016,
+          "y": 690,
+          "w": 118,
+          "h": 146,
+          "bottom": 836,
+          "right": 1134,
+          "disabled": true,
+          "cost": "100.00万 摸鱼值"
+        }
+      ]
+    },
+    "journal": {
+      "hidden": true,
+      "total": "0/55",
+      "goals": 0,
+      "grid": 0,
+      "claim": "完成 0/3",
+      "panel": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "bottom": 0,
+        "right": 0
+      },
+      "gridScrollH": 0,
+      "gridClientH": 0
+    },
+    "welcome": {
+      "hidden": true,
+      "time": "30 分钟",
+      "gain": "7560.1",
+      "rule": "首日全额｜8 小时封顶",
+      "panel": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "bottom": 0,
+        "right": 0
+      }
+    },
+    "hudValues": {
+      "moyu": "7619.1",
+      "click": "17",
+      "idle": "4.2",
+      "rank": "摸鱼实习生（升 摸鱼学徒 86%）",
+      "streak": ""
+    },
+    "journalBadge": "",
+    "bootError": false,
+    "state": {
+      "moyu": 7619.161773600009,
+      "levels": {
+        "coffee": 14,
+        "phone": 4,
+        "water": 1
+      },
+      "totalEarned": 8584.16177359999,
+      "collected": {
+        "quotes": [],
+        "flavors": [
+          0,
+          1,
+          2,
+          5,
+          15
+        ]
+      },
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "meme_1",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "survive_2",
+            "target": 2,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "buy_3",
+            "target": 3,
+            "progress": 3,
+            "done": true
+          }
+        ],
+        "streak": 0,
+        "lastCompleteDate": null,
+        "claimed": false
+      },
+      "surviveStreak": 0
+    },
+    "fps": 61,
+    "frames": 119,
+    "assets": {
+      "worker": "loaded",
+      "computer": "loaded",
+      "cooler": "loaded"
+    }
+  },
+  "offlineNextDay": {
+    "reloadMs": 1606,
+    "market": {
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "dpr": 3
+      },
+      "doc": {
+        "scrollW": 390,
+        "scrollH": 844
+      },
+      "hud": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 81,
+          "bottom": 81,
+          "right": 390
+        },
+        "text": "1.29万摸鱼值 | 点击 +17 | 挂机 4.2/秒 | 摸鱼学徒（升 资深摸鱼 4%） | 📔",
+        "subScrollW": 366,
+        "subClientW": 366,
+        "rankLines": 1,
+        "clickLines": 1,
+        "idleLines": 1
+      },
+      "canvas": {
+        "attrW": 780,
+        "attrH": 1286,
+        "rect": {
+          "x": 0,
+          "y": 81,
+          "w": 390,
+          "h": 643,
+          "bottom": 724,
+          "right": 390
+        }
+      },
+      "shop": {
+        "rect": {
+          "x": 0,
+          "y": 680,
+          "w": 390,
+          "h": 164,
+          "bottom": 844,
+          "right": 390
+        },
+        "cards": 9,
+        "cardRects": [
+          {
+            "id": "coffee",
+            "x": 8,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 126,
+            "disabled": false,
+            "cost": "107 摸鱼值"
+          },
+          {
+            "id": "water",
+            "x": 134,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 252,
+            "disabled": false,
+            "cost": "115 摸鱼值"
+          },
+          {
+            "id": "chair",
+            "x": 260,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 378,
+            "disabled": false,
+            "cost": "800 摸鱼值"
+          },
+          {
+            "id": "phone",
+            "x": 386,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 504,
+            "disabled": false,
+            "cost": "88 摸鱼值"
+          },
+          {
+            "id": "toilet",
+            "x": 512,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 630,
+            "disabled": false,
+            "cost": "600 摸鱼值"
+          },
+          {
+            "id": "group",
+            "x": 638,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 756,
+            "disabled": false,
+            "cost": "4000 摸鱼值"
+          },
+          {
+            "id": "meeting",
+            "x": 764,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 882,
+            "disabled": true,
+            "cost": "2.50万 摸鱼值"
+          },
+          {
+            "id": "deep",
+            "x": 890,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 1008,
+            "disabled": true,
+            "cost": "15.00万 摸鱼值"
+          },
+          {
+            "id": "retire",
+            "x": 1016,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 1134,
+            "disabled": true,
+            "cost": "100.00万 摸鱼值"
+          }
+        ]
+      },
+      "journal": {
+        "hidden": true,
+        "total": "0/55",
+        "goals": 0,
+        "grid": 0,
+        "claim": "完成 0/3",
+        "panel": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "bottom": 0,
+          "right": 0
+        },
+        "gridScrollH": 0,
+        "gridClientH": 0
+      },
+      "welcome": {
+        "hidden": false,
+        "time": "30 分钟",
+        "gain": "5292.0",
+        "rule": "离线效率 70%｜8 小时封顶",
+        "panel": {
+          "x": 35,
+          "y": 302,
+          "w": 320,
+          "h": 241,
+          "bottom": 543,
+          "right": 355
+        }
+      },
+      "hudValues": {
+        "moyu": "1.29万",
+        "click": "17",
+        "idle": "4.2",
+        "rank": "摸鱼学徒（升 资深摸鱼 4%）",
+        "streak": ""
+      },
+      "journalBadge": "",
+      "bootError": false,
+      "state": {
+        "moyu": 12917.792733599179,
+        "levels": {
+          "coffee": 14,
+          "phone": 4,
+          "water": 1
+        },
+        "totalEarned": 13882.79273359916,
+        "collected": {
+          "quotes": [],
+          "flavors": [
+            0,
+            1,
+            2,
+            5,
+            15
+          ]
+        },
+        "daily": {
+          "date": "2026-11-27",
+          "goals": [
+            {
+              "id": "meme_1",
+              "target": 1,
+              "progress": 0,
+              "done": false
+            },
+            {
+              "id": "survive_2",
+              "target": 2,
+              "progress": 0,
+              "done": false
+            },
+            {
+              "id": "buy_3",
+              "target": 3,
+              "progress": 3,
+              "done": true
+            }
+          ],
+          "streak": 0,
+          "lastCompleteDate": null,
+          "claimed": false
+        },
+        "surviveStreak": 0
+      },
+      "fps": 61,
+      "frames": 95,
+      "assets": {
+        "worker": "loaded",
+        "cooler": "loaded",
+        "computer": "loaded"
+      }
+    },
+    "saved": {
+      "savedAt": 1795744978314,
+      "createdAt": 1795573978307,
+      "moyu": 7619.161773600009,
+      "levels": {
+        "coffee": 14,
+        "phone": 4,
+        "water": 1
+      }
+    }
+  },
+  "offlineCap": {
+    "reloadMs": 1605,
+    "market": {
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "dpr": 3
+      },
+      "doc": {
+        "scrollW": 390,
+        "scrollH": 844
+      },
+      "hud": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 81,
+          "bottom": 81,
+          "right": 390
+        },
+        "text": "9.76万摸鱼值 | 点击 +17 | 挂机 4.2/秒 | 摸鱼学徒（升 资深摸鱼 98%） | 📔",
+        "subScrollW": 366,
+        "subClientW": 366,
+        "rankLines": 1,
+        "clickLines": 1,
+        "idleLines": 1
+      },
+      "canvas": {
+        "attrW": 780,
+        "attrH": 1286,
+        "rect": {
+          "x": 0,
+          "y": 81,
+          "w": 390,
+          "h": 643,
+          "bottom": 724,
+          "right": 390
+        }
+      },
+      "shop": {
+        "rect": {
+          "x": 0,
+          "y": 680,
+          "w": 390,
+          "h": 164,
+          "bottom": 844,
+          "right": 390
+        },
+        "cards": 9,
+        "cardRects": [
+          {
+            "id": "coffee",
+            "x": 8,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 126,
+            "disabled": false,
+            "cost": "107 摸鱼值"
+          },
+          {
+            "id": "water",
+            "x": 134,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 252,
+            "disabled": false,
+            "cost": "115 摸鱼值"
+          },
+          {
+            "id": "chair",
+            "x": 260,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 378,
+            "disabled": false,
+            "cost": "800 摸鱼值"
+          },
+          {
+            "id": "phone",
+            "x": 386,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 504,
+            "disabled": false,
+            "cost": "88 摸鱼值"
+          },
+          {
+            "id": "toilet",
+            "x": 512,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 630,
+            "disabled": false,
+            "cost": "600 摸鱼值"
+          },
+          {
+            "id": "group",
+            "x": 638,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 756,
+            "disabled": false,
+            "cost": "4000 摸鱼值"
+          },
+          {
+            "id": "meeting",
+            "x": 764,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 882,
+            "disabled": false,
+            "cost": "2.50万 摸鱼值"
+          },
+          {
+            "id": "deep",
+            "x": 890,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 1008,
+            "disabled": true,
+            "cost": "15.00万 摸鱼值"
+          },
+          {
+            "id": "retire",
+            "x": 1016,
+            "y": 690,
+            "w": 118,
+            "h": 146,
+            "bottom": 836,
+            "right": 1134,
+            "disabled": true,
+            "cost": "100.00万 摸鱼值"
+          }
+        ]
+      },
+      "journal": {
+        "hidden": true,
+        "total": "0/55",
+        "goals": 0,
+        "grid": 0,
+        "claim": "完成 0/3",
+        "panel": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "bottom": 0,
+          "right": 0
+        },
+        "gridScrollH": 0,
+        "gridClientH": 0
+      },
+      "welcome": {
+        "hidden": false,
+        "time": "8 小时 0 分",
+        "gain": "8.47万",
+        "rule": "离线效率 70%｜8 小时封顶",
+        "panel": {
+          "x": 35,
+          "y": 298,
+          "w": 320,
+          "h": 248,
+          "bottom": 546,
+          "right": 355
+        }
+      },
+      "hudValues": {
+        "moyu": "9.76万",
+        "click": "17",
+        "idle": "4.2",
+        "rank": "摸鱼学徒（升 资深摸鱼 98%）",
+        "streak": ""
+      },
+      "journalBadge": "",
+      "bootError": false,
+      "state": {
+        "moyu": 97597.01925359812,
+        "levels": {
+          "coffee": 14,
+          "phone": 4,
+          "water": 1
+        },
+        "totalEarned": 98562.0192535981,
+        "collected": {
+          "quotes": [],
+          "flavors": [
+            0,
+            1,
+            2,
+            5,
+            15
+          ]
+        },
+        "daily": {
+          "date": "2026-11-27",
+          "goals": [
+            {
+              "id": "meme_1",
+              "target": 1,
+              "progress": 0,
+              "done": false
+            },
+            {
+              "id": "survive_2",
+              "target": 2,
+              "progress": 0,
+              "done": false
+            },
+            {
+              "id": "buy_3",
+              "target": 3,
+              "progress": 3,
+              "done": true
+            }
+          ],
+          "streak": 0,
+          "lastCompleteDate": null,
+          "claimed": false
+        },
+        "surviveStreak": 0
+      },
+      "fps": 61,
+      "frames": 96,
+      "assets": {
+        "worker": "loaded",
+        "computer": "loaded",
+        "cooler": "loaded"
+      }
+    },
+    "saved": {
+      "savedAt": 1795386780049,
+      "createdAt": 1795573978307,
+      "moyu": 12918.352593599177,
+      "levels": {
+        "coffee": 14,
+        "phone": 4,
+        "water": 1
+      }
+    }
+  },
+  "rewindHook": {
+    "welcome": {
+      "hidden": true,
+      "gain": "0"
+    },
+    "saved": {
+      "savedAt": 1795746781785,
+      "agoSec": 2
+    }
+  },
+  "smallScreen": {
+    "viewport": {
+      "w": 360,
+      "h": 740,
+      "dpr": 3
+    },
+    "doc": {
+      "scrollW": 360,
+      "scrollH": 740
+    },
+    "hud": {
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 360,
+        "h": 81,
+        "bottom": 81,
+        "right": 360
+      },
+      "text": "9.76万摸鱼值 | 点击 +17 | 挂机 4.2/秒 | 摸鱼学徒（升 资深摸鱼 98%） | 📔",
+      "subScrollW": 336,
+      "subClientW": 336,
+      "rankLines": 2,
+      "clickLines": 1,
+      "idleLines": 1
+    },
+    "canvas": {
+      "attrW": 720,
+      "attrH": 990,
+      "rect": {
+        "x": 0,
+        "y": 81,
+        "w": 360,
+        "h": 495,
+        "bottom": 576,
+        "right": 360
+      }
+    },
+    "shop": {
+      "rect": {
+        "x": 0,
+        "y": 576,
+        "w": 360,
+        "h": 164,
+        "bottom": 740,
+        "right": 360
+      },
+      "cards": 9,
+      "cardRects": [
+        {
+          "id": "coffee",
+          "x": 8,
+          "y": 586,
+          "w": 118,
+          "h": 146,
+          "bottom": 732,
+          "right": 126,
+          "disabled": false,
+          "cost": "107 摸鱼值"
+        },
+        {
+          "id": "water",
+          "x": 134,
+          "y": 586,
+          "w": 118,
+          "h": 146,
+          "bottom": 732,
+          "right": 252,
+          "disabled": false,
+          "cost": "115 摸鱼值"
+        },
+        {
+          "id": "chair",
+          "x": 260,
+          "y": 586,
+          "w": 118,
+          "h": 146,
+          "bottom": 732,
+          "right": 378,
+          "disabled": false,
+          "cost": "800 摸鱼值"
+        },
+        {
+          "id": "phone",
+          "x": 386,
+          "y": 586,
+          "w": 118,
+          "h": 146,
+          "bottom": 732,
+          "right": 504,
+          "disabled": false,
+          "cost": "88 摸鱼值"
+        },
+        {
+          "id": "toilet",
+          "x": 512,
+          "y": 586,
+          "w": 118,
+          "h": 146,
+          "bottom": 732,
+          "right": 630,
+          "disabled": false,
+          "cost": "600 摸鱼值"
+        },
+        {
+          "id": "group",
+          "x": 638,
+          "y": 586,
+          "w": 118,
+          "h": 146,
+          "bottom": 732,
+          "right": 756,
+          "disabled": false,
+          "cost": "4000 摸鱼值"
+        },
+        {
+          "id": "meeting",
+          "x": 764,
+          "y": 586,
+          "w": 118,
+          "h": 146,
+          "bottom": 732,
+          "right": 882,
+          "disabled": false,
+          "cost": "2.50万 摸鱼值"
+        },
+        {
+          "id": "deep",
+          "x": 890,
+          "y": 586,
+          "w": 118,
+          "h": 146,
+          "bottom": 732,
+          "right": 1008,
+          "disabled": true,
+          "cost": "15.00万 摸鱼值"
+        },
+        {
+          "id": "retire",
+          "x": 1016,
+          "y": 586,
+          "w": 118,
+          "h": 146,
+          "bottom": 732,
+          "right": 1134,
+          "disabled": true,
+          "cost": "100.00万 摸鱼值"
+        }
+      ]
+    },
+    "journal": {
+      "hidden": true,
+      "total": "0/55",
+      "goals": 0,
+      "grid": 0,
+      "claim": "完成 0/3",
+      "panel": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "bottom": 0,
+        "right": 0
+      },
+      "gridScrollH": 0,
+      "gridClientH": 0
+    },
+    "welcome": {
+      "hidden": true,
+      "time": "0",
+      "gain": "0",
+      "rule": "",
+      "panel": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "bottom": 0,
+        "right": 0
+      }
+    },
+    "hudValues": {
+      "moyu": "9.76万",
+      "click": "17",
+      "idle": "4.2",
+      "rank": "摸鱼学徒（升 资深摸鱼 98%）",
+      "streak": ""
+    },
+    "journalBadge": "",
+    "bootError": false,
+    "state": {
+      "moyu": 97606.33023359696,
+      "levels": {
+        "coffee": 14,
+        "phone": 4,
+        "water": 1
+      },
+      "totalEarned": 98571.33023359695,
+      "collected": {
+        "quotes": [],
+        "flavors": [
+          0,
+          1,
+          2,
+          5,
+          15
+        ]
+      },
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "meme_1",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "survive_2",
+            "target": 2,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "buy_3",
+            "target": 3,
+            "progress": 3,
+            "done": true
+          }
+        ],
+        "streak": 0,
+        "lastCompleteDate": null,
+        "claimed": false
+      },
+      "surviveStreak": 0
+    },
+    "fps": 60,
+    "frames": 126,
+    "assets": {
+      "worker": "loaded",
+      "computer": "loaded",
+      "cooler": "loaded"
+    }
+  },
+  "console": {
+    "errors": [],
+    "warns": [],
+    "exceptions": [],
+    "failedReq": []
+  },
+  "chromeStderrTail": []
+}

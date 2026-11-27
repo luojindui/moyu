@@ -1,6 +1,6 @@
 {
   "probe": "r4v-variety-verdict",
-  "generatedAt": "2026-11-27T02:19:40.397Z",
+  "generatedAt": "2026-11-27T02:35:20.074Z",
   "cliffB": {
     "leadBaseline": {
       "quoteExhaustCycle": 10.3,
@@ -105,7 +105,7 @@
     "codexAt60": 41,
     "remainingAt12": 34,
     "remainingAt30": 23,
-    "lastNoveltyAt60": 57.5,
+    "lastNoveltyAt60": 56.5,
     "exhaustedIn60": false
   },
   "variants": {
@@ -172,9 +172,9 @@
     }
   },
   "economy": {
-    "maxEventSharePct": 9.17,
-    "varietyMedianPct": 8.13,
-    "casualMedianPct": 7.31,
+    "maxEventSharePct": 6.67,
+    "varietyMedianPct": 4.43,
+    "casualMedianPct": 6.21,
     "thresholdPct": 10
   }
 }

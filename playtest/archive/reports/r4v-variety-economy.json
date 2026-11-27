@@ -3,39 +3,39 @@
   "rows": [
     {
       "persona": "variety(多玩法党)",
-      "medianEventSharePct": 7,
-      "medianEventNetSharePct": 7,
-      "bossRewards": 20449,
+      "medianEventSharePct": 3.96,
+      "medianEventNetSharePct": 3.96,
+      "bossRewards": 8361,
       "memeEarnings": 6108,
       "penalties": 0,
-      "blitzBonus": 2027,
+      "blitzBonus": 870,
       "bossWindows": 13.5,
       "memeWindows": 28,
-      "totalEarned": 383623
+      "totalEarned": 372203
     },
     {
       "persona": "clicker(狂点党)",
-      "medianEventSharePct": 7.58,
-      "medianEventNetSharePct": 7.58,
-      "bossRewards": 160837,
-      "memeEarnings": 22200,
+      "medianEventSharePct": 3.72,
+      "medianEventNetSharePct": 3.72,
+      "bossRewards": 61226,
+      "memeEarnings": 22270,
       "penalties": 0,
-      "blitzBonus": 11336,
+      "blitzBonus": 4738,
       "bossWindows": 13.5,
       "memeWindows": 28,
-      "totalEarned": 2434790
+      "totalEarned": 2274672
     },
     {
       "persona": "casual(休闲党)",
-      "medianEventSharePct": 7.31,
-      "medianEventNetSharePct": 7.31,
-      "bossRewards": 2048,
+      "medianEventSharePct": 6.21,
+      "medianEventNetSharePct": 6.21,
+      "bossRewards": 1021,
       "memeEarnings": 4223,
       "penalties": 0,
       "blitzBonus": 0,
       "bossWindows": 13.5,
       "memeWindows": 28,
-      "totalEarned": 86749
+      "totalEarned": 85904
     }
   ]
 }

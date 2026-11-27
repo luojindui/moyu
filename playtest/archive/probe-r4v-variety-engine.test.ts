@@ -120,11 +120,11 @@ describe("R4V 引擎 · 巡逻三变体语义", () => {
     const fin2 = finishPatrol(s, safe);
     expect(fin2.reward).toBeGreaterThan(0);
     expect(safe.surviveStreak).toBe(1);
-    // 封顶 ×2
-    const s10 = bossSurviveReward(s, { ...newEventState(), surviveStreak: 10 });
+    // 封顶 ×1.5（R5 控事件占比）
+    const s5 = bossSurviveReward(s, { ...newEventState(), surviveStreak: 5 });
     const s20 = bossSurviveReward(s, { ...newEventState(), surviveStreak: 20 });
-    expect(s10).toBeCloseTo(s20, 6);
-    expect(s10).toBeCloseTo(bossSurviveReward(s, newEventState()) * 2, 6);
+    expect(s5).toBeCloseTo(s20, 6);
+    expect(s5).toBeCloseTo(bossSurviveReward(s, newEventState()) * 1.5, 6);
   });
 
   it("横幅：三变体文案不同、进度有上限、hold 警示文案", () => {
