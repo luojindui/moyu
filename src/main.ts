@@ -700,7 +700,11 @@ async function boot(): Promise<void> {
           state = withCards;
           serialize(state, localStorageAdapter, Date.now());
         }
-        if (document.getElementById("welcome")!.classList.contains("hidden")) cardPanel.maybeShow(state);
+        const anyPanelOpen =
+          !document.getElementById("welcome")!.classList.contains("hidden") ||
+          !document.getElementById("team")!.classList.contains("hidden") ||
+          !document.getElementById("journal")!.classList.contains("hidden");
+        if (!anyPanelOpen) cardPanel.maybeShow(state);
       }
       // 回合制老板：同步弹层
       {

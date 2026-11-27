@@ -185,7 +185,10 @@ export class TeamPanel {
     const btn = document.getElementById("btn-team");
     if (btn) {
       const n = claimableCount(state, Date.now());
-      const energyLeft = state.energy.left > 0 && state.energy.used.length < 3;
+      const anyAffordable = ENERGY_ACTIONS.some(
+        (a) => !state.energy.used.includes(a.id) && state.energy.left >= a.cost,
+      );
+      const energyLeft = state.energy.left > 0 && anyAffordable;
       let badge = btn.querySelector(".badge") as HTMLElement | null;
       if (n > 0) {
         if (!badge) {

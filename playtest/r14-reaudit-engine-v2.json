@@ -1,0 +1,95 @@
+{
+  "commit": "7857cf1",
+  "generatedAt": "2026-11-27T11:22:11.068Z",
+  "wiring": {
+    "idle": {
+      "base": 0.2,
+      "plant": 0.21000000000000002,
+      "fridge": 0.21600000000000003,
+      "aquarium": 0.22000000000000003,
+      "catbed": 0.22999999999999998
+    },
+    "energyIdle": {
+      "slack": 0.25,
+      "socialMult": 1.05,
+      "both": 1.3125
+    },
+    "click": {
+      "lamp": 1.15,
+      "aquarium": 1.1,
+      "focus": 1.2
+    },
+    "offlineStation": {
+      "station": 0.22999999999999998,
+      "total": 0.22999999999999998,
+      "teamPart": 0,
+      "eff": 0.8999999999999999,
+      "earned": 745.1999999999998
+    },
+    "dispatch": {
+      "base": 1552,
+      "proj": 2017,
+      "claimBase": 1552,
+      "claimProj": 2017
+    }
+  },
+  "boundary": {},
+  "save": {
+    "boostedTamperIgnored": {
+      "idleMult": 1,
+      "patrolRewardMult": 1,
+      "clickMult": 1
+    }
+  },
+  "observations": {
+    "offlineTeamPart": {
+      "teamPartBase": 20.0016,
+      "teamPartPlant": 20.0016,
+      "teamPartSlack": 20.0016
+    },
+    "d5": {
+      "earnedStale": 25832.015999999996,
+      "earnedFresh": 25706.015999999996,
+      "ratio": 1.004901576346953
+    },
+    "decorOfflineDouble": {
+      "rugActual": 0.8,
+      "rugSpec": 0.75,
+      "allActual": 1.16,
+      "allSpec": 0.93,
+      "note": "progression.ts base 里 teamBase 已含 decorBonus，capRaise 又含 decorBase → 家具离线加成被计两次"
+    }
+  },
+  "defects": [
+    {
+      "id": "D4-residual",
+      "where": "save.ts:269-281",
+      "detail": "left 未按 used 成本重算，used=3+left=100 可再使用 focus（145 点预算）",
+      "actualLeft": 100
+    },
+    {
+      "id": "D11",
+      "where": "src/engine/progression.ts:41-52",
+      "detail": "progression.ts base 里 teamBase 已含 decorBonus，capRaise 又含 decorBase → 家具离线加成被计两次",
+      "rugActual": 0.8,
+      "rugSpec": 0.75,
+      "allActual": 1.16,
+      "allSpec": 0.93
+    },
+    {
+      "id": "D12",
+      "where": "src/ui/team-panel.ts:526,280",
+      "detail": "「省心组合」按钮禁用条件 left>=145（四项总和），正常 100 点永远禁用 → 死按钮；onUseAllEnergy 逻辑已按 100 组合实现却点不到"
+    },
+    {
+      "id": "D13",
+      "where": "src/ui/team-panel.ts:512-527,258-272",
+      "detail": "social 无同事时 UI 按钮/整行仍显示可点，点击静默无效（引擎正确返回 null，UI 未同步禁用）"
+    },
+    {
+      "id": "D14",
+      "where": "src/engine/energy.ts:4,76",
+      "detail": "头部注释仍写「3 种行为」；social 处注释「好感 +3」实际 +5（doc-only）"
+    }
+  ]
+}

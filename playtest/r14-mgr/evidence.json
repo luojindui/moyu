@@ -3,10 +3,10 @@
   "port": 9317,
   "steps": [
     {
-      "t": 2.2,
+      "t": 2.1,
       "step": "A0 全新档",
-      "moyu": 0.3233072,
-      "lifetime": 0.3233072,
+      "moyu": 0.3266400000000001,
+      "lifetime": 0.3266400000000001,
       "prestige": 0,
       "rankHud": "实习生 0%",
       "hudIdle": "0.2",
@@ -40,7 +40,7 @@
       "summaryLine": null
     },
     {
-      "t": 2.2,
+      "t": 2.1,
       "step": "A0b 首开默认页 / boot 提示 / 精力角标",
       "firstOpenTab": "同事",
       "bootToast": {
@@ -60,7 +60,7 @@
     {
       "t": 3.1,
       "step": "A1 真实点击 15 次",
-      "moyu": 2.5219872000000034,
+      "moyu": 2.5319800000000035,
       "hudClick": "1",
       "hudIdle": "0.2",
       "rank": "实习生 0%",
@@ -72,7 +72,7 @@
     {
       "t": 3.6,
       "step": "A2 工位页(新号)",
-      "freshEnergyText": "今日精力 （剩 100/100） | 40 | 认真摸鱼 今天挂机 +25% · 花 40 精力 | 使用 | 35 | 假装工作 今天巡逻奖励 ×2.2 · 花 35 精力 | 使用 | 25 | 跟同事聊天 全体好感 +5，且今天挂机 +5% · 花 25 精力 | 使用 | 45 | 专注点击 今天点击力 +20% · 花 45 精力 | 使用 | 一键全用（3 项，共 100 精力） | 每天 100 点，效果持续到当天结束；3 项合计正好 100",
+      "freshEnergyText": "今日精力 （剩 100/100） | 40 | 认真摸鱼 今天挂机 +25% · 花 40 精力 | 使用 | 35 | 假装工作 今天巡逻奖励 ×2.2 · 花 35 精力 | 使用 | 25 | 跟同事聊天 全体好感 +5，且今天挂机 +5% · 花 25 精力 | 使用 | 45 | 专注点击 今天点击力 +20% · 花 45 精力 | 使用 | 省心组合：摸鱼+假装工作+社交（100 精力） | 每天 100 点；4 项合计 145，必须放弃至少 1 项（含「专注点击」45 点时只剩 55）",
       "freshEnergyBtns": [
         {
           "id": "slack",
@@ -98,7 +98,8 @@
       "freshEnergyAll": {
         "found": true,
         "disabled": true,
-        "text": "一键全用（3 项，共 100 精力）"
+        "text": "省心组合：摸鱼+假装工作+社交（100 精力）",
+        "footer": "每天 100 点；4 项合计 145，必须放弃至少 1 项（含「专注点击」45 点时只剩 55）"
       },
       "freshDecorBtns": [
         {
@@ -161,14 +162,14 @@
       "used": [],
       "toasts": [
         {
-          "at": 1795778350154,
+          "at": 1795778502154,
           "text": "送你 1 个天赋点，点 👥 看看"
         }
       ],
       "announces": []
     },
     {
-      "t": 4.9,
+      "t": 4.8,
       "step": "A3 专注点击路径（45+40=85，剩 15 作废）",
       "focusRes": {
         "found": true,
@@ -206,7 +207,7 @@
       ],
       "energyAllAfterFocus": {
         "disabled": true,
-        "text": "一键全用（3 项，共 100 精力）"
+        "text": "省心组合：摸鱼+假装工作+社交（100 精力）"
       },
       "slackRes": {
         "found": true,
@@ -248,13 +249,13 @@
       },
       "trioBtn": {
         "disabled": true,
-        "text": "一键全用（3 项，共 100 精力）"
+        "text": "省心组合：摸鱼+假装工作+社交（100 精力）"
       },
-      "trioFooter": "每天 100 点，效果持续到当天结束；3 项合计正好 100",
+      "trioFooter": "每天 100 点；4 项合计 145，必须放弃至少 1 项（含「专注点击」45 点时只剩 55）",
       "trioClick": {
         "found": true,
         "disabled": true,
-        "text": "一键全用（3 项，共 100 精力）"
+        "text": "省心组合：摸鱼+假装工作+社交（100 精力）"
       },
       "energy": {
         "date": "2026-11-27",
@@ -294,8 +295,8 @@
     {
       "t": 9,
       "step": "A4 grant 1e11",
-      "moyu": 100000000003.59985,
-      "lifetime": 100000000003.59985,
+      "moyu": 100000000003.61555,
+      "lifetime": 100000000003.61555,
       "rank": "奇点 25%",
       "talents": {
         "points": 6,
@@ -316,35 +317,35 @@
           "mission": null,
           "favor": 0,
           "auto": false,
-          "endsIn": -1795778361
+          "endsIn": -1795778513
         },
         "mei": {
           "lv": 1,
           "mission": null,
           "favor": 0,
           "auto": false,
-          "endsIn": -1795778361
+          "endsIn": -1795778513
         },
         "qiang": {
           "lv": 1,
           "mission": null,
           "favor": 0,
           "auto": false,
-          "endsIn": -1795778361
+          "endsIn": -1795778513
         },
         "li": {
           "lv": 1,
           "mission": null,
           "favor": 0,
           "auto": false,
-          "endsIn": -1795778361
+          "endsIn": -1795778513
         },
         "wang": {
           "lv": 1,
           "mission": null,
           "favor": 0,
           "auto": false,
-          "endsIn": -1795778361
+          "endsIn": -1795778513
         }
       },
       "recruitRes": {
@@ -496,7 +497,7 @@
       "hudIdleBeforeDecor": "1967.2"
     },
     {
-      "t": 14.7,
+      "t": 14.8,
       "step": "A8 买完全部家具",
       "decor": [
         "plant",
@@ -510,8 +511,8 @@
       ],
       "decorAfter": [],
       "summaryBefore": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%",
-      "summaryAfter": "已装修 8/8 · 挂机 ×1.43 · 点击 ×1.26 · 离线 +23%",
-      "hudIdle": "2347.1",
+      "summaryAfter": "已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23%",
+      "hudIdle": "2472.5",
       "buyRes": {
         "plant": {
           "found": true,
@@ -559,56 +560,56 @@
       "0": {
         "同事": "老周 Lv.1",
         "任务": [
-          "stroll[就近溜达3m · +7442 · 净 +15.89万/h]",
-          "quick[溜一圈13m · +2.45万 · 净 +9.92万/h]",
-          "chat[茶水间聊八卦 ★26m · +6.60万 · 净 +13.90万/h]",
-          "meeting[开个会51m · +10.83万 · 净 +11.11万/h]",
-          "toilet[长线蹲点3h · +59.54万 · 净 +15.89万/h]",
-          "coffee[楼下买咖啡7h · +151.56万 · 净 +20.67万/h]"
+          "stroll[就近溜达3m · +8164 · 净 +17.53万/h]",
+          "quick[溜一圈13m · +2.69万 · 净 +10.99万/h]",
+          "chat[茶水间聊八卦 ★26m · +7.24万 · 净 +15.35万/h]",
+          "meeting[开个会51m · +11.88万 · 净 +12.30万/h]",
+          "toilet[长线蹲点3h · +65.31万 · 净 +17.53万/h]",
+          "coffee[楼下买咖啡7h · +166.26万 · 净 +22.77万/h]"
         ]
       },
       "1": {
         "同事": "小美 Lv.1",
         "任务": [
-          "stroll[就近溜达3m · +8377 · 净 +10.68万/h]",
-          "quick[溜一圈15m · +2.76万 · 净 +4.97万/h]",
-          "chat[茶水间聊八卦30m · +4.95万 · 净 +3.82万/h]",
-          "meeting[开个会 ★1h · +18.28万 · 净 +12.20万/h]",
-          "toilet[长线蹲点4h · +67.02万 · 净 +10.68万/h]",
-          "coffee[楼下买咖啡8h · +170.59万 · 净 +15.25万/h]"
+          "stroll[就近溜达3m · +9101 · 净 +12.06万/h]",
+          "quick[溜一圈15m · +3.00万 · 净 +5.85万/h]",
+          "chat[茶水间聊八卦30m · +5.38万 · 净 +4.61万/h]",
+          "meeting[开个会 ★1h · +19.86万 · 净 +13.71万/h]",
+          "toilet[长线蹲点4h · +72.81万 · 净 +12.06万/h]",
+          "coffee[楼下买咖啡8h · +185.34万 · 净 +17.02万/h]"
         ]
       },
       "2": {
         "同事": "强哥 Lv.1",
         "任务": [
-          "stroll[就近溜达3m · +9538 · 净 +7.46万/h]",
-          "quick[溜一圈15m · +3.14万 · 净 +9600.4/h]",
-          "chat[茶水间聊八卦30m · +5.64万 · 净 -3405.6/h]",
-          "meeting[开个会1h · +13.87万 · 净 +2.26万/h]",
-          "toilet[长线蹲点 ★4h · +114.46万 · 净 +17.00万/h]",
-          "coffee[楼下买咖啡8h · +194.23万 · 净 +12.67万/h]"
+          "stroll[就近溜达3m · +1.03万 · 净 +8.84万/h]",
+          "quick[溜一圈15m · +3.38万 · 净 +1.84万/h]",
+          "chat[茶水间聊八卦30m · +6.07万 · 净 +4377.7/h]",
+          "meeting[开个会1h · +14.93万 · 净 +3.24万/h]",
+          "toilet[长线蹲点 ★4h · +123.19万 · 净 +19.10万/h]",
+          "coffee[楼下买咖啡8h · +209.04万 · 净 +14.44万/h]"
         ]
       },
       "3": {
         "同事": "小李 Lv.1",
         "任务": [
-          "stroll[就近溜达 ★3m · +2.57万 · 净 +34.21万/h]",
-          "quick[溜一圈 ★15m · +8.46万 · 净 +16.70万/h]",
-          "chat[茶水间聊八卦30m · +10.12万 · 净 +3.08万/h]",
-          "meeting[开个会1h · +24.90万 · 净 +7.75万/h]",
-          "toilet[长线蹲点4h · +85.59万 · 净 +4.25万/h]",
-          "coffee[楼下买咖啡8h · +217.87万 · 净 +10.09万/h]"
+          "stroll[就近溜达 ★3m · +2.74万 · 净 +37.62万/h]",
+          "quick[溜一圈 ★15m · +9.04万 · 净 +18.91万/h]",
+          "chat[茶水间聊八卦30m · +10.81万 · 净 +4.37万/h]",
+          "meeting[开个会1h · +26.60万 · 净 +9.36万/h]",
+          "toilet[长线蹲点4h · +91.43万 · 净 +5.62万/h]",
+          "coffee[楼下买咖啡8h · +232.74万 · 净 +11.85万/h]"
         ]
       },
       "4": {
         "同事": "王师傅 Lv.1",
         "任务": [
-          "stroll[就近溜达3m · +1.19万 · 净 +1.04万/h]",
-          "quick[溜一圈15m · +3.91万 · 净 -70500.8/h]",
-          "chat[茶水间聊八卦30m · +7.01万 · 净 -86672.8/h]",
-          "meeting[开个会1h · +17.25万 · 净 -54326.8/h]",
-          "toilet[长线蹲点4h · +142.32万 · 净 +12.90万/h]",
-          "coffee[楼下买咖啡 ★8h · +543.41万 · 净 +45.24万/h]"
+          "stroll[就近溜达3m · +1.26万 · 净 +2.39万/h]",
+          "quick[溜一圈15m · +4.15万 · 净 -61920.4/h]",
+          "chat[茶水间聊八卦30m · +7.44万 · 净 -79094.4/h]",
+          "meeting[开个会1h · +18.32万 · 净 -44748.4/h]",
+          "toilet[长线蹲点4h · +151.12万 · 净 +14.99万/h]",
+          "coffee[楼下买咖啡 ★8h · +576.99万 · 净 +49.33万/h]"
         ]
       },
       "t": 16.3,
@@ -622,65 +623,65 @@
           "colleague": "老周 Lv.1",
           "id": "zhou",
           "picked": "coffee",
-          "net": 206700.00000000003,
+          "net": 227700,
           "matched": false,
           "wasMatchedBest": true,
           "res": {
             "found": true,
             "disabled": false,
-            "text": "楼下买咖啡7h · +151.56万 · 净 +20.67万/h"
+            "text": "楼下买咖啡7h · +166.26万 · 净 +22.77万/h"
           }
         },
         {
           "colleague": "小美 Lv.1",
           "id": "mei",
           "picked": "coffee",
-          "net": 152500,
+          "net": 170200,
           "matched": false,
           "wasMatchedBest": true,
           "res": {
             "found": true,
             "disabled": false,
-            "text": "楼下买咖啡8h · +170.59万 · 净 +15.25万/h"
+            "text": "楼下买咖啡8h · +185.34万 · 净 +17.02万/h"
           }
         },
         {
           "colleague": "强哥 Lv.1",
           "id": "qiang",
           "picked": "toilet",
-          "net": 170000,
+          "net": 191000,
           "matched": true,
           "wasMatchedBest": true,
           "res": {
             "found": true,
             "disabled": false,
-            "text": "长线蹲点 ★4h · +114.46万 · 净 +17.00万/h"
+            "text": "长线蹲点 ★4h · +123.19万 · 净 +19.10万/h"
           }
         },
         {
           "colleague": "小李 Lv.1",
           "id": "li",
           "picked": "stroll",
-          "net": 342100,
+          "net": 376200,
           "matched": true,
           "wasMatchedBest": true,
           "res": {
             "found": true,
             "disabled": false,
-            "text": "就近溜达 ★3m · +2.57万 · 净 +34.21万/h"
+            "text": "就近溜达 ★3m · +2.74万 · 净 +37.62万/h"
           }
         },
         {
           "colleague": "王师傅 Lv.1",
           "id": "wang",
           "picked": "coffee",
-          "net": 452400,
+          "net": 493300,
           "matched": true,
           "wasMatchedBest": true,
           "res": {
             "found": true,
             "disabled": false,
-            "text": "楼下买咖啡 ★8h · +543.41万 · 净 +45.24万/h"
+            "text": "楼下买咖啡 ★8h · +576.99万 · 净 +49.33万/h"
           }
         }
       ],
@@ -755,8 +756,8 @@
       "claimBtn": {
         "found": false
       },
-      "beforeMoyu": 97305910919,
-      "afterMoyu": 97305912702,
+      "beforeMoyu": 97306630900,
+      "afterMoyu": 97306632747,
       "team": {
         "zhou": {
           "lv": 1,
@@ -796,21 +797,21 @@
       },
       "toasts": [
         {
-          "at": 1795778363242,
+          "at": 1795778515344,
           "text": "已装修：投影仪（派遣奖励 +30%）"
         },
         {
-          "at": 1795778363425,
-          "text": "已装修：工位猫窝（挂机 +15%、离线 +10%）"
+          "at": 1795778515532,
+          "text": "🎉 工位装修完成：挂机 +10%"
         }
       ],
       "announces": [
         {
-          "at": 1795778366360,
+          "at": 1795778518458,
           "text": "小李 出发去派遣了"
         },
         {
-          "at": 1795778366560,
+          "at": 1795778518652,
           "text": "王师傅 出发去派遣了"
         }
       ]
@@ -1027,7 +1028,7 @@
           "clickMult": 1
         }
       },
-      "hudIdle": "2183.2",
+      "hudIdle": "2308.6",
       "badges": {
         "team": null,
         "talent": "天赋"
@@ -1039,7 +1040,7 @@
       "t": 24.6,
       "step": "A17 第二天工位页 + 一键全用",
       "day2FirstTab": "同事",
-      "day2EnergyText": "今日精力 （剩 100/100） | 40 | 认真摸鱼 今天挂机 +25% · 花 40 精力 | 使用 | 35 | 假装工作 今天巡逻奖励 ×2.2 · 花 35 精力 | 使用 | 25 | 跟同事聊天 全体好感 +5，且今天挂机 +5% · 花 25 精力 | 使用 | 45 | 专注点击 今天点击力 +20% · 花 45 精力 | 使用 | 一键全用（3 项，共 100 精力） | 每天 100 点，效果持续到当天结束；3 项合计正好 100",
+      "day2EnergyText": "今日精力 （剩 100/100） | 40 | 认真摸鱼 今天挂机 +25% · 花 40 精力 | 使用 | 35 | 假装工作 今天巡逻奖励 ×2.2 · 花 35 精力 | 使用 | 25 | 跟同事聊天 全体好感 +5，且今天挂机 +5% · 花 25 精力 | 使用 | 45 | 专注点击 今天点击力 +20% · 花 45 精力 | 使用 | 省心组合：摸鱼+假装工作+社交（100 精力） | 每天 100 点；4 项合计 145，必须放弃至少 1 项（含「专注点击」45 点时只剩 55）",
       "day2EnergyBtns": [
         {
           "id": "slack",
@@ -1065,12 +1066,12 @@
       "day2EnergyAll": {
         "found": true,
         "disabled": true,
-        "text": "一键全用（3 项，共 100 精力）"
+        "text": "省心组合：摸鱼+假装工作+社交（100 精力）"
       },
       "allRes": {
         "found": true,
         "disabled": true,
-        "text": "一键全用（3 项，共 100 精力）"
+        "text": "省心组合：摸鱼+假装工作+社交（100 精力）"
       },
       "energy": {
         "date": "2026-11-27",
@@ -1082,7 +1083,7 @@
           "clickMult": 1
         }
       },
-      "hudIdle": "2183.2",
+      "hudIdle": "2308.6",
       "toast": null,
       "announces": []
     }
@@ -1108,9 +1109,10 @@
     "freshProfile": true,
     "firstOpenDefaultTab": "同事",
     "socialDeadClickOnFreshSave": true,
-    "focusPathLeavesOnlyOneMore": false,
+    "focusPathLeavesOnlyOneMore": true,
+    "oneClickButtonEnabledAtFull": false,
     "oneClickUsesOnlyOldThree": false,
-    "staleCopy3Actions": true,
+    "copyMatches4ActionSpec": true,
     "decorAllBoughtOneShot": true,
     "matchedMissionEverPicked": true,
     "matchedSometimesNotBest": true,
@@ -1119,8 +1121,9 @@
     "energyResetsNextDay": true,
     "energyResetNotified": false,
     "oneClickAllEnergy": false,
+    "oneClickButtonDisabled": true,
     "day2FirstTab": "同事",
-    "day2EnergyUsable": false,
+    "day2EnergyUsable": true,
     "energyTabsAndTaps": {
       "firstOpenDefaultTab": "同事",
       "tapsToEnergyFromNewSession": 2
@@ -1407,48 +1410,48 @@
         {
           "id": "zhou",
           "mission": "stroll",
-          "text": "就近溜达3m · +7442 · 净 +15.89万/h",
-          "net": 158900,
+          "text": "就近溜达3m · +8164 · 净 +17.53万/h",
+          "net": 175300,
           "matched": false,
           "duration": "3m ·"
         },
         {
           "id": "zhou",
           "mission": "quick",
-          "text": "溜一圈13m · +2.45万 · 净 +9.92万/h",
-          "net": 99200,
+          "text": "溜一圈13m · +2.69万 · 净 +10.99万/h",
+          "net": 109900,
           "matched": false,
           "duration": "13m ·"
         },
         {
           "id": "zhou",
           "mission": "chat",
-          "text": "茶水间聊八卦 ★26m · +6.60万 · 净 +13.90万/h",
-          "net": 139000,
+          "text": "茶水间聊八卦 ★26m · +7.24万 · 净 +15.35万/h",
+          "net": 153500,
           "matched": true,
           "duration": "26m ·"
         },
         {
           "id": "zhou",
           "mission": "meeting",
-          "text": "开个会51m · +10.83万 · 净 +11.11万/h",
-          "net": 111100,
+          "text": "开个会51m · +11.88万 · 净 +12.30万/h",
+          "net": 123000,
           "matched": false,
           "duration": "51m ·"
         },
         {
           "id": "zhou",
           "mission": "toilet",
-          "text": "长线蹲点3h · +59.54万 · 净 +15.89万/h",
-          "net": 158900,
+          "text": "长线蹲点3h · +65.31万 · 净 +17.53万/h",
+          "net": 175300,
           "matched": false,
           "duration": "3h ·"
         },
         {
           "id": "zhou",
           "mission": "coffee",
-          "text": "楼下买咖啡7h · +151.56万 · 净 +20.67万/h",
-          "net": 206700.00000000003,
+          "text": "楼下买咖啡7h · +166.26万 · 净 +22.77万/h",
+          "net": 227700,
           "matched": false,
           "duration": "7h ·"
         }
@@ -1461,48 +1464,48 @@
         {
           "id": "mei",
           "mission": "stroll",
-          "text": "就近溜达3m · +8377 · 净 +10.68万/h",
-          "net": 106800,
+          "text": "就近溜达3m · +9101 · 净 +12.06万/h",
+          "net": 120600,
           "matched": false,
           "duration": "3m ·"
         },
         {
           "id": "mei",
           "mission": "quick",
-          "text": "溜一圈15m · +2.76万 · 净 +4.97万/h",
-          "net": 49700,
+          "text": "溜一圈15m · +3.00万 · 净 +5.85万/h",
+          "net": 58500,
           "matched": false,
           "duration": "15m ·"
         },
         {
           "id": "mei",
           "mission": "chat",
-          "text": "茶水间聊八卦30m · +4.95万 · 净 +3.82万/h",
-          "net": 38200,
+          "text": "茶水间聊八卦30m · +5.38万 · 净 +4.61万/h",
+          "net": 46100,
           "matched": false,
           "duration": "30m ·"
         },
         {
           "id": "mei",
           "mission": "meeting",
-          "text": "开个会 ★1h · +18.28万 · 净 +12.20万/h",
-          "net": 122000,
+          "text": "开个会 ★1h · +19.86万 · 净 +13.71万/h",
+          "net": 137100,
           "matched": true,
           "duration": "1h ·"
         },
         {
           "id": "mei",
           "mission": "toilet",
-          "text": "长线蹲点4h · +67.02万 · 净 +10.68万/h",
-          "net": 106800,
+          "text": "长线蹲点4h · +72.81万 · 净 +12.06万/h",
+          "net": 120600,
           "matched": false,
           "duration": "4h ·"
         },
         {
           "id": "mei",
           "mission": "coffee",
-          "text": "楼下买咖啡8h · +170.59万 · 净 +15.25万/h",
-          "net": 152500,
+          "text": "楼下买咖啡8h · +185.34万 · 净 +17.02万/h",
+          "net": 170200,
           "matched": false,
           "duration": "8h ·"
         }
@@ -1515,48 +1518,48 @@
         {
           "id": "qiang",
           "mission": "stroll",
-          "text": "就近溜达3m · +9538 · 净 +7.46万/h",
-          "net": 74600,
+          "text": "就近溜达3m · +1.03万 · 净 +8.84万/h",
+          "net": 88400,
           "matched": false,
           "duration": "3m ·"
         },
         {
           "id": "qiang",
           "mission": "quick",
-          "text": "溜一圈15m · +3.14万 · 净 +9600.4/h",
-          "net": 9600.4,
+          "text": "溜一圈15m · +3.38万 · 净 +1.84万/h",
+          "net": 18400,
           "matched": false,
           "duration": "15m ·"
         },
         {
           "id": "qiang",
           "mission": "chat",
-          "text": "茶水间聊八卦30m · +5.64万 · 净 -3405.6/h",
-          "net": -3405.6,
+          "text": "茶水间聊八卦30m · +6.07万 · 净 +4377.7/h",
+          "net": 4377.7,
           "matched": false,
           "duration": "30m ·"
         },
         {
           "id": "qiang",
           "mission": "meeting",
-          "text": "开个会1h · +13.87万 · 净 +2.26万/h",
-          "net": 22599.999999999996,
+          "text": "开个会1h · +14.93万 · 净 +3.24万/h",
+          "net": 32400.000000000004,
           "matched": false,
           "duration": "1h ·"
         },
         {
           "id": "qiang",
           "mission": "toilet",
-          "text": "长线蹲点 ★4h · +114.46万 · 净 +17.00万/h",
-          "net": 170000,
+          "text": "长线蹲点 ★4h · +123.19万 · 净 +19.10万/h",
+          "net": 191000,
           "matched": true,
           "duration": "4h ·"
         },
         {
           "id": "qiang",
           "mission": "coffee",
-          "text": "楼下买咖啡8h · +194.23万 · 净 +12.67万/h",
-          "net": 126700,
+          "text": "楼下买咖啡8h · +209.04万 · 净 +14.44万/h",
+          "net": 144400,
           "matched": false,
           "duration": "8h ·"
         }
@@ -1569,48 +1572,48 @@
         {
           "id": "li",
           "mission": "stroll",
-          "text": "就近溜达 ★3m · +2.57万 · 净 +34.21万/h",
-          "net": 342100,
+          "text": "就近溜达 ★3m · +2.74万 · 净 +37.62万/h",
+          "net": 376200,
           "matched": true,
           "duration": "3m ·"
         },
         {
           "id": "li",
           "mission": "quick",
-          "text": "溜一圈 ★15m · +8.46万 · 净 +16.70万/h",
-          "net": 167000,
+          "text": "溜一圈 ★15m · +9.04万 · 净 +18.91万/h",
+          "net": 189100,
           "matched": true,
           "duration": "15m ·"
         },
         {
           "id": "li",
           "mission": "chat",
-          "text": "茶水间聊八卦30m · +10.12万 · 净 +3.08万/h",
-          "net": 30800,
+          "text": "茶水间聊八卦30m · +10.81万 · 净 +4.37万/h",
+          "net": 43700,
           "matched": false,
           "duration": "30m ·"
         },
         {
           "id": "li",
           "mission": "meeting",
-          "text": "开个会1h · +24.90万 · 净 +7.75万/h",
-          "net": 77500,
+          "text": "开个会1h · +26.60万 · 净 +9.36万/h",
+          "net": 93600,
           "matched": false,
           "duration": "1h ·"
         },
         {
           "id": "li",
           "mission": "toilet",
-          "text": "长线蹲点4h · +85.59万 · 净 +4.25万/h",
-          "net": 42500,
+          "text": "长线蹲点4h · +91.43万 · 净 +5.62万/h",
+          "net": 56200,
           "matched": false,
           "duration": "4h ·"
         },
         {
           "id": "li",
           "mission": "coffee",
-          "text": "楼下买咖啡8h · +217.87万 · 净 +10.09万/h",
-          "net": 100900,
+          "text": "楼下买咖啡8h · +232.74万 · 净 +11.85万/h",
+          "net": 118500,
           "matched": false,
           "duration": "8h ·"
         }
@@ -1623,48 +1626,48 @@
         {
           "id": "wang",
           "mission": "stroll",
-          "text": "就近溜达3m · +1.19万 · 净 +1.04万/h",
-          "net": 10400,
+          "text": "就近溜达3m · +1.26万 · 净 +2.39万/h",
+          "net": 23900,
           "matched": false,
           "duration": "3m ·"
         },
         {
           "id": "wang",
           "mission": "quick",
-          "text": "溜一圈15m · +3.91万 · 净 -70500.8/h",
-          "net": -70500.8,
+          "text": "溜一圈15m · +4.15万 · 净 -61920.4/h",
+          "net": -61920.4,
           "matched": false,
           "duration": "15m ·"
         },
         {
           "id": "wang",
           "mission": "chat",
-          "text": "茶水间聊八卦30m · +7.01万 · 净 -86672.8/h",
-          "net": -86672.8,
+          "text": "茶水间聊八卦30m · +7.44万 · 净 -79094.4/h",
+          "net": -79094.4,
           "matched": false,
           "duration": "30m ·"
         },
         {
           "id": "wang",
           "mission": "meeting",
-          "text": "开个会1h · +17.25万 · 净 -54326.8/h",
-          "net": -54326.8,
+          "text": "开个会1h · +18.32万 · 净 -44748.4/h",
+          "net": -44748.4,
           "matched": false,
           "duration": "1h ·"
         },
         {
           "id": "wang",
           "mission": "toilet",
-          "text": "长线蹲点4h · +142.32万 · 净 +12.90万/h",
-          "net": 129000,
+          "text": "长线蹲点4h · +151.12万 · 净 +14.99万/h",
+          "net": 149900,
           "matched": false,
           "duration": "4h ·"
         },
         {
           "id": "wang",
           "mission": "coffee",
-          "text": "楼下买咖啡 ★8h · +543.41万 · 净 +45.24万/h",
-          "net": 452400,
+          "text": "楼下买咖啡 ★8h · +576.99万 · 净 +49.33万/h",
+          "net": 493300,
           "matched": true,
           "duration": "8h ·"
         }
@@ -1676,74 +1679,74 @@
       "colleague": "老周 Lv.1",
       "id": "zhou",
       "picked": "coffee",
-      "net": 206700.00000000003,
+      "net": 227700,
       "matched": false,
       "wasMatchedBest": true,
       "res": {
         "found": true,
         "disabled": false,
-        "text": "楼下买咖啡7h · +151.56万 · 净 +20.67万/h"
+        "text": "楼下买咖啡7h · +166.26万 · 净 +22.77万/h"
       }
     },
     {
       "colleague": "小美 Lv.1",
       "id": "mei",
       "picked": "coffee",
-      "net": 152500,
+      "net": 170200,
       "matched": false,
       "wasMatchedBest": true,
       "res": {
         "found": true,
         "disabled": false,
-        "text": "楼下买咖啡8h · +170.59万 · 净 +15.25万/h"
+        "text": "楼下买咖啡8h · +185.34万 · 净 +17.02万/h"
       }
     },
     {
       "colleague": "强哥 Lv.1",
       "id": "qiang",
       "picked": "toilet",
-      "net": 170000,
+      "net": 191000,
       "matched": true,
       "wasMatchedBest": true,
       "res": {
         "found": true,
         "disabled": false,
-        "text": "长线蹲点 ★4h · +114.46万 · 净 +17.00万/h"
+        "text": "长线蹲点 ★4h · +123.19万 · 净 +19.10万/h"
       }
     },
     {
       "colleague": "小李 Lv.1",
       "id": "li",
       "picked": "stroll",
-      "net": 342100,
+      "net": 376200,
       "matched": true,
       "wasMatchedBest": true,
       "res": {
         "found": true,
         "disabled": false,
-        "text": "就近溜达 ★3m · +2.57万 · 净 +34.21万/h"
+        "text": "就近溜达 ★3m · +2.74万 · 净 +37.62万/h"
       }
     },
     {
       "colleague": "王师傅 Lv.1",
       "id": "wang",
       "picked": "coffee",
-      "net": 452400,
+      "net": 493300,
       "matched": true,
       "wasMatchedBest": true,
       "res": {
         "found": true,
         "disabled": false,
-        "text": "楼下买咖啡 ★8h · +543.41万 · 净 +45.24万/h"
+        "text": "楼下买咖啡 ★8h · +576.99万 · 净 +49.33万/h"
       }
     }
   ],
   "finalState": {
-    "moyu": 97312109797.37245,
-    "lifetime": 100016043173.37245,
+    "moyu": 97313281818.24202,
+    "lifetime": 100017215194.24202,
     "prestige": 0,
     "rankHud": "奇点 25%",
-    "hudIdle": "2183.2",
+    "hudIdle": "2308.6",
     "hudClick": "1.3",
     "energy": {
       "date": "2026-11-27",
@@ -1816,7 +1819,7 @@
     },
     "teamOpen": true,
     "activeTab": "工位",
-    "summaryLine": "已装修 8/8 · 挂机 ×1.43 · 点击 ×1.26 · 离线 +23%"
+    "summaryLine": "已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23%"
   },
   "logs": {
     "toasts": [],

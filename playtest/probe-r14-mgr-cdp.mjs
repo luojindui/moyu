@@ -205,7 +205,7 @@ await runChrome(async ({ port, proc }) => {
     const freshEnergyText = await energyBlock();
     const freshEnergyBtns = await energyBtns();
     const freshDecorBtns = await decorBtns();
-    const freshEnergyAll = await ev(`(() => { const b = document.querySelector('#team-body button[data-act="energy-all"]'); return b ? { found: true, disabled: !!b.disabled, text: b.textContent.trim() } : { found: false }; })()`);
+    const freshEnergyAll = await ev(`(() => { const b = document.querySelector('#team-body button[data-act="energy-all"]'); const footer = [...document.querySelectorAll('#team-body .branch div')].map(d => (d.textContent||'').trim()).find(t => t.includes('每天 100 点')); return b ? { found: true, disabled: !!b.disabled, text: b.textContent.trim(), footer } : { found: false, footer }; })()`);
     log("A2 工位页(新号)", { freshEnergyText, freshEnergyBtns, freshEnergyAll, freshDecorBtns });
     await shot("03-fresh-decor-tab");
 
@@ -270,8 +270,9 @@ await runChrome(async ({ port, proc }) => {
       energy: afterTrio.energy, hudIdle: afterTrio.hudIdle, btnsAfterTrio,
       toasts: trioLogs.toasts.slice(-2),
     });
+    EVIDENCE.asserts.oneClickButtonEnabledAtFull = trioBtn.found === true && trioBtn.disabled === false;
     EVIDENCE.asserts.oneClickUsesOnlyOldThree = afterTrio.energy.used.length === 3 && !afterTrio.energy.used.includes("focus") && afterTrio.energy.left === 0;
-    EVIDENCE.asserts.staleCopy3Actions = /3 项/.test(String(trioBtn.text ?? "")) || /3 项合计正好 100/.test(String(trioFooter ?? ""));
+    EVIDENCE.asserts.copyMatches4ActionSpec = /4 项合计 145|4 项/.test(String(trioFooter ?? ""));
     await shot("04b-oneclick-trio");
 
     // ============ 3. grant 大钱 + 全招募（建立"中期"状态） ============
