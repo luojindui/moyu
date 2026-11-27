@@ -41,9 +41,11 @@ export function offlineEfficiency(state: GameState, createdAtMs: number, nowMs: 
   const ce = cardEffects(state, Date.now());
   const teamBase = teamTraits(state).offlineEfficiency + ce.offlineBonus - ce.riskPenalty + decorEffects(state).offlineBonus;
   // idle_4：离线效率上限可超过 100%（上限随天赋 +talentBase 提高）
-  // 上限随天赋一起抬高（event_5b 的离线 +20% 不会被 1.0 截断）
+  // 上限随「天赋 + 今日卡 + 工位家具」一起抬高（否则这些加成会被 100% 截断而失效）
+  const decorBase = decorEffects(state).offlineBonus;
+  const capRaise = talentBase + eventBonus + decorBase;
   return Math.min(
-    1 + talentBase + eventBonus,
-    0.7 + talentBase + eventBonus + favorBase + teamBase + visits * VISIT_BONUS_STEP + streakBonus,
+    1 + capRaise,
+    0.7 + capRaise + favorBase + teamBase + visits * VISIT_BONUS_STEP + streakBonus,
   );
 }

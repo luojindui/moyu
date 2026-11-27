@@ -95,11 +95,20 @@ export function conversionBonus(state: GameState): number {
   return bonus;
 }
 
-/** 工位挂机（已放大：×转生/图鉴/天赋/转化加成，不含同事） */
+/** 工位挂机（已放大：×转生/图鉴/天赋/转化/溢出/今日卡/家具/精力，不含同事） */
 export function stationIdleScaled(state: GameState): number {
   const mult = prestigeMultiplier(state.prestige) * collectionBonus(state);
   const talent = talentEffects(state.talents);
-  return stationIdleOf(state) * mult * talent.idleMult * (1 + conversionBonus(state)) * (1 + talent.overflowIdleBonus);
+  return (
+    stationIdleOf(state) *
+    mult *
+    talent.idleMult *
+    (1 + conversionBonus(state)) *
+    (1 + talent.overflowIdleBonus) *
+    cardEffects(state, Date.now()).idleMult *
+    decorEffects(state).idleMult *
+    energyEffects(state).idleMult
+  );
 }
 
 /** 假设所有同事都在家（未派遣）时的挂机收益，用于计算派遣净收益 */

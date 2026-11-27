@@ -1,0 +1,3259 @@
+{
+  "idle_early": {
+    "total": 1.2,
+    "station": 1.2,
+    "stationShareOfTotal": 1,
+    "hudIdleText": "1.2"
+  },
+  "idle_mid": {
+    "total": 262.5728,
+    "station": 99.2,
+    "stationShareOfTotal": 0.3778,
+    "hudIdleText": "262.6"
+  },
+  "idle_late": {
+    "total": 4791.5248,
+    "station": 631.2,
+    "stationShareOfTotal": 0.1317,
+    "hudIdleText": "4791.5"
+  },
+  "energy_actions": [
+    {
+      "id": "slack",
+      "name": "认真摸鱼",
+      "cost": 40,
+      "desc": "今天挂机 +25%"
+    },
+    {
+      "id": "fake-work",
+      "name": "假装工作",
+      "cost": 35,
+      "desc": "今天巡逻奖励 ×2.2"
+    },
+    {
+      "id": "social",
+      "name": "跟同事聊天",
+      "cost": 25,
+      "desc": "全体好感 +5，且今天挂机 +5%"
+    },
+    {
+      "id": "focus",
+      "name": "专注点击",
+      "cost": 45,
+      "desc": "今天点击力 +20%"
+    }
+  ],
+  "energy_budget": 100,
+  "energy_cost_sum": 145,
+  "energy_has_real_budget_constraint": true,
+  "energy_all_subsets": [
+    {
+      "set": [
+        "slack"
+      ],
+      "cost": 40,
+      "affordable": true
+    },
+    {
+      "set": [
+        "fake-work"
+      ],
+      "cost": 35,
+      "affordable": true
+    },
+    {
+      "set": [
+        "slack",
+        "fake-work"
+      ],
+      "cost": 75,
+      "affordable": true
+    },
+    {
+      "set": [
+        "social"
+      ],
+      "cost": 25,
+      "affordable": true
+    },
+    {
+      "set": [
+        "slack",
+        "social"
+      ],
+      "cost": 65,
+      "affordable": true
+    },
+    {
+      "set": [
+        "fake-work",
+        "social"
+      ],
+      "cost": 60,
+      "affordable": true
+    },
+    {
+      "set": [
+        "slack",
+        "fake-work",
+        "social"
+      ],
+      "cost": 100,
+      "affordable": true
+    },
+    {
+      "set": [
+        "focus"
+      ],
+      "cost": 45,
+      "affordable": true
+    },
+    {
+      "set": [
+        "slack",
+        "focus"
+      ],
+      "cost": 85,
+      "affordable": true
+    },
+    {
+      "set": [
+        "fake-work",
+        "focus"
+      ],
+      "cost": 80,
+      "affordable": true
+    },
+    {
+      "set": [
+        "slack",
+        "fake-work",
+        "focus"
+      ],
+      "cost": 120,
+      "affordable": false
+    },
+    {
+      "set": [
+        "social",
+        "focus"
+      ],
+      "cost": 70,
+      "affordable": true
+    },
+    {
+      "set": [
+        "slack",
+        "social",
+        "focus"
+      ],
+      "cost": 110,
+      "affordable": false
+    },
+    {
+      "set": [
+        "fake-work",
+        "social",
+        "focus"
+      ],
+      "cost": 105,
+      "affordable": false
+    },
+    {
+      "set": [
+        "slack",
+        "fake-work",
+        "social",
+        "focus"
+      ],
+      "cost": 145,
+      "affordable": false
+    }
+  ],
+  "energy_maximal_sets": [
+    {
+      "set": [
+        "slack",
+        "fake-work",
+        "social"
+      ],
+      "cost": 100,
+      "leftover": 0
+    },
+    {
+      "set": [
+        "slack",
+        "focus"
+      ],
+      "cost": 85,
+      "leftover": 15
+    },
+    {
+      "set": [
+        "fake-work",
+        "focus"
+      ],
+      "cost": 80,
+      "leftover": 20
+    },
+    {
+      "set": [
+        "social",
+        "focus"
+      ],
+      "cost": 70,
+      "leftover": 30
+    }
+  ],
+  "energy_maximal_set_count": 4,
+  "energy_full_budget_sets": [
+    [
+      "slack",
+      "fake-work",
+      "social"
+    ]
+  ],
+  "energy_after_focus": {
+    "date": "2026-11-27",
+    "left": 55,
+    "used": [
+      "focus"
+    ],
+    "boosted": {
+      "idleMult": 1,
+      "patrolRewardMult": 1,
+      "clickMult": 1.2
+    }
+  },
+  "energy_focus_slack": {
+    "date": "2026-11-27",
+    "left": 15,
+    "used": [
+      "focus",
+      "slack"
+    ],
+    "boosted": {
+      "idleMult": 1.25,
+      "patrolRewardMult": 1,
+      "clickMult": 1.2
+    }
+  },
+  "energy_focus_path_leftover_wasted": {
+    "leftToday": 15,
+    "leftTomorrow": 100
+  },
+  "energy_value_4actions": [
+    {
+      "stage": "early",
+      "cps": 0,
+      "idleRate": 1.2,
+      "clickPower": 3,
+      "clickIncomePerDay": 0,
+      "values": {
+        "slack": 14040,
+        "social": 2808,
+        "fakeWork": 1800,
+        "focus": 0
+      },
+      "bestAction": "slack",
+      "best3NoFocus": 18648,
+      "focusBuild": 14040,
+      "focusBuildBeatsFull": false,
+      "allClose": false
+    },
+    {
+      "stage": "early",
+      "cps": 1,
+      "idleRate": 1.2,
+      "clickPower": 3,
+      "clickIncomePerDay": 3600,
+      "values": {
+        "slack": 14040,
+        "social": 2808,
+        "fakeWork": 1800,
+        "focus": 720
+      },
+      "bestAction": "slack",
+      "best3NoFocus": 18648,
+      "focusBuild": 14760,
+      "focusBuildBeatsFull": false,
+      "allClose": false
+    },
+    {
+      "stage": "early",
+      "cps": 2.5,
+      "idleRate": 1.2,
+      "clickPower": 3,
+      "clickIncomePerDay": 9000,
+      "values": {
+        "slack": 14040,
+        "social": 2808,
+        "fakeWork": 1800,
+        "focus": 1800
+      },
+      "bestAction": "slack",
+      "best3NoFocus": 18648,
+      "focusBuild": 15840,
+      "focusBuildBeatsFull": false,
+      "allClose": false
+    },
+    {
+      "stage": "early",
+      "cps": 5,
+      "idleRate": 1.2,
+      "clickPower": 3,
+      "clickIncomePerDay": 18000,
+      "values": {
+        "slack": 14040,
+        "social": 2808,
+        "fakeWork": 1800,
+        "focus": 3600
+      },
+      "bestAction": "slack",
+      "best3NoFocus": 18648,
+      "focusBuild": 17640,
+      "focusBuildBeatsFull": false,
+      "allClose": false
+    },
+    {
+      "stage": "mid",
+      "cps": 0,
+      "idleRate": 262.57,
+      "clickPower": 1,
+      "clickIncomePerDay": 0,
+      "values": {
+        "slack": 1160640,
+        "social": 232128,
+        "fakeWork": 47263,
+        "focus": 0
+      },
+      "bestAction": "slack",
+      "best3NoFocus": 1440031,
+      "focusBuild": 1160640,
+      "focusBuildBeatsFull": false,
+      "allClose": false
+    },
+    {
+      "stage": "mid",
+      "cps": 1,
+      "idleRate": 262.57,
+      "clickPower": 1,
+      "clickIncomePerDay": 1200,
+      "values": {
+        "slack": 1160640,
+        "social": 232128,
+        "fakeWork": 47263,
+        "focus": 240
+      },
+      "bestAction": "slack",
+      "best3NoFocus": 1440031,
+      "focusBuild": 1160880,
+      "focusBuildBeatsFull": false,
+      "allClose": false
+    },
+    {
+      "stage": "mid",
+      "cps": 2.5,
+      "idleRate": 262.57,
+      "clickPower": 1,
+      "clickIncomePerDay": 3000,
+      "values": {
+        "slack": 1160640,
+        "social": 232128,
+        "fakeWork": 47263,
+        "focus": 600
+      },
+      "bestAction": "slack",
+      "best3NoFocus": 1440031,
+      "focusBuild": 1161240,
+      "focusBuildBeatsFull": false,
+      "allClose": false
+    },
+    {
+      "stage": "mid",
+      "cps": 5,
+      "idleRate": 262.57,
+      "clickPower": 1,
+      "clickIncomePerDay": 6000,
+      "values": {
+        "slack": 1160640,
+        "social": 232128,
+        "fakeWork": 47263,
+        "focus": 1200
+      },
+      "bestAction": "slack",
+      "best3NoFocus": 1440031,
+      "focusBuild": 1161840,
+      "focusBuildBeatsFull": false,
+      "allClose": false
+    },
+    {
+      "stage": "late",
+      "cps": 0,
+      "idleRate": 4791.52,
+      "clickPower": 1,
+      "clickIncomePerDay": 0,
+      "values": {
+        "slack": 7385040,
+        "social": 1477008,
+        "fakeWork": 862474,
+        "focus": 0
+      },
+      "bestAction": "slack",
+      "best3NoFocus": 9724522,
+      "focusBuild": 7385040,
+      "focusBuildBeatsFull": false,
+      "allClose": false
+    },
+    {
+      "stage": "late",
+      "cps": 1,
+      "idleRate": 4791.52,
+      "clickPower": 1,
+      "clickIncomePerDay": 1200,
+      "values": {
+        "slack": 7385040,
+        "social": 1477008,
+        "fakeWork": 862474,
+        "focus": 240
+      },
+      "bestAction": "slack",
+      "best3NoFocus": 9724522,
+      "focusBuild": 7385280,
+      "focusBuildBeatsFull": false,
+      "allClose": false
+    },
+    {
+      "stage": "late",
+      "cps": 2.5,
+      "idleRate": 4791.52,
+      "clickPower": 1,
+      "clickIncomePerDay": 3000,
+      "values": {
+        "slack": 7385040,
+        "social": 1477008,
+        "fakeWork": 862474,
+        "focus": 600
+      },
+      "bestAction": "slack",
+      "best3NoFocus": 9724522,
+      "focusBuild": 7385640,
+      "focusBuildBeatsFull": false,
+      "allClose": false
+    },
+    {
+      "stage": "late",
+      "cps": 5,
+      "idleRate": 4791.52,
+      "clickPower": 1,
+      "clickIncomePerDay": 6000,
+      "values": {
+        "slack": 7385040,
+        "social": 1477008,
+        "fakeWork": 862474,
+        "focus": 1200
+      },
+      "bestAction": "slack",
+      "best3NoFocus": 9724522,
+      "focusBuild": 7386240,
+      "focusBuildBeatsFull": false,
+      "allClose": false
+    },
+    {
+      "stage": "clickBuild",
+      "cps": 0,
+      "idleRate": 3413.39,
+      "clickPower": 3600,
+      "clickIncomePerDay": 0,
+      "values": {
+        "slack": 10315469,
+        "social": 2063094,
+        "fakeWork": 614410,
+        "focus": 0
+      },
+      "bestAction": "slack",
+      "best3NoFocus": 12992972,
+      "focusBuild": 10315469,
+      "focusBuildBeatsFull": false,
+      "allClose": false
+    },
+    {
+      "stage": "clickBuild",
+      "cps": 1,
+      "idleRate": 3413.39,
+      "clickPower": 3600,
+      "clickIncomePerDay": 4320000,
+      "values": {
+        "slack": 10315469,
+        "social": 2063094,
+        "fakeWork": 614410,
+        "focus": 864000
+      },
+      "bestAction": "slack",
+      "best3NoFocus": 12992972,
+      "focusBuild": 11179469,
+      "focusBuildBeatsFull": false,
+      "allClose": false
+    },
+    {
+      "stage": "clickBuild",
+      "cps": 2.5,
+      "idleRate": 3413.39,
+      "clickPower": 3600,
+      "clickIncomePerDay": 10800000,
+      "values": {
+        "slack": 10315469,
+        "social": 2063094,
+        "fakeWork": 614410,
+        "focus": 2160000
+      },
+      "bestAction": "slack",
+      "best3NoFocus": 12992972,
+      "focusBuild": 12475469,
+      "focusBuildBeatsFull": false,
+      "allClose": false
+    },
+    {
+      "stage": "clickBuild",
+      "cps": 5,
+      "idleRate": 3413.39,
+      "clickPower": 3600,
+      "clickIncomePerDay": 21600000,
+      "values": {
+        "slack": 10315469,
+        "social": 2063094,
+        "fakeWork": 614410,
+        "focus": 4320000
+      },
+      "bestAction": "slack",
+      "best3NoFocus": 12992972,
+      "focusBuild": 14635469,
+      "focusBuildBeatsFull": true,
+      "allClose": false
+    }
+  ],
+  "energy_decision_by_playstyle": {
+    "idlePlayerFocusEverBest": false,
+    "idlePlayerFocusBuildWins": false,
+    "clickBuildFocusActionBest": false,
+    "clickBuildFocusComboWins": true,
+    "note": "如果仅点击画像才选 focus → 第 4 档把「每日分配」变成「一次性流派选择」（同画像每天都选同一套）",
+    "clickBuildDetail": [
+      {
+        "stage": "clickBuild",
+        "cps": 5,
+        "idleRate": 3413.39,
+        "clickPower": 3600,
+        "clickIncomePerDay": 21600000,
+        "values": {
+          "slack": 10315469,
+          "social": 2063094,
+          "fakeWork": 614410,
+          "focus": 4320000
+        },
+        "bestAction": "slack",
+        "best3NoFocus": 12992972,
+        "focusBuild": 14635469,
+        "focusBuildBeatsFull": true,
+        "allClose": false
+      }
+    ]
+  },
+  "energy_combos_effect": [
+    {
+      "combo": [
+        "slack",
+        "fake-work",
+        "social"
+      ],
+      "used": [
+        "slack",
+        "fake-work",
+        "social"
+      ],
+      "left": 0,
+      "idleMult": 1.3125,
+      "patrolRewardMult": 2.2,
+      "clickMult": 1,
+      "idleRate": 293.573,
+      "clickPower": 1,
+      "patrolReward": 2583.4,
+      "favorSum": 10
+    },
+    {
+      "combo": [
+        "focus",
+        "slack"
+      ],
+      "used": [
+        "focus",
+        "slack"
+      ],
+      "left": 15,
+      "idleMult": 1.25,
+      "patrolRewardMult": 1,
+      "clickMult": 1.2,
+      "idleRate": 287.373,
+      "clickPower": 1.2,
+      "patrolReward": 1149.5,
+      "favorSum": 0
+    },
+    {
+      "combo": [
+        "focus",
+        "fake-work"
+      ],
+      "used": [
+        "focus",
+        "fake-work"
+      ],
+      "left": 20,
+      "idleMult": 1,
+      "patrolRewardMult": 2.2,
+      "clickMult": 1.2,
+      "idleRate": 262.573,
+      "clickPower": 1.2,
+      "patrolReward": 2310.6,
+      "favorSum": 0
+    },
+    {
+      "combo": [
+        "focus",
+        "social"
+      ],
+      "used": [
+        "focus",
+        "social"
+      ],
+      "left": 30,
+      "idleMult": 1.05,
+      "patrolRewardMult": 1,
+      "clickMult": 1.2,
+      "idleRate": 267.533,
+      "clickPower": 1.2,
+      "patrolReward": 1070.1,
+      "favorSum": 10
+    }
+  ],
+  "decor_items": [
+    {
+      "id": "plant",
+      "name": "绿萝",
+      "cost": 3000,
+      "effects": {
+        "idleMult": 1.05
+      },
+      "minRank": null
+    },
+    {
+      "id": "lamp",
+      "name": "护眼台灯",
+      "cost": 20000,
+      "effects": {
+        "clickMult": 1.15
+      },
+      "minRank": null
+    },
+    {
+      "id": "rug",
+      "name": "毛绒地毯",
+      "cost": 120000,
+      "effects": {
+        "offlineBonus": 0.05
+      },
+      "minRank": null
+    },
+    {
+      "id": "fridge",
+      "name": "迷你冰箱",
+      "cost": 600000,
+      "effects": {
+        "idleMult": 1.08
+      },
+      "minRank": null
+    },
+    {
+      "id": "chair",
+      "name": "按摩椅",
+      "cost": 4000000,
+      "effects": {
+        "offlineBonus": 0.08
+      },
+      "minRank": null
+    },
+    {
+      "id": "aquarium",
+      "name": "鱼缸",
+      "cost": 30000000,
+      "effects": {
+        "idleMult": 1.1,
+        "clickMult": 1.1
+      },
+      "minRank": null
+    },
+    {
+      "id": "projector",
+      "name": "投影仪",
+      "cost": 200000000,
+      "effects": {
+        "dispatchRewardMult": 1.3
+      },
+      "minRank": null
+    },
+    {
+      "id": "catbed",
+      "name": "工位猫窝",
+      "cost": 2000000000,
+      "effects": {
+        "idleMult": 1.15,
+        "offlineBonus": 0.1
+      },
+      "minRank": null
+    }
+  ],
+  "decor_no_slots": {
+    "stateDecorIsArray": true,
+    "maxCount": 8,
+    "mutex": false,
+    "upkeep": false,
+    "consumesCurrency": "moyu(一次性)"
+  },
+  "decor_minRank_gate": {
+    "declaredInInterface": true,
+    "usedByAnyItem": false,
+    "enforcedInCanBuy": false
+  },
+  "decor_after_buy_all": {
+    "count": 8,
+    "effects": {
+      "idleMult": 1.4345100000000002,
+      "clickMult": 1.265,
+      "offlineBonus": 0.23,
+      "dispatchRewardMult": 1.3
+    },
+    "remainingAffordable": 0
+  },
+  "decor_totals": {
+    "totalCost": 2234743000,
+    "totalCostText": "22.35亿",
+    "idleMult": 1.4345,
+    "clickMult": 1.265,
+    "offlineBonus": 0.23,
+    "dispatchRewardMult": 1.3,
+    "exhaustedAtLifetime": 2234743000
+  },
+  "decor_exhaust_rank": {
+    "rankIndex": 5,
+    "rankName": "摸鱼之神",
+    "rankAt": 1000000000,
+    "nextRank": "摸鱼宇宙尽头"
+  },
+  "decor_roi": [
+    {
+      "stage": "early",
+      "id": "plant",
+      "cost": 3000,
+      "deltaIdlePerSec": 0.06,
+      "paybackHours": 13.89,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 0.69,
+      "desc": "工位挂机 +5%"
+    },
+    {
+      "stage": "early",
+      "id": "lamp",
+      "cost": 20000,
+      "deltaIdlePerSec": 0,
+      "paybackHours": null,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 4.63,
+      "desc": "点击力 +15%"
+    },
+    {
+      "stage": "early",
+      "id": "rug",
+      "cost": 120000,
+      "deltaIdlePerSec": 0,
+      "paybackHours": null,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 27.78,
+      "desc": "离线效率 +5%"
+    },
+    {
+      "stage": "early",
+      "id": "fridge",
+      "cost": 600000,
+      "deltaIdlePerSec": 0.096,
+      "paybackHours": 1736.11,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 138.89,
+      "desc": "工位挂机 +8%"
+    },
+    {
+      "stage": "early",
+      "id": "chair",
+      "cost": 4000000,
+      "deltaIdlePerSec": 0,
+      "paybackHours": null,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 925.93,
+      "desc": "离线效率 +8%"
+    },
+    {
+      "stage": "early",
+      "id": "aquarium",
+      "cost": 30000000,
+      "deltaIdlePerSec": 0.12,
+      "paybackHours": 69444.44,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 6944.44,
+      "desc": "挂机 +10%、点击 +10%"
+    },
+    {
+      "stage": "early",
+      "id": "projector",
+      "cost": 200000000,
+      "deltaIdlePerSec": 0,
+      "paybackHours": null,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 46296.3,
+      "desc": "派遣奖励 +30%"
+    },
+    {
+      "stage": "early",
+      "id": "catbed",
+      "cost": 2000000000,
+      "deltaIdlePerSec": 0.18,
+      "paybackHours": 3086419.75,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 462962.96,
+      "desc": "挂机 +15%、离线 +10%"
+    },
+    {
+      "stage": "mid",
+      "id": "plant",
+      "cost": 3000,
+      "deltaIdlePerSec": 4.96,
+      "paybackHours": 0.17,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 0,
+      "desc": "工位挂机 +5%"
+    },
+    {
+      "stage": "mid",
+      "id": "lamp",
+      "cost": 20000,
+      "deltaIdlePerSec": 0,
+      "paybackHours": null,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 0.02,
+      "desc": "点击力 +15%"
+    },
+    {
+      "stage": "mid",
+      "id": "rug",
+      "cost": 120000,
+      "deltaIdlePerSec": 0,
+      "paybackHours": null,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 0.13,
+      "desc": "离线效率 +5%"
+    },
+    {
+      "stage": "mid",
+      "id": "fridge",
+      "cost": 600000,
+      "deltaIdlePerSec": 7.936,
+      "paybackHours": 21,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 0.63,
+      "desc": "工位挂机 +8%"
+    },
+    {
+      "stage": "mid",
+      "id": "chair",
+      "cost": 4000000,
+      "deltaIdlePerSec": 0,
+      "paybackHours": null,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 4.23,
+      "desc": "离线效率 +8%"
+    },
+    {
+      "stage": "mid",
+      "id": "aquarium",
+      "cost": 30000000,
+      "deltaIdlePerSec": 9.92,
+      "paybackHours": 840.05,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 31.74,
+      "desc": "挂机 +10%、点击 +10%"
+    },
+    {
+      "stage": "mid",
+      "id": "projector",
+      "cost": 200000000,
+      "deltaIdlePerSec": 0,
+      "paybackHours": null,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 211.58,
+      "desc": "派遣奖励 +30%"
+    },
+    {
+      "stage": "mid",
+      "id": "catbed",
+      "cost": 2000000000,
+      "deltaIdlePerSec": 14.88,
+      "paybackHours": 37335.72,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 2115.82,
+      "desc": "挂机 +15%、离线 +10%"
+    },
+    {
+      "stage": "late",
+      "id": "plant",
+      "cost": 3000,
+      "deltaIdlePerSec": 31.56,
+      "paybackHours": 0.03,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 0,
+      "desc": "工位挂机 +5%"
+    },
+    {
+      "stage": "late",
+      "id": "lamp",
+      "cost": 20000,
+      "deltaIdlePerSec": 0,
+      "paybackHours": null,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 0,
+      "desc": "点击力 +15%"
+    },
+    {
+      "stage": "late",
+      "id": "rug",
+      "cost": 120000,
+      "deltaIdlePerSec": 0,
+      "paybackHours": null,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 0.01,
+      "desc": "离线效率 +5%"
+    },
+    {
+      "stage": "late",
+      "id": "fridge",
+      "cost": 600000,
+      "deltaIdlePerSec": 50.496,
+      "paybackHours": 3.3,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 0.03,
+      "desc": "工位挂机 +8%"
+    },
+    {
+      "stage": "late",
+      "id": "chair",
+      "cost": 4000000,
+      "deltaIdlePerSec": 0,
+      "paybackHours": null,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 0.23,
+      "desc": "离线效率 +8%"
+    },
+    {
+      "stage": "late",
+      "id": "aquarium",
+      "cost": 30000000,
+      "deltaIdlePerSec": 63.12,
+      "paybackHours": 132.02,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 1.74,
+      "desc": "挂机 +10%、点击 +10%"
+    },
+    {
+      "stage": "late",
+      "id": "projector",
+      "cost": 200000000,
+      "deltaIdlePerSec": 0,
+      "paybackHours": null,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 11.59,
+      "desc": "派遣奖励 +30%"
+    },
+    {
+      "stage": "late",
+      "id": "catbed",
+      "cost": 2000000000,
+      "deltaIdlePerSec": 94.68,
+      "paybackHours": 5867.72,
+      "deltaClick": 0,
+      "costAsHoursOfIncome": 115.95,
+      "desc": "挂机 +15%、离线 +10%"
+    }
+  ],
+  "decor_idle_payback_hours": {
+    "early": [
+      {
+        "id": "plant",
+        "hours": 13.89
+      },
+      {
+        "id": "fridge",
+        "hours": 1736.11
+      },
+      {
+        "id": "aquarium",
+        "hours": 69444.44
+      },
+      {
+        "id": "catbed",
+        "hours": 3086419.75
+      }
+    ],
+    "mid": [
+      {
+        "id": "plant",
+        "hours": 0.17
+      },
+      {
+        "id": "fridge",
+        "hours": 21
+      },
+      {
+        "id": "aquarium",
+        "hours": 840.05
+      },
+      {
+        "id": "catbed",
+        "hours": 37335.72
+      }
+    ],
+    "late": [
+      {
+        "id": "plant",
+        "hours": 0.03
+      },
+      {
+        "id": "fridge",
+        "hours": 3.3
+      },
+      {
+        "id": "aquarium",
+        "hours": 132.02
+      },
+      {
+        "id": "catbed",
+        "hours": 5867.72
+      }
+    ]
+  },
+  "decor_vs_shop_roi": {
+    "early": {
+      "bestShopUpgrade": {
+        "id": "phone",
+        "level": 1,
+        "cost": 58,
+        "delta": 1,
+        "roi": 0.017241379310344827
+      },
+      "decorIdleRoi": [
+        {
+          "id": "plant",
+          "cost": 3000,
+          "delta": 0.06,
+          "roi": 0.00002000000000000002,
+          "roiVsBestShop": 0.001
+        },
+        {
+          "id": "fridge",
+          "cost": 600000,
+          "delta": 0.096,
+          "roi": 1.6000000000000014e-7,
+          "roiVsBestShop": 0
+        },
+        {
+          "id": "aquarium",
+          "cost": 30000000,
+          "delta": 0.12,
+          "roi": 4.0000000000000036e-9,
+          "roiVsBestShop": 0
+        },
+        {
+          "id": "catbed",
+          "cost": 2000000000,
+          "delta": 0.18,
+          "roi": 8.999999999999997e-11,
+          "roiVsBestShop": 0
+        }
+      ]
+    },
+    "mid": {
+      "bestShopUpgrade": {
+        "id": "phone",
+        "level": 4,
+        "cost": 88,
+        "delta": 6,
+        "roi": 0.06818181818181818
+      },
+      "decorIdleRoi": [
+        {
+          "id": "plant",
+          "cost": 3000,
+          "delta": 4.96,
+          "roi": 0.0016533333333333454,
+          "roiVsBestShop": 0.024
+        },
+        {
+          "id": "fridge",
+          "cost": 600000,
+          "delta": 7.936,
+          "roi": 0.000013226666666666726,
+          "roiVsBestShop": 0
+        },
+        {
+          "id": "aquarium",
+          "cost": 30000000,
+          "delta": 9.92,
+          "roi": 3.306666666666672e-7,
+          "roiVsBestShop": 0
+        },
+        {
+          "id": "catbed",
+          "cost": 2000000000,
+          "delta": 14.88,
+          "roi": 7.4399999999999975e-9,
+          "roiVsBestShop": 0
+        }
+      ]
+    },
+    "late": {
+      "bestShopUpgrade": {
+        "id": "phone",
+        "level": 8,
+        "cost": 153,
+        "delta": 2,
+        "roi": 0.013071895424836602
+      },
+      "decorIdleRoi": [
+        {
+          "id": "plant",
+          "cost": 3000,
+          "delta": 31.56,
+          "roi": 0.010520000000000133,
+          "roiVsBestShop": 0.805
+        },
+        {
+          "id": "fridge",
+          "cost": 600000,
+          "delta": 50.496,
+          "roi": 0.00008416000000000016,
+          "roiVsBestShop": 0.006
+        },
+        {
+          "id": "aquarium",
+          "cost": 30000000,
+          "delta": 63.12,
+          "roi": 0.0000021039999999999963,
+          "roiVsBestShop": 0
+        },
+        {
+          "id": "catbed",
+          "cost": 2000000000,
+          "delta": 94.68,
+          "roi": 4.7340000000000145e-8,
+          "roiVsBestShop": 0
+        }
+      ]
+    }
+  },
+  "dispatch_argmax": [
+    {
+      "colleague": "zhou",
+      "name": "老周",
+      "skill": "chat",
+      "level": 1,
+      "favor": 0,
+      "uniqueArgmax": [
+        "stroll",
+        "coffee"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "stroll",
+          "bestNet": 4725
+        },
+        {
+          "station": 5,
+          "best": "stroll",
+          "bestNet": 4708
+        },
+        {
+          "station": 20,
+          "best": "stroll",
+          "bestNet": 4643
+        },
+        {
+          "station": 100,
+          "best": "coffee",
+          "bestNet": 7239
+        },
+        {
+          "station": 500,
+          "best": "coffee",
+          "bestNet": 58525
+        },
+        {
+          "station": 2000,
+          "best": "coffee",
+          "bestNet": 250846
+        },
+        {
+          "station": 10000,
+          "best": "coffee",
+          "bestNet": 1276560
+        }
+      ]
+    },
+    {
+      "colleague": "zhou",
+      "name": "老周",
+      "skill": "chat",
+      "level": 1,
+      "favor": 100,
+      "uniqueArgmax": [
+        "stroll",
+        "coffee"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "stroll",
+          "bestNet": 12490
+        },
+        {
+          "station": 5,
+          "best": "stroll",
+          "bestNet": 12473
+        },
+        {
+          "station": 20,
+          "best": "stroll",
+          "bestNet": 12408
+        },
+        {
+          "station": 100,
+          "best": "coffee",
+          "bestNet": 16475
+        },
+        {
+          "station": 500,
+          "best": "coffee",
+          "bestNet": 94267
+        },
+        {
+          "station": 2000,
+          "best": "coffee",
+          "bestNet": 385989
+        },
+        {
+          "station": 10000,
+          "best": "coffee",
+          "bestNet": 1941840
+        }
+      ]
+    },
+    {
+      "colleague": "zhou",
+      "name": "老周",
+      "skill": "chat",
+      "level": 3,
+      "favor": 0,
+      "uniqueArgmax": [
+        "coffee"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "coffee",
+          "bestNet": -12675
+        },
+        {
+          "station": 5,
+          "best": "coffee",
+          "bestNet": -12043
+        },
+        {
+          "station": 20,
+          "best": "coffee",
+          "bestNet": -9674
+        },
+        {
+          "station": 100,
+          "best": "coffee",
+          "bestNet": 2960
+        },
+        {
+          "station": 500,
+          "best": "coffee",
+          "bestNet": 66130
+        },
+        {
+          "station": 2000,
+          "best": "coffee",
+          "bestNet": 303018
+        },
+        {
+          "station": 10000,
+          "best": "coffee",
+          "bestNet": 1566424
+        }
+      ]
+    },
+    {
+      "colleague": "zhou",
+      "name": "老周",
+      "skill": "chat",
+      "level": 3,
+      "favor": 100,
+      "uniqueArgmax": [
+        "coffee"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "coffee",
+          "bestNet": -2806
+        },
+        {
+          "station": 5,
+          "best": "coffee",
+          "bestNet": -1833
+        },
+        {
+          "station": 20,
+          "best": "coffee",
+          "bestNet": 1818
+        },
+        {
+          "station": 100,
+          "best": "coffee",
+          "bestNet": 21287
+        },
+        {
+          "station": 500,
+          "best": "coffee",
+          "bestNet": 118635
+        },
+        {
+          "station": 2000,
+          "best": "coffee",
+          "bestNet": 483688
+        },
+        {
+          "station": 10000,
+          "best": "coffee",
+          "bestNet": 2430635
+        }
+      ]
+    },
+    {
+      "colleague": "zhou",
+      "name": "老周",
+      "skill": "chat",
+      "level": 5,
+      "favor": 0,
+      "uniqueArgmax": [
+        "coffee"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "coffee",
+          "bestNet": -14676
+        },
+        {
+          "station": 5,
+          "best": "coffee",
+          "bestNet": -13917
+        },
+        {
+          "station": 20,
+          "best": "coffee",
+          "bestNet": -11071
+        },
+        {
+          "station": 100,
+          "best": "coffee",
+          "bestNet": 4106
+        },
+        {
+          "station": 500,
+          "best": "coffee",
+          "bestNet": 79996
+        },
+        {
+          "station": 2000,
+          "best": "coffee",
+          "bestNet": 364583
+        },
+        {
+          "station": 10000,
+          "best": "coffee",
+          "bestNet": 1882376
+        }
+      ]
+    },
+    {
+      "colleague": "zhou",
+      "name": "老周",
+      "skill": "chat",
+      "level": 5,
+      "favor": 100,
+      "uniqueArgmax": [
+        "coffee"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "coffee",
+          "bestNet": 4996
+        },
+        {
+          "station": 5,
+          "best": "coffee",
+          "bestNet": 6178
+        },
+        {
+          "station": 20,
+          "best": "coffee",
+          "bestNet": 10609
+        },
+        {
+          "station": 100,
+          "best": "coffee",
+          "bestNet": 34240
+        },
+        {
+          "station": 500,
+          "best": "coffee",
+          "bestNet": 152394
+        },
+        {
+          "station": 2000,
+          "best": "coffee",
+          "bestNet": 595474
+        },
+        {
+          "station": 10000,
+          "best": "coffee",
+          "bestNet": 2958565
+        }
+      ]
+    },
+    {
+      "colleague": "mei",
+      "name": "小美",
+      "skill": "meeting",
+      "level": 1,
+      "favor": 0,
+      "uniqueArgmax": [
+        "coffee"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "coffee",
+          "bestNet": -31716
+        },
+        {
+          "station": 5,
+          "best": "coffee",
+          "bestNet": -31286
+        },
+        {
+          "station": 20,
+          "best": "coffee",
+          "bestNet": -29670
+        },
+        {
+          "station": 100,
+          "best": "coffee",
+          "bestNet": -21054
+        },
+        {
+          "station": 500,
+          "best": "coffee",
+          "bestNet": 22025
+        },
+        {
+          "station": 2000,
+          "best": "coffee",
+          "bestNet": 183571
+        },
+        {
+          "station": 10000,
+          "best": "coffee",
+          "bestNet": 1045152
+        }
+      ]
+    },
+    {
+      "colleague": "mei",
+      "name": "小美",
+      "skill": "meeting",
+      "level": 1,
+      "favor": 100,
+      "uniqueArgmax": [
+        "coffee"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "coffee",
+          "bestNet": -20572
+        },
+        {
+          "station": 5,
+          "best": "coffee",
+          "bestNet": -19915
+        },
+        {
+          "station": 20,
+          "best": "coffee",
+          "bestNet": -17451
+        },
+        {
+          "station": 100,
+          "best": "coffee",
+          "bestNet": -4311
+        },
+        {
+          "station": 500,
+          "best": "coffee",
+          "bestNet": 61387
+        },
+        {
+          "station": 2000,
+          "best": "coffee",
+          "bestNet": 307757
+        },
+        {
+          "station": 10000,
+          "best": "coffee",
+          "bestNet": 1621728
+        }
+      ]
+    },
+    {
+      "colleague": "mei",
+      "name": "小美",
+      "skill": "meeting",
+      "level": 3,
+      "favor": 0,
+      "uniqueArgmax": [
+        "coffee"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "coffee",
+          "bestNet": -78709
+        },
+        {
+          "station": 5,
+          "best": "coffee",
+          "bestNet": -78186
+        },
+        {
+          "station": 20,
+          "best": "coffee",
+          "bestNet": -76226
+        },
+        {
+          "station": 100,
+          "best": "coffee",
+          "bestNet": -65768
+        },
+        {
+          "station": 500,
+          "best": "coffee",
+          "bestNet": -13482
+        },
+        {
+          "station": 2000,
+          "best": "coffee",
+          "bestNet": 182592
+        },
+        {
+          "station": 10000,
+          "best": "coffee",
+          "bestNet": 1228320
+        }
+      ]
+    },
+    {
+      "colleague": "mei",
+      "name": "小美",
+      "skill": "meeting",
+      "level": 3,
+      "favor": 100,
+      "uniqueArgmax": [
+        "coffee"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "coffee",
+          "bestNet": -37056
+        },
+        {
+          "station": 5,
+          "best": "coffee",
+          "bestNet": -36239
+        },
+        {
+          "station": 20,
+          "best": "coffee",
+          "bestNet": -33177
+        },
+        {
+          "station": 100,
+          "best": "coffee",
+          "bestNet": -16843
+        },
+        {
+          "station": 500,
+          "best": "coffee",
+          "bestNet": 64827
+        },
+        {
+          "station": 2000,
+          "best": "coffee",
+          "bestNet": 371088
+        },
+        {
+          "station": 10000,
+          "best": "coffee",
+          "bestNet": 2004480
+        }
+      ]
+    },
+    {
+      "colleague": "mei",
+      "name": "小美",
+      "skill": "meeting",
+      "level": 5,
+      "favor": 0,
+      "uniqueArgmax": [
+        "coffee"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "coffee",
+          "bestNet": -103524
+        },
+        {
+          "station": 5,
+          "best": "coffee",
+          "bestNet": -102900
+        },
+        {
+          "station": 20,
+          "best": "coffee",
+          "bestNet": -100561
+        },
+        {
+          "station": 100,
+          "best": "coffee",
+          "bestNet": -88085
+        },
+        {
+          "station": 500,
+          "best": "coffee",
+          "bestNet": -25704
+        },
+        {
+          "station": 2000,
+          "best": "coffee",
+          "bestNet": 208224
+        },
+        {
+          "station": 10000,
+          "best": "coffee",
+          "bestNet": 1455840
+        }
+      ]
+    },
+    {
+      "colleague": "mei",
+      "name": "小美",
+      "skill": "meeting",
+      "level": 5,
+      "favor": 100,
+      "uniqueArgmax": [
+        "coffee"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "coffee",
+          "bestNet": -20273
+        },
+        {
+          "station": 5,
+          "best": "coffee",
+          "bestNet": -19283
+        },
+        {
+          "station": 20,
+          "best": "coffee",
+          "bestNet": -15571
+        },
+        {
+          "station": 100,
+          "best": "coffee",
+          "bestNet": 4223
+        },
+        {
+          "station": 500,
+          "best": "coffee",
+          "bestNet": 103194
+        },
+        {
+          "station": 2000,
+          "best": "coffee",
+          "bestNet": 474336
+        },
+        {
+          "station": 10000,
+          "best": "coffee",
+          "bestNet": 2453760
+        }
+      ]
+    },
+    {
+      "colleague": "qiang",
+      "name": "强哥",
+      "skill": "toilet",
+      "level": 1,
+      "favor": 0,
+      "uniqueArgmax": [
+        "toilet"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "toilet",
+          "bestNet": -55601
+        },
+        {
+          "station": 5,
+          "best": "toilet",
+          "bestNet": -55091
+        },
+        {
+          "station": 20,
+          "best": "toilet",
+          "bestNet": -53181
+        },
+        {
+          "station": 100,
+          "best": "toilet",
+          "bestNet": -42994
+        },
+        {
+          "station": 500,
+          "best": "toilet",
+          "bestNet": 7940
+        },
+        {
+          "station": 2000,
+          "best": "toilet",
+          "bestNet": 198945
+        },
+        {
+          "station": 10000,
+          "best": "toilet",
+          "bestNet": 1217635
+        }
+      ]
+    },
+    {
+      "colleague": "qiang",
+      "name": "强哥",
+      "skill": "toilet",
+      "level": 1,
+      "favor": 100,
+      "uniqueArgmax": [
+        "toilet"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "toilet",
+          "bestNet": -29398
+        },
+        {
+          "station": 5,
+          "best": "toilet",
+          "bestNet": -28621
+        },
+        {
+          "station": 20,
+          "best": "toilet",
+          "bestNet": -25707
+        },
+        {
+          "station": 100,
+          "best": "toilet",
+          "bestNet": -10168
+        },
+        {
+          "station": 500,
+          "best": "toilet",
+          "bestNet": 67530
+        },
+        {
+          "station": 2000,
+          "best": "toilet",
+          "bestNet": 358897
+        },
+        {
+          "station": 10000,
+          "best": "toilet",
+          "bestNet": 1912853
+        }
+      ]
+    },
+    {
+      "colleague": "qiang",
+      "name": "强哥",
+      "skill": "toilet",
+      "level": 3,
+      "favor": 0,
+      "uniqueArgmax": [
+        "toilet"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "toilet",
+          "bestNet": -127824
+        },
+        {
+          "station": 5,
+          "best": "toilet",
+          "bestNet": -127202
+        },
+        {
+          "station": 20,
+          "best": "toilet",
+          "bestNet": -124867
+        },
+        {
+          "station": 100,
+          "best": "toilet",
+          "bestNet": -112413
+        },
+        {
+          "station": 500,
+          "best": "toilet",
+          "bestNet": -50144
+        },
+        {
+          "station": 2000,
+          "best": "toilet",
+          "bestNet": 183362
+        },
+        {
+          "station": 10000,
+          "best": "toilet",
+          "bestNet": 1428732
+        }
+      ]
+    },
+    {
+      "colleague": "qiang",
+      "name": "强哥",
+      "skill": "toilet",
+      "level": 3,
+      "favor": 100,
+      "uniqueArgmax": [
+        "toilet"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "toilet",
+          "bestNet": -29727
+        },
+        {
+          "station": 5,
+          "best": "toilet",
+          "bestNet": -28754
+        },
+        {
+          "station": 20,
+          "best": "toilet",
+          "bestNet": -25106
+        },
+        {
+          "station": 100,
+          "best": "toilet",
+          "bestNet": -5647
+        },
+        {
+          "station": 500,
+          "best": "toilet",
+          "bestNet": 91643
+        },
+        {
+          "station": 2000,
+          "best": "toilet",
+          "bestNet": 456484
+        },
+        {
+          "station": 10000,
+          "best": "toilet",
+          "bestNet": 2402298
+        }
+      ]
+    },
+    {
+      "colleague": "qiang",
+      "name": "强哥",
+      "skill": "toilet",
+      "level": 5,
+      "favor": 0,
+      "uniqueArgmax": [
+        "toilet"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "toilet",
+          "bestNet": -147773
+        },
+        {
+          "station": 5,
+          "best": "toilet",
+          "bestNet": -147024
+        },
+        {
+          "station": 20,
+          "best": "toilet",
+          "bestNet": -144217
+        },
+        {
+          "station": 100,
+          "best": "toilet",
+          "bestNet": -129246
+        },
+        {
+          "station": 500,
+          "best": "toilet",
+          "bestNet": -54389
+        },
+        {
+          "station": 2000,
+          "best": "toilet",
+          "bestNet": 226325
+        },
+        {
+          "station": 10000,
+          "best": "toilet",
+          "bestNet": 1723464
+        }
+      ]
+    },
+    {
+      "colleague": "qiang",
+      "name": "强哥",
+      "skill": "toilet",
+      "level": 5,
+      "favor": 100,
+      "uniqueArgmax": [
+        "toilet"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "toilet",
+          "bestNet": 48357
+        },
+        {
+          "station": 5,
+          "best": "toilet",
+          "bestNet": 49545
+        },
+        {
+          "station": 20,
+          "best": "toilet",
+          "bestNet": 53998
+        },
+        {
+          "station": 100,
+          "best": "toilet",
+          "bestNet": 77751
+        },
+        {
+          "station": 500,
+          "best": "toilet",
+          "bestNet": 196517
+        },
+        {
+          "station": 2000,
+          "best": "toilet",
+          "bestNet": 641887
+        },
+        {
+          "station": 10000,
+          "best": "toilet",
+          "bestNet": 3017196
+        }
+      ]
+    },
+    {
+      "colleague": "li",
+      "name": "小李",
+      "skill": "errand",
+      "level": 1,
+      "favor": 0,
+      "uniqueArgmax": [
+        "stroll"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "stroll",
+          "bestNet": -36348
+        },
+        {
+          "station": 5,
+          "best": "stroll",
+          "bestNet": -35518
+        },
+        {
+          "station": 20,
+          "best": "stroll",
+          "bestNet": -32411
+        },
+        {
+          "station": 100,
+          "best": "stroll",
+          "bestNet": -15816
+        },
+        {
+          "station": 500,
+          "best": "stroll",
+          "bestNet": 67140
+        },
+        {
+          "station": 2000,
+          "best": "stroll",
+          "bestNet": 378200
+        },
+        {
+          "station": 10000,
+          "best": "stroll",
+          "bestNet": 2037260
+        }
+      ]
+    },
+    {
+      "colleague": "li",
+      "name": "小李",
+      "skill": "errand",
+      "level": 1,
+      "favor": 100,
+      "uniqueArgmax": [
+        "stroll"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "stroll",
+          "bestNet": 26492
+        },
+        {
+          "station": 5,
+          "best": "stroll",
+          "bestNet": 27742
+        },
+        {
+          "station": 20,
+          "best": "stroll",
+          "bestNet": 32469
+        },
+        {
+          "station": 100,
+          "best": "stroll",
+          "bestNet": 57664
+        },
+        {
+          "station": 500,
+          "best": "stroll",
+          "bestNet": 183600
+        },
+        {
+          "station": 2000,
+          "best": "stroll",
+          "bestNet": 655880
+        },
+        {
+          "station": 10000,
+          "best": "stroll",
+          "bestNet": 3174700
+        }
+      ]
+    },
+    {
+      "colleague": "li",
+      "name": "小李",
+      "skill": "errand",
+      "level": 3,
+      "favor": 0,
+      "uniqueArgmax": [
+        "stroll"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "stroll",
+          "bestNet": -15303
+        },
+        {
+          "station": 5,
+          "best": "stroll",
+          "bestNet": -14253
+        },
+        {
+          "station": 20,
+          "best": "stroll",
+          "bestNet": -10354
+        },
+        {
+          "station": 100,
+          "best": "stroll",
+          "bestNet": 10492
+        },
+        {
+          "station": 500,
+          "best": "stroll",
+          "bestNet": 114760
+        },
+        {
+          "station": 2000,
+          "best": "stroll",
+          "bestNet": 505700
+        },
+        {
+          "station": 10000,
+          "best": "stroll",
+          "bestNet": 2590780
+        }
+      ]
+    },
+    {
+      "colleague": "li",
+      "name": "小李",
+      "skill": "errand",
+      "level": 3,
+      "favor": 100,
+      "uniqueArgmax": [
+        "stroll"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "stroll",
+          "bestNet": 220057
+        },
+        {
+          "station": 5,
+          "best": "stroll",
+          "bestNet": 221667
+        },
+        {
+          "station": 20,
+          "best": "stroll",
+          "bestNet": 227706
+        },
+        {
+          "station": 100,
+          "best": "stroll",
+          "bestNet": 259892
+        },
+        {
+          "station": 500,
+          "best": "stroll",
+          "bestNet": 420800
+        },
+        {
+          "station": 2000,
+          "best": "stroll",
+          "bestNet": 1024240
+        },
+        {
+          "station": 10000,
+          "best": "stroll",
+          "bestNet": 4242580
+        }
+      ]
+    },
+    {
+      "colleague": "li",
+      "name": "小李",
+      "skill": "errand",
+      "level": 5,
+      "favor": 0,
+      "uniqueArgmax": [
+        "stroll"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "stroll",
+          "bestNet": 131202
+        },
+        {
+          "station": 5,
+          "best": "stroll",
+          "bestNet": 132491
+        },
+        {
+          "station": 20,
+          "best": "stroll",
+          "bestNet": 137284
+        },
+        {
+          "station": 100,
+          "best": "stroll",
+          "bestNet": 162860
+        },
+        {
+          "station": 500,
+          "best": "stroll",
+          "bestNet": 290760
+        },
+        {
+          "station": 2000,
+          "best": "stroll",
+          "bestNet": 770360
+        },
+        {
+          "station": 10000,
+          "best": "stroll",
+          "bestNet": 3328300
+        }
+      ]
+    },
+    {
+      "colleague": "li",
+      "name": "小李",
+      "skill": "errand",
+      "level": 5,
+      "favor": 100,
+      "uniqueArgmax": [
+        "stroll"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "stroll",
+          "bestNet": 601842
+        },
+        {
+          "station": 5,
+          "best": "stroll",
+          "bestNet": 603831
+        },
+        {
+          "station": 20,
+          "best": "stroll",
+          "bestNet": 611304
+        },
+        {
+          "station": 100,
+          "best": "stroll",
+          "bestNet": 651180
+        },
+        {
+          "station": 500,
+          "best": "stroll",
+          "bestNet": 850580
+        },
+        {
+          "station": 2000,
+          "best": "stroll",
+          "bestNet": 1598360
+        },
+        {
+          "station": 10000,
+          "best": "stroll",
+          "bestNet": 5586440
+        }
+      ]
+    },
+    {
+      "colleague": "wang",
+      "name": "王师傅",
+      "skill": "coffee",
+      "level": 1,
+      "favor": 0,
+      "uniqueArgmax": [
+        "coffee"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "coffee",
+          "bestNet": -16167
+        },
+        {
+          "station": 5,
+          "best": "coffee",
+          "bestNet": -15172
+        },
+        {
+          "station": 20,
+          "best": "coffee",
+          "bestNet": -11440
+        },
+        {
+          "station": 100,
+          "best": "coffee",
+          "bestNet": 8466
+        },
+        {
+          "station": 500,
+          "best": "coffee",
+          "bestNet": 107996
+        },
+        {
+          "station": 2000,
+          "best": "coffee",
+          "bestNet": 481231
+        },
+        {
+          "station": 10000,
+          "best": "coffee",
+          "bestNet": 2471818
+        }
+      ]
+    },
+    {
+      "colleague": "wang",
+      "name": "王师傅",
+      "skill": "coffee",
+      "level": 1,
+      "favor": 100,
+      "uniqueArgmax": [
+        "coffee"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "coffee",
+          "bestNet": 83753
+        },
+        {
+          "station": 5,
+          "best": "coffee",
+          "bestNet": 85264
+        },
+        {
+          "station": 20,
+          "best": "coffee",
+          "bestNet": 90927
+        },
+        {
+          "station": 100,
+          "best": "coffee",
+          "bestNet": 121132
+        },
+        {
+          "station": 500,
+          "best": "coffee",
+          "bestNet": 272154
+        },
+        {
+          "station": 2000,
+          "best": "coffee",
+          "bestNet": 838486
+        },
+        {
+          "station": 10000,
+          "best": "coffee",
+          "bestNet": 3858926
+        }
+      ]
+    },
+    {
+      "colleague": "wang",
+      "name": "王师傅",
+      "skill": "coffee",
+      "level": 3,
+      "favor": 0,
+      "uniqueArgmax": [
+        "coffee"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "coffee",
+          "bestNet": 100756
+        },
+        {
+          "station": 5,
+          "best": "coffee",
+          "bestNet": 102019
+        },
+        {
+          "station": 20,
+          "best": "coffee",
+          "bestNet": 106757
+        },
+        {
+          "station": 100,
+          "best": "coffee",
+          "bestNet": 132027
+        },
+        {
+          "station": 500,
+          "best": "coffee",
+          "bestNet": 258374
+        },
+        {
+          "station": 2000,
+          "best": "coffee",
+          "bestNet": 732175
+        },
+        {
+          "station": 10000,
+          "best": "coffee",
+          "bestNet": 3259116
+        }
+      ]
+    },
+    {
+      "colleague": "wang",
+      "name": "王师傅",
+      "skill": "coffee",
+      "level": 3,
+      "favor": 100,
+      "uniqueArgmax": [
+        "coffee"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "coffee",
+          "bestNet": 475147
+        },
+        {
+          "station": 5,
+          "best": "coffee",
+          "bestNet": 477094
+        },
+        {
+          "station": 20,
+          "best": "coffee",
+          "bestNet": 484395
+        },
+        {
+          "station": 100,
+          "best": "coffee",
+          "bestNet": 523336
+        },
+        {
+          "station": 500,
+          "best": "coffee",
+          "bestNet": 718041
+        },
+        {
+          "station": 2000,
+          "best": "coffee",
+          "bestNet": 1448183
+        },
+        {
+          "station": 10000,
+          "best": "coffee",
+          "bestNet": 5342274
+        }
+      ]
+    },
+    {
+      "colleague": "wang",
+      "name": "王师傅",
+      "skill": "coffee",
+      "level": 5,
+      "favor": 0,
+      "uniqueArgmax": [
+        "coffee"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "coffee",
+          "bestNet": 417271
+        },
+        {
+          "station": 5,
+          "best": "coffee",
+          "bestNet": 418834
+        },
+        {
+          "station": 20,
+          "best": "coffee",
+          "bestNet": 424698
+        },
+        {
+          "station": 100,
+          "best": "coffee",
+          "bestNet": 455970
+        },
+        {
+          "station": 500,
+          "best": "coffee",
+          "bestNet": 612328
+        },
+        {
+          "station": 2000,
+          "best": "coffee",
+          "bestNet": 1198670
+        },
+        {
+          "station": 10000,
+          "best": "coffee",
+          "bestNet": 4325832
+        }
+      ]
+    },
+    {
+      "colleague": "wang",
+      "name": "王师傅",
+      "skill": "coffee",
+      "level": 5,
+      "favor": 100,
+      "uniqueArgmax": [
+        "coffee"
+      ],
+      "byStation": [
+        {
+          "station": 1,
+          "best": "coffee",
+          "bestNet": 1165928
+        },
+        {
+          "station": 5,
+          "best": "coffee",
+          "bestNet": 1168360
+        },
+        {
+          "station": 20,
+          "best": "coffee",
+          "bestNet": 1177479
+        },
+        {
+          "station": 100,
+          "best": "coffee",
+          "bestNet": 1226114
+        },
+        {
+          "station": 500,
+          "best": "coffee",
+          "bestNet": 1469291
+        },
+        {
+          "station": 2000,
+          "best": "coffee",
+          "bestNet": 2381206
+        },
+        {
+          "station": 10000,
+          "best": "coffee",
+          "bestNet": 7244748
+        }
+      ]
+    }
+  ],
+  "dispatch_argmax_changing_groups": 2,
+  "dispatch_argmax_total_groups": 30,
+  "dispatch_skill_match": [
+    {
+      "colleague": "老周",
+      "skill": "chat",
+      "best": {
+        "mission": "coffee",
+        "type": "coffee",
+        "mult": 2.8,
+        "matched": false,
+        "gross": 409812,
+        "netPerHour": 4106
+      },
+      "bestMatched": {
+        "mission": "chat",
+        "type": "chat",
+        "mult": 1.3,
+        "matched": true,
+        "gross": 17837,
+        "netPerHour": -14191
+      },
+      "matchedIsBest": false,
+      "scored": [
+        {
+          "mission": "stroll",
+          "type": "errand",
+          "mult": 2.2,
+          "matched": false,
+          "gross": 2012,
+          "netPerHour": -8819
+        },
+        {
+          "mission": "quick",
+          "type": "errand",
+          "mult": 1.45,
+          "matched": false,
+          "gross": 6632,
+          "netPerHour": -24951
+        },
+        {
+          "mission": "chat",
+          "type": "chat",
+          "mult": 1.3,
+          "matched": true,
+          "gross": 17837,
+          "netPerHour": -14191
+        },
+        {
+          "mission": "meeting",
+          "type": "meeting",
+          "mult": 1.6,
+          "matched": false,
+          "gross": 29272,
+          "netPerHour": -21722
+        },
+        {
+          "mission": "toilet",
+          "type": "toilet",
+          "mult": 2.2,
+          "matched": false,
+          "gross": 160997,
+          "netPerHour": -8808
+        },
+        {
+          "mission": "coffee",
+          "type": "coffee",
+          "mult": 2.8,
+          "matched": false,
+          "gross": 409812,
+          "netPerHour": 4106
+        }
+      ]
+    },
+    {
+      "colleague": "小美",
+      "skill": "meeting",
+      "best": {
+        "mission": "coffee",
+        "type": "coffee",
+        "mult": 2.8,
+        "matched": false,
+        "gross": 1476921,
+        "netPerHour": -88085
+      },
+      "bestMatched": {
+        "mission": "meeting",
+        "type": "meeting",
+        "mult": 1.6,
+        "matched": true,
+        "gross": 158241,
+        "netPerHour": -114459
+      },
+      "matchedIsBest": false,
+      "scored": [
+        {
+          "mission": "stroll",
+          "type": "errand",
+          "mult": 2.2,
+          "matched": false,
+          "gross": 7252,
+          "netPerHour": -127660
+        },
+        {
+          "mission": "quick",
+          "type": "errand",
+          "mult": 1.45,
+          "matched": false,
+          "gross": 23901,
+          "netPerHour": -177096
+        },
+        {
+          "mission": "chat",
+          "type": "chat",
+          "mult": 1.3,
+          "matched": false,
+          "gross": 42857,
+          "netPerHour": -186986
+        },
+        {
+          "mission": "meeting",
+          "type": "meeting",
+          "mult": 1.6,
+          "matched": true,
+          "gross": 158241,
+          "netPerHour": -114459
+        },
+        {
+          "mission": "toilet",
+          "type": "toilet",
+          "mult": 2.2,
+          "matched": false,
+          "gross": 580219,
+          "netPerHour": -127645
+        },
+        {
+          "mission": "coffee",
+          "type": "coffee",
+          "mult": 2.8,
+          "matched": false,
+          "gross": 1476921,
+          "netPerHour": -88085
+        }
+      ]
+    },
+    {
+      "colleague": "强哥",
+      "skill": "toilet",
+      "best": {
+        "mission": "toilet",
+        "type": "toilet",
+        "mult": 2.2,
+        "matched": true,
+        "gross": 1655976,
+        "netPerHour": -129246
+      },
+      "bestMatched": {
+        "mission": "toilet",
+        "type": "toilet",
+        "mult": 2.2,
+        "matched": true,
+        "gross": 1655976,
+        "netPerHour": -129246
+      },
+      "matchedIsBest": true,
+      "scored": [
+        {
+          "mission": "stroll",
+          "type": "errand",
+          "mult": 2.2,
+          "matched": false,
+          "gross": 13799,
+          "netPerHour": -267260
+        },
+        {
+          "mission": "quick",
+          "type": "errand",
+          "mult": 1.45,
+          "matched": false,
+          "gross": 45476,
+          "netPerHour": -361336
+        },
+        {
+          "mission": "chat",
+          "type": "chat",
+          "mult": 1.3,
+          "matched": false,
+          "gross": 81544,
+          "netPerHour": -380152
+        },
+        {
+          "mission": "meeting",
+          "type": "meeting",
+          "mult": 1.6,
+          "matched": false,
+          "gross": 200724,
+          "netPerHour": -342516
+        },
+        {
+          "mission": "toilet",
+          "type": "toilet",
+          "mult": 2.2,
+          "matched": true,
+          "gross": 1655976,
+          "netPerHour": -129246
+        },
+        {
+          "mission": "coffee",
+          "type": "coffee",
+          "mult": 2.8,
+          "matched": false,
+          "gross": 2810142,
+          "netPerHour": -191972
+        }
+      ]
+    },
+    {
+      "colleague": "小李",
+      "skill": "errand",
+      "best": {
+        "mission": "stroll",
+        "type": "errand",
+        "mult": 2.2,
+        "matched": true,
+        "gross": 48832,
+        "netPerHour": 162860
+      },
+      "bestMatched": {
+        "mission": "stroll",
+        "type": "errand",
+        "mult": 2.2,
+        "matched": true,
+        "gross": 48832,
+        "netPerHour": 162860
+      },
+      "matchedIsBest": true,
+      "scored": [
+        {
+          "mission": "stroll",
+          "type": "errand",
+          "mult": 2.2,
+          "matched": true,
+          "gross": 48832,
+          "netPerHour": 162860
+        },
+        {
+          "mission": "quick",
+          "type": "errand",
+          "mult": 1.45,
+          "matched": true,
+          "gross": 160925,
+          "netPerHour": -170080
+        },
+        {
+          "mission": "chat",
+          "type": "chat",
+          "mult": 1.3,
+          "matched": false,
+          "gross": 192370,
+          "netPerHour": -429040
+        },
+        {
+          "mission": "meeting",
+          "type": "meeting",
+          "mult": 1.6,
+          "matched": false,
+          "gross": 473527,
+          "netPerHour": -340253
+        },
+        {
+          "mission": "toilet",
+          "type": "toilet",
+          "mult": 2.2,
+          "matched": false,
+          "gross": 1627750,
+          "netPerHour": -406842
+        },
+        {
+          "mission": "coffee",
+          "type": "coffee",
+          "mult": 2.8,
+          "matched": false,
+          "gross": 4143363,
+          "netPerHour": -295860
+        }
+      ]
+    },
+    {
+      "colleague": "王师傅",
+      "skill": "coffee",
+      "best": {
+        "mission": "coffee",
+        "type": "coffee",
+        "mult": 2.8,
+        "matched": true,
+        "gross": 12322316,
+        "netPerHour": 455970
+      },
+      "bestMatched": {
+        "mission": "coffee",
+        "type": "coffee",
+        "mult": 2.8,
+        "matched": true,
+        "gross": 12322316,
+        "netPerHour": 455970
+      },
+      "matchedIsBest": true,
+      "scored": [
+        {
+          "mission": "stroll",
+          "type": "errand",
+          "mult": 2.2,
+          "matched": false,
+          "gross": 26893,
+          "netPerHour": -546460
+        },
+        {
+          "mission": "quick",
+          "type": "errand",
+          "mult": 1.45,
+          "matched": false,
+          "gross": 88627,
+          "netPerHour": -729812
+        },
+        {
+          "mission": "chat",
+          "type": "chat",
+          "mult": 1.3,
+          "matched": false,
+          "gross": 158918,
+          "netPerHour": -766484
+        },
+        {
+          "mission": "meeting",
+          "type": "meeting",
+          "mult": 1.6,
+          "matched": false,
+          "gross": 391184,
+          "netPerHour": -693136
+        },
+        {
+          "mission": "toilet",
+          "type": "toilet",
+          "mult": 2.2,
+          "matched": false,
+          "gross": 3227273,
+          "netPerHour": -277502
+        },
+        {
+          "mission": "coffee",
+          "type": "coffee",
+          "mult": 2.8,
+          "matched": true,
+          "gross": 12322316,
+          "netPerHour": 455970
+        }
+      ]
+    }
+  ],
+  "dispatch_matched_is_best_count": 3,
+  "dispatch_auto_repeat_mission_drift": [
+    {
+      "name": "老周",
+      "bestPerStage": [
+        {
+          "station": 1,
+          "mission": "coffee",
+          "net": -14676
+        },
+        {
+          "station": 100,
+          "mission": "coffee",
+          "net": 4106
+        },
+        {
+          "station": 2000,
+          "mission": "coffee",
+          "net": 364583
+        }
+      ],
+      "allSame": true
+    },
+    {
+      "name": "小美",
+      "bestPerStage": [
+        {
+          "station": 1,
+          "mission": "coffee",
+          "net": -103524
+        },
+        {
+          "station": 100,
+          "mission": "coffee",
+          "net": -88085
+        },
+        {
+          "station": 2000,
+          "mission": "coffee",
+          "net": 208224
+        }
+      ],
+      "allSame": true
+    },
+    {
+      "name": "强哥",
+      "bestPerStage": [
+        {
+          "station": 1,
+          "mission": "toilet",
+          "net": -147773
+        },
+        {
+          "station": 100,
+          "mission": "toilet",
+          "net": -129246
+        },
+        {
+          "station": 2000,
+          "mission": "toilet",
+          "net": 226325
+        }
+      ],
+      "allSame": true
+    },
+    {
+      "name": "小李",
+      "bestPerStage": [
+        {
+          "station": 1,
+          "mission": "stroll",
+          "net": 131202
+        },
+        {
+          "station": 100,
+          "mission": "stroll",
+          "net": 162860
+        },
+        {
+          "station": 2000,
+          "mission": "stroll",
+          "net": 770360
+        }
+      ],
+      "allSame": true
+    },
+    {
+      "name": "王师傅",
+      "bestPerStage": [
+        {
+          "station": 1,
+          "mission": "coffee",
+          "net": 417271
+        },
+        {
+          "station": 100,
+          "mission": "coffee",
+          "net": 455970
+        },
+        {
+          "station": 2000,
+          "mission": "coffee",
+          "net": 1198670
+        }
+      ],
+      "allSame": true
+    }
+  ],
+  "dispatch_all_same_across_stages": 5,
+  "dispatch_capacity": {
+    "missionsUnlimited": true,
+    "noConcurrentLimit": true,
+    "eachColleagueIndependent": true,
+    "noSharedSlot": true,
+    "implication": "5 人可以同时派同一个任务，不存在排班冲突 → 没有'派谁'的资源竞争"
+  },
+  "synergy_multiplier_only": [
+    {
+      "stage": "mid",
+      "totalIdle": 262.5728,
+      "stationIdle": 99.2,
+      "teamIdle": 163.3728,
+      "stationShare": 0.3778,
+      "decorFullTotalIdleGainPct": 16.42,
+      "decorFullStationOnlyGainPct": 43.45,
+      "slackTotalIdleGainPct": 9.44,
+      "slackStationOnlyGainPct": 25
+    },
+    {
+      "stage": "late",
+      "totalIdle": 4791.5248,
+      "stationIdle": 631.2,
+      "teamIdle": 4160.3248,
+      "stationShare": 0.1317,
+      "decorFullTotalIdleGainPct": 5.72,
+      "decorFullStationOnlyGainPct": 43.45,
+      "slackTotalIdleGainPct": 3.29,
+      "slackStationOnlyGainPct": 25
+    }
+  ],
+  "decor_synergy_dispatch_offline": [
+    {
+      "stage": "mid",
+      "dispatchRewardNoDecor": 248328,
+      "dispatchRewardAllDecor": 387940,
+      "dispatchMultiplier": 1.562,
+      "offlineBonusFromDecor": 0.23,
+      "offlineEfficiencyDeltaPct": 23
+    },
+    {
+      "stage": "late",
+      "dispatchRewardNoDecor": 1173149,
+      "dispatchRewardAllDecor": 2037446,
+      "dispatchMultiplier": 1.737,
+      "offlineBonusFromDecor": 0.23,
+      "offlineEfficiencyDeltaPct": 23
+    }
+  ],
+  "offline_multiplier_accounting": [
+    {
+      "variant": "plant",
+      "stationIdleBefore": 49.2,
+      "stationIdleAfter": 51.66,
+      "totalIdleBefore": 49.2,
+      "totalIdleAfter": 51.66,
+      "offlineGainIfFull": 70848,
+      "offlineGainActual": 70848,
+      "ratio": 1
+    },
+    {
+      "variant": "slack",
+      "stationIdleBefore": 49.2,
+      "stationIdleAfter": 61.5,
+      "totalIdleBefore": 49.2,
+      "totalIdleAfter": 61.5,
+      "offlineGainIfFull": 354240,
+      "offlineGainActual": 354240,
+      "ratio": 1
+    },
+    {
+      "variant": "allIdleDecor",
+      "stationIdleBefore": 49.2,
+      "stationIdleAfter": 70.578,
+      "totalIdleBefore": 49.2,
+      "totalIdleAfter": 70.578,
+      "offlineGainIfFull": 615683,
+      "offlineGainActual": 615683,
+      "ratio": 1
+    }
+  ],
+  "social_favor_value": {
+    "socialFavorPerColleague": 3,
+    "totalFavor": 15,
+    "favorPerMatchedClaim": 4,
+    "equivalentClaims": 3.75,
+    "favoriteMilestones": "20预警/40离线+3%/60丢梗+10%/80全员挂机+2%/100该同事派遣×1.5",
+    "note": "社交 = 相当于 5 位同事各多领 1 次匹配任务的进度；对已经在刷派遣的玩家价值很低"
+  },
+  "energy_offline_leak": {
+    "idleRate": 110.3808,
+    "offlineEarnWithYesterdaySlack": 2652204,
+    "offlineEarnWithoutBuff": 2297964,
+    "extra": 354240,
+    "energyDateAfterReset": "2026-11-27",
+    "resetLeft": 100,
+    "note": "离线结算发生在 ensureEnergy 重置之前 → 昨天的 +25% 会结算进今天凌晨的离线收益"
+  },
+  "talent_branch_cost": {
+    "branches": [
+      {
+        "branch": "click",
+        "pointsForOneUltimate": 9,
+        "nonUlt": 6
+      },
+      {
+        "branch": "idle",
+        "pointsForOneUltimate": 9,
+        "nonUlt": 6
+      },
+      {
+        "branch": "event",
+        "pointsForOneUltimate": 9,
+        "nonUlt": 6
+      }
+    ],
+    "allBranches": 27,
+    "cap": 24,
+    "mustDropPoints": 3
+  },
+  "talent_daily_gift": {
+    "perDay": 1,
+    "daysTo24Points": 24,
+    "note": "点满上限后每日不再赠点（防白送 overflow）"
+  },
+  "talent_idle_branch": [
+    {
+      "id": "idle_1",
+      "tier": 1,
+      "cost": 1
+    },
+    {
+      "id": "idle_2",
+      "tier": 2,
+      "cost": 1
+    },
+    {
+      "id": "idle_3",
+      "tier": 3,
+      "cost": 2
+    },
+    {
+      "id": "idle_4",
+      "tier": 4,
+      "cost": 2
+    },
+    {
+      "id": "idle_5a",
+      "tier": 5,
+      "cost": 3
+    },
+    {
+      "id": "idle_5b",
+      "tier": 5,
+      "cost": 3
+    }
+  ],
+  "talent_respec": {
+    "free": true,
+    "cost": 0,
+    "cooldown": false,
+    "note": "免费重置 → 天赋只有『现在点哪个』的弱决策，没有构筑承诺"
+  },
+  "decision_tally": {
+    "energy": {
+      "dailyActions": 4,
+      "budget": 100,
+      "costSum": 145,
+      "maximalCombos": [
+        "slack+fake-work+social(100 用满)",
+        "slack+focus(85)",
+        "fake-work+focus(80)",
+        "social+focus(70)"
+      ],
+      "forcedAnswer": "非点击画像：slack+fake-work+social（唯一用满 100，且是 UI 一键按钮的默认）",
+      "realDecisionsPerDay": "1 次（仅流派切换时；同画像每天答案固定）",
+      "caveat": "UI 仍写「一键全用（3 项，共 100 精力）」/「3 项合计正好 100」→ 与 4 档 145 不一致（半成态）"
+    },
+    "dispatch": {
+      "colleagues": 5,
+      "missionsPerColleague": 6,
+      "capacityLimit": 0,
+      "setupDecisionsOnce": "5 次任务选择 + 5 次自动重复开关（一次性）",
+      "dailyDecisionsWithAutoRepeat": 0,
+      "actionPerDay": "一键领取 1 次（无决策）",
+      "argmaxChangingGroups": "2/30（只有老周 Lv1 在 station 20→100 之间从 stroll 换 coffee）"
+    },
+    "decor": {
+      "items": 8,
+      "oneTime": true,
+      "slots": 0,
+      "upkeep": 0,
+      "mutex": 0,
+      "totalCostText": "22.35亿",
+      "decisionsTotal": "8 次（整个游戏生涯），耗尽后该页永久无事可做"
+    },
+    "talent": {
+      "dailyGain": 1,
+      "cap": 24,
+      "freeRespec": true,
+      "decisionsPerDay": "0-1（点 1 下，且可随时免费洗）"
+    },
+    "cards": {
+      "dailyChoices": 1,
+      "existingFromBatch2": true
+    },
+    "summary": "批次3新增的『每天上线的决策链』里，精力与家具的持续决策数 = 0；真正每日要做的是领派遣奖励+点天赋点+选卡"
+  },
+  "offline_ratio_flag": 1
+}

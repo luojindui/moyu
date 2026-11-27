@@ -230,6 +230,8 @@ export class TeamPanel {
       cols,
       state.talents.points,
       state.talents.unlocked.join(","),
+      state.decor.join(","),
+      `${state.energy.left}:${state.energy.used.join(",")}`,
       claimableCount(state, Date.now()),
       Math.floor(state.totalClicks / 300),
       state.patrolSurvives,
@@ -256,6 +258,30 @@ export class TeamPanel {
     // 按钮可用态（买了新同事/钱够了时从禁用变可用，但不重建 DOM）
     this.body.querySelectorAll<HTMLButtonElement>("button[data-act]").forEach((btn) => {
       const id = btn.dataset.id ?? "";
+      // 工位家具 / 精力：余额或精力变化时实时更新可用态（不重建 DOM）
+      if (btn.dataset.act === "decor") {
+        const d = DECOR.find((x) => x.id === id);
+        if (!d) return;
+        const owned = state.decor.includes(id);
+        const can = !owned && state.moyu >= d.cost;
+        if (btn.disabled === can) btn.disabled = !can;
+        const row = btn.closest<HTMLElement>(".row-tap");
+        if (row) row.dataset.disabled = String(owned || !can);
+        return;
+      }
+      if (btn.dataset.act === "energy") {
+        const a = ENERGY_ACTIONS.find((x) => x.id === id);
+        if (!a) return;
+        const used = state.energy.used.includes(id as never);
+        const can = !used && state.energy.left >= a.cost;
+        if (btn.disabled === can) btn.disabled = !can;
+        return;
+      }
+      if (btn.dataset.act === "energy-all") {
+        const canAll = state.energy.left >= ENERGY_ACTIONS.reduce((s, a) => s + a.cost, 0);
+        btn.disabled = !canAll;
+        return;
+      }
       const def = COLLEAGUES.find((x) => x.id === id);
       if (!def) return;
       if (btn.dataset.act === "recruit") {

@@ -78,6 +78,8 @@ async function boot(): Promise<void> {
   const restored = restore(localStorageAdapter, Date.now());
   let state = restored.state ?? initialState();
   state = ensureVisits(state, Date.now()); // 本次打开算一次回访（可把离线效率挣回 1.0）
+  // 先按今天重置精力/卡池，再结算离线：否则"昨天的精力加成"会被算进今天这笔离线收益
+  state = ensureEnergy(state, new Date().toLocaleDateString("sv-SE"));
   const currentOfflineRate = (): number => offlineEfficiency(state, restored.createdAt, Date.now());
   const offline = settleReturn(state, Date.now() - restored.offlineSeconds * 1000, Date.now(), currentOfflineRate());
   state = offline.state;
@@ -805,6 +807,7 @@ async function boot(): Promise<void> {
   document.addEventListener("pagehide", saveNow);
 
   const settleForeground = (): void => {
+    state = ensureEnergy(state, new Date().toLocaleDateString("sv-SE"));
     const r = settleReturn(state, lastActiveMs, Date.now(), currentOfflineRate());
     if (r.earned > 0) {
       state = r.state;

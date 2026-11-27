@@ -209,25 +209,70 @@ await runChrome(async ({ port, proc }) => {
     log("A2 工位页(新号)", { freshEnergyText, freshEnergyBtns, freshEnergyAll, freshDecorBtns });
     await shot("03-fresh-decor-tab");
 
-    // ============ 2. 精力：3 项能不能全点？有无取舍 ============
-    const hudIdle0 = (await snap()).hudIdle;
-    const energySteps = [];
-    for (const id of ["slack", "fake-work", "social"]) {
-      const btn = await click(`#team-body button[data-act="energy"][data-id="${id}"]`);
-      await sleep(280);
-      const s = await snap();
-      const logs = await readLogs();
-      energySteps.push({ id, btn, energy: s.energy, hudIdle: s.hudIdle, favors: Object.fromEntries(Object.entries(s.team).map(([k, v]) => [k, v.favor])), toast: logs.toasts.at(-1)?.text ?? null, announce: logs.announces.at(-1)?.text ?? null });
-      log(`A3 用精力 ${id}`, energySteps.at(-1));
-    }
-    const afterEnergy = await snap();
-    const energyBtnsAfter = await energyBtns();
-    const summaryAfterEnergy = afterEnergy.summaryLine;
-    log("A3 精力全部使用后", { energy: afterEnergy.energy, hudIdle0, hudIdle: afterEnergy.hudIdle, energyBtnsAfter, summaryAfterEnergy });
-    EVIDENCE.asserts.energyThreeUsableSameDay = afterEnergy.energy.used.length === 3 && afterEnergy.energy.left === 0;
-    EVIDENCE.asserts.socialWorksWithoutColleagues = (await snap()).energy.used.includes("social"); // 新号用社交 = 空放
-    EVIDENCE.asserts.summaryShowsEnergyBuff = /1\.25|1\.43|1\.2/.test(String(summaryAfterEnergy));
-    await shot("04-energy-all-used");
+    // ============ 2. 新号点「跟同事聊天」→ 还没有同事，是否死点？ ============
+    const beforeSocial = await snap();
+    const socialBtn = await ev(`(() => { const b = document.querySelector('#team-body button[data-act="energy"][data-id="social"]'); return b ? { disabled: !!b.disabled, text: b.textContent.trim(), rowDisabled: b.closest('.row-tap')?.dataset.disabled } : { found: false }; })()`);
+    const socialClick = await click('#team-body button[data-act="energy"][data-id="social"]');
+    await sleep(420);
+    const afterSocial = await snap();
+    const socialLogs = await readLogs();
+    log("A2b 新号点社交精力（无同事）", {
+      socialBtn, socialClick, beforeLeft: beforeSocial.energy.left, afterLeft: afterSocial.energy.left,
+      used: afterSocial.energy.used, toasts: socialLogs.toasts.slice(-2), announces: socialLogs.announces.slice(-2),
+    });
+    EVIDENCE.asserts.socialDeadClickOnFreshSave = beforeSocial.energy.left === afterSocial.energy.left && afterSocial.energy.used.length === beforeSocial.energy.used.length;
+
+    // ============ 3. 真取舍：点「专注点击」(45) 后只剩 55 → 只能再选 1 项 ============
+    const focusRes = await click('#team-body button[data-act="energy"][data-id="focus"]');
+    await sleep(350);
+    const afterFocus = await snap();
+    const btnsAfterFocus = await energyBtns();
+    const energyAllAfterFocus = await ev(`(() => { const b = document.querySelector('#team-body button[data-act="energy-all"]'); return b ? { disabled: !!b.disabled, text: b.textContent.trim() } : { found: false }; })()`);
+    const slackRes = await click('#team-body button[data-act="energy"][data-id="slack"]');
+    await sleep(350);
+    const afterFocusSlack = await snap();
+    const btnsAfterFocusSlack = await energyBtns();
+    log("A3 专注点击路径（45+40=85，剩 15 作废）", {
+      focusRes, afterFocus: afterFocus.energy, btnsAfterFocus, energyAllAfterFocus,
+      slackRes, afterFocusSlack: afterFocusSlack.energy, btnsAfterFocusSlack,
+    });
+    EVIDENCE.asserts.focusPathLeavesOnlyOneMore = afterFocus.energy.left === 55 && btnsAfterFocusSlack.length === 0;
+    await shot("04-focus-path");
+
+    // ============ 3b. 重置今日精力 → 验证「一键全用」是否仍锁死旧三档 ============
+    const resetEnergyInfo = await ev(`(() => {
+      const raw = localStorage.getItem('moyu-save');
+      if (!raw) return { ok: false };
+      const blob = JSON.parse(raw);
+      const today = new Date().toLocaleDateString('sv-SE');
+      blob.energy = { date: today, left: 100, used: [], boosted: { idleMult: 1, patrolRewardMult: 1, clickMult: 1 } };
+      blob.savedAt = Date.now();
+      const orig = localStorage.setItem.bind(localStorage);
+      orig('moyu-save', JSON.stringify(blob));
+      localStorage.setItem = () => {}; // 阻止 pagehide 把内存态写回
+      return { ok: true, today };
+    })()`);
+    await ev("location.reload()");
+    await waitBoot();
+    await installRecorder();
+    await sleep(1300);
+    await dismissSoftModals();
+    await openTeamTab("decor");
+    const trioBtn = await ev(`(() => { const b = document.querySelector('#team-body button[data-act="energy-all"]'); return b ? { disabled: !!b.disabled, text: b.textContent.trim() } : { found: false }; })()`);
+    const trioFooter = await ev(`(() => { const el = [...document.querySelectorAll('#team-body .branch div')].find(d => (d.textContent||'').includes('每天 100 点')); return el ? el.textContent.trim() : null; })()`);
+    const trioClick = await click('#team-body button[data-act="energy-all"]');
+    await sleep(550);
+    const afterTrio = await snap();
+    const trioLogs = await readLogs();
+    const btnsAfterTrio = await energyBtns();
+    log("A3b 一键全用（默认旧三档）", {
+      resetEnergyInfo, trioBtn, trioFooter, trioClick,
+      energy: afterTrio.energy, hudIdle: afterTrio.hudIdle, btnsAfterTrio,
+      toasts: trioLogs.toasts.slice(-2),
+    });
+    EVIDENCE.asserts.oneClickUsesOnlyOldThree = afterTrio.energy.used.length === 3 && !afterTrio.energy.used.includes("focus") && afterTrio.energy.left === 0;
+    EVIDENCE.asserts.staleCopy3Actions = /3 项/.test(String(trioBtn.text ?? "")) || /3 项合计正好 100/.test(String(trioFooter ?? ""));
+    await shot("04b-oneclick-trio");
 
     // ============ 3. grant 大钱 + 全招募（建立"中期"状态） ============
     await ev("__MOYU__.grant(1e11)");

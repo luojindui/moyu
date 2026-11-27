@@ -1,0 +1,170 @@
+{
+ "tablet": {
+  "geo": {
+   "cssW": 768,
+   "cssH": 805,
+   "scale": 6,
+   "vw": 128,
+   "vh": 134.2,
+   "groundY": 67,
+   "aquarium": {
+    "y": -32.2,
+    "h": 24,
+    "visible": false
+   },
+   "chair": {
+    "x": 95.2
+   },
+   "clock": {
+    "x": 86.1
+   },
+   "board": {
+    "x": 65.6,
+    "y": -3.4
+   },
+   "cooler": {
+    "x": 97.6
+   },
+   "lamp": {
+    "y": 9.4
+   },
+   "boardOverClock": true
+  },
+  "decor": [
+   "plant",
+   "lamp",
+   "rug",
+   "fridge",
+   "chair",
+   "aquarium",
+   "projector",
+   "catbed"
+  ]
+ },
+ "small": {
+  "geo": {
+   "cssW": 320,
+   "cssH": 349,
+   "scale": 2,
+   "vw": 160,
+   "vh": 174.5,
+   "groundY": 107.3,
+   "aquarium": {
+    "y": 8.1,
+    "h": 24,
+    "visible": true
+   },
+   "chair": {
+    "x": 111.2
+   },
+   "clock": {
+    "x": 118.1
+   },
+   "board": {
+    "x": 97.6,
+    "y": 36.9
+   },
+   "cooler": {
+    "x": 129.6
+   },
+   "lamp": {
+    "y": 49.7
+   },
+   "boardOverClock": true
+  },
+  "decor": [
+   "plant",
+   "lamp",
+   "rug",
+   "fridge",
+   "chair",
+   "aquarium",
+   "projector",
+   "catbed"
+  ]
+ },
+ "mobile": {
+  "geo": {
+   "cssW": 390,
+   "cssH": 625,
+   "scale": 3,
+   "vw": 130,
+   "vh": 208.3,
+   "groundY": 141.1,
+   "aquarium": {
+    "y": 41.9,
+    "h": 24,
+    "visible": true
+   },
+   "chair": {
+    "x": 96.2
+   },
+   "clock": {
+    "x": 88.1
+   },
+   "board": {
+    "x": 67.6,
+    "y": 70.7
+   },
+   "cooler": {
+    "x": 99.6
+   },
+   "lamp": {
+    "y": 83.5
+   },
+   "boardOverClock": false
+  },
+  "decor": [
+   "plant",
+   "lamp",
+   "rug",
+   "fridge",
+   "chair",
+   "aquarium",
+   "projector",
+   "catbed"
+  ]
+ },
+ "desktop": {
+  "geo": {
+   "cssW": 900,
+   "cssH": 581,
+   "scale": 4,
+   "vw": 225,
+   "vh": 145.3,
+   "groundY": 78,
+   "aquarium": {
+    "y": -21.2,
+    "h": 24,
+    "visible": true
+   },
+   "chair": {
+    "x": 143.7
+   },
+   "clock": {
+    "x": 183.1
+   },
+   "board": {
+    "x": 162.6,
+    "y": 7.6
+   },
+   "cooler": {
+    "x": 194.6
+   },
+   "lamp": {
+    "y": 20.4
+   },
+   "boardOverClock": true
+  },
+  "decor": [
+   "plant",
+   "lamp",
+   "rug",
+   "fridge",
+   "chair",
+   "aquarium",
+   "projector",
+   "catbed"
+  ]
+ }
+}

@@ -1,0 +1,3418 @@
+{
+  "meta": {
+    "startedAt": "2026-11-27T11:14:49.550Z",
+    "head": "3580947",
+    "dev": "http://127.0.0.1:5173/",
+    "live": "https://luojindui.github.io/moyu/",
+    "viewport": "390x844@2x"
+  },
+  "open1": {
+    "boot": {
+      "ok": true,
+      "ms": 113
+    },
+    "hudBefore": {
+      "teamBtn": {
+        "x": 336,
+        "y": 510,
+        "w": 44,
+        "h": 44
+      },
+      "btnAriaLabel": "摸鱼小队，还有精力 100",
+      "taskBadge": null,
+      "energyBadge": {
+        "text": "精力 100",
+        "rect": {
+          "x": 290,
+          "y": 552,
+          "w": 51,
+          "h": 16
+        }
+      },
+      "talentBadge": {
+        "text": "天赋",
+        "rect": {
+          "x": 308,
+          "y": 524,
+          "w": 30,
+          "h": 16
+        }
+      },
+      "overlaps": {
+        "energyVsTalent": false,
+        "energyVsTeamBtn": false
+      },
+      "hudText": "0.3摸鱼值 点击 +1 不点也 0.2/秒 实习生 0% 👥 精力 100 天赋 🔊 📔 再戳 15 下 → 解锁「咖啡续命」",
+      "centers": {
+        "atEnergyBadge": "energy-badge",
+        "atTeamBtn": "btn-team"
+      },
+      "overlays": {
+        "welcome": false,
+        "cards": false,
+        "team": false,
+        "boss": false
+      }
+    },
+    "before": {
+      "moyu": 0.28332,
+      "decor": [],
+      "energy": {
+        "date": "2026-11-27",
+        "left": 100,
+        "used": [],
+        "boosted": {
+          "idleMult": 1,
+          "patrolRewardMult": 1
+        }
+      },
+      "totalClicks": 0,
+      "cards": {
+        "date": "2026-11-27",
+        "offers": [
+          "old_zhou_secret",
+          "big_meeting",
+          "quiet_day"
+        ],
+        "chosen": null,
+        "until": 0,
+        "nextDayGuaranteed": null,
+        "dismissed": false,
+        "chosenDate": ""
+      }
+    },
+    "goto": {
+      "taps": 2,
+      "ms": 973,
+      "team": true,
+      "decoTap": {
+        "ok": true,
+        "rect": {
+          "x": 180.59375,
+          "y": 267.65625,
+          "w": 54,
+          "h": 44,
+          "text": "工位",
+          "hit": "tab-decor",
+          "hitSelf": true,
+          "disabled": false
+        }
+      },
+      "afterOpen": {
+        "teamBtn": {
+          "x": 336,
+          "y": 510,
+          "w": 44,
+          "h": 44
+        },
+        "btnAriaLabel": "摸鱼小队，还有精力 100",
+        "taskBadge": null,
+        "energyBadge": {
+          "text": "精力 100",
+          "rect": {
+            "x": 290,
+            "y": 552,
+            "w": 51,
+            "h": 16
+          }
+        },
+        "talentBadge": {
+          "text": "天赋",
+          "rect": {
+            "x": 308,
+            "y": 524,
+            "w": 30,
+            "h": 16
+          }
+        },
+        "overlaps": {
+          "energyVsTalent": false,
+          "energyVsTeamBtn": false
+        },
+        "hudText": "0.4摸鱼值 点击 +1 不点也 0.2/秒 实习生 0% 👥 精力 100 天赋 🔊 📔 再戳 15 下 → 解锁「咖啡续命」",
+        "centers": {
+          "atEnergyBadge": "",
+          "atTeamBtn": "team-panel"
+        },
+        "overlays": {
+          "welcome": false,
+          "cards": false,
+          "team": true,
+          "boss": false
+        }
+      }
+    },
+    "decor0": {
+      "rows": [
+        {
+          "name": "认真摸鱼",
+          "desc": "今天挂机 +25% · 花 40 精力",
+          "dot": "40",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 85,
+          "h": 61,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "text": "使用",
+            "aria": "使用：认真摸鱼（消耗 40 精力，今天挂机 +25%）"
+          }
+        },
+        {
+          "name": "假装工作",
+          "desc": "今天巡逻奖励 +80% · 花 35 精力",
+          "dot": "35",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 146,
+          "h": 61,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "text": "使用",
+            "aria": "使用：假装工作（消耗 35 精力，今天巡逻奖励 +80%）"
+          }
+        },
+        {
+          "name": "跟同事聊天",
+          "desc": "全体同事好感 +3 · 花 25 精力",
+          "dot": "25",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 207,
+          "h": 61,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "text": "使用",
+            "aria": "使用：跟同事聊天（消耗 25 精力，全体同事好感 +3）"
+          }
+        },
+        {
+          "name": "绿萝",
+          "desc": "工位挂机 +5%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 405,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": true,
+            "text": "3000",
+            "aria": "购买：绿萝，3000，效果工位挂机 +5%"
+          }
+        },
+        {
+          "name": "护眼台灯",
+          "desc": "点击力 +15%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 459,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": true,
+            "text": "2.00万",
+            "aria": "购买：护眼台灯，2.00万，效果点击力 +15%"
+          }
+        },
+        {
+          "name": "毛绒地毯",
+          "desc": "离线效率 +5%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 513,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 65,
+            "h": 44,
+            "disabled": true,
+            "text": "12.00万",
+            "aria": "购买：毛绒地毯，12.00万，效果离线效率 +5%"
+          }
+        },
+        {
+          "name": "迷你冰箱",
+          "desc": "工位挂机 +8%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 567,
+          "h": 46,
+          "visible": true,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 67,
+            "h": 44,
+            "disabled": true,
+            "text": "60.00万",
+            "aria": "购买：迷你冰箱，60.00万，效果工位挂机 +8%"
+          }
+        },
+        {
+          "name": "按摩椅",
+          "desc": "离线效率 +8%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 621,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 75,
+            "h": 44,
+            "disabled": true,
+            "text": "400.00万",
+            "aria": "购买：按摩椅，400.00万，效果离线效率 +8%"
+          }
+        },
+        {
+          "name": "鱼缸",
+          "desc": "挂机 +10%、点击 +10%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 675,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 82,
+            "h": 44,
+            "disabled": true,
+            "text": "3000.00万",
+            "aria": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%"
+          }
+        },
+        {
+          "name": "投影仪",
+          "desc": "派遣奖励 +30%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 729,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": true,
+            "text": "2.00亿",
+            "aria": "购买：投影仪，2.00亿，效果派遣奖励 +30%"
+          }
+        },
+        {
+          "name": "工位猫窝",
+          "desc": "挂机 +15%、离线 +10%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 783,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 67,
+            "h": 44,
+            "disabled": true,
+            "text": "20.00亿",
+            "aria": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%"
+          }
+        }
+      ],
+      "btns": [
+        {
+          "act": "energy",
+          "id": "slack",
+          "text": "使用",
+          "aria": "使用：认真摸鱼（消耗 40 精力，今天挂机 +25%）",
+          "w": 64,
+          "h": 44,
+          "disabled": false,
+          "top": 93
+        },
+        {
+          "act": "energy",
+          "id": "fake-work",
+          "text": "使用",
+          "aria": "使用：假装工作（消耗 35 精力，今天巡逻奖励 +80%）",
+          "w": 64,
+          "h": 44,
+          "disabled": false,
+          "top": 154
+        },
+        {
+          "act": "energy",
+          "id": "social",
+          "text": "使用",
+          "aria": "使用：跟同事聊天（消耗 25 精力，全体同事好感 +3）",
+          "w": 64,
+          "h": 44,
+          "disabled": false,
+          "top": 215
+        },
+        {
+          "act": "energy-all",
+          "id": "",
+          "text": "一键全用（3 项，共 100 精力）",
+          "aria": null,
+          "w": 301,
+          "h": 44,
+          "disabled": false,
+          "top": 276
+        },
+        {
+          "act": "decor",
+          "id": "plant",
+          "text": "3000",
+          "aria": "购买：绿萝，3000，效果工位挂机 +5%",
+          "w": 64,
+          "h": 44,
+          "disabled": true,
+          "top": 406
+        },
+        {
+          "act": "decor",
+          "id": "lamp",
+          "text": "2.00万",
+          "aria": "购买：护眼台灯，2.00万，效果点击力 +15%",
+          "w": 64,
+          "h": 44,
+          "disabled": true,
+          "top": 460
+        },
+        {
+          "act": "decor",
+          "id": "rug",
+          "text": "12.00万",
+          "aria": "购买：毛绒地毯，12.00万，效果离线效率 +5%",
+          "w": 65,
+          "h": 44,
+          "disabled": true,
+          "top": 514
+        },
+        {
+          "act": "decor",
+          "id": "fridge",
+          "text": "60.00万",
+          "aria": "购买：迷你冰箱，60.00万，效果工位挂机 +8%",
+          "w": 67,
+          "h": 44,
+          "disabled": true,
+          "top": 568
+        },
+        {
+          "act": "decor",
+          "id": "chair",
+          "text": "400.00万",
+          "aria": "购买：按摩椅，400.00万，效果离线效率 +8%",
+          "w": 75,
+          "h": 44,
+          "disabled": true,
+          "top": 622
+        },
+        {
+          "act": "decor",
+          "id": "aquarium",
+          "text": "3000.00万",
+          "aria": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%",
+          "w": 82,
+          "h": 44,
+          "disabled": true,
+          "top": 676
+        },
+        {
+          "act": "decor",
+          "id": "projector",
+          "text": "2.00亿",
+          "aria": "购买：投影仪，2.00亿，效果派遣奖励 +30%",
+          "w": 64,
+          "h": 44,
+          "disabled": true,
+          "top": 730
+        },
+        {
+          "act": "decor",
+          "id": "catbed",
+          "text": "20.00亿",
+          "aria": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%",
+          "w": 67,
+          "h": 44,
+          "disabled": true,
+          "top": 784
+        }
+      ],
+      "rowCount": 11,
+      "names": [
+        "认真摸鱼",
+        "假装工作",
+        "跟同事聊天",
+        "绿萝",
+        "护眼台灯",
+        "毛绒地毯",
+        "迷你冰箱",
+        "按摩椅",
+        "鱼缸",
+        "投影仪",
+        "工位猫窝"
+      ],
+      "headings": [
+        "今日精力 （剩 100/100）",
+        "工位家具 （已装修 0/8）"
+      ],
+      "onCount": 0,
+      "enabledBtns": 4,
+      "visibleRows": 7,
+      "fullyVisibleRows": 6,
+      "scroll": {
+        "top": 0,
+        "sh": 829,
+        "ch": 603,
+        "overflow": 226
+      },
+      "chars": 306,
+      "numTokens": 41,
+      "minBtnH": 44,
+      "minRowH": 46,
+      "tabs": [
+        {
+          "text": "同事",
+          "w": 54,
+          "h": 44,
+          "ariaSelected": "false"
+        },
+        {
+          "text": "天赋",
+          "w": 54,
+          "h": 44,
+          "ariaSelected": "false"
+        },
+        {
+          "text": "工位",
+          "w": 54,
+          "h": 44,
+          "ariaSelected": "true"
+        }
+      ],
+      "bodyRect": {
+        "x": 34,
+        "y": 164,
+        "w": 323,
+        "h": 603
+      },
+      "panelRect": {
+        "x": 16,
+        "y": 59,
+        "w": 359,
+        "h": 726
+      },
+      "text": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%\n今日精力 （剩 100/100）\n40\n认真摸鱼 今天挂机 +25% · 花 40 精力\n使用\n35\n假装工作 今天巡逻奖励 +80% · 花 35 精力\n使用\n25\n跟同事聊天 全体同事好感 +3 · 花 25 精力\n使用\n一键全用（3 项，共 100 精力）\n每天 100 点，效果持续到当天结束；3 项合计正好 100\n工位家具 （已装修 0/8）\n绿萝 工位挂机 +5%\n3000\n护眼台灯 点击力 +15%\n2.00万\n毛绒地毯 离线效率 +5%\n12.00万\n迷你冰箱 工位挂机 +8%\n60.00万\n按摩椅 离线效率 +8%\n400.00万\n鱼缸 挂机 +10%、点击 +10%\n3000.00万\n投影仪 派遣奖励 +30%\n2.00亿\n工位猫窝 挂机 +15%、离线 +10%\n20.00亿",
+      "vw": 390,
+      "vh": 844
+    },
+    "scroll": {
+      "steps": 1,
+      "tops": [
+        226
+      ],
+      "deltaY": 300,
+      "overflow": 226,
+      "reachedBottom": true
+    },
+    "cardsWhilePanel": {
+      "covered": true,
+      "waitedMs": 9247,
+      "stack": {
+        "teamStillOpen": true,
+        "cardsZ": "16",
+        "teamZ": "13",
+        "hitAtBuyBtn": "cards-panel"
+      }
+    },
+    "cardsAfterClose": {
+      "appeared": false,
+      "ms": 6067,
+      "shotNeeded": true,
+      "skipped": false
+    },
+    "reopen": {
+      "taps": 2,
+      "ms": 990,
+      "team": true,
+      "decoTap": {
+        "ok": true,
+        "rect": {
+          "x": 180.59375,
+          "y": 132.078125,
+          "w": 54,
+          "h": 44,
+          "text": "工位",
+          "hit": "tab-decor",
+          "hitSelf": true,
+          "disabled": false
+        }
+      },
+      "afterOpen": {
+        "teamBtn": {
+          "x": 336,
+          "y": 510,
+          "w": 44,
+          "h": 44
+        },
+        "btnAriaLabel": "摸鱼小队，还有精力 100",
+        "taskBadge": null,
+        "energyBadge": {
+          "text": "精力 100",
+          "rect": {
+            "x": 290,
+            "y": 552,
+            "w": 51,
+            "h": 16
+          }
+        },
+        "talentBadge": {
+          "text": "天赋",
+          "rect": {
+            "x": 308,
+            "y": 524,
+            "w": 30,
+            "h": 16
+          }
+        },
+        "overlaps": {
+          "energyVsTalent": false,
+          "energyVsTeamBtn": false
+        },
+        "hudText": "3.8摸鱼值 点击 +1 不点也 0.2/秒 实习生 0% 👥 精力 100 天赋 🔊 📔 再戳 12 下 → 解锁「咖啡续命」",
+        "centers": {
+          "atEnergyBadge": "",
+          "atTeamBtn": "team-panel"
+        },
+        "overlays": {
+          "welcome": false,
+          "cards": false,
+          "team": true,
+          "boss": false
+        }
+      }
+    },
+    "decorBeforeAll": {
+      "rows": [
+        {
+          "name": "认真摸鱼",
+          "desc": "今天挂机 +25% · 花 40 精力",
+          "dot": "40",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 85,
+          "h": 61,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "text": "使用",
+            "aria": "使用：认真摸鱼（消耗 40 精力，今天挂机 +25%）"
+          }
+        },
+        {
+          "name": "假装工作",
+          "desc": "今天巡逻奖励 +80% · 花 35 精力",
+          "dot": "35",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 146,
+          "h": 61,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "text": "使用",
+            "aria": "使用：假装工作（消耗 35 精力，今天巡逻奖励 +80%）"
+          }
+        },
+        {
+          "name": "跟同事聊天",
+          "desc": "全体同事好感 +3 · 花 25 精力",
+          "dot": "25",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 207,
+          "h": 61,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "text": "使用",
+            "aria": "使用：跟同事聊天（消耗 25 精力，全体同事好感 +3）"
+          }
+        },
+        {
+          "name": "绿萝",
+          "desc": "工位挂机 +5%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 405,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": true,
+            "text": "3000",
+            "aria": "购买：绿萝，3000，效果工位挂机 +5%"
+          }
+        },
+        {
+          "name": "护眼台灯",
+          "desc": "点击力 +15%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 459,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": true,
+            "text": "2.00万",
+            "aria": "购买：护眼台灯，2.00万，效果点击力 +15%"
+          }
+        },
+        {
+          "name": "毛绒地毯",
+          "desc": "离线效率 +5%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 513,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 65,
+            "h": 44,
+            "disabled": true,
+            "text": "12.00万",
+            "aria": "购买：毛绒地毯，12.00万，效果离线效率 +5%"
+          }
+        },
+        {
+          "name": "迷你冰箱",
+          "desc": "工位挂机 +8%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 567,
+          "h": 46,
+          "visible": true,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 67,
+            "h": 44,
+            "disabled": true,
+            "text": "60.00万",
+            "aria": "购买：迷你冰箱，60.00万，效果工位挂机 +8%"
+          }
+        },
+        {
+          "name": "按摩椅",
+          "desc": "离线效率 +8%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 621,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 75,
+            "h": 44,
+            "disabled": true,
+            "text": "400.00万",
+            "aria": "购买：按摩椅，400.00万，效果离线效率 +8%"
+          }
+        },
+        {
+          "name": "鱼缸",
+          "desc": "挂机 +10%、点击 +10%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 675,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 82,
+            "h": 44,
+            "disabled": true,
+            "text": "3000.00万",
+            "aria": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%"
+          }
+        },
+        {
+          "name": "投影仪",
+          "desc": "派遣奖励 +30%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 729,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": true,
+            "text": "2.00亿",
+            "aria": "购买：投影仪，2.00亿，效果派遣奖励 +30%"
+          }
+        },
+        {
+          "name": "工位猫窝",
+          "desc": "挂机 +15%、离线 +10%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 783,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 67,
+            "h": 44,
+            "disabled": true,
+            "text": "20.00亿",
+            "aria": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%"
+          }
+        }
+      ],
+      "btns": [
+        {
+          "act": "energy",
+          "id": "slack",
+          "text": "使用",
+          "aria": "使用：认真摸鱼（消耗 40 精力，今天挂机 +25%）",
+          "w": 64,
+          "h": 44,
+          "disabled": false,
+          "top": 93
+        },
+        {
+          "act": "energy",
+          "id": "fake-work",
+          "text": "使用",
+          "aria": "使用：假装工作（消耗 35 精力，今天巡逻奖励 +80%）",
+          "w": 64,
+          "h": 44,
+          "disabled": false,
+          "top": 154
+        },
+        {
+          "act": "energy",
+          "id": "social",
+          "text": "使用",
+          "aria": "使用：跟同事聊天（消耗 25 精力，全体同事好感 +3）",
+          "w": 64,
+          "h": 44,
+          "disabled": false,
+          "top": 215
+        },
+        {
+          "act": "energy-all",
+          "id": "",
+          "text": "一键全用（3 项，共 100 精力）",
+          "aria": null,
+          "w": 301,
+          "h": 44,
+          "disabled": false,
+          "top": 276
+        },
+        {
+          "act": "decor",
+          "id": "plant",
+          "text": "3000",
+          "aria": "购买：绿萝，3000，效果工位挂机 +5%",
+          "w": 64,
+          "h": 44,
+          "disabled": true,
+          "top": 406
+        },
+        {
+          "act": "decor",
+          "id": "lamp",
+          "text": "2.00万",
+          "aria": "购买：护眼台灯，2.00万，效果点击力 +15%",
+          "w": 64,
+          "h": 44,
+          "disabled": true,
+          "top": 460
+        },
+        {
+          "act": "decor",
+          "id": "rug",
+          "text": "12.00万",
+          "aria": "购买：毛绒地毯，12.00万，效果离线效率 +5%",
+          "w": 65,
+          "h": 44,
+          "disabled": true,
+          "top": 514
+        },
+        {
+          "act": "decor",
+          "id": "fridge",
+          "text": "60.00万",
+          "aria": "购买：迷你冰箱，60.00万，效果工位挂机 +8%",
+          "w": 67,
+          "h": 44,
+          "disabled": true,
+          "top": 568
+        },
+        {
+          "act": "decor",
+          "id": "chair",
+          "text": "400.00万",
+          "aria": "购买：按摩椅，400.00万，效果离线效率 +8%",
+          "w": 75,
+          "h": 44,
+          "disabled": true,
+          "top": 622
+        },
+        {
+          "act": "decor",
+          "id": "aquarium",
+          "text": "3000.00万",
+          "aria": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%",
+          "w": 82,
+          "h": 44,
+          "disabled": true,
+          "top": 676
+        },
+        {
+          "act": "decor",
+          "id": "projector",
+          "text": "2.00亿",
+          "aria": "购买：投影仪，2.00亿，效果派遣奖励 +30%",
+          "w": 64,
+          "h": 44,
+          "disabled": true,
+          "top": 730
+        },
+        {
+          "act": "decor",
+          "id": "catbed",
+          "text": "20.00亿",
+          "aria": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%",
+          "w": 67,
+          "h": 44,
+          "disabled": true,
+          "top": 784
+        }
+      ],
+      "rowCount": 11,
+      "names": [
+        "认真摸鱼",
+        "假装工作",
+        "跟同事聊天",
+        "绿萝",
+        "护眼台灯",
+        "毛绒地毯",
+        "迷你冰箱",
+        "按摩椅",
+        "鱼缸",
+        "投影仪",
+        "工位猫窝"
+      ],
+      "headings": [
+        "今日精力 （剩 100/100）",
+        "工位家具 （已装修 0/8）"
+      ],
+      "onCount": 0,
+      "enabledBtns": 4,
+      "visibleRows": 7,
+      "fullyVisibleRows": 6,
+      "scroll": {
+        "top": 0,
+        "sh": 829,
+        "ch": 603,
+        "overflow": 226
+      },
+      "chars": 306,
+      "numTokens": 41,
+      "minBtnH": 44,
+      "minRowH": 46,
+      "tabs": [
+        {
+          "text": "同事",
+          "w": 54,
+          "h": 44,
+          "ariaSelected": "false"
+        },
+        {
+          "text": "天赋",
+          "w": 54,
+          "h": 44,
+          "ariaSelected": "false"
+        },
+        {
+          "text": "工位",
+          "w": 54,
+          "h": 44,
+          "ariaSelected": "true"
+        }
+      ],
+      "bodyRect": {
+        "x": 34,
+        "y": 164,
+        "w": 323,
+        "h": 603
+      },
+      "panelRect": {
+        "x": 16,
+        "y": 59,
+        "w": 359,
+        "h": 726
+      },
+      "text": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%\n今日精力 （剩 100/100）\n40\n认真摸鱼 今天挂机 +25% · 花 40 精力\n使用\n35\n假装工作 今天巡逻奖励 +80% · 花 35 精力\n使用\n25\n跟同事聊天 全体同事好感 +3 · 花 25 精力\n使用\n一键全用（3 项，共 100 精力）\n每天 100 点，效果持续到当天结束；3 项合计正好 100\n工位家具 （已装修 0/8）\n绿萝 工位挂机 +5%\n3000\n护眼台灯 点击力 +15%\n2.00万\n毛绒地毯 离线效率 +5%\n12.00万\n迷你冰箱 工位挂机 +8%\n60.00万\n按摩椅 离线效率 +8%\n400.00万\n鱼缸 挂机 +10%、点击 +10%\n3000.00万\n投影仪 派遣奖励 +30%\n2.00亿\n工位猫窝 挂机 +15%、离线 +10%\n20.00亿",
+      "vw": 390,
+      "vh": 844
+    },
+    "oneClick": {
+      "btn": {
+        "text": "一键全用（3 项，共 100 精力）",
+        "disabled": false,
+        "w": 301,
+        "h": 44,
+        "topInBody": 276,
+        "inBodyViewport": true
+      },
+      "tap": {
+        "ok": true,
+        "rect": {
+          "x": 194.9921875,
+          "y": 462.078125,
+          "w": 300.8,
+          "h": 44,
+          "text": "一键全用（3 项，共 100 精力）",
+          "hit": "ghost",
+          "hitSelf": true,
+          "disabled": false
+        }
+      },
+      "energy": {
+        "before": {
+          "left": 100,
+          "used": []
+        },
+        "after": {
+          "left": 0,
+          "used": [
+            "slack",
+            "fake-work",
+            "social"
+          ]
+        }
+      },
+      "toast": {
+        "text": "已使用 3 项精力（剩余 0 点）",
+        "opacity": "1",
+        "visible": true,
+        "rect": {
+          "x": 98,
+          "y": 108,
+          "w": 195,
+          "h": 61
+        },
+        "zIndex": "45"
+      },
+      "steps": 1,
+      "badgeAfter": null,
+      "btnAfter": {
+        "disabled": true,
+        "text": "一键全用（3 项，共 100 精力）"
+      }
+    },
+    "decorAfterAll": {
+      "rows": [
+        {
+          "name": "认真摸鱼",
+          "desc": "今天挂机 +25% · 花 40 精力",
+          "dot": "✓",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 85,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": true,
+          "btn": null
+        },
+        {
+          "name": "假装工作",
+          "desc": "今天巡逻奖励 +80% · 花 35 精力",
+          "dot": "✓",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 131,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": true,
+          "btn": null
+        },
+        {
+          "name": "跟同事聊天",
+          "desc": "全体同事好感 +3 · 花 25 精力",
+          "dot": "✓",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 177,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": true,
+          "btn": null
+        },
+        {
+          "name": "绿萝",
+          "desc": "工位挂机 +5%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 360,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": true,
+            "text": "3000",
+            "aria": "购买：绿萝，3000，效果工位挂机 +5%"
+          }
+        },
+        {
+          "name": "护眼台灯",
+          "desc": "点击力 +15%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 414,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": true,
+            "text": "2.00万",
+            "aria": "购买：护眼台灯，2.00万，效果点击力 +15%"
+          }
+        },
+        {
+          "name": "毛绒地毯",
+          "desc": "离线效率 +5%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 468,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 65,
+            "h": 44,
+            "disabled": true,
+            "text": "12.00万",
+            "aria": "购买：毛绒地毯，12.00万，效果离线效率 +5%"
+          }
+        },
+        {
+          "name": "迷你冰箱",
+          "desc": "工位挂机 +8%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 522,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 67,
+            "h": 44,
+            "disabled": true,
+            "text": "60.00万",
+            "aria": "购买：迷你冰箱，60.00万，效果工位挂机 +8%"
+          }
+        },
+        {
+          "name": "按摩椅",
+          "desc": "离线效率 +8%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 576,
+          "h": 46,
+          "visible": true,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 75,
+            "h": 44,
+            "disabled": true,
+            "text": "400.00万",
+            "aria": "购买：按摩椅，400.00万，效果离线效率 +8%"
+          }
+        },
+        {
+          "name": "鱼缸",
+          "desc": "挂机 +10%、点击 +10%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 630,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 82,
+            "h": 44,
+            "disabled": true,
+            "text": "3000.00万",
+            "aria": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%"
+          }
+        },
+        {
+          "name": "投影仪",
+          "desc": "派遣奖励 +30%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 684,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": true,
+            "text": "2.00亿",
+            "aria": "购买：投影仪，2.00亿，效果派遣奖励 +30%"
+          }
+        },
+        {
+          "name": "工位猫窝",
+          "desc": "挂机 +15%、离线 +10%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 738,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 67,
+            "h": 44,
+            "disabled": true,
+            "text": "20.00亿",
+            "aria": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%"
+          }
+        }
+      ],
+      "btns": [
+        {
+          "act": "energy-all",
+          "id": "",
+          "text": "一键全用（3 项，共 100 精力）",
+          "aria": null,
+          "w": 301,
+          "h": 44,
+          "disabled": true,
+          "top": 231
+        },
+        {
+          "act": "decor",
+          "id": "plant",
+          "text": "3000",
+          "aria": "购买：绿萝，3000，效果工位挂机 +5%",
+          "w": 64,
+          "h": 44,
+          "disabled": true,
+          "top": 361
+        },
+        {
+          "act": "decor",
+          "id": "lamp",
+          "text": "2.00万",
+          "aria": "购买：护眼台灯，2.00万，效果点击力 +15%",
+          "w": 64,
+          "h": 44,
+          "disabled": true,
+          "top": 415
+        },
+        {
+          "act": "decor",
+          "id": "rug",
+          "text": "12.00万",
+          "aria": "购买：毛绒地毯，12.00万，效果离线效率 +5%",
+          "w": 65,
+          "h": 44,
+          "disabled": true,
+          "top": 469
+        },
+        {
+          "act": "decor",
+          "id": "fridge",
+          "text": "60.00万",
+          "aria": "购买：迷你冰箱，60.00万，效果工位挂机 +8%",
+          "w": 67,
+          "h": 44,
+          "disabled": true,
+          "top": 523
+        },
+        {
+          "act": "decor",
+          "id": "chair",
+          "text": "400.00万",
+          "aria": "购买：按摩椅，400.00万，效果离线效率 +8%",
+          "w": 75,
+          "h": 44,
+          "disabled": true,
+          "top": 577
+        },
+        {
+          "act": "decor",
+          "id": "aquarium",
+          "text": "3000.00万",
+          "aria": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%",
+          "w": 82,
+          "h": 44,
+          "disabled": true,
+          "top": 631
+        },
+        {
+          "act": "decor",
+          "id": "projector",
+          "text": "2.00亿",
+          "aria": "购买：投影仪，2.00亿，效果派遣奖励 +30%",
+          "w": 64,
+          "h": 44,
+          "disabled": true,
+          "top": 685
+        },
+        {
+          "act": "decor",
+          "id": "catbed",
+          "text": "20.00亿",
+          "aria": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%",
+          "w": 67,
+          "h": 44,
+          "disabled": true,
+          "top": 739
+        }
+      ],
+      "rowCount": 11,
+      "names": [
+        "认真摸鱼",
+        "假装工作",
+        "跟同事聊天",
+        "绿萝",
+        "护眼台灯",
+        "毛绒地毯",
+        "迷你冰箱",
+        "按摩椅",
+        "鱼缸",
+        "投影仪",
+        "工位猫窝"
+      ],
+      "headings": [
+        "今日精力 （剩 0/100）",
+        "工位家具 （已装修 0/8）"
+      ],
+      "onCount": 3,
+      "enabledBtns": 0,
+      "visibleRows": 8,
+      "fullyVisibleRows": 7,
+      "scroll": {
+        "top": 0,
+        "sh": 784,
+        "ch": 603,
+        "overflow": 181
+      },
+      "chars": 304,
+      "numTokens": 38,
+      "minBtnH": 44,
+      "minRowH": 46,
+      "tabs": [
+        {
+          "text": "同事",
+          "w": 54,
+          "h": 44,
+          "ariaSelected": "false"
+        },
+        {
+          "text": "天赋",
+          "w": 54,
+          "h": 44,
+          "ariaSelected": "false"
+        },
+        {
+          "text": "工位",
+          "w": 54,
+          "h": 44,
+          "ariaSelected": "true"
+        }
+      ],
+      "bodyRect": {
+        "x": 34,
+        "y": 164,
+        "w": 323,
+        "h": 603
+      },
+      "panelRect": {
+        "x": 16,
+        "y": 59,
+        "w": 359,
+        "h": 726
+      },
+      "text": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%\n今日精力 （剩 0/100）\n✓\n认真摸鱼 今天挂机 +25% · 花 40 精力\n已使用\n✓\n假装工作 今天巡逻奖励 +80% · 花 35 精力\n已使用\n✓\n跟同事聊天 全体同事好感 +3 · 花 25 精力\n已使用\n一键全用（3 项，共 100 精力）\n每天 100 点，效果持续到当天结束；3 项合计正好 100\n工位家具 （已装修 0/8）\n绿萝 工位挂机 +5%\n3000\n护眼台灯 点击力 +15%\n2.00万\n毛绒地毯 离线效率 +5%\n12.00万\n迷你冰箱 工位挂机 +8%\n60.00万\n按摩椅 离线效率 +8%\n400.00万\n鱼缸 挂机 +10%、点击 +10%\n3000.00万\n投影仪 派遣奖励 +30%\n2.00亿\n工位猫窝 挂机 +15%、离线 +10%\n20.00亿",
+      "vw": 390,
+      "vh": 844
+    },
+    "totalMs": 1795778109714
+  },
+  "open2": {
+    "boot": {
+      "ok": true,
+      "ms": 61
+    },
+    "hudBefore": {
+      "teamBtn": {
+        "x": 336,
+        "y": 510,
+        "w": 44,
+        "h": 44
+      },
+      "btnAriaLabel": "摸鱼小队",
+      "taskBadge": null,
+      "energyBadge": null,
+      "talentBadge": {
+        "text": "天赋",
+        "rect": {
+          "x": 308,
+          "y": 524,
+          "w": 30,
+          "h": 16
+        }
+      },
+      "overlaps": {
+        "energyVsTalent": false,
+        "energyVsTeamBtn": false
+      },
+      "hudText": "4.5摸鱼值 点击 +1 不点也 0.3/秒 实习生 0% 👥 天赋 🔊 📔 再戳 11 下 → 解锁「咖啡续命」",
+      "centers": {
+        "atEnergyBadge": null,
+        "atTeamBtn": "btn-team"
+      },
+      "overlays": {
+        "welcome": false,
+        "cards": false,
+        "team": false,
+        "boss": false
+      }
+    },
+    "canvasBefore": {
+      "sum": 3755196064,
+      "bright": 4980,
+      "w": 780,
+      "h": 1104
+    },
+    "goto": {
+      "taps": 2,
+      "ms": 959,
+      "team": true,
+      "decoTap": {
+        "ok": true,
+        "rect": {
+          "x": 180.59375,
+          "y": 318.796875,
+          "w": 54,
+          "h": 44,
+          "text": "工位",
+          "hit": "tab-decor",
+          "hitSelf": true,
+          "disabled": false
+        }
+      },
+      "afterOpen": {
+        "teamBtn": {
+          "x": 336,
+          "y": 510,
+          "w": 44,
+          "h": 44
+        },
+        "btnAriaLabel": "摸鱼小队",
+        "taskBadge": null,
+        "energyBadge": null,
+        "talentBadge": {
+          "text": "天赋",
+          "rect": {
+            "x": 308,
+            "y": 524,
+            "w": 30,
+            "h": 16
+          }
+        },
+        "overlaps": {
+          "energyVsTalent": false,
+          "energyVsTeamBtn": false
+        },
+        "hudText": "1000.00亿摸鱼值 点击 +1 不点也 0.3/秒 奇点 25% ♻ 可离职再就业 👥 天赋 🔊 📔",
+        "centers": {
+          "atEnergyBadge": null,
+          "atTeamBtn": "team-panel"
+        },
+        "overlays": {
+          "welcome": false,
+          "cards": false,
+          "team": true,
+          "boss": false
+        }
+      }
+    },
+    "decor1": {
+      "rows": [
+        {
+          "name": "认真摸鱼",
+          "desc": "今天挂机 +25% · 花 40 精力",
+          "dot": "✓",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 85,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": true,
+          "btn": null
+        },
+        {
+          "name": "假装工作",
+          "desc": "今天巡逻奖励 +80% · 花 35 精力",
+          "dot": "✓",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 131,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": true,
+          "btn": null
+        },
+        {
+          "name": "跟同事聊天",
+          "desc": "全体同事好感 +3 · 花 25 精力",
+          "dot": "✓",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 177,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": true,
+          "btn": null
+        },
+        {
+          "name": "绿萝",
+          "desc": "工位挂机 +5%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 360,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "text": "3000",
+            "aria": "购买：绿萝，3000，效果工位挂机 +5%"
+          }
+        },
+        {
+          "name": "护眼台灯",
+          "desc": "点击力 +15%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 414,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "text": "2.00万",
+            "aria": "购买：护眼台灯，2.00万，效果点击力 +15%"
+          }
+        },
+        {
+          "name": "毛绒地毯",
+          "desc": "离线效率 +5%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 468,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 65,
+            "h": 44,
+            "disabled": false,
+            "text": "12.00万",
+            "aria": "购买：毛绒地毯，12.00万，效果离线效率 +5%"
+          }
+        },
+        {
+          "name": "迷你冰箱",
+          "desc": "工位挂机 +8%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 522,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 67,
+            "h": 44,
+            "disabled": false,
+            "text": "60.00万",
+            "aria": "购买：迷你冰箱，60.00万，效果工位挂机 +8%"
+          }
+        },
+        {
+          "name": "按摩椅",
+          "desc": "离线效率 +8%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 576,
+          "h": 46,
+          "visible": true,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 75,
+            "h": 44,
+            "disabled": false,
+            "text": "400.00万",
+            "aria": "购买：按摩椅，400.00万，效果离线效率 +8%"
+          }
+        },
+        {
+          "name": "鱼缸",
+          "desc": "挂机 +10%、点击 +10%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 630,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 82,
+            "h": 44,
+            "disabled": false,
+            "text": "3000.00万",
+            "aria": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%"
+          }
+        },
+        {
+          "name": "投影仪",
+          "desc": "派遣奖励 +30%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 684,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "text": "2.00亿",
+            "aria": "购买：投影仪，2.00亿，效果派遣奖励 +30%"
+          }
+        },
+        {
+          "name": "工位猫窝",
+          "desc": "挂机 +15%、离线 +10%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 738,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 67,
+            "h": 44,
+            "disabled": false,
+            "text": "20.00亿",
+            "aria": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%"
+          }
+        }
+      ],
+      "btns": [
+        {
+          "act": "energy-all",
+          "id": "",
+          "text": "一键全用（3 项，共 100 精力）",
+          "aria": null,
+          "w": 301,
+          "h": 44,
+          "disabled": true,
+          "top": 231
+        },
+        {
+          "act": "decor",
+          "id": "plant",
+          "text": "3000",
+          "aria": "购买：绿萝，3000，效果工位挂机 +5%",
+          "w": 64,
+          "h": 44,
+          "disabled": false,
+          "top": 361
+        },
+        {
+          "act": "decor",
+          "id": "lamp",
+          "text": "2.00万",
+          "aria": "购买：护眼台灯，2.00万，效果点击力 +15%",
+          "w": 64,
+          "h": 44,
+          "disabled": false,
+          "top": 415
+        },
+        {
+          "act": "decor",
+          "id": "rug",
+          "text": "12.00万",
+          "aria": "购买：毛绒地毯，12.00万，效果离线效率 +5%",
+          "w": 65,
+          "h": 44,
+          "disabled": false,
+          "top": 469
+        },
+        {
+          "act": "decor",
+          "id": "fridge",
+          "text": "60.00万",
+          "aria": "购买：迷你冰箱，60.00万，效果工位挂机 +8%",
+          "w": 67,
+          "h": 44,
+          "disabled": false,
+          "top": 523
+        },
+        {
+          "act": "decor",
+          "id": "chair",
+          "text": "400.00万",
+          "aria": "购买：按摩椅，400.00万，效果离线效率 +8%",
+          "w": 75,
+          "h": 44,
+          "disabled": false,
+          "top": 577
+        },
+        {
+          "act": "decor",
+          "id": "aquarium",
+          "text": "3000.00万",
+          "aria": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%",
+          "w": 82,
+          "h": 44,
+          "disabled": false,
+          "top": 631
+        },
+        {
+          "act": "decor",
+          "id": "projector",
+          "text": "2.00亿",
+          "aria": "购买：投影仪，2.00亿，效果派遣奖励 +30%",
+          "w": 64,
+          "h": 44,
+          "disabled": false,
+          "top": 685
+        },
+        {
+          "act": "decor",
+          "id": "catbed",
+          "text": "20.00亿",
+          "aria": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%",
+          "w": 67,
+          "h": 44,
+          "disabled": false,
+          "top": 739
+        }
+      ],
+      "rowCount": 11,
+      "names": [
+        "认真摸鱼",
+        "假装工作",
+        "跟同事聊天",
+        "绿萝",
+        "护眼台灯",
+        "毛绒地毯",
+        "迷你冰箱",
+        "按摩椅",
+        "鱼缸",
+        "投影仪",
+        "工位猫窝"
+      ],
+      "headings": [
+        "今日精力 （剩 0/100）",
+        "工位家具 （已装修 0/8）"
+      ],
+      "onCount": 3,
+      "enabledBtns": 8,
+      "visibleRows": 8,
+      "fullyVisibleRows": 7,
+      "scroll": {
+        "top": 0,
+        "sh": 784,
+        "ch": 603,
+        "overflow": 181
+      },
+      "chars": 304,
+      "numTokens": 38,
+      "minBtnH": 44,
+      "minRowH": 46,
+      "tabs": [
+        {
+          "text": "同事",
+          "w": 54,
+          "h": 44,
+          "ariaSelected": "false"
+        },
+        {
+          "text": "天赋",
+          "w": 54,
+          "h": 44,
+          "ariaSelected": "false"
+        },
+        {
+          "text": "工位",
+          "w": 54,
+          "h": 44,
+          "ariaSelected": "true"
+        }
+      ],
+      "bodyRect": {
+        "x": 34,
+        "y": 164,
+        "w": 323,
+        "h": 603
+      },
+      "panelRect": {
+        "x": 16,
+        "y": 59,
+        "w": 359,
+        "h": 726
+      },
+      "text": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%\n今日精力 （剩 0/100）\n✓\n认真摸鱼 今天挂机 +25% · 花 40 精力\n已使用\n✓\n假装工作 今天巡逻奖励 +80% · 花 35 精力\n已使用\n✓\n跟同事聊天 全体同事好感 +3 · 花 25 精力\n已使用\n一键全用（3 项，共 100 精力）\n每天 100 点，效果持续到当天结束；3 项合计正好 100\n工位家具 （已装修 0/8）\n绿萝 工位挂机 +5%\n3000\n护眼台灯 点击力 +15%\n2.00万\n毛绒地毯 离线效率 +5%\n12.00万\n迷你冰箱 工位挂机 +8%\n60.00万\n按摩椅 离线效率 +8%\n400.00万\n鱼缸 挂机 +10%、点击 +10%\n3000.00万\n投影仪 派遣奖励 +30%\n2.00亿\n工位猫窝 挂机 +15%、离线 +10%\n20.00亿",
+      "vw": 390,
+      "vh": 844
+    },
+    "rowTapBuy": {
+      "point": {
+        "x": 173.9921875,
+        "y": 546.578125,
+        "hit": "talent-desc",
+        "rowH": 46,
+        "btnH": 44,
+        "aria": "购买：绿萝，3000，效果工位挂机 +5%"
+      },
+      "decorBefore": 0,
+      "decorAfter": 1,
+      "toast": {
+        "text": "已装修：绿萝（工位挂机 +5%）",
+        "opacity": "1",
+        "visible": true,
+        "rect": {
+          "x": 98,
+          "y": 108,
+          "w": 195,
+          "h": 61
+        },
+        "zIndex": "45"
+      },
+      "summary": "已装修 1/8 · 挂机 ×1.05 · 点击 ×1.00 · 离线 +0%"
+    },
+    "err": "TypeError: Cannot read properties of undefined (reading 'length')\n    at runChrome.timeoutMs (file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-r14-frag-verify.mjs:294:61)\n    at async runChrome (file:///Users/p/Desktop/workspace/code/moyu/playtest/lib/chrome.mjs:39:12)\n    at async main (file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-r14-frag-verify.mjs:179:3)\n    at async file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-r14-frag-verify.mjs:447:1"
+  },
+  "open3": {
+    "boot": {
+      "ok": true,
+      "ms": 118
+    },
+    "hudSameDay": {
+      "teamBtn": {
+        "x": 336,
+        "y": 510,
+        "w": 44,
+        "h": 44
+      },
+      "btnAriaLabel": "摸鱼小队",
+      "taskBadge": null,
+      "energyBadge": null,
+      "talentBadge": {
+        "text": "天赋",
+        "rect": {
+          "x": 308,
+          "y": 524,
+          "w": 30,
+          "h": 16
+        }
+      },
+      "overlaps": {
+        "energyVsTalent": false,
+        "energyVsTeamBtn": false
+      },
+      "hudText": "1000.00亿摸鱼值 点击 +1 不点也 0.3/秒 奇点 25% ♻ 可离职再就业 👥 天赋 🔊 📔",
+      "centers": {
+        "atEnergyBadge": null,
+        "atTeamBtn": "btn-team"
+      },
+      "overlays": {
+        "welcome": false,
+        "cards": false,
+        "team": false,
+        "boss": false
+      }
+    },
+    "goto": {
+      "taps": 2,
+      "ms": 961,
+      "team": true,
+      "decoTap": {
+        "ok": true,
+        "rect": {
+          "x": 180.59375,
+          "y": 318.796875,
+          "w": 54,
+          "h": 44,
+          "text": "工位",
+          "hit": "tab-decor",
+          "hitSelf": true,
+          "disabled": false
+        }
+      },
+      "afterOpen": {
+        "teamBtn": {
+          "x": 336,
+          "y": 510,
+          "w": 44,
+          "h": 44
+        },
+        "btnAriaLabel": "摸鱼小队",
+        "taskBadge": null,
+        "energyBadge": null,
+        "talentBadge": {
+          "text": "天赋",
+          "rect": {
+            "x": 308,
+            "y": 524,
+            "w": 30,
+            "h": 16
+          }
+        },
+        "overlaps": {
+          "energyVsTalent": false,
+          "energyVsTeamBtn": false
+        },
+        "hudText": "1000.00亿摸鱼值 点击 +1 不点也 0.3/秒 奇点 25% ♻ 可离职再就业 👥 天赋 🔊 📔",
+        "centers": {
+          "atEnergyBadge": null,
+          "atTeamBtn": "team-panel"
+        },
+        "overlays": {
+          "welcome": false,
+          "cards": false,
+          "team": true,
+          "boss": false
+        }
+      }
+    },
+    "decorDead": {
+      "rows": [
+        {
+          "name": "认真摸鱼",
+          "desc": "今天挂机 +25% · 花 40 精力",
+          "dot": "✓",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 85,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": true,
+          "btn": null
+        },
+        {
+          "name": "假装工作",
+          "desc": "今天巡逻奖励 ×2.2 · 花 35 精力",
+          "dot": "✓",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 131,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": true,
+          "btn": null
+        },
+        {
+          "name": "跟同事聊天",
+          "desc": "全体好感 +5，且今天挂机 +5% · 花 25 精力",
+          "dot": "✓",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 177,
+          "h": 55,
+          "visible": true,
+          "fully": true,
+          "on": true,
+          "btn": null
+        },
+        {
+          "name": "专注点击",
+          "desc": "今天点击力 +20% · 花 45 精力",
+          "dot": "45",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 232,
+          "h": 61,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": true,
+            "text": "使用",
+            "aria": "使用：专注点击（消耗 45 精力，今天点击力 +20%）"
+          }
+        },
+        {
+          "name": "绿萝",
+          "desc": "工位挂机 +5%",
+          "dot": "✓",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 430,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": true,
+          "btn": null
+        },
+        {
+          "name": "护眼台灯",
+          "desc": "点击力 +15%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 484,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "text": "2.00万",
+            "aria": "购买：护眼台灯，2.00万，效果点击力 +15%"
+          }
+        },
+        {
+          "name": "毛绒地毯",
+          "desc": "离线效率 +5%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 538,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 65,
+            "h": 44,
+            "disabled": false,
+            "text": "12.00万",
+            "aria": "购买：毛绒地毯，12.00万，效果离线效率 +5%"
+          }
+        },
+        {
+          "name": "迷你冰箱",
+          "desc": "工位挂机 +8%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 592,
+          "h": 46,
+          "visible": true,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 67,
+            "h": 44,
+            "disabled": false,
+            "text": "60.00万",
+            "aria": "购买：迷你冰箱，60.00万，效果工位挂机 +8%"
+          }
+        },
+        {
+          "name": "按摩椅",
+          "desc": "离线效率 +8%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 646,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 75,
+            "h": 44,
+            "disabled": false,
+            "text": "400.00万",
+            "aria": "购买：按摩椅，400.00万，效果离线效率 +8%"
+          }
+        },
+        {
+          "name": "鱼缸",
+          "desc": "挂机 +10%、点击 +10%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 700,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 82,
+            "h": 44,
+            "disabled": false,
+            "text": "3000.00万",
+            "aria": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%"
+          }
+        },
+        {
+          "name": "投影仪",
+          "desc": "派遣奖励 +30%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 754,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "text": "2.00亿",
+            "aria": "购买：投影仪，2.00亿，效果派遣奖励 +30%"
+          }
+        },
+        {
+          "name": "工位猫窝",
+          "desc": "挂机 +15%、离线 +10%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 808,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 67,
+            "h": 44,
+            "disabled": false,
+            "text": "20.00亿",
+            "aria": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%"
+          }
+        }
+      ],
+      "btns": [
+        {
+          "act": "energy",
+          "id": "focus",
+          "text": "使用",
+          "aria": "使用：专注点击（消耗 45 精力，今天点击力 +20%）",
+          "w": 64,
+          "h": 44,
+          "disabled": true,
+          "top": 240
+        },
+        {
+          "act": "energy-all",
+          "id": "",
+          "text": "一键全用（3 项，共 100 精力）",
+          "aria": null,
+          "w": 301,
+          "h": 44,
+          "disabled": true,
+          "top": 301
+        },
+        {
+          "act": "decor",
+          "id": "lamp",
+          "text": "2.00万",
+          "aria": "购买：护眼台灯，2.00万，效果点击力 +15%",
+          "w": 64,
+          "h": 44,
+          "disabled": false,
+          "top": 485
+        },
+        {
+          "act": "decor",
+          "id": "rug",
+          "text": "12.00万",
+          "aria": "购买：毛绒地毯，12.00万，效果离线效率 +5%",
+          "w": 65,
+          "h": 44,
+          "disabled": false,
+          "top": 539
+        },
+        {
+          "act": "decor",
+          "id": "fridge",
+          "text": "60.00万",
+          "aria": "购买：迷你冰箱，60.00万，效果工位挂机 +8%",
+          "w": 67,
+          "h": 44,
+          "disabled": false,
+          "top": 593
+        },
+        {
+          "act": "decor",
+          "id": "chair",
+          "text": "400.00万",
+          "aria": "购买：按摩椅，400.00万，效果离线效率 +8%",
+          "w": 75,
+          "h": 44,
+          "disabled": false,
+          "top": 647
+        },
+        {
+          "act": "decor",
+          "id": "aquarium",
+          "text": "3000.00万",
+          "aria": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%",
+          "w": 82,
+          "h": 44,
+          "disabled": false,
+          "top": 701
+        },
+        {
+          "act": "decor",
+          "id": "projector",
+          "text": "2.00亿",
+          "aria": "购买：投影仪，2.00亿，效果派遣奖励 +30%",
+          "w": 64,
+          "h": 44,
+          "disabled": false,
+          "top": 755
+        },
+        {
+          "act": "decor",
+          "id": "catbed",
+          "text": "20.00亿",
+          "aria": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%",
+          "w": 67,
+          "h": 44,
+          "disabled": false,
+          "top": 809
+        }
+      ],
+      "rowCount": 12,
+      "names": [
+        "认真摸鱼",
+        "假装工作",
+        "跟同事聊天",
+        "专注点击",
+        "绿萝",
+        "护眼台灯",
+        "毛绒地毯",
+        "迷你冰箱",
+        "按摩椅",
+        "鱼缸",
+        "投影仪",
+        "工位猫窝"
+      ],
+      "headings": [
+        "今日精力 （剩 0/100）",
+        "工位家具 （已装修 1/8）"
+      ],
+      "onCount": 4,
+      "enabledBtns": 7,
+      "visibleRows": 8,
+      "fullyVisibleRows": 7,
+      "scroll": {
+        "top": 0,
+        "sh": 854,
+        "ch": 603,
+        "overflow": 251
+      },
+      "chars": 334,
+      "numTokens": 41,
+      "minBtnH": 44,
+      "minRowH": 46,
+      "tabs": [
+        {
+          "text": "同事",
+          "w": 54,
+          "h": 44,
+          "ariaSelected": "false"
+        },
+        {
+          "text": "天赋",
+          "w": 54,
+          "h": 44,
+          "ariaSelected": "false"
+        },
+        {
+          "text": "工位",
+          "w": 54,
+          "h": 44,
+          "ariaSelected": "true"
+        }
+      ],
+      "bodyRect": {
+        "x": 34,
+        "y": 164,
+        "w": 323,
+        "h": 603
+      },
+      "panelRect": {
+        "x": 16,
+        "y": 59,
+        "w": 359,
+        "h": 726
+      },
+      "text": "已装修 1/8 · 挂机 ×1.05 · 点击 ×1.00 · 离线 +0%\n今日精力 （剩 0/100）\n✓\n认真摸鱼 今天挂机 +25% · 花 40 精力\n已使用\n✓\n假装工作 今天巡逻奖励 ×2.2 · 花 35 精力\n已使用\n✓\n跟同事聊天 全体好感 +5，且今天挂机 +5% · 花 25 精力\n已使用\n45\n专注点击 今天点击力 +20% · 花 45 精力\n使用\n一键全用（3 项，共 100 精力）\n每天 100 点，效果持续到当天结束；3 项合计正好 100\n工位家具 （已装修 1/8）\n✓\n绿萝 工位挂机 +5%\n已装修\n护眼台灯 点击力 +15%\n2.00万\n毛绒地毯 离线效率 +5%\n12.00万\n迷你冰箱 工位挂机 +8%\n60.00万\n按摩椅 离线效率 +8%\n400.00万\n鱼缸 挂机 +10%、点击 +10%\n3000.00万\n投影仪 派遣奖励 +30%\n2.00亿\n工位猫窝 挂机 +15%、离线 +10%\n20.00亿",
+      "vw": 390,
+      "vh": 844
+    },
+    "dead": {
+      "onCount": 4,
+      "enabledBtns": 7,
+      "energy": {
+        "date": "2026-11-27",
+        "left": 0,
+        "used": [
+          "slack",
+          "fake-work",
+          "social"
+        ],
+        "boosted": {
+          "idleMult": 1.25,
+          "patrolRewardMult": 1.8
+        }
+      },
+      "summary": "已装修 1/8 · 挂机 ×1.05 · 点击 ×1.00 · 离线 +0%"
+    },
+    "backdate": {
+      "ok": true,
+      "energyDate": "2020-01-01"
+    },
+    "boot2": {
+      "ok": true,
+      "ms": 114
+    },
+    "hudNextDay": {
+      "teamBtn": {
+        "x": 336,
+        "y": 510,
+        "w": 44,
+        "h": 44
+      },
+      "btnAriaLabel": "摸鱼小队，还有精力 100",
+      "taskBadge": null,
+      "energyBadge": {
+        "text": "精力 100",
+        "rect": {
+          "x": 290,
+          "y": 552,
+          "w": 51,
+          "h": 16
+        }
+      },
+      "talentBadge": {
+        "text": "天赋",
+        "rect": {
+          "x": 308,
+          "y": 524,
+          "w": 30,
+          "h": 16
+        }
+      },
+      "overlaps": {
+        "energyVsTalent": false,
+        "energyVsTeamBtn": false
+      },
+      "hudText": "1000.00亿摸鱼值 点击 +1 不点也 0.2/秒 奇点 25% ♻ 可离职再就业 👥 天赋 精力 100 🔊 📔",
+      "centers": {
+        "atEnergyBadge": "energy-badge",
+        "atTeamBtn": "btn-team"
+      },
+      "overlays": {
+        "welcome": false,
+        "cards": false,
+        "team": false,
+        "boss": false
+      }
+    },
+    "gotoNext": {
+      "taps": 2,
+      "ms": 959,
+      "team": true,
+      "decoTap": {
+        "ok": true,
+        "rect": {
+          "x": 180.59375,
+          "y": 318.796875,
+          "w": 54,
+          "h": 44,
+          "text": "工位",
+          "hit": "tab-decor",
+          "hitSelf": true,
+          "disabled": false
+        }
+      },
+      "afterOpen": {
+        "teamBtn": {
+          "x": 336,
+          "y": 510,
+          "w": 44,
+          "h": 44
+        },
+        "btnAriaLabel": "摸鱼小队，还有精力 100",
+        "taskBadge": null,
+        "energyBadge": {
+          "text": "精力 100",
+          "rect": {
+            "x": 290,
+            "y": 552,
+            "w": 51,
+            "h": 16
+          }
+        },
+        "talentBadge": {
+          "text": "天赋",
+          "rect": {
+            "x": 308,
+            "y": 524,
+            "w": 30,
+            "h": 16
+          }
+        },
+        "overlaps": {
+          "energyVsTalent": false,
+          "energyVsTeamBtn": false
+        },
+        "hudText": "1000.00亿摸鱼值 点击 +1 不点也 0.2/秒 奇点 25% ♻ 可离职再就业 👥 天赋 精力 100 🔊 📔",
+        "centers": {
+          "atEnergyBadge": "team-hint",
+          "atTeamBtn": "team-panel"
+        },
+        "overlays": {
+          "welcome": false,
+          "cards": false,
+          "team": true,
+          "boss": false
+        }
+      }
+    },
+    "decorNextDay": {
+      "rows": [
+        {
+          "name": "认真摸鱼",
+          "desc": "今天挂机 +25% · 花 40 精力",
+          "dot": "40",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 85,
+          "h": 61,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "text": "使用",
+            "aria": "使用：认真摸鱼（消耗 40 精力，今天挂机 +25%）"
+          }
+        },
+        {
+          "name": "假装工作",
+          "desc": "今天巡逻奖励 ×2.2 · 花 35 精力",
+          "dot": "35",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 146,
+          "h": 61,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "text": "使用",
+            "aria": "使用：假装工作（消耗 35 精力，今天巡逻奖励 ×2.2）"
+          }
+        },
+        {
+          "name": "跟同事聊天",
+          "desc": "全体好感 +5，且今天挂机 +5% · 花 25 精力",
+          "dot": "25",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 207,
+          "h": 61,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "text": "使用",
+            "aria": "使用：跟同事聊天（消耗 25 精力，全体好感 +5，且今天挂机 +5%）"
+          }
+        },
+        {
+          "name": "专注点击",
+          "desc": "今天点击力 +20% · 花 45 精力",
+          "dot": "45",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 268,
+          "h": 61,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "text": "使用",
+            "aria": "使用：专注点击（消耗 45 精力，今天点击力 +20%）"
+          }
+        },
+        {
+          "name": "绿萝",
+          "desc": "工位挂机 +5%",
+          "dot": "✓",
+          "rowTap": true,
+          "dataDisabled": "1",
+          "top": 466,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": true,
+          "btn": null
+        },
+        {
+          "name": "护眼台灯",
+          "desc": "点击力 +15%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 520,
+          "h": 46,
+          "visible": true,
+          "fully": true,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "text": "2.00万",
+            "aria": "购买：护眼台灯，2.00万，效果点击力 +15%"
+          }
+        },
+        {
+          "name": "毛绒地毯",
+          "desc": "离线效率 +5%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 574,
+          "h": 46,
+          "visible": true,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 65,
+            "h": 44,
+            "disabled": false,
+            "text": "12.00万",
+            "aria": "购买：毛绒地毯，12.00万，效果离线效率 +5%"
+          }
+        },
+        {
+          "name": "迷你冰箱",
+          "desc": "工位挂机 +8%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 628,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 67,
+            "h": 44,
+            "disabled": false,
+            "text": "60.00万",
+            "aria": "购买：迷你冰箱，60.00万，效果工位挂机 +8%"
+          }
+        },
+        {
+          "name": "按摩椅",
+          "desc": "离线效率 +8%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 682,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 75,
+            "h": 44,
+            "disabled": false,
+            "text": "400.00万",
+            "aria": "购买：按摩椅，400.00万，效果离线效率 +8%"
+          }
+        },
+        {
+          "name": "鱼缸",
+          "desc": "挂机 +10%、点击 +10%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 736,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 82,
+            "h": 44,
+            "disabled": false,
+            "text": "3000.00万",
+            "aria": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%"
+          }
+        },
+        {
+          "name": "投影仪",
+          "desc": "派遣奖励 +30%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 790,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "text": "2.00亿",
+            "aria": "购买：投影仪，2.00亿，效果派遣奖励 +30%"
+          }
+        },
+        {
+          "name": "工位猫窝",
+          "desc": "挂机 +15%、离线 +10%",
+          "dot": "",
+          "rowTap": true,
+          "dataDisabled": "0",
+          "top": 844,
+          "h": 46,
+          "visible": false,
+          "fully": false,
+          "on": false,
+          "btn": {
+            "w": 67,
+            "h": 44,
+            "disabled": false,
+            "text": "20.00亿",
+            "aria": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%"
+          }
+        }
+      ],
+      "btns": [
+        {
+          "act": "energy",
+          "id": "slack",
+          "text": "使用",
+          "aria": "使用：认真摸鱼（消耗 40 精力，今天挂机 +25%）",
+          "w": 64,
+          "h": 44,
+          "disabled": false,
+          "top": 93
+        },
+        {
+          "act": "energy",
+          "id": "fake-work",
+          "text": "使用",
+          "aria": "使用：假装工作（消耗 35 精力，今天巡逻奖励 ×2.2）",
+          "w": 64,
+          "h": 44,
+          "disabled": false,
+          "top": 154
+        },
+        {
+          "act": "energy",
+          "id": "social",
+          "text": "使用",
+          "aria": "使用：跟同事聊天（消耗 25 精力，全体好感 +5，且今天挂机 +5%）",
+          "w": 64,
+          "h": 44,
+          "disabled": false,
+          "top": 215
+        },
+        {
+          "act": "energy",
+          "id": "focus",
+          "text": "使用",
+          "aria": "使用：专注点击（消耗 45 精力，今天点击力 +20%）",
+          "w": 64,
+          "h": 44,
+          "disabled": false,
+          "top": 276
+        },
+        {
+          "act": "energy-all",
+          "id": "",
+          "text": "一键全用（3 项，共 100 精力）",
+          "aria": null,
+          "w": 301,
+          "h": 44,
+          "disabled": false,
+          "top": 337
+        },
+        {
+          "act": "decor",
+          "id": "lamp",
+          "text": "2.00万",
+          "aria": "购买：护眼台灯，2.00万，效果点击力 +15%",
+          "w": 64,
+          "h": 44,
+          "disabled": false,
+          "top": 521
+        },
+        {
+          "act": "decor",
+          "id": "rug",
+          "text": "12.00万",
+          "aria": "购买：毛绒地毯，12.00万，效果离线效率 +5%",
+          "w": 65,
+          "h": 44,
+          "disabled": false,
+          "top": 575
+        },
+        {
+          "act": "decor",
+          "id": "fridge",
+          "text": "60.00万",
+          "aria": "购买：迷你冰箱，60.00万，效果工位挂机 +8%",
+          "w": 67,
+          "h": 44,
+          "disabled": false,
+          "top": 629
+        },
+        {
+          "act": "decor",
+          "id": "chair",
+          "text": "400.00万",
+          "aria": "购买：按摩椅，400.00万，效果离线效率 +8%",
+          "w": 75,
+          "h": 44,
+          "disabled": false,
+          "top": 683
+        },
+        {
+          "act": "decor",
+          "id": "aquarium",
+          "text": "3000.00万",
+          "aria": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%",
+          "w": 82,
+          "h": 44,
+          "disabled": false,
+          "top": 737
+        },
+        {
+          "act": "decor",
+          "id": "projector",
+          "text": "2.00亿",
+          "aria": "购买：投影仪，2.00亿，效果派遣奖励 +30%",
+          "w": 64,
+          "h": 44,
+          "disabled": false,
+          "top": 791
+        },
+        {
+          "act": "decor",
+          "id": "catbed",
+          "text": "20.00亿",
+          "aria": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%",
+          "w": 67,
+          "h": 44,
+          "disabled": false,
+          "top": 845
+        }
+      ],
+      "rowCount": 12,
+      "names": [
+        "认真摸鱼",
+        "假装工作",
+        "跟同事聊天",
+        "专注点击",
+        "绿萝",
+        "护眼台灯",
+        "毛绒地毯",
+        "迷你冰箱",
+        "按摩椅",
+        "鱼缸",
+        "投影仪",
+        "工位猫窝"
+      ],
+      "headings": [
+        "今日精力 （剩 100/100）",
+        "工位家具 （已装修 1/8）"
+      ],
+      "onCount": 1,
+      "enabledBtns": 12,
+      "visibleRows": 7,
+      "fullyVisibleRows": 6,
+      "scroll": {
+        "top": 0,
+        "sh": 890,
+        "ch": 603,
+        "overflow": 287
+      },
+      "chars": 336,
+      "numTokens": 44,
+      "minBtnH": 44,
+      "minRowH": 46,
+      "tabs": [
+        {
+          "text": "同事",
+          "w": 54,
+          "h": 44,
+          "ariaSelected": "false"
+        },
+        {
+          "text": "天赋",
+          "w": 54,
+          "h": 44,
+          "ariaSelected": "false"
+        },
+        {
+          "text": "工位",
+          "w": 54,
+          "h": 44,
+          "ariaSelected": "true"
+        }
+      ],
+      "bodyRect": {
+        "x": 34,
+        "y": 164,
+        "w": 323,
+        "h": 603
+      },
+      "panelRect": {
+        "x": 16,
+        "y": 59,
+        "w": 359,
+        "h": 726
+      },
+      "text": "已装修 1/8 · 挂机 ×1.05 · 点击 ×1.00 · 离线 +0%\n今日精力 （剩 100/100）\n40\n认真摸鱼 今天挂机 +25% · 花 40 精力\n使用\n35\n假装工作 今天巡逻奖励 ×2.2 · 花 35 精力\n使用\n25\n跟同事聊天 全体好感 +5，且今天挂机 +5% · 花 25 精力\n使用\n45\n专注点击 今天点击力 +20% · 花 45 精力\n使用\n一键全用（3 项，共 100 精力）\n每天 100 点，效果持续到当天结束；3 项合计正好 100\n工位家具 （已装修 1/8）\n✓\n绿萝 工位挂机 +5%\n已装修\n护眼台灯 点击力 +15%\n2.00万\n毛绒地毯 离线效率 +5%\n12.00万\n迷你冰箱 工位挂机 +8%\n60.00万\n按摩椅 离线效率 +8%\n400.00万\n鱼缸 挂机 +10%、点击 +10%\n3000.00万\n投影仪 派遣奖励 +30%\n2.00亿\n工位猫窝 挂机 +15%、离线 +10%\n20.00亿",
+      "vw": 390,
+      "vh": 844
+    },
+    "rowTapEnergy": {
+      "point": {
+        "x": 173.9921875,
+        "y": 279.078125,
+        "hit": "talent-info",
+        "rowH": 61
+      },
+      "before": {
+        "left": 100,
+        "used": []
+      },
+      "after": {
+        "left": 60,
+        "used": [
+          "slack"
+        ]
+      },
+      "singleTrigger": true,
+      "toast": {
+        "text": "精力已使用：认真摸鱼（剩余 60 点）",
+        "opacity": "1",
+        "visible": true,
+        "rect": {
+          "x": 98,
+          "y": 108,
+          "w": 195,
+          "h": 61
+        },
+        "zIndex": "45"
+      },
+      "badgeWhileOpen": {
+        "text": "精力 60",
+        "rect": {
+          "x": 290,
+          "y": 552,
+          "w": 46,
+          "h": 16
+        }
+      },
+      "allBtnDisabled": true
+    },
+    "small": {
+      "metrics": {
+        "rows": [
+          {
+            "name": "认真摸鱼",
+            "desc": "今天挂机 +25% · 花 40 精力",
+            "dot": "✓",
+            "rowTap": true,
+            "dataDisabled": "1",
+            "top": 85,
+            "h": 46,
+            "visible": true,
+            "fully": true,
+            "on": true,
+            "btn": null
+          },
+          {
+            "name": "假装工作",
+            "desc": "今天巡逻奖励 ×2.2 · 花 35 精力",
+            "dot": "35",
+            "rowTap": true,
+            "dataDisabled": "0",
+            "top": 131,
+            "h": 61,
+            "visible": true,
+            "fully": true,
+            "on": false,
+            "btn": {
+              "w": 64,
+              "h": 44,
+              "disabled": false,
+              "text": "使用",
+              "aria": "使用：假装工作（消耗 35 精力，今天巡逻奖励 ×2.2）"
+            }
+          },
+          {
+            "name": "跟同事聊天",
+            "desc": "全体好感 +5，且今天挂机 +5% · 花 25 精力",
+            "dot": "25",
+            "rowTap": true,
+            "dataDisabled": "0",
+            "top": 192,
+            "h": 61,
+            "visible": true,
+            "fully": true,
+            "on": false,
+            "btn": {
+              "w": 64,
+              "h": 44,
+              "disabled": false,
+              "text": "使用",
+              "aria": "使用：跟同事聊天（消耗 25 精力，全体好感 +5，且今天挂机 +5%）"
+            }
+          },
+          {
+            "name": "专注点击",
+            "desc": "今天点击力 +20% · 花 45 精力",
+            "dot": "45",
+            "rowTap": true,
+            "dataDisabled": "0",
+            "top": 253,
+            "h": 61,
+            "visible": true,
+            "fully": true,
+            "on": false,
+            "btn": {
+              "w": 64,
+              "h": 44,
+              "disabled": false,
+              "text": "使用",
+              "aria": "使用：专注点击（消耗 45 精力，今天点击力 +20%）"
+            }
+          },
+          {
+            "name": "绿萝",
+            "desc": "工位挂机 +5%",
+            "dot": "✓",
+            "rowTap": true,
+            "dataDisabled": "1",
+            "top": 451,
+            "h": 46,
+            "visible": false,
+            "fully": false,
+            "on": true,
+            "btn": null
+          },
+          {
+            "name": "护眼台灯",
+            "desc": "点击力 +15%",
+            "dot": "",
+            "rowTap": true,
+            "dataDisabled": "0",
+            "top": 505,
+            "h": 46,
+            "visible": false,
+            "fully": false,
+            "on": false,
+            "btn": {
+              "w": 64,
+              "h": 44,
+              "disabled": false,
+              "text": "2.00万",
+              "aria": "购买：护眼台灯，2.00万，效果点击力 +15%"
+            }
+          },
+          {
+            "name": "毛绒地毯",
+            "desc": "离线效率 +5%",
+            "dot": "",
+            "rowTap": true,
+            "dataDisabled": "0",
+            "top": 559,
+            "h": 46,
+            "visible": false,
+            "fully": false,
+            "on": false,
+            "btn": {
+              "w": 65,
+              "h": 44,
+              "disabled": false,
+              "text": "12.00万",
+              "aria": "购买：毛绒地毯，12.00万，效果离线效率 +5%"
+            }
+          },
+          {
+            "name": "迷你冰箱",
+            "desc": "工位挂机 +8%",
+            "dot": "",
+            "rowTap": true,
+            "dataDisabled": "0",
+            "top": 613,
+            "h": 46,
+            "visible": false,
+            "fully": false,
+            "on": false,
+            "btn": {
+              "w": 67,
+              "h": 44,
+              "disabled": false,
+              "text": "60.00万",
+              "aria": "购买：迷你冰箱，60.00万，效果工位挂机 +8%"
+            }
+          },
+          {
+            "name": "按摩椅",
+            "desc": "离线效率 +8%",
+            "dot": "",
+            "rowTap": true,
+            "dataDisabled": "0",
+            "top": 667,
+            "h": 46,
+            "visible": false,
+            "fully": false,
+            "on": false,
+            "btn": {
+              "w": 75,
+              "h": 44,
+              "disabled": false,
+              "text": "400.00万",
+              "aria": "购买：按摩椅，400.00万，效果离线效率 +8%"
+            }
+          },
+          {
+            "name": "鱼缸",
+            "desc": "挂机 +10%、点击 +10%",
+            "dot": "",
+            "rowTap": true,
+            "dataDisabled": "0",
+            "top": 721,
+            "h": 46,
+            "visible": false,
+            "fully": false,
+            "on": false,
+            "btn": {
+              "w": 82,
+              "h": 44,
+              "disabled": false,
+              "text": "3000.00万",
+              "aria": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%"
+            }
+          },
+          {
+            "name": "投影仪",
+            "desc": "派遣奖励 +30%",
+            "dot": "",
+            "rowTap": true,
+            "dataDisabled": "0",
+            "top": 775,
+            "h": 46,
+            "visible": false,
+            "fully": false,
+            "on": false,
+            "btn": {
+              "w": 64,
+              "h": 44,
+              "disabled": false,
+              "text": "2.00亿",
+              "aria": "购买：投影仪，2.00亿，效果派遣奖励 +30%"
+            }
+          },
+          {
+            "name": "工位猫窝",
+            "desc": "挂机 +15%、离线 +10%",
+            "dot": "",
+            "rowTap": true,
+            "dataDisabled": "0",
+            "top": 829,
+            "h": 46,
+            "visible": false,
+            "fully": false,
+            "on": false,
+            "btn": {
+              "w": 67,
+              "h": 44,
+              "disabled": false,
+              "text": "20.00亿",
+              "aria": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%"
+            }
+          }
+        ],
+        "btns": [
+          {
+            "act": "energy",
+            "id": "fake-work",
+            "text": "使用",
+            "aria": "使用：假装工作（消耗 35 精力，今天巡逻奖励 ×2.2）",
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "top": 139
+          },
+          {
+            "act": "energy",
+            "id": "social",
+            "text": "使用",
+            "aria": "使用：跟同事聊天（消耗 25 精力，全体好感 +5，且今天挂机 +5%）",
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "top": 200
+          },
+          {
+            "act": "energy",
+            "id": "focus",
+            "text": "使用",
+            "aria": "使用：专注点击（消耗 45 精力，今天点击力 +20%）",
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "top": 261
+          },
+          {
+            "act": "energy-all",
+            "id": "",
+            "text": "一键全用（3 项，共 100 精力）",
+            "aria": null,
+            "w": 287,
+            "h": 44,
+            "disabled": true,
+            "top": 322
+          },
+          {
+            "act": "decor",
+            "id": "lamp",
+            "text": "2.00万",
+            "aria": "购买：护眼台灯，2.00万，效果点击力 +15%",
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "top": 506
+          },
+          {
+            "act": "decor",
+            "id": "rug",
+            "text": "12.00万",
+            "aria": "购买：毛绒地毯，12.00万，效果离线效率 +5%",
+            "w": 65,
+            "h": 44,
+            "disabled": false,
+            "top": 560
+          },
+          {
+            "act": "decor",
+            "id": "fridge",
+            "text": "60.00万",
+            "aria": "购买：迷你冰箱，60.00万，效果工位挂机 +8%",
+            "w": 67,
+            "h": 44,
+            "disabled": false,
+            "top": 614
+          },
+          {
+            "act": "decor",
+            "id": "chair",
+            "text": "400.00万",
+            "aria": "购买：按摩椅，400.00万，效果离线效率 +8%",
+            "w": 75,
+            "h": 44,
+            "disabled": false,
+            "top": 668
+          },
+          {
+            "act": "decor",
+            "id": "aquarium",
+            "text": "3000.00万",
+            "aria": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%",
+            "w": 82,
+            "h": 44,
+            "disabled": false,
+            "top": 722
+          },
+          {
+            "act": "decor",
+            "id": "projector",
+            "text": "2.00亿",
+            "aria": "购买：投影仪，2.00亿，效果派遣奖励 +30%",
+            "w": 64,
+            "h": 44,
+            "disabled": false,
+            "top": 776
+          },
+          {
+            "act": "decor",
+            "id": "catbed",
+            "text": "20.00亿",
+            "aria": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%",
+            "w": 67,
+            "h": 44,
+            "disabled": false,
+            "top": 830
+          }
+        ],
+        "rowCount": 12,
+        "names": [
+          "认真摸鱼",
+          "假装工作",
+          "跟同事聊天",
+          "专注点击",
+          "绿萝",
+          "护眼台灯",
+          "毛绒地毯",
+          "迷你冰箱",
+          "按摩椅",
+          "鱼缸",
+          "投影仪",
+          "工位猫窝"
+        ],
+        "headings": [
+          "今日精力 （剩 60/100）",
+          "工位家具 （已装修 1/8）"
+        ],
+        "onCount": 2,
+        "enabledBtns": 10,
+        "visibleRows": 4,
+        "fullyVisibleRows": 4,
+        "scroll": {
+          "top": 0,
+          "sh": 875,
+          "ch": 451,
+          "overflow": 424
+        },
+        "chars": 335,
+        "numTokens": 43,
+        "minBtnH": 44,
+        "minRowH": 46,
+        "tabs": [
+          {
+            "text": "同事",
+            "w": 54,
+            "h": 44,
+            "ariaSelected": "false"
+          },
+          {
+            "text": "天赋",
+            "w": 54,
+            "h": 44,
+            "ariaSelected": "false"
+          },
+          {
+            "text": "工位",
+            "w": 54,
+            "h": 44,
+            "ariaSelected": "true"
+          }
+        ],
+        "bodyRect": {
+          "x": 33,
+          "y": 152,
+          "w": 309,
+          "h": 451
+        },
+        "panelRect": {
+          "x": 15,
+          "y": 47,
+          "w": 345,
+          "h": 574
+        },
+        "text": "已装修 1/8 · 挂机 ×1.05 · 点击 ×1.00 · 离线 +0%\n今日精力 （剩 60/100）\n✓\n认真摸鱼 今天挂机 +25% · 花 40 精力\n已使用\n35\n假装工作 今天巡逻奖励 ×2.2 · 花 35 精力\n使用\n25\n跟同事聊天 全体好感 +5，且今天挂机 +5% · 花 25 精力\n使用\n45\n专注点击 今天点击力 +20% · 花 45 精力\n使用\n一键全用（3 项，共 100 精力）\n每天 100 点，效果持续到当天结束；3 项合计正好 100\n工位家具 （已装修 1/8）\n✓\n绿萝 工位挂机 +5%\n已装修\n护眼台灯 点击力 +15%\n2.00万\n毛绒地毯 离线效率 +5%\n12.00万\n迷你冰箱 工位挂机 +8%\n60.00万\n按摩椅 离线效率 +8%\n400.00万\n鱼缸 挂机 +10%、点击 +10%\n3000.00万\n投影仪 派遣奖励 +30%\n2.00亿\n工位猫窝 挂机 +15%、离线 +10%\n20.00亿",
+        "vw": 375,
+        "vh": 667
+      },
+      "scroll": {
+        "steps": 2,
+        "tops": [
+          250,
+          424
+        ],
+        "deltaY": 250,
+        "overflow": 424,
+        "reachedBottom": true
+      }
+    }
+  },
+  "liveCheck": {
+    "boot": {
+      "ok": true,
+      "ms": 1242
+    },
+    "hud": {
+      "hudText": "0.4摸鱼值 点击 +1 不点也 0.2/秒 实习生 0% 👥 精力 100 天赋 🔊 📔 再戳 15 下 → 解锁「咖啡续命」",
+      "energyBadge": "精力 100",
+      "aria": "摸鱼小队，还有精力 100"
+    },
+    "decor": {
+      "activeTab": "工位",
+      "hasOneClick": true,
+      "oneClickText": "一键全用（3 项，共 100 精力）",
+      "rowTapCount": 11,
+      "minBtnH": 44,
+      "hasFurnitureTitle": true,
+      "text": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%\n今日精力 （剩 100/100）\n40\n认真摸鱼 今天挂机 +25% · 花 40 精力\n使用\n35\n假装工作 今天巡逻奖励 +80% · 花 35 精力\n使用\n25\n跟同事聊天 全体同事好感 +3 · 花 25 精力\n使用\n一键全用（3 项，共 100 精力）\n每天 100 点，效果持续到当天结束；3 项合计正好 100\n工位家具 （已装修 0/8）\n绿萝 工位挂机 +5%\n3000\n护眼台灯 点击力 +15%\n2.00万\n毛绒地毯 离"
+    },
+    "cardsWhilePanel": {
+      "covered": true,
+      "waitedMs": 8712,
+      "stack": {
+        "teamStillOpen": true,
+        "cardsZ": "16",
+        "teamZ": "13",
+        "hitAtBuyBtn": "cards-panel"
+      }
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,253 @@
+{
+  "startedAt": "2026-11-27T11:12:26.335Z",
+  "runs": {
+    "desktop": {
+      "canvas": {
+        "W": 900,
+        "H": 581,
+        "cssW": 900,
+        "cssH": 581,
+        "offsetX": 190,
+        "offsetY": 75
+      },
+      "decor": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair",
+        "aquarium",
+        "projector",
+        "catbed"
+      ],
+      "colors": {
+        "plant": {
+          "n": 3768,
+          "bbox": [
+            55,
+            153,
+            126,
+            240
+          ]
+        },
+        "lampShade": {
+          "n": 630,
+          "bbox": [
+            511,
+            82,
+            555,
+            95
+          ]
+        },
+        "lampPole": {
+          "n": 0,
+          "bbox": null
+        },
+        "fridge": {
+          "n": 5756,
+          "bbox": [
+            13,
+            181,
+            75,
+            311
+          ]
+        },
+        "chairBack": {
+          "n": 278,
+          "bbox": [
+            638,
+            220,
+            653,
+            253
+          ]
+        },
+        "chairSeat": {
+          "n": 0,
+          "bbox": null
+        },
+        "chairPillow": {
+          "n": 120,
+          "bbox": [
+            633,
+            210,
+            645,
+            220
+          ]
+        },
+        "aquaWater": {
+          "n": 0,
+          "bbox": null
+        },
+        "aquaFrame": {
+          "n": 11,
+          "bbox": [
+            63,
+            219,
+            68,
+            221
+          ]
+        },
+        "aquaBase": {
+          "n": 0,
+          "bbox": null
+        },
+        "aquaFishY": {
+          "n": 630,
+          "bbox": [
+            511,
+            82,
+            555,
+            95
+          ]
+        },
+        "aquaFishP": {
+          "n": 0,
+          "bbox": null
+        },
+        "projector": {
+          "n": 3788,
+          "bbox": [
+            367,
+            71,
+            493,
+            117
+          ]
+        },
+        "catbed": {
+          "n": 1084,
+          "bbox": [
+            415,
+            265,
+            503,
+            292
+          ]
+        },
+        "rug": {
+          "n": 0,
+          "bbox": null
+        }
+      },
+      "dataURL": "data:ima",
+      "canvasShot": "playtest/r14-audit-canvas-desktop.png"
+    },
+    "mobile": {
+      "canvas": {
+        "W": 390,
+        "H": 625,
+        "cssW": 390,
+        "cssH": 625,
+        "offsetX": 0,
+        "offsetY": 75
+      },
+      "decor": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair",
+        "aquarium",
+        "projector",
+        "catbed"
+      ],
+      "colors": {
+        "plant": {
+          "n": 2018,
+          "bbox": [
+            41,
+            305,
+            93,
+            369
+          ]
+        },
+        "lampShade": {
+          "n": 0,
+          "bbox": null
+        },
+        "lampPole": {
+          "n": 0,
+          "bbox": null
+        },
+        "fridge": {
+          "n": 3164,
+          "bbox": [
+            10,
+            325,
+            56,
+            422
+          ]
+        },
+        "chairBack": {
+          "n": 0,
+          "bbox": null
+        },
+        "chairSeat": {
+          "n": 0,
+          "bbox": null
+        },
+        "chairPillow": {
+          "n": 0,
+          "bbox": null
+        },
+        "aquaWater": {
+          "n": 593,
+          "bbox": [
+            305,
+            132,
+            321,
+            180
+          ]
+        },
+        "aquaFrame": {
+          "n": 117,
+          "bbox": [
+            48,
+            126,
+            325,
+            355
+          ]
+        },
+        "aquaBase": {
+          "n": 68,
+          "bbox": [
+            316,
+            182,
+            325,
+            188
+          ]
+        },
+        "aquaFishY": {
+          "n": 0,
+          "bbox": null
+        },
+        "aquaFishP": {
+          "n": 0,
+          "bbox": null
+        },
+        "projector": {
+          "n": 2986,
+          "bbox": [
+            133,
+            53,
+            227,
+            87
+          ]
+        },
+        "catbed": {
+          "n": 577,
+          "bbox": [
+            169,
+            388,
+            234,
+            408
+          ]
+        },
+        "rug": {
+          "n": 0,
+          "bbox": null
+        }
+      },
+      "dataURL": "data:ima",
+      "canvasShot": "playtest/r14-audit-canvas-mobile.png"
+    }
+  }
+}

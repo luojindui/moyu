@@ -1,0 +1,4786 @@
+{
+  "at": "2026-11-27T11:16:28.580Z",
+  "head": "3580947",
+  "helperDebug": [
+    {
+      "hk": "ok",
+      "type": "object"
+    },
+    {
+      "hk": "ok",
+      "type": "object"
+    }
+  ],
+  "panelState": {
+    "hidden": false,
+    "btnTeamHidden": false,
+    "active": {
+      "tag": "BUTTON",
+      "id": "tab-colleagues",
+      "role": "tab"
+    }
+  },
+  "panelRectDbg": {
+    "x": 15.59375,
+    "y": 194.65625,
+    "width": 358.796875,
+    "height": 454.671875
+  },
+  "focusAfterOpenRaw": "ok",
+  "tabState": {
+    "activeTab": "工位",
+    "hidden": false,
+    "bodyRows": 12
+  },
+  "initialAx": [
+    {
+      "role": "RootWebArea",
+      "name": "摸鱼工位",
+      "description": ""
+    },
+    {
+      "role": "status",
+      "name": "",
+      "description": "",
+      "live": "polite"
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "dialog",
+      "name": "摸鱼小队",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "banner",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "main",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "contentinfo",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "heading",
+      "name": "摸鱼小队",
+      "description": "",
+      "level": 2
+    },
+    {
+      "role": "button",
+      "name": "关闭",
+      "description": ""
+    },
+    {
+      "role": "tablist",
+      "name": "小队面板",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "点击 +",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "不点也 ",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "/秒",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": "摸鱼实习生 → 摸鱼学徒"
+    },
+    {
+      "role": "button",
+      "name": "摸鱼小队，还有精力 100",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "音效开关",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "日报与图鉴",
+      "description": "日报与图鉴"
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "点击摸鱼",
+      "description": "工位尚未装修"
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "摸鱼小队",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "✕",
+      "description": ""
+    },
+    {
+      "role": "tab",
+      "name": "同事",
+      "description": "",
+      "selected": false
+    },
+    {
+      "role": "tab",
+      "name": "天赋",
+      "description": "",
+      "selected": false
+    },
+    {
+      "role": "tab",
+      "name": "工位",
+      "description": "",
+      "selected": true
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "heading",
+      "name": "今日精力 （剩 100/100）",
+      "description": "",
+      "level": 3
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "一键全用（3 项，共 100 精力）",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "heading",
+      "name": "工位家具 （已装修 0/8）",
+      "description": "",
+      "level": 3
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "点击 +",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "1",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "不点也 ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "0.2",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "/秒",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "实习生 0%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "👥",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "天赋",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "精力 100",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "🔊",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "📔",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "工位尚未装修",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "摸鱼小队",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "✕",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "同事",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "天赋",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "工位",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "天赋点 1",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "今日精力 ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "（剩 100/100）",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "认真摸鱼",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "今天挂机 +25% · 花 40 精力",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "使用：认真摸鱼（消耗 40 精力，今天挂机 +25%）",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "假装工作",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "今天巡逻奖励 ×2.2 · 花 35 精力",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "使用：假装工作（消耗 35 精力，今天巡逻奖励 ×2.2）",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "跟同事聊天",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "全体好感 +5，且今天挂机 +5% · 花 25 精力",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "使用：跟同事聊天（消耗 25 精力，全体好感 +5，且今天挂机 +5%）",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "专注点击",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "今天点击力 +20% · 花 45 精力",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "使用：专注点击（消耗 45 精力，今天点击力 +20%）",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "一键全用（3 项，共 100 精力）",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "每天 100 点，效果持续到当天结束；3 项合计正好 100",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "工位家具 ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "（已装修 0/8）",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "绿萝",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "工位挂机 +5%",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "购买：绿萝，3000，效果工位挂机 +5%",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "StaticText",
+      "name": "护眼台灯",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "点击力 +15%",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "购买：护眼台灯，2.00万，效果点击力 +15%",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "StaticText",
+      "name": "毛绒地毯",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "离线效率 +5%",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "购买：毛绒地毯，12.00万，效果离线效率 +5%",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "StaticText",
+      "name": "迷你冰箱",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "工位挂机 +8%",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "购买：迷你冰箱，60.00万，效果工位挂机 +8%",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "StaticText",
+      "name": "按摩椅",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "离线效率 +8%",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "购买：按摩椅，400.00万，效果离线效率 +8%",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "StaticText",
+      "name": "鱼缸",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "挂机 +10%、点击 +10%",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "StaticText",
+      "name": "投影仪",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "派遣奖励 +30%",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "购买：投影仪，2.00亿，效果派遣奖励 +30%",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "StaticText",
+      "name": "工位猫窝",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "挂机 +15%、离线 +10%",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "StaticText",
+      "name": "0.5",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "1",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "0.2",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "实习生 0%",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "👥",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "天赋",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "精力 100",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "🔊",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "📔",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "再戳 15 下 → 解锁「咖啡续命」",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "工位尚未装修",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "点了才赚 咖啡续命 +1 点击力 ★ 点击最优 15 摸鱼值 再戳 15 下",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "button",
+      "name": "会自动赚 刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值 还差 49.5",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "button",
+      "name": "点了才赚 带薪喝水 +2 点击力 100 摸鱼值 再戳 100 下",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "button",
+      "name": "会自动赚 带薪蹲坑 +5/秒 600 摸鱼值 还差 599.5",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "button",
+      "name": "点了才赚 人体工学椅 +5 点击力 800 摸鱼值 再戳 800 下",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "button",
+      "name": "会自动赚 摸鱼群聊 +15/秒 4000 摸鱼值 还差 3999.5",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "button",
+      "name": "会自动赚 无用会议 +50/秒 2.50万 摸鱼值 还差 2.50万",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "button",
+      "name": "会自动赚 深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 15.00万",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "button",
+      "name": "会自动赚 退休式躺平 +700/秒 100.00万 摸鱼值 还差 100.00万",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "StaticText",
+      "name": "← 滑动查看更多 →",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "同事",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "天赋",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "工位",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "天赋点 1",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+0%",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "今日精力 ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "（剩 100/100）",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "认真摸鱼",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "今天挂机 +25% · 花 40 ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "精力",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "使用",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "假装工作",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "今天巡逻奖励 ×2.2 · 花 ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "35 精力",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "使用",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "跟同事聊天",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "全体好感 +5，且今天",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "挂机 +5% · 花 25 精力",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "使用",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "专注点击",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "今天点击力 +20% · 花 ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "45 精力",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "使用",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "一键全用（3 项，共 100 精力）",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "每天 100 点，效果持续到当天结束；3 项合计正好 100",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "工位家具 ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "（已装修 0/8）",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "绿萝",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "工位挂机 +5%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "3000",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "护眼台灯",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "点击力 +15%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "2.00万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "毛绒地毯",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "离线效率 +5%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "12.00万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "迷你冰箱",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "工位挂机 +8%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "60.00万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "按摩椅",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "离线效率 +8%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "400.00万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "鱼缸",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "挂机 +10%、点击 +10%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "3000.00万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "投影仪",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "派遣奖励 +30%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "2.00亿",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "工位猫窝",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "挂机 +15%、离线 +10%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "20.00亿",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "0.5",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "再戳 15 下 → 解锁「咖啡续命」",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "点了才赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "咖啡续命",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+1 点击力",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "★ 点击最优",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "15",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "再戳 15 下",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "刷手机",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+1/秒 · ×2差5级",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "★ 挂机最优",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "50",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "还差 49.5",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "点了才赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "带薪喝水",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+2 点击力",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "100",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "再戳 100 下",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "带薪蹲坑",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+5/秒",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "600",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "还差 599.5",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "点了才赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "人体工学椅",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+5 点击力",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "800",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "再戳 800 下",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "摸鱼群聊",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+15/秒",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "4000",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "还差 3999.5",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "无用会议",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+50/秒",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "2.50万",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "还差 2.50万",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "深度摸鱼",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+180/秒 · ×2差5级",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "15.00万",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "还差 15.00万",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "退休式躺平",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+700/秒",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "100.00万",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "还差 100.00万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "← 滑动查看更多 →",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "使用",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "使用",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "使用",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "使用",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "3000",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "2.00万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "12.00万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "60.00万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "400.00万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "3000.00万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "2.00亿",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "20.00亿",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "点了才赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "咖啡续命",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+1 点击力",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "★ 点击最优",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "15",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "再戳 15 下",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "刷手机",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+1/秒 · ×2差5级",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "★ 挂机最优",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "50",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "还差 49.5",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "点了才赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "带薪喝水",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+2 点击力",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "100",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "再戳 100 下",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "带薪蹲坑",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+5/秒",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "600",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "还差 599.5",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "点了才赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "人体工学椅",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+5 点击力",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "800",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "再戳 800 下",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "摸鱼群聊",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+15/秒",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "4000",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "还差 3999.5",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "无用会议",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+50/秒",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "2.50万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "还差 2.50万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "深度摸鱼",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+180/秒 · ×2差5级",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "15.00万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "还差 15.00万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "退休式躺平",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+700/秒",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "100.00万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "还差 100.00万",
+      "description": ""
+    }
+  ],
+  "initialAxButtons": [
+    {
+      "role": "button",
+      "name": "使用：认真摸鱼（消耗 40 精力，今天挂机 +25%）",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "使用：假装工作（消耗 35 精力，今天巡逻奖励 ×2.2）",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "使用：跟同事聊天（消耗 25 精力，全体好感 +5，且今天挂机 +5%）",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "使用：专注点击（消耗 45 精力，今天点击力 +20%）",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "购买：绿萝，3000，效果工位挂机 +5%",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "button",
+      "name": "购买：护眼台灯，2.00万，效果点击力 +15%",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "button",
+      "name": "购买：毛绒地毯，12.00万，效果离线效率 +5%",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "button",
+      "name": "购买：迷你冰箱，60.00万，效果工位挂机 +8%",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "button",
+      "name": "购买：按摩椅，400.00万，效果离线效率 +8%",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "button",
+      "name": "购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "button",
+      "name": "购买：投影仪，2.00亿，效果派遣奖励 +30%",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "button",
+      "name": "购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%",
+      "description": "",
+      "disabled": true
+    }
+  ],
+  "initialAxTabs": [
+    {
+      "role": "tablist",
+      "name": "小队面板",
+      "description": ""
+    },
+    {
+      "role": "tab",
+      "name": "同事",
+      "description": "",
+      "selected": false
+    },
+    {
+      "role": "tab",
+      "name": "天赋",
+      "description": "",
+      "selected": false
+    },
+    {
+      "role": "tab",
+      "name": "工位",
+      "description": "",
+      "selected": true
+    }
+  ],
+  "initialAxHeadings": [
+    {
+      "role": "heading",
+      "name": "摸鱼小队",
+      "description": "",
+      "level": 2
+    },
+    {
+      "role": "heading",
+      "name": "今日精力 （剩 100/100）",
+      "description": "",
+      "level": 3
+    },
+    {
+      "role": "heading",
+      "name": "工位家具 （已装修 0/8）",
+      "description": "",
+      "level": 3
+    }
+  ],
+  "shots": {
+    "initialTop": "playtest/r14b-shots/init-top.png",
+    "initialBottom": "playtest/r14b-shots/init-bottom.png",
+    "ownedTop": "playtest/r14b-shots/owned-top.png",
+    "ownedBottom": "playtest/r14b-shots/owned-bottom.png",
+    "energyUsed": "playtest/r14b-shots/energy-used.png",
+    "scene": "playtest/r14b-shots/scene-all-decor.png",
+    "energyAll": "SKIP-zero-size",
+    "small": "SKIP-zero-size",
+    "reduced": "playtest/r14b-shots/reduced-motion.png"
+  },
+  "beforeBuy": {
+    "live": "段位晋升：摸鱼奇点",
+    "decor": "工位尚未装修"
+  },
+  "buys": [
+    {
+      "id": "plant",
+      "pre": {
+        "tag": "BUTTON",
+        "act": null,
+        "id": null,
+        "text": "工位"
+      },
+      "duringPress": {
+        "tag": "BUTTON",
+        "text": "3000",
+        "act": "decor",
+        "id": "plant",
+        "isBody": false
+      },
+      "post": {
+        "live": "已装修：绿萝（工位挂机 +5%）",
+        "decor": "工位已装修：绿萝（工位挂机 +5%）",
+        "summary": "已装修 1/8 · 挂机 ×1.05 · 点击 ×1.00 · 离线 +0%",
+        "toast": "已装修：绿萝（工位挂机 +5%）",
+        "toastCls": "show",
+        "active": {
+          "tag": "BODY",
+          "text": "已装修：绿萝（工位挂机 +5%）\n   ",
+          "act": null,
+          "id": null,
+          "role": null,
+          "isBody": true,
+          "insideDialog": false
+        }
+      }
+    },
+    {
+      "id": "lamp",
+      "pre": {
+        "tag": "BODY",
+        "act": null,
+        "id": null,
+        "text": "已装修：绿萝（工位挂机 +5%）\n   "
+      },
+      "duringPress": null,
+      "post": {
+        "live": "已装修：护眼台灯（点击力 +15%）",
+        "decor": "工位已装修：绿萝（工位挂机 +5%）、护眼台灯（点击力 +15%）",
+        "summary": "已装修 2/8 · 挂机 ×1.05 · 点击 ×1.15 · 离线 +0%",
+        "toast": "已装修：护眼台灯（点击力 +15%）",
+        "toastCls": "show",
+        "active": {
+          "tag": "BODY",
+          "text": "已装修：护眼台灯（点击力 +15%）\n ",
+          "act": null,
+          "id": null,
+          "role": null,
+          "isBody": true,
+          "insideDialog": false
+        }
+      }
+    },
+    {
+      "id": "rug",
+      "pre": {
+        "tag": "BODY",
+        "act": null,
+        "id": null,
+        "text": "已装修：护眼台灯（点击力 +15%）\n "
+      },
+      "duringPress": null,
+      "post": {
+        "live": "已装修：毛绒地毯（离线效率 +5%）",
+        "decor": "工位已装修：绿萝（工位挂机 +5%）、护眼台灯（点击力 +15%）、毛绒地毯（离线效率 +5%）",
+        "summary": "已装修 3/8 · 挂机 ×1.05 · 点击 ×1.15 · 离线 +5%",
+        "toast": "已装修：毛绒地毯（离线效率 +5%）",
+        "toastCls": "show",
+        "active": {
+          "tag": "BODY",
+          "text": "已装修：毛绒地毯（离线效率 +5%）\n ",
+          "act": null,
+          "id": null,
+          "role": null,
+          "isBody": true,
+          "insideDialog": false
+        }
+      }
+    },
+    {
+      "id": "fridge",
+      "pre": {
+        "tag": "BODY",
+        "act": null,
+        "id": null,
+        "text": "已装修：毛绒地毯（离线效率 +5%）\n "
+      },
+      "duringPress": null,
+      "post": {
+        "live": "已装修：迷你冰箱（工位挂机 +8%）",
+        "decor": "工位已装修：绿萝（工位挂机 +5%）、护眼台灯（点击力 +15%）、毛绒地毯（离线效率 +5%）、迷你冰箱（工位挂机 +8%）",
+        "summary": "已装修 4/8 · 挂机 ×1.13 · 点击 ×1.15 · 离线 +5%",
+        "toast": "已装修：迷你冰箱（工位挂机 +8%）",
+        "toastCls": "show",
+        "active": {
+          "tag": "BODY",
+          "text": "已装修：迷你冰箱（工位挂机 +8%）\n ",
+          "act": null,
+          "id": null,
+          "role": null,
+          "isBody": true,
+          "insideDialog": false
+        }
+      }
+    },
+    {
+      "id": "chair",
+      "pre": {
+        "tag": "BODY",
+        "act": null,
+        "id": null,
+        "text": "已装修：迷你冰箱（工位挂机 +8%）\n "
+      },
+      "duringPress": null,
+      "post": {
+        "live": "已装修：按摩椅（离线效率 +8%）",
+        "decor": "工位已装修：绿萝（工位挂机 +5%）、护眼台灯（点击力 +15%）、毛绒地毯（离线效率 +5%）、迷你冰箱（工位挂机 +8%）、按摩椅（离线效率 +8%）",
+        "summary": "已装修 5/8 · 挂机 ×1.13 · 点击 ×1.15 · 离线 +13%",
+        "toast": "已装修：按摩椅（离线效率 +8%）",
+        "toastCls": "show",
+        "active": {
+          "tag": "BODY",
+          "text": "已装修：按摩椅（离线效率 +8%）\n  ",
+          "act": null,
+          "id": null,
+          "role": null,
+          "isBody": true,
+          "insideDialog": false
+        }
+      }
+    },
+    {
+      "id": "aquarium",
+      "pre": {
+        "tag": "BODY",
+        "act": null,
+        "id": null,
+        "text": "已装修：按摩椅（离线效率 +8%）\n  "
+      },
+      "duringPress": null,
+      "post": {
+        "live": "已装修：鱼缸（挂机 +10%、点击 +10%）",
+        "decor": "工位已装修：绿萝（工位挂机 +5%）、护眼台灯（点击力 +15%）、毛绒地毯（离线效率 +5%）、迷你冰箱（工位挂机 +8%）、按摩椅（离线效率 +8%）、鱼缸（挂机 +10%、点击 +10%）",
+        "summary": "已装修 6/8 · 挂机 ×1.25 · 点击 ×1.26 · 离线 +13%",
+        "toast": "已装修：鱼缸（挂机 +10%、点击 +10%）",
+        "toastCls": "show",
+        "active": {
+          "tag": "BODY",
+          "text": "已装修：鱼缸（挂机 +10%、点击 +1",
+          "act": null,
+          "id": null,
+          "role": null,
+          "isBody": true,
+          "insideDialog": false
+        }
+      }
+    },
+    {
+      "id": "projector",
+      "pre": {
+        "tag": "BODY",
+        "act": null,
+        "id": null,
+        "text": "已装修：鱼缸（挂机 +10%、点击 +1"
+      },
+      "duringPress": null,
+      "post": {
+        "live": "已装修：投影仪（派遣奖励 +30%）",
+        "decor": "工位已装修：绿萝（工位挂机 +5%）、护眼台灯（点击力 +15%）、毛绒地毯（离线效率 +5%）、迷你冰箱（工位挂机 +8%）、按摩椅（离线效率 +8%）、鱼缸（挂机 +10%、点击 +10%）、投影仪（派遣奖励 +30%）",
+        "summary": "已装修 7/8 · 挂机 ×1.25 · 点击 ×1.26 · 离线 +13%",
+        "toast": "已装修：投影仪（派遣奖励 +30%）",
+        "toastCls": "show",
+        "active": {
+          "tag": "BODY",
+          "text": "已装修：投影仪（派遣奖励 +30%）\n ",
+          "act": null,
+          "id": null,
+          "role": null,
+          "isBody": true,
+          "insideDialog": false
+        }
+      }
+    },
+    {
+      "id": "catbed",
+      "pre": {
+        "tag": "BODY",
+        "act": null,
+        "id": null,
+        "text": "已装修：投影仪（派遣奖励 +30%）\n "
+      },
+      "duringPress": null,
+      "post": {
+        "live": "已装修：工位猫窝（挂机 +15%、离线 +10%）",
+        "decor": "工位已装修：绿萝（工位挂机 +5%）、护眼台灯（点击力 +15%）、毛绒地毯（离线效率 +5%）、迷你冰箱（工位挂机 +8%）、按摩椅（离线效率 +8%）、鱼缸（挂机 +10%、点击 +10%）、投影仪（派遣奖励 +30%）、工位猫窝（挂机 +15%、离线 +10%）",
+        "summary": "已装修 8/8 · 挂机 ×1.43 · 点击 ×1.26 · 离线 +23%",
+        "toast": "已装修：工位猫窝（挂机 +15%、离线 +10%）",
+        "toastCls": "show",
+        "active": {
+          "tag": "BODY",
+          "text": "已装修：工位猫窝（挂机 +15%、离线 ",
+          "act": null,
+          "id": null,
+          "role": null,
+          "isBody": true,
+          "insideDialog": false
+        }
+      }
+    }
+  ],
+  "energy": [
+    {
+      "id": "slack",
+      "duringPress": {
+        "tag": "BUTTON",
+        "text": "使用",
+        "act": "energy",
+        "id": "slack",
+        "isBody": false
+      },
+      "post": {
+        "live": "精力已使用：认真摸鱼（剩余 60 点）",
+        "head": "今日精力 （剩 60/100）",
+        "toast": "精力已使用：认真摸鱼（剩余 60 点）",
+        "active": {
+          "tag": "BODY",
+          "text": "精力已使用：认真摸鱼（剩余 60 点）\n",
+          "act": null,
+          "id": null,
+          "isBody": true,
+          "insideDialog": false
+        }
+      }
+    },
+    {
+      "id": "fake-work",
+      "duringPress": null,
+      "post": {
+        "live": "精力已使用：假装工作（剩余 25 点）",
+        "head": "今日精力 （剩 25/100）",
+        "toast": "精力已使用：假装工作（剩余 25 点）",
+        "active": {
+          "tag": "BODY",
+          "text": "精力已使用：假装工作（剩余 25 点）\n",
+          "act": null,
+          "id": null,
+          "isBody": true,
+          "insideDialog": false
+        }
+      }
+    },
+    {
+      "id": "social",
+      "duringPress": null,
+      "post": {
+        "live": "精力已使用：跟同事聊天（剩余 0 点）",
+        "head": "今日精力 （剩 0/100）",
+        "toast": "精力已使用：跟同事聊天（剩余 0 点）",
+        "active": {
+          "tag": "BODY",
+          "text": "精力已使用：跟同事聊天（剩余 0 点）\n",
+          "act": null,
+          "id": null,
+          "isBody": true,
+          "insideDialog": false
+        }
+      }
+    }
+  ],
+  "energyUsedUpSamples": [
+    {
+      "ms": 120,
+      "at": 123,
+      "live": "精力已使用：跟同事聊天（剩余 0 点）"
+    },
+    {
+      "ms": 350,
+      "at": 351,
+      "live": "精力已使用：跟同事聊天（剩余 0 点）"
+    },
+    {
+      "ms": 430,
+      "at": 432,
+      "live": "精力已使用：跟同事聊天（剩余 0 点）"
+    },
+    {
+      "ms": 520,
+      "at": 521,
+      "live": "精力已使用：跟同事聊天（剩余 0 点）"
+    },
+    {
+      "ms": 700,
+      "at": 702,
+      "live": "精力已使用：跟同事聊天（剩余 0 点）"
+    },
+    {
+      "ms": 1100,
+      "at": 1099,
+      "live": "精力已使用：跟同事聊天（剩余 0 点）"
+    }
+  ],
+  "afterEnergyAx": [
+    {
+      "role": "RootWebArea",
+      "name": "摸鱼工位",
+      "description": ""
+    },
+    {
+      "role": "status",
+      "name": "",
+      "description": "",
+      "live": "polite"
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "dialog",
+      "name": "摸鱼小队",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "精力已使用：跟同事聊天（剩余 0 点）",
+      "description": ""
+    },
+    {
+      "role": "banner",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "main",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "contentinfo",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "heading",
+      "name": "摸鱼小队",
+      "description": "",
+      "level": 2
+    },
+    {
+      "role": "button",
+      "name": "关闭",
+      "description": ""
+    },
+    {
+      "role": "tablist",
+      "name": "小队面板",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "精力已使用：跟同事聊天（剩余 0 点）",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "精力已使用：跟同事聊天（剩余 0 点）",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "点击 +",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "不点也 ",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "/秒",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": "摸鱼奇点 → 摸鱼永恒"
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "摸鱼小队",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "音效开关",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "日报与图鉴",
+      "description": "日报与图鉴"
+    },
+    {
+      "role": "button",
+      "name": "点击摸鱼",
+      "description": "工位已装修：绿萝（工位挂机 +5%）、护眼台灯（点击力 +15%）、毛绒地毯（离线效率 +5%）、迷你冰箱（工位挂机 +8%）、按摩椅（离线效率 +8%）、鱼缸（挂机 +10%、点击 +10%）、投影仪（派遣奖励 +30%）、工位猫窝（挂机 +15%、离线 +10%）"
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "摸鱼小队",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "✕",
+      "description": ""
+    },
+    {
+      "role": "tab",
+      "name": "同事",
+      "description": "",
+      "selected": false
+    },
+    {
+      "role": "tab",
+      "name": "天赋",
+      "description": "",
+      "selected": false
+    },
+    {
+      "role": "tab",
+      "name": "工位",
+      "description": "",
+      "selected": true
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "heading",
+      "name": "今日精力 （剩 0/100）",
+      "description": "",
+      "level": 3
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "一键全用（3 项，共 100 精力）",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "heading",
+      "name": "工位家具 （已装修 8/8）",
+      "description": "",
+      "level": 3
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "精力已使用：跟同事聊天",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "（剩余 0 点）",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "点击 +",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "1.3",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "不点也 ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "0.4",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "/秒",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "奇点 25%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "♻ 可离职再就业",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "👥",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "天赋",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "🔊",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "📔",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "工位已装修：绿萝（工位挂机 +5%）、护眼台灯（点击力 +15%）、毛绒地毯（离线效率 +5%）、迷你冰箱（工位挂机 +8%）、按摩椅（离线效率 +8%）、鱼缸（挂机 +10%、点击 +10%）、投影仪（派遣奖励 +30%）、工位猫窝（挂机 +15%、离线 +10%）",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "摸鱼小队",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "✕",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "同事",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "天赋",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "工位",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "天赋点 6",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "已装修 8/8 · 挂机 ×1.43 · 点击 ×1.26 · 离线 +23%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "今日精力 ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "（剩 0/100）",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "认真摸鱼",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "今天挂机 +25% · 花 40 精力",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "已使用",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "假装工作",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "今天巡逻奖励 ×2.2 · 花 35 精力",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "已使用",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "跟同事聊天",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "全体好感 +5，且今天挂机 +5% · 花 25 精力",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "已使用",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "专注点击",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "今天点击力 +20% · 花 45 精力",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "使用：专注点击（消耗 45 精力，今天点击力 +20%）",
+      "description": "",
+      "disabled": true
+    },
+    {
+      "role": "StaticText",
+      "name": "一键全用（3 项，共 100 精力）",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "每天 100 点，效果持续到当天结束；3 项合计正好 100",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "工位家具 ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "（已装修 8/8）",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "绿萝",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "工位挂机 +5%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "已装修",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "护眼台灯",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "点击力 +15%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "已装修",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "毛绒地毯",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "离线效率 +5%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "已装修",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "迷你冰箱",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "工位挂机 +8%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "已装修",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "按摩椅",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "离线效率 +8%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "已装修",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "鱼缸",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "挂机 +10%、点击 +10%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "已装修",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "投影仪",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "派遣奖励 +30%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "已装修",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "工位猫窝",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "挂机 +15%、离线 +10%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "已装修",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "977.65亿",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "1.3",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "0.4",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "奇点 25%",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "♻ 可离职再就业",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "👥",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "天赋",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "🔊",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "📔",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "工位已装修：绿萝（工位挂机 +5%）、护眼台灯（点击力 +15%）、毛绒地毯（离线效率 +5%）、迷你冰箱（工位挂机 +8%）、按摩椅（离线效率 +8%）、鱼缸（挂机 +10%、点击 +10%）、投影仪（派遣奖励 +30%）、工位猫窝（挂机 +15%、离线 +10%）",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "点了才赚 咖啡续命 +1 点击力 ★ 点击最优 15 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "会自动赚 刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "点了才赚 带薪喝水 +2 点击力 100 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "会自动赚 带薪蹲坑 +5/秒 600 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "点了才赚 人体工学椅 +5 点击力 800 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "会自动赚 摸鱼群聊 +15/秒 4000 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "会自动赚 无用会议 +50/秒 2.50万 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "会自动赚 深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "会自动赚 退休式躺平 +700/秒 100.00万 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "← 滑动查看更多 →",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "同事",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "天赋",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "工位",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "天赋点 6",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "已装修 8/8 · 挂机 ×1.43 · 点击 ×1.26 · 离线 ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+23%",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "今日精力 ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "（剩 0/100）",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "认真摸鱼",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "今天挂机 +25% · 花 40 精力",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "已使用",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "假装工作",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "今天巡逻奖励 ×2.2 · 花 35 精力",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "已使用",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "跟同事聊天",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "全体好感 +5，且今天挂机 +5% · 花 ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "25 精力",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "已使用",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "专注点击",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "今天点击力 +20% · 花 ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "45 精力",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "使用",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "一键全用（3 项，共 100 精力）",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "每天 100 点，效果持续到当天结束；3 项合计正好 100",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "工位家具 ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "（已装修 8/8）",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "绿萝",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "工位挂机 +5%",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "已装修",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "护眼台灯",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "点击力 +15%",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "已装修",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "毛绒地毯",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "离线效率 +5%",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "已装修",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "迷你冰箱",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "工位挂机 +8%",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "已装修",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "按摩椅",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "离线效率 +8%",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "已装修",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "鱼缸",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "挂机 +10%、点击 +10%",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "已装修",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "投影仪",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "派遣奖励 +30%",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "已装修",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "工位猫窝",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " ",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "挂机 +15%、离线 +10%",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "已装修",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "977.65亿",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "点了才赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "咖啡续命",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+1 点击力",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "★ 点击最优",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "15",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "刷手机",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+1/秒 · ×2差5级",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "★ 挂机最优",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "50",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "点了才赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "带薪喝水",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+2 点击力",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "100",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "带薪蹲坑",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+5/秒",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "600",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "点了才赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "人体工学椅",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+5 点击力",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "800",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "摸鱼群聊",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+15/秒",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "4000",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "无用会议",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+50/秒",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "2.50万",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "深度摸鱼",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+180/秒 · ×2差5级",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "15.00万",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "退休式躺平",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+700/秒",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "100.00万",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "← 滑动查看更多 →",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "使用",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "点了才赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "咖啡续命",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+1 点击力",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "★ 点击最优",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "15",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "刷手机",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+1/秒 · ×2差5级",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "★ 挂机最优",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "50",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "点了才赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "带薪喝水",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+2 点击力",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "100",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "带薪蹲坑",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+5/秒",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "600",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "点了才赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "人体工学椅",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+5 点击力",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "800",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "摸鱼群聊",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+15/秒",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "4000",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "无用会议",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+50/秒",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "2.50万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "深度摸鱼",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+180/秒 · ×2差5级",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "15.00万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "退休式躺平",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+700/秒",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "100.00万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    }
+  ],
+  "afterClose": {
+    "decorSummary": "工位已装修：绿萝（工位挂机 +5%）、护眼台灯（点击力 +15%）、毛绒地毯（离线效率 +5%）、迷你冰箱（工位挂机 +8%）、按摩椅（离线效率 +8%）、鱼缸（挂机 +10%、点击 +10%）、投影仪（派遣奖励 +30%）、工位猫窝（挂机 +15%、离线 +10%）",
+    "canvas": {
+      "role": "button",
+      "label": "点击摸鱼",
+      "describedby": "decor-summary"
+    },
+    "active": {
+      "tag": "BUTTON",
+      "id": "btn-team",
+      "isBody": false,
+      "insideDialog": false
+    }
+  },
+  "sceneAx": [
+    {
+      "role": "RootWebArea",
+      "name": "摸鱼工位",
+      "description": ""
+    },
+    {
+      "role": "status",
+      "name": "",
+      "description": "",
+      "live": "polite"
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "精力已使用：跟同事聊天（剩余 0 点）",
+      "description": ""
+    },
+    {
+      "role": "banner",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "main",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "contentinfo",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "精力已使用：跟同事聊天（剩余 0 点）",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "精力已使用：跟同事聊天（剩余 0 点）",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "点击 +",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "不点也 ",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "/秒",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": "摸鱼奇点 → 摸鱼永恒"
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "摸鱼小队",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "音效开关",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "日报与图鉴",
+      "description": "日报与图鉴"
+    },
+    {
+      "role": "button",
+      "name": "点击摸鱼",
+      "description": "工位已装修：绿萝（工位挂机 +5%）、护眼台灯（点击力 +15%）、毛绒地毯（离线效率 +5%）、迷你冰箱（工位挂机 +8%）、按摩椅（离线效率 +8%）、鱼缸（挂机 +10%、点击 +10%）、投影仪（派遣奖励 +30%）、工位猫窝（挂机 +15%、离线 +10%）"
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "精力已使用：跟同事聊天",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "（剩余 0 点）",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "点击 +",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "1.3",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "不点也 ",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "0.4",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "/秒",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "奇点 25%",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "♻ 可离职再就业",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "👥",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "天赋",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "🔊",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "📔",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "工位已装修：绿萝（工位挂机 +5%）、护眼台灯（点击力 +15%）、毛绒地毯（离线效率 +5%）、迷你冰箱（工位挂机 +8%）、按摩椅（离线效率 +8%）、鱼缸（挂机 +10%、点击 +10%）、投影仪（派遣奖励 +30%）、工位猫窝（挂机 +15%、离线 +10%）",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "generic",
+      "name": "",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "977.65亿",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "1.3",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "0.4",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "奇点 25%",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "♻ 可离职再就业",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "👥",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "天赋",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "🔊",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "📔",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "工位已装修：绿萝（工位挂机 +5%）、护眼台灯（点击力 +15%）、毛绒地毯（离线效率 +5%）、迷你冰箱（工位挂机 +8%）、按摩椅（离线效率 +8%）、鱼缸（挂机 +10%、点击 +10%）、投影仪（派遣奖励 +30%）、工位猫窝（挂机 +15%、离线 +10%）",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "点了才赚 咖啡续命 +1 点击力 ★ 点击最优 15 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "会自动赚 刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "点了才赚 带薪喝水 +2 点击力 100 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "会自动赚 带薪蹲坑 +5/秒 600 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "点了才赚 人体工学椅 +5 点击力 800 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "会自动赚 摸鱼群聊 +15/秒 4000 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "会自动赚 无用会议 +50/秒 2.50万 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "会自动赚 深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "button",
+      "name": "会自动赚 退休式躺平 +700/秒 100.00万 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "← 滑动查看更多 →",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "977.65亿",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "点了才赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "咖啡续命",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+1 点击力",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "★ 点击最优",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "15",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "刷手机",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+1/秒 · ×2差5级",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "★ 挂机最优",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "50",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "点了才赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "带薪喝水",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+2 点击力",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "100",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "带薪蹲坑",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+5/秒",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "600",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "点了才赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "人体工学椅",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+5 点击力",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "800",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "摸鱼群聊",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+15/秒",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "4000",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "无用会议",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+50/秒",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "2.50万",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "深度摸鱼",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+180/秒 · ×2差5级",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "15.00万",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "退休式躺平",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "+700/秒",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "100.00万",
+      "description": ""
+    },
+    {
+      "role": "StaticText",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "← 滑动查看更多 →",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "点了才赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "咖啡续命",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+1 点击力",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "★ 点击最优",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "15",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "刷手机",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+1/秒 · ×2差5级",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "★ 挂机最优",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "50",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "点了才赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "带薪喝水",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+2 点击力",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "100",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "带薪蹲坑",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+5/秒",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "600",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "点了才赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "人体工学椅",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+5 点击力",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "800",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "摸鱼群聊",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+15/秒",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "4000",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "无用会议",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+50/秒",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "2.50万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "深度摸鱼",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+180/秒 · ×2差5级",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "15.00万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "会自动赚",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "退休式躺平",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "+700/秒",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "100.00万",
+      "description": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " 摸鱼值",
+      "description": ""
+    }
+  ],
+  "sceneCanvasAx": [
+    {
+      "role": "button",
+      "name": "点击摸鱼",
+      "description": "工位已装修：绿萝（工位挂机 +5%）、护眼台灯（点击力 +15%）、毛绒地毯（离线效率 +5%）、迷你冰箱（工位挂机 +8%）、按摩椅（离线效率 +8%）、鱼缸（挂机 +10%、点击 +10%）、投影仪（派遣奖励 +30%）、工位猫窝（挂机 +15%、离线 +10%）"
+    }
+  ],
+  "energyAll": {
+    "before": {
+      "live": ""
+    },
+    "after": {
+      "clicked": false,
+      "samples": [
+        {
+          "ms": 150,
+          "live": ""
+        },
+        {
+          "ms": 500,
+          "live": ""
+        },
+        {
+          "ms": 800,
+          "live": ""
+        },
+        {
+          "ms": 1300,
+          "live": ""
+        }
+      ],
+      "state": {
+        "toast": "",
+        "active": {
+          "tag": "BODY",
+          "text": "977.65亿摸鱼值\n        \n",
+          "act": null,
+          "isBody": true,
+          "insideDialog": false
+        },
+        "buttonsLeft": []
+      }
+    }
+  },
+  "energyAllAx": [],
+  "tabStops": [
+    {
+      "tag": "BUTTON",
+      "text": "👥天赋",
+      "id": "btn-team",
+      "role": null,
+      "isBody": false,
+      "insideDialog": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "🔊",
+      "id": "btn-mute",
+      "role": null,
+      "isBody": false,
+      "insideDialog": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "📔",
+      "id": "btn-journal",
+      "role": null,
+      "isBody": false,
+      "insideDialog": false
+    },
+    {
+      "tag": "CANVAS",
+      "text": "",
+      "id": "stage",
+      "role": "button",
+      "isBody": false,
+      "insideDialog": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "点了才赚咖啡续命\n       ",
+      "id": "",
+      "role": null,
+      "isBody": false,
+      "insideDialog": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "会自动赚刷手机\n        ",
+      "id": "",
+      "role": null,
+      "isBody": false,
+      "insideDialog": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "点了才赚带薪喝水\n       ",
+      "id": "",
+      "role": null,
+      "isBody": false,
+      "insideDialog": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "会自动赚带薪蹲坑\n       ",
+      "id": "",
+      "role": null,
+      "isBody": false,
+      "insideDialog": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "点了才赚人体工学椅\n      ",
+      "id": "",
+      "role": null,
+      "isBody": false,
+      "insideDialog": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "会自动赚摸鱼群聊\n       ",
+      "id": "",
+      "role": null,
+      "isBody": false,
+      "insideDialog": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "会自动赚无用会议\n       ",
+      "id": "",
+      "role": null,
+      "isBody": false,
+      "insideDialog": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "会自动赚深度摸鱼\n       ",
+      "id": "",
+      "role": null,
+      "isBody": false,
+      "insideDialog": false
+    },
+    {
+      "tag": "BUTTON",
+      "text": "会自动赚退休式躺平\n      ",
+      "id": "",
+      "role": null,
+      "isBody": false,
+      "insideDialog": false
+    },
+    {
+      "tag": "BODY",
+      "text": "977.65亿摸鱼值\n     ",
+      "id": "",
+      "role": null,
+      "isBody": true,
+      "insideDialog": false
+    }
+  ],
+  "keyboardBuy": {
+    "focused": null,
+    "after": {
+      "live": "段位晋升：摸鱼永恒",
+      "decor": "工位已装修：绿萝（工位挂机 +5%）、护眼台灯（点击力 +15%）、毛绒地毯（离线效率 +5%）、迷你冰箱（工位挂机 +8%）、按摩椅（离线效率 +8%）、鱼缸（挂机 +10%、点击 +10%）、投影仪（派遣奖励 +30%）、工位猫窝（挂机 +15%、离线 +10%）",
+      "active": {
+        "tag": "BODY",
+        "text": "段位晋升：摸鱼永恒\n    \n     ",
+        "act": null,
+        "id": null,
+        "role": null,
+        "isBody": true,
+        "insideDialog": false
+      }
+    }
+  },
+  "toastOverlap": {
+    "toastRect": {
+      "x": 114,
+      "y": 108,
+      "w": 163,
+      "h": 40
+    },
+    "tabsRect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0
+    },
+    "overlap": false,
+    "toastZ": "45",
+    "toastCls": "show"
+  },
+  "smallScreen": {
+    "docScrollW": 375,
+    "docClientW": 375,
+    "panel": {
+      "x": 0,
+      "w": 0,
+      "h": 0
+    },
+    "bodyScrollH": 0,
+    "bodyClientH": 0,
+    "clippedButtons": 0
+  },
+  "reducedMotion": true
+}

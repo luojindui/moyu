@@ -269,16 +269,16 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
           ? Math.max(0, Math.min(ENERGY_PER_DAY, Math.floor(rawEnergy.left)))
           : ENERGY_PER_DAY;
       energy.used = Array.isArray(rawEnergy.used)
-        ? [...new Set(rawEnergy.used.filter((x): x is EnergyAction => x === "slack" || x === "fake-work" || x === "social"))]
+        ? [...new Set(rawEnergy.used.filter((x): x is EnergyAction => x === "slack" || x === "fake-work" || x === "social" || x === "focus"))]
         : [];
-      const b = rawEnergy.boosted;
-      energy.boosted = {
-        idleMult: typeof b?.idleMult === "number" && Number.isFinite(b.idleMult) ? Math.max(1, Math.min(2, b.idleMult)) : 1,
-        patrolRewardMult:
-          typeof b?.patrolRewardMult === "number" && Number.isFinite(b.patrolRewardMult)
-            ? Math.max(1, Math.min(3, b.patrolRewardMult))
-            : 1,
-      };
+      // boosted 由 used 推导（不信存档里的值，防"没用品却拿满档"）
+      energy.boosted = { idleMult: 1, patrolRewardMult: 1, clickMult: 1 };
+      for (const a of energy.used) {
+        if (a === "slack") energy.boosted.idleMult *= 1.25;
+        if (a === "social") energy.boosted.idleMult *= 1.05;
+        if (a === "fake-work") energy.boosted.patrolRewardMult *= 2.2;
+        if (a === "focus") energy.boosted.clickMult *= 1.2;
+      }
     }
     const patrolSurvives =
       typeof blob.patrolSurvives === "number" && Number.isInteger(blob.patrolSurvives) && blob.patrolSurvives >= 0

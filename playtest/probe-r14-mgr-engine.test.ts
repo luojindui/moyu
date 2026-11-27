@@ -23,6 +23,7 @@ import {
 } from "../src/engine/team";
 import { costOf, effectOf, marginalEffect, stationIdleOf, stationIdleScaled, valueScoreOf } from "../src/engine/upgrades";
 import { bossSurviveReward } from "../src/engine/events";
+import { clickPowerOf } from "../src/engine/actions";
 import { offlineEarn, OFFLINE_CAP_SECONDS } from "../src/engine/offline";
 import { settleReturn } from "../src/engine/resume";
 import { talentEffects, TALENTS, talentCostOf, addTalentPoints, emptyTalents } from "../src/engine/talents";
@@ -31,6 +32,7 @@ import { formatMoyu } from "../src/engine/format";
 
 mkdirSync("playtest/r14-mgr", { recursive: true });
 const OUT: Record<string, unknown> = {};
+let EVIDENCE_OFFLINE_RATIO = 0;
 function note(key: string, value: unknown): void {
   OUT[key] = value;
 }
@@ -63,130 +65,146 @@ for (const [name, s] of Object.entries({ early: S_EARLY, mid: S_MID, late: S_LAT
   });
 }
 
+const S_CLICK = mkState(
+  { coffee: 20, water: 15, chair: 10, phone: 4, toilet: 3, group: 2 },
+  { zhou: col(2), mei: col(1) },
+  {
+    prestige: 20,
+    collected: {
+      quotes: [0, 1, 2, 3, 4],
+      flavors: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
+    },
+  },
+);
+
 /* ============================================================
  * 1) 每日精力：是不是"真取舍"
  * ========================================================== */
 describe("R14-1 每日精力是否真取舍", () => {
-  it("三个动作成本之和 == 每日预算，且每项每天限一次，任意子集都付得起", () => {
-    const costs = ENERGY_ACTIONS.map((a) => ({ id: a.id, name: a.name, cost: a.cost }));
-    const total = costs.reduce((s, c) => s + c.cost, 0);
+  it("4 个动作总价 145 > 每日 100 → 预算约束成立（与 3 动作版不同）", () => {
+    const costs = ENERGY_ACTIONS.map((a) => ({ id: a.id, name: a.name, cost: a.cost, desc: a.desc }));
+    const total = costs.reduce((s2, c) => s2 + c.cost, 0);
     note("energy_actions", costs);
     note("energy_budget", ENERGY_PER_DAY);
     note("energy_cost_sum", total);
-    note("energy_cost_sum_equals_budget", total === ENERGY_PER_DAY);
+    note("energy_has_real_budget_constraint", total > ENERGY_PER_DAY);
 
-    // 枚举全部子集：能否在 left=100 时一次付清
+    // 枚举全部子集，列出可负担的"极大集"（再加一个动作就超预算）
+    const all = ENERGY_ACTIONS.map((a) => a.id);
     const subsets: { set: string[]; cost: number; affordable: boolean }[] = [];
-    for (let mask = 1; mask < 8; mask++) {
-      const set = ENERGY_ACTIONS.filter((_, i) => mask & (1 << i)).map((a) => a.id);
-      const cost = ENERGY_ACTIONS.filter((_, i) => mask & (1 << i)).reduce((s, a) => s + a.cost, 0);
-      subsets.push({ set: set as string[], cost, affordable: cost <= ENERGY_PER_DAY });
+    for (let mask = 1; mask < 1 << all.length; mask++) {
+      const set = all.filter((_, i) => mask & (1 << i));
+      const cost = ENERGY_ACTIONS.filter((_, i) => mask & (1 << i)).reduce((s2, a) => s2 + a.cost, 0);
+      subsets.push({ set, cost, affordable: cost <= ENERGY_PER_DAY });
     }
+    const affordable = subsets.filter((x) => x.affordable);
+    const maximal = affordable.filter((x) => !affordable.some((y) => y.set.length > x.set.length && x.set.every((id) => y.set!.includes(id))));
     note("energy_all_subsets", subsets);
-    note("energy_all_subsets_affordable", subsets.every((x) => x.affordable));
-    const maximal = subsets.filter((x) => !subsets.some((y) => y.set.length > x.set.length && x.set.every((id) => y.set.includes(id))));
-    note("energy_maximal_sets", maximal.map((m) => m.set));
-    note("energy_unique_maximal_set", maximal.length === 1);
-    expect(total).toBe(ENERGY_PER_DAY);
-    expect(maximal.length).toBe(1);
+    note("energy_maximal_sets", maximal.map((m) => ({ set: m.set, cost: m.cost, leftover: ENERGY_PER_DAY - m.cost })));
+    note("energy_maximal_set_count", maximal.length);
+    note("energy_full_budget_sets", maximal.filter((m) => m.cost === ENERGY_PER_DAY).map((m) => m.set));
+    // 关键：现在有多组极大集 → 存在真取舍；且只有一组"用满 100"的特例
+    expect(total).toBeGreaterThan(ENERGY_PER_DAY);
+    expect(maximal.length).toBeGreaterThan(1);
   });
 
-  it("效果全部单调正向 + 当日剩点不结转 → 唯一占优策略 = 三个都用", () => {
-    // 每个动作的效果最少是 1（无负面），且不能重复用 → 超集弱占优
-    const effects = ENERGY_ACTIONS.map((a) => ({ id: a.id, cost: a.cost, desc: a.desc }));
-    note("energy_effect_monotone", {
-      slack_idleMult: 1.25, fakeWork_patrolMult: 1.8, social_favorPerColleague: 3,
-      allNonNegative: true, note: "超集只会更多不会更少 → 全用弱占优",
-    });
-    // 模拟整天：按任意顺序用完 3 个
+  it("真取舍长什么样：用「专注点击」后只能再选 1 项（且剩 15-30 点作废）", () => {
     let s = mkState({}, {}, { energy: emptyEnergy("2026-11-27") });
-    const order: EnergyAction[] = ["social", "fake-work", "slack"];
-    for (const id of order) {
-      const n = useEnergy(s, id);
-      expect(n).not.toBeNull();
-      s = n!;
-    }
-    note("energy_after_all_three", s.energy);
-    expect(s.energy.left).toBe(0);
-    expect(s.energy.used.length).toBe(3);
-    // 再点一次也应失败（每天限一次）
-    expect(useEnergy(s, "slack")).toBeNull();
-    // 当天剩下点的唯一价值：没有（跨日 ensureEnergy 重置 → 不结转）
-    const leftover = useEnergy(mkState({}, {}, { energy: emptyEnergy("2026-11-27") }), "slack")!;
-    const nextDay = ensureEnergy(leftover, "2026-11-28");
-    note("energy_leftover_wasted", { sameDayLeft: leftover.energy.left, nextDayLeft: nextDay.energy.left, carriedOver: false });
-    expect(leftover.energy.left).toBe(60);
-    expect(nextDay.energy.left).toBe(100);
-    expect(nextDay.energy.used.length).toBe(0);
+    s = useEnergy(s, "focus")!; // 45
+    note("energy_after_focus", s.energy);
+    expect(s.energy.left).toBe(55);
+    // 只剩 55 点：slack(40) 可、fake-work(35) 可、social(25) 可，但任意两项组合（>=60）都不行
+    const afterSlack = useEnergy(s, "slack");
+    expect(afterSlack).not.toBeNull();
+    note("energy_focus_slack", afterSlack!.energy);
+    expect(afterSlack!.energy.left).toBe(15);
+    // 15 点什么都点不了；剩余 15 点作废（不结转）
+    expect(useEnergy(afterSlack!, "fake-work")).toBeNull();
+    expect(useEnergy(afterSlack!, "social")).toBeNull();
+    const nextDay = ensureEnergy(afterSlack!, "2026-11-28");
+    note("energy_focus_path_leftover_wasted", { leftToday: afterSlack!.energy.left, leftTomorrow: nextDay.energy.left });
   });
 
-  it("三档精力的实际价值差（若被迫三选一，最优是否固定）", () => {
-    // 挂机档：+25% 工位挂机。注意 energy idleMult 只乘「工位」部分（不含同事固定值），见 upgrades.effectOf
-    // 一天口径：在线 1h + 离线 12h（离线封顶 12h；精力 buff 在次日离线结算前不会被重置，见 R14-4）
+  it("四个动作的实际价值（管理党最关心的：取舍是否'等价值'）", () => {
+    // 一天口径：在线 1h + 离线 12h（离线封顶 12h，且精力 buff 会结算进次日离线，见 R14-4）
     const DAY_IDLE_SECONDS = 3600 + 12 * 3600;
+    const CLICK_SECONDS = 20 * 60; // 每天主动点击 20 分钟
     const rows: Record<string, unknown>[] = [];
-    for (const [name, base] of Object.entries({ early: S_EARLY, mid: S_MID, late: S_LATE })) {
+    for (const [name, base] of Object.entries({ early: S_EARLY, mid: S_MID, late: S_LATE, clickBuild: S_CLICK })) {
       const idle = effectOf(base).idleRate;
-      const withSlack = effectOf({ ...base, energy: { ...emptyEnergy("d"), boosted: { idleMult: 1.25, patrolRewardMult: 1 } } }).idleRate;
-      const slackGainPerDay = (withSlack - idle) * DAY_IDLE_SECONDS;
-
-      // 巡逻档：巡逻基础奖 = max(50, 5×idleRate)；每 90-150s 一次（均值 120s），连胜倍率平均按 1.5；仅在线时巡逻
+      const station = stationIdleScaled(base);
+      const clickPower = clickPowerOf(base);
       const patrolBase = Math.max(50, 5 * idle);
       const patrolsPerActiveHour = 3600 / 120;
-      const fakeWorkGainPerActiveHour = patrolsPerActiveHour * 0.8 * patrolBase * 1.5;
-      const fakeWorkGainPerDay = fakeWorkGainPerActiveHour * 1; // 只在线 1h 有巡逻
-      // 社交档：全体 +3 好感；好感里程碑：80 → 全员挂机 +2%/人（封顶 10%）；100 → 该同事派遣 ×1.5
-      const socialFavorTotal = 3 * 5; // 15 点好感
-      rows.push({
-        stage: name,
-        idleRate: round(idle, 4),
-        stationShare: round(stationIdleScaled(base) / idle, 4),
-        actualIdleGainFromSlackPct: round(((withSlack - idle) / idle) * 100, 2),
-        slackGainPerDay: Math.round(slackGainPerDay),
-        patrolBase: Math.round(patrolBase),
-        fakeWorkGainPerActiveHour: Math.round(fakeWorkGainPerActiveHour),
-        fakeWorkGainPerDay: Math.round(fakeWorkGainPerDay),
-        socialFavorTotal,
-        ratio_slack_over_fakework_perDay: round(slackGainPerDay / Math.max(1, fakeWorkGainPerDay), 2),
-      });
+      for (const cps of [0, 1, 2.5, 5]) {
+        const clickIncomePerDay = cps * CLICK_SECONDS * clickPower; // 不含连击/暴击的保守下界
+        const v = {
+          slack: 0.25 * station * DAY_IDLE_SECONDS,
+          social: 0.05 * station * DAY_IDLE_SECONDS, // +5% 工位挂机；另有 25 点好感
+          fakeWork: 1.2 * patrolBase * patrolsPerActiveHour, // ×2.2 相对 ×1 → +120%，仅在线 1h
+          focus: 0.2 * clickIncomePerDay,
+        };
+        const max = Math.max(...Object.values(v));
+        rows.push({
+          stage: name, cps,
+          idleRate: round(idle, 2), clickPower: round(clickPower, 2),
+          clickIncomePerDay: Math.round(clickIncomePerDay),
+          values: Object.fromEntries(Object.entries(v).map(([k, x]) => [k, Math.round(x)])),
+          bestAction: Object.entries(v).sort((a, b) => b[1] - a[1])[0]![0],
+          // 满额组合 vs 专注组合的"一天价值"
+          best3NoFocus: Math.round(v.slack + v.social + v.fakeWork),
+          focusBuild: Math.round(v.focus + v.slack),
+          focusBuildBeatsFull: Math.round(v.focus + v.slack) > Math.round(v.slack + v.social + v.fakeWork),
+          allClose: Object.values(v).every((x) => max / Math.max(1, x) < 4),
+        });
+      }
     }
-    note("energy_value_comparison", rows);
-    // 关键：UI 文案写「今天挂机 +25%」，但实际总挂机增幅远小于 25%（同事固定值不被乘，同事占比越高越稀释）
-    const late = rows.find((r) => r.stage === "late")!;
-    expect(Number(late.actualIdleGainFromSlackPct)).toBeLessThan(10);
-    // 若被迫三选一：按"一天"口径，slack 在所有阶段都显著 > 巡逻档（巡逻收益只有在线 1h 那点）
-    for (const r of rows) expect(Number(r.ratio_slack_over_fakework_perDay)).toBeGreaterThan(2);
+    note("energy_value_4actions", rows);
+    // 关键判断：挂机/普通画像下 focus 没有价值 → 每天答案固定「三连」；只有点击画像才为 focus 放弃另外两档
+    const idlePlayer = rows.filter((r) => r.stage !== "clickBuild" && (r.cps === 0 || r.cps === 1));
+    const clickBuild5 = rows.filter((r) => r.stage === "clickBuild" && r.cps === 5);
+    note("energy_decision_by_playstyle", {
+      idlePlayerFocusEverBest: idlePlayer.some((r) => r.bestAction === "focus"),
+      idlePlayerFocusBuildWins: idlePlayer.some((r) => r.focusBuildBeatsFull),
+      clickBuildFocusActionBest: clickBuild5.some((r) => r.bestAction === "focus"),
+      clickBuildFocusComboWins: clickBuild5.some((r) => r.focusBuildBeatsFull),
+      note: "如果仅点击画像才选 focus → 第 4 档把「每日分配」变成「一次性流派选择」（同画像每天都选同一套）",
+      clickBuildDetail: clickBuild5,
+    });
+    // 挂机/普通画像：focus 不是最优 → 每天答案仍是固定的「三连」
+    expect(idlePlayer.some((r) => r.bestAction === "focus")).toBe(false);
+    // 点击画像：focus 应该赢（证明第 4 档不是纯装饰）
+    expect(clickBuild5.some((r) => r.focusBuildBeatsFull)).toBe(true);
   });
 
-  it("跨日：不同 subset 是否会让强度出现差异（答案：不会，全用严格最优）", () => {
-    // 比较 7 种可能用法在"一天"内的收益分量，确认全用的分量最大
+  it("跨日：4 档子集的效果叠加 & 每日重置", () => {
     const base = S_MID;
+    const combos: string[][] = [
+      ["slack", "fake-work", "social"], // 唯一用满 100 的组合
+      ["focus", "slack"],
+      ["focus", "fake-work"],
+      ["focus", "social"],
+    ];
     const rows = [];
-    for (let mask = 0; mask < 8; mask++) {
+    for (const combo of combos) {
       let s = { ...base, energy: emptyEnergy("2026-11-27") };
-      for (let i = 0; i < 3; i++) {
-        if (!(mask & (1 << i))) continue;
-        const n = useEnergy(s, ENERGY_ACTIONS[i]!.id);
+      for (const id of combo) {
+        const n = useEnergy(s, id as never);
         if (n) s = n;
       }
       const e = energyEffects(s);
       rows.push({
-        mask, used: s.energy.used,
-        idleMult: e.idleMult, patrolRewardMult: e.patrolRewardMult,
-        idleRate: round(effectOf(s).idleRate, 4),
+        combo, used: s.energy.used, left: s.energy.left,
+        idleMult: e.idleMult, patrolRewardMult: e.patrolRewardMult, clickMult: e.clickMult,
+        idleRate: round(effectOf(s).idleRate, 3),
+        clickPower: round(clickPowerOf(s), 3),
         patrolReward: round(bossSurviveReward(s), 1),
         favorSum: Object.values(s.team.colleagues).reduce((a, c) => a + c.favor, 0),
       });
     }
-    note("energy_subsets_effect", rows);
-    // 全用集合在 idle/patrol/favor 三个维度都不差于任何子集
-    const full = rows[7]!;
-    for (const r of rows) {
-      if (r === full) continue;
-      expect(full.idleRate).toBeGreaterThanOrEqual(r.idleRate as number);
-      expect(full.patrolReward).toBeGreaterThanOrEqual(r.patrolReward as number);
-      expect(full.favorSum).toBeGreaterThanOrEqual(r.favorSum as number);
-    }
+    note("energy_combos_effect", rows);
+    expect(rows[0]!.left).toBe(0); // 旧三项仍是唯一用满预算的组合
+    expect(rows.slice(1).every((r) => (r.left as number) > 0)).toBe(true);
   });
 });
 
@@ -413,6 +431,82 @@ describe("R14-4 协同深度 & 跨日", () => {
     expect(Number(late.slackTotalIdleGainPct)).toBeLessThan(10);
   });
 
+  it("家具对派遣/离线的协同倍数（与同事系统联动的量化）", () => {
+    const rows: Record<string, unknown>[] = [];
+    for (const [name, base] of Object.entries({ mid: S_MID, late: S_LATE })) {
+      const station = stationIdleScaled(base);
+      const allIdleDecor = { ...base, decor: DECOR.map((d) => d.id) };
+      // 派遣奖励：工位挂机（被家具 idleMult 放大）+ decor dispatchRewardMult
+      const zhouCur = base.team.colleagues.zhou ?? col(1);
+      const colBase: GameState = {
+        ...base,
+        team: { colleagues: { ...base.team.colleagues, zhou: { ...zhouCur, missionId: "coffee" } } },
+      };
+      const noDecor = dispatchReward({ ...colBase, decor: [] }, "zhou", station);
+      const withDecor = dispatchReward({ ...colBase, decor: DECOR.map((d) => d.id) }, "zhou", stationIdleScaled(allIdleDecor));
+      rows.push({
+        stage: name,
+        dispatchRewardNoDecor: Math.round(noDecor),
+        dispatchRewardAllDecor: Math.round(withDecor),
+        dispatchMultiplier: round(withDecor / Math.max(1, noDecor), 3),
+        offlineBonusFromDecor: decorEffects(allIdleDecor).offlineBonus,
+        offlineEfficiencyDeltaPct: round(decorEffects(allIdleDecor).offlineBonus * 100, 1),
+      });
+    }
+    note("decor_synergy_dispatch_offline", rows);
+  });
+
+  it("离线结算口径：家具/精力的挂机倍率是否 100% 计入（影响「买家具」的实际价值）", () => {
+    // offlineEarn：工位 = stationIdleScaled()（不含家具/精力/卡倍率）；其余计入 teamPart 再 ×0.5
+    const base = mkState({ phone: 4, toilet: 3, group: 2 });
+    const elapsed = 8 * 3600;
+    const variants: Record<string, GameState> = {
+      plant: { ...base, decor: ["plant"] },
+      slack: { ...base, energy: { ...emptyEnergy("d"), boosted: { idleMult: 1.25, patrolRewardMult: 1 } } },
+      allIdleDecor: { ...base, decor: DECOR.filter((d) => d.effects.idleMult).map((d) => d.id) },
+    };
+    const rows: Record<string, unknown>[] = [];
+    const r0 = offlineEarn(base, elapsed, 1);
+    for (const [name, st2] of Object.entries(variants)) {
+      const r = offlineEarn(st2, elapsed, 1);
+      const station0 = stationIdleScaled(base);
+      const station1 = stationIdleScaled(st2);
+      const total0 = effectOf(base).idleRate;
+      const total1 = effectOf(st2).idleRate;
+      const expectedFull = (total1 - total0) * elapsed; // 若工位倍率 100% 计离线
+      const actual = r.earned - r0.earned;
+      rows.push({
+        variant: name,
+        stationIdleBefore: round(station0, 3),
+        stationIdleAfter: round(station1, 3), // 注意：不含家具/精力倍率
+        totalIdleBefore: round(total0, 3),
+        totalIdleAfter: round(total1, 3),
+        offlineGainIfFull: Math.round(expectedFull),
+        offlineGainActual: Math.round(actual),
+        ratio: round(actual / Math.max(1, expectedFull), 3),
+      });
+    }
+    note("offline_multiplier_accounting", rows);
+    // 预期发现：ratio ≈ 0.5（家具/精力的挂机加成在离线里只兑现一半）
+    const plantRow = rows.find((r) => r.variant === "plant")!;
+    EVIDENCE_OFFLINE_RATIO = Number(plantRow.ratio);
+  });
+
+  it("社交精力的好感价值（相当于多少次领奖）", () => {
+    // 每次领奖：好感 +2，匹配任务再 +3（共 5）
+    const favorPerClaimMatched = 3 + 1; // FAVOR_PER_CLAIM=2 + FAVOR_MATCH_BONUS=1 → 3
+    const socialFavor = 3;
+    const colleagues = 5;
+    note("social_favor_value", {
+      socialFavorPerColleague: socialFavor,
+      totalFavor: socialFavor * colleagues,
+      favorPerMatchedClaim: favorPerClaimMatched,
+      equivalentClaims: round((socialFavor * colleagues) / favorPerClaimMatched, 2),
+      favoriteMilestones: "20预警/40离线+3%/60丢梗+10%/80全员挂机+2%/100该同事派遣×1.5",
+      note: "社交 = 相当于 5 位同事各多领 1 次匹配任务的进度；对已经在刷派遣的玩家价值很低",
+    });
+  });
+
   it("跨日精力 buff 是否会被计入次日离线结算（文案「持续到当天结束」）", () => {
     const base = mkState({ phone: 4, toilet: 3, group: 2 }, { zhou: col(3) });
     const now = Date.now();
@@ -456,7 +550,13 @@ describe("R14-4 协同深度 & 跨日", () => {
 
   it("每日决策量清点（管理党口径）", () => {
     note("decision_tally", {
-      energy: { dailyActions: 3, budget: 100, costSum: 100, forcedAnswer: "三个都用", realDecisionsPerDay: 0 },
+      energy: {
+        dailyActions: 4, budget: 100, costSum: 145,
+        maximalCombos: ["slack+fake-work+social(100 用满)", "slack+focus(85)", "fake-work+focus(80)", "social+focus(70)"],
+        forcedAnswer: "非点击画像：slack+fake-work+social（唯一用满 100，且是 UI 一键按钮的默认）",
+        realDecisionsPerDay: "1 次（仅流派切换时；同画像每天答案固定）",
+        caveat: "UI 仍写「一键全用（3 项，共 100 精力）」/「3 项合计正好 100」→ 与 4 档 145 不一致（半成态）",
+      },
       dispatch: {
         colleagues: 5, missionsPerColleague: 6, capacityLimit: 0,
         setupDecisionsOnce: "5 次任务选择 + 5 次自动重复开关（一次性）",
@@ -474,6 +574,7 @@ describe("R14-4 协同深度 & 跨日", () => {
 
 describe("R14-输出证据 JSON", () => {
   it("写盘", () => {
+    note("offline_ratio_flag", EVIDENCE_OFFLINE_RATIO);
     writeFileSync("playtest/r14-mgr/engine-evidence.json", JSON.stringify(OUT, null, 2));
     expect(Object.keys(OUT).length).toBeGreaterThan(10);
   });
