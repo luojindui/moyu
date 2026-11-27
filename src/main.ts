@@ -27,6 +27,9 @@ import { Shop } from "./ui/shop";
 import { Welcome } from "./ui/welcome";
 import { Journal } from "./ui/journal";
 import { Quest } from "./ui/quest";
+import { TeamPanel } from "./ui/team-panel";
+import { claimMission, colleagueDef, recruit, upgradeColleague, dispatch as dispatchMission } from "./engine/team";
+import { resetTalents, unlockTalent } from "./engine/talents";
 import { initAudio, playClick, playBreak, playSuccess, toggleMute, isMuted } from "./ui/audio";
 import { Scene, SPRITE_MAP } from "./render/scene";
 import { SpriteGrid, frameActivity } from "./render/sprites";
@@ -136,6 +139,65 @@ async function boot(): Promise<void> {
       serialize(state, localStorageAdapter, Date.now());
     },
   );
+  const teamPanel = new TeamPanel({
+    onRecruit: (id) => {
+      const next = recruit(state, id);
+      if (next) {
+        state = next;
+        hud.refresh(state);
+        shop.refresh(state);
+        teamPanel.refresh(state);
+        announce(`招募成功：${colleagueDef(id)?.name ?? ""}`);
+        serialize(state, localStorageAdapter, Date.now());
+      }
+    },
+    onUpgrade: (id) => {
+      const next = upgradeColleague(state, id);
+      if (next) {
+        state = next;
+        hud.refresh(state);
+        shop.refresh(state);
+        teamPanel.refresh(state);
+        serialize(state, localStorageAdapter, Date.now());
+      }
+    },
+    onDispatch: (id, missionId) => {
+      const next = dispatchMission(state, id, missionId, Date.now());
+      if (next) {
+        state = next;
+        teamPanel.refresh(state);
+        announce(`${colleagueDef(id)?.name ?? ""} 出发去派遣了`);
+        serialize(state, localStorageAdapter, Date.now());
+      }
+    },
+    onClaim: (id) => {
+      const r = claimMission(state, id, Date.now(), effectOf(state).idleRate);
+      if (r) {
+        state = r.state;
+        hud.refresh(state);
+        shop.refresh(state);
+        teamPanel.refresh(state);
+        toast(`任务完成 +${Math.round(r.reward)}`);
+        serialize(state, localStorageAdapter, Date.now());
+      }
+    },
+    onUnlockTalent: (id) => {
+      const next = unlockTalent(state, id);
+      if (next) {
+        state = next;
+        hud.refresh(state);
+        teamPanel.refresh(state);
+        serialize(state, localStorageAdapter, Date.now());
+      }
+    },
+    onResetTalents: () => {
+      state = resetTalents(state);
+      hud.refresh(state);
+      teamPanel.refresh(state);
+      serialize(state, localStorageAdapter, Date.now());
+      toast("天赋已重置，点数已返还");
+    },
+  });
   const shop = new Shop(
     (id) => {
     const next = buyUpgrade(state, id);
@@ -278,6 +340,7 @@ async function boot(): Promise<void> {
     const j = document.getElementById("journal")!;
     const w = document.getElementById("welcome")!;
     if (!j.classList.contains("hidden")) journal.hide();
+    else if (teamPanel.isOpen) teamPanel.hide();
     else if (!w.classList.contains("hidden")) w.classList.add("hidden");
   });
   const rng = Math.random;
@@ -369,6 +432,7 @@ async function boot(): Promise<void> {
       hud.refresh(state, combo);
       shop.refresh(state);
       journal.refresh(state);
+      teamPanel.refresh(state);
     }
     requestAnimationFrame(frame);
   };

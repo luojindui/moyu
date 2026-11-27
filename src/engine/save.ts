@@ -185,7 +185,10 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
         const missionId = typeof c.missionId === "string" ? c.missionId : null;
         const startedAt = numOr0(c.startedAt);
         const endsAt = numOr0(c.endsAt);
-        team.colleagues[def.id] = { level, missionId, startedAt, endsAt };
+        const favor = typeof c.favor === "number" && Number.isFinite(c.favor) && c.favor >= 0
+          ? Math.min(100, Math.floor(c.favor))
+          : 0;
+        team.colleagues[def.id] = { level, missionId, startedAt, endsAt, favor };
       }
     }
     // createdAt 钳制：缺失默认 savedAt（不重发首日）；越界（未来/NaN）按 savedAt收敛，堵离线分级绕过

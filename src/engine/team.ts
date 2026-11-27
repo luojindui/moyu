@@ -59,6 +59,8 @@ export interface ColleagueState {
   /** 任务开始/结束时间（毫秒） */
   startedAt: number;
   endsAt: number;
+  /** 好感度（0-100，每次领奖 +1） */
+  favor: number;
 }
 
 export interface TeamState {
@@ -132,7 +134,7 @@ export function recruit(state: GameState, id: string): GameState | null {
     team: {
       colleagues: {
         ...state.team.colleagues,
-        [id]: { level: 1, missionId: null, startedAt: 0, endsAt: 0 },
+        [id]: { level: 1, missionId: null, startedAt: 0, endsAt: 0, favor: 0 },
       },
     },
   };
@@ -214,10 +216,29 @@ export function claimMission(
     state: {
       ...next,
       team: {
-        colleagues: { ...next.team.colleagues, [id]: { ...cur, missionId: null, startedAt: 0, endsAt: 0 } },
+        colleagues: {
+          ...next.team.colleagues,
+          // 领奖 +1 好感（上限 100）
+          [id]: { ...cur, missionId: null, startedAt: 0, endsAt: 0, favor: Math.min(100, cur.favor + 1) },
+        },
       },
     },
   };
+}
+
+/** 好感里程碑（按已招募同事中最高好感判定） */
+export function favorTier(state: GameState): number {
+  let max = 0;
+  for (const def of COLLEAGUES) {
+    const cur = state.team.colleagues[def.id];
+    if (cur) max = Math.max(max, cur.favor);
+  }
+  if (max >= 100) return 5;
+  if (max >= 80) return 4;
+  if (max >= 60) return 3;
+  if (max >= 40) return 2;
+  if (max >= 20) return 1;
+  return 0;
 }
 
 /** 有任务可领的同事数量（用于 HUD 红点） */

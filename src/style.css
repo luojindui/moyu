@@ -806,3 +806,257 @@ body {
   white-space: nowrap;
   border: 0;
 }
+
+/* ---------- 摸鱼小队面板 ---------- */
+#btn-team {
+  position: fixed;
+  right: 10px;
+  bottom: 290px;
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+  background: #3a3a52;
+  color: #f4f1e8;
+  border: 2px solid #55557a;
+  border-radius: 50%;
+  font-family: inherit;
+}
+#btn-team .badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 9px;
+  background: #ff5a5a;
+  color: #fff;
+  font-size: 11px;
+  line-height: 18px;
+  text-align: center;
+}
+#team {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 18, 0.78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 13;
+}
+#team.hidden {
+  display: none;
+}
+.team-panel {
+  width: min(360px, 92vw);
+  max-height: 86vh;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  background: #2f2f44;
+  border: 4px solid #7ec8ff;
+  border-radius: 6px;
+}
+.team-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.team-head h2 {
+  font-size: 18px;
+}
+#team-close {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  margin: -11px -11px -11px 0;
+  background: none;
+  border: none;
+  color: #a8a493;
+  font-size: 18px;
+  font-family: inherit;
+}
+.team-tabs {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin: 8px 0 10px;
+}
+.team-tabs .tab {
+  padding: 6px 12px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #b8b39c;
+  background: #3a3a52;
+  border: 2px solid #55557a;
+  border-radius: 4px;
+}
+.team-tabs .tab.active {
+  color: #10241a;
+  background: #7ec8ff;
+  border-color: #3f7fa8;
+  font-weight: 700;
+}
+.team-points {
+  margin-left: auto;
+  font-size: 12px;
+  color: #ffd76e;
+}
+#team-body {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mate {
+  padding: 9px;
+  background: #3a3a52;
+  border: 2px solid #55557a;
+  border-radius: 5px;
+}
+.mate.locked {
+  border-style: dashed;
+}
+.mate-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+.mate-name {
+  font-size: 14px;
+  font-weight: 700;
+}
+.mate-role {
+  font-size: 11px;
+  color: #a8a493;
+}
+.mate-lv {
+  font-size: 12px;
+  color: #8be28b;
+}
+.mate-skill {
+  font-size: 11px;
+  color: #ffd76e;
+}
+.mate-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 7px;
+}
+.mate-actions button,
+.mate-missions button {
+  flex: 1 1 auto;
+  min-height: 36px;
+  padding: 6px 8px;
+  font-size: 12px;
+  font-family: inherit;
+  color: #10241a;
+  background: #8be28b;
+  border: 2px solid #4c9e52;
+  border-radius: 4px;
+}
+.mate-actions button:disabled,
+.mate-missions button:disabled {
+  color: #e8e2d0;
+  background: #43435c;
+  border-color: #55557a;
+}
+.mate-actions button.ghost {
+  color: #f4f1e8;
+  background: #4a4a66;
+  border-color: #6a6a8a;
+}
+.mate-missions {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-top: 7px;
+}
+.mate-missions button {
+  flex: 1 1 30%;
+  font-size: 11px;
+}
+.mate-progress {
+  margin-top: 7px;
+  font-size: 12px;
+  color: #7ec8ff;
+}
+.mate-favor {
+  margin-top: 6px;
+}
+.favor-track {
+  height: 5px;
+  background: #262636;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.favor-bar {
+  height: 100%;
+  background: #ff9e9e;
+}
+.branch {
+  padding: 9px;
+  background: #3a3a52;
+  border: 2px solid #55557a;
+  border-radius: 5px;
+}
+.branch h3 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.talent {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px dashed #43435c;
+}
+.talent:last-child {
+  border-bottom: none;
+}
+.talent-dot {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  border-radius: 50%;
+  border: 2px solid #55557a;
+  background: #262636;
+  text-align: center;
+  font-size: 11px;
+  line-height: 14px;
+}
+.talent.on .talent-dot {
+  background: #8be28b;
+  border-color: #4c9e52;
+  color: #10241a;
+}
+.talent-info {
+  flex: 1;
+  min-width: 0;
+}
+.talent-name {
+  font-size: 12px;
+  font-weight: 700;
+}
+.talent-desc {
+  font-size: 11px;
+  color: #b8b39c;
+}
+.talent button {
+  padding: 5px 9px;
+  font-size: 11px;
+  font-family: inherit;
+  color: #10241a;
+  background: #ffd76e;
+  border: 2px solid #a8862c;
+  border-radius: 4px;
+}
+.talent button:disabled {
+  color: #a8a493;
+  background: #43435c;
+  border-color: #55557a;
+}

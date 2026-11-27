@@ -26,6 +26,7 @@
           <span id="hud-rank">摸鱼实习生</span>
           <span id="hud-combo" class="hidden"></span>
           <span id="hud-streak" class="hidden"></span>
+          <button id="btn-team" aria-label="摸鱼小队">👥</button>
           <button id="btn-mute" aria-label="音效开关">🔊</button>
           <button id="btn-journal" aria-label="日报与图鉴">📔</button>
         </div>
@@ -36,6 +37,20 @@
       </header>
       <main id="stage-wrap"><canvas id="stage" tabindex="0" role="button" aria-label="点击摸鱼"></canvas></main>
       <footer id="shop"><div id="shop-wrap"><div id="shop-cards"></div><span id="shop-hint">← 滑动查看更多 →</span></div></footer>
+    </div>
+    <div id="team" class="hidden" role="dialog" aria-modal="true" aria-labelledby="team-title">
+      <div class="team-panel">
+        <div class="team-head">
+          <h2 id="team-title">摸鱼小队</h2>
+          <button id="team-close" aria-label="关闭">✕</button>
+        </div>
+        <div class="team-tabs">
+          <button id="tab-colleagues" class="tab active">同事</button>
+          <button id="tab-talents" class="tab">天赋</button>
+          <span class="team-points" id="team-points"></span>
+        </div>
+        <div id="team-body"></div>
+      </div>
     </div>
     <div id="journal" class="hidden" role="dialog" aria-modal="true" aria-labelledby="journal-title">
       <div class="journal-panel">
