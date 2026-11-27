@@ -7,6 +7,7 @@ import { formatMoyu } from "../engine/format";
 import { clickPowerOf } from "../engine/actions";
 import { canPrestige, prestigeGain, prestigeMultiplier, prestigeThreshold } from "../engine/prestige";
 import { computeStats } from "../engine/stats";
+import { RECORDS_KEY, parseRecords, emptyRecords } from "../engine/records";
 
 /** 日报 + 图鉴面板（收集党：差距可见、每日有仪式） */
 export class Journal {
@@ -150,7 +151,13 @@ export class Journal {
     }
 
     // 数据统计（全部由现有字段推导）
-    const st = computeStats(state);
+    let rec = emptyRecords();
+    try {
+      rec = parseRecords(localStorage.getItem(RECORDS_KEY));
+    } catch {
+      /* 忽略 */
+    }
+    const st = computeStats(state, rec);
     const rows: [string, string][] = [
       ["生涯总收入", formatMoyu(st.lifetime)],
       ["本局 / 往期", `${formatMoyu(st.run)} / ${formatMoyu(st.previous)}`],
@@ -162,6 +169,9 @@ export class Journal {
       ["连续日报", `${st.streak} 天`],
       ["图鉴", `${st.collection}/${st.collectionTotal}`],
       ["转生", `${st.prestige} 点（×${st.prestigeMult.toFixed(2)}）`],
+      ["纪录·最佳单日", `${formatMoyu(st.records.bestDayEarned)}${st.records.bestDayDate ? `（${st.records.bestDayDate}）` : ""}`],
+      ["纪录·最长连签", `${st.records.maxStreak} 天`],
+      ["纪录·最多点击", String(st.records.maxClicks)],
     ];
     this.elStats.innerHTML = rows
       .map(([k, v]) => `<div class="stat-row"><span>${k}</span><b>${v}</b></div>`)

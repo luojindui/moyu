@@ -16,6 +16,7 @@ import {
 import { collectQuote, syncFlavorCollection } from "./engine/collection";
 import { ensureVisits, offlineEfficiency } from "./engine/progression";
 import { rankFor } from "./engine/titles";
+import { RECORDS_KEY, parseRecords, updateRecords, type Records } from "./engine/records";
 import { doPrestige } from "./engine/prestige";
 import { ensureDaily, dailyTrack, claimDaily } from "./engine/daily";
 import { Hud } from "./ui/hud";
@@ -103,6 +104,8 @@ async function boot(): Promise<void> {
         const old = localStorage.getItem(SAVE_KEY);
         if (old) localStorage.setItem(`${SAVE_KEY}.bak`, old);
         localStorage.setItem(SAVE_KEY, JSON.stringify(blob));
+        suppressSave = true; // 阻止 pagehide/自动存档用旧内存状态覆盖刚导入的档
+        clearInterval(saveTimer);
         setTimeout(() => location.reload(), 300);
         return { ok: true, message: "导入成功，正在重新加载…" };
       } catch {
@@ -236,6 +239,7 @@ async function boot(): Promise<void> {
   let lastActiveMs = Date.now();
   let fpsWindowStart = last;
   let fpsFrames = 0;
+  let lastDaySnapshot = { date: today(), lifetime: state.lifetimeEarned };
   let lastHud = 0;
   let prevBossActive = false;
   const quest = new Quest((text) => toast(text));
@@ -320,12 +324,42 @@ async function boot(): Promise<void> {
   requestAnimationFrame(frame);
 
   // 5) 存档与前后台切换
+  // 本地生涯纪录（独立 key，不动存档 schema）
+  let records: Records = (() => {
+    try {
+      return parseRecords(localStorage.getItem(RECORDS_KEY));
+    } catch {
+      return parseRecords(null);
+    }
+  })();
+  const saveRecords = (): void => {
+    try {
+      localStorage.setItem(RECORDS_KEY, JSON.stringify(records));
+    } catch {
+      /* 忽略 */
+    }
+  };
   let suppressSave = false; // rewindSave 后暂停写档，避免覆盖回拨的时间戳
   const saveTimer = setInterval(() => {
     if (!suppressSave) serialize(state, localStorageAdapter, Date.now());
   }, 10_000);
   const saveNow = (): void => {
     if (!suppressSave) serialize(state, localStorageAdapter, Date.now());
+    // 纪录：以"当日收入"为近似，用 lifetime 增量按日累计不易精确，这里用当日净增（同日首帧差值）
+    const dayKey = today();
+    const dayEarnedNow = state.lifetimeEarned - (lastDaySnapshot.date === dayKey ? lastDaySnapshot.lifetime : state.lifetimeEarned);
+    const r = updateRecords(records, {
+      date: dayKey,
+      dayEarned: dayEarnedNow,
+      streak: state.daily?.streak ?? 0,
+      lifetime: state.lifetimeEarned,
+      clicks: state.totalClicks,
+      collection: state.collected.quotes.length + state.collected.flavors.length,
+    });
+    if (r.changed) {
+      records = r.records;
+      saveRecords();
+    }
   };
   void saveTimer;
   document.addEventListener("pagehide", saveNow);

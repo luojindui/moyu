@@ -22,5 +22,6 @@ esac
 HELPER
 chmod 700 "$ASKPASS"
 
+# 关掉系统 credential.helper（osxkeychain 在沙箱里会挂死），只走 GIT_ASKPASS
 GIT_TERMINAL_PROMPT=0 GIT_ASKPASS="$ASKPASS" \
-  git push "$URL" "HEAD:refs/heads/$BRANCH"
+  git -c credential.helper= push "$URL" "HEAD:refs/heads/$BRANCH"

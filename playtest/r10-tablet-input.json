@@ -1,0 +1,89 @@
+{
+ "desktop1440": {
+  "realMouseClick": {
+   "before": "0.5",
+   "after": "1.7",
+   "added": 1.2
+  },
+  "afterClicks": {
+   "label": "after16clicks",
+   "moyu": "19.7",
+   "shopScrollLeft": 0,
+   "shopMax": 0,
+   "firstDisabled": false,
+   "firstAffordable": true,
+   "enabledCards": 1,
+   "active": "BODY"
+  },
+  "hoverAffordableCard": {
+   "cursor": "default",
+   "bg": "rgb(61, 74, 107)",
+   "transform": "none",
+   "matchedHover": true,
+   "hasHoverRule": false,
+   "cursorImg": null
+  },
+  "tabSeqAffordable": [
+   "button.shop-card|outline=auto/1px",
+   "#btn-mute|outline=auto/1px",
+   "#btn-journal|outline=auto/1px",
+   "button.shop-card|outline=auto/1px",
+   "BODY",
+   "#btn-mute|outline=auto/1px",
+   "#btn-journal|outline=auto/1px",
+   "button.shop-card|outline=auto/1px",
+   "#btn-mute|outline=auto/1px",
+   "#btn-journal|outline=auto/1px",
+   "button.shop-card|outline=auto/1px",
+   "BODY",
+   "#btn-mute|outline=auto/1px",
+   "#btn-journal|outline=auto/1px",
+   "button.shop-card|outline=auto/1px",
+   "#btn-mute|outline=auto/1px"
+  ],
+  "keyboardBuy": {
+   "before": {
+    "moyu": "19.9",
+    "confirm": false,
+    "cost": "15",
+    "level": ""
+   },
+   "after": {
+    "moyu": "20.0",
+    "confirm": false,
+    "level": "",
+    "toast": null
+   }
+  },
+  "keyboardClick": {
+   "before": "20.0",
+   "after": "20.0",
+   "added": 0,
+   "canvasTabIndex": -1
+  },
+  "shopHintAt1440": {
+   "opacity": "0.9",
+   "hidden": false,
+   "text": "← 滑动查看更多 →"
+  }
+ },
+ "landscape1024": {
+  "wheelVertical": {
+   "scrollLeft": 0,
+   "max": 324
+  },
+  "wheelHorizontal": {
+   "scrollLeft": 296,
+   "max": 324
+  },
+  "touchDrag": {
+   "before": 296,
+   "after": 324,
+   "max": 324
+  },
+  "touchClick": {
+   "before": "20.9",
+   "after": "22.0"
+  }
+ }
+}

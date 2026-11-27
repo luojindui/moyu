@@ -1,0 +1,98 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "at": "2026-11-27T04:17:49.911Z",
+  "steps": {
+    "boot": {
+      "readyMs": 327,
+      "hook": true
+    },
+    "ui": {
+      "hudRank": "实习生 0%",
+      "hudRankTitle": "摸鱼实习生 → 摸鱼学徒",
+      "keywordHits": [],
+      "stats": "生涯总收入\n0.0\n本局 / 往期\n0.0 / 0\n当前余额\n0.0\n累计投入\n0\n点击力 / 挂机\n1 / 0.2每秒\n累计点击\n0\n今日回访\n1/3（离线效率 80%）\n连续日报\n0 天\n图鉴\n0/55\n转生\n0 点（×1.00）",
+      "statsRank": "摸鱼实习生",
+      "collectionTotal": "0/55",
+      "buttons": [
+        "🔊",
+        "📔",
+        "点了才赚咖啡续命\n        +1 点击力\n        ★ 点击最优\n        15 摸鱼值\n        再戳 15 下",
+        "会自动赚刷手机\n        +1/秒 · ×2差5级\n        ★ 挂机最优\n        50 摸鱼值\n        还差 50.0",
+        "点了才赚带薪喝水\n        +2 点击力\n        \n        100 摸鱼值\n        再戳 100 下",
+        "会自动赚带薪蹲坑\n        +5/秒\n        \n        600 摸鱼值\n        还差 600.0",
+        "点了才赚人体工学椅\n        +5 点击力\n        \n        800 摸鱼值\n        再戳 800 下",
+        "会自动赚摸鱼群聊\n        +15/秒\n        \n        4000 摸鱼值\n        还差 4000.0",
+        "会自动赚无用会议\n        +50/秒\n        \n        2.50万 摸鱼值\n        还差 2.50万",
+        "会自动赚深度摸鱼\n        +180/秒 · ×2差5级\n        \n        15.00万 摸鱼值\n        还差 15.00万",
+        "会自动赚退休式躺平\n        +700/秒\n        \n        100.00万 摸鱼值\n        还差 100.00万",
+        "✕",
+        "完成 0/3",
+        "导出存档 JSON",
+        "复制/生成存档码",
+        "导入存档码",
+        "未解锁（本局累计 0.0 / 需 1.00亿）",
+        "继续摸鱼"
+      ]
+    },
+    "syntheticClicks": {
+      "before": {
+        "clicks": 0,
+        "lifetime": 0.049694
+      },
+      "after": {
+        "clicks": 30,
+        "lifetime": 35.52969400000005
+      },
+      "gainedClicks": null,
+      "syntheticCps": 11.76470588235294
+    },
+    "saveCode": {
+      "length": 774,
+      "bodyBytes": 575,
+      "bodyKeys": [
+        "v",
+        "moyu",
+        "totalEarned",
+        "levels",
+        "savedAt",
+        "createdAt",
+        "collected",
+        "daily",
+        "surviveStreak",
+        "totalClicks",
+        "visits",
+        "lifetimeEarned",
+        "prestige"
+      ]
+    },
+    "tamper": {
+      "badCodeRejected": false,
+      "forgedCodeLen": 769,
+      "forgedJsonBytes": 571,
+      "badCodeMsg": "导入失败：校验失败（可能复制不完整）"
+    },
+    "forgedImportApplied": {
+      "lifetime": 35.88465400003838,
+      "total": 35.88465400003838,
+      "moyu": 35.88465400003838,
+      "prestige": 0,
+      "rankFromEngine": null,
+      "hudRank": "实习生 0%",
+      "hudRankTitle": "摸鱼实习生 → 摸鱼学徒",
+      "statsRank": ""
+    },
+    "comparableFromCode": {
+      "fields": [
+        "lifetimeEarned",
+        "totalClicks",
+        "collected(quotes/flavors)",
+        "prestige",
+        "visits",
+        "daily.streak",
+        "surviveStreak"
+      ],
+      "decodeOnly": true,
+      "note": "decodeSaveCode + restore 即可算 computeStats，无需导入覆盖"
+    }
+  }
+}
