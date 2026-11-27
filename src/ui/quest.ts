@@ -84,7 +84,14 @@ export class Quest {
     {
       id: "zhaomu",
       doneText: "第一位同事 已入职",
-      text: () => "点右下 👥 招募第一位同事（新人价 1,500）：他会帮你自动摸鱼",
+      text: (s?: unknown) => {
+        const st = s as GameState | undefined;
+        const price = 1500;
+        const gap = st ? Math.max(0, price - st.moyu) : price;
+        return gap > 0
+          ? `攒够 1,500 再招同事（还差 ${Math.max(0, Math.ceil(gap))}，约 ${Math.ceil(gap)} 下）`
+          : "点右下 👥 招募第一位同事（新人价 1,500）";
+      },
       done: (s) => Object.keys(s.team.colleagues).length > 0,
       progress: (s) => Math.min(1, Object.keys(s.team.colleagues).length),
     },

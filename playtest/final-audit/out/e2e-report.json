@@ -1,11 +1,15 @@
 {
-  "generatedAt": "2026-11-27T13:32:36.589Z",
+  "generatedAt": "2026-11-27T14:25:28.956Z",
   "summary": {
-    "pass": 158,
-    "total": 160,
+    "pass": 104,
+    "total": 110,
     "failed": [
-      "H15 超时后应有「没来得及选」提示",
-      "K7b 未知升级键应被丢弃（数据卫生）"
+      "D2 完成提示出现",
+      "H11 宽限外选错真罚款",
+      "H12 罚款后连胜为 0",
+      "I 摸鱼站小游戏:STAGE-EXCEPTION",
+      "J 存档与离线:STAGE-EXCEPTION",
+      "K 边界与异常:STAGE-EXCEPTION"
     ]
   },
   "stages": [
@@ -28,7 +32,7 @@
         {
           "id": "A3 主循环在跑",
           "ok": true,
-          "detail": "51→58"
+          "detail": "30→37"
         },
         {
           "id": "A4 无 boot 错误横幅",
@@ -53,7 +57,7 @@
         {
           "id": "A8 初始状态干净",
           "ok": true,
-          "detail": "{\"m\":0.2167035999618531,\"c\":0}"
+          "detail": "{\"m\":0.1966699999618531,\"c\":0}"
         },
         {
           "id": "A9 canvas 尺寸有效",
@@ -66,7 +70,7 @@
           "detail": "[]"
         }
       ],
-      "ms": 60280
+      "ms": 51137
     },
     {
       "name": "B 新号首购",
@@ -77,7 +81,7 @@
         {
           "id": "B1 点击入账（20 次）",
           "ok": true,
-          "detail": "{\"clicks\":20,\"moyu\":\"22.99\"}"
+          "detail": "{\"clicks\":20,\"moyu\":\"23.04\"}"
         },
         {
           "id": "B2 咖啡可购买",
@@ -92,7 +96,7 @@
         {
           "id": "B4 扣款正确 -15",
           "ok": true,
-          "detail": "22.99→8.05"
+          "detail": "23.04→8.09"
         },
         {
           "id": "B5 HUD 点击力同步",
@@ -105,7 +109,7 @@
           "detail": "[]"
         }
       ],
-      "ms": 57546
+      "ms": 49457
     },
     {
       "name": "C 招募派遣领奖",
@@ -126,7 +130,7 @@
         {
           "id": "C3 老周招募按钮可用",
           "ok": true,
-          "detail": "{\"disabled\":false,\"text\":\"招募 1.20万\"}"
+          "detail": "{\"disabled\":false,\"text\":\"招募 1500\"}"
         },
         {
           "id": "C4 招募成功",
@@ -134,9 +138,9 @@
           "detail": "[\"zhou\"]"
         },
         {
-          "id": "C5 招募扣 12000",
+          "id": "C5 招募按实际价格扣款",
           "ok": true,
-          "detail": "15008→3015"
+          "detail": "价格 1500：15008→13515"
         },
         {
           "id": "C5b 小队挂机显示与引擎一致",
@@ -151,7 +155,7 @@
         {
           "id": "C7 派遣状态写入",
           "ok": true,
-          "detail": "{\"level\":1,\"missionId\":\"stroll\",\"startedAt\":1795786302486,\"endsAt\":1795786455486,\"favor\":0,\"autoRepeat\":false,\"rewardSnapshot\":660}"
+          "detail": "{\"level\":1,\"missionId\":\"stroll\",\"startedAt\":1795789483270,\"endsAt\":1795789636270,\"favor\":0,\"autoRepeat\":false,\"rewardSnapshot\":660}"
         },
         {
           "id": "C8 面板显示倒计时",
@@ -171,7 +175,7 @@
         {
           "id": "C11 奖励入账",
           "ok": true,
-          "detail": "3037.7→3707.1"
+          "detail": "13538.1→14207.2"
         },
         {
           "id": "C12 好感 +2（普攻非匹配）",
@@ -189,13 +193,15 @@
           "detail": "[]"
         }
       ],
-      "ms": 54689
+      "ms": 46282
     },
     {
       "name": "D 工位家具 8 件",
-      "pass": 15,
+      "pass": 14,
       "total": 15,
-      "failed": [],
+      "failed": [
+        "D2 完成提示出现"
+      ],
       "checks": [
         {
           "id": "D-buy-plant",
@@ -244,13 +250,13 @@
         },
         {
           "id": "D2 完成提示出现",
-          "ok": true,
-          "detail": "🎉 工位装修完成：挂机 +10%"
+          "ok": false,
+          "detail": "未捕获到提示"
         },
         {
           "id": "D3 读屏摘要含全部 8 件",
           "ok": true,
-          "detail": "工位已装修：绿萝（工位挂机 +5%）、护眼台灯（点击力 +15%）、毛绒地毯（离线效率 +5%）、迷你冰箱（工位挂机 +8%）、按摩椅（离线效率 +8%）、鱼缸"
+          "detail": "工位已装修：绿萝（工位挂机 +5%）、护眼台灯（点击力 +15%）、毛绒地毯（离线收益 +10%）、迷你冰箱（工位挂机 +8%）、按摩椅（离线收益 +18%）、"
         },
         {
           "id": "D4 完成 +10% 且 HUD 一致",
@@ -273,7 +279,7 @@
           "detail": "[]"
         }
       ],
-      "ms": 52393
+      "ms": 43957
     },
     {
       "name": "E 每日精力",
@@ -372,7 +378,7 @@
           "detail": "[]"
         }
       ],
-      "ms": 49238
+      "ms": 38221
     },
     {
       "name": "F 跨日重置",
@@ -408,7 +414,7 @@
         {
           "id": "F6 每日卡重置出 3 张",
           "ok": true,
-          "detail": "{\"offers\":[\"quiet_day\",\"early_leave\",\"click_frenzy\"],\"chosen\":null}"
+          "detail": "{\"offers\":[\"click_frenzy\",\"quiet_day\",\"overtime\"],\"chosen\":null}"
         },
         {
           "id": "F7 日报生成 3 目标",
@@ -426,7 +432,7 @@
           "detail": "[]"
         }
       ],
-      "ms": 46708
+      "ms": 35362
     },
     {
       "name": "G 每日卡",
@@ -447,7 +453,7 @@
         {
           "id": "G3 选卡写入",
           "ok": true,
-          "detail": "{\"chosen\":\"quiet_day\",\"chosenId\":\"quiet_day\"}"
+          "detail": "{\"chosen\":\"click_frenzy\",\"chosenId\":\"click_frenzy\"}"
         },
         {
           "id": "G4 卡面板关闭",
@@ -457,7 +463,7 @@
         {
           "id": "G5 HUD 常驻今日卡",
           "ok": true,
-          "detail": "卡·老板出差 vs 卡·老板出差"
+          "detail": "卡·手速上头 vs 卡·手速上头"
         },
         {
           "id": "G6 卡效果生效（HUD 挂机）",
@@ -470,14 +476,15 @@
           "detail": "[]"
         }
       ],
-      "ms": 45398
+      "ms": 34038
     },
     {
       "name": "H 回合制老板",
-      "pass": 16,
+      "pass": 15,
       "total": 17,
       "failed": [
-        "H15 超时后应有「没来得及选」提示"
+        "H11 宽限外选错真罚款",
+        "H12 罚款后连胜为 0"
       ],
       "checks": [
         {
@@ -508,7 +515,7 @@
         {
           "id": "H6 选对奖励 ×1.8",
           "ok": true,
-          "detail": "toast=王总：屏幕挺干净啊。 +219 期望 +219"
+          "detail": "toast=王总：屏幕挺干净啊。 +146 期望 +146"
         },
         {
           "id": "H7 选对连胜 +1",
@@ -518,7 +525,7 @@
         {
           "id": "H8 结果行内文案",
           "ok": true,
-          "detail": "王总：屏幕挺干净啊。 +219"
+          "detail": "王总：屏幕挺干净啊。 +146"
         },
         {
           "id": "H9 新手宽限选错不扣钱且有提示",
@@ -532,13 +539,13 @@
         },
         {
           "id": "H11 宽限外选错真罚款",
-          "ok": true,
-          "detail": "toast=王总：切得真快。 -134 期望 -134"
+          "ok": false,
+          "detail": "toast=日报可领 +1.22万，点右下 📔 期望 -89"
         },
         {
           "id": "H12 罚款后连胜为 0",
-          "ok": true,
-          "detail": "streak=0"
+          "ok": false,
+          "detail": "streak=1"
         },
         {
           "id": "H13 超时面板自动关闭",
@@ -548,12 +555,12 @@
         {
           "id": "H14 超时无奖惩（连胜不变）",
           "ok": true,
-          "detail": "0→0"
+          "detail": "1→1"
         },
         {
           "id": "H15 超时后应有「没来得及选」提示",
-          "ok": false,
-          "detail": "已作答后再超时：提示缺失（toast日志 []）"
+          "ok": true,
+          "detail": "已作答后再超时：提示缺失（toast日志 [\"没来得及选…这次不算\"]）"
         },
         {
           "id": "H16 首次超时提示正常",
@@ -566,13 +573,15 @@
           "detail": "[]"
         }
       ],
-      "ms": 43506
+      "ms": 32150
     },
     {
       "name": "I 摸鱼站小游戏",
-      "pass": 15,
-      "total": 15,
-      "failed": [],
+      "pass": 10,
+      "total": 11,
+      "failed": [
+        "I 摸鱼站小游戏:STAGE-EXCEPTION"
+      ],
       "checks": [
         {
           "id": "I1 3 个游戏可选",
@@ -587,22 +596,22 @@
         {
           "id": "I3 接咖啡消耗 1 次",
           "ok": true,
-          "detail": "{\"date\":\"2026-11-27\",\"played\":1,\"best\":{\"coffee\":6}}"
+          "detail": "{\"date\":\"2026-11-27\",\"played\":1,\"best\":{}}"
         },
         {
           "id": "I4 找老板消耗 1 次",
           "ok": true,
-          "detail": "{\"date\":\"2026-11-27\",\"played\":2,\"best\":{\"coffee\":6}}"
+          "detail": "{\"date\":\"2026-11-27\",\"played\":2,\"best\":{}}"
         },
         {
           "id": "I5 节奏点击消耗 1 次",
           "ok": true,
-          "detail": "{\"date\":\"2026-11-27\",\"played\":3,\"best\":{\"coffee\":6}}"
+          "detail": "{\"date\":\"2026-11-27\",\"played\":3,\"best\":{}}"
         },
         {
           "id": "I6 三局都有最高分记录或次数入账",
           "ok": true,
-          "detail": "{\"coffee\":6}"
+          "detail": "{}"
         },
         {
           "id": "I7 次数用尽文案",
@@ -625,292 +634,44 @@
           "detail": ""
         },
         {
-          "id": "I11 跨日次数恢复",
-          "ok": true,
-          "detail": "{\"date\":\"2026-11-27\",\"played\":0,\"best\":{\"coffee\":200,\"findboss\":300,\"rhythm\":150}}"
-        },
-        {
-          "id": "I12 跨日最高分保留",
-          "ok": true,
-          "detail": "{\"coffee\":200,\"findboss\":300,\"rhythm\":150}"
-        },
-        {
-          "id": "I13 跨日按钮重新可用",
-          "ok": true,
-          "detail": ""
-        },
-        {
-          "id": "I14 角标回到 3",
-          "ok": true,
-          "detail": ""
-        },
-        {
-          "id": "I15 无异常",
-          "ok": true,
-          "detail": "[]"
+          "id": "I 摸鱼站小游戏:STAGE-EXCEPTION",
+          "ok": false,
+          "detail": "ev 异常 window.__MOYU__.saveNow(): {\"exceptionId\":1,\"text\":\"Uncaught\",\"lineNumber\":0,\"columnNumber\":16,\"scriptId\":\"117\",\"exception\":{\"type\":\"object\",\"subtype\":\"error\",\"className\":\"TypeError\",\"description\":\"TypeError: Cannot read proper"
         }
       ],
-      "ms": 25385
+      "ms": 13901
     },
     {
       "name": "J 存档与离线",
-      "pass": 23,
-      "total": 23,
-      "failed": [],
+      "pass": 0,
+      "total": 1,
+      "failed": [
+        "J 存档与离线:STAGE-EXCEPTION"
+      ],
       "checks": [
         {
-          "id": "J1 刷新保留点击/等级",
-          "ok": true,
-          "detail": "{\"clicks\":[20,20],\"levels\":{\"coffee\":1}}"
-        },
-        {
-          "id": "J2 刷新保留家具/小队",
-          "ok": true,
-          "detail": "{\"decor\":8,\"team\":[\"zhou\"]}"
-        },
-        {
-          "id": "J3 刷新保留余额（只增不减）",
-          "ok": true,
-          "detail": "65262849.9→65262861.7"
-        },
-        {
-          "id": "J4 savedAt 正常推进",
-          "ok": true,
-          "detail": "1795786345525"
-        },
-        {
-          "id": "J5 存档码导出非空",
-          "ok": true,
-          "detail": "长度 1752, 片段 eyJ2IjoyLCJtb3l1Ijo2"
-        },
-        {
-          "id": "J6 存档码含校验位",
-          "ok": true,
-          "detail": "MH19.13mbu6k"
-        },
-        {
-          "id": "J7 改动生效",
-          "ok": true,
-          "detail": "65262862→65312878"
-        },
-        {
-          "id": "J8 刷新保留改动",
-          "ok": true,
-          "detail": "65312878.0→65312887.8"
-        },
-        {
-          "id": "J9 导入触发重载",
-          "ok": true,
-          "detail": ""
-        },
-        {
-          "id": "J10 导入恢复旧余额",
-          "ok": true,
-          "detail": "恢复后 65262879.5 vs 导出时 65262861.7"
-        },
-        {
-          "id": "J11 导入恢复点击/等级",
-          "ok": true,
-          "detail": "{\"clicks\":20,\"levels\":{\"coffee\":1}}"
-        },
-        {
-          "id": "J12 导入前备份旧档",
-          "ok": true,
-          "detail": ""
-        },
-        {
-          "id": "J13 非法存档码被拒",
-          "ok": true,
-          "detail": "导入失败：格式不正确"
-        },
-        {
-          "id": "J14 非法导入不重载",
-          "ok": true,
-          "detail": ""
-        },
-        {
-          "id": "J15 离线欢迎面板",
-          "ok": true,
-          "detail": ""
-        },
-        {
-          "id": "J16 离线收益符合引擎公式",
-          "ok": true,
-          "detail": "实际 70572.3 期望 70564.1~70858.1 (面板 7.06万)"
-        },
-        {
-          "id": "J17 欢迎面板文案（离线效率 + 真实 12h 封顶）",
-          "ok": true,
-          "detail": "离线效率 95%｜12 小时封顶"
-        },
-        {
-          "id": "J18 超上限仍弹面板",
-          "ok": true,
-          "detail": ""
-        },
-        {
-          "id": "J19 封顶提示 12 小时",
-          "ok": true,
-          "detail": "离线效率 95%｜超过上限，已按上限结算 12 小时 0 分"
-        },
-        {
-          "id": "J20 时钟回拨不崩溃",
-          "ok": true,
-          "detail": ""
-        },
-        {
-          "id": "J21 时钟回拨不白送离线",
-          "ok": true,
-          "detail": "welcome 不应出现"
-        },
-        {
-          "id": "J22 未来档不丢档",
-          "ok": true,
-          "detail": "{\"clicks\":20,\"decor\":8}"
-        },
-        {
-          "id": "J23 无异常",
-          "ok": true,
-          "detail": "[]"
+          "id": "J 存档与离线:STAGE-EXCEPTION",
+          "ok": false,
+          "detail": "ev 异常 window.__MOYU__.saveNow(): {\"exceptionId\":2,\"text\":\"Uncaught\",\"lineNumber\":0,\"columnNumber\":16,\"scriptId\":\"117\",\"exception\":{\"type\":\"object\",\"subtype\":\"error\",\"className\":\"TypeError\",\"description\":\"TypeError: Cannot read proper"
         }
       ],
-      "ms": 11069
+      "ms": 210
     },
     {
       "name": "K 边界与异常",
-      "pass": 24,
-      "total": 25,
+      "pass": 0,
+      "total": 1,
       "failed": [
-        "K7b 未知升级键应被丢弃（数据卫生）"
+        "K 边界与异常:STAGE-EXCEPTION"
       ],
       "checks": [
         {
-          "id": "K1 未来版本档拒绝读取",
-          "ok": true,
-          "detail": "{\"moyu\":0.10000680007629391,\"clicks\":0}"
-        },
-        {
-          "id": "K2 未来版本档已备份",
-          "ok": true,
-          "detail": ""
-        },
-        {
-          "id": "K3 v1 旧档迁移可读",
-          "ok": true,
-          "detail": "{\"moyu\":5000.099706800002,\"levels\":{\"coffee\":2}}"
-        },
-        {
-          "id": "K4 损坏档不崩溃",
-          "ok": true,
-          "detail": ""
-        },
-        {
-          "id": "K5 损坏档回初始状态",
-          "ok": true,
-          "detail": "{\"moyu\":0.09668000007629392}"
-        },
-        {
-          "id": "K6 极值档可启动",
-          "ok": true,
-          "detail": ""
-        },
-        {
-          "id": "K7a 超上限等级被丢弃 / 负数丢弃",
-          "ok": true,
-          "detail": "{\"hack\":5}"
-        },
-        {
-          "id": "K7b 未知升级键应被丢弃（数据卫生）",
+          "id": "K 边界与异常:STAGE-EXCEPTION",
           "ok": false,
-          "detail": "实际保留 {\"hack\":5}"
-        },
-        {
-          "id": "K8 家具只留合法 id",
-          "ok": true,
-          "detail": "[\"plant\"]"
-        },
-        {
-          "id": "K9 精力被推导钳制（focus×2/1.08 + slack 1.25 → 挂机 1.35、点击 2）",
-          "ok": true,
-          "detail": "{\"date\":\"2026-11-27\",\"left\":0,\"used\":[\"focus\",\"slack\"],\"boosted\":{\"idleMult\":1.35,\"patrolRewardMult\":1,\"clickMult\":2}}"
-        },
-        {
-          "id": "K10 小游戏次数钳制",
-          "ok": true,
-          "detail": "{\"date\":\"2026-11-27\",\"played\":3,\"best\":{\"coffee\":8000}}"
-        },
-        {
-          "id": "K11 未知同事丢弃 / 合法任务保留",
-          "ok": true,
-          "detail": "[\"zhou\"]"
-        },
-        {
-          "id": "K12 等级/任务时间被钳制",
-          "ok": true,
-          "detail": "{\"level\":5,\"missionId\":null,\"startedAt\":0,\"endsAt\":0,\"favor\":100,\"autoRepeat\":false,\"rewardSnapshot\":1000000000000000000}"
-        },
-        {
-          "id": "K13 非法卡档被重置为合法今日卡",
-          "ok": true,
-          "detail": "{\"chosen\":null,\"offers\":[\"overtime\",\"hr_talk\",\"click_frenzy\"],\"date\":\"2026-11-27\"}"
-        },
-        {
-          "id": "K14 非法日报被重建为合法日报",
-          "ok": true,
-          "detail": "{\"goals\":[\"visit_1\",\"idle_earn\",\"buy_3\"],\"claimed\":false}"
-        },
-        {
-          "id": "K15 图鉴净化",
-          "ok": true,
-          "detail": "{\"quotes\":[],\"flavors\":[]}"
-        },
-        {
-          "id": "K16 HUD 无 NaN/Infinity",
-          "ok": true,
-          "detail": "{\"moyu\":\"1e+300亿\",\"click\":\"187.50万\",\"idle\":\"7675.06万\",\"rank\":\"宇宙尽头·终\",\"card\":\"\",\"toast\":\"\",\"toastShown\":false,\"sr\":\"\"}"
-        },
-        {
-          "id": "K17 极值档仍可操作（帧推进）",
-          "ok": true,
-          "detail": ""
-        },
-        {
-          "id": "K18 同步连点只结算 1 次（80ms 冷却）",
-          "ok": true,
-          "detail": "0→1"
-        },
-        {
-          "id": "K19 无异常",
-          "ok": true,
-          "detail": "[]"
-        },
-        {
-          "id": "K20 面板快速开关后状态一致",
-          "ok": true,
-          "detail": "中途 open=false"
-        },
-        {
-          "id": "K21 日报快速开关后关闭",
-          "ok": true,
-          "detail": ""
-        },
-        {
-          "id": "K22 Esc 关闭面板",
-          "ok": true,
-          "detail": ""
-        },
-        {
-          "id": "K23 键盘空格也能点",
-          "ok": true,
-          "detail": "1→3"
-        },
-        {
-          "id": "K24 无异常",
-          "ok": true,
-          "detail": "[]"
+          "detail": "ev 异常 window.__MOYU__.saveNow(): {\"exceptionId\":3,\"text\":\"Uncaught\",\"lineNumber\":0,\"columnNumber\":16,\"scriptId\":\"117\",\"exception\":{\"type\":\"object\",\"subtype\":\"error\",\"className\":\"TypeError\",\"description\":\"TypeError: Cannot read proper"
         }
       ],
-      "ms": 4679
+      "ms": 169
     }
   ]
 }

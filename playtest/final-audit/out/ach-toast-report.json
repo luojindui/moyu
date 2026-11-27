@@ -1,0 +1,49 @@
+{
+  "name": "成就提示/UI",
+  "pass": 8,
+  "total": 8,
+  "failed": [],
+  "checks": [
+    {
+      "id": "T1 构造档 22/22 成就达成",
+      "ok": true,
+      "detail": "{\"points\":22,\"level\":6,\"total\":22}"
+    },
+    {
+      "id": "T2 老玩家启动不误报「成就解锁」toast",
+      "ok": true,
+      "detail": "误报 []（state.totalClicks=100000）"
+    },
+    {
+      "id": "T3 成就墙渲染 22 条且 22 完成",
+      "ok": true,
+      "detail": "{\"n\":22,\"done\":22,\"summary\":\"22/22 · Lv.6\"}"
+    },
+    {
+      "id": "T4 进度条可见（高度≥3px、宽度>0）",
+      "ok": true,
+      "detail": "{\"heights\":[5,5,5,5,5],\"widths\":[234,234,234,234,234]}"
+    },
+    {
+      "id": "T5 汇总 22/22 · Lv.6",
+      "ok": true,
+      "detail": "22/22 · Lv.6"
+    },
+    {
+      "id": "T6 缺 1 条的老玩家启动也不误报",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "id": "T7 真实解锁有提示",
+      "ok": true,
+      "detail": "[\"🏆 成就解锁：今日宜摸鱼\"]"
+    },
+    {
+      "id": "T8 无 JS 异常",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "ms": 16370
+}
