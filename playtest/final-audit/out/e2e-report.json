@@ -1,22 +1,14 @@
 {
-  "generatedAt": "2026-11-27T13:03:31.987Z",
+  "generatedAt": "2026-11-27T13:09:37.508Z",
   "summary": {
-    "pass": 141,
-    "total": 154,
+    "pass": 154,
+    "total": 159,
     "failed": [
-      "C5 招募扣 12000",
-      "C13 面板浮动提示",
       "E6 刷新后 focus 点击仍 ×2",
       "E7 刷新后 focus 挂机仍 +8%",
-      "H5 选对奖励 ×1.8",
-      "H6 选对连胜 +1",
-      "H7 新手宽限内选错不扣钱",
-      "H9 第 4 次巡逻选错扣罚款",
-      "H12 超时提示出现",
-      "J16 离线收益符合公式",
-      "K7 等级被钳制/未知键丢弃",
-      "K13 每日卡净化",
-      "K14 日报非法回 null"
+      "H5 弹层遮罩真实挡住画布点击",
+      "H15 超时后应有「没来得及选」提示",
+      "K7b 未知升级键应被丢弃（数据卫生）"
     ]
   },
   "stages": [
@@ -39,7 +31,7 @@
         {
           "id": "A3 主循环在跑",
           "ok": true,
-          "detail": "45→51"
+          "detail": "52→58"
         },
         {
           "id": "A4 无 boot 错误横幅",
@@ -64,7 +56,7 @@
         {
           "id": "A8 初始状态干净",
           "ok": true,
-          "detail": "{\"m\":0.17000719999999997,\"c\":0}"
+          "detail": "{\"m\":0.1866683998855591,\"c\":0}"
         },
         {
           "id": "A9 canvas 尺寸有效",
@@ -77,7 +69,7 @@
           "detail": "[]"
         }
       ],
-      "ms": 50639
+      "ms": 57100
     },
     {
       "name": "B 新号首购",
@@ -88,7 +80,7 @@
         {
           "id": "B1 点击入账（20 次）",
           "ok": true,
-          "detail": "{\"clicks\":20,\"moyu\":\"22.95\"}"
+          "detail": "{\"clicks\":20,\"moyu\":\"22.93\"}"
         },
         {
           "id": "B2 咖啡可购买",
@@ -103,7 +95,7 @@
         {
           "id": "B4 扣款正确 -15",
           "ok": true,
-          "detail": "22.95→8.00"
+          "detail": "22.93→7.98"
         },
         {
           "id": "B5 HUD 点击力同步",
@@ -116,16 +108,13 @@
           "detail": "[]"
         }
       ],
-      "ms": 49696
+      "ms": 55919
     },
     {
       "name": "C 招募派遣领奖",
-      "pass": 12,
+      "pass": 14,
       "total": 14,
-      "failed": [
-        "C5 招募扣 12000",
-        "C13 面板浮动提示"
-      ],
+      "failed": [],
       "checks": [
         {
           "id": "C1 资金注入生效",
@@ -149,7 +138,7 @@
         },
         {
           "id": "C5 招募扣 12000",
-          "ok": false,
+          "ok": true,
           "detail": "15008→3015"
         },
         {
@@ -160,7 +149,7 @@
         {
           "id": "C7 派遣状态写入",
           "ok": true,
-          "detail": "{\"level\":1,\"missionId\":\"stroll\",\"startedAt\":1795784565689,\"endsAt\":1795784718689,\"favor\":0,\"autoRepeat\":false,\"rewardSnapshot\":660}"
+          "detail": "{\"level\":1,\"missionId\":\"stroll\",\"startedAt\":1795784924891,\"endsAt\":1795785077891,\"favor\":0,\"autoRepeat\":false,\"rewardSnapshot\":660}"
         },
         {
           "id": "C8 面板显示倒计时",
@@ -189,8 +178,8 @@
         },
         {
           "id": "C13 面板浮动提示",
-          "ok": false,
-          "detail": "老周 回来了，可领取"
+          "ok": true,
+          "detail": "老周 回来了，可领取 | 任务完成 +660"
         },
         {
           "id": "C14 无异常",
@@ -198,7 +187,7 @@
           "detail": "[]"
         }
       ],
-      "ms": 46860
+      "ms": 53197
     },
     {
       "name": "D 工位家具 8 件",
@@ -282,7 +271,7 @@
           "detail": "[]"
         }
       ],
-      "ms": 44605
+      "ms": 50917
     },
     {
       "name": "E 每日精力",
@@ -384,7 +373,7 @@
           "detail": "[]"
         }
       ],
-      "ms": 41449
+      "ms": 47785
     },
     {
       "name": "F 跨日重置",
@@ -420,12 +409,12 @@
         {
           "id": "F6 每日卡重置出 3 张",
           "ok": true,
-          "detail": "{\"offers\":[\"overtime\",\"team_bond\",\"big_meeting\"],\"chosen\":null}"
+          "detail": "{\"offers\":[\"coffee_day\",\"team_bond\",\"intern_ask\"],\"chosen\":null}"
         },
         {
           "id": "F7 日报生成 3 目标",
           "ok": true,
-          "detail": "[\"visit_1\",\"idle_earn\",\"click_100\"]"
+          "detail": "[\"visit_1\",\"idle_earn\",\"survive_2\"]"
         },
         {
           "id": "F8 🎮 角标回到 3",
@@ -438,7 +427,7 @@
           "detail": "[]"
         }
       ],
-      "ms": 38765
+      "ms": 45108
     },
     {
       "name": "G 每日卡",
@@ -459,7 +448,7 @@
         {
           "id": "G3 选卡写入",
           "ok": true,
-          "detail": "{\"chosen\":\"overtime\",\"chosenId\":\"overtime\"}"
+          "detail": "{\"chosen\":\"coffee_day\",\"chosenId\":\"coffee_day\"}"
         },
         {
           "id": "G4 卡面板关闭",
@@ -469,12 +458,12 @@
         {
           "id": "G5 HUD 常驻今日卡",
           "ok": true,
-          "detail": "卡·通宵摸鱼 vs 卡·通宵摸鱼"
+          "detail": "卡·咖啡管够 vs 卡·咖啡管够"
         },
         {
           "id": "G6 卡效果生效（HUD 挂机）",
           "ok": true,
-          "detail": "20.5 vs 20.5"
+          "detail": "20.4 vs 20.4"
         },
         {
           "id": "G7 无异常",
@@ -482,18 +471,15 @@
           "detail": "[]"
         }
       ],
-      "ms": 37461
+      "ms": 43807
     },
     {
       "name": "H 回合制老板",
-      "pass": 8,
-      "total": 13,
+      "pass": 15,
+      "total": 17,
       "failed": [
-        "H5 选对奖励 ×1.8",
-        "H6 选对连胜 +1",
-        "H7 新手宽限内选错不扣钱",
-        "H9 第 4 次巡逻选错扣罚款",
-        "H12 超时提示出现"
+        "H5 弹层遮罩真实挡住画布点击",
+        "H15 超时后应有「没来得及选」提示"
       ],
       "checks": [
         {
@@ -509,7 +495,7 @@
         {
           "id": "H3 三个选项",
           "ok": true,
-          "detail": "选项 3"
+          "detail": ""
         },
         {
           "id": "H4 决策期点击被拦截",
@@ -517,52 +503,72 @@
           "detail": "20→20"
         },
         {
-          "id": "H5 选对奖励 ×1.8",
+          "id": "H5 弹层遮罩真实挡住画布点击",
           "ok": false,
-          "detail": "实际 14.4 期望 147"
+          "detail": "{\"tag\":\"CANVAS\",\"inBoss\":false}"
         },
         {
-          "id": "H6 选对连胜 +1",
-          "ok": false,
-          "detail": "streak=0"
+          "id": "H6 选对奖励 ×1.8",
+          "ok": true,
+          "detail": "toast=王总：屏幕挺干净啊。 +146 期望 +146"
         },
         {
-          "id": "H7 新手宽限内选错不扣钱",
-          "ok": false,
-          "detail": "delta 18.5"
+          "id": "H7 选对连胜 +1",
+          "ok": true,
+          "detail": "streak=1"
         },
         {
-          "id": "H8 选错连胜清零",
+          "id": "H8 结果行内文案",
+          "ok": true,
+          "detail": "王总：屏幕挺干净啊。 +146"
+        },
+        {
+          "id": "H9 新手宽限选错不扣钱且有提示",
+          "ok": true,
+          "detail": "王总：切得真快。（新手保护，这次不扣钱）"
+        },
+        {
+          "id": "H10 选错连胜清零",
           "ok": true,
           "detail": "streak=0"
         },
         {
-          "id": "H9 第 4 次巡逻选错扣罚款",
-          "ok": false,
-          "detail": "损失 63.5 期望≈82"
+          "id": "H11 宽限外选错真罚款",
+          "ok": true,
+          "detail": "toast=王总：切得真快。 -89 期望 -89"
         },
         {
-          "id": "H10 超时面板自动关闭",
+          "id": "H12 罚款后连胜为 0",
+          "ok": true,
+          "detail": "streak=0"
+        },
+        {
+          "id": "H13 超时面板自动关闭",
           "ok": true,
           "detail": ""
         },
         {
-          "id": "H11 超时无奖惩（连胜不变）",
+          "id": "H14 超时无奖惩（连胜不变）",
           "ok": true,
           "detail": "0→0"
         },
         {
-          "id": "H12 超时提示出现",
+          "id": "H15 超时后应有「没来得及选」提示",
           "ok": false,
-          "detail": "王总：切得真快。 -82"
+          "detail": "已作答后再超时：提示缺失（toast日志 []）"
         },
         {
-          "id": "H13 无异常",
+          "id": "H16 首次超时提示正常",
+          "ok": true,
+          "detail": "[\"没来得及选…这次不算\"]"
+        },
+        {
+          "id": "H17 无异常",
           "ok": true,
           "detail": "[]"
         }
       ],
-      "ms": 35593
+      "ms": 41909
     },
     {
       "name": "I 摸鱼站小游戏",
@@ -583,22 +589,22 @@
         {
           "id": "I3 接咖啡消耗 1 次",
           "ok": true,
-          "detail": "{\"date\":\"2026-11-27\",\"played\":1,\"best\":{\"coffee\":8}}"
+          "detail": "{\"date\":\"2026-11-27\",\"played\":1,\"best\":{\"coffee\":6}}"
         },
         {
           "id": "I4 找老板消耗 1 次",
           "ok": true,
-          "detail": "{\"date\":\"2026-11-27\",\"played\":2,\"best\":{\"coffee\":8}}"
+          "detail": "{\"date\":\"2026-11-27\",\"played\":2,\"best\":{\"coffee\":6}}"
         },
         {
           "id": "I5 节奏点击消耗 1 次",
           "ok": true,
-          "detail": "{\"date\":\"2026-11-27\",\"played\":3,\"best\":{\"coffee\":8}}"
+          "detail": "{\"date\":\"2026-11-27\",\"played\":3,\"best\":{\"coffee\":6}}"
         },
         {
           "id": "I6 三局都有最高分记录或次数入账",
           "ok": true,
-          "detail": "{\"coffee\":8}"
+          "detail": "{\"coffee\":6}"
         },
         {
           "id": "I7 次数用尽文案",
@@ -646,15 +652,13 @@
           "detail": "[]"
         }
       ],
-      "ms": 24859
+      "ms": 24823
     },
     {
       "name": "J 存档与离线",
-      "pass": 22,
+      "pass": 23,
       "total": 23,
-      "failed": [
-        "J16 离线收益符合公式"
-      ],
+      "failed": [],
       "checks": [
         {
           "id": "J1 刷新保留点击/等级",
@@ -669,32 +673,32 @@
         {
           "id": "J3 刷新保留余额（只增不减）",
           "ok": true,
-          "detail": "65262321.3→65262333.7"
+          "detail": "65262733.4→65262745.8"
         },
         {
           "id": "J4 savedAt 正常推进",
           "ok": true,
-          "detail": "1795784601302"
+          "detail": "1795784966906"
         },
         {
           "id": "J5 存档码导出非空",
           "ok": true,
-          "detail": "长度 1746, 片段 eyJ2IjoyLCJtb3l1Ijo2"
+          "detail": "长度 1748, 片段 eyJ2IjoyLCJtb3l1Ijo2"
         },
         {
           "id": "J6 存档码含校验位",
           "ok": true,
-          "detail": "owfX0.ybkplw"
+          "detail": "MH19.1cplzt1"
         },
         {
           "id": "J7 改动生效",
           "ok": true,
-          "detail": "65262334→65312346"
+          "detail": "65262746→65312758"
         },
         {
           "id": "J8 刷新保留改动",
           "ok": true,
-          "detail": "65312346.0→65312356.0"
+          "detail": "65312758.0→65312767.9"
         },
         {
           "id": "J9 导入触发重载",
@@ -704,7 +708,7 @@
         {
           "id": "J10 导入恢复旧余额",
           "ok": true,
-          "detail": "恢复后 65262347.7 vs 导出时 65262333.7"
+          "detail": "恢复后 65262760.1 vs 导出时 65262745.8"
         },
         {
           "id": "J11 导入恢复点击/等级",
@@ -732,9 +736,9 @@
           "detail": ""
         },
         {
-          "id": "J16 离线收益符合公式",
-          "ok": false,
-          "detail": "实际 77918.7 期望 152076.6 (7.79万)"
+          "id": "J16 离线收益符合引擎公式",
+          "ok": true,
+          "detail": "实际 91789.1 期望 91781.2~92163.6 (面板 9.18万)"
         },
         {
           "id": "J17 欢迎面板文案",
@@ -772,22 +776,20 @@
           "detail": "[]"
         }
       ],
-      "ms": 10687
+      "ms": 10604
     },
     {
       "name": "K 边界与异常",
-      "pass": 21,
-      "total": 24,
+      "pass": 24,
+      "total": 25,
       "failed": [
-        "K7 等级被钳制/未知键丢弃",
-        "K13 每日卡净化",
-        "K14 日报非法回 null"
+        "K7b 未知升级键应被丢弃（数据卫生）"
       ],
       "checks": [
         {
           "id": "K1 未来版本档拒绝读取",
           "ok": true,
-          "detail": "{\"moyu\":0.09999999999999996,\"clicks\":0}"
+          "detail": "{\"moyu\":0.09788000015258787,\"clicks\":0}"
         },
         {
           "id": "K2 未来版本档已备份",
@@ -797,7 +799,7 @@
         {
           "id": "K3 v1 旧档迁移可读",
           "ok": true,
-          "detail": "{\"moyu\":5000.09852000004,\"levels\":{\"coffee\":2}}"
+          "detail": "{\"moyu\":5000.100006800078,\"levels\":{\"coffee\":2}}"
         },
         {
           "id": "K4 损坏档不崩溃",
@@ -807,7 +809,7 @@
         {
           "id": "K5 损坏档回初始状态",
           "ok": true,
-          "detail": "{\"moyu\":0.097799999961853}"
+          "detail": "{\"moyu\":0.09708000003814694}"
         },
         {
           "id": "K6 极值档可启动",
@@ -815,9 +817,14 @@
           "detail": ""
         },
         {
-          "id": "K7 等级被钳制/未知键丢弃",
-          "ok": false,
+          "id": "K7a 超上限等级被丢弃 / 负数丢弃",
+          "ok": true,
           "detail": "{\"hack\":5}"
+        },
+        {
+          "id": "K7b 未知升级键应被丢弃（数据卫生）",
+          "ok": false,
+          "detail": "实际保留 {\"hack\":5}"
         },
         {
           "id": "K8 家具只留合法 id",
@@ -845,14 +852,14 @@
           "detail": "{\"level\":5,\"missionId\":null,\"startedAt\":0,\"endsAt\":0,\"favor\":100,\"autoRepeat\":false,\"rewardSnapshot\":1000000000000000000}"
         },
         {
-          "id": "K13 每日卡净化",
-          "ok": false,
-          "detail": "{\"chosen\":null,\"offers\":[\"deadline\",\"hr_talk\",\"team_bond\"]}"
+          "id": "K13 非法卡档被重置为合法今日卡",
+          "ok": true,
+          "detail": "{\"chosen\":null,\"offers\":[\"team_bond\",\"ac_broken\",\"quiet_day\"],\"date\":\"2026-11-27\"}"
         },
         {
-          "id": "K14 日报非法回 null",
-          "ok": false,
-          "detail": "{\"date\":\"2026-11-27\",\"goals\":[{\"id\":\"visit_1\",\"target\":1,\"progress\":1,\"done\":true},{\"id\":\"idle_earn\",\"target\":1,\"progress\":1,\"done\":true},{\"id\":\"click_100\",\"target\":100,\"progress\":0,\"done\":false}],\"streak\":0,\"lastCompleteDate\":null,\"claimed\":false,\"window\":3,\"claimsToday\":0}"
+          "id": "K14 非法日报被重建为合法日报",
+          "ok": true,
+          "detail": "{\"goals\":[\"visit_1\",\"idle_earn\",\"survive_2\"],\"claimed\":false}"
         },
         {
           "id": "K15 图鉴净化",
@@ -905,7 +912,7 @@
           "detail": "[]"
         }
       ],
-      "ms": 4497
+      "ms": 4459
     }
   ]
 }

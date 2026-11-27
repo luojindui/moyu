@@ -1,25 +1,33 @@
 {
   "rows": [
     {
-      "stage": "early",
+      "stage": "d1",
       "profile": "碎片3访(在线0.5h/0点击/离线23h)",
-      "baseDaily": 803112,
+      "baseDaily": 2242434627,
       "singles": {
-        "slack": 24.94,
-        "fake-work": 0.17,
-        "social": 0,
-        "focus": 8.09
+        "slack": 23.72,
+        "fake-work": 0.13,
+        "social": 4.74,
+        "focus": 7.59
       },
-      "bestSubset": {
+      "best": {
         "set": [
           "slack",
           "focus"
         ],
         "cost": 85,
-        "valuePct": 35.02
+        "valuePct": 33.21
       },
-      "comboValuePct": 25.11,
-      "comboRank": 3,
+      "combo": {
+        "set": [
+          "slack",
+          "fake-work",
+          "social"
+        ],
+        "cost": 100,
+        "valuePct": 29.81
+      },
+      "comboRank": 2,
       "top": [
         {
           "set": [
@@ -27,15 +35,7 @@
             "focus"
           ],
           "cost": 85,
-          "valuePct": 35.02
-        },
-        {
-          "set": [
-            "slack",
-            "fake-work"
-          ],
-          "cost": 75,
-          "valuePct": 25.11
+          "valuePct": 33.21
         },
         {
           "set": [
@@ -44,37 +44,54 @@
             "social"
           ],
           "cost": 100,
-          "valuePct": 25.11
+          "valuePct": 29.81
         },
         {
           "set": [
-            "slack"
+            "slack",
+            "social"
           ],
-          "cost": 40,
-          "valuePct": 24.94
+          "cost": 65,
+          "valuePct": 29.65
+        },
+        {
+          "set": [
+            "slack",
+            "fake-work"
+          ],
+          "cost": 75,
+          "valuePct": 23.88
         }
       ]
     },
     {
-      "stage": "early",
+      "stage": "d1",
       "profile": "重度(在线2h/5400点击/离线21h)",
-      "baseDaily": 828267,
+      "baseDaily": 2225737991,
       "singles": {
-        "slack": 23.68,
-        "fake-work": 0.65,
-        "social": 0,
-        "focus": 12.32
+        "slack": 23.65,
+        "fake-work": 0.51,
+        "social": 4.73,
+        "focus": 7.57
       },
-      "bestSubset": {
+      "best": {
         "set": [
           "slack",
           "focus"
         ],
         "cost": 85,
-        "valuePct": 37.89
+        "valuePct": 33.11
       },
-      "comboValuePct": 24.33,
-      "comboRank": 3,
+      "combo": {
+        "set": [
+          "slack",
+          "fake-work",
+          "social"
+        ],
+        "cost": 100,
+        "valuePct": 30.21
+      },
+      "comboRank": 2,
       "top": [
         {
           "set": [
@@ -82,15 +99,7 @@
             "focus"
           ],
           "cost": 85,
-          "valuePct": 37.89
-        },
-        {
-          "set": [
-            "slack",
-            "fake-work"
-          ],
-          "cost": 75,
-          "valuePct": 24.33
+          "valuePct": 33.11
         },
         {
           "set": [
@@ -99,36 +108,53 @@
             "social"
           ],
           "cost": 100,
-          "valuePct": 24.33
+          "valuePct": 30.21
         },
         {
           "set": [
-            "slack"
+            "slack",
+            "social"
           ],
-          "cost": 40,
-          "valuePct": 23.68
+          "cost": 65,
+          "valuePct": 29.56
+        },
+        {
+          "set": [
+            "slack",
+            "fake-work"
+          ],
+          "cost": 75,
+          "valuePct": 24.27
         }
       ]
     },
     {
-      "stage": "mid",
+      "stage": "d2",
       "profile": "碎片3访(在线0.5h/0点击/离线23h)",
-      "baseDaily": 393769846,
+      "baseDaily": 26062270518,
       "singles": {
-        "slack": 24.21,
+        "slack": 22.92,
         "fake-work": 0.11,
-        "social": 4.84,
-        "focus": 7.75
+        "social": 4.58,
+        "focus": 7.34
       },
-      "bestSubset": {
+      "best": {
         "set": [
           "slack",
           "focus"
         ],
         "cost": 85,
-        "valuePct": 33.9
+        "valuePct": 32.09
       },
-      "comboValuePct": 30.41,
+      "combo": {
+        "set": [
+          "slack",
+          "fake-work",
+          "social"
+        ],
+        "cost": 100,
+        "valuePct": 28.79
+      },
       "comboRank": 2,
       "top": [
         {
@@ -137,7 +163,7 @@
             "focus"
           ],
           "cost": 85,
-          "valuePct": 33.9
+          "valuePct": 32.09
         },
         {
           "set": [
@@ -146,7 +172,7 @@
             "social"
           ],
           "cost": 100,
-          "valuePct": 30.41
+          "valuePct": 28.79
         },
         {
           "set": [
@@ -154,7 +180,7 @@
             "social"
           ],
           "cost": 65,
-          "valuePct": 30.26
+          "valuePct": 28.65
         },
         {
           "set": [
@@ -162,29 +188,37 @@
             "fake-work"
           ],
           "cost": 75,
-          "valuePct": 24.35
+          "valuePct": 23.06
         }
       ]
     },
     {
-      "stage": "mid",
+      "stage": "d2",
       "profile": "重度(在线2h/5400点击/离线21h)",
-      "baseDaily": 386828291,
+      "baseDaily": 26190430623,
       "singles": {
-        "slack": 24.14,
-        "fake-work": 0.45,
-        "social": 4.83,
-        "focus": 7.86
+        "slack": 22.86,
+        "fake-work": 0.44,
+        "social": 4.57,
+        "focus": 7.32
       },
-      "bestSubset": {
+      "best": {
         "set": [
           "slack",
           "focus"
         ],
         "cost": 85,
-        "valuePct": 33.93
+        "valuePct": 32
       },
-      "comboValuePct": 30.75,
+      "combo": {
+        "set": [
+          "slack",
+          "fake-work",
+          "social"
+        ],
+        "cost": 100,
+        "valuePct": 29.13
+      },
       "comboRank": 2,
       "top": [
         {
@@ -193,7 +227,7 @@
             "focus"
           ],
           "cost": 85,
-          "valuePct": 33.93
+          "valuePct": 32
         },
         {
           "set": [
@@ -202,7 +236,7 @@
             "social"
           ],
           "cost": 100,
-          "valuePct": 30.75
+          "valuePct": 29.13
         },
         {
           "set": [
@@ -210,7 +244,7 @@
             "social"
           ],
           "cost": 65,
-          "valuePct": 30.17
+          "valuePct": 28.57
         },
         {
           "set": [
@@ -218,29 +252,37 @@
             "fake-work"
           ],
           "cost": 75,
-          "valuePct": 24.69
+          "valuePct": 23.39
         }
       ]
     },
     {
-      "stage": "late",
+      "stage": "d4",
       "profile": "碎片3访(在线0.5h/0点击/离线23h)",
-      "baseDaily": 392064006986,
+      "baseDaily": 115701468119,
       "singles": {
-        "slack": 21.8,
-        "fake-work": 0.2,
-        "social": 4.36,
-        "focus": 6.98
+        "slack": 22.75,
+        "fake-work": 0.11,
+        "social": 4.55,
+        "focus": 7.28
       },
-      "bestSubset": {
+      "best": {
         "set": [
           "slack",
           "focus"
         ],
         "cost": 85,
-        "valuePct": 30.52
+        "valuePct": 31.86
       },
-      "comboValuePct": 27.5,
+      "combo": {
+        "set": [
+          "slack",
+          "fake-work",
+          "social"
+        ],
+        "cost": 100,
+        "valuePct": 28.58
+      },
       "comboRank": 2,
       "top": [
         {
@@ -249,7 +291,7 @@
             "focus"
           ],
           "cost": 85,
-          "valuePct": 30.52
+          "valuePct": 31.86
         },
         {
           "set": [
@@ -258,7 +300,7 @@
             "social"
           ],
           "cost": 100,
-          "valuePct": 27.5
+          "valuePct": 28.58
         },
         {
           "set": [
@@ -266,7 +308,7 @@
             "social"
           ],
           "cost": 65,
-          "valuePct": 27.25
+          "valuePct": 28.44
         },
         {
           "set": [
@@ -274,29 +316,37 @@
             "fake-work"
           ],
           "cost": 75,
-          "valuePct": 22.04
+          "valuePct": 22.89
         }
       ]
     },
     {
-      "stage": "late",
+      "stage": "d4",
       "profile": "重度(在线2h/5400点击/离线21h)",
-      "baseDaily": 391003406097,
+      "baseDaily": 116539017885,
       "singles": {
-        "slack": 21.76,
-        "fake-work": 0.81,
-        "social": 4.35,
-        "focus": 6.99
+        "slack": 22.69,
+        "fake-work": 0.44,
+        "social": 4.54,
+        "focus": 7.26
       },
-      "bestSubset": {
+      "best": {
         "set": [
           "slack",
           "focus"
         ],
         "cost": 85,
-        "valuePct": 30.49
+        "valuePct": 31.77
       },
-      "comboValuePct": 28.19,
+      "combo": {
+        "set": [
+          "slack",
+          "fake-work",
+          "social"
+        ],
+        "cost": 100,
+        "valuePct": 28.92
+      },
       "comboRank": 2,
       "top": [
         {
@@ -305,7 +355,7 @@
             "focus"
           ],
           "cost": 85,
-          "valuePct": 30.49
+          "valuePct": 31.77
         },
         {
           "set": [
@@ -314,7 +364,7 @@
             "social"
           ],
           "cost": 100,
-          "valuePct": 28.19
+          "valuePct": 28.92
         },
         {
           "set": [
@@ -322,7 +372,7 @@
             "social"
           ],
           "cost": 65,
-          "valuePct": 27.19
+          "valuePct": 28.37
         },
         {
           "set": [
@@ -330,44 +380,167 @@
             "fake-work"
           ],
           "cost": 75,
-          "valuePct": 22.71
+          "valuePct": 23.22
+        }
+      ]
+    },
+    {
+      "stage": "d7p",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "baseDaily": 1329927508487,
+      "singles": {
+        "slack": 22.61,
+        "fake-work": 0.12,
+        "social": 4.52,
+        "focus": 7.23
+      },
+      "best": {
+        "set": [
+          "slack",
+          "focus"
+        ],
+        "cost": 85,
+        "valuePct": 31.65
+      },
+      "combo": {
+        "set": [
+          "slack",
+          "fake-work",
+          "social"
+        ],
+        "cost": 100,
+        "valuePct": 28.41
+      },
+      "comboRank": 2,
+      "top": [
+        {
+          "set": [
+            "slack",
+            "focus"
+          ],
+          "cost": 85,
+          "valuePct": 31.65
+        },
+        {
+          "set": [
+            "slack",
+            "fake-work",
+            "social"
+          ],
+          "cost": 100,
+          "valuePct": 28.41
+        },
+        {
+          "set": [
+            "slack",
+            "social"
+          ],
+          "cost": 65,
+          "valuePct": 28.26
+        },
+        {
+          "set": [
+            "slack",
+            "fake-work"
+          ],
+          "cost": 75,
+          "valuePct": 22.75
+        }
+      ]
+    },
+    {
+      "stage": "d7p",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "baseDaily": 1346296175789,
+      "singles": {
+        "slack": 22.53,
+        "fake-work": 0.48,
+        "social": 4.51,
+        "focus": 7.21
+      },
+      "best": {
+        "set": [
+          "slack",
+          "focus"
+        ],
+        "cost": 85,
+        "valuePct": 31.54
+      },
+      "combo": {
+        "set": [
+          "slack",
+          "fake-work",
+          "social"
+        ],
+        "cost": 100,
+        "valuePct": 28.76
+      },
+      "comboRank": 2,
+      "top": [
+        {
+          "set": [
+            "slack",
+            "focus"
+          ],
+          "cost": 85,
+          "valuePct": 31.54
+        },
+        {
+          "set": [
+            "slack",
+            "fake-work",
+            "social"
+          ],
+          "cost": 100,
+          "valuePct": 28.76
+        },
+        {
+          "set": [
+            "slack",
+            "social"
+          ],
+          "cost": 65,
+          "valuePct": 28.16
+        },
+        {
+          "set": [
+            "slack",
+            "fake-work"
+          ],
+          "cost": 75,
+          "valuePct": 23.11
         }
       ]
     }
   ],
   "scope": [
     {
-      "stage": "early",
-      "station": 9,
-      "teamFixed": 0,
-      "teamShare": 0,
-      "idleRate": 9,
-      "stationShareOfIdle": 1,
-      "slackActualIdlePct": 25,
-      "socialActualIdlePct": 5,
-      "focusActualIdlePct": 8
+      "stage": "d1",
+      "stationShareOfIdle": 0.905,
+      "slackActualIdlePct": 22.63,
+      "socialActualIdlePct": 4.53,
+      "focusActualIdlePct": 7.24
     },
     {
-      "stage": "mid",
-      "station": 3814,
-      "teamFixed": 157,
-      "teamShare": 81,
-      "idleRate": 4051,
-      "stationShareOfIdle": 0.941,
-      "slackActualIdlePct": 23.53,
-      "socialActualIdlePct": 4.71,
-      "focusActualIdlePct": 7.53
+      "stage": "d2",
+      "stationShareOfIdle": 0.838,
+      "slackActualIdlePct": 20.95,
+      "socialActualIdlePct": 4.19,
+      "focusActualIdlePct": 6.7
     },
     {
-      "stage": "late",
-      "station": 2291835,
-      "teamFixed": 62944,
-      "teamShare": 685857,
-      "idleRate": 3040636,
-      "stationShareOfIdle": 0.754,
-      "slackActualIdlePct": 18.84,
-      "socialActualIdlePct": 3.77,
-      "focusActualIdlePct": 6.03
+      "stage": "d4",
+      "stationShareOfIdle": 0.823,
+      "slackActualIdlePct": 20.59,
+      "socialActualIdlePct": 4.12,
+      "focusActualIdlePct": 6.59
+    },
+    {
+      "stage": "d7p",
+      "stationShareOfIdle": 0.814,
+      "slackActualIdlePct": 20.36,
+      "socialActualIdlePct": 4.07,
+      "focusActualIdlePct": 6.52
     }
   ]
 }

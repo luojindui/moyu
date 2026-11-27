@@ -1,188 +1,707 @@
 {
-  "visits": [
+  "milestone": [
     {
-      "visits": 0,
-      "offlineEff": 1.13
-    },
-    {
-      "visits": 1,
-      "offlineEff": 1.13
-    },
-    {
-      "visits": 2,
-      "offlineEff": 1.13
-    },
-    {
-      "visits": 3,
-      "offlineEff": 1.13
+      "line": "退休式躺平",
+      "level": 36,
+      "nextMilestone": 40,
+      "gap": 4,
+      "cost": 153151852,
+      "deltaIdle": 2361,
+      "paybackSec": 64864
     }
   ],
-  "offlineCards": [
+  "starCheck": [
     {
-      "id": "early_leave",
-      "eff": 1.28,
-      "deltaPct": 13.27
-    },
-    {
-      "id": "canteen_gift",
-      "eff": 1.21,
-      "deltaPct": 7.08
-    },
-    {
-      "id": "overtime",
-      "eff": 1,
-      "deltaPct": -11.5
-    },
-    {
-      "id": "deadline",
-      "eff": 1.03,
-      "deltaPct": -8.85
-    },
-    {
-      "id": "hr_talk",
-      "eff": 1.13,
-      "deltaPct": 0
-    },
-    {
-      "id": "ac_move",
-      "eff": 1.13,
-      "deltaPct": 0
+      "starPick": "退休式躺平",
+      "trueBest": "退休式躺平",
+      "top3": [
+        "退休式躺平(ROI 1.54e-5)",
+        "深度摸鱼(ROI 1.49e-5)",
+        "无用会议(ROI 1.24e-5)"
+      ]
     }
   ],
-  "autoRepeat": [
+  "dailyClaim": [
     {
-      "stage": "mid",
-      "dispatchRound": 7635090,
-      "dispatchPerDay": 8156481,
-      "catchUpSharePct": 93.6
-    },
-    {
-      "stage": "late",
-      "dispatchRound": 41961390739,
-      "dispatchPerDay": 45104892540,
-      "catchUpSharePct": 93
+      "firstClaim": true,
+      "claimedAfter1": {
+        "claimed": true,
+        "claimsToday": 1
+      },
+      "window2Claimable": false,
+      "claimsTodayAfter2": 1
     }
   ],
   "dispatchRows": [
     {
-      "stage": "mid",
+      "stage": "d2",
       "colleague": "老周",
       "best": {
         "mission": "楼下买咖啡",
         "secs": 24480,
-        "reward": 4007244,
-        "perHour": 589301,
+        "reward": 417347458,
+        "perHour": 61374626,
         "skillMatch": false
       },
       "skillMatchIsBest": false,
-      "skillMissionPerHour": 410405
+      "skillBest": {
+        "mission": "茶水间聊八卦",
+        "secs": 1530,
+        "reward": 18165793,
+        "perHour": 42743042,
+        "skillMatch": true
+      },
+      "all": [
+        {
+          "mission": "楼下买咖啡",
+          "secs": 24480,
+          "reward": 417347458,
+          "perHour": 61374626,
+          "skillMatch": false
+        },
+        {
+          "mission": "长线蹲点",
+          "secs": 12240,
+          "reward": 163957929,
+          "perHour": 48222920,
+          "skillMatch": false
+        },
+        {
+          "mission": "就近溜达",
+          "secs": 153,
+          "reward": 2049474,
+          "perHour": 48222918,
+          "skillMatch": false
+        },
+        {
+          "mission": "茶水间聊八卦",
+          "secs": 1530,
+          "reward": 18165793,
+          "perHour": 42743042,
+          "skillMatch": true
+        },
+        {
+          "mission": "开个会",
+          "secs": 3060,
+          "reward": 29810532,
+          "perHour": 35071214,
+          "skillMatch": false
+        },
+        {
+          "mission": "溜一圈",
+          "secs": 765,
+          "reward": 6753948,
+          "perHour": 31783285,
+          "skillMatch": false
+        }
+      ]
     },
     {
-      "stage": "mid",
+      "stage": "d2",
       "colleague": "小美",
       "best": {
         "mission": "楼下买咖啡",
         "secs": 28800,
-        "reward": 3627846,
-        "perHour": 453481,
+        "reward": 426453490,
+        "perHour": 53306686,
         "skillMatch": false
       },
       "skillMatchIsBest": false,
-      "skillMissionPerHour": 388697
-    },
-    {
-      "stage": "late",
-      "colleague": "老周",
-      "best": {
-        "mission": "楼下买咖啡",
-        "secs": 24480,
-        "reward": 6422605326,
-        "perHour": 944500783,
-        "skillMatch": false
+      "skillBest": {
+        "mission": "开个会",
+        "secs": 3600,
+        "reward": 45691445,
+        "perHour": 45691445,
+        "skillMatch": true
       },
-      "skillMatchIsBest": false,
-      "skillMissionPerHour": 657777329
+      "all": [
+        {
+          "mission": "楼下买咖啡",
+          "secs": 28800,
+          "reward": 426453490,
+          "perHour": 53306686,
+          "skillMatch": false
+        },
+        {
+          "mission": "开个会",
+          "secs": 3600,
+          "reward": 45691445,
+          "perHour": 45691445,
+          "skillMatch": true
+        },
+        {
+          "mission": "长线蹲点",
+          "secs": 14400,
+          "reward": 167535299,
+          "perHour": 41883825,
+          "skillMatch": false
+        },
+        {
+          "mission": "就近溜达",
+          "secs": 180,
+          "reward": 2094191,
+          "perHour": 41883820,
+          "skillMatch": false
+        },
+        {
+          "mission": "溜一圈",
+          "secs": 900,
+          "reward": 6901312,
+          "perHour": 27605248,
+          "skillMatch": false
+        },
+        {
+          "mission": "茶水间聊八卦",
+          "secs": 1800,
+          "reward": 12374766,
+          "perHour": 24749532,
+          "skillMatch": false
+        }
+      ]
     },
     {
-      "stage": "late",
-      "colleague": "小美",
-      "best": {
-        "mission": "楼下买咖啡",
-        "secs": 28800,
-        "reward": 6543608526,
-        "perHour": 817951066,
-        "skillMatch": false
-      },
-      "skillMatchIsBest": false,
-      "skillMissionPerHour": 701100913
-    },
-    {
-      "stage": "late",
+      "stage": "d2",
       "colleague": "强哥",
       "best": {
         "mission": "长线蹲点",
         "secs": 14400,
-        "reward": 3927666272,
-        "perHour": 981916568,
+        "reward": 256872865,
+        "perHour": 64218216,
         "skillMatch": true
       },
       "skillMatchIsBest": true,
-      "skillMissionPerHour": 981916568
+      "skillBest": {
+        "mission": "长线蹲点",
+        "secs": 14400,
+        "reward": 256872865,
+        "perHour": 64218216,
+        "skillMatch": true
+      },
+      "all": [
+        {
+          "mission": "长线蹲点",
+          "secs": 14400,
+          "reward": 256872865,
+          "perHour": 64218216,
+          "skillMatch": true
+        },
+        {
+          "mission": "楼下买咖啡",
+          "secs": 28800,
+          "reward": 435905468,
+          "perHour": 54488184,
+          "skillMatch": false
+        },
+        {
+          "mission": "就近溜达",
+          "secs": 180,
+          "reward": 2140607,
+          "perHour": 42812140,
+          "skillMatch": false
+        },
+        {
+          "mission": "开个会",
+          "secs": 3600,
+          "reward": 31136104,
+          "perHour": 31136104,
+          "skillMatch": false
+        },
+        {
+          "mission": "溜一圈",
+          "secs": 900,
+          "reward": 7054273,
+          "perHour": 28217092,
+          "skillMatch": false
+        },
+        {
+          "mission": "茶水间聊八卦",
+          "secs": 1800,
+          "reward": 12649042,
+          "perHour": 25298084,
+          "skillMatch": false
+        }
+      ]
     },
     {
-      "stage": "late",
+      "stage": "d2",
       "colleague": "小李",
       "best": {
         "mission": "就近溜达",
         "secs": 180,
-        "reward": 79985550,
-        "perHour": 1599711000,
+        "reward": 5248855,
+        "perHour": 104977100,
         "skillMatch": true
       },
       "skillMatchIsBest": true,
-      "skillMissionPerHour": 1599711000
+      "skillBest": {
+        "mission": "就近溜达",
+        "secs": 180,
+        "reward": 5248855,
+        "perHour": 104977100,
+        "skillMatch": true
+      },
+      "all": [
+        {
+          "mission": "就近溜达",
+          "secs": 180,
+          "reward": 5248855,
+          "perHour": 104977100,
+          "skillMatch": true
+        },
+        {
+          "mission": "溜一圈",
+          "secs": 900,
+          "reward": 17297365,
+          "perHour": 69189460,
+          "skillMatch": true
+        },
+        {
+          "mission": "楼下买咖啡",
+          "secs": 28800,
+          "reward": 445357447,
+          "perHour": 55669681,
+          "skillMatch": false
+        },
+        {
+          "mission": "开个会",
+          "secs": 3600,
+          "reward": 50897993,
+          "perHour": 50897993,
+          "skillMatch": false
+        },
+        {
+          "mission": "长线蹲点",
+          "secs": 14400,
+          "reward": 174961854,
+          "perHour": 43740464,
+          "skillMatch": false
+        },
+        {
+          "mission": "茶水间聊八卦",
+          "secs": 1800,
+          "reward": 20677310,
+          "perHour": 41354620,
+          "skillMatch": false
+        }
+      ]
     },
     {
-      "stage": "late",
+      "stage": "d2",
       "colleague": "王师傅",
       "best": {
         "mission": "楼下买咖啡",
         "secs": 28800,
-        "reward": 15543393481,
-        "perHour": 1942924185,
+        "reward": 697935280,
+        "perHour": 87241910,
         "skillMatch": true
       },
       "skillMatchIsBest": true,
-      "skillMissionPerHour": 1942924185
+      "skillBest": {
+        "mission": "楼下买咖啡",
+        "secs": 28800,
+        "reward": 697935280,
+        "perHour": 87241910,
+        "skillMatch": true
+      },
+      "all": [
+        {
+          "mission": "楼下买咖啡",
+          "secs": 28800,
+          "reward": 697935280,
+          "perHour": 87241910,
+          "skillMatch": true
+        },
+        {
+          "mission": "长线蹲点",
+          "secs": 14400,
+          "reward": 182792573,
+          "perHour": 45698143,
+          "skillMatch": false
+        },
+        {
+          "mission": "就近溜达",
+          "secs": 180,
+          "reward": 1523271,
+          "perHour": 30465420,
+          "skillMatch": false
+        },
+        {
+          "mission": "开个会",
+          "secs": 3600,
+          "reward": 22156675,
+          "perHour": 22156675,
+          "skillMatch": false
+        },
+        {
+          "mission": "溜一圈",
+          "secs": 900,
+          "reward": 5019871,
+          "perHour": 20079484,
+          "skillMatch": false
+        },
+        {
+          "mission": "茶水间聊八卦",
+          "secs": 1800,
+          "reward": 9001149,
+          "perHour": 18002298,
+          "skillMatch": false
+        }
+      ]
+    },
+    {
+      "stage": "d7p",
+      "colleague": "老周",
+      "best": {
+        "mission": "楼下买咖啡",
+        "secs": 24480,
+        "reward": 22848958194,
+        "perHour": 3360140911,
+        "skillMatch": false
+      },
+      "skillMatchIsBest": false,
+      "skillBest": {
+        "mission": "茶水间聊八卦",
+        "secs": 1530,
+        "reward": 994541707,
+        "perHour": 2340098134,
+        "skillMatch": true
+      },
+      "all": [
+        {
+          "mission": "楼下买咖啡",
+          "secs": 24480,
+          "reward": 22848958194,
+          "perHour": 3360140911,
+          "skillMatch": false
+        },
+        {
+          "mission": "长线蹲点",
+          "secs": 12240,
+          "reward": 8976376433,
+          "perHour": 2640110716,
+          "skillMatch": false
+        },
+        {
+          "mission": "就近溜达",
+          "secs": 153,
+          "reward": 112204705,
+          "perHour": 2640110706,
+          "skillMatch": false
+        },
+        {
+          "mission": "茶水间聊八卦",
+          "secs": 1530,
+          "reward": 994541707,
+          "perHour": 2340098134,
+          "skillMatch": true
+        },
+        {
+          "mission": "开个会",
+          "secs": 3060,
+          "reward": 1632068442,
+          "perHour": 1920080520,
+          "skillMatch": false
+        },
+        {
+          "mission": "溜一圈",
+          "secs": 765,
+          "reward": 369765506,
+          "perHour": 1740072969,
+          "skillMatch": false
+        }
+      ]
+    },
+    {
+      "stage": "d7p",
+      "colleague": "小美",
+      "best": {
+        "mission": "楼下买咖啡",
+        "secs": 28800,
+        "reward": 23273464425,
+        "perHour": 2909183053,
+        "skillMatch": false
+      },
+      "skillMatchIsBest": false,
+      "skillBest": {
+        "mission": "开个会",
+        "secs": 3600,
+        "reward": 2493585474,
+        "perHour": 2493585474,
+        "skillMatch": true
+      },
+      "all": [
+        {
+          "mission": "楼下买咖啡",
+          "secs": 28800,
+          "reward": 23273464425,
+          "perHour": 2909183053,
+          "skillMatch": false
+        },
+        {
+          "mission": "开个会",
+          "secs": 3600,
+          "reward": 2493585474,
+          "perHour": 2493585474,
+          "skillMatch": true
+        },
+        {
+          "mission": "长线蹲点",
+          "secs": 14400,
+          "reward": 9143146738,
+          "perHour": 2285786685,
+          "skillMatch": false
+        },
+        {
+          "mission": "就近溜达",
+          "secs": 180,
+          "reward": 114289334,
+          "perHour": 2285786680,
+          "skillMatch": false
+        },
+        {
+          "mission": "溜一圈",
+          "secs": 900,
+          "reward": 376635305,
+          "perHour": 1506541220,
+          "skillMatch": false
+        },
+        {
+          "mission": "茶水间聊八卦",
+          "secs": 1800,
+          "reward": 675346065,
+          "perHour": 1350692130,
+          "skillMatch": false
+        }
+      ]
+    },
+    {
+      "stage": "d7p",
+      "colleague": "强哥",
+      "best": {
+        "mission": "长线蹲点",
+        "secs": 14400,
+        "reward": 13965079426,
+        "perHour": 3491269857,
+        "skillMatch": true
+      },
+      "skillMatchIsBest": true,
+      "skillBest": {
+        "mission": "长线蹲点",
+        "secs": 14400,
+        "reward": 13965079426,
+        "perHour": 3491269857,
+        "skillMatch": true
+      },
+      "all": [
+        {
+          "mission": "长线蹲点",
+          "secs": 14400,
+          "reward": 13965079426,
+          "perHour": 3491269857,
+          "skillMatch": true
+        },
+        {
+          "mission": "楼下买咖啡",
+          "secs": 28800,
+          "reward": 23698316602,
+          "perHour": 2962289575,
+          "skillMatch": false
+        },
+        {
+          "mission": "就近溜达",
+          "secs": 180,
+          "reward": 116375661,
+          "perHour": 2327513220,
+          "skillMatch": false
+        },
+        {
+          "mission": "开个会",
+          "secs": 3600,
+          "reward": 1692736900,
+          "perHour": 1692736900,
+          "skillMatch": false
+        },
+        {
+          "mission": "溜一圈",
+          "secs": 900,
+          "reward": 383510703,
+          "perHour": 1534042812,
+          "skillMatch": false
+        },
+        {
+          "mission": "茶水间聊八卦",
+          "secs": 1800,
+          "reward": 687674365,
+          "perHour": 1375348730,
+          "skillMatch": false
+        }
+      ]
+    },
+    {
+      "stage": "d7p",
+      "colleague": "小李",
+      "best": {
+        "mission": "就近溜达",
+        "secs": 180,
+        "reward": 284308774,
+        "perHour": 5686175480,
+        "skillMatch": true
+      },
+      "skillMatchIsBest": true,
+      "skillBest": {
+        "mission": "就近溜达",
+        "secs": 180,
+        "reward": 284308774,
+        "perHour": 5686175480,
+        "skillMatch": true
+      },
+      "all": [
+        {
+          "mission": "就近溜达",
+          "secs": 180,
+          "reward": 284308774,
+          "perHour": 5686175480,
+          "skillMatch": true
+        },
+        {
+          "mission": "溜一圈",
+          "secs": 900,
+          "reward": 936926644,
+          "perHour": 3747706576,
+          "skillMatch": true
+        },
+        {
+          "mission": "楼下买咖啡",
+          "secs": 28800,
+          "reward": 24123168779,
+          "perHour": 3015396097,
+          "skillMatch": false
+        },
+        {
+          "mission": "开个会",
+          "secs": 3600,
+          "reward": 2756933574,
+          "perHour": 2756933574,
+          "skillMatch": false
+        },
+        {
+          "mission": "长线蹲点",
+          "secs": 14400,
+          "reward": 9476959163,
+          "perHour": 2369239791,
+          "skillMatch": false
+        },
+        {
+          "mission": "茶水间聊八卦",
+          "secs": 1800,
+          "reward": 1120004264,
+          "perHour": 2240008528,
+          "skillMatch": false
+        }
+      ]
+    },
+    {
+      "stage": "d7p",
+      "colleague": "王师傅",
+      "best": {
+        "mission": "楼下买咖啡",
+        "secs": 28800,
+        "reward": 32751753230,
+        "perHour": 4093969154,
+        "skillMatch": true
+      },
+      "skillMatchIsBest": true,
+      "skillBest": {
+        "mission": "楼下买咖啡",
+        "secs": 28800,
+        "reward": 32751753230,
+        "perHour": 4093969154,
+        "skillMatch": true
+      },
+      "all": [
+        {
+          "mission": "楼下买咖啡",
+          "secs": 28800,
+          "reward": 32751753230,
+          "perHour": 4093969154,
+          "skillMatch": true
+        },
+        {
+          "mission": "长线蹲点",
+          "secs": 14400,
+          "reward": 8577840131,
+          "perHour": 2144460033,
+          "skillMatch": false
+        },
+        {
+          "mission": "就近溜达",
+          "secs": 180,
+          "reward": 71482001,
+          "perHour": 1429640020,
+          "skillMatch": false
+        },
+        {
+          "mission": "开个会",
+          "secs": 3600,
+          "reward": 1039738197,
+          "perHour": 1039738197,
+          "skillMatch": false
+        },
+        {
+          "mission": "溜一圈",
+          "secs": 900,
+          "reward": 235565685,
+          "perHour": 942262740,
+          "skillMatch": false
+        },
+        {
+          "mission": "茶水间聊八卦",
+          "secs": 1800,
+          "reward": 422393642,
+          "perHour": 844787284,
+          "skillMatch": false
+        }
+      ]
     }
   ],
   "arcade": [
     {
-      "stage": "early",
-      "stationIdlePerSec": 9,
-      "arcadePerGame": 229,
-      "arcade3PerDay": 687,
-      "dailyTotal": 803112,
-      "sharePct": 0.086,
-      "equivalentIdleSeconds": 75
+      "stage": "d1",
+      "stationIdlePerSec": 23574,
+      "arcadePerGame": 589345,
+      "arcade3PerDay": 1768035,
+      "dailyTotal": 2242434627,
+      "sharePct": 0.079
     },
     {
-      "stage": "mid",
-      "stationIdlePerSec": 3814,
-      "arcadePerGame": 95339,
-      "arcade3PerDay": 286017,
-      "dailyTotal": 393769846,
-      "sharePct": 0.073,
-      "equivalentIdleSeconds": 75
+      "stage": "d2",
+      "stationIdlePerSec": 223222,
+      "arcadePerGame": 5580537,
+      "arcade3PerDay": 16741611,
+      "dailyTotal": 26062270518,
+      "sharePct": 0.064
     },
     {
-      "stage": "late",
-      "stationIdlePerSec": 2291835,
-      "arcadePerGame": 57295870,
-      "arcade3PerDay": 171887610,
-      "dailyTotal": 392064006986,
-      "sharePct": 0.044,
-      "equivalentIdleSeconds": 75
+      "stage": "d4",
+      "stationIdlePerSec": 970119,
+      "arcadePerGame": 24252980,
+      "arcade3PerDay": 72758940,
+      "dailyTotal": 115701468119,
+      "sharePct": 0.063
+    }
+  ],
+  "autoRepeat": [
+    {
+      "stage": "d2",
+      "dispatchRound": 2422999143,
+      "dispatchPerDay": 2608558412,
+      "catchUpSharePct": 92.9
+    },
+    {
+      "stage": "d7p",
+      "dispatchRound": 126695661230,
+      "dispatchPerDay": 136466030457,
+      "catchUpSharePct": 92.8
     }
   ],
   "energyBest": [
@@ -192,7 +711,7 @@
         "focus"
       ],
       "cost": 85,
-      "gainPct": 33.9
+      "gainPct": 32.09
     },
     {
       "set": [
@@ -201,7 +720,7 @@
         "social"
       ],
       "cost": 100,
-      "gainPct": 30.41
+      "gainPct": 28.79
     },
     {
       "set": [
@@ -209,7 +728,7 @@
         "social"
       ],
       "cost": 65,
-      "gainPct": 30.26
+      "gainPct": 28.65
     },
     {
       "set": [
@@ -217,14 +736,7 @@
         "fake-work"
       ],
       "cost": 75,
-      "gainPct": 24.35
-    },
-    {
-      "set": [
-        "slack"
-      ],
-      "cost": 40,
-      "gainPct": 24.21
+      "gainPct": 23.06
     }
   ],
   "energyCombo": {
@@ -234,7 +746,7 @@
       "social"
     ],
     "cost": 100,
-    "gainPct": 30.41
+    "gainPct": 28.79
   },
   "prestigeThresholdGain": [
     {
@@ -268,12 +780,51 @@
       "gainAtThreshold": 3
     }
   ],
-  "constantChecks": {
-    "cardDismissCosts": 0,
-    "talentRespecCosts": 0,
+  "cardOfflineMechanism": [
+    {
+      "id": "early_leave",
+      "firstDayOfflineEff": 1.25,
+      "dailyValuePct": 0
+    },
+    {
+      "id": "canteen_gift",
+      "firstDayOfflineEff": 1.18,
+      "dailyValuePct": 0
+    },
+    {
+      "id": "overtime",
+      "firstDayOfflineEff": 1,
+      "dailyValuePct": 33.36
+    },
+    {
+      "id": "deadline",
+      "firstDayOfflineEff": 1,
+      "dailyValuePct": -6.22
+    },
+    {
+      "id": "hr_talk",
+      "firstDayOfflineEff": 1.1,
+      "dailyValuePct": -9.17
+    },
+    {
+      "id": "ac_broken",
+      "firstDayOfflineEff": 1.05,
+      "dailyValuePct": 6.62
+    },
+    {
+      "id": "office_move",
+      "firstDayOfflineEff": 1.1,
+      "dailyValuePct": -9.1
+    }
+  ],
+  "constants": {
+    "cardDismissCost": 0,
+    "talentRespecCost": 0,
     "decorSlots": null,
-    "decorMutualExclusion": false,
-    "decorCompletionBonus": 0.1,
-    "autoRepeatDefault": false
+    "decorExclusive": false,
+    "decorCompleteBonus": 0.1,
+    "autoRepeatDefault": false,
+    "energyPerDay": 100,
+    "cardDurationH": 24
   }
 }

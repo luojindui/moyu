@@ -1,0 +1,292 @@
+{
+  "summary": {
+    "name": "S 系统完整性",
+    "pass": 27,
+    "total": 27,
+    "failed": [],
+    "checks": [
+      {
+        "id": "S1 每日首开送 1 天赋点",
+        "ok": true,
+        "detail": "{\"unlocked\":[],\"points\":1,\"rankGranted\":-1,\"dailyGiftDate\":\"2026-11-27\",\"overflow\":0}"
+      },
+      {
+        "id": "S2 天赋按钮可点亮",
+        "ok": true,
+        "detail": "{\"disabled\":false,\"text\":\"点亮 1\"}"
+      },
+      {
+        "id": "S3 点亮写入状态",
+        "ok": true,
+        "detail": "{\"unlocked\":[\"click_1\"],\"points\":0}"
+      },
+      {
+        "id": "S4 天赋效果生效（HUD 点击力）",
+        "ok": true,
+        "detail": "1.3 vs 1.3"
+      },
+      {
+        "id": "S5a 图鉴前置：挂机线首购成功",
+        "ok": true,
+        "detail": "{\"phone\":1}"
+      },
+      {
+        "id": "S5b 购买推进图鉴解锁",
+        "ok": true,
+        "detail": "0→1"
+      },
+      {
+        "id": "S6 图鉴面板 55 格",
+        "ok": true,
+        "detail": "cells=55 total=1/55"
+      },
+      {
+        "id": "S7 图鉴计数与已解锁格一致",
+        "ok": true,
+        "detail": "total=1/55 实际点亮=1"
+      },
+      {
+        "id": "S8 日报 3/3 可领取",
+        "ok": true,
+        "detail": "{\"disabled\":false,\"text\":\"领取 +720\"}"
+      },
+      {
+        "id": "S9 领取后 claimed/连续天数 +1",
+        "ok": true,
+        "detail": "{\"claimed\":true,\"streak\":4}"
+      },
+      {
+        "id": "S10 日报奖励入账",
+        "ok": true,
+        "detail": "+720.6 期望 720"
+      },
+      {
+        "id": "S11 已领取按钮不可再点",
+        "ok": true,
+        "detail": "{\"disabled\":true,\"text\":\"今日已领\"}"
+      },
+      {
+        "id": "S12 重复领取无效",
+        "ok": true,
+        "detail": "1216.8→1217.2"
+      },
+      {
+        "id": "S13 段位随生涯累计提升",
+        "ok": true,
+        "detail": "HUD=传说 11% 期望含 传说"
+      },
+      {
+        "id": "S14 lifetime ≥ 段位门槛",
+        "ok": true,
+        "detail": "{\"lifetime\":200001267.7598895}"
+      },
+      {
+        "id": "S15 转生按钮解锁",
+        "ok": true,
+        "detail": "{\"disabled\":false,\"text\":\"离职再就业：+3 点（永久 ×3.25）\"}"
+      },
+      {
+        "id": "S16 转生点数到账",
+        "ok": true,
+        "detail": "prestige 0→3 期望 +3"
+      },
+      {
+        "id": "S17 转生重置本局余额/累计",
+        "ok": true,
+        "detail": "{\"moyu\":0.39006500000000005,\"total\":0.39006500000000005}"
+      },
+      {
+        "id": "S18 转生保留等级 80%",
+        "ok": true,
+        "detail": "{\"before\":{\"phone\":1},\"after\":{\"phone\":0}}"
+      },
+      {
+        "id": "S19 转生保留图鉴/历史累计/家具",
+        "ok": true,
+        "detail": "{\"beforeLife\":200001267.7798095,\"afterLife\":200001268.16987413,\"decor\":0}"
+      },
+      {
+        "id": "S20 永久倍率 = 1+0.75×点数",
+        "ok": true,
+        "detail": "3.25 vs 3.25"
+      },
+      {
+        "id": "S21 已选卡刷新后保留",
+        "ok": true,
+        "detail": "{\"chosen\":\"coffee_day\"}"
+      },
+      {
+        "id": "S22 HUD 显示今日卡",
+        "ok": true,
+        "detail": "卡·咖啡管够"
+      },
+      {
+        "id": "S23 卡效果在刷新后仍生效",
+        "ok": true,
+        "detail": "1.15"
+      },
+      {
+        "id": "S24 跨日可再选卡（chosenDate 非今日）",
+        "ok": true,
+        "detail": "{\"chosenDate\":\"2026-11-26\",\"offers\":3}"
+      },
+      {
+        "id": "S25 未过期的昨日卡仍生效",
+        "ok": true,
+        "detail": "coffee_day"
+      },
+      {
+        "id": "S26 无异常",
+        "ok": true,
+        "detail": "[]"
+      }
+    ],
+    "ms": 12007
+  },
+  "stages": [
+    {
+      "name": "S 系统完整性",
+      "pass": 27,
+      "total": 27,
+      "failed": [],
+      "checks": [
+        {
+          "id": "S1 每日首开送 1 天赋点",
+          "ok": true,
+          "detail": "{\"unlocked\":[],\"points\":1,\"rankGranted\":-1,\"dailyGiftDate\":\"2026-11-27\",\"overflow\":0}"
+        },
+        {
+          "id": "S2 天赋按钮可点亮",
+          "ok": true,
+          "detail": "{\"disabled\":false,\"text\":\"点亮 1\"}"
+        },
+        {
+          "id": "S3 点亮写入状态",
+          "ok": true,
+          "detail": "{\"unlocked\":[\"click_1\"],\"points\":0}"
+        },
+        {
+          "id": "S4 天赋效果生效（HUD 点击力）",
+          "ok": true,
+          "detail": "1.3 vs 1.3"
+        },
+        {
+          "id": "S5a 图鉴前置：挂机线首购成功",
+          "ok": true,
+          "detail": "{\"phone\":1}"
+        },
+        {
+          "id": "S5b 购买推进图鉴解锁",
+          "ok": true,
+          "detail": "0→1"
+        },
+        {
+          "id": "S6 图鉴面板 55 格",
+          "ok": true,
+          "detail": "cells=55 total=1/55"
+        },
+        {
+          "id": "S7 图鉴计数与已解锁格一致",
+          "ok": true,
+          "detail": "total=1/55 实际点亮=1"
+        },
+        {
+          "id": "S8 日报 3/3 可领取",
+          "ok": true,
+          "detail": "{\"disabled\":false,\"text\":\"领取 +720\"}"
+        },
+        {
+          "id": "S9 领取后 claimed/连续天数 +1",
+          "ok": true,
+          "detail": "{\"claimed\":true,\"streak\":4}"
+        },
+        {
+          "id": "S10 日报奖励入账",
+          "ok": true,
+          "detail": "+720.6 期望 720"
+        },
+        {
+          "id": "S11 已领取按钮不可再点",
+          "ok": true,
+          "detail": "{\"disabled\":true,\"text\":\"今日已领\"}"
+        },
+        {
+          "id": "S12 重复领取无效",
+          "ok": true,
+          "detail": "1216.8→1217.2"
+        },
+        {
+          "id": "S13 段位随生涯累计提升",
+          "ok": true,
+          "detail": "HUD=传说 11% 期望含 传说"
+        },
+        {
+          "id": "S14 lifetime ≥ 段位门槛",
+          "ok": true,
+          "detail": "{\"lifetime\":200001267.7598895}"
+        },
+        {
+          "id": "S15 转生按钮解锁",
+          "ok": true,
+          "detail": "{\"disabled\":false,\"text\":\"离职再就业：+3 点（永久 ×3.25）\"}"
+        },
+        {
+          "id": "S16 转生点数到账",
+          "ok": true,
+          "detail": "prestige 0→3 期望 +3"
+        },
+        {
+          "id": "S17 转生重置本局余额/累计",
+          "ok": true,
+          "detail": "{\"moyu\":0.39006500000000005,\"total\":0.39006500000000005}"
+        },
+        {
+          "id": "S18 转生保留等级 80%",
+          "ok": true,
+          "detail": "{\"before\":{\"phone\":1},\"after\":{\"phone\":0}}"
+        },
+        {
+          "id": "S19 转生保留图鉴/历史累计/家具",
+          "ok": true,
+          "detail": "{\"beforeLife\":200001267.7798095,\"afterLife\":200001268.16987413,\"decor\":0}"
+        },
+        {
+          "id": "S20 永久倍率 = 1+0.75×点数",
+          "ok": true,
+          "detail": "3.25 vs 3.25"
+        },
+        {
+          "id": "S21 已选卡刷新后保留",
+          "ok": true,
+          "detail": "{\"chosen\":\"coffee_day\"}"
+        },
+        {
+          "id": "S22 HUD 显示今日卡",
+          "ok": true,
+          "detail": "卡·咖啡管够"
+        },
+        {
+          "id": "S23 卡效果在刷新后仍生效",
+          "ok": true,
+          "detail": "1.15"
+        },
+        {
+          "id": "S24 跨日可再选卡（chosenDate 非今日）",
+          "ok": true,
+          "detail": "{\"chosenDate\":\"2026-11-26\",\"offers\":3}"
+        },
+        {
+          "id": "S25 未过期的昨日卡仍生效",
+          "ok": true,
+          "detail": "coffee_day"
+        },
+        {
+          "id": "S26 无异常",
+          "ok": true,
+          "detail": "[]"
+        }
+      ],
+      "ms": 12007
+    }
+  ]
+}

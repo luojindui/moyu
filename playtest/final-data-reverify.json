@@ -1,0 +1,164 @@
+{
+  "generatedAt": "2026-11-27T13:18:53.280Z",
+  "snapshot": {
+    "head": "c3eaab3",
+    "headTitle": "perf(P1 from review): audio context prewarmed at boot (first click no longer blocks 143ms), frame() wrapped in try/catch with unconditional rAF (a single error can't kill the loop), unified draw throttling across all modals, scene drawing paused during minigames, DPR capped at 2 (canvas pixels -44%), sessionStorage guarded, dev-only pixel scan; fix bestDay record never updating",
+    "dirtySrc": "M src/engine/progression.test.ts\n M src/engine/progression.ts"
+  },
+  "checks": [
+    {
+      "panel": "精力(当前代码)",
+      "item": "focus 实时点击倍率=×2",
+      "shown": 2,
+      "expected": 2,
+      "ok": true
+    },
+    {
+      "panel": "精力(当前代码)",
+      "item": "focus 刷新后点击倍率（应保持 ×2）",
+      "shown": 1.2,
+      "expected": 2,
+      "ok": false
+    },
+    {
+      "panel": "精力(当前代码)",
+      "item": "focus 刷新后点击力（实时 22.40）",
+      "shown": "13.44",
+      "expected": "22.40",
+      "ok": false
+    },
+    {
+      "panel": "精力(当前代码)",
+      "item": "focus 刷新后 idleMult（应 1.08）",
+      "shown": 1,
+      "expected": 1.08,
+      "ok": false
+    },
+    {
+      "panel": "小队(当前代码)",
+      "item": "「小队挂机 +X/秒」是否等于引擎同事真实贡献",
+      "shown": "已招募 5/5 · 小队挂机 +1.66万/秒 自动重复：完成后自动领取并续班（离线回来最多补 1 轮）",
+      "expected": "引擎 88851",
+      "ok": false
+    },
+    {
+      "panel": "小队(当前代码)",
+      "item": "老周卡片「挂机 +X/秒」是否等于引擎贡献",
+      "shown": "挂机 +700/秒 + 工位 4.0% · 擅长 聊八卦",
+      "expected": "引擎 1542.24",
+      "ok": false
+    },
+    {
+      "panel": "天赋(当前代码)",
+      "item": "未点 event_5a 时是否仍显示「安然转化 +20%」",
+      "shown": "安然转化：20/30 次（当前 +20%）",
+      "expected": "不应显示/显示 0",
+      "ok": false
+    },
+    {
+      "panel": "离线(当前代码)",
+      "item": "非封顶场景文案是否仍写「8 小时封顶」",
+      "shown": "离线效率 95%｜8 小时封顶",
+      "expected": "引擎 12h 封顶",
+      "ok": false
+    },
+    {
+      "panel": "离线(当前代码)",
+      "item": "首日/回访后离线效率是否 ≤0.95（新硬上限）",
+      "shown": 0.95,
+      "expected": "≤0.95",
+      "ok": true
+    },
+    {
+      "panel": "离线(当前代码)",
+      "item": "≥7 天回归：面板效率 vs 实际结算（settleReturn 强制 1.0）",
+      "shown": "离线效率 95%｜超过上限，已按上限结算 24 小时 0 分",
+      "expected": "面板应显示实际结算效率",
+      "ok": false
+    }
+  ],
+  "scenarios": {
+    "boot": "ok",
+    "focus": {
+      "focus": {
+        "liveClick": 22.4,
+        "liveIdle": 0.22032000000000004,
+        "hudClick": "22.4",
+        "boost": {
+          "idleMult": 1.08,
+          "patrolRewardMult": 1,
+          "clickMult": 2
+        }
+      },
+      "focusAfter": {
+        "click": 13.44,
+        "idle": 0.20400000000000001,
+        "hudClick": "13.4",
+        "boost": {
+          "idleMult": 1,
+          "patrolRewardMult": 1,
+          "clickMult": 1.2
+        }
+      }
+    },
+    "team": {
+      "ui": 16569.034767559508,
+      "engineTeam": 88851.01680000001,
+      "summary": "已招募 5/5 · 小队挂机 +1.66万/秒 自动重复：完成后自动领取并续班（离线回来最多补 1 轮）",
+      "zhouSkill": "挂机 +700/秒 + 工位 4.0% · 擅长 聊八卦",
+      "idleE": [
+        {
+          "id": "zhou",
+          "engine": 1542.24
+        },
+        {
+          "id": "mei",
+          "engine": 7711.2
+        },
+        {
+          "id": "qiang",
+          "engine": 15422.4
+        },
+        {
+          "id": "li",
+          "engine": 23133.6
+        },
+        {
+          "id": "wang",
+          "engine": 30844.8
+        }
+      ],
+      "station": 38230.115891865025
+    },
+    "talents": {
+      "prog": [
+        "点击转化：3000/10500 次（当前 +10%）",
+        "安然转化：20/30 次（当前 +20%）",
+        "溢出转化：4/30 点（当前 +2.0% 挂机，封顶 +15%）",
+        "天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1；每日首开 +1（上限 24，满树需 27 点 → 终局必须放弃一条流派）"
+      ],
+      "surviveToIdle": false,
+      "conversion": 0.1
+    },
+    "offline1h": {
+      "hidden": false,
+      "rule": "离线效率 95%｜8 小时封顶",
+      "gain": "6.91万",
+      "rate": 0.95,
+      "capHours": 12
+    },
+    "offline8d": {
+      "rule": "离线效率 95%｜超过上限，已按上限结算 24 小时 0 分",
+      "gain": "174.53万",
+      "idle": 21.008,
+      "applied": 86400,
+      "earnedText": "174.53万"
+    }
+  },
+  "defects": [],
+  "summary": {
+    "total": 10,
+    "pass": 2,
+    "fail": 8
+  }
+}

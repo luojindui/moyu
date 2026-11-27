@@ -1,0 +1,16 @@
+url=https://luojindui.github.io/moyu/
+frames=123
+events=9010
+actions=33
+cardsShownAt=8739.5
+cardHandled=true
+bossShownAt=31875.5
+bossHandled=true
+memeEvents=4
+bought={"coffee":{"p":13538,"cost":"15","lv":""},"phone":{"p":23190,"cost":"50","lv":""},"water":{"p":44914,"cost":"100","lv":""},"toilet":{"p":52437,"cost":"600","lv":""},"chair":{"p":52437,"cost":"800","lv":""}}
+questGoneAt=27983
+journalStarAt=23537
+claim={"ok":true,"text":"领取 +810"}
+mute={"before":{"text":"🔊","aria":"音效开关"},"after":{"text":"🔇","aria":"音效开关"}}
+panelsDone=true
+taps=193

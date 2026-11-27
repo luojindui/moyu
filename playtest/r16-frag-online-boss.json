@@ -1,0 +1,150 @@
+{
+  "startedAt": "2026-11-27T13:12:58.583Z",
+  "url": "https://luojindui.github.io/moyu/",
+  "events": [
+    {
+      "t": 0,
+      "type": "toast",
+      "text": "送你 1 个天赋点，点 👥 看看"
+    },
+    {
+      "t": 0,
+      "type": "journal-claimable",
+      "text": "完成 0/3"
+    },
+    {
+      "t": 15.2,
+      "type": "toast",
+      "text": "图鉴 +1（1/55）"
+    },
+    {
+      "t": 27.5,
+      "type": "boss-show",
+      "text": "有人过来了——脚步声又快又重，两三步就到工位 | 立刻装忙 | 切到工作界面 | 继续摸鱼",
+      "timerText": "",
+      "banner": null
+    },
+    {
+      "t": 30.4,
+      "type": "boss-hide"
+    },
+    {
+      "t": 30.4,
+      "type": "toast",
+      "text": "安总：嗯，忙你的。 +90"
+    },
+    {
+      "t": 31,
+      "type": "toast",
+      "text": "今日卡：提前下班"
+    },
+    {
+      "t": 54.9,
+      "type": "toast",
+      "text": "图鉴 +3（4/55）"
+    },
+    {
+      "t": 73.8,
+      "type": "toast",
+      "text": "图鉴 +1（5/55）"
+    },
+    {
+      "t": 121.9,
+      "type": "toast",
+      "text": "图鉴 +1（6/55）"
+    },
+    {
+      "t": 158.1,
+      "type": "boss-show",
+      "text": "有人过来了——脚步声又快又重，两三步就到工位 | 立刻装忙 | 切到工作界面 | 继续摸鱼",
+      "timerText": "",
+      "banner": null
+    }
+  ],
+  "actions": [
+    {
+      "t": 27.5,
+      "label": "自然戳到第一次巡逻",
+      "taps": 60
+    },
+    {
+      "label": "读线索并作答",
+      "choice": "act-busy",
+      "barAtDecision": "66.7%",
+      "decisionMs": 2546,
+      "moyuDelta": 115,
+      "streak": 1
+    },
+    {
+      "t": 158.1,
+      "label": "等第二次巡逻",
+      "waitedSec": 127.8,
+      "gotSecond": true,
+      "taps": 272
+    },
+    {
+      "t": 163,
+      "label": "第二次巡逻故意不答（碎片被打断）",
+      "bossText": "有人过来了——脚步声又快又重，两三步就到工位 | 立刻装忙 | 切到工作界面 | 继续摸鱼",
+      "hideAfterMs": 4590,
+      "save": {
+        "moyu": 417,
+        "surviveStreak": 1,
+        "patrolSurvives": 1,
+        "totalClicks": 271,
+        "totalEarned": 417,
+        "daily": [
+          {
+            "id": "visit_1",
+            "target": 1,
+            "progress": 1,
+            "done": true
+          },
+          {
+            "id": "idle_earn",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "buy_3",
+            "target": 3,
+            "progress": 0,
+            "done": false
+          }
+        ]
+      }
+    }
+  ],
+  "readyMs": 1271,
+  "finalSave": {
+    "moyu": 417,
+    "surviveStreak": 1,
+    "patrolSurvives": 1,
+    "totalClicks": 271,
+    "totalEarned": 417,
+    "daily": [
+      {
+        "id": "visit_1",
+        "target": 1,
+        "progress": 1,
+        "done": true
+      },
+      {
+        "id": "idle_earn",
+        "target": 1,
+        "progress": 0,
+        "done": false
+      },
+      {
+        "id": "buy_3",
+        "target": 3,
+        "progress": 0,
+        "done": false
+      }
+    ]
+  },
+  "tapCount": 272,
+  "totalSec": 163.9,
+  "errors": []
+}

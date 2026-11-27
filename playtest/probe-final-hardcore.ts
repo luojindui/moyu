@@ -289,7 +289,6 @@ function simulate(o: SimOpts): { snaps: DaySnap[]; end: GameState } {
     if (dg.granted > 0) { state = { ...state, talents: dg.talents }; pendingTasks.push("领每日天赋点"); }
     const rg = grantRankTalents(state.talents, rankIndexFor(state.lifetimeEarned));
     if (rg.granted > 0) { state = { ...state, talents: rg.talents }; pendingTasks.push(`段位天赋点+${rg.granted}`); }
-    if (o.prestigePolicy === "daily" && canPrestige(state)) doPrestigeOnce("每日");
     for (let i = 0; i < 10; i++) state = spendTalents(state);
   };
   const tryPrestige = (): void => {
@@ -439,6 +438,7 @@ function simulate(o: SimOpts): { snaps: DaySnap[]; end: GameState } {
       if (day !== lastDay) { lastDay = day; doDayStart(); }
       state = ensureVisits(state, nowMs());
       settleOffline(gap);
+      if (si === 0 && o.prestigePolicy === "daily" && canPrestige(state)) doPrestigeOnce("每日");
       if (si === 0) collectCard();
       if (!o.keepOpen) claimJournal();
       doDispatchSetup(si === 0);
@@ -543,26 +543,31 @@ function simulate(o: SimOpts): { snaps: DaySnap[]; end: GameState } {
 const L: string[] = [];
 const log = (s: string) => { L.push(s); };
 
-log("================== A. 30 天进度：转生策略对比（真实引擎模拟） ==================");
+log("================== A. 30 天进度：转生（离职再就业）策略对比（真实引擎，全系统参与） ==================");
 const decorBuyLog: Record<string, Array<{ day: number; cost: number; income: number }>> = {};
 let mainRun: ReturnType<typeof simulate> | null = null;
 const runs: Array<{ policy: string; r: ReturnType<typeof simulate> }> = [];
-for (const policy of ["never", "daily", "spam"] as const) {
+const POLICY_LABEL: Record<string, string> = {
+  never: "不转生", daily: "每天开页面转一次", spam: "一解锁就转（spam）",
+  gain5: "攒到 ≥5 点就转", gain10: "攒到 ≥10 点就转", gain20: "攒到 ≥20 点（封顶）再转",
+};
+for (const policy of ["never", "daily", "spam", "gain5", "gain10", "gain20"] as const) {
   seed = 1234567;
   const r = simulate({
     prestigePolicy: policy,
     keepOpen: false,
     days: 30,
-    onDecorBuy: (id, day, st) => {
-      if (policy === "daily") (decorBuyLog[id] ??= []).push({ day, cost: DECOR.find((d) => d.id === id)!.cost, income: effectOf(st).idleRate });
+    onDecorBuy: (id, day, _before, income) => {
+      (decorBuyLog[id] ??= []).push({ day, cost: DECOR.find((d) => d.id === id)!.cost, income });
     },
   });
   runs.push({ policy, r });
   const e = r.snaps[r.snaps.length - 1]!;
-  log(`策略 ${policy.padEnd(5)}：D30 瞬时挂机=${sci(e.income)}/s，lifetime=${sci(e.lifetime)}，转生点=${e.prestige}（${e.prestiges} 次），家具=${e.decor.length}/8，天赋已点=${e.talentSpent} 点（${e.talentUnlocked} 节点），图鉴=${e.collection}/55`);
+  log(`策略 ${POLICY_LABEL[policy]!.padEnd(20)}：D30 挂机=${sci(e.income)}/s，lifetime=${sci(e.lifetime)}，转生点=${e.prestige}（${e.prestiges} 次），家具=${e.decor.length}/8，天赋=${e.talentSpent}点/${e.talentUnlocked}节点，图鉴=${e.collection}/55`);
 }
-const bestPolicy = [...runs].sort((a, b) => b.r.snaps[29]!.lifetime - a.r.snaps[29]!.lifetime)[0]!;
-log(`→ 30 天最优策略：${bestPolicy.policy === "spam" ? "转生一解锁就刷（spam）" : bestPolicy.policy === "daily" ? "每日转生" : "不转生"}；比次优高 ${fmt(bestPolicy.r.snaps[29]!.lifetime / [...runs].sort((a, b) => b.r.snaps[29]!.lifetime - a.r.snaps[29]!.lifetime)[1]!.r.snaps[29]!.lifetime * 100 - 100, 0)}%`);
+const sortedRuns = [...runs].sort((a, b) => b.r.snaps[29]!.lifetime - a.r.snaps[29]!.lifetime);
+const bestPolicy = sortedRuns[0]!;
+log(`→ 30 天最优 = ${POLICY_LABEL[bestPolicy.policy]}（比次优高 ${fmt((bestPolicy.r.snaps[29]!.lifetime / sortedRuns[1]!.r.snaps[29]!.lifetime - 1) * 100, 0)}%）`);
 mainRun = bestPolicy.r;
 
 log("\n================== B. 主画像逐日明细（硬核：3 次开机/天，20min 在线，夜离线 12h 封顶） ==================");
@@ -583,7 +588,7 @@ for (const dayNo of [1, 3, 5, 10, 15, 20, 25, 30]) {
   const lvSum = Object.values(s.levels).reduce((a, b) => a + b, 0);
   const dispShare = s.dispDaily / Math.max(s.income * (ACTIVE_SEC + SAME_DAY_GAPS + Math.min(NIGHT_GAP, 12 * 3600) * s.offEff), 1e-9);
   log(
-    `D${String(dayNo).padStart(2)}｜挂机${sci(s.income)}/s｜余额${sci(s.store)}｜家具${s.decor.length}/8${s.decor.length === 8 ? "（+10% 已生效）" : ""}｜同事${s.col.length}/5 Lv合计${s.colLevelSum}｜天赋${s.talentSpent}/24 点（${s.talentUnlocked}节点，余${s.talentPoints}点）｜图鉴${s.collection}/55｜转生×${fmt(prestigeMultiplier(s.prestige), 2)}（${s.prestige}点/${s.prestiges}次）｜段位=${s.rank}${nextRankIn !== null ? `（距下一档 ${sci(nextRankIn)}）` : "（终档）"}｜升级总等级=${lvSum}｜离线效率=${fmt(s.offEff, 2)}｜派遣日收益=${sci(s.dispDaily)}（占日收入 ${fmt(dispShare * 100, 1)}%）`,
+    `D${String(dayNo).padStart(2)}｜挂机${sci(s.income)}/s｜余额${sci(s.store)}｜家具${s.decor.length}/8${s.decor.length === 8 ? "（+10% 已生效）" : ""}｜同事${s.col.length}/5 Lv合计${s.colLevelSum}｜天赋${s.talentSpent}/24 点（${s.talentUnlocked}节点，余${s.talentPoints}点，溢出${s.talentOverflow}）｜图鉴${s.collection}/55｜转生×${fmt(prestigeMultiplier(s.prestige), 2)}（${s.prestige}点/${s.prestiges}次）｜段位=${s.rank}${nextRankIn !== null ? `（距下一档 ${sci(nextRankIn)}）` : "（终档）"}｜升级总等级=${lvSum}｜离线效率=${fmt(s.offEff, 2)}｜派遣日收益=${sci(s.dispDaily)}（占日收入 ${fmt(dispShare * 100, 1)}%）`,
   );
   const todo: string[] = [];
   if (s.decor.length < 8) todo.push(`家具 ${8 - s.decor.length} 件（一次性清单）`);
@@ -600,13 +605,14 @@ log("\n================== D. 离线 vs 常开 / 离线效率>100% 的反直觉�
   const opened = simulate({ prestigePolicy: bestPolicy.policy, keepOpen: true, days: 30 });
   const eo = opened.snaps[opened.snaps.length - 1]!;
   const ec = mainRun.snaps[mainRun.snaps.length - 1]!;
-  log(`每天关机 12h 封顶 → D30 lifetime=${sci(ec.lifetime)}，挂机=${sci(ec.income)}/s，离线效率=${fmt(ec.offEff, 2)}`);
-  log(`页面常开 24/7     → D30 lifetime=${sci(eo.lifetime)}，挂机=${sci(eo.income)}/s，离线效率=—（无离线）`);
-  log(`→ 关机 ${fmt((ec.lifetime / eo.lifetime - 1) * 100, 0)}% vs 常开；离线系内容（地毯/按摩椅/离线卡/离线天赋）在常开画像下价值≈0。`);
+  log(`每天关机（20min 在线 + 23.3h 离线，夜段 12h 封顶）→ D30 lifetime=${sci(ec.lifetime)}，挂机=${sci(ec.income)}/s，离线效率=${fmt(ec.offEff, 2)}（>100%！）`);
+  log(`页面常开 24h/天（在线 100%，无离线结算）        → D30 lifetime=${sci(eo.lifetime)}，挂机=${sci(eo.income)}/s`);
+  log(`→ 关机玩法 lifetime = 常开的 ${fmt(ec.lifetime / eo.lifetime, 2)} 倍（${fmt((ec.lifetime / eo.lifetime - 1) * 100, 0)}% 更多）。离线系内容（地毯/按摩椅/离线卡/离线天赋）在常开画像下价值≈0。`);
   const offEffNow = mainRun.snaps[15]!.offEff;
-  log(`关键：离线效率可自然 >100%（D16=${fmt(offEffNow, 2)}；来自 回访 0.3 + 连签 0.15 + 好感 0.03 + 小美 0.02 + 家具 raise 0.23 + 天赋 idle_4 0.08 等）→ 同样是 1 小时，离线给的比在线多。`);
-  log(`硬核最优实操 = 「上线 1-3 分钟做完领取/决策 → 立刻关掉页面」：同一天里开机越久，越亏（在线 100% vs 离线 ${fmt(offEffNow, 2)}×，上限 12h/次）。`);
-  log(`推演：每天离线 23h（分 3 段，均 <12h 封顶）→ 离线产出 = 23h×${fmt(offEffNow, 2)} ≈ ${fmt(23 * offEffNow, 1)} 等效小时 > 常开 24h。`);
+  log(`根因：离线效率可自然 >100%（D16=${fmt(offEffNow, 2)}）：回访 3 次 +0.3、连签 3 周 +0.15、好感 40 +0.03、小美 +0.02 先把 raw 顶过 1.0，`);
+  log(`      再由「家具离线 +0.23 / 天赋 idle_4 +0.08 / 事件终极 +0.2」把上限 1+raise 继续抬高 → min(1+raise, raw+raise) 恒等于 1+raise。`);
+  log(`硬核最优实操 = 「上线 1-3 分钟做完领取/决策 → 立刻关掉页面」：同样 1 小时，离线给 ${fmt(offEffNow, 2)}×，在线上限只有 1×（离线每次最多 12h，分 3 段即可全额吃满）。`);
+  log(`→ 对硬核玩家，这款放置游戏的最优策略是「尽量别玩」（挂机页常开反而亏 ${fmt((1 - eo.lifetime / ec.lifetime) * 100, 0)}% lifetime）。`);
 }
 
 log("\n\n================== E. 四批系统的最优解 / 假选择审计 ==================");
@@ -709,7 +715,7 @@ log("\n--- E3 天赋树：24 点上限的最优分配（用 D20 真实形貌状�
     const st = withT(unlocked);
     const dIdle = effectOf(st).idleRate - effectOf(base).idleRate;
     const eff = offlineEfficiency(st, BASE_MS - 20 * DAY, REAL_NOW);
-    const night = offlineEarn(st, 12 * 3600, eff).earned - offlineEarn(base, 12 * 3600, offlineEfficiency(base, BASE_MS - 20 * DAY, REAL_NOW)).earned;
+    const night = offlineEarn(st, NIGHT_GAP, eff).earned - offlineEarn(base, NIGHT_GAP, offlineEfficiency(base, BASE_MS - 20 * DAY, REAL_NOW)).earned;
     const patrol = (ACTIVE_SEC / 120) * bossSurviveReward(st, ES5) * 1.22 - (ACTIVE_SEC / 120) * bossSurviveReward(base, ES5) * 1.22;
     const click = (clickPowerOf(st) - clickPowerOf(base)) * CLICK_SECONDS.reduce((a, b) => a + b, 0) * CPS;
     return { idle: dIdle, daily: dIdle * (ACTIVE_SEC + SAME_DAY_GAPS) + night + patrol + click, eff };
@@ -738,6 +744,9 @@ log("\n--- E3 天赋树：24 点上限的最优分配（用 D20 真实形貌状�
   const c5a = evalWith([...clickLine, "click_5a"]);
   const c5b = evalWith([...clickLine, "click_5b"]);
   log(`  互斥终极 click_5a(每300点击→挂机+1%,上限35%) vs click_5b(+12%挂机+每1000点击+1%,上限32%,点击+60%)：日价值 5a=${sci(c5a.daily)}，5b=${sci(c5b.daily)} → ${c5a.daily >= c5b.daily ? "5a 优" : "5b 优"}（当前 11,250 累计点击下）`);
+  log(`    解析：5a = min(0.35, clicks/300×0.01)；5b = min(0.44, 0.12 + clicks/1000×0.01)；两线交点 ≈ 5,143 点击（5a 反超）与 ≈ 23,000 点击（5b 再反超）→ 只有重点击党（>2.3 万点击）才该选 5b。`);
+  log(`  24 点上限 vs 满树 27 点：必须放弃 3 点。实测最优放弃的是事件终极 event_5b（挂机全 + 点击全 + 事件 t1-4 = 24 点）；`);
+  log(`    因为 event_5b 只给「事件×2 + 离线效率+0.2」，事件经济本身只占日收入 0.1~0.2%，+0.2 离线效率在 raise 已经很高时又被边际稀释。`);
   log(`  单点收益（从无天赋到全树逐节点增量，仅挂机+离线+巡逻+点击）：`);
   const all = [...idleLine, ...clickLine, "click_5a", ...eventLine];
   const nodeRows: Array<{ id: string; cost: number; v: number }> = [];
@@ -762,8 +771,10 @@ log("\n--- E4 派遣任务：两种开机节奏下的任务排名（D20 状态�
     return { ...s, team: { colleagues: cols } };
   })();
   const station = stationIdleScaled(s0);
-  const idleDaily = effectOf(s0).idleRate * (ACTIVE_SEC + SAME_DAY_GAPS + 12 * 3600);
-  log(`  状态：挂机=${sci(effectOf(s0).idleRate)}/s，工位=${sci(station)}/s，日收入≈${sci(idleDaily)}`);
+  const EFF = 1.18; // 主模拟实测离线效率
+  const idleDailyClosed = effectOf(s0).idleRate * (ACTIVE_SEC + (SAME_DAY_GAPS + 12 * 3600) * EFF);
+  const idleDailyOpen = effectOf(s0).idleRate * DAY;
+  log(`  状态：挂机=${sci(effectOf(s0).idleRate)}/s，工位=${sci(station)}/s；关闭画像日收入≈${sci(idleDailyClosed)}，常开≈${sci(idleDailyOpen)}`);
   log(`  【每天关机画像】任务在日历下的每日可领次数与全队日收益：`);
   let bestClosed = { mission: "", daily: 0 };
   for (const m of MISSIONS) {
@@ -775,7 +786,7 @@ log("\n--- E4 派遣任务：两种开机节奏下的任务排名（D20 状态�
       sum += dispatchReward(probe, c.id, station) * claims;
     }
     if (sum > bestClosed.daily) bestClosed = { mission: m.id, daily: sum };
-    log(`    ${m.name.padEnd(7)} ${hrs(m.seconds).padEnd(5)} ×${String(m.mult).padEnd(4)} 可领 ${String(claims).padStart(2)} 次/天 → 全队 ${sci(sum)}/天（占日收入 ${fmt(sum / idleDaily * 100, 1)}%）`);
+    log(`    ${m.name.padEnd(7)} ${hrs(m.seconds).padEnd(5)} ×${String(m.mult).padEnd(4)} 可领 ${String(claims).padStart(2)} 次/天 → 全队 ${sci(sum)}/天（占关闭画像日收入 ${fmt(sum / idleDailyClosed * 100, 1)}%）`);
   }
   log(`    → 每天关机画像最优任务 = ${MISSIONS.find((m) => m.id === bestClosed.mission)!.name}（其余任务被支配）`);
   log(`  【页面常开画像】可领次数 = 86400/时长：`);
@@ -789,27 +800,44 @@ log("\n--- E4 派遣任务：两种开机节奏下的任务排名（D20 状态�
       sum += dispatchReward(probe, c.id, station) * claims;
     }
     if (sum > bestOpen.daily) bestOpen = { mission: m.id, daily: sum };
-    log(`    ${m.name.padEnd(7)} ${hrs(m.seconds).padEnd(5)} ×${String(m.mult).padEnd(4)} 可领 ${String(claims).padStart(5)} 次/天 → 全队 ${sci(sum)}/天（占日收入 ${fmt(sum / idleDaily * 100, 1)}%）`);
+    log(`    ${m.name.padEnd(7)} ${hrs(m.seconds).padEnd(5)} ×${String(m.mult).padEnd(4)} 可领 ${String(claims).padStart(5)} 次/天 → 全队 ${sci(sum)}/天（占常开画像日收入 ${fmt(sum / idleDailyOpen * 100, 1)}%）`);
   }
   log(`    → 页面常开画像最优任务 = ${MISSIONS.find((m) => m.id === bestOpen.mission)!.name}`);
   const bestDaily = dispatchDailyEst(s0, CLAIM);
   log(`  【最优排班】每天关机画像下按人最优：${COLLEAGUES.map((c) => `${c.name}→${MISSIONS.find((m) => m.id === bestDaily.per[c.id]?.mission)?.name ?? "-"}(${sci(bestDaily.per[c.id]?.daily ?? 0)}/天)`).join("；")}`);
-  log(`    全队派遣日收益=${sci(bestDaily.total)}，占日收入 ${fmt(bestDaily.total / idleDaily * 100, 1)}%`);
+  log(`    全队派遣日收益=${sci(bestDaily.total)}，占关闭画像日收入 ${fmt(bestDaily.total / idleDailyClosed * 100, 1)}%（设计目标 10-18%）`);
   log(`    注意：五人全派 8h 后「匹配任务 +50%」只在 30min/1h/4h 任务上有意义，但倍率差让 8h 任务在关机画像下全面胜出。`);
 }
 
 /* ---- E5 家具 ---- */
-log("\n--- E5 家具：真实购买时点与回本（主画像模拟中的首次购买日） ---");
+log("\n--- E5 家具：真实购买时点（主模拟贪心 ROI 采购）+ 回本 ---");
 {
-  for (const d of DECOR) {
-    const buys = decorBuyLog[d.id] ?? [];
-    const first = buys[0];
-    const s = mainRun.snaps[first ? first.day - 1 : 0]!;
-    const idleSec = ACTIVE_SEC + SAME_DAY_GAPS + Math.min(NIGHT_GAP, 12 * 3600) * s.offEff;
-    const probe: GameState = { ...mainRun.end, decor: [...mainRun.end.decor.filter((x) => x !== d.id), d.id] };
-    log(`  ${d.name.padEnd(5)} 价=${fmt(d.cost).padEnd(13)} ${d.desc.padEnd(16)} 首购日=${first ? "D" + first.day : "30 天内未买"}${first ? `（当时挂机 ${sci(first.income)}/s）` : ""}`);
+  const buyDays = DECOR.map((d) => ({ d, buy: (decorBuyLog[d.id] ?? [])[0] }));
+  for (const { d, buy } of buyDays) {
+    log(`  ${d.name.padEnd(5)} 价=${fmt(d.cost).padEnd(13)} ${d.desc.padEnd(16)} 首购=${buy ? "D" + buy.day : "30 天内未买"}${buy ? `（当时挂机 ${sci(buy.income)}/s）` : ""}`);
   }
-  log(`  说明：本模拟里家具按「回本最快」贪心购买；地毯/按摩椅的收益仅在离线时兑现，常开画像=0。`);
+  const doneDay = mainRun.snaps.find((s) => s.decor.length >= 8)?.day;
+  log(`  集齐 8 件（+10% 集齐奖励）时间：${doneDay ? "D" + doneDay : "30 天内未达成"}`);
+  // 在 D30 状态上算每件对日收益的边际价值（引擎口径：在线+同日离线+夜间离线+点击+派遣）
+  const end = mainRun.end;
+  const eff = mainRun.snaps[29]!.offEff;
+  const idleSec = ACTIVE_SEC + (SAME_DAY_GAPS + Math.min(NIGHT_GAP, 12 * 3600)) * eff;
+  const base = { ...end, decor: [] as string[] };
+  const baseIdle = effectOf(base).idleRate;
+  const dispBase = dispatchDailyEst(base).total;
+  log(`  D30 状态（挂机 ${sci(effectOf(end).idleRate)}/s，离线效率 ${fmt(eff, 2)}）每件家具的日收益增量与回本：`);
+  const fullBase = { ...end, decor: end.decor.filter((x) => x !== ""), };
+  const fullIdle = effectOf(fullBase).idleRate;
+  const fullDisp = dispatchDailyEst(fullBase).total;
+  void base; void baseIdle; void dispBase;
+  for (const d of DECOR) {
+    const without: GameState = { ...fullBase, decor: fullBase.decor.filter((x) => x !== d.id) };
+    const dIdle = fullIdle - effectOf(without).idleRate;
+    const dDisp = fullDisp - dispatchDailyEst(without).total;
+    const dDaily = dIdle * idleSec + dDisp;
+    log(`    ${d.name.padEnd(5)} 集齐后边际日增=${sci(dDaily).padEnd(9)} 回本=${dDaily > 0 ? hrs(d.cost / dDaily) : "∞"}${d.id === "rug" || d.id === "chair" ? "  ← 仅离线兑现（常开画像=0）" : ""}${d.id === "projector" ? "  ← 仅派遣兑现（不派=0）" : ""}`);
+  }
+  log(`  结论：家具是一次性清单（D1-3 内买完），买到即永久；没有取舍，只有顺序。离线两件在「页面常开」画像下收益恒 0。`);
 }
 
 /* ---- E6 摸鱼站 ---- */
@@ -821,34 +849,49 @@ for (const dayNo of [1, 5, 20, 30]) {
   log(`  D${dayNo}: 3 次满分奖励=${sci(arc)}，占当日收入 ${fmt((arc / Math.max(total, 1e-9)) * 100, 2)}%（= 75 挂机秒，与阶段无关）`);
 }
 
-/* ---- E7 转生 spam 实测 ---- */
-log("\n--- E7 转生（离职再就业）：spam 是不是最优？单次上限 20 点、每次 +1 天赋点 ---");
+/* ---- E7 转生策略实测 ---- */
+log("\n--- E7 转生（离职再就业）：攒够再转 vs 一解锁就刷，30 天实录 ---");
 {
-  const s = mainRun.end;
-  log(`  主模拟中：${s.prestige} 点 / ${mainRun.snaps[29]!.prestiges} 次；D30 倍率 ×${fmt(prestigeMultiplier(s.prestige), 1)}。`);
-  log(`  转生公式：点数 = floor(3 × (本局累计/(1e8×当前倍率))^0.4)，单次封顶 20；门槛 = 1e8×当前倍率。`);
-  log(`  → 门槛随倍率线性涨、收入也随倍率线性涨 ⇒ 每次转生耗时恒定、门槛悬赏恒定；而「一解锁就转」每次 +3 点，`);
-  log(`    「攒到 20 点」需要 ~114× 门槛时间才给 20 点 ⇒ **spam 严格占优**（相同时间内点数约 17 倍）。`);
-  // 实测：从 D20 状态开始 5 分钟「可转就转」
-  const st0 = mainRun.snaps[19]!;
-  log(`  实测（D20 状态，模拟 300 秒活动内「一解锁就点转生」）：`);
-  let s2 = { ...mainRun.end };
-  void st0;
-  const cnt0 = s2.prestige;
-  let tSim = 0;
-  let cnt = 0;
-  let mob = 0;
-  while (tSim < 300) {
-    if (canPrestige(s2)) {
-      const r = doPrestige(s2);
-      if (r) { s2 = r.state; cnt++; }
-    }
-    s2 = advance(s2, 1);
-    tSim++;
-    mob = Math.max(mob, s2.moyu);
+  const sortByLifetime = [...runs].sort((a, b) => b.r.snaps[29]!.lifetime - a.r.snaps[29]!.lifetime);
+  for (const r of sortByLifetime) {
+    const e = r.r.snaps[29]!;
+    log(`  ${POLICY_LABEL[r.policy]!.padEnd(20)} D30 lifetime=${sci(e.lifetime).padEnd(9)} 相对最优=${fmt(e.lifetime / sortByLifetime[0]!.r.snaps[29]!.lifetime * 100, 1)}% 转生=${String(e.prestiges).padStart(3)} 次 / ${e.prestige} 点 / 倍率×${fmt(prestigeMultiplier(e.prestige), 1)}`);
   }
-  log(`    300 秒内转生 ${cnt} 次 → 转生点 ${cnt0} → ${s2.prestige}（${cnt ? `+${s2.prestige - cnt0}` : "0"}），倍率 ×${fmt(prestigeMultiplier(s2.prestige), 1)}（原 ×${fmt(prestigeMultiplier(cnt0), 1)}）`);
-  log(`    → 后期单次转生只值「几秒挂机」，转生从「战略决策」退化成「频繁点击按钮的刷子」；且无冷却/无递减。`);
+  log(`  公式：点数 = floor(3 × (本局累计/(1e8×当前倍率))^0.4)，单次封顶 20；门槛 = 1e8×当前倍率。`);
+  log(`  关键机制：转生保留 80% 等级（floor），但每次转生都会把已经买起来的复利等级打回 0.8×；`);
+  log(`  → 「一解锁就转（+3 点）」在 20min/天画像下反被惩罚：每转一次丢 20% 等级，一天转好几次等于自毁复利，30 天反而低 ${fmt((1 - RUNS_SPAM_RATIO()) * 100, 0)}%。`);
+  log(`  → 本画像 30 天最优 = 「攒到接近单次上限（20 点）再转」≈ 每天开页面时转 1 次；点击党/长在线玩家可以提高频率（在线时间越长，等级回补越快，spam 越接近最优——上代 r8 竞速报告实测长在线 spam 路线 7.4h 打穿终档）。`);
+  // 一次会话内不同频率对比（D30 状态，600s 连续在线）
+  const simPrestige = (minGain: number): { n: number; pts: number } => {
+    let st = { ...mainRun.end };
+    let n = 0;
+    const pts0 = st.prestige;
+    for (let i = 0; i < 600; i++) {
+      if (canPrestige(st) && prestigeGain(st) >= minGain) {
+        const r = doPrestige(st)!;
+        st = r.state; n++;
+        for (let k = 0; k < 10; k++) st = spendTalents(st);
+      }
+      st = advance(st, 1);
+      if (i % 15 === 0) {
+        // 简易再投资：买当前最便宜的可见升级（复用引擎成本）
+        for (const u of UPGRADES) {
+          const cost = costOf(u.id, st.levels[u.id] ?? 0);
+          if (st.moyu >= cost) { st = { ...st, moyu: st.moyu - cost, levels: { ...st.levels, [u.id]: (st.levels[u.id] ?? 0) + 1 } }; break; }
+        }
+      }
+    }
+    return { n, pts: st.prestige - pts0 };
+  };
+  const spam600 = simPrestige(1);
+  const wait600 = simPrestige(20);
+  log(`  实测（D30 状态连续在线 600 秒）：一解锁就转 → ${spam600.n} 次 / +${spam600.pts} 点；攒到 20 点再转 → ${wait600.n} 次 / +${wait600.pts} 点。`);
+  log(`  → 答案不是唯一的「spam 最优」：转生频率与在线时长强相关。但无论哪种，最优都退化成「按固定节奏点同一个按钮」，没有构筑取舍。`);
+}
+function RUNS_SPAM_RATIO(): number {
+  const best = [...runs].sort((a, b) => b.r.snaps[29]!.lifetime - a.r.snaps[29]!.lifetime)[0]!;
+  const spam = runs.find((r) => r.policy === "spam")!;
+  return spam.r.snaps[29]!.lifetime / best.r.snaps[29]!.lifetime;
 }
 
 /* ---- E8 完成度时间线 ---- */
@@ -881,8 +924,9 @@ log("\n--- E9 硬核玩家「每天上线做什么」决策链（主画像，D10
   log("  5. 派遣：自动重复 + 开机自动领取 → 0 决策（改任务才有决策，但最优固定 = 8h 咖啡）");
   log("  6. 家具/同事/天赋：一次性清单，D5 前基本买完/招完；之后只等转生给天赋点");
   log("  7. 摸鱼站：3 次/天，可玩可不玩（占收入 <0.1%）；对硬核=纯内容");
-  log("  8. 转生：一解锁就点（spam 最优）→ 后期每小时可点几十次按钮");
-  log("  → 真实每日决策数：0-1 个（只有卡牌 3 选 1，且是固定排序）+ 可选的内容消耗（小游戏）");
+  log("  8. 转生：攒到接近单次上限 20 点再点（≈1 次/天）；长在线玩家才值得提高频率 → 仍是「固定节奏点按钮」");
+  log("  → 真实每日决策数：1 个（卡牌 3 选 1，且是固定排序，不是权衡）+ 可选的内容消耗（小游戏）");
+  log("  → 唯一「需要想一下」的战略选择都发生在早期（1-3 天内）：先买哪件家具/先招谁/卡池要不要跳；之后系统全部收敛到固定最优。");
 }
 
 const outPath = "playtest/final-hardcore-sim.txt";

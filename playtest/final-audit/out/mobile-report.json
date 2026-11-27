@@ -1,0 +1,152 @@
+{
+  "name": "M 线上移动端",
+  "pass": 26,
+  "total": 28,
+  "failed": [
+    "M25 横屏画布仍可用（>100px）",
+    "M26 横屏显示竖屏建议"
+  ],
+  "checks": [
+    {
+      "id": "M1 移动端可启动",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": "M2 无横向溢出",
+      "ok": true,
+      "detail": "{\"scrollW\":390,\"innerW\":390}"
+    },
+    {
+      "id": "M3 HUD 触控热区 ≥40px",
+      "ok": true,
+      "detail": "[{\"id\":\"btn-arcade\",\"w\":44,\"h\":44,\"x\":336},{\"id\":\"btn-team\",\"w\":44,\"h\":44,\"x\":336},{\"id\":\"btn-mute\",\"w\":44,\"h\":44,\"x\":336},{\"id\":\"btn-journal\",\"w\":44,\"h\":44,\"x\":336}]"
+    },
+    {
+      "id": "M4 按钮不越界",
+      "ok": true,
+      "detail": "[380,380,380,380]"
+    },
+    {
+      "id": "M5 画布与商店同屏",
+      "ok": true,
+      "detail": "{\"stage\":{\"w\":390,\"h\":552,\"top\":131,\"bottom\":683},\"shop\":{\"h\":161,\"top\":683}}"
+    },
+    {
+      "id": "M6 商店可横向滑动",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": "M7 DPR 生效（≥2）",
+      "ok": true,
+      "detail": "3"
+    },
+    {
+      "id": "M8 触摸点击入账",
+      "ok": true,
+      "detail": "0.3→6.8"
+    },
+    {
+      "id": "M9 移动端小队面板可打开",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": "M10 小队面板完整在视口内",
+      "ok": true,
+      "detail": "{\"w\":359,\"h\":455,\"left\":16,\"top\":195,\"innerW\":390,\"innerH\":844,\"bodyH\":332}"
+    },
+    {
+      "id": "M11 天赋页可切换",
+      "ok": true,
+      "detail": "点击流 · 手速摸鱼 （0/5 · 点击力 ×1.00）\n        \n  "
+    },
+    {
+      "id": "M12 点遮罩可关闭小队面板",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": "M13 日报面板可打开",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": "M14 日报面板不溢出",
+      "ok": true,
+      "detail": "{\"w\":340,\"h\":692,\"left\":25,\"innerW\":390,\"innerH\":844,\"gridW\":300,\"gridOverflowX\":false}"
+    },
+    {
+      "id": "M15 图鉴网格不横向溢出",
+      "ok": true,
+      "detail": "{\"gridW\":300}"
+    },
+    {
+      "id": "M16 摸鱼站可打开",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": "M17 三个小游戏入口",
+      "ok": true,
+      "detail": "3"
+    },
+    {
+      "id": "M18 移动端可开始小游戏",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": "M19 小游戏可退出并结算",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": "M20 每日卡弹窗出现",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": "M21 桌面/移动卡片布局不溢出",
+      "ok": true,
+      "detail": "{\"w\":359,\"h\":441,\"left\":16,\"top\":202,\"innerW\":390,\"innerH\":844,\"n\":3}"
+    },
+    {
+      "id": "M22 三张备选卡",
+      "ok": true,
+      "detail": "3"
+    },
+    {
+      "id": "M23 触摸选卡生效（HUD 显示）",
+      "ok": true,
+      "detail": "cards hidden=true"
+    },
+    {
+      "id": "M24 横屏无横向溢出",
+      "ok": true,
+      "detail": "{\"scrollW\":844,\"innerW\":844,\"innerH\":390,\"stageH\":98,\"shopH\":161,\"rotateHint\":\"none\",\"hudVisible\":true}"
+    },
+    {
+      "id": "M25 横屏画布仍可用（>100px）",
+      "ok": false,
+      "detail": "98"
+    },
+    {
+      "id": "M26 横屏显示竖屏建议",
+      "ok": false,
+      "detail": "none"
+    },
+    {
+      "id": "M27 全流程无 JS 错误",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "id": "M28 无 CDP 异常",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "ms": 17564
+}

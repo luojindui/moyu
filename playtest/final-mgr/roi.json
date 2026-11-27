@@ -1,1411 +1,554 @@
 {
-  "upgradeCurves": [
-    {
-      "id": "coffee",
-      "name": "咖啡续命",
-      "line": "click",
-      "currentLevel": 12,
-      "currentStar": {
-        "click": 123.45679012345678,
-        "idle": 0
-      },
-      "points": [
-        {
-          "L": 0,
-          "cost": 15,
-          "dIdle": 0,
-          "dClick": 1.288,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 6
-        },
-        {
-          "L": 5,
-          "cost": 31,
-          "dIdle": 0,
-          "dClick": 1.288,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 12
-        },
-        {
-          "L": 10,
-          "cost": 61,
-          "dIdle": 0,
-          "dClick": 1.288,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 24
-        },
-        {
-          "L": 15,
-          "cost": 123,
-          "dIdle": 0,
-          "dClick": 1.288,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 48
-        },
-        {
-          "L": 18,
-          "cost": 186,
-          "dIdle": 0,
-          "dClick": 1.288,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 72
-        },
-        {
-          "L": 19,
-          "cost": 214,
-          "dIdle": 0,
-          "dClick": 27.048,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 4
-        },
-        {
-          "L": 20,
-          "cost": 246,
-          "dIdle": 0,
-          "dClick": 2.576,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 48
-        },
-        {
-          "L": 23,
-          "cost": 374,
-          "dIdle": 0,
-          "dClick": 2.576,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 73
-        },
-        {
-          "L": 24,
-          "cost": 430,
-          "dIdle": 0,
-          "dClick": 2.576,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 83
-        },
-        {
-          "L": 25,
-          "cost": 494,
-          "dIdle": 0,
-          "dClick": 2.576,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 96
-        },
-        {
-          "L": 35,
-          "cost": 1998,
-          "dIdle": 0,
-          "dClick": 2.576,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 388
-        },
-        {
-          "L": 39,
-          "cost": 3494,
-          "dIdle": 0,
-          "dClick": 105.616,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 17
-        },
-        {
-          "L": 40,
-          "cost": 4018,
-          "dIdle": 0,
-          "dClick": 5.152,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 390
-        },
-        {
-          "L": 41,
-          "cost": 4621,
-          "dIdle": 0,
-          "dClick": 5.152,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 448
-        },
-        {
-          "L": 45,
-          "cost": 8082,
-          "dIdle": 0,
-          "dClick": 5.152,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 784
+  "d2": {
+    "upgrades": [
+      {
+        "id": "coffee",
+        "name": "咖啡续命",
+        "line": "click",
+        "lv": 0,
+        "cost": 15,
+        "nextEffect": "+1.100点击",
+        "dIdlePerSec": 0,
+        "dClick": 1.1,
+        "paybackSec": null,
+        "paybackSecClick2cps": 7,
+        "star": {
+          "click": 666.6666666666666,
+          "idle": 0
         }
-      ]
-    },
-    {
-      "id": "water",
-      "name": "带薪喝水",
-      "line": "click",
-      "currentLevel": 10,
-      "currentStar": {
-        "click": 49.382716049382715,
-        "idle": 0
       },
-      "points": [
-        {
-          "L": 0,
-          "cost": 100,
-          "dIdle": 0,
-          "dClick": 2.576,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 19
-        },
-        {
-          "L": 5,
-          "cost": 202,
-          "dIdle": 0,
-          "dClick": 2.576,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 39
-        },
-        {
-          "L": 10,
-          "cost": 405,
-          "dIdle": 0,
-          "dClick": 2.576,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 79
-        },
-        {
-          "L": 15,
-          "cost": 814,
-          "dIdle": 0,
-          "dClick": 5.152,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 79
-        },
-        {
-          "L": 18,
-          "cost": 1238,
-          "dIdle": 0,
-          "dClick": 5.152,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 120
-        },
-        {
-          "L": 19,
-          "cost": 1424,
-          "dIdle": 0,
-          "dClick": 5.152,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 138
-        },
-        {
-          "L": 20,
-          "cost": 1637,
-          "dIdle": 0,
-          "dClick": 5.152,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 159
-        },
-        {
-          "L": 23,
-          "cost": 2490,
-          "dIdle": 0,
-          "dClick": 5.152,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 242
-        },
-        {
-          "L": 24,
-          "cost": 2863,
-          "dIdle": 0,
-          "dClick": 5.152,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 278
-        },
-        {
-          "L": 25,
-          "cost": 3292,
-          "dIdle": 0,
-          "dClick": 5.152,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 319
-        },
-        {
-          "L": 35,
-          "cost": 13318,
-          "dIdle": 0,
-          "dClick": 10.304,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 646
-        },
-        {
-          "L": 39,
-          "cost": 23293,
-          "dIdle": 0,
-          "dClick": 10.304,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 1130
-        },
-        {
-          "L": 40,
-          "cost": 26787,
-          "dIdle": 0,
-          "dClick": 10.304,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 1300
-        },
-        {
-          "L": 41,
-          "cost": 30805,
-          "dIdle": 0,
-          "dClick": 10.304,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 1495
-        },
-        {
-          "L": 45,
-          "cost": 53877,
-          "dIdle": 0,
-          "dClick": 10.304,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 2614
+      {
+        "id": "water",
+        "name": "带薪喝水",
+        "line": "click",
+        "lv": 0,
+        "cost": 100,
+        "nextEffect": "+2.200点击",
+        "dIdlePerSec": 0,
+        "dClick": 2.2,
+        "paybackSec": null,
+        "paybackSecClick2cps": 23,
+        "star": {
+          "click": 200,
+          "idle": 0
         }
-      ]
-    },
-    {
-      "id": "chair",
-      "name": "人体工学椅",
-      "line": "click",
-      "currentLevel": 6,
-      "currentStar": {
-        "click": 27.01242571582928,
-        "idle": 0
       },
-      "points": [
-        {
-          "L": 0,
-          "cost": 800,
-          "dIdle": 0,
-          "dClick": 6.44,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 62
-        },
-        {
-          "L": 5,
-          "cost": 1610,
-          "dIdle": 0,
-          "dClick": 6.44,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 125
-        },
-        {
-          "L": 10,
-          "cost": 3237,
-          "dIdle": 0,
-          "dClick": 12.88,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 126
-        },
-        {
-          "L": 15,
-          "cost": 6510,
-          "dIdle": 0,
-          "dClick": 12.88,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 253
-        },
-        {
-          "L": 18,
-          "cost": 9901,
-          "dIdle": 0,
-          "dClick": 12.88,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 384
-        },
-        {
-          "L": 19,
-          "cost": 11386,
-          "dIdle": 0,
-          "dClick": 12.88,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 442
-        },
-        {
-          "L": 20,
-          "cost": 13094,
-          "dIdle": 0,
-          "dClick": 12.88,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 508
-        },
-        {
-          "L": 23,
-          "cost": 19914,
-          "dIdle": 0,
-          "dClick": 12.88,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 773
-        },
-        {
-          "L": 24,
-          "cost": 22901,
-          "dIdle": 0,
-          "dClick": 12.88,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 889
-        },
-        {
-          "L": 25,
-          "cost": 26336,
-          "dIdle": 0,
-          "dClick": 12.88,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 1022
-        },
-        {
-          "L": 35,
-          "cost": 106541,
-          "dIdle": 0,
-          "dClick": 25.76,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 2068
-        },
-        {
-          "L": 39,
-          "cost": 186340,
-          "dIdle": 0,
-          "dClick": 25.76,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 3617
-        },
-        {
-          "L": 40,
-          "cost": 214291,
-          "dIdle": 0,
-          "dClick": 25.76,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 4159
-        },
-        {
-          "L": 41,
-          "cost": 246435,
-          "dIdle": 0,
-          "dClick": 25.76,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 4783
-        },
-        {
-          "L": 45,
-          "cost": 431016,
-          "dIdle": 0,
-          "dClick": 25.76,
-          "paybackSecIdle": null,
-          "paybackSecClickAt2cps": 8366
+      {
+        "id": "chair",
+        "name": "人体工学椅",
+        "line": "click",
+        "lv": 0,
+        "cost": 800,
+        "nextEffect": "+5.500点击",
+        "dIdlePerSec": 0,
+        "dClick": 5.5,
+        "paybackSec": null,
+        "paybackSecClick2cps": 73,
+        "star": {
+          "click": 62.5,
+          "idle": 0
         }
-      ]
-    },
-    {
-      "id": "phone",
-      "name": "刷手机",
-      "line": "idle",
-      "currentLevel": 25,
-      "currentStar": {
-        "click": 0,
-        "idle": 24.30133657351154
       },
-      "points": [
-        {
-          "L": 0,
-          "cost": 50,
-          "dIdle": 1.401,
-          "dClick": 0,
-          "paybackSecIdle": 36,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 5,
-          "cost": 101,
-          "dIdle": 2.802,
-          "dClick": 0,
-          "paybackSecIdle": 36,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 10,
-          "cost": 203,
-          "dIdle": 2.802,
-          "dClick": 0,
-          "paybackSecIdle": 72,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 15,
-          "cost": 407,
-          "dIdle": 2.802,
-          "dClick": 0,
-          "paybackSecIdle": 145,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 18,
-          "cost": 619,
-          "dIdle": 2.802,
-          "dClick": 0,
-          "paybackSecIdle": 221,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 19,
-          "cost": 712,
-          "dIdle": 2.802,
-          "dClick": 0,
-          "paybackSecIdle": 254,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 20,
-          "cost": 819,
-          "dIdle": 2.802,
-          "dClick": 0,
-          "paybackSecIdle": 292,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 23,
-          "cost": 1245,
-          "dIdle": 2.802,
-          "dClick": 0,
-          "paybackSecIdle": 444,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 24,
-          "cost": 1432,
-          "dIdle": 72.842,
-          "dClick": 0,
-          "paybackSecIdle": 20,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 25,
-          "cost": 1646,
-          "dIdle": 5.603,
-          "dClick": 0,
-          "paybackSecIdle": 294,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 35,
-          "cost": 6659,
-          "dIdle": 5.603,
-          "dClick": 0,
-          "paybackSecIdle": 1188,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 39,
-          "cost": 11647,
-          "dIdle": 5.603,
-          "dClick": 0,
-          "paybackSecIdle": 2079,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 40,
-          "cost": 13394,
-          "dIdle": 5.603,
-          "dClick": 0,
-          "paybackSecIdle": 2390,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 41,
-          "cost": 15403,
-          "dIdle": 5.603,
-          "dClick": 0,
-          "paybackSecIdle": 2749,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 45,
-          "cost": 26939,
-          "dIdle": 11.206,
-          "dClick": 0,
-          "paybackSecIdle": 2404,
-          "paybackSecClickAt2cps": null
+      {
+        "id": "phone",
+        "name": "刷手机",
+        "line": "idle",
+        "lv": 78,
+        "cost": 2712699,
+        "nextEffect": "+26.984/s",
+        "dIdlePerSec": 26.9842,
+        "dClick": 0,
+        "paybackSec": 100529,
+        "paybackSecClick2cps": null,
+        "star": {
+          "click": 0,
+          "idle": 0.0589818479676514
         }
-      ]
-    },
-    {
-      "id": "toilet",
-      "name": "带薪蹲坑",
-      "line": "idle",
-      "currentLevel": 22,
-      "currentStar": {
-        "click": 0,
-        "idle": 7.7000077000077
       },
-      "points": [
-        {
-          "L": 0,
-          "cost": 600,
-          "dIdle": 7.004,
-          "dClick": 0,
-          "paybackSecIdle": 86,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 5,
-          "cost": 1207,
-          "dIdle": 7.004,
-          "dClick": 0,
-          "paybackSecIdle": 172,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 10,
-          "cost": 2428,
-          "dIdle": 7.004,
-          "dClick": 0,
-          "paybackSecIdle": 347,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 15,
-          "cost": 4883,
-          "dIdle": 7.004,
-          "dClick": 0,
-          "paybackSecIdle": 697,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 18,
-          "cost": 7426,
-          "dIdle": 7.004,
-          "dClick": 0,
-          "paybackSecIdle": 1060,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 19,
-          "cost": 8540,
-          "dIdle": 147.085,
-          "dClick": 0,
-          "paybackSecIdle": 58,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 20,
-          "cost": 9820,
-          "dIdle": 14.008,
-          "dClick": 0,
-          "paybackSecIdle": 701,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 23,
-          "cost": 14935,
-          "dIdle": 14.008,
-          "dClick": 0,
-          "paybackSecIdle": 1066,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 24,
-          "cost": 17176,
-          "dIdle": 14.008,
-          "dClick": 0,
-          "paybackSecIdle": 1226,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 25,
-          "cost": 19752,
-          "dIdle": 14.008,
-          "dClick": 0,
-          "paybackSecIdle": 1410,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 35,
-          "cost": 79906,
-          "dIdle": 14.008,
-          "dClick": 0,
-          "paybackSecIdle": 5704,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 39,
-          "cost": 139755,
-          "dIdle": 574.331,
-          "dClick": 0,
-          "paybackSecIdle": 243,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 40,
-          "cost": 160719,
-          "dIdle": 28.016,
-          "dClick": 0,
-          "paybackSecIdle": 5737,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 41,
-          "cost": 184826,
-          "dIdle": 28.016,
-          "dClick": 0,
-          "paybackSecIdle": 6597,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 45,
-          "cost": 323262,
-          "dIdle": 28.016,
-          "dClick": 0,
-          "paybackSecIdle": 11538,
-          "paybackSecClickAt2cps": null
+      {
+        "id": "toilet",
+        "name": "带薪蹲坑",
+        "line": "idle",
+        "lv": 66,
+        "cost": 6084274,
+        "nextEffect": "+67.460/s",
+        "dIdlePerSec": 67.4604,
+        "dClick": 0,
+        "paybackSec": 90190,
+        "paybackSecClick2cps": null,
+        "star": {
+          "click": 0,
+          "idle": 0.06574325876842496
         }
-      ]
-    },
-    {
-      "id": "group",
-      "name": "摸鱼群聊",
-      "line": "idle",
-      "currentLevel": 18,
-      "currentStar": {
-        "click": 0,
-        "idle": 6.060361197527373
       },
-      "points": [
-        {
-          "L": 0,
-          "cost": 4000,
-          "dIdle": 21.012,
-          "dClick": 0,
-          "paybackSecIdle": 190,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 5,
-          "cost": 8046,
-          "dIdle": 21.012,
-          "dClick": 0,
-          "paybackSecIdle": 383,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 10,
-          "cost": 16183,
-          "dIdle": 21.012,
-          "dClick": 0,
-          "paybackSecIdle": 770,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 15,
-          "cost": 32549,
-          "dIdle": 42.024,
-          "dClick": 0,
-          "paybackSecIdle": 775,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 18,
-          "cost": 49502,
-          "dIdle": 42.024,
-          "dClick": 0,
-          "paybackSecIdle": 1178,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 19,
-          "cost": 56928,
-          "dIdle": 42.024,
-          "dClick": 0,
-          "paybackSecIdle": 1355,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 20,
-          "cost": 65467,
-          "dIdle": 42.024,
-          "dClick": 0,
-          "paybackSecIdle": 1558,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 23,
-          "cost": 99566,
-          "dIdle": 42.024,
-          "dClick": 0,
-          "paybackSecIdle": 2369,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 24,
-          "cost": 114501,
-          "dIdle": 42.024,
-          "dClick": 0,
-          "paybackSecIdle": 2725,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 25,
-          "cost": 131676,
-          "dIdle": 42.024,
-          "dClick": 0,
-          "paybackSecIdle": 3133,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 35,
-          "cost": 532703,
-          "dIdle": 84.048,
-          "dClick": 0,
-          "paybackSecIdle": 6338,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 39,
-          "cost": 931700,
-          "dIdle": 84.048,
-          "dClick": 0,
-          "paybackSecIdle": 11085,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 40,
-          "cost": 1071455,
-          "dIdle": 84.048,
-          "dClick": 0,
-          "paybackSecIdle": 12748,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 41,
-          "cost": 1232173,
-          "dIdle": 84.048,
-          "dClick": 0,
-          "paybackSecIdle": 14660,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 45,
-          "cost": 2155078,
-          "dIdle": 84.048,
-          "dClick": 0,
-          "paybackSecIdle": 25641,
-          "paybackSecClickAt2cps": null
+      {
+        "id": "group",
+        "name": "摸鱼群聊",
+        "line": "idle",
+        "lv": 61,
+        "cost": 20166395,
+        "nextEffect": "+202.381/s",
+        "dIdlePerSec": 202.3812,
+        "dClick": 0,
+        "paybackSec": 99646,
+        "paybackSecClick2cps": null,
+        "star": {
+          "click": 0,
+          "idle": 0.059504933826794525
         }
-      ]
-    },
-    {
-      "id": "meeting",
-      "name": "无用会议",
-      "line": "idle",
-      "currentLevel": 12,
-      "currentStar": {
-        "click": 0,
-        "idle": 7.476244233946634
       },
-      "points": [
-        {
-          "L": 0,
-          "cost": 25000,
-          "dIdle": 70.04,
-          "dClick": 0,
-          "paybackSecIdle": 357,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 5,
-          "cost": 50284,
-          "dIdle": 70.04,
-          "dClick": 0,
-          "paybackSecIdle": 718,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 10,
-          "cost": 101139,
-          "dIdle": 140.081,
-          "dClick": 0,
-          "paybackSecIdle": 722,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 15,
-          "cost": 203427,
-          "dIdle": 140.081,
-          "dClick": 0,
-          "paybackSecIdle": 1452,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 18,
-          "cost": 309387,
-          "dIdle": 140.081,
-          "dClick": 0,
-          "paybackSecIdle": 2209,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 19,
-          "cost": 355795,
-          "dIdle": 140.081,
-          "dClick": 0,
-          "paybackSecIdle": 2540,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 20,
-          "cost": 409164,
-          "dIdle": 140.081,
-          "dClick": 0,
-          "paybackSecIdle": 2921,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 23,
-          "cost": 622287,
-          "dIdle": 140.081,
-          "dClick": 0,
-          "paybackSecIdle": 4442,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 24,
-          "cost": 715630,
-          "dIdle": 140.081,
-          "dClick": 0,
-          "paybackSecIdle": 5109,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 25,
-          "cost": 822974,
-          "dIdle": 140.081,
-          "dClick": 0,
-          "paybackSecIdle": 5875,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 35,
-          "cost": 3329389,
-          "dIdle": 280.161,
-          "dClick": 0,
-          "paybackSecIdle": 11884,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 39,
-          "cost": 5823121,
-          "dIdle": 280.161,
-          "dClick": 0,
-          "paybackSecIdle": 20785,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 40,
-          "cost": 6696589,
-          "dIdle": 280.161,
-          "dClick": 0,
-          "paybackSecIdle": 23903,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 41,
-          "cost": 7701077,
-          "dIdle": 280.161,
-          "dClick": 0,
-          "paybackSecIdle": 27488,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 45,
-          "cost": 13469232,
-          "dIdle": 280.161,
-          "dClick": 0,
-          "paybackSecIdle": 48077,
-          "paybackSecClickAt2cps": null
+      {
+        "id": "meeting",
+        "name": "无用会议",
+        "line": "idle",
+        "lv": 55,
+        "cost": 54490555,
+        "nextEffect": "+674.604/s",
+        "dIdlePerSec": 674.604,
+        "dClick": 0,
+        "paybackSec": 80774,
+        "paybackSecClick2cps": null,
+        "star": {
+          "click": 0,
+          "idle": 0.07340721708560319
         }
-      ]
-    },
-    {
-      "id": "deep",
-      "name": "深度摸鱼",
-      "line": "idle",
-      "currentLevel": 4,
-      "currentStar": {
-        "click": 0,
-        "idle": 41.16622387564752
       },
-      "points": [
-        {
-          "L": 0,
-          "cost": 150000,
-          "dIdle": 252.145,
-          "dClick": 0,
-          "paybackSecIdle": 595,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 5,
-          "cost": 301704,
-          "dIdle": 504.29,
-          "dClick": 0,
-          "paybackSecIdle": 598,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 10,
-          "cost": 606834,
-          "dIdle": 504.29,
-          "dClick": 0,
-          "paybackSecIdle": 1203,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 15,
-          "cost": 1220560,
-          "dIdle": 504.29,
-          "dClick": 0,
-          "paybackSecIdle": 2420,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 18,
-          "cost": 1856319,
-          "dIdle": 504.29,
-          "dClick": 0,
-          "paybackSecIdle": 3681,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 19,
-          "cost": 2134766,
-          "dIdle": 504.29,
-          "dClick": 0,
-          "paybackSecIdle": 4233,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 20,
-          "cost": 2454981,
-          "dIdle": 504.29,
-          "dClick": 0,
-          "paybackSecIdle": 4868,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 23,
-          "cost": 3733719,
-          "dIdle": 504.29,
-          "dClick": 0,
-          "paybackSecIdle": 7404,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 24,
-          "cost": 4293777,
-          "dIdle": 13111.548,
-          "dClick": 0,
-          "paybackSecIdle": 327,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 25,
-          "cost": 4937843,
-          "dIdle": 1008.581,
-          "dClick": 0,
-          "paybackSecIdle": 4896,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 35,
-          "cost": 19976329,
-          "dIdle": 1008.581,
-          "dClick": 0,
-          "paybackSecIdle": 19806,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 39,
-          "cost": 34938724,
-          "dIdle": 1008.581,
-          "dClick": 0,
-          "paybackSecIdle": 34641,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 40,
-          "cost": 40179532,
-          "dIdle": 1008.581,
-          "dClick": 0,
-          "paybackSecIdle": 39838,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 41,
-          "cost": 46206462,
-          "dIdle": 1008.581,
-          "dClick": 0,
-          "paybackSecIdle": 45813,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 45,
-          "cost": 80815391,
-          "dIdle": 2017.161,
-          "dClick": 0,
-          "paybackSecIdle": 40064,
-          "paybackSecClickAt2cps": null
+      {
+        "id": "deep",
+        "name": "深度摸鱼",
+        "line": "idle",
+        "lv": 50,
+        "cost": 162548617,
+        "nextEffect": "+2428.574/s",
+        "dIdlePerSec": 2428.5744,
+        "dClick": 0,
+        "paybackSec": 66932,
+        "paybackSecClick2cps": null,
+        "star": {
+          "click": 0,
+          "idle": 0.08858888045783865
         }
-      ]
-    },
-    {
-      "id": "retire",
-      "name": "退休式躺平",
-      "line": "idle",
-      "currentLevel": 0,
-      "currentStar": {
-        "click": 0,
-        "idle": 7
       },
-      "points": [
-        {
-          "L": 0,
-          "cost": 1000000,
-          "dIdle": 980.564,
-          "dClick": 0,
-          "paybackSecIdle": 1020,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 5,
-          "cost": 2011358,
-          "dIdle": 980.564,
-          "dClick": 0,
-          "paybackSecIdle": 2051,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 10,
-          "cost": 4045558,
-          "dIdle": 980.564,
-          "dClick": 0,
-          "paybackSecIdle": 4126,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 15,
-          "cost": 8137062,
-          "dIdle": 980.564,
-          "dClick": 0,
-          "paybackSecIdle": 8298,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 18,
-          "cost": 12375454,
-          "dIdle": 980.564,
-          "dClick": 0,
-          "paybackSecIdle": 12621,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 19,
-          "cost": 14231772,
-          "dIdle": 20591.854,
-          "dClick": 0,
-          "paybackSecIdle": 691,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 20,
-          "cost": 16366538,
-          "dIdle": 1961.129,
-          "dClick": 0,
-          "paybackSecIdle": 8345,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 23,
-          "cost": 24891458,
-          "dIdle": 1961.129,
-          "dClick": 0,
-          "paybackSecIdle": 12692,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 24,
-          "cost": 28625177,
-          "dIdle": 1961.129,
-          "dClick": 0,
-          "paybackSecIdle": 14596,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 25,
-          "cost": 32918953,
-          "dIdle": 1961.129,
-          "dClick": 0,
-          "paybackSecIdle": 16786,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 35,
-          "cost": 133175524,
-          "dIdle": 1961.129,
-          "dClick": 0,
-          "paybackSecIdle": 67908,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 39,
-          "cost": 232924823,
-          "dIdle": 80406.287,
-          "dClick": 0,
-          "paybackSecIdle": 2897,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 40,
-          "cost": 267863547,
-          "dIdle": 3922.258,
-          "dClick": 0,
-          "paybackSecIdle": 68293,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 41,
-          "cost": 308043079,
-          "dIdle": 3922.258,
-          "dClick": 0,
-          "paybackSecIdle": 78537,
-          "paybackSecClickAt2cps": null
-        },
-        {
-          "L": 45,
-          "cost": 538769269,
-          "dIdle": 3922.258,
-          "dClick": 0,
-          "paybackSecIdle": 137362,
-          "paybackSecClickAt2cps": null
+      {
+        "id": "retire",
+        "name": "退休式躺平",
+        "line": "idle",
+        "lv": 36,
+        "cost": 153151852,
+        "nextEffect": "+2361.114/s",
+        "dIdlePerSec": 2361.114,
+        "dClick": 0,
+        "paybackSec": 64864,
+        "paybackSecClick2cps": null,
+        "star": {
+          "click": 0,
+          "idle": 0.09141254132532463
         }
-      ]
-    }
-  ],
-  "decorMid": [
-    {
-      "id": "plant",
-      "name": "绿萝",
-      "desc": "工位挂机 +5%",
-      "cost": 3000,
-      "owned": false,
-      "deltaIdlePerSec": 168.146,
-      "deltaClick": 0,
-      "deltaDispatchPerHour": 44483,
-      "deltaDailyPct": 4.82,
-      "paybackDays": 0
-    },
-    {
-      "id": "lamp",
-      "name": "护眼台灯",
-      "desc": "点击力 +15%",
-      "cost": 20000,
-      "owned": false,
-      "deltaIdlePerSec": 0,
-      "deltaClick": 10.566,
-      "deltaDispatchPerHour": 0,
-      "deltaDailyPct": 0,
-      "paybackDays": 12.62
-    },
-    {
-      "id": "rug",
-      "name": "毛绒地毯",
-      "desc": "离线效率 +5%",
-      "cost": 120000,
-      "owned": false,
-      "deltaIdlePerSec": 0,
-      "deltaClick": 0,
-      "deltaDispatchPerHour": 0,
-      "deltaDailyPct": 4.63,
-      "paybackDays": 0.01
-    },
-    {
-      "id": "fridge",
-      "name": "迷你冰箱",
-      "desc": "工位挂机 +8%",
-      "cost": 600000,
-      "owned": false,
-      "deltaIdlePerSec": 269.034,
-      "deltaClick": 0,
-      "deltaDispatchPerHour": 71172,
-      "deltaDailyPct": 7.71,
-      "paybackDays": 0.02
-    },
-    {
-      "id": "chair",
-      "name": "按摩椅",
-      "desc": "离线效率 +8%",
-      "cost": 4000000,
-      "owned": false,
-      "deltaIdlePerSec": 0,
-      "deltaClick": 0,
-      "deltaDispatchPerHour": 0,
-      "deltaDailyPct": 7.41,
-      "paybackDays": 0.17
-    },
-    {
-      "id": "aquarium",
-      "name": "鱼缸",
-      "desc": "挂机 +10%、点击 +10%",
-      "cost": 30000000,
-      "owned": false,
-      "deltaIdlePerSec": 336.293,
-      "deltaClick": 7.044,
-      "deltaDispatchPerHour": 88965,
-      "deltaDailyPct": 9.64,
-      "paybackDays": 1
-    },
-    {
-      "id": "projector",
-      "name": "投影仪",
-      "desc": "派遣奖励 +30%",
-      "cost": 200000000,
-      "owned": false,
-      "deltaIdlePerSec": 0,
-      "deltaClick": 0,
-      "deltaDispatchPerHour": 277071,
-      "deltaDailyPct": 0.7,
-      "paybackDays": 92.27
-    },
-    {
-      "id": "catbed",
-      "name": "工位猫窝",
-      "desc": "挂机 +15%、离线 +10%",
-      "cost": 2000000000,
-      "owned": false,
-      "deltaIdlePerSec": 504.439,
-      "deltaClick": 0,
-      "deltaDispatchPerHour": 133448,
-      "deltaDailyPct": 25.07,
-      "paybackDays": 25.64
-    }
-  ],
-  "colleaguesMid": [
-    {
-      "id": "zhou",
-      "name": "老周",
-      "action": "升级Lv2→3",
-      "cost": 8749,
-      "deltaIdlePerSec": 47.31,
-      "deltaDispatchPerHour": 81950,
-      "deltaDailyPct": 0.77,
-      "paybackDays": 0
-    },
-    {
-      "id": "mei",
-      "name": "小美",
-      "action": "升级Lv1→2",
-      "cost": 270000,
-      "deltaIdlePerSec": 143.14,
-      "deltaDispatchPerHour": 91147,
-      "deltaDailyPct": 2.05,
-      "paybackDays": 0.03
-    }
-  ],
-  "colleaguesLate": [],
-  "decorLate": [
-    {
-      "id": "plant",
-      "name": "绿萝",
-      "desc": "工位挂机 +5%",
-      "cost": 3000,
-      "owned": false,
-      "deltaIdlePerSec": 72620.135,
-      "deltaClick": 0,
-      "deltaDispatchPerHour": 153096427,
-      "deltaDailyPct": 4.05,
-      "paybackDays": 0
-    },
-    {
-      "id": "lamp",
-      "name": "护眼台灯",
-      "desc": "点击力 +15%",
-      "cost": 20000,
-      "owned": false,
-      "deltaIdlePerSec": 0,
-      "deltaClick": 1783.031,
-      "deltaDispatchPerHour": 0,
-      "deltaDailyPct": 0,
-      "paybackDays": 0.03
-    },
-    {
-      "id": "rug",
-      "name": "毛绒地毯",
-      "desc": "离线效率 +5%",
-      "cost": 120000,
-      "owned": false,
-      "deltaIdlePerSec": 0,
-      "deltaClick": 0,
-      "deltaDispatchPerHour": 0,
-      "deltaDailyPct": 3.35,
-      "paybackDays": 0
-    },
-    {
-      "id": "fridge",
-      "name": "迷你冰箱",
-      "desc": "工位挂机 +8%",
-      "cost": 600000,
-      "owned": false,
-      "deltaIdlePerSec": 116192.216,
-      "deltaClick": 0,
-      "deltaDispatchPerHour": 244954267,
-      "deltaDailyPct": 6.47,
-      "paybackDays": 0
-    },
-    {
-      "id": "chair",
-      "name": "按摩椅",
-      "desc": "离线效率 +8%",
-      "cost": 4000000,
-      "owned": false,
-      "deltaIdlePerSec": 0,
-      "deltaClick": 0,
-      "deltaDispatchPerHour": 0,
-      "deltaDailyPct": 5.37,
-      "paybackDays": 0
-    },
-    {
-      "id": "aquarium",
-      "name": "鱼缸",
-      "desc": "挂机 +10%、点击 +10%",
-      "cost": 30000000,
-      "owned": false,
-      "deltaIdlePerSec": 145240.271,
-      "deltaClick": 1188.688,
-      "deltaDispatchPerHour": 306192833,
-      "deltaDailyPct": 8.09,
-      "paybackDays": 0
-    },
-    {
-      "id": "projector",
-      "name": "投影仪",
-      "desc": "派遣奖励 +30%",
-      "cost": 200000000,
-      "owned": false,
-      "deltaIdlePerSec": 0,
-      "deltaClick": 0,
-      "deltaDispatchPerHour": 919944409,
-      "deltaDailyPct": 2.93,
-      "paybackDays": 0.03
-    },
-    {
-      "id": "catbed",
-      "name": "工位猫窝",
-      "desc": "挂机 +15%、离线 +10%",
-      "cost": 2000000000,
-      "owned": false,
-      "deltaIdlePerSec": 217860.406,
-      "deltaClick": 0,
-      "deltaDispatchPerHour": 459289260,
-      "deltaDailyPct": 19.65,
-      "paybackDays": 0.05
-    }
-  ]
+      }
+    ],
+    "decor": [
+      {
+        "id": "plant",
+        "name": "绿萝",
+        "desc": "工位挂机 +5%",
+        "cost": 3000,
+        "owned": true,
+        "deltaIdlePerSec": 0,
+        "deltaClick": 0,
+        "deltaDispatchPerHour": 0,
+        "deltaDailyPct": 0,
+        "gainPerSec": 0,
+        "paybackDays": null
+      },
+      {
+        "id": "lamp",
+        "name": "护眼台灯",
+        "desc": "点击力 +15%",
+        "cost": 20000,
+        "owned": false,
+        "deltaIdlePerSec": 0,
+        "deltaClick": 0.165,
+        "deltaDispatchPerHour": 0,
+        "deltaDailyPct": 0,
+        "gainPerSec": 0,
+        "paybackDays": 808.081
+      },
+      {
+        "id": "rug",
+        "name": "毛绒地毯",
+        "desc": "离线效率 +5%",
+        "cost": 120000,
+        "owned": false,
+        "deltaIdlePerSec": 0,
+        "deltaClick": 0,
+        "deltaDispatchPerHour": 0,
+        "deltaDailyPct": 3.89,
+        "gainPerSec": 11728.953,
+        "paybackDays": 0
+      },
+      {
+        "id": "fridge",
+        "name": "迷你冰箱",
+        "desc": "工位挂机 +8%",
+        "cost": 600000,
+        "owned": true,
+        "deltaIdlePerSec": 0,
+        "deltaClick": 0,
+        "deltaDispatchPerHour": 0,
+        "deltaDailyPct": 0,
+        "gainPerSec": 0,
+        "paybackDays": null
+      },
+      {
+        "id": "chair",
+        "name": "按摩椅",
+        "desc": "离线效率 +8%",
+        "cost": 4000000,
+        "owned": false,
+        "deltaIdlePerSec": 0,
+        "deltaClick": 0,
+        "deltaDispatchPerHour": 0,
+        "deltaDailyPct": 6.22,
+        "gainPerSec": 18766.325,
+        "paybackDays": 0.002
+      },
+      {
+        "id": "aquarium",
+        "name": "鱼缸",
+        "desc": "挂机 +10%、点击 +10%",
+        "cost": 30000000,
+        "owned": true,
+        "deltaIdlePerSec": 0,
+        "deltaClick": 0,
+        "deltaDispatchPerHour": 0,
+        "deltaDailyPct": 0,
+        "gainPerSec": 0,
+        "paybackDays": null
+      },
+      {
+        "id": "projector",
+        "name": "投影仪",
+        "desc": "派遣奖励 +30%",
+        "cost": 200000000,
+        "owned": true,
+        "deltaIdlePerSec": 0,
+        "deltaClick": 0,
+        "deltaDispatchPerHour": 0,
+        "deltaDailyPct": 0,
+        "gainPerSec": 0,
+        "paybackDays": null
+      },
+      {
+        "id": "catbed",
+        "name": "工位猫窝",
+        "desc": "挂机 +15%、离线 +10%",
+        "cost": 2000000000,
+        "owned": true,
+        "deltaIdlePerSec": 0,
+        "deltaClick": 0,
+        "deltaDispatchPerHour": 0,
+        "deltaDailyPct": 0,
+        "gainPerSec": 0,
+        "paybackDays": null
+      }
+    ],
+    "colleagues": [
+      {
+        "id": "wang",
+        "name": "王师傅",
+        "action": "升级 Lv2→3",
+        "cost": 291600001,
+        "deltaDailyPct": 0.97,
+        "deltaDispatchPerHour": 12913713,
+        "paybackDays": 1.149
+      }
+    ],
+    "decorByRoi": [
+      "毛绒地毯",
+      "按摩椅",
+      "护眼台灯"
+    ],
+    "decorByCost": [
+      "护眼台灯",
+      "毛绒地毯",
+      "按摩椅"
+    ]
+  },
+  "d7p": {
+    "upgrades": [
+      {
+        "id": "coffee",
+        "name": "咖啡续命",
+        "line": "click",
+        "lv": 0,
+        "cost": 15,
+        "nextEffect": "+148.775点击",
+        "dIdlePerSec": 0,
+        "dClick": 148.775,
+        "paybackSec": null,
+        "paybackSecClick2cps": 0,
+        "star": {
+          "click": 666.6666666666666,
+          "idle": 0
+        }
+      },
+      {
+        "id": "water",
+        "name": "带薪喝水",
+        "line": "click",
+        "lv": 0,
+        "cost": 100,
+        "nextEffect": "+297.550点击",
+        "dIdlePerSec": 0,
+        "dClick": 297.55,
+        "paybackSec": null,
+        "paybackSecClick2cps": 0,
+        "star": {
+          "click": 200,
+          "idle": 0
+        }
+      },
+      {
+        "id": "chair",
+        "name": "人体工学椅",
+        "line": "click",
+        "lv": 0,
+        "cost": 800,
+        "nextEffect": "+743.875点击",
+        "dIdlePerSec": 0,
+        "dClick": 743.875,
+        "paybackSec": null,
+        "paybackSecClick2cps": 1,
+        "star": {
+          "click": 62.5,
+          "idle": 0
+        }
+      },
+      {
+        "id": "phone",
+        "name": "刷手机",
+        "line": "idle",
+        "lv": 57,
+        "cost": 144128,
+        "nextEffect": "+1605.039/s",
+        "dIdlePerSec": 1605.0388,
+        "dClick": 0,
+        "paybackSec": 90,
+        "paybackSecClick2cps": null,
+        "star": {
+          "click": 0,
+          "idle": 0.5550621669626998
+        }
+      },
+      {
+        "id": "toilet",
+        "name": "带薪蹲坑",
+        "line": "idle",
+        "lv": 44,
+        "cost": 281098,
+        "nextEffect": "+4012.597/s",
+        "dIdlePerSec": 4012.597,
+        "dClick": 0,
+        "paybackSec": 70,
+        "paybackSecClick2cps": null,
+        "star": {
+          "click": 0,
+          "idle": 0.7114956349742794
+        }
+      },
+      {
+        "id": "group",
+        "name": "摸鱼群聊",
+        "line": "idle",
+        "lv": 40,
+        "cost": 1071455,
+        "nextEffect": "+12037.791/s",
+        "dIdlePerSec": 12037.791,
+        "dClick": 0,
+        "paybackSec": 89,
+        "paybackSecClick2cps": null,
+        "star": {
+          "click": 0,
+          "idle": 0.5599861870073871
+        }
+      },
+      {
+        "id": "meeting",
+        "name": "无用会议",
+        "line": "idle",
+        "lv": 36,
+        "cost": 3828797,
+        "nextEffect": "+40125.970/s",
+        "dIdlePerSec": 40125.97,
+        "dClick": 0,
+        "paybackSec": 95,
+        "paybackSecClick2cps": null,
+        "star": {
+          "click": 0,
+          "idle": 0.5223572835018414
+        }
+      },
+      {
+        "id": "deep",
+        "name": "深度摸鱼",
+        "line": "idle",
+        "lv": 33,
+        "cost": 15104975,
+        "nextEffect": "+144453.492/s",
+        "dIdlePerSec": 144453.492,
+        "dClick": 0,
+        "paybackSec": 105,
+        "paybackSecClick2cps": null,
+        "star": {
+          "click": 0,
+          "idle": 0.47666414542228636
+        }
+      },
+      {
+        "id": "retire",
+        "name": "退休式躺平",
+        "line": "idle",
+        "lv": 27,
+        "cost": 43535315,
+        "nextEffect": "+280881.790/s",
+        "dIdlePerSec": 280881.79,
+        "dClick": 0,
+        "paybackSec": 155,
+        "paybackSecClick2cps": null,
+        "star": {
+          "click": 0,
+          "idle": 0.3215780108631349
+        }
+      }
+    ],
+    "decor": [
+      {
+        "id": "plant",
+        "name": "绿萝",
+        "desc": "工位挂机 +5%",
+        "cost": 3000,
+        "owned": true,
+        "deltaIdlePerSec": 0,
+        "deltaClick": 0,
+        "deltaDispatchPerHour": 0,
+        "deltaDailyPct": 0,
+        "gainPerSec": 0,
+        "paybackDays": null
+      },
+      {
+        "id": "lamp",
+        "name": "护眼台灯",
+        "desc": "点击力 +15%",
+        "cost": 20000,
+        "owned": false,
+        "deltaIdlePerSec": 0,
+        "deltaClick": 22.316,
+        "deltaDispatchPerHour": 0,
+        "deltaDailyPct": 0,
+        "gainPerSec": 0.039,
+        "paybackDays": 5.975
+      },
+      {
+        "id": "rug",
+        "name": "毛绒地毯",
+        "desc": "离线效率 +5%",
+        "cost": 120000,
+        "owned": false,
+        "deltaIdlePerSec": 0,
+        "deltaClick": 0,
+        "deltaDispatchPerHour": 0,
+        "deltaDailyPct": 4.24,
+        "gainPerSec": 652844.752,
+        "paybackDays": 0
+      },
+      {
+        "id": "fridge",
+        "name": "迷你冰箱",
+        "desc": "工位挂机 +8%",
+        "cost": 600000,
+        "owned": true,
+        "deltaIdlePerSec": 0,
+        "deltaClick": 0,
+        "deltaDispatchPerHour": 0,
+        "deltaDailyPct": 0,
+        "gainPerSec": 0,
+        "paybackDays": null
+      },
+      {
+        "id": "chair",
+        "name": "按摩椅",
+        "desc": "离线效率 +8%",
+        "cost": 4000000,
+        "owned": false,
+        "deltaIdlePerSec": 0,
+        "deltaClick": 0,
+        "deltaDispatchPerHour": 0,
+        "deltaDailyPct": 6.79,
+        "gainPerSec": 1044551.603,
+        "paybackDays": 0
+      },
+      {
+        "id": "aquarium",
+        "name": "鱼缸",
+        "desc": "挂机 +10%、点击 +10%",
+        "cost": 30000000,
+        "owned": true,
+        "deltaIdlePerSec": 0,
+        "deltaClick": 0,
+        "deltaDispatchPerHour": 0,
+        "deltaDailyPct": 0,
+        "gainPerSec": 0,
+        "paybackDays": null
+      },
+      {
+        "id": "projector",
+        "name": "投影仪",
+        "desc": "派遣奖励 +30%",
+        "cost": 200000000,
+        "owned": true,
+        "deltaIdlePerSec": 0,
+        "deltaClick": 0,
+        "deltaDispatchPerHour": 0,
+        "deltaDailyPct": 0,
+        "gainPerSec": 0,
+        "paybackDays": null
+      },
+      {
+        "id": "catbed",
+        "name": "工位猫窝",
+        "desc": "挂机 +15%、离线 +10%",
+        "cost": 2000000000,
+        "owned": false,
+        "deltaIdlePerSec": 1834634.329,
+        "deltaClick": 0,
+        "deltaDispatchPerHour": 2930771876,
+        "deltaDailyPct": 23.19,
+        "gainPerSec": 3569283.122,
+        "paybackDays": 0.006
+      }
+    ],
+    "colleagues": [
+      {
+        "id": "wang",
+        "name": "王师傅",
+        "action": "升级 Lv1→2",
+        "cost": 216000000,
+        "deltaDailyPct": 1.14,
+        "deltaDispatchPerHour": 654841862,
+        "paybackDays": 0.014
+      }
+    ],
+    "decorByRoi": [
+      "毛绒地毯",
+      "按摩椅",
+      "工位猫窝",
+      "护眼台灯"
+    ],
+    "decorByCost": [
+      "护眼台灯",
+      "毛绒地毯",
+      "按摩椅",
+      "工位猫窝"
+    ]
+  }
 }

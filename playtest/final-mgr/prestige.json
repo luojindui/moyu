@@ -6,16 +6,6 @@
       "pointsPerTime": 3
     },
     {
-      "waitMultiple": 1.25,
-      "pointsPerRun": 3,
-      "pointsPerTime": 2.4
-    },
-    {
-      "waitMultiple": 1.5,
-      "pointsPerRun": 3,
-      "pointsPerTime": 2
-    },
-    {
       "waitMultiple": 2,
       "pointsPerRun": 3,
       "pointsPerTime": 1.5
@@ -50,311 +40,496 @@
     {
       "level": 5,
       "keptLevel": 4,
-      "idleRetained": 1.137,
-      "stationRetained": 1.137,
+      "levelRetained": 0.672,
       "gained": 3,
       "multBefore": 3.25,
       "multAfter": 5.5,
-      "netAfter": 1.925
+      "netAfter": 1.137
     },
     {
       "level": 10,
       "keptLevel": 8,
-      "idleRetained": 1.297,
-      "stationRetained": 1.297,
+      "levelRetained": 0.766,
       "gained": 3,
       "multBefore": 3.25,
       "multAfter": 5.5,
-      "netAfter": 2.194
+      "netAfter": 1.297
     },
     {
       "level": 15,
       "keptLevel": 12,
-      "idleRetained": 1.337,
-      "stationRetained": 1.337,
+      "levelRetained": 0.79,
       "gained": 3,
       "multBefore": 3.25,
       "multAfter": 5.5,
-      "netAfter": 2.262
+      "netAfter": 1.337
     },
     {
       "level": 19,
       "keptLevel": 15,
-      "idleRetained": 1.336,
-      "stationRetained": 1.336,
+      "levelRetained": 0.789,
       "gained": 3,
       "multBefore": 3.25,
       "multAfter": 5.5,
-      "netAfter": 2.261
+      "netAfter": 1.336
     },
     {
       "level": 20,
       "keptLevel": 16,
-      "idleRetained": 0.852,
-      "stationRetained": 0.852,
+      "levelRetained": 0.503,
       "gained": 3,
       "multBefore": 3.25,
       "multAfter": 5.5,
-      "netAfter": 1.442
+      "netAfter": 0.852
     },
     {
       "level": 21,
       "keptLevel": 16,
-      "idleRetained": 0.811,
-      "stationRetained": 0.811,
+      "levelRetained": 0.479,
       "gained": 3,
       "multBefore": 3.25,
       "multAfter": 5.5,
-      "netAfter": 1.373
+      "netAfter": 0.811
     },
     {
       "level": 22,
       "keptLevel": 17,
-      "idleRetained": 0.823,
-      "stationRetained": 0.823,
+      "levelRetained": 0.486,
       "gained": 3,
       "multBefore": 3.25,
       "multAfter": 5.5,
-      "netAfter": 1.393
+      "netAfter": 0.823
     },
     {
       "level": 25,
       "keptLevel": 20,
-      "idleRetained": 1.137,
-      "stationRetained": 1.137,
+      "levelRetained": 0.672,
       "gained": 3,
       "multBefore": 3.25,
       "multAfter": 5.5,
-      "netAfter": 1.925
+      "netAfter": 1.137
     },
     {
       "level": 30,
       "keptLevel": 24,
-      "idleRetained": 1.089,
-      "stationRetained": 1.089,
+      "levelRetained": 0.644,
       "gained": 3,
       "multBefore": 3.25,
       "multAfter": 5.5,
-      "netAfter": 1.843
+      "netAfter": 1.089
     },
     {
       "level": 35,
       "keptLevel": 28,
-      "idleRetained": 1.28,
-      "stationRetained": 1.28,
+      "levelRetained": 0.757,
       "gained": 3,
       "multBefore": 3.25,
       "multAfter": 5.5,
-      "netAfter": 2.167
+      "netAfter": 1.28
     },
     {
       "level": 39,
       "keptLevel": 31,
-      "idleRetained": 1.328,
-      "stationRetained": 1.328,
+      "levelRetained": 0.785,
       "gained": 3,
       "multBefore": 3.25,
       "multAfter": 5.5,
-      "netAfter": 2.248
+      "netAfter": 1.328
     },
     {
       "level": 40,
       "keptLevel": 32,
-      "idleRetained": 0.841,
-      "stationRetained": 0.841,
+      "levelRetained": 0.497,
       "gained": 3,
       "multBefore": 3.25,
       "multAfter": 5.5,
-      "netAfter": 1.424
+      "netAfter": 0.841
     },
     {
       "level": 41,
       "keptLevel": 32,
-      "idleRetained": 0.821,
-      "stationRetained": 0.821,
+      "levelRetained": 0.485,
       "gained": 3,
       "multBefore": 3.25,
       "multAfter": 5.5,
-      "netAfter": 1.389
+      "netAfter": 0.821
     },
     {
       "level": 45,
       "keptLevel": 36,
-      "idleRetained": 0.716,
-      "stationRetained": 0.716,
+      "levelRetained": 0.423,
       "gained": 3,
       "multBefore": 3.25,
       "multAfter": 5.5,
-      "netAfter": 1.211
+      "netAfter": 0.716
     },
     {
       "level": 48,
       "keptLevel": 38,
-      "idleRetained": 0.708,
-      "stationRetained": 0.708,
+      "levelRetained": 0.419,
       "gained": 3,
       "multBefore": 3.25,
       "multAfter": 5.5,
-      "netAfter": 1.199
+      "netAfter": 0.708
     },
     {
       "level": 50,
       "keptLevel": 40,
-      "idleRetained": 1.089,
-      "stationRetained": 1.089,
+      "levelRetained": 0.644,
       "gained": 3,
       "multBefore": 3.25,
       "multAfter": 5.5,
-      "netAfter": 1.843
+      "netAfter": 1.089
     },
     {
       "level": 55,
       "keptLevel": 44,
-      "idleRetained": 1.076,
-      "stationRetained": 1.076,
+      "levelRetained": 0.636,
       "gained": 3,
       "multBefore": 3.25,
       "multAfter": 5.5,
-      "netAfter": 1.82
+      "netAfter": 1.076
     },
     {
       "level": 59,
       "keptLevel": 47,
-      "idleRetained": 1.275,
-      "stationRetained": 1.275,
+      "levelRetained": 0.753,
       "gained": 3,
       "multBefore": 3.25,
       "multAfter": 5.5,
-      "netAfter": 2.158
+      "netAfter": 1.275
     },
     {
       "level": 60,
       "keptLevel": 48,
-      "idleRetained": 0.806,
-      "stationRetained": 0.806,
+      "levelRetained": 0.476,
       "gained": 3,
       "multBefore": 3.25,
       "multAfter": 5.5,
-      "netAfter": 1.364
+      "netAfter": 0.806
     }
   ],
   "sims": [
     {
-      "policy": "never",
-      "days": 7,
-      "lifetime": 677600986949,
+      "days": 3,
+      "waitMultiple": null,
+      "lifetime": 37690517184,
       "prestigePoints": 0,
       "mult": 1,
-      "prestiges": 0,
-      "firstPrestigeMin": -1,
-      "maxIdlePerSec": 1556169,
+      "idleRate": 715278,
       "levels": {
-        "phone": 140,
-        "toilet": 123,
-        "group": 109,
-        "meeting": 96,
-        "deep": 83,
-        "retire": 70
+        "phone": 105,
+        "toilet": 88,
+        "group": 76,
+        "meeting": 69,
+        "deep": 68,
+        "retire": 55
       },
       "decorCount": 5,
       "colleagues": 5
     },
     {
-      "policy": "x1",
-      "days": 7,
-      "lifetime": 1556014690779,
-      "prestigePoints": 342,
-      "mult": 257.5,
-      "prestiges": 114,
-      "firstPrestigeMin": 365,
-      "maxIdlePerSec": 6197588,
+      "days": 3,
+      "waitMultiple": 1,
+      "lifetime": 144091242219,
+      "prestigePoints": 49,
+      "mult": 37.75,
+      "idleRate": 3508510,
       "levels": {
-        "phone": 39,
-        "toilet": 27,
-        "group": 22,
-        "meeting": 17,
-        "deep": 14,
-        "retire": 8
-      },
-      "decorCount": 2,
-      "colleagues": 2
-    },
-    {
-      "policy": "x2",
-      "days": 7,
-      "lifetime": 2542721182510,
-      "prestigePoints": 339,
-      "mult": 255.25,
-      "prestiges": 93,
-      "firstPrestigeMin": 445,
-      "maxIdlePerSec": 13159461,
-      "levels": {
-        "phone": 52,
-        "toilet": 36,
-        "group": 30,
-        "meeting": 26,
-        "deep": 22,
-        "retire": 14
-      },
-      "decorCount": 3,
-      "colleagues": 3
-    },
-    {
-      "policy": "x5",
-      "days": 7,
-      "lifetime": 5727831520272,
-      "prestigePoints": 385,
-      "mult": 289.75,
-      "prestiges": 77,
-      "firstPrestigeMin": 570,
-      "maxIdlePerSec": 29535629,
-      "levels": {
-        "phone": 54,
-        "toilet": 38,
-        "group": 33,
-        "meeting": 28,
+        "phone": 49,
+        "toilet": 40,
+        "group": 36,
+        "meeting": 32,
         "deep": 29,
-        "retire": 18
+        "retire": 23
       },
       "decorCount": 3,
       "colleagues": 4
     },
     {
-      "policy": "x10",
-      "days": 7,
-      "lifetime": 11343469411832,
-      "prestigePoints": 455,
-      "mult": 342.25,
-      "prestiges": 65,
-      "firstPrestigeMin": 670,
-      "maxIdlePerSec": 45492051,
+      "days": 3,
+      "waitMultiple": 2,
+      "lifetime": 144091242219,
+      "prestigePoints": 49,
+      "mult": 37.75,
+      "idleRate": 3508510,
       "levels": {
-        "phone": 58,
-        "toilet": 47,
-        "group": 41,
-        "meeting": 36,
-        "deep": 33,
+        "phone": 49,
+        "toilet": 40,
+        "group": 36,
+        "meeting": 32,
+        "deep": 29,
+        "retire": 23
+      },
+      "decorCount": 3,
+      "colleagues": 4
+    },
+    {
+      "days": 3,
+      "waitMultiple": 5,
+      "lifetime": 200938833579,
+      "prestigePoints": 53,
+      "mult": 40.75,
+      "idleRate": 3979441,
+      "levels": {
+        "phone": 53,
+        "toilet": 41,
+        "group": 37,
+        "meeting": 33,
+        "deep": 30,
         "retire": 24
       },
-      "decorCount": 4,
+      "decorCount": 3,
       "colleagues": 4
     },
     {
-      "policy": "x20",
-      "days": 7,
-      "lifetime": 23033825790256,
-      "prestigePoints": 536,
-      "mult": 403,
-      "prestiges": 55,
-      "firstPrestigeMin": 810,
-      "maxIdlePerSec": 105111983,
+      "days": 3,
+      "waitMultiple": 10,
+      "lifetime": 209462748667,
+      "prestigePoints": 51,
+      "mult": 39.25,
+      "idleRate": 4358354,
       "levels": {
-        "phone": 72,
-        "toilet": 56,
+        "phone": 57,
+        "toilet": 44,
+        "group": 40,
+        "meeting": 36,
+        "deep": 33,
+        "retire": 27
+      },
+      "decorCount": 4,
+      "colleagues": 5
+    },
+    {
+      "days": 3,
+      "waitMultiple": 20,
+      "lifetime": 221519991972,
+      "prestigePoints": 48,
+      "mult": 37,
+      "idleRate": 5917407,
+      "levels": {
+        "phone": 61,
+        "toilet": 52,
+        "group": 48,
+        "meeting": 44,
+        "deep": 41,
+        "retire": 34
+      },
+      "decorCount": 5,
+      "colleagues": 5
+    },
+    {
+      "days": 7,
+      "waitMultiple": null,
+      "lifetime": 442931539059,
+      "prestigePoints": 0,
+      "mult": 1,
+      "idleRate": 1410470,
+      "levels": {
+        "phone": 125,
+        "toilet": 108,
+        "group": 99,
+        "meeting": 88,
+        "deep": 83,
+        "retire": 75
+      },
+      "decorCount": 5,
+      "colleagues": 5
+    },
+    {
+      "days": 7,
+      "waitMultiple": 1,
+      "lifetime": 2690219510120,
+      "prestigePoints": 172,
+      "mult": 130,
+      "idleRate": 14165333,
+      "levels": {
+        "phone": 57,
+        "toilet": 44,
+        "group": 40,
+        "meeting": 36,
+        "deep": 33,
+        "retire": 26
+      },
+      "decorCount": 4,
+      "colleagues": 5
+    },
+    {
+      "days": 7,
+      "waitMultiple": 2,
+      "lifetime": 2690219510120,
+      "prestigePoints": 172,
+      "mult": 130,
+      "idleRate": 14165333,
+      "levels": {
+        "phone": 57,
+        "toilet": 44,
+        "group": 40,
+        "meeting": 36,
+        "deep": 33,
+        "retire": 26
+      },
+      "decorCount": 4,
+      "colleagues": 5
+    },
+    {
+      "days": 7,
+      "waitMultiple": 5,
+      "lifetime": 2909948289650,
+      "prestigePoints": 177,
+      "mult": 133.75,
+      "idleRate": 14573949,
+      "levels": {
+        "phone": 57,
+        "toilet": 44,
+        "group": 40,
+        "meeting": 36,
+        "deep": 33,
+        "retire": 26
+      },
+      "decorCount": 4,
+      "colleagues": 5
+    },
+    {
+      "days": 7,
+      "waitMultiple": 10,
+      "lifetime": 3015834171805,
+      "prestigePoints": 179,
+      "mult": 135.25,
+      "idleRate": 15018277,
+      "levels": {
+        "phone": 57,
+        "toilet": 44,
+        "group": 40,
+        "meeting": 36,
+        "deep": 33,
+        "retire": 27
+      },
+      "decorCount": 4,
+      "colleagues": 5
+    },
+    {
+      "days": 7,
+      "waitMultiple": 20,
+      "lifetime": 4441550223392,
+      "prestigePoints": 190,
+      "mult": 143.5,
+      "idleRate": 24594650,
+      "levels": {
+        "phone": 64,
+        "toilet": 54,
         "group": 50,
         "meeting": 46,
-        "deep": 42,
-        "retire": 34
+        "deep": 44,
+        "retire": 36
+      },
+      "decorCount": 5,
+      "colleagues": 5
+    },
+    {
+      "days": 14,
+      "waitMultiple": null,
+      "lifetime": 1746649007555,
+      "prestigePoints": 0,
+      "mult": 1,
+      "idleRate": 3006330,
+      "levels": {
+        "phone": 138,
+        "toilet": 120,
+        "group": 112,
+        "meeting": 104,
+        "deep": 93,
+        "retire": 82
+      },
+      "decorCount": 5,
+      "colleagues": 5
+    },
+    {
+      "days": 14,
+      "waitMultiple": 1,
+      "lifetime": 15262701987898,
+      "prestigePoints": 393,
+      "mult": 295.75,
+      "idleRate": 34324430,
+      "levels": {
+        "phone": 57,
+        "toilet": 44,
+        "group": 40,
+        "meeting": 36,
+        "deep": 33,
+        "retire": 26
+      },
+      "decorCount": 4,
+      "colleagues": 5
+    },
+    {
+      "days": 14,
+      "waitMultiple": 2,
+      "lifetime": 15262701987898,
+      "prestigePoints": 393,
+      "mult": 295.75,
+      "idleRate": 34324430,
+      "levels": {
+        "phone": 57,
+        "toilet": 44,
+        "group": 40,
+        "meeting": 36,
+        "deep": 33,
+        "retire": 26
+      },
+      "decorCount": 4,
+      "colleagues": 5
+    },
+    {
+      "days": 14,
+      "waitMultiple": 5,
+      "lifetime": 15665155586757,
+      "prestigePoints": 398,
+      "mult": 299.5,
+      "idleRate": 34626845,
+      "levels": {
+        "phone": 57,
+        "toilet": 44,
+        "group": 40,
+        "meeting": 36,
+        "deep": 33,
+        "retire": 26
+      },
+      "decorCount": 4,
+      "colleagues": 5
+    },
+    {
+      "days": 14,
+      "waitMultiple": 10,
+      "lifetime": 16165227075558,
+      "prestigePoints": 405,
+      "mult": 304.75,
+      "idleRate": 35768839,
+      "levels": {
+        "phone": 57,
+        "toilet": 44,
+        "group": 40,
+        "meeting": 36,
+        "deep": 33,
+        "retire": 27
+      },
+      "decorCount": 4,
+      "colleagues": 5
+    },
+    {
+      "days": 14,
+      "waitMultiple": 20,
+      "lifetime": 25465001913625,
+      "prestigePoints": 447,
+      "mult": 336.25,
+      "idleRate": 50227380,
+      "levels": {
+        "phone": 60,
+        "toilet": 48,
+        "group": 42,
+        "meeting": 38,
+        "deep": 40,
+        "retire": 28
       },
       "decorCount": 5,
       "colleagues": 5

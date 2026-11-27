@@ -1,0 +1,169 @@
+{
+  "name": "P 线上生产包",
+  "pass": 32,
+  "total": 32,
+  "failed": [],
+  "checks": [
+    {
+      "id": "P1 线上页可启动",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": "P2 标题正确",
+      "ok": true,
+      "detail": "摸鱼工位"
+    },
+    {
+      "id": "P3 无作弊钩子 __MOYU__",
+      "ok": true,
+      "detail": "undefined"
+    },
+    {
+      "id": "P4 无 boot 错误横幅",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": "P5 无未捕获 JS 错误",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "id": "P6 资源全部成功加载",
+      "ok": true,
+      "detail": "{\"n\":11,\"bad\":[]}"
+    },
+    {
+      "id": "P7 无版本更新条",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": "P8 canvas 尺寸有效",
+      "ok": true,
+      "detail": "{\"w\":900,\"h\":508}"
+    },
+    {
+      "id": "P9 首屏 HUD 正常",
+      "ok": true,
+      "detail": "{\"moyu\":\"0.3\",\"idle\":\"0.2\",\"rank\":\"实习生 0%\"}"
+    },
+    {
+      "id": "P10 关于面板版本 v0.5.0",
+      "ok": true,
+      "detail": "v0.5.0 · 2026-11-27"
+    },
+    {
+      "id": "P11 存档码框存在",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": "P12 导出 JSON 按钮存在",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": "P13 首屏 3 秒内无强制弹窗",
+      "ok": true,
+      "detail": "cards should be hidden early"
+    },
+    {
+      "id": "P14 点击入账并落盘",
+      "ok": true,
+      "detail": "{\"clicks\":25,\"moyu\":29.797560000076356}"
+    },
+    {
+      "id": "P15 首次购买成功",
+      "ok": true,
+      "detail": "{\"ok\":true,\"text\":\"点了才赚咖啡续命\\n        +1 点击力 · 第一杯，回魂\\n        ★ 点击最优\\n        18 摸\"}"
+    },
+    {
+      "id": "P16 刷新后进度保留（等级/点击）",
+      "ok": true,
+      "detail": "{\"levels\":{\"coffee\":1},\"clicks\":25}"
+    },
+    {
+      "id": "P17 刷新后点击力保留（Lv.1 咖啡 = 2）",
+      "ok": true,
+      "detail": "2"
+    },
+    {
+      "id": "P18 存档码导出非空含校验",
+      "ok": true,
+      "detail": "len=1424 tail=19.1ioz5q1"
+    },
+    {
+      "id": "P19 非法存档码被拒",
+      "ok": true,
+      "detail": "导入失败：格式不正确"
+    },
+    {
+      "id": "P20 有效导入触发重载",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": "P21 导入恢复旧进度",
+      "ok": true,
+      "detail": "{\"before\":25,\"after\":25,\"levels\":{\"coffee\":1}}"
+    },
+    {
+      "id": "P22 导入备份旧档",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": "P23 导入后无 JS 错误",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "id": "P24 离线 2h 弹出欢迎面板",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": "P25 离线收益 > 0",
+      "ok": true,
+      "detail": "面板=1440.0"
+    },
+    {
+      "id": "P26 离线规则文案",
+      "ok": true,
+      "detail": "首日全额｜8 小时封顶"
+    },
+    {
+      "id": "P27 离线收益进内存状态（HUD）",
+      "ok": true,
+      "detail": "HUD=1455.4 面板收益=1440.0"
+    },
+    {
+      "id": "P28 Service Worker 已注册",
+      "ok": true,
+      "detail": "active"
+    },
+    {
+      "id": "P29 刷新后页面受 SW 控制",
+      "ok": true,
+      "detail": "true"
+    },
+    {
+      "id": "P30 断网刷新仍可启动（离线壳）",
+      "ok": true,
+      "detail": "ready=true"
+    },
+    {
+      "id": "P31 断网启动无 JS 错误",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "id": "P32 断网后页面标题正确",
+      "ok": true,
+      "detail": "摸鱼工位"
+    }
+  ],
+  "ms": 28277
+}

@@ -1,0 +1,150 @@
+{
+  "d1": {
+    "levels": {
+      "phone": 51,
+      "toilet": 35,
+      "group": 29,
+      "meeting": 25,
+      "deep": 21,
+      "retire": 13
+    },
+    "decor": [
+      "plant",
+      "fridge"
+    ],
+    "colleagues": {
+      "zhou": 5,
+      "mei": 5
+    },
+    "moyu": 228417433,
+    "lifetime": 291312059,
+    "prestige": 0,
+    "idleRate": 26045,
+    "station": 23574,
+    "clickPower": 1,
+    "collection": 0
+  },
+  "d2": {
+    "levels": {
+      "phone": 78,
+      "toilet": 66,
+      "group": 61,
+      "meeting": 55,
+      "deep": 50,
+      "retire": 36
+    },
+    "decor": [
+      "plant",
+      "fridge",
+      "aquarium",
+      "projector",
+      "catbed"
+    ],
+    "colleagues": {
+      "zhou": 5,
+      "mei": 5,
+      "qiang": 5,
+      "li": 5,
+      "wang": 2
+    },
+    "moyu": 772818,
+    "lifetime": 5814445922,
+    "prestige": 0,
+    "idleRate": 266335,
+    "station": 223222,
+    "clickPower": 1,
+    "collection": 0
+  },
+  "d4": {
+    "levels": {
+      "phone": 113,
+      "toilet": 97,
+      "group": 84,
+      "meeting": 80,
+      "deep": 74,
+      "retire": 65
+    },
+    "decor": [
+      "plant",
+      "fridge",
+      "aquarium",
+      "projector",
+      "catbed"
+    ],
+    "colleagues": {
+      "zhou": 5,
+      "mei": 5,
+      "qiang": 5,
+      "li": 5,
+      "wang": 5
+    },
+    "moyu": 340896594,
+    "lifetime": 115317283216,
+    "prestige": 0,
+    "idleRate": 1178101,
+    "station": 970119,
+    "clickPower": 1,
+    "collection": 0
+  },
+  "d7": {
+    "levels": {
+      "phone": 125,
+      "toilet": 108,
+      "group": 99,
+      "meeting": 88,
+      "deep": 83,
+      "retire": 75
+    },
+    "decor": [
+      "plant",
+      "fridge",
+      "aquarium",
+      "projector",
+      "catbed"
+    ],
+    "colleagues": {
+      "zhou": 5,
+      "mei": 5,
+      "qiang": 5,
+      "li": 5,
+      "wang": 5
+    },
+    "moyu": 552505586,
+    "lifetime": 442931539059,
+    "prestige": 0,
+    "idleRate": 1410470,
+    "station": 1162298,
+    "clickPower": 1,
+    "collection": 0
+  },
+  "d7p": {
+    "levels": {
+      "phone": 57,
+      "toilet": 44,
+      "group": 40,
+      "meeting": 36,
+      "deep": 33,
+      "retire": 27
+    },
+    "decor": [
+      "plant",
+      "fridge",
+      "aquarium",
+      "projector"
+    ],
+    "colleagues": {
+      "zhou": 5,
+      "mei": 5,
+      "qiang": 5,
+      "li": 5,
+      "wang": 1
+    },
+    "moyu": 0,
+    "lifetime": 3015834171805,
+    "prestige": 179,
+    "idleRate": 15018277,
+    "station": 12230896,
+    "clickPower": 149,
+    "collection": 0
+  }
+}

@@ -152,6 +152,16 @@ function fmtTol(v) {
   return 5.1e5; // 亿：2 位小数 → ±0.005亿
 }
 
+async function shot(cdp, file) {
+  try {
+    const r = await cdp.send("Page.captureScreenshot", { format: "png" });
+    writeFileSync(file, Buffer.from(r.data, "base64"));
+    return file;
+  } catch (e) {
+    return "shot-error:" + String(e).slice(0, 120);
+  }
+}
+
 function addCheck(panel, item, shown, expected, opts = {}) {
   const tol = opts.tol ?? (typeof expected === "number" ? fmtTol(expected) : 0);
   const expectedStr = opts.expectedStr !== undefined ? opts.expectedStr : String(expected);
@@ -186,6 +196,7 @@ async function scenarioS1(cdp) {
   await cdp.ev(`document.getElementById('welcome').classList.add('hidden')`);
   await sleep(650); // HUD 150ms / 面板 400-500ms 节流
 
+  let shotJournal = null;
   const res = await cdp.ev(`(async () => { try {
     const F = await import('/src/engine/format.ts');
     const U = await import('/src/engine/upgrades.ts');
@@ -256,7 +267,7 @@ async function scenarioS1(cdp) {
     await new Promise((r) => setTimeout(r, 700));
     const journal = {
       date: t('#journal-date'), streak: t('#journal-streak'),
-      goals: all('#journal-goals li').map((x) => x.replace(/\s+/g, '')),
+      goals: all('#journal-goals li').map((x) => x.replace(/\\s+/g, '')),
       claim: t('#journal-claim'), claimDisabled: q('#journal-claim').disabled,
       total: t('#journal-total'), quote: t('#journal-quote'), flavor: t('#journal-flavor'),
       stats: all('#stats-list .stat-row').map((x) => x.replace(/\\s+/g, ' ')),
@@ -266,6 +277,7 @@ async function scenarioS1(cdp) {
       gridCount: document.querySelectorAll('#journal-grid .c-item').length,
     };
     const st = ST.computeStats(S, records);
+    window.__shotNow = true;
     const statsExpect = [
       ['生涯总收入', formatMoyu(st.lifetime)],
       ['本局 / 往期', formatMoyu(st.run) + ' / ' + formatMoyu(st.previous)],
@@ -285,6 +297,7 @@ async function scenarioS1(cdp) {
     const prestigeBtnExpect = PR.canPrestige(S)
       ? '离职再就业：+' + prestigeGain + ' 点（永久 ×' + PR.prestigeMultiplier(S.prestige + prestigeGain).toFixed(2) + '）'
       : '未解锁（本局累计 ' + formatMoyu(S.totalEarned) + ' / 需 ' + formatMoyu(PR.prestigeThreshold(S)) + '）';
+    window.__journalShotReady = true;
     q('#journal-close').click();
     // 小队面板：同事页
     q('#btn-team').click();
@@ -357,22 +370,23 @@ async function scenarioS1(cdp) {
       state: { moyu: S.moyu, totalEarned: S.totalEarned, idle, click, station, teamEngine, prestige: S.prestige, surviveStreak: S.surviveStreak, totalClicks: S.totalClicks, visits: S.visits, decorCount: S.decor.length },
       exp: {
         hud: {
-          moyu: formatMoyu(S.moyu), click: formatMoyu(click), idle: formatMoyu(idle),
+          moyu: formatMoyu(S.moyu), click: formatMoyu(click), idle: formatMoyu(idle), idleRaw: idle,
           rankShort: rank.next ? rank.current.replace(/^带薪/, '').replace(/^摸鱼/, '') + ' ' + (rank.progress * 100).toFixed(0) + '%' : rank.current.replace(/^带薪/, '').replace(/^摸鱼/, ''),
           card: S.cards.chosen && Date.now() < S.cards.until ? '卡·' + (await import('/src/engine/cards.ts')).CARDS.find((c) => c.id === S.cards.chosen).name : null,
           streak: S.prestige > 0 && PR.canPrestige(S) ? '♻ 转生×' + S.prestige + '（可晋升）' : null,
+          journalHasReward: !!S.daily && !S.daily.claimed && DA.dailyAllDone(S.daily),
           arcadeBadge: String(Math.max(0, 3 - S.arcade.played)),
           teamBadge: String(TM.claimableCount(S, Date.now())),
         },
         shop: shopExpect,
         journal: {
           date: S.daily.date, streak: S.daily.claimed ? '🔥 连续 ' + S.daily.streak + ' 天' : '🔥 连续 ' + S.daily.streak + ' 天（今天未领）',
-          goals: S.daily.goals.map((g) => ((g.done ? '✓' : '○') + (DA.DAILY_GOAL_TEMPLATES.find((t2) => t2.id === g.id) || {}).desc + Math.min(g.progress, g.target) + '/' + g.target).replace(/\s+/g, '')),
+          goals: S.daily.goals.map((g) => ((g.done ? '✓' : '○') + (DA.DAILY_GOAL_TEMPLATES.find((t2) => t2.id === g.id) || {}).desc + Math.min(g.progress, g.target) + '/' + g.target).replace(/\\s+/g, '')),
           claim: S.daily.claimed ? '今日已领' : (DA.dailyAllDone(S.daily) ? '领取 +' + formatMoyu(DA.dailyReward(S)) : '完成 ' + S.daily.goals.filter((g) => g.done).length + '/3'),
           total: CO.collectionCount(S) + '/' + CO.TOTAL_ITEMS,
           quote: S.collected.quotes.length + '/' + 10,
           flavor: S.collected.flavors.length + '/45',
-          stats: statsExpect.map(([k, v]) => (k + v).replace(/\s+/g, '')),
+          stats: statsExpect.map(([k, v]) => (k + v).replace(/\\s+/g, '')),
           rank: st.rank,
           prestigeBtn: prestigeBtnExpect,
           gridCount: 55,
@@ -409,6 +423,26 @@ async function scenarioS1(cdp) {
 
   const sc = { welcome, res };
   report.scenarios.S1 = sc;
+  // 截图证据：日报统计 / 小队同事 / 天赋 / 工位
+  try {
+    const shots = [];
+    await cdp.ev(`document.getElementById('btn-journal').click()`);
+    await sleep(700);
+    shots.push(await shot(cdp, "playtest/final-data-shots/panel-journal.png"));
+    await cdp.ev(`document.getElementById('journal-close').click(); document.getElementById('btn-team').click(); document.getElementById('tab-colleagues').click()`);
+    await sleep(700);
+    shots.push(await shot(cdp, "playtest/final-data-shots/panel-team.png"));
+    await cdp.ev(`document.getElementById('tab-talents').click()`);
+    await sleep(600);
+    shots.push(await shot(cdp, "playtest/final-data-shots/panel-talents.png"));
+    await cdp.ev(`document.getElementById('tab-decor').click()`);
+    await sleep(600);
+    shots.push(await shot(cdp, "playtest/final-data-shots/panel-decor.png"));
+    await cdp.ev(`document.getElementById('team-close').click()`);
+    sc.screenshots = shots;
+  } catch (e) {
+    sc.shotError = String(e).slice(0, 200);
+  }
   if (res && res.__evalError) {
     report.scenarios.S1EvalError = res.__evalError;
     return sc;
@@ -420,7 +454,7 @@ async function scenarioS1(cdp) {
   addCheck("HUD", "摸鱼值", D.hud.moyu, E.hud.moyu);
   addCheck("HUD", "点击力", D.hud.click, E.hud.click);
   addCheck("HUD", "挂机/秒", D.hud.idle, E.hud.idle);
-  addCheck("HUD", "段位+进度", D.hud.rank, E.hud.rank);
+  addCheck("HUD", "段位+进度", D.hud.rank, E.hud.rankShort, { expectedStr: E.hud.rankShort });
   addCheck("HUD", "今日卡", D.hud.card, E.hud.card);
   addCheck("HUD", "连胜/转生角标", D.hud.streak, E.hud.streak);
   addCheck("HUD", "🎮 剩余次数角标", D.hud.arcadeBadge, E.hud.arcadeBadge);
@@ -460,10 +494,16 @@ async function scenarioS1(cdp) {
   addCheck("日报", "图鉴总计", D.journal.total, E.journal.total, { expectedStr: E.journal.total });
   addCheck("日报", "图鉴语录", D.journal.quote, E.journal.quote, { expectedStr: E.journal.quote });
   addCheck("日报", "图鉴彩蛋", D.journal.flavor, E.journal.flavor, { expectedStr: E.journal.flavor });
+  const nz = (x) => String(x).replace(/\s+/g, "");
   for (const line of E.journal.stats) {
-    addCheck("统计面板", line.split(" ")[0], D.journal.stats.includes(line), true, { expectedStr: "包含「" + line + "」" });
+    addCheck("统计面板", line.replace(/[0-9.万亿\/×（）()·]/g, "").slice(0, 12) || line, D.journal.stats.map(nz).includes(nz(line)), true, { expectedStr: "包含「" + line + "」" });
   }
   addCheck("统计面板", "段位", D.journal.rank, E.journal.rank, { expectedStr: E.journal.rank });
+  const statIdleLine = (D.journal.stats || []).find((x) => x.includes("点击力")) || "";
+  const after挂机 = statIdleLine.split("挂机")[1] ?? "";
+  const idleNums = [...after挂机.matchAll(/([\d.]+万?亿?)/g)].map((m) => parseMoyu(m[1])).filter((x) => x !== null);
+  const statIdle = idleNums.length >= 2 ? idleNums[1] : idleNums[0] ?? null;
+  addCheck("跨面板", "HUD 挂机/秒 与 统计面板挂机 一致", statIdle, E.hud.idleRaw, { engine: { hud: D.hud.idle, statLine: statIdleLine } });
   addCheck("统计面板", "转生按钮", D.journal.prestigeBtn, E.journal.prestigeBtn, { expectedStr: E.journal.prestigeBtn });
   addCheck("图鉴", "55 格", D.journal.gridCount, E.journal.gridCount, { tol: 0 });
 
@@ -926,7 +966,7 @@ async function scenarioS5(cdp) {
     const expect = base * EV.surviveStreakMult(preStreak);
     return { toast, sr, surviveStreak: S.surviveStreak, expect, base, preStreak };
   })()`);
-  addCheck("巡逻热修", "hold 安然奖励", parseMoyu((String(hold.toast).match(/\+([\d.]+万?亿?)/) || [])[1] ?? ""), hold.expect, {
+  addCheck("巡逻热修", "hold 安然奖励（toast 已 Math.round）", parseMoyu((String(hold.toast).match(/\+([\d.]+万?亿?)/) || [])[1] ?? ""), Math.round(hold.expect), {
     engine: { base: hold.base, preStreak: hold.preStreak, surviveStreak: hold.surviveStreak }, note: "低倍率下 = max(50, 4×idle) × 连胜",
   });
   report.panelChecks.push({
@@ -1082,6 +1122,43 @@ async function scenarioS6(cdp) {
     level: "P1",
     where: "线上 https://luojindui.github.io/moyu/ v0.5.0 欢迎面板",
     issue: `线上 100h 离线实测面板文案「${offlineUi.rule}」；引擎封顶 12h → 文案自相矛盾（同 dist 版本）`,
+  });
+  // 线上非封顶场景：1h 离线 → 面板会写「8 小时封顶」（引擎 12h）
+  const now2 = Date.now();
+  const prodBlobShort = { ...prodBlob, savedAt: now2 - 3600 * 1000, createdAt: now2 - 10 * 86400_000 };
+  await cdp.ev(`(() => {
+    const proto = Storage.prototype;
+    const orig = proto.setItem;
+    proto.setItem = function (k, v) { if (k === 'moyu-save' && this === localStorage) return; return orig.call(this, k, v); };
+    orig.call(localStorage, 'moyu-save', ${JSON.stringify(JSON.stringify(prodBlobShort))});
+    return true;
+  })()`);
+  await cdp.send("Page.reload", { ignoreCache: false });
+  for (let i = 0; i < 200; i++) {
+    const st = await cdp.ev(`(() => ({ ready: document.readyState, cards: document.querySelectorAll('.shop-card').length }))()`);
+    if (st.ready !== "loading" && st.cards >= 9) break;
+    await sleep(150);
+  }
+  await sleep(800);
+  const shortOffline = await cdp.ev(`(() => {
+    const q = (s) => document.getElementById(s);
+    return { hidden: document.getElementById('welcome').classList.contains('hidden'), time: q('welcome-time').textContent, gain: q('welcome-gain').textContent, rule: q('welcome-rule').textContent };
+  })()`);
+  sc.shortOffline = shortOffline;
+  report.panelChecks.push({
+    panel: "线上 v0.5.0 离线",
+    item: "非封顶场景（离 1h）面板固定文案「8 小时封顶」",
+    shown: shortOffline.rule,
+    expected: "引擎日常封顶 12h（PROJECT-SUMMARY 亦写 12h）",
+    expectedStr: "引擎日常封顶 12h",
+    engine: { knownCapHours: 12 },
+    note: "线上 v0.5.0 实测",
+    ok: !String(shortOffline.rule).includes("8 小时封顶"),
+  });
+  report.defects.push({
+    level: "P1",
+    where: "线上 https://luojindui.github.io/moyu/ v0.5.0 欢迎面板（离 1h 非封顶场景）",
+    issue: `面板写「${shortOffline.rule}」，引擎日常封顶 12h；文案与实现/文档不一致`,
   });
   await cdp.ev(`window.scrollTo(0,0)`);
   return sc;

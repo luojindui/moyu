@@ -24,16 +24,17 @@ describe("批次3 审计回归：精力取舍与跨日", () => {
     expect(next.energy.left).toBe(ENERGY_PER_DAY);
   });
 
-  it("离线效率上限包含工位家具的加成（不会被 100% 截断）", () => {
+  it("离线效率计入工位家具加成（上限 95%）", () => {
     const now = Date.UTC(2026, 11, 1);
     const created = now - 30 * 86400_000;
     const base = {
       ...initialState(),
-      visits: { date: new Date(now).toLocaleDateString("sv-SE"), count: 3 },
-      daily: { date: "", goals: [], claimed: false, streak: 28, lastCompleteDate: "", window: 0, claimsToday: 0 } as never,
+      visits: { date: new Date(now).toLocaleDateString("sv-SE"), count: 0 },
+      daily: { date: "", goals: [], claimed: false, streak: 0, lastCompleteDate: "", window: 0, claimsToday: 0 } as never,
     };
     const noDecor = offlineEfficiency(base, created, now);
     const withDecor = offlineEfficiency({ ...base, decor: ["rug", "chair"] }, created, now);
-    expect(withDecor).toBeGreaterThan(noDecor); // 地毯+按摩椅的离线加成不被吃掉
+    expect(withDecor).toBeGreaterThan(noDecor); // 地毯+按摩椅的离线加成确实计入（直到硬上限）
+    expect(withDecor).toBeLessThanOrEqual(0.95);
   });
 });

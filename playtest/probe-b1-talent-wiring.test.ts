@@ -55,7 +55,7 @@ describe("天赋接线守卫（防描述说谎回归）", () => {
     expect(withUlt).toBeGreaterThan(before);
   });
 
-  it("idle_4 让离线效率上限超过 100%", () => {
+  it("idle_4 让离线效率更快摸到 95% 硬上限（不再突破 100%）", () => {
     const now = Date.UTC(2026, 11, 1);
     const created = now - 10 * 86400_000;
     const s = {
@@ -69,8 +69,8 @@ describe("天赋接线守卫（防描述说谎回归）", () => {
       created,
       now,
     );
-    expect(effWith).toBeGreaterThan(effNo);
-    expect(effWith).toBeGreaterThan(1); // 可超 100%
+    expect(effWith).toBeGreaterThanOrEqual(effNo);
+    expect(effWith).toBeLessThanOrEqual(0.95); // 硬上限 95%：离线永远弱于在线
   });
 
   it("event_4 提前预警字段被 main.ts 消费", () => {

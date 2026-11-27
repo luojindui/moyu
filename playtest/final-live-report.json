@@ -1,0 +1,447 @@
+{
+  "startedAt": "2026-11-27T13:10:15.119Z",
+  "dev": {
+    "versionInPage": "?",
+    "hasGrant": true,
+    "hasForceBoss": true,
+    "stateAfterGrant": {
+      "moyu": 1000000000000.3258,
+      "totalEarned": 1000000000000.3258,
+      "idle": 0,
+      "levels": {},
+      "teamSize": 0,
+      "decor": [],
+      "talentsPts": 7,
+      "energy": {
+        "date": "2026-11-27",
+        "left": 100,
+        "used": [],
+        "boosted": {
+          "idleMult": 1,
+          "patrolRewardMult": 1,
+          "clickMult": 1
+        }
+      },
+      "cards": {
+        "date": "2026-11-27",
+        "offers": [
+          "early_leave",
+          "canteen_gift",
+          "secret_project"
+        ],
+        "chosen": null,
+        "until": 0,
+        "nextDayGuaranteed": null,
+        "dismissed": false,
+        "chosenDate": ""
+      },
+      "arcade": {
+        "date": "2026-11-27",
+        "played": 0,
+        "best": {}
+      },
+      "daily": {
+        "date": "2026-11-27",
+        "claimed": false,
+        "streak": 0
+      },
+      "prestige": 0,
+      "lifetime": 1000000000000.3258
+    },
+    "teamPanelOpen": true,
+    "colleagueCards": 1,
+    "recruited": [
+      {
+        "id": "zhou",
+        "ok": true
+      },
+      {
+        "id": "mei",
+        "ok": true
+      },
+      {
+        "id": "qiang",
+        "ok": true
+      },
+      {
+        "id": "li",
+        "ok": true
+      },
+      {
+        "id": "wang",
+        "ok": true
+      }
+    ],
+    "upgradesClicked": 20,
+    "teamAfter": {
+      "team": {
+        "zhou": {
+          "level": 5,
+          "missionId": null,
+          "startedAt": 0,
+          "endsAt": 0,
+          "favor": 0,
+          "autoRepeat": false,
+          "rewardSnapshot": 0
+        },
+        "mei": {
+          "level": 5,
+          "missionId": null,
+          "startedAt": 0,
+          "endsAt": 0,
+          "favor": 0,
+          "autoRepeat": false,
+          "rewardSnapshot": 0
+        },
+        "qiang": {
+          "level": 5,
+          "missionId": null,
+          "startedAt": 0,
+          "endsAt": 0,
+          "favor": 0,
+          "autoRepeat": false,
+          "rewardSnapshot": 0
+        },
+        "li": {
+          "level": 5,
+          "missionId": null,
+          "startedAt": 0,
+          "endsAt": 0,
+          "favor": 0,
+          "autoRepeat": false,
+          "rewardSnapshot": 0
+        },
+        "wang": {
+          "level": 5,
+          "missionId": null,
+          "startedAt": 0,
+          "endsAt": 0,
+          "favor": 0,
+          "autoRepeat": false,
+          "rewardSnapshot": 0
+        }
+      },
+      "favorTier": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "dispatchUi": {
+      "opened": true,
+      "n": 30
+    },
+    "dispatched8h": true,
+    "claimAfterEndMissions": {
+      "found": true,
+      "text": "领取 +1308"
+    },
+    "talentTab": {
+      "nodes": 18,
+      "sample": [
+        " 1 手速 点击力 +25% 点亮 1 ",
+        " 2 连击窗口 连击窗口 0.5s → 0.65s 点亮 1 ",
+        " 3 连击上限（2点） 连击上限 20 → 30（最高 ×1.36） 点亮 2 ",
+        " 4 暴击（2点） 每 20 次点击必暴击 ×5（巡逻偷点不触发） 点亮 2 ",
+        " 5 摸鱼转正（终极·3点） 每 300 次累计点击 → 挂机 +1%（封顶 +",
+        " 5 指尖风暴（终极·3点） 立即 +12% 挂机；此后每 1000 次累计点击"
+      ],
+      "buttons": [
+        "点亮 1",
+        "点亮 1",
+        "点亮 2",
+        "点亮 2",
+        "点亮 3",
+        "点亮 3"
+      ]
+    },
+    "talentPointsAfterRankGrant": 7,
+    "talentsUnlocked": [
+      "click_1",
+      "click_2",
+      "click_3",
+      "click_4",
+      "idle_1"
+    ],
+    "decorRows": [
+      {
+        "id": "plant",
+        "text": " 绿萝 工位挂机 +5% 3000 ",
+        "disabled": "0"
+      },
+      {
+        "id": "plant",
+        "text": "3000"
+      },
+      {
+        "id": "lamp",
+        "text": " 护眼台灯 点击力 +15% 2.00万 ",
+        "disabled": "0"
+      },
+      {
+        "id": "lamp",
+        "text": "2.00万"
+      },
+      {
+        "id": "rug",
+        "text": " 毛绒地毯 离线效率 +5% 12.00万 ",
+        "disabled": "0"
+      },
+      {
+        "id": "rug",
+        "text": "12.00万"
+      },
+      {
+        "id": "fridge",
+        "text": " 迷你冰箱 工位挂机 +8% 60.00万 ",
+        "disabled": "0"
+      },
+      {
+        "id": "fridge",
+        "text": "60.00万"
+      },
+      {
+        "id": "chair",
+        "text": " 按摩椅 离线效率 +8% 400.00万 ",
+        "disabled": "0"
+      },
+      {
+        "id": "chair",
+        "text": "400.00万"
+      },
+      {
+        "id": "aquarium",
+        "text": " 鱼缸 挂机 +10%、点击 +10% 3000.00万 ",
+        "disabled": "0"
+      },
+      {
+        "id": "aquarium",
+        "text": "3000.00万"
+      },
+      {
+        "id": "projector",
+        "text": " 投影仪 派遣奖励 +30% 2.00亿 ",
+        "disabled": "0"
+      },
+      {
+        "id": "projector",
+        "text": "2.00亿"
+      },
+      {
+        "id": "catbed",
+        "text": " 工位猫窝 挂机 +15%、离线 +10% 20.00亿 ",
+        "disabled": "0"
+      },
+      {
+        "id": "catbed",
+        "text": "20.00亿"
+      }
+    ],
+    "decorOwned": [
+      "plant",
+      "lamp",
+      "rug",
+      "fridge",
+      "chair",
+      "aquarium",
+      "projector",
+      "catbed"
+    ],
+    "energyUi": {
+      "rows": [
+        " 40 认真摸鱼 今天挂机 +25% · 花 40 精力 使用 ",
+        " 35 假装工作 今天巡逻奖励 ×2.2 · 花 35 精力 使用 ",
+        " 25 跟同事聊天 全体好感 +5，且今天挂机 +5% · 花 25 精力 使用 ",
+        " 45 专注点击 今天点击力 ×2，且挂机 +8% · 花 45 精力 使用 "
+      ],
+      "allButton": {
+        "text": "省心组合：摸鱼+假装工作+社交（100 精力）",
+        "disabled": false
+      },
+      "used": [],
+      "left": 100
+    },
+    "energyAfterSlackFocus": {
+      "date": "2026-11-27",
+      "left": 15,
+      "used": [
+        "slack",
+        "focus"
+      ],
+      "boosted": {
+        "idleMult": 1.35,
+        "patrolRewardMult": 1,
+        "clickMult": 2
+      }
+    },
+    "energySocialTry": {
+      "found": true,
+      "disabled": true
+    },
+    "energyFinal": {
+      "left": 15,
+      "used": [
+        "slack",
+        "focus"
+      ],
+      "boosted": {
+        "idleMult": 1.35,
+        "patrolRewardMult": 1,
+        "clickMult": 2
+      }
+    },
+    "cardsOpen": true,
+    "cardOffers": [
+      {
+        "id": "early_leave",
+        "text": " 普通 提前下班 今天离线效率 +15% 今天可以准点走——这种事要记下来。 "
+      },
+      {
+        "id": "canteen_gift",
+        "text": " 普通 食堂加菜 今天离线效率 +8% 今天的糖醋排骨是限量的。 "
+      },
+      {
+        "id": "secret_project",
+        "text": " 稀有 秘密项目 今天点击力 ×2，派遣奖励 +30% 没人知道你在做什么，但看起来很重要。 "
+      }
+    ],
+    "cardChosen": "early_leave",
+    "bossOpen": true,
+    "bossTell": "有人过来了——他一路盯着别人的屏幕走过来",
+    "bossOpts": [
+      "立刻装忙",
+      "切到工作界面",
+      "继续摸鱼"
+    ],
+    "bossResult": {
+      "text": " 有人过来了——他一路盯着别人的屏幕走过来 立刻装忙切到工作界面继续摸鱼王总：屏幕挺干净啊。 +36723 ",
+      "surviveStreak": 1
+    },
+    "arcadeOpen": true,
+    "arcadeMenu": {
+      "left": "今天还能玩 3/3 次 · 每局能赢摸鱼值",
+      "body": " 接咖啡 最高 0 咖啡掉下来时点住它——掉地上就没了 满分 ≈ 25 秒挂机收益（新号保底 30） 开始（30 秒） 找老板 最高 0 在一堆同事脸里找出王总，越快越好 满分 ≈ 25 秒挂机收益（新号保底 30） 开始（30 秒内无限轮） 节奏点击 最高 0 跟着节拍点屏幕，越准分越高 满分 ≈ 25 秒挂机收益（"
+    },
+    "arcadeGameStarted": true,
+    "arcadeLiveText": " 28.1s 0 找出王总（红色「王」）· 已找 0 员员员员员员王员员 ",
+    "stateAtEnd": {
+      "arcade": {
+        "date": "2026-11-27",
+        "played": 0,
+        "best": {}
+      },
+      "cards": {
+        "chosen": "early_leave",
+        "until": 1795871432431
+      },
+      "energy": {
+        "date": "2026-11-27",
+        "left": 15,
+        "used": [
+          "slack",
+          "focus"
+        ],
+        "boosted": {
+          "idleMult": 1.35,
+          "patrolRewardMult": 1,
+          "clickMult": 2
+        }
+      },
+      "talents": {
+        "unlocked": [
+          "click_1",
+          "click_2",
+          "click_3",
+          "click_4",
+          "idle_1"
+        ],
+        "points": 0,
+        "overflow": 0
+      },
+      "decor": [
+        "plant",
+        "lamp",
+        "rug",
+        "fridge",
+        "chair",
+        "aquarium",
+        "projector",
+        "catbed"
+      ],
+      "team": {
+        "zhou": {
+          "level": 5,
+          "favor": 2,
+          "autoRepeat": false
+        },
+        "mei": {
+          "level": 5,
+          "favor": 0,
+          "autoRepeat": false
+        },
+        "qiang": {
+          "level": 5,
+          "favor": 0,
+          "autoRepeat": true
+        },
+        "li": {
+          "level": 5,
+          "favor": 0,
+          "autoRepeat": false
+        },
+        "wang": {
+          "level": 5,
+          "favor": 0,
+          "autoRepeat": false
+        }
+      },
+      "prestige": 0,
+      "lifetime": 2004000127335.2227,
+      "totalEarned": 2004000127335.2227
+    },
+    "consoleErrors": []
+  },
+  "prod": {
+    "url": "https://luojindui.github.io/moyu/",
+    "title": "摸鱼工位",
+    "versionSeen": "?",
+    "hasDebugHook": false,
+    "updates": {
+      "version": "0.5.0",
+      "date": "2026-11-27",
+      "notes": [
+        "新增：摸鱼小队（招募/派遣/好感/一键领取）+ 天赋树（18 天赋/24 点/溢出转化）",
+        "新增：每日摸鱼卡（16 张，选 1 生效 24h）",
+        "新增：回合制老板（3 性格，看线索选应对，5 秒窗口）",
+        "新增：工位经营（8 件家具，买完看得见，集齐 +10%）+ 每日精力（4 档取舍）",
+        "新增：摸鱼站小游戏（接咖啡/找老板/节奏点击，每天 3 次）",
+        "优化：存档 v2、降级备份、无障碍（读屏播报/44px/对比度/焦点管理）",
+        "修复：面板点按丢失、卡弹窗覆盖、离线结算口径、早退刷分等 40+ 问题"
+      ]
+    },
+    "ui": {
+      "team": true,
+      "arcade": true,
+      "cards": true,
+      "bossChoice": true,
+      "hudButtons": [
+        "btn-arcade",
+        "btn-team",
+        "btn-mute",
+        "btn-journal"
+      ],
+      "tabs": [
+        "同事",
+        "天赋",
+        "工位"
+      ]
+    },
+    "teamPanelOpened": true,
+    "arcadeOpened": true,
+    "consoleErrors": []
+  },
+  "consoleErrors": [],
+  "finishedAt": "2026-11-27T13:10:43.483Z"
+}

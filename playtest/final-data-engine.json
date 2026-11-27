@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-27T13:05:47.710Z",
-  "nowIso": "2026-11-27T13:05:47.710Z",
+  "generatedAt": "2026-11-27T13:19:43.858Z",
+  "nowIso": "2026-11-27T13:19:43.858Z",
   "today": "2026-11-27",
   "checks": {
     "upgradePrices": [
@@ -605,11 +605,19 @@
       },
       "idle2Applied": 50400,
       "rates": {
-        "firstDay": 1.31,
-        "afterDay_noVisit": 1.06,
-        "afterDay_1visit": 1.16,
-        "afterDay_3visit": 1.31
-      }
+        "firstDay": 0.95,
+        "afterDay_noVisit": 0.95,
+        "afterDay_1visit": 0.95,
+        "afterDay_3visit": 0.95
+      },
+      "wipOfflineMax": 0.95,
+      "docConflict": "当前 WIP 把离线效率硬上限设为 0.95：首日不再是「全额 1.0」（文档/PROJECT-SUMMARY 写首日全额）；而 resume.settleReturn 对 ≥7 天回归仍强制 rate=1（>0.95），两套上限并存"
+    },
+    "offline7d": {
+      "applied": 86400,
+      "earned": 17280,
+      "normalEarned": 16416,
+      "ratio": 1.0526315789473684
     },
     "prestige": {
       "rows": [
@@ -746,7 +754,7 @@
         "stationShareOfTotal": 0.3310199758131278
       },
       "slackOnly": {
-        "stationFactor": 1.3125,
+        "stationFactor": 1.25,
         "totalPct": 8.275499395328211,
         "claimedPct": 25
       },
@@ -765,10 +773,11 @@
       "note": "claimDaily 只在同一天第一次 +streak；但奖励可领 4 次/天（每 6 小时时段）"
     },
     "firstDayRisk": {
-      "firstDayRate": 1.1099999999999999,
-      "laterRate": 1.16,
+      "firstDayRate": 0.95,
+      "laterRate": 0.49999999999999994,
+      "noCardLaterRate": 0.7,
       "claimedRisk": 0.2,
-      "note": "首日 branch: 1+max(0, raise)；负风险被截断"
+      "note": "首日 branch: 1+max(0, raise)；负风险被截断 → 首日 100%，非首日 50%（0.7-0.2）"
     },
     "favorHint": {
       "uiFormula": "ceil((next-favor)/2)",
@@ -776,13 +785,50 @@
       "actualGainPerMatchedClaim": 3,
       "actualClaimsTo20": 4,
       "cardFavorNote": "今日卡 old_zhou_secret 再 +1 → 每次 +4"
-    }
+    },
+    "teamFormulaDrift": [
+      {
+        "name": "early",
+        "ui": 20.0816,
+        "engineTeam": 20.0816,
+        "ratio": 1,
+        "underPct": 0,
+        "mult": 1,
+        "fav": 1,
+        "teamIdle": 1
+      },
+      {
+        "name": "mid",
+        "ui": 60.827424,
+        "engineTeam": 203.627424,
+        "ratio": 0.29871921377348465,
+        "underPct": 70.12807862265153,
+        "mult": 3.38,
+        "fav": 1,
+        "teamIdle": 1
+      },
+      {
+        "name": "endgame",
+        "ui": 16569.034767559508,
+        "engineTeam": 88851.01680000001,
+        "ratio": 0.18648109345620348,
+        "underPct": 81.35189065437966,
+        "mult": 8.4,
+        "fav": 1.08,
+        "teamIdle": 1.7
+      }
+    ]
   },
   "defects": [
     {
       "level": "P2",
+      "where": "src/engine/progression.ts（并行 WIP，未提交） / src/engine/resume.ts",
+      "issue": "当前离线效率硬上限 OFFLINE_MAX=0.95：实测首日 0.95、3 次回访后 0.95，不再是文档承诺的「首日全额 1.0」；而 settleReturn 对 ≥7 天回归仍强制 rate=1，同一系统两套上限（0.95 与 1.0）并存"
+    },
+    {
+      "level": "P2",
       "where": "src/main.ts saveNow/lastDaySnapshot",
-      "issue": "「纪录·最佳单日」用 lifetime - lastDaySnapshot.lifetime，而 lastDaySnapshot 只在启动时赋值（共 3 处引用），实际是「本次会话增量」，多会话/跨零点会低估或错记日期"
+      "issue": "「纪录·最佳单日」用 lifetime - lastDaySnapshot.lifetime 计算，而基线只在 saveNow（pagehide / visibilitychange→hidden）里推进；10 秒定时存档不更新纪录 → 实际记录的是「两次存档间隔的增量」，首段（打开→首次隐藏）之前的收益不计入，跨零点当次增量也会丢失"
     },
     {
       "level": "P2",
@@ -797,7 +843,7 @@
     {
       "level": "P1",
       "where": "src/ui/welcome.ts:24",
-      "issue": "欢迎回来面板固定文案「8 小时封顶」，引擎 OFFLINE_CAP_SECONDS=12h（≥7 天 24h / ≥30 天 48h）；同面板封顶结算行会显示「已按上限结算 12 小时 0 分」自相矛盾"
+      "issue": "欢迎回来面板固定文案「8 小时封顶」，引擎 OFFLINE_CAP_SECONDS=12h（≥7 天 24h / ≥30 天 48h）：非封顶场景显示 8h（错误，实际按 12h 结算）；封顶场景反而显示「已按上限结算 12/24/48 小时」——同一面板文案随分支不同，8h 恒错"
     },
     {
       "level": "P2",

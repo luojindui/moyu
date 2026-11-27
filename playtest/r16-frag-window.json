@@ -1,0 +1,127 @@
+{
+  "steps": [
+    {
+      "stage": "初始(首日)",
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "visit_1",
+            "target": 1,
+            "progress": 1,
+            "done": true
+          },
+          {
+            "id": "idle_earn",
+            "target": 1,
+            "progress": 0,
+            "done": false
+          },
+          {
+            "id": "click_100",
+            "target": 100,
+            "progress": 0,
+            "done": false
+          }
+        ],
+        "streak": 0,
+        "lastCompleteDate": null,
+        "claimed": false,
+        "window": 3,
+        "claimsToday": 0
+      }
+    },
+    {
+      "stage": "已领(同窗口)重载后",
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "visit_1",
+            "target": 1,
+            "progress": 1,
+            "done": true
+          },
+          {
+            "id": "idle_earn",
+            "target": 1,
+            "progress": 1,
+            "done": true
+          },
+          {
+            "id": "click_100",
+            "target": 100,
+            "progress": 100,
+            "done": true
+          }
+        ],
+        "streak": 1,
+        "lastCompleteDate": "2026-11-27",
+        "claimed": true,
+        "window": 3,
+        "claimsToday": 1
+      }
+    },
+    {
+      "stage": "下一窗口重载后",
+      "daily": {
+        "date": "2026-11-27",
+        "goals": [
+          {
+            "id": "visit_1",
+            "target": 1,
+            "progress": 1,
+            "done": true
+          },
+          {
+            "id": "idle_earn",
+            "target": 1,
+            "progress": 1,
+            "done": true
+          },
+          {
+            "id": "click_100",
+            "target": 100,
+            "progress": 100,
+            "done": true
+          }
+        ],
+        "streak": 1,
+        "lastCompleteDate": "2026-11-27",
+        "claimed": false,
+        "window": 3,
+        "claimsToday": 1
+      },
+      "claimBtn": {
+        "text": "完成 0/3",
+        "dis": false
+      },
+      "energy": {
+        "date": "2026-11-27",
+        "left": 100,
+        "used": [],
+        "boosted": {
+          "idleMult": 1,
+          "patrolRewardMult": 1,
+          "clickMult": 1
+        }
+      }
+    }
+  ],
+  "verdict": {
+    "sameWindowClaimed": true,
+    "nextWindowClaimed": false,
+    "claimsTodayKept": 1,
+    "windowChanged": 3,
+    "goalIds": [
+      "visit_1",
+      "idle_earn",
+      "click_100"
+    ],
+    "goalIdsNext": [
+      "visit_1",
+      "idle_earn",
+      "click_100"
+    ]
+  }
+}

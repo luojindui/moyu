@@ -14,13 +14,13 @@ describe("批次3 回归：focus 不再是被支配选项（硬核 P1-4）", () 
 });
 
 describe("批次3 回归：首日离线加成不被 1.0 截断（硬核 P1-2）", () => {
-  it("建档首日：有地毯时离线效率 > 1（而不是恒 1）", () => {
+  it("建档首日：家具仍生效（且不超过 95% 硬上限）", () => {
     const now = Date.UTC(2026, 11, 1);
     const created = now - 3600_000; // 1 小时前建档（首日）
     const base = initialState();
     const noDecor = offlineEfficiency(base, created, now);
     const withRug = offlineEfficiency({ ...base, decor: ["rug"] }, created, now);
-    expect(noDecor).toBe(1);
-    expect(withRug).toBeCloseTo(1.05, 6);
+    expect(noDecor).toBeCloseTo(0.95, 6); // 首日基础 100% 也被 95% 硬上限约束
+    expect(withRug).toBeCloseTo(0.95, 6);
   });
 });

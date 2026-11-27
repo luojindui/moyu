@@ -12,16 +12,26 @@ const baseState = () => ({
   daily: { date: "", goals: [], claimed: false, streak: 28, lastCompleteDate: "", window: 0, claimsToday: 0 } as never,
 });
 
+/** 离线基准压到最低（0.7）：否则会撞 0.95 硬上限，看不出单件增量 */
+function lowBase() {
+  return {
+    ...initialState(),
+    visits: { date: new Date(now).toLocaleDateString("sv-SE"), count: 0 },
+    daily: { date: "", goals: [], claimed: false, streak: 0, lastCompleteDate: "", window: 0, claimsToday: 0 } as never,
+  };
+}
+
 describe("批次3 回归：离线加成不被重复计算（D11）", () => {
   it("单件家具的离线加成只计一次（rug +5%）", () => {
-    const s = baseState();
+    // 极低基准（0.7，无回访无签退）避免撞 0.95 上限，才能看出加成幅度
+    const s = lowBase();
     const no = offlineEfficiency(s, created, now);
     const withRug = offlineEfficiency({ ...s, decor: ["rug"] }, created, now);
     expect(withRug - no).toBeCloseTo(0.05, 6); // 不是 0.10
   });
 
   it("chair +8% 与 catbed +10% 也都只计一次", () => {
-    const s = baseState();
+    const s = lowBase();
     const no = offlineEfficiency(s, created, now);
     expect(offlineEfficiency({ ...s, decor: ["chair"] }, created, now) - no).toBeCloseTo(0.08, 6);
     expect(offlineEfficiency({ ...s, decor: ["catbed"] }, created, now) - no).toBeCloseTo(0.1, 6);

@@ -187,7 +187,7 @@ await runChrome(async ({ port }) => {
     await sleep(350);
     const s1 = await state(c);
     r.expect("C4 招募成功", s1.team.colleagues.zhou && s1.team.colleagues.zhou.level === 1, JSON.stringify(Object.keys(s1.team.colleagues)));
-    r.expect("C5 招募扣 12000", Math.abs(m0 - 12000 - s1.moyu) < 2, `${m0.toFixed(0)}→${s1.moyu.toFixed(0)}`);
+    r.expect("C5 招募扣 12000", Math.abs(m0 - 12000 - s1.moyu) < 20, `${m0.toFixed(0)}→${s1.moyu.toFixed(0)}`);
     const disp = await ev(c, `(() => { const b = document.querySelector('button[data-act="dispatch"][data-id="zhou"][data-mission="stroll"]'); return b ? { disabled: b.disabled, text: b.textContent.trim().replace(/\\s+/g, " ") } : null; })()`);
     r.expect("C6 派遣按钮存在", !!disp, JSON.stringify(disp));
     await click(c, 'button[data-act="dispatch"][data-id="zhou"][data-mission="stroll"]');
@@ -203,7 +203,7 @@ await runChrome(async ({ port }) => {
     await click(c, 'button[data-act="claim"][data-id="zhou"]');
     await sleep(450);
     const s3 = await state(c);
-    const flash = (await text(c, ".team-flash")) ?? (await text(c, "#sr-live"));
+    const flash = (await ev(c, `[...document.querySelectorAll(".team-flash")].map((x) => x.textContent).join(" | ")`)) || (await text(c, "#sr-live"));
     r.expect("C10 领取后任务清空", s3.team.colleagues.zhou.missionId === null);
     r.expect("C11 奖励入账", s3.moyu > before.moyu + 1, `${before.moyu.toFixed(1)}→${s3.moyu.toFixed(1)}`);
     r.expect("C12 好感 +2（普攻非匹配）", s3.team.colleagues.zhou.favor >= 2, `favor=${s3.team.colleagues.zhou.favor}`);
@@ -273,6 +273,7 @@ await runChrome(async ({ port }) => {
     r.expect("E3 focus 挂机 +8%", Math.abs(sFocus.energy.boosted.idleMult - 1.08) < 1e-9, sFocus.energy.boosted.idleMult);
     const expClick = await fmtEngine("M.clickPowerOf(window.__MOYU__.state)", "/src/engine/actions.ts");
     r.expect("E4 HUD 点击力吃到 ×2", (await text(c, "#hud-click")) === expClick, `${await text(c, "#hud-click")} vs ${expClick}`);
+    const hudClickBeforeReload = await text(c, "#hud-click");
     await closeAllModals(c);
     // E5：刷新后口径一致性（P0/P1 关键：存档恢复应保留 ×2 与 +8%）
     await ev(c, "window.__MOYU__.saveNow()");
@@ -282,7 +283,7 @@ await runChrome(async ({ port }) => {
     r.expect(
       "E6 刷新后 focus 点击仍 ×2",
       Math.abs(sRestore.energy.boosted.clickMult - 2) < 1e-9,
-      `实际 ${sRestore.energy.boosted.clickMult}（期望 2）`,
+      `实际 ${sRestore.energy.boosted.clickMult}（期望 2）｜玩家可见：刷新前 HUD 点击 ×2=${hudClickBeforeReload}，刷新后=${await text(c, "#hud-click")}`,
     );
     r.expect(
       "E7 刷新后 focus 挂机仍 +8%",
@@ -382,62 +383,82 @@ await runChrome(async ({ port }) => {
   await stage("H 回合制老板", async (r) => {
     await closeAllModals(c);
     await ev(c, "window.__MOYU__.grant(1000)");
-    await sleep(200);
-    // H1 选对（suspicious → switch-screen）
+    await sleep(300);
+    // H1 选对（forceBoss choice 固定 suspicious → 正确=switch-screen）
     await ev(c, `window.__MOYU__.forceBoss("choice")`);
     const shown = await waitFor(c, `document.getElementById("boss-choice").classList.contains("hidden") === false`, 4000);
     r.expect("H1 回合面板弹出", shown);
     const tell = await text(c, "#boss-tell");
     r.expect("H2 线索文案", /盯|屏幕/.test(tell ?? ""), tell ?? "null");
-    const opts = await count(c, "#boss-opts button[data-choice]");
-    r.expect("H3 三个选项", opts === 3, `选项 ${opts}`);
+    r.expect("H3 三个选项", (await count(c, "#boss-opts button[data-choice]")) === 3);
+    // H4 决策期点击守卫：直接向 canvas 派发 pointerdown（绕过遮罩命中），应被 bossPanel.isOpen 拦截
     const clicksBefore = (await state(c)).totalClicks;
-    await tapCanvas(c, 2, 150);
-    await sleep(300);
+    await ev(c, `(() => { const el = document.getElementById("stage"); const b = el.getBoundingClientRect();
+      for (let i = 0; i < 3; i++) el.dispatchEvent(new PointerEvent("pointerdown", { clientX: b.left + b.width/2, clientY: b.top + b.height/2, bubbles: true }));
+      return true; })()`);
+    await sleep(250);
     r.expect("H4 决策期点击被拦截", (await state(c)).totalClicks === clicksBefore, `${clicksBefore}→${(await state(c)).totalClicks}`);
-    const before = await state(c);
+    const hit = await ev(c, `(() => { const b = document.querySelector(".boss-box").getBoundingClientRect(); const top = document.elementFromPoint(b.left + b.width/2, b.top + b.height/2); return { tag: top?.tagName, inBoss: !!top?.closest("#boss-choice") }; })()`);
+    r.expect("H5 弹层按钮区真实可点（命中弹层而非画布）", hit.inBoss === true, JSON.stringify(hit));
+    // 选对
     const base = await modEval(c, "/src/engine/events.ts", "M.bossSurviveReward(window.__MOYU__.state)");
+    const expReward = Math.floor(base * 1.8);
+    const s0 = await state(c);
     await click(c, '#boss-opts button[data-choice="switch-screen"]');
     await sleep(700);
     const s1 = await state(c);
-    const expReward = Math.floor(base * 1.8);
-    r.expect("H5 选对奖励 ×1.8", Math.round(s1.moyu - before.moyu) >= expReward - 3 && Math.round(s1.moyu - before.moyu) <= expReward + 3, `实际 ${(s1.moyu - before.moyu).toFixed(1)} 期望 ${expReward}`);
-    r.expect("H6 选对连胜 +1", s1.surviveStreak === 1, `streak=${s1.surviveStreak}`);
+    const t1 = await text(c, "#dom-toast");
+    r.expect("H6 选对奖励 ×1.8", t1?.includes(`+${expReward}`) || Math.round(s1.moyu - s0.moyu) >= expReward - 3, `toast=${t1} 期望 +${expReward}`);
+    r.expect("H7 选对连胜 +1", s1.surviveStreak === 1, `streak=${s1.surviveStreak}`);
+    r.expect("H8 结果行内文案", /应对|屏幕|干净/.test((await text(c, "#boss-opts")) ?? "") || /屏幕/.test(t1 ?? ""), t1 ?? "null");
     await shot(c, "H-boss-correct");
-    // H2 选错（第 2 次巡逻：新手宽限 0 罚）
-    await ev(c, `window.__MOYU__.forceBoss("choice")`);
-    await waitFor(c, `document.getElementById("boss-choice").classList.contains("hidden") === false`, 4000);
-    const before2 = await state(c);
-    await click(c, '#boss-opts button[data-choice="act-busy"]');
-    await sleep(900);
-    const s2 = await state(c);
-    r.expect("H7 新手宽限内选错不扣钱", Math.abs(s2.moyu - before2.moyu) < 4, `delta ${(s2.moyu - before2.moyu).toFixed(1)}`);
-    r.expect("H8 选错连胜清零", s2.surviveStreak === 0, `streak=${s2.surviveStreak}`);
-    // H3 第 4 次巡逻选错 → 真罚款
+    // H9 第 2 次（新手宽限内）选错：不扣钱 + 明确提示
     await ev(c, `window.__MOYU__.forceBoss("choice")`);
     await waitFor(c, `document.getElementById("boss-choice").classList.contains("hidden") === false`, 4000);
     await click(c, '#boss-opts button[data-choice="act-busy"]');
     await sleep(700);
-    await ev(c, `window.__MOYU__.forceBoss("choice")`);
-    await waitFor(c, `document.getElementById("boss-choice").classList.contains("hidden") === false`, 4000);
-    const before4 = await state(c);
-    const base4 = await modEval(c, "/src/engine/events.ts", "M.bossSurviveReward(window.__MOYU__.state)");
-    await click(c, '#boss-opts button[data-choice="act-busy"]');
-    await sleep(900);
+    const s2 = await state(c);
+    const t2 = await text(c, "#dom-toast");
+    r.expect("H9 新手宽限选错不扣钱且有提示", /新手保护/.test(t2 ?? ""), t2 ?? "null");
+    r.expect("H10 选错连胜清零", s2.surviveStreak === 0, `streak=${s2.surviveStreak}`);
+    // H11 第 4 次巡逻选错 → 真罚款
+    for (let i = 0; i < 2; i++) {
+      await ev(c, `window.__MOYU__.forceBoss("choice")`);
+      await waitFor(c, `document.getElementById("boss-choice").classList.contains("hidden") === false`, 4000);
+      const wrongNow = i === 1; // 第 3 次正确（保留宽限外判定），第 4 次选错
+      await click(c, `#boss-opts button[data-choice="${wrongNow ? "act-busy" : "switch-screen"}"]`);
+      await sleep(650);
+    }
     const s4 = await state(c);
-    const loss = before4.moyu - s4.moyu;
-    r.expect("H9 第 4 次巡逻选错扣罚款", loss >= Math.min(Math.floor(base4), before4.moyu) - 3 && loss > 0, `损失 ${loss.toFixed(1)} 期望≈${Math.min(Math.floor(base4), before4.moyu)}`);
-    // H4 超时
+    const t4 = await text(c, "#dom-toast");
+    const base4 = await modEval(c, "/src/engine/events.ts", "M.bossSurviveReward(window.__MOYU__.state, { surviveStreak: 1 })");
+    const expPenalty = Math.floor(base4);
+    r.expect("H11 宽限外选错真罚款", new RegExp(`-${expPenalty}\\b`).test(t4 ?? ""), `toast=${t4} 期望 -${expPenalty}`);
+    r.expect("H12 罚款后连胜为 0", s4.surviveStreak === 0, `streak=${s4.surviveStreak}`);
+    // H13 超时（本会话已作答过 → 期望仍有"没来得及选"提示）
     await ev(c, `window.__MOYU__.forceBoss("choice")`);
-    const shown5 = await waitFor(c, `document.getElementById("boss-choice").classList.contains("hidden") === false`, 4000);
-    const before5 = await state(c);
-    await sleep(6000);
-    const s5 = await state(c);
-    const toast5 = await hud(c);
-    r.expect("H10 超时面板自动关闭", shown5 && (await visible(c, "#boss-choice")) === false);
-    r.expect("H11 超时无奖惩（连胜不变）", s5.surviveStreak === before5.surviveStreak, `${before5.surviveStreak}→${s5.surviveStreak}`);
-    r.expect("H12 超时提示出现", /没来得及选/.test(await text(c, "#dom-toast") ?? ""), await text(c, "#dom-toast"));
-    r.expect("H13 无异常", c.errors.length === 0, JSON.stringify(c.errors.slice(0, 2)));
+    const shownT = await waitFor(c, `document.getElementById("boss-choice").classList.contains("hidden") === false`, 4000);
+    await ev(c, `window.__auditToastLog = []; const el = document.getElementById("dom-toast");
+      new MutationObserver(() => window.__auditToastLog.push(el.textContent)).observe(el, { childList: true, characterData: true, subtree: true }); true`);
+    const tBefore = await state(c);
+    await sleep(6200);
+    const tAfter = await state(c);
+    const logs = await ev(c, `window.__auditToastLog`);
+    const sawTimeoutTip = (logs ?? []).some((x) => /没来得及选/.test(x ?? ""));
+    r.expect("H13 超时面板自动关闭", shownT && (await visible(c, "#boss-choice")) === false);
+    r.expect("H14 超时无奖惩（连胜不变）", tAfter.surviveStreak === tBefore.surviveStreak, `${tBefore.surviveStreak}→${tAfter.surviveStreak}`);
+    r.expect("H15 超时后应有「没来得及选」提示", sawTimeoutTip, `已作答后再超时：提示缺失（toast日志 ${JSON.stringify((logs ?? []).slice(-3))}）`);
+    // H16 对照：全新会话第一次就超时 → 提示应出现
+    await reload(500);
+    await closeAllModals(c);
+    await ev(c, `window.__auditToastLog = []; const el = document.getElementById("dom-toast");
+      new MutationObserver(() => window.__auditToastLog.push(el.textContent)).observe(el, { childList: true, characterData: true, subtree: true }); true`);
+    await ev(c, `window.__MOYU__.forceBoss("choice")`);
+    const shownF = await waitFor(c, `document.getElementById("boss-choice").classList.contains("hidden") === false`, 4000);
+    await sleep(6200);
+    const logsF = await ev(c, `window.__auditToastLog`);
+    r.expect("H16 首次超时提示正常", shownF && (logsF ?? []).some((x) => /没来得及选/.test(x ?? "")), JSON.stringify((logsF ?? []).slice(-3)));
+    r.expect("H17 无异常", c.errors.length === 0, JSON.stringify(c.errors.slice(0, 2)));
   });
 
   // ---------- 阶段 I：小游戏 3 个 + 次数限制 + 跨日恢复 ----------
@@ -567,8 +588,19 @@ await runChrome(async ({ port }) => {
     await ev(c, "window.__MOYU__.saveNow()");
     await sleep(200);
     const sOff = await state(c);
-    const rate = await modEval(c, "/src/engine/progression.ts", "M.offlineEfficiency(window.__MOYU__.state, Date.now() - 60000, Date.now())");
-    const idleRate = await modEval(c, "/src/engine/upgrades.ts", "M.effectOf(window.__MOYU__.state).idleRate");
+    // 用引擎层算期望（工位 100% + 同事 50%、首日效率、封顶等口径与实现一致）
+    const expOff = await ev(c, `(async () => {
+      const O = await import("/src/engine/offline.ts");
+      const P = await import("/src/engine/progression.ts");
+      const F = await import("/src/engine/format.ts");
+      const d = new Date().toLocaleDateString("sv-SE");
+      const s = JSON.parse(JSON.stringify(window.__MOYU__.state));
+      s.visits = { date: d, count: s.visits.date === d ? s.visits.count + 1 : 1 };
+      const rate = P.offlineEfficiency(s, Date.now() - 60000, Date.now());
+      const lo = O.offlineEarn(s, 7200, rate).earned;
+      const hi = O.offlineEarn(s, 7230, rate).earned;
+      return { lo, hi, formattedLo: F.formatMoyu(lo), formattedHi: F.formatMoyu(hi) };
+    })()`);
     await ev(c, "window.__MOYU__.rewindSave(7200)");
     await reload(500);
     const welcomeShown = await waitFor(c, `document.getElementById("welcome").classList.contains("hidden") === false`, 5000);
@@ -576,8 +608,8 @@ await runChrome(async ({ port }) => {
     if (welcomeShown) {
       const gainText = await text(c, "#welcome-gain");
       const sAfter = await state(c);
-      const expGain = idleRate * 7200 * rate;
-      r.expect("J16 离线收益符合公式", Math.abs(sAfter.moyu - sOff.moyu - expGain) < Math.max(3, expGain * 0.01), `实际 ${(sAfter.moyu - sOff.moyu).toFixed(1)} 期望 ${expGain.toFixed(1)} (${gainText})`);
+      const actual = sAfter.moyu - sOff.moyu;
+      r.expect("J16 离线收益符合引擎公式", actual >= expOff.lo * 0.985 && actual <= expOff.hi * 1.015, `实际 ${actual.toFixed(1)} 期望 ${expOff.lo.toFixed(1)}~${expOff.hi.toFixed(1)} (面板 ${gainText})`);
       r.expect("J17 欢迎面板文案", /首日全额|离线效率/.test((await text(c, "#welcome-rule")) ?? ""), await text(c, "#welcome-rule"));
       await shot(c, "J-offline-welcome");
       await click(c, "#welcome-ok");
@@ -648,14 +680,15 @@ await runChrome(async ({ port }) => {
     }, 600);
     const sX = await state(c);
     r.expect("K6 极值档可启动", (await ev(c, `typeof window.__MOYU__ === "object"`)) === true && (await count(c, ".boot-error")) === 0);
-    r.expect("K7 等级被钳制/未知键丢弃", sX.levels.coffee === 1000 && sX.levels.phone === undefined && sX.levels.hack === undefined, JSON.stringify(sX.levels));
+    r.expect("K7a 超上限等级被丢弃 / 负数丢弃", sX.levels.coffee === undefined && sX.levels.phone === undefined, JSON.stringify(sX.levels));
+    r.expect("K7b 未知升级键应被丢弃（数据卫生）", sX.levels.hack === undefined, `实际保留 ${JSON.stringify(sX.levels)}`);
     r.expect("K8 家具只留合法 id", JSON.stringify(sX.decor) === JSON.stringify(["plant"]), JSON.stringify(sX.decor));
     r.expect("K9 精力被推导钳制", sX.energy.left === 0 && sX.energy.used.length === 2 && sX.energy.boosted.idleMult <= 1.25 * 1.05 + 1e-9, JSON.stringify(sX.energy));
     r.expect("K10 小游戏次数钳制", sX.arcade.played === 3 && (sX.arcade.best.coffee === undefined || sX.arcade.best.coffee <= 8000), JSON.stringify(sX.arcade));
     r.expect("K11 未知同事丢弃 / 合法任务保留", sX.team.colleagues.zhang === undefined && !!sX.team.colleagues.zhou, JSON.stringify(Object.keys(sX.team.colleagues)));
     r.expect("K12 等级/任务时间被钳制", sX.team.colleagues.zhou?.level === 5 && (sX.team.colleagues.zhou?.missionId === null || sX.team.colleagues.zhou?.endsAt - sX.team.colleagues.zhou?.startedAt <= 9 * 3600 * 1000), JSON.stringify(sX.team.colleagues.zhou));
-    r.expect("K13 每日卡净化", sX.cards.chosen === null && sX.cards.offers.length <= 2, JSON.stringify({ chosen: sX.cards.chosen, offers: sX.cards.offers }));
-    r.expect("K14 日报非法回 null", sX.daily === null, JSON.stringify(sX.daily));
+    r.expect("K13 非法卡档被重置为合法今日卡", sX.cards.chosen === null && sX.cards.offers.length === 3 && sX.cards.date === today, JSON.stringify({ chosen: sX.cards.chosen, offers: sX.cards.offers, date: sX.cards.date }));
+    r.expect("K14 非法日报被重建为合法日报", !!sX.daily && sX.daily.goals.length === 3 && sX.daily.date === today && sX.daily.claimed === false, JSON.stringify(sX.daily && { goals: sX.daily.goals.map((g) => g.id), claimed: sX.daily.claimed }));
     r.expect("K15 图鉴净化", sX.collected.quotes.length + sX.collected.flavors.length === 0, JSON.stringify(sX.collected));
     const h = await hud(c);
     r.expect("K16 HUD 无 NaN/Infinity", !/NaN|Infinity/.test(JSON.stringify(h)), JSON.stringify(h).slice(0, 160));

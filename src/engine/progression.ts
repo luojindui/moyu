@@ -17,6 +17,8 @@ export const VISIT_BONUS_MAX_VISITS = 3;
 export const STREAK_BONUS_STEP = 0.05;
 export const STREAK_BONUS_DAYS = 7;
 export const STREAK_BONUS_MAX = 0.15;
+/** 离线效率硬上限：必须 < 1，否则"关掉页面等离线"比在线更优 */
+export const OFFLINE_MAX = 0.95;
 
 /** 记录一次回访（同日累计，跨日重置为 1） */
 export function ensureVisits(state: GameState, nowMs: number): GameState {
@@ -35,7 +37,7 @@ export function offlineEfficiency(state: GameState, createdAtMs: number, nowMs: 
     decorEffects(state).offlineBonus +
     cardEffects(state, Date.now()).offlineBonus -
     cardEffects(state, Date.now()).riskPenalty;
-  if (nowMs - createdAtMs < FIRST_DAY_MS) return 1 + Math.max(0, firstDayRaise);
+  if (nowMs - createdAtMs < FIRST_DAY_MS) return Math.min(OFFLINE_MAX, 1 + Math.max(0, firstDayRaise));
   const visits = Math.min(state.visits.count, VISIT_BONUS_MAX_VISITS);
   const streakDays = state.daily?.streak ?? 0;
   const streakBonus = Math.min(STREAK_BONUS_MAX, STREAK_BONUS_STEP * Math.floor(streakDays / STREAK_BONUS_DAYS));
@@ -51,5 +53,7 @@ export function offlineEfficiency(state: GameState, createdAtMs: number, nowMs: 
   // 「可突破 100% 的加成」= 天赋 + 今日卡 + 工位家具；它们同时抬高上限与基数（各计一次）
   const raise = talentBase + eventBonus + decorBase;
   const raw = 0.7 + favorBase + teamBase + visits * VISIT_BONUS_STEP + streakBonus;
-  return Math.min(1 + raise, raw + raise);
+  // 硬上限 95%：离线永远弱于在线（否则"关掉页面等离线"成为最优玩法）。
+  // 家具/天赋/卡的离线加成会帮你更快摸到这个上限，但不会突破它。
+  return Math.min(OFFLINE_MAX, raw + raise);
 }

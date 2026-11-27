@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-11-27T13:16:50.349Z",
+  "checks": [],
+  "scenarios": {
+    "error": "Error: boot error\n    at waitReady (file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-final-data-cdp-settle.mjs:48:24)\n    at async runChrome.timeoutMs (file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-final-data-cdp-settle.mjs:71:7)\n    at async runChrome (file:///Users/p/Desktop/workspace/code/moyu/playtest/lib/chrome.mjs:40:12)\n    at async run (file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-final-data-cdp-settle.mjs:66:3)"
+  },
+  "defects": [],
+  "summary": {
+    "total": 0,
+    "pass": 0,
+    "fail": 0
+  }
+}

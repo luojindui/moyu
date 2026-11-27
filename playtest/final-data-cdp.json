@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T13:07:19.373Z",
+  "generatedAt": "2026-11-27T13:14:30.941Z",
   "node": "v22.23.2",
   "scenarios": {
     "bootstrap": {
@@ -14,8 +14,8 @@
       },
       "res": {
         "state": {
-          "moyu": 1000000164294.4841,
-          "totalEarned": 5000000164294.479,
+          "moyu": 1000000144544.4554,
+          "totalEarned": 5000000144544.452,
           "idle": 131404.0506556448,
           "click": 715.04125,
           "station": 43964.63327564478,
@@ -34,9 +34,11 @@
             "moyu": "10000.00亿",
             "click": "715.0",
             "idle": "13.14万",
+            "idleRaw": 131404.0506556448,
             "rankShort": "宇宙尽头·终",
             "card": "卡·咖啡管够",
             "streak": "♻ 转生×8（可晋升）",
+            "journalHasReward": false,
             "arcadeBadge": "3",
             "teamBadge": "1"
           },
@@ -138,25 +140,25 @@
             "goals": [
               "✓今天上线看一眼1/1",
               "✓什么都不点，等摸鱼值自己涨1/1",
-              "✓戳 100 下100/100"
+              "○老板巡逻时忍住不点，1次0/1"
             ],
-            "claim": "领取 +7884.24万",
+            "claim": "完成 2/3",
             "total": "55/55",
             "quote": "10/10",
             "flavor": "45/45",
             "stats": [
               "生涯总收入50000.00亿",
-              "本局 / 往期50000.00亿 / 0",
+              "本局/往期50000.00亿/0",
               "当前余额10000.00亿",
               "累计投入21.49亿",
-              "点击力 / 挂机715 / 13.14万每秒",
+              "点击力/挂机715/13.14万每秒",
               "累计点击3000",
-              "今日回访6/3（离线效率 131%）",
-              "连续日报5 天",
+              "今日回访6/3（离线效率131%）",
+              "连续日报5天",
               "图鉴55/55",
-              "转生8 点（×7.00）",
+              "转生8点（×7.00）",
               "纪录·最佳单日0.1（2026-11-27）",
-              "纪录·最长连签0 天",
+              "纪录·最长连签0天",
               "纪录·最多点击0"
             ],
             "rank": "摸鱼宇宙尽头·终",
@@ -463,7 +465,7 @@
             "card": "卡·咖啡管够",
             "streak": "♻ 转生×8（可晋升）",
             "comboHidden": true,
-            "journalHasReward": true,
+            "journalHasReward": false,
             "teamBadge": "1",
             "energyBadge": "精力 100",
             "arcadeBadge": "3"
@@ -564,12 +566,12 @@
             "date": "2026-11-27",
             "streak": "🔥 连续 5 天（今天未领）",
             "goals": [
-              "✓\n        今天上线看一眼\n        1/1",
-              "✓\n        什么都不点，等摸鱼值自己涨\n        1/1",
-              "✓\n        戳 100 下\n        100/100"
+              "✓今天上线看一眼1/1",
+              "✓什么都不点，等摸鱼值自己涨1/1",
+              "○老板巡逻时忍住不点，1次0/1"
             ],
-            "claim": "领取 +7884.24万",
-            "claimDisabled": false,
+            "claim": "完成 2/3",
+            "claimDisabled": true,
             "total": "55/55",
             "quote": "10/10",
             "flavor": "45/45",
@@ -743,12 +745,406 @@
             "title": "摸鱼站"
           }
         }
+      },
+      "screenshots": [
+        "playtest/final-data-shots/panel-journal.png",
+        "playtest/final-data-shots/panel-team.png",
+        "playtest/final-data-shots/panel-talents.png",
+        "playtest/final-data-shots/panel-decor.png"
+      ]
+    },
+    "S2": {
+      "desc": "45 专注点击 今天点击力 ×2，且挂机 +8% · 花 45 精力 使用",
+      "clicked": true,
+      "before": {
+        "click": "11.2",
+        "idle": "0.2",
+        "state": {
+          "moyu": 1000000.1189932001,
+          "levels": {
+            "coffee": 10
+          },
+          "totalEarned": 1000000.1189932001,
+          "collected": {
+            "quotes": [],
+            "flavors": [
+              0,
+              1,
+              2,
+              5,
+              6,
+              7,
+              10,
+              11,
+              12
+            ]
+          },
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 100,
+                "done": true
+              }
+            ],
+            "streak": 5,
+            "lastCompleteDate": "2026-11-26",
+            "claimed": false,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "surviveStreak": 0,
+          "totalClicks": 3000,
+          "visits": {
+            "date": "2026-11-27",
+            "count": 6
+          },
+          "lifetimeEarned": 1000000.1189932001,
+          "prestige": 0,
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [],
+            "points": 0,
+            "rankGranted": 12,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "patrolSurvives": 20,
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [],
+            "chosen": null,
+            "until": 0,
+            "nextDayGuaranteed": null,
+            "dismissed": true,
+            "chosenDate": ""
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 0,
+            "best": {}
+          }
+        }
+      },
+      "live": {
+        "clickText": "22.4",
+        "idleText": "0.2",
+        "click": 22.4,
+        "idle": 0.22032000000000004,
+        "energy": {
+          "date": "2026-11-27",
+          "left": 55,
+          "used": [
+            "focus"
+          ],
+          "boosted": {
+            "idleMult": 1.08,
+            "patrolRewardMult": 1,
+            "clickMult": 2
+          }
+        }
+      },
+      "after": {
+        "clickText": "13.4",
+        "idleText": "0.2",
+        "click": 13.44,
+        "idle": 0.20400000000000001,
+        "energy": {
+          "date": "2026-11-27",
+          "left": 55,
+          "used": [
+            "focus"
+          ],
+          "boosted": {
+            "idleMult": 1,
+            "patrolRewardMult": 1,
+            "clickMult": 1.2
+          }
+        }
+      }
+    },
+    "S3": [
+      {
+        "case": "100h（应 12h 封顶）",
+        "welcome": {
+          "hidden": false,
+          "time": "100 小时 0 分",
+          "gain": "156.93万",
+          "rule": "离线效率 90%｜超过上限，已按上限结算 12 小时 0 分"
+        },
+        "engine": {
+          "elapsed": 360000.627,
+          "applied": 43200,
+          "earned": 1569259.0079999997,
+          "rate": 0.8999999999999999,
+          "rate0": 0.8999999999999999,
+          "impliedRate": 0.8999999999999999,
+          "cap": 43200,
+          "rateLabel": "离线效率 90%",
+          "realSeconds": 360000.627
+        },
+        "hudMoyu": "10000.02亿",
+        "stateMoyu": 1000001569296.0386,
+        "elapsedSec": 360000.627,
+        "expectCap": 12,
+        "rateLabelBug": false
+      },
+      {
+        "case": "8 天（应 24h 封顶）",
+        "welcome": {
+          "hidden": false,
+          "time": "192 小时 0 分",
+          "gain": "348.72万",
+          "rule": "离线效率 90%｜超过上限，已按上限结算 24 小时 0 分"
+        },
+        "engine": {
+          "elapsed": 691200.62,
+          "applied": 86400,
+          "earned": 3487242.2399999998,
+          "rate": 1,
+          "rate0": 0.8999999999999999,
+          "impliedRate": 1,
+          "cap": 86400,
+          "rateLabel": "首日全额",
+          "realSeconds": 691200.62
+        },
+        "hudMoyu": "10000.03亿",
+        "stateMoyu": 1000003487278.9497,
+        "elapsedSec": 691200.62,
+        "expectCap": 24,
+        "rateLabelBug": false
+      },
+      {
+        "case": "31 天（应 48h 封顶）",
+        "welcome": {
+          "hidden": false,
+          "time": "744 小时 0 分",
+          "gain": "697.45万",
+          "rule": "离线效率 90%｜超过上限，已按上限结算 48 小时 0 分"
+        },
+        "engine": {
+          "elapsed": 2678400.617,
+          "applied": 172800,
+          "earned": 6974484.4799999995,
+          "rate": 1,
+          "rate0": 0.8999999999999999,
+          "impliedRate": 1,
+          "cap": 172800,
+          "rateLabel": "首日全额",
+          "realSeconds": 2678400.617
+        },
+        "hudMoyu": "10000.07亿",
+        "stateMoyu": 1000006974521.97,
+        "elapsedSec": 2678400.617,
+        "expectCap": 48,
+        "rateLabelBug": false
+      },
+      {
+        "case": "3 天前建档 + 3 次回访 + 地毯（rate≈1.05，文案却说首日）",
+        "welcome": {
+          "hidden": false,
+          "time": "1 小时 0 分",
+          "gain": "15.26万",
+          "rule": "首日全额｜8 小时封顶"
+        },
+        "engine": {
+          "elapsed": 3600.615,
+          "applied": 3600.615,
+          "earned": 152592.91150319998,
+          "rate": 1.05,
+          "rate0": 1.05,
+          "impliedRate": 1.05,
+          "cap": 43200,
+          "rateLabel": "首日全额",
+          "realSeconds": 3600.615
+        },
+        "hudMoyu": "10000.00亿",
+        "stateMoyu": 1000000152605.3777,
+        "elapsedSec": 3600.615,
+        "expectCap": 12,
+        "rateLabelBug": true
+      }
+    ],
+    "S4firstChunk": "2250",
+    "S4": {
+      "idleBefore": 769.8080000000001,
+      "text": "找老板 结束 13400 分 本局奖励 +19245 摸鱼值 🎉 新纪录！（旧 0） 找对 268 · 找错 0 再来一局 返回摸鱼站",
+      "score": 13400,
+      "gotText": "本局奖励 +19245 摸鱼值",
+      "idle": 769.8080000000001,
+      "expectReward": 19245,
+      "detail": [
+        "找对 268 · 找错 0"
+      ],
+      "played": 1,
+      "best": {
+        "findboss": 8000
+      },
+      "rewardText": "本局奖励 +19245 摸鱼值"
+    },
+    "S5choice": {
+      "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+      "opts": [
+        {
+          "id": "act-busy",
+          "label": "立刻装忙"
+        },
+        {
+          "id": "switch-screen",
+          "label": "切到工作界面"
+        },
+        {
+          "id": "keep-slacking",
+          "label": "继续摸鱼"
+        }
+      ],
+      "personality": "suspicious",
+      "correct": "switch-screen",
+      "base": 217.40160000000003,
+      "expect": 391,
+      "toast": "王总：屏幕挺干净啊。 +391",
+      "surviveStreak": 4,
+      "sr": "应对正确"
+    },
+    "S5": {
+      "daily": {
+        "beforeButton": "领取 +2.51万",
+        "expect": 25084.800000000003,
+        "before": 1000000000050.1707,
+        "after": 1000000025156.5687,
+        "delta": 25106.398071289062,
+        "afterText": "今日已领",
+        "daily": {
+          "date": "2026-11-27",
+          "goals": [
+            {
+              "id": "visit_1",
+              "target": 1,
+              "progress": 1,
+              "done": true
+            },
+            {
+              "id": "idle_earn",
+              "target": 1,
+              "progress": 1,
+              "done": true
+            },
+            {
+              "id": "click_100",
+              "target": 100,
+              "progress": 100,
+              "done": true
+            }
+          ],
+          "streak": 5,
+          "lastCompleteDate": "2026-11-27",
+          "claimed": true,
+          "window": 3,
+          "claimsToday": 1
+        }
+      },
+      "hold": {
+        "toast": "王总今天心情不错。 +201（连胜 3）",
+        "sr": "王总巡逻：8 秒内不要点屏幕",
+        "surviveStreak": 3,
+        "expect": 200.67840000000004,
+        "base": 167.23200000000003,
+        "preStreak": 2
+      },
+      "choice": {
+        "tell": "有人过来了——他一路盯着别人的屏幕走过来",
+        "opts": [
+          {
+            "id": "act-busy",
+            "label": "立刻装忙"
+          },
+          {
+            "id": "switch-screen",
+            "label": "切到工作界面"
+          },
+          {
+            "id": "keep-slacking",
+            "label": "继续摸鱼"
+          }
+        ],
+        "personality": "suspicious",
+        "correct": "switch-screen",
+        "base": 217.40160000000003,
+        "expect": 391,
+        "toast": "王总：屏幕挺干净啊。 +391",
+        "surviveStreak": 4,
+        "sr": "应对正确"
+      }
+    },
+    "S6": {
+      "base": {
+        "hasDebug": false,
+        "title": "摸鱼工位",
+        "cards": 9,
+        "hud": {
+          "moyu": "0.2",
+          "click": "1",
+          "idle": "0.2",
+          "rank": "实习生 0%"
+        },
+        "boot": false
+      },
+      "afterClicks": {
+        "moyu": "11.1",
+        "click": "1",
+        "idle": "0.2"
+      },
+      "offlineUi": {
+        "hidden": false,
+        "time": "100 小时 0 分",
+        "gain": "78.54万",
+        "rule": "离线效率 90%｜超过上限，已按上限结算 12 小时 0 分",
+        "hud": {
+          "moyu": "78.64万",
+          "click": "1",
+          "idle": "20.2"
+        },
+        "version": ""
+      },
+      "versionText": "v0.5.0 · 2026-11-27",
+      "shortOffline": {
+        "hidden": false,
+        "time": "1 小时 0 分",
+        "gain": "6.54万",
+        "rule": "离线效率 90%｜8 小时封顶"
       }
     },
     "finalHud": {
-      "moyu": "10000.00亿",
-      "click": "715.0",
-      "idle": "13.14万"
+      "moyu": "6.65万",
+      "click": "1",
+      "idle": "20.2"
     }
   },
   "panelChecks": [
@@ -777,8 +1173,8 @@
       "panel": "HUD",
       "item": "段位+进度",
       "shown": "宇宙尽头·终",
-      "expected": "undefined",
-      "ok": false
+      "expected": "宇宙尽头·终",
+      "ok": true
     },
     {
       "panel": "HUD",
@@ -811,9 +1207,9 @@
     {
       "panel": "HUD",
       "item": "📔 日报可领点",
-      "shown": "true",
-      "expected": "undefined",
-      "ok": false
+      "shown": "false",
+      "expected": "false",
+      "ok": true
     },
     {
       "panel": "商店",
@@ -1039,30 +1435,30 @@
     {
       "panel": "日报",
       "item": "领取按钮",
-      "shown": "领取 +7884.24万",
-      "expected": "领取 +7884.24万",
+      "shown": "完成 2/3",
+      "expected": "完成 2/3",
       "ok": true
     },
     {
       "panel": "日报",
       "item": "目标1",
-      "shown": "✓\n        今天上线看一眼\n        1/1",
+      "shown": "✓今天上线看一眼1/1",
       "expected": "✓今天上线看一眼1/1",
-      "ok": false
+      "ok": true
     },
     {
       "panel": "日报",
       "item": "目标2",
-      "shown": "✓\n        什么都不点，等摸鱼值自己涨\n        1/1",
+      "shown": "✓什么都不点，等摸鱼值自己涨1/1",
       "expected": "✓什么都不点，等摸鱼值自己涨1/1",
-      "ok": false
+      "ok": true
     },
     {
       "panel": "日报",
       "item": "目标3",
-      "shown": "✓\n        戳 100 下\n        100/100",
-      "expected": "✓戳 100 下100/100",
-      "ok": false
+      "shown": "○老板巡逻时忍住不点，1次0/1",
+      "expected": "○老板巡逻时忍住不点，1次0/1",
+      "ok": true
     },
     {
       "panel": "日报",
@@ -1087,91 +1483,91 @@
     },
     {
       "panel": "统计面板",
-      "item": "生涯总收入50000.00亿",
+      "item": "生涯总收入",
       "shown": "true",
       "expected": "包含「生涯总收入50000.00亿」",
       "ok": true
     },
     {
       "panel": "统计面板",
-      "item": "本局",
+      "item": "本局往期",
       "shown": "true",
-      "expected": "包含「本局 / 往期50000.00亿 / 0」",
+      "expected": "包含「本局/往期50000.00亿/0」",
       "ok": true
     },
     {
       "panel": "统计面板",
-      "item": "当前余额10000.00亿",
+      "item": "当前余额",
       "shown": "true",
       "expected": "包含「当前余额10000.00亿」",
       "ok": true
     },
     {
       "panel": "统计面板",
-      "item": "累计投入21.49亿",
+      "item": "累计投入",
       "shown": "true",
       "expected": "包含「累计投入21.49亿」",
       "ok": true
     },
     {
       "panel": "统计面板",
-      "item": "点击力",
+      "item": "点击力挂机每秒",
       "shown": "true",
-      "expected": "包含「点击力 / 挂机715 / 13.14万每秒」",
+      "expected": "包含「点击力/挂机715/13.14万每秒」",
       "ok": true
     },
     {
       "panel": "统计面板",
-      "item": "累计点击3000",
+      "item": "累计点击",
       "shown": "true",
       "expected": "包含「累计点击3000」",
       "ok": true
     },
     {
       "panel": "统计面板",
-      "item": "今日回访6/3（离线效率",
+      "item": "今日回访离线效率%",
       "shown": "true",
-      "expected": "包含「今日回访6/3（离线效率 131%）」",
+      "expected": "包含「今日回访6/3（离线效率131%）」",
       "ok": true
     },
     {
       "panel": "统计面板",
-      "item": "连续日报5",
+      "item": "连续日报天",
       "shown": "true",
-      "expected": "包含「连续日报5 天」",
+      "expected": "包含「连续日报5天」",
       "ok": true
     },
     {
       "panel": "统计面板",
-      "item": "图鉴55/55",
+      "item": "图鉴",
       "shown": "true",
       "expected": "包含「图鉴55/55」",
       "ok": true
     },
     {
       "panel": "统计面板",
-      "item": "转生8",
+      "item": "转生点",
       "shown": "true",
-      "expected": "包含「转生8 点（×7.00）」",
+      "expected": "包含「转生8点（×7.00）」",
       "ok": true
     },
     {
       "panel": "统计面板",
-      "item": "纪录·最佳单日0.1（2026-11-27）",
+      "item": "纪录最佳单日--",
       "shown": "true",
       "expected": "包含「纪录·最佳单日0.1（2026-11-27）」",
       "ok": true
     },
     {
       "panel": "统计面板",
-      "item": "纪录·最长连签0",
+      "item": "纪录最长连签天",
       "shown": "true",
-      "expected": "包含「纪录·最长连签0 天」",
+      "expected": "包含「纪录·最长连签0天」",
       "ok": true
     },
     {
       "panel": "统计面板",
-      "item": "纪录·最多点击0",
+      "item": "纪录最多点击",
       "shown": "true",
       "expected": "包含「纪录·最多点击0」",
       "ok": true
@@ -1181,6 +1577,17 @@
       "item": "段位",
       "shown": "摸鱼宇宙尽头·终",
       "expected": "摸鱼宇宙尽头·终",
+      "ok": true
+    },
+    {
+      "panel": "跨面板",
+      "item": "HUD 挂机/秒 与 统计面板挂机 一致",
+      "shown": 131400,
+      "expected": "131404.0506556448",
+      "engine": {
+        "hud": "13.14万",
+        "statLine": "点击力 / 挂机715 / 13.14万每秒"
+      },
       "ok": true
     },
     {
@@ -1777,20 +2184,428 @@
       "shown": 3,
       "expected": "3",
       "ok": true
+    },
+    {
+      "panel": "精力(实时)",
+      "item": "专注点击后点击力（HUD 文本）",
+      "shown": "22.4",
+      "expected": "22.4",
+      "engine": {
+        "idleMult": 1.08,
+        "patrolRewardMult": 1,
+        "clickMult": 2
+      },
+      "ok": true
+    },
+    {
+      "panel": "精力(实时)",
+      "item": "专注点击后挂机/秒（引擎值；HUD 只有 1 位小数显示 0.2）",
+      "shown": 0.22032000000000004,
+      "expected": 0.22032000000000004,
+      "engine": {
+        "hudText": "0.2",
+        "boosted": {
+          "idleMult": 1.08,
+          "patrolRewardMult": 1,
+          "clickMult": 2
+        }
+      },
+      "note": "formatMoyu 对 <1万 非整数只保留 1 位小数，小数值时 HUD 看不出 +8%",
+      "ok": true
+    },
+    {
+      "panel": "精力(刷新前后)",
+      "item": "专注点击：刷新后点击力倍率",
+      "shown": 13.44,
+      "expected": 22.4,
+      "engine": {
+        "liveBoost": {
+          "idleMult": 1.08,
+          "patrolRewardMult": 1,
+          "clickMult": 2
+        },
+        "restoredBoost": {
+          "idleMult": 1,
+          "patrolRewardMult": 1,
+          "clickMult": 1.2
+        }
+      },
+      "note": "存档按 used 重算 boosted：clickMult 2→1.2、idleMult 1.08→1",
+      "ok": false
+    },
+    {
+      "panel": "精力(刷新前后)",
+      "item": "专注点击：刷新后挂机/秒（引擎值）",
+      "shown": 0.20400000000000001,
+      "expected": 0.22032000000000004,
+      "engine": {
+        "hudTextBefore": "0.2",
+        "hudTextAfter": "0.2",
+        "idleDropPct": 7.407407407407418
+      },
+      "note": "focus 的 +8% 挂机在刷新后丢失（HUD 0.2→0.2 看不出，引擎 0.22032→0.204）",
+      "ok": false
+    },
+    {
+      "panel": "离线",
+      "item": "100h（应 12h 封顶） 到账金额",
+      "shown": 1569300,
+      "expected": "1569259.0079999997",
+      "engine": {
+        "appliedHours": 12,
+        "rate": 0.8999999999999999,
+        "capHours": 12
+      },
+      "ok": true
+    },
+    {
+      "panel": "离线欢迎面板",
+      "item": "100h（应 12h 封顶） 海报文案 vs 引擎封顶",
+      "shown": "离线效率 90%｜超过上限，已按上限结算 12 小时 0 分",
+      "expected": "按上限结算 12h（引擎 OFFLINE_CAP_SECONDS=12h 阶梯 24/48h）",
+      "engine": {
+        "appliedHours": 12,
+        "capHours": 12
+      },
+      "note": "固定后缀「8 小时封顶」与引擎 12h 阶梯不符",
+      "ok": true
+    },
+    {
+      "panel": "离线",
+      "item": "8 天（应 24h 封顶） 到账金额",
+      "shown": 3487200.0000000005,
+      "expected": "3487242.2399999998",
+      "engine": {
+        "appliedHours": 24,
+        "rate": 1,
+        "capHours": 24
+      },
+      "ok": true
+    },
+    {
+      "panel": "离线欢迎面板",
+      "item": "8 天（应 24h 封顶） 海报文案 vs 引擎封顶",
+      "shown": "离线效率 90%｜超过上限，已按上限结算 24 小时 0 分",
+      "expected": "按上限结算 24h（引擎 OFFLINE_CAP_SECONDS=12h 阶梯 24/48h）",
+      "engine": {
+        "appliedHours": 24,
+        "capHours": 24
+      },
+      "note": "固定后缀「8 小时封顶」与引擎 12h 阶梯不符",
+      "ok": true
+    },
+    {
+      "panel": "离线欢迎面板",
+      "item": "8 天（应 24h 封顶） 面板效率 vs 实际结算效率（≥7 天回归首开强制 100%）",
+      "shown": "离线效率 90%｜超过上限，已按上限结算 24 小时 0 分",
+      "expected": "实际按 100% 结算（面板显示 90%）",
+      "engine": {
+        "panelRate": 0.8999999999999999,
+        "effectiveRate": 1,
+        "impliedRate": 1,
+        "earned": 3487242.2399999998
+      },
+      "note": "settleReturn 对 gap>=7d 强制 rate=1，但欢迎面板仍用 offlineEfficiency（0.9）显示",
+      "ok": false
+    },
+    {
+      "panel": "离线",
+      "item": "31 天（应 48h 封顶） 到账金额",
+      "shown": 6974500,
+      "expected": "6974484.4799999995",
+      "engine": {
+        "appliedHours": 48,
+        "rate": 1,
+        "capHours": 48
+      },
+      "ok": true
+    },
+    {
+      "panel": "离线欢迎面板",
+      "item": "31 天（应 48h 封顶） 海报文案 vs 引擎封顶",
+      "shown": "离线效率 90%｜超过上限，已按上限结算 48 小时 0 分",
+      "expected": "按上限结算 48h（引擎 OFFLINE_CAP_SECONDS=12h 阶梯 24/48h）",
+      "engine": {
+        "appliedHours": 48,
+        "capHours": 48
+      },
+      "note": "固定后缀「8 小时封顶」与引擎 12h 阶梯不符",
+      "ok": true
+    },
+    {
+      "panel": "离线欢迎面板",
+      "item": "31 天（应 48h 封顶） 面板效率 vs 实际结算效率（≥7 天回归首开强制 100%）",
+      "shown": "离线效率 90%｜超过上限，已按上限结算 48 小时 0 分",
+      "expected": "实际按 100% 结算（面板显示 90%）",
+      "engine": {
+        "panelRate": 0.8999999999999999,
+        "effectiveRate": 1,
+        "impliedRate": 1,
+        "earned": 6974484.4799999995
+      },
+      "note": "settleReturn 对 gap>=7d 强制 rate=1，但欢迎面板仍用 offlineEfficiency（0.9）显示",
+      "ok": false
+    },
+    {
+      "panel": "离线",
+      "item": "3 天前建档 + 3 次回访 + 地毯（rate≈1.05，文案却说首日） 到账金额",
+      "shown": 152600,
+      "expected": "152592.91150319998",
+      "engine": {
+        "appliedHours": 1.0001708333333332,
+        "rate": 1.05,
+        "capHours": 12
+      },
+      "ok": true
+    },
+    {
+      "panel": "离线欢迎面板",
+      "item": "3 天前建档 + 3 次回访 + 地毯（rate≈1.05，文案却说首日） 海报文案 vs 引擎封顶",
+      "shown": "首日全额｜8 小时封顶",
+      "expected": "按上限结算 1.0001708333333332h（引擎 OFFLINE_CAP_SECONDS=12h 阶梯 24/48h）",
+      "engine": {
+        "appliedHours": 1.0001708333333332,
+        "capHours": 12
+      },
+      "note": "固定后缀「8 小时封顶」与引擎 12h 阶梯不符",
+      "ok": false
+    },
+    {
+      "panel": "离线欢迎面板",
+      "item": "非首日但 rate≥1 时文案却说「首日全额」",
+      "shown": "首日全额｜8 小时封顶",
+      "expected": "离线效率 105%",
+      "engine": {
+        "rate": 1.05,
+        "byRate": "首日全额"
+      },
+      "note": "welcome.ts 用 rate>=1 判定「首日全额」，非首日靠回访+家具也能到 ≥1",
+      "ok": false
+    },
+    {
+      "panel": "摸鱼站结算",
+      "item": "找老板 分数",
+      "shown": 13400,
+      "expected": "13400",
+      "ok": true
+    },
+    {
+      "panel": "摸鱼站结算",
+      "item": "本局奖励 = max(⌊挂机×25×ratio⌋, ⌈30×ratio⌉)",
+      "shown": 19245,
+      "expected": "19245",
+      "engine": {
+        "score": 13400,
+        "ref": 1200,
+        "ratio": 1,
+        "idle": 769.8080000000001,
+        "expectReward": 19245
+      },
+      "note": "结算页奖励文本未用 formatMoyu（直接数字）",
+      "ok": true
+    },
+    {
+      "panel": "摸鱼站结算",
+      "item": "次数已消耗 1",
+      "shown": 1,
+      "expected": "1",
+      "ok": true
+    },
+    {
+      "panel": "摸鱼站菜单",
+      "item": "「满分 ≈ 25 秒挂机收益（新号保底 30）」",
+      "shown": "满分 ≈ 25 秒挂机收益（新号保底 30）",
+      "expected": "TARGET_IDLE_SECONDS=25、EARLY_FLOOR=30",
+      "engine": {
+        "targetIdleSeconds": 25,
+        "earlyFloor": 30
+      },
+      "ok": true
+    },
+    {
+      "panel": "日报领取",
+      "item": "按钮金额",
+      "shown": 25099.999999999996,
+      "expected": "25084.800000000003",
+      "ok": true
+    },
+    {
+      "panel": "日报领取",
+      "item": "实际到账",
+      "shown": 25106.398071289062,
+      "expected": "25084.800000000003",
+      "engine": {
+        "claimed": true,
+        "streak": 5
+      },
+      "ok": true
+    },
+    {
+      "panel": "日报领取",
+      "item": "领取后 HUD 角标清掉",
+      "shown": "今日已领",
+      "expected": "今日已领",
+      "expectedStr": "今日已领",
+      "engine": true,
+      "ok": true
+    },
+    {
+      "panel": "巡逻热修",
+      "item": "hold 安然奖励（toast 已 Math.round）",
+      "shown": 201,
+      "expected": "201",
+      "engine": {
+        "base": 167.23200000000003,
+        "preStreak": 2,
+        "surviveStreak": 3
+      },
+      "note": "低倍率下 = max(50, 4×idle) × 连胜",
+      "ok": true
+    },
+    {
+      "panel": "巡逻 HUD",
+      "item": "连胜角标 +1",
+      "shown": 3,
+      "expected": 3,
+      "engine": {
+        "pre": 2,
+        "post": 3
+      },
+      "ok": true
+    },
+    {
+      "panel": "巡逻·回合制",
+      "item": "选对奖励 = floor(基础×1.8)",
+      "shown": 391,
+      "expected": "391",
+      "engine": {
+        "personality": "suspicious",
+        "base": 217.40160000000003,
+        "mult": 1.8,
+        "expect": 391
+      },
+      "note": "面板结果文本/顶部 toast",
+      "ok": true
+    },
+    {
+      "panel": "巡逻·回合制",
+      "item": "选项数 3",
+      "shown": 3,
+      "expected": 3,
+      "engine": [
+        {
+          "id": "act-busy",
+          "label": "立刻装忙"
+        },
+        {
+          "id": "switch-screen",
+          "label": "切到工作界面"
+        },
+        {
+          "id": "keep-slacking",
+          "label": "继续摸鱼"
+        }
+      ],
+      "ok": true
+    },
+    {
+      "panel": "线上 v0.5.0 离线",
+      "item": "到账金额（手算：20.2/s×12h×0.9+1000）",
+      "shown": 786400,
+      "expected": "786376",
+      "note": "线上无法 import 引擎，按常量手算",
+      "ok": true
+    },
+    {
+      "panel": "线上 v0.5.0",
+      "item": "生产包不暴露 __MOYU__",
+      "shown": "false",
+      "expected": "false",
+      "ok": true
+    },
+    {
+      "panel": "线上 v0.5.0",
+      "item": "9 档商店渲染",
+      "shown": 9,
+      "expected": "9",
+      "ok": true
+    },
+    {
+      "panel": "线上 v0.5.0",
+      "item": "初始 HUD 点击/挂机",
+      "shown": "1|0.2",
+      "expected": "1|0.2",
+      "ok": true
+    },
+    {
+      "panel": "线上 v0.5.0",
+      "item": "点 10 下后摸鱼值 ≥ 10（含连击与底薪）",
+      "shown": "11.1",
+      "expected": ">=10",
+      "expectedStr": ">=10",
+      "engine": {
+        "note": "连击每连 +1.2%，另有 0.2/s 底薪"
+      },
+      "ok": true
+    },
+    {
+      "panel": "线上 v0.5.0 离线",
+      "item": "欢迎面板文案 vs 引擎 12h 封顶（线上无法取引擎，按已知常量）",
+      "shown": "离线效率 90%｜超过上限，已按上限结算 12 小时 0 分",
+      "expected": "已按上限结算 12 小时 0 分（引擎 12h 封顶）",
+      "expectedStr": "已按上限结算 12 小时 0 分",
+      "engine": {
+        "knownCapHours": 12
+      },
+      "note": "线上封顶文案同样是「8 小时封顶」矛盾",
+      "ok": true
+    },
+    {
+      "panel": "线上 v0.5.0 离线",
+      "item": "非封顶场景（离 1h）面板固定文案「8 小时封顶」",
+      "shown": "离线效率 90%｜8 小时封顶",
+      "expected": "引擎日常封顶 12h（PROJECT-SUMMARY 亦写 12h）",
+      "expectedStr": "引擎日常封顶 12h",
+      "engine": {
+        "knownCapHours": 12
+      },
+      "note": "线上 v0.5.0 实测",
+      "ok": false
     }
   ],
-  "defects": [],
+  "defects": [
+    {
+      "level": "P1",
+      "where": "src/engine/save.ts 精力 boosted 重算",
+      "issue": "「专注点击」描述=点击力 ×2 且挂机 +8%；实测点击 22.40 → 刷新后 13.44（倍率 2→1.2），挂机下降 7.41%（idleMult 1.08→1）"
+    },
+    {
+      "level": "P1",
+      "where": "src/ui/welcome.ts:24（线上 v0.5.0 同样命中）",
+      "issue": "欢迎面板固定写「8 小时封顶」，引擎实际 12h（≥7 天 24h、≥30 天 48h）；100h 档实测同面板同时显示「已按上限结算 12 小时 0 分」+「8 小时封顶」自相矛盾；另有非首日 rate≥1 被标成「首日全额」"
+    },
+    {
+      "level": "P1",
+      "where": "线上 https://luojindui.github.io/moyu/ v0.5.0 欢迎面板",
+      "issue": "线上 100h 离线实测面板文案「离线效率 90%｜超过上限，已按上限结算 12 小时 0 分」；引擎封顶 12h → 文案自相矛盾（同 dist 版本）"
+    },
+    {
+      "level": "P1",
+      "where": "线上 https://luojindui.github.io/moyu/ v0.5.0 欢迎面板（离 1h 非封顶场景）",
+      "issue": "面板写「离线效率 90%｜8 小时封顶」，引擎日常封顶 12h；文案与实现/文档不一致"
+    }
+  ],
   "chromeCleanup": {
     "done": true
   },
   "panelChecksSummary": {
-    "total": 124,
-    "pass": 93,
-    "fail": 31,
+    "total": 158,
+    "pass": 125,
+    "fail": 33,
     "byPanel": {
       "HUD": {
         "total": 9,
-        "fail": 2
+        "fail": 0
       },
       "商店": {
         "total": 27,
@@ -1798,10 +2613,14 @@
       },
       "日报": {
         "total": 9,
-        "fail": 3
+        "fail": 0
       },
       "统计面板": {
         "total": 15,
+        "fail": 0
+      },
+      "跨面板": {
+        "total": 1,
         "fail": 0
       },
       "图鉴": {
@@ -1822,6 +2641,54 @@
       },
       "摸鱼站": {
         "total": 2,
+        "fail": 0
+      },
+      "精力(实时)": {
+        "total": 2,
+        "fail": 0
+      },
+      "精力(刷新前后)": {
+        "total": 2,
+        "fail": 2
+      },
+      "离线": {
+        "total": 4,
+        "fail": 0
+      },
+      "离线欢迎面板": {
+        "total": 7,
+        "fail": 4
+      },
+      "摸鱼站结算": {
+        "total": 3,
+        "fail": 0
+      },
+      "摸鱼站菜单": {
+        "total": 1,
+        "fail": 0
+      },
+      "日报领取": {
+        "total": 3,
+        "fail": 0
+      },
+      "巡逻热修": {
+        "total": 1,
+        "fail": 0
+      },
+      "巡逻 HUD": {
+        "total": 1,
+        "fail": 0
+      },
+      "巡逻·回合制": {
+        "total": 2,
+        "fail": 0
+      },
+      "线上 v0.5.0 离线": {
+        "total": 3,
+        "fail": 1
+      },
+      "线上 v0.5.0": {
+        "total": 4,
         "fail": 0
       }
     }

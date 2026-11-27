@@ -11,6 +11,8 @@ import { runChrome, connect, sleep } from "./lib/chrome.mjs";
 
 export { runChrome, connect, sleep };
 
+export const BASE_URL = process.env.R16_URL || "http://127.0.0.1:5199/";
+
 export const INIT_SCRIPT = String.raw`
 (function(){
   var W = window;
@@ -212,7 +214,7 @@ export const INIT_SCRIPT = String.raw`
 `;
 
 /** 启动一个 dev 会话（含仪表化钩子、移动端视口、清档） */
-export async function bootDev(send, ev, { url = "http://127.0.0.1:5173/", reset = true, device = "mobile" } = {}) {
+export async function bootDev(send, ev, { url = BASE_URL, reset = true, device = "mobile" } = {}) {
   await send("Runtime.enable");
   await send("Page.enable");
   try { await send("Log.enable"); } catch { /* 忽略 */ }
@@ -306,7 +308,7 @@ export async function startGame(send, ev, game) {
 }
 
 /** 终止当前小游戏：直接刷新页面（避免 confirm 对话框卡住 headless） */
-export async function abortByReload(send, ev, url = "http://127.0.0.1:5173/") {
+export async function abortByReload(send, ev, url = BASE_URL) {
   await send("Page.navigate", { url });
   await waitFor(ev, 'document.readyState === "complete"', { timeout: 20000, label: "reload" });
   await waitFor(ev, "typeof window.__MOYU__ !== 'undefined' && typeof window.__R16 !== 'undefined'", { timeout: 20000, label: "hooks" });

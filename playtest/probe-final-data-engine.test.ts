@@ -3,7 +3,8 @@
  * 覆盖：升级价格/里程碑、全系统倍率叠加、派遣/日报/巡逻/丢梗/小游戏/离线奖励公式、
  *       转生、精力存档一致性、面板显示公式 vs 引擎真值、静态文案漂移。
  * 产出：playtest/final-data-engine.json
- * 运行：node node_modules/vitest/vitest.mjs run --config vitest.final-data.config.ts
+ * 运行：PATH=~/.nvm/versions/node/v22.23.2/bin:$PATH node node_modules/vitest/vitest.mjs run --config playtest/vitest.final-data.config.ts
+ * 说明：本项目依赖 Node≥20（默认 nvm node v16 太旧），Node 24 与 rollup 原生模块签名冲突，实测 v22.23.2 可用。
  */
 import { describe, it, expect, afterAll } from "vitest";
 import { writeFileSync, readFileSync } from "node:fs";
@@ -21,6 +22,7 @@ import { bossSurviveReward, newEventState, finishPatrol, onMemeTap, onBossTap, s
 import { resolveBossChoice, CHOICE_CORRECT_MULT, CHOICE_WRONG_PENALTY_RATIO } from "../src/engine/boss-choice";
 import { offlineEarn, capForElapsed, OFFLINE_CAP_SECONDS, OFFLINE_CAP_WEEK, OFFLINE_CAP_MONTH } from "../src/engine/offline";
 import { offlineEfficiency } from "../src/engine/progression";
+import { settleReturn } from "../src/engine/resume";
 import { finishGame, REF_SCORE_BY_GAME, TARGET_IDLE_SECONDS, EARLY_FLOOR, ARCADE_DAILY_LIMIT } from "../src/engine/minigames";
 import { MEME_QUOTES, UPGRADE_FLAVOR } from "../src/engine/flavor";
 import { collectionCount, TOTAL_ITEMS } from "../src/engine/collection";
@@ -401,9 +403,37 @@ describe("奖励公式核对", () => {
       afterDay_1visit: offlineEfficiency({ ...s, visits: { date: TODAY, count: 1 } }, created, NOW),
       afterDay_3visit: offlineEfficiency({ ...s, visits: { date: TODAY, count: 3 } }, created, NOW),
     };
-    report.checks.offline = { rows, caps: { day: OFFLINE_CAP_SECONDS, week: OFFLINE_CAP_WEEK, month: OFFLINE_CAP_MONTH }, idle2Applied: offlineEarn(withIdle2, 20 * 3600, 1).applied, rates: effRows };
-    expect(effRows.firstDay).toBeGreaterThan(1); // 首日家具/天赋加成不被 1.0 截断
-    expect(effRows.afterDay_3visit).toBeGreaterThanOrEqual(1);
+    // 并行 WIP：progression.ts 新增 OFFLINE_MAX=0.95 硬上限（未提交）。记录当前实况 + 口径冲突。
+    const capApplied = effRows.firstDay <= 0.9500001;
+    report.checks.offline = {
+      rows,
+      caps: { day: OFFLINE_CAP_SECONDS, week: OFFLINE_CAP_WEEK, month: OFFLINE_CAP_MONTH },
+      idle2Applied: offlineEarn(withIdle2, 20 * 3600, 1).applied,
+      rates: effRows,
+      wipOfflineMax: capApplied ? 0.95 : null,
+      docConflict: capApplied
+        ? "当前 WIP 把离线效率硬上限设为 0.95：首日不再是「全额 1.0」（文档/PROJECT-SUMMARY 写首日全额）；而 resume.settleReturn 对 ≥7 天回归仍强制 rate=1（>0.95），两套上限并存"
+        : null,
+    };
+    if (capApplied) {
+      report.defects.push({
+        level: "P2",
+        where: "src/engine/progression.ts（并行 WIP，未提交） / src/engine/resume.ts",
+        issue: `当前离线效率硬上限 OFFLINE_MAX=0.95：实测首日 ${effRows.firstDay.toFixed(2)}、3 次回访后 ${effRows.afterDay_3visit.toFixed(2)}，不再是文档承诺的「首日全额 1.0」；而 settleReturn 对 ≥7 天回归仍强制 rate=1，同一系统两套上限（0.95 与 1.0）并存`,
+      });
+      expect(effRows.firstDay).toBeLessThanOrEqual(0.9500001);
+      expect(effRows.afterDay_3visit).toBeLessThanOrEqual(0.9500001);
+    } else {
+      expect(effRows.firstDay).toBeGreaterThan(1);
+      expect(effRows.afterDay_3visit).toBeGreaterThanOrEqual(1);
+    }
+    // ≥7 天回归强制 1.0 与常规离线效率的差：settleReturn 会绕过硬上限
+    const gap8d = 8 * 86400;
+    const state0 = { ...initialState() };
+    const r7 = settleReturn(state0, NOW - gap8d * 1000, NOW, 0.95);
+    const rNorm = offlineEarn(state0, gap8d, 0.95);
+    report.checks.offline7d = { applied: r7.applied, earned: r7.earned, normalEarned: rNorm.earned, ratio: r7.earned / rNorm.earned };
+    expect(close(r7.earned / rNorm.earned, 1 / 0.95, 1e-9)).toBe(true);
   });
 
   it("转生：+75%/点线性、点数公式 floor(3×(本局/1e8)^0.4) 封顶 20、门槛随倍率涨", () => {
@@ -555,7 +585,9 @@ describe("文案加成口径 vs 实际总收益增幅", () => {
     const stationNo = stationIdleScaled(noEnergy);
     // 单项 slack
     const slackOnly = useEnergy({ ...noEnergy }, "slack")!;
-    const slackGain = effectiveIdle({ ...noEnergy, energy: slackOnly.energy });
+    const slackState = { ...noEnergy, energy: slackOnly.energy };
+    const slackGain = effectiveIdle(slackState);
+    const slackStationFactor = stationIdleScaled(slackState) / stationNo;
     report.checks.labelScope = {
       energy: {
         claimedFactors: "slack ×1.25、social ×1.05（文案「今天挂机 +25% / +5%」）",
@@ -566,13 +598,13 @@ describe("文案加成口径 vs 实际总收益增幅", () => {
         stationShareOfTotal: stationNo / totalNo,
       },
       slackOnly: {
-        stationFactor: stationWith / stationNo,
+        stationFactor: slackStationFactor,
         totalPct: (slackGain / totalNo - 1) * 100,
         claimedPct: 25,
       },
     };
     expect(close(stationWith / stationNo, 1.25 * 1.05, 1e-12)).toBe(true);
-    expect(totalWith / totalNo).toBeLessThan(1.3125 * 0.5); // 明显低于标称
+    expect((totalWith / totalNo - 1) * 100).toBeLessThan((31.25) / 2); // 总增幅明显低于标称 31.25%
   });
   it("天赋「挂机收益 +4%」同样只作用于工位段（idle_1/idle_3）", () => {
     const base = richState();
@@ -612,12 +644,21 @@ describe("其它数据口径", () => {
     expect(second.claimedReward).toBe(dailyReward(rerolled));
   });
   it("首日「离线效率 -20%」风险卡：首日分支用 max(0, raise) 把负加成吃掉（文案写 -20% 但实际 0）", () => {
-    const s = { ...richState(), cards: { ...emptyCardState(TODAY), chosen: "overtime", until: NOW + 3600_000, chosenDate: TODAY } };
-    const firstDay = offlineEfficiency(s, NOW - 3600_000, NOW);
-    const later = offlineEfficiency(s, NOW - 10 * DAY, NOW);
-    report.checks.firstDayRisk = { firstDayRate: firstDay, laterRate: later, claimedRisk: 0.2, note: "首日 branch: 1+max(0, raise)；负风险被截断" };
-    expect(firstDay).toBeGreaterThanOrEqual(1);
-    expect(later).toBeLessThan(firstDay);
+    // 最小状态：无家具/天赋等正加成，只剩卡片的 -20% 风险
+    const minimal = { ...initialState(), cards: { ...emptyCardState(TODAY), chosen: "overtime", until: NOW + 3600_000, chosenDate: TODAY } };
+    const firstDay = offlineEfficiency(minimal, NOW - 3600_000, NOW);
+    const later = offlineEfficiency(minimal, NOW - 10 * DAY, NOW);
+    const noCardLater = offlineEfficiency({ ...initialState() }, NOW - 10 * DAY, NOW);
+    report.checks.firstDayRisk = {
+      firstDayRate: firstDay,
+      laterRate: later,
+      noCardLaterRate: noCardLater,
+      claimedRisk: 0.2,
+      note: "首日 branch: 1+max(0, raise)；负风险被截断 → 首日 100%，非首日 50%（0.7-0.2）",
+    };
+    expect(firstDay).toBe(1); // 风险被吃掉
+    expect(later).toBeCloseTo(0.5, 12); // 非首日生效
+    expect(noCardLater).toBeCloseTo(0.7, 12);
   });
   it("好感提示「再领 N 次到 milestone」按每次 +2 估算，匹配任务实际 +3（带卡 +4）", () => {
     const now = Date.now();
@@ -636,11 +677,11 @@ describe("其它数据口径", () => {
     };
     expect(gainMatch).toBe(3);
   });
-  it("「纪录·最佳单日」实现的是「本次会话增量」（lastDaySnapshot 仅启动时赋值、不跨日重置）", () => {
+  it("「纪录·最佳单日」实为「两次存档之间的增量」（saveNow 才推进基线；10s 定时器只存档不记纪录）", () => {
     const src = readFileSync("src/main.ts", "utf8");
     const cnt = (src.match(/lastDaySnapshot/g) ?? []).length;
-    report.defects.push({ level: "P2", where: "src/main.ts saveNow/lastDaySnapshot", issue: `「纪录·最佳单日」用 lifetime - lastDaySnapshot.lifetime，而 lastDaySnapshot 只在启动时赋值（共 ${cnt} 处引用），实际是「本次会话增量」，多会话/跨零点会低估或错记日期` });
-    expect(cnt).toBe(2);
+    report.defects.push({ level: "P2", where: "src/main.ts saveNow/lastDaySnapshot", issue: `「纪录·最佳单日」用 lifetime - lastDaySnapshot.lifetime 计算，而基线只在 saveNow（pagehide / visibilitychange→hidden）里推进；10 秒定时存档不更新纪录 → 实际记录的是「两次存档间隔的增量」，首段（打开→首次隐藏）之前的收益不计入，跨零点当次增量也会丢失` });
+    expect(cnt).toBeGreaterThanOrEqual(4);
   });
   it("天赋面板静态说明「满树需 27 点」正确；但 talents.ts TALENT_COST 注释写「tier1-4=1 点，终极=2 点」与实际 1/1/2/2/3 不符（P2）", () => {
     const src = readFileSync("src/engine/talents.ts", "utf8");
@@ -658,12 +699,45 @@ describe("其它数据口径", () => {
     expect(src).toContain("/3（离线效率");
   });
 });
+
+// ═══════════ 五-d、小队面板公式误差随阶段放大 ═══════════
+describe("小队面板公式误差（早期≈0，终局放大）", () => {
+  it("三阶段对比：UI 公式 vs 引擎同事真实贡献", () => {
+    const zhou = (lv: number, favor = 0) => ({ zhou: { level: lv, missionId: null, startedAt: 0, endsAt: 0, favor, autoRepeat: false, rewardSnapshot: 0 } });
+    const cases: Array<[string, GameState]> = [];
+    // 早期：老周 1 级，无倍率
+    cases.push(["early", { ...initialState(), levels: { phone: 5 }, team: { colleagues: zhou(1, 0) } }]);
+    // 中期：转生 3 点、图鉴 10 格、老周 3 级好感 50
+    cases.push(["mid", {
+      ...initialState(),
+      levels: { phone: 5 },
+      prestige: 3,
+      collected: { quotes: [0, 1, 2, 3, 4], flavors: [0, 1, 2, 3, 4] },
+      team: { colleagues: zhou(3, 50) },
+    }]);
+    // 终局：richState 去掉精力/卡（避免额外因子）
+    const rich = richState();
+    cases.push(["endgame", { ...rich, energy: emptyEnergy(TODAY), cards: emptyCardState(TODAY) }]);
+    const rows = cases.map(([name, st]) => {
+      const station = stationIdleScaled(st);
+      const mult = prestigeMultiplier(st.prestige) * (1 + Math.min(0.2, 0.02 * Math.floor((st.collected.quotes.length + st.collected.flavors.length) / 5)));
+      const tl = talentEffects(st.talents);
+      const fav = favorBonuses(st).idleMult;
+      const ui = teamFixedRate(st) + station * teamShareRatio(st);
+      const engineTeam = effectOf(st).idleRate - station;
+      return { name, ui, engineTeam, ratio: ui / engineTeam, underPct: (1 - ui / engineTeam) * 100, mult, fav, teamIdle: tl.teamIdleMult };
+    });
+    report.checks.teamFormulaDrift = rows;
+    expect(rows[0]!.ratio).toBeCloseTo(1, 6); // 早期准确
+    expect(rows[2]!.ratio).toBeLessThan(0.3); // 终局严重低估
+  });
+});
 // ═══════════ 六、静态文案漂移（不可解释/自相矛盾） ═══════════
 describe("静态文案漂移", () => {
   const read = (p: string) => readFileSync(p, "utf8");
   it("welcome 面板写「8 小时封顶」但引擎封顶 12h（P1）", () => {
     const src = read("src/ui/welcome.ts");
-    report.defects.push({ level: "P1", where: "src/ui/welcome.ts:24", issue: "欢迎回来面板固定文案「8 小时封顶」，引擎 OFFLINE_CAP_SECONDS=12h（≥7 天 24h / ≥30 天 48h）；同面板封顶结算行会显示「已按上限结算 12 小时 0 分」自相矛盾" });
+    report.defects.push({ level: "P1", where: "src/ui/welcome.ts:24", issue: "欢迎回来面板固定文案「8 小时封顶」，引擎 OFFLINE_CAP_SECONDS=12h（≥7 天 24h / ≥30 天 48h）：非封顶场景显示 8h（错误，实际按 12h 结算）；封顶场景反而显示「已按上限结算 12/24/48 小时」——同一面板文案随分支不同，8h 恒错" });
     expect(src).toContain("8 小时封顶");
     expect(OFFLINE_CAP_SECONDS).toBe(12 * 3600);
   });

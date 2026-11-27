@@ -1,0 +1,411 @@
+{
+  "section": "rhythm-fair",
+  "ts": 1795785371865,
+  "run": {
+    "t0": 2837.1000003814697,
+    "playT": 2837.1000003814697,
+    "tests": [
+      {
+        "i": 2,
+        "d": 0,
+        "tapErr": 1002,
+        "scoreBefore": "60",
+        "scoreSync": "60",
+        "scoreAfter": "60",
+        "judgeSync": "MISS|judge-text miss",
+        "judgeAfter": "MISS|judge-text miss",
+        "audioCreated": 5
+      },
+      {
+        "i": 3,
+        "d": 0,
+        "tapErr": 762.1,
+        "scoreBefore": "60",
+        "scoreSync": "55",
+        "scoreAfter": "55",
+        "judgeSync": "MISS|judge-text miss",
+        "judgeAfter": "MISS|judge-text miss",
+        "audioCreated": 6
+      },
+      {
+        "i": 4,
+        "d": 0,
+        "tapErr": 761.5,
+        "scoreBefore": "55",
+        "scoreSync": "40",
+        "scoreAfter": "40",
+        "judgeSync": "MISS|judge-text miss",
+        "judgeAfter": "MISS|judge-text miss",
+        "audioCreated": 6
+      },
+      {
+        "i": 6,
+        "d": 0.079,
+        "tapErr": 182.8,
+        "scoreBefore": "40",
+        "scoreSync": "25",
+        "scoreAfter": "25",
+        "judgeSync": "MISS|judge-text miss",
+        "judgeAfter": "MISS|judge-text miss",
+        "audioCreated": 6
+      },
+      {
+        "i": 9,
+        "d": 0.081,
+        "tapErr": 0,
+        "scoreBefore": "25",
+        "scoreSync": "15",
+        "scoreAfter": "15",
+        "judgeSync": "GOOD|judge-text good",
+        "judgeAfter": "MISS|judge-text miss",
+        "audioCreated": 8
+      },
+      {
+        "i": 12,
+        "d": -0.079,
+        "tapErr": 0,
+        "scoreBefore": "15",
+        "scoreSync": "20",
+        "scoreAfter": "20",
+        "judgeSync": "PERFECT|judge-text perfect",
+        "judgeAfter": "MISS|judge-text miss",
+        "audioCreated": 9
+      },
+      {
+        "i": 15,
+        "d": -0.081,
+        "tapErr": 0,
+        "scoreBefore": "20",
+        "scoreSync": "10",
+        "scoreAfter": "10",
+        "judgeSync": "GOOD|judge-text good",
+        "judgeAfter": "MISS|judge-text miss",
+        "audioCreated": 12
+      },
+      {
+        "i": 18,
+        "d": 0.159,
+        "tapErr": 0,
+        "scoreBefore": "10",
+        "scoreSync": "0",
+        "scoreAfter": "0",
+        "judgeSync": "MISS|judge-text miss",
+        "judgeAfter": "MISS|judge-text miss",
+        "audioCreated": 12
+      },
+      {
+        "i": 21,
+        "d": 0.161,
+        "tapErr": 0,
+        "scoreBefore": "0",
+        "scoreSync": "0",
+        "scoreAfter": "0",
+        "judgeSync": "MISS|judge-text miss",
+        "judgeAfter": "MISS|judge-text miss",
+        "audioCreated": 12
+      },
+      {
+        "i": 24,
+        "d": -0.159,
+        "tapErr": 0,
+        "scoreBefore": "0",
+        "scoreSync": "10",
+        "scoreAfter": "10",
+        "judgeSync": "GOOD|judge-text good",
+        "judgeAfter": "MISS|judge-text miss",
+        "audioCreated": 14
+      },
+      {
+        "i": 27,
+        "d": -0.161,
+        "tapErr": 0,
+        "scoreBefore": "10",
+        "scoreSync": "0",
+        "scoreAfter": "0",
+        "judgeSync": "MISS|judge-text miss",
+        "judgeAfter": "MISS|judge-text miss",
+        "audioCreated": 14
+      },
+      {
+        "i": 30,
+        "d": 0.175,
+        "tapErr": 0,
+        "scoreBefore": "0",
+        "scoreSync": "0",
+        "scoreAfter": "0",
+        "judgeSync": "MISS|judge-text miss",
+        "judgeAfter": "MISS|judge-text miss",
+        "audioCreated": 14
+      },
+      {
+        "i": 33,
+        "d": 0.2,
+        "tapErr": 0,
+        "scoreBefore": "0",
+        "scoreSync": "0",
+        "scoreAfter": "0",
+        "judgeSync": "MISS|judge-text miss",
+        "judgeAfter": "MISS|judge-text miss",
+        "audioCreated": 14
+      },
+      {
+        "i": 36,
+        "d": 0.215,
+        "tapErr": 0,
+        "scoreBefore": "0",
+        "scoreSync": "0",
+        "scoreAfter": "0",
+        "judgeSync": "MISS|judge-text miss",
+        "judgeAfter": "MISS|judge-text miss",
+        "audioCreated": 14
+      },
+      {
+        "i": 39,
+        "d": 0.235,
+        "tapErr": 0,
+        "scoreBefore": "0",
+        "scoreSync": "0",
+        "scoreAfter": "0",
+        "judgeSync": "MISS|judge-text miss",
+        "judgeAfter": "MISS|judge-text miss",
+        "audioCreated": 14
+      },
+      {
+        "i": 42,
+        "d": 0.3,
+        "tapErr": 0,
+        "scoreBefore": "0",
+        "scoreSync": "0",
+        "scoreAfter": "0",
+        "judgeSync": "MISS|judge-text miss",
+        "judgeAfter": "MISS|judge-text miss",
+        "audioCreated": 14
+      },
+      {
+        "i": 45,
+        "d": -0.175,
+        "tapErr": 0,
+        "scoreBefore": "0",
+        "scoreSync": "0",
+        "scoreAfter": "0",
+        "judgeSync": "MISS|judge-text miss",
+        "judgeAfter": "MISS|judge-text miss",
+        "audioCreated": 14
+      },
+      {
+        "i": 48,
+        "d": -0.2,
+        "tapErr": 0,
+        "scoreBefore": "0",
+        "scoreSync": "0",
+        "scoreAfter": "0",
+        "judgeSync": "MISS|judge-text miss",
+        "judgeAfter": "MISS|judge-text miss",
+        "audioCreated": 14
+      },
+      {
+        "i": 51,
+        "d": -0.26,
+        "tapErr": 22.6,
+        "scoreBefore": "0",
+        "scoreSync": "0",
+        "scoreAfter": "0",
+        "judgeSync": "MISS|judge-text miss",
+        "judgeAfter": "MISS|judge-text miss",
+        "audioCreated": 14
+      }
+    ],
+    "tail": [
+      {
+        "i": 55,
+        "d": 0,
+        "tapErr": 0,
+        "scoreBefore": "0",
+        "scoreAfter": "20",
+        "judge": "PERFECT|judge-text perfect"
+      },
+      {
+        "i": 55,
+        "d": 0.05,
+        "tapErr": 2.7,
+        "scoreBefore": "20",
+        "scoreAfter": "20",
+        "judge": "MISS|judge-text miss"
+      },
+      {
+        "i": 55,
+        "d": 0.1,
+        "tapErr": 0,
+        "scoreBefore": "20",
+        "scoreAfter": "20",
+        "judge": "MISS|judge-text miss"
+      },
+      {
+        "i": 55,
+        "d": 0.3,
+        "tapErr": 0,
+        "scoreBefore": "20",
+        "scoreAfter": "15",
+        "judge": "MISS|judge-text miss"
+      }
+    ],
+    "scoreLog": [
+      {
+        "t": 2839.2000007629395,
+        "v": "0"
+      },
+      {
+        "t": 4442.300000190735,
+        "v": "20"
+      },
+      {
+        "t": 4937.400000572205,
+        "v": "40"
+      },
+      {
+        "t": 5437.5,
+        "v": "60"
+      },
+      {
+        "t": 5699.200000762939,
+        "v": "55"
+      },
+      {
+        "t": 6198.700000762939,
+        "v": "40"
+      },
+      {
+        "t": 6699,
+        "v": "25"
+      },
+      {
+        "t": 8019,
+        "v": "15"
+      },
+      {
+        "t": 9358.60000038147,
+        "v": "20"
+      },
+      {
+        "t": 10856.300000190735,
+        "v": "10"
+      },
+      {
+        "t": 12596.5,
+        "v": "0"
+      },
+      {
+        "t": 15278.300000190735,
+        "v": "10"
+      },
+      {
+        "t": 16776.10000038147,
+        "v": "0"
+      },
+      {
+        "t": 30942.20000076294,
+        "v": "20"
+      },
+      {
+        "t": 31237.20000076294,
+        "v": "15"
+      }
+    ],
+    "audio": [
+      {
+        "t": 4441.5,
+        "tStart": 4442.200000762939,
+        "freq": 660
+      },
+      {
+        "t": 4535.200000762939,
+        "tStart": 4535.200000762939,
+        "freq": 880
+      },
+      {
+        "t": 4937.200000762939,
+        "tStart": 4937.300000190735,
+        "freq": 660
+      },
+      {
+        "t": 5028.900000572205,
+        "tStart": 5028.900000572205,
+        "freq": 880
+      },
+      {
+        "t": 5437.200000762939,
+        "tStart": 5437.300000190735,
+        "freq": 660
+      },
+      {
+        "t": 5527.700000762939,
+        "tStart": 5527.700000762939,
+        "freq": 880
+      },
+      {
+        "t": 8018.400000572205,
+        "tStart": 8018.800000190735,
+        "freq": 406.2776564038224
+      },
+      {
+        "t": 8018.800000190735,
+        "tStart": 8018.800000190735,
+        "freq": 609.4164846057336
+      },
+      {
+        "t": 9358.300000190735,
+        "tStart": 9358.300000190735,
+        "freq": 660
+      },
+      {
+        "t": 9449,
+        "tStart": 9449,
+        "freq": 880
+      },
+      {
+        "t": 10856.20000076294,
+        "tStart": 10856.20000076294,
+        "freq": 406.2776564038224
+      },
+      {
+        "t": 10856.20000076294,
+        "tStart": 10856.20000076294,
+        "freq": 609.4164846057336
+      },
+      {
+        "t": 15278.20000076294,
+        "tStart": 15278.300000190735,
+        "freq": 406.2776564038224
+      },
+      {
+        "t": 15278.300000190735,
+        "tStart": 15278.300000190735,
+        "freq": 609.4164846057336
+      },
+      {
+        "t": 30939.20000076294,
+        "tStart": 30941.70000076294,
+        "freq": 660
+      },
+      {
+        "t": 31037.10000038147,
+        "tStart": 31037.20000076294,
+        "freq": 880
+      }
+    ],
+    "finalScore": "15",
+    "finalJudge": "MISS|judge-text miss",
+    "resultText": "0.4s\n15\n跟着节拍点！\nMISS"
+  },
+  "planMeta": {
+    "lastBeat": 54,
+    "tailBeat": 55,
+    "padBeats": [
+      2,
+      3,
+      4
+    ],
+    "tests": 16
+  },
+  "errors": []
+}

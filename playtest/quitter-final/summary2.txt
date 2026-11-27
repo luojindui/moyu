@@ -1,0 +1,16 @@
+url=https://luojindui.github.io/moyu/
+frames=123
+events=9340
+actions=27
+cardsShownAt=8846.199951171875
+cardHandled=true
+bossShownAt=32700.199951171875
+bossHandled=true
+memeEvents=4
+bought={"coffee":{"p":13606,"cost":"15","lv":""},"phone":{"p":23341,"cost":"50","lv":""},"water":{"p":43191,"cost":"100","lv":""}}
+questGoneAt=27904
+journalStarAt=107519
+claim={"ok":false,"text":"完成 2/3"}
+mute={"before":{"text":"🔊","aria":"音效开关"},"after":{"text":"🔇","aria":"音效开关"}}
+panelsDone=true
+taps=121

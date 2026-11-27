@@ -18,8 +18,8 @@ describe("R7 长线：段位续档", () => {
   });
 });
 
-describe("R7 长线：回访提升离线效率（回访可挣回 0.7 → 1.0）", () => {
-  it("当日回访次数递增，效率 0.7 → 0.8 → 0.9 → 1.0 封顶", () => {
+describe("R7 长线：回访提升离线效率（回访可挣回 0.7 → 0.95 硬上限）", () => {
+  it("当日回访次数递增，效率 0.7 → 0.8 → 0.9 → 0.95 封顶", () => {
     let s = initialState();
     const t0 = 10 * DAY;
     const boot = (now: number) => {
@@ -28,8 +28,8 @@ describe("R7 长线：回访提升离线效率（回访可挣回 0.7 → 1.0）"
     };
     expect(boot(t0 + 1 * DAY)).toBeCloseTo(0.8, 6); // 第 1 次回访：0.7 + 0.1
     expect(boot(t0 + 1 * DAY + 3600_000)).toBeCloseTo(0.9, 6); // 第 2 次
-    expect(boot(t0 + 1 * DAY + 7200_000)).toBeCloseTo(1.0, 6); // 第 3 次
-    expect(boot(t0 + 1 * DAY + 10_800_000)).toBeCloseTo(1.0, 6); // 封顶
+    expect(boot(t0 + 1 * DAY + 7200_000)).toBeCloseTo(0.95, 6); // 第 3 次（0.7+0.3 但硬上限 0.95）
+    expect(boot(t0 + 1 * DAY + 10_800_000)).toBeCloseTo(0.95, 6); // 封顶
   });
 
   it("首日全额；跨日回访计数重置", () => {
@@ -49,7 +49,7 @@ describe("R7 长线：回访提升离线效率（回访可挣回 0.7 → 1.0）"
     expect(offlineEfficiency(s1, 1000, 2 * DAY + 1000)).toBeCloseTo(0.85, 6);
     const s21 = { ...s, daily: { ...s.daily!, streak: 21 } };
     const s2 = ensureVisits(s21, 2 * DAY + 1000);
-    expect(offlineEfficiency(s2, 1000, 2 * DAY + 1000)).toBeLessThanOrEqual(1.0);
+    expect(offlineEfficiency(s2, 1000, 2 * DAY + 1000)).toBeLessThanOrEqual(0.95);
   });
 });
 

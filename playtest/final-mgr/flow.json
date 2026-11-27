@@ -1,233 +1,310 @@
 {
-  "early": {
+  "d1": {
     "profiles": {
       "碎片3访(在线0.5h/0点击/离线23h)": {
-        "totalPerDay": 803112,
+        "totalPerDay": 2242434627,
         "share": {
           "clickIncome": "0.0%",
-          "station": "2.1%",
+          "station": "1.9%",
           "teamFixed": "0.0%",
-          "teamShare": "0.0%",
-          "dispatch": "0.0%",
+          "teamShare": "0.2%",
+          "dispatch": "3.3%",
           "patrol": "0.1%",
-          "meme": "0.1%",
+          "meme": "0.0%",
           "arcade": "0.1%",
-          "daily": "2.7%",
-          "offline": "94.9%"
+          "daily": "2.8%",
+          "offline": "91.6%"
         },
         "raw": {
           "clickIncome": 0,
-          "station": 16560,
-          "teamFixed": 0,
-          "teamShare": 0,
-          "dispatchOnline": 0,
-          "dispatchOffline": 0,
-          "patrol": 1125,
-          "meme": 900,
-          "arcade": 687,
-          "daily": 22080,
-          "offline": 761760,
-          "dispatch": 0
+          "station": 42432874,
+          "teamFixed": 1080000,
+          "teamShare": 3367688,
+          "dispatchOnline": 4750025,
+          "dispatchOffline": 69975380,
+          "patrol": 2344028,
+          "meme": 150,
+          "arcade": 1768035,
+          "daily": 62507416,
+          "offline": 2054209030,
+          "dispatch": 74725405
         }
       },
       "重度(在线2h/5400点击/离线21h)": {
-        "totalPerDay": 828267,
+        "totalPerDay": 2225737991,
         "share": {
-          "clickIncome": "4.3%",
-          "station": "8.0%",
-          "teamFixed": "0.0%",
-          "teamShare": "0.0%",
-          "dispatch": "0.0%",
-          "patrol": "0.5%",
-          "meme": "0.4%",
+          "clickIncome": "0.0%",
+          "station": "7.6%",
+          "teamFixed": "0.2%",
+          "teamShare": "0.6%",
+          "dispatch": "4.0%",
+          "patrol": "0.4%",
+          "meme": "0.0%",
           "arcade": "0.1%",
-          "daily": "2.7%",
-          "offline": "84.0%"
+          "daily": "2.8%",
+          "offline": "84.3%"
         },
         "raw": {
-          "clickIncome": 35640,
-          "station": 66240,
-          "teamFixed": 0,
-          "teamShare": 0,
-          "dispatchOnline": 0,
-          "dispatchOffline": 0,
-          "patrol": 4500,
-          "meme": 3600,
-          "arcade": 687,
-          "daily": 22080,
-          "offline": 695520,
-          "dispatch": 0
+          "clickIncome": 5940,
+          "station": 169731495,
+          "teamFixed": 4320000,
+          "teamShare": 13470754,
+          "dispatchOnline": 19000101,
+          "dispatchOffline": 69975380,
+          "patrol": 9376112,
+          "meme": 600,
+          "arcade": 1768035,
+          "daily": 62507416,
+          "offline": 1875582158,
+          "dispatch": 88975481
         }
       }
     },
     "channels": {
-      "station": 9.2,
-      "teamFixed": 0,
-      "teamShare": 0,
-      "idleRate": 9.2,
-      "clickPower": 6,
-      "dispatchPerHour": 0,
-      "dispatchRound": 0,
-      "arcadePerGame": 229,
-      "dailyPerClaim": 5520,
-      "patrolPerEvent": 75,
-      "memePerHour": 1800,
-      "offlinePerSec": 9.2,
-      "offlineEff": 1
+      "station": 23573.819,
+      "teamFixed": 600,
+      "teamShare": 1870.938,
+      "idleRate": 26044.757,
+      "clickPower": 1,
+      "dispatchPerHour": 9500050.485,
+      "dispatchRound": 69975380,
+      "offlineEff": 1,
+      "arcadePerGame": 589345,
+      "dailyPerClaim": 15626854.08,
+      "patrolPerEvent": 156268.541,
+      "memePerHour": 300,
+      "offlinePerSec": 24809.288
     }
   },
-  "mid": {
+  "d2": {
     "profiles": {
       "碎片3访(在线0.5h/0点击/离线23h)": {
-        "totalPerDay": 393769846,
+        "totalPerDay": 26062270518,
+        "share": {
+          "clickIncome": "0.0%",
+          "station": "1.5%",
+          "teamFixed": "0.0%",
+          "teamShare": "0.3%",
+          "dispatch": "10.0%",
+          "patrol": "0.1%",
+          "meme": "0.0%",
+          "arcade": "0.1%",
+          "daily": "2.5%",
+          "offline": "85.5%"
+        },
+        "raw": {
+          "clickIncome": 0,
+          "station": 401798734,
+          "teamFixed": 7020000,
+          "teamShare": 70583880,
+          "dispatchOnline": 185559269,
+          "dispatchOffline": 2422999143,
+          "patrol": 23970131,
+          "meme": 165,
+          "arcade": 16741611,
+          "daily": 639203485,
+          "offline": 22294394101,
+          "dispatch": 2608558412
+        }
+      },
+      "重度(在线2h/5400点击/离线21h)": {
+        "totalPerDay": 26190430623,
+        "share": {
+          "clickIncome": "0.0%",
+          "station": "6.1%",
+          "teamFixed": "0.1%",
+          "teamShare": "1.1%",
+          "dispatch": "12.1%",
+          "patrol": "0.4%",
+          "meme": "0.0%",
+          "arcade": "0.1%",
+          "daily": "2.4%",
+          "offline": "77.7%"
+        },
+        "raw": {
+          "clickIncome": 6534,
+          "station": 1607194937,
+          "teamFixed": 28080000,
+          "teamShare": 282335518,
+          "dispatchOnline": 742237077,
+          "dispatchOffline": 2422999143,
+          "patrol": 95880523,
+          "meme": 660,
+          "arcade": 16741611,
+          "daily": 639203485,
+          "offline": 20355751135,
+          "dispatch": 3165236220
+        }
+      }
+    },
+    "channels": {
+      "station": 223221.519,
+      "teamFixed": 3900,
+      "teamShare": 39213.266,
+      "idleRate": 266334.785,
+      "clickPower": 1.1,
+      "dispatchPerHour": 371118538.676,
+      "dispatchRound": 2422999143,
+      "offlineEff": 1.1,
+      "arcadePerGame": 5580537,
+      "dailyPerClaim": 159800871.229,
+      "patrolPerEvent": 1598008.712,
+      "memePerHour": 330,
+      "offlinePerSec": 269255.967
+    }
+  },
+  "d4": {
+    "profiles": {
+      "碎片3访(在线0.5h/0点击/离线23h)": {
+        "totalPerDay": 115701468119,
+        "share": {
+          "clickIncome": "0.0%",
+          "station": "1.5%",
+          "teamFixed": "0.0%",
+          "teamShare": "0.3%",
+          "dispatch": "11.0%",
+          "patrol": "0.1%",
+          "meme": "0.0%",
+          "arcade": "0.1%",
+          "daily": "2.4%",
+          "offline": "84.6%"
+        },
+        "raw": {
+          "clickIncome": 0,
+          "station": 1746214621,
+          "teamFixed": 9180000,
+          "teamShare": 365186988,
+          "dispatchOnline": 888220791,
+          "dispatchOffline": 11856490794,
+          "patrol": 106029080,
+          "meme": 165,
+          "arcade": 72758940,
+          "daily": 2827442145,
+          "offline": 97829944595,
+          "dispatch": 12744711585
+        }
+      },
+      "重度(在线2h/5400点击/离线21h)": {
+        "totalPerDay": 116539017885,
+        "share": {
+          "clickIncome": "0.0%",
+          "station": "6.0%",
+          "teamFixed": "0.0%",
+          "teamShare": "1.3%",
+          "dispatch": "13.2%",
+          "patrol": "0.4%",
+          "meme": "0.0%",
+          "arcade": "0.1%",
+          "daily": "2.4%",
+          "offline": "76.6%"
+        },
+        "raw": {
+          "clickIncome": 6534,
+          "station": 6984858482,
+          "teamFixed": 36720000,
+          "teamShare": 1460747952,
+          "dispatchOnline": 3552883166,
+          "dispatchOffline": 11856490794,
+          "patrol": 424116322,
+          "meme": 660,
+          "arcade": 72758940,
+          "daily": 2827442145,
+          "offline": 89322992891,
+          "dispatch": 15409373960
+        }
+      }
+    },
+    "channels": {
+      "station": 970119.234,
+      "teamFixed": 5100,
+      "teamShare": 202881.66,
+      "idleRate": 1178100.894,
+      "clickPower": 1.1,
+      "dispatchPerHour": 1776441582.904,
+      "dispatchRound": 11856490794,
+      "offlineEff": 1.1,
+      "arcadePerGame": 24252980,
+      "dailyPerClaim": 706860536.173,
+      "patrolPerEvent": 7068605.362,
+      "memePerHour": 330,
+      "offlinePerSec": 1181521.07
+    }
+  },
+  "d7p": {
+    "profiles": {
+      "碎片3访(在线0.5h/0点击/离线23h)": {
+        "totalPerDay": 1329927508487,
         "share": {
           "clickIncome": "0.0%",
           "station": "1.7%",
           "teamFixed": "0.1%",
-          "teamShare": "0.0%",
-          "dispatch": "2.1%",
+          "teamShare": "0.3%",
+          "dispatch": "10.3%",
           "patrol": "0.1%",
           "meme": "0.0%",
           "arcade": "0.1%",
-          "daily": "2.5%",
-          "offline": "93.4%"
+          "daily": "2.7%",
+          "offline": "84.8%"
         },
         "raw": {
           "clickIncome": 0,
-          "station": 6864413,
-          "teamFixed": 282240,
-          "teamShare": 145727,
-          "dispatchOnline": 521391,
-          "dispatchOffline": 7635090,
-          "patrol": 364619,
-          "meme": 12151,
-          "arcade": 286017,
-          "daily": 9723173,
-          "offline": 367935026,
-          "dispatch": 8156481
+          "station": 22015611943,
+          "teamFixed": 852075000,
+          "teamShare": 4165211174,
+          "dispatchOnline": 9770369227,
+          "dispatchOffline": 126695661230,
+          "patrol": 1351644906,
+          "meme": 22316,
+          "arcade": 917317164,
+          "daily": 36043864156,
+          "offline": 1128115731371,
+          "dispatch": 136466030457
         }
       },
       "重度(在线2h/5400点击/离线21h)": {
-        "totalPerDay": 386828291,
+        "totalPerDay": 1346296175789,
         "share": {
-          "clickIncome": "0.1%",
-          "station": "7.1%",
+          "clickIncome": "0.0%",
+          "station": "6.5%",
           "teamFixed": "0.3%",
-          "teamShare": "0.2%",
-          "dispatch": "2.5%",
+          "teamShare": "1.2%",
+          "dispatch": "12.3%",
           "patrol": "0.4%",
           "meme": "0.0%",
           "arcade": "0.1%",
-          "daily": "2.5%",
-          "offline": "86.8%"
+          "daily": "2.7%",
+          "offline": "76.5%"
         },
         "raw": {
-          "clickIncome": 481176,
-          "station": 27457650,
-          "teamFixed": 1128960,
-          "teamShare": 582908,
-          "dispatchOnline": 2085563,
-          "dispatchOffline": 7635090,
-          "patrol": 1458476,
-          "meme": 48604,
-          "arcade": 286017,
-          "daily": 9723173,
-          "offline": 335940676,
-          "dispatch": 9720653
+          "clickIncome": 883724,
+          "station": 88062447771,
+          "teamFixed": 3408300000,
+          "teamShare": 16660844696,
+          "dispatchOnline": 39081476909,
+          "dispatchOffline": 126695661230,
+          "patrol": 5406579623,
+          "meme": 89265,
+          "arcade": 917317164,
+          "daily": 36043864156,
+          "offline": 1030018711252,
+          "dispatch": 165777138139
         }
       }
     },
     "channels": {
-      "station": 3813.5625,
-      "teamFixed": 156.8,
-      "teamShare": 80.9594,
-      "idleRate": 4051.322,
-      "clickPower": 81.006,
-      "dispatchPerHour": 1042781.3382,
-      "dispatchRound": 7635090,
-      "arcadePerGame": 95339,
-      "dailyPerClaim": 2430793.172,
-      "patrolPerEvent": 24307.9317,
-      "memePerHour": 24301.8,
-      "offlinePerSec": 4443.6597,
-      "offlineEff": 1.13
-    }
-  },
-  "late": {
-    "profiles": {
-      "碎片3访(在线0.5h/0点击/离线23h)": {
-        "totalPerDay": 392064006986,
-        "share": {
-          "clickIncome": "0.0%",
-          "station": "1.1%",
-          "teamFixed": "0.0%",
-          "teamShare": "0.3%",
-          "dispatch": "11.5%",
-          "patrol": "0.2%",
-          "meme": "0.0%",
-          "arcade": "0.0%",
-          "daily": "1.9%",
-          "offline": "85.0%"
-        },
-        "raw": {
-          "clickIncome": 0,
-          "station": 4125302686,
-          "teamFixed": 113299560,
-          "teamShare": 1234542300,
-          "dispatchOnline": 3143501801,
-          "dispatchOffline": 41961390739,
-          "patrol": 656777346,
-          "meme": 5706502,
-          "arcade": 171887610,
-          "daily": 7297526061,
-          "offline": 333354072381,
-          "dispatch": 45104892540
-        }
-      },
-      "重度(在线2h/5400点击/离线21h)": {
-        "totalPerDay": 391003406097,
-        "share": {
-          "clickIncome": "0.0%",
-          "station": "4.2%",
-          "teamFixed": "0.1%",
-          "teamShare": "1.3%",
-          "dispatch": "13.9%",
-          "patrol": "0.7%",
-          "meme": "0.0%",
-          "arcade": "0.0%",
-          "daily": "1.9%",
-          "offline": "77.8%"
-        },
-        "raw": {
-          "clickIncome": 89319167,
-          "station": 16501210745,
-          "teamFixed": 453198240,
-          "teamShare": 4938169199,
-          "dispatchOnline": 12574007204,
-          "dispatchOffline": 41961390739,
-          "patrol": 2627109382,
-          "meme": 22826009,
-          "arcade": 171887610,
-          "daily": 7297526061,
-          "offline": 304366761739,
-          "dispatch": 54535397943
-        }
-      }
-    },
-    "channels": {
-      "station": 2291834.8257,
-      "teamFixed": 62944.2,
-      "teamShare": 685856.8332,
-      "idleRate": 3040635.8589,
-      "clickPower": 15036.8969,
-      "dispatchPerHour": 6287003602.1103,
-      "dispatchRound": 41961390739,
-      "arcadePerGame": 57295870,
-      "dailyPerClaim": 1824381515.3588,
-      "patrolPerEvent": 43785156.3686,
-      "memePerHour": 11413004.7281,
-      "offlinePerSec": 4026015.3669,
-      "offlineEff": 1.51
+      "station": 12230895.524,
+      "teamFixed": 473375,
+      "teamShare": 2314006.208,
+      "idleRate": 15018276.732,
+      "clickPower": 148.775,
+      "dispatchPerHour": 19540738454.257,
+      "dispatchRound": 126695661230,
+      "offlineEff": 1,
+      "arcadePerGame": 305772388,
+      "dailyPerClaim": 9010966038.942,
+      "patrolPerEvent": 90109660.389,
+      "memePerHour": 44632.5,
+      "offlinePerSec": 13624586.128
     }
   }
 }
