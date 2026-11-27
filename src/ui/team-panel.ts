@@ -216,7 +216,10 @@ export class TeamPanel {
       const def = COLLEAGUES.find((x) => x.id === id);
       if (!def) return;
       if (btn.dataset.act === "recruit") {
-        btn.disabled = !canRecruit(state, id);
+        const ok = canRecruit(state, id);
+        btn.disabled = !ok;
+        const next = ok ? `招募 ${formatMoyu(def.cost)}` : `攒够再招 ${formatMoyu(def.cost)}`;
+        if (btn.textContent?.trim() !== next) btn.textContent = next;
       } else if (btn.dataset.act === "upgrade") {
         const cur = state.team.colleagues[id];
         if (!cur) return;

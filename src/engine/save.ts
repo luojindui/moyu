@@ -170,10 +170,18 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
     if (Array.isArray(rawTalents?.unlocked)) {
       const seen = new Set<string>();
       const takenGroups = new Set<string>();
-      talents.unlocked = rawTalents.unlocked.filter((x): x is string => {
-        if (typeof x !== "string") return false;
+      const candidates = rawTalents.unlocked.filter((x): x is string => typeof x === "string");
+      // 先按 tier 排序再过滤，保证前置链存在（防篡改跳过 tier4 直接点终极）
+      candidates.sort((a, b) => (TALENTS.find((t) => t.id === a)?.tier ?? 0) - (TALENTS.find((t) => t.id === b)?.tier ?? 0));
+      talents.unlocked = candidates.filter((x): x is string => {
         const def = TALENTS.find((t) => t.id === x);
         if (!def || seen.has(x)) return false;
+        // 前置校验（终极前置是 tier4）
+        if (def.tier > 1) {
+          const prevTier = def.tier >= 5 ? 4 : def.tier - 1;
+          const hasPrev = TALENTS.filter((t) => t.branch === def.branch && t.tier === prevTier).some((t) => seen.has(t.id));
+          if (!hasPrev) return false;
+        }
         // 互斥组只能有一个
         if (def.exclusive) {
           if (takenGroups.has(def.exclusive)) return false;
@@ -225,7 +233,7 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
         // 时间不合理（startedAt 不在合理区间 / endsAt <= startedAt）→ 视为没有任务，防"白领"
         const timeOk =
           missionId !== null &&
-          rawStart > 0 &&
+          rawStart >= nowRef - MAX_MISSION_MS && // 不早于 9 小时前（防极旧时间戳白领）
           rawStart <= nowRef + 60_000 &&
           rawEnds0 > rawStart &&
           rawEnds0 - rawStart <= MAX_MISSION_MS;
