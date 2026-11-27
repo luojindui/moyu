@@ -213,8 +213,9 @@ export function finishPatrol(state: GameState, es: EventState): { state: GameSta
   es.bossCaught = false;
   es.bossUntil = -1;
   es.bossPenaltyTotal = 0;
-  // 连胜入档（刷新/重开不丢）
-  return { state: { ...next, surviveStreak: es.surviveStreak }, reward };
+  // 连胜入档（刷新/重开不丢）；安然次数累计（事件流 Lv5 转化用）
+  const survived = reward > 0 && es.surviveStreak > 0 ? state.patrolSurvives + 1 : state.patrolSurvives;
+  return { state: { ...next, surviveStreak: es.surviveStreak, patrolSurvives: survived }, reward };
 }
 
 /** 巡逻安然结束奖励：max(50, 5×idleRate) × 连胜乘数（连续安然 N 次 ×(1+0.1N) 封顶 ×2）；被抓过不给 */

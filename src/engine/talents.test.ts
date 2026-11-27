@@ -14,7 +14,7 @@ import {
 } from "./talents";
 
 function withPoints(points: number): GameState {
-  return { ...initialState(), talents: { unlocked: [], points } };
+  return { ...initialState(), talents: { unlocked: [], points, rankGranted: -1 } };
 }
 
 describe("天赋树", () => {
@@ -72,19 +72,19 @@ describe("天赋树", () => {
     let s = withPoints(5);
     for (const id of ["idle_1", "idle_2", "idle_3", "idle_4", "idle_5"]) s = unlockTalent(s, id)!;
     const e = talentEffects(s.talents);
-    expect(e.idleMult).toBeCloseTo(1 + 0.2 + 0.3 + 0.5, 6);
-    expect(e.offlineCapBonusHours).toBe(4);
-    expect(e.offlineBaseBonus).toBe(0.1);
+    expect(e.idleMult).toBeCloseTo(1 + 0.05 + 0.05 + 0.05, 6); // 三档各 +5%
+    expect(e.offlineCapBonusHours).toBe(2);
+    expect(e.offlineBaseBonus).toBe(0.05);
   });
 
   it("效果聚合：事件流", () => {
     let s = withPoints(5);
     for (const id of ["event_1", "event_2", "event_3", "event_4", "event_5"]) s = unlockTalent(s, id)!;
     const e = talentEffects(s.talents);
-    expect(e.patrolRewardMult).toBe(1.5);
-    expect(e.penaltyReduction).toBe(0.3);
-    expect(e.memeRewardMult).toBe(2);
-    expect(e.patrolIntervalCut).toBe(0.2);
-    expect(e.eventDoubleChance).toBe(0.05);
+    expect(e.patrolRewardMult).toBeCloseTo(1.2, 6); // 15% + 5%
+    expect(e.penaltyReduction).toBe(0.35);
+    expect(e.memeRewardMult).toBeCloseTo(1.1, 6);
+    expect(e.patrolWarnSeconds).toBe(2);
+    expect(e.surviveToIdle).toBe(true);
   });
 });

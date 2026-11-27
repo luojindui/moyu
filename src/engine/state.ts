@@ -32,6 +32,8 @@ export interface GameState {
   team: TeamState;
   /** 天赋树 */
   talents: TalentState;
+  /** 累计安然巡逻次数（事件流 Lv5 转化用） */
+  patrolSurvives: number;
 }
 
 export function initialState(): GameState {
@@ -48,6 +50,7 @@ export function initialState(): GameState {
     prestige: 0,
     team: emptyTeam(),
     talents: emptyTalents(),
+    patrolSurvives: 0,
   };
 }
 

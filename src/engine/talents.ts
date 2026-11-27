@@ -27,27 +27,31 @@ export const TALENT_COST = 1;
 export const MAX_TIER = 5;
 /** 每次转生获得的天赋点 */
 export const TALENT_POINTS_PER_PRESTIGE = 1;
+/** 全树点数上限（15 个天赋，点满毕业） */
+export const TALENT_POINT_CAP = 15;
+/** 发放天赋点的段位档位（第 3/5/7/9/11/13 档，索引 2/4/6/8/10/12） */
+export const TALENT_RANK_TIERS = [2, 4, 6, 8, 10, 12];
 
 /** 天赋表（数值待 balance-owner 决策，当前为规格草案值） */
 export const TALENTS: TalentDef[] = [
-  // 点击流
+  // 点击流（balance-owner：总额度受控，末级改为可测的转化）
   { id: "click_1", branch: "click", tier: 1, name: "手速", desc: "点击力 +25%", value: 0.25 },
   { id: "click_2", branch: "click", tier: 2, name: "连击窗口", desc: "连击窗口 0.5s → 0.6s", value: 0.1 },
-  { id: "click_3", branch: "click", tier: 3, name: "连击上限", desc: "连击上限 20 → 30", value: 10 },
-  { id: "click_4", branch: "click", tier: 4, name: "暴击", desc: "点击 5% 概率 ×5 点击力", value: 0.05 },
-  { id: "click_5", branch: "click", tier: 5, name: "转化", desc: "点击收入 10% 转为挂机收益", value: 0.1 },
+  { id: "click_3", branch: "click", tier: 3, name: "连击上限", desc: "连击上限 20 → 30（倍率 1.36）", value: 10 },
+  { id: "click_4", branch: "click", tier: 4, name: "暴击", desc: "每 20 次点击必暴击 ×5（巡逻偷点不触发）", value: 20 },
+  { id: "click_5", branch: "click", tier: 5, name: "摸鱼转正", desc: "每 300 次累计点击 → 挂机 +1%（封顶 +35%）", value: 300 },
   // 挂机流
-  { id: "idle_1", branch: "idle", tier: 1, name: "稳", desc: "挂机收益 +20%", value: 0.2 },
-  { id: "idle_2", branch: "idle", tier: 2, name: "离线扩容", desc: "离线封顶 +4h", value: 4 },
-  { id: "idle_3", branch: "idle", tier: 3, name: "更稳", desc: "挂机收益 +30%", value: 0.3 },
-  { id: "idle_4", branch: "idle", tier: 4, name: "离线效率", desc: "离线基础效率 0.7 → 0.8", value: 0.1 },
-  { id: "idle_5", branch: "idle", tier: 5, name: "最稳", desc: "挂机收益 +50%", value: 0.5 },
+  { id: "idle_1", branch: "idle", tier: 1, name: "稳", desc: "挂机收益 +5%", value: 0.05 },
+  { id: "idle_2", branch: "idle", tier: 2, name: "离线扩容", desc: "离线封顶 +2h（12→14h）", value: 2 },
+  { id: "idle_3", branch: "idle", tier: 3, name: "更稳", desc: "挂机收益 +5%", value: 0.05 },
+  { id: "idle_4", branch: "idle", tier: 4, name: "离线效率", desc: "离线基础效率 +0.05", value: 0.05 },
+  { id: "idle_5", branch: "idle", tier: 5, name: "最稳", desc: "挂机收益 +5%", value: 0.05 },
   // 事件流
-  { id: "event_1", branch: "event", tier: 1, name: "情报", desc: "巡逻奖励 +50%", value: 0.5 },
-  { id: "event_2", branch: "event", tier: 2, name: "反侦察", desc: "偷点罚款 -30%", value: 0.3 },
-  { id: "event_3", branch: "event", tier: 3, name: "人脉", desc: "丢梗奖励 ×2", value: 2 },
-  { id: "event_4", branch: "event", tier: 4, name: "高频", desc: "巡逻间隔 -20%", value: 0.2 },
-  { id: "event_5", branch: "event", tier: 5, name: "暴富", desc: "事件奖励 5% 概率翻倍", value: 0.05 },
+  { id: "event_1", branch: "event", tier: 1, name: "情报", desc: "安然巡逻奖励 +15%", value: 0.15 },
+  { id: "event_2", branch: "event", tier: 2, name: "反侦察", desc: "偷点罚款 -35%", value: 0.35 },
+  { id: "event_3", branch: "event", tier: 3, name: "人脉", desc: "丢梗奖励 +10%", value: 0.1 },
+  { id: "event_4", branch: "event", tier: 4, name: "预警", desc: "巡逻横幅提前 2s + 奖励再 +5%", value: 0.05 },
+  { id: "event_5", branch: "event", tier: 5, name: "摸鱼气场", desc: "每次安然巡逻 → 挂机 +1%（封顶 +30%）", value: 1 },
 ];
 
 export interface TalentState {
@@ -55,10 +59,29 @@ export interface TalentState {
   unlocked: string[];
   /** 当前可用天赋点 */
   points: number;
+  /** 已发放到第几个段位档（防重复发点） */
+  rankGranted: number;
 }
 
 export function emptyTalents(): TalentState {
-  return { unlocked: [], points: 0 };
+  return { unlocked: [], points: 0, rankGranted: -1 };
+}
+
+/** 按生涯累计检查应发放的段位天赋点（幂等） */
+export function grantRankTalents(talents: TalentState, rankIndex: number): { talents: TalentState; granted: number } {
+  let granted = 0;
+  let rankGranted = talents.rankGranted;
+  for (const tier of TALENT_RANK_TIERS) {
+    if (rankIndex >= tier && tier > rankGranted) {
+      granted += 1;
+      rankGranted = tier;
+    }
+  }
+  if (granted === 0) return { talents, granted: 0 };
+  return {
+    granted,
+    talents: { unlocked: talents.unlocked, rankGranted, points: Math.min(TALENT_POINT_CAP, talents.points + granted) },
+  };
 }
 
 export function talentDef(id: string): TalentDef | undefined {
@@ -92,19 +115,30 @@ export function unlockTalent(state: GameState, id: string): GameState | null {
   if (!canUnlock(state.talents, id)) return null;
   return {
     ...state,
-    talents: { unlocked: [...state.talents.unlocked, id], points: state.talents.points - TALENT_COST },
+    talents: {
+      unlocked: [...state.talents.unlocked, id],
+      points: state.talents.points - TALENT_COST,
+      rankGranted: state.talents.rankGranted,
+    },
   };
 }
 
 /** 重置天赋：返还全部已用点数 */
 export function resetTalents(state: GameState): GameState {
   const refunded = state.talents.unlocked.length * TALENT_COST;
-  return { ...state, talents: { unlocked: [], points: state.talents.points + refunded } };
+  return {
+    ...state,
+    talents: {
+      unlocked: [],
+      points: Math.min(TALENT_POINT_CAP, state.talents.points + refunded),
+      rankGranted: state.talents.rankGranted,
+    },
+  };
 }
 
 /** 转生时加天赋点 */
 export function grantPrestigeTalentPoints(talents: TalentState, count = TALENT_POINTS_PER_PRESTIGE): TalentState {
-  return { ...talents, points: talents.points + count };
+  return { ...talents, points: Math.min(TALENT_POINT_CAP, talents.points + count) };
 }
 
 export interface TalentEffects {
@@ -114,10 +148,10 @@ export interface TalentEffects {
   comboWindowBonus: number;
   /** 连击上限增加 */
   comboMaxBonus: number;
-  /** 暴击概率 */
-  critChance: number;
-  /** 点击转挂机比例 */
-  clickToIdle: number;
+  /** 每 N 次点击必暴击（0 = 无） */
+  critEvery: number;
+  /** 每 N 次累计点击 → 挂机 +1%（0 = 无） */
+  clickToIdleStep: number;
   /** 挂机收益倍率 */
   idleMult: number;
   /** 离线封顶增加（小时） */
@@ -130,10 +164,10 @@ export interface TalentEffects {
   penaltyReduction: number;
   /** 丢梗奖励倍率 */
   memeRewardMult: number;
-  /** 巡逻间隔缩短比例 */
-  patrolIntervalCut: number;
-  /** 事件翻倍概率 */
-  eventDoubleChance: number;
+  /** 巡逻横幅提前秒数 */
+  patrolWarnSeconds: number;
+  /** 每次安然巡逻 → 挂机 +1%（Lv5） */
+  surviveToIdle: boolean;
 }
 
 /** 汇总当前已点天赋的效果 */
@@ -144,15 +178,15 @@ export function talentEffects(talents: TalentState): TalentEffects {
     clickMult: has("click_1") ? 1 + v("click_1") : 1,
     comboWindowBonus: has("click_2") ? v("click_2") : 0,
     comboMaxBonus: has("click_3") ? v("click_3") : 0,
-    critChance: has("click_4") ? v("click_4") : 0,
-    clickToIdle: has("click_5") ? v("click_5") : 0,
+    critEvery: has("click_4") ? v("click_4") : 0,
+    clickToIdleStep: has("click_5") ? v("click_5") : 0,
     idleMult: 1 + (has("idle_1") ? v("idle_1") : 0) + (has("idle_3") ? v("idle_3") : 0) + (has("idle_5") ? v("idle_5") : 0),
     offlineCapBonusHours: has("idle_2") ? v("idle_2") : 0,
     offlineBaseBonus: has("idle_4") ? v("idle_4") : 0,
-    patrolRewardMult: has("event_1") ? 1 + v("event_1") : 1,
+    patrolRewardMult: 1 + (has("event_1") ? v("event_1") : 0) + (has("event_4") ? v("event_4") : 0),
     penaltyReduction: has("event_2") ? v("event_2") : 0,
-    memeRewardMult: has("event_3") ? v("event_3") : 1,
-    patrolIntervalCut: has("event_4") ? v("event_4") : 0,
-    eventDoubleChance: has("event_5") ? v("event_5") : 0,
+    memeRewardMult: has("event_3") ? 1 + v("event_3") : 1,
+    patrolWarnSeconds: has("event_4") ? 2 : 0,
+    surviveToIdle: has("event_5"),
   };
 }

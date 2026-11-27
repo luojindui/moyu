@@ -68,6 +68,7 @@ export function doPrestige(state: GameState): { state: GameState; gained: number
       // 转生保留小队与天赋，并按次给天赋点
       team: state.team,
       talents: grantPrestigeTalentPoints(state.talents),
+      patrolSurvives: state.patrolSurvives,
     },
   };
 }

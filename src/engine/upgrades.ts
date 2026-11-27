@@ -1,6 +1,6 @@
 import type { GameState } from "./state";
 import { prestigeMultiplier } from "./prestige";
-import { teamIdleRate } from "./team";
+import { teamFixedRate, teamShareRatio, favorTier } from "./team";
 import { talentEffects } from "./talents";
 
 export interface UpgradeDef {
@@ -64,24 +64,59 @@ function collectionBonus(state: GameState): number {
   return 1 + Math.min(0.2, 0.02 * Math.floor(n / 5));
 }
 
-/** 状态合计加成（含底薪） */
+/** 工位基础挂机（未放大：底薪 + 各升级效果，不含同事、不含倍率） */
+export function stationIdleOf(state: GameState): number {
+  let idle = BASE_IDLE_RATE;
+  for (const u of UPGRADES) {
+    const lv = state.levels[u.id] ?? 0;
+    if (lv <= 0) continue;
+    if (u.idleRate) idle += effectAt(u, lv);
+  }
+  return idle;
+}
+
+/** 天赋转化加成：点击流 Lv5（每 300 点击 +1%，封顶 35%）+ 事件流 Lv5（每次安然 +1%，封顶 30%） */
+export function conversionBonus(state: GameState): number {
+  const talent = talentEffects(state.talents);
+  let bonus = 0;
+  if (talent.clickToIdleStep > 0) {
+    bonus += Math.min(0.35, Math.floor(state.totalClicks / talent.clickToIdleStep) * 0.01);
+  }
+  if (talent.surviveToIdle) {
+    bonus += Math.min(0.3, state.patrolSurvives * 0.01);
+  }
+  return bonus;
+}
+
+/** 工位挂机（已放大：×转生/图鉴/天赋/转化加成，不含同事） */
+export function stationIdleScaled(state: GameState): number {
+  const mult = prestigeMultiplier(state.prestige) * collectionBonus(state);
+  const talent = talentEffects(state.talents);
+  return stationIdleOf(state) * mult * talent.idleMult * (1 + conversionBonus(state));
+}
+
+/** 状态合计加成（含底薪/同事） */
 export function effectOf(state: GameState): { clickPower: number; idleRate: number } {
   let clickPower = 0;
-  let idleRate = BASE_IDLE_RATE;
   for (const u of UPGRADES) {
     const lv = state.levels[u.id] ?? 0;
     if (lv <= 0) continue;
     if (u.clickPower) clickPower += effectAt(u, lv);
-    if (u.idleRate) idleRate += effectAt(u, lv);
   }
   const mult = prestigeMultiplier(state.prestige) * collectionBonus(state);
   const talent = talentEffects(state.talents);
-  // 摸鱼小队：同事提供的挂机收益同样吃转生/图鉴倍率
-  const team = teamIdleRate(state) * mult;
-  // 天赋：挂机流
+
+  // 工位部分（吃满倍率 + 天赋转化）
+  const station = stationIdleOf(state) * mult * talent.idleMult * (1 + conversionBonus(state));
+  // 同事固定部分（吃转生/图鉴，但不吃挂机天赋——避免双重放大）
+  const favorIdleBonus = favorTier(state) >= 4 ? 1.1 : 1;
+  const teamFixed = teamFixedRate(state) * mult * favorIdleBonus;
+  // 同事占比部分：以工位为基数
+  const teamShare = station * teamShareRatio(state);
+
   return {
     clickPower: clickPower * mult,
-    idleRate: (idleRate * mult + team) * talent.idleMult,
+    idleRate: station + teamFixed + teamShare,
   };
 }
 

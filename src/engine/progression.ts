@@ -1,5 +1,6 @@
 import type { GameState } from "./state";
 import { talentEffects } from "./talents";
+import { favorTier } from "./team";
 
 /**
  * 长线进度辅助（R7）：
@@ -30,5 +31,7 @@ export function offlineEfficiency(state: GameState, createdAtMs: number, nowMs: 
   const streakDays = state.daily?.streak ?? 0;
   const streakBonus = Math.min(STREAK_BONUS_MAX, STREAK_BONUS_STEP * Math.floor(streakDays / STREAK_BONUS_DAYS));
   const talentBase = talentEffects(state.talents).offlineBaseBonus;
-  return Math.min(1, 0.7 + talentBase + visits * VISIT_BONUS_STEP + streakBonus);
+  // 好感 40 里程碑：离线基础效率 +3%
+  const favorBase = favorTier(state) >= 2 ? 0.03 : 0;
+  return Math.min(1, 0.7 + talentBase + favorBase + visits * VISIT_BONUS_STEP + streakBonus);
 }

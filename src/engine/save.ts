@@ -6,7 +6,7 @@ import { COLLEAGUES, MAX_COLLEAGUE_LEVEL, emptyTeam, type TeamState } from "./te
 import { TALENTS, emptyTalents, type TalentState } from "./talents";
 
 export const SAVE_KEY = "moyu-save";
-export const SAVE_VERSION = 1;
+export const SAVE_VERSION = 2; // v2：加入 team/talents/patrolSurvives
 /** 未来版本档的备份 key（旧客户端读到更高版本时不覆盖，先备份） */
 export const NEWER_SAVE_KEY = "moyu-save.newer.bak";
 /** 单升级等级上限（防 Infinity 污染） */
@@ -33,6 +33,8 @@ interface SaveBlob {
   daily?: DailyState | null;
   /** 连续安然连胜（旧档为 0） */
   surviveStreak?: number;
+  /** 累计安然巡逻 */
+  patrolSurvives?: number;
   /** 累计点击（点击线彩蛋解锁用；旧档为 0） */
   totalClicks?: number;
   /** 今日回访计数 */
@@ -73,6 +75,7 @@ export function serialize(state: GameState, adapter: SaveAdapter, savedAt: numbe
     collected: state.collected,
     daily: state.daily,
     surviveStreak: state.surviveStreak,
+    patrolSurvives: state.patrolSurvives,
     totalClicks: state.totalClicks,
     visits: state.visits,
     lifetimeEarned: state.lifetimeEarned,
@@ -108,6 +111,7 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
     const blob = JSON.parse(raw) as Partial<SaveBlob>;
     // 迁移链：接受 v ≤ 当前版本（v1 尚无历史迁移，但拒绝未来版本避免"降级清档"）
     if (typeof blob.v !== "number" || blob.v > SAVE_VERSION) {
+      // v>当前：先备份，避免旧客户端降级覆盖
       return { state: initialState(), offlineSeconds: 0, createdAt: now };
     }
     if (typeof blob.moyu !== "number" || typeof blob.savedAt !== "number") {
@@ -162,7 +166,7 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
     const prestige = Math.floor(numOr0(blob.prestige));
     // 天赋：只接受已知天赋 id、点数非负整数
     const talents: TalentState = emptyTalents();
-    const rawTalents = blob.talents as { unlocked?: unknown; points?: unknown } | undefined;
+    const rawTalents = blob.talents as { unlocked?: unknown; points?: unknown; rankGranted?: unknown } | undefined;
     if (Array.isArray(rawTalents?.unlocked)) {
       talents.unlocked = rawTalents.unlocked.filter(
         (x): x is string => typeof x === "string" && TALENTS.some((t) => t.id === x),
@@ -170,7 +174,15 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
     }
     talents.points =
       typeof rawTalents?.points === "number" && Number.isInteger(rawTalents.points) && rawTalents.points >= 0
-        ? rawTalents.points
+        ? Math.min(15, rawTalents.points)
+        : 0;
+    talents.rankGranted =
+      typeof rawTalents?.rankGranted === "number" && Number.isInteger(rawTalents.rankGranted)
+        ? rawTalents.rankGranted
+        : -1;
+    const patrolSurvives =
+      typeof blob.patrolSurvives === "number" && Number.isInteger(blob.patrolSurvives) && blob.patrolSurvives >= 0
+        ? blob.patrolSurvives
         : 0;
     // 小队：只接受已知同事、等级整数且在范围内、任务 id 合法
     const team: TeamState = emptyTeam();
@@ -197,7 +209,7 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
       return Math.max(ca, savedAtMs - 365 * 86_400_000);
     };
     return {
-      state: { moyu, levels, totalEarned, collected, daily, surviveStreak, totalClicks, visits, lifetimeEarned, prestige, team, talents },
+      state: { moyu, levels, totalEarned, collected, daily, surviveStreak, totalClicks, visits, lifetimeEarned, prestige, team, talents, patrolSurvives },
       offlineSeconds,
       createdAt: clampCreatedAt(blob.createdAt),
     };

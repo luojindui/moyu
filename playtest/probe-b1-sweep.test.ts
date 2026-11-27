@@ -76,10 +76,10 @@ describe("B1 候选扫描", () => {
 
   it("首招时间（单次连续会话，贪心买升级 + 攒钱招人）", () => {
     const cfg = base();
-    for (const cost of [800, 1200, 1600, 2000, 2500, 3000]) {
+    for (const cost of [6000, 10000, 16000, 25000, 40000]) {
       const t = base(cfg as unknown as Partial<TeamCfg>);
       t.colleagues = t.colleagues.map((c) => (c.id === "zhou" ? { ...c, cost } : c));
-      for (const cps of [1, 3, 5]) {
+      for (const cps of [0, 1, 2, 3]) {
         const r = simulate({
           ...baseOpts(cps, t),
           days: 1,

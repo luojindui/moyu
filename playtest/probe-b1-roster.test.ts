@@ -10,7 +10,7 @@ const NO_TALENT: TalentCfg = {
 /** 5 个同事的招募时间（3 次回访/天，每次 10 分钟） */
 describe("B1 招募节奏", () => {
   it("各同事招募时刻（天/小时）", () => {
-    for (const cps of [0, 1, 3]) {
+    for (const cps of [0, 1, 2, 3]) {
       const r = simulate({
         days: 3, visitHours: [9, 13, 20], sessionSeconds: 600, cps,
         recruit: true, dispatch: true, levelColleagues: true,

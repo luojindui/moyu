@@ -9,7 +9,7 @@ import { type GameState, initialState } from "../src/engine/state";
 import { costOf, marginalEffect, effectOf, UPGRADES } from "../src/engine/upgrades";
 import { clickPowerOf } from "../src/engine/actions";
 import { prestigeGain, doPrestige, canPrestige, prestigeMultiplier } from "../src/engine/prestige";
-import { rankFor } from "../src/engine/titles";
+import { rankFor, RANKS } from "../src/engine/titles";
 
 export const DAY_S = 86400;
 
@@ -58,11 +58,11 @@ export interface TeamCfg {
 
 export const DRAFT_TEAM: TeamCfg = {
   colleagues: [
-    { id: "zhou", name: "老周", skill: "chat" as TaskType, cost: 6000, idlePerLevel: 20, sharePerLevel: 0.005, upgradeCoef: 0.4 },
-    { id: "mei", name: "小美", skill: "meeting" as TaskType, cost: 1500000, idlePerLevel: 100, sharePerLevel: 0.005, upgradeCoef: 0.4 },
-    { id: "qiang", name: "强哥", skill: "toilet" as TaskType, cost: 20000000, idlePerLevel: 200, sharePerLevel: 0.005, upgradeCoef: 0.4 },
-    { id: "li", name: "小李", skill: "errand" as TaskType, cost: 600000000, idlePerLevel: 300, sharePerLevel: 0.005, upgradeCoef: 0.4 },
-    { id: "wang", name: "王师傅", skill: "coffee" as TaskType, cost: 10000000000, idlePerLevel: 400, sharePerLevel: 0.005, upgradeCoef: 0.4 },
+    { id: "zhou", name: "老周", skill: "chat" as TaskType, cost: 12000, idlePerLevel: 20, sharePerLevel: 0.008, upgradeCoef: 0.4 },
+    { id: "mei", name: "小美", skill: "meeting" as TaskType, cost: 800000, idlePerLevel: 100, sharePerLevel: 0.008, upgradeCoef: 0.4 },
+    { id: "qiang", name: "强哥", skill: "toilet" as TaskType, cost: 15000000, idlePerLevel: 200, sharePerLevel: 0.008, upgradeCoef: 0.4 },
+    { id: "li", name: "小李", skill: "errand" as TaskType, cost: 300000000, idlePerLevel: 300, sharePerLevel: 0.008, upgradeCoef: 0.4 },
+    { id: "wang", name: "王师傅", skill: "coffee" as TaskType, cost: 6000000000, idlePerLevel: 400, sharePerLevel: 0.008, upgradeCoef: 0.4 },
   ],
   missions: [
     { id: "quick", type: "errand" as TaskType, seconds: 15 * 60, mult: 1.2 },
@@ -71,10 +71,10 @@ export const DRAFT_TEAM: TeamCfg = {
     { id: "toilet", type: "toilet" as TaskType, seconds: 4 * 3600, mult: 2.2 },
     { id: "coffee", type: "coffee" as TaskType, seconds: 8 * 3600, mult: 2.8 },
   ],
-  maxLevel: 10,
+  maxLevel: 5,
   upgradeBase: 1.35,
   matchBonus: 0.5,
-  dispatchCoef: 0.012,
+  dispatchCoef: 0.011,
   dispatchFloor: 300,
   dispatchBase: "global",
   offlineTeamFactor: 0.5,
@@ -180,6 +180,8 @@ export interface SimOpts {
   prestige: boolean;
   dailyClaim: boolean;
   events: boolean;
+  /** 招人时的攒钱行为：none=不预留（有整笔钱就招）；save=够得着就预留 */
+  reserveMode?: "none" | "save";
   seed?: number;
 }
 
@@ -316,8 +318,10 @@ export function simulate(o: SimOpts): SimResult {
   function buy(nowAbsSec: number): void {
     const mult = M() * coll();
     const reserveDef = nextColleagueDef();
-    // 玩家行为模型：下一个同事"够得着"（价格 ≤ 5×当前余额）才攒钱，否则照常买升级
-    const reserve = o.recruit && reserveDef && reserveDef.cost <= Math.max(1, 5 * s.moyu) ? reserveDef.cost : 0;
+    // 玩家行为模型（可切换）：reserveMode = "none"：不预留，离线大额到账时顺手招；
+    // "save"：价格 ≤ saveWithin×余额时攒钱（默认 off，模拟"理性不攒钱"对照）
+    const reserve =
+      o.reserveMode === "save" && reserveDef && reserveDef.cost <= Math.max(1, 2 * s.moyu) ? reserveDef.cost : 0;
     for (let guard = 0; guard < 400; guard++) {
       // 招募
       if (o.recruit && reserveDef && s.moyu >= reserveDef.cost) {
@@ -446,8 +450,13 @@ export function simulate(o: SimOpts): SimResult {
         if (r) {
           s = r.state;
           prestigeCount++;
-          rankTimes[`prestige_${prestigeCount}`] = (nowSec + o.sessionSeconds) / 60;
+          rankTimes[`prestige_${prestigeCount}`] = (nowSec + o.sessionSeconds) / 60 - 540;
         }
+      }
+      // 段位到达时刻（首次打开后分钟数；首访 9:00 → 0 起算）
+      const gameMin = (nowSec + o.sessionSeconds) / 60 - 540;
+      for (const rank of RANKS) {
+        if (s.lifetimeEarned >= rank.at && rankTimes[rank.name] === undefined) rankTimes[rank.name] = gameMin;
       }
       lastVisitMs = nowMs;
     }
@@ -482,3 +491,33 @@ function gain(s: GameState, amount: number): GameState {
   if (amount <= 0) return s;
   return { ...s, moyu: s.moyu + amount, totalEarned: s.totalEarned + amount, lifetimeEarned: s.lifetimeEarned + amount };
 }
+
+// ----------------------------- B1 决策版天赋常量 -----------------------------
+
+/** 点击流满级（5 点）：点击 ×1.65，挂机转化封顶 +30% */
+export const TAL_CLICK: TalentCfg = {
+  ...NO_TALENT,
+  clickMult: 1.25,
+  comboMaxBonus: 10,
+  critChance: 0.05,
+  critMult: 5,
+  clickToIdlePer1k: 1 / 30, // 每 300 次累计点击 → 挂机 +1%
+  clickToIdleCap: 0.35,
+};
+/** 挂机流满级（5 点）：挂机 +45%、离线封顶 +4h、离线基础效率 +0.10 */
+export const TAL_IDLE: TalentCfg = {
+  ...NO_TALENT,
+  idleMult: 1.15,
+  offlineCapBonus: 2 * 3600,
+  offlineBaseBonus: 0.05,
+};
+/** 事件流满级（5 点）：事件小加成 + 每 200 次安然巡逻挂机 +1%（封顶 +30%） */
+export const TAL_EVENT: TalentCfg = {
+  ...NO_TALENT,
+  patrolRewardMult: 1.15,
+  penaltyReduction: 0.35,
+  memeRewardMult: 1.1,
+  patrolIntervalCut: 0,
+  patrolIdlePerPatrol: 0.01, // 每次安然巡逻 → 挂机 +1%
+  patrolIdleCap: 0.3,
+};

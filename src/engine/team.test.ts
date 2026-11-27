@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import { initialState, gain } from "./state";
 import {
   COLLEAGUES,
+  MAX_COLLEAGUE_LEVEL,
   MISSIONS,
   SKILL_MATCH_BONUS,
   canRecruit,
@@ -9,10 +10,14 @@ import {
   claimableCount,
   dispatch,
   dispatchReward,
+  DISPATCH_COEF,
+  DISPATCH_FLOOR,
+  DISPATCH_LEVEL_FACTOR,
   emptyTeam,
   missionDone,
   recruit,
-  teamIdleRate,
+  teamFixedRate,
+  teamShareRatio,
   teamSize,
   upgradeColleague,
   upgradeCostOf,
@@ -20,7 +25,7 @@ import {
 
 const NOW = 1_700_000_000_000;
 
-function rich(amount = 10_000_000) {
+function rich(amount = 100_000_000_000) {
   return gain(initialState(), amount);
 }
 
@@ -31,7 +36,8 @@ describe("摸鱼小队（第二玩法）", () => {
     const r = recruit(s, "zhou")!;
     expect(r.moyu).toBe(s.moyu - COLLEAGUES[0]!.cost);
     expect(teamSize(r)).toBe(1);
-    expect(teamIdleRate(r)).toBe(COLLEAGUES[0]!.idlePerLevel);
+    expect(teamFixedRate(r)).toBe(COLLEAGUES[0]!.idlePerLevel);
+    expect(teamShareRatio(r)).toBeCloseTo(COLLEAGUES[0]!.sharePerLevel, 10);
     // 不能重复招募
     expect(recruit(r, "zhou")).toBeNull();
   });
@@ -42,16 +48,24 @@ describe("摸鱼小队（第二玩法）", () => {
     expect(recruit(s, "zhou")).toBeNull();
   });
 
-  it("升级：价格递增、收益线性增长、封顶", () => {
+  it("升级：价格递增、收益线性增长、等级上限 5", () => {
     let s = rich();
     s = recruit(s, "zhou")!;
     const def = COLLEAGUES[0]!;
     const price1 = upgradeCostOf(def, 1);
     s = upgradeColleague(s, "zhou")!;
     expect(s.team.colleagues["zhou"]!.level).toBe(2);
-    expect(teamIdleRate(s)).toBe(def.idlePerLevel * 2);
+    expect(teamFixedRate(s)).toBe(def.idlePerLevel * 2);
     const price2 = upgradeCostOf(def, 2);
     expect(price2).toBeGreaterThan(price1);
+    // 升到 5 级后不能再升
+    let capped = s;
+    for (let i = 0; i < 5; i++) {
+      const nx = upgradeColleague(capped, "zhou");
+      if (nx) capped = nx;
+    }
+    expect(capped.team.colleagues["zhou"]!.level).toBe(MAX_COLLEAGUE_LEVEL);
+    expect(upgradeColleague(capped, "zhou")).toBeNull();
   });
 
   it("派遣：占用同事、到点可领、领完恢复空闲", () => {
@@ -79,10 +93,12 @@ describe("摸鱼小队（第二玩法）", () => {
     // 用同一任务、人为把同事技能改成不匹配来对比，隔离时长/倍率影响
     const chatMission = MISSIONS.find((m) => m.type === "chat")!;
     const matched = dispatch(s, "zhou", chatMission.id, NOW)!;
-    const withMatch = dispatchReward(matched, "zhou", 1000);
-    // 直接计算基准：max(200, 1000×seconds) × mult
-    const base = Math.max(200, 1000 * chatMission.seconds) * chatMission.mult;
-    expect(withMatch).toBe(Math.floor(base * (1 + SKILL_MATCH_BONUS)));
+    const stationIdle = 1000;
+    const withMatch = dispatchReward(matched, "zhou", stationIdle);
+    // 直接计算：max(300, 1000×秒×0.011) × mult × 匹配1.5 × 等级系数1（lv1） × 好感1
+    const base = Math.max(DISPATCH_FLOOR, stationIdle * chatMission.seconds * DISPATCH_COEF);
+    const levelFactor = 1 + DISPATCH_LEVEL_FACTOR * 0; // lv1
+    expect(withMatch).toBe(Math.floor(base * chatMission.mult * (1 + SKILL_MATCH_BONUS) * levelFactor));
     expect(SKILL_MATCH_BONUS).toBe(0.5);
   });
 
@@ -108,7 +124,8 @@ describe("摸鱼小队（第二玩法）", () => {
 
   it("空队伍", () => {
     const s = initialState();
-    expect(teamIdleRate(s)).toBe(0);
+    expect(teamFixedRate(s)).toBe(0);
+    expect(teamShareRatio(s)).toBe(0);
     expect(teamSize(s)).toBe(0);
     expect(s.team).toEqual(emptyTeam());
   });

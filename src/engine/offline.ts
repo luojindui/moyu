@@ -1,6 +1,7 @@
 import type { GameState } from "./state";
 import { gain } from "./state";
-import { effectOf } from "./upgrades";
+import { effectOf, stationIdleScaled } from "./upgrades";
+import { TEAM_OFFLINE_SHARE } from "./team";
 import { talentEffects } from "./talents";
 
 export const OFFLINE_CAP_SECONDS = 12 * 3600; // R11：8h→12h（每天开机一次也能拿满一天的大半）
@@ -28,6 +29,10 @@ export function offlineEarn(state: GameState, elapsed: number, rate = 1): Offlin
   // 天赋：挂机流「离线扩容」
   const cap = capForElapsed(elapsed) + talentEffects(state.talents).offlineCapBonusHours * 3600;
   const applied = Math.max(0, Math.min(elapsed, cap));
-  const earned = effectOf(state).idleRate * applied * rate;
+  // 离线收益：工位 100% + 同事固定部分 50%（同事 share 已按工位为基数，同样折半）
+  const total = effectOf(state).idleRate;
+  const station = stationIdleScaled(state);
+  const teamPart = Math.max(0, total - station);
+  const earned = (station + teamPart * TEAM_OFFLINE_SHARE) * applied * rate;
   return { applied, earned, state: gain(state, earned) };
 }

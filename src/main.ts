@@ -1,7 +1,7 @@
 import "./style.css";
 import { initialState } from "./engine/state";
 import { doClick, buyUpgrade, clickPowerOf, COMBO_WINDOW_S, COMBO_BREAK_S, COMBO_MAX } from "./engine/actions";
-import { effectOf } from "./engine/upgrades";
+import { effectOf, stationIdleScaled } from "./engine/upgrades";
 import { advance } from "./engine/tick";
 import { settleReturn } from "./engine/resume";
 import { CLICK_MEMES, MEME_QUOTES } from "./engine/flavor";
@@ -16,7 +16,7 @@ import {
 } from "./engine/events";
 import { collectQuote, syncFlavorCollection } from "./engine/collection";
 import { ensureVisits, offlineEfficiency } from "./engine/progression";
-import { rankFor } from "./engine/titles";
+import { rankFor, RANKS } from "./engine/titles";
 import { chapterFor, zhouLine, bossOutcome, HR_PRESTIGE_LINE } from "./engine/story";
 import { APP_VERSION } from "./version";
 import { RECORDS_KEY, parseRecords, updateRecords, type Records } from "./engine/records";
@@ -29,7 +29,7 @@ import { Journal } from "./ui/journal";
 import { Quest } from "./ui/quest";
 import { TeamPanel } from "./ui/team-panel";
 import { claimMission, colleagueDef, recruit, upgradeColleague, dispatch as dispatchMission } from "./engine/team";
-import { resetTalents, unlockTalent } from "./engine/talents";
+import { grantRankTalents, resetTalents, unlockTalent } from "./engine/talents";
 import { initAudio, playClick, playBreak, playSuccess, toggleMute, isMuted } from "./ui/audio";
 import { Scene, SPRITE_MAP } from "./render/scene";
 import { SpriteGrid, frameActivity } from "./render/sprites";
@@ -171,7 +171,7 @@ async function boot(): Promise<void> {
       }
     },
     onClaim: (id) => {
-      const r = claimMission(state, id, Date.now(), effectOf(state).idleRate);
+      const r = claimMission(state, id, Date.now(), stationIdleScaled(state));
       if (r) {
         state = r.state;
         hud.refresh(state);
@@ -412,6 +412,18 @@ async function boot(): Promise<void> {
     if (now - lastHud >= 150) {
       lastHud = now;
       scene.hideHint = state.totalEarned > 500;
+      // 段位天赋点：按生涯段位发放（幂等）
+      {
+        const rankIdx = RANKS.findIndex((r, i) => state.lifetimeEarned >= r.at && (i + 1 >= RANKS.length || state.lifetimeEarned < RANKS[i + 1]!.at));
+        const idx = rankIdx >= 0 ? Math.max(0, RANKS.filter((r) => state.lifetimeEarned >= r.at).length - 1) : 0;
+        const g = grantRankTalents(state.talents, idx);
+        if (g.granted > 0) {
+          state = { ...state, talents: g.talents };
+          toast(`段位奖励：天赋点 +${g.granted}`);
+          teamPanel.refresh(state);
+          serialize(state, localStorageAdapter, Date.now());
+        }
+      }
       // 挂机目标：只要在自动收入就记（佛系零操作也能完成）
       if (effectOf(state).idleRate > 0.5) trackDaily("idle");
       // 剧情章节：便签 + 职员配色随生涯进度变化（零新美术）
