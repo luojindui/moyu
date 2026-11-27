@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { doClick, buyUpgrade } from "./actions";
+import { doClick, buyUpgrade, comboMultiplier, COMBO_MAX } from "./actions";
 import { initialState } from "./state";
 import { UPGRADES, effectOf, costOf } from "./upgrades";
 
@@ -9,6 +9,15 @@ describe("点击与购买", () => {
     const base = effectOf(s).clickPower + 1; // 初始点击力为 1
     const out = doClick(s);
     expect(out.moyu).toBe(s.moyu + base);
+  });
+
+  it("连击链：收入 ×(1+0.02×combo) 封顶 ×(1+0.02×COMBO_MAX)", () => {
+    const s = initialState();
+    expect(doClick(s, 0).moyu).toBe(1); // 无连击
+    expect(doClick(s, 5).moyu).toBeCloseTo(1.1, 10); // ×1.1
+    expect(doClick(s, 12).moyu).toBeCloseTo(1.24, 10); // 12 连击
+    expect(doClick(s, 99).moyu).toBeCloseTo(1 + 0.02 * COMBO_MAX, 10); // 封顶
+    expect(comboMultiplier(3)).toBeCloseTo(1.06, 10);
   });
 
   it("买得起：扣当前价、涨一级、价格上浮", () => {

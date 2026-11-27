@@ -1,0 +1,8 @@
+   ✓ 老板巡逻结算 > 罚款封顶：min(raw, max(10, 10×idleRate))，后期不洗劫 0ms
+   ✓ 老板巡逻结算 > 安然度过：奖励 = max(50, 5 × idleRate)（克制，不喧宾夺主） 0ms
+   ✓ 同事丢梗 > 有效期内点击：奖励 5 × 点击力 0ms
+   × 同事丢梗 > 偷点（challenger #1）：巡逻期点击照常获得点击收入，同时承担罚款 3ms
+     → expected undefined to be 5 // Object.is equality
+   × 同事丢梗 > 偷点在高点击力时正期望（cps 越高越值得赌） 0ms
+     → expected undefined to be 11 // Object.is equality
+   × 同事丢梗 > 宽限期内点击：有收入、无罚款、不算被抓 0ms

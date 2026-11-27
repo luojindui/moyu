@@ -125,9 +125,9 @@ describe("R2 审计①②：一次性惩罚 / 一梗一奖 / 安然奖", () => {
       state = r.state;
       totalLost += r.lost;
     }
-    // raw=max(10,50)=50；cap=max(10, 10×0.2)=10；lost=min(50,10,1000)=10，仅一次
+    // 偷点语义：每击收入 +1（共 +5）；罚款 raw=50、cap=10 → 仅首击扣 10
     expect(totalLost).toBe(10);
-    expect(state.moyu).toBe(990);
+    expect(state.moyu).toBe(1000 + 5 - 10);
   });
 
   it("巡逻外点击不触发惩罚", () => {
@@ -141,9 +141,10 @@ describe("R2 审计①②：一次性惩罚 / 一梗一奖 / 安然奖", () => {
     const es: EventState = { ...newEventState(), bossUntil: 100, bossStartAt: 0 };
     const state = { ...initialState(), moyu: 3 };
     const r = onBossTap(state, es, 5);
-    console.log("上报 lost:", r.lost, "实扣:", state.moyu - r.state.moyu);
-    expect(r.state.moyu).toBe(0); // 实扣 3
-    expect(r.lost).toBe(3); // ✅ 已修复：上报=实扣
+    console.log("上报 lost:", r.lost, "实扣:", state.moyu + r.income - r.state.moyu);
+    // 偷点：余额 3 + 收入 1 = 4，罚款 min(raw, cap, 4) = 4 → 归零
+    expect(r.state.moyu).toBe(0);
+    expect(r.lost).toBe(4); // ✅ 上报=实扣（不为 0 不虚报）
   });
 
   it("被抓过 → 安然奖为 0；未被抓 → max(50, 5×idleRate)（BOSS_REWARD_IDLE_SECONDS=5；注释写 20× 已过时）", () => {

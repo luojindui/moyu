@@ -1,5 +1,7 @@
 import type { GameState } from "./state";
 import { initialState } from "./state";
+import type { Collected } from "./collection";
+import type { DailyState } from "./daily";
 
 export const SAVE_KEY = "moyu-save";
 export const SAVE_VERSION = 1;
@@ -21,6 +23,10 @@ interface SaveBlob {
   savedAt: number;
   /** 建档时间（首日判定用）；旧档缺省补当前时间 */
   createdAt?: number;
+  /** 图鉴收集（旧档缺省为空） */
+  collected?: Collected;
+  /** 每日日报（旧档/非法形状为 null） */
+  daily?: DailyState | null;
 }
 
 /** 序列化并写入（savedAt=毫秒时间戳） */
@@ -46,6 +52,8 @@ export function serialize(state: GameState, adapter: SaveAdapter, savedAt: numbe
     levels: state.levels,
     savedAt,
     createdAt,
+    collected: state.collected,
+    daily: state.daily,
   };
   try {
     adapter.setItem(SAVE_KEY, JSON.stringify(blob));
@@ -92,13 +100,26 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
         : 0;
     const savedAtMs: number = blob.savedAt;
     const offlineSeconds = Math.max(0, (now - savedAtMs) / 1000);
-    // createdAt 钳制：缺失默认 savedAt（不重发首日）；越界（未来/NaN）按 savedAt 收敛，堵离线分级绕过
+    // 图鉴：数组 + 整数索引净化
+    const sanitizeIdx = (arr: unknown): number[] =>
+      Array.isArray(arr) ? arr.filter((x): x is number => Number.isInteger(x) && x >= 0 && x < 1024) : [];
+    const collectedBlob = blob.collected as { quotes?: unknown; flavors?: unknown } | undefined;
+    const collected = {
+      quotes: sanitizeIdx(collectedBlob?.quotes),
+      flavors: sanitizeIdx(collectedBlob?.flavors),
+    };
+    // 日报：仅接受形状合法的对象
+    const d = blob.daily as Partial<DailyState> | undefined;
+    const dailyShapeOk =
+      !!d && typeof d === "object" && typeof d.date === "string" && Array.isArray(d.goals) && typeof d.claimed === "boolean";
+    const daily: DailyState | null = dailyShapeOk ? (d as DailyState) : null;
+    // createdAt 钳制：缺失默认 savedAt（不重发首日）；越界（未来/NaN）按 savedAt收敛，堵离线分级绕过
     const clampCreatedAt = (ca: unknown): number => {
       if (typeof ca !== "number" || !Number.isFinite(ca) || ca > now) return savedAtMs;
       return Math.max(ca, savedAtMs - 365 * 86_400_000);
     };
     return {
-      state: { moyu, levels, totalEarned },
+      state: { moyu, levels, totalEarned, collected, daily },
       offlineSeconds,
       createdAt: clampCreatedAt(blob.createdAt),
     };

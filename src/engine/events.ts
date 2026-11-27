@@ -1,6 +1,6 @@
 import type { GameState } from "./state";
 import { gain } from "./state";
-import { clickPowerOf } from "./actions";
+import { clickPowerOf, doClick, comboMultiplier } from "./actions";
 import { effectOf } from "./upgrades";
 
 /** 随机事件数值（视觉层读取同一份） */
@@ -15,6 +15,12 @@ export const BOSS_REWARD_IDLE_SECONDS = 5;
 export const BOSS_REWARD_MIN = 50;
 /** 反应宽限：横幅弹出到此时间内点击免罚（半空中的手指不算顶风作案） */
 export const BOSS_GRACE_SECONDS = 0.8;
+/** 安然连胜：连续安然 N 次奖励 ×(1+0.1N)，封顶 ×2 */
+export const SURVIVE_STREAK_CAP = 10;
+
+export function surviveStreakMult(n: number): number {
+  return 1 + 0.1 * Math.min(n, SURVIVE_STREAK_CAP);
+}
 
 export const MEME_INTERVAL_MIN = 45;
 export const MEME_INTERVAL_MAX = 75;
@@ -30,11 +36,21 @@ export interface EventState {
   bossCaught: boolean;
   /** 本次巡逻开启时刻（宽限判定用） */
   bossStartAt: number;
+  /** 连续安然次数（被抓清零，奖励乘 ×(1+0.1N) 封顶 ×2） */
+  surviveStreak: number;
 }
 
 /** 事件为运行时状态，不入存档 */
 export function newEventState(): EventState {
-  return { nextBossAt: Infinity, bossUntil: -1, nextMemeAt: Infinity, memeUntil: -1, bossCaught: false, bossStartAt: 0 };
+  return {
+    nextBossAt: Infinity,
+    bossUntil: -1,
+    nextMemeAt: Infinity,
+    memeUntil: -1,
+    bossCaught: false,
+    bossStartAt: 0,
+    surviveStreak: 0,
+  };
 }
 
 function nextWindow(now: number, min: number, max: number, rng: () => number): number {
@@ -74,25 +90,52 @@ export function scheduleEvents(es: EventState, now: number, rng: () => number): 
 }
 
 /**
- * 巡逻中点击 = 被逮：扣 min(max(10, 5% 余额), max(10, 10×idleRate))。
- * 宽限期（开启后 0.8s 内）与同一巡逻已抓过 → 免罚免逮。
+ * 巡逻中点击「偷点」（challenger #1 真赌点）：
+ * ①照常获得点击收入（含连击加成）；②过了宽限期且本巡逻未被抓 → 扣罚款一次。
+ * 盈亏线约在点击力 > 罚款封顶时（高点击力流派赌得划算），低点击力自动落在"忍"侧。
  */
-export function onBossTap(state: GameState, es: EventState, now: number): { state: GameState; caught: boolean; lost: number } {
-  if (es.bossUntil <= 0) return { state, caught: false, lost: 0 };
-  if (es.bossCaught) return { state, caught: false, lost: 0 };
-  if (now < es.bossStartAt + BOSS_GRACE_SECONDS) return { state, caught: false, lost: 0 };
-  const raw = Math.max(BOSS_PENALTY_MIN, state.moyu * BOSS_PENALTY_RATE);
-  const cap = Math.max(BOSS_PENALTY_MIN, BOSS_PENALTY_CAP_IDLE_SECONDS * effectOf(state).idleRate);
-  const lost = Math.min(raw, cap, state.moyu); // 汇报口径 = 实扣金额，不为 0 不虚报
+export function onBossTap(
+  state: GameState,
+  es: EventState,
+  now: number,
+  combo = 0,
+): { state: GameState; caught: boolean; lost: number; income: number } {
+  if (es.bossUntil <= 0) {
+    return { state: doClick(state, combo), caught: false, lost: 0, income: clickPowerOf(state) * comboMultiplier(combo) };
+  }
+  const income = clickPowerOf(state) * comboMultiplier(combo);
+  const afterIncome = gain(state, income); // 偷点收入照给
+  if (es.bossCaught) return { state: afterIncome, caught: false, lost: 0, income };
+  if (now < es.bossStartAt + BOSS_GRACE_SECONDS) {
+    return { state: afterIncome, caught: false, lost: 0, income };
+  }
+  const raw = Math.max(BOSS_PENALTY_MIN, afterIncome.moyu * BOSS_PENALTY_RATE);
+  const cap = Math.max(BOSS_PENALTY_MIN, BOSS_PENALTY_CAP_IDLE_SECONDS * effectOf(afterIncome).idleRate);
+  const lost = Math.min(raw, cap, afterIncome.moyu); // 汇报口径 = 实扣金额
   es.bossCaught = true;
-  return { state: { ...state, moyu: state.moyu - lost }, caught: true, lost };
+  es.surviveStreak = 0; // 被抓清零连胜
+  return { state: { ...afterIncome, moyu: afterIncome.moyu - lost }, caught: true, lost, income };
 }
 
-/** 巡逻安然结束奖励：max(BOSS_REWARD_MIN, BOSS_REWARD_IDLE_SECONDS × idleRate) 即 max(50, 5×idleRate)；被抓过不给 */
+/**
+ * 巡逻窗口结束结算：安然 → 发奖（含连胜乘数）并推进连胜；被抓 → 0 奖且连胜清零。
+ * 同时复位本巡逻状态，供下一次巡逻使用。
+ */
+export function finishPatrol(state: GameState, es: EventState): { state: GameState; reward: number } {
+  const reward = bossSurviveReward(state, es);
+  const next = gain(state, reward);
+  if (reward > 0 && !es.bossCaught) es.surviveStreak += 1;
+  es.bossCaught = false;
+  es.bossUntil = -1;
+  return { state: next, reward };
+}
+
+/** 巡逻安然结束奖励：max(50, 5×idleRate) × 连胜乘数（连续安然 N 次 ×(1+0.1N) 封顶 ×2）；被抓过不给 */
 export function bossSurviveReward(state: GameState, es?: EventState): number {
   if (es?.bossCaught) return 0;
   const { idleRate } = effectOf(state);
-  return Math.max(BOSS_REWARD_MIN, BOSS_REWARD_IDLE_SECONDS * idleRate);
+  const base = Math.max(BOSS_REWARD_MIN, BOSS_REWARD_IDLE_SECONDS * idleRate);
+  return base * surviveStreakMult(es?.surviveStreak ?? 0);
 }
 
 /** 丢梗点击奖励：5 × 点击力（仅窗口内有效） */

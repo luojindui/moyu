@@ -18,10 +18,28 @@
           <span>点击 +<b id="hud-click">1</b></span>
           <span>挂机 <b id="hud-idle">0.2</b>/秒</span>
           <span id="hud-rank">摸鱼实习生</span>
+          <button id="btn-journal" aria-label="日报与图鉴">📔</button>
         </div>
       </header>
       <main id="stage-wrap"><canvas id="stage"></canvas></main>
       <footer id="shop"><div id="shop-cards"></div></footer>
+    </div>
+    <div id="journal" class="hidden">
+      <div class="journal-panel">
+        <div class="journal-head">
+          <h2>摸鱼日报</h2>
+          <button id="journal-close" aria-label="关闭">✕</button>
+        </div>
+        <p class="journal-meta"><span id="journal-date"></span> · <span id="journal-streak"></span></p>
+        <ul id="journal-goals"></ul>
+        <button id="journal-claim">完成 0/3</button>
+        <h3>摸鱼图鉴 <small id="journal-total">0/55</small></h3>
+        <div class="journal-collect">
+          <span>梗语录 <b id="journal-quote">0/10</b></span>
+          <span>升级彩蛋 <b id="journal-flavor">0/45</b></span>
+        </div>
+        <p class="journal-latest" id="journal-latest"></p>
+      </div>
     </div>
     <div id="welcome" class="hidden">
       <div class="welcome-panel">

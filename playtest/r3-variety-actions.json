@@ -1,0 +1,1897 @@
+{
+  "probe": "r3-variety-actions",
+  "contentPools": {
+    "clickMemes": 6,
+    "memeQuotes": 10,
+    "upgradeFlavorLines": 45
+  },
+  "curves": [
+    {
+      "persona": "variety(多玩法党)",
+      "quoteMode": "cycle",
+      "lastNewContentMinute": 29.83,
+      "firstFlatBucketMinute": null,
+      "endTotal": 591285
+    },
+    {
+      "persona": "variety(多玩法党)",
+      "quoteMode": "random",
+      "lastNewContentMinute": 29.83,
+      "firstFlatBucketMinute": null,
+      "endTotal": 591285
+    },
+    {
+      "persona": "clicker(狂点党)",
+      "quoteMode": "cycle",
+      "lastNewContentMinute": 28.47,
+      "firstFlatBucketMinute": null,
+      "endTotal": 5230829
+    },
+    {
+      "persona": "clicker(狂点党)",
+      "quoteMode": "random",
+      "lastNewContentMinute": 28.47,
+      "firstFlatBucketMinute": null,
+      "endTotal": 5230829
+    },
+    {
+      "persona": "casual(休闲党)",
+      "quoteMode": "cycle",
+      "lastNewContentMinute": 29.21,
+      "firstFlatBucketMinute": null,
+      "endTotal": 98524
+    },
+    {
+      "persona": "casual(休闲党)",
+      "quoteMode": "random",
+      "lastNewContentMinute": 29.21,
+      "firstFlatBucketMinute": null,
+      "endTotal": 98524
+    }
+  ],
+  "results": [
+    {
+      "persona": "variety(多玩法党)",
+      "quoteMode": "cycle",
+      "rows": [
+        {
+          "bucket": 0,
+          "minuteRange": [
+            0,
+            5
+          ],
+          "clicks": 684,
+          "buys": 20,
+          "dodgeWins": 2,
+          "caught": 0,
+          "memeTaps": 4,
+          "bossWindows": 2,
+          "newUnlocks": 13,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 0.991,
+          "nonClickActions": 26
+        },
+        {
+          "bucket": 1,
+          "minuteRange": [
+            5,
+            10
+          ],
+          "clicks": 426,
+          "buys": 20,
+          "dodgeWins": 2,
+          "caught": 0,
+          "memeTaps": 5,
+          "bossWindows": 2,
+          "newUnlocks": 9,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.049,
+          "nonClickActions": 27
+        },
+        {
+          "bucket": 2,
+          "minuteRange": [
+            10,
+            15
+          ],
+          "clicks": 552,
+          "buys": 20,
+          "dodgeWins": 3,
+          "caught": 0,
+          "memeTaps": 4,
+          "bossWindows": 3,
+          "newUnlocks": 8,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.081,
+          "nonClickActions": 27
+        },
+        {
+          "bucket": 3,
+          "minuteRange": [
+            15,
+            20
+          ],
+          "clicks": 568,
+          "buys": 20,
+          "dodgeWins": 2,
+          "caught": 0,
+          "memeTaps": 6,
+          "bossWindows": 2,
+          "newUnlocks": 3,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.095,
+          "nonClickActions": 28
+        },
+        {
+          "bucket": 4,
+          "minuteRange": [
+            20,
+            25
+          ],
+          "clicks": 552,
+          "buys": 20,
+          "dodgeWins": 3,
+          "caught": 0,
+          "memeTaps": 4,
+          "bossWindows": 3,
+          "newUnlocks": 3,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.081,
+          "nonClickActions": 27
+        },
+        {
+          "bucket": 5,
+          "minuteRange": [
+            25,
+            30
+          ],
+          "clicks": 552,
+          "buys": 20,
+          "dodgeWins": 3,
+          "caught": 0,
+          "memeTaps": 5,
+          "bossWindows": 3,
+          "newUnlocks": 4,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.136,
+          "nonClickActions": 28
+        }
+      ],
+      "noveltyTimeline": [
+        {
+          "t": 0.08,
+          "kind": "firstBuy",
+          "detail": "coffee"
+        },
+        {
+          "t": 0.08,
+          "kind": "flavor",
+          "detail": "coffee:1"
+        },
+        {
+          "t": 0.76,
+          "kind": "quote",
+          "detail": "在吗？帮个忙"
+        },
+        {
+          "t": 1.08,
+          "kind": "firstBuy",
+          "detail": "phone"
+        },
+        {
+          "t": 1.08,
+          "kind": "flavor",
+          "detail": "phone:1"
+        },
+        {
+          "t": 1.33,
+          "kind": "flavor",
+          "detail": "coffee:5"
+        },
+        {
+          "t": 1.79,
+          "kind": "quote",
+          "detail": "这个需求很简单"
+        },
+        {
+          "t": 2.83,
+          "kind": "flavor",
+          "detail": "phone:5"
+        },
+        {
+          "t": 3,
+          "kind": "quote",
+          "detail": "下班前给我"
+        },
+        {
+          "t": 4.01,
+          "kind": "quote",
+          "detail": "我提个思路啊"
+        },
+        {
+          "t": 4.33,
+          "kind": "flavor",
+          "detail": "phone:10"
+        },
+        {
+          "t": 4.83,
+          "kind": "firstBuy",
+          "detail": "water"
+        },
+        {
+          "t": 4.83,
+          "kind": "flavor",
+          "detail": "water:1"
+        },
+        {
+          "t": 5.04,
+          "kind": "quote",
+          "detail": "对齐一下颗粒度"
+        },
+        {
+          "t": 5.33,
+          "kind": "flavor",
+          "detail": "coffee:10"
+        },
+        {
+          "t": 6.08,
+          "kind": "firstBuy",
+          "detail": "toilet"
+        },
+        {
+          "t": 6.08,
+          "kind": "flavor",
+          "detail": "toilet:1"
+        },
+        {
+          "t": 6.09,
+          "kind": "quote",
+          "detail": "形成闭环"
+        },
+        {
+          "t": 6.87,
+          "kind": "quote",
+          "detail": "底层逻辑"
+        },
+        {
+          "t": 8,
+          "kind": "quote",
+          "detail": "赋能"
+        },
+        {
+          "t": 8.58,
+          "kind": "flavor",
+          "detail": "water:5"
+        },
+        {
+          "t": 9.23,
+          "kind": "quote",
+          "detail": "抓手"
+        },
+        {
+          "t": 10.08,
+          "kind": "flavor",
+          "detail": "toilet:5"
+        },
+        {
+          "t": 10.34,
+          "kind": "quote",
+          "detail": "组合拳"
+        },
+        {
+          "t": 11.58,
+          "kind": "firstBuy",
+          "detail": "group"
+        },
+        {
+          "t": 11.58,
+          "kind": "flavor",
+          "detail": "group:1"
+        },
+        {
+          "t": 13.83,
+          "kind": "firstBuy",
+          "detail": "chair"
+        },
+        {
+          "t": 13.83,
+          "kind": "flavor",
+          "detail": "chair:1"
+        },
+        {
+          "t": 14.33,
+          "kind": "flavor",
+          "detail": "water:10"
+        },
+        {
+          "t": 14.83,
+          "kind": "flavor",
+          "detail": "phone:20"
+        },
+        {
+          "t": 15.83,
+          "kind": "flavor",
+          "detail": "coffee:20"
+        },
+        {
+          "t": 17.83,
+          "kind": "flavor",
+          "detail": "toilet:10"
+        },
+        {
+          "t": 18.83,
+          "kind": "flavor",
+          "detail": "group:5"
+        },
+        {
+          "t": 20.08,
+          "kind": "firstBuy",
+          "detail": "meeting"
+        },
+        {
+          "t": 20.08,
+          "kind": "flavor",
+          "detail": "meeting:1"
+        },
+        {
+          "t": 21.33,
+          "kind": "flavor",
+          "detail": "chair:5"
+        },
+        {
+          "t": 26.58,
+          "kind": "flavor",
+          "detail": "water:20"
+        },
+        {
+          "t": 28.83,
+          "kind": "firstBuy",
+          "detail": "deep"
+        },
+        {
+          "t": 28.83,
+          "kind": "flavor",
+          "detail": "deep:1"
+        },
+        {
+          "t": 29.83,
+          "kind": "flavor",
+          "detail": "meeting:5"
+        }
+      ],
+      "end": {
+        "moyu": 122547.04999999063,
+        "totalEarned": 591285.049999986,
+        "idleRate": 764.2,
+        "clickPower": 185
+      },
+      "economy": {
+        "bossRewards": 15604,
+        "memeEarnings": 10285,
+        "eventShareOfTotal": 4.38,
+        "memeEvents": 28,
+        "bossWindows": 15
+      }
+    },
+    {
+      "persona": "variety(多玩法党)",
+      "quoteMode": "random",
+      "rows": [
+        {
+          "bucket": 0,
+          "minuteRange": [
+            0,
+            5
+          ],
+          "clicks": 684,
+          "buys": 20,
+          "dodgeWins": 2,
+          "caught": 0,
+          "memeTaps": 4,
+          "bossWindows": 2,
+          "newUnlocks": 12,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 0.991,
+          "nonClickActions": 26
+        },
+        {
+          "bucket": 1,
+          "minuteRange": [
+            5,
+            10
+          ],
+          "clicks": 426,
+          "buys": 20,
+          "dodgeWins": 2,
+          "caught": 0,
+          "memeTaps": 5,
+          "bossWindows": 2,
+          "newUnlocks": 7,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.049,
+          "nonClickActions": 27
+        },
+        {
+          "bucket": 2,
+          "minuteRange": [
+            10,
+            15
+          ],
+          "clicks": 552,
+          "buys": 20,
+          "dodgeWins": 3,
+          "caught": 0,
+          "memeTaps": 4,
+          "bossWindows": 3,
+          "newUnlocks": 8,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.081,
+          "nonClickActions": 27
+        },
+        {
+          "bucket": 3,
+          "minuteRange": [
+            15,
+            20
+          ],
+          "clicks": 568,
+          "buys": 20,
+          "dodgeWins": 2,
+          "caught": 0,
+          "memeTaps": 6,
+          "bossWindows": 2,
+          "newUnlocks": 4,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.095,
+          "nonClickActions": 28
+        },
+        {
+          "bucket": 4,
+          "minuteRange": [
+            20,
+            25
+          ],
+          "clicks": 552,
+          "buys": 20,
+          "dodgeWins": 3,
+          "caught": 0,
+          "memeTaps": 4,
+          "bossWindows": 3,
+          "newUnlocks": 4,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.081,
+          "nonClickActions": 27
+        },
+        {
+          "bucket": 5,
+          "minuteRange": [
+            25,
+            30
+          ],
+          "clicks": 552,
+          "buys": 20,
+          "dodgeWins": 3,
+          "caught": 0,
+          "memeTaps": 5,
+          "bossWindows": 3,
+          "newUnlocks": 4,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.136,
+          "nonClickActions": 28
+        }
+      ],
+      "noveltyTimeline": [
+        {
+          "t": 0.08,
+          "kind": "firstBuy",
+          "detail": "coffee"
+        },
+        {
+          "t": 0.08,
+          "kind": "flavor",
+          "detail": "coffee:1"
+        },
+        {
+          "t": 0.76,
+          "kind": "quote",
+          "detail": "对齐一下颗粒度"
+        },
+        {
+          "t": 1.08,
+          "kind": "firstBuy",
+          "detail": "phone"
+        },
+        {
+          "t": 1.08,
+          "kind": "flavor",
+          "detail": "phone:1"
+        },
+        {
+          "t": 1.33,
+          "kind": "flavor",
+          "detail": "coffee:5"
+        },
+        {
+          "t": 1.79,
+          "kind": "quote",
+          "detail": "抓手"
+        },
+        {
+          "t": 2.83,
+          "kind": "flavor",
+          "detail": "phone:5"
+        },
+        {
+          "t": 4.01,
+          "kind": "quote",
+          "detail": "赋能"
+        },
+        {
+          "t": 4.33,
+          "kind": "flavor",
+          "detail": "phone:10"
+        },
+        {
+          "t": 4.83,
+          "kind": "firstBuy",
+          "detail": "water"
+        },
+        {
+          "t": 4.83,
+          "kind": "flavor",
+          "detail": "water:1"
+        },
+        {
+          "t": 5.04,
+          "kind": "quote",
+          "detail": "在吗？帮个忙"
+        },
+        {
+          "t": 5.33,
+          "kind": "flavor",
+          "detail": "coffee:10"
+        },
+        {
+          "t": 6.08,
+          "kind": "firstBuy",
+          "detail": "toilet"
+        },
+        {
+          "t": 6.08,
+          "kind": "flavor",
+          "detail": "toilet:1"
+        },
+        {
+          "t": 6.09,
+          "kind": "quote",
+          "detail": "形成闭环"
+        },
+        {
+          "t": 6.87,
+          "kind": "quote",
+          "detail": "底层逻辑"
+        },
+        {
+          "t": 8.58,
+          "kind": "flavor",
+          "detail": "water:5"
+        },
+        {
+          "t": 10.08,
+          "kind": "flavor",
+          "detail": "toilet:5"
+        },
+        {
+          "t": 11.29,
+          "kind": "quote",
+          "detail": "组合拳"
+        },
+        {
+          "t": 11.58,
+          "kind": "firstBuy",
+          "detail": "group"
+        },
+        {
+          "t": 11.58,
+          "kind": "flavor",
+          "detail": "group:1"
+        },
+        {
+          "t": 13.83,
+          "kind": "firstBuy",
+          "detail": "chair"
+        },
+        {
+          "t": 13.83,
+          "kind": "flavor",
+          "detail": "chair:1"
+        },
+        {
+          "t": 14.33,
+          "kind": "flavor",
+          "detail": "water:10"
+        },
+        {
+          "t": 14.83,
+          "kind": "flavor",
+          "detail": "phone:20"
+        },
+        {
+          "t": 15.83,
+          "kind": "flavor",
+          "detail": "coffee:20"
+        },
+        {
+          "t": 16.99,
+          "kind": "quote",
+          "detail": "我提个思路啊"
+        },
+        {
+          "t": 17.83,
+          "kind": "flavor",
+          "detail": "toilet:10"
+        },
+        {
+          "t": 18.83,
+          "kind": "flavor",
+          "detail": "group:5"
+        },
+        {
+          "t": 20.08,
+          "kind": "firstBuy",
+          "detail": "meeting"
+        },
+        {
+          "t": 20.08,
+          "kind": "flavor",
+          "detail": "meeting:1"
+        },
+        {
+          "t": 21.03,
+          "kind": "quote",
+          "detail": "下班前给我"
+        },
+        {
+          "t": 21.33,
+          "kind": "flavor",
+          "detail": "chair:5"
+        },
+        {
+          "t": 26.58,
+          "kind": "flavor",
+          "detail": "water:20"
+        },
+        {
+          "t": 28.83,
+          "kind": "firstBuy",
+          "detail": "deep"
+        },
+        {
+          "t": 28.83,
+          "kind": "flavor",
+          "detail": "deep:1"
+        },
+        {
+          "t": 29.83,
+          "kind": "flavor",
+          "detail": "meeting:5"
+        }
+      ],
+      "end": {
+        "moyu": 122547.04999999063,
+        "totalEarned": 591285.049999986,
+        "idleRate": 764.2,
+        "clickPower": 185
+      },
+      "economy": {
+        "bossRewards": 15604,
+        "memeEarnings": 10285,
+        "eventShareOfTotal": 4.38,
+        "memeEvents": 28,
+        "bossWindows": 15
+      }
+    },
+    {
+      "persona": "clicker(狂点党)",
+      "quoteMode": "cycle",
+      "rows": [
+        {
+          "bucket": 0,
+          "minuteRange": [
+            0,
+            5
+          ],
+          "clicks": 852,
+          "buys": 60,
+          "dodgeWins": 2,
+          "caught": 0,
+          "memeTaps": 4,
+          "bossWindows": 2,
+          "newUnlocks": 19,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 0.523,
+          "nonClickActions": 66
+        },
+        {
+          "bucket": 1,
+          "minuteRange": [
+            5,
+            10
+          ],
+          "clicks": 852,
+          "buys": 60,
+          "dodgeWins": 2,
+          "caught": 0,
+          "memeTaps": 5,
+          "bossWindows": 2,
+          "newUnlocks": 13,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 0.573,
+          "nonClickActions": 67
+        },
+        {
+          "bucket": 2,
+          "minuteRange": [
+            10,
+            15
+          ],
+          "clicks": 828,
+          "buys": 60,
+          "dodgeWins": 3,
+          "caught": 0,
+          "memeTaps": 4,
+          "bossWindows": 3,
+          "newUnlocks": 7,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 0.586,
+          "nonClickActions": 67
+        },
+        {
+          "bucket": 3,
+          "minuteRange": [
+            15,
+            20
+          ],
+          "clicks": 852,
+          "buys": 46,
+          "dodgeWins": 2,
+          "caught": 0,
+          "memeTaps": 6,
+          "bossWindows": 2,
+          "newUnlocks": 3,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 0.725,
+          "nonClickActions": 54
+        },
+        {
+          "bucket": 4,
+          "minuteRange": [
+            20,
+            25
+          ],
+          "clicks": 828,
+          "buys": 29,
+          "dodgeWins": 3,
+          "caught": 0,
+          "memeTaps": 4,
+          "bossWindows": 3,
+          "newUnlocks": 3,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 0.902,
+          "nonClickActions": 36
+        },
+        {
+          "bucket": 5,
+          "minuteRange": [
+            25,
+            30
+          ],
+          "clicks": 828,
+          "buys": 23,
+          "dodgeWins": 3,
+          "caught": 0,
+          "memeTaps": 5,
+          "bossWindows": 3,
+          "newUnlocks": 2,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.07,
+          "nonClickActions": 31
+        }
+      ],
+      "noveltyTimeline": [
+        {
+          "t": 0.08,
+          "kind": "firstBuy",
+          "detail": "coffee"
+        },
+        {
+          "t": 0.08,
+          "kind": "flavor",
+          "detail": "coffee:1"
+        },
+        {
+          "t": 0.41,
+          "kind": "flavor",
+          "detail": "coffee:5"
+        },
+        {
+          "t": 0.76,
+          "kind": "quote",
+          "detail": "在吗？帮个忙"
+        },
+        {
+          "t": 0.83,
+          "kind": "firstBuy",
+          "detail": "phone"
+        },
+        {
+          "t": 0.83,
+          "kind": "flavor",
+          "detail": "phone:1"
+        },
+        {
+          "t": 0.91,
+          "kind": "flavor",
+          "detail": "coffee:10"
+        },
+        {
+          "t": 1.5,
+          "kind": "flavor",
+          "detail": "phone:5"
+        },
+        {
+          "t": 1.66,
+          "kind": "firstBuy",
+          "detail": "water"
+        },
+        {
+          "t": 1.66,
+          "kind": "flavor",
+          "detail": "water:1"
+        },
+        {
+          "t": 1.79,
+          "kind": "quote",
+          "detail": "这个需求很简单"
+        },
+        {
+          "t": 2.66,
+          "kind": "flavor",
+          "detail": "water:5"
+        },
+        {
+          "t": 2.75,
+          "kind": "flavor",
+          "detail": "phone:10"
+        },
+        {
+          "t": 3,
+          "kind": "quote",
+          "detail": "下班前给我"
+        },
+        {
+          "t": 3.08,
+          "kind": "flavor",
+          "detail": "coffee:20"
+        },
+        {
+          "t": 3.91,
+          "kind": "flavor",
+          "detail": "water:10"
+        },
+        {
+          "t": 4.01,
+          "kind": "quote",
+          "detail": "我提个思路啊"
+        },
+        {
+          "t": 4.91,
+          "kind": "firstBuy",
+          "detail": "toilet"
+        },
+        {
+          "t": 4.91,
+          "kind": "flavor",
+          "detail": "toilet:1"
+        },
+        {
+          "t": 5.04,
+          "kind": "quote",
+          "detail": "对齐一下颗粒度"
+        },
+        {
+          "t": 5.41,
+          "kind": "flavor",
+          "detail": "phone:20"
+        },
+        {
+          "t": 5.66,
+          "kind": "firstBuy",
+          "detail": "chair"
+        },
+        {
+          "t": 5.66,
+          "kind": "flavor",
+          "detail": "chair:1"
+        },
+        {
+          "t": 6.09,
+          "kind": "quote",
+          "detail": "形成闭环"
+        },
+        {
+          "t": 6.41,
+          "kind": "flavor",
+          "detail": "toilet:5"
+        },
+        {
+          "t": 6.87,
+          "kind": "quote",
+          "detail": "底层逻辑"
+        },
+        {
+          "t": 7.33,
+          "kind": "flavor",
+          "detail": "chair:5"
+        },
+        {
+          "t": 7.41,
+          "kind": "flavor",
+          "detail": "water:20"
+        },
+        {
+          "t": 8,
+          "kind": "quote",
+          "detail": "赋能"
+        },
+        {
+          "t": 8.5,
+          "kind": "flavor",
+          "detail": "toilet:10"
+        },
+        {
+          "t": 9.23,
+          "kind": "quote",
+          "detail": "抓手"
+        },
+        {
+          "t": 9.41,
+          "kind": "flavor",
+          "detail": "chair:10"
+        },
+        {
+          "t": 10.34,
+          "kind": "quote",
+          "detail": "组合拳"
+        },
+        {
+          "t": 10.5,
+          "kind": "firstBuy",
+          "detail": "group"
+        },
+        {
+          "t": 10.5,
+          "kind": "flavor",
+          "detail": "group:1"
+        },
+        {
+          "t": 12.5,
+          "kind": "flavor",
+          "detail": "group:5"
+        },
+        {
+          "t": 13.16,
+          "kind": "flavor",
+          "detail": "toilet:20"
+        },
+        {
+          "t": 14.25,
+          "kind": "flavor",
+          "detail": "chair:20"
+        },
+        {
+          "t": 15,
+          "kind": "flavor",
+          "detail": "group:10"
+        },
+        {
+          "t": 15.08,
+          "kind": "flavor",
+          "detail": "coffee:50"
+        },
+        {
+          "t": 17.16,
+          "kind": "firstBuy",
+          "detail": "meeting"
+        },
+        {
+          "t": 17.16,
+          "kind": "flavor",
+          "detail": "meeting:1"
+        },
+        {
+          "t": 21.3,
+          "kind": "flavor",
+          "detail": "meeting:5"
+        },
+        {
+          "t": 21.96,
+          "kind": "flavor",
+          "detail": "phone:50"
+        },
+        {
+          "t": 23.36,
+          "kind": "flavor",
+          "detail": "group:20"
+        },
+        {
+          "t": 27.85,
+          "kind": "flavor",
+          "detail": "meeting:10"
+        },
+        {
+          "t": 28.47,
+          "kind": "flavor",
+          "detail": "water:50"
+        }
+      ],
+      "end": {
+        "moyu": 52992.049999990384,
+        "totalEarned": 5230829.049999703,
+        "idleRate": 2640.2,
+        "clickPower": 1633
+      },
+      "economy": {
+        "bossRewards": 70465,
+        "memeEarnings": 99650,
+        "eventShareOfTotal": 3.25,
+        "memeEvents": 28,
+        "bossWindows": 15
+      }
+    },
+    {
+      "persona": "clicker(狂点党)",
+      "quoteMode": "random",
+      "rows": [
+        {
+          "bucket": 0,
+          "minuteRange": [
+            0,
+            5
+          ],
+          "clicks": 852,
+          "buys": 60,
+          "dodgeWins": 2,
+          "caught": 0,
+          "memeTaps": 4,
+          "bossWindows": 2,
+          "newUnlocks": 18,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 0.523,
+          "nonClickActions": 66
+        },
+        {
+          "bucket": 1,
+          "minuteRange": [
+            5,
+            10
+          ],
+          "clicks": 852,
+          "buys": 60,
+          "dodgeWins": 2,
+          "caught": 0,
+          "memeTaps": 5,
+          "bossWindows": 2,
+          "newUnlocks": 11,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 0.573,
+          "nonClickActions": 67
+        },
+        {
+          "bucket": 2,
+          "minuteRange": [
+            10,
+            15
+          ],
+          "clicks": 828,
+          "buys": 60,
+          "dodgeWins": 3,
+          "caught": 0,
+          "memeTaps": 4,
+          "bossWindows": 3,
+          "newUnlocks": 7,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 0.586,
+          "nonClickActions": 67
+        },
+        {
+          "bucket": 3,
+          "minuteRange": [
+            15,
+            20
+          ],
+          "clicks": 852,
+          "buys": 46,
+          "dodgeWins": 2,
+          "caught": 0,
+          "memeTaps": 6,
+          "bossWindows": 2,
+          "newUnlocks": 4,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 0.725,
+          "nonClickActions": 54
+        },
+        {
+          "bucket": 4,
+          "minuteRange": [
+            20,
+            25
+          ],
+          "clicks": 828,
+          "buys": 29,
+          "dodgeWins": 3,
+          "caught": 0,
+          "memeTaps": 4,
+          "bossWindows": 3,
+          "newUnlocks": 4,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 0.902,
+          "nonClickActions": 36
+        },
+        {
+          "bucket": 5,
+          "minuteRange": [
+            25,
+            30
+          ],
+          "clicks": 828,
+          "buys": 23,
+          "dodgeWins": 3,
+          "caught": 0,
+          "memeTaps": 5,
+          "bossWindows": 3,
+          "newUnlocks": 2,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.07,
+          "nonClickActions": 31
+        }
+      ],
+      "noveltyTimeline": [
+        {
+          "t": 0.08,
+          "kind": "firstBuy",
+          "detail": "coffee"
+        },
+        {
+          "t": 0.08,
+          "kind": "flavor",
+          "detail": "coffee:1"
+        },
+        {
+          "t": 0.41,
+          "kind": "flavor",
+          "detail": "coffee:5"
+        },
+        {
+          "t": 0.76,
+          "kind": "quote",
+          "detail": "对齐一下颗粒度"
+        },
+        {
+          "t": 0.83,
+          "kind": "firstBuy",
+          "detail": "phone"
+        },
+        {
+          "t": 0.83,
+          "kind": "flavor",
+          "detail": "phone:1"
+        },
+        {
+          "t": 0.91,
+          "kind": "flavor",
+          "detail": "coffee:10"
+        },
+        {
+          "t": 1.5,
+          "kind": "flavor",
+          "detail": "phone:5"
+        },
+        {
+          "t": 1.66,
+          "kind": "firstBuy",
+          "detail": "water"
+        },
+        {
+          "t": 1.66,
+          "kind": "flavor",
+          "detail": "water:1"
+        },
+        {
+          "t": 1.79,
+          "kind": "quote",
+          "detail": "抓手"
+        },
+        {
+          "t": 2.66,
+          "kind": "flavor",
+          "detail": "water:5"
+        },
+        {
+          "t": 2.75,
+          "kind": "flavor",
+          "detail": "phone:10"
+        },
+        {
+          "t": 3.08,
+          "kind": "flavor",
+          "detail": "coffee:20"
+        },
+        {
+          "t": 3.91,
+          "kind": "flavor",
+          "detail": "water:10"
+        },
+        {
+          "t": 4.01,
+          "kind": "quote",
+          "detail": "赋能"
+        },
+        {
+          "t": 4.91,
+          "kind": "firstBuy",
+          "detail": "toilet"
+        },
+        {
+          "t": 4.91,
+          "kind": "flavor",
+          "detail": "toilet:1"
+        },
+        {
+          "t": 5.04,
+          "kind": "quote",
+          "detail": "在吗？帮个忙"
+        },
+        {
+          "t": 5.41,
+          "kind": "flavor",
+          "detail": "phone:20"
+        },
+        {
+          "t": 5.66,
+          "kind": "firstBuy",
+          "detail": "chair"
+        },
+        {
+          "t": 5.66,
+          "kind": "flavor",
+          "detail": "chair:1"
+        },
+        {
+          "t": 6.09,
+          "kind": "quote",
+          "detail": "形成闭环"
+        },
+        {
+          "t": 6.41,
+          "kind": "flavor",
+          "detail": "toilet:5"
+        },
+        {
+          "t": 6.87,
+          "kind": "quote",
+          "detail": "底层逻辑"
+        },
+        {
+          "t": 7.33,
+          "kind": "flavor",
+          "detail": "chair:5"
+        },
+        {
+          "t": 7.41,
+          "kind": "flavor",
+          "detail": "water:20"
+        },
+        {
+          "t": 8.5,
+          "kind": "flavor",
+          "detail": "toilet:10"
+        },
+        {
+          "t": 9.41,
+          "kind": "flavor",
+          "detail": "chair:10"
+        },
+        {
+          "t": 10.5,
+          "kind": "firstBuy",
+          "detail": "group"
+        },
+        {
+          "t": 10.5,
+          "kind": "flavor",
+          "detail": "group:1"
+        },
+        {
+          "t": 11.29,
+          "kind": "quote",
+          "detail": "组合拳"
+        },
+        {
+          "t": 12.5,
+          "kind": "flavor",
+          "detail": "group:5"
+        },
+        {
+          "t": 13.16,
+          "kind": "flavor",
+          "detail": "toilet:20"
+        },
+        {
+          "t": 14.25,
+          "kind": "flavor",
+          "detail": "chair:20"
+        },
+        {
+          "t": 15,
+          "kind": "flavor",
+          "detail": "group:10"
+        },
+        {
+          "t": 15.08,
+          "kind": "flavor",
+          "detail": "coffee:50"
+        },
+        {
+          "t": 16.99,
+          "kind": "quote",
+          "detail": "我提个思路啊"
+        },
+        {
+          "t": 17.16,
+          "kind": "firstBuy",
+          "detail": "meeting"
+        },
+        {
+          "t": 17.16,
+          "kind": "flavor",
+          "detail": "meeting:1"
+        },
+        {
+          "t": 21.03,
+          "kind": "quote",
+          "detail": "下班前给我"
+        },
+        {
+          "t": 21.3,
+          "kind": "flavor",
+          "detail": "meeting:5"
+        },
+        {
+          "t": 21.96,
+          "kind": "flavor",
+          "detail": "phone:50"
+        },
+        {
+          "t": 23.36,
+          "kind": "flavor",
+          "detail": "group:20"
+        },
+        {
+          "t": 27.85,
+          "kind": "flavor",
+          "detail": "meeting:10"
+        },
+        {
+          "t": 28.47,
+          "kind": "flavor",
+          "detail": "water:50"
+        }
+      ],
+      "end": {
+        "moyu": 52992.049999990384,
+        "totalEarned": 5230829.049999703,
+        "idleRate": 2640.2,
+        "clickPower": 1633
+      },
+      "economy": {
+        "bossRewards": 70465,
+        "memeEarnings": 99650,
+        "eventShareOfTotal": 3.25,
+        "memeEvents": 28,
+        "bossWindows": 15
+      }
+    },
+    {
+      "persona": "casual(休闲党)",
+      "quoteMode": "cycle",
+      "rows": [
+        {
+          "bucket": 0,
+          "minuteRange": [
+            0,
+            5
+          ],
+          "clicks": 284,
+          "buys": 10,
+          "dodgeWins": 2,
+          "caught": 0,
+          "memeTaps": 4,
+          "bossWindows": 2,
+          "newUnlocks": 9,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.299,
+          "nonClickActions": 16
+        },
+        {
+          "bucket": 1,
+          "minuteRange": [
+            5,
+            10
+          ],
+          "clicks": 284,
+          "buys": 10,
+          "dodgeWins": 2,
+          "caught": 0,
+          "memeTaps": 5,
+          "bossWindows": 2,
+          "newUnlocks": 9,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.333,
+          "nonClickActions": 17
+        },
+        {
+          "bucket": 2,
+          "minuteRange": [
+            10,
+            15
+          ],
+          "clicks": 276,
+          "buys": 10,
+          "dodgeWins": 3,
+          "caught": 0,
+          "memeTaps": 4,
+          "bossWindows": 3,
+          "newUnlocks": 1,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.383,
+          "nonClickActions": 17
+        },
+        {
+          "bucket": 3,
+          "minuteRange": [
+            15,
+            20
+          ],
+          "clicks": 284,
+          "buys": 10,
+          "dodgeWins": 2,
+          "caught": 0,
+          "memeTaps": 6,
+          "bossWindows": 2,
+          "newUnlocks": 3,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.352,
+          "nonClickActions": 18
+        },
+        {
+          "bucket": 4,
+          "minuteRange": [
+            20,
+            25
+          ],
+          "clicks": 276,
+          "buys": 10,
+          "dodgeWins": 3,
+          "caught": 0,
+          "memeTaps": 4,
+          "bossWindows": 3,
+          "newUnlocks": 1,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.383,
+          "nonClickActions": 17
+        },
+        {
+          "bucket": 5,
+          "minuteRange": [
+            25,
+            30
+          ],
+          "clicks": 276,
+          "buys": 10,
+          "dodgeWins": 3,
+          "caught": 0,
+          "memeTaps": 5,
+          "bossWindows": 3,
+          "newUnlocks": 2,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.415,
+          "nonClickActions": 18
+        }
+      ],
+      "noveltyTimeline": [
+        {
+          "t": 0.21,
+          "kind": "firstBuy",
+          "detail": "coffee"
+        },
+        {
+          "t": 0.21,
+          "kind": "flavor",
+          "detail": "coffee:1"
+        },
+        {
+          "t": 0.76,
+          "kind": "quote",
+          "detail": "在吗？帮个忙"
+        },
+        {
+          "t": 1.79,
+          "kind": "quote",
+          "detail": "这个需求很简单"
+        },
+        {
+          "t": 2.21,
+          "kind": "flavor",
+          "detail": "coffee:5"
+        },
+        {
+          "t": 3,
+          "kind": "quote",
+          "detail": "下班前给我"
+        },
+        {
+          "t": 4.01,
+          "kind": "quote",
+          "detail": "我提个思路啊"
+        },
+        {
+          "t": 4.71,
+          "kind": "firstBuy",
+          "detail": "phone"
+        },
+        {
+          "t": 4.71,
+          "kind": "flavor",
+          "detail": "phone:1"
+        },
+        {
+          "t": 5.04,
+          "kind": "quote",
+          "detail": "对齐一下颗粒度"
+        },
+        {
+          "t": 5.21,
+          "kind": "flavor",
+          "detail": "coffee:10"
+        },
+        {
+          "t": 6.09,
+          "kind": "quote",
+          "detail": "形成闭环"
+        },
+        {
+          "t": 6.87,
+          "kind": "quote",
+          "detail": "底层逻辑"
+        },
+        {
+          "t": 8,
+          "kind": "quote",
+          "detail": "赋能"
+        },
+        {
+          "t": 8.71,
+          "kind": "flavor",
+          "detail": "phone:5"
+        },
+        {
+          "t": 9.23,
+          "kind": "quote",
+          "detail": "抓手"
+        },
+        {
+          "t": 9.71,
+          "kind": "firstBuy",
+          "detail": "water"
+        },
+        {
+          "t": 9.71,
+          "kind": "flavor",
+          "detail": "water:1"
+        },
+        {
+          "t": 10.34,
+          "kind": "quote",
+          "detail": "组合拳"
+        },
+        {
+          "t": 15.71,
+          "kind": "flavor",
+          "detail": "water:5"
+        },
+        {
+          "t": 16.21,
+          "kind": "flavor",
+          "detail": "phone:10"
+        },
+        {
+          "t": 18.21,
+          "kind": "flavor",
+          "detail": "coffee:20"
+        },
+        {
+          "t": 23.21,
+          "kind": "flavor",
+          "detail": "water:10"
+        },
+        {
+          "t": 29.21,
+          "kind": "firstBuy",
+          "detail": "toilet"
+        },
+        {
+          "t": 29.21,
+          "kind": "flavor",
+          "detail": "toilet:1"
+        }
+      ],
+      "end": {
+        "moyu": 85800.30000000559,
+        "totalEarned": 98524.30000000622,
+        "idleRate": 41.2,
+        "clickPower": 83
+      },
+      "economy": {
+        "bossRewards": 1566,
+        "memeEarnings": 5145,
+        "eventShareOfTotal": 6.81,
+        "memeEvents": 28,
+        "bossWindows": 15
+      }
+    },
+    {
+      "persona": "casual(休闲党)",
+      "quoteMode": "random",
+      "rows": [
+        {
+          "bucket": 0,
+          "minuteRange": [
+            0,
+            5
+          ],
+          "clicks": 284,
+          "buys": 10,
+          "dodgeWins": 2,
+          "caught": 0,
+          "memeTaps": 4,
+          "bossWindows": 2,
+          "newUnlocks": 8,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.299,
+          "nonClickActions": 16
+        },
+        {
+          "bucket": 1,
+          "minuteRange": [
+            5,
+            10
+          ],
+          "clicks": 284,
+          "buys": 10,
+          "dodgeWins": 2,
+          "caught": 0,
+          "memeTaps": 5,
+          "bossWindows": 2,
+          "newUnlocks": 7,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.333,
+          "nonClickActions": 17
+        },
+        {
+          "bucket": 2,
+          "minuteRange": [
+            10,
+            15
+          ],
+          "clicks": 276,
+          "buys": 10,
+          "dodgeWins": 3,
+          "caught": 0,
+          "memeTaps": 4,
+          "bossWindows": 3,
+          "newUnlocks": 1,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.383,
+          "nonClickActions": 17
+        },
+        {
+          "bucket": 3,
+          "minuteRange": [
+            15,
+            20
+          ],
+          "clicks": 284,
+          "buys": 10,
+          "dodgeWins": 2,
+          "caught": 0,
+          "memeTaps": 6,
+          "bossWindows": 2,
+          "newUnlocks": 4,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.352,
+          "nonClickActions": 18
+        },
+        {
+          "bucket": 4,
+          "minuteRange": [
+            20,
+            25
+          ],
+          "clicks": 276,
+          "buys": 10,
+          "dodgeWins": 3,
+          "caught": 0,
+          "memeTaps": 4,
+          "bossWindows": 3,
+          "newUnlocks": 2,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.383,
+          "nonClickActions": 17
+        },
+        {
+          "bucket": 5,
+          "minuteRange": [
+            25,
+            30
+          ],
+          "clicks": 276,
+          "buys": 10,
+          "dodgeWins": 3,
+          "caught": 0,
+          "memeTaps": 5,
+          "bossWindows": 3,
+          "newUnlocks": 2,
+          "distinctActionTypes": 4,
+          "eventLayerEntropy": 1.415,
+          "nonClickActions": 18
+        }
+      ],
+      "noveltyTimeline": [
+        {
+          "t": 0.21,
+          "kind": "firstBuy",
+          "detail": "coffee"
+        },
+        {
+          "t": 0.21,
+          "kind": "flavor",
+          "detail": "coffee:1"
+        },
+        {
+          "t": 0.76,
+          "kind": "quote",
+          "detail": "对齐一下颗粒度"
+        },
+        {
+          "t": 1.79,
+          "kind": "quote",
+          "detail": "抓手"
+        },
+        {
+          "t": 2.21,
+          "kind": "flavor",
+          "detail": "coffee:5"
+        },
+        {
+          "t": 4.01,
+          "kind": "quote",
+          "detail": "赋能"
+        },
+        {
+          "t": 4.71,
+          "kind": "firstBuy",
+          "detail": "phone"
+        },
+        {
+          "t": 4.71,
+          "kind": "flavor",
+          "detail": "phone:1"
+        },
+        {
+          "t": 5.04,
+          "kind": "quote",
+          "detail": "在吗？帮个忙"
+        },
+        {
+          "t": 5.21,
+          "kind": "flavor",
+          "detail": "coffee:10"
+        },
+        {
+          "t": 6.09,
+          "kind": "quote",
+          "detail": "形成闭环"
+        },
+        {
+          "t": 6.87,
+          "kind": "quote",
+          "detail": "底层逻辑"
+        },
+        {
+          "t": 8.71,
+          "kind": "flavor",
+          "detail": "phone:5"
+        },
+        {
+          "t": 9.71,
+          "kind": "firstBuy",
+          "detail": "water"
+        },
+        {
+          "t": 9.71,
+          "kind": "flavor",
+          "detail": "water:1"
+        },
+        {
+          "t": 11.29,
+          "kind": "quote",
+          "detail": "组合拳"
+        },
+        {
+          "t": 15.71,
+          "kind": "flavor",
+          "detail": "water:5"
+        },
+        {
+          "t": 16.21,
+          "kind": "flavor",
+          "detail": "phone:10"
+        },
+        {
+          "t": 16.99,
+          "kind": "quote",
+          "detail": "我提个思路啊"
+        },
+        {
+          "t": 18.21,
+          "kind": "flavor",
+          "detail": "coffee:20"
+        },
+        {
+          "t": 21.03,
+          "kind": "quote",
+          "detail": "下班前给我"
+        },
+        {
+          "t": 23.21,
+          "kind": "flavor",
+          "detail": "water:10"
+        },
+        {
+          "t": 29.21,
+          "kind": "firstBuy",
+          "detail": "toilet"
+        },
+        {
+          "t": 29.21,
+          "kind": "flavor",
+          "detail": "toilet:1"
+        }
+      ],
+      "end": {
+        "moyu": 85800.30000000559,
+        "totalEarned": 98524.30000000622,
+        "idleRate": 41.2,
+        "clickPower": 83
+      },
+      "economy": {
+        "bossRewards": 1566,
+        "memeEarnings": 5145,
+        "eventShareOfTotal": 6.81,
+        "memeEvents": 28,
+        "bossWindows": 15
+      }
+    }
+  ]
+}

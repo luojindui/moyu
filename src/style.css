@@ -215,3 +215,130 @@ body {
   font-size: 14px;
   z-index: 99;
 }
+
+/* ---------- 日报 / 图鉴 ---------- */
+#btn-journal {
+  margin-left: auto;
+  padding: 2px 8px;
+  font-size: 15px;
+  background: #3a3a52;
+  color: #f4f1e8;
+  border: 2px solid #55557a;
+  border-radius: 4px;
+  font-family: inherit;
+}
+#journal {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 18, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 12;
+}
+#journal.hidden {
+  display: none;
+}
+.journal-panel {
+  width: min(340px, 88vw);
+  max-height: 82vh;
+  overflow-y: auto;
+  padding: 16px;
+  background: #2f2f44;
+  border: 4px solid #7ec8ff;
+  border-radius: 6px;
+}
+.journal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.journal-head h2 {
+  font-size: 18px;
+}
+#journal-close {
+  background: none;
+  border: none;
+  color: #a8a493;
+  font-size: 18px;
+  font-family: inherit;
+}
+.journal-meta {
+  margin: 6px 0 10px;
+  font-size: 12px;
+  color: #a8a493;
+}
+#journal-goals {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.goal {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 9px;
+  background: #3a3a52;
+  border: 2px solid #55557a;
+  border-radius: 4px;
+  font-size: 13px;
+}
+.goal.done {
+  border-color: #4c9e52;
+  background: #33443a;
+}
+.goal-mark {
+  color: #8be28b;
+  width: 14px;
+}
+.goal-desc {
+  flex: 1;
+}
+.goal-progress {
+  color: #ffd76e;
+  font-size: 12px;
+}
+#journal-claim {
+  width: 100%;
+  margin: 10px 0 14px;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #10241a;
+  background: #8be28b;
+  border: 3px solid #4c9e52;
+  border-radius: 4px;
+  font-family: inherit;
+}
+#journal-claim:disabled {
+  background: #55557a;
+  color: #a8a493;
+  border-color: #43435c;
+}
+.journal-panel h3 {
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.journal-panel h3 small {
+  font-size: 12px;
+  color: #ffd76e;
+}
+.journal-collect {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #b8b39c;
+}
+.journal-collect b {
+  color: #7ec8ff;
+}
+.journal-latest {
+  margin-top: 10px;
+  font-size: 11px;
+  font-style: italic;
+  color: #8f9fd0;
+}

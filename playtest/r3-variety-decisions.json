@@ -1,0 +1,156 @@
+{
+  "probe": "r3-variety-decisions",
+  "samples": 361,
+  "affordableGt1Pct": 98.6,
+  "affordableDist": [
+    {
+      "k": "0",
+      "pct": 0.8
+    },
+    {
+      "k": "1",
+      "pct": 0.6
+    },
+    {
+      "k": "2",
+      "pct": 0.8
+    },
+    {
+      "k": "3",
+      "pct": 3.3
+    },
+    {
+      "k": "4",
+      "pct": 3
+    },
+    {
+      "k": "5+",
+      "pct": 91.4
+    }
+  ],
+  "starChurn": {
+    "idleSwitches": 46,
+    "clickSwitches": 62,
+    "per10minIdle": 15.3,
+    "per10minClick": 20.7,
+    "top3Changes": 37,
+    "per10minTop3": 12.3
+  },
+  "starHolders": {
+    "phone": "31.6%",
+    "toilet": "8.3%",
+    "group": "18.8%",
+    "meeting": "6.6%",
+    "deep": "34.6%"
+  },
+  "milestoneJumps": [
+    {
+      "id": "coffee",
+      "normalGain": 1,
+      "jumpGain": 21,
+      "jumpMultiple": 21,
+      "gapFrom0": 20
+    },
+    {
+      "id": "water",
+      "normalGain": 2,
+      "jumpGain": 4,
+      "jumpMultiple": 2,
+      "gapFrom0": 15
+    },
+    {
+      "id": "chair",
+      "normalGain": 5,
+      "jumpGain": 10,
+      "jumpMultiple": 2,
+      "gapFrom0": 10
+    },
+    {
+      "id": "phone",
+      "normalGain": 1,
+      "jumpGain": 2,
+      "jumpMultiple": 2,
+      "gapFrom0": 5
+    },
+    {
+      "id": "toilet",
+      "normalGain": 5,
+      "jumpGain": 105,
+      "jumpMultiple": 21,
+      "gapFrom0": 20
+    },
+    {
+      "id": "group",
+      "normalGain": 15,
+      "jumpGain": 30,
+      "jumpMultiple": 2,
+      "gapFrom0": 15
+    },
+    {
+      "id": "meeting",
+      "normalGain": 50,
+      "jumpGain": 100,
+      "jumpMultiple": 2,
+      "gapFrom0": 10
+    },
+    {
+      "id": "deep",
+      "normalGain": 180,
+      "jumpGain": 360,
+      "jumpMultiple": 2,
+      "gapFrom0": 5
+    },
+    {
+      "id": "retire",
+      "normalGain": 700,
+      "jumpGain": 14700,
+      "jumpMultiple": 21,
+      "gapFrom0": 20
+    }
+  ],
+  "strategyCompare": [
+    {
+      "strategy": "cheapest",
+      "endTotalEarned": 1099650,
+      "endMoyu": 529819,
+      "levels": {
+        "coffee": 49,
+        "phone": 41,
+        "water": 36,
+        "toilet": 23,
+        "chair": 21,
+        "group": 10
+      }
+    },
+    {
+      "strategy": "dearest",
+      "endTotalEarned": 2630495,
+      "endMoyu": 16656,
+      "levels": {
+        "coffee": 2,
+        "phone": 31,
+        "water": 49,
+        "toilet": 34,
+        "chair": 33,
+        "group": 22,
+        "meeting": 9
+      }
+    },
+    {
+      "strategy": "value",
+      "endTotalEarned": 1401917,
+      "endMoyu": 63916,
+      "levels": {
+        "coffee": 37,
+        "phone": 38,
+        "water": 28,
+        "toilet": 27,
+        "group": 21,
+        "chair": 20,
+        "meeting": 8,
+        "deep": 1
+      }
+    }
+  ],
+  "strategySpreadPct": 139.2
+}

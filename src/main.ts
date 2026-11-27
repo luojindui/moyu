@@ -1,6 +1,6 @@
 import "./style.css";
-import { initialState, gain } from "./engine/state";
-import { doClick, buyUpgrade, clickPowerOf } from "./engine/actions";
+import { initialState } from "./engine/state";
+import { doClick, buyUpgrade, clickPowerOf, COMBO_WINDOW_S, COMBO_BREAK_S, COMBO_MAX } from "./engine/actions";
 import { advance } from "./engine/tick";
 import { settleReturn } from "./engine/resume";
 import { CLICK_MEMES, MEME_QUOTES } from "./engine/flavor";
@@ -10,12 +10,15 @@ import {
   scheduleEvents,
   onBossTap,
   onMemeTap,
-  bossSurviveReward,
+  finishPatrol,
   type EventState,
 } from "./engine/events";
+import { collectQuote, syncFlavorCollection } from "./engine/collection";
+import { ensureDaily, dailyTrack, claimDaily } from "./engine/daily";
 import { Hud } from "./ui/hud";
 import { Shop } from "./ui/shop";
 import { Welcome } from "./ui/welcome";
+import { Journal } from "./ui/journal";
 import { Scene, SPRITE_MAP } from "./render/scene";
 import { SpriteGrid, frameActivity } from "./render/sprites";
 
@@ -57,12 +60,27 @@ async function boot(): Promise<void> {
   const scene = new Scene({});
   const hud = new Hud();
   const welcome = new Welcome();
+  const today = (): string => new Date().toLocaleDateString("sv-SE"); // YYYY-MM-DD（本地时区）
+  // 读档迁移：补齐历史彩蛋档 + 保证今日日报存在
+  state = syncFlavorCollection(state);
+  state = ensureDaily(state, today(), Math.random);
+  const journal = new Journal(() => {
+    const r = claimDaily(state, today());
+    if (r.claimedReward !== null) {
+      state = r.state;
+      hud.refresh(state);
+      journal.refresh(state);
+      serialize(state, localStorageAdapter, Date.now());
+    }
+  });
   const shop = new Shop((id) => {
     const next = buyUpgrade(state, id);
     if (next) {
-      state = next;
-      hud.refresh(state);
+      state = syncFlavorCollection(next); // 购买后同步新解锁的彩蛋档
       shop.refresh(state);
+      journal.refresh(state);
+      state = { ...state, daily: state.daily ? dailyTrack(state.daily, "buy") : null };
+      hud.refresh(state);
       serialize(state, localStorageAdapter, Date.now());
     }
   });
@@ -83,19 +101,32 @@ async function boot(): Promise<void> {
   fit();
   window.addEventListener("resize", fit);
 
-  // 3) 输入：主指针才算点击（防多指连点刷）；巡逻中点击会被逮
+  // 3) 输入：主指针才算点击（防多指连点刷）；巡逻中点击 = 偷点（有收入也有风险）
   const es: EventState = newEventState();
   scene.events = es;
+  let combo = 0; // 连击链（间隔 <0.4s 累积，>3s 断）
+  let lastClickAt = 0;
+  const trackDaily = (kind: "click" | "meme" | "buy" | "survive", n = 1): void => {
+    if (state.daily) state = { ...state, daily: dailyTrack(state.daily, kind, n) };
+  };
   canvas.addEventListener("pointerdown", (e) => {
     if (!e.isPrimary) return;
     const p = scene.toVirtual(e.clientX, e.clientY, canvas);
+    const nowMs = performance.now();
+    // 连击链更新
+    const gap = (nowMs - lastClickAt) / 1000;
+    combo = gap < COMBO_WINDOW_S ? Math.min(COMBO_MAX, combo + 1) : gap > COMBO_BREAK_S ? 0 : combo;
+    lastClickAt = nowMs;
+
     if (es.bossUntil > scene.gameTime) {
-      const r = onBossTap(state, es, scene.gameTime);
+      // 偷点：拿走点击收入 + 赌一次罚款（过了宽限才罚，每巡逻一次）
+      const r = onBossTap(state, es, scene.gameTime, combo);
       state = r.state;
+      trackDaily("click");
       if (r.caught) {
-        scene.fx.floatText(p.x, p.y, `被逮住了！-${Math.round(r.lost)}`);
+        scene.fx.floatText(p.x, p.y, `偷点被逮！+${Math.round(r.income)} -${Math.round(r.lost)}`);
       } else {
-        scene.fx.floatText(p.x, p.y, "忍住！");
+        scene.fx.floatText(p.x, p.y, `偷点 +${Math.round(r.income)}`);
       }
       return;
     }
@@ -106,16 +137,20 @@ async function boot(): Promise<void> {
       es.memeUntil > scene.gameTime && Math.hypot(vx - scene.memePos.x, vy - scene.memePos.y) < 3 * 16;
     if (hitMeme) {
       const r = onMemeTap(state, es);
-      state = r.state;
-      const quote = MEME_QUOTES[Math.floor(Math.random() * MEME_QUOTES.length)];
+      const qi = Math.floor(Math.random() * MEME_QUOTES.length);
+      state = collectQuote(r.state, qi).state;
+      trackDaily("meme");
+      const quote = MEME_QUOTES[qi];
       scene.fx.floatText(p.x, p.y - 24, quote ?? "");
       scene.fx.floatText(p.x, p.y, `梗收了 +${Math.round(r.earned)}`);
+      journal.refresh(state);
       return;
     }
-    const gained = clickPowerOf(state);
-    state = doClick(state);
+    const gained = clickPowerOf(state) * (1 + 0.02 * Math.min(combo, COMBO_MAX));
+    state = doClick(state, combo);
+    trackDaily("click");
     const meme = CLICK_MEMES[Math.floor(Math.random() * CLICK_MEMES.length)];
-    const text = Math.random() < 0.22 && meme ? meme : `+${gained}`;
+    const text = combo >= 6 ? `连击×${combo} +${Math.round(gained)}` : Math.random() < 0.22 && meme ? meme : `+${Math.round(gained)}`;
     scene.fx.floatText(p.x, p.y, text);
   });
 
@@ -143,16 +178,23 @@ async function boot(): Promise<void> {
         y: 4 * 16 + Math.random() * (yMax - 4 * 16),
       };
     }
-    // 巡逻结束：未被抓则发安然奖励
+    // 巡逻结束：安然 → 发奖（含连胜乘数）并推进连胜；被抓 → 0 奖清零
     const bossActive = es.bossUntil > scene.gameTime;
-    if (prevBossActive && !bossActive && !es.bossCaught) {
-      const reward = bossSurviveReward(state, es);
-      if (reward > 0) {
-        state = gain(state, reward);
-        scene.fx.floatText((scene.w / 2), scene.h * 0.3, `安然度过 +${Math.round(reward)}`);
+    if (prevBossActive && !bossActive) {
+      const r = finishPatrol(state, es);
+      state = r.state;
+      if (r.reward > 0) {
+        trackDaily("survive");
+        scene.fx.floatText(scene.w / 2, scene.h * 0.3, `安然度过 +${Math.round(r.reward)}（连胜 ${es.surviveStreak}）`);
       }
     }
     prevBossActive = bossActive;
+    // 跨日重置日报（长时间挂机不刷新页面）
+    const d = today();
+    if (state.daily && state.daily.date !== d) {
+      state = ensureDaily(state, d, Math.random);
+      journal.refresh(state);
+    }
     state = advance(state, dt);
     scene.update(dt);
     scene.draw(ctx);
@@ -167,6 +209,7 @@ async function boot(): Promise<void> {
       lastHud = now;
       hud.refresh(state);
       shop.refresh(state);
+      journal.refresh(state);
     }
     requestAnimationFrame(frame);
   };

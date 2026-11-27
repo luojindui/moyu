@@ -1,0 +1,126 @@
+[
+  {
+    "persona": "clicker(狂点党)",
+    "crossings": [
+      {
+        "rank": "摸鱼实习生",
+        "threshold": 0,
+        "hour": 0
+      },
+      {
+        "rank": "摸鱼学徒",
+        "threshold": 10000,
+        "hour": 0.05
+      },
+      {
+        "rank": "资深摸鱼",
+        "threshold": 100000,
+        "hour": 0.12
+      },
+      {
+        "rank": "摸鱼大师",
+        "threshold": 1000000,
+        "hour": 0.28
+      },
+      {
+        "rank": "带薪摸鱼传说",
+        "threshold": 100000000,
+        "hour": 1.81
+      }
+    ],
+    "endTotalEarned": 14256080224
+  },
+  {
+    "persona": "idle(挂机党)",
+    "crossings": [
+      {
+        "rank": "摸鱼实习生",
+        "threshold": 0,
+        "hour": 0
+      },
+      {
+        "rank": "摸鱼学徒",
+        "threshold": 10000,
+        "hour": 0.45
+      },
+      {
+        "rank": "资深摸鱼",
+        "threshold": 100000,
+        "hour": 1.13
+      },
+      {
+        "rank": "摸鱼大师",
+        "threshold": 1000000,
+        "hour": 2.45
+      },
+      {
+        "rank": "带薪摸鱼传说",
+        "threshold": 100000000,
+        "hour": 7.28
+      }
+    ],
+    "endTotalEarned": 5763310301
+  },
+  {
+    "persona": "whale(爆肝党)",
+    "crossings": [
+      {
+        "rank": "摸鱼实习生",
+        "threshold": 0,
+        "hour": 0
+      },
+      {
+        "rank": "摸鱼学徒",
+        "threshold": 10000,
+        "hour": 0.03
+      },
+      {
+        "rank": "资深摸鱼",
+        "threshold": 100000,
+        "hour": 0.07
+      },
+      {
+        "rank": "摸鱼大师",
+        "threshold": 1000000,
+        "hour": 0.18
+      },
+      {
+        "rank": "带薪摸鱼传说",
+        "threshold": 100000000,
+        "hour": 2.05
+      }
+    ],
+    "endTotalEarned": 10039062169
+  },
+  {
+    "persona": "casual(休闲党)",
+    "crossings": [
+      {
+        "rank": "摸鱼实习生",
+        "threshold": 0,
+        "hour": 0
+      },
+      {
+        "rank": "摸鱼学徒",
+        "threshold": 10000,
+        "hour": 0.19
+      },
+      {
+        "rank": "资深摸鱼",
+        "threshold": 100000,
+        "hour": 0.51
+      },
+      {
+        "rank": "摸鱼大师",
+        "threshold": 1000000,
+        "hour": 1.16
+      },
+      {
+        "rank": "带薪摸鱼传说",
+        "threshold": 100000000,
+        "hour": 4.12
+      }
+    ],
+    "endTotalEarned": 9179290463
+  }
+]

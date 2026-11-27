@@ -168,7 +168,7 @@ describe("agent 试玩模拟", () => {
     const results = PERSONAS.map(simulate);
     const report = {
       generatedAt: new Date().toISOString(),
-      engine: "mvp-v1 batch1（纯放置循环，无随机事件）",
+      engine: "r3（放置+事件+里程碑错峰+底薪+段位）",
       sessions: results,
       offlineCheck: simulateOffline(),
       summary: results.map((r) => ({

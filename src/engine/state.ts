@@ -1,3 +1,7 @@
+import type { Collected } from "./collection";
+import { emptyCollected } from "./collection";
+import type { DailyState } from "./daily";
+
 /** 游戏状态（纯数据，engine 层的唯一事实来源） */
 export interface GameState {
   /** 摸鱼值（可花费余额） */
@@ -6,10 +10,14 @@ export interface GameState {
   totalEarned: number;
   /** 各升级已购次数 */
   levels: Record<string, number>;
+  /** 图鉴收集（语录索引 + 彩蛋索引） */
+  collected: Collected;
+  /** 每日日报（null = 今日尚未生成） */
+  daily: DailyState | null;
 }
 
 export function initialState(): GameState {
-  return { moyu: 0, totalEarned: 0, levels: {} };
+  return { moyu: 0, totalEarned: 0, levels: {}, collected: emptyCollected(), daily: null };
 }
 
 /** 统一的进账入口：余额与累计同步增加（惩罚只扣余额） */

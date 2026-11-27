@@ -6,7 +6,7 @@ import { buyUpgrade, clickPowerOf } from "../src/engine/actions";
 import { rankFor } from "../src/engine/titles";
 import { offlineEarn, OFFLINE_CAP_SECONDS } from "../src/engine/offline";
 import { settleReturn, RESUME_SETTLE_THRESHOLD_SECONDS } from "../src/engine/resume";
-import { onBossTap } from "../src/engine/events";
+import { onBossTap, newEventState } from "../src/engine/events";
 
 /**
  * R2 审计探针②：批次3 经济数值规格逐条对照。
@@ -81,10 +81,11 @@ describe("R2 审计②c：段位（规格：9000→10000 实习生→学徒，�
     const clicked = { ...s, moyu: 0, totalEarned: 0, levels: {} };
     const afterClick = { ...clicked, moyu: 100 };
     // 惩罚只扣余额
-    const es = { nextBossAt: 0, bossUntil: 100, nextMemeAt: 0, memeUntil: -1, bossCaught: false };
-    const penalized = onBossTap({ ...afterClick, totalEarned: 100 }, es).state;
-    expect(penalized.moyu).toBe(90); // 100 - max(10, 5) = 100 - 10
-    expect(penalized.totalEarned).toBe(100); // 段位不受惩罚影响
+    const es = { ...newEventState(), bossUntil: 100, bossStartAt: 0 };
+    const penalized = onBossTap({ ...afterClick, totalEarned: 100 }, es, 5).state;
+    // 偷点：+1 收入，罚款 10 → 91；totalEarned 只加不减
+    expect(penalized.moyu).toBe(91);
+    expect(penalized.totalEarned).toBe(101); // 段位不受惩罚影响（收入照加）
   });
 });
 

@@ -1,0 +1,170 @@
+{
+  "clicker(狂点党)": {
+    "tier0": {
+      "tier": "rank1(摸鱼实习生)",
+      "windows": 36,
+      "median5min": 129.6,
+      "p10_5min": 36.6,
+      "firstMin": 0.1,
+      "lastMin": 3
+    },
+    "tier1": {
+      "tier": "rank2(摸鱼学徒)",
+      "windows": 51,
+      "median5min": 99.4,
+      "p10_5min": 63.067,
+      "firstMin": 3.2,
+      "lastMin": 7.3
+    },
+    "tier2": {
+      "tier": "rank3(资深摸鱼)",
+      "windows": 110,
+      "median5min": 51.773,
+      "p10_5min": 23.307,
+      "firstMin": 7.5,
+      "lastMin": 16.6
+    },
+    "tier3": {
+      "tier": "rank4(摸鱼大师)",
+      "windows": 1104,
+      "median5min": 5.28,
+      "p10_5min": 1.896,
+      "firstMin": 16.8,
+      "lastMin": 108.7
+    },
+    "tier4": {
+      "tier": "rank5(带薪摸鱼传说)",
+      "windows": 15975,
+      "median5min": 0,
+      "p10_5min": 0,
+      "firstMin": 108.8,
+      "lastMin": 1440
+    }
+  },
+  "idle(挂机党)": {
+    "tier0": {
+      "tier": "rank1(摸鱼实习生)",
+      "windows": 321,
+      "median5min": 9.6,
+      "p10_5min": 0.6,
+      "firstMin": 0.1,
+      "lastMin": 26.8
+    },
+    "tier1": {
+      "tier": "rank2(摸鱼学徒)",
+      "windows": 490,
+      "median5min": 10.067,
+      "p10_5min": 6.067,
+      "firstMin": 26.9,
+      "lastMin": 67.7
+    },
+    "tier2": {
+      "tier": "rank3(资深摸鱼)",
+      "windows": 952,
+      "median5min": 5.707,
+      "p10_5min": 2.14,
+      "firstMin": 67.8,
+      "lastMin": 147.1
+    },
+    "tier3": {
+      "tier": "rank4(摸鱼大师)",
+      "windows": 3476,
+      "median5min": 1.068,
+      "p10_5min": 0.165,
+      "firstMin": 147.3,
+      "lastMin": 436.8
+    },
+    "tier4": {
+      "tier": "rank5(带薪摸鱼传说)",
+      "windows": 12037,
+      "median5min": 0,
+      "p10_5min": 0,
+      "firstMin": 437,
+      "lastMin": 1440
+    }
+  },
+  "whale(爆肝党)": {
+    "tier0": {
+      "tier": "rank1(摸鱼实习生)",
+      "windows": 19,
+      "median5min": 192.6,
+      "p10_5min": 24.6,
+      "firstMin": 0.1,
+      "lastMin": 1.6
+    },
+    "tier1": {
+      "tier": "rank2(摸鱼学徒)",
+      "windows": 28,
+      "median5min": 159.067,
+      "p10_5min": 104.067,
+      "firstMin": 1.8,
+      "lastMin": 4
+    },
+    "tier2": {
+      "tier": "rank3(资深摸鱼)",
+      "windows": 79,
+      "median5min": 78.907,
+      "p10_5min": 39.907,
+      "firstMin": 4.2,
+      "lastMin": 10.7
+    },
+    "tier3": {
+      "tier": "rank4(摸鱼大师)",
+      "windows": 1348,
+      "median5min": 4.165,
+      "p10_5min": 2.59,
+      "firstMin": 10.8,
+      "lastMin": 123.1
+    },
+    "tier4": {
+      "tier": "rank5(带薪摸鱼传说)",
+      "windows": 15802,
+      "median5min": 0,
+      "p10_5min": 0,
+      "firstMin": 123.3,
+      "lastMin": 1440
+    }
+  },
+  "casual(休闲党)": {
+    "tier0": {
+      "tier": "rank1(摸鱼实习生)",
+      "windows": 139,
+      "median5min": 36.6,
+      "p10_5min": 6.6,
+      "firstMin": 0.1,
+      "lastMin": 11.6
+    },
+    "tier1": {
+      "tier": "rank2(摸鱼学徒)",
+      "windows": 225,
+      "median5min": 27.733,
+      "p10_5min": 12.4,
+      "firstMin": 11.8,
+      "lastMin": 30.4
+    },
+    "tier2": {
+      "tier": "rank3(资深摸鱼)",
+      "windows": 471,
+      "median5min": 11.64,
+      "p10_5min": 5.807,
+      "firstMin": 30.6,
+      "lastMin": 69.8
+    },
+    "tier3": {
+      "tier": "rank4(摸鱼大师)",
+      "windows": 2131,
+      "median5min": 2.063,
+      "p10_5min": 0.361,
+      "firstMin": 69.9,
+      "lastMin": 247.4
+    },
+    "tier4": {
+      "tier": "rank5(带薪摸鱼传说)",
+      "windows": 14310,
+      "median5min": 0,
+      "p10_5min": 0,
+      "firstMin": 247.6,
+      "lastMin": 1440
+    }
+  }
+}
