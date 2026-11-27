@@ -105,7 +105,7 @@ describe("R2-① 线索去名：横幅还能不能一眼看出答案", () => {
 });
 
 describe("R2-① 首次巡逻是否优先 choice（lead 声称的设计变更）", () => {
-  it("代码里找不到"首巡强制 choice"：0 巡逻次数时变体仍按 35/30/20/15 抽取", () => {
+  it("代码里找不到「首巡强制 choice」：0 巡逻次数时变体仍按 35/30/20/15 抽取", () => {
     const src = readFileSync("src/engine/events.ts", "utf8");
     console.log(`[first] events.ts 含 forcedVariant 逻辑=${src.includes("es.forcedVariant = null")}；含"首次优先 choice"标记=${/patrolCount\s*===?\s*0[^;]*choice/.test(src)}`);
     // 用 1000 个随机种子模拟"首次巡逻"的变体分布
@@ -192,7 +192,7 @@ describe("R2-⑤ 卡池 10 → 16：多样性到底改善多少", () => {
     void rng;
   });
 
-  it("新稀有卡的"风险"是真实数值（不是文案）：部门搬家/截止日/空调坏了", () => {
+  it("新稀有卡的风险是真实数值（不是文案）：部门搬家/截止日/空调坏了", () => {
     const s = initialState();
     const now = Date.now();
     const createdAt = now - 5 * DAY;
@@ -277,7 +277,7 @@ describe("R2 保底：超时/窗口校验/画布不罚仍成立", () => {
     const es = { ...newEventState(), bossVariant: "choice" as const, bossUntil: 1e9, surviveStreak: 4, patrolCount: 10 };
     const base = 50 * 1.4;
     const right = resolveBossChoice(s, "forgetful", "keep-slacking", base);
-    const wrong = resolveBossChoice(s, "forgetful", "keep-slacking", base);
+    const wrong = resolveBossChoice(s, "forgetful", "act-busy", base);
     console.log(`[reward] base=${base} 时 选对 +${right.delta} / 选错 ${wrong.delta}（错的代价随连胜一起变大）`);
     expect(right.delta).toBe(Math.floor(base * 1.8));
     expect(wrong.delta).toBe(-base);
