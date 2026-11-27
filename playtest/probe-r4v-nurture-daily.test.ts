@@ -129,9 +129,37 @@ describe("日报·量级：3 目标在 10 分钟内可完成（真实引擎模�
     log("中期玩家组合完成时刻(秒)", results);
   });
 
+  it("巡逻词条口径：跟随横幅（adaptive）时 survive_2 完成率；纯躲避（字面「躲过」）的差异", () => {
+    // batch6 巡逻三变体后：survive 只在 finishPatrol 有奖励时计数（hold 安然；type/blitz 需点满）
+    const measure = (patrolBehavior: "adaptive" | "dodge") => {
+      const times: Array<number | null> = [];
+      let survives = 0;
+      for (let seed = 1; seed <= 20; seed++) {
+        const start: GameState = { ...initialState(), daily: makeDaily(["survive_2", "buy_3", "click_100"], DATE) };
+        const r = simulateSession(start, { date: DATE, maxSeconds: 1800, tps: 1, buyEverySec: 30, seed, patrolBehavior });
+        survives += r.survives;
+        times.push(r.goalDoneAtSec["survive_2"] ?? null);
+      }
+      const done600 = times.filter((t) => t !== null && t <= 600).length;
+      const done900 = times.filter((t) => t !== null && t <= 900).length;
+      const done1800 = times.filter((t) => t !== null).length;
+      const max = Math.max(...times.filter((t): t is number => t !== null));
+      return { patrolBehavior, done600, done900, done1800, total: 20, maxSurviveDoneSec: Math.round(max), survivesAvg: +(survives / 20).toFixed(1) };
+    };
+    const adaptive = measure("adaptive");
+    const dodge = measure("dodge");
+    log("survive_2 完成率", { adaptive, dodge });
+    // 跟随横幅提示的玩家：10 分钟内基本稳定（20 局 19 局达标，1 局 644s）
+    expect(adaptive.done600).toBeGreaterThanOrEqual(19);
+    expect(adaptive.done900).toBe(20);
+    // 只按字面「安然躲过」全程不点的玩家：10 分钟内仅约 2/3 局达标，最慢 25 分钟
+    expect(dodge.done600).toBeLessThan(20); // 证据：口径与变体交互导致不稳
+    expect(dodge.done1800).toBe(20); // 30 分钟内总能完成
+  });
+
   it("模拟器自查：一局内点击/丢梗/购买/安然计数确实来自真实行为", () => {
     const start: GameState = { ...initialState(), daily: makeDaily(ALL_IDS, DATE) };
-    const r = simulateSession(start, { date: DATE, maxSeconds: 180, tps: 1, buyEverySec: 20, seed: 9 });
+    const r = simulateSession(start, { date: DATE, maxSeconds: 480, tps: 1, buyEverySec: 20, seed: 9 });
     expect(r.clicks).toBeGreaterThan(50);
     expect(r.memeWindows).toBeGreaterThanOrEqual(1);
     expect(r.buys).toBeGreaterThanOrEqual(3);

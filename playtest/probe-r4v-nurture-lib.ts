@@ -14,7 +14,7 @@ import type { GameState } from "../src/engine/state";
 import { advance } from "../src/engine/tick";
 import { doClick, buyUpgrade } from "../src/engine/actions";
 import { UPGRADES, costOf } from "../src/engine/upgrades";
-import { newEventState, scheduleEvents, onMemeTap, finishPatrol } from "../src/engine/events";
+import { newEventState, scheduleEvents, onMemeTap, onBossTap, finishPatrol } from "../src/engine/events";
 import { collectQuote, syncFlavorCollection } from "../src/engine/collection";
 import { MEME_QUOTES } from "../src/engine/flavor";
 import {
@@ -52,7 +52,13 @@ export interface SessionOpts {
   /** 购买尝试节律（秒）；每次最多买 1 个最便宜的 */
   buyEverySec: number;
   seed?: number;
-  dodgeBoss?: boolean;
+  /**
+   * 巡逻窗口内的行为：
+   *  - "adaptive"（默认，跟随横幅提示）：hold 忍住不点；type/blitz 连点达成
+   *  - "dodge"（字面理解「安然躲过」）：任何巡逻都不点
+   *  - "tapAll"（手痒）：任何巡逻都点（hold 会被抓）
+   */
+  patrolBehavior?: "adaptive" | "dodge" | "tapAll";
   tapMemes?: boolean;
 }
 
@@ -95,12 +101,23 @@ export function simulateSession(start: GameState, opts: SessionOpts): SessionRes
     scheduleEvents(es, t, rng);
     const bossActive = es.bossUntil > t;
 
-    // 点击（巡逻中躲避，不点 → 不被抓）
-    if (!bossActive || opts.dodgeBoss === false) {
+    // 点击：非巡逻期正常点击；巡逻期内按行为模式处理（复刻 main.ts：boss 窗口内的点击走 onBossTap）
+    const behavior = opts.patrolBehavior ?? "adaptive";
+    const tapDuringPatrol = bossActive && (behavior === "tapAll" || (behavior === "adaptive" && es.bossVariant !== "hold"));
+    if (!bossActive) {
       tapCredit += opts.tps * DT;
       while (tapCredit >= 1) {
         tapCredit -= 1;
         state = doClick(state);
+        track("click");
+        counters.clicks += 1;
+      }
+    } else if (tapDuringPatrol) {
+      tapCredit += opts.tps * DT;
+      while (tapCredit >= 1) {
+        tapCredit -= 1;
+        const r = onBossTap(state, es, t, 0);
+        state = r.state;
         track("click");
         counters.clicks += 1;
       }

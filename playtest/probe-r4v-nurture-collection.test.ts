@@ -127,13 +127,14 @@ describe("图鉴·syncFlavorCollection 按等级补齐历史档（幂等）", ()
     const twice = syncFlavorCollection(once);
     expect(twice).toBe(once); // 无缺失 → 同引用
     expect(twice.collected.flavors).toHaveLength(3);
-    // 已有部分条目（旧档只存了第 0 档）→ 只补缺失的 1/2 档
+    // 已有部分条目（旧档只存了第 0 档）→ 只补缺失的 1/2 档，且不丢弃无关已有条目
+    const phoneBase = UPGRADES.findIndex((u) => u.id === "phone") * 5;
     const partial = initialState();
     partial.levels["phone"] = 10;
-    partial.collected.flavors = [20];
+    partial.collected.flavors = [phoneBase, 20]; // 20 = 另一项的彩蛋，应保留
     const filled = syncFlavorCollection(partial);
-    expect(filled.collected.flavors).toEqual([20, 21, 22]);
-    expect(syncFlavorCollection(filled).collected.flavors).toEqual([20, 21, 22]);
+    expect(filled.collected.flavors).toEqual([phoneBase, 20, phoneBase + 1, phoneBase + 2]);
+    expect(syncFlavorCollection(filled).collected.flavors).toEqual([phoneBase, 20, phoneBase + 1, phoneBase + 2]);
     log("幂等/补缺", { once: once.collected.flavors, filled: filled.collected.flavors });
   });
 
@@ -152,19 +153,19 @@ describe("图鉴·syncFlavorCollection 按等级补齐历史档（幂等）", ()
 });
 
 describe("图鉴·边界与缺陷复现（预期失败 = 缺陷证据）", () => {
-  it("⚠️ 缺陷：collectQuote 不校验索引边界，越界索引可污染「x/10」", () => {
+  it.fails("⚠️ 缺陷（当前存在，修复后本断言会转红）：collectQuote 不校验索引边界，越界索引可污染「x/10」", () => {
     const s = collectQuote(initialState(), 99).state;
     log("collectQuote(99)", { quotes: s.collected.quotes, count: collectionCount(s) });
     expect(s.collected.quotes.every((i) => Number.isInteger(i) && i >= 0 && i < MEME_QUOTES.length)).toBe(true);
   });
 
-  it("⚠️ 缺陷：collectQuote 接受负数索引", () => {
+  it.fails("⚠️ 缺陷（当前存在，修复后本断言会转红）：collectQuote 接受负数索引", () => {
     const s = collectQuote(initialState(), -1).state;
     log("collectQuote(-1)", { quotes: s.collected.quotes });
     expect(s.collected.quotes.every((i) => i >= 0)).toBe(true);
   });
 
-  it("⚠️ 缺陷：collectFlavor 未知升级 id → findIndex(-1) 生成负索引（-5）", () => {
+  it.fails("⚠️ 缺陷（当前存在，修复后本断言会转红）：collectFlavor 未知升级 id → findIndex(-1) 生成负索引（-5）", () => {
     const s = collectFlavor(initialState(), "no_such_upgrade", 0).state;
     log("collectFlavor(unknown)", { flavors: s.collected.flavors, flavorIndex: flavorIndex("no_such_upgrade", 0) });
     expect(s.collected.flavors.every((i) => i >= 0 && i <= 44)).toBe(true);
