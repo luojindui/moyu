@@ -294,6 +294,32 @@ const run = async () => {
   result.smallScreen = await cdp.evaluate(MARKET);
   await shot("19-360x740");
 
+  // ---- HUD 真实极端状态：高段位（带薪摸鱼传说）+ 🔥连胜，检查 390 宽下是否溢出/截断 ----
+  await emu(390, 844);
+  await sleep(300);
+  result.hudLongRank = await (async () => {
+    // 注意：Page.reload 会触发旧页面 pagehide → 用内存状态重写存档；必须在"新文档创建时"注入存档种子
+    const seeded = await cdp.send("Page.addScriptToEvaluateOnNewDocument", {
+      source: `(() => { try {
+        const raw = JSON.parse(localStorage.getItem('moyu-save') || 'null') || { v: 1, levels: {}, collected: { quotes: [], flavors: [] }, daily: null };
+        raw.v = 1;
+        raw.totalEarned = 150000000; // 带薪摸鱼传说（升 摸鱼之神 5%）
+        raw.surviveStreak = 10;      // HUD 显示 🔥连胜 10
+        raw.savedAt = Date.now();
+        raw.createdAt = Date.now();
+        localStorage.setItem('moyu-save', JSON.stringify(raw));
+      } catch (e) {} })();`,
+    });
+    await cdp.send("Page.reload");
+    await sleep(900);
+    await waitReady(20);
+    await sleep(700);
+    const m = await cdp.evaluate(MARKET);
+    await shot("21-hud-longrank-streak");
+    m.seedScriptId = seeded.identifier;
+    return m;
+  })();
+
   result.console = { errors: consoleErrors, warns: consoleWarns, exceptions, failedReq };
   result.chromeStderrTail = chromeErr.split("\n").filter((l) => /CONSOLE|Uncaught|TypeError|ReferenceError|Failed to load|404/i.test(l)).slice(0, 20);
   writeFileSync(process.env.CASUAL_CDP_OUT || "/tmp/final-casual-cdp2.json", JSON.stringify(result, null, 2));

@@ -20,9 +20,12 @@ export class Hud {
     // 底薪 0.2/s 恒存在，不再有"未解锁"态
     this.elIdle.textContent = formatMoyu(effectOf(state).idleRate);
     const rank = rankFor(state.totalEarned);
+    // 窄屏友好：短段位名 + 进度百分比（长段位名会截断进度）
+    const shortName = rank.current.replace(/^带薪/, "").replace(/^摸鱼/, "");
     this.elRank.textContent = rank.next
-      ? `${rank.current}（升 ${rank.next.name} ${(rank.progress * 100).toFixed(0)}%）`
-      : rank.current;
+      ? `${shortName} ${(rank.progress * 100).toFixed(0)}%`
+      : shortName;
+    this.elRank.title = rank.next ? `${rank.current} → ${rank.next.name}` : rank.current;
     // 📔 可领角标：日报 3/3 完成且未领
     const claimable = !!state.daily && !state.daily.claimed && dailyAllDone(state.daily);
     this.elJournal.classList.toggle("has-reward", claimable);

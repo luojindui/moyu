@@ -220,8 +220,14 @@ async function boot(): Promise<void> {
   requestAnimationFrame(frame);
 
   // 5) 存档与前后台切换
-  setInterval(() => serialize(state, localStorageAdapter, Date.now()), 10_000);
-  const saveNow = (): void => serialize(state, localStorageAdapter, Date.now());
+  let suppressSave = false; // rewindSave 后暂停写档，避免覆盖回拨的时间戳
+  const saveTimer = setInterval(() => {
+    if (!suppressSave) serialize(state, localStorageAdapter, Date.now());
+  }, 10_000);
+  const saveNow = (): void => {
+    if (!suppressSave) serialize(state, localStorageAdapter, Date.now());
+  };
+  void saveTimer;
   document.addEventListener("pagehide", saveNow);
 
   const settleForeground = (): void => {
@@ -305,6 +311,8 @@ async function boot(): Promise<void> {
         if (typeof blob.v === "number") {
           blob.savedAt = Date.now() - seconds * 1000;
           localStorage.setItem(SAVE_KEY, JSON.stringify(blob));
+          suppressSave = true; // 刷新前不再覆盖
+          clearInterval(saveTimer);
         }
       } catch {
         /* 损坏存档：保持原样，reset() 可清理 */

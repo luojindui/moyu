@@ -36,7 +36,7 @@ describe("每日摸鱼日报", () => {
     expect(byId["click_100"]).toBe(100);
     expect(byId["meme_1"]).toBe(1);
     expect(byId["buy_3"]).toBe(3);
-    expect(byId["survive_2"]).toBe(2);
+    expect(byId["survive_2"]).toBe(1); // 2 分钟碎片 session 也能完成
   });
 
   it("dailyTrack：进度累计、达标置 done、超额不溢出", () => {
