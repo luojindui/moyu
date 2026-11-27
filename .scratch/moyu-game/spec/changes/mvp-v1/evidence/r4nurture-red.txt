@@ -1,0 +1,8 @@
+   ✓ 每日摸鱼日报 > claimDaily：全完成才可领，奖励 = max(500, 60×挂机)；streak 推进 0ms
+   × 日报结构净化和跨日（nurture 验收 #3/#5） > yesterdayOf 用本地日期（UTC+8 跨日正确） 2ms
+   × 日报结构净化和跨日（nurture 验收 #3/#5） > restoreDaily 形状非法 → null（空 goals/缺 streak/非数值 progress） 0ms
+   ✓ 摸鱼图鉴（收集） > flavorIndex：升级表序 × 档位 → 0..54 唯一索引 0ms
+   × 图鉴边界与净化（nurture 验收 #4） > collectQuote 拒绝越界/负数索引 3ms
+   × 图鉴边界与净化（nurture 验收 #4） > collectFlavor 拒绝未知升级 id 与越界档位 0ms
+   × 图鉴边界与净化（nurture 验收 #4） > collectionCount 不超过 TOTAL_ITEMS（篡改档收敛） 0ms
+ Test Files  2 failed (2)

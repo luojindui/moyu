@@ -6,6 +6,8 @@ import {
   dailyAllDone,
   claimDaily,
   DAILY_GOAL_TEMPLATES,
+  yesterdayLocal,
+  restoreDaily,
   type DailyState,
 } from "./daily";
 import { initialState } from "./state";
@@ -121,5 +123,23 @@ describe("每日摸鱼日报", () => {
     });
     expect(claimDaily(s, "2026-11-26").claimedReward).toBe(500);
     expect(effectOf(initialState()).idleRate).toBe(0.2); // 底薪党保底语境
+  });
+});
+
+describe("日报结构净化和跨日（nurture 验收 #3/#5）", () => {
+  it("目标池文案与巡逻变体一致（应付 2 次巡逻）", () => {
+    const tpl = DAILY_GOAL_TEMPLATES.find((t) => t.id === "survive_2")!;
+    expect(tpl.desc).toContain("巡逻"); // 不写"安然躲过"（变体下点满也算）
+  });
+
+  it("yesterdayOf 用本地日期（UTC+8 跨日正确）", () => {
+    expect(yesterdayLocal("2026-03-01")).toBe("2026-02-28");
+    expect(yesterdayLocal("2026-01-01")).toBe("2025-12-31");
+  });
+
+  it("restoreDaily 形状非法 → null（空 goals/缺 streak/非数值 progress）", () => {
+    expect(restoreDaily(null)).toBeNull();
+    expect(restoreDaily({ date: "2026-11-27", goals: [], claimed: false })).toBeNull();
+    expect(restoreDaily({ date: "2026-11-27", goals: [{ id: "x", target: 1, progress: 1, done: true }], claimed: false })).toBeNull();
   });
 });

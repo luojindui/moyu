@@ -32,8 +32,9 @@ function tierFor(level: number): number {
   return t;
 }
 
-/** 收集一条语录（重复不重复计） */
+/** 收集一条语录（越界拒绝；重复不重复计） */
 export function collectQuote(state: GameState, quoteIdx: number): { state: GameState; isNew: boolean } {
+  if (!Number.isInteger(quoteIdx) || quoteIdx < 0 || quoteIdx >= MEME_QUOTES.length) return { state, isNew: false };
   if (state.collected.quotes.includes(quoteIdx)) return { state, isNew: false };
   return {
     state: { ...state, collected: { ...state.collected, quotes: [...state.collected.quotes, quoteIdx] } },
@@ -41,8 +42,10 @@ export function collectQuote(state: GameState, quoteIdx: number): { state: GameS
   };
 }
 
-/** 收集一条彩蛋（重复不重复计） */
+/** 收集一条彩蛋（未知 id / 越界档位拒绝；重复不重复计） */
 export function collectFlavor(state: GameState, upgradeId: string, tier: number): { state: GameState; isNew: boolean } {
+  const up = UPGRADES.find((u) => u.id === upgradeId);
+  if (!up || !Number.isInteger(tier) || tier < 0 || tier >= 5) return { state, isNew: false };
   const idx = flavorIndex(upgradeId, tier);
   if (state.collected.flavors.includes(idx)) return { state, isNew: false };
   return {
@@ -66,7 +69,21 @@ export function syncFlavorCollection(state: GameState): GameState {
   return { ...state, collected: { ...state.collected, flavors: [...state.collected.flavors, ...missing] } };
 }
 
-/** 已收集总数（图鉴 x/55） */
+/** 已收集总数（图鉴 x/55）：按去重后的合法条目计数，篡改档自动收敛 */
 export function collectionCount(state: GameState): number {
-  return state.collected.quotes.length + state.collected.flavors.length;
+  const quotes = new Set(state.collected.quotes.filter((i) => Number.isInteger(i) && i >= 0 && i < MEME_QUOTES.length));
+  const flavors = new Set(state.collected.flavors.filter((i) => Number.isInteger(i) && i >= 0 && i < TOTAL_ITEMS));
+  return quotes.size + Math.min(flavors.size, UPGRADES.length * 5);
+}
+
+/** 存档净化：去重 + 上限裁剪（restore 调用） */
+export function sanitizeCollected(raw: { quotes?: unknown; flavors?: unknown } | undefined): Collected {
+  const toSet = (arr: unknown, max: number): number[] =>
+    Array.isArray(arr)
+      ? [...new Set(arr.filter((x): x is number => Number.isInteger(x) && x >= 0 && x < max))].sort((a, b) => a - b)
+      : [];
+  return {
+    quotes: toSet(raw?.quotes, MEME_QUOTES.length),
+    flavors: toSet(raw?.flavors, UPGRADES.length * 5),
+  };
 }

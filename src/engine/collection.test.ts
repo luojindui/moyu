@@ -57,3 +57,24 @@ describe("摸鱼图鉴（收集）", () => {
     expect(again.collected.flavors).toHaveLength(4);
   });
 });
+
+describe("图鉴边界与净化（nurture 验收 #4）", () => {
+  it("collectQuote 拒绝越界/负数索引", () => {
+    const s = initialState();
+    expect(collectQuote(s, 99).isNew).toBe(false);
+    expect(collectQuote(s, -5).isNew).toBe(false);
+    expect(collectQuote(s, 0).isNew).toBe(true);
+  });
+
+  it("collectFlavor 拒绝未知升级 id 与越界档位", () => {
+    const s = initialState();
+    expect(collectFlavor(s, "nope", 0).isNew).toBe(false);
+    expect(collectFlavor(s, "coffee", 9).isNew).toBe(false);
+    expect(collectFlavor(s, "coffee", 4).isNew).toBe(true);
+  });
+
+  it("collectionCount 不超过 TOTAL_ITEMS（篡改档收敛）", () => {
+    const s = { ...initialState(), collected: { quotes: [0, 0, 0, 1], flavors: [0, 0] } };
+    expect(collectionCount(s)).toBe(3); // 去重后 2 + 1
+  });
+});

@@ -32,7 +32,7 @@ export const DAILY_GOAL_TEMPLATES: GoalTemplate[] = [
   { id: "click_100", desc: "点 100 下", kind: "click", target: 100 },
   { id: "meme_1", desc: "收 1 个梗", kind: "meme", target: 1 },
   { id: "buy_3", desc: "买 3 次升级", kind: "buy", target: 3 },
-  { id: "survive_2", desc: "安然躲过 2 次巡逻", kind: "survive", target: 2 },
+  { id: "survive_2", desc: "应付 2 次巡逻（忍住或点满都算）", kind: "survive", target: 2 },
 ];
 
 /** 奖励 = max(500, 60 × 挂机秒收益) */
@@ -40,10 +40,45 @@ export function dailyReward(state: GameState): number {
   return Math.max(500, 60 * effectOf(state).idleRate);
 }
 
-function yesterdayOf(date: string): string {
-  const d = new Date(`${date}T12:00:00`);
-  d.setDate(d.getDate() - 1);
-  return d.toISOString().slice(0, 10);
+/** 本地日期格式化（避免 toISOString 在非 UTC 时区跨日错位） */
+export function formatLocalDate(d: Date): string {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
+/** 前一天的本地日期（YYYY-MM-DD） */
+export function yesterdayLocal(date: string): string {
+  const [y, m, d] = date.split("-").map(Number);
+  const dt = new Date(y!, (m ?? 1) - 1, (d ?? 1) - 1, 12, 0, 0);
+  return formatLocalDate(dt);
+}
+
+export function yesterdayOf(date: string): string {
+  return yesterdayLocal(date);
+}
+
+/** 存档净化：形状非法/目标数不为 3/数值非法 → null */
+export function restoreDaily(raw: unknown): DailyState | null {
+  if (!raw || typeof raw !== "object") return null;
+  const d = raw as Record<string, unknown>;
+  if (typeof d.date !== "string" || !Array.isArray(d.goals) || d.goals.length !== 3) return null;
+  if (typeof d.claimed !== "boolean") return null;
+  const goals: DailyGoal[] = [];
+  for (const g of d.goals) {
+    if (!g || typeof g !== "object") return null;
+    const gg = g as Record<string, unknown>;
+    if (typeof gg.id !== "string") return null;
+    if (typeof gg.target !== "number" || !Number.isFinite(gg.target) || gg.target <= 0) return null;
+    if (typeof gg.progress !== "number" || !Number.isFinite(gg.progress) || gg.progress < 0) return null;
+    if (typeof gg.done !== "boolean") return null;
+    goals.push({ id: gg.id, target: gg.target, progress: Math.min(gg.progress, gg.target), done: gg.done });
+  }
+  const streak =
+    typeof d.streak === "number" && Number.isInteger(d.streak) && d.streak >= 0 ? d.streak : 0;
+  const lastCompleteDate = typeof d.lastCompleteDate === "string" ? d.lastCompleteDate : null;
+  return { date: d.date, goals, streak, lastCompleteDate, claimed: d.claimed };
 }
 
 /** 掷出当日目标（3 个不重复，继承 streak 基础） */

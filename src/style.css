@@ -227,6 +227,27 @@ body {
   border-radius: 4px;
   font-family: inherit;
 }
+#btn-journal.has-reward {
+  position: relative;
+  border-color: #ffd76e;
+  animation: journalPulse 1.4s ease-in-out infinite;
+}
+#btn-journal.has-reward::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ff5a5a;
+  box-shadow: 0 0 6px #ff5a5a;
+}
+@keyframes journalPulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(255, 215, 110, 0); }
+  50% { box-shadow: 0 0 10px rgba(255, 215, 110, 0.65); }
+}
+
 #journal {
   position: fixed;
   inset: 0;
