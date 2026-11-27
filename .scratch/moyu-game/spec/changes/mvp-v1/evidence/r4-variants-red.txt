@@ -1,0 +1,8 @@
+   ✓ 老板巡逻结算 > 罚款封顶：min(raw, max(10, 10×idleRate))，后期不洗劫 0ms
+   ✓ 老板巡逻结算 > 安然度过：奖励 = max(50, 5 × idleRate)（克制，不喧宾夺主） 0ms
+   ✓ 同事丢梗 > 有效期内点击：奖励 5 × 点击力 0ms
+   ✓ 同事丢梗 > 安然连胜：奖励 ×(1+0.1N) 封顶 ×2，被抓清零 0ms
+   × 巡逻变体（variety #1：拆掉同 pattern 重复） > 三种变体：hold 忍住 / type 假装工作 / blitz 连点冲刺 4ms
+   × 巡逻变体（variety #1：拆掉同 pattern 重复） > 巡逻开启时按权重抽变体（hold 40% / type 35% / blitz 25%） 1ms
+   × 巡逻变体（variety #1：拆掉同 pattern 重复） > type 变体：未达标无奖励（也不罚） 1ms
+   × 巡逻变体（variety #1：拆掉同 pattern 重复） > blitz 变体：达标奖励 ×1.5，未达标为 0 0ms

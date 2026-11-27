@@ -15,6 +15,10 @@ import {
   BOSS_PENALTY_RATE,
   BOSS_PENALTY_MIN,
   BOSS_REWARD_IDLE_SECONDS,
+  BOSS_VARIANTS,
+  BOSS_TYPE_TARGET,
+  BOSS_BLITZ_TARGET,
+  BOSS_BLITZ_REWARD_MULT,
   BOSS_REWARD_MIN,
   type EventState,
 } from "./events";
@@ -22,6 +26,14 @@ import { initialState } from "./state";
 
 /** 可复现的 LCG 随机源 */
 function seededRng(seed: number): () => number {
+  let s = seed >>> 0;
+  return () => {
+    s = (s * 1664525 + 1013904223) >>> 0;
+    return s / 4294967296;
+  };
+}
+
+function seededRng3(seed: number): () => number {
   let s = seed >>> 0;
   return () => {
     s = (s * 1664525 + 1013904223) >>> 0;
@@ -76,7 +88,7 @@ describe("老板巡逻结算", () => {
   it("巡逻中手滑：扣 5%（下限 10），并标记被逮", () => {
     const s = initialState();
     s.moyu = 1000;
-    const es: EventState = { nextBossAt: Infinity, bossUntil: 10, nextMemeAt: Infinity, memeUntil: -1, bossCaught: false, bossStartAt: 2, surviveStreak: 0 };
+    const es: EventState = { nextBossAt: Infinity, bossUntil: 10, nextMemeAt: Infinity, memeUntil: -1, bossCaught: false, bossStartAt: 2, surviveStreak: 0, bossVariant: "hold", bossTaps: 0 };
     const r = onBossTap(s, es, 5);
     // 偷点语义：收入 +1（基础点击力），罚款 raw=max(10,50)、cap=10 → lost=10 → 净 -9
     expect(r.income).toBe(1);
@@ -88,7 +100,7 @@ describe("老板巡逻结算", () => {
   it("反应宽限期（巡逻开启 0.8s 内）点击免罚免逮", () => {
     const s = initialState();
     s.moyu = 1000;
-    const es: EventState = { nextBossAt: Infinity, bossUntil: 10, nextMemeAt: Infinity, memeUntil: -1, bossCaught: false, bossStartAt: 2, surviveStreak: 0 };
+    const es: EventState = { nextBossAt: Infinity, bossUntil: 10, nextMemeAt: Infinity, memeUntil: -1, bossCaught: false, bossStartAt: 2, surviveStreak: 0, bossVariant: "hold", bossTaps: 0 };
     // 巡逻 2s 开启，2.5s 点击 → 宽限内（0.5s < 0.8s）
     const r = onBossTap(s, es, 2.5);
     expect(r.caught).toBe(false);
@@ -101,7 +113,7 @@ describe("老板巡逻结算", () => {
     const s = initialState();
     s.moyu = 800_000;
     s.levels["retire" as string] = 1; // 700/s + 底薪 0.2
-    const es: EventState = { nextBossAt: Infinity, bossUntil: 10, nextMemeAt: Infinity, memeUntil: -1, bossCaught: false, bossStartAt: 2, surviveStreak: 0 };
+    const es: EventState = { nextBossAt: Infinity, bossUntil: 10, nextMemeAt: Infinity, memeUntil: -1, bossCaught: false, bossStartAt: 2, surviveStreak: 0, bossVariant: "hold", bossTaps: 0 };
     const r = onBossTap(s, es, 5);
     // 独立推定：raw = max(10, 40000)；cap = max(10, 10×700.2=7002)；lost = min(40000, 7002) = 7002
     expect(r.lost).toBeCloseTo(7002, 0);
@@ -110,7 +122,7 @@ describe("老板巡逻结算", () => {
   it("小额时按下限扣 10", () => {
     const s = initialState();
     s.moyu = 50;
-    const es: EventState = { nextBossAt: Infinity, bossUntil: 10, nextMemeAt: Infinity, memeUntil: -1, bossCaught: false, bossStartAt: 2, surviveStreak: 0 };
+    const es: EventState = { nextBossAt: Infinity, bossUntil: 10, nextMemeAt: Infinity, memeUntil: -1, bossCaught: false, bossStartAt: 2, surviveStreak: 0, bossVariant: "hold", bossTaps: 0 };
     const r = onBossTap(s, es, 5);
     // 收入 +1，罚款 10 → 41
     expect(r.state.moyu).toBe(50 + 1 - BOSS_PENALTY_MIN);
@@ -119,7 +131,7 @@ describe("老板巡逻结算", () => {
   it("同一巡逻内被抓一次后不再重复扣（连点无额外伤）", () => {
     const s = initialState();
     s.moyu = 1000;
-    const es: EventState = { nextBossAt: Infinity, bossUntil: 10, nextMemeAt: Infinity, memeUntil: -1, bossCaught: false, bossStartAt: 2, surviveStreak: 0 };
+    const es: EventState = { nextBossAt: Infinity, bossUntil: 10, nextMemeAt: Infinity, memeUntil: -1, bossCaught: false, bossStartAt: 2, surviveStreak: 0, bossVariant: "hold", bossTaps: 0 };
     const first = onBossTap(s, es, 5);
     expect(first.caught).toBe(true);
     const second = onBossTap(first.state, es, 5);
@@ -139,7 +151,7 @@ describe("老板巡逻结算", () => {
   it("被逮过的巡逻不给奖励", () => {
     const s = initialState();
     s.levels["phone" as string] = 5;
-    const caughtEs: EventState = { nextBossAt: Infinity, bossUntil: -1, nextMemeAt: Infinity, memeUntil: -1, bossCaught: true, bossStartAt: 2, surviveStreak: 0 };
+    const caughtEs: EventState = { nextBossAt: Infinity, bossUntil: -1, nextMemeAt: Infinity, memeUntil: -1, bossCaught: true, bossStartAt: 2, surviveStreak: 0, bossVariant: "hold", bossTaps: 0 };
     expect(bossSurviveReward(s, caughtEs)).toBe(0);
   });
 });
@@ -148,7 +160,7 @@ describe("同事丢梗", () => {
   it("有效期内点击：奖励 5 × 点击力", () => {
     const s = initialState();
     s.levels["coffee" as string] = 2; // 点击力 1+2=3
-    const es: EventState = { nextBossAt: Infinity, bossUntil: -1, nextMemeAt: Infinity, memeUntil: 10, bossCaught: false, bossStartAt: 2, surviveStreak: 0 };
+    const es: EventState = { nextBossAt: Infinity, bossUntil: -1, nextMemeAt: Infinity, memeUntil: 10, bossCaught: false, bossStartAt: 2, surviveStreak: 0, bossVariant: "hold", bossTaps: 0 };
     const r = onMemeTap(s, es);
     expect(r.earned).toBe(MEME_REWARD_CLICKS * 3);
     expect(r.state.moyu).toBe(15);
@@ -156,7 +168,7 @@ describe("同事丢梗", () => {
 
   it("过期点击无效", () => {
     const s = initialState();
-    const es: EventState = { nextBossAt: Infinity, bossUntil: -1, nextMemeAt: Infinity, memeUntil: -1, bossCaught: false, bossStartAt: 2, surviveStreak: 0 };
+    const es: EventState = { nextBossAt: Infinity, bossUntil: -1, nextMemeAt: Infinity, memeUntil: -1, bossCaught: false, bossStartAt: 2, surviveStreak: 0, bossVariant: "hold", bossTaps: 0 };
     const r = onMemeTap(s, es);
     expect(r.earned).toBe(0);
   });
@@ -164,7 +176,7 @@ describe("同事丢梗", () => {
   it("巡逻期间丢梗点击按被抓处理（boss 优先）", () => {
     const s = initialState();
     s.moyu = 1000;
-    const es: EventState = { nextBossAt: Infinity, bossUntil: 10, nextMemeAt: Infinity, memeUntil: 10, bossCaught: false, bossStartAt: 2, surviveStreak: 0 };
+    const es: EventState = { nextBossAt: Infinity, bossUntil: 10, nextMemeAt: Infinity, memeUntil: 10, bossCaught: false, bossStartAt: 2, surviveStreak: 0, bossVariant: "hold", bossTaps: 0 };
     const caught = onBossTap(s, es, 5);
     expect(caught.caught).toBe(true);
     // 偷点收入 +1，罚款 10 → 991
@@ -241,7 +253,7 @@ describe("同事丢梗", () => {
     const base = bossSurviveReward(s, newEventState());
     expect(base).toBeCloseTo(3501, 0);
     // 连续安然 3 次后（streak=3）→ ×1.3
-    const es3: EventState = { ...newEventState(), surviveStreak: 3 };
+    const es3: EventState = { ...newEventState(), surviveStreak: 3, bossVariant: "hold", bossTaps: 0 };
     expect(bossSurviveReward(s, es3)).toBeCloseTo(3501 * 1.3, 0);
     // 封顶 ×2（streak 10 与 50 相同）
     expect(bossSurviveReward(s, { ...newEventState(), surviveStreak: 10 })).toBeCloseTo(3501 * 2, 0);
@@ -250,5 +262,82 @@ describe("同事丢梗", () => {
     const es = newEventState();
     onBossTap({ ...s, moyu: 100000 }, es, 5);
     expect(es.surviveStreak).toBe(0);
+  });
+});
+
+describe("巡逻变体（variety #1：拆掉同 pattern 重复）", () => {
+  it("三种变体：hold 忍住 / type 假装工作 / blitz 连点冲刺", () => {
+    expect(BOSS_VARIANTS).toEqual(["hold", "type", "blitz"]);
+    // type：8s 内点满 5 次达标
+    expect(BOSS_TYPE_TARGET).toBe(5);
+    // blitz：8s 内点满 12 次，奖励 ×1.5
+    expect(BOSS_BLITZ_TARGET).toBe(12);
+    expect(BOSS_BLITZ_REWARD_MULT).toBe(1.5);
+  });
+
+  it("巡逻开启时按权重抽变体（hold 40% / type 35% / blitz 25%）", () => {
+    const counts = { hold: 0, type: 0, blitz: 0 };
+    const rng = seededRng3(9);
+    for (let i = 0; i < 4000; i++) {
+      const es = newEventState();
+      // 直接把巡逻排到当前时刻
+      es.nextBossAt = 0;
+      es.nextMemeAt = Infinity;
+      scheduleEvents(es, 0, rng);
+      counts[es.bossVariant] += 1;
+      if (counts.hold + counts.type + counts.blitz >= 4000) break;
+    }
+    expect(counts.hold / 4000).toBeGreaterThan(0.3);
+    expect(counts.hold / 4000).toBeLessThan(0.5);
+    expect(counts.type / 4000).toBeGreaterThan(0.25);
+    expect(counts.blitz / 4000).toBeGreaterThan(0.15);
+  });
+
+  it("type 变体：点击计数、不罚、达标给奖励", () => {
+    const s = initialState();
+    s.levels["phone" as string] = 5; // 10.2/s
+    const es: EventState = { ...newEventState(), bossUntil: 10, bossStartAt: 0, bossVariant: "type" };
+    let state = s;
+    for (let i = 0; i < BOSS_TYPE_TARGET; i++) {
+      const r = onBossTap(state, es, 1 + i * 0.1);
+      state = r.state;
+      expect(r.caught).toBe(false); // type 变体点击不罚
+      expect(r.income).toBeGreaterThan(0); // 但照给收入
+    }
+    const fin = finishPatrol(state, es);
+    expect(fin.reward).toBeGreaterThan(0); // 达标有奖
+  });
+
+  it("type 变体：未达标无奖励（也不罚）", () => {
+    const s = initialState();
+    const es: EventState = { ...newEventState(), bossUntil: 10, bossStartAt: 0, bossVariant: "type" };
+    let state = s;
+    for (let i = 0; i < BOSS_TYPE_TARGET - 1; i++) state = onBossTap(state, es, 1 + i * 0.1).state;
+    const fin = finishPatrol(state, es);
+    expect(fin.reward).toBe(0);
+  });
+
+  it("blitz 变体：达标奖励 ×1.5，未达标为 0", () => {
+    const s = initialState();
+    s.levels["phone" as string] = 5;
+    const base = bossSurviveReward(s, newEventState()); // 51
+    const es: EventState = { ...newEventState(), bossUntil: 10, bossStartAt: 0, bossVariant: "blitz" };
+    let state = s;
+    for (let i = 0; i < BOSS_BLITZ_TARGET; i++) state = onBossTap(state, es, 1 + i * 0.05).state;
+    expect(finishPatrol(state, es).reward).toBeCloseTo(base * BOSS_BLITZ_REWARD_MULT, 0);
+    // 未达标
+    const es2: EventState = { ...newEventState(), bossUntil: 10, bossStartAt: 0, bossVariant: "blitz" };
+    let s2 = s;
+    for (let i = 0; i < 3; i++) s2 = onBossTap(s2, es2, 1 + i * 0.05).state;
+    expect(finishPatrol(s2, es2).reward).toBe(0);
+  });
+
+  it("hold 变体维持偷点语义（有收入 + 罚款风险）", () => {
+    const s = initialState();
+    s.moyu = 1000;
+    const es: EventState = { ...newEventState(), bossUntil: 10, bossStartAt: 0, bossVariant: "hold" };
+    const r = onBossTap(s, es, 5);
+    expect(r.caught).toBe(true);
+    expect(r.income).toBe(1);
   });
 });

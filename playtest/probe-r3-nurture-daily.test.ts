@@ -55,10 +55,10 @@ describe("养成党：14 天每日 30min 回访模型（休闲党）", () => {
     }
 
     const terminal = state.totalEarned >= RANKS.at(-1)!.at;
-    console.log(`\n14 天累计 totalEarned=${(state.totalEarned / 1e8).toFixed(2)}e8（终段 1e8 ${terminal ? "已达成" : "未达成"}）`);
+    console.log(`\n14 天累计 totalEarned=${(state.totalEarned / 1e8).toFixed(2)}e8（终段 2.5e9 ${terminal ? "已达成" : "未达成"}）`);
     console.log(`终段达成后：段位栏固定文本、进度条恒 100%，无任何系统继续记录成长`);
     expect(OFFLINE_CAP_SECONDS).toBe(8 * 3600);
     expect(effectOf(initialState()).idleRate).toBe(0.2);
-    expect(RANKS.at(-1)!.at).toBe(1e8);
+    expect(RANKS.at(-1)!.at).toBe(2.5e9); // R4 扩充后终段
   });
 });

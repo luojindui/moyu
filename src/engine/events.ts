@@ -18,6 +18,22 @@ export const BOSS_GRACE_SECONDS = 0.8;
 /** 安然连胜：连续安然 N 次奖励 ×(1+0.1N)，封顶 ×2 */
 export const SURVIVE_STREAK_CAP = 10;
 
+/** 巡逻变体（variety #1）：拆掉"同 pattern 忍住 ×N"的重复感 */
+export type BossVariant = "hold" | "type" | "blitz";
+export const BOSS_VARIANTS: BossVariant[] = ["hold", "type", "blitz"];
+/** type：8s 内点满 N 次 → 达标奖励（点击不罚） */
+export const BOSS_TYPE_TARGET = 5;
+/** blitz：8s 内点满 N 次 → 奖励 ×1.5（点击不罚） */
+export const BOSS_BLITZ_TARGET = 12;
+export const BOSS_BLITZ_REWARD_MULT = 1.5;
+/** 变体权重：hold 40% / type 35% / blitz 25% */
+export function pickBossVariant(rng: () => number): BossVariant {
+  const r = rng();
+  if (r < 0.4) return "hold";
+  if (r < 0.75) return "type";
+  return "blitz";
+}
+
 export function surviveStreakMult(n: number): number {
   return 1 + 0.1 * Math.min(n, SURVIVE_STREAK_CAP);
 }
@@ -38,6 +54,10 @@ export interface EventState {
   bossStartAt: number;
   /** 连续安然次数（被抓清零，奖励乘 ×(1+0.1N) 封顶 ×2） */
   surviveStreak: number;
+  /** 本次巡逻变体 */
+  bossVariant: BossVariant;
+  /** 本次巡逻内的有效点击计数（type/blitz 变体用） */
+  bossTaps: number;
 }
 
 /** 事件为运行时状态，不入存档 */
@@ -50,6 +70,8 @@ export function newEventState(): EventState {
     bossCaught: false,
     bossStartAt: 0,
     surviveStreak: 0,
+    bossVariant: "hold",
+    bossTaps: 0,
   };
 }
 
@@ -81,6 +103,8 @@ export function scheduleEvents(es: EventState, now: number, rng: () => number): 
     es.bossUntil = now + BOSS_DURATION;
     es.bossStartAt = now;
     es.bossCaught = false;
+    es.bossVariant = pickBossVariant(rng);
+    es.bossTaps = 0;
     es.nextBossAt = Infinity;
     // 巡逻开启时丢梗必然已结束（互斥条件 memeUntil < 0），无需清场
   } else if (now >= es.nextMemeAt && es.memeUntil < 0 && es.bossUntil < 0) {
@@ -105,6 +129,11 @@ export function onBossTap(
   }
   const income = clickPowerOf(state) * comboMultiplier(combo);
   const afterIncome = gain(state, income); // 偷点收入照给
+  // type / blitz：反向玩法——点击是任务，不罚，计数
+  if (es.bossVariant === "type" || es.bossVariant === "blitz") {
+    es.bossTaps += 1;
+    return { state: afterIncome, caught: false, lost: 0, income };
+  }
   if (es.bossCaught) return { state: afterIncome, caught: false, lost: 0, income };
   if (now < es.bossStartAt + BOSS_GRACE_SECONDS) {
     return { state: afterIncome, caught: false, lost: 0, income };
@@ -122,7 +151,18 @@ export function onBossTap(
  * 同时复位本巡逻状态，供下一次巡逻使用。
  */
 export function finishPatrol(state: GameState, es: EventState): { state: GameState; reward: number } {
-  const reward = bossSurviveReward(state, es);
+  let reward = 0;
+  if (es.bossVariant === "type") {
+    // 点满 N 次算达标（不罚；没点满只是没奖）
+    reward = es.bossTaps >= BOSS_TYPE_TARGET ? bossSurviveReward(state, { ...es, bossCaught: false }) : 0;
+  } else if (es.bossVariant === "blitz") {
+    reward =
+      es.bossTaps >= BOSS_BLITZ_TARGET
+        ? bossSurviveReward(state, { ...es, bossCaught: false }) * BOSS_BLITZ_REWARD_MULT
+        : 0;
+  } else {
+    reward = bossSurviveReward(state, es); // hold：忍住才有奖，被抓为 0
+  }
   const next = gain(state, reward);
   if (reward > 0 && !es.bossCaught) es.surviveStreak += 1;
   es.bossCaught = false;

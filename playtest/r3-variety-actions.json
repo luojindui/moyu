@@ -11,42 +11,42 @@
       "quoteMode": "cycle",
       "lastNewContentMinute": 29.83,
       "firstFlatBucketMinute": null,
-      "endTotal": 591285
+      "endTotal": 591966
     },
     {
       "persona": "variety(多玩法党)",
       "quoteMode": "random",
       "lastNewContentMinute": 29.83,
       "firstFlatBucketMinute": null,
-      "endTotal": 591285
+      "endTotal": 591966
     },
     {
       "persona": "clicker(狂点党)",
       "quoteMode": "cycle",
-      "lastNewContentMinute": 28.47,
+      "lastNewContentMinute": 28.36,
       "firstFlatBucketMinute": null,
-      "endTotal": 5230829
+      "endTotal": 5287148
     },
     {
       "persona": "clicker(狂点党)",
       "quoteMode": "random",
-      "lastNewContentMinute": 28.47,
+      "lastNewContentMinute": 28.36,
       "firstFlatBucketMinute": null,
-      "endTotal": 5230829
+      "endTotal": 5287148
     },
     {
       "persona": "casual(休闲党)",
       "quoteMode": "cycle",
       "lastNewContentMinute": 29.21,
-      "firstFlatBucketMinute": null,
-      "endTotal": 98524
+      "firstFlatBucketMinute": 10,
+      "endTotal": 99345
     },
     {
       "persona": "casual(休闲党)",
       "quoteMode": "random",
       "lastNewContentMinute": 29.21,
       "firstFlatBucketMinute": null,
-      "endTotal": 98524
+      "endTotal": 99345
     }
   ],
   "results": [
@@ -64,12 +64,12 @@
           "buys": 20,
           "dodgeWins": 2,
           "caught": 0,
-          "memeTaps": 4,
+          "memeTaps": 5,
           "bossWindows": 2,
-          "newUnlocks": 13,
+          "newUnlocks": 14,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 0.991,
-          "nonClickActions": 26
+          "eventLayerEntropy": 1.049,
+          "nonClickActions": 27
         },
         {
           "bucket": 1,
@@ -94,15 +94,15 @@
             10,
             15
           ],
-          "clicks": 552,
+          "clicks": 568,
           "buys": 20,
-          "dodgeWins": 3,
+          "dodgeWins": 2,
           "caught": 0,
-          "memeTaps": 4,
-          "bossWindows": 3,
-          "newUnlocks": 8,
+          "memeTaps": 5,
+          "bossWindows": 2,
+          "newUnlocks": 7,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 1.081,
+          "eventLayerEntropy": 1.049,
           "nonClickActions": 27
         },
         {
@@ -111,15 +111,15 @@
             15,
             20
           ],
-          "clicks": 568,
+          "clicks": 552,
           "buys": 20,
-          "dodgeWins": 2,
+          "dodgeWins": 3,
           "caught": 0,
-          "memeTaps": 6,
-          "bossWindows": 2,
+          "memeTaps": 5,
+          "bossWindows": 3,
           "newUnlocks": 3,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 1.095,
+          "eventLayerEntropy": 1.136,
           "nonClickActions": 28
         },
         {
@@ -128,16 +128,16 @@
             20,
             25
           ],
-          "clicks": 552,
+          "clicks": 568,
           "buys": 20,
-          "dodgeWins": 3,
+          "dodgeWins": 2,
           "caught": 0,
           "memeTaps": 4,
-          "bossWindows": 3,
+          "bossWindows": 2,
           "newUnlocks": 3,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 1.081,
-          "nonClickActions": 27
+          "eventLayerEntropy": 0.991,
+          "nonClickActions": 26
         },
         {
           "bucket": 5,
@@ -145,16 +145,16 @@
             25,
             30
           ],
-          "clicks": 552,
+          "clicks": 568,
           "buys": 20,
-          "dodgeWins": 3,
+          "dodgeWins": 2,
           "caught": 0,
           "memeTaps": 5,
-          "bossWindows": 3,
+          "bossWindows": 2,
           "newUnlocks": 4,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 1.136,
-          "nonClickActions": 28
+          "eventLayerEntropy": 1.049,
+          "nonClickActions": 27
         }
       ],
       "noveltyTimeline": [
@@ -194,17 +194,17 @@
           "detail": "这个需求很简单"
         },
         {
+          "t": 2.6,
+          "kind": "quote",
+          "detail": "下班前给我"
+        },
+        {
           "t": 2.83,
           "kind": "flavor",
           "detail": "phone:5"
         },
         {
-          "t": 3,
-          "kind": "quote",
-          "detail": "下班前给我"
-        },
-        {
-          "t": 4.01,
+          "t": 3.6,
           "kind": "quote",
           "detail": "我提个思路啊"
         },
@@ -212,6 +212,11 @@
           "t": 4.33,
           "kind": "flavor",
           "detail": "phone:10"
+        },
+        {
+          "t": 4.63,
+          "kind": "quote",
+          "detail": "对齐一下颗粒度"
         },
         {
           "t": 4.83,
@@ -224,14 +229,14 @@
           "detail": "water:1"
         },
         {
-          "t": 5.04,
-          "kind": "quote",
-          "detail": "对齐一下颗粒度"
-        },
-        {
           "t": 5.33,
           "kind": "flavor",
           "detail": "coffee:10"
+        },
+        {
+          "t": 5.41,
+          "kind": "quote",
+          "detail": "形成闭环"
         },
         {
           "t": 6.08,
@@ -244,17 +249,12 @@
           "detail": "toilet:1"
         },
         {
-          "t": 6.09,
-          "kind": "quote",
-          "detail": "形成闭环"
-        },
-        {
-          "t": 6.87,
+          "t": 6.7,
           "kind": "quote",
           "detail": "底层逻辑"
         },
         {
-          "t": 8,
+          "t": 7.81,
           "kind": "quote",
           "detail": "赋能"
         },
@@ -264,19 +264,19 @@
           "detail": "water:5"
         },
         {
-          "t": 9.23,
+          "t": 8.8,
           "kind": "quote",
           "detail": "抓手"
+        },
+        {
+          "t": 9.75,
+          "kind": "quote",
+          "detail": "组合拳"
         },
         {
           "t": 10.08,
           "kind": "flavor",
           "detail": "toilet:5"
-        },
-        {
-          "t": 10.34,
-          "kind": "quote",
-          "detail": "组合拳"
         },
         {
           "t": 11.58,
@@ -360,17 +360,17 @@
         }
       ],
       "end": {
-        "moyu": 122547.04999999063,
-        "totalEarned": 591285.049999986,
+        "moyu": 123228.0499999906,
+        "totalEarned": 591966.0499999863,
         "idleRate": 764.2,
         "clickPower": 185
       },
       "economy": {
-        "bossRewards": 15604,
-        "memeEarnings": 10285,
-        "eventShareOfTotal": 4.38,
-        "memeEvents": 28,
-        "bossWindows": 15
+        "bossRewards": 12152,
+        "memeEarnings": 10350,
+        "eventShareOfTotal": 3.8,
+        "memeEvents": 29,
+        "bossWindows": 13
       }
     },
     {
@@ -387,12 +387,12 @@
           "buys": 20,
           "dodgeWins": 2,
           "caught": 0,
-          "memeTaps": 4,
+          "memeTaps": 5,
           "bossWindows": 2,
-          "newUnlocks": 12,
+          "newUnlocks": 13,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 0.991,
-          "nonClickActions": 26
+          "eventLayerEntropy": 1.049,
+          "nonClickActions": 27
         },
         {
           "bucket": 1,
@@ -406,7 +406,7 @@
           "caught": 0,
           "memeTaps": 5,
           "bossWindows": 2,
-          "newUnlocks": 7,
+          "newUnlocks": 6,
           "distinctActionTypes": 4,
           "eventLayerEntropy": 1.049,
           "nonClickActions": 27
@@ -417,15 +417,15 @@
             10,
             15
           ],
-          "clicks": 552,
+          "clicks": 568,
           "buys": 20,
-          "dodgeWins": 3,
+          "dodgeWins": 2,
           "caught": 0,
-          "memeTaps": 4,
-          "bossWindows": 3,
+          "memeTaps": 5,
+          "bossWindows": 2,
           "newUnlocks": 8,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 1.081,
+          "eventLayerEntropy": 1.049,
           "nonClickActions": 27
         },
         {
@@ -434,15 +434,15 @@
             15,
             20
           ],
-          "clicks": 568,
+          "clicks": 552,
           "buys": 20,
-          "dodgeWins": 2,
+          "dodgeWins": 3,
           "caught": 0,
-          "memeTaps": 6,
-          "bossWindows": 2,
-          "newUnlocks": 4,
+          "memeTaps": 5,
+          "bossWindows": 3,
+          "newUnlocks": 5,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 1.095,
+          "eventLayerEntropy": 1.136,
           "nonClickActions": 28
         },
         {
@@ -451,16 +451,16 @@
             20,
             25
           ],
-          "clicks": 552,
+          "clicks": 568,
           "buys": 20,
-          "dodgeWins": 3,
+          "dodgeWins": 2,
           "caught": 0,
           "memeTaps": 4,
-          "bossWindows": 3,
-          "newUnlocks": 4,
+          "bossWindows": 2,
+          "newUnlocks": 3,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 1.081,
-          "nonClickActions": 27
+          "eventLayerEntropy": 0.991,
+          "nonClickActions": 26
         },
         {
           "bucket": 5,
@@ -468,16 +468,16 @@
             25,
             30
           ],
-          "clicks": 552,
+          "clicks": 568,
           "buys": 20,
-          "dodgeWins": 3,
+          "dodgeWins": 2,
           "caught": 0,
           "memeTaps": 5,
-          "bossWindows": 3,
+          "bossWindows": 2,
           "newUnlocks": 4,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 1.136,
-          "nonClickActions": 28
+          "eventLayerEntropy": 1.049,
+          "nonClickActions": 27
         }
       ],
       "noveltyTimeline": [
@@ -522,7 +522,7 @@
           "detail": "phone:5"
         },
         {
-          "t": 4.01,
+          "t": 3.6,
           "kind": "quote",
           "detail": "赋能"
         },
@@ -530,6 +530,11 @@
           "t": 4.33,
           "kind": "flavor",
           "detail": "phone:10"
+        },
+        {
+          "t": 4.63,
+          "kind": "quote",
+          "detail": "在吗？帮个忙"
         },
         {
           "t": 4.83,
@@ -542,14 +547,14 @@
           "detail": "water:1"
         },
         {
-          "t": 5.04,
-          "kind": "quote",
-          "detail": "在吗？帮个忙"
-        },
-        {
           "t": 5.33,
           "kind": "flavor",
           "detail": "coffee:10"
+        },
+        {
+          "t": 5.41,
+          "kind": "quote",
+          "detail": "形成闭环"
         },
         {
           "t": 6.08,
@@ -562,12 +567,7 @@
           "detail": "toilet:1"
         },
         {
-          "t": 6.09,
-          "kind": "quote",
-          "detail": "形成闭环"
-        },
-        {
-          "t": 6.87,
+          "t": 6.7,
           "kind": "quote",
           "detail": "底层逻辑"
         },
@@ -582,7 +582,7 @@
           "detail": "toilet:5"
         },
         {
-          "t": 11.29,
+          "t": 10.99,
           "kind": "quote",
           "detail": "组合拳"
         },
@@ -617,14 +617,14 @@
           "detail": "phone:20"
         },
         {
+          "t": 15.62,
+          "kind": "quote",
+          "detail": "我提个思路啊"
+        },
+        {
           "t": 15.83,
           "kind": "flavor",
           "detail": "coffee:20"
-        },
-        {
-          "t": 16.99,
-          "kind": "quote",
-          "detail": "我提个思路啊"
         },
         {
           "t": 17.83,
@@ -637,6 +637,11 @@
           "detail": "group:5"
         },
         {
+          "t": 19.77,
+          "kind": "quote",
+          "detail": "下班前给我"
+        },
+        {
           "t": 20.08,
           "kind": "firstBuy",
           "detail": "meeting"
@@ -645,11 +650,6 @@
           "t": 20.08,
           "kind": "flavor",
           "detail": "meeting:1"
-        },
-        {
-          "t": 21.03,
-          "kind": "quote",
-          "detail": "下班前给我"
         },
         {
           "t": 21.33,
@@ -678,17 +678,17 @@
         }
       ],
       "end": {
-        "moyu": 122547.04999999063,
-        "totalEarned": 591285.049999986,
+        "moyu": 123228.0499999906,
+        "totalEarned": 591966.0499999863,
         "idleRate": 764.2,
         "clickPower": 185
       },
       "economy": {
-        "bossRewards": 15604,
-        "memeEarnings": 10285,
-        "eventShareOfTotal": 4.38,
-        "memeEvents": 28,
-        "bossWindows": 15
+        "bossRewards": 12152,
+        "memeEarnings": 10350,
+        "eventShareOfTotal": 3.8,
+        "memeEvents": 29,
+        "bossWindows": 13
       }
     },
     {
@@ -705,12 +705,12 @@
           "buys": 60,
           "dodgeWins": 2,
           "caught": 0,
-          "memeTaps": 4,
+          "memeTaps": 5,
           "bossWindows": 2,
-          "newUnlocks": 19,
+          "newUnlocks": 20,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 0.523,
-          "nonClickActions": 66
+          "eventLayerEntropy": 0.573,
+          "nonClickActions": 67
         },
         {
           "bucket": 1,
@@ -735,15 +735,15 @@
             10,
             15
           ],
-          "clicks": 828,
+          "clicks": 852,
           "buys": 60,
-          "dodgeWins": 3,
+          "dodgeWins": 2,
           "caught": 0,
-          "memeTaps": 4,
-          "bossWindows": 3,
-          "newUnlocks": 7,
+          "memeTaps": 5,
+          "bossWindows": 2,
+          "newUnlocks": 6,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 0.586,
+          "eventLayerEntropy": 0.573,
           "nonClickActions": 67
         },
         {
@@ -752,15 +752,15 @@
             15,
             20
           ],
-          "clicks": 852,
+          "clicks": 828,
           "buys": 46,
-          "dodgeWins": 2,
+          "dodgeWins": 3,
           "caught": 0,
-          "memeTaps": 6,
-          "bossWindows": 2,
+          "memeTaps": 5,
+          "bossWindows": 3,
           "newUnlocks": 3,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 0.725,
+          "eventLayerEntropy": 0.747,
           "nonClickActions": 54
         },
         {
@@ -769,16 +769,16 @@
             20,
             25
           ],
-          "clicks": 828,
+          "clicks": 852,
           "buys": 29,
-          "dodgeWins": 3,
+          "dodgeWins": 2,
           "caught": 0,
           "memeTaps": 4,
-          "bossWindows": 3,
+          "bossWindows": 2,
           "newUnlocks": 3,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 0.902,
-          "nonClickActions": 36
+          "eventLayerEntropy": 0.818,
+          "nonClickActions": 35
         },
         {
           "bucket": 5,
@@ -786,15 +786,15 @@
             25,
             30
           ],
-          "clicks": 828,
-          "buys": 23,
-          "dodgeWins": 3,
+          "clicks": 852,
+          "buys": 24,
+          "dodgeWins": 2,
           "caught": 0,
           "memeTaps": 5,
-          "bossWindows": 3,
+          "bossWindows": 2,
           "newUnlocks": 2,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 1.07,
+          "eventLayerEntropy": 0.966,
           "nonClickActions": 31
         }
       ],
@@ -855,6 +855,11 @@
           "detail": "这个需求很简单"
         },
         {
+          "t": 2.6,
+          "kind": "quote",
+          "detail": "下班前给我"
+        },
+        {
           "t": 2.66,
           "kind": "flavor",
           "detail": "water:5"
@@ -865,14 +870,14 @@
           "detail": "phone:10"
         },
         {
-          "t": 3,
-          "kind": "quote",
-          "detail": "下班前给我"
-        },
-        {
           "t": 3.08,
           "kind": "flavor",
           "detail": "coffee:20"
+        },
+        {
+          "t": 3.6,
+          "kind": "quote",
+          "detail": "我提个思路啊"
         },
         {
           "t": 3.91,
@@ -880,9 +885,9 @@
           "detail": "water:10"
         },
         {
-          "t": 4.01,
+          "t": 4.63,
           "kind": "quote",
-          "detail": "我提个思路啊"
+          "detail": "对齐一下颗粒度"
         },
         {
           "t": 4.91,
@@ -895,9 +900,9 @@
           "detail": "toilet:1"
         },
         {
-          "t": 5.04,
+          "t": 5.41,
           "kind": "quote",
-          "detail": "对齐一下颗粒度"
+          "detail": "形成闭环"
         },
         {
           "t": 5.41,
@@ -915,17 +920,12 @@
           "detail": "chair:1"
         },
         {
-          "t": 6.09,
-          "kind": "quote",
-          "detail": "形成闭环"
-        },
-        {
           "t": 6.41,
           "kind": "flavor",
           "detail": "toilet:5"
         },
         {
-          "t": 6.87,
+          "t": 6.7,
           "kind": "quote",
           "detail": "底层逻辑"
         },
@@ -940,7 +940,7 @@
           "detail": "water:20"
         },
         {
-          "t": 8,
+          "t": 7.81,
           "kind": "quote",
           "detail": "赋能"
         },
@@ -950,7 +950,7 @@
           "detail": "toilet:10"
         },
         {
-          "t": 9.23,
+          "t": 8.8,
           "kind": "quote",
           "detail": "抓手"
         },
@@ -960,7 +960,7 @@
           "detail": "chair:10"
         },
         {
-          "t": 10.34,
+          "t": 9.75,
           "kind": "quote",
           "detail": "组合拳"
         },
@@ -1010,43 +1010,43 @@
           "detail": "meeting:1"
         },
         {
-          "t": 21.3,
+          "t": 21.26,
           "kind": "flavor",
           "detail": "meeting:5"
         },
         {
-          "t": 21.96,
+          "t": 21.98,
           "kind": "flavor",
           "detail": "phone:50"
         },
         {
-          "t": 23.36,
+          "t": 23.31,
           "kind": "flavor",
           "detail": "group:20"
         },
         {
-          "t": 27.85,
+          "t": 27.72,
           "kind": "flavor",
           "detail": "meeting:10"
         },
         {
-          "t": 28.47,
+          "t": 28.36,
           "kind": "flavor",
           "detail": "water:50"
         }
       ],
       "end": {
-        "moyu": 52992.049999990384,
-        "totalEarned": 5230829.049999703,
+        "moyu": 944.5499999902356,
+        "totalEarned": 5287147.549999705,
         "idleRate": 2640.2,
-        "clickPower": 1633
+        "clickPower": 1641
       },
       "economy": {
-        "bossRewards": 70465,
-        "memeEarnings": 99650,
-        "eventShareOfTotal": 3.25,
-        "memeEvents": 28,
-        "bossWindows": 15
+        "bossRewards": 56508,
+        "memeEarnings": 101085,
+        "eventShareOfTotal": 2.98,
+        "memeEvents": 29,
+        "bossWindows": 13
       }
     },
     {
@@ -1063,12 +1063,12 @@
           "buys": 60,
           "dodgeWins": 2,
           "caught": 0,
-          "memeTaps": 4,
+          "memeTaps": 5,
           "bossWindows": 2,
-          "newUnlocks": 18,
+          "newUnlocks": 19,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 0.523,
-          "nonClickActions": 66
+          "eventLayerEntropy": 0.573,
+          "nonClickActions": 67
         },
         {
           "bucket": 1,
@@ -1082,7 +1082,7 @@
           "caught": 0,
           "memeTaps": 5,
           "bossWindows": 2,
-          "newUnlocks": 11,
+          "newUnlocks": 10,
           "distinctActionTypes": 4,
           "eventLayerEntropy": 0.573,
           "nonClickActions": 67
@@ -1093,15 +1093,15 @@
             10,
             15
           ],
-          "clicks": 828,
+          "clicks": 852,
           "buys": 60,
-          "dodgeWins": 3,
+          "dodgeWins": 2,
           "caught": 0,
-          "memeTaps": 4,
-          "bossWindows": 3,
+          "memeTaps": 5,
+          "bossWindows": 2,
           "newUnlocks": 7,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 0.586,
+          "eventLayerEntropy": 0.573,
           "nonClickActions": 67
         },
         {
@@ -1110,15 +1110,15 @@
             15,
             20
           ],
-          "clicks": 852,
+          "clicks": 828,
           "buys": 46,
-          "dodgeWins": 2,
+          "dodgeWins": 3,
           "caught": 0,
-          "memeTaps": 6,
-          "bossWindows": 2,
-          "newUnlocks": 4,
+          "memeTaps": 5,
+          "bossWindows": 3,
+          "newUnlocks": 5,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 0.725,
+          "eventLayerEntropy": 0.747,
           "nonClickActions": 54
         },
         {
@@ -1127,16 +1127,16 @@
             20,
             25
           ],
-          "clicks": 828,
+          "clicks": 852,
           "buys": 29,
-          "dodgeWins": 3,
+          "dodgeWins": 2,
           "caught": 0,
           "memeTaps": 4,
-          "bossWindows": 3,
-          "newUnlocks": 4,
+          "bossWindows": 2,
+          "newUnlocks": 3,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 0.902,
-          "nonClickActions": 36
+          "eventLayerEntropy": 0.818,
+          "nonClickActions": 35
         },
         {
           "bucket": 5,
@@ -1144,15 +1144,15 @@
             25,
             30
           ],
-          "clicks": 828,
-          "buys": 23,
-          "dodgeWins": 3,
+          "clicks": 852,
+          "buys": 24,
+          "dodgeWins": 2,
           "caught": 0,
           "memeTaps": 5,
-          "bossWindows": 3,
+          "bossWindows": 2,
           "newUnlocks": 2,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 1.07,
+          "eventLayerEntropy": 0.966,
           "nonClickActions": 31
         }
       ],
@@ -1228,14 +1228,19 @@
           "detail": "coffee:20"
         },
         {
+          "t": 3.6,
+          "kind": "quote",
+          "detail": "赋能"
+        },
+        {
           "t": 3.91,
           "kind": "flavor",
           "detail": "water:10"
         },
         {
-          "t": 4.01,
+          "t": 4.63,
           "kind": "quote",
-          "detail": "赋能"
+          "detail": "在吗？帮个忙"
         },
         {
           "t": 4.91,
@@ -1248,9 +1253,9 @@
           "detail": "toilet:1"
         },
         {
-          "t": 5.04,
+          "t": 5.41,
           "kind": "quote",
-          "detail": "在吗？帮个忙"
+          "detail": "形成闭环"
         },
         {
           "t": 5.41,
@@ -1268,17 +1273,12 @@
           "detail": "chair:1"
         },
         {
-          "t": 6.09,
-          "kind": "quote",
-          "detail": "形成闭环"
-        },
-        {
           "t": 6.41,
           "kind": "flavor",
           "detail": "toilet:5"
         },
         {
-          "t": 6.87,
+          "t": 6.7,
           "kind": "quote",
           "detail": "底层逻辑"
         },
@@ -1313,7 +1313,7 @@
           "detail": "group:1"
         },
         {
-          "t": 11.29,
+          "t": 10.99,
           "kind": "quote",
           "detail": "组合拳"
         },
@@ -1343,7 +1343,7 @@
           "detail": "coffee:50"
         },
         {
-          "t": 16.99,
+          "t": 15.62,
           "kind": "quote",
           "detail": "我提个思路啊"
         },
@@ -1358,48 +1358,48 @@
           "detail": "meeting:1"
         },
         {
-          "t": 21.03,
+          "t": 19.77,
           "kind": "quote",
           "detail": "下班前给我"
         },
         {
-          "t": 21.3,
+          "t": 21.26,
           "kind": "flavor",
           "detail": "meeting:5"
         },
         {
-          "t": 21.96,
+          "t": 21.98,
           "kind": "flavor",
           "detail": "phone:50"
         },
         {
-          "t": 23.36,
+          "t": 23.31,
           "kind": "flavor",
           "detail": "group:20"
         },
         {
-          "t": 27.85,
+          "t": 27.72,
           "kind": "flavor",
           "detail": "meeting:10"
         },
         {
-          "t": 28.47,
+          "t": 28.36,
           "kind": "flavor",
           "detail": "water:50"
         }
       ],
       "end": {
-        "moyu": 52992.049999990384,
-        "totalEarned": 5230829.049999703,
+        "moyu": 944.5499999902356,
+        "totalEarned": 5287147.549999705,
         "idleRate": 2640.2,
-        "clickPower": 1633
+        "clickPower": 1641
       },
       "economy": {
-        "bossRewards": 70465,
-        "memeEarnings": 99650,
-        "eventShareOfTotal": 3.25,
-        "memeEvents": 28,
-        "bossWindows": 15
+        "bossRewards": 56508,
+        "memeEarnings": 101085,
+        "eventShareOfTotal": 2.98,
+        "memeEvents": 29,
+        "bossWindows": 13
       }
     },
     {
@@ -1416,12 +1416,12 @@
           "buys": 10,
           "dodgeWins": 2,
           "caught": 0,
-          "memeTaps": 4,
+          "memeTaps": 5,
           "bossWindows": 2,
-          "newUnlocks": 9,
+          "newUnlocks": 10,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 1.299,
-          "nonClickActions": 16
+          "eventLayerEntropy": 1.333,
+          "nonClickActions": 17
         },
         {
           "bucket": 1,
@@ -1446,15 +1446,15 @@
             10,
             15
           ],
-          "clicks": 276,
+          "clicks": 284,
           "buys": 10,
-          "dodgeWins": 3,
+          "dodgeWins": 2,
           "caught": 0,
-          "memeTaps": 4,
-          "bossWindows": 3,
-          "newUnlocks": 1,
+          "memeTaps": 5,
+          "bossWindows": 2,
+          "newUnlocks": 0,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 1.383,
+          "eventLayerEntropy": 1.333,
           "nonClickActions": 17
         },
         {
@@ -1463,15 +1463,15 @@
             15,
             20
           ],
-          "clicks": 284,
+          "clicks": 276,
           "buys": 10,
-          "dodgeWins": 2,
+          "dodgeWins": 3,
           "caught": 0,
-          "memeTaps": 6,
-          "bossWindows": 2,
+          "memeTaps": 5,
+          "bossWindows": 3,
           "newUnlocks": 3,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 1.352,
+          "eventLayerEntropy": 1.415,
           "nonClickActions": 18
         },
         {
@@ -1480,16 +1480,16 @@
             20,
             25
           ],
-          "clicks": 276,
+          "clicks": 284,
           "buys": 10,
-          "dodgeWins": 3,
+          "dodgeWins": 2,
           "caught": 0,
           "memeTaps": 4,
-          "bossWindows": 3,
+          "bossWindows": 2,
           "newUnlocks": 1,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 1.383,
-          "nonClickActions": 17
+          "eventLayerEntropy": 1.299,
+          "nonClickActions": 16
         },
         {
           "bucket": 5,
@@ -1497,16 +1497,16 @@
             25,
             30
           ],
-          "clicks": 276,
+          "clicks": 284,
           "buys": 10,
-          "dodgeWins": 3,
+          "dodgeWins": 2,
           "caught": 0,
           "memeTaps": 5,
-          "bossWindows": 3,
+          "bossWindows": 2,
           "newUnlocks": 2,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 1.415,
-          "nonClickActions": 18
+          "eventLayerEntropy": 1.333,
+          "nonClickActions": 17
         }
       ],
       "noveltyTimeline": [
@@ -1536,14 +1536,19 @@
           "detail": "coffee:5"
         },
         {
-          "t": 3,
+          "t": 2.6,
           "kind": "quote",
           "detail": "下班前给我"
         },
         {
-          "t": 4.01,
+          "t": 3.6,
           "kind": "quote",
           "detail": "我提个思路啊"
+        },
+        {
+          "t": 4.63,
+          "kind": "quote",
+          "detail": "对齐一下颗粒度"
         },
         {
           "t": 4.71,
@@ -1556,27 +1561,22 @@
           "detail": "phone:1"
         },
         {
-          "t": 5.04,
-          "kind": "quote",
-          "detail": "对齐一下颗粒度"
-        },
-        {
           "t": 5.21,
           "kind": "flavor",
           "detail": "coffee:10"
         },
         {
-          "t": 6.09,
+          "t": 5.41,
           "kind": "quote",
           "detail": "形成闭环"
         },
         {
-          "t": 6.87,
+          "t": 6.7,
           "kind": "quote",
           "detail": "底层逻辑"
         },
         {
-          "t": 8,
+          "t": 7.81,
           "kind": "quote",
           "detail": "赋能"
         },
@@ -1586,7 +1586,7 @@
           "detail": "phone:5"
         },
         {
-          "t": 9.23,
+          "t": 8.8,
           "kind": "quote",
           "detail": "抓手"
         },
@@ -1601,7 +1601,7 @@
           "detail": "water:1"
         },
         {
-          "t": 10.34,
+          "t": 9.75,
           "kind": "quote",
           "detail": "组合拳"
         },
@@ -1637,17 +1637,17 @@
         }
       ],
       "end": {
-        "moyu": 85800.30000000559,
-        "totalEarned": 98524.30000000622,
+        "moyu": 86621.3000000056,
+        "totalEarned": 99345.30000000626,
         "idleRate": 41.2,
         "clickPower": 83
       },
       "economy": {
-        "bossRewards": 1566,
-        "memeEarnings": 5145,
-        "eventShareOfTotal": 6.81,
-        "memeEvents": 28,
-        "bossWindows": 15
+        "bossRewards": 1279,
+        "memeEarnings": 5225,
+        "eventShareOfTotal": 6.55,
+        "memeEvents": 29,
+        "bossWindows": 13
       }
     },
     {
@@ -1664,12 +1664,12 @@
           "buys": 10,
           "dodgeWins": 2,
           "caught": 0,
-          "memeTaps": 4,
+          "memeTaps": 5,
           "bossWindows": 2,
-          "newUnlocks": 8,
+          "newUnlocks": 9,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 1.299,
-          "nonClickActions": 16
+          "eventLayerEntropy": 1.333,
+          "nonClickActions": 17
         },
         {
           "bucket": 1,
@@ -1683,7 +1683,7 @@
           "caught": 0,
           "memeTaps": 5,
           "bossWindows": 2,
-          "newUnlocks": 7,
+          "newUnlocks": 6,
           "distinctActionTypes": 4,
           "eventLayerEntropy": 1.333,
           "nonClickActions": 17
@@ -1694,15 +1694,15 @@
             10,
             15
           ],
-          "clicks": 276,
+          "clicks": 284,
           "buys": 10,
-          "dodgeWins": 3,
+          "dodgeWins": 2,
           "caught": 0,
-          "memeTaps": 4,
-          "bossWindows": 3,
+          "memeTaps": 5,
+          "bossWindows": 2,
           "newUnlocks": 1,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 1.383,
+          "eventLayerEntropy": 1.333,
           "nonClickActions": 17
         },
         {
@@ -1711,15 +1711,15 @@
             15,
             20
           ],
-          "clicks": 284,
+          "clicks": 276,
           "buys": 10,
-          "dodgeWins": 2,
+          "dodgeWins": 3,
           "caught": 0,
-          "memeTaps": 6,
-          "bossWindows": 2,
-          "newUnlocks": 4,
+          "memeTaps": 5,
+          "bossWindows": 3,
+          "newUnlocks": 5,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 1.352,
+          "eventLayerEntropy": 1.415,
           "nonClickActions": 18
         },
         {
@@ -1728,16 +1728,16 @@
             20,
             25
           ],
-          "clicks": 276,
+          "clicks": 284,
           "buys": 10,
-          "dodgeWins": 3,
+          "dodgeWins": 2,
           "caught": 0,
           "memeTaps": 4,
-          "bossWindows": 3,
-          "newUnlocks": 2,
+          "bossWindows": 2,
+          "newUnlocks": 1,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 1.383,
-          "nonClickActions": 17
+          "eventLayerEntropy": 1.299,
+          "nonClickActions": 16
         },
         {
           "bucket": 5,
@@ -1745,16 +1745,16 @@
             25,
             30
           ],
-          "clicks": 276,
+          "clicks": 284,
           "buys": 10,
-          "dodgeWins": 3,
+          "dodgeWins": 2,
           "caught": 0,
           "memeTaps": 5,
-          "bossWindows": 3,
+          "bossWindows": 2,
           "newUnlocks": 2,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 1.415,
-          "nonClickActions": 18
+          "eventLayerEntropy": 1.333,
+          "nonClickActions": 17
         }
       ],
       "noveltyTimeline": [
@@ -1784,9 +1784,14 @@
           "detail": "coffee:5"
         },
         {
-          "t": 4.01,
+          "t": 3.6,
           "kind": "quote",
           "detail": "赋能"
+        },
+        {
+          "t": 4.63,
+          "kind": "quote",
+          "detail": "在吗？帮个忙"
         },
         {
           "t": 4.71,
@@ -1799,22 +1804,17 @@
           "detail": "phone:1"
         },
         {
-          "t": 5.04,
-          "kind": "quote",
-          "detail": "在吗？帮个忙"
-        },
-        {
           "t": 5.21,
           "kind": "flavor",
           "detail": "coffee:10"
         },
         {
-          "t": 6.09,
+          "t": 5.41,
           "kind": "quote",
           "detail": "形成闭环"
         },
         {
-          "t": 6.87,
+          "t": 6.7,
           "kind": "quote",
           "detail": "底层逻辑"
         },
@@ -1834,9 +1834,14 @@
           "detail": "water:1"
         },
         {
-          "t": 11.29,
+          "t": 10.99,
           "kind": "quote",
           "detail": "组合拳"
+        },
+        {
+          "t": 15.62,
+          "kind": "quote",
+          "detail": "我提个思路啊"
         },
         {
           "t": 15.71,
@@ -1849,17 +1854,12 @@
           "detail": "phone:10"
         },
         {
-          "t": 16.99,
-          "kind": "quote",
-          "detail": "我提个思路啊"
-        },
-        {
           "t": 18.21,
           "kind": "flavor",
           "detail": "coffee:20"
         },
         {
-          "t": 21.03,
+          "t": 19.77,
           "kind": "quote",
           "detail": "下班前给我"
         },
@@ -1880,17 +1880,17 @@
         }
       ],
       "end": {
-        "moyu": 85800.30000000559,
-        "totalEarned": 98524.30000000622,
+        "moyu": 86621.3000000056,
+        "totalEarned": 99345.30000000626,
         "idleRate": 41.2,
         "clickPower": 83
       },
       "economy": {
-        "bossRewards": 1566,
-        "memeEarnings": 5145,
-        "eventShareOfTotal": 6.81,
-        "memeEvents": 28,
-        "bossWindows": 15
+        "bossRewards": 1279,
+        "memeEarnings": 5225,
+        "eventShareOfTotal": 6.55,
+        "memeEvents": 29,
+        "bossWindows": 13
       }
     }
   ]

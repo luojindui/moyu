@@ -26,9 +26,19 @@
         "rank": "带薪摸鱼传说",
         "threshold": 100000000,
         "hour": 1.81
+      },
+      {
+        "rank": "摸鱼之神",
+        "threshold": 1000000000,
+        "hour": 5.55
+      },
+      {
+        "rank": "摸鱼宇宙尽头",
+        "threshold": 2500000000,
+        "hour": 8.78
       }
     ],
-    "endTotalEarned": 14256080224
+    "endTotalEarned": 14256928483
   },
   {
     "persona": "idle(挂机党)",
@@ -57,9 +67,19 @@
         "rank": "带薪摸鱼传说",
         "threshold": 100000000,
         "hour": 7.28
+      },
+      {
+        "rank": "摸鱼之神",
+        "threshold": 1000000000,
+        "hour": 12.62
+      },
+      {
+        "rank": "摸鱼宇宙尽头",
+        "threshold": 2500000000,
+        "hour": 17.03
       }
     ],
-    "endTotalEarned": 5763310301
+    "endTotalEarned": 5763951118
   },
   {
     "persona": "whale(爆肝党)",
@@ -87,10 +107,20 @@
       {
         "rank": "带薪摸鱼传说",
         "threshold": 100000000,
-        "hour": 2.05
+        "hour": 2.01
+      },
+      {
+        "rank": "摸鱼之神",
+        "threshold": 1000000000,
+        "hour": 6.69
+      },
+      {
+        "rank": "摸鱼宇宙尽头",
+        "threshold": 2500000000,
+        "hour": 10.67
       }
     ],
-    "endTotalEarned": 10039062169
+    "endTotalEarned": 10550858899
   },
   {
     "persona": "casual(休闲党)",
@@ -119,8 +149,18 @@
         "rank": "带薪摸鱼传说",
         "threshold": 100000000,
         "hour": 4.12
+      },
+      {
+        "rank": "摸鱼之神",
+        "threshold": 1000000000,
+        "hour": 8.79
+      },
+      {
+        "rank": "摸鱼宇宙尽头",
+        "threshold": 2500000000,
+        "hour": 12.72
       }
     ],
-    "endTotalEarned": 9179290463
+    "endTotalEarned": 9180506349
   }
 ]

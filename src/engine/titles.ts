@@ -10,6 +10,8 @@ export const RANKS: Rank[] = [
   { name: "资深摸鱼", at: 100_000 },
   { name: "摸鱼大师", at: 1_000_000 },
   { name: "带薪摸鱼传说", at: 100_000_000 },
+  { name: "摸鱼之神", at: 1_000_000_000 },
+  { name: "摸鱼宇宙尽头", at: 2_500_000_000 },
 ];
 
 export interface RankInfo {

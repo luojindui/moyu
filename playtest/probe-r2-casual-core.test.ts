@@ -114,7 +114,7 @@ describe("R2-③ 彩蛋与商店增量文案覆盖", () => {
     const mid = rankFor(50_000);
     console.log(`累计5万 → ${mid.current}，升 ${mid.next!.name} 进度 ${(mid.progress * 100).toFixed(0)}%`);
     expect(rankFor(0).current).toBe("摸鱼实习生");
-    expect(rankFor(1e9).current).toBe("带薪摸鱼传说");
+    expect(rankFor(1e9).current).toBe("摸鱼之神"); // R4 扩充：7 档
   });
 });
 

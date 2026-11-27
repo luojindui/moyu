@@ -1,7 +1,12 @@
 import { SpriteGrid } from "./sprites";
 import { Fx } from "./fx";
 import type { EventState } from "../engine/events";
-import { MEME_REWARD_CLICKS } from "../engine/events";
+import {
+  MEME_REWARD_CLICKS,
+  BOSS_TYPE_TARGET,
+  BOSS_BLITZ_TARGET,
+  type BossVariant,
+} from "../engine/events";
 
 /** 场景精灵的行列映射（视觉定稿前可一键调整） */
 export const SPRITE_MAP = {
@@ -149,13 +154,14 @@ export class Scene {
     ctx.fillStyle = "rgba(255,255,255,0.75)";
     ctx.textAlign = "center";
     if (this.events && this.events.bossUntil > this.gameTime) {
-      // 老板巡逻：红色警戒横幅
+      // 老板巡逻：变体决定横幅文案与玩法（variety #1）
       const remain = Math.ceil(this.events.bossUntil - this.gameTime);
-      ctx.fillStyle = "#b3413c";
+      const { bossVariant, bossTaps } = this.events;
+      ctx.fillStyle = bossVariant === "hold" ? "#b3413c" : "#2f7a4f";
       ctx.fillRect(0, 0, vw * s, 3.2 * s * 4);
       ctx.fillStyle = "#fff";
       ctx.font = `bold ${Math.max(14, 4 * s)}px system-ui`;
-      ctx.fillText(`⚠ 老板来了！忍住别点 (${remain}s)`, (vw / 2) * s, 2.6 * s * 4);
+      ctx.fillText(bossBannerText(bossVariant, remain, bossTaps), (vw / 2) * s, 2.6 * s * 4);
     } else if (this.events && this.events.memeUntil > this.gameTime) {
       // 同事丢梗：气泡目标
       const mx = this.memePos.x * s;
@@ -182,4 +188,11 @@ export class Scene {
     const r = canvas.getBoundingClientRect();
     return { x: clientX - r.left, y: clientY - r.top };
   }
+}
+
+/** 巡逻变体横幅文案 */
+export function bossBannerText(variant: BossVariant, remain: number, taps: number): string {
+  if (variant === "type") return `假装工作！点 ${Math.min(taps, BOSS_TYPE_TARGET)}/${BOSS_TYPE_TARGET} (${remain}s)`;
+  if (variant === "blitz") return `摸鱼冲刺！连点 ${Math.min(taps, BOSS_BLITZ_TARGET)}/${BOSS_BLITZ_TARGET} (${remain}s)`;
+  return `⚠ 老板来了！忍住别点 (${remain}s)`;
 }

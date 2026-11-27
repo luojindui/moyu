@@ -22,6 +22,12 @@ describe("摸鱼段位", () => {
     expect(r.progress).toBe(1);
   });
 
+  it("R4 扩充：7 档，覆盖 1e9/2.5e9（nurture #3：终局真空）", () => {
+    expect(RANKS.map((r) => r.at)).toEqual([0, 10_000, 100_000, 1_000_000, 100_000_000, 1_000_000_000, 2_500_000_000]);
+    expect(rankFor(1_100_000_000).current).toBe("摸鱼之神");
+    expect(rankFor(1_100_000_000).next?.at).toBe(2_500_000_000);
+  });
+
   it("段位单调递增且不重复", () => {
     for (let i = 1; i < RANKS.length; i++) {
       expect(RANKS[i]!.at).toBeGreaterThan(RANKS[i - 1]!.at);

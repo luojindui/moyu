@@ -46,8 +46,8 @@ describe("养成党：段位 / 彩蛋 / 进度条密度（24h 连续游玩）", 
     writeFileSync("playtest/r3-nurture-ranks.json", JSON.stringify(lines, null, 2));
 
     // 事实断言：段位体系只有 5 档、4 次跨越
-    expect(RANKS.length).toBe(5);
-    expect(RANKS.map((r) => r.at)).toEqual([0, 1e4, 1e5, 1e6, 1e8]);
+    expect(RANKS.length).toBe(7); // R4 扩充（nurture #3）：1e9 / 2.5e9 两档
+    expect(RANKS.map((r) => r.at)).toEqual([0, 1e4, 1e5, 1e6, 1e8, 1e9, 2.5e9]); // R4 扩充 7 档
     const clicker = runs["clicker(狂点党)"]!;
     expect(clicker.endTotalEarned).toBeGreaterThan(1e6);
   });
