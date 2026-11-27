@@ -1,0 +1,1264 @@
+{
+  "last": {
+    "hours": 720,
+    "totalEarned": 3652916222772.992,
+    "moyu": 21146725602.863976,
+    "idleRate": 1834816.2,
+    "clickPower": 1,
+    "levels": {
+      "phone": 132,
+      "toilet": 116,
+      "group": 110,
+      "meeting": 105,
+      "deep": 101,
+      "retire": 89
+    },
+    "totalLevels": 653,
+    "unlocked": 6,
+    "collection": 30,
+    "quotes": 0,
+    "flavors": 30,
+    "totalClicks": 0,
+    "rankIdx": 13,
+    "rankName": "摸鱼宇宙尽头·终",
+    "rankProgress": 1,
+    "toNextRank": 0,
+    "blockIncome": 3277328886207.9087,
+    "blockGrowth": 2.376052911144678,
+    "income": {
+      "idle": 3478967831220,
+      "click": 0,
+      "event": 173948391560.59134
+    },
+    "purchases": {
+      "coffee": 0,
+      "water": 0,
+      "chair": 0,
+      "phone": 132,
+      "toilet": 116,
+      "group": 110,
+      "meeting": 105,
+      "deep": 101,
+      "retire": 89
+    },
+    "bestIdleRoi": 4.437212535101477e-8,
+    "items": [
+      {
+        "id": "coffee",
+        "name": "咖啡续命",
+        "isClick": true,
+        "level": 0,
+        "cost": 15,
+        "dIdle": 0,
+        "dClick": 1,
+        "idleRoi": 0,
+        "clickRoi": 0.06666666666666667
+      },
+      {
+        "id": "water",
+        "name": "带薪喝水",
+        "isClick": true,
+        "level": 0,
+        "cost": 100,
+        "dIdle": 0,
+        "dClick": 2,
+        "idleRoi": 0,
+        "clickRoi": 0.02
+      },
+      {
+        "id": "chair",
+        "name": "人体工学椅",
+        "isClick": true,
+        "level": 0,
+        "cost": 800,
+        "dIdle": 0,
+        "dClick": 5,
+        "idleRoi": 0,
+        "clickRoi": 0.00625
+      },
+      {
+        "id": "phone",
+        "name": "刷手机",
+        "isClick": false,
+        "level": 132,
+        "cost": 5141441883,
+        "dIdle": 128,
+        "dClick": 0,
+        "idleRoi": 2.4895739933038548e-8,
+        "clickRoi": 0
+      },
+      {
+        "id": "toilet",
+        "name": "带薪蹲坑",
+        "isClick": false,
+        "level": 116,
+        "cost": 6593268036,
+        "dIdle": 160,
+        "dClick": 0,
+        "idleRoi": 2.4267176630220648e-8,
+        "clickRoi": 0
+      },
+      {
+        "id": "group",
+        "name": "摸鱼群聊",
+        "isClick": false,
+        "level": 110,
+        "cost": 19003011459,
+        "dIdle": 480,
+        "dClick": 0,
+        "idleRoi": 2.5259154373275274e-8,
+        "clickRoi": 0
+      },
+      {
+        "id": "meeting",
+        "name": "无用会议",
+        "isClick": false,
+        "level": 105,
+        "cost": 59049094987,
+        "dIdle": 1600,
+        "dClick": 0,
+        "idleRoi": 2.7096096906349696e-8,
+        "clickRoi": 0
+      },
+      {
+        "id": "deep",
+        "name": "深度摸鱼",
+        "isClick": false,
+        "level": 101,
+        "cost": 202569070246,
+        "dIdle": 5760,
+        "dClick": 0,
+        "idleRoi": 2.8434745704292627e-8,
+        "clickRoi": 0
+      },
+      {
+        "id": "retire",
+        "name": "退休式躺平",
+        "isClick": false,
+        "level": 89,
+        "cost": 252410717571,
+        "dIdle": 11200,
+        "dClick": 0,
+        "idleRoi": 4.437212535101477e-8,
+        "clickRoi": 0
+      }
+    ]
+  },
+  "rank7AtHours": 152.06666666666666,
+  "gap": {
+    "missing": 25,
+    "totalCost": 6604286,
+    "byItem": [
+      {
+        "id": "chair",
+        "name": "人体工学椅",
+        "from": 0,
+        "to": 50,
+        "cost": 5774199
+      },
+      {
+        "id": "water",
+        "name": "带薪喝水",
+        "from": 0,
+        "to": 50,
+        "cost": 721798
+      },
+      {
+        "id": "coffee",
+        "name": "咖啡续命",
+        "from": 0,
+        "to": 50,
+        "cost": 108289
+      }
+    ],
+    "retireShare": 0
+  },
+  "income": {
+    "idle": 3478967831220,
+    "click": 0,
+    "event": 173948391560.59134
+  },
+  "blocks": [
+    {
+      "fromHours": 0,
+      "toHours": 6,
+      "income": 1041239744.9999865,
+      "growth": null,
+      "totalEarned": 1041239744.9999865,
+      "idleRate": 87728.2,
+      "rankName": "摸鱼之神"
+    },
+    {
+      "fromHours": 6,
+      "toHours": 12,
+      "income": 3354705270.00012,
+      "growth": 3.221837512551121,
+      "totalEarned": 4395945015.000107,
+      "idleRate": 222656.2,
+      "rankName": "摸鱼宇宙尽头"
+    },
+    {
+      "fromHours": 12,
+      "toHours": 18,
+      "income": 5431559741.999451,
+      "growth": 1.6190870150566927,
+      "totalEarned": 9827504756.999557,
+      "idleRate": 252768.2,
+      "rankName": "带薪摸鱼之神"
+    },
+    {
+      "fromHours": 18,
+      "toHours": 24,
+      "income": 5938147025.999451,
+      "growth": 1.0932673685024252,
+      "totalEarned": 15765651782.999008,
+      "idleRate": 270256.2,
+      "rankName": "摸鱼星人"
+    },
+    {
+      "fromHours": 24,
+      "toHours": 30,
+      "income": 6798324330.001564,
+      "growth": 1.144856181606136,
+      "totalEarned": 22563976113.000572,
+      "idleRate": 374768.2,
+      "rankName": "摸鱼黑洞"
+    },
+    {
+      "fromHours": 30,
+      "toHours": 36,
+      "income": 9334542672.002197,
+      "growth": 1.3730652170871127,
+      "totalEarned": 31898518785.00277,
+      "idleRate": 430192.2,
+      "rankName": "摸鱼黑洞"
+    },
+    {
+      "fromHours": 36,
+      "toHours": 42,
+      "income": 9923949756.002197,
+      "growth": 1.0631425774899346,
+      "totalEarned": 41822468541.00497,
+      "idleRate": 443856.2,
+      "rankName": "摸鱼次元"
+    },
+    {
+      "fromHours": 42,
+      "toHours": 48,
+      "income": 10189521720.002197,
+      "growth": 1.026760712269767,
+      "totalEarned": 52011990261.007164,
+      "idleRate": 453488.2,
+      "rankName": "摸鱼次元"
+    },
+    {
+      "fromHours": 48,
+      "toHours": 54,
+      "income": 10415879208.002197,
+      "growth": 1.0222147313897625,
+      "totalEarned": 62427869469.00936,
+      "idleRate": 463552.2,
+      "rankName": "摸鱼次元"
+    },
+    {
+      "fromHours": 54,
+      "toHours": 60,
+      "income": 11825348975.99775,
+      "growth": 1.1353193273317437,
+      "totalEarned": 74253218445.00711,
+      "idleRate": 640832.2,
+      "rankName": "摸鱼次元"
+    },
+    {
+      "fromHours": 60,
+      "toHours": 66,
+      "income": 14685584255.99121,
+      "growth": 1.2418732238514874,
+      "totalEarned": 88938802700.99832,
+      "idleRate": 654912.2,
+      "rankName": "摸鱼奇点"
+    },
+    {
+      "fromHours": 66,
+      "toHours": 72,
+      "income": 14973136415.99121,
+      "growth": 1.0195805733696082,
+      "totalEarned": 103911939116.98953,
+      "idleRate": 666272.2,
+      "rankName": "摸鱼奇点"
+    },
+    {
+      "fromHours": 72,
+      "toHours": 78,
+      "income": 15214656491.99121,
+      "growth": 1.016130226112283,
+      "totalEarned": 119126595608.98074,
+      "idleRate": 675904.2,
+      "rankName": "摸鱼奇点"
+    },
+    {
+      "fromHours": 78,
+      "toHours": 84,
+      "income": 15416045063.99121,
+      "growth": 1.0132364849713176,
+      "totalEarned": 134542640672.97195,
+      "idleRate": 682656.2,
+      "rankName": "摸鱼奇点"
+    },
+    {
+      "fromHours": 84,
+      "toHours": 90,
+      "income": 15626708495.99121,
+      "growth": 1.0136652060321274,
+      "totalEarned": 150169349168.96317,
+      "idleRate": 695936.2,
+      "rankName": "摸鱼奇点"
+    },
+    {
+      "fromHours": 90,
+      "toHours": 96,
+      "income": 15823296215.99121,
+      "growth": 1.012580238509628,
+      "totalEarned": 165992645384.95438,
+      "idleRate": 698816.2,
+      "rankName": "摸鱼永恒"
+    },
+    {
+      "fromHours": 96,
+      "toHours": 102,
+      "income": 16001191835.99121,
+      "growth": 1.0112426398123178,
+      "totalEarned": 181993837220.9456,
+      "idleRate": 708480.2,
+      "rankName": "摸鱼永恒"
+    },
+    {
+      "fromHours": 102,
+      "toHours": 108,
+      "income": 16125176087.99121,
+      "growth": 1.0077484385707522,
+      "totalEarned": 198119013308.9368,
+      "idleRate": 715264.2,
+      "rankName": "摸鱼永恒"
+    },
+    {
+      "fromHours": 108,
+      "toHours": 114,
+      "income": 16252311095.99121,
+      "growth": 1.007884255483863,
+      "totalEarned": 214371324404.928,
+      "idleRate": 718144.2,
+      "rankName": "摸鱼永恒"
+    },
+    {
+      "fromHours": 114,
+      "toHours": 120,
+      "income": 16379269955.99121,
+      "growth": 1.0078117419270491,
+      "totalEarned": 230750594360.91922,
+      "idleRate": 724928.2,
+      "rankName": "摸鱼永恒"
+    },
+    {
+      "fromHours": 120,
+      "toHours": 126,
+      "income": 16478339975.99121,
+      "growth": 1.0060485003462418,
+      "totalEarned": 247228934336.91043,
+      "idleRate": 727808.2,
+      "rankName": "摸鱼永恒"
+    },
+    {
+      "fromHours": 126,
+      "toHours": 132,
+      "income": 16596621971.99121,
+      "growth": 1.0071780286225636,
+      "totalEarned": 263825556308.90164,
+      "idleRate": 734592.2,
+      "rankName": "摸鱼永恒"
+    },
+    {
+      "fromHours": 132,
+      "toHours": 138,
+      "income": 16687676376.006073,
+      "growth": 1.005486321503769,
+      "totalEarned": 280513232684.9077,
+      "idleRate": 737472.2,
+      "rankName": "摸鱼永恒"
+    },
+    {
+      "fromHours": 138,
+      "toHours": 144,
+      "income": 16773210216.035156,
+      "growth": 1.0051255691986012,
+      "totalEarned": 297286442900.9429,
+      "idleRate": 743456.2,
+      "rankName": "摸鱼永恒"
+    },
+    {
+      "fromHours": 144,
+      "toHours": 150,
+      "income": 16878710016.035156,
+      "growth": 1.0062897798716637,
+      "totalEarned": 314165152916.978,
+      "idleRate": 744256.2,
+      "rankName": "摸鱼永恒"
+    },
+    {
+      "fromHours": 150,
+      "toHours": 156,
+      "income": 16943370696.035156,
+      "growth": 1.0038309017655123,
+      "totalEarned": 331108523613.0132,
+      "idleRate": 747136.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 156,
+      "toHours": 162,
+      "income": 21793942296.035156,
+      "growth": 1.2862813832630753,
+      "totalEarned": 352902465909.04834,
+      "idleRate": 994816.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 162,
+      "toHours": 168,
+      "income": 22684870656.035156,
+      "growth": 1.0408796328767962,
+      "totalEarned": 375587336565.0835,
+      "idleRate": 1006176.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 168,
+      "toHours": 174,
+      "income": 23358066984.035156,
+      "growth": 1.0296760046908577,
+      "totalEarned": 398945403549.11865,
+      "idleRate": 1088880.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 174,
+      "toHours": 180,
+      "income": 24756434136.035156,
+      "growth": 1.0598665614306082,
+      "totalEarned": 423701837685.1538,
+      "idleRate": 1093680.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 180,
+      "toHours": 186,
+      "income": 24831555336.035156,
+      "growth": 1.0030344111590228,
+      "totalEarned": 448533393021.18896,
+      "idleRate": 1095280.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 186,
+      "toHours": 192,
+      "income": 24942208536.035156,
+      "growth": 1.0044561526051259,
+      "totalEarned": 473475601557.2241,
+      "idleRate": 1100880.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 192,
+      "toHours": 198,
+      "income": 25396994448.035156,
+      "growth": 1.0182335863058378,
+      "totalEarned": 498872596005.2593,
+      "idleRate": 1132064.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 198,
+      "toHours": 204,
+      "income": 25698122856.035156,
+      "growth": 1.0118568521411515,
+      "totalEarned": 524570718861.29443,
+      "idleRate": 1133664.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 204,
+      "toHours": 210,
+      "income": 25785503856.035156,
+      "growth": 1.0034002872696002,
+      "totalEarned": 550356222717.3296,
+      "idleRate": 1139264.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 210,
+      "toHours": 216,
+      "income": 25905209400.035156,
+      "growth": 1.0046423581508563,
+      "totalEarned": 576261432117.3647,
+      "idleRate": 1145728.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 216,
+      "toHours": 222,
+      "income": 26009786376.035156,
+      "growth": 1.0040369091168149,
+      "totalEarned": 602271218493.3999,
+      "idleRate": 1147328.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 222,
+      "toHours": 228,
+      "income": 26083319976.035156,
+      "growth": 1.0028271512474918,
+      "totalEarned": 628354538469.435,
+      "idleRate": 1152928.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 228,
+      "toHours": 234,
+      "income": 26179072416.035156,
+      "growth": 1.0036710219438314,
+      "totalEarned": 654533610885.4702,
+      "idleRate": 1158912.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 234,
+      "toHours": 240,
+      "income": 26306440776.035156,
+      "growth": 1.004865273985872,
+      "totalEarned": 680840051661.5054,
+      "idleRate": 1160992.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 240,
+      "toHours": 246,
+      "income": 26331303096.035156,
+      "growth": 1.000945103908646,
+      "totalEarned": 707171354757.5405,
+      "idleRate": 1160992.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 246,
+      "toHours": 252,
+      "income": 26454606696.035156,
+      "growth": 1.00468277622077,
+      "totalEarned": 733625961453.5757,
+      "idleRate": 1166592.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 252,
+      "toHours": 258,
+      "income": 26533747800.035156,
+      "growth": 1.0029915811982895,
+      "totalEarned": 760159709253.6108,
+      "idleRate": 1173056.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 258,
+      "toHours": 264,
+      "income": 26623537416.035156,
+      "growth": 1.003383977893989,
+      "totalEarned": 786783246669.646,
+      "idleRate": 1174656.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 264,
+      "toHours": 270,
+      "income": 26641202616.035156,
+      "growth": 1.0006635181390044,
+      "totalEarned": 813424449285.6812,
+      "idleRate": 1174656.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 270,
+      "toHours": 276,
+      "income": 26764859016.035156,
+      "growth": 1.0046415472222554,
+      "totalEarned": 840189308301.7163,
+      "idleRate": 1180256.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 276,
+      "toHours": 282,
+      "income": 26814845736.035156,
+      "growth": 1.0018676250067318,
+      "totalEarned": 867004154037.7515,
+      "idleRate": 1186720.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 282,
+      "toHours": 288,
+      "income": 26921340936.035156,
+      "growth": 1.0039715014976531,
+      "totalEarned": 893925494973.7866,
+      "idleRate": 1188320.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 288,
+      "toHours": 294,
+      "income": 26951102136.035156,
+      "growth": 1.001105487281288,
+      "totalEarned": 920876597109.8218,
+      "idleRate": 1188320.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 294,
+      "toHours": 300,
+      "income": 27005609736.035156,
+      "growth": 1.002022462744747,
+      "totalEarned": 947882206845.8569,
+      "idleRate": 1193920.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 300,
+      "toHours": 306,
+      "income": 27078110136.035156,
+      "growth": 1.0026846422172524,
+      "totalEarned": 974960316981.8921,
+      "idleRate": 1193920.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 306,
+      "toHours": 312,
+      "income": 27158467896.035156,
+      "growth": 1.0029676280802573,
+      "totalEarned": 1002118784877.9272,
+      "idleRate": 1200384.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 312,
+      "toHours": 318,
+      "income": 27233911656.035156,
+      "growth": 1.0027779092800375,
+      "totalEarned": 1029352696533.9624,
+      "idleRate": 1201984.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 318,
+      "toHours": 324,
+      "income": 27261001656.035156,
+      "growth": 1.0009947157184818,
+      "totalEarned": 1056613698189.9976,
+      "idleRate": 1201984.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 324,
+      "toHours": 330,
+      "income": 27294429456.035156,
+      "growth": 1.0012262131972176,
+      "totalEarned": 1083908127646.0327,
+      "idleRate": 1207584.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 330,
+      "toHours": 336,
+      "income": 27388009655.959473,
+      "growth": 1.003428545743191,
+      "totalEarned": 1111296137301.9922,
+      "idleRate": 1207584.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 336,
+      "toHours": 342,
+      "income": 27388009655.859375,
+      "growth": 0.9999999999963453,
+      "totalEarned": 1138684146957.8516,
+      "idleRate": 1207584.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 342,
+      "toHours": 348,
+      "income": 37525629455.859375,
+      "growth": 1.370148102304001,
+      "totalEarned": 1176209776413.711,
+      "idleRate": 1661184.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 348,
+      "toHours": 354,
+      "income": 37735351415.859375,
+      "growth": 1.0055887659458635,
+      "totalEarned": 1213945127829.5703,
+      "idleRate": 1666944.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 354,
+      "toHours": 360,
+      "income": 37806294455.859375,
+      "growth": 1.0018800153526644,
+      "totalEarned": 1251751422285.4297,
+      "idleRate": 1666944.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 360,
+      "toHours": 366,
+      "income": 37948296455.859375,
+      "growth": 1.0037560412106983,
+      "totalEarned": 1289699718741.289,
+      "idleRate": 1678144.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 366,
+      "toHours": 372,
+      "income": 38060310455.859375,
+      "growth": 1.0029517530551153,
+      "totalEarned": 1327760029197.1484,
+      "idleRate": 1678144.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 372,
+      "toHours": 378,
+      "income": 38167360055.859375,
+      "growth": 1.0028126307620153,
+      "totalEarned": 1365927389253.0078,
+      "idleRate": 1683904.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 378,
+      "toHours": 384,
+      "income": 38190947255.859375,
+      "growth": 1.0006179940128288,
+      "totalEarned": 1404118336508.8672,
+      "idleRate": 1683904.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 384,
+      "toHours": 390,
+      "income": 38358174455.859375,
+      "growth": 1.0043787130724897,
+      "totalEarned": 1442476510964.7266,
+      "idleRate": 1695104.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 390,
+      "toHours": 396,
+      "income": 38444963255.859375,
+      "growth": 1.0022625894279686,
+      "totalEarned": 1480921474220.586,
+      "idleRate": 1695104.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 396,
+      "toHours": 402,
+      "income": 38533505975.859375,
+      "growth": 1.0023031032546639,
+      "totalEarned": 1519454980196.4453,
+      "idleRate": 1700864.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 402,
+      "toHours": 408,
+      "income": 38575600055.859375,
+      "growth": 1.00109240202608,
+      "totalEarned": 1558030580252.3047,
+      "idleRate": 1700864.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 408,
+      "toHours": 414,
+      "income": 38630989655.859375,
+      "growth": 1.0014358713777567,
+      "totalEarned": 1596661569908.164,
+      "idleRate": 1712064.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 414,
+      "toHours": 420,
+      "income": 38829616055.859375,
+      "growth": 1.0051416337445518,
+      "totalEarned": 1635491185964.0234,
+      "idleRate": 1712064.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 420,
+      "toHours": 426,
+      "income": 38829616055.859375,
+      "growth": 1,
+      "totalEarned": 1674320802019.8828,
+      "idleRate": 1712064.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 426,
+      "toHours": 432,
+      "income": 38955353975.859375,
+      "growth": 1.0032381963246588,
+      "totalEarned": 1713276155995.7422,
+      "idleRate": 1717824.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 432,
+      "toHours": 438,
+      "income": 38960252855.859375,
+      "growth": 1.0001257562696781,
+      "totalEarned": 1752236408851.6016,
+      "idleRate": 1717824.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 438,
+      "toHours": 444,
+      "income": 39001766831.859375,
+      "growth": 1.0010655468832195,
+      "totalEarned": 1791238175683.461,
+      "idleRate": 1729248.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 444,
+      "toHours": 450,
+      "income": 39232347335.859375,
+      "growth": 1.005912052779405,
+      "totalEarned": 1830470523019.3203,
+      "idleRate": 1731328.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 450,
+      "toHours": 456,
+      "income": 39266523575.859375,
+      "growth": 1.0008711240168076,
+      "totalEarned": 1869737046595.1797,
+      "idleRate": 1731328.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 456,
+      "toHours": 462,
+      "income": 39266523575.859375,
+      "growth": 1,
+      "totalEarned": 1909003570171.039,
+      "idleRate": 1731328.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 462,
+      "toHours": 468,
+      "income": 39336831575.859375,
+      "growth": 1.0017905328406314,
+      "totalEarned": 1948340401746.8984,
+      "idleRate": 1737088.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 468,
+      "toHours": 474,
+      "income": 39397160375.859375,
+      "growth": 1.0015336466508153,
+      "totalEarned": 1987737562122.7578,
+      "idleRate": 1737088.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 474,
+      "toHours": 480,
+      "income": 39397160375.859375,
+      "growth": 1,
+      "totalEarned": 2027134722498.6172,
+      "idleRate": 1737088.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 480,
+      "toHours": 486,
+      "income": 39488101631.859375,
+      "growth": 1.0023083200700862,
+      "totalEarned": 2066622824130.4766,
+      "idleRate": 1748992.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 486,
+      "toHours": 492,
+      "income": 39672535895.859375,
+      "growth": 1.0046706287812832,
+      "totalEarned": 2106295360026.336,
+      "idleRate": 1750592.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 492,
+      "toHours": 498,
+      "income": 39703431095.859375,
+      "growth": 1.000778755360663,
+      "totalEarned": 2145998791122.1953,
+      "idleRate": 1750592.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 498,
+      "toHours": 504,
+      "income": 39703431095.859375,
+      "growth": 1,
+      "totalEarned": 2185702222218.0547,
+      "idleRate": 1750592.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 504,
+      "toHours": 510,
+      "income": 39733640855.859375,
+      "growth": 1.0007608853735352,
+      "totalEarned": 2225435863073.914,
+      "idleRate": 1756352.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 510,
+      "toHours": 516,
+      "income": 39834067895.859375,
+      "growth": 1.0025275066124526,
+      "totalEarned": 2265269930969.7734,
+      "idleRate": 1756352.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 516,
+      "toHours": 522,
+      "income": 39834067895.859375,
+      "growth": 1,
+      "totalEarned": 2305103998865.633,
+      "idleRate": 1756352.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 522,
+      "toHours": 528,
+      "income": 39834067895.859375,
+      "growth": 1,
+      "totalEarned": 2344938066761.492,
+      "idleRate": 1756352.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 528,
+      "toHours": 534,
+      "income": 40091583671.859375,
+      "growth": 1.006464711981544,
+      "totalEarned": 2385029650433.3516,
+      "idleRate": 1776352.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 534,
+      "toHours": 540,
+      "income": 40297760495.859375,
+      "growth": 1.005142646039815,
+      "totalEarned": 2425327410929.211,
+      "idleRate": 1776832.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 540,
+      "toHours": 546,
+      "income": 40333531895.859375,
+      "growth": 1.0008876771205109,
+      "totalEarned": 2465660942825.0703,
+      "idleRate": 1778432.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 546,
+      "toHours": 552,
+      "income": 40334842295.859375,
+      "growth": 1.0000324890962533,
+      "totalEarned": 2505995785120.9297,
+      "idleRate": 1778432.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 552,
+      "toHours": 558,
+      "income": 40334842295.859375,
+      "growth": 1,
+      "totalEarned": 2546330627416.789,
+      "idleRate": 1778432.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 558,
+      "toHours": 564,
+      "income": 40421298455.859375,
+      "growth": 1.0021434609652329,
+      "totalEarned": 2586751925872.6484,
+      "idleRate": 1784192.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 564,
+      "toHours": 570,
+      "income": 40465479095.859375,
+      "growth": 1.0010930039777977,
+      "totalEarned": 2627217404968.508,
+      "idleRate": 1784192.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 570,
+      "toHours": 576,
+      "income": 40465479095.859375,
+      "growth": 1,
+      "totalEarned": 2667682884064.367,
+      "idleRate": 1784192.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 576,
+      "toHours": 582,
+      "income": 40465479095.859375,
+      "growth": 1,
+      "totalEarned": 2708148363160.2266,
+      "idleRate": 1784192.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 582,
+      "toHours": 588,
+      "income": 40611260087.859375,
+      "growth": 1.0036026014088368,
+      "totalEarned": 2748759623248.086,
+      "idleRate": 1796160.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 588,
+      "toHours": 594,
+      "income": 40736913335.859375,
+      "growth": 1.0030940494761345,
+      "totalEarned": 2789496536583.9453,
+      "idleRate": 1796160.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 594,
+      "toHours": 600,
+      "income": 40772042135.859375,
+      "growth": 1.000862333375884,
+      "totalEarned": 2830268578719.8047,
+      "idleRate": 1797760.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 600,
+      "toHours": 606,
+      "income": 40773201335.859375,
+      "growth": 1.0000284312469838,
+      "totalEarned": 2871041780055.664,
+      "idleRate": 1797760.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 606,
+      "toHours": 612,
+      "income": 40773201335.859375,
+      "growth": 1,
+      "totalEarned": 2911814981391.5234,
+      "idleRate": 1797760.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 612,
+      "toHours": 618,
+      "income": 40800780215.859375,
+      "growth": 1.0006763972191643,
+      "totalEarned": 2952615761607.383,
+      "idleRate": 1803520.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 618,
+      "toHours": 624,
+      "income": 40903838135.859375,
+      "growth": 1.0025258811094975,
+      "totalEarned": 2993519599743.242,
+      "idleRate": 1803520.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 624,
+      "toHours": 630,
+      "income": 40903838135.859375,
+      "growth": 1,
+      "totalEarned": 3034423437879.1016,
+      "idleRate": 1803520.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 630,
+      "toHours": 636,
+      "income": 40903838135.859375,
+      "growth": 1,
+      "totalEarned": 3075327276014.961,
+      "idleRate": 1803520.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 636,
+      "toHours": 642,
+      "income": 40903838135.859375,
+      "growth": 1,
+      "totalEarned": 3116231114150.8203,
+      "idleRate": 1803520.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 642,
+      "toHours": 648,
+      "income": 41044817519.859375,
+      "growth": 1.0034466052679885,
+      "totalEarned": 3157275931670.6797,
+      "idleRate": 1815008.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 648,
+      "toHours": 654,
+      "income": 41175060695.859375,
+      "growth": 1.0031731941782172,
+      "totalEarned": 3198450992366.539,
+      "idleRate": 1815488.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 654,
+      "toHours": 660,
+      "income": 41201883575.859375,
+      "growth": 1.0006514351052966,
+      "totalEarned": 3239652875942.3984,
+      "idleRate": 1817088.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 660,
+      "toHours": 666,
+      "income": 41211560375.859375,
+      "growth": 1.0002348630489717,
+      "totalEarned": 3280864436318.258,
+      "idleRate": 1817088.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 666,
+      "toHours": 672,
+      "income": 41211560375.859375,
+      "growth": 1,
+      "totalEarned": 3322075996694.117,
+      "idleRate": 1817088.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 672,
+      "toHours": 678,
+      "income": 41211560375.859375,
+      "growth": 1,
+      "totalEarned": 3363287557069.9766,
+      "idleRate": 1817088.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 678,
+      "toHours": 684,
+      "income": 41271526295.859375,
+      "growth": 1.001455075213195,
+      "totalEarned": 3404559083365.836,
+      "idleRate": 1822848.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 684,
+      "toHours": 690,
+      "income": 41342197175.859375,
+      "growth": 1.0017123398706747,
+      "totalEarned": 3445901280541.6953,
+      "idleRate": 1822848.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 690,
+      "toHours": 696,
+      "income": 41342197175.859375,
+      "growth": 1,
+      "totalEarned": 3487243477717.5547,
+      "idleRate": 1822848.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 696,
+      "toHours": 702,
+      "income": 41342197175.859375,
+      "growth": 1,
+      "totalEarned": 3528585674893.414,
+      "idleRate": 1822848.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 702,
+      "toHours": 708,
+      "income": 41342197175.859375,
+      "growth": 1,
+      "totalEarned": 3569927872069.2734,
+      "idleRate": 1822848.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 708,
+      "toHours": 714,
+      "income": 41380424567.859375,
+      "growth": 1.0009246579671949,
+      "totalEarned": 3611308296637.133,
+      "idleRate": 1834176.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    },
+    {
+      "fromHours": 714,
+      "toHours": 720,
+      "income": 41607926135.859375,
+      "growth": 1.0054978065202527,
+      "totalEarned": 3652916222772.992,
+      "idleRate": 1834816.2,
+      "rankName": "摸鱼宇宙尽头·终"
+    }
+  ],
+  "blocksAll": 120
+}

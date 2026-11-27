@@ -1,0 +1,44 @@
+[
+  {
+    "cps": 0,
+    "total": 101474764253.67358,
+    "clickShare": 0,
+    "clicks": 0,
+    "clickLevels": 0
+  },
+  {
+    "cps": 0.2,
+    "total": 124296344214.55017,
+    "clickShare": 0.002849804906471022,
+    "clicks": 51839,
+    "clickLevels": 257
+  },
+  {
+    "cps": 0.4,
+    "total": 127026374213.08383,
+    "clickShare": 0.006978947985315757,
+    "clicks": 103680,
+    "clickLevels": 280
+  },
+  {
+    "cps": 0.8,
+    "total": 129227625444.59691,
+    "clickShare": 0.018757831871200406,
+    "clicks": 207360,
+    "clickLevels": 299
+  },
+  {
+    "cps": 2.5,
+    "total": 147405344949.26346,
+    "clickShare": 0.11840461505037672,
+    "clicks": 648000,
+    "clickLevels": 339
+  },
+  {
+    "cps": 3,
+    "total": 153835554166.01767,
+    "clickShare": 0.14710148307205742,
+    "clicks": 777600,
+    "clickLevels": 342
+  }
+]

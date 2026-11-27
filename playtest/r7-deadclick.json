@@ -1,0 +1,108 @@
+{
+ "disabledCardTap": {
+  "card": {
+   "x": 67,
+   "y": 764,
+   "disabled": true
+  },
+  "moyuBefore": 0.3,
+  "moyuAfter": 0.4,
+  "domMutations": 129,
+  "floatTexts": [],
+  "hudSame": true
+ },
+ "journalTap": {
+  "tap": {
+   "x": 359,
+   "y": 58
+  },
+  "journalOpen": true,
+  "goals": "○\n应付 1 次巡逻（忍住或点满都算）\n0/1\n○\n点 100 下\n0/100\n○\n收 1 个梗\n0/1",
+  "claimBtn": "完成 0/3",
+  "shot": "playtest/r7-screens/journal.png"
+ },
+ "clicksToAffordable": [
+  {
+   "i": 1,
+   "t": 3620,
+   "coffeeAffordable": false
+  },
+  {
+   "i": 2,
+   "t": 4583,
+   "coffeeAffordable": false
+  },
+  {
+   "i": 3,
+   "t": 5550,
+   "coffeeAffordable": false
+  },
+  {
+   "i": 4,
+   "t": 6519,
+   "coffeeAffordable": false
+  },
+  {
+   "i": 5,
+   "t": 7483,
+   "coffeeAffordable": false
+  },
+  {
+   "i": 6,
+   "t": 8449,
+   "coffeeAffordable": false
+  },
+  {
+   "i": 7,
+   "t": 9416,
+   "coffeeAffordable": false
+  },
+  {
+   "i": 8,
+   "t": 10382,
+   "coffeeAffordable": false
+  },
+  {
+   "i": 9,
+   "t": 11350,
+   "coffeeAffordable": false
+  },
+  {
+   "i": 10,
+   "t": 702,
+   "coffeeAffordable": false
+  },
+  {
+   "i": 11,
+   "t": 1666,
+   "coffeeAffordable": false
+  },
+  {
+   "i": 12,
+   "t": 2634,
+   "coffeeAffordable": false
+  },
+  {
+   "i": 13,
+   "t": 3633,
+   "coffeeAffordable": true
+  }
+ ],
+ "firstBuy": {
+  "moyuBefore": 16,
+  "moyuAfter": 1.1,
+  "levels": {
+   "coffee": 1
+  },
+  "clickPowerHud": "2",
+  "cardText": "点击 | 咖啡续命 | 点击力 +1 | +1 点击力｜×2还差19级 | ★ 点击 556/万 | 18 摸鱼值 | 第一杯，回魂 | Lv.1",
+  "domMutations": 178,
+  "floatTexts": []
+ },
+ "hintDrawnCount": 243,
+ "eventsSeen": [
+  "+1",
+  "摸了一条鱼",
+  "这波不亏"
+ ]
+}

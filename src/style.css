@@ -101,15 +101,59 @@ body {
   gap: 8px;
   overflow-x: auto;
   scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  mask-image: linear-gradient(to right, #000 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, #000 88%, transparent 100%);
 }
 #shop-cards::-webkit-scrollbar {
   display: none;
 }
+#shop-cards::after {
+  content: "";
+}
+#shop-wrap {
+  position: relative;
+}
+#shop-hint {
+  display: block;
+  text-align: right;
+  padding: 0 4px 4px;
+  font-size: 10px;
+  color: #ffd76e;
+  pointer-events: none;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+#shop-hint.hidden {
+  opacity: 0;
+}
+.shop-top {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+.shop-tag {
+  flex: 0 0 auto;
+  padding: 0 3px;
+  font-size: 9px;
+  border-radius: 3px;
+  line-height: 13px;
+}
+.tag-click {
+  background: #4a3040;
+  color: #ff9e9e;
+}
+.tag-idle {
+  background: #2f4a44;
+  color: #8be2c0;
+}
 .shop-card {
   flex: 0 0 auto;
   width: 118px;
-  min-height: 84px;
-  padding: 8px;
+  min-height: 92px;
+  padding: 8px 8px 6px;
   display: flex;
   flex-direction: column;
   gap: 3px;
@@ -119,7 +163,11 @@ body {
   border: 3px solid #55557a;
   border-radius: 4px;
   font-family: inherit;
-  opacity: 0.55;
+  scroll-snap-align: start;
+  /* 买不起也要能读清（原 opacity .55 导致对比度 2.7:1） */
+  opacity: 1;
+  background: #34344b;
+  border-color: #4a4a66;
 }
 .shop-card.affordable {
   opacity: 1;
@@ -130,12 +178,15 @@ body {
   transform: translateY(1px);
 }
 .shop-name {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .shop-desc {
-  font-size: 11px;
-  color: #b8b39c;
+  font-size: 12px;
+  color: #c9c4ad;
 }
 .shop-flavor {
   font-size: 10px;
@@ -144,16 +195,21 @@ body {
   min-height: 12px;
 }
 .shop-next {
-  font-size: 10px;
+  font-size: 11px;
   color: #b8e0ff;
+  line-height: 1.25;
 }
 .shop-value {
-  font-size: 10px;
+  font-size: 11px;
   color: #ffd76e;
+}
+.shop-remain {
+  font-size: 10px;
+  color: #b8b39c;
 }
 .shop-cost {
   margin-top: auto;
-  font-size: 12px;
+  font-size: 13px;
   color: #ffd76e;
 }
 .shop-level {
@@ -236,7 +292,8 @@ body {
 #btn-journal {
   margin-left: auto;
   flex: 0 0 auto;
-  height: 26px;
+  position: relative;
+  height: 28px;
   line-height: 1;
   padding: 2px 8px;
   font-size: 15px;
@@ -250,6 +307,12 @@ body {
   position: relative;
   border-color: #ffd76e;
   animation: journalPulse 1.4s ease-in-out infinite;
+}
+#btn-journal::before {
+  /* 扩大点击热区到 ≥44×44（视觉不变） */
+  content: "";
+  position: absolute;
+  inset: -9px -3px;
 }
 #btn-journal.has-reward::after {
   content: "";
@@ -297,6 +360,11 @@ body {
   font-size: 18px;
 }
 #journal-close {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  margin: -11px -11px -11px 0;
   background: none;
   border: none;
   color: #a8a493;
@@ -406,14 +474,63 @@ body {
   background: #2f3d34;
 }
 .c-item.off {
-  opacity: 0.55;
+  opacity: 0.85;
 }
 .c-label {
-  color: #8f9fd0;
-  font-size: 9px;
+  color: #a9b6dd;
+  font-size: 11px;
 }
 .c-text {
   color: #f4f1e8;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.25;
+}
+
+/* ---------- 新手引导 ---------- */
+#tutorial {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 18, 0.78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 14;
+}
+#tutorial.hidden {
+  display: none;
+}
+.tutorial-panel {
+  width: min(340px, 88vw);
+  padding: 18px;
+  background: #2f2f44;
+  border: 4px solid #ffd76e;
+  border-radius: 6px;
+}
+.tutorial-panel h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.tutorial-panel ol {
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #d8d3c2;
+}
+.tutorial-panel b {
+  color: #ffd76e;
+}
+#tutorial-ok {
+  width: 100%;
+  margin-top: 14px;
+  padding: 11px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #10241a;
+  background: #8be28b;
+  border: 3px solid #4c9e52;
+  border-radius: 4px;
+  font-family: inherit;
 }

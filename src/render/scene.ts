@@ -46,6 +46,8 @@ export class Scene {
   events: EventState | null = null;
   /** 当前事件时钟（游戏秒） */
   gameTime = 0;
+  /** 累计摸鱼值达标后隐藏新手引导字 */
+  hideHint = false;
   /** 丢梗目标位置（虚拟坐标），由 main 设置 */
   memePos = { x: 0, y: 0 };
 
@@ -155,7 +157,7 @@ export class Scene {
 
     // 公告板（右墙中部，避开饮水机）
     const boardX = vw - 3.9 * u;
-    const boardY = 4.6 * u;
+    const boardY = Math.min(4.6 * u, groundY - 4.4 * u); // 矮屏（375×667）不落地
     R(boardX, boardY, 2.5 * u, 1.6 * u, "#5f4529");
     R(boardX + 0.1 * u, boardY + 0.1 * u, 2.3 * u, 1.4 * u, "#d9c9a3");
     R(boardX + 0.25 * u, boardY + 0.28 * u, 0.75 * u, 0.18 * u, "#c05a4a");
@@ -278,9 +280,11 @@ export class Scene {
       ctx.font = `bold ${Math.max(11, 2.4 * s)}px system-ui`;
       ctx.fillText(`戳它 +${MEME_REWARD_CLICKS}×点击力`, (vw / 2) * s, 2.3 * u * s);
     } else {
-      ctx.fillStyle = "rgba(255,255,255,0.55)";
-      ctx.font = `bold ${Math.max(10, 2.2 * s)}px system-ui`;
-      ctx.fillText("戳屏幕摸鱼", (vw / 2) * s, (groundY + 2.8 * u) * s);
+      if (!this.hideHint) {
+        ctx.fillStyle = "rgba(255,255,255,0.75)";
+        ctx.font = `bold ${Math.max(12, 2.6 * s)}px system-ui`;
+        ctx.fillText("戳屏幕摸鱼", (vw / 2) * s, (groundY + 2.8 * u) * s);
+      }
     }
 
     this.fx.draw(ctx, s);
@@ -297,5 +301,5 @@ export class Scene {
 export function bossBannerText(variant: BossVariant, remain: number, taps: number): string {
   if (variant === "type") return `假装工作！点 ${Math.min(taps, BOSS_TYPE_TARGET)}/${BOSS_TYPE_TARGET} (${remain}s)`;
   if (variant === "blitz") return `摸鱼冲刺！连点 ${Math.min(taps, BOSS_BLITZ_TARGET)}/${BOSS_BLITZ_TARGET} 奖×1.5 (${remain}s)`;
-  return `⚠ 老板来了！忍住别点 (${remain}s)`;
+  return `⚠ 老板来了！忍住别点，点了会罚 (${remain}s)`;
 }

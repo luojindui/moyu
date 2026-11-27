@@ -28,7 +28,7 @@
         </div>
       </header>
       <main id="stage-wrap"><canvas id="stage"></canvas></main>
-      <footer id="shop"><div id="shop-cards"></div></footer>
+      <footer id="shop"><div id="shop-wrap"><div id="shop-cards"></div><span id="shop-hint">← 滑动查看更多 →</span></div></footer>
     </div>
     <div id="journal" class="hidden">
       <div class="journal-panel">
@@ -46,6 +46,17 @@
         </div>
         <p class="journal-latest" id="journal-latest"></p>
         <div class="journal-grid" id="journal-grid"></div>
+      </div>
+    </div>
+    <div id="tutorial" class="hidden">
+      <div class="tutorial-panel">
+        <h2>摸鱼入门</h2>
+        <ol>
+          <li><b>戳屏幕</b>：攒摸鱼值（看上方大数字）</li>
+          <li><b>买升级</b>：底部卡片，<b>左右滑动</b>看全部 9 项；绿色「挂机」项会自动攒钱</li>
+          <li><b>⚠ 老板巡逻</b>：横幅弹出时<b>忍住别点</b>，点了会被罚款（前 3 次有新手保护）</li>
+        </ol>
+        <button id="tutorial-ok">开始摸鱼</button>
       </div>
     </div>
     <div id="welcome" class="hidden">

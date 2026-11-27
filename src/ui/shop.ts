@@ -3,6 +3,9 @@ import { UPGRADES, costOf, marginalEffect, milestoneGap, valueScoreOf } from "..
 import { formatMoyu } from "../engine/format";
 import { flavorFor } from "../engine/flavor";
 
+/** 展示顺序：点击线与挂机线交错，保证首屏就能看到挂机卡（挂机是核心卖点） */
+const DISPLAY_ORDER = ["coffee", "phone", "water", "toilet", "chair", "group", "meeting", "deep", "retire"];
+
 /** 升级商店：卡片 + 可购态刷新 + 性价比提示 + 购买回调 */
 export class Shop {
   private container = document.getElementById("shop-cards")!;
@@ -10,16 +13,26 @@ export class Shop {
   private costs = new Map<string, HTMLElement>();
 
   constructor(onBuy: (id: string) => void) {
-    for (const u of UPGRADES) {
+    // 滑动一次后隐藏「滑动查看」提示
+    const hint = document.getElementById("shop-hint");
+    if (hint) {
+      const hide = (): void => hint.classList.add("hidden");
+      this.container.addEventListener("scroll", hide, { once: true, passive: true });
+      setTimeout(hide, 8000);
+    }
+    const ordered = [...UPGRADES].sort(
+      (a, b) => DISPLAY_ORDER.indexOf(a.id) - DISPLAY_ORDER.indexOf(b.id),
+    );
+    for (const u of ordered) {
       const card = document.createElement("button");
       card.className = "shop-card pixel-panel";
       card.dataset.upgrade = u.id;
-      card.innerHTML = `<span class="shop-name">${u.name}</span>
-        <span class="shop-desc">${u.desc}</span>
+      const lineTag = u.clickPower ? "点击" : "挂机";
+      card.innerHTML = `<span class="shop-top"><span class="shop-tag ${u.clickPower ? "tag-click" : "tag-idle"}">${lineTag}</span><span class="shop-name">${u.name}</span></span>
         <span class="shop-next"></span>
         <span class="shop-value"></span>
         <span class="shop-cost"><b>0</b> 摸鱼值</span>
-        <span class="shop-flavor"></span>
+        <span class="shop-remain"></span>
         <span class="shop-level"></span>`;
       card.addEventListener("click", () => onBuy(u.id));
       this.container.appendChild(card);
@@ -54,19 +67,23 @@ export class Shop {
       this.costs.get(u.id)!.textContent = formatMoyu(price);
       const lvEl = btn.querySelector(".shop-level")!;
       lvEl.textContent = lv > 0 ? `Lv.${lv}` : "";
-      btn.querySelector(".shop-flavor")!.textContent = flavorFor(u.id, lv) ?? "";
+      // 彩蛋文案并入 next 行（避免卡片过高）
+      const flavor = flavorFor(u.id, lv);
       // 下一级即时增量 + 里程碑进度（效果 ×2 还差 N 级）
       const m = marginalEffect(u.id, lv);
       const inc = m.clickPower > 0 ? `+${m.clickPower} 点击力` : `+${m.idleRate}/秒`;
       const gap = milestoneGap(u.id, lv);
-      btn.querySelector(".shop-next")!.textContent = `${inc}｜×2还差${gap}级`;
+      const gapText = gap <= 5 ? ` · ×2差${gap}级` : ""; // 只在快到时提示（降低噪音）
+      btn.querySelector(".shop-next")!.textContent = `${inc}${gapText}${flavor ? ` · ${flavor}` : ""}`;
       // 性价比：每万摸鱼值的边际收益；星标当前维度最优（黑箱显性化）
       const score = valueScoreOf(u.id, lv);
       const isBest = u.clickPower ? u.id === bestClickId : u.id === bestIdleId;
-      const dim = u.clickPower ? `点击 ${score.click.toFixed(0)}/万` : `挂机 ${score.idle.toFixed(1)}/万`;
+      const dim = u.clickPower ? `${score.click.toFixed(0)}/万` : `${score.idle.toFixed(1)}/万`;
       btn.querySelector(".shop-value")!.textContent = `${isBest ? "★ " : ""}${dim}`;
       btn.disabled = state.moyu < price;
       btn.classList.toggle("affordable", state.moyu >= price);
+      const remain = btn.querySelector(".shop-remain")!;
+      remain.textContent = state.moyu < price ? `还差 ${formatMoyu(price - state.moyu)}` : "";
     }
   }
 }

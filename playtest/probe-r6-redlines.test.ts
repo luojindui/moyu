@@ -40,6 +40,7 @@ function dodgeEV(s: ReturnType<typeof st>): number {
   es.bossUntil = 100;
   es.bossStartAt = 100 - BOSS_DURATION;
   es.bossVariant = "hold";
+  es.patrolCount = 99; // 跳过新手保护（中期/后期场景）
   return finishPatrol(s, es).reward;
 }
 
@@ -49,6 +50,7 @@ function hardEV(s: ReturnType<typeof st>, cps: number): number {
   es.bossUntil = 100;
   es.bossStartAt = 100 - BOSS_DURATION;
   es.bossVariant = "hold";
+  es.patrolCount = 99; // 跳过新手保护（中期/后期场景）
   let cur = s;
   let net = 0;
   const start = 100 - BOSS_DURATION;

@@ -1,0 +1,110 @@
+{
+  "viewport": {
+    "w": 360,
+    "h": 740
+  },
+  "sub": {
+    "rect": {
+      "x": 12,
+      "y": 45,
+      "w": 336,
+      "h": 26,
+      "right": 348
+    },
+    "scrollW": 336,
+    "clientW": 336,
+    "clipped": false
+  },
+  "parts": [
+    {
+      "sel": "#hud-moyu",
+      "text": "9.88亿",
+      "rect": {
+        "x": 12,
+        "y": 7,
+        "w": 98.1,
+        "h": 35,
+        "right": 110.1
+      },
+      "scrollW": 0,
+      "clientW": 0,
+      "clipped": false
+    },
+    {
+      "sel": "#hud-click",
+      "text": "10",
+      "rect": {
+        "x": 46.9,
+        "y": 50.5,
+        "w": 14.4,
+        "h": 15,
+        "right": 61.3
+      },
+      "scrollW": 0,
+      "clientW": 0,
+      "clipped": false
+    },
+    {
+      "sel": "#hud-idle",
+      "text": "14.00万",
+      "rect": {
+        "x": 98.7,
+        "y": 50.5,
+        "w": 46.2,
+        "h": 15,
+        "right": 144.9
+      },
+      "scrollW": 0,
+      "clientW": 0,
+      "clipped": false
+    },
+    {
+      "sel": "#hud-rank",
+      "text": "宇宙尽头·终",
+      "rect": {
+        "x": 170.6,
+        "y": 49.5,
+        "w": 62.5,
+        "h": 17,
+        "right": 233
+      },
+      "scrollW": 64,
+      "clientW": 62,
+      "clipped": true
+    },
+    {
+      "sel": "#hud-streak",
+      "text": "🔥连胜 12",
+      "rect": {
+        "x": 243,
+        "y": 48,
+        "w": 56,
+        "h": 20,
+        "right": 299
+      },
+      "scrollW": 56,
+      "clientW": 56,
+      "clipped": false
+    },
+    {
+      "sel": "#btn-journal",
+      "text": "📔",
+      "rect": {
+        "x": 309,
+        "y": 45,
+        "w": 39,
+        "h": 26,
+        "right": 348
+      },
+      "scrollW": 35,
+      "clientW": 35,
+      "clipped": false
+    }
+  ],
+  "rankTitle": "摸鱼宇宙尽头·终",
+  "state": {
+    "totalEarned": 320000153384.2191
+  },
+  "docScrollW": 360,
+  "screenshot": "playtest/r6-screens/360x740-hud-stress-r7.png"
+}

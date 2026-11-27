@@ -35,12 +35,20 @@ import { MEME_QUOTES } from "../src/engine/flavor";
 import { rankFor, RANKS } from "../src/engine/titles";
 import { formatMoyu } from "../src/engine/format";
 
-export { TOTAL_ITEMS, RANKS, formatMoyu, UPGRADES, costOf, effectOf, marginalEffect, MILESTONE_LEVELS, collectionCount };
+export { TOTAL_ITEMS, RANKS, formatMoyu, UPGRADES, costOf, effectOf, marginalEffect, MILESTONE_LEVELS, collectionCount, initialState };
+export type { GameState };
 
 export const HOUR = 3600;
+/** 时间采样间隔（秒）：反推「达到任意累计收入所需时长」用 */
+export const SAMPLE_SECONDS = 900;
 export const BLOCK_HOURS = 6;
-/** 连击均值（12 连 ×1.24；真实手速平均约 ×1.16） */
-export const AVG_COMBO_MULT = 1.16;
+/**
+ * 连击均值：连击窗口 0.4s。≥2.5cps 时稳定 12 连 → ×1.24；低于 2.5cps 会断链 → ×1.0。
+ * （真实手速 3cps 才能维持满连）
+ */
+export function comboMultFor(cps: number): number {
+  return cps >= 2.5 ? 1.24 : 1.0;
+}
 
 export function makeRng(seed: number): () => number {
   let a = seed >>> 0;
@@ -67,6 +75,13 @@ export interface HardConfig {
   doEvents: boolean;
   /** 攒钱窗口（秒）：全局最优项 ≤N 秒收入即可及时，等它；0 = 有就买 */
   saveWatchSeconds: number;
+  /**
+   * ROI 门槛（0..1）：可负担项 ROI ≥ 全局最优 ROI × 本值时立刻买；否则攒钱等全局最优。
+   * 1 = 只买全局最优（硬核 optimizer 的"最优路线"）；0.85 = 留 15% 容差。
+   */
+  roiRatio?: number;
+  /** 攒钱上限（秒）：若等全局最优要超过 N 秒，宁可先买可负担的次优项；0/未设 = 不封顶 */
+  maxWaitSeconds?: number;
   /** 长跑近似：事件收益按 share 折算进挂机收入（省算力） */
   approxEventShare?: number;
   /** 额外快照小时点（默认 1h + 每 6h；最后一定补 hours） */
@@ -109,10 +124,15 @@ export interface Snapshot {
   collection: number;
   quotes: number;
   flavors: number;
+  totalClicks: number;
   rankIdx: number;
   rankName: string;
   rankProgress: number;
   toNextRank: number;
+  /** 自上一快照以来的收入 */
+  blockIncome: number;
+  /** 相对上一快照的「每小时收入」倍数（首段 null） */
+  blockGrowth: number | null;
   /** 自开局的收入构成 */
   income: { idle: number; click: number; event: number };
   purchases: Record<string, number>;
@@ -160,6 +180,12 @@ export interface HardSim {
   roiLog: { hours: number; id: string; roi: number; level: number }[];
   lastBlockStart: number;
   lastBlockIncome: number;
+  /** 时间采样（用于反推任意收入阈值所需时长 / 转生设计验证） */
+  samples: { hours: number; totalEarned: number; idleRate: number; rankIdx: number }[];
+  /** 累计点击（点击线彩蛋门槛用；与引擎同：只有普通点击 doClick 计数） */
+  totalClicks: number;
+  clickDebt: number;
+  lastFlavorSync?: number;
 }
 
 function emptyPurchases(): Record<string, number> {
@@ -174,7 +200,7 @@ export function incomeRateOf(state: GameState, clickValue: number): number {
 }
 
 export function clickValueOf(cps: number): number {
-  return cps * AVG_COMBO_MULT;
+  return cps * comboMultFor(cps);
 }
 
 /** 各项下一级的边际收益 / 价格 */
@@ -250,6 +276,24 @@ export function buyTick(sim: HardSim): void {
       buyItem(sim, best.id, best.roi);
       continue;
     }
+    const aff = bestAffordable(sim.state, cv);
+    if (!aff) return;
+    if (sim.cfg.roiRatio !== undefined) {
+      if (aff.roi >= sim.cfg.roiRatio * best.roi) {
+        buyItem(sim, aff.id, aff.roi);
+        continue;
+      }
+      if (sim.cfg.maxWaitSeconds) {
+        const rate = incomeRateOf(sim.state, cv);
+        const wait = (best.cost - sim.state.moyu) / Math.max(1e-9, rate);
+        if (wait > sim.cfg.maxWaitSeconds) {
+          buyItem(sim, aff.id, aff.roi);
+          continue;
+        }
+      }
+      sim.saveWaits++;
+      return; // 攒钱等全局最优
+    }
     if (sim.cfg.saveWatchSeconds > 0) {
       const rate = incomeRateOf(sim.state, cv);
       const wait = (best.cost - sim.state.moyu) / Math.max(1e-9, rate);
@@ -258,8 +302,6 @@ export function buyTick(sim: HardSim): void {
         return;
       }
     }
-    const aff = bestAffordable(sim.state, cv);
-    if (!aff) return;
     buyItem(sim, aff.id, aff.roi);
   }
 }
@@ -288,6 +330,9 @@ export function createSim(cfg: HardConfig): HardSim {
     roiLog: [],
     lastBlockStart: 0,
     lastBlockIncome: 0,
+    samples: [],
+    totalClicks: 0,
+    clickDebt: 0,
   };
 }
 
@@ -316,6 +361,7 @@ export function snapshotOf(sim: HardSim): Snapshot {
     collection: collectionCount(s),
     quotes: s.collected.quotes.length,
     flavors: s.collected.flavors.length,
+    totalClicks: s.totalClicks,
     rankIdx,
     rankName: r.current,
     rankProgress: r.progress,
@@ -326,7 +372,7 @@ export function snapshotOf(sim: HardSim): Snapshot {
     purchases: { ...sim.purchases },
     bestIdleRoi: best ? best.roi : 0,
     items: marginalTable(s, cv),
-  } as Snapshot;
+  };
 }
 
 /** 一步 dt：事件 → 巡逻结算 → 点击收入 → 挂机收入 */
@@ -368,6 +414,19 @@ export function step(sim: HardSim, dt: number): void {
     const clickIncome = clickPowerOf(sim.state) * cv * dt;
     sim.state = gain(sim.state, clickIncome);
     sim.income.click += clickIncome;
+    // 普通点击计数（与 main.ts 一致：只有非事件点击会 doClick）
+    sim.clickDebt += sim.cfg.cps * dt;
+    const clicks = Math.floor(sim.clickDebt);
+    if (clicks > 0) {
+      sim.clickDebt -= clicks;
+      sim.totalClicks += clicks;
+      sim.state = { ...sim.state, totalClicks: sim.totalClicks };
+      // 每 5s 同步一次图鉴（引擎在购买/读档时同步，这里按点击门槛补）
+      if (sim.t - (sim.lastFlavorSync ?? 0) >= 5) {
+        sim.lastFlavorSync = sim.t;
+        sim.state = syncFlavorCollection(sim.state);
+      }
+    }
   }
 
   const idle = effectOf(sim.state).idleRate * dt;
@@ -404,6 +463,7 @@ export function runSim(cfg: HardConfig): HardSim {
   blockMarks.push(cfg.hours);
   let blockIdx = 0;
   let nextBuy = cfg.buyInterval;
+  let prevRate = 0;
   const steps = Math.round((cfg.hours * HOUR) / cfg.dt);
   for (let i = 0; i < steps; i++) {
     step(sim, cfg.dt);
@@ -413,11 +473,23 @@ export function runSim(cfg: HardConfig): HardSim {
     }
     while (snapIdx < sorted.length && sim.t / HOUR >= sorted[snapIdx]! - 1e-9) {
       const snap = snapshotOf(sim);
-      snap.blockIncome = sim.state.totalEarned - sim.lastBlockStart;
       const prev = sim.snapshots[sim.snapshots.length - 1];
-      snap.blockGrowth = prev && prev.blockIncome > 0 ? snap.blockIncome / prev.blockIncome : null;
+      const period = prev ? snap.hours - prev.hours : snap.hours;
+      snap.blockIncome = sim.state.totalEarned - (prev ? prev.totalEarned : 0);
+      const curRate = snap.blockIncome / Math.max(1e-9, period);
+      snap.blockGrowth = prevRate > 0 && curRate > 0 ? curRate / prevRate : null;
+      if (curRate > 0) prevRate = curRate;
       sim.snapshots.push(snap);
       snapIdx++;
+    }
+    if (i % Math.max(1, Math.round(SAMPLE_SECONDS / cfg.dt)) === 0) {
+      const rk = rankFor(sim.state.totalEarned).current;
+      sim.samples.push({
+        hours: sim.t / HOUR,
+        totalEarned: sim.state.totalEarned,
+        idleRate: effectOf(sim.state).idleRate,
+        rankIdx: RANKS.findIndex((r) => r.name === rk),
+      });
     }
     while (blockIdx < blockMarks.length && sim.t / HOUR >= blockMarks[blockIdx]! - 1e-9) {
       const income = sim.state.totalEarned - sim.lastBlockStart;
@@ -513,8 +585,23 @@ export function longRun(maxHours: number, base: Partial<HardConfig> = {}): { sim
   return { sim, rank7AtHours: hit ? hit.atHours : null };
 }
 
-export function itemLine(items: ItemSpend[]): string {
-  return items
-    .map((i) => `${i.id}:${i.level}(Lv${i.level} cost ${formatMoyu(i.cost)})`)
-    .join("  ");
+/** 由时间采样曲线反推「累计收入达到 target 所需小时数」（线性插值，未达返回 null） */
+export function makeInverse(samples: { hours: number; totalEarned: number }[]): (target: number) => number | null {
+  return (target: number): number | null => {
+    if (target <= 0) return 0;
+    for (let i = 1; i < samples.length; i++) {
+      const a = samples[i - 1]!;
+      const b = samples[i]!;
+      if (b.totalEarned >= target) {
+        const denom = b.totalEarned - a.totalEarned;
+        const f = denom > 0 ? (target - a.totalEarned) / denom : 1;
+        return a.hours + f * (b.hours - a.hours);
+      }
+    }
+    return null;
+  };
+}
+
+export function levelLine(s: Snapshot): string {
+  return UPGRADES.map((u) => `${u.id}:Lv${s.levels[u.id] ?? 0}`).join(" ");
 }

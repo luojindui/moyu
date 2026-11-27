@@ -285,6 +285,21 @@ const AUDIT_EXPR = `(() => {
     },
     journalBtn: (() => { const j = document.getElementById('btn-journal'); const r = j.getBoundingClientRect(); return { text: j.textContent, w: Math.round(r.width), h: Math.round(r.height), cls: j.className }; })(),
     welcomeVisible: !document.getElementById('welcome').classList.contains('hidden'),
+    tutorial: (() => {
+      const t = document.getElementById('tutorial');
+      if (!t) return null;
+      const p = t.querySelector('.tutorial-panel');
+      const pr = p ? p.getBoundingClientRect() : null;
+      const b = document.getElementById('tutorial-ok');
+      const br = b ? b.getBoundingClientRect() : null;
+      return {
+        visible: !t.classList.contains('hidden'),
+        text: t.innerText.slice(0, 600),
+        panel: pr ? [Math.round(pr.x), Math.round(pr.y), Math.round(pr.width), Math.round(pr.height)] : null,
+        okBtn: br ? { rect: [Math.round(br.x), Math.round(br.y), Math.round(br.width), Math.round(br.height)], fontSize: b ? getComputedStyle(b).fontSize : null, text: b.textContent } : null,
+      };
+    })(),
+    shopHint: (() => { const s = document.getElementById('shop-hint'); if (!s) return null; const r = s.getBoundingClientRect(); return { text: s.textContent, rect: [Math.round(r.x), Math.round(r.y), Math.round(r.width), Math.round(r.height)], fontSize: getComputedStyle(s).fontSize, opacity: getComputedStyle(s).opacity, cls: s.className }; })(),
     bodyInnerText: document.body.innerText.slice(0, 2000),
   });
 })()`;
@@ -349,24 +364,43 @@ async function phaseA() {
     await b.shot(`${SHOTS}/first-ready.png`);
     out.shots.ready = `${SHOTS}/first-ready.png`;
 
-    // —— 3 秒内能不能玩：在 0.8s / 1.5s / 2.2s 各点一次，看有没有数字变化 ——
+    // —— 3 秒内能不能玩：先看是否有遮挡/教程，再在 0.8s / 1.5s 乱点，2.0s 点教程按钮，2.4s 点场景 ——
     const early = [];
-    for (const at of [800, 1500, 2200]) {
-      await sleepUntilPageMs(b, at);
+    const tapMeasure = async (atMs, x, y, label) => {
+      await sleepUntilPageMs(b, atMs);
       const mark = await pageNow(b);
-      const before = (await readState(b)).moyu;
-      await b.tap(195, 430);
-      await sleep(240);
-      const after = (await readState(b)).moyu;
+      const st0 = await readState(b);
+      const tutBefore = await b.ev("!!document.getElementById('tutorial') && !document.getElementById('tutorial').classList.contains('hidden')");
+      await b.tap(x, y);
+      await sleep(260);
+      const st1 = await readState(b);
+      const tutAfter = await b.ev("!!document.getElementById('tutorial') && !document.getElementById('tutorial').classList.contains('hidden')");
       const texts = JSON.parse(await b.ev(`JSON.stringify(window.__probe.recent(${mark - 5}, 900))`));
       early.push({
+        label,
         atPageMs: Math.round(mark),
-        moyuBefore: Math.round(before * 10) / 10,
-        moyuAfter: Math.round(after * 10) / 10,
-        delta: Math.round((after - before) * 10) / 10,
+        tap: [x, y],
+        tutorialBefore: tutBefore,
+        tutorialAfter: tutAfter,
+        moyuBefore: Math.round(st0.moyu * 10) / 10,
+        moyuAfter: Math.round(st1.moyu * 10) / 10,
+        delta: Math.round((st1.moyu - st0.moyu) * 10) / 10,
         floatTexts: texts.map((t) => t.txt),
+        feedback: st1.moyu - st0.moyu > 1.5 || texts.length > 0,
       });
-    }
+    };
+    // 700ms：教程弹窗首屏证据
+    await sleepUntilPageMs(b, 700);
+    await b.shot(`${SHOTS}/first-700ms.png`);
+    out.shots.first700 = `${SHOTS}/first-700ms.png`;
+    out.tutorialAt700 = JSON.parse(await b.ev(AUDIT_EXPR)).tutorial;
+    await tapMeasure(800, 195, 430, "第一次乱点（屏幕中央，教程遮挡下）");
+    await tapMeasure(1500, 195, 430, "第二次乱点（同一位置）");
+    // 2.0s：点教程唯一的绿色按钮
+    const okRect = JSON.parse(await b.ev(AUDIT_EXPR)).tutorial?.okBtn?.rect;
+    if (okRect) await tapMeasure(1950, okRect[0] + okRect[2] / 2, okRect[1] + okRect[3] / 2, "点「开始摸鱼」关闭教程");
+    await b.shot(`${SHOTS}/first-after-tutorial.png`);
+    await tapMeasure(2400, 195, 430, "第一次真正点场景");
     out.earlyTaps = early;
 
     // —— 3 秒整：首屏截图 + DOM/画布审计 ——
@@ -449,8 +483,7 @@ async function phaseB() {
     const BOSS_RE = /老板来了|假装工作|摸鱼冲刺/;
     const patrols = [];
     let punish = null;
-    for (let round = 0; round < 10 && !punish; round++) {
-      // 等巡逻横幅出现
+    for (let round = 0; round < 8 && !punish; round++) {
       let banner = null;
       const t0 = Date.now();
       while (Date.now() - t0 < 40000) {
@@ -464,35 +497,35 @@ async function phaseB() {
       }
       if (!banner) break;
       const variant = /老板来了/.test(banner) ? "hold" : /假装工作/.test(banner) ? "type" : "blitz";
-      patrols.push({ round: round + 1, banner, variant, realMsAtDetect: Date.now() - t0 });
+      const patrol = { round: round + 1, banner, variant, realMsAtDetect: Date.now() - t0 };
+      patrols.push(patrol);
       if (variant === "hold") {
-        await b.shot("/tmp/rage-3-boss.png");
-        writeFileSync(`${SHOTS}/boss-banner.png`, Buffer.from((await b.send("Page.captureScreenshot", { format: "png", captureBeyondViewport: false })).data, "base64"));
-        await sleep(140); // 真手指落下：约 1 游戏秒后，已过 0.8s 宽限
+        if (round === 0) {
+          await b.shot("/tmp/rage-3-boss.png");
+          writeFileSync(`${SHOTS}/boss-banner.png`, Buffer.from((await b.send("Page.captureScreenshot", { format: "png", captureBeyondViewport: false })).data, "base64"));
+        }
+        await sleep(140);
         const st0 = await readState(b);
         const mark = await pageNow(b);
         await b.tap(195, 430);
         await sleep(320);
         const st1 = await readState(b);
         const texts = JSON.parse(await b.ev(`JSON.stringify(__probe.recent(${mark - 5}, 2000))`));
-        await b.shot("/tmp/rage-4-penalty.png");
-        writeFileSync(`${SHOTS}/penalty.png`, Buffer.from((await b.send("Page.captureScreenshot", { format: "png", captureBeyondViewport: false })).data, "base64"));
-        punish = {
-          banner,
-          variant,
+        patrol.tap = {
           moyuBefore: Math.round(st0.moyu * 10) / 10,
           moyuAfter: Math.round(st1.moyu * 10) / 10,
           netDelta: Math.round((st1.moyu - st0.moyu) * 10) / 10,
           totalEarnedBefore: Math.round(st0.totalEarned * 10) / 10,
           totalEarnedAfter: Math.round(st1.totalEarned * 10) / 10,
-          surviveStreakAfter: st1.surviveStreak,
           floatTexts: texts.map((t) => t.txt),
           hudMoyuAfter: await b.ev("document.getElementById('hud-moyu').textContent"),
-          hudRankAfter: await b.ev("document.getElementById('hud-rank').textContent"),
-          shots: { boss: "/tmp/rage-3-boss.png", penalty: "/tmp/rage-4-penalty.png" },
         };
+        if (texts.some((t) => /被逮/.test(t.txt))) {
+          await b.shot("/tmp/rage-4-penalty.png");
+          writeFileSync(`${SHOTS}/penalty.png`, Buffer.from((await b.send("Page.captureScreenshot", { format: "png", captureBeyondViewport: false })).data, "base64"));
+          punish = { ...patrol, shots: { boss: "/tmp/rage-3-boss.png", penalty: "/tmp/rage-4-penalty.png" } };
+        }
       } else {
-        // 非 hold 变体不罚款：等本段结束（8 游戏秒 ≈ 1.1s 真实秒）再等下一次窗口
         await sleep(1600);
       }
     }

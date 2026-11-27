@@ -1,0 +1,79 @@
+{
+  "phase": "B",
+  "note": "rAF 时间戳每帧 +125ms（≈7.5 倍速），用于把 90-150s 才出现的巡逻压缩到 12-20s；游戏内数值仍是真实逻辑",
+  "balanceBeforeBoss": 28.54309999999989,
+  "gameSecondsAtStart": 203,
+  "patrols": [
+    {
+      "round": 1,
+      "banner": "⚠ 老板来了！忍住别点 (8s)",
+      "variant": "hold",
+      "realMsAtDetect": 15132
+    }
+  ],
+  "punish": {
+    "banner": "⚠ 老板来了！忍住别点 (8s)",
+    "variant": "hold",
+    "moyuBefore": 51.7,
+    "moyuAfter": 43.3,
+    "netDelta": -8.5,
+    "totalEarnedBefore": 51.7,
+    "totalEarnedAfter": 43.3,
+    "surviveStreakAfter": 0,
+    "floatTexts": [
+      "偷点被逮！+1 -10",
+      "⚠ 老板来了！忍住别点 (3s)",
+      "⚠ 老板来了！忍住别点 (4s)",
+      "⚠ 老板来了！忍住别点 (5s)",
+      "⚠ 老板来了！忍住别点 (6s)"
+    ],
+    "hudMoyuAfter": "43.6",
+    "hudRankAfter": "实习生 0%",
+    "shots": {
+      "boss": "/tmp/rage-3-boss.png",
+      "penalty": "/tmp/rage-4-penalty.png"
+    }
+  },
+  "gameSecondsElapsed": 1164,
+  "finalState": {
+    "moyu": 43.56809999999852,
+    "totalEarned": 43.56809999999852,
+    "levels": {},
+    "collected": {
+      "quotes": [],
+      "flavors": []
+    },
+    "daily": {
+      "date": "2026-11-27",
+      "goals": [
+        {
+          "id": "meme_1",
+          "target": 1,
+          "progress": 0,
+          "done": false
+        },
+        {
+          "id": "buy_3",
+          "target": 3,
+          "progress": 0,
+          "done": false
+        },
+        {
+          "id": "click_100",
+          "target": 100,
+          "progress": 21,
+          "done": false
+        }
+      ],
+      "streak": 0,
+      "lastCompleteDate": null,
+      "claimed": false
+    },
+    "surviveStreak": 0,
+    "totalClicks": 20,
+    "visits": {
+      "date": "2026-11-27",
+      "count": 1
+    }
+  }
+}

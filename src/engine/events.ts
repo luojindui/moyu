@@ -13,6 +13,8 @@ export const BOSS_PENALTY_MIN = 10;
 export const BOSS_PENALTY_CAP_IDLE_SECONDS = 10;
 export const BOSS_REWARD_IDLE_SECONDS = 4; // 事件经济红线 <10%：奖励回到 4×挂机秒
 export const BOSS_REWARD_MIN = 50;
+/** 新手保护：前 N 次巡逻不罚款（只提示） */
+export const BOSS_ROOKIE_PATROLS = 3;
 /** 反应宽限：横幅弹出到此时间内点击免罚（半空中的手指不算顶风作案）；宽限内不给收入 */
 export const BOSS_GRACE_SECONDS = 0.8;
 /** 偷点每击罚款 = 0.5 × 挂机秒收益（早期按下限 10）：轻罚但连续偷点会累积，交叉点落在 4-6cps */
@@ -64,6 +66,8 @@ export interface EventState {
   bossTaps: number;
   /** 本次巡逻已累计罚款（偷点递增罚的封顶用） */
   bossPenaltyTotal: number;
+  /** 累计经历的巡逻次数（新手前 3 次免罚） */
+  patrolCount: number;
 }
 
 /** 事件为运行时状态，不入存档 */
@@ -79,6 +83,7 @@ export function newEventState(): EventState {
     bossVariant: "hold",
     bossTaps: 0,
     bossPenaltyTotal: 0,
+    patrolCount: 0,
   };
 }
 
@@ -113,6 +118,7 @@ export function scheduleEvents(es: EventState, now: number, rng: () => number): 
     es.bossVariant = pickBossVariant(rng);
     es.bossTaps = 0;
     es.bossPenaltyTotal = 0;
+    es.patrolCount += 1;
     es.nextBossAt = Infinity;
     // 巡逻开启时丢梗必然已结束（互斥条件 memeUntil < 0），无需清场
   } else if (now >= es.nextMemeAt && es.memeUntil < 0 && es.bossUntil < 0) {
@@ -144,6 +150,10 @@ export function onBossTap(
   // type / blitz：反向玩法——点击是任务，不罚，计数
   if (es.bossVariant === "type" || es.bossVariant === "blitz") {
     es.bossTaps += 1;
+    return { state: afterIncome, caught: false, lost: 0, income };
+  }
+  // 新手保护：前 3 次巡逻只提示不罚款（降低"第一次遇到就扣钱"的流失）
+  if (es.patrolCount <= BOSS_ROOKIE_PATROLS) {
     return { state: afterIncome, caught: false, lost: 0, income };
   }
   // hold：每偷点一次累加罚款，整段封顶；罚款与余额脱钩（防"花光规避"），只按挂机收益计

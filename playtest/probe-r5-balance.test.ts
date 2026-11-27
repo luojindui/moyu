@@ -18,6 +18,7 @@ function evDodge(s: ReturnType<typeof stateFrom>): number {
   es.bossUntil = 100;
   es.bossStartAt = 100 - BOSS_DURATION;
   es.bossVariant = "hold";
+  es.patrolCount = 99; // 跳过新手保护（中期/后期场景）
   return finishPatrol(s, es).reward;
 }
 
@@ -26,6 +27,7 @@ function evClickThrough(s: ReturnType<typeof stateFrom>, cps: number): number {
   es.bossUntil = 100;
   es.bossStartAt = 100 - BOSS_DURATION;
   es.bossVariant = "hold";
+  es.patrolCount = 99; // 跳过新手保护（中期/后期场景）
   let st = s;
   let gained = 0;
   const step = 1 / cps;

@@ -1,0 +1,7510 @@
+{
+  "a": {
+    "cfg": {
+      "seed": 20261127,
+      "dt": 0.5,
+      "hours": 72,
+      "buyInterval": 1,
+      "cps": 0,
+      "doEvents": true,
+      "saveWatchSeconds": 0,
+      "roiRatio": 0.6,
+      "snapshotHours": [
+        1,
+        3,
+        6,
+        24
+      ]
+    },
+    "state": {
+      "moyu": 4443470761.392358,
+      "totalEarned": 101474764253.67358,
+      "levels": {
+        "phone": 101,
+        "toilet": 90,
+        "group": 84,
+        "meeting": 80,
+        "deep": 75,
+        "retire": 63
+      },
+      "collected": {
+        "quotes": [
+          6,
+          1,
+          0,
+          4,
+          5,
+          8,
+          7,
+          3,
+          2,
+          9
+        ],
+        "flavors": [
+          15,
+          16,
+          17,
+          20,
+          21,
+          18,
+          22,
+          25,
+          26,
+          30,
+          27,
+          31,
+          35,
+          23,
+          32,
+          28,
+          36,
+          37,
+          40,
+          33,
+          41,
+          19,
+          38,
+          42,
+          24,
+          43,
+          29,
+          34,
+          39,
+          44
+        ]
+      },
+      "daily": null,
+      "surviveStreak": 1514,
+      "totalClicks": 0,
+      "visits": {
+        "date": "",
+        "count": 0
+      }
+    },
+    "es": {
+      "nextBossAt": 259235.71827996057,
+      "bossUntil": -1,
+      "nextMemeAt": 259215.13009276753,
+      "memeUntil": -1,
+      "bossCaught": false,
+      "bossStartAt": 259104.5,
+      "surviveStreak": 1514,
+      "bossVariant": "hold",
+      "bossTaps": 0,
+      "bossPenaltyTotal": 0,
+      "patrolCount": 2015
+    },
+    "t": 259200,
+    "combo": 0,
+    "prevBossActive": false,
+    "purchases": {
+      "coffee": 0,
+      "water": 0,
+      "chair": 0,
+      "phone": 101,
+      "toilet": 90,
+      "group": 84,
+      "meeting": 80,
+      "deep": 75,
+      "retire": 63
+    },
+    "income": {
+      "idle": 98073436745.22028,
+      "click": 0,
+      "event": 3401296104.399963
+    },
+    "quotesHit": 10,
+    "memesSeen": 4165,
+    "patrols": 2015,
+    "rankCross": [
+      {
+        "idx": 1,
+        "name": "摸鱼学徒",
+        "atHours": 0.13319444444444445,
+        "totalEarned": 10007.84000000006
+      },
+      {
+        "idx": 2,
+        "name": "资深摸鱼",
+        "atHours": 0.27597222222222223,
+        "totalEarned": 100035.20000000061
+      },
+      {
+        "idx": 3,
+        "name": "摸鱼大师",
+        "atHours": 0.6168055555555556,
+        "totalEarned": 1000033.1999999658
+      },
+      {
+        "idx": 4,
+        "name": "带薪摸鱼传说",
+        "atHours": 2.3681944444444443,
+        "totalEarned": 100000160.09999637
+      },
+      {
+        "idx": 5,
+        "name": "摸鱼之神",
+        "atHours": 5.895555555555555,
+        "totalEarned": 1000016019.6003894
+      },
+      {
+        "idx": 6,
+        "name": "摸鱼宇宙尽头",
+        "atHours": 8.985138888888889,
+        "totalEarned": 2500046858.898463
+      },
+      {
+        "idx": 7,
+        "name": "带薪摸鱼之神",
+        "atHours": 12.814861111111112,
+        "totalEarned": 5000077160.098711
+      },
+      {
+        "idx": 8,
+        "name": "摸鱼星人",
+        "atHours": 18.36263888888889,
+        "totalEarned": 10000122890.113956
+      },
+      {
+        "idx": 9,
+        "name": "摸鱼黑洞",
+        "atHours": 28.429583333333333,
+        "totalEarned": 20000012294.104004
+      },
+      {
+        "idx": 10,
+        "name": "摸鱼次元",
+        "atHours": 41.430416666666666,
+        "totalEarned": 40000193231.7611
+      },
+      {
+        "idx": 11,
+        "name": "摸鱼奇点",
+        "atHours": 63.20111111111111,
+        "totalEarned": 80000018362.88747
+      }
+    ],
+    "snapshots": [
+      {
+        "hours": 1,
+        "totalEarned": 6626468.1999998605,
+        "moyu": 634584.1999999967,
+        "idleRate": 6712.2,
+        "clickPower": 1,
+        "levels": {
+          "phone": 38,
+          "toilet": 27,
+          "group": 21,
+          "meeting": 17,
+          "deep": 11
+        },
+        "totalLevels": 114,
+        "unlocked": 5,
+        "collection": 28,
+        "quotes": 10,
+        "flavors": 18,
+        "totalClicks": 0,
+        "rankIdx": 3,
+        "rankName": "摸鱼大师",
+        "rankProgress": 0.05683301212121071,
+        "toNextRank": 93373531.80000015,
+        "blockIncome": 6626468.1999998605,
+        "blockGrowth": null,
+        "income": {
+          "idle": 6408694.999999881,
+          "click": 0,
+          "event": 217391.2
+        },
+        "purchases": {
+          "coffee": 0,
+          "water": 0,
+          "chair": 0,
+          "phone": 38,
+          "toilet": 27,
+          "group": 21,
+          "meeting": 17,
+          "deep": 11,
+          "retire": 0
+        },
+        "bestIdleRoi": 0.0007,
+        "items": [
+          {
+            "id": "coffee",
+            "name": "咖啡续命",
+            "isClick": true,
+            "level": 0,
+            "cost": 15,
+            "dIdle": 0,
+            "dClick": 1,
+            "idleRoi": 0,
+            "clickRoi": 0.06666666666666667
+          },
+          {
+            "id": "water",
+            "name": "带薪喝水",
+            "isClick": true,
+            "level": 0,
+            "cost": 100,
+            "dIdle": 0,
+            "dClick": 2,
+            "idleRoi": 0,
+            "clickRoi": 0.02
+          },
+          {
+            "id": "chair",
+            "name": "人体工学椅",
+            "isClick": true,
+            "level": 0,
+            "cost": 800,
+            "dIdle": 0,
+            "dClick": 5,
+            "idleRoi": 0,
+            "clickRoi": 0.00625
+          },
+          {
+            "id": "phone",
+            "name": "刷手机",
+            "isClick": false,
+            "level": 38,
+            "cost": 10128,
+            "dIdle": 4,
+            "dClick": 0,
+            "idleRoi": 0.00039494470774091627,
+            "clickRoi": 0
+          },
+          {
+            "id": "toilet",
+            "name": "带薪蹲坑",
+            "isClick": false,
+            "level": 27,
+            "cost": 26122,
+            "dIdle": 10,
+            "dClick": 0,
+            "idleRoi": 0.0003828190797029324,
+            "clickRoi": 0
+          },
+          {
+            "id": "group",
+            "name": "摸鱼群聊",
+            "isClick": false,
+            "level": 21,
+            "cost": 75287,
+            "dIdle": 30,
+            "dClick": 0,
+            "idleRoi": 0.0003984751683557586,
+            "clickRoi": 0
+          },
+          {
+            "id": "meeting",
+            "name": "无用会议",
+            "isClick": false,
+            "level": 17,
+            "cost": 269032,
+            "dIdle": 100,
+            "dClick": 0,
+            "idleRoi": 0.0003717029944393232,
+            "clickRoi": 0
+          },
+          {
+            "id": "deep",
+            "name": "深度摸鱼",
+            "isClick": false,
+            "level": 11,
+            "cost": 697859,
+            "dIdle": 360,
+            "dClick": 0,
+            "idleRoi": 0.0005158635197081359,
+            "clickRoi": 0
+          },
+          {
+            "id": "retire",
+            "name": "退休式躺平",
+            "isClick": false,
+            "level": 0,
+            "cost": 1000000,
+            "dIdle": 700,
+            "dClick": 0,
+            "idleRoi": 0.0007,
+            "clickRoi": 0
+          }
+        ]
+      },
+      {
+        "hours": 3,
+        "totalEarned": 199822340.59996918,
+        "moyu": 4886225.599999841,
+        "idleRate": 46060.2,
+        "clickPower": 1,
+        "levels": {
+          "phone": 60,
+          "toilet": 49,
+          "group": 43,
+          "meeting": 39,
+          "deep": 31,
+          "retire": 17
+        },
+        "totalLevels": 239,
+        "unlocked": 6,
+        "collection": 34,
+        "quotes": 10,
+        "flavors": 24,
+        "totalClicks": 0,
+        "rankIdx": 4,
+        "rankName": "带薪摸鱼传说",
+        "rankProgress": 0.11091371177774353,
+        "toNextRank": 800177659.4000309,
+        "blockIncome": 193195872.3999693,
+        "blockGrowth": 14.577589944517758,
+        "income": {
+          "idle": 192450296.99997061,
+          "click": 0,
+          "event": 7370875.600000003
+        },
+        "purchases": {
+          "coffee": 0,
+          "water": 0,
+          "chair": 0,
+          "phone": 60,
+          "toilet": 49,
+          "group": 43,
+          "meeting": 39,
+          "deep": 31,
+          "retire": 17
+        },
+        "bestIdleRoi": 0.00006504811469655286,
+        "items": [
+          {
+            "id": "coffee",
+            "name": "咖啡续命",
+            "isClick": true,
+            "level": 0,
+            "cost": 15,
+            "dIdle": 0,
+            "dClick": 1,
+            "idleRoi": 0,
+            "clickRoi": 0.06666666666666667
+          },
+          {
+            "id": "water",
+            "name": "带薪喝水",
+            "isClick": true,
+            "level": 0,
+            "cost": 100,
+            "dIdle": 0,
+            "dClick": 2,
+            "idleRoi": 0,
+            "clickRoi": 0.02
+          },
+          {
+            "id": "chair",
+            "name": "人体工学椅",
+            "isClick": true,
+            "level": 0,
+            "cost": 800,
+            "dIdle": 0,
+            "dClick": 5,
+            "idleRoi": 0,
+            "clickRoi": 0.00625
+          },
+          {
+            "id": "phone",
+            "name": "刷手机",
+            "isClick": false,
+            "level": 60,
+            "cost": 219200,
+            "dIdle": 8,
+            "dClick": 0,
+            "idleRoi": 0.00003649635036496351,
+            "clickRoi": 0
+          },
+          {
+            "id": "toilet",
+            "name": "带薪蹲坑",
+            "isClick": false,
+            "level": 49,
+            "cost": 565387,
+            "dIdle": 20,
+            "dClick": 0,
+            "idleRoi": 0.0000353740004633994,
+            "clickRoi": 0
+          },
+          {
+            "id": "group",
+            "name": "摸鱼群聊",
+            "isClick": false,
+            "level": 43,
+            "cost": 1629548,
+            "dIdle": 60,
+            "dClick": 0,
+            "idleRoi": 0.000036820026166765264,
+            "clickRoi": 0
+          },
+          {
+            "id": "meeting",
+            "name": "无用会议",
+            "isClick": false,
+            "level": 39,
+            "cost": 5823121,
+            "dIdle": 200,
+            "dClick": 0,
+            "idleRoi": 0.00003434584306250892,
+            "clickRoi": 0
+          },
+          {
+            "id": "deep",
+            "name": "深度摸鱼",
+            "isClick": false,
+            "level": 31,
+            "cost": 11421531,
+            "dIdle": 720,
+            "dClick": 0,
+            "idleRoi": 0.00006303883428587639,
+            "clickRoi": 0
+          },
+          {
+            "id": "retire",
+            "name": "退休式躺平",
+            "isClick": false,
+            "level": 17,
+            "cost": 10761265,
+            "dIdle": 700,
+            "dClick": 0,
+            "idleRoi": 0.00006504811469655286,
+            "clickRoi": 0
+          }
+        ]
+      },
+      {
+        "hours": 6,
+        "totalEarned": 1033943015.2004074,
+        "moyu": 20501056.200007774,
+        "idleRate": 87728.2,
+        "clickPower": 1,
+        "levels": {
+          "phone": 73,
+          "toilet": 57,
+          "group": 51,
+          "meeting": 47,
+          "deep": 43,
+          "retire": 30
+        },
+        "totalLevels": 301,
+        "unlocked": 6,
+        "collection": 37,
+        "quotes": 10,
+        "flavors": 27,
+        "totalClicks": 0,
+        "rankIdx": 5,
+        "rankName": "摸鱼之神",
+        "rankProgress": 0.02262867680027159,
+        "toNextRank": 1466056984.7995925,
+        "blockIncome": 834120674.6004382,
+        "blockGrowth": 2.8783246910285123,
+        "income": {
+          "idle": 998244145.0003983,
+          "click": 0,
+          "event": 35696351.19999998
+        },
+        "purchases": {
+          "coffee": 0,
+          "water": 0,
+          "chair": 0,
+          "phone": 73,
+          "toilet": 57,
+          "group": 51,
+          "meeting": 47,
+          "deep": 43,
+          "retire": 30
+        },
+        "bestIdleRoi": 0.000021144276277638363,
+        "items": [
+          {
+            "id": "coffee",
+            "name": "咖啡续命",
+            "isClick": true,
+            "level": 0,
+            "cost": 15,
+            "dIdle": 0,
+            "dClick": 1,
+            "idleRoi": 0,
+            "clickRoi": 0.06666666666666667
+          },
+          {
+            "id": "water",
+            "name": "带薪喝水",
+            "isClick": true,
+            "level": 0,
+            "cost": 100,
+            "dIdle": 0,
+            "dClick": 2,
+            "idleRoi": 0,
+            "clickRoi": 0.02
+          },
+          {
+            "id": "chair",
+            "name": "人体工学椅",
+            "isClick": true,
+            "level": 0,
+            "cost": 800,
+            "dIdle": 0,
+            "dClick": 5,
+            "idleRoi": 0,
+            "clickRoi": 0.00625
+          },
+          {
+            "id": "phone",
+            "name": "刷手机",
+            "isClick": false,
+            "level": 73,
+            "cost": 1348691,
+            "dIdle": 16,
+            "dClick": 0,
+            "idleRoi": 0.000011863354912281613,
+            "clickRoi": 0
+          },
+          {
+            "id": "toilet",
+            "name": "带薪蹲坑",
+            "isClick": false,
+            "level": 57,
+            "cost": 1729531,
+            "dIdle": 20,
+            "dClick": 0,
+            "idleRoi": 0.00001156382857549243,
+            "clickRoi": 0
+          },
+          {
+            "id": "group",
+            "name": "摸鱼群聊",
+            "isClick": false,
+            "level": 51,
+            "cost": 4984825,
+            "dIdle": 60,
+            "dClick": 0,
+            "idleRoi": 0.000012036530871194074,
+            "clickRoi": 0
+          },
+          {
+            "id": "meeting",
+            "name": "无用会议",
+            "isClick": false,
+            "level": 47,
+            "cost": 17813059,
+            "dIdle": 200,
+            "dClick": 0,
+            "idleRoi": 0.00001122771782207649,
+            "clickRoi": 0
+          },
+          {
+            "id": "deep",
+            "name": "深度摸鱼",
+            "isClick": false,
+            "level": 43,
+            "cost": 61108046,
+            "dIdle": 720,
+            "dClick": 0,
+            "idleRoi": 0.000011782409144615752,
+            "clickRoi": 0
+          },
+          {
+            "id": "retire",
+            "name": "退休式躺平",
+            "isClick": false,
+            "level": 30,
+            "cost": 66211772,
+            "dIdle": 1400,
+            "dClick": 0,
+            "idleRoi": 0.000021144276277638363,
+            "clickRoi": 0
+          }
+        ]
+      },
+      {
+        "hours": 24,
+        "totalEarned": 15482476079.829523,
+        "moyu": 13033568.800567819,
+        "idleRate": 270064.2,
+        "clickPower": 1,
+        "levels": {
+          "phone": 92,
+          "toilet": 76,
+          "group": 70,
+          "meeting": 66,
+          "deep": 62,
+          "retire": 50
+        },
+        "totalLevels": 416,
+        "unlocked": 6,
+        "collection": 40,
+        "quotes": 10,
+        "flavors": 30,
+        "totalClicks": 0,
+        "rankIdx": 8,
+        "rankName": "摸鱼星人",
+        "rankProgress": 0.5482476079829524,
+        "toNextRank": 4517523920.170477,
+        "blockIncome": 14448533064.629116,
+        "blockGrowth": 2.886978967711571,
+        "income": {
+          "idle": 14966273369.028889,
+          "click": 0,
+          "event": 516192356.7999972
+        },
+        "purchases": {
+          "coffee": 0,
+          "water": 0,
+          "chair": 0,
+          "phone": 92,
+          "toilet": 76,
+          "group": 70,
+          "meeting": 66,
+          "deep": 62,
+          "retire": 50
+        },
+        "bestIdleRoi": 0.0000025838423578140295,
+        "items": [
+          {
+            "id": "coffee",
+            "name": "咖啡续命",
+            "isClick": true,
+            "level": 0,
+            "cost": 15,
+            "dIdle": 0,
+            "dClick": 1,
+            "idleRoi": 0,
+            "clickRoi": 0.06666666666666667
+          },
+          {
+            "id": "water",
+            "name": "带薪喝水",
+            "isClick": true,
+            "level": 0,
+            "cost": 100,
+            "dIdle": 0,
+            "dClick": 2,
+            "idleRoi": 0,
+            "clickRoi": 0.02
+          },
+          {
+            "id": "chair",
+            "name": "人体工学椅",
+            "isClick": true,
+            "level": 0,
+            "cost": 800,
+            "dIdle": 0,
+            "dClick": 5,
+            "idleRoi": 0,
+            "clickRoi": 0.00625
+          },
+          {
+            "id": "phone",
+            "name": "刷手机",
+            "isClick": false,
+            "level": 92,
+            "cost": 19194258,
+            "dIdle": 32,
+            "dClick": 0,
+            "idleRoi": 0.0000016671652532752242,
+            "clickRoi": 0
+          },
+          {
+            "id": "toilet",
+            "name": "带薪蹲坑",
+            "isClick": false,
+            "level": 76,
+            "cost": 24614279,
+            "dIdle": 40,
+            "dClick": 0,
+            "idleRoi": 0.000001625072991169069,
+            "clickRoi": 0
+          },
+          {
+            "id": "group",
+            "name": "摸鱼群聊",
+            "isClick": false,
+            "level": 70,
+            "cost": 70942881,
+            "dIdle": 120,
+            "dClick": 0,
+            "idleRoi": 0.0000016915016462328333,
+            "clickRoi": 0
+          },
+          {
+            "id": "meeting",
+            "name": "无用会议",
+            "isClick": false,
+            "level": 66,
+            "cost": 253511388,
+            "dIdle": 400,
+            "dClick": 0,
+            "idleRoi": 0.0000015778383888616475,
+            "clickRoi": 0
+          },
+          {
+            "id": "deep",
+            "name": "深度摸鱼",
+            "isClick": false,
+            "level": 62,
+            "cost": 869675752,
+            "dIdle": 1440,
+            "dClick": 0,
+            "idleRoi": 0.0000016557895246457326,
+            "clickRoi": 0
+          },
+          {
+            "id": "retire",
+            "name": "退休式躺平",
+            "isClick": false,
+            "level": 50,
+            "cost": 1083657442,
+            "dIdle": 2800,
+            "dClick": 0,
+            "idleRoi": 0.0000025838423578140295,
+            "clickRoi": 0
+          }
+        ]
+      },
+      {
+        "hours": 72,
+        "totalEarned": 101474764253.67358,
+        "moyu": 4443470761.392358,
+        "idleRate": 663392.2,
+        "clickPower": 1,
+        "levels": {
+          "phone": 101,
+          "toilet": 90,
+          "group": 84,
+          "meeting": 80,
+          "deep": 75,
+          "retire": 63
+        },
+        "totalLevels": 493,
+        "unlocked": 6,
+        "collection": 40,
+        "quotes": 10,
+        "flavors": 30,
+        "totalClicks": 0,
+        "rankIdx": 11,
+        "rankName": "摸鱼奇点",
+        "rankProgress": 0.2684345531709198,
+        "toNextRank": 58525235746.326416,
+        "blockIncome": 85992288173.84406,
+        "blockGrowth": 2.23186035017869,
+        "income": {
+          "idle": 98073436745.22028,
+          "click": 0,
+          "event": 3401296104.399963
+        },
+        "purchases": {
+          "coffee": 0,
+          "water": 0,
+          "chair": 0,
+          "phone": 101,
+          "toilet": 90,
+          "group": 84,
+          "meeting": 80,
+          "deep": 75,
+          "retire": 63
+        },
+        "bestIdleRoi": 8.398932378529582e-7,
+        "items": [
+          {
+            "id": "coffee",
+            "name": "咖啡续命",
+            "isClick": true,
+            "level": 0,
+            "cost": 15,
+            "dIdle": 0,
+            "dClick": 1,
+            "idleRoi": 0,
+            "clickRoi": 0.06666666666666667
+          },
+          {
+            "id": "water",
+            "name": "带薪喝水",
+            "isClick": true,
+            "level": 0,
+            "cost": 100,
+            "dIdle": 0,
+            "dClick": 2,
+            "idleRoi": 0,
+            "clickRoi": 0.02
+          },
+          {
+            "id": "chair",
+            "name": "人体工学椅",
+            "isClick": true,
+            "level": 0,
+            "cost": 800,
+            "dIdle": 0,
+            "dClick": 5,
+            "idleRoi": 0,
+            "clickRoi": 0.00625
+          },
+          {
+            "id": "phone",
+            "name": "刷手机",
+            "isClick": false,
+            "level": 101,
+            "cost": 67523024,
+            "dIdle": 32,
+            "dClick": 0,
+            "idleRoi": 4.7391242430137606e-7,
+            "clickRoi": 0
+          },
+          {
+            "id": "toilet",
+            "name": "带薪蹲坑",
+            "isClick": false,
+            "level": 90,
+            "cost": 174163396,
+            "dIdle": 80,
+            "dClick": 0,
+            "idleRoi": 4.593387694392454e-7,
+            "clickRoi": 0
+          },
+          {
+            "id": "group",
+            "name": "摸鱼群聊",
+            "isClick": false,
+            "level": 84,
+            "cost": 501970947,
+            "dIdle": 240,
+            "dClick": 0,
+            "idleRoi": 4.781153200884353e-7,
+            "clickRoi": 0
+          },
+          {
+            "id": "meeting",
+            "name": "无用会议",
+            "isClick": false,
+            "level": 80,
+            "cost": 1793771986,
+            "dIdle": 800,
+            "dClick": 0,
+            "idleRoi": 4.459875648877482e-7,
+            "clickRoi": 0
+          },
+          {
+            "id": "deep",
+            "name": "深度摸鱼",
+            "isClick": false,
+            "level": 75,
+            "cost": 5350930197,
+            "dIdle": 2880,
+            "dClick": 0,
+            "idleRoi": 5.382241767262582e-7,
+            "clickRoi": 0
+          },
+          {
+            "id": "retire",
+            "name": "退休式躺平",
+            "isClick": false,
+            "level": 63,
+            "cost": 6667514093,
+            "dIdle": 5600,
+            "dClick": 0,
+            "idleRoi": 8.398932378529582e-7,
+            "clickRoi": 0
+          }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "fromHours": 0,
+        "toHours": 6,
+        "income": 1033943015.2004074,
+        "growth": null,
+        "totalEarned": 1033943015.2004074,
+        "idleRate": 87728.2,
+        "rankName": "摸鱼之神"
+      },
+      {
+        "fromHours": 6,
+        "toHours": 12,
+        "income": 3284626807.9960685,
+        "growth": 3.176796747700273,
+        "totalEarned": 4318569823.196476,
+        "idleRate": 222656.2,
+        "rankName": "摸鱼宇宙尽头"
+      },
+      {
+        "fromHours": 12,
+        "toHours": 18,
+        "income": 5339431165.216478,
+        "growth": 1.6255822890497669,
+        "totalEarned": 9658000988.412954,
+        "idleRate": 252768.2,
+        "rankName": "带薪摸鱼之神"
+      },
+      {
+        "fromHours": 18,
+        "toHours": 24,
+        "income": 5824475091.416569,
+        "growth": 1.0908418726998281,
+        "totalEarned": 15482476079.829523,
+        "idleRate": 270064.2,
+        "rankName": "摸鱼星人"
+      },
+      {
+        "fromHours": 24,
+        "toHours": 30,
+        "income": 6565460254.957251,
+        "growth": 1.1272192175107176,
+        "totalEarned": 22047936334.786774,
+        "idleRate": 374768.2,
+        "rankName": "摸鱼黑洞"
+      },
+      {
+        "fromHours": 30,
+        "toHours": 36,
+        "income": 9119372457.134178,
+        "growth": 1.3889921045898643,
+        "totalEarned": 31167308791.92095,
+        "idleRate": 430192.2,
+        "rankName": "摸鱼黑洞"
+      },
+      {
+        "fromHours": 36,
+        "toHours": 42,
+        "income": 9775906859.533852,
+        "growth": 1.0719933751456834,
+        "totalEarned": 40943215651.4548,
+        "idleRate": 443056.2,
+        "rankName": "摸鱼次元"
+      },
+      {
+        "fromHours": 42,
+        "toHours": 48,
+        "income": 10009734119.133713,
+        "growth": 1.0239187282530033,
+        "totalEarned": 50952949770.58852,
+        "idleRate": 453488.2,
+        "rankName": "摸鱼次元"
+      },
+      {
+        "fromHours": 48,
+        "toHours": 54,
+        "income": 10247805316.533691,
+        "growth": 1.023783968142061,
+        "totalEarned": 61200755087.12221,
+        "idleRate": 463552.2,
+        "rankName": "摸鱼次元"
+      },
+      {
+        "fromHours": 54,
+        "toHours": 60,
+        "income": 11142284110.624786,
+        "growth": 1.0872849128630453,
+        "totalEarned": 72343039197.747,
+        "idleRate": 637952.2,
+        "rankName": "摸鱼次元"
+      },
+      {
+        "fromHours": 60,
+        "toHours": 66,
+        "income": 14420110289.063293,
+        "growth": 1.294179016249722,
+        "totalEarned": 86763149486.81029,
+        "idleRate": 654912.2,
+        "rankName": "摸鱼奇点"
+      },
+      {
+        "fromHours": 66,
+        "toHours": 72,
+        "income": 14711614766.863297,
+        "growth": 1.0202151351103805,
+        "totalEarned": 101474764253.67358,
+        "idleRate": 663392.2,
+        "rankName": "摸鱼奇点"
+      }
+    ],
+    "at1e6": {
+      "hours": 0.6168055555555556,
+      "totalEarned": 1000033.1999999658,
+      "moyu": 50436.20000000032,
+      "idleRate": 1755.2,
+      "clickPower": 1,
+      "levels": {
+        "phone": 35,
+        "toilet": 24,
+        "group": 13,
+        "meeting": 10,
+        "deep": 1
+      },
+      "totalLevels": 83,
+      "unlocked": 5,
+      "collection": 25,
+      "quotes": 10,
+      "flavors": 15,
+      "totalClicks": 0,
+      "rankIdx": 3,
+      "rankName": "摸鱼大师",
+      "rankProgress": 3.353535350085227e-7,
+      "toNextRank": 98999966.80000003,
+      "blockIncome": 0,
+      "blockGrowth": null,
+      "income": {
+        "idle": 962185.5999999671,
+        "click": 0,
+        "event": 37633.600000000006
+      },
+      "purchases": {
+        "coffee": 0,
+        "water": 0,
+        "chair": 0,
+        "phone": 35,
+        "toilet": 24,
+        "group": 13,
+        "meeting": 10,
+        "deep": 1,
+        "retire": 0
+      },
+      "bestIdleRoi": 0.0010434782608695651,
+      "items": [
+        {
+          "id": "coffee",
+          "name": "咖啡续命",
+          "isClick": true,
+          "level": 0,
+          "cost": 15,
+          "dIdle": 0,
+          "dClick": 1,
+          "idleRoi": 0,
+          "clickRoi": 0.06666666666666667
+        },
+        {
+          "id": "water",
+          "name": "带薪喝水",
+          "isClick": true,
+          "level": 0,
+          "cost": 100,
+          "dIdle": 0,
+          "dClick": 2,
+          "idleRoi": 0,
+          "clickRoi": 0.02
+        },
+        {
+          "id": "chair",
+          "name": "人体工学椅",
+          "isClick": true,
+          "level": 0,
+          "cost": 800,
+          "dIdle": 0,
+          "dClick": 5,
+          "idleRoi": 0,
+          "clickRoi": 0.00625
+        },
+        {
+          "id": "phone",
+          "name": "刷手机",
+          "isClick": false,
+          "level": 35,
+          "cost": 6659,
+          "dIdle": 4,
+          "dClick": 0,
+          "idleRoi": 0.0006006907944135756,
+          "clickRoi": 0
+        },
+        {
+          "id": "toilet",
+          "name": "带薪蹲坑",
+          "isClick": false,
+          "level": 24,
+          "cost": 17176,
+          "dIdle": 10,
+          "dClick": 0,
+          "idleRoi": 0.0005822077317186772,
+          "clickRoi": 0
+        },
+        {
+          "id": "group",
+          "name": "摸鱼群聊",
+          "isClick": false,
+          "level": 13,
+          "cost": 24612,
+          "dIdle": 15,
+          "dClick": 0,
+          "idleRoi": 0.0006094588005850804,
+          "clickRoi": 0
+        },
+        {
+          "id": "meeting",
+          "name": "无用会议",
+          "isClick": false,
+          "level": 10,
+          "cost": 101139,
+          "dIdle": 100,
+          "dClick": 0,
+          "idleRoi": 0.0009887382710922592,
+          "clickRoi": 0
+        },
+        {
+          "id": "deep",
+          "name": "深度摸鱼",
+          "isClick": false,
+          "level": 1,
+          "cost": 172500,
+          "dIdle": 180,
+          "dClick": 0,
+          "idleRoi": 0.0010434782608695651,
+          "clickRoi": 0
+        },
+        {
+          "id": "retire",
+          "name": "退休式躺平",
+          "isClick": false,
+          "level": 0,
+          "cost": 1000000,
+          "dIdle": 700,
+          "dClick": 0,
+          "idleRoi": 0.0007,
+          "clickRoi": 0
+        }
+      ]
+    },
+    "atRetireAffordable": {
+      "hours": 1.0698611111111112,
+      "totalEarned": 8492418.699999673,
+      "moyu": 1000137.699999989,
+      "idleRate": 7432.2,
+      "clickPower": 1,
+      "levels": {
+        "phone": 38,
+        "toilet": 27,
+        "group": 21,
+        "meeting": 17,
+        "deep": 13
+      },
+      "totalLevels": 116,
+      "unlocked": 5,
+      "collection": 28,
+      "quotes": 10,
+      "flavors": 18,
+      "totalClicks": 0,
+      "rankIdx": 3,
+      "rankName": "摸鱼大师",
+      "rankProgress": 0.07568099696969367,
+      "toNextRank": 91507581.30000032,
+      "blockIncome": 0,
+      "blockGrowth": null,
+      "income": {
+        "idle": 8232173.299999693,
+        "click": 0,
+        "event": 259824.40000000002
+      },
+      "purchases": {
+        "coffee": 0,
+        "water": 0,
+        "chair": 0,
+        "phone": 38,
+        "toilet": 27,
+        "group": 21,
+        "meeting": 17,
+        "deep": 13,
+        "retire": 0
+      },
+      "bestIdleRoi": 0.0007,
+      "items": [
+        {
+          "id": "coffee",
+          "name": "咖啡续命",
+          "isClick": true,
+          "level": 0,
+          "cost": 15,
+          "dIdle": 0,
+          "dClick": 1,
+          "idleRoi": 0,
+          "clickRoi": 0.06666666666666667
+        },
+        {
+          "id": "water",
+          "name": "带薪喝水",
+          "isClick": true,
+          "level": 0,
+          "cost": 100,
+          "dIdle": 0,
+          "dClick": 2,
+          "idleRoi": 0,
+          "clickRoi": 0.02
+        },
+        {
+          "id": "chair",
+          "name": "人体工学椅",
+          "isClick": true,
+          "level": 0,
+          "cost": 800,
+          "dIdle": 0,
+          "dClick": 5,
+          "idleRoi": 0,
+          "clickRoi": 0.00625
+        },
+        {
+          "id": "phone",
+          "name": "刷手机",
+          "isClick": false,
+          "level": 38,
+          "cost": 10128,
+          "dIdle": 4,
+          "dClick": 0,
+          "idleRoi": 0.00039494470774091627,
+          "clickRoi": 0
+        },
+        {
+          "id": "toilet",
+          "name": "带薪蹲坑",
+          "isClick": false,
+          "level": 27,
+          "cost": 26122,
+          "dIdle": 10,
+          "dClick": 0,
+          "idleRoi": 0.0003828190797029324,
+          "clickRoi": 0
+        },
+        {
+          "id": "group",
+          "name": "摸鱼群聊",
+          "isClick": false,
+          "level": 21,
+          "cost": 75287,
+          "dIdle": 30,
+          "dClick": 0,
+          "idleRoi": 0.0003984751683557586,
+          "clickRoi": 0
+        },
+        {
+          "id": "meeting",
+          "name": "无用会议",
+          "isClick": false,
+          "level": 17,
+          "cost": 269032,
+          "dIdle": 100,
+          "dClick": 0,
+          "idleRoi": 0.0003717029944393232,
+          "clickRoi": 0
+        },
+        {
+          "id": "deep",
+          "name": "深度摸鱼",
+          "isClick": false,
+          "level": 13,
+          "cost": 922919,
+          "dIdle": 360,
+          "dClick": 0,
+          "idleRoi": 0.00039006673391706097,
+          "clickRoi": 0
+        },
+        {
+          "id": "retire",
+          "name": "退休式躺平",
+          "isClick": false,
+          "level": 0,
+          "cost": 1000000,
+          "dIdle": 700,
+          "dClick": 0,
+          "idleRoi": 0.0007,
+          "clickRoi": 0
+        }
+      ]
+    },
+    "firstBuys": [
+      {
+        "hours": 0.036,
+        "id": "phone",
+        "cost": 50
+      },
+      {
+        "hours": 0.042,
+        "id": "phone",
+        "cost": 58
+      },
+      {
+        "hours": 0.05,
+        "id": "phone",
+        "cost": 67
+      },
+      {
+        "hours": 0.056,
+        "id": "phone",
+        "cost": 77
+      },
+      {
+        "hours": 0.062,
+        "id": "phone",
+        "cost": 88
+      },
+      {
+        "hours": 0.065,
+        "id": "phone",
+        "cost": 101
+      },
+      {
+        "hours": 0.068,
+        "id": "phone",
+        "cost": 116
+      },
+      {
+        "hours": 0.07,
+        "id": "phone",
+        "cost": 134
+      },
+      {
+        "hours": 0.073,
+        "id": "phone",
+        "cost": 153
+      },
+      {
+        "hours": 0.076,
+        "id": "phone",
+        "cost": 176
+      },
+      {
+        "hours": 0.078,
+        "id": "phone",
+        "cost": 203
+      },
+      {
+        "hours": 0.08,
+        "id": "phone",
+        "cost": 233
+      },
+      {
+        "hours": 0.083,
+        "id": "phone",
+        "cost": 268
+      },
+      {
+        "hours": 0.086,
+        "id": "phone",
+        "cost": 308
+      },
+      {
+        "hours": 0.09,
+        "id": "phone",
+        "cost": 354
+      },
+      {
+        "hours": 0.096,
+        "id": "toilet",
+        "cost": 600
+      },
+      {
+        "hours": 0.099,
+        "id": "phone",
+        "cost": 407
+      },
+      {
+        "hours": 0.104,
+        "id": "toilet",
+        "cost": 690
+      },
+      {
+        "hours": 0.107,
+        "id": "phone",
+        "cost": 468
+      },
+      {
+        "hours": 0.112,
+        "id": "toilet",
+        "cost": 794
+      },
+      {
+        "hours": 0.115,
+        "id": "phone",
+        "cost": 539
+      },
+      {
+        "hours": 0.119,
+        "id": "toilet",
+        "cost": 913
+      },
+      {
+        "hours": 0.122,
+        "id": "phone",
+        "cost": 619
+      },
+      {
+        "hours": 0.127,
+        "id": "toilet",
+        "cost": 1050
+      },
+      {
+        "hours": 0.13,
+        "id": "phone",
+        "cost": 712
+      },
+      {
+        "hours": 0.135,
+        "id": "toilet",
+        "cost": 1207
+      },
+      {
+        "hours": 0.138,
+        "id": "phone",
+        "cost": 819
+      },
+      {
+        "hours": 0.144,
+        "id": "toilet",
+        "cost": 1388
+      },
+      {
+        "hours": 0.149,
+        "id": "toilet",
+        "cost": 1597
+      },
+      {
+        "hours": 0.156,
+        "id": "toilet",
+        "cost": 1836
+      },
+      {
+        "hours": 0.162,
+        "id": "toilet",
+        "cost": 2111
+      },
+      {
+        "hours": 0.173,
+        "id": "group",
+        "cost": 4000
+      },
+      {
+        "hours": 0.175,
+        "id": "phone",
+        "cost": 942
+      },
+      {
+        "hours": 0.181,
+        "id": "toilet",
+        "cost": 2428
+      },
+      {
+        "hours": 0.193,
+        "id": "group",
+        "cost": 4600
+      },
+      {
+        "hours": 0.195,
+        "id": "phone",
+        "cost": 1083
+      },
+      {
+        "hours": 0.201,
+        "id": "toilet",
+        "cost": 2792
+      },
+      {
+        "hours": 0.21,
+        "id": "group",
+        "cost": 5290
+      },
+      {
+        "hours": 0.212,
+        "id": "phone",
+        "cost": 1245
+      },
+      {
+        "hours": 0.215,
+        "id": "phone",
+        "cost": 1432
+      },
+      {
+        "hours": 0.217,
+        "id": "phone",
+        "cost": 1646
+      },
+      {
+        "hours": 0.22,
+        "id": "phone",
+        "cost": 1893
+      },
+      {
+        "hours": 0.223,
+        "id": "phone",
+        "cost": 2177
+      },
+      {
+        "hours": 0.226,
+        "id": "phone",
+        "cost": 2504
+      },
+      {
+        "hours": 0.23,
+        "id": "toilet",
+        "cost": 3211
+      },
+      {
+        "hours": 0.236,
+        "id": "group",
+        "cost": 6084
+      },
+      {
+        "hours": 0.239,
+        "id": "phone",
+        "cost": 2879
+      },
+      {
+        "hours": 0.243,
+        "id": "toilet",
+        "cost": 3692
+      },
+      {
+        "hours": 0.251,
+        "id": "group",
+        "cost": 6997
+      },
+      {
+        "hours": 0.254,
+        "id": "phone",
+        "cost": 3311
+      },
+      {
+        "hours": 0.263,
+        "id": "group",
+        "cost": 8046
+      },
+      {
+        "hours": 0.272,
+        "id": "group",
+        "cost": 9253
+      },
+      {
+        "hours": 0.28,
+        "id": "group",
+        "cost": 10641
+      },
+      {
+        "hours": 0.291,
+        "id": "group",
+        "cost": 12237
+      },
+      {
+        "hours": 0.31,
+        "id": "meeting",
+        "cost": 25000
+      },
+      {
+        "hours": 0.313,
+        "id": "phone",
+        "cost": 3808
+      },
+      {
+        "hours": 0.316,
+        "id": "toilet",
+        "cost": 4246
+      },
+      {
+        "hours": 0.326,
+        "id": "group",
+        "cost": 14072
+      },
+      {
+        "hours": 0.344,
+        "id": "meeting",
+        "cost": 28750
+      },
+      {
+        "hours": 0.347,
+        "id": "phone",
+        "cost": 4379
+      },
+      {
+        "hours": 0.35,
+        "id": "toilet",
+        "cost": 4883
+      },
+      {
+        "hours": 0.36,
+        "id": "group",
+        "cost": 16183
+      },
+      {
+        "hours": 0.378,
+        "id": "meeting",
+        "cost": 33063
+      },
+      {
+        "hours": 0.38,
+        "id": "phone",
+        "cost": 5035
+      },
+      {
+        "hours": 0.383,
+        "id": "toilet",
+        "cost": 5615
+      },
+      {
+        "hours": 0.393,
+        "id": "group",
+        "cost": 18610
+      },
+      {
+        "hours": 0.412,
+        "id": "meeting",
+        "cost": 38022
+      },
+      {
+        "hours": 0.415,
+        "id": "toilet",
+        "cost": 6457
+      },
+      {
+        "hours": 0.433,
+        "id": "meeting",
+        "cost": 43726
+      },
+      {
+        "hours": 0.454,
+        "id": "meeting",
+        "cost": 50284
+      },
+      {
+        "hours": 0.476,
+        "id": "meeting",
+        "cost": 57827
+      },
+      {
+        "hours": 0.5,
+        "id": "meeting",
+        "cost": 66501
+      },
+      {
+        "hours": 0.55,
+        "id": "deep",
+        "cost": 150000
+      },
+      {
+        "hours": 0.552,
+        "id": "phone",
+        "cost": 5791
+      },
+      {
+        "hours": 0.554,
+        "id": "toilet",
+        "cost": 7426
+      },
+      {
+        "hours": 0.554,
+        "id": "toilet",
+        "cost": 8540
+      },
+      {
+        "hours": 0.557,
+        "id": "toilet",
+        "cost": 9820
+      },
+      {
+        "hours": 0.56,
+        "id": "toilet",
+        "cost": 11293
+      },
+      {
+        "hours": 0.563,
+        "id": "toilet",
+        "cost": 12987
+      },
+      {
+        "hours": 0.567,
+        "id": "toilet",
+        "cost": 14935
+      },
+      {
+        "hours": 0.572,
+        "id": "group",
+        "cost": 21402
+      },
+      {
+        "hours": 0.59,
+        "id": "meeting",
+        "cost": 76476
+      },
+      {
+        "hours": 0.609,
+        "id": "meeting",
+        "cost": 87947
+      },
+      {
+        "hours": 0.625,
+        "id": "meeting",
+        "cost": 101139
+      },
+      {
+        "hours": 0.641,
+        "id": "meeting",
+        "cost": 116310
+      },
+      {
+        "hours": 0.66,
+        "id": "meeting",
+        "cost": 133757
+      },
+      {
+        "hours": 0.679,
+        "id": "meeting",
+        "cost": 153820
+      },
+      {
+        "hours": 0.701,
+        "id": "deep",
+        "cost": 172500
+      },
+      {
+        "hours": 0.702,
+        "id": "phone",
+        "cost": 6659
+      },
+      {
+        "hours": 0.704,
+        "id": "toilet",
+        "cost": 17176
+      },
+      {
+        "hours": 0.707,
+        "id": "group",
+        "cost": 24612
+      },
+      {
+        "hours": 0.71,
+        "id": "group",
+        "cost": 28303
+      },
+      {
+        "hours": 0.712,
+        "id": "group",
+        "cost": 32549
+      },
+      {
+        "hours": 0.716,
+        "id": "group",
+        "cost": 37431
+      },
+      {
+        "hours": 0.721,
+        "id": "group",
+        "cost": 43046
+      },
+      {
+        "hours": 0.726,
+        "id": "group",
+        "cost": 49502
+      },
+      {
+        "hours": 0.744,
+        "id": "meeting",
+        "cost": 176893
+      },
+      {
+        "hours": 0.763,
+        "id": "deep",
+        "cost": 198375
+      },
+      {
+        "hours": 0.764,
+        "id": "phone",
+        "cost": 7658
+      },
+      {
+        "hours": 0.766,
+        "id": "toilet",
+        "cost": 19752
+      },
+      {
+        "hours": 0.771,
+        "id": "group",
+        "cost": 56928
+      },
+      {
+        "hours": 0.789,
+        "id": "meeting",
+        "cost": 203427
+      },
+      {
+        "hours": 0.808,
+        "id": "deep",
+        "cost": 228132
+      },
+      {
+        "hours": 0.828,
+        "id": "deep",
+        "cost": 262351
+      },
+      {
+        "hours": 0.847,
+        "id": "deep",
+        "cost": 301704
+      },
+      {
+        "hours": 0.866,
+        "id": "deep",
+        "cost": 346960
+      },
+      {
+        "hours": 0.887,
+        "id": "deep",
+        "cost": 399003
+      },
+      {
+        "hours": 0.909,
+        "id": "deep",
+        "cost": 458854
+      },
+      {
+        "hours": 0.909,
+        "id": "phone",
+        "cost": 8807
+      },
+      {
+        "hours": 0.91,
+        "id": "toilet",
+        "cost": 22715
+      },
+      {
+        "hours": 0.914,
+        "id": "group",
+        "cost": 65467
+      },
+      {
+        "hours": 0.924,
+        "id": "meeting",
+        "cost": 233941
+      },
+      {
+        "hours": 0.949,
+        "id": "deep",
+        "cost": 527682
+      },
+      {
+        "hours": 0.976,
+        "id": "deep",
+        "cost": 606834
+      },
+      {
+        "hours": 1.003,
+        "id": "deep",
+        "cost": 697859
+      },
+      {
+        "hours": 1.032,
+        "id": "deep",
+        "cost": 802538
+      },
+      {
+        "hours": 1.07,
+        "id": "retire",
+        "cost": 1000000
+      },
+      {
+        "hours": 1.07,
+        "id": "phone",
+        "cost": 10128
+      },
+      {
+        "hours": 1.071,
+        "id": "toilet",
+        "cost": 26122
+      },
+      {
+        "hours": 1.074,
+        "id": "group",
+        "cost": 75287
+      },
+      {
+        "hours": 1.083,
+        "id": "meeting",
+        "cost": 269032
+      },
+      {
+        "hours": 1.112,
+        "id": "deep",
+        "cost": 922919
+      },
+      {
+        "hours": 1.147,
+        "id": "retire",
+        "cost": 1150000
+      },
+      {
+        "hours": 1.148,
+        "id": "phone",
+        "cost": 11647
+      },
+      {
+        "hours": 1.149,
+        "id": "toilet",
+        "cost": 30040
+      },
+      {
+        "hours": 1.151,
+        "id": "group",
+        "cost": 86579
+      },
+      {
+        "hours": 1.161,
+        "id": "meeting",
+        "cost": 309387
+      },
+      {
+        "hours": 1.192,
+        "id": "deep",
+        "cost": 1061356
+      },
+      {
+        "hours": 1.227,
+        "id": "retire",
+        "cost": 1322500
+      },
+      {
+        "hours": 1.228,
+        "id": "phone",
+        "cost": 13394
+      },
+      {
+        "hours": 1.229,
+        "id": "toilet",
+        "cost": 34546
+      },
+      {
+        "hours": 1.231,
+        "id": "group",
+        "cost": 99566
+      },
+      {
+        "hours": 1.239,
+        "id": "meeting",
+        "cost": 355795
+      },
+      {
+        "hours": 1.271,
+        "id": "deep",
+        "cost": 1220560
+      },
+      {
+        "hours": 1.307,
+        "id": "retire",
+        "cost": 1520875
+      },
+      {
+        "hours": 1.308,
+        "id": "phone",
+        "cost": 15403
+      },
+      {
+        "hours": 1.309,
+        "id": "toilet",
+        "cost": 39728
+      },
+      {
+        "hours": 1.311,
+        "id": "group",
+        "cost": 114501
+      },
+      {
+        "hours": 1.319,
+        "id": "meeting",
+        "cost": 409164
+      },
+      {
+        "hours": 1.35,
+        "id": "deep",
+        "cost": 1403644
+      },
+      {
+        "hours": 1.388,
+        "id": "retire",
+        "cost": 1749007
+      },
+      {
+        "hours": 1.389,
+        "id": "phone",
+        "cost": 17713
+      },
+      {
+        "hours": 1.39,
+        "id": "toilet",
+        "cost": 45687
+      },
+      {
+        "hours": 1.393,
+        "id": "group",
+        "cost": 131676
+      },
+      {
+        "hours": 1.403,
+        "id": "meeting",
+        "cost": 470538
+      },
+      {
+        "hours": 1.435,
+        "id": "deep",
+        "cost": 1614190
+      },
+      {
+        "hours": 1.475,
+        "id": "retire",
+        "cost": 2011358
+      },
+      {
+        "hours": 1.476,
+        "id": "phone",
+        "cost": 20370
+      },
+      {
+        "hours": 1.476,
+        "id": "phone",
+        "cost": 23425
+      },
+      {
+        "hours": 1.476,
+        "id": "phone",
+        "cost": 26939
+      },
+      {
+        "hours": 1.477,
+        "id": "phone",
+        "cost": 30980
+      },
+      {
+        "hours": 1.478,
+        "id": "phone",
+        "cost": 35627
+      },
+      {
+        "hours": 1.479,
+        "id": "phone",
+        "cost": 40971
+      },
+      {
+        "hours": 1.479,
+        "id": "toilet",
+        "cost": 52540
+      },
+      {
+        "hours": 1.482,
+        "id": "group",
+        "cost": 151428
+      },
+      {
+        "hours": 1.493,
+        "id": "meeting",
+        "cost": 541119
+      },
+      {
+        "hours": 1.527,
+        "id": "deep",
+        "cost": 1856319
+      },
+      {
+        "hours": 1.567,
+        "id": "retire",
+        "cost": 2313061
+      },
+      {
+        "hours": 1.567,
+        "id": "phone",
+        "cost": 47116
+      },
+      {
+        "hours": 1.569,
+        "id": "toilet",
+        "cost": 60420
+      },
+      {
+        "hours": 1.572,
+        "id": "group",
+        "cost": 174142
+      },
+      {
+        "hours": 1.583,
+        "id": "meeting",
+        "cost": 622287
+      },
+      {
+        "hours": 1.621,
+        "id": "deep",
+        "cost": 2134766
+      },
+      {
+        "hours": 1.665,
+        "id": "retire",
+        "cost": 2660020
+      },
+      {
+        "hours": 1.666,
+        "id": "phone",
+        "cost": 54183
+      },
+      {
+        "hours": 1.667,
+        "id": "toilet",
+        "cost": 69483
+      },
+      {
+        "hours": 1.67,
+        "id": "group",
+        "cost": 200263
+      },
+      {
+        "hours": 1.68,
+        "id": "meeting",
+        "cost": 715630
+      },
+      {
+        "hours": 1.719,
+        "id": "deep",
+        "cost": 2454981
+      },
+      {
+        "hours": 1.768,
+        "id": "retire",
+        "cost": 3059023
+      },
+      {
+        "hours": 1.769,
+        "id": "phone",
+        "cost": 62311
+      },
+      {
+        "hours": 1.77,
+        "id": "toilet",
+        "cost": 79906
+      },
+      {
+        "hours": 1.774,
+        "id": "group",
+        "cost": 230302
+      },
+      {
+        "hours": 1.785,
+        "id": "meeting",
+        "cost": 822974
+      },
+      {
+        "hours": 1.826,
+        "id": "deep",
+        "cost": 2823228
+      },
+      {
+        "hours": 1.877,
+        "id": "retire",
+        "cost": 3517877
+      },
+      {
+        "hours": 1.877,
+        "id": "phone",
+        "cost": 71657
+      },
+      {
+        "hours": 1.878,
+        "id": "toilet",
+        "cost": 91892
+      },
+      {
+        "hours": 1.882,
+        "id": "group",
+        "cost": 264848
+      },
+      {
+        "hours": 1.896,
+        "id": "meeting",
+        "cost": 946420
+      },
+      {
+        "hours": 1.941,
+        "id": "deep",
+        "cost": 3246712
+      },
+      {
+        "hours": 1.994,
+        "id": "retire",
+        "cost": 4045558
+      },
+      {
+        "hours": 1.996,
+        "id": "phone",
+        "cost": 82406
+      },
+      {
+        "hours": 1.997,
+        "id": "toilet",
+        "cost": 105675
+      },
+      {
+        "hours": 2.001,
+        "id": "group",
+        "cost": 304575
+      },
+      {
+        "hours": 2.016,
+        "id": "meeting",
+        "cost": 1088383
+      },
+      {
+        "hours": 2.063,
+        "id": "deep",
+        "cost": 3733719
+      },
+      {
+        "hours": 2.118,
+        "id": "deep",
+        "cost": 4293777
+      },
+      {
+        "hours": 2.159,
+        "id": "retire",
+        "cost": 4652392
+      },
+      {
+        "hours": 2.2,
+        "id": "deep",
+        "cost": 4937843
+      },
+      {
+        "hours": 2.201,
+        "id": "phone",
+        "cost": 94767
+      },
+      {
+        "hours": 2.202,
+        "id": "toilet",
+        "cost": 121526
+      },
+      {
+        "hours": 2.204,
+        "id": "toilet",
+        "cost": 139755
+      },
+      {
+        "hours": 2.205,
+        "id": "toilet",
+        "cost": 160719
+      },
+      {
+        "hours": 2.206,
+        "id": "toilet",
+        "cost": 184826
+      },
+      {
+        "hours": 2.208,
+        "id": "toilet",
+        "cost": 212550
+      },
+      {
+        "hours": 2.211,
+        "id": "toilet",
+        "cost": 244433
+      },
+      {
+        "hours": 2.214,
+        "id": "group",
+        "cost": 350261
+      },
+      {
+        "hours": 2.224,
+        "id": "meeting",
+        "cost": 1251641
+      },
+      {
+        "hours": 2.237,
+        "id": "meeting",
+        "cost": 1439387
+      },
+      {
+        "hours": 2.248,
+        "id": "meeting",
+        "cost": 1655295
+      },
+      {
+        "hours": 2.263,
+        "id": "meeting",
+        "cost": 1903589
+      },
+      {
+        "hours": 2.278,
+        "id": "meeting",
+        "cost": 2189127
+      },
+      {
+        "hours": 2.297,
+        "id": "meeting",
+        "cost": 2517496
+      },
+      {
+        "hours": 2.337,
+        "id": "retire",
+        "cost": 5350251
+      },
+      {
+        "hours": 2.378,
+        "id": "deep",
+        "cost": 5678520
+      },
+      {
+        "hours": 2.379,
+        "id": "phone",
+        "cost": 108982
+      },
+      {
+        "hours": 2.381,
+        "id": "toilet",
+        "cost": 281098
+      },
+      {
+        "hours": 2.382,
+        "id": "group",
+        "cost": 402800
+      },
+      {
+        "hours": 2.386,
+        "id": "group",
+        "cost": 463220
+      },
+      {
+        "hours": 2.389,
+        "id": "group",
+        "cost": 532703
+      },
+      {
+        "hours": 2.394,
+        "id": "group",
+        "cost": 612608
+      },
+      {
+        "hours": 2.399,
+        "id": "group",
+        "cost": 704499
+      },
+      {
+        "hours": 2.404,
+        "id": "group",
+        "cost": 810174
+      },
+      {
+        "hours": 2.424,
+        "id": "meeting",
+        "cost": 2895121
+      },
+      {
+        "hours": 2.465,
+        "id": "retire",
+        "cost": 6152788
+      },
+      {
+        "hours": 2.511,
+        "id": "deep",
+        "cost": 6530298
+      },
+      {
+        "hours": 2.512,
+        "id": "phone",
+        "cost": 125329
+      },
+      {
+        "hours": 2.514,
+        "id": "toilet",
+        "cost": 323262
+      },
+      {
+        "hours": 2.52,
+        "id": "group",
+        "cost": 931700
+      },
+      {
+        "hours": 2.541,
+        "id": "meeting",
+        "cost": 3329389
+      },
+      {
+        "hours": 2.587,
+        "id": "retire",
+        "cost": 7075706
+      },
+      {
+        "hours": 2.636,
+        "id": "deep",
+        "cost": 7509842
+      },
+      {
+        "hours": 2.637,
+        "id": "phone",
+        "cost": 144128
+      },
+      {
+        "hours": 2.639,
+        "id": "toilet",
+        "cost": 371751
+      },
+      {
+        "hours": 2.646,
+        "id": "group",
+        "cost": 1071455
+      },
+      {
+        "hours": 2.671,
+        "id": "meeting",
+        "cost": 3828797
+      },
+      {
+        "hours": 2.723,
+        "id": "retire",
+        "cost": 8137062
+      },
+      {
+        "hours": 2.777,
+        "id": "deep",
+        "cost": 8636319
+      },
+      {
+        "hours": 2.777,
+        "id": "phone",
+        "cost": 165747
+      },
+      {
+        "hours": 2.78,
+        "id": "toilet",
+        "cost": 427514
+      },
+      {
+        "hours": 2.786,
+        "id": "group",
+        "cost": 1232173
+      },
+      {
+        "hours": 2.814,
+        "id": "meeting",
+        "cost": 4403116
+      },
+      {
+        "hours": 2.869,
+        "id": "retire",
+        "cost": 9357621
+      },
+      {
+        "hours": 2.931,
+        "id": "deep",
+        "cost": 9931766
+      },
+      {
+        "hours": 2.932,
+        "id": "phone",
+        "cost": 190609
+      },
+      {
+        "hours": 2.933,
+        "id": "toilet",
+        "cost": 491641
+      },
+      {
+        "hours": 2.942,
+        "id": "group",
+        "cost": 1416999
+      },
+      {
+        "hours": 2.971,
+        "id": "meeting",
+        "cost": 5063584
+      },
+      {
+        "hours": 3.034,
+        "id": "retire",
+        "cost": 10761265
+      },
+      {
+        "hours": 3.098,
+        "id": "deep",
+        "cost": 11421531
+      },
+      {
+        "hours": 3.1,
+        "id": "phone",
+        "cost": 219200
+      },
+      {
+        "hours": 3.103,
+        "id": "toilet",
+        "cost": 565387
+      },
+      {
+        "hours": 3.112,
+        "id": "group",
+        "cost": 1629548
+      },
+      {
+        "hours": 3.147,
+        "id": "meeting",
+        "cost": 5823121
+      },
+      {
+        "hours": 3.219,
+        "id": "retire",
+        "cost": 12375454
+      },
+      {
+        "hours": 3.295,
+        "id": "retire",
+        "cost": 14231772
+      },
+      {
+        "hours": 3.351,
+        "id": "deep",
+        "cost": 13134761
+      },
+      {
+        "hours": 3.419,
+        "id": "retire",
+        "cost": 16366538
+      },
+      {
+        "hours": 3.482,
+        "id": "deep",
+        "cost": 15104975
+      },
+      {
+        "hours": 3.559,
+        "id": "retire",
+        "cost": 18821519
+      },
+      {
+        "hours": 3.627,
+        "id": "deep",
+        "cost": 17370721
+      },
+      {
+        "hours": 3.714,
+        "id": "retire",
+        "cost": 21644746
+      },
+      {
+        "hours": 3.792,
+        "id": "deep",
+        "cost": 19976329
+      },
+      {
+        "hours": 3.886,
+        "id": "retire",
+        "cost": 24891458
+      },
+      {
+        "hours": 3.887,
+        "id": "phone",
+        "cost": 252080
+      },
+      {
+        "hours": 3.889,
+        "id": "toilet",
+        "cost": 650195
+      },
+      {
+        "hours": 3.896,
+        "id": "group",
+        "cost": 1873981
+      },
+      {
+        "hours": 3.921,
+        "id": "meeting",
+        "cost": 6696589
+      },
+      {
+        "hours": 4.008,
+        "id": "deep",
+        "cost": 22972778
+      },
+      {
+        "hours": 4.114,
+        "id": "retire",
+        "cost": 28625177
+      },
+      {
+        "hours": 4.115,
+        "id": "phone",
+        "cost": 289892
+      },
+      {
+        "hours": 4.117,
+        "id": "toilet",
+        "cost": 747724
+      },
+      {
+        "hours": 4.124,
+        "id": "group",
+        "cost": 2155078
+      },
+      {
+        "hours": 4.153,
+        "id": "meeting",
+        "cost": 7701077
+      },
+      {
+        "hours": 4.25,
+        "id": "deep",
+        "cost": 26418695
+      },
+      {
+        "hours": 4.367,
+        "id": "retire",
+        "cost": 32918953
+      },
+      {
+        "hours": 4.368,
+        "id": "phone",
+        "cost": 333376
+      },
+      {
+        "hours": 4.369,
+        "id": "phone",
+        "cost": 383383
+      },
+      {
+        "hours": 4.371,
+        "id": "phone",
+        "cost": 440890
+      },
+      {
+        "hours": 4.373,
+        "id": "phone",
+        "cost": 507023
+      },
+      {
+        "hours": 4.375,
+        "id": "phone",
+        "cost": 583077
+      },
+      {
+        "hours": 4.377,
+        "id": "phone",
+        "cost": 670538
+      },
+      {
+        "hours": 4.38,
+        "id": "toilet",
+        "cost": 859883
+      },
+      {
+        "hours": 4.388,
+        "id": "group",
+        "cost": 2478339
+      },
+      {
+        "hours": 4.419,
+        "id": "meeting",
+        "cost": 8856239
+      },
+      {
+        "hours": 4.524,
+        "id": "deep",
+        "cost": 30381499
+      },
+      {
+        "hours": 4.652,
+        "id": "retire",
+        "cost": 37856796
+      },
+      {
+        "hours": 4.654,
+        "id": "phone",
+        "cost": 771119
+      },
+      {
+        "hours": 4.658,
+        "id": "toilet",
+        "cost": 988865
+      },
+      {
+        "hours": 4.668,
+        "id": "group",
+        "cost": 2850090
+      },
+      {
+        "hours": 4.702,
+        "id": "meeting",
+        "cost": 10184675
+      },
+      {
+        "hours": 4.818,
+        "id": "deep",
+        "cost": 34938724
+      },
+      {
+        "hours": 4.965,
+        "id": "retire",
+        "cost": 43535315
+      },
+      {
+        "hours": 4.968,
+        "id": "phone",
+        "cost": 886787
+      },
+      {
+        "hours": 4.972,
+        "id": "toilet",
+        "cost": 1137195
+      },
+      {
+        "hours": 4.983,
+        "id": "group",
+        "cost": 3277603
+      },
+      {
+        "hours": 5.021,
+        "id": "meeting",
+        "cost": 11712376
+      },
+      {
+        "hours": 5.154,
+        "id": "deep",
+        "cost": 40179532
+      },
+      {
+        "hours": 5.317,
+        "id": "retire",
+        "cost": 50065613
+      },
+      {
+        "hours": 5.318,
+        "id": "phone",
+        "cost": 1019804
+      },
+      {
+        "hours": 5.322,
+        "id": "toilet",
+        "cost": 1307774
+      },
+      {
+        "hours": 5.335,
+        "id": "group",
+        "cost": 3769244
+      },
+      {
+        "hours": 5.378,
+        "id": "meeting",
+        "cost": 13469232
+      },
+      {
+        "hours": 5.524,
+        "id": "deep",
+        "cost": 46206462
+      },
+      {
+        "hours": 5.705,
+        "id": "retire",
+        "cost": 57575454
+      },
+      {
+        "hours": 5.709,
+        "id": "phone",
+        "cost": 1172775
+      },
+      {
+        "hours": 5.714,
+        "id": "toilet",
+        "cost": 1503940
+      },
+      {
+        "hours": 5.728,
+        "id": "group",
+        "cost": 4334630
+      },
+      {
+        "hours": 5.774,
+        "id": "meeting",
+        "cost": 15489617
+      }
+    ],
+    "saveWaits": 247270,
+    "roiLog": [
+      {
+        "hours": 0.03638888888888889,
+        "id": "phone",
+        "roi": 0.02,
+        "level": 1
+      },
+      {
+        "hours": 0.041666666666666664,
+        "id": "phone",
+        "roi": 0.017241379310344827,
+        "level": 2
+      },
+      {
+        "hours": 0.05,
+        "id": "phone",
+        "roi": 0.014925373134328358,
+        "level": 3
+      },
+      {
+        "hours": 0.05638888888888889,
+        "id": "phone",
+        "roi": 0.012987012987012988,
+        "level": 4
+      },
+      {
+        "hours": 0.06222222222222222,
+        "id": "phone",
+        "roi": 0.06818181818181818,
+        "level": 5
+      },
+      {
+        "hours": 0.065,
+        "id": "phone",
+        "roi": 0.019801980198019802,
+        "level": 6
+      },
+      {
+        "hours": 0.06777777777777778,
+        "id": "phone",
+        "roi": 0.017241379310344827,
+        "level": 7
+      },
+      {
+        "hours": 0.07027777777777777,
+        "id": "phone",
+        "roi": 0.014925373134328358,
+        "level": 8
+      },
+      {
+        "hours": 0.07277777777777777,
+        "id": "phone",
+        "roi": 0.013071895424836602,
+        "level": 9
+      },
+      {
+        "hours": 0.07555555555555556,
+        "id": "phone",
+        "roi": 0.011363636363636364,
+        "level": 10
+      },
+      {
+        "hours": 0.07833333333333334,
+        "id": "phone",
+        "roi": 0.009852216748768473,
+        "level": 11
+      },
+      {
+        "hours": 0.08,
+        "id": "phone",
+        "roi": 0.008583690987124463,
+        "level": 12
+      },
+      {
+        "hours": 0.08305555555555555,
+        "id": "phone",
+        "roi": 0.007462686567164179,
+        "level": 13
+      },
+      {
+        "hours": 0.08638888888888889,
+        "id": "phone",
+        "roi": 0.006493506493506494,
+        "level": 14
+      },
+      {
+        "hours": 0.09,
+        "id": "phone",
+        "roi": 0.005649717514124294,
+        "level": 15
+      },
+      {
+        "hours": 0.09555555555555556,
+        "id": "toilet",
+        "roi": 0.008333333333333333,
+        "level": 1
+      },
+      {
+        "hours": 0.09861111111111111,
+        "id": "phone",
+        "roi": 0.004914004914004914,
+        "level": 16
+      },
+      {
+        "hours": 0.10388888888888889,
+        "id": "toilet",
+        "roi": 0.007246376811594203,
+        "level": 2
+      },
+      {
+        "hours": 0.10694444444444444,
+        "id": "phone",
+        "roi": 0.004273504273504274,
+        "level": 17
+      },
+      {
+        "hours": 0.11194444444444444,
+        "id": "toilet",
+        "roi": 0.006297229219143577,
+        "level": 3
+      },
+      {
+        "hours": 0.115,
+        "id": "phone",
+        "roi": 0.0037105751391465678,
+        "level": 18
+      },
+      {
+        "hours": 0.11888888888888889,
+        "id": "toilet",
+        "roi": 0.00547645125958379,
+        "level": 4
+      },
+      {
+        "hours": 0.12166666666666667,
+        "id": "phone",
+        "roi": 0.0032310177705977385,
+        "level": 19
+      },
+      {
+        "hours": 0.12666666666666668,
+        "id": "toilet",
+        "roi": 0.004761904761904762,
+        "level": 5
+      },
+      {
+        "hours": 0.1297222222222222,
+        "id": "phone",
+        "roi": 0.0028089887640449437,
+        "level": 20
+      },
+      {
+        "hours": 0.135,
+        "id": "toilet",
+        "roi": 0.004142502071251036,
+        "level": 6
+      },
+      {
+        "hours": 0.13805555555555554,
+        "id": "phone",
+        "roi": 0.002442002442002442,
+        "level": 21
+      },
+      {
+        "hours": 0.1436111111111111,
+        "id": "toilet",
+        "roi": 0.0036023054755043226,
+        "level": 7
+      },
+      {
+        "hours": 0.14916666666666667,
+        "id": "toilet",
+        "roi": 0.0031308703819661866,
+        "level": 8
+      },
+      {
+        "hours": 0.15555555555555556,
+        "id": "toilet",
+        "roi": 0.0027233115468409588,
+        "level": 9
+      },
+      {
+        "hours": 0.1622222222222222,
+        "id": "toilet",
+        "roi": 0.0023685457129322598,
+        "level": 10
+      },
+      {
+        "hours": 0.17277777777777778,
+        "id": "group",
+        "roi": 0.00375,
+        "level": 1
+      },
+      {
+        "hours": 0.17527777777777778,
+        "id": "phone",
+        "roi": 0.0021231422505307855,
+        "level": 22
+      },
+      {
+        "hours": 0.18138888888888888,
+        "id": "toilet",
+        "roi": 0.002059308072487644,
+        "level": 11
+      },
+      {
+        "hours": 0.19277777777777777,
+        "id": "group",
+        "roi": 0.003260869565217391,
+        "level": 2
+      },
+      {
+        "hours": 0.195,
+        "id": "phone",
+        "roi": 0.0018467220683287165,
+        "level": 23
+      },
+      {
+        "hours": 0.20083333333333334,
+        "id": "toilet",
+        "roi": 0.0017908309455587394,
+        "level": 12
+      },
+      {
+        "hours": 0.21027777777777779,
+        "id": "group",
+        "roi": 0.002835538752362949,
+        "level": 3
+      },
+      {
+        "hours": 0.2125,
+        "id": "phone",
+        "roi": 0.001606425702811245,
+        "level": 24
+      },
+      {
+        "hours": 0.215,
+        "id": "phone",
+        "roi": 0.036312849162011177,
+        "level": 25
+      },
+      {
+        "hours": 0.21722222222222223,
+        "id": "phone",
+        "roi": 0.002430133657351154,
+        "level": 26
+      },
+      {
+        "hours": 0.21972222222222224,
+        "id": "phone",
+        "roi": 0.0021130480718436345,
+        "level": 27
+      },
+      {
+        "hours": 0.22277777777777777,
+        "id": "phone",
+        "roi": 0.0018373909049150207,
+        "level": 28
+      },
+      {
+        "hours": 0.22583333333333333,
+        "id": "phone",
+        "roi": 0.001597444089456869,
+        "level": 29
+      },
+      {
+        "hours": 0.23,
+        "id": "toilet",
+        "roi": 0.0015571473061351605,
+        "level": 13
+      },
+      {
+        "hours": 0.23583333333333334,
+        "id": "group",
+        "roi": 0.002465483234714004,
+        "level": 4
+      },
+      {
+        "hours": 0.23916666666666667,
+        "id": "phone",
+        "roi": 0.0013893713094824591,
+        "level": 30
+      },
+      {
+        "hours": 0.24333333333333335,
+        "id": "toilet",
+        "roi": 0.0013542795232936078,
+        "level": 14
+      },
+      {
+        "hours": 0.2511111111111111,
+        "id": "group",
+        "roi": 0.0021437759039588393,
+        "level": 5
+      },
+      {
+        "hours": 0.2544444444444444,
+        "id": "phone",
+        "roi": 0.0012080942313500453,
+        "level": 31
+      },
+      {
+        "hours": 0.2627777777777778,
+        "id": "group",
+        "roi": 0.0018642803877703207,
+        "level": 6
+      },
+      {
+        "hours": 0.27194444444444443,
+        "id": "group",
+        "roi": 0.0016210958608019021,
+        "level": 7
+      },
+      {
+        "hours": 0.28,
+        "id": "group",
+        "roi": 0.00140964195094446,
+        "level": 8
+      },
+      {
+        "hours": 0.29083333333333333,
+        "id": "group",
+        "roi": 0.001225790634959549,
+        "level": 9
+      },
+      {
+        "hours": 0.31027777777777776,
+        "id": "meeting",
+        "roi": 0.002,
+        "level": 1
+      },
+      {
+        "hours": 0.31305555555555553,
+        "id": "phone",
+        "roi": 0.0010504201680672268,
+        "level": 32
+      },
+      {
+        "hours": 0.3161111111111111,
+        "id": "toilet",
+        "roi": 0.0011775788977861517,
+        "level": 15
+      },
+      {
+        "hours": 0.3263888888888889,
+        "id": "group",
+        "roi": 0.0010659465605457647,
+        "level": 10
+      },
+      {
+        "hours": 0.34444444444444444,
+        "id": "meeting",
+        "roi": 0.0017391304347826088,
+        "level": 2
+      },
+      {
+        "hours": 0.3472222222222222,
+        "id": "phone",
+        "roi": 0.0009134505594884677,
+        "level": 33
+      },
+      {
+        "hours": 0.35,
+        "id": "toilet",
+        "roi": 0.0010239606799098914,
+        "level": 16
+      },
+      {
+        "hours": 0.3597222222222222,
+        "id": "group",
+        "roi": 0.0009268985972934561,
+        "level": 11
+      },
+      {
+        "hours": 0.37777777777777777,
+        "id": "meeting",
+        "roi": 0.0015122644648096059,
+        "level": 3
+      },
+      {
+        "hours": 0.38,
+        "id": "phone",
+        "roi": 0.0007944389275074479,
+        "level": 34
+      },
+      {
+        "hours": 0.38305555555555554,
+        "id": "toilet",
+        "roi": 0.0008904719501335708,
+        "level": 17
+      },
+      {
+        "hours": 0.3927777777777778,
+        "id": "group",
+        "roi": 0.0008060182697474476,
+        "level": 12
+      },
+      {
+        "hours": 0.41194444444444445,
+        "id": "meeting",
+        "roi": 0.0013150281416022304,
+        "level": 4
+      },
+      {
+        "hours": 0.4147222222222222,
+        "id": "toilet",
+        "roi": 0.0007743534148985597,
+        "level": 18
+      },
+      {
+        "hours": 0.4330555555555556,
+        "id": "meeting",
+        "roi": 0.0011434844257421214,
+        "level": 5
+      },
+      {
+        "hours": 0.4538888888888889,
+        "id": "meeting",
+        "roi": 0.0009943520801845517,
+        "level": 6
+      },
+      {
+        "hours": 0.47555555555555556,
+        "id": "meeting",
+        "roi": 0.0008646480017984678,
+        "level": 7
+      },
+      {
+        "hours": 0.5,
+        "id": "meeting",
+        "roi": 0.0007518683929564969,
+        "level": 8
+      },
+      {
+        "hours": 0.55,
+        "id": "deep",
+        "roi": 0.0012,
+        "level": 1
+      },
+      {
+        "hours": 0.5516666666666666,
+        "id": "phone",
+        "roi": 0.0006907269901571404,
+        "level": 35
+      },
+      {
+        "hours": 0.5538888888888889,
+        "id": "toilet",
+        "roi": 0.00067330999192028,
+        "level": 19
+      },
+      {
+        "hours": 0.5544444444444444,
+        "id": "toilet",
+        "roi": 0.012295081967213115,
+        "level": 20
+      },
+      {
+        "hours": 0.5569444444444445,
+        "id": "toilet",
+        "roi": 0.0010183299389002036,
+        "level": 21
+      },
+      {
+        "hours": 0.5597222222222222,
+        "id": "toilet",
+        "roi": 0.0008855042946958293,
+        "level": 22
+      },
+      {
+        "hours": 0.5630555555555555,
+        "id": "toilet",
+        "roi": 0.00077000077000077,
+        "level": 23
+      },
+      {
+        "hours": 0.5666666666666667,
+        "id": "toilet",
+        "roi": 0.0006695681285570807,
+        "level": 24
+      },
+      {
+        "hours": 0.5719444444444445,
+        "id": "group",
+        "roi": 0.0007008690776562938,
+        "level": 13
+      },
+      {
+        "hours": 0.5902777777777778,
+        "id": "meeting",
+        "roi": 0.0006537998849312203,
+        "level": 9
+      },
+      {
+        "hours": 0.6088888888888889,
+        "id": "meeting",
+        "roi": 0.006253766472989414,
+        "level": 10
+      },
+      {
+        "hours": 0.625,
+        "id": "meeting",
+        "roi": 0.0009887382710922592,
+        "level": 11
+      },
+      {
+        "hours": 0.6408333333333334,
+        "id": "meeting",
+        "roi": 0.0008597713008339781,
+        "level": 12
+      },
+      {
+        "hours": 0.6597222222222222,
+        "id": "meeting",
+        "roi": 0.0007476244233946634,
+        "level": 13
+      },
+      {
+        "hours": 0.6788888888888889,
+        "id": "meeting",
+        "roi": 0.000650110518788194,
+        "level": 14
+      },
+      {
+        "hours": 0.7011111111111111,
+        "id": "deep",
+        "roi": 0.0010434782608695651,
+        "level": 2
+      },
+      {
+        "hours": 0.7019444444444445,
+        "id": "phone",
+        "roi": 0.0006006907944135756,
+        "level": 36
+      },
+      {
+        "hours": 0.7038888888888889,
+        "id": "toilet",
+        "roi": 0.0005822077317186772,
+        "level": 25
+      },
+      {
+        "hours": 0.7069444444444445,
+        "id": "group",
+        "roi": 0.0006094588005850804,
+        "level": 14
+      },
+      {
+        "hours": 0.7102777777777778,
+        "id": "group",
+        "roi": 0.00847966646645232,
+        "level": 15
+      },
+      {
+        "hours": 0.7119444444444445,
+        "id": "group",
+        "roi": 0.0009216873022212664,
+        "level": 16
+      },
+      {
+        "hours": 0.7158333333333333,
+        "id": "group",
+        "roi": 0.0008014747134727899,
+        "level": 17
+      },
+      {
+        "hours": 0.7205555555555555,
+        "id": "group",
+        "roi": 0.0006969288667936625,
+        "level": 18
+      },
+      {
+        "hours": 0.7255555555555555,
+        "id": "group",
+        "roi": 0.0006060361197527372,
+        "level": 19
+      },
+      {
+        "hours": 0.7436111111111111,
+        "id": "meeting",
+        "roi": 0.0005653134945984296,
+        "level": 15
+      },
+      {
+        "hours": 0.7630555555555556,
+        "id": "deep",
+        "roi": 0.0009073724007561437,
+        "level": 3
+      },
+      {
+        "hours": 0.7638888888888888,
+        "id": "phone",
+        "roi": 0.0005223295899712719,
+        "level": 37
+      },
+      {
+        "hours": 0.7655555555555555,
+        "id": "toilet",
+        "roi": 0.0005062778452814905,
+        "level": 26
+      },
+      {
+        "hours": 0.7708333333333334,
+        "id": "group",
+        "roi": 0.0005269814502529511,
+        "level": 20
+      },
+      {
+        "hours": 0.7894444444444444,
+        "id": "meeting",
+        "roi": 0.0004915768310008012,
+        "level": 16
+      },
+      {
+        "hours": 0.8077777777777778,
+        "id": "deep",
+        "roi": 0.0007890168849613382,
+        "level": 4
+      },
+      {
+        "hours": 0.8280555555555555,
+        "id": "deep",
+        "roi": 0.0041166223875647515,
+        "level": 5
+      },
+      {
+        "hours": 0.8472222222222222,
+        "id": "deep",
+        "roi": 0.001193222496221462,
+        "level": 6
+      },
+      {
+        "hours": 0.8658333333333333,
+        "id": "deep",
+        "roi": 0.0010375835831219738,
+        "level": 7
+      },
+      {
+        "hours": 0.8872222222222222,
+        "id": "deep",
+        "roi": 0.0009022488552717649,
+        "level": 8
+      },
+      {
+        "hours": 0.9088888888888889,
+        "id": "deep",
+        "roi": 0.0007845632815666857,
+        "level": 9
+      },
+      {
+        "hours": 0.9094444444444445,
+        "id": "phone",
+        "roi": 0.0004541841716816169,
+        "level": 38
+      },
+      {
+        "hours": 0.9102777777777777,
+        "id": "toilet",
+        "roi": 0.00044023772837332157,
+        "level": 27
+      },
+      {
+        "hours": 0.9136111111111112,
+        "id": "group",
+        "roi": 0.0004582461392762766,
+        "level": 21
+      },
+      {
+        "hours": 0.9244444444444444,
+        "id": "meeting",
+        "roi": 0.0004274582052739793,
+        "level": 17
+      },
+      {
+        "hours": 0.9488888888888889,
+        "id": "deep",
+        "roi": 0.0006822290697806634,
+        "level": 10
+      },
+      {
+        "hours": 0.9755555555555555,
+        "id": "deep",
+        "roi": 0.0005932429626553555,
+        "level": 11
+      },
+      {
+        "hours": 1.0027777777777778,
+        "id": "deep",
+        "roi": 0.0005158635197081359,
+        "level": 12
+      },
+      {
+        "hours": 1.0325,
+        "id": "deep",
+        "roi": 0.0004485768898170554,
+        "level": 13
+      },
+      {
+        "hours": 1.07,
+        "id": "retire",
+        "roi": 0.0007,
+        "level": 1
+      },
+      {
+        "hours": 1.0702777777777779,
+        "id": "phone",
+        "roi": 0.00039494470774091627,
+        "level": 39
+      },
+      {
+        "hours": 1.0711111111111111,
+        "id": "toilet",
+        "roi": 0.0003828190797029324,
+        "level": 28
+      },
+      {
+        "hours": 1.073888888888889,
+        "id": "group",
+        "roi": 0.0003984751683557586,
+        "level": 22
+      },
+      {
+        "hours": 1.0830555555555557,
+        "id": "meeting",
+        "roi": 0.0003717029944393232,
+        "level": 18
+      },
+      {
+        "hours": 1.1122222222222222,
+        "id": "deep",
+        "roi": 0.00039006673391706097,
+        "level": 14
+      },
+      {
+        "hours": 1.1475,
+        "id": "retire",
+        "roi": 0.000608695652173913,
+        "level": 2
+      },
+      {
+        "hours": 1.1480555555555556,
+        "id": "phone",
+        "roi": 0.00034343607795998967,
+        "level": 40
+      },
+      {
+        "hours": 1.1488888888888888,
+        "id": "toilet",
+        "roi": 0.00033288948069241014,
+        "level": 29
+      },
+      {
+        "hours": 1.1513888888888888,
+        "id": "group",
+        "roi": 0.0003465043486295753,
+        "level": 23
+      },
+      {
+        "hours": 1.1605555555555556,
+        "id": "meeting",
+        "roi": 0.00032321978622243337,
+        "level": 19
+      },
+      {
+        "hours": 1.1916666666666667,
+        "id": "deep",
+        "roi": 0.0003391887359189565,
+        "level": 15
+      },
+      {
+        "hours": 1.2272222222222222,
+        "id": "retire",
+        "roi": 0.0005293005671077504,
+        "level": 3
+      },
+      {
+        "hours": 1.2277777777777779,
+        "id": "phone",
+        "roi": 0.00029864118261908315,
+        "level": 41
+      },
+      {
+        "hours": 1.228611111111111,
+        "id": "toilet",
+        "roi": 0.000289469113645574,
+        "level": 30
+      },
+      {
+        "hours": 1.231111111111111,
+        "id": "group",
+        "roi": 0.0003013076753108491,
+        "level": 24
+      },
+      {
+        "hours": 1.238888888888889,
+        "id": "meeting",
+        "roi": 0.0002810607231692407,
+        "level": 20
+      },
+      {
+        "hours": 1.2705555555555557,
+        "id": "deep",
+        "roi": 0.00029494658189683424,
+        "level": 16
+      },
+      {
+        "hours": 1.3072222222222223,
+        "id": "retire",
+        "roi": 0.0004602613627023917,
+        "level": 4
+      },
+      {
+        "hours": 1.3075,
+        "id": "phone",
+        "roi": 0.0002596896708433422,
+        "level": 42
+      },
+      {
+        "hours": 1.3086111111111112,
+        "id": "toilet",
+        "roi": 0.00025171163914619414,
+        "level": 31
+      },
+      {
+        "hours": 1.3111111111111111,
+        "id": "group",
+        "roi": 0.0002620064453585558,
+        "level": 25
+      },
+      {
+        "hours": 1.3191666666666666,
+        "id": "meeting",
+        "roi": 0.0002444007781720777,
+        "level": 21
+      },
+      {
+        "hours": 1.3502777777777777,
+        "id": "deep",
+        "roi": 0.00025647528860594284,
+        "level": 17
+      },
+      {
+        "hours": 1.3883333333333334,
+        "id": "retire",
+        "roi": 0.0004002271002917656,
+        "level": 5
+      },
+      {
+        "hours": 1.388611111111111,
+        "id": "phone",
+        "roi": 0.0002258228419804663,
+        "level": 43
+      },
+      {
+        "hours": 1.3897222222222223,
+        "id": "toilet",
+        "roi": 0.00021888064438461708,
+        "level": 32
+      },
+      {
+        "hours": 1.3925,
+        "id": "group",
+        "roi": 0.00022783195115282968,
+        "level": 26
+      },
+      {
+        "hours": 1.4025,
+        "id": "meeting",
+        "roi": 0.00021252268679681555,
+        "level": 22
+      },
+      {
+        "hours": 1.4352777777777779,
+        "id": "deep",
+        "roi": 0.00022302207299016845,
+        "level": 18
+      },
+      {
+        "hours": 1.475,
+        "id": "retire",
+        "roi": 0.000348023574122558,
+        "level": 6
+      },
+      {
+        "hours": 1.4755555555555555,
+        "id": "phone",
+        "roi": 0.00019636720667648503,
+        "level": 44
+      },
+      {
+        "hours": 1.4758333333333333,
+        "id": "phone",
+        "roi": 0.007854855923159019,
+        "level": 45
+      },
+      {
+        "hours": 1.476388888888889,
+        "id": "phone",
+        "roi": 0.00029696722224284493,
+        "level": 46
+      },
+      {
+        "hours": 1.4769444444444444,
+        "id": "phone",
+        "roi": 0.0002582311168495804,
+        "level": 47
+      },
+      {
+        "hours": 1.4777777777777779,
+        "id": "phone",
+        "roi": 0.00022454879726050466,
+        "level": 48
+      },
+      {
+        "hours": 1.478611111111111,
+        "id": "phone",
+        "roi": 0.0001952600619950697,
+        "level": 49
+      },
+      {
+        "hours": 1.4794444444444443,
+        "id": "toilet",
+        "roi": 0.00019033117624666921,
+        "level": 33
+      },
+      {
+        "hours": 1.4825,
+        "id": "group",
+        "roi": 0.00019811395514700056,
+        "level": 27
+      },
+      {
+        "hours": 1.4927777777777778,
+        "id": "meeting",
+        "roi": 0.00018480223388940326,
+        "level": 23
+      },
+      {
+        "hours": 1.5266666666666666,
+        "id": "deep",
+        "roi": 0.00019393218514705715,
+        "level": 19
+      },
+      {
+        "hours": 1.5666666666666667,
+        "id": "retire",
+        "roi": 0.00030262928647363817,
+        "level": 7
+      },
+      {
+        "hours": 1.5675,
+        "id": "phone",
+        "roi": 0.00016979370065370574,
+        "level": 50
+      },
+      {
+        "hours": 1.5686111111111112,
+        "id": "toilet",
+        "roi": 0.00016550810989738498,
+        "level": 34
+      },
+      {
+        "hours": 1.5716666666666668,
+        "id": "group",
+        "roi": 0.0001722732023291337,
+        "level": 28
+      },
+      {
+        "hours": 1.5827777777777778,
+        "id": "meeting",
+        "roi": 0.00016069755595087153,
+        "level": 24
+      },
+      {
+        "hours": 1.6205555555555555,
+        "id": "deep",
+        "roi": 0.00016863674988265692,
+        "level": 20
+      },
+      {
+        "hours": 1.6647222222222222,
+        "id": "retire",
+        "roi": 0.00026315591612093145,
+        "level": 8
+      },
+      {
+        "hours": 1.6655555555555555,
+        "id": "phone",
+        "roi": 0.00014764778620600556,
+        "level": 51
+      },
+      {
+        "hours": 1.6666666666666667,
+        "id": "toilet",
+        "roi": 0.00014392009556294345,
+        "level": 35
+      },
+      {
+        "hours": 1.67,
+        "id": "group",
+        "roi": 0.0001498030090431083,
+        "level": 29
+      },
+      {
+        "hours": 1.6802777777777778,
+        "id": "meeting",
+        "roi": 0.00013973701493788689,
+        "level": 25
+      },
+      {
+        "hours": 1.718888888888889,
+        "id": "deep",
+        "roi": 0.00014664064609868672,
+        "level": 21
+      },
+      {
+        "hours": 1.7680555555555555,
+        "id": "retire",
+        "roi": 0.00022883123140950558,
+        "level": 9
+      },
+      {
+        "hours": 1.768888888888889,
+        "id": "phone",
+        "roi": 0.00012838824605607358,
+        "level": 52
+      },
+      {
+        "hours": 1.7702777777777778,
+        "id": "toilet",
+        "roi": 0.00012514704778114285,
+        "level": 36
+      },
+      {
+        "hours": 1.7738888888888888,
+        "id": "group",
+        "roi": 0.00013026374065357662,
+        "level": 30
+      },
+      {
+        "hours": 1.7847222222222223,
+        "id": "meeting",
+        "roi": 0.000121510521596065,
+        "level": 26
+      },
+      {
+        "hours": 1.8263888888888888,
+        "id": "deep",
+        "roi": 0.00012751361207808933,
+        "level": 22
+      },
+      {
+        "hours": 1.8775,
+        "id": "retire",
+        "roi": 0.00019898364837656347,
+        "level": 10
+      },
+      {
+        "hours": 1.8775,
+        "id": "phone",
+        "roi": 0.00011164296579538636,
+        "level": 53
+      },
+      {
+        "hours": 1.8783333333333334,
+        "id": "toilet",
+        "roi": 0.00010882340138423367,
+        "level": 37
+      },
+      {
+        "hours": 1.8822222222222222,
+        "id": "group",
+        "roi": 0.00011327251857669304,
+        "level": 31
+      },
+      {
+        "hours": 1.8958333333333333,
+        "id": "meeting",
+        "roi": 0.00010566133429132943,
+        "level": 27
+      },
+      {
+        "hours": 1.9408333333333334,
+        "id": "deep",
+        "roi": 0.00011088140863741533,
+        "level": 23
+      },
+      {
+        "hours": 1.9944444444444445,
+        "id": "retire",
+        "roi": 0.0001730292829814824,
+        "level": 11
+      },
+      {
+        "hours": 1.9955555555555555,
+        "id": "phone",
+        "roi": 0.0000970803096861879,
+        "level": 54
+      },
+      {
+        "hours": 1.9969444444444444,
+        "id": "toilet",
+        "roi": 0.00009462976105985333,
+        "level": 38
+      },
+      {
+        "hours": 2.0011111111111113,
+        "id": "group",
+        "roi": 0.00009849790691947795,
+        "level": 32
+      },
+      {
+        "hours": 2.015833333333333,
+        "id": "meeting",
+        "roi": 0.00009187942112289516,
+        "level": 28
+      },
+      {
+        "hours": 2.0630555555555556,
+        "id": "deep",
+        "roi": 0.00009641861104169864,
+        "level": 24
+      },
+      {
+        "hours": 2.118333333333333,
+        "id": "deep",
+        "roi": 0.0021798989560939007,
+        "level": 25
+      },
+      {
+        "hours": 2.1594444444444445,
+        "id": "retire",
+        "roi": 0.00015046023636873247,
+        "level": 12
+      },
+      {
+        "hours": 2.200277777777778,
+        "id": "deep",
+        "roi": 0.0001458126554448977,
+        "level": 26
+      },
+      {
+        "hours": 2.201111111111111,
+        "id": "phone",
+        "roi": 0.00008441757151751136,
+        "level": 55
+      },
+      {
+        "hours": 2.2022222222222223,
+        "id": "toilet",
+        "roi": 0.00008228691802577227,
+        "level": 39
+      },
+      {
+        "hours": 2.203611111111111,
+        "id": "toilet",
+        "roi": 0.002933705413044256,
+        "level": 40
+      },
+      {
+        "hours": 2.205,
+        "id": "toilet",
+        "roi": 0.00012444079418114846,
+        "level": 41
+      },
+      {
+        "hours": 2.2063888888888887,
+        "id": "toilet",
+        "roi": 0.00010820988389079459,
+        "level": 42
+      },
+      {
+        "hours": 2.2083333333333335,
+        "id": "toilet",
+        "roi": 0.00009409550693954363,
+        "level": 43
+      },
+      {
+        "hours": 2.2105555555555556,
+        "id": "toilet",
+        "roi": 0.00008182201257604333,
+        "level": 44
+      },
+      {
+        "hours": 2.213611111111111,
+        "id": "group",
+        "roi": 0.00008565041497626056,
+        "level": 33
+      },
+      {
+        "hours": 2.2241666666666666,
+        "id": "meeting",
+        "roi": 0.00007989511369474155,
+        "level": 29
+      },
+      {
+        "hours": 2.236666666666667,
+        "id": "meeting",
+        "roi": 0.002153694593601304,
+        "level": 30
+      },
+      {
+        "hours": 2.2480555555555557,
+        "id": "meeting",
+        "roi": 0.00012082438477733576,
+        "level": 31
+      },
+      {
+        "hours": 2.262777777777778,
+        "id": "meeting",
+        "roi": 0.00010506469621331075,
+        "level": 32
+      },
+      {
+        "hours": 2.2780555555555555,
+        "id": "meeting",
+        "roi": 0.00009136062000971163,
+        "level": 33
+      },
+      {
+        "hours": 2.2975,
+        "id": "meeting",
+        "roi": 0.00007944401897758725,
+        "level": 34
+      },
+      {
+        "hours": 2.3369444444444443,
+        "id": "retire",
+        "roi": 0.00013083498325592574,
+        "level": 13
+      },
+      {
+        "hours": 2.3780555555555556,
+        "id": "deep",
+        "roi": 0.00012679360114959532,
+        "level": 27
+      },
+      {
+        "hours": 2.3786111111111112,
+        "id": "phone",
+        "roi": 0.00007340661760657723,
+        "level": 56
+      },
+      {
+        "hours": 2.3808333333333334,
+        "id": "toilet",
+        "roi": 0.00007114956349742794,
+        "level": 45
+      },
+      {
+        "hours": 2.382222222222222,
+        "id": "group",
+        "roi": 0.00007447864945382324,
+        "level": 34
+      },
+      {
+        "hours": 2.3855555555555554,
+        "id": "group",
+        "roi": 0.002331505548119684,
+        "level": 35
+      },
+      {
+        "hours": 2.3894444444444445,
+        "id": "group",
+        "roi": 0.0001126331182666514,
+        "level": 36
+      },
+      {
+        "hours": 2.393611111111111,
+        "id": "group",
+        "roi": 0.00009794191391558713,
+        "level": 37
+      },
+      {
+        "hours": 2.398888888888889,
+        "id": "group",
+        "roi": 0.00008516690584372725,
+        "level": 38
+      },
+      {
+        "hours": 2.4044444444444446,
+        "id": "group",
+        "roi": 0.00007405816528301328,
+        "level": 39
+      },
+      {
+        "hours": 2.423611111111111,
+        "id": "meeting",
+        "roi": 0.00006908174131582066,
+        "level": 35
+      },
+      {
+        "hours": 2.4652777777777777,
+        "id": "retire",
+        "roi": 0.00011376956267630219,
+        "level": 14
+      },
+      {
+        "hours": 2.5108333333333333,
+        "id": "deep",
+        "roi": 0.00011025530534747419,
+        "level": 28
+      },
+      {
+        "hours": 2.5116666666666667,
+        "id": "phone",
+        "roi": 0.00006383199419128853,
+        "level": 57
+      },
+      {
+        "hours": 2.513888888888889,
+        "id": "toilet",
+        "roi": 0.0000618693196230921,
+        "level": 46
+      },
+      {
+        "hours": 2.520277777777778,
+        "id": "group",
+        "roi": 0.00006439841150584953,
+        "level": 40
+      },
+      {
+        "hours": 2.5413888888888887,
+        "id": "meeting",
+        "roi": 0.000060071082111462494,
+        "level": 36
+      },
+      {
+        "hours": 2.5875,
+        "id": "retire",
+        "roi": 0.00009893005729746261,
+        "level": 15
+      },
+      {
+        "hours": 2.636111111111111,
+        "id": "deep",
+        "roi": 0.00009587418749955059,
+        "level": 29
+      },
+      {
+        "hours": 2.6369444444444445,
+        "id": "phone",
+        "roi": 0.000055506216696269984,
+        "level": 58
+      },
+      {
+        "hours": 2.6394444444444445,
+        "id": "toilet",
+        "roi": 0.00005379945178358632,
+        "level": 47
+      },
+      {
+        "hours": 2.6463888888888887,
+        "id": "group",
+        "roi": 0.000055998618700738714,
+        "level": 41
+      },
+      {
+        "hours": 2.671388888888889,
+        "id": "meeting",
+        "roi": 0.000052235728350184144,
+        "level": 37
+      },
+      {
+        "hours": 2.722777777777778,
+        "id": "retire",
+        "roi": 0.00008602613572318854,
+        "level": 16
+      },
+      {
+        "hours": 2.776666666666667,
+        "id": "deep",
+        "roi": 0.00008336885193796107,
+        "level": 30
+      },
+      {
+        "hours": 2.7775,
+        "id": "phone",
+        "roi": 0.000048266333628964626,
+        "level": 59
+      },
+      {
+        "hours": 2.7802777777777776,
+        "id": "toilet",
+        "roi": 0.000046782093685820813,
+        "level": 48
+      },
+      {
+        "hours": 2.786388888888889,
+        "id": "group",
+        "roi": 0.00004869446092391247,
+        "level": 42
+      },
+      {
+        "hours": 2.8141666666666665,
+        "id": "meeting",
+        "roi": 0.00004542237815219949,
+        "level": 38
+      },
+      {
+        "hours": 2.8694444444444445,
+        "id": "retire",
+        "roi": 0.00007480533780968475,
+        "level": 17
+      },
+      {
+        "hours": 2.9305555555555554,
+        "id": "deep",
+        "roi": 0.00007249466006347713,
+        "level": 31
+      },
+      {
+        "hours": 2.9316666666666666,
+        "id": "phone",
+        "roi": 0.00004197073590439066,
+        "level": 60
+      },
+      {
+        "hours": 2.9330555555555557,
+        "id": "toilet",
+        "roi": 0.00004068008974027797,
+        "level": 49
+      },
+      {
+        "hours": 2.941666666666667,
+        "id": "group",
+        "roi": 0.00004234300800494566,
+        "level": 43
+      },
+      {
+        "hours": 2.9705555555555554,
+        "id": "meeting",
+        "roi": 0.000039497715452138246,
+        "level": 39
+      },
+      {
+        "hours": 3.033888888888889,
+        "id": "retire",
+        "roi": 0.00006504811469655286,
+        "level": 18
+      },
+      {
+        "hours": 3.098333333333333,
+        "id": "deep",
+        "roi": 0.00006303883428587639,
+        "level": 32
+      },
+      {
+        "hours": 3.0997222222222223,
+        "id": "phone",
+        "roi": 0.00003649635036496351,
+        "level": 61
+      },
+      {
+        "hours": 3.1030555555555557,
+        "id": "toilet",
+        "roi": 0.0000353740004633994,
+        "level": 50
+      },
+      {
+        "hours": 3.1125,
+        "id": "group",
+        "roi": 0.000036820026166765264,
+        "level": 44
+      },
+      {
+        "hours": 3.1466666666666665,
+        "id": "meeting",
+        "roi": 0.00003434584306250892,
+        "level": 40
+      },
+      {
+        "hours": 3.218611111111111,
+        "id": "retire",
+        "roi": 0.00005656358142497237,
+        "level": 19
+      },
+      {
+        "hours": 3.295,
+        "id": "retire",
+        "roi": 0.0010329001898006797,
+        "level": 20
+      },
+      {
+        "hours": 3.351111111111111,
+        "id": "deep",
+        "roi": 0.00005481637617920874,
+        "level": 33
+      },
+      {
+        "hours": 3.418888888888889,
+        "id": "retire",
+        "roi": 0.00008554038734398197,
+        "level": 21
+      },
+      {
+        "hours": 3.4816666666666665,
+        "id": "deep",
+        "roi": 0.000047666414542228636,
+        "level": 34
+      },
+      {
+        "hours": 3.5591666666666666,
+        "id": "retire",
+        "roi": 0.00007438294433090124,
+        "level": 22
+      },
+      {
+        "hours": 3.6275,
+        "id": "deep",
+        "roi": 0.000041449056720213286,
+        "level": 35
+      },
+      {
+        "hours": 3.713888888888889,
+        "id": "retire",
+        "roi": 0.00006468082369735362,
+        "level": 23
+      },
+      {
+        "hours": 3.792222222222222,
+        "id": "deep",
+        "roi": 0.00003604265828821702,
+        "level": 36
+      },
+      {
+        "hours": 3.8855555555555554,
+        "id": "retire",
+        "roi": 0.000056244194293480114,
+        "level": 24
+      },
+      {
+        "hours": 3.8866666666666667,
+        "id": "phone",
+        "roi": 0.0000317359568390987,
+        "level": 62
+      },
+      {
+        "hours": 3.8891666666666667,
+        "id": "toilet",
+        "roi": 0.00003076000276840025,
+        "level": 51
+      },
+      {
+        "hours": 3.8963888888888887,
+        "id": "group",
+        "roi": 0.00003201740038986521,
+        "level": 45
+      },
+      {
+        "hours": 3.9205555555555556,
+        "id": "meeting",
+        "roi": 0.000029865951158119453,
+        "level": 41
+      },
+      {
+        "hours": 4.0075,
+        "id": "deep",
+        "roi": 0.00003134144246725407,
+        "level": 37
+      },
+      {
+        "hours": 4.113611111111111,
+        "id": "retire",
+        "roi": 0.00004890799452523909,
+        "level": 25
+      },
+      {
+        "hours": 4.114722222222222,
+        "id": "phone",
+        "roi": 0.000027596484207911913,
+        "level": 63
+      },
+      {
+        "hours": 4.1175,
+        "id": "toilet",
+        "roi": 0.00002674783743734319,
+        "level": 52
+      },
+      {
+        "hours": 4.1241666666666665,
+        "id": "group",
+        "roi": 0.000027841219668151223,
+        "level": 46
+      },
+      {
+        "hours": 4.152777777777778,
+        "id": "meeting",
+        "roi": 0.00002597039349171551,
+        "level": 42
+      },
+      {
+        "hours": 4.25,
+        "id": "deep",
+        "roi": 0.000027253427922915952,
+        "level": 38
+      },
+      {
+        "hours": 4.366666666666666,
+        "id": "retire",
+        "roi": 0.00004252869160206888,
+        "level": 26
+      },
+      {
+        "hours": 4.368055555555555,
+        "id": "phone",
+        "roi": 0.000023996928393165674,
+        "level": 64
+      },
+      {
+        "hours": 4.3694444444444445,
+        "id": "phone",
+        "roi": 0.0013772128654635182,
+        "level": 65
+      },
+      {
+        "hours": 4.370833333333334,
+        "id": "phone",
+        "roi": 0.000036290231123409467,
+        "level": 66
+      },
+      {
+        "hours": 4.372777777777777,
+        "id": "phone",
+        "roi": 0.00003155675383562482,
+        "level": 67
+      },
+      {
+        "hours": 4.375,
+        "id": "phone",
+        "roi": 0.00002744062962524675,
+        "level": 68
+      },
+      {
+        "hours": 4.377222222222223,
+        "id": "phone",
+        "roi": 0.00002386143663744635,
+        "level": 69
+      },
+      {
+        "hours": 4.38,
+        "id": "toilet",
+        "roi": 0.000023258978256344176,
+        "level": 53
+      },
+      {
+        "hours": 4.387777777777778,
+        "id": "group",
+        "roi": 0.000024209763071153704,
+        "level": 47
+      },
+      {
+        "hours": 4.419444444444444,
+        "id": "meeting",
+        "roi": 0.000022582949714884614,
+        "level": 43
+      },
+      {
+        "hours": 4.523611111111111,
+        "id": "deep",
+        "roi": 0.000023698633171457406,
+        "level": 39
+      },
+      {
+        "hours": 4.651666666666666,
+        "id": "retire",
+        "roi": 0.00003698147090947686,
+        "level": 27
+      },
+      {
+        "hours": 4.654444444444445,
+        "id": "phone",
+        "roi": 0.000020749067264585622,
+        "level": 70
+      },
+      {
+        "hours": 4.657777777777778,
+        "id": "toilet",
+        "roi": 0.00002022520768760144,
+        "level": 54
+      },
+      {
+        "hours": 4.667777777777777,
+        "id": "group",
+        "roi": 0.00002105196677999642,
+        "level": 48
+      },
+      {
+        "hours": 4.701666666666667,
+        "id": "meeting",
+        "roi": 0.000019637347288941472,
+        "level": 44
+      },
+      {
+        "hours": 4.818333333333333,
+        "id": "deep",
+        "roi": 0.000020607507017142356,
+        "level": 40
+      },
+      {
+        "hours": 4.965277777777778,
+        "id": "retire",
+        "roi": 0.00003215780108631349,
+        "level": 28
+      },
+      {
+        "hours": 4.968333333333334,
+        "id": "phone",
+        "roi": 0.000018042664134679466,
+        "level": 71
+      },
+      {
+        "hours": 4.972222222222222,
+        "id": "toilet",
+        "roi": 0.000017587133253311877,
+        "level": 55
+      },
+      {
+        "hours": 4.983333333333333,
+        "id": "group",
+        "roi": 0.000018306060862160547,
+        "level": 49
+      },
+      {
+        "hours": 5.021388888888889,
+        "id": "meeting",
+        "roi": 0.000017075954528782206,
+        "level": 45
+      },
+      {
+        "hours": 5.153888888888889,
+        "id": "deep",
+        "roi": 0.000017919571586846755,
+        "level": 41
+      },
+      {
+        "hours": 5.316666666666666,
+        "id": "retire",
+        "roi": 0.00002796330487354664,
+        "level": 29
+      },
+      {
+        "hours": 5.318333333333333,
+        "id": "phone",
+        "roi": 0.00001568928931441728,
+        "level": 72
+      },
+      {
+        "hours": 5.3225,
+        "id": "toilet",
+        "roi": 0.000015293162274215574,
+        "level": 56
+      },
+      {
+        "hours": 5.335,
+        "id": "group",
+        "roi": 0.00001591831147041688,
+        "level": 50
+      },
+      {
+        "hours": 5.377777777777778,
+        "id": "meeting",
+        "roi": 0.000014848656552949715,
+        "level": 46
+      },
+      {
+        "hours": 5.524444444444445,
+        "id": "deep",
+        "roi": 0.000015582236095029307,
+        "level": 42
+      },
+      {
+        "hours": 5.705277777777778,
+        "id": "retire",
+        "roi": 0.000024315917682559656,
+        "level": 30
+      },
+      {
+        "hours": 5.708888888888889,
+        "id": "phone",
+        "roi": 0.000013642855620217007,
+        "level": 73
+      },
+      {
+        "hours": 5.713888888888889,
+        "id": "toilet",
+        "roi": 0.000013298402861816296,
+        "level": 57
+      },
+      {
+        "hours": 5.727777777777778,
+        "id": "group",
+        "roi": 0.000013842011890288213,
+        "level": 51
+      },
+      {
+        "hours": 5.773888888888889,
+        "id": "meeting",
+        "roi": 0.000012911875096718014,
+        "level": 47
+      },
+      {
+        "hours": 5.936944444444444,
+        "id": "deep",
+        "roi": 0.000013549770593915238,
+        "level": 43
+      },
+      {
+        "hours": 6.14,
+        "id": "retire",
+        "roi": 0.000021144276277638363,
+        "level": 31
+      },
+      {
+        "hours": 6.144166666666667,
+        "id": "phone",
+        "roi": 0.000011863354912281613,
+        "level": 74
+      },
+      {
+        "hours": 6.149444444444445,
+        "id": "toilet",
+        "roi": 0.00001156382857549243,
+        "level": 58
+      },
+      {
+        "hours": 6.165,
+        "id": "group",
+        "roi": 0.000012036530871194074,
+        "level": 52
+      },
+      {
+        "hours": 6.217222222222222,
+        "id": "meeting",
+        "roi": 0.00001122771782207649,
+        "level": 48
+      },
+      {
+        "hours": 6.396944444444444,
+        "id": "deep",
+        "roi": 0.000011782409144615752,
+        "level": 44
+      },
+      {
+        "hours": 6.603611111111111,
+        "id": "deep",
+        "roi": 0.0004712963651139771,
+        "level": 45
+      },
+      {
+        "hours": 6.770277777777777,
+        "id": "retire",
+        "roi": 0.000018386327149652542,
+        "level": 32
+      },
+      {
+        "hours": 6.943611111111111,
+        "id": "deep",
+        "roi": 0.000017818388084022262,
+        "level": 46
+      },
+      {
+        "hours": 6.946666666666666,
+        "id": "phone",
+        "roi": 0.000010315958465372228,
+        "level": 75
+      },
+      {
+        "hours": 6.949722222222222,
+        "id": "toilet",
+        "roi": 0.000010055506395302067,
+        "level": 59
+      },
+      {
+        "hours": 6.954722222222222,
+        "id": "toilet",
+        "roi": 0.0005333790348812401,
+        "level": 60
+      },
+      {
+        "hours": 6.960555555555556,
+        "id": "toilet",
+        "roi": 0.000015206812652068127,
+        "level": 61
+      },
+      {
+        "hours": 6.966944444444445,
+        "id": "toilet",
+        "roi": 0.000013223315349624457,
+        "level": 62
+      },
+      {
+        "hours": 6.974722222222222,
+        "id": "toilet",
+        "roi": 0.000011498535086629964,
+        "level": 63
+      },
+      {
+        "hours": 6.9816666666666665,
+        "id": "toilet",
+        "roi": 0.000009998727661905023,
+        "level": 64
+      },
+      {
+        "hours": 6.994166666666667,
+        "id": "group",
+        "roi": 0.000010466549953005191,
+        "level": 53
+      },
+      {
+        "hours": 7.037222222222222,
+        "id": "meeting",
+        "roi": 0.000009763232817271627,
+        "level": 49
+      },
+      {
+        "hours": 7.085,
+        "id": "meeting",
+        "roi": 0.0004329781455130029,
+        "level": 50
+      },
+      {
+        "hours": 7.137777777777778,
+        "id": "meeting",
+        "roi": 0.000014764812955473716,
+        "level": 51
+      },
+      {
+        "hours": 7.198888888888889,
+        "id": "meeting",
+        "roi": 0.000012838968014022208,
+        "level": 52
+      },
+      {
+        "hours": 7.265555555555555,
+        "id": "meeting",
+        "roi": 0.000011164319949872203,
+        "level": 53
+      },
+      {
+        "hours": 7.344444444444444,
+        "id": "meeting",
+        "roi": 0.00000970810448095037,
+        "level": 54
+      },
+      {
+        "hours": 7.5152777777777775,
+        "id": "retire",
+        "roi": 0.000015988110510139607,
+        "level": 33
+      },
+      {
+        "hours": 7.69,
+        "id": "deep",
+        "roi": 0.00001549425061621119,
+        "level": 47
+      },
+      {
+        "hours": 7.693611111111111,
+        "id": "phone",
+        "roi": 0.000008970399922854561,
+        "level": 76
+      },
+      {
+        "hours": 7.700833333333334,
+        "id": "toilet",
+        "roi": 0.000008694546454418298,
+        "level": 65
+      },
+      {
+        "hours": 7.713611111111111,
+        "id": "group",
+        "roi": 0.00000910134668076162,
+        "level": 54
+      },
+      {
+        "hours": 7.728611111111111,
+        "id": "group",
+        "roi": 0.00044319605027900907,
+        "level": 55
+      },
+      {
+        "hours": 7.743333333333333,
+        "id": "group",
+        "roi": 0.00001376385288781118,
+        "level": 56
+      },
+      {
+        "hours": 7.7625,
+        "id": "group",
+        "roi": 0.000011968566952612354,
+        "level": 57
+      },
+      {
+        "hours": 7.782777777777778,
+        "id": "group",
+        "roi": 0.00001040744993019203,
+        "level": 58
+      },
+      {
+        "hours": 7.808055555555556,
+        "id": "group",
+        "roi": 0.000009049956665790832,
+        "level": 59
+      },
+      {
+        "hours": 7.894444444444445,
+        "id": "meeting",
+        "roi": 0.00000844183001906735,
+        "level": 55
+      },
+      {
+        "hours": 8.08,
+        "id": "retire",
+        "roi": 0.000013902704839747047,
+        "level": 34
+      },
+      {
+        "hours": 8.273888888888889,
+        "id": "deep",
+        "roi": 0.000013473261386491786,
+        "level": 48
+      },
+      {
+        "hours": 8.2775,
+        "id": "phone",
+        "roi": 0.000007800350040708077,
+        "level": 77
+      },
+      {
+        "hours": 8.285833333333333,
+        "id": "toilet",
+        "roi": 0.000007560474820500152,
+        "level": 66
+      },
+      {
+        "hours": 8.3125,
+        "id": "group",
+        "roi": 0.000007869527432254517,
+        "level": 60
+      },
+      {
+        "hours": 8.413333333333334,
+        "id": "meeting",
+        "roi": 0.0000073407217085603185,
+        "level": 56
+      },
+      {
+        "hours": 8.6175,
+        "id": "retire",
+        "roi": 0.000012089308592839625,
+        "level": 35
+      },
+      {
+        "hours": 8.834444444444445,
+        "id": "deep",
+        "roi": 0.000011715879476046669,
+        "level": 49
+      },
+      {
+        "hours": 8.838888888888889,
+        "id": "phone",
+        "roi": 0.0000067829116411297105,
+        "level": 78
+      },
+      {
+        "hours": 8.849722222222223,
+        "id": "toilet",
+        "roi": 0.0000065743258768424955,
+        "level": 67
+      },
+      {
+        "hours": 8.88,
+        "id": "group",
+        "roi": 0.00000684306764457905,
+        "level": 61
+      },
+      {
+        "hours": 8.988611111111112,
+        "id": "meeting",
+        "roi": 0.000006383236293779386,
+        "level": 57
+      },
+      {
+        "hours": 9.219444444444445,
+        "id": "retire",
+        "roi": 0.000010512442211227943,
+        "level": 36
+      },
+      {
+        "hours": 9.466111111111111,
+        "id": "deep",
+        "roi": 0.000010187721287122651,
+        "level": 50
+      },
+      {
+        "hours": 9.470833333333333,
+        "id": "phone",
+        "roi": 0.00000589818479676514,
+        "level": 79
+      },
+      {
+        "hours": 9.483333333333333,
+        "id": "toilet",
+        "roi": 0.000005716805192002475,
+        "level": 68
+      },
+      {
+        "hours": 9.519166666666667,
+        "id": "group",
+        "roi": 0.0000059504933826794525,
+        "level": 62
+      },
+      {
+        "hours": 9.643611111111111,
+        "id": "meeting",
+        "roi": 0.000005550640232353131,
+        "level": 58
+      },
+      {
+        "hours": 9.904444444444444,
+        "id": "retire",
+        "roi": 0.000009141254132532463,
+        "level": 37
+      },
+      {
+        "hours": 10.184444444444445,
+        "id": "deep",
+        "roi": 0.000008858888045783865,
+        "level": 51
+      },
+      {
+        "hours": 10.19,
+        "id": "phone",
+        "roi": 0.000005128856098402233,
+        "level": 80
+      },
+      {
+        "hours": 10.203888888888889,
+        "id": "toilet",
+        "roi": 0.000004971135104018516,
+        "level": 69
+      },
+      {
+        "hours": 10.2425,
+        "id": "group",
+        "roi": 0.00000517434212767396,
+        "level": 63
+      },
+      {
+        "hours": 10.381388888888889,
+        "id": "meeting",
+        "roi": 0.000004826643671570887,
+        "level": 59
+      },
+      {
+        "hours": 10.673055555555555,
+        "id": "retire",
+        "roi": 0.000007948916627958282,
+        "level": 38
+      },
+      {
+        "hours": 10.982222222222223,
+        "id": "deep",
+        "roi": 0.000007703380932042651,
+        "level": 52
+      },
+      {
+        "hours": 10.988333333333333,
+        "id": "phone",
+        "roi": 0.000004459875614069124,
+        "level": 81
+      },
+      {
+        "hours": 11.00388888888889,
+        "id": "toilet",
+        "roi": 0.0000043227260839776,
+        "level": 70
+      },
+      {
+        "hours": 11.046111111111111,
+        "id": "group",
+        "roi": 0.000004499427953978501,
+        "level": 64
+      },
+      {
+        "hours": 11.20138888888889,
+        "id": "meeting",
+        "roi": 0.000004197081473357331,
+        "level": 60
+      },
+      {
+        "hours": 11.529722222222222,
+        "id": "retire",
+        "roi": 0.000006912101398552631,
+        "level": 39
+      },
+      {
+        "hours": 11.909444444444444,
+        "id": "retire",
+        "roi": 0.0002464314419592797,
+        "level": 40
+      },
+      {
+        "hours": 12.172777777777778,
+        "id": "deep",
+        "roi": 0.000006698592125725876,
+        "level": 53
+      },
+      {
+        "hours": 12.494722222222222,
+        "id": "retire",
+        "roi": 0.000010453083412652638,
+        "level": 41
+      },
+      {
+        "hours": 12.785833333333333,
+        "id": "deep",
+        "roi": 0.000005824862712132045,
+        "level": 54
+      },
+      {
+        "hours": 13.147222222222222,
+        "id": "retire",
+        "roi": 0.000009089637751608112,
+        "level": 42
+      },
+      {
+        "hours": 13.47888888888889,
+        "id": "deep",
+        "roi": 0.00000506509801144041,
+        "level": 55
+      },
+      {
+        "hours": 13.885277777777778,
+        "id": "retire",
+        "roi": 0.000007904032846450556,
+        "level": 43
+      },
+      {
+        "hours": 14.261111111111111,
+        "id": "deep",
+        "roi": 0.000004404433052079289,
+        "level": 56
+      },
+      {
+        "hours": 14.717222222222222,
+        "id": "retire",
+        "roi": 0.000006873072040391788,
+        "level": 44
+      },
+      {
+        "hours": 14.721944444444444,
+        "id": "phone",
+        "roi": 0.0000038781523318845205,
+        "level": 82
+      },
+      {
+        "hours": 14.734444444444444,
+        "id": "toilet",
+        "roi": 0.000003758892246937043,
+        "level": 71
+      },
+      {
+        "hours": 14.768333333333333,
+        "id": "group",
+        "roi": 0.000003912546117099571,
+        "level": 65
+      },
+      {
+        "hours": 14.890277777777778,
+        "id": "meeting",
+        "roi": 0.0000036496360687839245,
+        "level": 61
+      },
+      {
+        "hours": 15.31,
+        "id": "deep",
+        "roi": 0.000003829941786454058,
+        "level": 57
+      },
+      {
+        "hours": 15.831944444444444,
+        "id": "retire",
+        "roi": 0.0000059765843784844355,
+        "level": 45
+      },
+      {
+        "hours": 15.8375,
+        "id": "phone",
+        "roi": 0.000003372306659863038,
+        "level": 83
+      },
+      {
+        "hours": 15.85138888888889,
+        "id": "toilet",
+        "roi": 0.000003268602207597588,
+        "level": 72
+      },
+      {
+        "hours": 15.889722222222222,
+        "id": "group",
+        "roi": 0.0000034022139907544835,
+        "level": 66
+      },
+      {
+        "hours": 16.029444444444444,
+        "id": "meeting",
+        "roi": 0.0000031735965903639897,
+        "level": 62
+      },
+      {
+        "hours": 16.503055555555555,
+        "id": "deep",
+        "roi": 0.0000033303841625190837,
+        "level": 58
+      },
+      {
+        "hours": 17.08861111111111,
+        "id": "retire",
+        "roi": 0.000005197029899639654,
+        "level": 46
+      },
+      {
+        "hours": 17.093611111111112,
+        "id": "phone",
+        "roi": 0.0000029324406006664705,
+        "level": 84
+      },
+      {
+        "hours": 17.1,
+        "id": "phone",
+        "roi": 0.00021929555446793177,
+        "level": 85
+      },
+      {
+        "hours": 17.108055555555556,
+        "id": "phone",
+        "roi": 0.000004434692432599258,
+        "level": 86
+      },
+      {
+        "hours": 17.11722222222222,
+        "id": "phone",
+        "roi": 0.000003856254265981282,
+        "level": 87
+      },
+      {
+        "hours": 17.127777777777776,
+        "id": "phone",
+        "roi": 0.0000033532646493915555,
+        "level": 88
+      },
+      {
+        "hours": 17.138333333333332,
+        "id": "phone",
+        "roi": 0.0000029158822639638867,
+        "level": 89
+      },
+      {
+        "hours": 17.15388888888889,
+        "id": "toilet",
+        "roi": 0.0000028422627993133663,
+        "level": 73
+      },
+      {
+        "hours": 17.197222222222223,
+        "id": "group",
+        "roi": 0.000002958446984950528,
+        "level": 67
+      },
+      {
+        "hours": 17.3525,
+        "id": "meeting",
+        "roi": 0.000002759649201396501,
+        "level": 63
+      },
+      {
+        "hours": 17.88388888888889,
+        "id": "deep",
+        "roi": 0.0000028959862262390214,
+        "level": 59
+      },
+      {
+        "hours": 18.54138888888889,
+        "id": "retire",
+        "roi": 0.000004519156429728264,
+        "level": 47
+      },
+      {
+        "hours": 18.555,
+        "id": "phone",
+        "roi": 0.0000025355499956578705,
+        "level": 90
+      },
+      {
+        "hours": 18.572777777777777,
+        "id": "toilet",
+        "roi": 0.0000024715328842393315,
+        "level": 74
+      },
+      {
+        "hours": 18.621666666666666,
+        "id": "group",
+        "roi": 0.0000025725625570036987,
+        "level": 68
+      },
+      {
+        "hours": 18.7975,
+        "id": "meeting",
+        "roi": 0.000002399694955576637,
+        "level": 64
+      },
+      {
+        "hours": 19.394444444444446,
+        "id": "deep",
+        "roi": 0.0000025182488928221448,
+        "level": 60
+      },
+      {
+        "hours": 20.134444444444444,
+        "id": "retire",
+        "roi": 0.000003929701243241968,
+        "level": 48
+      },
+      {
+        "hours": 20.15,
+        "id": "phone",
+        "roi": 0.0000022048259920321723,
+        "level": 91
+      },
+      {
+        "hours": 20.168055555555554,
+        "id": "toilet",
+        "roi": 0.000002149158937395645,
+        "level": 75
+      },
+      {
+        "hours": 20.221944444444443,
+        "id": "group",
+        "roi": 0.000002237010935814377,
+        "level": 69
+      },
+      {
+        "hours": 20.423055555555557,
+        "id": "meeting",
+        "roi": 0.0000020866912651745297,
+        "level": 65
+      },
+      {
+        "hours": 21.099722222222223,
+        "id": "deep",
+        "roi": 0.0000021897816479302766,
+        "level": 61
+      },
+      {
+        "hours": 21.941944444444445,
+        "id": "retire",
+        "roi": 0.0000034171315194073203,
+        "level": 49
+      },
+      {
+        "hours": 21.95777777777778,
+        "id": "phone",
+        "roi": 0.0000019172400562494267,
+        "level": 92
+      },
+      {
+        "hours": 21.98027777777778,
+        "id": "toilet",
+        "roi": 0.000001868833928455711,
+        "level": 76
+      },
+      {
+        "hours": 22.04138888888889,
+        "id": "group",
+        "roi": 0.0000019452268849418724,
+        "level": 70
+      },
+      {
+        "hours": 22.26388888888889,
+        "id": "meeting",
+        "roi": 0.000001814514148980276,
+        "level": 66
+      },
+      {
+        "hours": 23.032222222222224,
+        "id": "deep",
+        "roi": 0.0000019041579542183937,
+        "level": 62
+      },
+      {
+        "hours": 23.986666666666668,
+        "id": "retire",
+        "roi": 0.000002971418711897438,
+        "level": 50
+      },
+      {
+        "hours": 24.00638888888889,
+        "id": "phone",
+        "roi": 0.0000016671652532752242,
+        "level": 93
+      },
+      {
+        "hours": 24.031666666666666,
+        "id": "toilet",
+        "roi": 0.000001625072991169069,
+        "level": 77
+      },
+      {
+        "hours": 24.101388888888888,
+        "id": "group",
+        "roi": 0.0000016915016462328333,
+        "level": 71
+      },
+      {
+        "hours": 24.35361111111111,
+        "id": "meeting",
+        "roi": 0.0000015778383888616475,
+        "level": 67
+      },
+      {
+        "hours": 25.217777777777776,
+        "id": "deep",
+        "roi": 0.0000016557895246457326,
+        "level": 63
+      },
+      {
+        "hours": 26.284166666666668,
+        "id": "retire",
+        "roi": 0.0000025838423578140295,
+        "level": 51
+      },
+      {
+        "hours": 26.30472222222222,
+        "id": "phone",
+        "roi": 0.0000014497088961884751,
+        "level": 94
+      },
+      {
+        "hours": 26.331666666666667,
+        "id": "toilet",
+        "roi": 0.0000014131069413544015,
+        "level": 78
+      },
+      {
+        "hours": 26.410833333333333,
+        "id": "group",
+        "roi": 0.0000014708709994285298,
+        "level": 72
+      },
+      {
+        "hours": 26.696944444444444,
+        "id": "meeting",
+        "roi": 0.0000013720333825600617,
+        "level": 68
+      },
+      {
+        "hours": 27.66861111111111,
+        "id": "deep",
+        "roi": 0.0000014398169791045182,
+        "level": 64
+      },
+      {
+        "hours": 28.782222222222224,
+        "id": "deep",
+        "roi": 0.00008263297446013951,
+        "level": 65
+      },
+      {
+        "hours": 29.684722222222224,
+        "id": "retire",
+        "roi": 0.000002246819442118295,
+        "level": 52
+      },
+      {
+        "hours": 30.638333333333332,
+        "id": "deep",
+        "roi": 0.0000021774169804225617,
+        "level": 66
+      },
+      {
+        "hours": 30.656944444444445,
+        "id": "phone",
+        "roi": 0.0000012606164587818206,
+        "level": 95
+      },
+      {
+        "hours": 30.679166666666667,
+        "id": "toilet",
+        "roi": 0.000001228788650318207,
+        "level": 79
+      },
+      {
+        "hours": 30.706666666666667,
+        "id": "toilet",
+        "roi": 0.0000865494605324042,
+        "level": 80
+      },
+      {
+        "hours": 30.7375,
+        "id": "toilet",
+        "roi": 0.000001858281505862135,
+        "level": 81
+      },
+      {
+        "hours": 30.7725,
+        "id": "toilet",
+        "roi": 0.0000016158969681470552,
+        "level": 82
+      },
+      {
+        "hours": 30.810833333333335,
+        "id": "toilet",
+        "roi": 0.0000014051277996227338,
+        "level": 83
+      },
+      {
+        "hours": 30.856944444444444,
+        "id": "toilet",
+        "roi": 0.000001221850250277696,
+        "level": 84
+      },
+      {
+        "hours": 30.92361111111111,
+        "id": "group",
+        "roi": 0.0000012790182596910148,
+        "level": 73
+      },
+      {
+        "hours": 31.16027777777778,
+        "id": "meeting",
+        "roi": 0.0000011930725079973887,
+        "level": 69
+      },
+      {
+        "hours": 31.43166666666667,
+        "id": "meeting",
+        "roi": 0.00007365925909388135,
+        "level": 70
+      },
+      {
+        "hours": 31.718611111111112,
+        "id": "meeting",
+        "roi": 0.0000018042684440118169,
+        "level": 71
+      },
+      {
+        "hours": 32.04972222222222,
+        "id": "meeting",
+        "roi": 0.0000015689290791340214,
+        "level": 72
+      },
+      {
+        "hours": 32.43361111111111,
+        "id": "meeting",
+        "roi": 0.000001364286157629991,
+        "level": 73
+      },
+      {
+        "hours": 32.869166666666665,
+        "id": "meeting",
+        "roi": 0.000001186335788539774,
+        "level": 74
+      },
+      {
+        "hours": 33.79555555555555,
+        "id": "retire",
+        "roi": 0.000001953756036215623,
+        "level": 53
+      },
+      {
+        "hours": 34.77583333333333,
+        "id": "deep",
+        "roi": 0.000001893406070368338,
+        "level": 67
+      },
+      {
+        "hours": 34.79527777777778,
+        "id": "phone",
+        "roi": 0.0000010961882212725806,
+        "level": 96
+      },
+      {
+        "hours": 34.843333333333334,
+        "id": "toilet",
+        "roi": 0.0000010624784897909496,
+        "level": 85
+      },
+      {
+        "hours": 34.913333333333334,
+        "id": "group",
+        "roi": 0.0000011121898013437163,
+        "level": 74
+      },
+      {
+        "hours": 34.99194444444444,
+        "id": "group",
+        "roi": 0.00007350123901570526,
+        "level": 75
+      },
+      {
+        "hours": 35.08138888888889,
+        "id": "group",
+        "roi": 0.0000016819505513265713,
+        "level": 76
+      },
+      {
+        "hours": 35.185833333333335,
+        "id": "group",
+        "roi": 0.000001462565695023132,
+        "level": 77
+      },
+      {
+        "hours": 35.304722222222225,
+        "id": "group",
+        "roi": 0.000001271796256204882,
+        "level": 78
+      },
+      {
+        "hours": 35.441944444444445,
+        "id": "group",
+        "roi": 0.000001105909786985048,
+        "level": 79
+      },
+      {
+        "hours": 35.92861111111111,
+        "id": "meeting",
+        "roi": 0.0000010315963387253283,
+        "level": 75
+      },
+      {
+        "hours": 36.949444444444445,
+        "id": "retire",
+        "roi": 0.0000016989182924129527,
+        "level": 54
+      },
+      {
+        "hours": 38.03333333333333,
+        "id": "deep",
+        "roi": 0.0000016464400618957875,
+        "level": 68
+      },
+      {
+        "hours": 38.054722222222225,
+        "id": "phone",
+        "roi": 9.532071503523724e-7,
+        "level": 97
+      },
+      {
+        "hours": 38.10666666666667,
+        "id": "toilet",
+        "roi": 9.238943314798204e-7,
+        "level": 86
+      },
+      {
+        "hours": 38.260555555555555,
+        "id": "group",
+        "roi": 9.616606841421596e-7,
+        "level": 80
+      },
+      {
+        "hours": 38.805,
+        "id": "meeting",
+        "roi": 8.97040294040838e-7,
+        "level": 76
+      },
+      {
+        "hours": 39.97138888888889,
+        "id": "retire",
+        "roi": 0.0000014773202541162417,
+        "level": 55
+      },
+      {
+        "hours": 41.20027777777778,
+        "id": "deep",
+        "roi": 0.0000014316870103085774,
+        "level": 69
+      },
+      {
+        "hours": 41.224444444444444,
+        "id": "phone",
+        "roi": 8.288757947235218e-7,
+        "level": 98
+      },
+      {
+        "hours": 41.283611111111114,
+        "id": "toilet",
+        "roi": 8.033863780235986e-7,
+        "level": 87
+      },
+      {
+        "hours": 41.456944444444446,
+        "id": "group",
+        "roi": 8.362266834652528e-7,
+        "level": 81
+      },
+      {
+        "hours": 42.075,
+        "id": "meeting",
+        "roi": 7.800350382963808e-7,
+        "level": 77
+      },
+      {
+        "hours": 43.39416666666666,
+        "id": "retire",
+        "roi": 0.0000012846263084281399,
+        "level": 56
+      },
+      {
+        "hours": 44.78944444444444,
+        "id": "deep",
+        "roi": 0.0000012449452262745614,
+        "level": 70
+      },
+      {
+        "hours": 44.81527777777778,
+        "id": "phone",
+        "roi": 7.20761563876007e-7,
+        "level": 99
+      },
+      {
+        "hours": 44.882777777777775,
+        "id": "toilet",
+        "roi": 6.985968507603266e-7,
+        "level": 88
+      },
+      {
+        "hours": 45.08166666666666,
+        "id": "group",
+        "roi": 7.271536371349316e-7,
+        "level": 82
+      },
+      {
+        "hours": 45.789722222222224,
+        "id": "meeting",
+        "roi": 6.782913377928016e-7,
+        "level": 78
+      },
+      {
+        "hours": 47.27972222222222,
+        "id": "retire",
+        "roi": 0.000001117066354976642,
+        "level": 57
+      },
+      {
+        "hours": 48.85916666666667,
+        "id": "deep",
+        "roi": 0.0000010825610664070902,
+        "level": 71
+      },
+      {
+        "hours": 48.88861111111111,
+        "id": "phone",
+        "roi": 6.267491810689548e-7,
+        "level": 100
+      },
+      {
+        "hours": 48.96722222222222,
+        "id": "toilet",
+        "roi": 6.07475522400284e-7,
+        "level": 89
+      },
+      {
+        "hours": 49.19305555555555,
+        "id": "group",
+        "roi": 6.323075103855257e-7,
+        "level": 83
+      },
+      {
+        "hours": 49.984722222222224,
+        "id": "meeting",
+        "roi": 5.89818554471979e-7,
+        "level": 79
+      },
+      {
+        "hours": 51.66972222222222,
+        "id": "retire",
+        "roi": 9.713620477383796e-7,
+        "level": 58
+      },
+      {
+        "hours": 53.45111111111111,
+        "id": "deep",
+        "roi": 9.413574490188743e-7,
+        "level": 72
+      },
+      {
+        "hours": 53.486111111111114,
+        "id": "phone",
+        "roi": 5.44999288350148e-7,
+        "level": 101
+      },
+      {
+        "hours": 53.57527777777778,
+        "id": "toilet",
+        "roi": 5.282395859166863e-7,
+        "level": 90
+      },
+      {
+        "hours": 53.82861111111111,
+        "id": "group",
+        "roi": 5.498326189232112e-7,
+        "level": 84
+      },
+      {
+        "hours": 54.72833333333333,
+        "id": "meeting",
+        "roi": 5.128856996066142e-7,
+        "level": 80
+      },
+      {
+        "hours": 56.646388888888886,
+        "id": "retire",
+        "roi": 8.44662650423871e-7,
+        "level": 59
+      },
+      {
+        "hours": 58.83833333333333,
+        "id": "retire",
+        "roi": 0.00004480384492788773,
+        "level": 60
+      },
+      {
+        "hours": 60.320277777777775,
+        "id": "deep",
+        "roi": 8.185716948106542e-7,
+        "level": 73
+      },
+      {
+        "hours": 62.15888888888889,
+        "id": "retire",
+        "roi": 0.0000012773726281535756,
+        "level": 61
+      },
+      {
+        "hours": 63.844166666666666,
+        "id": "deep",
+        "roi": 7.118014736516367e-7,
+        "level": 74
+      },
+      {
+        "hours": 65.92611111111111,
+        "id": "retire",
+        "roi": 0.0000011107588070680339,
+        "level": 62
+      },
+      {
+        "hours": 67.82944444444445,
+        "id": "deep",
+        "roi": 6.18957803235197e-7,
+        "level": 75
+      },
+      {
+        "hours": 70.19611111111111,
+        "id": "retire",
+        "roi": 9.65877223487443e-7,
+        "level": 63
+      }
+    ],
+    "lastBlockStart": 101474764253.67358,
+    "lastBlockIncome": 14711614766.863297,
+    "samples": [
+      {
+        "hours": 0.0001388888888888889,
+        "totalEarned": 0.1,
+        "idleRate": 0.2,
+        "rankIdx": 0
+      },
+      {
+        "hours": 0.2501388888888889,
+        "totalEarned": 72378.89999999953,
+        "idleRate": 250.2,
+        "rankIdx": 1
+      },
+      {
+        "hours": 0.5001388888888889,
+        "totalEarned": 543599.0999999855,
+        "idleRate": 806.2,
+        "rankIdx": 2
+      },
+      {
+        "hours": 0.7501388888888889,
+        "totalEarned": 2111198.3000000487,
+        "idleRate": 2824.2,
+        "rankIdx": 3
+      },
+      {
+        "hours": 1.000138888888889,
+        "totalEarned": 6629824.29999986,
+        "idleRate": 6712.2,
+        "rankIdx": 3
+      },
+      {
+        "hours": 1.250138888888889,
+        "totalEarned": 14708333.299999187,
+        "idleRate": 10684.2,
+        "rankIdx": 3
+      },
+      {
+        "hours": 1.500138888888889,
+        "totalEarned": 26431375.70000118,
+        "idleRate": 14512.2,
+        "rankIdx": 3
+      },
+      {
+        "hours": 1.750138888888889,
+        "totalEarned": 41276185.70000387,
+        "idleRate": 17288.2,
+        "rankIdx": 3
+      },
+      {
+        "hours": 2.000138888888889,
+        "totalEarned": 59012804.10000657,
+        "idleRate": 20422.2,
+        "rankIdx": 3
+      },
+      {
+        "hours": 2.250138888888889,
+        "totalEarned": 83932886.50000143,
+        "idleRate": 35630.2,
+        "rankIdx": 3
+      },
+      {
+        "hours": 2.500138888888889,
+        "totalEarned": 119256846.69999072,
+        "idleRate": 39928.2,
+        "rankIdx": 4
+      },
+      {
+        "hours": 2.750138888888889,
+        "totalEarned": 158156914.69997996,
+        "idleRate": 43344.2,
+        "rankIdx": 4
+      },
+      {
+        "hours": 3.000138888888889,
+        "totalEarned": 199845370.69996917,
+        "idleRate": 46060.2,
+        "rankIdx": 4
+      },
+      {
+        "hours": 3.250138888888889,
+        "totalEarned": 243564992.4999584,
+        "idleRate": 48468.2,
+        "rankIdx": 4
+      },
+      {
+        "hours": 3.500138888888889,
+        "totalEarned": 301005091.6999768,
+        "idleRate": 66008.2,
+        "rankIdx": 4
+      },
+      {
+        "hours": 3.750138888888889,
+        "totalEarned": 363489400.50001967,
+        "idleRate": 69528.2,
+        "rankIdx": 4
+      },
+      {
+        "hours": 4.0001388888888885,
+        "totalEarned": 429815952.7000625,
+        "idleRate": 71936.2,
+        "rankIdx": 4
+      },
+      {
+        "hours": 4.2501388888888885,
+        "totalEarned": 497749239.5001054,
+        "idleRate": 75064.2,
+        "rankIdx": 4
+      },
+      {
+        "hours": 4.5001388888888885,
+        "totalEarned": 569093800.7001483,
+        "idleRate": 77344.2,
+        "rankIdx": 4
+      },
+      {
+        "hours": 4.7501388888888885,
+        "totalEarned": 643624077.3001916,
+        "idleRate": 79760.2,
+        "rankIdx": 4
+      },
+      {
+        "hours": 5.0001388888888885,
+        "totalEarned": 717507128.9002347,
+        "idleRate": 81976.2,
+        "rankIdx": 4
+      },
+      {
+        "hours": 5.2501388888888885,
+        "totalEarned": 794172736.9002779,
+        "idleRate": 82896.2,
+        "rankIdx": 4
+      },
+      {
+        "hours": 5.5001388888888885,
+        "totalEarned": 872367380.900321,
+        "idleRate": 84592.2,
+        "rankIdx": 4
+      },
+      {
+        "hours": 5.7501388888888885,
+        "totalEarned": 952397271.1003642,
+        "idleRate": 86808.2,
+        "rankIdx": 4
+      },
+      {
+        "hours": 6.0001388888888885,
+        "totalEarned": 1033986879.3004074,
+        "idleRate": 87728.2,
+        "rankIdx": 5
+      },
+      {
+        "hours": 6.2501388888888885,
+        "totalEarned": 1116739250.5003412,
+        "idleRate": 89424.2,
+        "rankIdx": 5
+      },
+      {
+        "hours": 6.5001388888888885,
+        "totalEarned": 1201793927.10017,
+        "idleRate": 90144.2,
+        "rankIdx": 5
+      },
+      {
+        "hours": 6.7501388888888885,
+        "totalEarned": 1304235971.2999985,
+        "idleRate": 123264.2,
+        "rankIdx": 5
+      },
+      {
+        "hours": 7.0001388888888885,
+        "totalEarned": 1421363122.4998271,
+        "idleRate": 127580.2,
+        "rankIdx": 5
+      },
+      {
+        "hours": 7.2501388888888885,
+        "totalEarned": 1548260555.8996558,
+        "idleRate": 138780.2,
+        "rankIdx": 5
+      },
+      {
+        "hours": 7.5001388888888885,
+        "totalEarned": 1677902659.8994844,
+        "idleRate": 139580.2,
+        "rankIdx": 5
+      },
+      {
+        "hours": 7.7501388888888885,
+        "totalEarned": 1811261381.299313,
+        "idleRate": 146016.2,
+        "rankIdx": 5
+      },
+      {
+        "hours": 8.00013888888889,
+        "totalEarned": 1948383118.4991417,
+        "idleRate": 146776.2,
+        "rankIdx": 5
+      },
+      {
+        "hours": 8.25013888888889,
+        "totalEarned": 2084895549.2989702,
+        "idleRate": 148176.2,
+        "rankIdx": 5
+      },
+      {
+        "hours": 8.50013888888889,
+        "totalEarned": 2223274989.0987983,
+        "idleRate": 150192.2,
+        "rankIdx": 5
+      },
+      {
+        "hours": 8.75013888888889,
+        "totalEarned": 2365449836.4986253,
+        "idleRate": 151592.2,
+        "rankIdx": 5
+      },
+      {
+        "hours": 9.00013888888889,
+        "totalEarned": 2508336706.6984525,
+        "idleRate": 153608.2,
+        "rankIdx": 6
+      },
+      {
+        "hours": 9.25013888888889,
+        "totalEarned": 2652268771.8982797,
+        "idleRate": 155008.2,
+        "rankIdx": 6
+      },
+      {
+        "hours": 9.50013888888889,
+        "totalEarned": 2795676992.6981072,
+        "idleRate": 156504.2,
+        "rankIdx": 6
+      },
+      {
+        "hours": 9.75013888888889,
+        "totalEarned": 2940547846.497935,
+        "idleRate": 157024.2,
+        "rankIdx": 6
+      },
+      {
+        "hours": 10.00013888888889,
+        "totalEarned": 3087071155.497762,
+        "idleRate": 158424.2,
+        "rankIdx": 6
+      },
+      {
+        "hours": 10.25013888888889,
+        "totalEarned": 3232867662.09759,
+        "idleRate": 160040.2,
+        "rankIdx": 6
+      },
+      {
+        "hours": 10.50013888888889,
+        "totalEarned": 3382843579.297417,
+        "idleRate": 160440.2,
+        "rankIdx": 6
+      },
+      {
+        "hours": 10.75013888888889,
+        "totalEarned": 3534383651.697244,
+        "idleRate": 161840.2,
+        "rankIdx": 6
+      },
+      {
+        "hours": 11.00013888888889,
+        "totalEarned": 3684988676.6970716,
+        "idleRate": 163296.2,
+        "rankIdx": 6
+      },
+      {
+        "hours": 11.25013888888889,
+        "totalEarned": 3839998409.2968984,
+        "idleRate": 163856.2,
+        "rankIdx": 6
+      },
+      {
+        "hours": 11.50013888888889,
+        "totalEarned": 3994351039.6967254,
+        "idleRate": 163856.2,
+        "rankIdx": 6
+      },
+      {
+        "hours": 11.75013888888889,
+        "totalEarned": 4146898781.496553,
+        "idleRate": 165256.2,
+        "rankIdx": 6
+      },
+      {
+        "hours": 12.00013888888889,
+        "totalEarned": 4318681151.296476,
+        "idleRate": 222656.2,
+        "rankIdx": 6
+      },
+      {
+        "hours": 12.25013888888889,
+        "totalEarned": 4524833907.097162,
+        "idleRate": 224096.2,
+        "rankIdx": 6
+      },
+      {
+        "hours": 12.50013888888889,
+        "totalEarned": 4731953503.897848,
+        "idleRate": 226896.2,
+        "rankIdx": 6
+      },
+      {
+        "hours": 12.75013888888889,
+        "totalEarned": 4945689814.298533,
+        "idleRate": 226896.2,
+        "rankIdx": 6
+      },
+      {
+        "hours": 13.00013888888889,
+        "totalEarned": 5156487550.099219,
+        "idleRate": 228336.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 13.25013888888889,
+        "totalEarned": 5371281337.299905,
+        "idleRate": 231136.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 13.50013888888889,
+        "totalEarned": 5586356921.3005905,
+        "idleRate": 232576.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 13.75013888888889,
+        "totalEarned": 5802652886.301276,
+        "idleRate": 232576.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 14.00013888888889,
+        "totalEarned": 6022947941.7019615,
+        "idleRate": 235376.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 14.25013888888889,
+        "totalEarned": 6239023429.302648,
+        "idleRate": 235376.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 14.50013888888889,
+        "totalEarned": 6462047489.703333,
+        "idleRate": 236816.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 14.75013888888889,
+        "totalEarned": 6685481269.104018,
+        "idleRate": 239672.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 15.00013888888889,
+        "totalEarned": 6908643259.104704,
+        "idleRate": 240192.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 15.25013888888889,
+        "totalEarned": 7133463266.305389,
+        "idleRate": 240192.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 15.50013888888889,
+        "totalEarned": 7356412572.106075,
+        "idleRate": 241632.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 15.75013888888889,
+        "totalEarned": 7582580415.306761,
+        "idleRate": 241632.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 16.000138888888888,
+        "totalEarned": 7807675426.107447,
+        "idleRate": 244608.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 16.250138888888888,
+        "totalEarned": 8035490960.108132,
+        "idleRate": 245008.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 16.500138888888888,
+        "totalEarned": 8263348690.108818,
+        "idleRate": 245008.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 16.750138888888888,
+        "totalEarned": 8494009199.309504,
+        "idleRate": 246448.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 17.000138888888888,
+        "totalEarned": 8723206128.310192,
+        "idleRate": 246448.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 17.250138888888888,
+        "totalEarned": 8957959195.710884,
+        "idleRate": 250928.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 17.500138888888888,
+        "totalEarned": 9190036784.511574,
+        "idleRate": 251328.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 17.750138888888888,
+        "totalEarned": 9423772118.512264,
+        "idleRate": 251328.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 18.000138888888888,
+        "totalEarned": 9658127372.512955,
+        "idleRate": 252768.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 18.250138888888888,
+        "totalEarned": 9893201906.513645,
+        "idleRate": 252768.2,
+        "rankIdx": 7
+      },
+      {
+        "hours": 18.500138888888888,
+        "totalEarned": 10129793040.714336,
+        "idleRate": 252768.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 18.750138888888888,
+        "totalEarned": 10365611845.515026,
+        "idleRate": 255760.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 19.000138888888888,
+        "totalEarned": 10608378800.115719,
+        "idleRate": 256160.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 19.250138888888888,
+        "totalEarned": 10845070931.916409,
+        "idleRate": 256160.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 19.500138888888888,
+        "totalEarned": 11085410824.1171,
+        "idleRate": 257600.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 19.750138888888888,
+        "totalEarned": 11326524729.317791,
+        "idleRate": 257600.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 20.000138888888888,
+        "totalEarned": 11566093028.318481,
+        "idleRate": 257600.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 20.250138888888888,
+        "totalEarned": 11808460101.519173,
+        "idleRate": 260592.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 20.500138888888888,
+        "totalEarned": 12050929174.519863,
+        "idleRate": 260992.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 20.750138888888888,
+        "totalEarned": 12293652018.520554,
+        "idleRate": 260992.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 21.000138888888888,
+        "totalEarned": 12534808928.321243,
+        "idleRate": 260992.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 21.250138888888888,
+        "totalEarned": 12778337462.321934,
+        "idleRate": 262432.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 21.500138888888888,
+        "totalEarned": 13022399540.322624,
+        "idleRate": 262432.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 21.750138888888888,
+        "totalEarned": 13263312421.923313,
+        "idleRate": 262432.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 22.000138888888888,
+        "totalEarned": 13509577437.124004,
+        "idleRate": 265304.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 22.250138888888888,
+        "totalEarned": 13757996052.324696,
+        "idleRate": 265424.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 22.500138888888888,
+        "totalEarned": 14006787802.525387,
+        "idleRate": 265824.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 22.750138888888888,
+        "totalEarned": 14254004435.526077,
+        "idleRate": 265824.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 23.000138888888888,
+        "totalEarned": 14496436260.926765,
+        "idleRate": 265824.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 23.250138888888888,
+        "totalEarned": 14743222173.727455,
+        "idleRate": 267264.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 23.500138888888888,
+        "totalEarned": 14991777968.728146,
+        "idleRate": 267264.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 23.750138888888888,
+        "totalEarned": 15235523074.128834,
+        "idleRate": 267264.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 24.000138888888888,
+        "totalEarned": 15482611116.929523,
+        "idleRate": 270064.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 24.250138888888888,
+        "totalEarned": 15732277517.730213,
+        "idleRate": 270256.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 24.500138888888888,
+        "totalEarned": 15982207758.530903,
+        "idleRate": 270656.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 24.750138888888888,
+        "totalEarned": 16237165988.931595,
+        "idleRate": 270656.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 25.000138888888888,
+        "totalEarned": 16488876367.932285,
+        "idleRate": 270656.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 25.250138888888888,
+        "totalEarned": 16742395705.132977,
+        "idleRate": 272096.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 25.500138888888888,
+        "totalEarned": 16997077847.333668,
+        "idleRate": 272096.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 25.750138888888888,
+        "totalEarned": 17250127426.333397,
+        "idleRate": 272096.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 26.000138888888888,
+        "totalEarned": 17501544437.130653,
+        "idleRate": 272096.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 26.250138888888888,
+        "totalEarned": 17757859162.527912,
+        "idleRate": 272096.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 26.500138888888888,
+        "totalEarned": 18013257287.52517,
+        "idleRate": 275088.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 26.750138888888888,
+        "totalEarned": 18270821336.722427,
+        "idleRate": 275488.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 27.000138888888888,
+        "totalEarned": 18530331320.119686,
+        "idleRate": 275488.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 27.250138888888888,
+        "totalEarned": 18786535459.116943,
+        "idleRate": 275488.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 27.500138888888888,
+        "totalEarned": 19042739594.1142,
+        "idleRate": 275488.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 27.750138888888888,
+        "totalEarned": 19299383643.111458,
+        "idleRate": 276928.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 28.000138888888888,
+        "totalEarned": 19560250116.508717,
+        "idleRate": 276928.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 28.250138888888888,
+        "totalEarned": 19821116570.905975,
+        "idleRate": 276928.2,
+        "rankIdx": 8
+      },
+      {
+        "hours": 28.500138888888888,
+        "totalEarned": 20073675239.30323,
+        "idleRate": 276928.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 28.750138888888888,
+        "totalEarned": 20332880133.50049,
+        "idleRate": 276928.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 29.000138888888888,
+        "totalEarned": 20665601743.297745,
+        "idleRate": 371968.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 29.250138888888888,
+        "totalEarned": 21013764106.495003,
+        "idleRate": 371968.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 29.500138888888888,
+        "totalEarned": 21359694640.49226,
+        "idleRate": 371968.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 29.750138888888888,
+        "totalEarned": 21701837770.089516,
+        "idleRate": 374768.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 30.000138888888888,
+        "totalEarned": 22048123718.886772,
+        "idleRate": 374768.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 30.250138888888888,
+        "totalEarned": 22396658233.88403,
+        "idleRate": 374768.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 30.500138888888888,
+        "totalEarned": 22738446977.281284,
+        "idleRate": 374768.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 30.750138888888888,
+        "totalEarned": 23090975591.478542,
+        "idleRate": 381040.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 31.000138888888888,
+        "totalEarned": 23445542980.4758,
+        "idleRate": 381400.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 31.250138888888888,
+        "totalEarned": 23800377064.473057,
+        "idleRate": 381800.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 31.500138888888888,
+        "totalEarned": 24165083550.670315,
+        "idleRate": 410200.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 31.750138888888888,
+        "totalEarned": 24551587839.067574,
+        "idleRate": 411000.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 32.00013888888889,
+        "totalEarned": 24936284106.26483,
+        "idleRate": 411000.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 32.25013888888889,
+        "totalEarned": 25314169220.862087,
+        "idleRate": 411800.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 32.50013888888889,
+        "totalEarned": 25702286324.259346,
+        "idleRate": 412600.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 32.75013888888889,
+        "totalEarned": 26088480220.456604,
+        "idleRate": 412600.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 33.00013888888889,
+        "totalEarned": 26470104932.25386,
+        "idleRate": 413400.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 33.25013888888889,
+        "totalEarned": 26857047623.45112,
+        "idleRate": 413400.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 33.50013888888889,
+        "totalEarned": 27246470706.848377,
+        "idleRate": 413400.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 33.75013888888889,
+        "totalEarned": 27633413388.045635,
+        "idleRate": 413400.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 34.00013888888889,
+        "totalEarned": 28022485474.242893,
+        "idleRate": 416200.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 34.25013888888889,
+        "totalEarned": 28409551763.24015,
+        "idleRate": 416200.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 34.50013888888889,
+        "totalEarned": 28796618067.237408,
+        "idleRate": 416200.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 34.75013888888889,
+        "totalEarned": 29188678754.634666,
+        "idleRate": 416200.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 35.00013888888889,
+        "totalEarned": 29576021539.431923,
+        "idleRate": 428432.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 35.25013888888889,
+        "totalEarned": 29972098690.22918,
+        "idleRate": 428912.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 35.50013888888889,
+        "totalEarned": 30368638570.026436,
+        "idleRate": 429392.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 35.75013888888889,
+        "totalEarned": 30765397079.823692,
+        "idleRate": 429392.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 36.00013888888889,
+        "totalEarned": 31167523888.02095,
+        "idleRate": 430192.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 36.25013888888889,
+        "totalEarned": 31567602757.018208,
+        "idleRate": 430192.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 36.50013888888889,
+        "totalEarned": 31970262769.215466,
+        "idleRate": 430192.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 36.75013888888889,
+        "totalEarned": 32375503896.612724,
+        "idleRate": 430192.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 37.00013888888889,
+        "totalEarned": 32781272843.009983,
+        "idleRate": 432992.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 37.25013888888889,
+        "totalEarned": 33183955702.00724,
+        "idleRate": 432992.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 37.50013888888889,
+        "totalEarned": 33589236495.2045,
+        "idleRate": 432992.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 37.75013888888889,
+        "totalEarned": 33989321401.001755,
+        "idleRate": 432992.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 38.00013888888889,
+        "totalEarned": 34394602199.19901,
+        "idleRate": 432992.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 38.25013888888889,
+        "totalEarned": 34802283473.39625,
+        "idleRate": 435984.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 38.50013888888889,
+        "totalEarned": 35210580428.59348,
+        "idleRate": 436224.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 38.75013888888889,
+        "totalEarned": 35621503699.990715,
+        "idleRate": 436224.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 39.00013888888889,
+        "totalEarned": 36025151391.78796,
+        "idleRate": 437024.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 39.25013888888889,
+        "totalEarned": 36428961860.5852,
+        "idleRate": 437024.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 39.50013888888889,
+        "totalEarned": 36835394479.582436,
+        "idleRate": 437024.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 39.75013888888889,
+        "totalEarned": 37241827098.57967,
+        "idleRate": 437024.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 40.00013888888889,
+        "totalEarned": 37651171648.77691,
+        "idleRate": 439824.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 40.25013888888889,
+        "totalEarned": 38057569317.57415,
+        "idleRate": 439824.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 40.50013888888889,
+        "totalEarned": 38471883803.97138,
+        "idleRate": 439824.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 40.75013888888889,
+        "totalEarned": 38878281491.76862,
+        "idleRate": 439824.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 41.00013888888889,
+        "totalEarned": 39287318115.76586,
+        "idleRate": 439824.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 41.25013888888889,
+        "totalEarned": 39699531086.9631,
+        "idleRate": 442736.2,
+        "rankIdx": 9
+      },
+      {
+        "hours": 41.50013888888889,
+        "totalEarned": 40114035775.16033,
+        "idleRate": 443056.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 41.75013888888889,
+        "totalEarned": 40528736477.35757,
+        "idleRate": 443056.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 42.00013888888889,
+        "totalEarned": 40943437179.5548,
+        "idleRate": 443056.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 42.25013888888889,
+        "totalEarned": 41358661481.75204,
+        "idleRate": 443856.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 42.50013888888889,
+        "totalEarned": 41774110988.94927,
+        "idleRate": 443856.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 42.75013888888889,
+        "totalEarned": 42184234235.74651,
+        "idleRate": 443856.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 43.00013888888889,
+        "totalEarned": 42594357486.543755,
+        "idleRate": 443856.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 43.25013888888889,
+        "totalEarned": 43009806993.74099,
+        "idleRate": 443856.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 43.50013888888889,
+        "totalEarned": 43426375095.938225,
+        "idleRate": 446656.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 43.75013888888889,
+        "totalEarned": 43839085546.735466,
+        "idleRate": 446656.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 44.00013888888889,
+        "totalEarned": 44251795992.53271,
+        "idleRate": 446656.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 44.25013888888889,
+        "totalEarned": 44672546222.92994,
+        "idleRate": 446656.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 44.50013888888889,
+        "totalEarned": 45087936591.92718,
+        "idleRate": 446656.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 44.75013888888889,
+        "totalEarned": 45497967119.52442,
+        "idleRate": 446656.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 45.00013888888889,
+        "totalEarned": 45915685197.52166,
+        "idleRate": 449648.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 45.25013888888889,
+        "totalEarned": 46328610811.118904,
+        "idleRate": 449888.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 45.50013888888889,
+        "totalEarned": 46747006955.11614,
+        "idleRate": 449888.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 45.75013888888889,
+        "totalEarned": 47165403104.11338,
+        "idleRate": 449888.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 46.00013888888889,
+        "totalEarned": 47584429238.11062,
+        "idleRate": 450688.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 46.25013888888889,
+        "totalEarned": 47998161141.70786,
+        "idleRate": 450688.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 46.50013888888889,
+        "totalEarned": 48417301270.7051,
+        "idleRate": 450688.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 46.75013888888889,
+        "totalEarned": 48839145528.902336,
+        "idleRate": 450688.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 47.00013888888889,
+        "totalEarned": 49258285658.899574,
+        "idleRate": 450688.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 47.25013888888889,
+        "totalEarned": 49685538167.4968,
+        "idleRate": 450688.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 47.50013888888889,
+        "totalEarned": 50106967311.49404,
+        "idleRate": 453488.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 47.75013888888889,
+        "totalEarned": 50531432375.69128,
+        "idleRate": 453488.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 48.00013888888889,
+        "totalEarned": 50953176514.688515,
+        "idleRate": 453488.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 48.25013888888889,
+        "totalEarned": 51372199743.485756,
+        "idleRate": 453488.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 48.50013888888889,
+        "totalEarned": 51791222962.283,
+        "idleRate": 453488.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 48.75013888888889,
+        "totalEarned": 52210246186.08024,
+        "idleRate": 453488.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 49.00013888888889,
+        "totalEarned": 52633508981.07748,
+        "idleRate": 456480.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 49.25013888888889,
+        "totalEarned": 53058087885.074715,
+        "idleRate": 456720.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 49.50013888888889,
+        "totalEarned": 53488318393.47195,
+        "idleRate": 456720.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 49.75013888888889,
+        "totalEarned": 53915808599.66918,
+        "idleRate": 456720.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 50.00013888888889,
+        "totalEarned": 54340602903.66642,
+        "idleRate": 457520.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 50.25013888888889,
+        "totalEarned": 54774332128.26365,
+        "idleRate": 457520.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 50.50013888888889,
+        "totalEarned": 55197080925.06089,
+        "idleRate": 457520.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 50.75013888888889,
+        "totalEarned": 55628065052.45812,
+        "idleRate": 457520.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 51.00013888888889,
+        "totalEarned": 56053558946.45536,
+        "idleRate": 457520.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 51.25013888888889,
+        "totalEarned": 56476307714.2526,
+        "idleRate": 457520.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 51.50013888888889,
+        "totalEarned": 56907291837.64983,
+        "idleRate": 457520.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 51.75013888888889,
+        "totalEarned": 57333613136.64707,
+        "idleRate": 460320.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 52.00013888888889,
+        "totalEarned": 57764472937.84431,
+        "idleRate": 460320.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 52.25013888888889,
+        "totalEarned": 58192570841.841545,
+        "idleRate": 460320.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 52.50013888888889,
+        "totalEarned": 58617906823.63879,
+        "idleRate": 460320.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 52.75013888888889,
+        "totalEarned": 59048766629.83602,
+        "idleRate": 460320.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 53.00013888888889,
+        "totalEarned": 59476864514.83326,
+        "idleRate": 460320.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 53.25013888888889,
+        "totalEarned": 59910486247.23049,
+        "idleRate": 460320.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 53.50013888888889,
+        "totalEarned": 60339094087.22773,
+        "idleRate": 463232.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 53.75013888888889,
+        "totalEarned": 60769952439.22497,
+        "idleRate": 463312.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 54.00013888888889,
+        "totalEarned": 61200986863.222206,
+        "idleRate": 463552.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 54.25013888888889,
+        "totalEarned": 61634871826.41944,
+        "idleRate": 463552.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 54.50013888888889,
+        "totalEarned": 62068756770.61668,
+        "idleRate": 463552.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 54.75013888888889,
+        "totalEarned": 62502709357.81391,
+        "idleRate": 464352.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 55.00013888888889,
+        "totalEarned": 62934557022.81115,
+        "idleRate": 464352.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 55.25013888888889,
+        "totalEarned": 63369190795.008385,
+        "idleRate": 464352.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 55.50013888888889,
+        "totalEarned": 63798252349.805626,
+        "idleRate": 464352.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 55.75013888888889,
+        "totalEarned": 64227313914.60287,
+        "idleRate": 464352.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 56.00013888888889,
+        "totalEarned": 64656375460.40011,
+        "idleRate": 464352.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 56.25013888888889,
+        "totalEarned": 65085437015.19735,
+        "idleRate": 464352.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 56.50013888888889,
+        "totalEarned": 65525642980.79458,
+        "idleRate": 464352.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 56.75013888888889,
+        "totalEarned": 65961372938.99181,
+        "idleRate": 467152.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 57.00013888888889,
+        "totalEarned": 66395824583.98905,
+        "idleRate": 467152.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 57.25013888888889,
+        "totalEarned": 66827473343.78629,
+        "idleRate": 467152.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 57.50013888888889,
+        "totalEarned": 67264727896.98353,
+        "idleRate": 467152.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 57.75013888888889,
+        "totalEarned": 67704785369.38076,
+        "idleRate": 467152.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 58.00013888888889,
+        "totalEarned": 68133631205.978004,
+        "idleRate": 467152.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 58.25013888888889,
+        "totalEarned": 68562477056.57525,
+        "idleRate": 467152.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 58.50013888888889,
+        "totalEarned": 68996928715.58118,
+        "idleRate": 467152.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 58.75013888888889,
+        "totalEarned": 69434183273.79214,
+        "idleRate": 467152.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 59.00013888888889,
+        "totalEarned": 69974003232.00311,
+        "idleRate": 637952.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 59.25013888888889,
+        "totalEarned": 70571126595.21408,
+        "idleRate": 637952.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 59.50013888888889,
+        "totalEarned": 71160594550.02505,
+        "idleRate": 637952.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 59.75013888888889,
+        "totalEarned": 71742407106.43604,
+        "idleRate": 637952.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 60.00013888888889,
+        "totalEarned": 72343358173.847,
+        "idleRate": 637952.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 60.25013888888889,
+        "totalEarned": 72940481527.05797,
+        "idleRate": 637952.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 60.50013888888889,
+        "totalEarned": 73539538805.26894,
+        "idleRate": 640832.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 60.75013888888889,
+        "totalEarned": 74139357857.4799,
+        "idleRate": 640832.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 61.00013888888889,
+        "totalEarned": 74739176881.69087,
+        "idleRate": 640832.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 61.25013888888889,
+        "totalEarned": 75331305951.50185,
+        "idleRate": 640832.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 61.50013888888889,
+        "totalEarned": 75923435036.31282,
+        "idleRate": 640832.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 61.75013888888889,
+        "totalEarned": 76515564116.1238,
+        "idleRate": 640832.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 62.00013888888889,
+        "totalEarned": 77111538175.13477,
+        "idleRate": 640832.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 62.25013888888889,
+        "totalEarned": 77713264018.34573,
+        "idleRate": 646432.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 62.50013888888889,
+        "totalEarned": 78310567503.15671,
+        "idleRate": 646432.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 62.75013888888889,
+        "totalEarned": 78903992393.76768,
+        "idleRate": 646432.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 63.00013888888889,
+        "totalEarned": 79509053031.97865,
+        "idleRate": 646432.2,
+        "rankIdx": 10
+      },
+      {
+        "hours": 63.25013888888889,
+        "totalEarned": 80117992254.38962,
+        "idleRate": 646432.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 63.50013888888889,
+        "totalEarned": 80715295739.20059,
+        "idleRate": 646432.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 63.75013888888889,
+        "totalEarned": 81308720634.81157,
+        "idleRate": 646432.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 64.00013888888888,
+        "totalEarned": 81919346092.22253,
+        "idleRate": 649312.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 64.25013888888888,
+        "totalEarned": 82519310687.03351,
+        "idleRate": 649312.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 64.50013888888888,
+        "totalEarned": 83123171127.04448,
+        "idleRate": 649312.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 64.75013888888888,
+        "totalEarned": 83730927450.25545,
+        "idleRate": 649312.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 65.00013888888888,
+        "totalEarned": 84338683773.46642,
+        "idleRate": 649312.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 65.25013888888888,
+        "totalEarned": 84938648368.27739,
+        "idleRate": 649312.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 65.50013888888888,
+        "totalEarned": 85546404682.48836,
+        "idleRate": 649312.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 65.75013888888888,
+        "totalEarned": 86150265160.49933,
+        "idleRate": 649312.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 66.00013888888888,
+        "totalEarned": 86763476942.9103,
+        "idleRate": 654912.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 66.25013888888888,
+        "totalEarned": 87380404330.32126,
+        "idleRate": 654912.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 66.50013888888888,
+        "totalEarned": 87997331721.73222,
+        "idleRate": 654912.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 66.75013888888888,
+        "totalEarned": 88610329644.94319,
+        "idleRate": 654912.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 67.00013888888888,
+        "totalEarned": 89211539199.55417,
+        "idleRate": 654912.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 67.25013888888888,
+        "totalEarned": 89816678194.36514,
+        "idleRate": 654912.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 67.50013888888888,
+        "totalEarned": 90425746643.37611,
+        "idleRate": 654912.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 67.75013888888888,
+        "totalEarned": 91034815093.38708,
+        "idleRate": 654912.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 68.00013888888888,
+        "totalEarned": 91645687881.39806,
+        "idleRate": 657792.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 68.25013888888888,
+        "totalEarned": 92257434745.40903,
+        "idleRate": 657792.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 68.50013888888888,
+        "totalEarned": 92869181594.42,
+        "idleRate": 657792.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 68.75013888888888,
+        "totalEarned": 93488821946.83096,
+        "idleRate": 657792.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 69.00013888888888,
+        "totalEarned": 94100568800.84193,
+        "idleRate": 657792.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 69.25013888888888,
+        "totalEarned": 94716262389.0529,
+        "idleRate": 657792.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 69.50013888888888,
+        "totalEarned": 95324062513.86388,
+        "idleRate": 657792.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 69.75013888888888,
+        "totalEarned": 95943702841.27484,
+        "idleRate": 657792.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 70.00013888888888,
+        "totalEarned": 96555449700.28581,
+        "idleRate": 657792.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 70.25013888888888,
+        "totalEarned": 97164372620.09679,
+        "idleRate": 663392.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 70.50013888888888,
+        "totalEarned": 97781327489.10776,
+        "idleRate": 663392.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 70.75013888888888,
+        "totalEarned": 98402262687.31873,
+        "idleRate": 663392.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 71.00013888888888,
+        "totalEarned": 99023197885.5297,
+        "idleRate": 663392.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 71.25013888888888,
+        "totalEarned": 99632192052.14067,
+        "idleRate": 663392.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 71.50013888888888,
+        "totalEarned": 100249146911.15164,
+        "idleRate": 663392.2,
+        "rankIdx": 11
+      },
+      {
+        "hours": 71.75013888888888,
+        "totalEarned": 100866101784.16261,
+        "idleRate": 663392.2,
+        "rankIdx": 11
+      }
+    ],
+    "totalClicks": 0,
+    "clickDebt": 0
+  },
+  "ms": 2125
+}
