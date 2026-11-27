@@ -498,7 +498,7 @@ await runChrome(
       else if (S.questDoneAt === null && !(FLOW && S.injected)) {
         const savingForRecruit = /招募第一位同事/.test(qt);
         const bal = numOf(s.hud.moyu);
-        const stopBuy = savingForRecruit && bal >= 8000;
+        const stopBuy = savingForRecruit || (FLOW && S.injected);
         const enabled = (s.shop || []).filter((c) => !c.disabled);
         if (enabled.length && !stopBuy && p - (S.lastBuy || 0) > 650) {
           const target = enabled.slice().sort((a, b) => numOf(a.cost) - numOf(b.cost))[0];
@@ -541,6 +541,7 @@ await runChrome(
       nav: await ev("(() => { const n = performance.getEntriesByType('navigation')[0]; const p = performance.getEntriesByType('paint'); return { ttfb: n ? Math.round(n.responseStart) : null, dcl: n ? Math.round(n.domContentLoadedEventEnd) : null, load: n ? Math.round(n.loadEventEnd) : null, paints: p.map(function (x) { return { name: x.name, t: Math.round(x.startTime) }; }) }; })()"),
       fps: await ev("(() => { const t = performance.now(); return { frames: window.__frames, elapsed: Math.round(t), avgFps: +(window.__frames / (t / 1000)).toFixed(1) }; })()"),
       saveRaw: await ev("localStorage.getItem('moyu-save')"),
+      aboutVersion: await ev("(document.getElementById('about-version') || {}).textContent || ''"),
       errors: (c.errors || []).slice(0, 8),
     };
     await drain();

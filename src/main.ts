@@ -879,14 +879,14 @@ async function boot(): Promise<void> {
         }
       }
       // 成就解锁提示（收集党需要"解锁瞬间"的反馈）
+      // 首次运行（doneAch 为空）只做静默填充，避免"刷新就对已完成的成就误报解锁"
+      const silentInit = doneAch.size === 0;
       for (const a of ACHIEVEMENTS) {
-        if (!doneAch.has(a.id) && achDone(a, state)) {
-          doneAch.add(a.id);
-          // 首次填充时不刷屏（启动时把已完成的先记下）
-          if (doneAch.size > 1 || state.totalClicks > 0) {
-            showToast(`🏆 成就解锁：${a.name}`);
-            announce(`成就解锁：${a.name}`, 1);
-          }
+        if (doneAch.has(a.id) || !achDone(a, state)) continue;
+        doneAch.add(a.id);
+        if (!silentInit) {
+          showToast(`🏆 成就解锁：${a.name}`);
+          announce(`成就解锁：${a.name}`, 1);
         }
       }
       // 成就用：记录历史最高挂机/秒 & 段位

@@ -1,0 +1,4548 @@
+{
+  "startedAt": "2026-11-27T14:18:50.549Z",
+  "url": "https://luojindui.github.io/moyu/",
+  "version": "v0.6.3",
+  "expected": {
+    "A": {
+      "clickHud": "3841",
+      "idleHud": "220.2",
+      "achSummary": "3/22 · Lv.1"
+    },
+    "B": {
+      "clickBefore": "3841",
+      "clickAfterSingle": "3917.8",
+      "clickAfterOldDoubleIfRegression": "3996.2",
+      "idleBefore": "220.2",
+      "idleAfterLevelReward": "224.6",
+      "achSummaryAfter": "4/22 · Lv.2"
+    },
+    "C": {
+      "idleHud": "1831.1",
+      "achSummary": "4/22 · Lv.2"
+    },
+    "D": {
+      "idleHud": "229.1",
+      "achSummary": "4/22 · Lv.2"
+    },
+    "E": {
+      "achSummary": "22/22 · Lv.6",
+      "rank14": "14/14",
+      "talent18": "13/13",
+      "decorOfflineText": "离线收益 ×1.62"
+    },
+    "F": {
+      "achSummary": "5/22 · Lv.2"
+    },
+    "bars": {
+      "trackH": 5,
+      "trackW": 207,
+      "fillsVisibleOnFresh": 0,
+      "fillsVisibleOnMid": 15,
+      "allVisibleOnMax": 22
+    }
+  },
+  "errors": [],
+  "steps": [
+    {
+      "t": 2.9,
+      "s": "navigate prod fresh profile"
+    },
+    {
+      "t": 13.3,
+      "s": "seed A control"
+    },
+    {
+      "t": 16.5,
+      "s": "seed B totalClicks=999"
+    },
+    {
+      "t": 21,
+      "s": "reload to verify persistence of click_1k"
+    },
+    {
+      "t": 24,
+      "s": "seed C phone80 → idle_1k auto"
+    },
+    {
+      "t": 27.7,
+      "s": "seed D rankIndex=7 → rank_7"
+    },
+    {
+      "t": 30.9,
+      "s": "seed E maxed-out state"
+    },
+    {
+      "t": 38.1,
+      "s": "mobile 390x844 wall layout"
+    },
+    {
+      "t": 42.8,
+      "s": "seed F mid-progress state"
+    }
+  ],
+  "fresh": {
+    "booted": true,
+    "title": "摸鱼工位",
+    "hasDebugHook": "undefined",
+    "hud0": {
+      "moyu": "0.8",
+      "click": "1",
+      "idle": "0.2",
+      "rank": "实习生 0%",
+      "rankTitle": "摸鱼实习生 → 摸鱼学徒",
+      "quest": {
+        "hidden": false,
+        "text": "再戳 15 下 → 解锁「咖啡续命」",
+        "bar": "5%"
+      },
+      "journalBtn": {
+        "cls": "",
+        "title": "日报与图鉴"
+      },
+      "debugHook": "undefined"
+    },
+    "storage": {
+      "save": {
+        "v": 2,
+        "moyu": 0,
+        "totalEarned": 0,
+        "levels": {},
+        "savedAt": 1795789134902,
+        "createdAt": 1795789134901,
+        "collected": {
+          "quotes": [],
+          "flavors": []
+        },
+        "daily": {
+          "date": "2026-11-27",
+          "goals": [
+            {
+              "id": "visit_1",
+              "target": 1,
+              "progress": 1,
+              "done": true
+            },
+            {
+              "id": "idle_earn",
+              "target": 1,
+              "progress": 0,
+              "done": false
+            },
+            {
+              "id": "survive_2",
+              "target": 1,
+              "progress": 0,
+              "done": false
+            }
+          ],
+          "streak": 0,
+          "lastCompleteDate": null,
+          "claimed": false,
+          "window": 3,
+          "claimsToday": 0
+        },
+        "surviveStreak": 0,
+        "patrolSurvives": 0,
+        "cards": {
+          "date": "2026-11-27",
+          "offers": [
+            "deadline",
+            "overtime",
+            "team_bond"
+          ],
+          "chosen": null,
+          "until": 0,
+          "nextDayGuaranteed": null,
+          "dismissed": false,
+          "chosenDate": ""
+        },
+        "decor": [],
+        "energy": {
+          "date": "2026-11-27",
+          "left": 100,
+          "used": [],
+          "boosted": {
+            "idleMult": 1,
+            "patrolRewardMult": 1,
+            "clickMult": 1
+          }
+        },
+        "arcade": {
+          "date": "2026-11-27",
+          "played": 0,
+          "best": {}
+        },
+        "bestIdleRate": 0,
+        "rankIndex": 0,
+        "cardsChosenTotal": 0,
+        "bestSurviveStreak": 0,
+        "totalClicks": 0,
+        "visits": {
+          "date": "2026-11-27",
+          "count": 1
+        },
+        "lifetimeEarned": 0,
+        "prestige": 0,
+        "team": {
+          "colleagues": {}
+        },
+        "talents": {
+          "unlocked": [],
+          "points": 1,
+          "rankGranted": -1,
+          "dailyGiftDate": "2026-11-27",
+          "overflow": 0
+        }
+      },
+      "records": null
+    },
+    "journal": {
+      "version": "v0.6.3 · 2026-11-27",
+      "notes": "修复：成就进度条可见（之前渲染成 0 高）、成就解锁弹 🏆 提示、工位面板离线收益文案、点击加成不再重复计入、成就挂机加成离线足额；改进：首位同事新人价 1,500（新手目标链 2-3 分钟可走完）；新手期开屏改为教点击，不再推销天赋系统；修复：家具离线加成改为独立倍率（不再被 95% 上限吃掉变成 0 收益）；修复：2 条永不可达的成就（天赋 13 / 段位 14）；老板成就改用历史最高连胜；成就等级现在也给加成",
+      "today": "今日工位梗：摸了一条鱼",
+      "journalTotal": "0/55",
+      "quote": "0/10",
+      "flavor": "0/45",
+      "statsRank": "摸鱼实习生",
+      "stats": [
+        "生涯总收入1.0",
+        "本局 / 往期1.0 / 0",
+        "当前余额1.0",
+        "累计投入0",
+        "点击力 / 挂机1 / 0.2每秒",
+        "累计点击0",
+        "今日回访1/3（离线效率 95%）",
+        "连续日报0 天",
+        "图鉴0/55",
+        "转生0 点（×1.00）",
+        "纪录·最佳单日0",
+        "纪录·最长连签0 天",
+        "纪录·最多点击0"
+      ],
+      "grid": {
+        "total": 55,
+        "on": 0,
+        "firstOffLabel": "???"
+      },
+      "achSummary": "0/22 · Lv.1",
+      "panelScroll": {
+        "scrollH": 3305,
+        "clientH": 648,
+        "scrollW": 332,
+        "clientW": 332
+      }
+    },
+    "wall": {
+      "summary": "0/22 · Lv.1",
+      "count": 22,
+      "cats": [
+        {
+          "text": "点击 0/3",
+          "done": false
+        },
+        {
+          "text": "挂机 0/2",
+          "done": false
+        },
+        {
+          "text": "图鉴 0/3",
+          "done": false
+        },
+        {
+          "text": "工位 0/2",
+          "done": false
+        },
+        {
+          "text": "小队 0/3",
+          "done": false
+        },
+        {
+          "text": "天赋 0/2",
+          "done": false
+        },
+        {
+          "text": "段位 0/2",
+          "done": false
+        },
+        {
+          "text": "摸鱼站 0/2",
+          "done": false
+        },
+        {
+          "text": "摸鱼卡 0/1",
+          "done": false
+        },
+        {
+          "text": "老板 0/2",
+          "done": false
+        }
+      ],
+      "doneNames": [],
+      "barsRendered": 22,
+      "fillsRendered": 2,
+      "items": [
+        {
+          "name": "手速入门",
+          "desc": "累计点击 1,000 次",
+          "count": "0/1000",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 207.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "键盘杀手",
+          "desc": "累计点击 10,000 次",
+          "count": "0/10000",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 200.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "鼠标终结者",
+          "desc": "累计点击 100,000 次",
+          "count": "0/100000",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 193.5,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "躺平起步",
+          "desc": "挂机收益达到 1,000/秒",
+          "count": "0/1000",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 207.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "摸鱼自由",
+          "desc": "挂机收益达到 100万/秒",
+          "count": "0/1000000",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 186.5,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "收集癖",
+          "desc": "解锁 20 格图鉴",
+          "count": "0/20",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 219.9,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "博物学家",
+          "desc": "解锁 40 格图鉴",
+          "count": "0/40",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 219.7,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "全图鉴",
+          "desc": "解锁全部 55 格图鉴",
+          "count": "0/55",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 219.9,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "开始装修",
+          "desc": "装修 3 件工位家具",
+          "count": "0/3",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.6,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "工位大户",
+          "desc": "集齐 8 件工位家具",
+          "count": "0/8",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.5,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "第一个同事",
+          "desc": "招募 1 位同事",
+          "count": "0/1",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 228.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "满编小队",
+          "desc": "招募全部 5 位同事",
+          "count": "0/5",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.7,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "资深团队",
+          "desc": "任一同事升到 5 级",
+          "count": "0/5",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.7,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "初窥门径",
+          "desc": "解锁 6 个天赋",
+          "count": "0/6",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.5,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "天赋满树",
+          "desc": "解锁 13 个天赋（24 点数可达上限）",
+          "count": "0/13",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 221.5,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "中层摸鱼",
+          "desc": "达到第 7 段位",
+          "count": "1/7",
+          "bar": "14.3%",
+          "done": false,
+          "track": {
+            "w": 229.1,
+            "h": 5
+          },
+          "fill": {
+            "w": 32.8,
+            "h": 5
+          }
+        },
+        {
+          "name": "宇宙尽头",
+          "desc": "达到第 14 段位（最高档）",
+          "count": "1/14",
+          "bar": "7.1%",
+          "done": false,
+          "track": {
+            "w": 223.1,
+            "h": 5
+          },
+          "fill": {
+            "w": 15.8,
+            "h": 5
+          }
+        },
+        {
+          "name": "街机新手",
+          "desc": "任一游戏最高分 500",
+          "count": "0/500",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 212.7,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "街机高手",
+          "desc": "任一游戏最高分 2,000",
+          "count": "0/2000",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 205.9,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "今日宜摸鱼",
+          "desc": "累计选卡 5 次",
+          "count": "0/5",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.7,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "老油条",
+          "desc": "巡逻连胜 3 次",
+          "count": "0/3",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.6,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "摸鱼之王",
+          "desc": "巡逻连胜 10 次",
+          "count": "0/10",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 221.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        }
+      ]
+    },
+    "wallCount": 22,
+    "teamColleagues": {
+      "teamSummary": "\n      已招募 0/5 · 小队挂机 +0/秒\n      \n      自动重复：完成后自动领取并续班（离线回来最多补 1 轮）\n    ",
+      "tabs": [
+        {
+          "text": "同事",
+          "active": true
+        },
+        {
+          "text": "天赋",
+          "active": false
+        },
+        {
+          "text": "工位",
+          "active": false
+        }
+      ],
+      "mates": [
+        {
+          "name": "老周",
+          "favorWidth": "",
+          "locked": true
+        }
+      ],
+      "talents": [],
+      "decorSummary": "\n      已招募 0/5 · 小队挂机 +0/秒\n      \n      自动重复：完成后自动领取并续班（离线回来最多补 1 轮）\n    ",
+      "teamHint": "\n        还没有同事。戳屏幕攒够 1.20万 就能招募第一位「老周」，\n        他会帮你自动赚，还能派出去做任务。\n        当前余额：1.3\n      ",
+      "bodyLen": 881
+    },
+    "teamTalents": {
+      "teamSummary": null,
+      "tabs": [
+        {
+          "text": "同事",
+          "active": false
+        },
+        {
+          "text": "天赋",
+          "active": true
+        },
+        {
+          "text": "工位",
+          "active": false
+        }
+      ],
+      "mates": [],
+      "talents": [
+        {
+          "name": "手速",
+          "on": false
+        },
+        {
+          "name": "连击窗口",
+          "on": false
+        },
+        {
+          "name": "连击上限（2点）",
+          "on": false
+        },
+        {
+          "name": "暴击（2点）",
+          "on": false
+        },
+        {
+          "name": "摸鱼转正（终极·3点）",
+          "on": false
+        },
+        {
+          "name": "指尖风暴（终极·3点）",
+          "on": false
+        }
+      ],
+      "decorSummary": null,
+      "teamHint": "挂机流 · 稳如老狗：攒到 3 点后展开",
+      "bodyLen": 2765
+    },
+    "teamDecor": {
+      "teamSummary": "\n      已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线收益 ×1.00\n    ",
+      "tabs": [
+        {
+          "text": "同事",
+          "active": false
+        },
+        {
+          "text": "天赋",
+          "active": false
+        },
+        {
+          "text": "工位",
+          "active": true
+        }
+      ],
+      "mates": [],
+      "talents": [
+        {
+          "name": "认真摸鱼",
+          "on": false
+        },
+        {
+          "name": "假装工作",
+          "on": false
+        },
+        {
+          "name": "跟同事聊天",
+          "on": false
+        },
+        {
+          "name": "专注点击",
+          "on": false
+        },
+        {
+          "name": "绿萝",
+          "on": false
+        },
+        {
+          "name": "护眼台灯",
+          "on": false
+        },
+        {
+          "name": "毛绒地毯",
+          "on": false
+        },
+        {
+          "name": "迷你冰箱",
+          "on": false
+        },
+        {
+          "name": "按摩椅",
+          "on": false
+        },
+        {
+          "name": "鱼缸",
+          "on": false
+        },
+        {
+          "name": "投影仪",
+          "on": false
+        },
+        {
+          "name": "工位猫窝",
+          "on": false
+        }
+      ],
+      "decorSummary": "\n      已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线收益 ×1.00\n    ",
+      "teamHint": null,
+      "bodyLen": 5931
+    },
+    "arcade": {
+      "text": "接咖啡 最高 0 咖啡掉下来时点住它——掉地上就没了 满分 ≈ 25 秒挂机收益（新号保底 30） 开始（30 秒） 找老板 最高 0 在一堆同事脸里找出王总，越快越好 满分 ≈ 25 秒挂机收益（新号保底 30） 开始（30 秒内无限轮） 节奏点击 最高 0 跟着节拍点屏幕，越准分越高 满分 ≈ 25 秒挂机收益（新号保底 30） 开始（30 秒）",
+      "cardCount": 6
+    }
+  },
+  "today": "2026-11-27",
+  "A": {
+    "hud": {
+      "moyu": "407.5",
+      "click": "3841",
+      "idle": "220.2",
+      "rank": "实习生 4%",
+      "rankTitle": "摸鱼实习生 → 摸鱼学徒",
+      "quest": {
+        "hidden": false,
+        "text": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "bar": "0%"
+      },
+      "journalBtn": {
+        "cls": "",
+        "title": "日报与图鉴"
+      },
+      "debugHook": "undefined"
+    },
+    "log": {
+      "toasts": [
+        {
+          "at": 165,
+          "text": "🏆 成就解锁：全图鉴"
+        }
+      ],
+      "announces": [
+        {
+          "at": 165,
+          "text": "成就解锁：全图鉴"
+        }
+      ]
+    },
+    "journal": {
+      "version": "v0.6.3 · 2026-11-27",
+      "notes": "修复：成就进度条可见（之前渲染成 0 高）、成就解锁弹 🏆 提示、工位面板离线收益文案、点击加成不再重复计入、成就挂机加成离线足额；改进：首位同事新人价 1,500（新手目标链 2-3 分钟可走完）；新手期开屏改为教点击，不再推销天赋系统；修复：家具离线加成改为独立倍率（不再被 95% 上限吃掉变成 0 收益）；修复：2 条永不可达的成就（天赋 13 / 段位 14）；老板成就改用历史最高连胜；成就等级现在也给加成",
+      "today": "今日工位梗：摸了一条鱼",
+      "journalTotal": "55/55",
+      "quote": "10/10",
+      "flavor": "45/45",
+      "statsRank": "摸鱼实习生",
+      "stats": [
+        "生涯总收入543.4",
+        "本局 / 往期543.4 / 0",
+        "当前余额543.4",
+        "累计投入1.18亿",
+        "点击力 / 挂机3841 / 220.2每秒",
+        "累计点击0",
+        "今日回访1/3（离线效率 95%）",
+        "连续日报0 天",
+        "图鉴55/55",
+        "转生0 点（×1.00）",
+        "纪录·最佳单日0",
+        "纪录·最长连签0 天",
+        "纪录·最多点击0"
+      ],
+      "grid": {
+        "total": 55,
+        "on": 55,
+        "firstOffLabel": null
+      },
+      "achSummary": "3/22 · Lv.1",
+      "panelScroll": {
+        "scrollH": 3305,
+        "clientH": 648,
+        "scrollW": 332,
+        "clientW": 332
+      }
+    },
+    "wall": {
+      "summary": "3/22 · Lv.1",
+      "count": 22,
+      "cats": [
+        {
+          "text": "点击 0/3",
+          "done": false
+        },
+        {
+          "text": "挂机 0/2",
+          "done": false
+        },
+        {
+          "text": "图鉴 3/3",
+          "done": true
+        },
+        {
+          "text": "工位 0/2",
+          "done": false
+        },
+        {
+          "text": "小队 0/3",
+          "done": false
+        },
+        {
+          "text": "天赋 0/2",
+          "done": false
+        },
+        {
+          "text": "段位 0/2",
+          "done": false
+        },
+        {
+          "text": "摸鱼站 0/2",
+          "done": false
+        },
+        {
+          "text": "摸鱼卡 0/1",
+          "done": false
+        },
+        {
+          "text": "老板 0/2",
+          "done": false
+        }
+      ],
+      "doneNames": [
+        "收集癖",
+        "博物学家",
+        "全图鉴"
+      ],
+      "barsRendered": 22,
+      "fillsRendered": 6,
+      "items": [
+        {
+          "name": "手速入门",
+          "desc": "累计点击 1,000 次",
+          "count": "0/1000",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 207.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "键盘杀手",
+          "desc": "累计点击 10,000 次",
+          "count": "0/10000",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 200.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "鼠标终结者",
+          "desc": "累计点击 100,000 次",
+          "count": "0/100000",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 193.5,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "躺平起步",
+          "desc": "挂机收益达到 1,000/秒",
+          "count": "220/1000",
+          "bar": "22%",
+          "done": false,
+          "track": {
+            "w": 194,
+            "h": 5
+          },
+          "fill": {
+            "w": 42.7,
+            "h": 5
+          }
+        },
+        {
+          "name": "摸鱼自由",
+          "desc": "挂机收益达到 100万/秒",
+          "count": "220/1000000",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 173,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "收集癖",
+          "desc": "解锁 20 格图鉴",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "博物学家",
+          "desc": "解锁 40 格图鉴",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "全图鉴",
+          "desc": "解锁全部 55 格图鉴",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "开始装修",
+          "desc": "装修 3 件工位家具",
+          "count": "0/3",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.6,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "工位大户",
+          "desc": "集齐 8 件工位家具",
+          "count": "0/8",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.5,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "第一个同事",
+          "desc": "招募 1 位同事",
+          "count": "0/1",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 228.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "满编小队",
+          "desc": "招募全部 5 位同事",
+          "count": "0/5",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.7,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "资深团队",
+          "desc": "任一同事升到 5 级",
+          "count": "0/5",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.7,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "初窥门径",
+          "desc": "解锁 6 个天赋",
+          "count": "0/6",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.5,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "天赋满树",
+          "desc": "解锁 13 个天赋（24 点数可达上限）",
+          "count": "0/13",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 221.5,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "中层摸鱼",
+          "desc": "达到第 7 段位",
+          "count": "1/7",
+          "bar": "14.3%",
+          "done": false,
+          "track": {
+            "w": 229.1,
+            "h": 5
+          },
+          "fill": {
+            "w": 32.8,
+            "h": 5
+          }
+        },
+        {
+          "name": "宇宙尽头",
+          "desc": "达到第 14 段位（最高档）",
+          "count": "1/14",
+          "bar": "7.1%",
+          "done": false,
+          "track": {
+            "w": 223.1,
+            "h": 5
+          },
+          "fill": {
+            "w": 15.8,
+            "h": 5
+          }
+        },
+        {
+          "name": "街机新手",
+          "desc": "任一游戏最高分 500",
+          "count": "0/500",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 212.7,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "街机高手",
+          "desc": "任一游戏最高分 2,000",
+          "count": "0/2000",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 205.9,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "今日宜摸鱼",
+          "desc": "累计选卡 5 次",
+          "count": "0/5",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.7,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "老油条",
+          "desc": "巡逻连胜 3 次",
+          "count": "0/3",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.6,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "摸鱼之王",
+          "desc": "巡逻连胜 10 次",
+          "count": "0/10",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 221.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        }
+      ]
+    }
+  },
+  "B": {
+    "before": {
+      "hud": {
+        "moyu": "429.5",
+        "click": "3841",
+        "idle": "220.2",
+        "rank": "实习生 4%",
+        "rankTitle": "摸鱼实习生 → 摸鱼学徒",
+        "quest": {
+          "hidden": false,
+          "text": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+          "bar": "0%"
+        },
+        "journalBtn": {
+          "cls": "",
+          "title": "日报与图鉴"
+        },
+        "debugHook": "undefined"
+      },
+      "log": {
+        "toasts": [
+          {
+            "at": 168,
+            "text": "🏆 成就解锁：全图鉴"
+          }
+        ],
+        "announces": [
+          {
+            "at": 168,
+            "text": "成就解锁：全图鉴"
+          }
+        ]
+      },
+      "wall": {
+        "summary": "3/22 · Lv.1",
+        "count": 22,
+        "cats": [
+          {
+            "text": "点击 0/3",
+            "done": false
+          },
+          {
+            "text": "挂机 0/2",
+            "done": false
+          },
+          {
+            "text": "图鉴 3/3",
+            "done": true
+          },
+          {
+            "text": "工位 0/2",
+            "done": false
+          },
+          {
+            "text": "小队 0/3",
+            "done": false
+          },
+          {
+            "text": "天赋 0/2",
+            "done": false
+          },
+          {
+            "text": "段位 0/2",
+            "done": false
+          },
+          {
+            "text": "摸鱼站 0/2",
+            "done": false
+          },
+          {
+            "text": "摸鱼卡 0/1",
+            "done": false
+          },
+          {
+            "text": "老板 0/2",
+            "done": false
+          }
+        ],
+        "doneNames": [
+          "收集癖",
+          "博物学家",
+          "全图鉴"
+        ],
+        "barsRendered": 22,
+        "fillsRendered": 9,
+        "items": [
+          {
+            "name": "手速入门",
+            "desc": "累计点击 1,000 次",
+            "count": "999/1000",
+            "bar": "99.9%",
+            "done": false,
+            "track": {
+              "w": 193.2,
+              "h": 5
+            },
+            "fill": {
+              "w": 193,
+              "h": 5
+            }
+          },
+          {
+            "name": "键盘杀手",
+            "desc": "累计点击 10,000 次",
+            "count": "999/10000",
+            "bar": "10%",
+            "done": false,
+            "track": {
+              "w": 186.2,
+              "h": 5
+            },
+            "fill": {
+              "w": 18.6,
+              "h": 5
+            }
+          },
+          {
+            "name": "鼠标终结者",
+            "desc": "累计点击 100,000 次",
+            "count": "999/100000",
+            "bar": "1%",
+            "done": false,
+            "track": {
+              "w": 179.2,
+              "h": 5
+            },
+            "fill": {
+              "w": 1.8,
+              "h": 5
+            }
+          },
+          {
+            "name": "躺平起步",
+            "desc": "挂机收益达到 1,000/秒",
+            "count": "220/1000",
+            "bar": "22%",
+            "done": false,
+            "track": {
+              "w": 194,
+              "h": 5
+            },
+            "fill": {
+              "w": 42.7,
+              "h": 5
+            }
+          },
+          {
+            "name": "摸鱼自由",
+            "desc": "挂机收益达到 100万/秒",
+            "count": "220/1000000",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 173,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "收集癖",
+            "desc": "解锁 20 格图鉴",
+            "count": "✓",
+            "bar": "100%",
+            "done": true,
+            "track": {
+              "w": 234.4,
+              "h": 5
+            },
+            "fill": {
+              "w": 234.4,
+              "h": 5
+            }
+          },
+          {
+            "name": "博物学家",
+            "desc": "解锁 40 格图鉴",
+            "count": "✓",
+            "bar": "100%",
+            "done": true,
+            "track": {
+              "w": 234.4,
+              "h": 5
+            },
+            "fill": {
+              "w": 234.4,
+              "h": 5
+            }
+          },
+          {
+            "name": "全图鉴",
+            "desc": "解锁全部 55 格图鉴",
+            "count": "✓",
+            "bar": "100%",
+            "done": true,
+            "track": {
+              "w": 234.4,
+              "h": 5
+            },
+            "fill": {
+              "w": 234.4,
+              "h": 5
+            }
+          },
+          {
+            "name": "开始装修",
+            "desc": "装修 3 件工位家具",
+            "count": "0/3",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.6,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "工位大户",
+            "desc": "集齐 8 件工位家具",
+            "count": "0/8",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.5,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "第一个同事",
+            "desc": "招募 1 位同事",
+            "count": "0/1",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 228.4,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "满编小队",
+            "desc": "招募全部 5 位同事",
+            "count": "0/5",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.7,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "资深团队",
+            "desc": "任一同事升到 5 级",
+            "count": "0/5",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.7,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "初窥门径",
+            "desc": "解锁 6 个天赋",
+            "count": "0/6",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.5,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "天赋满树",
+            "desc": "解锁 13 个天赋（24 点数可达上限）",
+            "count": "0/13",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 221.5,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "中层摸鱼",
+            "desc": "达到第 7 段位",
+            "count": "1/7",
+            "bar": "14.3%",
+            "done": false,
+            "track": {
+              "w": 229.1,
+              "h": 5
+            },
+            "fill": {
+              "w": 32.8,
+              "h": 5
+            }
+          },
+          {
+            "name": "宇宙尽头",
+            "desc": "达到第 14 段位（最高档）",
+            "count": "1/14",
+            "bar": "7.1%",
+            "done": false,
+            "track": {
+              "w": 223.1,
+              "h": 5
+            },
+            "fill": {
+              "w": 15.8,
+              "h": 5
+            }
+          },
+          {
+            "name": "街机新手",
+            "desc": "任一游戏最高分 500",
+            "count": "0/500",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 212.7,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "街机高手",
+            "desc": "任一游戏最高分 2,000",
+            "count": "0/2000",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 205.9,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "今日宜摸鱼",
+            "desc": "累计选卡 5 次",
+            "count": "0/5",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.7,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "老油条",
+            "desc": "巡逻连胜 3 次",
+            "count": "0/3",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.6,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "摸鱼之王",
+            "desc": "巡逻连胜 10 次",
+            "count": "0/10",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 221.4,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          }
+        ]
+      }
+    },
+    "after": {
+      "hud": {
+        "moyu": "4721.9",
+        "click": "3917.8",
+        "idle": "224.6",
+        "rank": "实习生 47%",
+        "rankTitle": "摸鱼实习生 → 摸鱼学徒",
+        "quest": {
+          "hidden": false,
+          "text": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+          "bar": "4%"
+        },
+        "journalBtn": {
+          "cls": "",
+          "title": "日报与图鉴"
+        },
+        "debugHook": "undefined"
+      },
+      "log": {
+        "toasts": [
+          {
+            "at": 168,
+            "text": "🏆 成就解锁：全图鉴"
+          },
+          {
+            "at": 3240,
+            "text": "🏆 成就解锁：手速入门"
+          }
+        ],
+        "announces": [
+          {
+            "at": 168,
+            "text": "成就解锁：全图鉴"
+          },
+          {
+            "at": 3240,
+            "text": "成就解锁：手速入门"
+          }
+        ]
+      },
+      "tapAt": {
+        "x": 640,
+        "y": 376
+      },
+      "wall": {
+        "summary": "4/22 · Lv.2",
+        "count": 22,
+        "cats": [
+          {
+            "text": "点击 1/3",
+            "done": false
+          },
+          {
+            "text": "挂机 0/2",
+            "done": false
+          },
+          {
+            "text": "图鉴 3/3",
+            "done": true
+          },
+          {
+            "text": "工位 0/2",
+            "done": false
+          },
+          {
+            "text": "小队 0/3",
+            "done": false
+          },
+          {
+            "text": "天赋 0/2",
+            "done": false
+          },
+          {
+            "text": "段位 0/2",
+            "done": false
+          },
+          {
+            "text": "摸鱼站 0/2",
+            "done": false
+          },
+          {
+            "text": "摸鱼卡 0/1",
+            "done": false
+          },
+          {
+            "text": "老板 0/2",
+            "done": false
+          }
+        ],
+        "doneNames": [
+          "手速入门",
+          "收集癖",
+          "博物学家",
+          "全图鉴"
+        ],
+        "barsRendered": 22,
+        "fillsRendered": 9,
+        "items": [
+          {
+            "name": "手速入门",
+            "desc": "累计点击 1,000 次",
+            "count": "✓",
+            "bar": "100%",
+            "done": true,
+            "track": {
+              "w": 234.4,
+              "h": 5
+            },
+            "fill": {
+              "w": 234.4,
+              "h": 5
+            }
+          },
+          {
+            "name": "键盘杀手",
+            "desc": "累计点击 10,000 次",
+            "count": "1000/10000",
+            "bar": "10%",
+            "done": false,
+            "track": {
+              "w": 181.3,
+              "h": 5
+            },
+            "fill": {
+              "w": 18.1,
+              "h": 5
+            }
+          },
+          {
+            "name": "鼠标终结者",
+            "desc": "累计点击 100,000 次",
+            "count": "1000/100000",
+            "bar": "1%",
+            "done": false,
+            "track": {
+              "w": 174.3,
+              "h": 5
+            },
+            "fill": {
+              "w": 1.7,
+              "h": 5
+            }
+          },
+          {
+            "name": "躺平起步",
+            "desc": "挂机收益达到 1,000/秒",
+            "count": "224/1000",
+            "bar": "22.5%",
+            "done": false,
+            "track": {
+              "w": 194,
+              "h": 5
+            },
+            "fill": {
+              "w": 43.7,
+              "h": 5
+            }
+          },
+          {
+            "name": "摸鱼自由",
+            "desc": "挂机收益达到 100万/秒",
+            "count": "224/1000000",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 173.1,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "收集癖",
+            "desc": "解锁 20 格图鉴",
+            "count": "✓",
+            "bar": "100%",
+            "done": true,
+            "track": {
+              "w": 234.4,
+              "h": 5
+            },
+            "fill": {
+              "w": 234.4,
+              "h": 5
+            }
+          },
+          {
+            "name": "博物学家",
+            "desc": "解锁 40 格图鉴",
+            "count": "✓",
+            "bar": "100%",
+            "done": true,
+            "track": {
+              "w": 234.4,
+              "h": 5
+            },
+            "fill": {
+              "w": 234.4,
+              "h": 5
+            }
+          },
+          {
+            "name": "全图鉴",
+            "desc": "解锁全部 55 格图鉴",
+            "count": "✓",
+            "bar": "100%",
+            "done": true,
+            "track": {
+              "w": 234.4,
+              "h": 5
+            },
+            "fill": {
+              "w": 234.4,
+              "h": 5
+            }
+          },
+          {
+            "name": "开始装修",
+            "desc": "装修 3 件工位家具",
+            "count": "0/3",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.6,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "工位大户",
+            "desc": "集齐 8 件工位家具",
+            "count": "0/8",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.5,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "第一个同事",
+            "desc": "招募 1 位同事",
+            "count": "0/1",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 228.4,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "满编小队",
+            "desc": "招募全部 5 位同事",
+            "count": "0/5",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.7,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "资深团队",
+            "desc": "任一同事升到 5 级",
+            "count": "0/5",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.7,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "初窥门径",
+            "desc": "解锁 6 个天赋",
+            "count": "0/6",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.5,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "天赋满树",
+            "desc": "解锁 13 个天赋（24 点数可达上限）",
+            "count": "0/13",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 221.5,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "中层摸鱼",
+            "desc": "达到第 7 段位",
+            "count": "1/7",
+            "bar": "14.3%",
+            "done": false,
+            "track": {
+              "w": 229.1,
+              "h": 5
+            },
+            "fill": {
+              "w": 32.8,
+              "h": 5
+            }
+          },
+          {
+            "name": "宇宙尽头",
+            "desc": "达到第 14 段位（最高档）",
+            "count": "1/14",
+            "bar": "7.1%",
+            "done": false,
+            "track": {
+              "w": 223.1,
+              "h": 5
+            },
+            "fill": {
+              "w": 15.8,
+              "h": 5
+            }
+          },
+          {
+            "name": "街机新手",
+            "desc": "任一游戏最高分 500",
+            "count": "0/500",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 212.7,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "街机高手",
+            "desc": "任一游戏最高分 2,000",
+            "count": "0/2000",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 205.9,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "今日宜摸鱼",
+            "desc": "累计选卡 5 次",
+            "count": "0/5",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.7,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "老油条",
+            "desc": "巡逻连胜 3 次",
+            "count": "0/3",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.6,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "摸鱼之王",
+            "desc": "巡逻连胜 10 次",
+            "count": "0/10",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 221.4,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          }
+        ]
+      }
+    },
+    "toastDiff": {
+      "newToasts": [
+        {
+          "at": 3240,
+          "text": "🏆 成就解锁：手速入门"
+        }
+      ],
+      "newAnnounces": [
+        {
+          "at": 3240,
+          "text": "成就解锁：手速入门"
+        }
+      ]
+    },
+    "journalBtnAfter": {
+      "cls": "",
+      "title": "日报与图鉴"
+    },
+    "afterReload": {
+      "hud": {
+        "moyu": "5268.5",
+        "click": "3917.8",
+        "idle": "224.6",
+        "rank": "实习生 53%",
+        "rankTitle": "摸鱼实习生 → 摸鱼学徒",
+        "quest": {
+          "hidden": false,
+          "text": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+          "bar": "0%"
+        },
+        "journalBtn": {
+          "cls": "",
+          "title": "日报与图鉴"
+        },
+        "debugHook": "undefined"
+      },
+      "wall": {
+        "summary": "4/22 · Lv.2",
+        "count": 22,
+        "cats": [
+          {
+            "text": "点击 1/3",
+            "done": false
+          },
+          {
+            "text": "挂机 0/2",
+            "done": false
+          },
+          {
+            "text": "图鉴 3/3",
+            "done": true
+          },
+          {
+            "text": "工位 0/2",
+            "done": false
+          },
+          {
+            "text": "小队 0/3",
+            "done": false
+          },
+          {
+            "text": "天赋 0/2",
+            "done": false
+          },
+          {
+            "text": "段位 0/2",
+            "done": false
+          },
+          {
+            "text": "摸鱼站 0/2",
+            "done": false
+          },
+          {
+            "text": "摸鱼卡 0/1",
+            "done": false
+          },
+          {
+            "text": "老板 0/2",
+            "done": false
+          }
+        ],
+        "doneNames": [
+          "手速入门",
+          "收集癖",
+          "博物学家",
+          "全图鉴"
+        ],
+        "barsRendered": 22,
+        "fillsRendered": 9,
+        "items": [
+          {
+            "name": "手速入门",
+            "desc": "累计点击 1,000 次",
+            "count": "✓",
+            "bar": "100%",
+            "done": true,
+            "track": {
+              "w": 234.4,
+              "h": 5
+            },
+            "fill": {
+              "w": 234.4,
+              "h": 5
+            }
+          },
+          {
+            "name": "键盘杀手",
+            "desc": "累计点击 10,000 次",
+            "count": "1000/10000",
+            "bar": "10%",
+            "done": false,
+            "track": {
+              "w": 181.3,
+              "h": 5
+            },
+            "fill": {
+              "w": 18.1,
+              "h": 5
+            }
+          },
+          {
+            "name": "鼠标终结者",
+            "desc": "累计点击 100,000 次",
+            "count": "1000/100000",
+            "bar": "1%",
+            "done": false,
+            "track": {
+              "w": 174.3,
+              "h": 5
+            },
+            "fill": {
+              "w": 1.7,
+              "h": 5
+            }
+          },
+          {
+            "name": "躺平起步",
+            "desc": "挂机收益达到 1,000/秒",
+            "count": "224/1000",
+            "bar": "22.5%",
+            "done": false,
+            "track": {
+              "w": 194,
+              "h": 5
+            },
+            "fill": {
+              "w": 43.7,
+              "h": 5
+            }
+          },
+          {
+            "name": "摸鱼自由",
+            "desc": "挂机收益达到 100万/秒",
+            "count": "224/1000000",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 173.1,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "收集癖",
+            "desc": "解锁 20 格图鉴",
+            "count": "✓",
+            "bar": "100%",
+            "done": true,
+            "track": {
+              "w": 234.4,
+              "h": 5
+            },
+            "fill": {
+              "w": 234.4,
+              "h": 5
+            }
+          },
+          {
+            "name": "博物学家",
+            "desc": "解锁 40 格图鉴",
+            "count": "✓",
+            "bar": "100%",
+            "done": true,
+            "track": {
+              "w": 234.4,
+              "h": 5
+            },
+            "fill": {
+              "w": 234.4,
+              "h": 5
+            }
+          },
+          {
+            "name": "全图鉴",
+            "desc": "解锁全部 55 格图鉴",
+            "count": "✓",
+            "bar": "100%",
+            "done": true,
+            "track": {
+              "w": 234.4,
+              "h": 5
+            },
+            "fill": {
+              "w": 234.4,
+              "h": 5
+            }
+          },
+          {
+            "name": "开始装修",
+            "desc": "装修 3 件工位家具",
+            "count": "0/3",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.6,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "工位大户",
+            "desc": "集齐 8 件工位家具",
+            "count": "0/8",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.5,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "第一个同事",
+            "desc": "招募 1 位同事",
+            "count": "0/1",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 228.4,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "满编小队",
+            "desc": "招募全部 5 位同事",
+            "count": "0/5",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.7,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "资深团队",
+            "desc": "任一同事升到 5 级",
+            "count": "0/5",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.7,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "初窥门径",
+            "desc": "解锁 6 个天赋",
+            "count": "0/6",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.5,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "天赋满树",
+            "desc": "解锁 13 个天赋（24 点数可达上限）",
+            "count": "0/13",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 221.5,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "中层摸鱼",
+            "desc": "达到第 7 段位",
+            "count": "1/7",
+            "bar": "14.3%",
+            "done": false,
+            "track": {
+              "w": 229.1,
+              "h": 5
+            },
+            "fill": {
+              "w": 32.8,
+              "h": 5
+            }
+          },
+          {
+            "name": "宇宙尽头",
+            "desc": "达到第 14 段位（最高档）",
+            "count": "1/14",
+            "bar": "7.1%",
+            "done": false,
+            "track": {
+              "w": 223.1,
+              "h": 5
+            },
+            "fill": {
+              "w": 15.8,
+              "h": 5
+            }
+          },
+          {
+            "name": "街机新手",
+            "desc": "任一游戏最高分 500",
+            "count": "0/500",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 212.7,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "街机高手",
+            "desc": "任一游戏最高分 2,000",
+            "count": "0/2000",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 205.9,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "今日宜摸鱼",
+            "desc": "累计选卡 5 次",
+            "count": "0/5",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.7,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "老油条",
+            "desc": "巡逻连胜 3 次",
+            "count": "0/3",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 226.6,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          },
+          {
+            "name": "摸鱼之王",
+            "desc": "巡逻连胜 10 次",
+            "count": "0/10",
+            "bar": "0%",
+            "done": false,
+            "track": {
+              "w": 221.4,
+              "h": 5
+            },
+            "fill": {
+              "w": 0,
+              "h": 5
+            }
+          }
+        ]
+      }
+    }
+  },
+  "C": {
+    "hud": {
+      "moyu": "3684.5",
+      "click": "3841",
+      "idle": "1831.1",
+      "rank": "实习生 37%",
+      "rankTitle": "摸鱼实习生 → 摸鱼学徒",
+      "quest": {
+        "hidden": false,
+        "text": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "bar": "0%"
+      },
+      "journalBtn": {
+        "cls": "",
+        "title": "日报与图鉴"
+      },
+      "debugHook": "undefined"
+    },
+    "log": {
+      "toasts": [
+        {
+          "at": 159,
+          "text": "🏆 成就解锁：全图鉴"
+        },
+        {
+          "at": 327,
+          "text": "🏆 成就解锁：躺平起步"
+        }
+      ],
+      "announces": [
+        {
+          "at": 159,
+          "text": "成就解锁：全图鉴"
+        },
+        {
+          "at": 327,
+          "text": "成就解锁：躺平起步"
+        }
+      ]
+    },
+    "wall": {
+      "summary": "4/22 · Lv.2",
+      "count": 22,
+      "cats": [
+        {
+          "text": "点击 0/3",
+          "done": false
+        },
+        {
+          "text": "挂机 1/2",
+          "done": false
+        },
+        {
+          "text": "图鉴 3/3",
+          "done": true
+        },
+        {
+          "text": "工位 0/2",
+          "done": false
+        },
+        {
+          "text": "小队 0/3",
+          "done": false
+        },
+        {
+          "text": "天赋 0/2",
+          "done": false
+        },
+        {
+          "text": "段位 0/2",
+          "done": false
+        },
+        {
+          "text": "摸鱼站 0/2",
+          "done": false
+        },
+        {
+          "text": "摸鱼卡 0/1",
+          "done": false
+        },
+        {
+          "text": "老板 0/2",
+          "done": false
+        }
+      ],
+      "doneNames": [
+        "躺平起步",
+        "收集癖",
+        "博物学家",
+        "全图鉴"
+      ],
+      "barsRendered": 22,
+      "fillsRendered": 6,
+      "items": [
+        {
+          "name": "手速入门",
+          "desc": "累计点击 1,000 次",
+          "count": "0/1000",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 207.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "键盘杀手",
+          "desc": "累计点击 10,000 次",
+          "count": "0/10000",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 200.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "鼠标终结者",
+          "desc": "累计点击 100,000 次",
+          "count": "0/100000",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 193.5,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "躺平起步",
+          "desc": "挂机收益达到 1,000/秒",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "摸鱼自由",
+          "desc": "挂机收益达到 100万/秒",
+          "count": "1831/1000000",
+          "bar": "0.2%",
+          "done": false,
+          "track": {
+            "w": 169.1,
+            "h": 5
+          },
+          "fill": {
+            "w": 0.3,
+            "h": 5
+          }
+        },
+        {
+          "name": "收集癖",
+          "desc": "解锁 20 格图鉴",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "博物学家",
+          "desc": "解锁 40 格图鉴",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "全图鉴",
+          "desc": "解锁全部 55 格图鉴",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "开始装修",
+          "desc": "装修 3 件工位家具",
+          "count": "0/3",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.6,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "工位大户",
+          "desc": "集齐 8 件工位家具",
+          "count": "0/8",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.5,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "第一个同事",
+          "desc": "招募 1 位同事",
+          "count": "0/1",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 228.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "满编小队",
+          "desc": "招募全部 5 位同事",
+          "count": "0/5",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.7,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "资深团队",
+          "desc": "任一同事升到 5 级",
+          "count": "0/5",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.7,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "初窥门径",
+          "desc": "解锁 6 个天赋",
+          "count": "0/6",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.5,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "天赋满树",
+          "desc": "解锁 13 个天赋（24 点数可达上限）",
+          "count": "0/13",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 221.5,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "中层摸鱼",
+          "desc": "达到第 7 段位",
+          "count": "1/7",
+          "bar": "14.3%",
+          "done": false,
+          "track": {
+            "w": 229.1,
+            "h": 5
+          },
+          "fill": {
+            "w": 32.8,
+            "h": 5
+          }
+        },
+        {
+          "name": "宇宙尽头",
+          "desc": "达到第 14 段位（最高档）",
+          "count": "1/14",
+          "bar": "7.1%",
+          "done": false,
+          "track": {
+            "w": 223.1,
+            "h": 5
+          },
+          "fill": {
+            "w": 15.8,
+            "h": 5
+          }
+        },
+        {
+          "name": "街机新手",
+          "desc": "任一游戏最高分 500",
+          "count": "0/500",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 212.7,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "街机高手",
+          "desc": "任一游戏最高分 2,000",
+          "count": "0/2000",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 205.9,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "今日宜摸鱼",
+          "desc": "累计选卡 5 次",
+          "count": "0/5",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.7,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "老油条",
+          "desc": "巡逻连胜 3 次",
+          "count": "0/3",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.6,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "摸鱼之王",
+          "desc": "巡逻连胜 10 次",
+          "count": "0/10",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 221.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        }
+      ]
+    }
+  },
+  "D": {
+    "hud": {
+      "moyu": "485.0",
+      "click": "3841",
+      "idle": "229.1",
+      "rank": "实习生 5%",
+      "rankTitle": "摸鱼实习生 → 摸鱼学徒",
+      "quest": {
+        "hidden": false,
+        "text": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "bar": "0%"
+      },
+      "journalBtn": {
+        "cls": "",
+        "title": "日报与图鉴"
+      },
+      "debugHook": "undefined"
+    },
+    "log": {
+      "toasts": [
+        {
+          "at": 167,
+          "text": "🏆 成就解锁：中层摸鱼"
+        }
+      ],
+      "announces": [
+        {
+          "at": 167,
+          "text": "成就解锁：中层摸鱼"
+        }
+      ]
+    },
+    "wall": {
+      "summary": "4/22 · Lv.2",
+      "count": 22,
+      "cats": [
+        {
+          "text": "点击 0/3",
+          "done": false
+        },
+        {
+          "text": "挂机 0/2",
+          "done": false
+        },
+        {
+          "text": "图鉴 3/3",
+          "done": true
+        },
+        {
+          "text": "工位 0/2",
+          "done": false
+        },
+        {
+          "text": "小队 0/3",
+          "done": false
+        },
+        {
+          "text": "天赋 0/2",
+          "done": false
+        },
+        {
+          "text": "段位 1/2",
+          "done": false
+        },
+        {
+          "text": "摸鱼站 0/2",
+          "done": false
+        },
+        {
+          "text": "摸鱼卡 0/1",
+          "done": false
+        },
+        {
+          "text": "老板 0/2",
+          "done": false
+        }
+      ],
+      "doneNames": [
+        "收集癖",
+        "博物学家",
+        "全图鉴",
+        "中层摸鱼"
+      ],
+      "barsRendered": 22,
+      "fillsRendered": 6,
+      "items": [
+        {
+          "name": "手速入门",
+          "desc": "累计点击 1,000 次",
+          "count": "0/1000",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 207.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "键盘杀手",
+          "desc": "累计点击 10,000 次",
+          "count": "0/10000",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 200.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "鼠标终结者",
+          "desc": "累计点击 100,000 次",
+          "count": "0/100000",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 193.5,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "躺平起步",
+          "desc": "挂机收益达到 1,000/秒",
+          "count": "229/1000",
+          "bar": "22.9%",
+          "done": false,
+          "track": {
+            "w": 194,
+            "h": 5
+          },
+          "fill": {
+            "w": 44.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "摸鱼自由",
+          "desc": "挂机收益达到 100万/秒",
+          "count": "229/1000000",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 173,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "收集癖",
+          "desc": "解锁 20 格图鉴",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "博物学家",
+          "desc": "解锁 40 格图鉴",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "全图鉴",
+          "desc": "解锁全部 55 格图鉴",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "开始装修",
+          "desc": "装修 3 件工位家具",
+          "count": "0/3",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.6,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "工位大户",
+          "desc": "集齐 8 件工位家具",
+          "count": "0/8",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.5,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "第一个同事",
+          "desc": "招募 1 位同事",
+          "count": "0/1",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 228.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "满编小队",
+          "desc": "招募全部 5 位同事",
+          "count": "0/5",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.7,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "资深团队",
+          "desc": "任一同事升到 5 级",
+          "count": "0/5",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.7,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "初窥门径",
+          "desc": "解锁 6 个天赋",
+          "count": "0/6",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.5,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "天赋满树",
+          "desc": "解锁 13 个天赋（24 点数可达上限）",
+          "count": "0/13",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 221.5,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "中层摸鱼",
+          "desc": "达到第 7 段位",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "宇宙尽头",
+          "desc": "达到第 14 段位（最高档）",
+          "count": "7/14",
+          "bar": "50%",
+          "done": false,
+          "track": {
+            "w": 222.3,
+            "h": 5
+          },
+          "fill": {
+            "w": 111.1,
+            "h": 5
+          }
+        },
+        {
+          "name": "街机新手",
+          "desc": "任一游戏最高分 500",
+          "count": "0/500",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 212.7,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "街机高手",
+          "desc": "任一游戏最高分 2,000",
+          "count": "0/2000",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 205.9,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "今日宜摸鱼",
+          "desc": "累计选卡 5 次",
+          "count": "0/5",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.7,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "老油条",
+          "desc": "巡逻连胜 3 次",
+          "count": "0/3",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 226.6,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        },
+        {
+          "name": "摸鱼之王",
+          "desc": "巡逻连胜 10 次",
+          "count": "0/10",
+          "bar": "0%",
+          "done": false,
+          "track": {
+            "w": 221.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 0,
+            "h": 5
+          }
+        }
+      ]
+    }
+  },
+  "E": {
+    "hud": {
+      "moyu": "1000.01亿",
+      "click": "7298.1",
+      "idle": "30.41万",
+      "rank": "宇宙尽头·终",
+      "rankTitle": "摸鱼宇宙尽头·终",
+      "quest": {
+        "hidden": true,
+        "text": null,
+        "bar": ""
+      },
+      "journalBtn": {
+        "cls": "",
+        "title": "日报与图鉴"
+      },
+      "debugHook": "undefined"
+    },
+    "log": {
+      "toasts": [
+        {
+          "at": 164,
+          "text": "🏆 成就解锁：摸鱼之王"
+        }
+      ],
+      "announces": [
+        {
+          "at": 164,
+          "text": "成就解锁：摸鱼之王"
+        }
+      ]
+    },
+    "journal": {
+      "version": "v0.6.3 · 2026-11-27",
+      "notes": "修复：成就进度条可见（之前渲染成 0 高）、成就解锁弹 🏆 提示、工位面板离线收益文案、点击加成不再重复计入、成就挂机加成离线足额；改进：首位同事新人价 1,500（新手目标链 2-3 分钟可走完）；新手期开屏改为教点击，不再推销天赋系统；修复：家具离线加成改为独立倍率（不再被 95% 上限吃掉变成 0 收益）；修复：2 条永不可达的成就（天赋 13 / 段位 14）；老板成就改用历史最高连胜；成就等级现在也给加成",
+      "today": "今日工位梗：摸了一条鱼",
+      "journalTotal": "55/55",
+      "quote": "10/10",
+      "flavor": "45/45",
+      "statsRank": "摸鱼宇宙尽头·终",
+      "stats": [
+        "生涯总收入4000.01亿",
+        "本局 / 往期4000.01亿 / 0",
+        "当前余额1000.01亿",
+        "累计投入335.79亿",
+        "点击力 / 挂机7298 / 30.41万每秒",
+        "累计点击100000",
+        "今日回访1/3（离线效率 95%）",
+        "连续日报0 天",
+        "图鉴55/55",
+        "转生0 点（×1.00）",
+        "纪录·最佳单日12.35万（2026-11-26）",
+        "纪录·最长连签5 天",
+        "纪录·最多点击12345"
+      ],
+      "grid": {
+        "total": 55,
+        "on": 55,
+        "firstOffLabel": null
+      },
+      "achSummary": "22/22 · Lv.6",
+      "panelScroll": {
+        "scrollH": 3305,
+        "clientH": 648,
+        "scrollW": 332,
+        "clientW": 332
+      }
+    },
+    "wall": {
+      "summary": "22/22 · Lv.6",
+      "count": 22,
+      "cats": [
+        {
+          "text": "点击 3/3",
+          "done": true
+        },
+        {
+          "text": "挂机 2/2",
+          "done": true
+        },
+        {
+          "text": "图鉴 3/3",
+          "done": true
+        },
+        {
+          "text": "工位 2/2",
+          "done": true
+        },
+        {
+          "text": "小队 3/3",
+          "done": true
+        },
+        {
+          "text": "天赋 2/2",
+          "done": true
+        },
+        {
+          "text": "段位 2/2",
+          "done": true
+        },
+        {
+          "text": "摸鱼站 2/2",
+          "done": true
+        },
+        {
+          "text": "摸鱼卡 1/1",
+          "done": true
+        },
+        {
+          "text": "老板 2/2",
+          "done": true
+        }
+      ],
+      "doneNames": [
+        "手速入门",
+        "键盘杀手",
+        "鼠标终结者",
+        "躺平起步",
+        "摸鱼自由",
+        "收集癖",
+        "博物学家",
+        "全图鉴",
+        "开始装修",
+        "工位大户",
+        "第一个同事",
+        "满编小队",
+        "资深团队",
+        "初窥门径",
+        "天赋满树",
+        "中层摸鱼",
+        "宇宙尽头",
+        "街机新手",
+        "街机高手",
+        "今日宜摸鱼",
+        "老油条",
+        "摸鱼之王"
+      ],
+      "barsRendered": 22,
+      "fillsRendered": 22,
+      "items": [
+        {
+          "name": "手速入门",
+          "desc": "累计点击 1,000 次",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "键盘杀手",
+          "desc": "累计点击 10,000 次",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "鼠标终结者",
+          "desc": "累计点击 100,000 次",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "躺平起步",
+          "desc": "挂机收益达到 1,000/秒",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "摸鱼自由",
+          "desc": "挂机收益达到 100万/秒",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "收集癖",
+          "desc": "解锁 20 格图鉴",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "博物学家",
+          "desc": "解锁 40 格图鉴",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "全图鉴",
+          "desc": "解锁全部 55 格图鉴",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "开始装修",
+          "desc": "装修 3 件工位家具",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "工位大户",
+          "desc": "集齐 8 件工位家具",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "第一个同事",
+          "desc": "招募 1 位同事",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "满编小队",
+          "desc": "招募全部 5 位同事",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "资深团队",
+          "desc": "任一同事升到 5 级",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "初窥门径",
+          "desc": "解锁 6 个天赋",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "天赋满树",
+          "desc": "解锁 13 个天赋（24 点数可达上限）",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "中层摸鱼",
+          "desc": "达到第 7 段位",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "宇宙尽头",
+          "desc": "达到第 14 段位（最高档）",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "街机新手",
+          "desc": "任一游戏最高分 500",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "街机高手",
+          "desc": "任一游戏最高分 2,000",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "今日宜摸鱼",
+          "desc": "累计选卡 5 次",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "老油条",
+          "desc": "巡逻连胜 3 次",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "摸鱼之王",
+          "desc": "巡逻连胜 10 次",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        }
+      ]
+    },
+    "scrollTop": 1958,
+    "teamColleagues": {
+      "teamSummary": "\n      已招募 5/5 · 小队挂机 +4.09万/秒\n      \n      自动重复：完成后自动领取并续班（离线回来最多补 1 轮）\n    ",
+      "tabs": [
+        {
+          "text": "同事",
+          "active": true
+        },
+        {
+          "text": "天赋",
+          "active": false
+        },
+        {
+          "text": "工位",
+          "active": false
+        }
+      ],
+      "mates": [
+        {
+          "name": "老周 Lv.5",
+          "favorWidth": "100%",
+          "locked": false
+        },
+        {
+          "name": "小美 Lv.5",
+          "favorWidth": "100%",
+          "locked": false
+        },
+        {
+          "name": "强哥 Lv.5",
+          "favorWidth": "100%",
+          "locked": false
+        },
+        {
+          "name": "小李 Lv.5",
+          "favorWidth": "100%",
+          "locked": false
+        },
+        {
+          "name": "王师傅 Lv.5",
+          "favorWidth": "100%",
+          "locked": false
+        }
+      ],
+      "talents": [],
+      "decorSummary": "\n      已招募 5/5 · 小队挂机 +4.09万/秒\n      \n      自动重复：完成后自动领取并续班（离线回来最多补 1 轮）\n    ",
+      "teamHint": null,
+      "bodyLen": 9473
+    },
+    "teamTalents": {
+      "teamSummary": null,
+      "tabs": [
+        {
+          "text": "同事",
+          "active": false
+        },
+        {
+          "text": "天赋",
+          "active": true
+        },
+        {
+          "text": "工位",
+          "active": false
+        }
+      ],
+      "mates": [],
+      "talents": [
+        {
+          "name": "手速",
+          "on": true
+        },
+        {
+          "name": "连击窗口",
+          "on": true
+        },
+        {
+          "name": "连击上限（2点）",
+          "on": true
+        },
+        {
+          "name": "暴击（2点）",
+          "on": true
+        },
+        {
+          "name": "摸鱼转正（终极·3点）",
+          "on": true
+        },
+        {
+          "name": "指尖风暴（终极·3点）",
+          "on": false
+        },
+        {
+          "name": "稳",
+          "on": true
+        },
+        {
+          "name": "离线扩容",
+          "on": true
+        },
+        {
+          "name": "更稳（2点）",
+          "on": true
+        },
+        {
+          "name": "离线效率（2点）",
+          "on": true
+        },
+        {
+          "name": "最稳（终极·3点）",
+          "on": false
+        },
+        {
+          "name": "带队摸鱼（终极·3点）",
+          "on": true
+        },
+        {
+          "name": "情报",
+          "on": true
+        },
+        {
+          "name": "反侦察",
+          "on": true
+        },
+        {
+          "name": "人脉（2点）",
+          "on": true
+        },
+        {
+          "name": "预警（2点）",
+          "on": true
+        },
+        {
+          "name": "摸鱼气场（终极·3点）",
+          "on": false
+        },
+        {
+          "name": "老板眼线（终极·3点）",
+          "on": false
+        }
+      ],
+      "decorSummary": null,
+      "teamHint": null,
+      "bodyLen": 6088
+    },
+    "teamDecor": {
+      "teamSummary": "\n      已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线收益 ×1.62\n    ",
+      "tabs": [
+        {
+          "text": "同事",
+          "active": false
+        },
+        {
+          "text": "天赋",
+          "active": false
+        },
+        {
+          "text": "工位",
+          "active": true
+        }
+      ],
+      "mates": [],
+      "talents": [
+        {
+          "name": "认真摸鱼",
+          "on": false
+        },
+        {
+          "name": "假装工作",
+          "on": false
+        },
+        {
+          "name": "跟同事聊天",
+          "on": false
+        },
+        {
+          "name": "专注点击",
+          "on": false
+        },
+        {
+          "name": "绿萝",
+          "on": true
+        },
+        {
+          "name": "护眼台灯",
+          "on": true
+        },
+        {
+          "name": "毛绒地毯",
+          "on": true
+        },
+        {
+          "name": "迷你冰箱",
+          "on": true
+        },
+        {
+          "name": "按摩椅",
+          "on": true
+        },
+        {
+          "name": "鱼缸",
+          "on": true
+        },
+        {
+          "name": "投影仪",
+          "on": true
+        },
+        {
+          "name": "工位猫窝",
+          "on": true
+        }
+      ],
+      "decorSummary": "\n      已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线收益 ×1.62\n    ",
+      "teamHint": null,
+      "bodyLen": 5291
+    },
+    "arcade": {
+      "text": "接咖啡 最高 0 咖啡掉下来时点住它——掉地上就没了 满分 ≈ 25 秒挂机收益（新号保底 30） 明天再来 找老板 最高 2000 在一堆同事脸里找出王总，越快越好 满分 ≈ 25 秒挂机收益（新号保底 30） 明天再来 节奏点击 最高 0 跟着节拍点屏幕，越准分越高 满分 ≈ 25 秒挂机收益（新号保底 30） 明天再来",
+      "cardCount": 6
+    },
+    "mobile": {
+      "innerW": 390,
+      "innerH": 844,
+      "docScrollW": 390,
+      "panel": {
+        "scrollW": 332,
+        "clientW": 332,
+        "scrollH": 3320,
+        "clientH": 684
+      },
+      "itemCount": 22,
+      "itemHeights": [
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62
+      ],
+      "nameOverflow": 0,
+      "achSummary": "22/22 · Lv.6",
+      "hud": {
+        "moyu": "1000.03亿",
+        "click": "7298.1",
+        "idle": "30.41万",
+        "rank": "宇宙尽头·终",
+        "rankTitle": "摸鱼宇宙尽头·终",
+        "quest": {
+          "hidden": true,
+          "text": null,
+          "bar": ""
+        },
+        "journalBtn": {
+          "cls": "",
+          "title": "日报与图鉴"
+        },
+        "debugHook": "undefined"
+      }
+    }
+  },
+  "F": {
+    "hud": {
+      "moyu": "5277.7",
+      "click": "3.1",
+      "idle": "151.5",
+      "rank": "实习生 83%",
+      "rankTitle": "摸鱼实习生 → 摸鱼学徒",
+      "quest": {
+        "hidden": false,
+        "text": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "bar": "0%"
+      },
+      "journalBtn": {
+        "cls": "",
+        "title": "日报与图鉴"
+      },
+      "debugHook": "undefined"
+    },
+    "log": {
+      "toasts": [
+        {
+          "at": 168,
+          "text": "🏆 成就解锁：街机新手"
+        }
+      ],
+      "announces": [
+        {
+          "at": 168,
+          "text": "成就解锁：街机新手"
+        }
+      ]
+    },
+    "wall": {
+      "summary": "5/22 · Lv.2",
+      "count": 22,
+      "cats": [
+        {
+          "text": "点击 1/3",
+          "done": false
+        },
+        {
+          "text": "挂机 0/2",
+          "done": false
+        },
+        {
+          "text": "图鉴 1/3",
+          "done": false
+        },
+        {
+          "text": "工位 1/2",
+          "done": false
+        },
+        {
+          "text": "小队 1/3",
+          "done": false
+        },
+        {
+          "text": "天赋 0/2",
+          "done": false
+        },
+        {
+          "text": "段位 0/2",
+          "done": false
+        },
+        {
+          "text": "摸鱼站 1/2",
+          "done": false
+        },
+        {
+          "text": "摸鱼卡 0/1",
+          "done": false
+        },
+        {
+          "text": "老板 0/2",
+          "done": false
+        }
+      ],
+      "doneNames": [
+        "手速入门",
+        "收集癖",
+        "开始装修",
+        "第一个同事",
+        "街机新手"
+      ],
+      "barsRendered": 22,
+      "fillsRendered": 21,
+      "items": [
+        {
+          "name": "手速入门",
+          "desc": "累计点击 1,000 次",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "键盘杀手",
+          "desc": "累计点击 10,000 次",
+          "count": "5000/10000",
+          "bar": "50%",
+          "done": false,
+          "track": {
+            "w": 179.6,
+            "h": 5
+          },
+          "fill": {
+            "w": 89.8,
+            "h": 5
+          }
+        },
+        {
+          "name": "鼠标终结者",
+          "desc": "累计点击 100,000 次",
+          "count": "5000/100000",
+          "bar": "5%",
+          "done": false,
+          "track": {
+            "w": 172.6,
+            "h": 5
+          },
+          "fill": {
+            "w": 8.6,
+            "h": 5
+          }
+        },
+        {
+          "name": "躺平起步",
+          "desc": "挂机收益达到 1,000/秒",
+          "count": "800/1000",
+          "bar": "80%",
+          "done": false,
+          "track": {
+            "w": 193.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 154.7,
+            "h": 5
+          }
+        },
+        {
+          "name": "摸鱼自由",
+          "desc": "挂机收益达到 100万/秒",
+          "count": "800/1000000",
+          "bar": "0.1%",
+          "done": false,
+          "track": {
+            "w": 172.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 0.2,
+            "h": 5
+          }
+        },
+        {
+          "name": "收集癖",
+          "desc": "解锁 20 格图鉴",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "博物学家",
+          "desc": "解锁 40 格图鉴",
+          "count": "23/40",
+          "bar": "57.5%",
+          "done": false,
+          "track": {
+            "w": 213,
+            "h": 5
+          },
+          "fill": {
+            "w": 122.5,
+            "h": 5
+          }
+        },
+        {
+          "name": "全图鉴",
+          "desc": "解锁全部 55 格图鉴",
+          "count": "23/55",
+          "bar": "41.8%",
+          "done": false,
+          "track": {
+            "w": 213.2,
+            "h": 5
+          },
+          "fill": {
+            "w": 89.1,
+            "h": 5
+          }
+        },
+        {
+          "name": "开始装修",
+          "desc": "装修 3 件工位家具",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "工位大户",
+          "desc": "集齐 8 件工位家具",
+          "count": "3/8",
+          "bar": "37.5%",
+          "done": false,
+          "track": {
+            "w": 226.5,
+            "h": 5
+          },
+          "fill": {
+            "w": 84.9,
+            "h": 5
+          }
+        },
+        {
+          "name": "第一个同事",
+          "desc": "招募 1 位同事",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "满编小队",
+          "desc": "招募全部 5 位同事",
+          "count": "2/5",
+          "bar": "40%",
+          "done": false,
+          "track": {
+            "w": 227,
+            "h": 5
+          },
+          "fill": {
+            "w": 90.8,
+            "h": 5
+          }
+        },
+        {
+          "name": "资深团队",
+          "desc": "任一同事升到 5 级",
+          "count": "2/5",
+          "bar": "40%",
+          "done": false,
+          "track": {
+            "w": 227,
+            "h": 5
+          },
+          "fill": {
+            "w": 90.8,
+            "h": 5
+          }
+        },
+        {
+          "name": "初窥门径",
+          "desc": "解锁 6 个天赋",
+          "count": "4/6",
+          "bar": "66.7%",
+          "done": false,
+          "track": {
+            "w": 226.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 151,
+            "h": 5
+          }
+        },
+        {
+          "name": "天赋满树",
+          "desc": "解锁 13 个天赋（24 点数可达上限）",
+          "count": "4/13",
+          "bar": "30.8%",
+          "done": false,
+          "track": {
+            "w": 221.3,
+            "h": 5
+          },
+          "fill": {
+            "w": 68.2,
+            "h": 5
+          }
+        },
+        {
+          "name": "中层摸鱼",
+          "desc": "达到第 7 段位",
+          "count": "3/7",
+          "bar": "42.9%",
+          "done": false,
+          "track": {
+            "w": 227.3,
+            "h": 5
+          },
+          "fill": {
+            "w": 97.5,
+            "h": 5
+          }
+        },
+        {
+          "name": "宇宙尽头",
+          "desc": "达到第 14 段位（最高档）",
+          "count": "3/14",
+          "bar": "21.4%",
+          "done": false,
+          "track": {
+            "w": 221.3,
+            "h": 5
+          },
+          "fill": {
+            "w": 47.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "街机新手",
+          "desc": "任一游戏最高分 500",
+          "count": "✓",
+          "bar": "100%",
+          "done": true,
+          "track": {
+            "w": 234.4,
+            "h": 5
+          },
+          "fill": {
+            "w": 234.4,
+            "h": 5
+          }
+        },
+        {
+          "name": "街机高手",
+          "desc": "任一游戏最高分 2,000",
+          "count": "900/2000",
+          "bar": "45%",
+          "done": false,
+          "track": {
+            "w": 191.8,
+            "h": 5
+          },
+          "fill": {
+            "w": 86.3,
+            "h": 5
+          }
+        },
+        {
+          "name": "今日宜摸鱼",
+          "desc": "累计选卡 5 次",
+          "count": "2/5",
+          "bar": "40%",
+          "done": false,
+          "track": {
+            "w": 227,
+            "h": 5
+          },
+          "fill": {
+            "w": 90.8,
+            "h": 5
+          }
+        },
+        {
+          "name": "老油条",
+          "desc": "巡逻连胜 3 次",
+          "count": "2/3",
+          "bar": "66.7%",
+          "done": false,
+          "track": {
+            "w": 226.9,
+            "h": 5
+          },
+          "fill": {
+            "w": 151.3,
+            "h": 5
+          }
+        },
+        {
+          "name": "摸鱼之王",
+          "desc": "巡逻连胜 10 次",
+          "count": "2/10",
+          "bar": "20%",
+          "done": false,
+          "track": {
+            "w": 221.7,
+            "h": 5
+          },
+          "fill": {
+            "w": 44.3,
+            "h": 5
+          }
+        }
+      ]
+    },
+    "journal": {
+      "version": "v0.6.3 · 2026-11-27",
+      "notes": "修复：成就进度条可见（之前渲染成 0 高）、成就解锁弹 🏆 提示、工位面板离线收益文案、点击加成不再重复计入、成就挂机加成离线足额；改进：首位同事新人价 1,500（新手目标链 2-3 分钟可走完）；新手期开屏改为教点击，不再推销天赋系统；修复：家具离线加成改为独立倍率（不再被 95% 上限吃掉变成 0 收益）；修复：2 条永不可达的成就（天赋 13 / 段位 14）；老板成就改用历史最高连胜；成就等级现在也给加成",
+      "today": "今日工位梗：摸了一条鱼",
+      "journalTotal": "23/55",
+      "quote": "10/10",
+      "flavor": "13/45",
+      "statsRank": "摸鱼实习生",
+      "stats": [
+        "生涯总收入8444.3",
+        "本局 / 往期8444.3 / 0",
+        "当前余额5444.3",
+        "累计投入51.85万",
+        "点击力 / 挂机3 / 151.5每秒",
+        "累计点击5000",
+        "今日回访1/3（离线效率 95%）",
+        "连续日报0 天",
+        "图鉴23/55",
+        "转生0 点（×1.00）",
+        "纪录·最佳单日242.29万（2026-11-27）",
+        "纪录·最长连签5 天",
+        "纪录·最多点击100000"
+      ],
+      "grid": {
+        "total": 55,
+        "on": 23,
+        "firstOffLabel": "???"
+      },
+      "achSummary": "5/22 · Lv.2",
+      "panelScroll": {
+        "scrollH": 3305,
+        "clientH": 648,
+        "scrollW": 332,
+        "clientW": 332
+      }
+    }
+  },
+  "consoleErrors": [],
+  "finishedAt": "2026-11-27T14:19:37.096Z"
+}

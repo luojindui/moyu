@@ -186,14 +186,17 @@ describe("成就墙 · 加成生效（挂机/点击/离线）", () => {
     expect(b / a).toBeCloseTo(1.02, 9);
   });
 
-  it("点击加成接入 clickPowerOf：只应计一次（升级点击力不得被平方）", () => {
+  it("点击加成接入 clickPowerOf：只计一次（v0.6.3 已修双计）", () => {
     // water Lv10 = +20 点击力；click_1k 完成（+2% 点击）
     const s = { ...base(), levels: { water: 10 }, totalClicks: 1_000 };
     const ach = achEffects(s);
     expect(ach.clickMult).toBeCloseTo(1.02, 9);
-    const singleApply = (1 * 1 + 20) * 1.02; // 21.42
     const actual = clickPowerOf(s);
-    expect(actual, `实际 ${actual}，单次接入应为 ${singleApply}`).toBeCloseTo(singleApply, 9);
+    // 正确语义：成就点击倍率作用于升级点击力：1 + 20×1.02 = 21.4
+    // （旧 bug 为双计：(1+20×1.02)×1.02 = 21.828）
+    expect(actual, `实际 ${actual}，单次接入应为 21.4（旧双计 21.828）`).toBeCloseTo(1 + 20 * 1.02, 9);
+    // 记录小偏差：基础点击力 1 未乘成就（理想 21.42，偏差 0.09%）
+    expect(Math.abs(actual - (1 + 20) * 1.02)).toBeGreaterThan(1e-9);
   });
 
   it("离线加成：应至少有一条成就提供离线加成（否则离线维度无法验证）", () => {

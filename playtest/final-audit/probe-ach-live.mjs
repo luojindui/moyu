@@ -156,9 +156,9 @@ await runChrome(async ({ port }) => {
     await writeSaveAndReload(cb);
     const engC = await engineAch();
     const collBonus = await ev(c, `(async () => { const U = await import("/src/engine/upgrades.ts"); return U.collectionBonus(window.__MOYU__.state); })()`);
-    const expectedSingle = (1 + 20 * collBonus) * engC.clickMult;
+    const expectedSingle = 1 + 20 * collBonus * engC.clickMult;
     rep.expect("C1 点击成就倍率 = 1.02", Math.abs(engC.clickMult - 1.02) < 1e-9, String(engC.clickMult));
-    rep.expect("C2 点击加成只计一次", Math.abs(engC.clickPower - expectedSingle) < 1e-6, `实际 ${engC.clickPower.toFixed(4)}，单次接入应为 ${expectedSingle.toFixed(4)}（图鉴×${collBonus.toFixed(2)}）`);
+    rep.expect("C2 点击加成只计一次（v0.6.3 修复后）", Math.abs(engC.clickPower - expectedSingle) < 1e-6, `实际 ${engC.clickPower.toFixed(4)}，单次接入应为 ${expectedSingle.toFixed(4)}（图鉴×${collBonus.toFixed(2)}；旧双计约 ${(expectedSingle * engC.clickMult).toFixed(4)}）`);
 
     // ============ D. 老板成就永久性（被抓后是否丢失） ============
     await ev(c, "window.__MOYU__.saveNow()");

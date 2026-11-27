@@ -1,0 +1,16 @@
+label=v63a
+mode=quitter
+frames=110
+events=33620
+steps=17
+firstToasts=["15824:日报可领 +720，点右下 📔","15824:日报可领 +720，点右下 📔","18247:今日卡：空调坏了","23414:图鉴 +1（2/55）"]
+questDoneAt=87323
+claimAt=24931
+recruitAt=53362
+recruitWall={"balance":"815.6","recruit":{"text":"攒够再招 1500","disabled":true}}
+arcadeResult="接咖啡 结束 / 98 分 / 本局奖励 +7 摸鱼值 / 🎉 新纪录！（旧 0） / 接住 12 · 漏接 14 · 最高连击 1 / 再来一局 返回摸鱼站"
+taps=175
+finalHud={"moyu":"2043.1","click":"11.2","idle":"23.5","rank":"实习生 40%","card":"卡·空调坏了","combo":"连×20","streak":""}
+badgeStates=3
+endOnboarding=false
+endBadges={"arcade":{"n":1,"texts":["2"],"displays":["block"],"visible":1},"talent":{"n":1,"texts":["天赋"],"displays":["block"],"visible":1},"energy":{"n":1,"texts":["精力 60"],"displays":["block"],"visible":1},"mission":{"n":0,"texts":[],"displays":[],"visible":0}}

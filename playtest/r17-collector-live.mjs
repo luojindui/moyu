@@ -22,8 +22,8 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { runChrome, connect, sleep } from "./lib/chrome.mjs";
 
 const PROD = "https://luojindui.github.io/moyu/";
-const SHOTS = "playtest/r17-collector-shots-v061";
-const OUT = "playtest/r17-collector-live-v061.json";
+const SHOTS = "playtest/r17-collector-shots-v063";
+const OUT = "playtest/r17-collector-live-v063.json";
 mkdirSync(SHOTS, { recursive: true });
 
 const t0 = Date.now();
@@ -31,15 +31,16 @@ const log = (...a) => console.log(`[${((Date.now() - t0) / 1000).toFixed(1)}s]`,
 const R = {
   startedAt: new Date().toISOString(),
   url: PROD,
-  version: "v0.6.1",
+  version: "v0.6.3",
   expected: {
-    // 与 playtest/r17-collector-engine.test.ts 输出一致（v0.6.1：成就等级每级 +2% 挂机）
+    // 与 playtest/r17-collector-engine.test.ts 输出一致（v0.6.3：点击只计一次 / 等级每级 +2% 挂机）
     A: { clickHud: "3841", idleHud: "220.2", achSummary: "3/22 · Lv.1" },
-    B: { clickBefore: "3841", clickAfterDouble: "3996.2", clickAfterSingleIfNoDoubleBug: "3917.8", idleBefore: "220.2", idleAfterLevelReward: "224.6", achSummaryAfter: "4/22 · Lv.2" },
+    B: { clickBefore: "3841", clickAfterSingle: "3917.8", clickAfterOldDoubleIfRegression: "3996.2", idleBefore: "220.2", idleAfterLevelReward: "224.6", achSummaryAfter: "4/22 · Lv.2" },
     C: { idleHud: "1831.1", achSummary: "4/22 · Lv.2" },
     D: { idleHud: "229.1", achSummary: "4/22 · Lv.2" },
-    E: { achSummary: "22/22 · Lv.6", rank14: "14/14", talent18: "13/13" },
+    E: { achSummary: "22/22 · Lv.6", rank14: "14/14", talent18: "13/13", decorOfflineText: "离线收益 ×1.62" },
     F: { achSummary: "5/22 · Lv.2" },
+    bars: { trackH: 5, trackW: 207, fillsVisibleOnFresh: 0, fillsVisibleOnMid: 15, allVisibleOnMax: 22 },
   },
   errors: [],
   steps: [],
@@ -156,22 +157,31 @@ const JS_WALL = `(() => {
     var descEl = el.querySelector('.ach-desc');
     var countEl = el.querySelector('.ach-count');
     var barEl = el.querySelector('.ach-progress > i');
+    var trackEl = el.querySelector('.ach-progress');
+    var tr = trackEl ? trackEl.getBoundingClientRect() : null;
+    var fr = barEl ? barEl.getBoundingClientRect() : null;
     return {
       name: nameEl ? nameEl.textContent.replace('（已完成）', '') : '',
       desc: descEl ? descEl.textContent : '',
       count: countEl ? countEl.textContent : '',
       bar: barEl ? barEl.style.width : '',
-      done: el.classList.contains('done')
+      done: el.classList.contains('done'),
+      track: tr ? { w: Math.round(tr.width * 10) / 10, h: Math.round(tr.height * 10) / 10 } : null,
+      fill: fr ? { w: Math.round(fr.width * 10) / 10, h: Math.round(fr.height * 10) / 10 } : null
     };
   });
   var cats = Array.prototype.slice.call(document.querySelectorAll('#ach-categories .ach-cat')).map(function(el){
     return { text: el.textContent, done: el.classList.contains('done') };
   });
+  var barsRendered = items.filter(function(i){ return i.track && i.track.h >= 3 && i.track.w >= 20; }).length;
+  var fillsRendered = items.filter(function(i){ return i.fill && i.fill.h >= 3 && i.fill.w >= 1; }).length;
   return {
     summary: (document.getElementById('ach-summary')||{}).textContent || null,
     count: items.length,
     cats: cats,
     doneNames: items.filter(function(i){ return i.done; }).map(function(i){ return i.name; }),
+    barsRendered: barsRendered,
+    fillsRendered: fillsRendered,
     items: items
   };
 })()`;
@@ -437,7 +447,7 @@ async function main() {
         await openJournal();
         R.B.afterReload.wall = await ev(JS_WALL);
         await closeJournal();
-        log("B", JSON.stringify({ before: R.B.before.hud, after: R.B.after.hud, summary: R.B.after.wall.summary, reload: R.B.afterReload.hud }));
+        log("B", JSON.stringify({ before: R.B.before.hud, after: R.B.after.hud, summary: R.B.after.wall.summary, toasts: R.B.toastDiff, bars: { rendered: R.B.after.wall.barsRendered, fills: R.B.after.wall.fillsRendered }, reload: R.B.afterReload.hud }));
 
         // ===== 阶段 C：idle_1k 由 tick 自然记录 bestIdleRate 后自动完成 =====
         step("seed C phone80 → idle_1k auto");

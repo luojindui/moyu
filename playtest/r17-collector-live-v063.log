@@ -1,0 +1,34 @@
+[2.9s] STEP navigate prod fresh profile
+[7.7s] shot 01-fresh-first-screen
+[9.2s] shot 02-fresh-journal-top
+[9.7s] shot 03-fresh-achievements
+[10.1s] shot 04-fresh-collection-grid
+[11.0s] shot 05-fresh-team-colleagues
+[11.5s] shot 06-fresh-team-talents
+[12.0s] shot 07-fresh-team-decor
+[13.0s] shot 08-fresh-arcade
+[13.3s] STEP seed A control
+[16.5s] A hud {"moyu":"407.5","click":"3841","idle":"220.2","rank":"实习生 4%","rankTitle":"摸鱼实习生 → 摸鱼学徒","quest":{"hidden":false,"text":"攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）","bar":"0%"},"journalBtn":{"cls":"","title":"日报与图鉴"},"debugHook":"undefined"}
+[16.5s] STEP seed B totalClicks=999
+[20.7s] shot 09-bonus-click-wall-after
+[21.0s] STEP reload to verify persistence of click_1k
+[24.0s] B {"before":{"moyu":"429.5","click":"3841","idle":"220.2","rank":"实习生 4%","rankTitle":"摸鱼实习生 → 摸鱼学徒","quest":{"hidden":false,"text":"攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）","bar":"0%"},"journalBtn":{"cls":"","title":"日报与图鉴"},"debugHook":"undefined"},"after":{"moyu":"4721.9","click":"3917.8","idle":"224.6","rank":"实习生 47%","rankTitle":"摸鱼实习生 → 摸鱼学徒","quest":{"hidden":false,"text":"攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）","bar":"4%"},"journalBtn":{"cls":"","title":"日报与图鉴"},"debugHook":"undefined"},"summary":"4/22 · Lv.2","toasts":{"newToasts":[{"at":3240,"text":"🏆 成就解锁：手速入门"}],"newAnnounces":[{"at":3240,"text":"成就解锁：手速入门"}]},"bars":{"rendered":22,"fills":9},"reload":{"moyu":"5268.5","click":"3917.8","idle":"224.6","rank":"实习生 53%","rankTitle":"摸鱼实习生 → 摸鱼学徒","quest":{"hidden":false,"text":"攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）","bar":"0%"},"journalBtn":{"cls":"","title":"日报与图鉴"},"debugHook":"undefined"}}
+[24.0s] STEP seed C phone80 → idle_1k auto
+[26.3s] shot 10-bonus-idle-hud
+[27.4s] shot 11-bonus-idle-wall
+[27.7s] C hud {"moyu":"3684.5","click":"3841","idle":"1831.1","rank":"实习生 37%","rankTitle":"摸鱼实习生 → 摸鱼学徒","quest":{"hidden":false,"text":"攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）","bar":"0%"},"journalBtn":{"cls":"","title":"日报与图鉴"},"debugHook":"undefined"}
+[27.7s] STEP seed D rankIndex=7 → rank_7
+[30.9s] D hud {"moyu":"485.0","click":"3841","idle":"229.1","rank":"实习生 5%","rankTitle":"摸鱼实习生 → 摸鱼学徒","quest":{"hidden":false,"text":"攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）","bar":"0%"},"journalBtn":{"cls":"","title":"日报与图鉴"},"debugHook":"undefined"}
+[30.9s] STEP seed E maxed-out state
+[34.5s] shot 12-stuck-wall-top
+[35.0s] shot 13-stuck-wall-bottom
+[35.9s] shot 14-stuck-team-colleagues
+[36.4s] shot 15-stuck-team-talents
+[36.9s] shot 16-stuck-team-decor
+[37.8s] shot 17-stuck-arcade
+[38.1s] STEP mobile 390x844 wall layout
+[42.4s] shot 18-mobile-wall
+[42.8s] STEP seed F mid-progress state
+[46.0s] shot 19-mid-wall
+[46.3s] F {"hud":{"moyu":"5277.7","click":"3.1","idle":"151.5","rank":"实习生 83%","rankTitle":"摸鱼实习生 → 摸鱼学徒","quest":{"hidden":false,"text":"攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）","bar":"0%"},"journalBtn":{"cls":"","title":"日报与图鉴"},"debugHook":"undefined"},"summary":"5/22 · Lv.2"}
+[46.6s] evidence -> playtest/r17-collector-live-v063.json

@@ -1,12 +1,12 @@
 /**
  * R17 终验-收集成就党：引擎侧证据（只读 src/，不修改）
- * 针对当前 v0.6.1（线上已部署）：
+ * 针对当前 v0.6.3（线上已部署，2026-11-27）：
  * 1) 成就数量/分类校验（22/10）
  * 2) v0.6.1 可达性修复验证：rank_14（rankIndex 改 1 基）、talent_18（target 18→13）、
  *    boss 成就改 bestSurviveStreak（转生不清）→ 22/22 可达、Lv.6
  * 3) 成就等级奖励：每级 +2% 挂机（achEffects 内）→ 验证 Lv.2 起确实有收益
  * 4) 与 live 探针一致的 seeded 状态 → 输出预期 clickPower / idleRate 供 HUD 对照
- * 5) 点击系成就"重复计入"检查（v0.6.1 仍未修）：effectOf.clickPower 内一次 + clickPowerOf 外一次
+ * 5) 点击加成单次计入检查（v0.6.3 已修）+ 成就挂机离线足额检查（v0.6.3 已修）
  *
  * 运行：npx vitest run --config playtest/vitest.r17-collector.config.ts
  */
@@ -14,7 +14,7 @@ import { describe, it, expect } from "vitest";
 import { initialState, type GameState } from "../src/engine/state";
 import { ACHIEVEMENTS, achByCategory, achDone, achEffects, achLevel, achPoints, achById } from "../src/engine/achievements";
 import { clickPowerOf } from "../src/engine/actions";
-import { effectOf } from "../src/engine/upgrades";
+import { effectOf, stationIdleScaled } from "../src/engine/upgrades";
 import { RANKS } from "../src/engine/titles";
 import { TALENTS, TALENT_POINT_CAP, canUnlock, costOfTalent, unlockTalent } from "../src/engine/talents";
 import { COLLEAGUES } from "../src/engine/team";
@@ -216,34 +216,38 @@ describe("R17 收集成就党 / 引擎侧（v0.6.1）", () => {
     );
   });
 
-  it("成就「挂机 +X%」在离线结算里只兑现一半（teamPart 才吃 50% 份额）", () => {
+  it("v0.6.3：成就「挂机 +X%」离线足额兑现（stationIdleScaled 已含 achEffects）", () => {
     const A = seedBase({ totalClicks: 0 });
     const B = seedBase({ totalClicks: 1000 }); // Lv.2：等级奖励 +2% 挂机
     const online = effectOf(B).idleRate / effectOf(A).idleRate;
     const offA = offlineEarn(A, 12 * 3600, 0.95).earned;
     const offB = offlineEarn(B, 12 * 3600, 0.95).earned;
     const offlineRatio = offB / offA;
+    const stationA = stationIdleScaled(A);
+    const stationB = stationIdleScaled(B);
     console.log(
       "ACH_OFFLINE " +
         JSON.stringify({
           onlineIdleA: effectOf(A).idleRate,
           onlineIdleB: effectOf(B).idleRate,
           onlineRatio: Number(online.toFixed(4)),
+          stationScaledA: stationA,
+          stationScaledB: stationB,
+          stationRatio: Number((stationB / stationA).toFixed(4)),
           offline12hA: offA,
           offline12hB: offB,
           offlineRatio: Number(offlineRatio.toFixed(4)),
-          note: "成就/等级给的挂机加成进入 effectOf 的 station，但离线基数用 stationIdleScaled（不含 achEffects）→ 差额落到 teamPart×0.5",
         }),
     );
-    // 在线是 +2%，离线只拿到约 +1%（一半），说明"永久挂机加成"对离线党打折
     expect(online).toBeCloseTo(1.02, 3);
-    expect(offlineRatio).toBeGreaterThan(1.0);
-    expect(offlineRatio).toBeLessThan(online);
+    expect(stationB / stationA).toBeCloseTo(1.02, 3);
+    // 离线与在线一致：+2% 全额吃到
+    expect(offlineRatio).toBeCloseTo(1.02, 3);
   });
 
   it("live seeded 变体预期值（v0.6.1，HUD 对照用）", () => {
     const A = seedBase({ totalClicks: 0 }); // codex 3 条 = Lv.1
-    const B = seedBase({ totalClicks: 1000 }); // + click_1k = 4 条 = Lv.2
+    const B = seedBase({ totalClicks: 1000 }); // + click_1k = 4 条 = Lv.2（v0.6.3：点击只计一次 → 3917.8）
     const C = seedBase({ levels: { coffee: 100, phone: 80 }, bestIdleRate: 0 }); // 4 条 = Lv.2（idle_1k 自动）
     const D = seedBase({ rankIndex: 7 }); // + rank_7 = 4 条 = Lv.2
     const rows: Record<string, unknown> = {};
@@ -268,22 +272,23 @@ describe("R17 收集成就党 / 引擎侧（v0.6.1）", () => {
           note: "C/D 的 bestIdleRate 由 tick 自然记录 → idle_1k 自动完成；B/C/D 达到 4 条 → Lv.2 等级奖励 +2% 挂机",
         }),
     );
-    // B/A 点击比 → 仍应 ≈1.0404（重复计入未修）而不是 1.02
+    // v0.6.3：点击加成只计一次 → B/A = 1.02，HUD 显示 3917.8（v0.6.1 的重复计入版是 3996.2）
     const clickUpgrade = 3200; // coffee Lv.100
     const ratio = clickPowerOf(B) / clickPowerOf(A);
     const single = (1 + clickUpgrade * 1.2 * 1.02) / (1 + clickUpgrade * 1.2);
     console.log(
-      "DOUBLE_DIP " +
+      "SINGLE_CLICK " +
         JSON.stringify({
           clickA: clickPowerOf(A),
           clickB: clickPowerOf(B),
           ratioActual: Number(ratio.toFixed(6)),
           expectedIfSingle: Number(single.toFixed(6)),
-          singleHud: formatMoyu(1 + clickUpgrade * 1.2 * 1.02),
           hudA: formatMoyu(clickPowerOf(A)),
           hudB: formatMoyu(clickPowerOf(B)),
+          oldDoubleHud: 3996.2,
         }),
     );
+    expect(ratio).toBeCloseTo(1.02, 3);
     // 等级奖励：B 新增的是点击成就，但空闲倍率也应因 Lv.2 上升 2%
     expect(achEffects(B).idleMult / achEffects(A).idleMult).toBeCloseTo(1.02, 6);
     console.log(

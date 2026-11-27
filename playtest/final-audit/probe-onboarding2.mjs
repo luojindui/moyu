@@ -21,7 +21,6 @@ const baseSeed = (over = {}) => ({
   },
   energy: { date: today, left: 100, used: [], boosted: { idleMult: 1, patrolRewardMult: 1, clickMult: 1 } },
   arcade: { date: today, played: 0, best: {} },
-  cards: { date: today, offers: [], chosen: null, until: 0, dismissed: false, chosenDate: "", nextDayGuaranteed: null },
   ...over,
 });
 
@@ -35,6 +34,12 @@ async function seedAndReload(blob, ms = 700) {
   await c.send("Page.reload", {});
   const ok = await waitFor(c, `typeof window.__MOYU__ === "object" && document.readyState === "complete"`, 20000);
   await ev(c, `window.confirm = () => true; window.alert = () => {}; true`);
+  // boot 完成（onboarding class 在资产加载后添加）：等其出现或已进阶
+  await waitFor(c, `(() => {
+    if (!window.__MOYU__) return false;
+    const s = window.__MOYU__.state;
+    return document.body.classList.contains("onboarding") || s.prestige > 0 || s.lifetimeEarned > 1e6 || !document.getElementById("quest").classList.contains("hidden");
+  })()`, 20000);
   await sleep(ms);
   return ok;
 }
@@ -137,7 +142,8 @@ async function stepOnce(seen, mode) {
     return { q, action: "claim", claim };
   }
   if (/招募第一位同事/.test(q.text)) {
-    if ((await money()) < 12000) await ev(c, "window.__MOYU__.grant(13000)");
+    const price = await ev(c, `(async () => { const M = await import("/src/engine/team.ts"); return M.recruitCostOf(window.__MOYU__.state, "zhou"); })()`);
+    if ((await money()) < price) await ev(c, `window.__MOYU__.grant(${Math.ceil(price) + 500})`);
     await ev(c, `document.getElementById("btn-team").click(); true`);
     await sleep(400);
     await ev(c, `(() => { const b = document.querySelector('button[data-act="recruit"][data-id="zhou"]'); if (b && !b.disabled) b.click(); return true; })()`);
@@ -214,15 +220,16 @@ await runChrome(async ({ port }) => {
     if (happy?.finished) {
       const qEnd = await questInfo();
       rep.expect("H4 完成后 quest 隐藏 + onboarding class 移除", qEnd.hidden === true && qEnd.onboarding === false, JSON.stringify(qEnd));
-      await sleep(1000);
-      const bEnd = await badgeVisibility();
+      let bEnd = await badgeVisibility();
+      for (let i = 0; i < 10 && Object.values(bEnd).some((v) => v !== "shown"); i++) { await sleep(300); bEnd = await badgeVisibility(); }
       rep.expect("H5 完成后系统角标恢复显示", bEnd.arcade === "shown" && bEnd.energy === "shown" && bEnd.talent === "shown", JSON.stringify(bEnd));
       const sEnd = await state(c);
       rep.expect("H6 状态闭环（日报领/招募/精力/小游戏/点击≥100）",
         sEnd.daily.claimed === true && Object.keys(sEnd.team.colleagues).length >= 1 && sEnd.energy.used.length >= 1 && sEnd.arcade.played >= 1 && sEnd.totalClicks >= 100,
         JSON.stringify({ claimed: sEnd.daily.claimed, team: Object.keys(sEnd.team.colleagues).length, energy: sEnd.energy.used.length, arcade: sEnd.arcade.played, clicks: sEnd.totalClicks }));
       const stepCount = happy.seen.length;
-      rep.expect("H7 实际目标链步数 = 10（任务书写 9 步）", stepCount === 9, `实际观测 ${stepCount} 步：${JSON.stringify(happy.seen)}`);
+      rep.expect("H7a 目标链可完整走通且步数可观测", stepCount >= 9, `实际观测 ${stepCount} 步：${JSON.stringify(happy.seen)}`);
+      rep.expect("H7b 目标链步数应为 9（任务书/提交信息），实际实现", stepCount === 9, `实际观测 ${stepCount} 步（实现为 10 步）：${JSON.stringify(happy.seen)}`);
       await shotSafe("ONB2-happy-end");
     }
 
@@ -248,10 +255,15 @@ await runChrome(async ({ port }) => {
         continue;
       }
       if (/选一张「今日摸鱼卡」/.test(q.text)) {
-        // 卡步骤但弹窗已被 dismissed → 观察是否卡住
+        // 到达卡牌步骤：等弹窗出现（最多 6s），点「今天先不选」，再观察是否卡住
+        let vis = await cardsVisible();
+        const tw = Date.now();
+        while (!vis && Date.now() - tw < 6000) { await sleep(200); vis = await cardsVisible(); }
+        if (vis) { await skipCard(); skipped = true; }
         stuckText = q.text;
-        await sleep(1000);
-        stuckObserved = true;
+        await sleep(2600);
+        const q2 = await questInfo();
+        stuckObserved = !q2.hidden && /选一张「今日摸鱼卡」/.test(q2.text ?? "") && !(await cardsVisible());
         break;
       }
       const r = await stepOnce(seenSkip, "skip");

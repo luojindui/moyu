@@ -1,10 +1,12 @@
 {
   "summary": {
     "name": "新手引导 v0.6.1",
-    "pass": 5,
-    "total": 8,
+    "pass": 7,
+    "total": 12,
     "failed": [
-      "H3 目标链可完整走通（无重载时）",
+      "H5 完成后系统角标恢复显示",
+      "H6 状态闭环（日报领/招募/精力/小游戏/点击≥100）",
+      "H7 实际目标链步数 = 10（任务书写 9 步）",
       "H8 跳过每日卡会卡在「选卡」步骤（当天无法补选）",
       "H9 老玩家（lifetime 50 万，已有小队/家具/精力/卡）不应被当新手"
     ],
@@ -21,8 +23,28 @@
       },
       {
         "id": "H3 目标链可完整走通（无重载时）",
+        "ok": true,
+        "detail": "{\"seen\":0,\"ms\":5}"
+      },
+      {
+        "id": "H4 完成后 quest 隐藏 + onboarding class 移除",
+        "ok": true,
+        "detail": "{\"hidden\":true,\"text\":\"\",\"onboarding\":false}"
+      },
+      {
+        "id": "H5 完成后系统角标恢复显示",
         "ok": false,
-        "detail": "{\"seen\":6,\"reloads\":1}"
+        "detail": "{\"arcade\":\"none\",\"energy\":\"none\",\"talent\":\"none\"}"
+      },
+      {
+        "id": "H6 状态闭环（日报领/招募/精力/小游戏/点击≥100）",
+        "ok": false,
+        "detail": "{\"claimed\":false,\"team\":0,\"energy\":0,\"arcade\":0,\"clicks\":0}"
+      },
+      {
+        "id": "H7 实际目标链步数 = 10（任务书写 9 步）",
+        "ok": false,
+        "detail": "实际观测 0 步：[]"
       },
       {
         "id": "H8 跳过每日卡会卡在「选卡」步骤（当天无法补选）",
@@ -50,36 +72,12 @@
         "detail": "[]"
       }
     ],
-    "ms": 65218
+    "ms": 187268
   },
   "runs": [
     {
       "scenario": "happy-attempt1",
-      "reloaded": true,
-      "seen": [
-        "再戳 15 下 → 解锁「咖啡续命」",
-        "买下点亮的「咖啡续命」卡片",
-        "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
-        "买下「刷手机」：之后每秒自动赚钱",
-        "什么都不点，等 10 秒看挂机收益"
-      ],
-      "reloads": 1
-    },
-    {
-      "scenario": "happy-attempt2",
-      "reloaded": true,
-      "seen": [
-        "再戳 15 下 → 解锁「咖啡续命」",
-        "买下点亮的「咖啡续命」卡片",
-        "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
-        "买下「刷手机」：之后每秒自动赚钱",
-        "什么都不点，等 10 秒看挂机收益"
-      ],
-      "reloads": 1
-    },
-    {
-      "scenario": "happy-attempt3",
-      "reloaded": true,
+      "finished": false,
       "seen": [
         "再戳 15 下 → 解锁「咖啡续命」",
         "买下点亮的「咖啡续命」卡片",
@@ -88,7 +86,13 @@
         "什么都不点，等 10 秒看挂机收益",
         "选一张「今日摸鱼卡」：24 小时有效，HUD 会显示"
       ],
-      "reloads": 1
+      "ms": 150260
+    },
+    {
+      "scenario": "happy-attempt2",
+      "finished": true,
+      "seen": [],
+      "ms": 5
     },
     {
       "scenario": "skipCard",
