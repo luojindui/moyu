@@ -1,0 +1,1829 @@
+{
+  "generatedAt": "2026-11-27T13:07:19.373Z",
+  "node": "v22.23.2",
+  "scenarios": {
+    "bootstrap": {
+      "ok": true
+    },
+    "S1": {
+      "welcome": {
+        "hidden": true,
+        "time": "0",
+        "gain": "0",
+        "rule": ""
+      },
+      "res": {
+        "state": {
+          "moyu": 1000000164294.4841,
+          "totalEarned": 5000000164294.479,
+          "idle": 131404.0506556448,
+          "click": 715.04125,
+          "station": 43964.63327564478,
+          "teamEngine": 87439.41738000001,
+          "prestige": 8,
+          "surviveStreak": 3,
+          "totalClicks": 3000,
+          "visits": {
+            "date": "2026-11-27",
+            "count": 6
+          },
+          "decorCount": 8
+        },
+        "exp": {
+          "hud": {
+            "moyu": "10000.00亿",
+            "click": "715.0",
+            "idle": "13.14万",
+            "rankShort": "宇宙尽头·终",
+            "card": "卡·咖啡管够",
+            "streak": "♻ 转生×8（可晋升）",
+            "arcadeBadge": "3",
+            "teamBadge": "1"
+          },
+          "shop": [
+            {
+              "id": "coffee",
+              "price": "81",
+              "priceRaw": 81,
+              "inc": "+1 点击力",
+              "gap": 8,
+              "gapText": "",
+              "level": "Lv.12",
+              "disabled": false
+            },
+            {
+              "id": "water",
+              "price": "306",
+              "priceRaw": 306,
+              "inc": "+2 点击力",
+              "gap": 7,
+              "gapText": "",
+              "level": "Lv.8",
+              "disabled": false
+            },
+            {
+              "id": "chair",
+              "price": "1610",
+              "priceRaw": 1610,
+              "inc": "+5 点击力",
+              "gap": 5,
+              "gapText": " · ×2差5级",
+              "level": "Lv.5",
+              "disabled": false
+            },
+            {
+              "id": "phone",
+              "price": "3311",
+              "priceRaw": 3311,
+              "inc": "+4/秒",
+              "gap": 15,
+              "gapText": "",
+              "level": "Lv.30",
+              "disabled": false
+            },
+            {
+              "id": "toilet",
+              "price": "1.30万",
+              "priceRaw": 12987,
+              "inc": "+10/秒",
+              "gap": 18,
+              "gapText": "",
+              "level": "Lv.22",
+              "disabled": false
+            },
+            {
+              "id": "group",
+              "price": "3.25万",
+              "priceRaw": 32549,
+              "inc": "+30/秒",
+              "gap": 20,
+              "gapText": "",
+              "level": "Lv.15",
+              "disabled": false
+            },
+            {
+              "id": "meeting",
+              "price": "6.65万",
+              "priceRaw": 66501,
+              "inc": "+50/秒",
+              "gap": 3,
+              "gapText": " · ×2差3级",
+              "level": "Lv.7",
+              "disabled": false
+            },
+            {
+              "id": "deep",
+              "price": "22.81万",
+              "priceRaw": 228132,
+              "inc": "+180/秒",
+              "gap": 2,
+              "gapText": " · ×2差2级",
+              "level": "Lv.3",
+              "disabled": false
+            },
+            {
+              "id": "retire",
+              "price": "115.00万",
+              "priceRaw": 1150000,
+              "inc": "+700/秒",
+              "gap": 19,
+              "gapText": "",
+              "level": "Lv.1",
+              "disabled": false
+            }
+          ],
+          "journal": {
+            "date": "2026-11-27",
+            "streak": "🔥 连续 5 天（今天未领）",
+            "goals": [
+              "✓今天上线看一眼1/1",
+              "✓什么都不点，等摸鱼值自己涨1/1",
+              "✓戳 100 下100/100"
+            ],
+            "claim": "领取 +7884.24万",
+            "total": "55/55",
+            "quote": "10/10",
+            "flavor": "45/45",
+            "stats": [
+              "生涯总收入50000.00亿",
+              "本局 / 往期50000.00亿 / 0",
+              "当前余额10000.00亿",
+              "累计投入21.49亿",
+              "点击力 / 挂机715 / 13.14万每秒",
+              "累计点击3000",
+              "今日回访6/3（离线效率 131%）",
+              "连续日报5 天",
+              "图鉴55/55",
+              "转生8 点（×7.00）",
+              "纪录·最佳单日0.1（2026-11-27）",
+              "纪录·最长连签0 天",
+              "纪录·最多点击0"
+            ],
+            "rank": "摸鱼宇宙尽头·终",
+            "prestigeBtn": "离职再就业：+20 点（永久 ×22.00）",
+            "gridCount": 55
+          },
+          "team": {
+            "size": 5,
+            "claimableTotal": 12345678,
+            "claimAll": "一键领取 +1234.57万",
+            "summaryEngineTeam": 87439.41738000001,
+            "summaryUiFormula": 17884.6552331261,
+            "colleagueRows": [
+              {
+                "id": "zhou",
+                "ui": 840,
+                "engine": 1542.24,
+                "upCost": 21524,
+                "missions": [
+                  {
+                    "mission": "stroll",
+                    "est": 607528,
+                    "secs": 153,
+                    "uiNetPerHour": 10747323.921246072,
+                    "engineNetPerHour": 10583582.4704
+                  },
+                  {
+                    "mission": "quick",
+                    "est": 2002081,
+                    "secs": 765,
+                    "uiNetPerHour": 6605087.921246072,
+                    "engineNetPerHour": 6441346.4704
+                  },
+                  {
+                    "mission": "chat",
+                    "est": 5384908,
+                    "secs": 1530,
+                    "uiNetPerHour": 9366579.921246072,
+                    "engineNetPerHour": 9202838.4704
+                  },
+                  {
+                    "mission": "meeting",
+                    "est": 8836773,
+                    "secs": 3060,
+                    "uiNetPerHour": 7433536.921246072,
+                    "engineNetPerHour": 7269795.4704
+                  },
+                  {
+                    "mission": "toilet",
+                    "est": 48602253,
+                    "secs": 12240,
+                    "uiNetPerHour": 10747327.171246072,
+                    "engineNetPerHour": 10583585.7204
+                  },
+                  {
+                    "mission": "coffee",
+                    "est": 123714827,
+                    "secs": 24480,
+                    "uiNetPerHour": 14061117.296246072,
+                    "engineNetPerHour": 13897375.8454
+                  }
+                ]
+              },
+              {
+                "id": "mei",
+                "ui": 4200,
+                "engine": 6554.5199999999995,
+                "upCost": 896807,
+                "missions": [
+                  {
+                    "mission": "stroll",
+                    "est": 419283,
+                    "secs": 180,
+                    "uiNetPerHour": 4930614.901557591,
+                    "engineNetPerHour": 3303902.0879999995
+                  },
+                  {
+                    "mission": "quick",
+                    "est": 1381728,
+                    "secs": 900,
+                    "uiNetPerHour": 2071866.9015575913,
+                    "engineNetPerHour": 445154.0879999995
+                  },
+                  {
+                    "mission": "chat",
+                    "est": 2477581,
+                    "secs": 1800,
+                    "uiNetPerHour": 1500116.9015575913,
+                    "engineNetPerHour": -126595.91200000048
+                  },
+                  {
+                    "mission": "meeting",
+                    "est": 9147993,
+                    "secs": 3600,
+                    "uiNetPerHour": 5692947.901557591,
+                    "engineNetPerHour": 4066235.0879999995
+                  },
+                  {
+                    "mission": "toilet",
+                    "est": 33542642,
+                    "secs": 14400,
+                    "uiNetPerHour": 4930615.401557591,
+                    "engineNetPerHour": 3303902.5879999995
+                  },
+                  {
+                    "mission": "coffee",
+                    "est": 85381270,
+                    "secs": 28800,
+                    "uiNetPerHour": 7217613.651557591,
+                    "engineNetPerHour": 5590900.8379999995
+                  }
+                ]
+              },
+              {
+                "id": "qiang",
+                "ui": 8400,
+                "engine": 15422.4,
+                "upCost": 14348908,
+                "missions": [
+                  {
+                    "mission": "stroll",
+                    "est": 435246,
+                    "secs": 180,
+                    "uiNetPerHour": 2744465.8818691093,
+                    "engineNetPerHour": -724427.8943999987
+                  },
+                  {
+                    "mission": "quick",
+                    "est": 1434333,
+                    "secs": 900,
+                    "uiNetPerHour": -223122.11813089065,
+                    "engineNetPerHour": -3692015.8943999987
+                  },
+                  {
+                    "mission": "chat",
+                    "est": 2571908,
+                    "secs": 1800,
+                    "uiNetPerHour": -816638.1181308907,
+                    "engineNetPerHour": -4285531.894399999
+                  },
+                  {
+                    "mission": "meeting",
+                    "est": 6330852,
+                    "secs": 3600,
+                    "uiNetPerHour": 370397.88186910935,
+                    "engineNetPerHour": -3098495.8943999987
+                  },
+                  {
+                    "mission": "toilet",
+                    "est": 52229533,
+                    "secs": 14400,
+                    "uiNetPerHour": 7096929.131869109,
+                    "engineNetPerHour": 3628035.3556000013
+                  },
+                  {
+                    "mission": "coffee",
+                    "est": 88631936,
+                    "secs": 28800,
+                    "uiNetPerHour": 5118537.881869109,
+                    "engineNetPerHour": 1649644.1056000013
+                  }
+                ]
+              },
+              {
+                "id": "li",
+                "ui": 12600,
+                "engine": 23133.6,
+                "upCost": 107616803,
+                "missions": [
+                  {
+                    "mission": "stroll",
+                    "est": 1082902,
+                    "secs": 180,
+                    "uiNetPerHour": 13192176.862180628,
+                    "engineNetPerHour": 7881102.123200001
+                  },
+                  {
+                    "mission": "quick",
+                    "est": 3568654,
+                    "secs": 900,
+                    "uiNetPerHour": 5808752.862180628,
+                    "engineNetPerHour": 497678.1232000012
+                  },
+                  {
+                    "mission": "chat",
+                    "est": 4265977,
+                    "secs": 1800,
+                    "uiNetPerHour": 66090.86218062788,
+                    "engineNetPerHour": -5244983.876799999
+                  },
+                  {
+                    "mission": "meeting",
+                    "est": 10500868,
+                    "secs": 3600,
+                    "uiNetPerHour": 2035004.8621806279,
+                    "engineNetPerHour": -3276069.876799999
+                  },
+                  {
+                    "mission": "toilet",
+                    "est": 36096736,
+                    "secs": 14400,
+                    "uiNetPerHour": 558320.8621806279,
+                    "engineNetPerHour": -4752753.876799999
+                  },
+                  {
+                    "mission": "coffee",
+                    "est": 91882601,
+                    "secs": 28800,
+                    "uiNetPerHour": 3019461.987180628,
+                    "engineNetPerHour": -2291612.751799999
+                  }
+                ]
+              },
+              {
+                "id": "wang",
+                "ui": 16800,
+                "engine": 30844.8,
+                "upCost": 717445351,
+                "missions": [
+                  {
+                    "mission": "stroll",
+                    "est": 467172,
+                    "secs": 180,
+                    "uiNetPerHour": -1627832.1575078536,
+                    "engineNetPerHour": -8781087.859199997
+                  },
+                  {
+                    "mission": "quick",
+                    "est": 1539545,
+                    "secs": 900,
+                    "uiNetPerHour": -4813092.157507854,
+                    "engineNetPerHour": -11966347.859199997
+                  },
+                  {
+                    "mission": "chat",
+                    "est": 2760563,
+                    "secs": 1800,
+                    "uiNetPerHour": -5450146.157507854,
+                    "engineNetPerHour": -12603401.859199997
+                  },
+                  {
+                    "mission": "meeting",
+                    "est": 6795233,
+                    "secs": 3600,
+                    "uiNetPerHour": -4176039.1575078536,
+                    "engineNetPerHour": -11329294.859199997
+                  },
+                  {
+                    "mission": "toilet",
+                    "est": 56060674,
+                    "secs": 14400,
+                    "uiNetPerHour": 3043896.3424921464,
+                    "engineNetPerHour": -4109359.359199997
+                  },
+                  {
+                    "mission": "coffee",
+                    "est": 214049849,
+                    "secs": 28800,
+                    "uiNetPerHour": 15784958.967492146,
+                    "engineNetPerHour": 8631703.265800003
+                  }
+                ]
+              }
+            ],
+            "idleColleagues": [
+              "qiang",
+              "li",
+              "wang"
+            ]
+          },
+          "talent": {
+            "points": "天赋点 0",
+            "clickMult": 1.25,
+            "idleMult": 1.08,
+            "patrolMult": 1.2,
+            "conversionActual": 0.1,
+            "uiClickPct": 0.1,
+            "uiSurvivePct": 0.2,
+            "overflow": 0.02,
+            "surviveToIdle": false
+          },
+          "decor": {
+            "idleMult": 1.5779610000000004,
+            "clickMult": 1.265,
+            "offline": 0.23,
+            "energyLeft": 100,
+            "energyUsed": []
+          },
+          "arcade": {
+            "left": 3,
+            "refs": {
+              "coffee": 540,
+              "findboss": 1200,
+              "rhythm": 1180
+            }
+          }
+        },
+        "dom": {
+          "hud": {
+            "moyu": "10000.00亿",
+            "click": "715.0",
+            "idle": "13.14万",
+            "rank": "宇宙尽头·终",
+            "card": "卡·咖啡管够",
+            "streak": "♻ 转生×8（可晋升）",
+            "comboHidden": true,
+            "journalHasReward": true,
+            "teamBadge": "1",
+            "energyBadge": "精力 100",
+            "arcadeBadge": "3"
+          },
+          "shop": [
+            {
+              "id": "coffee",
+              "price": "81",
+              "next": "+1 点击力 · 咖啡因已注入静脉",
+              "value": "★ 点击最优",
+              "remain": "",
+              "level": "Lv.12",
+              "disabled": false,
+              "datasetPrice": "81"
+            },
+            {
+              "id": "phone",
+              "price": "3311",
+              "next": "+4/秒 · 手指有了肌肉记忆",
+              "value": "★ 挂机最优",
+              "remain": "",
+              "level": "Lv.30",
+              "disabled": false,
+              "datasetPrice": "3311"
+            },
+            {
+              "id": "water",
+              "price": "306",
+              "next": "+2 点击力 · 今日饮水 KPI 达成",
+              "value": "",
+              "remain": "",
+              "level": "Lv.8",
+              "disabled": false,
+              "datasetPrice": "306"
+            },
+            {
+              "id": "toilet",
+              "price": "1.30万",
+              "next": "+10/秒 · 隔间是我的办公室",
+              "value": "",
+              "remain": "",
+              "level": "Lv.22",
+              "disabled": false,
+              "datasetPrice": "12987"
+            },
+            {
+              "id": "chair",
+              "price": "1610",
+              "next": "+5 点击力 · ×2差5级 · 坐着就是赚钱",
+              "value": "",
+              "remain": "",
+              "level": "Lv.5",
+              "disabled": false,
+              "datasetPrice": "1610"
+            },
+            {
+              "id": "group",
+              "price": "3.25万",
+              "next": "+30/秒 · 摸鱼情报交换中",
+              "value": "",
+              "remain": "",
+              "level": "Lv.15",
+              "disabled": false,
+              "datasetPrice": "32549"
+            },
+            {
+              "id": "meeting",
+              "price": "6.65万",
+              "next": "+50/秒 · ×2差3级 · 发言=加班，沉默=摸鱼",
+              "value": "",
+              "remain": "",
+              "level": "Lv.7",
+              "disabled": false,
+              "datasetPrice": "66501"
+            },
+            {
+              "id": "deep",
+              "price": "22.81万",
+              "next": "+180/秒 · ×2差2级 · 心流状态，勿扰",
+              "value": "",
+              "remain": "",
+              "level": "Lv.3",
+              "disabled": false,
+              "datasetPrice": "228132"
+            },
+            {
+              "id": "retire",
+              "price": "115.00万",
+              "next": "+700/秒 · 工资？那是副业",
+              "value": "",
+              "remain": "",
+              "level": "Lv.1",
+              "disabled": false,
+              "datasetPrice": "1150000"
+            }
+          ],
+          "journal": {
+            "date": "2026-11-27",
+            "streak": "🔥 连续 5 天（今天未领）",
+            "goals": [
+              "✓\n        今天上线看一眼\n        1/1",
+              "✓\n        什么都不点，等摸鱼值自己涨\n        1/1",
+              "✓\n        戳 100 下\n        100/100"
+            ],
+            "claim": "领取 +7884.24万",
+            "claimDisabled": false,
+            "total": "55/55",
+            "quote": "10/10",
+            "flavor": "45/45",
+            "stats": [
+              "生涯总收入50000.00亿",
+              "本局 / 往期50000.00亿 / 0",
+              "当前余额10000.00亿",
+              "累计投入21.49亿",
+              "点击力 / 挂机715 / 13.14万每秒",
+              "累计点击3000",
+              "今日回访6/3（离线效率 131%）",
+              "连续日报5 天",
+              "图鉴55/55",
+              "转生8 点（×7.00）",
+              "纪录·最佳单日0.1（2026-11-27）",
+              "纪录·最长连签0 天",
+              "纪录·最多点击0"
+            ],
+            "rank": "摸鱼宇宙尽头·终",
+            "prestigeBtn": "离职再就业：+20 点（永久 ×22.00）",
+            "prestigeBtnDisabled": false,
+            "prestigeInfo": "已有 8 点 · 当前 ×7.00",
+            "gridCount": 55
+          },
+          "teamSummary": "已招募 5/5 · 小队挂机 +1.79万/秒\n      一键领取 +1234.57万\n      自动重复：完成后自动领取并续班（离线回来最多补 1 轮）",
+          "claimAllBtn": "一键领取 +1234.57万",
+          "mates": [
+            {
+              "name": "老周 Lv.5",
+              "skill": "挂机 +700/秒 + 工位 4.0% · 擅长 聊八卦",
+              "favor": "",
+              "buttons": [
+                "已满级 Lv.5",
+                "自动重复：关",
+                "领取 +1234.57万"
+              ],
+              "claim": "领取 +1234.57万",
+              "missions": []
+            },
+            {
+              "name": "强哥 Lv.5",
+              "skill": "挂机 +7000/秒 + 工位 6.0% · 擅长 蹲点",
+              "favor": "",
+              "buttons": [
+                "已满级 Lv.5",
+                "自动重复：关",
+                "就近溜达3m · +43.52万 · 净 +350.05万/h",
+                "溜一圈15m · +143.43万 · 净 +53.29万/h",
+                "茶水间聊八卦30m · +257.19万 · 净 -60638.1/h",
+                "开个会1h · +633.09万 · 净 +112.64万/h",
+                "长线蹲点 ★4h · +5222.95万 · 净 +785.29万/h",
+                "楼下买咖啡8h · +8863.19万 · 净 +587.45万/h"
+              ],
+              "claim": null,
+              "missions": [
+                "就近溜达3m · +43.52万 · 净 +350.05万/h",
+                "溜一圈15m · +143.43万 · 净 +53.29万/h",
+                "茶水间聊八卦30m · +257.19万 · 净 -60638.1/h",
+                "开个会1h · +633.09万 · 净 +112.64万/h",
+                "长线蹲点 ★4h · +5222.95万 · 净 +785.29万/h",
+                "楼下买咖啡8h · +8863.19万 · 净 +587.45万/h"
+              ]
+            },
+            {
+              "name": "小李 Lv.5",
+              "skill": "挂机 +1.05万/秒 + 工位 7.0% · 擅长 跑腿",
+              "favor": "",
+              "buttons": [
+                "已满级 Lv.5",
+                "自动重复：关",
+                "就近溜达 ★3m · +108.29万 · 净 +1432.62万/h",
+                "溜一圈 ★15m · +356.87万 · 净 +694.28万/h",
+                "茶水间聊八卦30m · +426.60万 · 净 +120.01万/h",
+                "开个会1h · +1050.09万 · 净 +316.90万/h",
+                "长线蹲点4h · +3609.67万 · 净 +169.23万/h",
+                "楼下买咖啡8h · +9188.26万 · 净 +415.35万/h"
+              ],
+              "claim": null,
+              "missions": [
+                "就近溜达 ★3m · +108.29万 · 净 +1432.62万/h",
+                "溜一圈 ★15m · +356.87万 · 净 +694.28万/h",
+                "茶水间聊八卦30m · +426.60万 · 净 +120.01万/h",
+                "开个会1h · +1050.09万 · 净 +316.90万/h",
+                "长线蹲点4h · +3609.67万 · 净 +169.23万/h",
+                "楼下买咖啡8h · +9188.26万 · 净 +415.35万/h"
+              ]
+            },
+            {
+              "name": "王师傅 Lv.5",
+              "skill": "挂机 +1.40万/秒 + 工位 8.0% · 擅长 买咖啡",
+              "favor": "",
+              "buttons": [
+                "已满级 Lv.5",
+                "自动重复：关",
+                "就近溜达3m · +46.72万 · 净 -115832.2/h",
+                "溜一圈15m · +153.95万 · 净 -3301092.2/h",
+                "茶水间聊八卦30m · +276.06万 · 净 -3938146.2/h",
+                "开个会1h · +679.52万 · 净 -2664039.2/h",
+                "长线蹲点4h · +5606.07万 · 净 +455.59万/h",
+                "楼下买咖啡 ★8h · +2.14亿 · 净 +1729.70万/h"
+              ],
+              "claim": null,
+              "missions": [
+                "就近溜达3m · +46.72万 · 净 -115832.2/h",
+                "溜一圈15m · +153.95万 · 净 -3301092.2/h",
+                "茶水间聊八卦30m · +276.06万 · 净 -3938146.2/h",
+                "开个会1h · +679.52万 · 净 -2664039.2/h",
+                "长线蹲点4h · +5606.07万 · 净 +455.59万/h",
+                "楼下买咖啡 ★8h · +2.14亿 · 净 +1729.70万/h"
+              ]
+            },
+            {
+              "name": "小美 Lv.5",
+              "skill": "挂机 +3500/秒 + 工位 5.0% （派遣中 -15%） · 擅长 开会",
+              "favor": "",
+              "buttons": [
+                "已满级 Lv.5",
+                "自动重复：关"
+              ],
+              "claim": null,
+              "missions": []
+            }
+          ],
+          "lockedMates": 0,
+          "talentPanel": {
+            "points": "天赋点 0",
+            "branches": [
+              "点击流 · 手速摸鱼 （5/5 · 点击力 ×1.25 · 已选终极）",
+              "挂机流 · 稳如老狗 （5/5 · 挂机 ×1.08 · 已选终极）",
+              "事件流 · 摸鱼情报 （4/5 · 巡逻奖 ×1.20）"
+            ],
+            "rows": 18,
+            "progress": [
+              "点击转化：3000/10500 次（当前 +10%）",
+              "安然转化：20/30 次（当前 +20%）",
+              "溢出转化：4/30 点（当前 +2.0% 挂机，封顶 +15%）",
+              "天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1；每日首开 +1（上限 24，满树需 27 点 → 终局必须放弃一条流派）"
+            ]
+          },
+          "decorPanel": {
+            "summary": "已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线 +23%",
+            "energyHead": [
+              "今日精力 （剩 100/100）",
+              "工位家具 （已装修 8/8）"
+            ],
+            "energyRows": [
+              "40 认真摸鱼 今天挂机 +25% · 花 40 精力 使用",
+              "35 假装工作 今天巡逻奖励 ×2.2 · 花 35 精力 使用",
+              "25 跟同事聊天 全体好感 +5，且今天挂机 +5% · 花 25 精力 使用",
+              "45 专注点击 今天点击力 ×2，且挂机 +8% · 花 45 精力 使用"
+            ],
+            "decorRows": [
+              "✓ 绿萝 工位挂机 +5% 已装修",
+              "✓ 护眼台灯 点击力 +15% 已装修",
+              "✓ 毛绒地毯 离线效率 +5% 已装修",
+              "✓ 迷你冰箱 工位挂机 +8% 已装修",
+              "✓ 按摩椅 离线效率 +8% 已装修",
+              "✓ 鱼缸 挂机 +10%、点击 +10% 已装修",
+              "✓ 投影仪 派遣奖励 +30% 已装修",
+              "✓ 工位猫窝 挂机 +15%、离线 +10% 已装修"
+            ],
+            "comboBtn": "省心组合：摸鱼+假装工作+社交（100 精力）"
+          },
+          "arcadeMenu": {
+            "left": "今天还能玩 3/3 次 · 每局能赢摸鱼值",
+            "cards": [
+              "接咖啡 最高 300\n        咖啡掉下来时点住它——掉地上就没了\n        满分 ≈ 25 秒挂机收益（新号保底 30）\n        开始（30 秒）",
+              "找老板 最高 0\n        在一堆同事脸里找出王总，越快越好\n        满分 ≈ 25 秒挂机收益（新号保底 30）\n        开始（30 秒内无限轮）",
+              "节奏点击 最高 0\n        跟着节拍点屏幕，越准分越高\n        满分 ≈ 25 秒挂机收益（新号保底 30）\n        开始（30 秒）"
+            ],
+            "title": "摸鱼站"
+          }
+        }
+      }
+    },
+    "finalHud": {
+      "moyu": "10000.00亿",
+      "click": "715.0",
+      "idle": "13.14万"
+    }
+  },
+  "panelChecks": [
+    {
+      "panel": "HUD",
+      "item": "摸鱼值",
+      "shown": "10000.00亿",
+      "expected": "10000.00亿",
+      "ok": true
+    },
+    {
+      "panel": "HUD",
+      "item": "点击力",
+      "shown": "715.0",
+      "expected": "715.0",
+      "ok": true
+    },
+    {
+      "panel": "HUD",
+      "item": "挂机/秒",
+      "shown": "13.14万",
+      "expected": "13.14万",
+      "ok": true
+    },
+    {
+      "panel": "HUD",
+      "item": "段位+进度",
+      "shown": "宇宙尽头·终",
+      "expected": "undefined",
+      "ok": false
+    },
+    {
+      "panel": "HUD",
+      "item": "今日卡",
+      "shown": "卡·咖啡管够",
+      "expected": "卡·咖啡管够",
+      "ok": true
+    },
+    {
+      "panel": "HUD",
+      "item": "连胜/转生角标",
+      "shown": "♻ 转生×8（可晋升）",
+      "expected": "♻ 转生×8（可晋升）",
+      "ok": true
+    },
+    {
+      "panel": "HUD",
+      "item": "🎮 剩余次数角标",
+      "shown": "3",
+      "expected": "3",
+      "ok": true
+    },
+    {
+      "panel": "HUD",
+      "item": "👥 可领任务角标",
+      "shown": "1",
+      "expected": "1",
+      "ok": true
+    },
+    {
+      "panel": "HUD",
+      "item": "📔 日报可领点",
+      "shown": "true",
+      "expected": "undefined",
+      "ok": false
+    },
+    {
+      "panel": "商店",
+      "item": "coffee 价格",
+      "shown": "81",
+      "expected": "81",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "coffee 下一级增量",
+      "shown": "+1 点击力 · 咖啡因已注入静脉",
+      "expected": "+1 点击力（前缀）",
+      "engine": "+1 点击力",
+      "note": "UI 在增量后可能拼接彩蛋文案",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "coffee 等级",
+      "shown": "Lv.12",
+      "expected": "Lv.12",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "water 价格",
+      "shown": "306",
+      "expected": "306",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "water 下一级增量",
+      "shown": "+2 点击力 · 今日饮水 KPI 达成",
+      "expected": "+2 点击力（前缀）",
+      "engine": "+2 点击力",
+      "note": "UI 在增量后可能拼接彩蛋文案",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "water 等级",
+      "shown": "Lv.8",
+      "expected": "Lv.8",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "chair 价格",
+      "shown": "1610",
+      "expected": "1610",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "chair 下一级增量",
+      "shown": "+5 点击力 · ×2差5级 · 坐着就是赚钱",
+      "expected": "+5 点击力 · ×2差5级（前缀）",
+      "engine": "+5 点击力 · ×2差5级",
+      "note": "UI 在增量后可能拼接彩蛋文案",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "chair 等级",
+      "shown": "Lv.5",
+      "expected": "Lv.5",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "phone 价格",
+      "shown": "3311",
+      "expected": "3311",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "phone 下一级增量",
+      "shown": "+4/秒 · 手指有了肌肉记忆",
+      "expected": "+4/秒（前缀）",
+      "engine": "+4/秒",
+      "note": "UI 在增量后可能拼接彩蛋文案",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "phone 等级",
+      "shown": "Lv.30",
+      "expected": "Lv.30",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "toilet 价格",
+      "shown": "1.30万",
+      "expected": "1.30万",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "toilet 下一级增量",
+      "shown": "+10/秒 · 隔间是我的办公室",
+      "expected": "+10/秒（前缀）",
+      "engine": "+10/秒",
+      "note": "UI 在增量后可能拼接彩蛋文案",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "toilet 等级",
+      "shown": "Lv.22",
+      "expected": "Lv.22",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "group 价格",
+      "shown": "3.25万",
+      "expected": "3.25万",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "group 下一级增量",
+      "shown": "+30/秒 · 摸鱼情报交换中",
+      "expected": "+30/秒（前缀）",
+      "engine": "+30/秒",
+      "note": "UI 在增量后可能拼接彩蛋文案",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "group 等级",
+      "shown": "Lv.15",
+      "expected": "Lv.15",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "meeting 价格",
+      "shown": "6.65万",
+      "expected": "6.65万",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "meeting 下一级增量",
+      "shown": "+50/秒 · ×2差3级 · 发言=加班，沉默=摸鱼",
+      "expected": "+50/秒 · ×2差3级（前缀）",
+      "engine": "+50/秒 · ×2差3级",
+      "note": "UI 在增量后可能拼接彩蛋文案",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "meeting 等级",
+      "shown": "Lv.7",
+      "expected": "Lv.7",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "deep 价格",
+      "shown": "22.81万",
+      "expected": "22.81万",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "deep 下一级增量",
+      "shown": "+180/秒 · ×2差2级 · 心流状态，勿扰",
+      "expected": "+180/秒 · ×2差2级（前缀）",
+      "engine": "+180/秒 · ×2差2级",
+      "note": "UI 在增量后可能拼接彩蛋文案",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "deep 等级",
+      "shown": "Lv.3",
+      "expected": "Lv.3",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "retire 价格",
+      "shown": "115.00万",
+      "expected": "115.00万",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "retire 下一级增量",
+      "shown": "+700/秒 · 工资？那是副业",
+      "expected": "+700/秒（前缀）",
+      "engine": "+700/秒",
+      "note": "UI 在增量后可能拼接彩蛋文案",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "retire 等级",
+      "shown": "Lv.1",
+      "expected": "Lv.1",
+      "ok": true
+    },
+    {
+      "panel": "日报",
+      "item": "日期",
+      "shown": "2026-11-27",
+      "expected": "2026-11-27",
+      "ok": true
+    },
+    {
+      "panel": "日报",
+      "item": "连续天数",
+      "shown": "🔥 连续 5 天（今天未领）",
+      "expected": "🔥 连续 5 天（今天未领）",
+      "ok": true
+    },
+    {
+      "panel": "日报",
+      "item": "领取按钮",
+      "shown": "领取 +7884.24万",
+      "expected": "领取 +7884.24万",
+      "ok": true
+    },
+    {
+      "panel": "日报",
+      "item": "目标1",
+      "shown": "✓\n        今天上线看一眼\n        1/1",
+      "expected": "✓今天上线看一眼1/1",
+      "ok": false
+    },
+    {
+      "panel": "日报",
+      "item": "目标2",
+      "shown": "✓\n        什么都不点，等摸鱼值自己涨\n        1/1",
+      "expected": "✓什么都不点，等摸鱼值自己涨1/1",
+      "ok": false
+    },
+    {
+      "panel": "日报",
+      "item": "目标3",
+      "shown": "✓\n        戳 100 下\n        100/100",
+      "expected": "✓戳 100 下100/100",
+      "ok": false
+    },
+    {
+      "panel": "日报",
+      "item": "图鉴总计",
+      "shown": "55/55",
+      "expected": "55/55",
+      "ok": true
+    },
+    {
+      "panel": "日报",
+      "item": "图鉴语录",
+      "shown": "10/10",
+      "expected": "10/10",
+      "ok": true
+    },
+    {
+      "panel": "日报",
+      "item": "图鉴彩蛋",
+      "shown": "45/45",
+      "expected": "45/45",
+      "ok": true
+    },
+    {
+      "panel": "统计面板",
+      "item": "生涯总收入50000.00亿",
+      "shown": "true",
+      "expected": "包含「生涯总收入50000.00亿」",
+      "ok": true
+    },
+    {
+      "panel": "统计面板",
+      "item": "本局",
+      "shown": "true",
+      "expected": "包含「本局 / 往期50000.00亿 / 0」",
+      "ok": true
+    },
+    {
+      "panel": "统计面板",
+      "item": "当前余额10000.00亿",
+      "shown": "true",
+      "expected": "包含「当前余额10000.00亿」",
+      "ok": true
+    },
+    {
+      "panel": "统计面板",
+      "item": "累计投入21.49亿",
+      "shown": "true",
+      "expected": "包含「累计投入21.49亿」",
+      "ok": true
+    },
+    {
+      "panel": "统计面板",
+      "item": "点击力",
+      "shown": "true",
+      "expected": "包含「点击力 / 挂机715 / 13.14万每秒」",
+      "ok": true
+    },
+    {
+      "panel": "统计面板",
+      "item": "累计点击3000",
+      "shown": "true",
+      "expected": "包含「累计点击3000」",
+      "ok": true
+    },
+    {
+      "panel": "统计面板",
+      "item": "今日回访6/3（离线效率",
+      "shown": "true",
+      "expected": "包含「今日回访6/3（离线效率 131%）」",
+      "ok": true
+    },
+    {
+      "panel": "统计面板",
+      "item": "连续日报5",
+      "shown": "true",
+      "expected": "包含「连续日报5 天」",
+      "ok": true
+    },
+    {
+      "panel": "统计面板",
+      "item": "图鉴55/55",
+      "shown": "true",
+      "expected": "包含「图鉴55/55」",
+      "ok": true
+    },
+    {
+      "panel": "统计面板",
+      "item": "转生8",
+      "shown": "true",
+      "expected": "包含「转生8 点（×7.00）」",
+      "ok": true
+    },
+    {
+      "panel": "统计面板",
+      "item": "纪录·最佳单日0.1（2026-11-27）",
+      "shown": "true",
+      "expected": "包含「纪录·最佳单日0.1（2026-11-27）」",
+      "ok": true
+    },
+    {
+      "panel": "统计面板",
+      "item": "纪录·最长连签0",
+      "shown": "true",
+      "expected": "包含「纪录·最长连签0 天」",
+      "ok": true
+    },
+    {
+      "panel": "统计面板",
+      "item": "纪录·最多点击0",
+      "shown": "true",
+      "expected": "包含「纪录·最多点击0」",
+      "ok": true
+    },
+    {
+      "panel": "统计面板",
+      "item": "段位",
+      "shown": "摸鱼宇宙尽头·终",
+      "expected": "摸鱼宇宙尽头·终",
+      "ok": true
+    },
+    {
+      "panel": "统计面板",
+      "item": "转生按钮",
+      "shown": "离职再就业：+20 点（永久 ×22.00）",
+      "expected": "离职再就业：+20 点（永久 ×22.00）",
+      "ok": true
+    },
+    {
+      "panel": "图鉴",
+      "item": "55 格",
+      "shown": 55,
+      "expected": "55",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "已招募人数",
+      "shown": "true",
+      "expected": "包含「已招募 5/5」",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "小队挂机 +X/秒（vs 引擎同事真实贡献）",
+      "shown": 17900,
+      "expected": "87439.41738000001",
+      "engine": {
+        "engineTeam": 87439.41738000001,
+        "uiFormula": 17884.6552331261,
+        "ratio": 0.2045376761306835
+      },
+      "note": "UI 公式 teamFixedRate+stationIdleScaled×shareRatio 与 effectOf 引擎三段拆分不一致",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "一键领取金额",
+      "shown": 12345700,
+      "expected": "12345678",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "zhou 同事挂机/秒（vs 引擎真实贡献）",
+      "shown": 700,
+      "expected": "1542.24",
+      "engine": {
+        "uiShown": 840,
+        "engine": 1542.24,
+        "ratio": 0.5446623093681917
+      },
+      "note": "UI = idlePerLevel×lv×转生倍率（漏好感/带队天赋/离岗折损）",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "zhou 领取金额(快照)",
+      "shown": 12345700,
+      "expected": "12345678",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "mei 同事挂机/秒（vs 引擎真实贡献）",
+      "shown": 3500,
+      "expected": "6554.5199999999995",
+      "engine": {
+        "uiShown": 4200,
+        "engine": 6554.5199999999995,
+        "ratio": 0.6407791874919903
+      },
+      "note": "UI = idlePerLevel×lv×转生倍率（漏好感/带队天赋/离岗折损）",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "qiang 同事挂机/秒（vs 引擎真实贡献）",
+      "shown": 7000,
+      "expected": "15422.4",
+      "engine": {
+        "uiShown": 8400,
+        "engine": 15422.4,
+        "ratio": 0.5446623093681917
+      },
+      "note": "UI = idlePerLevel×lv×转生倍率（漏好感/带队天赋/离岗折损）",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "qiang/stroll 派遣估算",
+      "shown": 435200.00000000006,
+      "expected": "435246",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "qiang/stroll 净收益/小时（vs 引擎离岗损失）",
+      "shown": 3500500,
+      "expected": "-724427.8943999987",
+      "engine": {
+        "uiNet": 2744465.8818691093,
+        "engineNet": -724427.8943999987
+      },
+      "note": "UI 用 stationIdleScaled 估离岗损失，与引擎实际离岗折损口径不同，可能出现符号翻转",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "qiang/quick 派遣估算",
+      "shown": 1434300,
+      "expected": "1434333",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "qiang/quick 净收益/小时（vs 引擎离岗损失）",
+      "shown": 532900,
+      "expected": "-3692015.8943999987",
+      "engine": {
+        "uiNet": -223122.11813089065,
+        "engineNet": -3692015.8943999987
+      },
+      "note": "UI 用 stationIdleScaled 估离岗损失，与引擎实际离岗折损口径不同，可能出现符号翻转",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "qiang/chat 派遣估算",
+      "shown": 2571900,
+      "expected": "2571908",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "qiang/chat 净收益/小时（vs 引擎离岗损失）",
+      "shown": -60638.1,
+      "expected": "-4285531.894399999",
+      "engine": {
+        "uiNet": -816638.1181308907,
+        "engineNet": -4285531.894399999
+      },
+      "note": "UI 用 stationIdleScaled 估离岗损失，与引擎实际离岗折损口径不同，可能出现符号翻转",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "qiang/meeting 派遣估算",
+      "shown": 6330900,
+      "expected": "6330852",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "qiang/meeting 净收益/小时（vs 引擎离岗损失）",
+      "shown": 1126400,
+      "expected": "-3098495.8943999987",
+      "engine": {
+        "uiNet": 370397.88186910935,
+        "engineNet": -3098495.8943999987
+      },
+      "note": "UI 用 stationIdleScaled 估离岗损失，与引擎实际离岗折损口径不同，可能出现符号翻转",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "qiang/toilet 派遣估算",
+      "shown": 52229500,
+      "expected": "52229533",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "qiang/toilet 净收益/小时（vs 引擎离岗损失）",
+      "shown": 7852900,
+      "expected": "3628035.3556000013",
+      "engine": {
+        "uiNet": 7096929.131869109,
+        "engineNet": 3628035.3556000013
+      },
+      "note": "UI 用 stationIdleScaled 估离岗损失，与引擎实际离岗折损口径不同，可能出现符号翻转",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "qiang/coffee 派遣估算",
+      "shown": 88631900,
+      "expected": "88631936",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "qiang/coffee 净收益/小时（vs 引擎离岗损失）",
+      "shown": 5874500,
+      "expected": "1649644.1056000013",
+      "engine": {
+        "uiNet": 5118537.881869109,
+        "engineNet": 1649644.1056000013
+      },
+      "note": "UI 用 stationIdleScaled 估离岗损失，与引擎实际离岗折损口径不同，可能出现符号翻转",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "li 同事挂机/秒（vs 引擎真实贡献）",
+      "shown": 10500,
+      "expected": "23133.6",
+      "engine": {
+        "uiShown": 12600,
+        "engine": 23133.6,
+        "ratio": 0.5446623093681917
+      },
+      "note": "UI = idlePerLevel×lv×转生倍率（漏好感/带队天赋/离岗折损）",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "li/stroll 派遣估算",
+      "shown": 1082900,
+      "expected": "1082902",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "li/stroll 净收益/小时（vs 引擎离岗损失）",
+      "shown": 14326199.999999998,
+      "expected": "7881102.123200001",
+      "engine": {
+        "uiNet": 13192176.862180628,
+        "engineNet": 7881102.123200001
+      },
+      "note": "UI 用 stationIdleScaled 估离岗损失，与引擎实际离岗折损口径不同，可能出现符号翻转",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "li/quick 派遣估算",
+      "shown": 3568700,
+      "expected": "3568654",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "li/quick 净收益/小时（vs 引擎离岗损失）",
+      "shown": 6942800,
+      "expected": "497678.1232000012",
+      "engine": {
+        "uiNet": 5808752.862180628,
+        "engineNet": 497678.1232000012
+      },
+      "note": "UI 用 stationIdleScaled 估离岗损失，与引擎实际离岗折损口径不同，可能出现符号翻转",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "li/chat 派遣估算",
+      "shown": 4266000,
+      "expected": "4265977",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "li/chat 净收益/小时（vs 引擎离岗损失）",
+      "shown": 1200100,
+      "expected": "-5244983.876799999",
+      "engine": {
+        "uiNet": 66090.86218062788,
+        "engineNet": -5244983.876799999
+      },
+      "note": "UI 用 stationIdleScaled 估离岗损失，与引擎实际离岗折损口径不同，可能出现符号翻转",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "li/meeting 派遣估算",
+      "shown": 10500900,
+      "expected": "10500868",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "li/meeting 净收益/小时（vs 引擎离岗损失）",
+      "shown": 3169000,
+      "expected": "-3276069.876799999",
+      "engine": {
+        "uiNet": 2035004.8621806279,
+        "engineNet": -3276069.876799999
+      },
+      "note": "UI 用 stationIdleScaled 估离岗损失，与引擎实际离岗折损口径不同，可能出现符号翻转",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "li/toilet 派遣估算",
+      "shown": 36096700,
+      "expected": "36096736",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "li/toilet 净收益/小时（vs 引擎离岗损失）",
+      "shown": 1692300,
+      "expected": "-4752753.876799999",
+      "engine": {
+        "uiNet": 558320.8621806279,
+        "engineNet": -4752753.876799999
+      },
+      "note": "UI 用 stationIdleScaled 估离岗损失，与引擎实际离岗折损口径不同，可能出现符号翻转",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "li/coffee 派遣估算",
+      "shown": 91882600,
+      "expected": "91882601",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "li/coffee 净收益/小时（vs 引擎离岗损失）",
+      "shown": 4153500,
+      "expected": "-2291612.751799999",
+      "engine": {
+        "uiNet": 3019461.987180628,
+        "engineNet": -2291612.751799999
+      },
+      "note": "UI 用 stationIdleScaled 估离岗损失，与引擎实际离岗折损口径不同，可能出现符号翻转",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "wang 同事挂机/秒（vs 引擎真实贡献）",
+      "shown": 14000,
+      "expected": "30844.8",
+      "engine": {
+        "uiShown": 16800,
+        "engine": 30844.8,
+        "ratio": 0.5446623093681917
+      },
+      "note": "UI = idlePerLevel×lv×转生倍率（漏好感/带队天赋/离岗折损）",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "wang/stroll 派遣估算",
+      "shown": 467200,
+      "expected": "467172",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "wang/stroll 净收益/小时（vs 引擎离岗损失）",
+      "shown": -115832.2,
+      "expected": "-8781087.859199997",
+      "engine": {
+        "uiNet": -1627832.1575078536,
+        "engineNet": -8781087.859199997
+      },
+      "note": "UI 用 stationIdleScaled 估离岗损失，与引擎实际离岗折损口径不同，可能出现符号翻转",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "wang/quick 派遣估算",
+      "shown": 1539500,
+      "expected": "1539545",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "wang/quick 净收益/小时（vs 引擎离岗损失）",
+      "shown": -3301092.2,
+      "expected": "-11966347.859199997",
+      "engine": {
+        "uiNet": -4813092.157507854,
+        "engineNet": -11966347.859199997
+      },
+      "note": "UI 用 stationIdleScaled 估离岗损失，与引擎实际离岗折损口径不同，可能出现符号翻转",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "wang/chat 派遣估算",
+      "shown": 2760600,
+      "expected": "2760563",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "wang/chat 净收益/小时（vs 引擎离岗损失）",
+      "shown": -3938146.2,
+      "expected": "-12603401.859199997",
+      "engine": {
+        "uiNet": -5450146.157507854,
+        "engineNet": -12603401.859199997
+      },
+      "note": "UI 用 stationIdleScaled 估离岗损失，与引擎实际离岗折损口径不同，可能出现符号翻转",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "wang/meeting 派遣估算",
+      "shown": 6795200,
+      "expected": "6795233",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "wang/meeting 净收益/小时（vs 引擎离岗损失）",
+      "shown": -2664039.2,
+      "expected": "-11329294.859199997",
+      "engine": {
+        "uiNet": -4176039.1575078536,
+        "engineNet": -11329294.859199997
+      },
+      "note": "UI 用 stationIdleScaled 估离岗损失，与引擎实际离岗折损口径不同，可能出现符号翻转",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "wang/toilet 派遣估算",
+      "shown": 56060700,
+      "expected": "56060674",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "wang/toilet 净收益/小时（vs 引擎离岗损失）",
+      "shown": 4555900,
+      "expected": "-4109359.359199997",
+      "engine": {
+        "uiNet": 3043896.3424921464,
+        "engineNet": -4109359.359199997
+      },
+      "note": "UI 用 stationIdleScaled 估离岗损失，与引擎实际离岗折损口径不同，可能出现符号翻转",
+      "ok": false
+    },
+    {
+      "panel": "小队",
+      "item": "wang/coffee 派遣估算",
+      "shown": 214000000,
+      "expected": "214049849",
+      "ok": true
+    },
+    {
+      "panel": "小队",
+      "item": "wang/coffee 净收益/小时（vs 引擎离岗损失）",
+      "shown": 17297000,
+      "expected": "8631703.265800003",
+      "engine": {
+        "uiNet": 15784958.967492146,
+        "engineNet": 8631703.265800003
+      },
+      "note": "UI 用 stationIdleScaled 估离岗损失，与引擎实际离岗折损口径不同，可能出现符号翻转",
+      "ok": false
+    },
+    {
+      "panel": "天赋",
+      "item": "天赋点",
+      "shown": "天赋点 0",
+      "expected": "天赋点 0",
+      "ok": true
+    },
+    {
+      "panel": "天赋",
+      "item": "天赋行数 18",
+      "shown": 18,
+      "expected": "18",
+      "ok": true
+    },
+    {
+      "panel": "天赋",
+      "item": "点击流 分支倍率",
+      "shown": 1.25,
+      "expected": "1.25",
+      "engine": 1.25,
+      "ok": true
+    },
+    {
+      "panel": "天赋",
+      "item": "挂机流 分支倍率",
+      "shown": 1.08,
+      "expected": "1.08",
+      "engine": 1.08,
+      "ok": true
+    },
+    {
+      "panel": "天赋",
+      "item": "事件流 分支倍率",
+      "shown": 1.2,
+      "expected": "1.2",
+      "engine": 1.2,
+      "ok": true
+    },
+    {
+      "panel": "天赋",
+      "item": "点击转化显示（click_5a 生效时与实际一致）",
+      "shown": 10,
+      "expected": "10",
+      "ok": true
+    },
+    {
+      "panel": "天赋",
+      "item": "安然转化 +X%（未解锁 event_5a 时仍显示）",
+      "shown": 20,
+      "expected": 0,
+      "engine": {
+        "surviveToIdle": false,
+        "actualConversion": 0.1
+      },
+      "note": "UI 无条件显示「安然转化」进度，但未点 event_5a 时 conversionBonus 不加成",
+      "ok": false
+    },
+    {
+      "panel": "天赋",
+      "item": "溢出转化 4 点 → +2%",
+      "shown": 2,
+      "expected": "2",
+      "engine": 0.02,
+      "ok": true
+    },
+    {
+      "panel": "天赋",
+      "item": "点击转化+安然转化 合计（UI 暗示可叠加）",
+      "shown": 30,
+      "expected": 10,
+      "engine": 0.1,
+      "note": "UI 两行相加=30%，引擎 conversionBonus 实际=10%",
+      "ok": false
+    },
+    {
+      "panel": "工位",
+      "item": "已装修 8/8",
+      "shown": "true",
+      "expected": "包含「已装修 8/8」",
+      "ok": true
+    },
+    {
+      "panel": "工位",
+      "item": "家具挂机倍率",
+      "shown": 1.58,
+      "expected": "1.5779610000000004",
+      "engine": 1.5779610000000004,
+      "ok": true
+    },
+    {
+      "panel": "工位",
+      "item": "家具点击倍率",
+      "shown": 1.26,
+      "expected": "1.265",
+      "engine": 1.265,
+      "ok": true
+    },
+    {
+      "panel": "工位",
+      "item": "家具离线加成",
+      "shown": 23,
+      "expected": "23",
+      "engine": 0.23,
+      "ok": true
+    },
+    {
+      "panel": "工位",
+      "item": "精力剩余",
+      "shown": 100,
+      "expected": "100",
+      "ok": true
+    },
+    {
+      "panel": "工位",
+      "item": "精力行数",
+      "shown": 4,
+      "expected": "4",
+      "ok": true
+    },
+    {
+      "panel": "工位",
+      "item": "家具行数",
+      "shown": 8,
+      "expected": "8",
+      "ok": true
+    },
+    {
+      "panel": "摸鱼站",
+      "item": "剩余次数",
+      "shown": 3,
+      "expected": "3",
+      "ok": true
+    },
+    {
+      "panel": "摸鱼站",
+      "item": "游戏数 3",
+      "shown": 3,
+      "expected": "3",
+      "ok": true
+    }
+  ],
+  "defects": [],
+  "chromeCleanup": {
+    "done": true
+  },
+  "panelChecksSummary": {
+    "total": 124,
+    "pass": 93,
+    "fail": 31,
+    "byPanel": {
+      "HUD": {
+        "total": 9,
+        "fail": 2
+      },
+      "商店": {
+        "total": 27,
+        "fail": 0
+      },
+      "日报": {
+        "total": 9,
+        "fail": 3
+      },
+      "统计面板": {
+        "total": 15,
+        "fail": 0
+      },
+      "图鉴": {
+        "total": 1,
+        "fail": 0
+      },
+      "小队": {
+        "total": 45,
+        "fail": 24
+      },
+      "天赋": {
+        "total": 9,
+        "fail": 2
+      },
+      "工位": {
+        "total": 7,
+        "fail": 0
+      },
+      "摸鱼站": {
+        "total": 2,
+        "fail": 0
+      }
+    }
+  }
+}

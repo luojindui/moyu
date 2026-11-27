@@ -1,0 +1,828 @@
+{
+  "generatedAt": "2026-11-27T13:05:47.710Z",
+  "nowIso": "2026-11-27T13:05:47.710Z",
+  "today": "2026-11-27",
+  "checks": {
+    "upgradePrices": [
+      {
+        "id": "coffee",
+        "base": 15,
+        "prices": [
+          15,
+          18,
+          61,
+          246,
+          16255
+        ]
+      },
+      {
+        "id": "water",
+        "base": 100,
+        "prices": [
+          100,
+          115,
+          405,
+          1637,
+          108366
+        ]
+      },
+      {
+        "id": "chair",
+        "base": 800,
+        "prices": [
+          800,
+          920,
+          3237,
+          13094,
+          866926
+        ]
+      },
+      {
+        "id": "phone",
+        "base": 50,
+        "prices": [
+          50,
+          58,
+          203,
+          819,
+          54183
+        ]
+      },
+      {
+        "id": "toilet",
+        "base": 600,
+        "prices": [
+          600,
+          690,
+          2428,
+          9820,
+          650195
+        ]
+      },
+      {
+        "id": "group",
+        "base": 4000,
+        "prices": [
+          4000,
+          4600,
+          16183,
+          65467,
+          4334630
+        ]
+      },
+      {
+        "id": "meeting",
+        "base": 25000,
+        "prices": [
+          25000,
+          28750,
+          101139,
+          409164,
+          27091437
+        ]
+      },
+      {
+        "id": "deep",
+        "base": 150000,
+        "prices": [
+          150000,
+          172500,
+          606834,
+          2454981,
+          162548617
+        ]
+      },
+      {
+        "id": "retire",
+        "base": 1000000,
+        "prices": [
+          1000000,
+          1150000,
+          4045558,
+          16366538,
+          1083657442
+        ]
+      }
+    ],
+    "milestones": [
+      {
+        "id": "coffee",
+        "base": 1,
+        "lv": 20,
+        "inc": 2,
+        "shown": 2,
+        "gap": 20
+      },
+      {
+        "id": "water",
+        "base": 2,
+        "lv": 20,
+        "inc": 4,
+        "shown": 4,
+        "gap": 15
+      },
+      {
+        "id": "chair",
+        "base": 5,
+        "lv": 20,
+        "inc": 10,
+        "shown": 10,
+        "gap": 10
+      },
+      {
+        "id": "phone",
+        "base": 1,
+        "lv": 20,
+        "inc": 2,
+        "shown": 2,
+        "gap": 5
+      },
+      {
+        "id": "toilet",
+        "base": 5,
+        "lv": 20,
+        "inc": 10,
+        "shown": 10,
+        "gap": 20
+      },
+      {
+        "id": "group",
+        "base": 15,
+        "lv": 20,
+        "inc": 30,
+        "shown": 30,
+        "gap": 15
+      },
+      {
+        "id": "meeting",
+        "base": 50,
+        "lv": 20,
+        "inc": 99.99999999999977,
+        "shown": 100,
+        "gap": 10
+      },
+      {
+        "id": "deep",
+        "base": 180,
+        "lv": 20,
+        "inc": 360,
+        "shown": 360,
+        "gap": 5
+      },
+      {
+        "id": "retire",
+        "base": 700,
+        "lv": 20,
+        "inc": 1400,
+        "shown": 1400,
+        "gap": 20
+      }
+    ],
+    "milestoneGaps": [],
+    "stackFactors": [
+      {
+        "name": "prestige",
+        "got": 7,
+        "expectFactor": 7
+      },
+      {
+        "name": "collection55",
+        "got": 1.2,
+        "expectFactor": 1.2
+      },
+      {
+        "name": "collection5",
+        "got": 1.02,
+        "expectFactor": 1.02
+      },
+      {
+        "name": "talentIdle",
+        "got": 1.08,
+        "expectFactor": 1.08
+      },
+      {
+        "name": "overflow4",
+        "got": 1.02,
+        "expectFactor": 1.02
+      },
+      {
+        "name": "card",
+        "got": 1.15,
+        "expectFactor": 1.15
+      },
+      {
+        "name": "decor5",
+        "got": 1.4345100000000002,
+        "expectFactor": 1.4345100000000002
+      },
+      {
+        "name": "decor8",
+        "got": 1.5779610000000004,
+        "expectFactor": 1.5779610000000004
+      },
+      {
+        "name": "energy2",
+        "got": 1.3125,
+        "expectFactor": 1.3125
+      }
+    ],
+    "stackFull": {
+      "raw": 2380.2,
+      "mult": 8.4,
+      "talentIdle": 1.08,
+      "conv": 1.1,
+      "overflow": 1.02,
+      "card": 1.15,
+      "decor": 1.5779610000000004,
+      "energy": 1.3125,
+      "expected": 57703.581174283776,
+      "got": 57703.581174283776,
+      "ratio": 1,
+      "factors": {
+        "prestige": 7,
+        "collection": 1.2,
+        "talentIdle": 1.08,
+        "conversion": 1.1,
+        "overflow": 1.02,
+        "card": 1.15,
+        "decor": 1.5779610000000004,
+        "energy": 1.3125
+      }
+    },
+    "idleSplit": {
+      "station": 57703.581174283776,
+      "fixed": 78654.24,
+      "share": 10196.7768,
+      "total": 146554.59797428377,
+      "manual": 146554.59797428377,
+      "diff": 0
+    },
+    "clickStack": {
+      "rawClick": 53,
+      "prestige": 7,
+      "collection": 1.2,
+      "mult": 8.4,
+      "talent": 1.25,
+      "card": 1,
+      "decor": 1.265,
+      "energy": 1,
+      "expected": 715.04125,
+      "got": 715.04125
+    },
+    "dispatch": {
+      "station": 57703.581174283776,
+      "rows": [
+        {
+          "colleague": "zhou",
+          "mission": "stroll",
+          "got": 796584,
+          "expected": 796584,
+          "ok": true
+        },
+        {
+          "colleague": "zhou",
+          "mission": "quick",
+          "got": 2625107,
+          "expected": 2625107,
+          "ok": true
+        },
+        {
+          "colleague": "zhou",
+          "mission": "chat",
+          "got": 7060634,
+          "expected": 7060634,
+          "ok": true
+        },
+        {
+          "colleague": "zhou",
+          "mission": "meeting",
+          "got": 11586682,
+          "expected": 11586682,
+          "ok": true
+        },
+        {
+          "colleague": "zhou",
+          "mission": "toilet",
+          "got": 63726751,
+          "expected": 63726751,
+          "ok": true
+        },
+        {
+          "colleague": "zhou",
+          "mission": "coffee",
+          "got": 162213548,
+          "expected": 162213548,
+          "ok": true
+        },
+        {
+          "colleague": "mei",
+          "mission": "stroll",
+          "got": 547654,
+          "expected": 547654,
+          "ok": true
+        },
+        {
+          "colleague": "mei",
+          "mission": "quick",
+          "got": 1804770,
+          "expected": 1804770,
+          "ok": true
+        },
+        {
+          "colleague": "mei",
+          "mission": "chat",
+          "got": 3236140,
+          "expected": 3236140,
+          "ok": true
+        },
+        {
+          "colleague": "mei",
+          "mission": "meeting",
+          "got": 11948826,
+          "expected": 11948826,
+          "ok": true
+        },
+        {
+          "colleague": "mei",
+          "mission": "toilet",
+          "got": 43812362,
+          "expected": 43812362,
+          "ok": true
+        },
+        {
+          "colleague": "mei",
+          "mission": "coffee",
+          "got": 111522378,
+          "expected": 111522378,
+          "ok": true
+        },
+        {
+          "colleague": "qiang",
+          "mission": "stroll",
+          "got": 565951,
+          "expected": 565951,
+          "ok": true
+        },
+        {
+          "colleague": "qiang",
+          "mission": "quick",
+          "got": 1865067,
+          "expected": 1865067,
+          "ok": true
+        },
+        {
+          "colleague": "qiang",
+          "mission": "chat",
+          "got": 3344259,
+          "expected": 3344259,
+          "ok": true
+        },
+        {
+          "colleague": "qiang",
+          "mission": "meeting",
+          "got": 8232024,
+          "expected": 8232024,
+          "ok": true
+        },
+        {
+          "colleague": "qiang",
+          "mission": "toilet",
+          "got": 67914198,
+          "expected": 67914198,
+          "ok": true
+        },
+        {
+          "colleague": "qiang",
+          "mission": "coffee",
+          "got": 115248336,
+          "expected": 115248336,
+          "ok": true
+        },
+        {
+          "colleague": "li",
+          "mission": "stroll",
+          "got": 1402197,
+          "expected": 1402197,
+          "ok": true
+        },
+        {
+          "colleague": "li",
+          "mission": "quick",
+          "got": 4620876,
+          "expected": 4620876,
+          "ok": true
+        },
+        {
+          "colleague": "li",
+          "mission": "chat",
+          "got": 5523806,
+          "expected": 5523806,
+          "ok": true
+        },
+        {
+          "colleague": "li",
+          "mission": "meeting",
+          "got": 13597062,
+          "expected": 13597062,
+          "ok": true
+        },
+        {
+          "colleague": "li",
+          "mission": "toilet",
+          "got": 46739901,
+          "expected": 46739901,
+          "ok": true
+        },
+        {
+          "colleague": "li",
+          "mission": "coffee",
+          "got": 118974294,
+          "expected": 118974294,
+          "ok": true
+        },
+        {
+          "colleague": "wang",
+          "mission": "stroll",
+          "got": 602545,
+          "expected": 602545,
+          "ok": true
+        },
+        {
+          "colleague": "wang",
+          "mission": "quick",
+          "got": 1985662,
+          "expected": 1985662,
+          "ok": true
+        },
+        {
+          "colleague": "wang",
+          "mission": "chat",
+          "got": 3560498,
+          "expected": 3560498,
+          "ok": true
+        },
+        {
+          "colleague": "wang",
+          "mission": "meeting",
+          "got": 8764303,
+          "expected": 8764303,
+          "ok": true
+        },
+        {
+          "colleague": "wang",
+          "mission": "toilet",
+          "got": 72305505,
+          "expected": 72305505,
+          "ok": true
+        },
+        {
+          "colleague": "wang",
+          "mission": "coffee",
+          "got": 276075567,
+          "expected": 276075567,
+          "ok": true
+        }
+      ]
+    },
+    "dispatchSnapshot": {
+      "snapshot": 7060634,
+      "claimed": 7060634
+    },
+    "daily": {
+      "idleRate": 146554.59797428377,
+      "expected": 87932758.78457026,
+      "got": 87932758.78457026,
+      "delta": 87932758.7845459
+    },
+    "patrol": {
+      "idle": 146554.59797428377,
+      "base": 586218.3918971351,
+      "expectHold": 2011901.5209909675,
+      "gotHold": 2011901.5209909675,
+      "streak3": 1.3,
+      "streakCap": 1.5,
+      "talent": 1.2,
+      "card": 1,
+      "energy": 2.2
+    },
+    "patrolVariants": {
+      "typeReward": 1547616.5546084365,
+      "blitzReward": 2321424.831912655,
+      "choiceCorrect": 1096829,
+      "choiceWrong": -609349,
+      "choiceBase": 609349.8172004367
+    },
+    "meme": {
+      "clickPower": 715.04125,
+      "talentMeme": 1.15,
+      "favorMeme": 1.1,
+      "expected": 4522.6359062500005,
+      "got": 4522.6359062500005
+    },
+    "arcade": {
+      "rows": [
+        {
+          "game": "coffee",
+          "ref": 540,
+          "full": 25000,
+          "expectFull": 25000,
+          "half": 12500,
+          "early": 7500,
+          "zero": 0,
+          "zeroPlayed": 1
+        },
+        {
+          "game": "findboss",
+          "ref": 1200,
+          "full": 25000,
+          "expectFull": 25000,
+          "half": 12500,
+          "early": 7500,
+          "zero": 0,
+          "zeroPlayed": 1
+        },
+        {
+          "game": "rhythm",
+          "ref": 1180,
+          "full": 25000,
+          "expectFull": 25000,
+          "half": 12500,
+          "early": 7500,
+          "zero": 0,
+          "zeroPlayed": 1
+        }
+      ],
+      "earlyFloor": 30,
+      "refundPlayed": 0
+    },
+    "offline": {
+      "rows": [
+        {
+          "seconds": 3600,
+          "capHours": 12,
+          "applied": 3600,
+          "got": 367664722.4674216,
+          "expectEarned": 367664722.4674216,
+          "ratio": 1
+        },
+        {
+          "seconds": 39600,
+          "capHours": 12,
+          "applied": 39600,
+          "got": 4044311947.1416373,
+          "expectEarned": 4044311947.1416373,
+          "ratio": 1
+        },
+        {
+          "seconds": 46800,
+          "capHours": 12,
+          "applied": 43200,
+          "got": 4411976669.609059,
+          "expectEarned": 4411976669.609059,
+          "ratio": 1
+        },
+        {
+          "seconds": 691200,
+          "capHours": 24,
+          "applied": 86400,
+          "got": 8823953339.218119,
+          "expectEarned": 8823953339.218119,
+          "ratio": 1
+        },
+        {
+          "seconds": 2678400,
+          "capHours": 48,
+          "applied": 172800,
+          "got": 17647906678.436237,
+          "expectEarned": 17647906678.436237,
+          "ratio": 1
+        }
+      ],
+      "caps": {
+        "day": 43200,
+        "week": 86400,
+        "month": 172800
+      },
+      "idle2Applied": 50400,
+      "rates": {
+        "firstDay": 1.31,
+        "afterDay_noVisit": 1.06,
+        "afterDay_1visit": 1.16,
+        "afterDay_3visit": 1.31
+      }
+    },
+    "prestige": {
+      "rows": [
+        {
+          "points": 0,
+          "mult": 1
+        },
+        {
+          "points": 1,
+          "mult": 1.75
+        },
+        {
+          "points": 5,
+          "mult": 4.75
+        },
+        {
+          "points": 8,
+          "mult": 7
+        },
+        {
+          "points": 20,
+          "mult": 16
+        },
+        {
+          "points": 40,
+          "mult": 31
+        }
+      ],
+      "gainAtUnlock": 3,
+      "expectG": 3,
+      "threshold": 100000000,
+      "perPoint": 0.75,
+      "keepLevelRatio": 0.8,
+      "gained": 3,
+      "levelsKeep": {}
+    },
+    "energyRoundtrip": {
+      "desc": "专注点击：今天点击力 ×2，且挂机 +8%",
+      "liveBoost": {
+        "idleMult": 1.08,
+        "patrolRewardMult": 1,
+        "clickMult": 2
+      },
+      "restoredBoost": {
+        "idleMult": 1,
+        "patrolRewardMult": 1,
+        "clickMult": 1.2
+      },
+      "liveClick": 1430.0825,
+      "restoredClick": 858.0495,
+      "ratioAfterReload": 0.6,
+      "liveIdle": 136332.82073769637,
+      "restoredIdle": 132815.65007564478,
+      "idleDropPct": 2.5798414813250403,
+      "baseClick": 715.04125
+    },
+    "teamSummary": {
+      "uiShown": 22411.074352285134,
+      "engineTeam": 88851.01679999998,
+      "ratio": 0.2522320527038148,
+      "missing": {
+        "prestigeMult": 7,
+        "collection": 1.2,
+        "favorIdle": 1.08,
+        "teamIdle": 1.7
+      }
+    },
+    "colleagueIdle": [
+      {
+        "id": "zhou",
+        "ui": 700,
+        "engine": 1285.2,
+        "k": 0.5446623093681917
+      },
+      {
+        "id": "mei",
+        "ui": 3500,
+        "engine": 6426.000000000001,
+        "k": 0.5446623093681916
+      },
+      {
+        "id": "qiang",
+        "ui": 7000,
+        "engine": 12852.000000000002,
+        "k": 0.5446623093681916
+      },
+      {
+        "id": "li",
+        "ui": 10500,
+        "engine": 19278,
+        "k": 0.5446623093681917
+      },
+      {
+        "id": "wang",
+        "ui": 14000,
+        "engine": 25704.000000000004,
+        "k": 0.5446623093681916
+      }
+    ],
+    "dispatchNet": {
+      "perHour": 8232024,
+      "uiLossPerHour": 6405596.030046795,
+      "engineLossPerHour": 9429347.894399999,
+      "uiNet": 1826427.9699532054,
+      "engineNet": -1197323.8943999987
+    },
+    "talentTransform": {
+      "state": "解锁 click_5a，未解锁 event_5a；patrolSurvives=20",
+      "uiLines": {
+        "click": 0.1,
+        "survive": 0.2
+      },
+      "actualConversion": 0.1,
+      "uiSumIfAdded": 0.30000000000000004,
+      "clickToIdleStep": 300,
+      "surviveToIdle": false,
+      "note": "UI 两行恒显示；未解锁 event_5a 时「安然转化 +20%」并未生效；若选 click_5b 则显示公式也不对"
+    },
+    "visits": {
+      "count": 5,
+      "shown": "5/3"
+    },
+    "invested": {
+      "invested": 2148705470,
+      "balance": 1000000000000
+    },
+    "labelScope": {
+      "energy": {
+        "claimedFactors": "slack ×1.25、social ×1.05（文案「今天挂机 +25% / +5%」）",
+        "stationFactor": 1.3125,
+        "totalIdleFactor": 1.1034437424416024,
+        "totalIdlePct": 10.344374244160237,
+        "claimedPctIfStacked": 31.25,
+        "stationShareOfTotal": 0.3310199758131278
+      },
+      "slackOnly": {
+        "stationFactor": 1.3125,
+        "totalPct": 8.275499395328211,
+        "claimedPct": 25
+      },
+      "talentIdle": {
+        "talentMult": 1.08,
+        "totalIdleFactor": 1.0300416894617652,
+        "totalPct": 3.004168946176522,
+        "claimedPct": 8
+      }
+    },
+    "dailyWindows": {
+      "firstReward": 87932758.78457026,
+      "claimedAfterWindowReroll": false,
+      "secondReward": 87932758.78457026,
+      "totalSameDay": 175865517.56914052,
+      "note": "claimDaily 只在同一天第一次 +streak；但奖励可领 4 次/天（每 6 小时时段）"
+    },
+    "firstDayRisk": {
+      "firstDayRate": 1.1099999999999999,
+      "laterRate": 1.16,
+      "claimedRisk": 0.2,
+      "note": "首日 branch: 1+max(0, raise)；负风险被截断"
+    },
+    "favorHint": {
+      "uiFormula": "ceil((next-favor)/2)",
+      "uiClaimsTo20": 5,
+      "actualGainPerMatchedClaim": 3,
+      "actualClaimsTo20": 4,
+      "cardFavorNote": "今日卡 old_zhou_secret 再 +1 → 每次 +4"
+    }
+  },
+  "defects": [
+    {
+      "level": "P2",
+      "where": "src/main.ts saveNow/lastDaySnapshot",
+      "issue": "「纪录·最佳单日」用 lifetime - lastDaySnapshot.lifetime，而 lastDaySnapshot 只在启动时赋值（共 3 处引用），实际是「本次会话增量」，多会话/跨零点会低估或错记日期"
+    },
+    {
+      "level": "P2",
+      "where": "src/engine/talents.ts:26",
+      "issue": "注释「每级天赋需要的点数（tier1-4 = 1 点，终极 = 2 点）」与实际 talentCostOf（1/1/2/2/3）不符；同文件 TALENT_POINT_CAP 注释「3 流派 × 6 点 = 18」也与 24 不符"
+    },
+    {
+      "level": "P2",
+      "where": "src/ui/journal.ts 今日回访",
+      "issue": "面板写「今日回访 5/3」但 visits.count 每次打开+1 无上限（实测富档 5/3），离线效率却按 min(count,3) 计算"
+    },
+    {
+      "level": "P1",
+      "where": "src/ui/welcome.ts:24",
+      "issue": "欢迎回来面板固定文案「8 小时封顶」，引擎 OFFLINE_CAP_SECONDS=12h（≥7 天 24h / ≥30 天 48h）；同面板封顶结算行会显示「已按上限结算 12 小时 0 分」自相矛盾"
+    },
+    {
+      "level": "P2",
+      "where": "src/engine/prestige.ts:8,42 / src/engine/state.ts:35",
+      "issue": "注释写「每点永久 ×1.08 复利」「1.08^points」「floor(3×(本局/1e8)^0.3)」，实现为 1+0.75×points 线性、^0.4；state.ts 注释同样写 ×1.08"
+    },
+    {
+      "level": "P2",
+      "where": "src/engine/events.ts:29,72,284",
+      "issue": "注释「封顶 ×2」，实现 1+0.1×min(n,5) = 封顶 ×1.5；同文件常量注释又写「封顶 ×1.5」"
+    },
+    {
+      "level": "P2",
+      "where": "src/engine/offline.ts:11,27",
+      "issue": "注释「日常 8h」「8h 封顶」，实现 OFFLINE_CAP_SECONDS=12h"
+    },
+    {
+      "level": "P2",
+      "where": "src/engine/energy.ts:87",
+      "issue": "注释「社交：全体同事好感 +3」，实现 +5（desc 也写 +5）"
+    },
+    {
+      "level": "P1",
+      "where": "src/engine/save.ts:287-290",
+      "issue": "存档按 used 重算 boosted：focus 的 clickMult 用 1.2（energy.ts 用 2）、idleMult 漏掉 focus 的 1.08 → 刷新后「专注点击 ×2 / 挂机+8%」实际变成 ×1.2 / +0%"
+    }
+  ]
+}

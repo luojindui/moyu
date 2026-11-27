@@ -16,6 +16,25 @@ export function initAudio(): void {
   } catch {
     /* 忽略 */
   }
+  // 预热：先把 AudioContext 建好（suspended），避免首次点击时才创建导致 ~140ms 长任务
+  if (!muted) {
+    try {
+      const Ctor =
+        window.AudioContext ?? (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+      if (Ctor) ctx = new Ctor();
+    } catch {
+      /* 忽略 */
+    }
+  }
+}
+
+/** 首次用户手势时调用：把预热的 AudioContext 恢复运行 */
+export function resumeAudio(): void {
+  try {
+    if (ctx && ctx.state === "suspended") void ctx.resume();
+  } catch {
+    /* 忽略 */
+  }
 }
 
 export function isMuted(): boolean {

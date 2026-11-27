@@ -1,0 +1,1238 @@
+{
+  "visits": [
+    {
+      "visits": 0,
+      "offlineEff": 1.13,
+      "channelOfflineEff": 1.13
+    },
+    {
+      "visits": 1,
+      "offlineEff": 1.13,
+      "channelOfflineEff": 1.13
+    },
+    {
+      "visits": 2,
+      "offlineEff": 1.13,
+      "channelOfflineEff": 1.13
+    },
+    {
+      "visits": 3,
+      "offlineEff": 1.13,
+      "channelOfflineEff": 1.13
+    }
+  ],
+  "rows": [
+    {
+      "stage": "early",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "coffee_day",
+      "name": "咖啡管够",
+      "rarity": "common",
+      "desc": "今天挂机 +15%",
+      "effects": {
+        "idleMult": 1.15
+      },
+      "valuePct": 14.96
+    },
+    {
+      "stage": "early",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "quiet_day",
+      "name": "老板出差",
+      "rarity": "common",
+      "desc": "今天巡逻奖励 +50%，且巡逻来得多 30%",
+      "effects": {
+        "patrolRewardMult": 1.5,
+        "eventRateMult": 1.3
+      },
+      "valuePct": 0.13
+    },
+    {
+      "stage": "early",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "early_leave",
+      "name": "提前下班",
+      "rarity": "common",
+      "desc": "今天离线效率 +15%",
+      "effects": {
+        "offlineBonus": 0.15
+      },
+      "valuePct": 14.23
+    },
+    {
+      "stage": "early",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "click_frenzy",
+      "name": "手速上头",
+      "rarity": "common",
+      "desc": "今天点击力 +80%",
+      "effects": {
+        "clickMult": 1.8
+      },
+      "valuePct": 0.09
+    },
+    {
+      "stage": "early",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "team_bond",
+      "name": "团建吃饭",
+      "rarity": "common",
+      "desc": "今天派遣奖励 +40%",
+      "effects": {
+        "dispatchRewardMult": 1.4
+      },
+      "valuePct": 0
+    },
+    {
+      "stage": "early",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "ac_broken",
+      "name": "空调坏了",
+      "rarity": "common",
+      "desc": "今天挂机 +10%，但离线效率 -5%",
+      "effects": {
+        "idleMult": 1.1,
+        "riskPenalty": 0.05
+      },
+      "valuePct": 9.97
+    },
+    {
+      "stage": "early",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "canteen_gift",
+      "name": "食堂加菜",
+      "rarity": "common",
+      "desc": "今天离线效率 +8%",
+      "effects": {
+        "offlineBonus": 0.08
+      },
+      "valuePct": 7.59
+    },
+    {
+      "stage": "early",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "remote_day",
+      "name": "远程办公日",
+      "rarity": "rare",
+      "desc": "今天挂机 +25%，巡逻少一半",
+      "effects": {
+        "idleMult": 1.25,
+        "eventRateMult": 0.5
+      },
+      "valuePct": 24.87
+    },
+    {
+      "stage": "early",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "intern_ask",
+      "name": "实习生来请教",
+      "rarity": "common",
+      "desc": "今天点击力 +40%，派遣奖励 +20%",
+      "effects": {
+        "clickMult": 1.4,
+        "dispatchRewardMult": 1.2
+      },
+      "valuePct": 0.04
+    },
+    {
+      "stage": "early",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "office_move",
+      "name": "部门搬家",
+      "rarity": "rare",
+      "desc": "今天巡逻奖励 +80%，但挂机 -10%",
+      "effects": {
+        "patrolRewardMult": 1.8,
+        "idleMult": 0.9
+      },
+      "valuePct": -9.86
+    },
+    {
+      "stage": "early",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "deadline",
+      "name": "截止日逼近",
+      "rarity": "rare",
+      "desc": "今天点击力 ×1.6，离线效率 -10%",
+      "effects": {
+        "clickMult": 1.6,
+        "riskPenalty": 0.1
+      },
+      "valuePct": 0.07
+    },
+    {
+      "stage": "early",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "overtime",
+      "name": "通宵摸鱼",
+      "rarity": "rare",
+      "desc": "今天挂机 +60%，代价是接下来 24h 离线效率 -20%",
+      "effects": {
+        "idleMult": 1.6,
+        "riskPenalty": 0.2
+      },
+      "valuePct": 59.87
+    },
+    {
+      "stage": "early",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "big_meeting",
+      "name": "全员大会",
+      "rarity": "rare",
+      "desc": "今天巡逻奖励 ×2，且巡逻明显变密",
+      "effects": {
+        "patrolRewardMult": 2,
+        "eventRateMult": 2
+      },
+      "valuePct": 0.42
+    },
+    {
+      "stage": "early",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "secret_project",
+      "name": "秘密项目",
+      "rarity": "rare",
+      "desc": "今天点击力 ×2，派遣奖励 +30%",
+      "effects": {
+        "clickMult": 2,
+        "dispatchRewardMult": 1.3
+      },
+      "valuePct": 0.11
+    },
+    {
+      "stage": "early",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "hr_talk",
+      "name": "HR 约谈",
+      "rarity": "event",
+      "desc": "今天挂机 -10%，明天卡池保证出一张稀有卡",
+      "effects": {
+        "idleMult": 0.9
+      },
+      "valuePct": -9.97
+    },
+    {
+      "stage": "early",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "old_zhou_secret",
+      "name": "老周的秘密",
+      "rarity": "event",
+      "desc": "今天派遣奖励 ×1.8，且领奖好感 +1",
+      "effects": {
+        "dispatchRewardMult": 1.8,
+        "favorPerClaim": 1
+      },
+      "valuePct": 0
+    },
+    {
+      "stage": "early",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "coffee_day",
+      "name": "咖啡管够",
+      "rarity": "common",
+      "desc": "今天挂机 +15%",
+      "effects": {
+        "idleMult": 1.15
+      },
+      "valuePct": 14.21
+    },
+    {
+      "stage": "early",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "quiet_day",
+      "name": "老板出差",
+      "rarity": "common",
+      "desc": "今天巡逻奖励 +50%，且巡逻来得多 30%",
+      "effects": {
+        "patrolRewardMult": 1.5,
+        "eventRateMult": 1.3
+      },
+      "valuePct": 0.52
+    },
+    {
+      "stage": "early",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "early_leave",
+      "name": "提前下班",
+      "rarity": "common",
+      "desc": "今天离线效率 +15%",
+      "effects": {
+        "offlineBonus": 0.15
+      },
+      "valuePct": 12.6
+    },
+    {
+      "stage": "early",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "click_frenzy",
+      "name": "手速上头",
+      "rarity": "common",
+      "desc": "今天点击力 +80%",
+      "effects": {
+        "clickMult": 1.8
+      },
+      "valuePct": 3.79
+    },
+    {
+      "stage": "early",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "team_bond",
+      "name": "团建吃饭",
+      "rarity": "common",
+      "desc": "今天派遣奖励 +40%",
+      "effects": {
+        "dispatchRewardMult": 1.4
+      },
+      "valuePct": 0
+    },
+    {
+      "stage": "early",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "ac_broken",
+      "name": "空调坏了",
+      "rarity": "common",
+      "desc": "今天挂机 +10%，但离线效率 -5%",
+      "effects": {
+        "idleMult": 1.1,
+        "riskPenalty": 0.05
+      },
+      "valuePct": 9.47
+    },
+    {
+      "stage": "early",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "canteen_gift",
+      "name": "食堂加菜",
+      "rarity": "common",
+      "desc": "今天离线效率 +8%",
+      "effects": {
+        "offlineBonus": 0.08
+      },
+      "valuePct": 6.72
+    },
+    {
+      "stage": "early",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "remote_day",
+      "name": "远程办公日",
+      "rarity": "rare",
+      "desc": "今天挂机 +25%，巡逻少一半",
+      "effects": {
+        "idleMult": 1.25,
+        "eventRateMult": 0.5
+      },
+      "valuePct": 23.41
+    },
+    {
+      "stage": "early",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "intern_ask",
+      "name": "实习生来请教",
+      "rarity": "common",
+      "desc": "今天点击力 +40%，派遣奖励 +20%",
+      "effects": {
+        "clickMult": 1.4,
+        "dispatchRewardMult": 1.2
+      },
+      "valuePct": 1.9
+    },
+    {
+      "stage": "early",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "office_move",
+      "name": "部门搬家",
+      "rarity": "rare",
+      "desc": "今天巡逻奖励 +80%，但挂机 -10%",
+      "effects": {
+        "patrolRewardMult": 1.8,
+        "idleMult": 0.9
+      },
+      "valuePct": -9.04
+    },
+    {
+      "stage": "early",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "deadline",
+      "name": "截止日逼近",
+      "rarity": "rare",
+      "desc": "今天点击力 ×1.6，离线效率 -10%",
+      "effects": {
+        "clickMult": 1.6,
+        "riskPenalty": 0.1
+      },
+      "valuePct": 2.84
+    },
+    {
+      "stage": "early",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "overtime",
+      "name": "通宵摸鱼",
+      "rarity": "rare",
+      "desc": "今天挂机 +60%，代价是接下来 24h 离线效率 -20%",
+      "effects": {
+        "idleMult": 1.6,
+        "riskPenalty": 0.2
+      },
+      "valuePct": 56.93
+    },
+    {
+      "stage": "early",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "big_meeting",
+      "name": "全员大会",
+      "rarity": "rare",
+      "desc": "今天巡逻奖励 ×2，且巡逻明显变密",
+      "effects": {
+        "patrolRewardMult": 2,
+        "eventRateMult": 2
+      },
+      "valuePct": 1.63
+    },
+    {
+      "stage": "early",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "secret_project",
+      "name": "秘密项目",
+      "rarity": "rare",
+      "desc": "今天点击力 ×2，派遣奖励 +30%",
+      "effects": {
+        "clickMult": 2,
+        "dispatchRewardMult": 1.3
+      },
+      "valuePct": 4.74
+    },
+    {
+      "stage": "early",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "hr_talk",
+      "name": "HR 约谈",
+      "rarity": "event",
+      "desc": "今天挂机 -10%，明天卡池保证出一张稀有卡",
+      "effects": {
+        "idleMult": 0.9
+      },
+      "valuePct": -9.47
+    },
+    {
+      "stage": "early",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "old_zhou_secret",
+      "name": "老周的秘密",
+      "rarity": "event",
+      "desc": "今天派遣奖励 ×1.8，且领奖好感 +1",
+      "effects": {
+        "dispatchRewardMult": 1.8,
+        "favorPerClaim": 1
+      },
+      "valuePct": 0
+    },
+    {
+      "stage": "mid",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "coffee_day",
+      "name": "咖啡管够",
+      "rarity": "common",
+      "desc": "今天挂机 +15%",
+      "effects": {
+        "idleMult": 1.15
+      },
+      "valuePct": 14.53
+    },
+    {
+      "stage": "mid",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "quiet_day",
+      "name": "老板出差",
+      "rarity": "common",
+      "desc": "今天巡逻奖励 +50%，且巡逻来得多 30%",
+      "effects": {
+        "patrolRewardMult": 1.5,
+        "eventRateMult": 1.3
+      },
+      "valuePct": 0.09
+    },
+    {
+      "stage": "mid",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "early_leave",
+      "name": "提前下班",
+      "rarity": "common",
+      "desc": "今天离线效率 +15%",
+      "effects": {
+        "offlineBonus": 0.15
+      },
+      "valuePct": 12.4
+    },
+    {
+      "stage": "mid",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "click_frenzy",
+      "name": "手速上头",
+      "rarity": "common",
+      "desc": "今天点击力 +80%",
+      "effects": {
+        "clickMult": 1.8
+      },
+      "valuePct": 0
+    },
+    {
+      "stage": "mid",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "team_bond",
+      "name": "团建吃饭",
+      "rarity": "common",
+      "desc": "今天派遣奖励 +40%",
+      "effects": {
+        "dispatchRewardMult": 1.4
+      },
+      "valuePct": 0.83
+    },
+    {
+      "stage": "mid",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "ac_broken",
+      "name": "空调坏了",
+      "rarity": "common",
+      "desc": "今天挂机 +10%，但离线效率 -5%",
+      "effects": {
+        "idleMult": 1.1,
+        "riskPenalty": 0.05
+      },
+      "valuePct": 5.15
+    },
+    {
+      "stage": "mid",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "canteen_gift",
+      "name": "食堂加菜",
+      "rarity": "common",
+      "desc": "今天离线效率 +8%",
+      "effects": {
+        "offlineBonus": 0.08
+      },
+      "valuePct": 6.62
+    },
+    {
+      "stage": "mid",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "remote_day",
+      "name": "远程办公日",
+      "rarity": "rare",
+      "desc": "今天挂机 +25%，巡逻少一半",
+      "effects": {
+        "idleMult": 1.25,
+        "eventRateMult": 0.5
+      },
+      "valuePct": 24.15
+    },
+    {
+      "stage": "mid",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "intern_ask",
+      "name": "实习生来请教",
+      "rarity": "common",
+      "desc": "今天点击力 +40%，派遣奖励 +20%",
+      "effects": {
+        "clickMult": 1.4,
+        "dispatchRewardMult": 1.2
+      },
+      "valuePct": 0.42
+    },
+    {
+      "stage": "mid",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "office_move",
+      "name": "部门搬家",
+      "rarity": "rare",
+      "desc": "今天巡逻奖励 +80%，但挂机 -10%",
+      "effects": {
+        "patrolRewardMult": 1.8,
+        "idleMult": 0.9
+      },
+      "valuePct": -9.62
+    },
+    {
+      "stage": "mid",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "deadline",
+      "name": "截止日逼近",
+      "rarity": "rare",
+      "desc": "今天点击力 ×1.6，离线效率 -10%",
+      "effects": {
+        "clickMult": 1.6,
+        "riskPenalty": 0.1
+      },
+      "valuePct": -8.27
+    },
+    {
+      "stage": "mid",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "overtime",
+      "name": "通宵摸鱼",
+      "rarity": "rare",
+      "desc": "今天挂机 +60%，代价是接下来 24h 离线效率 -20%",
+      "effects": {
+        "idleMult": 1.6,
+        "riskPenalty": 0.2
+      },
+      "valuePct": 41.1
+    },
+    {
+      "stage": "mid",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "big_meeting",
+      "name": "全员大会",
+      "rarity": "rare",
+      "desc": "今天巡逻奖励 ×2，且巡逻明显变密",
+      "effects": {
+        "patrolRewardMult": 2,
+        "eventRateMult": 2
+      },
+      "valuePct": 0.28
+    },
+    {
+      "stage": "mid",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "secret_project",
+      "name": "秘密项目",
+      "rarity": "rare",
+      "desc": "今天点击力 ×2，派遣奖励 +30%",
+      "effects": {
+        "clickMult": 2,
+        "dispatchRewardMult": 1.3
+      },
+      "valuePct": 0.62
+    },
+    {
+      "stage": "mid",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "hr_talk",
+      "name": "HR 约谈",
+      "rarity": "event",
+      "desc": "今天挂机 -10%，明天卡池保证出一张稀有卡",
+      "effects": {
+        "idleMult": 0.9
+      },
+      "valuePct": -9.68
+    },
+    {
+      "stage": "mid",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "old_zhou_secret",
+      "name": "老周的秘密",
+      "rarity": "event",
+      "desc": "今天派遣奖励 ×1.8，且领奖好感 +1",
+      "effects": {
+        "dispatchRewardMult": 1.8,
+        "favorPerClaim": 1
+      },
+      "valuePct": 1.66
+    },
+    {
+      "stage": "mid",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "coffee_day",
+      "name": "咖啡管够",
+      "rarity": "common",
+      "desc": "今天挂机 +15%",
+      "effects": {
+        "idleMult": 1.15
+      },
+      "valuePct": 14.48
+    },
+    {
+      "stage": "mid",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "quiet_day",
+      "name": "老板出差",
+      "rarity": "common",
+      "desc": "今天巡逻奖励 +50%，且巡逻来得多 30%",
+      "effects": {
+        "patrolRewardMult": 1.5,
+        "eventRateMult": 1.3
+      },
+      "valuePct": 0.36
+    },
+    {
+      "stage": "mid",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "early_leave",
+      "name": "提前下班",
+      "rarity": "common",
+      "desc": "今天离线效率 +15%",
+      "effects": {
+        "offlineBonus": 0.15
+      },
+      "valuePct": 11.53
+    },
+    {
+      "stage": "mid",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "click_frenzy",
+      "name": "手速上头",
+      "rarity": "common",
+      "desc": "今天点击力 +80%",
+      "effects": {
+        "clickMult": 1.8
+      },
+      "valuePct": 0.11
+    },
+    {
+      "stage": "mid",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "team_bond",
+      "name": "团建吃饭",
+      "rarity": "common",
+      "desc": "今天派遣奖励 +40%",
+      "effects": {
+        "dispatchRewardMult": 1.4
+      },
+      "valuePct": 1.01
+    },
+    {
+      "stage": "mid",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "ac_broken",
+      "name": "空调坏了",
+      "rarity": "common",
+      "desc": "今天挂机 +10%，但离线效率 -5%",
+      "effects": {
+        "idleMult": 1.1,
+        "riskPenalty": 0.05
+      },
+      "valuePct": 5.44
+    },
+    {
+      "stage": "mid",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "canteen_gift",
+      "name": "食堂加菜",
+      "rarity": "common",
+      "desc": "今天离线效率 +8%",
+      "effects": {
+        "offlineBonus": 0.08
+      },
+      "valuePct": 6.15
+    },
+    {
+      "stage": "mid",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "remote_day",
+      "name": "远程办公日",
+      "rarity": "rare",
+      "desc": "今天挂机 +25%，巡逻少一半",
+      "effects": {
+        "idleMult": 1.25,
+        "eventRateMult": 0.5
+      },
+      "valuePct": 23.9
+    },
+    {
+      "stage": "mid",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "intern_ask",
+      "name": "实习生来请教",
+      "rarity": "common",
+      "desc": "今天点击力 +40%，派遣奖励 +20%",
+      "effects": {
+        "clickMult": 1.4,
+        "dispatchRewardMult": 1.2
+      },
+      "valuePct": 0.56
+    },
+    {
+      "stage": "mid",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "office_move",
+      "name": "部门搬家",
+      "rarity": "rare",
+      "desc": "今天巡逻奖励 +80%，但挂机 -10%",
+      "effects": {
+        "patrolRewardMult": 1.8,
+        "idleMult": 0.9
+      },
+      "valuePct": -9.38
+    },
+    {
+      "stage": "mid",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "deadline",
+      "name": "截止日逼近",
+      "rarity": "rare",
+      "desc": "今天点击力 ×1.6，离线效率 -10%",
+      "effects": {
+        "clickMult": 1.6,
+        "riskPenalty": 0.1
+      },
+      "valuePct": -7.6
+    },
+    {
+      "stage": "mid",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "overtime",
+      "name": "通宵摸鱼",
+      "rarity": "rare",
+      "desc": "今天挂机 +60%，代价是接下来 24h 离线效率 -20%",
+      "effects": {
+        "idleMult": 1.6,
+        "riskPenalty": 0.2
+      },
+      "valuePct": 42.12
+    },
+    {
+      "stage": "mid",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "big_meeting",
+      "name": "全员大会",
+      "rarity": "rare",
+      "desc": "今天巡逻奖励 ×2，且巡逻明显变密",
+      "effects": {
+        "patrolRewardMult": 2,
+        "eventRateMult": 2
+      },
+      "valuePct": 1.13
+    },
+    {
+      "stage": "mid",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "secret_project",
+      "name": "秘密项目",
+      "rarity": "rare",
+      "desc": "今天点击力 ×2，派遣奖励 +30%",
+      "effects": {
+        "clickMult": 2,
+        "dispatchRewardMult": 1.3
+      },
+      "valuePct": 0.89
+    },
+    {
+      "stage": "mid",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "hr_talk",
+      "name": "HR 约谈",
+      "rarity": "event",
+      "desc": "今天挂机 -10%，明天卡池保证出一张稀有卡",
+      "effects": {
+        "idleMult": 0.9
+      },
+      "valuePct": -9.65
+    },
+    {
+      "stage": "mid",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "old_zhou_secret",
+      "name": "老周的秘密",
+      "rarity": "event",
+      "desc": "今天派遣奖励 ×1.8，且领奖好感 +1",
+      "effects": {
+        "dispatchRewardMult": 1.8,
+        "favorPerClaim": 1
+      },
+      "valuePct": 2.01
+    },
+    {
+      "stage": "late",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "coffee_day",
+      "name": "咖啡管够",
+      "rarity": "common",
+      "desc": "今天挂机 +15%",
+      "effects": {
+        "idleMult": 1.15
+      },
+      "valuePct": 13.08
+    },
+    {
+      "stage": "late",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "quiet_day",
+      "name": "老板出差",
+      "rarity": "common",
+      "desc": "今天巡逻奖励 +50%，且巡逻来得多 30%",
+      "effects": {
+        "patrolRewardMult": 1.5,
+        "eventRateMult": 1.3
+      },
+      "valuePct": 0.16
+    },
+    {
+      "stage": "late",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "early_leave",
+      "name": "提前下班",
+      "rarity": "common",
+      "desc": "今天离线效率 +15%",
+      "effects": {
+        "offlineBonus": 0.15
+      },
+      "valuePct": 8.45
+    },
+    {
+      "stage": "late",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "click_frenzy",
+      "name": "手速上头",
+      "rarity": "common",
+      "desc": "今天点击力 +80%",
+      "effects": {
+        "clickMult": 1.8
+      },
+      "valuePct": 0
+    },
+    {
+      "stage": "late",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "team_bond",
+      "name": "团建吃饭",
+      "rarity": "common",
+      "desc": "今天派遣奖励 +40%",
+      "effects": {
+        "dispatchRewardMult": 1.4
+      },
+      "valuePct": 4.6
+    },
+    {
+      "stage": "late",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "ac_broken",
+      "name": "空调坏了",
+      "rarity": "common",
+      "desc": "今天挂机 +10%，但离线效率 -5%",
+      "effects": {
+        "idleMult": 1.1,
+        "riskPenalty": 0.05
+      },
+      "valuePct": 5.66
+    },
+    {
+      "stage": "late",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "canteen_gift",
+      "name": "食堂加菜",
+      "rarity": "common",
+      "desc": "今天离线效率 +8%",
+      "effects": {
+        "offlineBonus": 0.08
+      },
+      "valuePct": 4.5
+    },
+    {
+      "stage": "late",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "remote_day",
+      "name": "远程办公日",
+      "rarity": "rare",
+      "desc": "今天挂机 +25%，巡逻少一半",
+      "effects": {
+        "idleMult": 1.25,
+        "eventRateMult": 0.5
+      },
+      "valuePct": 21.7
+    },
+    {
+      "stage": "late",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "intern_ask",
+      "name": "实习生来请教",
+      "rarity": "common",
+      "desc": "今天点击力 +40%，派遣奖励 +20%",
+      "effects": {
+        "clickMult": 1.4,
+        "dispatchRewardMult": 1.2
+      },
+      "valuePct": 2.3
+    },
+    {
+      "stage": "late",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "office_move",
+      "name": "部门搬家",
+      "rarity": "rare",
+      "desc": "今天巡逻奖励 +80%，但挂机 -10%",
+      "effects": {
+        "patrolRewardMult": 1.8,
+        "idleMult": 0.9
+      },
+      "valuePct": -8.6
+    },
+    {
+      "stage": "late",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "deadline",
+      "name": "截止日逼近",
+      "rarity": "rare",
+      "desc": "今天点击力 ×1.6，离线效率 -10%",
+      "effects": {
+        "clickMult": 1.6,
+        "riskPenalty": 0.1
+      },
+      "valuePct": -5.63
+    },
+    {
+      "stage": "late",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "overtime",
+      "name": "通宵摸鱼",
+      "rarity": "rare",
+      "desc": "今天挂机 +60%，代价是接下来 24h 离线效率 -20%",
+      "effects": {
+        "idleMult": 1.6,
+        "riskPenalty": 0.2
+      },
+      "valuePct": 35.25
+    },
+    {
+      "stage": "late",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "big_meeting",
+      "name": "全员大会",
+      "rarity": "rare",
+      "desc": "今天巡逻奖励 ×2，且巡逻明显变密",
+      "effects": {
+        "patrolRewardMult": 2,
+        "eventRateMult": 2
+      },
+      "valuePct": 0.5
+    },
+    {
+      "stage": "late",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "secret_project",
+      "name": "秘密项目",
+      "rarity": "rare",
+      "desc": "今天点击力 ×2，派遣奖励 +30%",
+      "effects": {
+        "clickMult": 2,
+        "dispatchRewardMult": 1.3
+      },
+      "valuePct": 3.45
+    },
+    {
+      "stage": "late",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "hr_talk",
+      "name": "HR 约谈",
+      "rarity": "event",
+      "desc": "今天挂机 -10%，明天卡池保证出一张稀有卡",
+      "effects": {
+        "idleMult": 0.9
+      },
+      "valuePct": -8.72
+    },
+    {
+      "stage": "late",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "id": "old_zhou_secret",
+      "name": "老周的秘密",
+      "rarity": "event",
+      "desc": "今天派遣奖励 ×1.8，且领奖好感 +1",
+      "effects": {
+        "dispatchRewardMult": 1.8,
+        "favorPerClaim": 1
+      },
+      "valuePct": 9.2
+    },
+    {
+      "stage": "late",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "coffee_day",
+      "name": "咖啡管够",
+      "rarity": "common",
+      "desc": "今天挂机 +15%",
+      "effects": {
+        "idleMult": 1.15
+      },
+      "valuePct": 13.05
+    },
+    {
+      "stage": "late",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "quiet_day",
+      "name": "老板出差",
+      "rarity": "common",
+      "desc": "今天巡逻奖励 +50%，且巡逻来得多 30%",
+      "effects": {
+        "patrolRewardMult": 1.5,
+        "eventRateMult": 1.3
+      },
+      "valuePct": 0.64
+    },
+    {
+      "stage": "late",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "early_leave",
+      "name": "提前下班",
+      "rarity": "common",
+      "desc": "今天离线效率 +15%",
+      "effects": {
+        "offlineBonus": 0.15
+      },
+      "valuePct": 7.73
+    },
+    {
+      "stage": "late",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "click_frenzy",
+      "name": "手速上头",
+      "rarity": "common",
+      "desc": "今天点击力 +80%",
+      "effects": {
+        "clickMult": 1.8
+      },
+      "valuePct": 0.02
+    },
+    {
+      "stage": "late",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "team_bond",
+      "name": "团建吃饭",
+      "rarity": "common",
+      "desc": "今天派遣奖励 +40%",
+      "effects": {
+        "dispatchRewardMult": 1.4
+      },
+      "valuePct": 5.58
+    },
+    {
+      "stage": "late",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "ac_broken",
+      "name": "空调坏了",
+      "rarity": "common",
+      "desc": "今天挂机 +10%，但离线效率 -5%",
+      "effects": {
+        "idleMult": 1.1,
+        "riskPenalty": 0.05
+      },
+      "valuePct": 5.9
+    },
+    {
+      "stage": "late",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "canteen_gift",
+      "name": "食堂加菜",
+      "rarity": "common",
+      "desc": "今天离线效率 +8%",
+      "effects": {
+        "offlineBonus": 0.08
+      },
+      "valuePct": 4.12
+    },
+    {
+      "stage": "late",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "remote_day",
+      "name": "远程办公日",
+      "rarity": "rare",
+      "desc": "今天挂机 +25%，巡逻少一半",
+      "effects": {
+        "idleMult": 1.25,
+        "eventRateMult": 0.5
+      },
+      "valuePct": 21.36
+    },
+    {
+      "stage": "late",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "intern_ask",
+      "name": "实习生来请教",
+      "rarity": "common",
+      "desc": "今天点击力 +40%，派遣奖励 +20%",
+      "effects": {
+        "clickMult": 1.4,
+        "dispatchRewardMult": 1.2
+      },
+      "valuePct": 2.8
+    },
+    {
+      "stage": "late",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "office_move",
+      "name": "部门搬家",
+      "rarity": "rare",
+      "desc": "今天巡逻奖励 +80%，但挂机 -10%",
+      "effects": {
+        "patrolRewardMult": 1.8,
+        "idleMult": 0.9
+      },
+      "valuePct": -8.21
+    },
+    {
+      "stage": "late",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "deadline",
+      "name": "截止日逼近",
+      "rarity": "rare",
+      "desc": "今天点击力 ×1.6，离线效率 -10%",
+      "effects": {
+        "clickMult": 1.6,
+        "riskPenalty": 0.1
+      },
+      "valuePct": -5.14
+    },
+    {
+      "stage": "late",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "overtime",
+      "name": "通宵摸鱼",
+      "rarity": "rare",
+      "desc": "今天挂机 +60%，代价是接下来 24h 离线效率 -20%",
+      "effects": {
+        "idleMult": 1.6,
+        "riskPenalty": 0.2
+      },
+      "valuePct": 36.59
+    },
+    {
+      "stage": "late",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "big_meeting",
+      "name": "全员大会",
+      "rarity": "rare",
+      "desc": "今天巡逻奖励 ×2，且巡逻明显变密",
+      "effects": {
+        "patrolRewardMult": 2,
+        "eventRateMult": 2
+      },
+      "valuePct": 2.02
+    },
+    {
+      "stage": "late",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "secret_project",
+      "name": "秘密项目",
+      "rarity": "rare",
+      "desc": "今天点击力 ×2，派遣奖励 +30%",
+      "effects": {
+        "clickMult": 2,
+        "dispatchRewardMult": 1.3
+      },
+      "valuePct": 4.21
+    },
+    {
+      "stage": "late",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "hr_talk",
+      "name": "HR 约谈",
+      "rarity": "event",
+      "desc": "今天挂机 -10%，明天卡池保证出一张稀有卡",
+      "effects": {
+        "idleMult": 0.9
+      },
+      "valuePct": -8.7
+    },
+    {
+      "stage": "late",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "id": "old_zhou_secret",
+      "name": "老周的秘密",
+      "rarity": "event",
+      "desc": "今天派遣奖励 ×1.8，且领奖好感 +1",
+      "effects": {
+        "dispatchRewardMult": 1.8,
+        "favorPerClaim": 1
+      },
+      "valuePct": 11.16
+    }
+  ]
+}

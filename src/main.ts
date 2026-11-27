@@ -406,7 +406,7 @@ async function boot(): Promise<void> {
 
   const fit = (): void => {
     const wrap = canvas.parentElement!;
-    const dpr = Math.min(3, window.devicePixelRatio || 1); // DPR3 设备不再糊
+    const dpr = Math.min(2, window.devicePixelRatio || 1); // 上限 2：DPR3 设备单核 CPU 可降 ~41%，视觉差异很小
     const w = wrap.clientWidth;
     const h = wrap.clientHeight;
     canvas.width = Math.round(w * dpr);
@@ -580,23 +580,37 @@ async function boot(): Promise<void> {
     else if (!w.classList.contains("hidden")) w.classList.add("hidden");
   });
   const rng = Math.random;
+  let frameErrorLogged = false;
   const frame = (now: number): void => {
+    // 任何一帧内的异常都不允许停掉主循环（否则游戏"卡死"）
+    try {
+      frameBody(now);
+    } catch (err) {
+      if (!frameErrorLogged) {
+        frameErrorLogged = true;
+        console.error("[frame] 循环异常，已兜底继续:", err);
+      }
+    } finally {
+      requestAnimationFrame(frame);
+    }
+  };
+  const frameBody = (now: number): void => {
     const dt = Math.min(1, (now - last) / 1000);
     last = now;
     // 面板打开 / 页面不可见时降帧：只减少绘制，状态仍按真实 dt 推进（否则开面板时收入变 1/3）
-    const overlayOpen = !document.getElementById("journal")!.classList.contains("hidden");
+    const anyModalOpen =
+      !document.getElementById("journal")!.classList.contains("hidden") ||
+      !document.getElementById("team")!.classList.contains("hidden") ||
+      !document.getElementById("cards")!.classList.contains("hidden") ||
+      !document.getElementById("arcade")!.classList.contains("hidden");
+    const overlayOpen = anyModalOpen;
     const throttleDraw = overlayOpen || document.visibilityState === "hidden";
     lastActiveMs = Date.now();
     scene.gameTime += dt;
     // 随机事件调度（丢梗位置：每次窗口随机出现在场景上半区，并按视口高度防裁剪）
     const memeWasIdle = es.memeUntil < 0;
     // 任一模态打开时，把即将触发的事件往后推（避免"老板盖在日报/卡弹窗上"）
-    const anyModalOpen =
-      !document.getElementById("journal")!.classList.contains("hidden") ||
-      !document.getElementById("team")!.classList.contains("hidden") ||
-      !document.getElementById("cards")!.classList.contains("hidden") ||
-      !document.getElementById("arcade")!.classList.contains("hidden");
-    if ((anyModalOpen || arcade.isOpen) && es.bossUntil < 0 && es.nextBossAt <= scene.gameTime) {
+    if (anyModalOpen && es.bossUntil < 0 && es.nextBossAt <= scene.gameTime) {
       es.nextBossAt = scene.gameTime + 3;
     }
     scheduleEvents(es, scene.gameTime, rng, cardEffects(state, Date.now()).eventRateMult);
@@ -659,7 +673,7 @@ async function boot(): Promise<void> {
     }
     state = advance(state, dt);
     scene.update(dt);
-    if (!throttleDraw) {
+    if (!throttleDraw && !arcade.isPlaying) {
       scene.draw(ctx);
       debug.frames++;
     }
@@ -845,9 +859,9 @@ async function boot(): Promise<void> {
       journal.refresh(state);
       teamPanel.refresh(state);
     }
-    requestAnimationFrame(frame);
   };
-  requestAnimationFrame(frame);
+
+  frame(performance.now());
 
   // 5) 存档与前后台切换
   // 本地生涯纪录（独立 key，不动存档 schema）
@@ -876,6 +890,10 @@ async function boot(): Promise<void> {
     if (!suppressSave) serialize(state, localStorageAdapter, Date.now());
     // 纪录：以"当日收入"为近似，用 lifetime 增量按日累计不易精确，这里用当日净增（同日首帧差值）
     const dayKey = today();
+    // 跨日：重置当天快照（否则长会话下"最佳单日"永远算不出来）
+    if (lastDaySnapshot.date !== dayKey) {
+      lastDaySnapshot = { date: dayKey, lifetime: state.lifetimeEarned };
+    }
     const dayEarnedNow = state.lifetimeEarned - (lastDaySnapshot.date === dayKey ? lastDaySnapshot.lifetime : state.lifetimeEarned);
     const r = updateRecords(records, {
       date: dayKey,

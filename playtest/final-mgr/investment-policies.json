@@ -1,0 +1,68 @@
+[
+  {
+    "policy": "roi",
+    "days": 3,
+    "lifetime": 133760744856,
+    "idleRate": 903549,
+    "levels": {
+      "phone": 128,
+      "toilet": 110,
+      "group": 98,
+      "meeting": 84,
+      "deep": 72,
+      "retire": 58
+    },
+    "decor": 5,
+    "colleagues": 5
+  },
+  {
+    "policy": "cheapest",
+    "days": 3,
+    "lifetime": 116716378269,
+    "idleRate": 885649,
+    "levels": {
+      "phone": 128,
+      "toilet": 110,
+      "group": 96,
+      "meeting": 83,
+      "deep": 70,
+      "retire": 57
+    },
+    "decor": 5,
+    "colleagues": 5
+  },
+  {
+    "policy": "idleOnly",
+    "days": 3,
+    "lifetime": 66999164889,
+    "idleRate": 454336,
+    "levels": {
+      "phone": 124,
+      "toilet": 106,
+      "group": 92,
+      "meeting": 79,
+      "deep": 67,
+      "retire": 54
+    },
+    "decor": 0,
+    "colleagues": 0
+  },
+  {
+    "policy": "decorOnly",
+    "days": 3,
+    "lifetime": 63267,
+    "idleRate": 0,
+    "levels": {},
+    "decor": 1,
+    "colleagues": 0
+  },
+  {
+    "policy": "clickOnly",
+    "days": 3,
+    "lifetime": 60855,
+    "idleRate": 0,
+    "levels": {},
+    "decor": 0,
+    "colleagues": 0
+  }
+]

@@ -1,0 +1,15 @@
+url=https://luojindui.github.io/moyu/
+frames=121
+events=12385
+actions=24
+cardsShownAt=9253.10009765625
+cardChosen=true
+bossShownAt=25536.10009765625
+bossAnswered=true
+memeCount=5
+memeTapped=2
+coffeeBought=true
+phoneBought=true
+questGoneAt=31660
+panelsDone=true
+taps=66

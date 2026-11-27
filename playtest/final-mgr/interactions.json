@@ -1,0 +1,279 @@
+{
+  "visits": [
+    {
+      "visits": 0,
+      "offlineEff": 1.13
+    },
+    {
+      "visits": 1,
+      "offlineEff": 1.13
+    },
+    {
+      "visits": 2,
+      "offlineEff": 1.13
+    },
+    {
+      "visits": 3,
+      "offlineEff": 1.13
+    }
+  ],
+  "offlineCards": [
+    {
+      "id": "early_leave",
+      "eff": 1.28,
+      "deltaPct": 13.27
+    },
+    {
+      "id": "canteen_gift",
+      "eff": 1.21,
+      "deltaPct": 7.08
+    },
+    {
+      "id": "overtime",
+      "eff": 1,
+      "deltaPct": -11.5
+    },
+    {
+      "id": "deadline",
+      "eff": 1.03,
+      "deltaPct": -8.85
+    },
+    {
+      "id": "hr_talk",
+      "eff": 1.13,
+      "deltaPct": 0
+    },
+    {
+      "id": "ac_move",
+      "eff": 1.13,
+      "deltaPct": 0
+    }
+  ],
+  "autoRepeat": [
+    {
+      "stage": "mid",
+      "dispatchRound": 7635090,
+      "dispatchPerDay": 8156481,
+      "catchUpSharePct": 93.6
+    },
+    {
+      "stage": "late",
+      "dispatchRound": 41961390739,
+      "dispatchPerDay": 45104892540,
+      "catchUpSharePct": 93
+    }
+  ],
+  "dispatchRows": [
+    {
+      "stage": "mid",
+      "colleague": "老周",
+      "best": {
+        "mission": "楼下买咖啡",
+        "secs": 24480,
+        "reward": 4007244,
+        "perHour": 589301,
+        "skillMatch": false
+      },
+      "skillMatchIsBest": false,
+      "skillMissionPerHour": 410405
+    },
+    {
+      "stage": "mid",
+      "colleague": "小美",
+      "best": {
+        "mission": "楼下买咖啡",
+        "secs": 28800,
+        "reward": 3627846,
+        "perHour": 453481,
+        "skillMatch": false
+      },
+      "skillMatchIsBest": false,
+      "skillMissionPerHour": 388697
+    },
+    {
+      "stage": "late",
+      "colleague": "老周",
+      "best": {
+        "mission": "楼下买咖啡",
+        "secs": 24480,
+        "reward": 6422605326,
+        "perHour": 944500783,
+        "skillMatch": false
+      },
+      "skillMatchIsBest": false,
+      "skillMissionPerHour": 657777329
+    },
+    {
+      "stage": "late",
+      "colleague": "小美",
+      "best": {
+        "mission": "楼下买咖啡",
+        "secs": 28800,
+        "reward": 6543608526,
+        "perHour": 817951066,
+        "skillMatch": false
+      },
+      "skillMatchIsBest": false,
+      "skillMissionPerHour": 701100913
+    },
+    {
+      "stage": "late",
+      "colleague": "强哥",
+      "best": {
+        "mission": "长线蹲点",
+        "secs": 14400,
+        "reward": 3927666272,
+        "perHour": 981916568,
+        "skillMatch": true
+      },
+      "skillMatchIsBest": true,
+      "skillMissionPerHour": 981916568
+    },
+    {
+      "stage": "late",
+      "colleague": "小李",
+      "best": {
+        "mission": "就近溜达",
+        "secs": 180,
+        "reward": 79985550,
+        "perHour": 1599711000,
+        "skillMatch": true
+      },
+      "skillMatchIsBest": true,
+      "skillMissionPerHour": 1599711000
+    },
+    {
+      "stage": "late",
+      "colleague": "王师傅",
+      "best": {
+        "mission": "楼下买咖啡",
+        "secs": 28800,
+        "reward": 15543393481,
+        "perHour": 1942924185,
+        "skillMatch": true
+      },
+      "skillMatchIsBest": true,
+      "skillMissionPerHour": 1942924185
+    }
+  ],
+  "arcade": [
+    {
+      "stage": "early",
+      "stationIdlePerSec": 9,
+      "arcadePerGame": 229,
+      "arcade3PerDay": 687,
+      "dailyTotal": 803112,
+      "sharePct": 0.086,
+      "equivalentIdleSeconds": 75
+    },
+    {
+      "stage": "mid",
+      "stationIdlePerSec": 3814,
+      "arcadePerGame": 95339,
+      "arcade3PerDay": 286017,
+      "dailyTotal": 393769846,
+      "sharePct": 0.073,
+      "equivalentIdleSeconds": 75
+    },
+    {
+      "stage": "late",
+      "stationIdlePerSec": 2291835,
+      "arcadePerGame": 57295870,
+      "arcade3PerDay": 171887610,
+      "dailyTotal": 392064006986,
+      "sharePct": 0.044,
+      "equivalentIdleSeconds": 75
+    }
+  ],
+  "energyBest": [
+    {
+      "set": [
+        "slack",
+        "focus"
+      ],
+      "cost": 85,
+      "gainPct": 33.9
+    },
+    {
+      "set": [
+        "slack",
+        "fake-work",
+        "social"
+      ],
+      "cost": 100,
+      "gainPct": 30.41
+    },
+    {
+      "set": [
+        "slack",
+        "social"
+      ],
+      "cost": 65,
+      "gainPct": 30.26
+    },
+    {
+      "set": [
+        "slack",
+        "fake-work"
+      ],
+      "cost": 75,
+      "gainPct": 24.35
+    },
+    {
+      "set": [
+        "slack"
+      ],
+      "cost": 40,
+      "gainPct": 24.21
+    }
+  ],
+  "energyCombo": {
+    "set": [
+      "slack",
+      "fake-work",
+      "social"
+    ],
+    "cost": 100,
+    "gainPct": 30.41
+  },
+  "prestigeThresholdGain": [
+    {
+      "prestige": 0,
+      "mult": 1,
+      "threshold": 100000000,
+      "gainAtThreshold": 3
+    },
+    {
+      "prestige": 1,
+      "mult": 1.75,
+      "threshold": 175000000,
+      "gainAtThreshold": 3
+    },
+    {
+      "prestige": 3,
+      "mult": 3.25,
+      "threshold": 325000000,
+      "gainAtThreshold": 3
+    },
+    {
+      "prestige": 6,
+      "mult": 5.5,
+      "threshold": 550000000,
+      "gainAtThreshold": 3
+    },
+    {
+      "prestige": 10,
+      "mult": 8.5,
+      "threshold": 850000000,
+      "gainAtThreshold": 3
+    }
+  ],
+  "constantChecks": {
+    "cardDismissCosts": 0,
+    "talentRespecCosts": 0,
+    "decorSlots": null,
+    "decorMutualExclusion": false,
+    "decorCompletionBonus": 0.1,
+    "autoRepeatDefault": false
+  }
+}

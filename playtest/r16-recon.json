@@ -1,0 +1,1004 @@
+{
+  "startedAt": "2026-11-27T12:58:58.219Z",
+  "online": {
+    "boot": {
+      "ready": "complete",
+      "hook": "undefined",
+      "nav": 1710,
+      "resources": 11
+    },
+    "firstScreen": {
+      "viewport": {
+        "w": 390,
+        "h": 844
+      },
+      "title": "摸鱼工位",
+      "hudMoyu": "0.3",
+      "hudSub": "点击 +1\n不点也 0.2/秒\n实习生 0%\n🎮\n3\n3\n👥\n精力 100\n天赋\n🔊\n📔",
+      "quest": {
+        "hidden": false,
+        "text": "再戳 15 下 → 解锁「咖啡续命」"
+      },
+      "shopCards": [
+        {
+          "cls": "shop-card pixel-panel",
+          "text": "点了才赚 | 咖啡续命 | +1 点击力 | ★ 点击最优 | 15 摸鱼值 | 再戳 15 下"
+        },
+        {
+          "cls": "shop-card pixel-panel",
+          "text": "会自动赚 | 刷手机 | +1/秒 · ×2差5级 | ★ 挂机最优 | 50 摸鱼值 | 还差 49.7"
+        },
+        {
+          "cls": "shop-card pixel-panel",
+          "text": "点了才赚 | 带薪喝水 | +2 点击力 | 100 摸鱼值 | 再戳 100 下"
+        },
+        {
+          "cls": "shop-card pixel-panel",
+          "text": "会自动赚 | 带薪蹲坑 | +5/秒 | 600 摸鱼值 | 还差 599.7"
+        },
+        {
+          "cls": "shop-card pixel-panel",
+          "text": "点了才赚 | 人体工学椅 | +5 点击力 | 800 摸鱼值 | 再戳 800 下"
+        },
+        {
+          "cls": "shop-card pixel-panel",
+          "text": "会自动赚 | 摸鱼群聊 | +15/秒 | 4000 摸鱼值 | 还差 3999.7"
+        },
+        {
+          "cls": "shop-card pixel-panel",
+          "text": "会自动赚 | 无用会议 | +50/秒 | 2.50万 摸鱼值 | 还差 2.50万"
+        },
+        {
+          "cls": "shop-card pixel-panel",
+          "text": "会自动赚 | 深度摸鱼 | +180/秒 · ×2差5级 | 15.00万 摸鱼值 | 还差 15.00万"
+        },
+        {
+          "cls": "shop-card pixel-panel",
+          "text": "会自动赚 | 退休式躺平 | +700/秒 | 100.00万 摸鱼值 | 还差 100.00万"
+        }
+      ],
+      "buttons": [
+        {
+          "id": "btn-arcade",
+          "aria": "摸鱼站，今天还剩 3 次",
+          "text": "🎮33",
+          "disabled": false,
+          "rect": {
+            "x": 336,
+            "y": 458,
+            "w": 44,
+            "h": 44
+          },
+          "badge": "3"
+        },
+        {
+          "id": "btn-team",
+          "aria": "摸鱼小队，还有精力 100",
+          "text": "👥精力 100天赋",
+          "disabled": false,
+          "rect": {
+            "x": 336,
+            "y": 510,
+            "w": 44,
+            "h": 44
+          },
+          "badge": "精力 100"
+        },
+        {
+          "id": "btn-mute",
+          "aria": "音效开关",
+          "text": "🔊",
+          "disabled": false,
+          "rect": {
+            "x": 336,
+            "y": 562,
+            "w": 44,
+            "h": 44
+          },
+          "badge": null
+        },
+        {
+          "id": "btn-journal",
+          "aria": "日报与图鉴",
+          "text": "📔",
+          "disabled": false,
+          "rect": {
+            "x": 336,
+            "y": 614,
+            "w": 44,
+            "h": 44
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "点了才赚咖啡续命\n        +1 点击力\n        ★ 点击最优\n        15 ",
+          "disabled": true,
+          "rect": {
+            "x": 8,
+            "y": 693,
+            "w": 140,
+            "h": 122
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "会自动赚刷手机\n        +1/秒 · ×2差5级\n        ★ 挂机最优\n      ",
+          "disabled": true,
+          "rect": {
+            "x": 156,
+            "y": 693,
+            "w": 140,
+            "h": 122
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "点了才赚带薪喝水\n        +2 点击力\n        \n        100 摸鱼值\n ",
+          "disabled": true,
+          "rect": {
+            "x": 304,
+            "y": 693,
+            "w": 140,
+            "h": 122
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "会自动赚带薪蹲坑\n        +5/秒\n        \n        600 摸鱼值\n   ",
+          "disabled": true,
+          "rect": {
+            "x": 452,
+            "y": 693,
+            "w": 140,
+            "h": 122
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "点了才赚人体工学椅\n        +5 点击力\n        \n        800 摸鱼值\n",
+          "disabled": true,
+          "rect": {
+            "x": 600,
+            "y": 693,
+            "w": 140,
+            "h": 122
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "会自动赚摸鱼群聊\n        +15/秒\n        \n        4000 摸鱼值\n ",
+          "disabled": true,
+          "rect": {
+            "x": 748,
+            "y": 693,
+            "w": 140,
+            "h": 122
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "会自动赚无用会议\n        +50/秒\n        \n        2.50万 摸鱼值\n",
+          "disabled": true,
+          "rect": {
+            "x": 896,
+            "y": 693,
+            "w": 140,
+            "h": 122
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "会自动赚深度摸鱼\n        +180/秒 · ×2差5级\n        \n        1",
+          "disabled": true,
+          "rect": {
+            "x": 1044,
+            "y": 693,
+            "w": 140,
+            "h": 122
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "会自动赚退休式躺平\n        +700/秒\n        \n        100.00万 ",
+          "disabled": true,
+          "rect": {
+            "x": 1192,
+            "y": 693,
+            "w": 140,
+            "h": 122
+          },
+          "badge": null
+        }
+      ],
+      "panels": {
+        "journal": false,
+        "team": false,
+        "arcade": false,
+        "cards": false,
+        "boss": false,
+        "welcome": false
+      },
+      "bodyText": "0.3摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 0%\n🎮\n3\n3\n👥\n精力 100\n天赋\n🔊\n📔\n再戳 15 下 → 解锁「咖啡续命」\n工位尚未装修\n点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n再戳 15 下\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机最优\n50 摸鱼值\n还差 49.7\n点了才赚\n带薪喝水\n+2 点击力\n100 摸鱼值\n再戳 100 下\n会自动赚\n带薪蹲坑\n+5/秒\n600 摸鱼值\n还差 599.7\n点了才赚\n人体工学椅\n+5 点击力\n800 摸鱼值\n再戳 800 下\n会自动赚\n摸鱼群聊\n+15/秒\n4000 摸鱼值\n还差 3999.7\n会自动赚\n无用会议\n+50/秒\n2.50万 摸鱼值\n还差 2.50万\n会自动赚\n深度摸鱼\n+180/秒 · ×2差5级\n15.00万 摸鱼值\n还差 15.00万\n会自动赚\n退休式躺平\n+700/秒\n100.00万 摸鱼值\n还差 100.00万\n← 滑动查看更多 →\n送你 1 个天赋点，点 👥 看看",
+      "save": {
+        "v": 2,
+        "moyu": 0,
+        "totalEarned": 0,
+        "levels": {},
+        "savedAt": 1795784338855,
+        "createdAt": 1795784338854,
+        "daily": {
+          "date": "2026-11-27",
+          "goals": [
+            {
+              "id": "visit_1",
+              "target": 1,
+              "progress": 1,
+              "done": true
+            },
+            {
+              "id": "idle_earn",
+              "target": 1,
+              "progress": 0,
+              "done": false
+            },
+            {
+              "id": "buy_3",
+              "target": 3,
+              "progress": 0,
+              "done": false
+            }
+          ],
+          "streak": 0,
+          "lastCompleteDate": null,
+          "claimed": false,
+          "window": 3,
+          "claimsToday": 0
+        },
+        "team": {
+          "colleagues": {}
+        },
+        "talents": {
+          "unlocked": [],
+          "points": 1,
+          "rankGranted": -1,
+          "dailyGiftDate": "2026-11-27",
+          "overflow": 0
+        },
+        "decor": [],
+        "energy": {
+          "date": "2026-11-27",
+          "left": 100,
+          "used": [],
+          "boosted": {
+            "idleMult": 1,
+            "patrolRewardMult": 1,
+            "clickMult": 1
+          }
+        },
+        "arcade": {
+          "date": "2026-11-27",
+          "played": 0,
+          "best": {}
+        },
+        "cards": {
+          "date": "2026-11-27",
+          "offers": [
+            "intern_ask",
+            "big_meeting",
+            "ac_broken"
+          ],
+          "chosen": null,
+          "until": 0,
+          "nextDayGuaranteed": null,
+          "dismissed": false,
+          "chosenDate": ""
+        }
+      },
+      "hasDevHook": "undefined"
+    },
+    "after10Taps": {
+      "viewport": {
+        "w": 390,
+        "h": 844
+      },
+      "title": "摸鱼工位",
+      "hudMoyu": "11.8",
+      "hudSub": "点击 +1\n不点也 0.2/秒\n实习生 0%\n🎮\n3\n3\n👥\n精力 100\n天赋\n🔊\n📔",
+      "quest": {
+        "hidden": false,
+        "text": "买下点亮的「咖啡续命」卡片"
+      },
+      "shopCards": [
+        {
+          "cls": "shop-card pixel-panel",
+          "text": "点了才赚 | 咖啡续命 | +1 点击力 | ★ 点击最优 | 15 摸鱼值 | 再戳 4 下"
+        },
+        {
+          "cls": "shop-card pixel-panel",
+          "text": "会自动赚 | 刷手机 | +1/秒 · ×2差5级 | ★ 挂机最优 | 50 摸鱼值 | 还差 38.2"
+        },
+        {
+          "cls": "shop-card pixel-panel",
+          "text": "点了才赚 | 带薪喝水 | +2 点击力 | 100 摸鱼值 | 再戳 89 下"
+        },
+        {
+          "cls": "shop-card pixel-panel",
+          "text": "会自动赚 | 带薪蹲坑 | +5/秒 | 600 摸鱼值 | 还差 588.2"
+        },
+        {
+          "cls": "shop-card pixel-panel",
+          "text": "点了才赚 | 人体工学椅 | +5 点击力 | 800 摸鱼值 | 再戳 789 下"
+        },
+        {
+          "cls": "shop-card pixel-panel",
+          "text": "会自动赚 | 摸鱼群聊 | +15/秒 | 4000 摸鱼值 | 还差 3988.2"
+        },
+        {
+          "cls": "shop-card pixel-panel",
+          "text": "会自动赚 | 无用会议 | +50/秒 | 2.50万 摸鱼值 | 还差 2.50万"
+        },
+        {
+          "cls": "shop-card pixel-panel",
+          "text": "会自动赚 | 深度摸鱼 | +180/秒 · ×2差5级 | 15.00万 摸鱼值 | 还差 15.00万"
+        },
+        {
+          "cls": "shop-card pixel-panel",
+          "text": "会自动赚 | 退休式躺平 | +700/秒 | 100.00万 摸鱼值 | 还差 100.00万"
+        }
+      ],
+      "buttons": [
+        {
+          "id": "btn-arcade",
+          "aria": "摸鱼站，今天还剩 3 次",
+          "text": "🎮33",
+          "disabled": false,
+          "rect": {
+            "x": 336,
+            "y": 458,
+            "w": 44,
+            "h": 44
+          },
+          "badge": "3"
+        },
+        {
+          "id": "btn-team",
+          "aria": "摸鱼小队，还有精力 100",
+          "text": "👥精力 100天赋",
+          "disabled": false,
+          "rect": {
+            "x": 336,
+            "y": 510,
+            "w": 44,
+            "h": 44
+          },
+          "badge": "精力 100"
+        },
+        {
+          "id": "btn-mute",
+          "aria": "音效开关",
+          "text": "🔊",
+          "disabled": false,
+          "rect": {
+            "x": 336,
+            "y": 562,
+            "w": 44,
+            "h": 44
+          },
+          "badge": null
+        },
+        {
+          "id": "btn-journal",
+          "aria": "日报与图鉴",
+          "text": "📔",
+          "disabled": false,
+          "rect": {
+            "x": 336,
+            "y": 614,
+            "w": 44,
+            "h": 44
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "点了才赚咖啡续命\n        +1 点击力\n        ★ 点击最优\n        15 ",
+          "disabled": true,
+          "rect": {
+            "x": 8,
+            "y": 693,
+            "w": 140,
+            "h": 122
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "会自动赚刷手机\n        +1/秒 · ×2差5级\n        ★ 挂机最优\n      ",
+          "disabled": true,
+          "rect": {
+            "x": 156,
+            "y": 693,
+            "w": 140,
+            "h": 122
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "点了才赚带薪喝水\n        +2 点击力\n        \n        100 摸鱼值\n ",
+          "disabled": true,
+          "rect": {
+            "x": 304,
+            "y": 693,
+            "w": 140,
+            "h": 122
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "会自动赚带薪蹲坑\n        +5/秒\n        \n        600 摸鱼值\n   ",
+          "disabled": true,
+          "rect": {
+            "x": 452,
+            "y": 693,
+            "w": 140,
+            "h": 122
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "点了才赚人体工学椅\n        +5 点击力\n        \n        800 摸鱼值\n",
+          "disabled": true,
+          "rect": {
+            "x": 600,
+            "y": 693,
+            "w": 140,
+            "h": 122
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "会自动赚摸鱼群聊\n        +15/秒\n        \n        4000 摸鱼值\n ",
+          "disabled": true,
+          "rect": {
+            "x": 748,
+            "y": 693,
+            "w": 140,
+            "h": 122
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "会自动赚无用会议\n        +50/秒\n        \n        2.50万 摸鱼值\n",
+          "disabled": true,
+          "rect": {
+            "x": 896,
+            "y": 693,
+            "w": 140,
+            "h": 122
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "会自动赚深度摸鱼\n        +180/秒 · ×2差5级\n        \n        1",
+          "disabled": true,
+          "rect": {
+            "x": 1044,
+            "y": 693,
+            "w": 140,
+            "h": 122
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "会自动赚退休式躺平\n        +700/秒\n        \n        100.00万 ",
+          "disabled": true,
+          "rect": {
+            "x": 1192,
+            "y": 693,
+            "w": 140,
+            "h": 122
+          },
+          "badge": null
+        },
+        {
+          "id": "cards-skip",
+          "aria": null,
+          "text": "今天先不选",
+          "disabled": false,
+          "rect": {
+            "x": 34,
+            "y": 575,
+            "w": 323,
+            "h": 42
+          },
+          "badge": null
+        }
+      ],
+      "panels": {
+        "journal": false,
+        "team": false,
+        "arcade": false,
+        "cards": true,
+        "boss": false,
+        "welcome": false
+      },
+      "bodyText": "✓ 戳屏幕完成！\n11.8摸鱼值\n点击 +1\n不点也 0.2/秒\n实习生 0%\n🎮\n3\n3\n👥\n精力 100\n天赋\n🔊\n📔\n买下点亮的「咖啡续命」卡片\n工位尚未装修\n点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n再戳 4 下\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机最优\n50 摸鱼值\n还差 38.2\n点了才赚\n带薪喝水\n+2 点击力\n100 摸鱼值\n再戳 89 下\n会自动赚\n带薪蹲坑\n+5/秒\n600 摸鱼值\n还差 588.2\n点了才赚\n人体工学椅\n+5 点击力\n800 摸鱼值\n再戳 789 下\n会自动赚\n摸鱼群聊\n+15/秒\n4000 摸鱼值\n还差 3988.2\n会自动赚\n无用会议\n+50/秒\n2.50万 摸鱼值\n还差 2.50万\n会自动赚\n深度摸鱼\n+180/秒 · ×2差5级\n15.00万 摸鱼值\n还差 15.00万\n会自动赚\n退休式躺平\n+700/秒\n100.00万 摸鱼值\n还差 100.00万\n← 滑动查看更多 →\n今日摸鱼卡\n选 1 张，生效 24 小时（跨天不清）\n普通\n实习生来请教\n今天点击力 +40%，派遣奖励 +20%\n小李问了你三个问题，你一个都没答上来。\n稀有\n全员大会\n今天巡逻奖励 ×2，且巡逻明显变密\n会议室里没人听，全在底下摸鱼。\n普通\n空调坏了\n今天挂机 +10%，但离线效率 -5%\n维修说下周才来，全组开始用文件扇风。\n今天先不选\n送你 1 个天赋点，点 👥 看看",
+      "save": {
+        "v": 2,
+        "moyu": 0,
+        "totalEarned": 0,
+        "levels": {},
+        "savedAt": 1795784338855,
+        "createdAt": 1795784338854,
+        "daily": {
+          "date": "2026-11-27",
+          "goals": [
+            {
+              "id": "visit_1",
+              "target": 1,
+              "progress": 1,
+              "done": true
+            },
+            {
+              "id": "idle_earn",
+              "target": 1,
+              "progress": 0,
+              "done": false
+            },
+            {
+              "id": "buy_3",
+              "target": 3,
+              "progress": 0,
+              "done": false
+            }
+          ],
+          "streak": 0,
+          "lastCompleteDate": null,
+          "claimed": false,
+          "window": 3,
+          "claimsToday": 0
+        },
+        "team": {
+          "colleagues": {}
+        },
+        "talents": {
+          "unlocked": [],
+          "points": 1,
+          "rankGranted": -1,
+          "dailyGiftDate": "2026-11-27",
+          "overflow": 0
+        },
+        "decor": [],
+        "energy": {
+          "date": "2026-11-27",
+          "left": 100,
+          "used": [],
+          "boosted": {
+            "idleMult": 1,
+            "patrolRewardMult": 1,
+            "clickMult": 1
+          }
+        },
+        "arcade": {
+          "date": "2026-11-27",
+          "played": 0,
+          "best": {}
+        },
+        "cards": {
+          "date": "2026-11-27",
+          "offers": [
+            "intern_ask",
+            "big_meeting",
+            "ac_broken"
+          ],
+          "chosen": null,
+          "until": 0,
+          "nextDayGuaranteed": null,
+          "dismissed": false,
+          "chosenDate": ""
+        }
+      },
+      "hasDevHook": "undefined"
+    },
+    "cards": [
+      {
+        "id": "intern_ask",
+        "cls": "card common",
+        "text": "普通 | 实习生来请教 | 今天点击力 +40%，派遣奖励 +20% | 小李问了你三个问题，你一个都没答上来。"
+      },
+      {
+        "id": "big_meeting",
+        "cls": "card rare",
+        "text": "稀有 | 全员大会 | 今天巡逻奖励 ×2，且巡逻明显变密 | 会议室里没人听，全在底下摸鱼。"
+      },
+      {
+        "id": "ac_broken",
+        "cls": "card common",
+        "text": "普通 | 空调坏了 | 今天挂机 +10%，但离线效率 -5% | 维修说下周才来，全组开始用文件扇风。"
+      }
+    ],
+    "cardsSkipBtn": "今天先不选",
+    "shopHTML": "<button class=\"shop-card pixel-panel\" data-upgrade=\"coffee\" data-price=\"15\" disabled=\"\"><span class=\"shop-top\"><span class=\"shop-tag tag-click\">点了才赚</span><span class=\"shop-name\">咖啡续命</span></span>\n        <span class=\"shop-next\">+1 点击力</span>\n        <span class=\"shop-value\">★ 点击最优</span>\n        <span class=\"shop-cost\"><b>15</b> 摸鱼值</span>\n        <span class=\"shop-remain\">再戳 4 下</span>\n        <span class=\"shop-level\"></span></button><button class=\"shop-card pixel-panel\" data-upgrade=\"phone\" data-price=\"50\" disabled=\"\"><span class=\"shop-top\"><span class=\"shop-tag tag-idle\">会自动赚</span><span class=\"shop-name\">刷手机</span></span>\n        <span class=\"shop-next\">+1/秒 · ×2差5级</span>\n        <span class=\"shop-value\">★ 挂机最优</span>\n        <span class=\"shop-cost\"><b>50</b> 摸鱼值</span>\n        <span class=\"shop-remain\">还差 38.2</span>\n        <span class=\"shop-level\"></span></button><button class=\"shop-card pixel-panel\" data-upgrade=\"water\" data-price=\"100\" disabled=\"\"><span class=\"shop-top\"><span class=\"shop-tag tag-click\">点了才赚</span><span class=\"shop-name\">带薪喝水</span></span>\n        <span class=\"shop-next\">+2 点击力</span>\n        <span class=\"shop-value\"></span>\n        <span class=\"shop-cost\"><b>100</b> 摸鱼值</span>\n        <span class=\"shop-remain\">再戳 89 下</span>\n        <span class=\"shop-level\"></span></button><button class=\"shop-card pixel-panel\" data-upgrade=\"toilet\" data-price=\"600\" disabled=\"\"><span class=\"shop-top\"><span class=\"shop-tag tag-idle\">会自动赚</span><span class=\"shop-name\">带薪蹲坑</span></span>\n        <span class=\"shop-next\">+5/秒</span>\n        <span class=\"shop-value\"></span>\n        <span class=\"shop-cost\"><b>600</b> 摸鱼值</span>\n        <span class=\"shop-remain\">还差 588.2</span>\n        <span class=\"shop-level\"></span></button><button class=\"shop-card pixel-panel\" data-upgrade=\"chair\" data-price=\"800\" disabled=\"\"><span class=\"shop-top\"><span class=\"shop-tag tag-click\">点了才赚</span><span class=\"shop-name\">人体工学椅</span></span>\n        <span class=\"shop-next\">+5 点击力</span>\n        <span class=\"shop-value\"></span>\n        <span class=\"shop-cost\"><b>800</b> 摸鱼值</span>\n        <span class=\"shop-remain\">再戳 789 下</span>\n        <span class=\"shop-level\"></span></button><button class=\"shop-card pixel-panel\" data-upgrade=\"group\" data-price=\"4000\" disabled=\"\"><span class=\"shop-top\"><span class=\"shop-tag tag-idle\">会自动赚</span><span class=\"shop-name\">摸鱼群聊</span></span>\n        <span class=\"shop-next\">+15/秒</span>\n        <span class=\"shop-value\"></span>\n        <span class=\"shop-cost\"><b>4000</b> 摸鱼值</span>\n        <span class=\"shop-remain\">还差 3988.2</span>\n        <span class=\"shop-level\"></span></button><button class=\"shop-card pixel-panel\" data-upgrade=\"meeting\" data-price=\"25000\" disabled=\"\"><span class=\"shop-top\"><span class=\"shop-tag tag-idle\">会自动赚</span><span class=\"shop-name\">无用会议</span></span>\n        <span class=\"shop-next\">+50/秒</span>\n        <span class=\"shop-value\"></span>\n        <span class=\"shop-cost\"><b>2.50万</b> 摸鱼值</span>\n        <span class=\"shop-remain\">还差 2.50万</span>\n        <span class=\"shop-level\"></span></button><button class=\"shop-card pixel-panel\" data-upgrade=\"deep\" data-price=\"150000\" disabled=\"\"><span class=\"shop-top\"><span class=\"shop-tag tag-idle\">会自动赚</span><span class=\"shop-name\">深度摸鱼</span></span>\n        <span class=\"shop-next\">+180/秒 · ×2差5级</span>\n        <span class=\"shop-value\"></span>\n        <span class=\"shop-cost\"><b>15.00万</b> 摸鱼值</span>\n        <span class=\"shop-remain\">还差 15.00万</span>\n        <span class=\"shop-level\"></span></button><button class=\"shop-card pixel-panel\" data-upgrade=\"retire\" data-price=\"1000000\" disabled=\"\"><span class=\"shop-top\"><span class=\"shop-tag tag-idle\">会自动赚</span><span class=\"shop-name\">退休式躺平</span></span>\n        <span class=\"shop-next\">+700/秒</span>\n        <span class=\"shop-value\"></span>\n        <span class=\"shop-cost\"><b>100.00万</b> 摸鱼值</span>\n        <span class=\"shop-remain\">还差 100.00万</span>\n        <span class=\"shop-level\"></span></button>",
+    "journal": {
+      "vis": true,
+      "text": "摸鱼日报\n✕\n2026-11-27 · 🔥 连续 0 天（今天未领）\n✓\n今天上线看一眼\n1/1\n○\n什么都不点，等摸鱼值自己涨\n0/1\n○\n买 3 次升级\n0/3\n完成 1/3\n摸鱼数据\n摸鱼实习生\n生涯总收入\n12.0\n本局 / 往期\n12.0 / 0\n当前余额\n12.0\n累计投入\n0\n点击力 / 挂机\n1 / 0.2每秒\n累计点击\n10\n今日回访\n1/3（离线效率 100%）\n连续日报\n0 天\n图鉴\n0/55\n转生\n0 点（×1.00）\n纪录·最佳单日\n0\n纪录·最长连签\n0 天\n纪录·最多点击\n0\n导出存档 JSON\n存档码（换设备用）\n复制这串码到新设备「导入」，进度就能带过去（防手滑，非防篡改）。\n复制/生成存档码\n导入存档码\n摸鱼图鉴\n0/55\n梗语录 0/10\n升级彩蛋 0/45\n买升级、收线索，开始收集摸鱼彩蛋\n关于\nv0.5.0 · 2026-11-27\n新增：摸鱼小队（招募/派遣/好感/一键领取）+ 天赋树（18 天赋/24 点/溢出转化）；新增：每日摸鱼卡（16 张，选 1 生效 24h）；新增：回合制老板（3 性格，看线索选应对，5 秒窗口）；新增：工位经营（8 件家具，买完看得见，集齐 +10%）+ 每日精力（4 档取舍）\n今日工位梗：摸了一条鱼\n离职再就业\n重置余额与 20% 等级，换永久点数：总倍率 = 1 + 0.75 × 累计点数（线性）；图鉴/日报/段位/历史累计保留。建议攒够多点再转。\n未解锁（本局累计 12.0 / 需 1.00亿）\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???",
+      "buttons": [
+        {
+          "id": "journal-close",
+          "text": "✕",
+          "disabled": false
+        },
+        {
+          "id": "journal-claim",
+          "text": "完成 1/3",
+          "disabled": true
+        },
+        {
+          "id": "stats-export",
+          "text": "导出存档 JSON",
+          "disabled": false
+        },
+        {
+          "id": "savecode-copy",
+          "text": "复制/生成存档码",
+          "disabled": false
+        },
+        {
+          "id": "savecode-import",
+          "text": "导入存档码",
+          "disabled": false
+        },
+        {
+          "id": "prestige-btn",
+          "text": "未解锁（本局累计 12.0 / 需 1.00亿）",
+          "disabled": true
+        }
+      ]
+    },
+    "arcade": {
+      "vis": true,
+      "left": "今天还能玩 3/3 次 · 每局能赢摸鱼值",
+      "html": "<div class=\"arcade-card \">\n        <div class=\"arcade-name\">接咖啡 <small>最高 0</small></div>\n        <div class=\"arcade-desc\">咖啡掉下来时点住它——掉地上就没了</div>\n        <div class=\"arcade-desc\" style=\"color:#8be28b\">满分 ≈ 25 秒挂机收益（新号保底 30）</div>\n        <button data-game=\"coffee\">开始（30 秒）</button>\n      </div><div class=\"arcade-card \">\n        <div class=\"arcade-name\">找老板 <small>最高 0</small></div>\n        <div class=\"arcade-desc\">在一堆同事脸里找出王总，越快越好</div>\n        <div class=\"arcade-desc\" style=\"color:#8be28b\">满分 ≈ 25 秒挂机收益（新号保底 30）</div>\n        <button data-game=\"findboss\">开始（30 秒内无限轮）</button>\n      </div><div class=\"arcade-card \">\n        <div class=\"arcade-name\">节奏点击 <small>最高 0</small></div>\n        <div class=\"arcade-desc\">跟着节拍点屏幕，越准分越高</div>\n        <div class=\"arcade-desc\" style=\"color:#8be28b\">满分 ≈ 25 秒挂机收益（新号保底 30）</div>\n        <button data-game=\"rhythm\">开始（30 秒）</button>\n      </div>"
+    },
+    "team": {
+      "vis": true,
+      "text": "摸鱼小队\n✕\n同事\n天赋\n工位\n天赋点 1\n已招募 0/5 · 小队挂机 +0/秒 自动重复：完成后自动领取并续班（离线回来最多补 1 轮）\n还没有同事。戳屏幕攒够 1.20万 就能招募第一位「老周」， 他会帮你自动赚，还能派出去做任务。\n当前余额：12.3\n老周\n八年老员工·甩锅大师\n擅长：聊八卦（匹配的派遣 +50%）\n被动：他的任务更快（时长 -15%）\n攒够再招 1.20万\n还有 4 位同事，攒够钱陆续解锁。",
+      "html": "<div class=\"team-summary\">\n      <span>已招募 0/5 · 小队挂机 +0/秒</span>\n      \n      <span style=\"width:100%;font-size:10px;color:#8f9fd0\">自动重复：完成后自动领取并续班（离线回来最多补 1 轮）</span>\n    </div><div class=\"team-hint\">\n        还没有同事。戳屏幕攒够 <b>1.20万</b> 就能招募第一位「老周」，\n        他会帮你自动赚，还能派出去做任务。\n        <br>当前余额：<b>12.3</b>\n      </div><div class=\"mate locked\">\n          <div class=\"mate-top\">\n            <span class=\"mate-name\">老周</span>\n            <span class=\"mate-role\">八年老员工·甩锅大师</span>\n          </div>\n          <div class=\"mate-skill\">擅长：聊八卦（匹配的派遣 +50%）</div>\n          <div class=\"mate-skill\" style=\"color:#8be28b\">被动：他的任务更快（时长 -15%）</div>\n          <div class=\"mate-actions\">\n            <button data-act=\"recruit\" data-id=\"zhou\" disabled=\"\">\n              攒够再招 1.20万\n            </button>\n          </div>\n        </div><div class=\"team-hint\" style=\"font-size:12px\">还有 4 位同事，攒够钱陆续解锁。</div>"
+    },
+    "errors": []
+  },
+  "dev": {
+    "boot": {
+      "hook": "object",
+      "fps": 62,
+      "state": true
+    },
+    "afterGrant": {
+      "viewport": {
+        "w": 390,
+        "h": 844
+      },
+      "title": "摸鱼工位",
+      "hudMoyu": "15.00万",
+      "hudSub": "点击 +1\n不点也 0.2/秒\n资深摸鱼 6%\n🎮\n3\n👥\n精力 100\n天赋\n🔊\n📔",
+      "quest": {
+        "hidden": false,
+        "text": "买下点亮的「咖啡续命」卡片"
+      },
+      "shopCards": [
+        {
+          "cls": "shop-card pixel-panel affordable just-unlocked",
+          "text": "点了才赚 | 咖啡续命 | +1 点击力 | ★ 点击最优 | 15 摸鱼值"
+        },
+        {
+          "cls": "shop-card pixel-panel affordable just-unlocked",
+          "text": "会自动赚 | 刷手机 | +1/秒 · ×2差5级 | ★ 挂机最优 | 50 摸鱼值"
+        },
+        {
+          "cls": "shop-card pixel-panel affordable just-unlocked",
+          "text": "点了才赚 | 带薪喝水 | +2 点击力 | 100 摸鱼值"
+        },
+        {
+          "cls": "shop-card pixel-panel affordable just-unlocked",
+          "text": "会自动赚 | 带薪蹲坑 | +5/秒 | 600 摸鱼值"
+        },
+        {
+          "cls": "shop-card pixel-panel affordable just-unlocked",
+          "text": "点了才赚 | 人体工学椅 | +5 点击力 | 800 摸鱼值"
+        },
+        {
+          "cls": "shop-card pixel-panel affordable just-unlocked",
+          "text": "会自动赚 | 摸鱼群聊 | +15/秒 | 4000 摸鱼值"
+        },
+        {
+          "cls": "shop-card pixel-panel affordable just-unlocked",
+          "text": "会自动赚 | 无用会议 | +50/秒 | 2.50万 摸鱼值"
+        },
+        {
+          "cls": "shop-card pixel-panel affordable just-unlocked",
+          "text": "会自动赚 | 深度摸鱼 | +180/秒 · ×2差5级 | 15.00万 摸鱼值"
+        },
+        {
+          "cls": "shop-card pixel-panel",
+          "text": "会自动赚 | 退休式躺平 | +700/秒 | 100.00万 摸鱼值 | 还差 85.00万"
+        }
+      ],
+      "buttons": [
+        {
+          "id": "btn-arcade",
+          "aria": "摸鱼站，今天还剩 3 次",
+          "text": "🎮3",
+          "disabled": false,
+          "rect": {
+            "x": 336,
+            "y": 458,
+            "w": 44,
+            "h": 44
+          },
+          "badge": "3"
+        },
+        {
+          "id": "btn-team",
+          "aria": "摸鱼小队，还有精力 100",
+          "text": "👥精力 100天赋",
+          "disabled": false,
+          "rect": {
+            "x": 336,
+            "y": 510,
+            "w": 44,
+            "h": 44
+          },
+          "badge": "精力 100"
+        },
+        {
+          "id": "btn-mute",
+          "aria": "音效开关",
+          "text": "🔊",
+          "disabled": false,
+          "rect": {
+            "x": 336,
+            "y": 562,
+            "w": 44,
+            "h": 44
+          },
+          "badge": null
+        },
+        {
+          "id": "btn-journal",
+          "aria": "日报与图鉴",
+          "text": "📔",
+          "disabled": false,
+          "rect": {
+            "x": 336,
+            "y": 614,
+            "w": 44,
+            "h": 44
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "点了才赚咖啡续命\n        +1 点击力\n        ★ 点击最优\n        15 ",
+          "disabled": false,
+          "rect": {
+            "x": 8,
+            "y": 710,
+            "w": 140,
+            "h": 105
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "会自动赚刷手机\n        +1/秒 · ×2差5级\n        ★ 挂机最优\n      ",
+          "disabled": false,
+          "rect": {
+            "x": 156,
+            "y": 710,
+            "w": 140,
+            "h": 105
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "点了才赚带薪喝水\n        +2 点击力\n        \n        100 摸鱼值",
+          "disabled": false,
+          "rect": {
+            "x": 304,
+            "y": 710,
+            "w": 140,
+            "h": 105
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "会自动赚带薪蹲坑\n        +5/秒\n        \n        600 摸鱼值",
+          "disabled": false,
+          "rect": {
+            "x": 452,
+            "y": 710,
+            "w": 140,
+            "h": 105
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "点了才赚人体工学椅\n        +5 点击力\n        \n        800 摸鱼值",
+          "disabled": false,
+          "rect": {
+            "x": 600,
+            "y": 710,
+            "w": 140,
+            "h": 105
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "会自动赚摸鱼群聊\n        +15/秒\n        \n        4000 摸鱼值",
+          "disabled": false,
+          "rect": {
+            "x": 748,
+            "y": 710,
+            "w": 140,
+            "h": 105
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "会自动赚无用会议\n        +50/秒\n        \n        2.50万 摸鱼值",
+          "disabled": false,
+          "rect": {
+            "x": 896,
+            "y": 710,
+            "w": 140,
+            "h": 105
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "会自动赚深度摸鱼\n        +180/秒 · ×2差5级\n        \n        1",
+          "disabled": false,
+          "rect": {
+            "x": 1044,
+            "y": 710,
+            "w": 140,
+            "h": 105
+          },
+          "badge": null
+        },
+        {
+          "id": null,
+          "aria": null,
+          "text": "会自动赚退休式躺平\n        +700/秒\n        \n        100.00万 ",
+          "disabled": true,
+          "rect": {
+            "x": 1192,
+            "y": 710,
+            "w": 140,
+            "h": 105
+          },
+          "badge": null
+        }
+      ],
+      "panels": {
+        "journal": false,
+        "team": false,
+        "arcade": false,
+        "cards": false,
+        "boss": false,
+        "welcome": false
+      },
+      "bodyText": "段位晋升：资深摸鱼\n15.00万摸鱼值\n点击 +1\n不点也 0.2/秒\n资深摸鱼 6%\n🎮\n3\n👥\n精力 100\n天赋\n🔊\n📔\n买下点亮的「咖啡续命」卡片\n工位尚未装修\n点了才赚\n咖啡续命\n+1 点击力\n★ 点击最优\n15 摸鱼值\n会自动赚\n刷手机\n+1/秒 · ×2差5级\n★ 挂机最优\n50 摸鱼值\n点了才赚\n带薪喝水\n+2 点击力\n100 摸鱼值\n会自动赚\n带薪蹲坑\n+5/秒\n600 摸鱼值\n点了才赚\n人体工学椅\n+5 点击力\n800 摸鱼值\n会自动赚\n摸鱼群聊\n+15/秒\n4000 摸鱼值\n会自动赚\n无用会议\n+50/秒\n2.50万 摸鱼值\n会自动赚\n深度摸鱼\n+180/秒 · ×2差5级\n15.00万 摸鱼值\n会自动赚\n退休式躺平\n+700/秒\n100.00万 摸鱼值\n还差 85.00万\n← 滑动查看更多 →\n新章节：302 · 转正",
+      "save": {
+        "v": 2,
+        "moyu": 150000.07667999997,
+        "totalEarned": 150000.07667999997,
+        "levels": {},
+        "savedAt": 1795784350726,
+        "createdAt": 1795784350425,
+        "daily": null,
+        "team": {
+          "colleagues": {}
+        },
+        "talents": {
+          "unlocked": [],
+          "points": 2,
+          "rankGranted": 2,
+          "dailyGiftDate": "2026-11-27",
+          "overflow": 0
+        },
+        "decor": [],
+        "energy": {
+          "date": "2026-11-27",
+          "left": 100,
+          "used": [],
+          "boosted": {
+            "idleMult": 1,
+            "patrolRewardMult": 1,
+            "clickMult": 1
+          }
+        },
+        "arcade": {
+          "date": "2026-11-27",
+          "played": 0,
+          "best": {}
+        },
+        "cards": {
+          "date": "2026-11-27",
+          "offers": [
+            "old_zhou_secret",
+            "canteen_gift",
+            "office_move"
+          ],
+          "chosen": null,
+          "until": 0,
+          "nextDayGuaranteed": null,
+          "dismissed": false,
+          "chosenDate": ""
+        }
+      },
+      "hasDevHook": "object"
+    },
+    "teamColleaguesHTML": "<div class=\"team-summary\">\n      <span>已招募 0/5 · 小队挂机 +0/秒</span>\n      \n      <span style=\"width:100%;font-size:10px;color:#8f9fd0\">自动重复：完成后自动领取并续班（离线回来最多补 1 轮）</span>\n    </div><div class=\"mate locked\">\n          <div class=\"mate-top\">\n            <span class=\"mate-name\">老周</span>\n            <span class=\"mate-role\">八年老员工·甩锅大师</span>\n          </div>\n          <div class=\"mate-skill\">擅长：聊八卦（匹配的派遣 +50%）</div>\n          <div class=\"mate-skill\" style=\"color:#8be28b\">被动：他的任务更快（时长 -15%）</div>\n          <div class=\"mate-actions\">\n            <button data-act=\"recruit\" data-id=\"zhou\">\n              招募 1.20万\n            </button>\n          </div>\n        </div><div class=\"team-hint\" style=\"font-size:12px\">还有 4 位同事，攒够钱陆续解锁。</div>",
+    "teamTalentsHTML": "<div class=\"branch\">\n        <h3>点击流 · 手速摸鱼 <small style=\"color:#8f9fd0\">（0/5 · 点击力 ×1.00）</small></h3>\n        <div class=\"talent \">\n            <span class=\"talent-dot\">1</span>\n            <span class=\"talent-info\">\n              <span class=\"talent-name\">手速</span>\n              <span class=\"talent-desc\">点击力 +25%</span>\n            </span>\n            <button data-act=\"talent\" data-id=\"click_1\">点亮 1</button>\n          </div><div class=\"talent \">\n            <span class=\"talent-dot\">2</span>\n            <span class=\"talent-info\">\n              <span class=\"talent-name\">连击窗口</span>\n              <span class=\"talent-desc\">连击窗口 0.5s → 0.65s</span>\n            </span>\n            <button data-act=\"talent\" data-id=\"click_2\" disabled=\"\">点亮 1</button>\n          </div><div class=\"talent \">\n            <span class=\"talent-dot\">3</span>\n            <span class=\"talent-info\">\n              <span class=\"talent-name\">连击上限（2点）</span>\n              <span class=\"talent-desc\">连击上限 20 → 30（最高 ×1.36）</span>\n            </span>\n            <button data-act=\"talent\" data-id=\"click_3\" disabled=\"\">点亮 2</button>\n          </div><div class=\"talent \">\n            <span class=\"talent-dot\">4</span>\n            <span class=\"talent-info\">\n              <span class=\"talent-name\">暴击（2点）</span>\n              <span class=\"talent-desc\">每 20 次点击必暴击 ×5（巡逻偷点不触发）</span>\n            </span>\n            <button data-act=\"talent\" data-id=\"click_4\" disabled=\"\">点亮 2</button>\n          </div><div class=\"talent \">\n            <span class=\"talent-dot\">5</span>\n            <span class=\"talent-info\">\n              <span class=\"talent-name\">摸鱼转正（终极·3点）</span>\n              <span class=\"talent-desc\">每 300 次累计点击 → 挂机 +1%（封顶 +35%）</span>\n            </span>\n            <button data-act=\"talent\" data-id=\"click_5a\" disabled=\"\">点亮 3</button>\n          </div><div class=\"talent \">\n            <span class=\"talent-dot\">5</span>\n            <span class=\"talent-info\">\n              <span class=\"talent-name\">指尖风暴（终极·3点）</span>\n              <span class=\"talent-desc\">立即 +12% 挂机；此后每 1000 次累计点击再 +1%（封顶 +32%）+ 点击力 +60%</span>\n            </span>\n            <button data-act=\"talent\" data-id=\"click_5b\" disabled=\"\">点亮 3</button>\n          </div>\n      </div><div class=\"team-hint\" style=\"font-size:12px\">挂机流 · 稳如老狗：攒到 3 点后展开</div><div class=\"team-hint\" style=\"font-size:12px\">事件流 · 摸鱼情报：攒到 3 点后展开</div><div class=\"mate-actions\">\n      <button class=\"ghost\" data-act=\"reset-talents\">重置天赋（返还全部点数）</button>\n    </div><div class=\"talent-progress\">\n      <div>点击转化：0/10500 次（当前 +0%）</div>\n      <div>安然转化：0/30 次（当前 +0%）</div>\n      <div>溢出转化：0/30 点（当前 +0.0% 挂机，封顶 +15%）</div>\n      <div style=\"color:#a8a493\">天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1；每日首开 +1（上限 24，满树需 27 点 → 终局必须放弃一条流派）</div>\n    </div>",
+    "teamDecorHTML": "<div class=\"team-summary\">\n      <span>已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%</span>\n    </div><div class=\"branch\">\n      <h3>今日精力 <small style=\"color:#8f9fd0\">（剩 100/100）</small></h3>\n      <div class=\"talent row-tap \" data-act=\"energy\" data-id=\"slack\" data-disabled=\"0\">\n          <span class=\"talent-dot\" aria-hidden=\"true\">40</span>\n          <span class=\"talent-info\">\n            <span class=\"talent-name\">认真摸鱼</span>\n            <span class=\"talent-desc\">今天挂机 +25% · 花 40 精力</span>\n            \n          </span>\n          <button data-act=\"energy\" data-id=\"slack\" aria-label=\"使用：认真摸鱼（消耗 40 精力，今天挂机 +25%）\">使用</button>\n        </div><div class=\"talent row-tap \" data-act=\"energy\" data-id=\"fake-work\" data-disabled=\"0\">\n          <span class=\"talent-dot\" aria-hidden=\"true\">35</span>\n          <span class=\"talent-info\">\n            <span class=\"talent-name\">假装工作</span>\n            <span class=\"talent-desc\">今天巡逻奖励 ×2.2 · 花 35 精力</span>\n            \n          </span>\n          <button data-act=\"energy\" data-id=\"fake-work\" aria-label=\"使用：假装工作（消耗 35 精力，今天巡逻奖励 ×2.2）\">使用</button>\n        </div><div class=\"talent row-tap \" data-act=\"energy\" data-id=\"social\" data-disabled=\"1\">\n          <span class=\"talent-dot\" aria-hidden=\"true\">25</span>\n          <span class=\"talent-info\">\n            <span class=\"talent-name\">跟同事聊天</span>\n            <span class=\"talent-desc\">全体好感 +5，且今天挂机 +5% · 花 25 精力 · 还没有同事，暂不可用</span>\n            \n          </span>\n          <button data-act=\"energy\" data-id=\"social\" aria-label=\"使用：跟同事聊天（消耗 25 精力，全体好感 +5，且今天挂机 +5%）\" disabled=\"\">使用</button>\n        </div><div class=\"talent row-tap \" data-act=\"energy\" data-id=\"focus\" data-disabled=\"0\">\n          <span class=\"talent-dot\" aria-hidden=\"true\">45</span>\n          <span class=\"talent-info\">\n            <span class=\"talent-name\">专注点击</span>\n            <span class=\"talent-desc\">今天点击力 ×2，且挂机 +8% · 花 45 精力</span>\n            \n          </span>\n          <button data-act=\"energy\" data-id=\"focus\" aria-label=\"使用：专注点击（消耗 45 精力，今天点击力 ×2，且挂机 +8%）\">使用</button>\n        </div>\n      <div class=\"mate-actions\" style=\"margin-top:8px\">\n        <button class=\"ghost\" data-act=\"energy-all\" disabled=\"\">省心组合：摸鱼+假装工作+社交（100 精力）（招 1 人后可用）</button>\n      </div>\n      <div style=\"font-size:11px;color:#a8a493;margin-top:6px\">每天 100 点；4 项合计 145，必须放弃至少 1 项（含「专注点击」45 点时只剩 55）</div>\n    </div><h3 style=\"margin-top:10px\">工位家具 <small style=\"color:#8f9fd0\">（已装修 0/8）</small></h3><div class=\"talent row-tap \" data-act=\"decor\" data-id=\"plant\" data-disabled=\"0\">\n        <span class=\"talent-dot\" aria-hidden=\"true\"></span>\n        <span class=\"talent-info\">\n          <span class=\"talent-name\">绿萝</span>\n          <span class=\"talent-desc\">工位挂机 +5%</span>\n          \n        </span>\n        <button data-act=\"decor\" data-id=\"plant\" aria-label=\"购买：绿萝，3000，效果工位挂机 +5%\">3000</button>\n      </div><div class=\"talent row-tap \" data-act=\"decor\" data-id=\"lamp\" data-disabled=\"0\">\n        <span class=\"talent-dot\" aria-hidden=\"true\"></span>\n        <span class=\"talent-info\">\n          <span class=\"talent-name\">护眼台灯</span>\n          <span class=\"talent-desc\">点击力 +15%</span>\n          \n        </span>\n        <button data-act=\"decor\" data-id=\"lamp\" aria-label=\"购买：护眼台灯，2.00万，效果点击力 +15%\">2.00万</button>\n      </div><div class=\"talent row-tap \" data-act=\"decor\" data-id=\"rug\" data-disabled=\"0\">\n        <span class=\"talent-dot\" aria-hidden=\"true\"></span>\n        <span class=\"talent-info\">\n          <span class=\"talent-name\">毛绒地毯</span>\n          <span class=\"talent-desc\">离线效率 +5%</span>\n          \n        </span>\n        <button data-act=\"decor\" data-id=\"rug\" aria-label=\"购买：毛绒地毯，12.00万，效果离线效率 +5%\">12.00万</button>\n      </div><div class=\"talent row-tap \" data-act=\"decor\" data-id=\"fridge\" data-disabled=\"1\">\n        <span class=\"talent-dot\" aria-hidden=\"true\"></span>\n        <span class=\"talent-info\">\n          <span class=\"talent-name\">迷你冰箱</span>\n          <span class=\"talent-desc\">工位挂机 +8%</span>\n          \n        </span>\n        <button data-act=\"decor\" data-id=\"fridge\" aria-label=\"购买：迷你冰箱，60.00万，效果工位挂机 +8%\" disabled=\"\">60.00万</button>\n      </div><div class=\"talent row-tap \" data-act=\"decor\" data-id=\"chair\" data-disabled=\"1\">\n        <span class=\"talent-dot\" aria-hidden=\"true\"></span>\n        <span class=\"talent-info\">\n          <span class=\"talent-name\">按摩椅</span>\n          <span class=\"talent-desc\">离线效率 +8%</span>\n          \n        </span>\n        <button data-act=\"decor\" data-id=\"chair\" aria-label=\"购买：按摩椅，400.00万，效果离线效率 +8%\" disabled=\"\">400.00万</button>\n      </div><div class=\"talent row-tap \" data-act=\"decor\" data-id=\"aquarium\" data-disabled=\"1\">\n        <span class=\"talent-dot\" aria-hidden=\"true\"></span>\n        <span class=\"talent-info\">\n          <span class=\"talent-name\">鱼缸</span>\n          <span class=\"talent-desc\">挂机 +10%、点击 +10%</span>\n          \n        </span>\n        <button data-act=\"decor\" data-id=\"aquarium\" aria-label=\"购买：鱼缸，3000.00万，效果挂机 +10%、点击 +10%\" disabled=\"\">3000.00万</button>\n      </div><div class=\"talent row-tap \" data-act=\"decor\" data-id=\"projector\" data-disabled=\"1\">\n        <span class=\"talent-dot\" aria-hidden=\"true\"></span>\n        <span class=\"talent-info\">\n          <span class=\"talent-name\">投影仪</span>\n          <span class=\"talent-desc\">派遣奖励 +30%</span>\n          \n        </span>\n        <button data-act=\"decor\" data-id=\"projector\" aria-label=\"购买：投影仪，2.00亿，效果派遣奖励 +30%\" disabled=\"\">2.00亿</button>\n      </div><div class=\"talent row-tap \" data-act=\"decor\" data-id=\"catbed\" data-disabled=\"1\">\n        <span class=\"talent-dot\" aria-hidden=\"true\"></span>\n        <span class=\"talent-info\">\n          <span class=\"talent-name\">工位猫窝</span>\n          <span class=\"talent-desc\">挂机 +15%、离线 +10%</span>\n          \n        </span>\n        <button data-act=\"decor\" data-id=\"catbed\" aria-label=\"购买：工位猫窝，20.00亿，效果挂机 +15%、离线 +10%\" disabled=\"\">20.00亿</button>\n      </div>",
+    "teamText": "摸鱼小队\n✕\n同事\n天赋\n工位\n天赋点 2\n已装修 0/8 · 挂机 ×1.00 · 点击 ×1.00 · 离线 +0%\n今日精力 （剩 100/100）\n40\n认真摸鱼 今天挂机 +25% · 花 40 精力\n使用\n35\n假装工作 今天巡逻奖励 ×2.2 · 花 35 精力\n使用\n25\n跟同事聊天 全体好感 +5，且今天挂机 +5% · 花 25 精力 · 还没有同事，暂不可用\n使用\n45\n专注点击 今天点击力 ×2，且挂机 +8% · 花 45 精力\n使用\n省心组合：摸鱼+假装工作+社交（100 精力）（招 1 人后可用）\n每天 100 点；4 项合计 145，必须放弃至少 1 项（含「专注点击」45 点时只剩 55）\n工位家具 （已装修 0/8）\n绿萝 工位挂机 +5%\n3000\n护眼台灯 点击力 +15%\n2.00万\n毛绒地毯 离线效率 +5%\n12.00万\n迷你冰箱 工位挂机 +8%\n60.00万\n按摩椅 离线效率 +8%\n400.00万\n鱼缸 挂机 +10%、点击 +10%\n3000.00万\n投影仪 派遣奖励 +30%\n2.00亿\n工位猫窝 挂机 +15%、离线 +10%\n20.00亿",
+    "recruit": {
+      "err": "no-el",
+      "s": "button[data-act=\"recruit\"][data-id=\"zhou\"]"
+    },
+    "afterRecruit": {
+      "colleagues": {}
+    },
+    "errors": []
+  },
+  "errors": []
+}

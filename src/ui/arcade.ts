@@ -36,6 +36,11 @@ export class Arcade {
     return !this.root.classList.contains("hidden");
   }
 
+  /** 小游戏进行中（用于暂停主场景绘制） */
+  get isPlaying(): boolean {
+    return this.play !== null;
+  }
+
   toggle(): void {
     if (this.isOpen) this.close();
     else this.open();

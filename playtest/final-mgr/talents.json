@@ -1,0 +1,219 @@
+{
+  "rows": [
+    {
+      "variant": "点击9000/安然120(mid)",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "top": [
+        {
+          "ids": "click_1,click_2,click_3,click_4,click_5a,idle_1,idle_2,idle_3,idle_4,event_1,event_2,event_3,event_4,event_5a",
+          "cost": 24,
+          "gain": 58.11
+        },
+        {
+          "ids": "idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5a",
+          "cost": 18,
+          "gain": 52.37
+        },
+        {
+          "ids": "click_1,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5a",
+          "cost": 19,
+          "gain": 52.37
+        },
+        {
+          "ids": "click_1,click_2,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5a",
+          "cost": 20,
+          "gain": 52.37
+        }
+      ]
+    },
+    {
+      "variant": "点击9000/安然120(mid)",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "top": [
+        {
+          "ids": "click_1,click_2,click_3,click_4,click_5a,idle_1,idle_2,idle_3,idle_4,event_1,event_2,event_3,event_4,event_5a",
+          "cost": 24,
+          "gain": 57.97
+        },
+        {
+          "ids": "click_1,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5a",
+          "cost": 19,
+          "gain": 52.25
+        },
+        {
+          "ids": "click_1,click_2,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5a",
+          "cost": 20,
+          "gain": 52.25
+        },
+        {
+          "ids": "click_1,click_2,click_3,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5a",
+          "cost": 22,
+          "gain": 52.25
+        }
+      ]
+    },
+    {
+      "variant": "点击2000/安然30",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "top": [
+        {
+          "ids": "idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5a",
+          "cost": 18,
+          "gain": 52.37
+        },
+        {
+          "ids": "click_1,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5a",
+          "cost": 19,
+          "gain": 52.37
+        },
+        {
+          "ids": "click_1,click_2,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5a",
+          "cost": 20,
+          "gain": 52.37
+        },
+        {
+          "ids": "click_1,click_2,click_3,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5a",
+          "cost": 22,
+          "gain": 52.37
+        }
+      ]
+    },
+    {
+      "variant": "点击2000/安然30",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "top": [
+        {
+          "ids": "click_1,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5a",
+          "cost": 19,
+          "gain": 52.25
+        },
+        {
+          "ids": "click_1,click_2,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5a",
+          "cost": 20,
+          "gain": 52.25
+        },
+        {
+          "ids": "click_1,click_2,click_3,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5a",
+          "cost": 22,
+          "gain": 52.25
+        },
+        {
+          "ids": "click_1,click_2,click_3,click_4,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5a",
+          "cost": 24,
+          "gain": 52.25
+        }
+      ]
+    },
+    {
+      "variant": "点击0/安然0(纯挂机)",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "top": [
+        {
+          "ids": "idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5b",
+          "cost": 18,
+          "gain": 36.36
+        },
+        {
+          "ids": "click_1,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5b",
+          "cost": 19,
+          "gain": 36.36
+        },
+        {
+          "ids": "click_1,click_2,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5b",
+          "cost": 20,
+          "gain": 36.36
+        },
+        {
+          "ids": "click_1,click_2,click_3,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5b",
+          "cost": 22,
+          "gain": 36.36
+        }
+      ]
+    },
+    {
+      "variant": "点击0/安然0(纯挂机)",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "top": [
+        {
+          "ids": "click_1,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5b",
+          "cost": 19,
+          "gain": 35.5
+        },
+        {
+          "ids": "click_1,click_2,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5b",
+          "cost": 20,
+          "gain": 35.5
+        },
+        {
+          "ids": "click_1,click_2,click_3,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5b",
+          "cost": 22,
+          "gain": 35.5
+        },
+        {
+          "ids": "click_1,click_2,click_3,click_4,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4,event_5b",
+          "cost": 24,
+          "gain": 35.5
+        }
+      ]
+    },
+    {
+      "variant": "点击20000/安然400(late)",
+      "profile": "碎片3访(在线0.5h/0点击/离线23h)",
+      "top": [
+        {
+          "ids": "click_1,click_2,click_3,click_4,click_5a,idle_1,idle_2,idle_3,idle_4,event_1,event_2,event_3,event_4,event_5a",
+          "cost": 24,
+          "gain": 59.91
+        },
+        {
+          "ids": "click_1,click_2,click_3,click_4,click_5b,idle_1,idle_2,idle_3,idle_4,event_1,event_2,event_3,event_4,event_5a",
+          "cost": 24,
+          "gain": 57.14
+        },
+        {
+          "ids": "click_1,click_2,click_3,click_4,click_5a,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4",
+          "cost": 24,
+          "gain": 55.3
+        },
+        {
+          "ids": "click_1,click_2,click_3,click_4,click_5a,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1",
+          "cost": 19,
+          "gain": 55.29
+        }
+      ]
+    },
+    {
+      "variant": "点击20000/安然400(late)",
+      "profile": "重度(在线2h/5400点击/离线21h)",
+      "top": [
+        {
+          "ids": "click_1,click_2,click_3,click_4,click_5a,idle_1,idle_2,idle_3,idle_4,event_1,event_2,event_3,event_4,event_5a",
+          "cost": 24,
+          "gain": 59.83
+        },
+        {
+          "ids": "click_1,click_2,click_3,click_4,click_5b,idle_1,idle_2,idle_3,idle_4,event_1,event_2,event_3,event_4,event_5a",
+          "cost": 24,
+          "gain": 57.09
+        },
+        {
+          "ids": "click_1,click_2,click_3,click_4,click_5a,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1,event_2,event_3,event_4",
+          "cost": 24,
+          "gain": 55.23
+        },
+        {
+          "ids": "click_1,click_2,click_3,click_4,click_5a,idle_1,idle_2,idle_3,idle_4,idle_5a,event_1",
+          "cost": 19,
+          "gain": 55.2
+        }
+      ]
+    }
+  ],
+  "pointsTimeline": {
+    "rankPoints": 6,
+    "perPrestige": 1,
+    "perDay": 1,
+    "cap": 24,
+    "fullTree": 27
+  }
+}

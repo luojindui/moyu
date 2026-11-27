@@ -1,0 +1,85 @@
+{
+ "dpr": {
+  "dpr3": {
+   "totalMs": 4021,
+   "busyMs": 544,
+   "busyPct": 13.5,
+   "canvas": {
+    "w": 1170,
+    "h": 1656
+   },
+   "drawCallPerSec": 4578,
+   "rafPerSec": 60.2,
+   "cssCanvas": {
+    "w": 390,
+    "h": 552
+   }
+  },
+  "dpr2": {
+   "totalMs": 4013,
+   "busyMs": 316,
+   "busyPct": 7.9,
+   "canvas": {
+    "w": 780,
+    "h": 1104
+   },
+   "drawCallPerSec": 4604,
+   "rafPerSec": 60,
+   "cssCanvas": {
+    "w": 390,
+    "h": 552
+   }
+  },
+  "dpr1": {
+   "totalMs": 4017,
+   "busyMs": 293,
+   "busyPct": 7.3,
+   "canvas": {
+    "w": 390,
+    "h": 552
+   },
+   "drawCallPerSec": 4556,
+   "rafPerSec": 59.9,
+   "cssCanvas": {
+    "w": 390,
+    "h": 552
+   }
+  }
+ },
+ "leak": {
+  "before": {
+   "heapMB": 1.8,
+   "dom": {
+    "documents": 1,
+    "nodes": 1263,
+    "jsEventListeners": 83
+   },
+   "ui": {
+    "nodes": 487,
+    "raf": 1,
+    "si": 2,
+    "st": 7
+   }
+  },
+  "after": {
+   "heapMB": 2.06,
+   "dom": {
+    "documents": 1,
+    "nodes": 1263,
+    "jsEventListeners": 83
+   },
+   "ui": {
+    "nodes": 487,
+    "raf": 1,
+    "si": 2,
+    "st": 0
+   }
+  },
+  "elapsedMs": 8539,
+  "heapDeltaMB": 0.26,
+  "domNodeDelta": 0,
+  "listenerDelta": 0,
+  "nodeDelta": 0
+ },
+ "errors": []
+}

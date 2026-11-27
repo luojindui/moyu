@@ -1,0 +1,194 @@
+{
+  "energy": {
+    "baseDaily": 225991460,
+    "comboGainPct": 30.7,
+    "bestSubset": {
+      "set": [
+        "slack",
+        "focus"
+      ],
+      "cost": 85,
+      "gainPct": 33.84
+    },
+    "comboRank": 2,
+    "top3": [
+      {
+        "set": [
+          "slack",
+          "focus"
+        ],
+        "cost": 85,
+        "gainPct": 33.84
+      },
+      {
+        "set": [
+          "slack",
+          "fake-work",
+          "social"
+        ],
+        "cost": 100,
+        "gainPct": 30.7
+      },
+      {
+        "set": [
+          "slack",
+          "social"
+        ],
+        "cost": 65,
+        "gainPct": 30.2
+      }
+    ]
+  },
+  "dispatchTable": [
+    {
+      "colleague": "老周",
+      "best": {
+        "mission": "楼下买咖啡",
+        "secs": 24480,
+        "reward": 4007244,
+        "perHour": 589301,
+        "skillMatch": false
+      },
+      "skillMatchIsBest": false,
+      "all": [
+        {
+          "mission": "楼下买咖啡",
+          "secs": 24480,
+          "reward": 4007244,
+          "perHour": 589301,
+          "skillMatch": false
+        },
+        {
+          "mission": "长线蹲点",
+          "secs": 12240,
+          "reward": 1574274,
+          "perHour": 463022,
+          "skillMatch": false
+        },
+        {
+          "mission": "就近溜达",
+          "secs": 153,
+          "reward": 19678,
+          "perHour": 463012,
+          "skillMatch": false
+        },
+        {
+          "mission": "茶水间聊八卦",
+          "secs": 1530,
+          "reward": 174422,
+          "perHour": 410405,
+          "skillMatch": true
+        },
+        {
+          "mission": "开个会",
+          "secs": 3060,
+          "reward": 286231,
+          "perHour": 336742,
+          "skillMatch": false
+        },
+        {
+          "mission": "溜一圈",
+          "secs": 765,
+          "reward": 64849,
+          "perHour": 305172,
+          "skillMatch": false
+        }
+      ]
+    },
+    {
+      "colleague": "小美",
+      "best": {
+        "mission": "楼下买咖啡",
+        "secs": 28800,
+        "reward": 3627846,
+        "perHour": 453481,
+        "skillMatch": false
+      },
+      "skillMatchIsBest": false,
+      "all": [
+        {
+          "mission": "楼下买咖啡",
+          "secs": 28800,
+          "reward": 3627846,
+          "perHour": 453481,
+          "skillMatch": false
+        },
+        {
+          "mission": "开个会",
+          "secs": 3600,
+          "reward": 388697,
+          "perHour": 388697,
+          "skillMatch": true
+        },
+        {
+          "mission": "长线蹲点",
+          "secs": 14400,
+          "reward": 1425225,
+          "perHour": 356306,
+          "skillMatch": false
+        },
+        {
+          "mission": "就近溜达",
+          "secs": 180,
+          "reward": 17815,
+          "perHour": 356300,
+          "skillMatch": false
+        },
+        {
+          "mission": "溜一圈",
+          "secs": 900,
+          "reward": 58709,
+          "perHour": 234836,
+          "skillMatch": false
+        },
+        {
+          "mission": "茶水间聊八卦",
+          "secs": 1800,
+          "reward": 105272,
+          "perHour": 210544,
+          "skillMatch": false
+        }
+      ]
+    }
+  ],
+  "arcadeShare": [
+    {
+      "stage": "mid",
+      "arcadePerDay": 286017,
+      "dailyTotal": 225991460,
+      "sharePct": 0.127
+    },
+    {
+      "stage": "late",
+      "arcadePerDay": 171887610,
+      "dailyTotal": 241912928651,
+      "sharePct": 0.071
+    }
+  ],
+  "riskCardOvertime": {
+    "noCard": 225991460,
+    "overtime": 322098732,
+    "gainPct": 42.53
+  },
+  "autoRepeatCatchUp": {
+    "dispatchRound": 7635090,
+    "note": "自动重复开启时，离线回来会补领 1 轮并续班；关闭则这轮要多等"
+  },
+  "dailyAutoGoals": {
+    "autoGoalCount": 2,
+    "totalGoals": 3,
+    "note": "rollDaily 固定 2 个自动目标（visit/idle），无需任何操作即可 2/3"
+  },
+  "talentRespec": {
+    "cost": 0,
+    "refund": "全部返还",
+    "note": "resetTalents 免费全额返还，无承诺成本"
+  },
+  "decorStructure": {
+    "count": 8,
+    "slots": null,
+    "exclusivity": false,
+    "completionBonus": 0.1,
+    "maintenance": null
+  }
+}

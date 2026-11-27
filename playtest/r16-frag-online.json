@@ -1,0 +1,4343 @@
+{
+  "startedAt": "2026-11-27T13:02:11.300Z",
+  "url": "https://luojindui.github.io/moyu/",
+  "opens": [
+    {
+      "id": "O1",
+      "label": "线上·新玩家首次打开",
+      "startedAt": "2026-11-27T13:02:11.656Z",
+      "actions": [
+        {
+          "t": 4.4,
+          "label": "读首屏",
+          "ms": 3000
+        },
+        {
+          "t": 1.4,
+          "label": "首屏：看 HUD / 目标链 / 商店（学生先愣 3 秒）",
+          "ms": 3006,
+          "out": {
+            "hud": {
+              "moyu": "0.8",
+              "sub": "点击 +1\n不点也 0.2/秒\n实习生 0%\n🎮\n3\n3\n👥\n精力 100\n天赋\n🔊\n📔",
+              "rank": "实习生 0%",
+              "card": ""
+            },
+            "quest": "再戳 15 下 → 解锁「咖啡续命」",
+            "shopCount": 9,
+            "affordable": 9,
+            "badges": [
+              "摸鱼站，今天还剩 3 次:3",
+              "摸鱼小队，还有精力 100:精力 100"
+            ]
+          }
+        },
+        {
+          "t": 4.5,
+          "label": "戳屏幕 8 下（跟目标链走）",
+          "ms": 3543,
+          "out": {
+            "clicks": 8
+          }
+        },
+        {
+          "t": 8.4,
+          "label": "想一下(戳屏幕 8 下（跟目标链走）)",
+          "ms": 400
+        },
+        {
+          "t": 13,
+          "label": "读 3 张卡",
+          "ms": 4500
+        },
+        {
+          "t": 8.4,
+          "label": "今日摸鱼卡弹窗：读 3 张卡再选",
+          "ms": 4585,
+          "out": {
+            "shown": true,
+            "cards": "今日摸鱼卡 | 选 1 张，生效 24 小时（跨天不清） | 稀有 | 全员大会 | 今天巡逻奖励 ×2，且巡逻明显变密 | 会议室里没人听，全在底下摸鱼。 | 剧情 | 老周的秘密 | 今天派遣奖励 ×1.8，且领奖好感 +1 | 他说他其实写过一个小说，主角是我们部门。 | 普通 | 老板出差 | 今天巡逻奖励 +50%，且巡逻来得多 30% | 王总的工位空了，但没人敢摸得太明显。 | 今天先不选"
+          }
+        },
+        {
+          "t": 13,
+          "label": "选卡（点第 1 张）",
+          "ms": 867,
+          "out": {
+            "chosenBefore": null,
+            "chosenAfter": "big_meeting"
+          }
+        },
+        {
+          "t": 14.5,
+          "label": "想一下(选卡（点第 1 张）)",
+          "ms": 600
+        },
+        {
+          "t": 14.5,
+          "label": "再戳 7 下（攒到 15 摸鱼值）",
+          "ms": 2218,
+          "out": {
+            "moyu": 11,
+            "quest": "买下点亮的「咖啡续命」卡片"
+          }
+        },
+        {
+          "t": 16.7,
+          "label": "买第一个升级（目标链：咖啡续命 15）",
+          "ms": 845,
+          "out": {
+            "moyuBefore": 11,
+            "moyuAfter": 8,
+            "levels": {
+              "coffee": 1
+            },
+            "quest": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）"
+          }
+        },
+        {
+          "t": 20.2,
+          "label": "读 3 个游戏介绍",
+          "ms": 2000
+        },
+        {
+          "t": 17.5,
+          "label": "看到 🎮 角标 3：打开摸鱼站，玩「接咖啡」30 秒（学生第一次尝鲜）",
+          "ms": 33784,
+          "out": {
+            "menu": "摸鱼站\n✕\n今天还能玩 3/3 次 · 每局能赢摸鱼值\n接咖啡 最高 0\n咖啡掉下来时点住它——掉地上就没了\n满分 ≈ 25 秒挂机收益（新号保底 30）\n开始（30 秒）\n找老板 最高 0\n在一堆同事脸里找出王总，越快越好\n满分 ≈ 25 秒挂机收益（新号保底 30）\n开始（30 秒内无限轮）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n满分 ≈ 25 秒挂机收益（新号保底 30）\n开始（30 秒）",
+            "result": "接咖啡 结束 | 540 分 | 本局奖励 +30 摸鱼值 | 🎉 新纪录！（旧 0） | 接住 27 · 漏接 0 · 最高连击 27 | 再来一局 返回摸鱼站",
+            "wallSec": 30.1,
+            "arcade": {
+              "date": "2026-11-27",
+              "played": 1,
+              "best": {
+                "coffee": 540
+              }
+            },
+            "moyu": 45
+          }
+        },
+        {
+          "t": 51.3,
+          "label": "打开 👥 小队（HUD 上写着 精力 100，学生以为有事做）",
+          "ms": 655,
+          "out": {
+            "text": "摸鱼小队\n✕\n同事\n天赋\n工位\n天赋点 1\n已招募 0/5 · 小队挂机 +0/秒 自动重复：完成后自动领取并续班（离线回来最多补 1 轮）\n还没有同事。戳屏幕攒够 1.20万 就能招募第一位「老周」， 他会帮你自动赚，还能派出去做任务。\n当前余额：44.8\n老周\n八年老员工·甩锅大师\n擅长：聊八卦（匹配的派遣 +50%）\n被动：他的任务更快（时长 -15%）\n攒够再招 1.20万\n还有 4 位同事，攒够钱陆续解锁。",
+            "disabledButtons": 0
+          }
+        },
+        {
+          "t": 53.2,
+          "label": "想一下(打开 👥 小队（HUD 上写着 精力 100，学生以为有事做）)",
+          "ms": 1200
+        },
+        {
+          "t": 53.2,
+          "label": "在空面板里翻到「天赋」tab（发现天赋点 1 可以点）",
+          "ms": 698,
+          "out": {
+            "text": "摸鱼小队\n✕\n同事\n天赋\n工位\n天赋点 1\n点击流 · 手速摸鱼 （0/5 · 点击力 ×1.00）\n1\n手速 点击力 +25%\n点亮 1\n2\n连击窗口 连击窗口 0.5s → 0.65s\n点亮 1\n3\n连击上限（2点） 连击上限 20 → 30（最高 ×1.36）\n点亮 2\n4\n暴击（2点） 每 20 次点击必暴击 ×5（巡逻偷点不触发）\n点亮 2\n5\n摸鱼转正（终极·3点） 每 300 次累计点击 → 挂机 +1%（封顶 +35%）\n点亮 3\n5\n指尖风暴（终极·3点） 立即 +12% 挂机；此后每 1000 次累计点击再 +1%（封顶 +32%）+ 点击力 +60%\n点亮 3\n挂机流 · 稳如老狗：攒到 3 点后展开\n事件流 · 摸鱼情报：攒到 3 点后展开\n重置天赋（返还全部点数）\n点击转化：15/10500 次（当前 +0%）\n安然转化：0/30 次（当前 +0%）\n溢出转化：0/30 点（当前 +0.0% 挂机，封顶 +15%）\n天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1；每日首开 +1（上限 24，满树需 27 点 → 终局必须放弃一条流派）"
+          }
+        },
+        {
+          "t": 54.7,
+          "label": "想一下(在空面板里翻到「天赋」tab（发现天赋点 1 可以点）)",
+          "ms": 800
+        },
+        {
+          "t": 54.7,
+          "label": "点亮第一个天赋（手速）",
+          "ms": 604,
+          "out": {
+            "r": "ok",
+            "talents": {
+              "unlocked": [
+                "click_1"
+              ],
+              "points": 0,
+              "rankGranted": -1,
+              "dailyGiftDate": "2026-11-27",
+              "overflow": 0
+            }
+          }
+        },
+        {
+          "t": 55.3,
+          "label": "关小队，打开 📔 日报（看今天要做什么）",
+          "ms": 1099,
+          "out": {
+            "daily": {
+              "date": "2026-11-27",
+              "goals": [
+                {
+                  "id": "visit_1",
+                  "target": 1,
+                  "progress": 1,
+                  "done": true
+                },
+                {
+                  "id": "idle_earn",
+                  "target": 1,
+                  "progress": 0,
+                  "done": false
+                },
+                {
+                  "id": "click_100",
+                  "target": 100,
+                  "progress": 14,
+                  "done": false
+                }
+              ],
+              "claimed": false,
+              "streak": 0,
+              "window": 3,
+              "claimsToday": 0
+            },
+            "claims": "摸鱼日报\n✕\n2026-11-27 · 🔥 连续 0 天（今天未领）\n✓\n今天上线看一眼\n1/1\n○\n什么都不点，等摸鱼值自己涨\n0/1\n○\n戳 100 下\n14/100\n完成 1/3\n摸鱼数据\n摸鱼实习生\n生涯总收入\n60.8\n本局 / 往期\n60.8 / 0\n当前余额\n45.8\n累计投入\n15\n点击力 / 挂机\n3 / 0.2每秒\n累计点击\n15\n今日回访\n1/3（离线效率 100%）\n连续日报\n0 天\n图鉴\n1/55\n转生\n0 点（×1.00）\n纪录·最佳单日\n0\n纪录·最长连签\n0 天\n纪录·最多点击\n0\n导出存档 JSON\n存档码（换设备用）\n复制这串码到新设备「导入」，进度就能带过去（防手滑，非防篡改）。\n复制/生成存档码\n导入存档码\n摸鱼图鉴\n1/55\n梗语录 1/10\n升级彩蛋 0/45\n买升级、收线索，开始收集摸鱼彩蛋\n关于\nv0.5.0 · 2026-11-27\n新增"
+          }
+        },
+        {
+          "t": 57.9,
+          "label": "想一下(关小队，打开 📔 日报（看今天要做什么）)",
+          "ms": 1500
+        },
+        {
+          "t": 57.9,
+          "label": "关日报",
+          "ms": 368,
+          "out": true
+        },
+        {
+          "t": 58.3,
+          "label": "本次打开收尾：看还剩什么可做",
+          "ms": 77,
+          "out": {
+            "moyu": 45,
+            "daily": [
+              "visit_1:1/1✓",
+              "idle_earn:0/1",
+              "click_100:14/100"
+            ],
+            "dailyClaimed": false,
+            "arcade": {
+              "date": "2026-11-27",
+              "played": 1,
+              "best": {
+                "coffee": 540
+              }
+            },
+            "team": 0,
+            "talentPoints": 0,
+            "energy": 100,
+            "affordable": 9
+          }
+        }
+      ],
+      "events": [
+        {
+          "t": 1.4,
+          "type": "toast",
+          "text": "送你 1 个天赋点，点 👥 看看"
+        },
+        {
+          "t": 8,
+          "type": "cards-show",
+          "text": "今日摸鱼卡 | 选 1 张，生效 24 小时（跨天不清） | 稀有 | 全员大会 | 今天巡逻奖励 ×2，且巡逻明显变密 | 会议室里没人听，全在底下摸鱼。 | 剧情 | 老周的秘密 | 今天派遣奖励 ×1.8，且领奖好感 +1 | 他说他其实写过一个小说，主角是我们部门。 | 普通 | 老板出差 | 今天巡逻奖励 +50%，且巡逻来得多 30% | 王总的工位空了，但没人敢摸得太明显。 | 今天先不选"
+        },
+        {
+          "t": 13.9,
+          "type": "cards-hide"
+        },
+        {
+          "t": 13.9,
+          "type": "toast",
+          "text": "今日卡：全员大会"
+        },
+        {
+          "t": 14.4,
+          "type": "sr-live",
+          "text": "老周丢来一个梗：戳亮起的黄点"
+        },
+        {
+          "t": 18.2,
+          "type": "sr-live",
+          "text": "✓ 咖啡续命 已解锁"
+        },
+        {
+          "t": 52,
+          "type": "toast",
+          "text": "摸鱼站 +30（得分 540）"
+        },
+        {
+          "t": 52,
+          "type": "sr-live",
+          "text": "摸鱼站得分 540，获得 30"
+        }
+      ],
+      "metrics": {
+        "navToReadyMs": 481,
+        "ready": true,
+        "perf": {
+          "dcl": 318,
+          "load": 460,
+          "transfer": 60145,
+          "res": 11
+        },
+        "sessionMs": 58256,
+        "totalMs": 58333
+      },
+      "shots": [
+        "O1-01-first-screen",
+        "O1-02-cards",
+        "O1-03-more-taps",
+        "O1-04-after-buy",
+        "O1-05-arcade-menu",
+        "O1-06-coffee-result",
+        "O1-07-after-coffee",
+        "O1-08-team",
+        "O1-09-talents",
+        "O1-10-journal",
+        "O1-11-end"
+      ],
+      "t0": 1795784531657,
+      "snap_O1-01-first-screen": {
+        "t": 4387,
+        "hud": {
+          "moyu": "0.8",
+          "sub": "点击 +1\n不点也 0.2/秒\n实习生 0%\n🎮\n3\n3\n👥\n精力 100\n天赋\n🔊\n📔",
+          "rank": "实习生 0%",
+          "card": ""
+        },
+        "quest": "再戳 15 下 → 解锁「咖啡续命」",
+        "panels": {
+          "journal": false,
+          "team": false,
+          "arcade": false,
+          "cards": false,
+          "boss": false,
+          "welcome": false
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天还剩 3 次",
+            "text": "🎮33",
+            "dis": false,
+            "badge": "3"
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100天赋",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 ★ 点击最优 15 摸鱼值 再戳 15 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值 还差 49",
+            "dis": true
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值 再戳 100 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 599.2",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 800 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3999.2",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.50万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 15",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 100.00万",
+            "dis": true
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": null,
+          "team": null,
+          "arcade": null,
+          "cards": null,
+          "boss": null,
+          "welcome": null
+        },
+        "save": {
+          "v": 2,
+          "moyu": 0,
+          "createdAt": 1795784531980,
+          "savedAt": 1795784531980,
+          "levels": {},
+          "totalClicks": 0,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 0,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [],
+            "points": 1,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 0,
+            "best": {}
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": null,
+            "until": 0,
+            "dismissed": false
+          }
+        }
+      },
+      "snap_O1-02-cards": {
+        "t": 8424,
+        "hud": {
+          "moyu": "9.9",
+          "sub": "点击 +1\n不点也 0.2/秒\n实习生 0%\n🎮\n3\n3\n👥\n精力 100\n天赋\n🔊\n📔",
+          "rank": "实习生 0%",
+          "card": ""
+        },
+        "quest": "再戳 6 下 → 解锁「咖啡续命」",
+        "panels": {
+          "journal": false,
+          "team": false,
+          "arcade": false,
+          "cards": true,
+          "boss": false,
+          "welcome": false
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天还剩 3 次",
+            "text": "🎮33",
+            "dis": false,
+            "badge": "3"
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100天赋",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 ★ 点击最优 15 摸鱼值 再戳 6 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值 还差 40",
+            "dis": true
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值 再戳 91 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 590.1",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 791 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3990.1",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.50万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 15",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 100.00万",
+            "dis": true
+          },
+          {
+            "id": "cards-skip",
+            "text": "今天先不选",
+            "dis": false
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": null,
+          "team": null,
+          "arcade": null,
+          "cards": "今日摸鱼卡 | 选 1 张，生效 24 小时（跨天不清） | 稀有 | 全员大会 | 今天巡逻奖励 ×2，且巡逻明显变密 | 会议室里没人听，全在底下摸鱼。 | 剧情 | 老周的秘密 | 今天派遣奖励 ×1.8，且领奖好感 +1 | 他说他其实写过一个小说，主角是我们部门。 | 普通 | 老板出差 | 今天巡逻奖励 +50%，且巡逻来得多 30% | 王总的工位空了，但没人敢摸得太明显。 | 今天先不选",
+          "boss": null,
+          "welcome": null
+        },
+        "save": {
+          "v": 2,
+          "moyu": 0,
+          "createdAt": 1795784531980,
+          "savedAt": 1795784531980,
+          "levels": {},
+          "totalClicks": 0,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 0,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [],
+            "points": 1,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 0,
+            "best": {}
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": null,
+            "until": 0,
+            "dismissed": false
+          }
+        }
+      },
+      "snap_O1-03-more-taps": {
+        "t": 16694,
+        "hud": {
+          "moyu": "22.8",
+          "sub": "点击 +1\n不点也 0.2/秒\n实习生 0%\n卡·全员大会\n连×6\n🎮\n3\n3\n👥\n精力 100\n天赋\n🔊\n📔",
+          "rank": "实习生 0%",
+          "card": "卡·全员大会"
+        },
+        "quest": "买下点亮的「咖啡续命」卡片",
+        "panels": {
+          "journal": false,
+          "team": false,
+          "arcade": false,
+          "cards": false,
+          "boss": false,
+          "welcome": false
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天还剩 3 次",
+            "text": "🎮33",
+            "dis": false,
+            "badge": "3"
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100天赋",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 ★ 点击最优 15 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值 还差 27",
+            "dis": true
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值 再戳 78 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 577.2",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 778 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3977.2",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.50万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 15",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 100.00万",
+            "dis": true
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": null,
+          "team": null,
+          "arcade": null,
+          "cards": null,
+          "boss": null,
+          "welcome": null
+        },
+        "save": {
+          "v": 2,
+          "moyu": 11,
+          "createdAt": 1795784531980,
+          "savedAt": 1795784544730,
+          "levels": {},
+          "totalClicks": 8,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 8,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [],
+            "points": 1,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 0,
+            "best": {}
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": "big_meeting",
+            "until": 1795870944730,
+            "dismissed": false
+          }
+        }
+      },
+      "snap_O1-04-after-buy": {
+        "t": 17461,
+        "hud": {
+          "moyu": "8.0",
+          "sub": "点击 +2\n不点也 0.2/秒\n实习生 0%\n卡·全员大会\n连×6\n🎮\n3\n3\n👥\n精力 100\n天赋\n🔊\n📔",
+          "rank": "实习生 0%",
+          "card": "卡·全员大会"
+        },
+        "quest": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "panels": {
+          "journal": false,
+          "team": false,
+          "arcade": false,
+          "cards": false,
+          "boss": false,
+          "welcome": false
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天还剩 3 次",
+            "text": "🎮33",
+            "dis": false,
+            "badge": "3"
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100天赋",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 · 第一杯，回魂 ★ 点击最优 18 摸鱼值 再",
+            "dis": true
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值 还差 42",
+            "dis": true
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值 再戳 47 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 592.0",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 397 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3992.0",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.50万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 15",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 100.00万",
+            "dis": true
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": null,
+          "team": null,
+          "arcade": null,
+          "cards": null,
+          "boss": null,
+          "welcome": null
+        },
+        "save": {
+          "v": 2,
+          "moyu": 8,
+          "createdAt": 1795784531980,
+          "savedAt": 1795784548415,
+          "levels": {
+            "coffee": 1
+          },
+          "totalClicks": 15,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 14,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [],
+            "points": 1,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 0,
+            "best": {}
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": "big_meeting",
+            "until": 1795870944730,
+            "dismissed": false
+          }
+        }
+      },
+      "snap_O1-05-arcade-menu": {
+        "t": 18110,
+        "hud": {
+          "moyu": "8.1",
+          "sub": "点击 +2\n不点也 0.2/秒\n实习生 0%\n卡·全员大会\n🎮\n3\n3\n👥\n精力 100\n天赋\n🔊\n📔",
+          "rank": "实习生 0%",
+          "card": "卡·全员大会"
+        },
+        "quest": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "panels": {
+          "journal": false,
+          "team": false,
+          "arcade": true,
+          "cards": false,
+          "boss": false,
+          "welcome": false
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天还剩 3 次",
+            "text": "🎮33",
+            "dis": false,
+            "badge": "3"
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100天赋",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 · 第一杯，回魂 ★ 点击最优 18 摸鱼值 再",
+            "dis": true
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值 还差 41",
+            "dis": true
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值 再戳 46 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 591.9",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 396 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3991.9",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.50万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 15",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 100.00万",
+            "dis": true
+          },
+          {
+            "id": "arcade-close",
+            "aria": "关闭",
+            "text": "✕",
+            "dis": false
+          },
+          {
+            "text": "开始（30 秒）",
+            "dis": false
+          },
+          {
+            "text": "开始（30 秒内无限轮）",
+            "dis": false
+          },
+          {
+            "text": "开始（30 秒）",
+            "dis": false
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": null,
+          "team": null,
+          "arcade": "摸鱼站\n✕\n今天还能玩 3/3 次 · 每局能赢摸鱼值\n接咖啡 最高 0\n咖啡掉下来时点住它——掉地上就没了\n满分 ≈ 25 秒挂机收益（新号保底 30）\n开始（30 秒）\n找老板 最高 0\n在一堆同事脸里找出王总，越快越好\n满分 ≈ 25 秒挂机收益（新号保底 30）\n开始（30 秒内无限轮）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n满分 ≈ 25 秒挂机收益（新号保底 30）\n开始（30 秒）",
+          "cards": null,
+          "boss": null,
+          "welcome": null
+        },
+        "save": {
+          "v": 2,
+          "moyu": 8,
+          "createdAt": 1795784531980,
+          "savedAt": 1795784548415,
+          "levels": {
+            "coffee": 1
+          },
+          "totalClicks": 15,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 14,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [],
+            "points": 1,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 0,
+            "best": {}
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": "big_meeting",
+            "until": 1795870944730,
+            "dismissed": false
+          }
+        }
+      },
+      "snap_O1-06-coffee-result": {
+        "t": 50305,
+        "hud": {
+          "moyu": "44.6",
+          "sub": "点击 +2\n不点也 0.2/秒\n实习生 1%\n卡·全员大会\n🎮\n2\n3\n👥\n精力 100\n天赋\n🔊\n📔",
+          "rank": "实习生 1%",
+          "card": "卡·全员大会"
+        },
+        "quest": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "panels": {
+          "journal": false,
+          "team": false,
+          "arcade": true,
+          "cards": false,
+          "boss": false,
+          "welcome": false
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天还剩 2 次",
+            "text": "🎮23",
+            "dis": false,
+            "badge": "2"
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100天赋",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 · 第一杯，回魂 ★ 点击最优 18 摸鱼值 再",
+            "dis": true
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值 还差 35",
+            "dis": true
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值 再戳 43 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 585.4",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 393 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3985.4",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.50万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 15",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 100.00万",
+            "dis": true
+          },
+          {
+            "id": "arcade-close",
+            "aria": "关闭",
+            "text": "✕",
+            "dis": false
+          },
+          {
+            "id": "arcade-again",
+            "text": "再来一局",
+            "dis": false
+          },
+          {
+            "id": "arcade-back",
+            "text": "返回摸鱼站",
+            "dis": false
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": null,
+          "team": null,
+          "arcade": "接咖啡\n✕\n今天还能玩 2/3 次 · 每局能赢摸鱼值\n接咖啡 结束\n540 分\n本局奖励 +30 摸鱼值\n🎉 新纪录！（旧 0）\n接住 27 · 漏接 0 · 最高连击 27\n再来一局 返回摸鱼站",
+          "cards": null,
+          "boss": null,
+          "welcome": null
+        },
+        "save": {
+          "v": 2,
+          "moyu": 45,
+          "createdAt": 1795784531980,
+          "savedAt": 1795784581929,
+          "levels": {
+            "coffee": 1
+          },
+          "totalClicks": 15,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 14,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [],
+            "points": 1,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 1,
+            "best": {
+              "coffee": 540
+            }
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": "big_meeting",
+            "until": 1795870944730,
+            "dismissed": false
+          }
+        }
+      },
+      "snap_O1-07-after-coffee": {
+        "t": 51324,
+        "hud": {
+          "moyu": "44.8",
+          "sub": "点击 +2\n不点也 0.2/秒\n实习生 1%\n卡·全员大会\n🎮\n2\n3\n👥\n精力 100\n天赋\n🔊\n📔",
+          "rank": "实习生 1%",
+          "card": "卡·全员大会"
+        },
+        "quest": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "panels": {
+          "journal": false,
+          "team": false,
+          "arcade": false,
+          "cards": false,
+          "boss": false,
+          "welcome": false
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天还剩 2 次",
+            "text": "🎮23",
+            "dis": false,
+            "badge": "2"
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100天赋",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 · 第一杯，回魂 ★ 点击最优 18 摸鱼值 L",
+            "dis": false
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值 还差 5.",
+            "dis": true
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值 再戳 28 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 555.2",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 378 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3955.2",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.50万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 15",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 100.00万",
+            "dis": true
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": null,
+          "team": null,
+          "arcade": null,
+          "cards": null,
+          "boss": null,
+          "welcome": null
+        },
+        "save": {
+          "v": 2,
+          "moyu": 45,
+          "createdAt": 1795784531980,
+          "savedAt": 1795784581977,
+          "levels": {
+            "coffee": 1
+          },
+          "totalClicks": 15,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 14,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [],
+            "points": 1,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 1,
+            "best": {
+              "coffee": 540
+            }
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": "big_meeting",
+            "until": 1795870944730,
+            "dismissed": false
+          }
+        }
+      },
+      "snap_O1-08-team": {
+        "t": 51892,
+        "hud": {
+          "moyu": "44.9",
+          "sub": "点击 +2\n不点也 0.2/秒\n实习生 1%\n卡·全员大会\n🎮\n2\n3\n👥\n精力 100\n天赋\n🔊\n📔",
+          "rank": "实习生 1%",
+          "card": "卡·全员大会"
+        },
+        "quest": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "panels": {
+          "journal": false,
+          "team": true,
+          "arcade": false,
+          "cards": false,
+          "boss": false,
+          "welcome": false
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天还剩 2 次",
+            "text": "🎮23",
+            "dis": false,
+            "badge": "2"
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100天赋",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 · 第一杯，回魂 ★ 点击最优 18 摸鱼值 L",
+            "dis": false
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值 还差 5.",
+            "dis": true
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值 再戳 28 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 555.1",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 378 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3955.1",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.50万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 15",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 100.00万",
+            "dis": true
+          },
+          {
+            "id": "team-close",
+            "aria": "关闭",
+            "text": "✕",
+            "dis": false
+          },
+          {
+            "id": "tab-colleagues",
+            "text": "同事",
+            "dis": false
+          },
+          {
+            "id": "tab-talents",
+            "text": "天赋",
+            "dis": false
+          },
+          {
+            "id": "tab-decor",
+            "text": "工位",
+            "dis": false
+          },
+          {
+            "text": "攒够再招 1.20万",
+            "dis": true
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": null,
+          "team": "摸鱼小队\n✕\n同事\n天赋\n工位\n天赋点 1\n已招募 0/5 · 小队挂机 +0/秒 自动重复：完成后自动领取并续班（离线回来最多补 1 轮）\n还没有同事。戳屏幕攒够 1.20万 就能招募第一位「老周」， 他会帮你自动赚，还能派出去做任务。\n当前余额：44.8\n老周\n八年老员工·甩锅大师\n擅长：聊八卦（匹配的派遣 +50%）\n被动：他的任务更快（时长 -15%）\n攒够再招 1.20万\n还有 4 位同事，攒够钱陆续解锁。",
+          "arcade": null,
+          "cards": null,
+          "boss": null,
+          "welcome": null
+        },
+        "save": {
+          "v": 2,
+          "moyu": 45,
+          "createdAt": 1795784531980,
+          "savedAt": 1795784581977,
+          "levels": {
+            "coffee": 1
+          },
+          "totalClicks": 15,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 14,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [],
+            "points": 1,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 1,
+            "best": {
+              "coffee": 540
+            }
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": "big_meeting",
+            "until": 1795870944730,
+            "dismissed": false
+          }
+        }
+      },
+      "snap_O1-09-talents": {
+        "t": 53743,
+        "hud": {
+          "moyu": "45.3",
+          "sub": "点击 +2\n不点也 0.2/秒\n实习生 1%\n卡·全员大会\n🎮\n2\n3\n👥\n精力 100\n天赋\n🔊\n📔",
+          "rank": "实习生 1%",
+          "card": "卡·全员大会"
+        },
+        "quest": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "panels": {
+          "journal": false,
+          "team": true,
+          "arcade": false,
+          "cards": false,
+          "boss": false,
+          "welcome": false
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天还剩 2 次",
+            "text": "🎮23",
+            "dis": false,
+            "badge": "2"
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100天赋",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 · 第一杯，回魂 ★ 点击最优 18 摸鱼值 L",
+            "dis": false
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值 还差 4.",
+            "dis": true
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值 再戳 28 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 554.7",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 378 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3954.7",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.50万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 15",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 100.00万",
+            "dis": true
+          },
+          {
+            "id": "team-close",
+            "aria": "关闭",
+            "text": "✕",
+            "dis": false
+          },
+          {
+            "id": "tab-colleagues",
+            "text": "同事",
+            "dis": false
+          },
+          {
+            "id": "tab-talents",
+            "text": "天赋",
+            "dis": false
+          },
+          {
+            "id": "tab-decor",
+            "text": "工位",
+            "dis": false
+          },
+          {
+            "text": "点亮 1",
+            "dis": false
+          },
+          {
+            "text": "点亮 1",
+            "dis": true
+          },
+          {
+            "text": "点亮 2",
+            "dis": true
+          },
+          {
+            "text": "点亮 2",
+            "dis": true
+          },
+          {
+            "text": "点亮 3",
+            "dis": true
+          },
+          {
+            "text": "点亮 3",
+            "dis": true
+          },
+          {
+            "text": "重置天赋（返还全部点数）",
+            "dis": false
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": null,
+          "team": "摸鱼小队\n✕\n同事\n天赋\n工位\n天赋点 1\n点击流 · 手速摸鱼 （0/5 · 点击力 ×1.00）\n1\n手速 点击力 +25%\n点亮 1\n2\n连击窗口 连击窗口 0.5s → 0.65s\n点亮 1\n3\n连击上限（2点） 连击上限 20 → 30（最高 ×1.36）\n点亮 2\n4\n暴击（2点） 每 20 次点击必暴击 ×5（巡逻偷点不触发）\n点亮 2\n5\n摸鱼转正（终极·3点） 每 300 次累计点击 → 挂机 +1%（封顶 +35%）\n点亮 3\n5\n指尖风暴（终极·3点） 立即 +12% 挂机；此后每 1000 次累计点击再 +1%（封顶 +32%）+ 点击力 +60%\n点亮 3\n挂机流 · 稳如老狗：攒到 3 点后展开\n事件流 · 摸鱼情报：攒到 3 点后展开\n重置天赋（返还全部点数）\n点击转化：15/10500 次（当前 +0%）\n安然转化：0/30 次（当前 +0%）\n溢出转化：0/30 点（当前 +0.0% 挂机，封顶 +15%）\n天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1；每日首开 +1（上限 24，满树需 27 点 → 终局必须放弃一条流派）",
+          "arcade": null,
+          "cards": null,
+          "boss": null,
+          "welcome": null
+        },
+        "save": {
+          "v": 2,
+          "moyu": 45,
+          "createdAt": 1795784531980,
+          "savedAt": 1795784581977,
+          "levels": {
+            "coffee": 1
+          },
+          "totalClicks": 15,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 14,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [],
+            "points": 1,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 1,
+            "best": {
+              "coffee": 540
+            }
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": "big_meeting",
+            "until": 1795870944730,
+            "dismissed": false
+          }
+        }
+      },
+      "snap_O1-10-journal": {
+        "t": 56329,
+        "hud": {
+          "moyu": "45.8",
+          "sub": "点击 +2.5\n不点也 0.2/秒\n实习生 1%\n卡·全员大会\n🎮\n2\n3\n👥\n精力 100\n🔊\n📔",
+          "rank": "实习生 1%",
+          "card": "卡·全员大会"
+        },
+        "quest": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "panels": {
+          "journal": true,
+          "team": false,
+          "arcade": false,
+          "cards": false,
+          "boss": false,
+          "welcome": false
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天还剩 2 次",
+            "text": "🎮23",
+            "dis": false,
+            "badge": "2"
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 · 第一杯，回魂 ★ 点击最优 18 摸鱼值 L",
+            "dis": false
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值 还差 4.",
+            "dis": true
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值 再戳 22 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 554.2",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 302 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3954.2",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.50万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 15",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 100.00万",
+            "dis": true
+          },
+          {
+            "id": "journal-close",
+            "aria": "关闭",
+            "text": "✕",
+            "dis": false
+          },
+          {
+            "id": "journal-claim",
+            "text": "完成 1/3",
+            "dis": true
+          },
+          {
+            "id": "stats-export",
+            "text": "导出存档 JSON",
+            "dis": false
+          },
+          {
+            "id": "savecode-copy",
+            "text": "复制/生成存档码",
+            "dis": false
+          },
+          {
+            "id": "savecode-import",
+            "text": "导入存档码",
+            "dis": false
+          },
+          {
+            "id": "prestige-btn",
+            "text": "未解锁（本局累计 60.8 / 需 1.00亿）",
+            "dis": true
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": "摸鱼日报\n✕\n2026-11-27 · 🔥 连续 0 天（今天未领）\n✓\n今天上线看一眼\n1/1\n○\n什么都不点，等摸鱼值自己涨\n0/1\n○\n戳 100 下\n14/100\n完成 1/3\n摸鱼数据\n摸鱼实习生\n生涯总收入\n60.8\n本局 / 往期\n60.8 / 0\n当前余额\n45.8\n累计投入\n15\n点击力 / 挂机\n3 / 0.2每秒\n累计点击\n15\n今日回访\n1/3（离线效率 100%）\n连续日报\n0 天\n图鉴\n1/55\n转生\n0 点（×1.00）\n纪录·最佳单日\n0\n纪录·最长连签\n0 天\n纪录·最多点击\n0\n导出存档 JSON\n存档码（换设备用）\n复制这串码到新设备「导入」，进度就能带过去（防手滑，非防篡改）。\n复制/生成存档码\n导入存档码\n摸鱼图鉴\n1/55\n梗语录 1/10\n升级彩蛋 0/45\n买升级、收线索，开始收集摸鱼彩蛋\n关于\nv0.5.0 · 2026-11-27\n新增：摸鱼小队（招募/派遣/好感/一键领取）+ 天赋树（18 天赋/24 点/溢出转化）；新增：每日摸鱼卡（16 张，选 1 生效 24h）；新增：回合制老板（3 性格，看线索选应对，5 秒窗口）；新增：工位经营（8 件家具，买完看得见，集齐 +10%）+ 每日精力（4 档取舍）\n今日工位梗：摸了一条鱼\n离职再就业\n重置余额与 20% 等级，换永久点数：总倍率 = 1 + 0.75 × 累计点数（线性）；图鉴/日报/段位/历史累计保留。建议攒够多点再转。\n未解锁（本局累计 60.8 / 需 1.00亿）\n???\n语录 2\n这个需求很简单\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???",
+          "team": null,
+          "arcade": null,
+          "cards": null,
+          "boss": null,
+          "welcome": null
+        },
+        "save": {
+          "v": 2,
+          "moyu": 45,
+          "createdAt": 1795784531980,
+          "savedAt": 1795784586341,
+          "levels": {
+            "coffee": 1
+          },
+          "totalClicks": 15,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 14,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [
+              "click_1"
+            ],
+            "points": 0,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 1,
+            "best": {
+              "coffee": 540
+            }
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": "big_meeting",
+            "until": 1795870944730,
+            "dismissed": false
+          }
+        }
+      },
+      "snap_O1-11-end": {
+        "t": 58255,
+        "hud": {
+          "moyu": "46.2",
+          "sub": "点击 +2.5\n不点也 0.2/秒\n实习生 1%\n卡·全员大会\n🎮\n2\n3\n👥\n精力 100\n🔊\n📔",
+          "rank": "实习生 1%",
+          "card": "卡·全员大会"
+        },
+        "quest": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "panels": {
+          "journal": false,
+          "team": false,
+          "arcade": false,
+          "cards": false,
+          "boss": false,
+          "welcome": false
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天还剩 2 次",
+            "text": "🎮23",
+            "dis": false,
+            "badge": "2"
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 · 第一杯，回魂 ★ 点击最优 18 摸鱼值 L",
+            "dis": false
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值 还差 3.",
+            "dis": true
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值 再戳 22 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 553.8",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 302 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3953.8",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.50万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 15",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 100.00万",
+            "dis": true
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": null,
+          "team": null,
+          "arcade": null,
+          "cards": null,
+          "boss": null,
+          "welcome": null
+        },
+        "save": {
+          "v": 2,
+          "moyu": 45,
+          "createdAt": 1795784531980,
+          "savedAt": 1795784586341,
+          "levels": {
+            "coffee": 1
+          },
+          "totalClicks": 15,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 14,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [
+              "click_1"
+            ],
+            "points": 0,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 1,
+            "best": {
+              "coffee": 540
+            }
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": "big_meeting",
+            "until": 1795870944730,
+            "dismissed": false
+          }
+        }
+      }
+    },
+    {
+      "id": "O2",
+      "label": "线上·25 分钟后第 2 次打开（课间回来）",
+      "startedAt": "2026-11-27T13:03:09.990Z",
+      "actions": [
+        {
+          "t": 3.5,
+          "label": "看离线收益",
+          "ms": 2500
+        },
+        {
+          "t": 0.9,
+          "label": "回访首屏：欢迎面板（离线收益）",
+          "ms": 3153,
+          "out": {
+            "welcome": "欢迎回来摸鱼\n你离开的 25 分钟 里，悄悄摸了\n300.0 摸鱼值\n首日全额｜8 小时封顶\n继续摸鱼",
+            "offlinePanelShown": true
+          }
+        },
+        {
+          "t": 4,
+          "label": "点 3 下看看钱（自然回访动作）",
+          "ms": 953,
+          "out": {
+            "moyu": 46,
+            "badges": [
+              "摸鱼站，今天还剩 2 次:2",
+              "摸鱼小队，还有精力 100:精力 100"
+            ]
+          }
+        },
+        {
+          "t": 5,
+          "label": "打开 📔 日报：完成「买 3 次升级」并领日报",
+          "ms": 2895,
+          "out": {
+            "before": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 14,
+                "done": false
+              }
+            ],
+            "after": {
+              "date": "2026-11-27",
+              "goals": [
+                {
+                  "id": "visit_1",
+                  "target": 1,
+                  "progress": 1,
+                  "done": true
+                },
+                {
+                  "id": "idle_earn",
+                  "target": 1,
+                  "progress": 0,
+                  "done": false
+                },
+                {
+                  "id": "click_100",
+                  "target": 100,
+                  "progress": 17,
+                  "done": false
+                }
+              ],
+              "claimed": false,
+              "streak": 0,
+              "window": 3,
+              "claimsToday": 0
+            },
+            "claimText": "完成 1/3",
+            "claimed": false,
+            "moyuAfter": 317
+          }
+        },
+        {
+          "t": 8.5,
+          "label": "想一下(打开 📔 日报：完成「买 3 次升级」并领日报)",
+          "ms": 600
+        },
+        {
+          "t": 8.5,
+          "label": "打开 🎮 摸鱼站：看 3 个游戏（今天剩 2 次）",
+          "ms": 659,
+          "out": {
+            "arcadeLeft": "今天还能玩 2/3 次 · 每局能赢摸鱼值",
+            "body": "摸鱼站\n✕\n今天还能玩 2/3 次 · 每局能赢摸鱼值\n接咖啡 最高 540\n咖啡掉下来时点住它——掉地上就没了\n满分 ≈ 25 秒挂机收益（新号保底 30）\n开始（30 秒）\n找老板 最高 0\n在一堆同事脸里找出王总，越快越好\n满分 ≈ 25 秒挂机收益（新号保底 30）\n开始（30 秒内无限轮）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n满分 ≈ 25 秒挂机收益（新号保底 30）\n开始（30 秒）"
+          }
+        },
+        {
+          "t": 10.9,
+          "label": "想一下(打开 🎮 摸鱼站：看 3 个游戏（今天剩 2 次）)",
+          "ms": 1800
+        },
+        {
+          "t": 10.9,
+          "label": "玩「找老板」（30 秒，测一局实际墙钟耗时）",
+          "ms": 30247,
+          "out": {
+            "wallMs": 30157,
+            "rounds": 58,
+            "res": {
+              "text": "找老板 结束 | 2900 分 | 本局奖励 +30 摸鱼值 | 🎉 新纪录！（旧 0） | 找对 58 · 找错 0 | 再来一局 返回摸鱼站"
+            }
+          }
+        },
+        {
+          "t": 41.2,
+          "label": "回菜单看次数",
+          "ms": 461,
+          "out": "今天还能玩 1/3 次 · 每局能赢摸鱼值"
+        },
+        {
+          "t": 41.7,
+          "label": "玩「节奏点击」（30 秒）",
+          "ms": 40261,
+          "out": {
+            "wallMs": 40156,
+            "taps": 79,
+            "res": null
+          }
+        },
+        {
+          "t": 81.9,
+          "label": "回菜单，关掉摸鱼站",
+          "ms": 874,
+          "out": {
+            "leftAfter": "今天玩完了，明天再来",
+            "arcadeSave": {
+              "date": "2026-11-27",
+              "played": 3,
+              "best": {
+                "coffee": 540,
+                "findboss": 2900,
+                "rhythm": 1180
+              }
+            },
+            "moyu": 392
+          }
+        },
+        {
+          "t": 83.6,
+          "label": "想一下(回菜单，关掉摸鱼站)",
+          "ms": 800
+        },
+        {
+          "t": 83.6,
+          "label": "收尾：还剩什么可做（学生准备收起手机）",
+          "ms": 81,
+          "out": {
+            "moyu": 392,
+            "affordable": 9,
+            "daily": [
+              "visit_1:1/1✓",
+              "idle_earn:0/1",
+              "click_100:17/100"
+            ],
+            "dailyClaimed": false,
+            "arcade": {
+              "date": "2026-11-27",
+              "played": 3,
+              "best": {
+                "coffee": 540,
+                "findboss": 2900,
+                "rhythm": 1180
+              }
+            },
+            "teamColleagues": 0,
+            "badges": [
+              "摸鱼小队，还有精力 100:精力 100"
+            ]
+          }
+        }
+      ],
+      "events": [
+        {
+          "t": 1,
+          "type": "welcome-show",
+          "text": "欢迎回来摸鱼 | 你离开的 25 分钟 里，悄悄摸了 | 300.0 摸鱼值 | 首日全额｜8 小时封顶 | 继续摸鱼"
+        },
+        {
+          "t": 1,
+          "type": "sr-live",
+          "text": "✓ 咖啡续命 已解锁"
+        },
+        {
+          "t": 7.9,
+          "type": "welcome-hide"
+        },
+        {
+          "t": 82.8,
+          "type": "sr-live",
+          "text": "摸鱼站得分 1180，获得 30"
+        }
+      ],
+      "metrics": {
+        "reloadReadyMs": 886,
+        "perf": {
+          "dcl": 52,
+          "load": 63,
+          "transfer": 0,
+          "res": 11
+        },
+        "totalMs": 83675
+      },
+      "shots": [
+        "O2-01-welcome",
+        "O2-02-back",
+        "O2-03-journal",
+        "O2-04-after-buys",
+        "O2-05-claimed",
+        "O2-06-arcade-menu",
+        "O2-07-findboss-result",
+        "O2-08-rhythm-result",
+        "O2-09-after-games",
+        "O2-10-end"
+      ],
+      "t0": 1795784589990,
+      "snap_O2-01-welcome": {
+        "t": 879,
+        "hud": {
+          "moyu": "346.3",
+          "sub": "点击 +2.5\n不点也 0.2/秒\n实习生 4%\n卡·全员大会\n🎮\n2\n👥\n精力 100\n🔊\n📔",
+          "rank": "实习生 4%",
+          "card": "卡·全员大会"
+        },
+        "quest": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "panels": {
+          "journal": false,
+          "team": false,
+          "arcade": false,
+          "cards": false,
+          "boss": false,
+          "welcome": true
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天还剩 2 次",
+            "text": "🎮2",
+            "dis": false,
+            "badge": "2"
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 · 第一杯，回魂 ★ 点击最优 18 摸鱼值 L",
+            "dis": false
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 253.7",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 182 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3653.7",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.47万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 14",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 99.97万",
+            "dis": true
+          },
+          {
+            "id": "welcome-ok",
+            "text": "继续摸鱼",
+            "dis": false
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": null,
+          "team": null,
+          "arcade": null,
+          "cards": null,
+          "boss": null,
+          "welcome": "欢迎回来摸鱼\n你离开的 25 分钟 里，悄悄摸了\n300.0 摸鱼值\n首日全额｜8 小时封顶\n继续摸鱼"
+        },
+        "save": {
+          "v": 2,
+          "moyu": 46,
+          "createdAt": 1795784531980,
+          "savedAt": 1795783090037,
+          "levels": {
+            "coffee": 1
+          },
+          "totalClicks": 15,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 14,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [
+              "click_1"
+            ],
+            "points": 0,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 1,
+            "best": {
+              "coffee": 540
+            }
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": "big_meeting",
+            "until": 1795870944730,
+            "dismissed": false
+          }
+        }
+      },
+      "snap_O2-02-back": {
+        "t": 4983,
+        "hud": {
+          "moyu": "354.8",
+          "sub": "点击 +2.5\n不点也 0.2/秒\n实习生 4%\n卡·全员大会\n连×2\n🎮\n2\n👥\n精力 100\n🔊\n📔",
+          "rank": "实习生 4%",
+          "card": "卡·全员大会"
+        },
+        "quest": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "panels": {
+          "journal": false,
+          "team": false,
+          "arcade": false,
+          "cards": false,
+          "boss": false,
+          "welcome": false
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天还剩 2 次",
+            "text": "🎮2",
+            "dis": false,
+            "badge": "2"
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 · 第一杯，回魂 ★ 点击最优 18 摸鱼值 L",
+            "dis": false
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 245.2",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 179 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3645.2",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.46万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 14",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 99.96万",
+            "dis": true
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": null,
+          "team": null,
+          "arcade": null,
+          "cards": null,
+          "boss": null,
+          "welcome": null
+        },
+        "save": {
+          "v": 2,
+          "moyu": 46,
+          "createdAt": 1795784531980,
+          "savedAt": 1795783090037,
+          "levels": {
+            "coffee": 1
+          },
+          "totalClicks": 15,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 14,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [
+              "click_1"
+            ],
+            "points": 0,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 1,
+            "best": {
+              "coffee": 540
+            }
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": "big_meeting",
+            "until": 1795870944730,
+            "dismissed": false
+          }
+        }
+      },
+      "snap_O2-03-journal": {
+        "t": 5451,
+        "hud": {
+          "moyu": "354.9",
+          "sub": "点击 +2.5\n不点也 0.2/秒\n实习生 4%\n卡·全员大会\n连×2\n🎮\n2\n👥\n精力 100\n🔊\n📔",
+          "rank": "实习生 4%",
+          "card": "卡·全员大会"
+        },
+        "quest": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "panels": {
+          "journal": true,
+          "team": false,
+          "arcade": false,
+          "cards": false,
+          "boss": false,
+          "welcome": false
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天还剩 2 次",
+            "text": "🎮2",
+            "dis": false,
+            "badge": "2"
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 · 第一杯，回魂 ★ 点击最优 18 摸鱼值 L",
+            "dis": false
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 245.1",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 179 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3645.1",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.46万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 14",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 99.96万",
+            "dis": true
+          },
+          {
+            "id": "journal-close",
+            "aria": "关闭",
+            "text": "✕",
+            "dis": false
+          },
+          {
+            "id": "journal-claim",
+            "text": "完成 1/3",
+            "dis": true
+          },
+          {
+            "id": "stats-export",
+            "text": "导出存档 JSON",
+            "dis": false
+          },
+          {
+            "id": "savecode-copy",
+            "text": "复制/生成存档码",
+            "dis": false
+          },
+          {
+            "id": "savecode-import",
+            "text": "导入存档码",
+            "dis": false
+          },
+          {
+            "id": "prestige-btn",
+            "text": "未解锁（本局累计 369.8 / 需 1.00亿）",
+            "dis": true
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": "摸鱼日报\n✕\n2026-11-27 · 🔥 连续 0 天（今天未领）\n✓\n今天上线看一眼\n1/1\n○\n什么都不点，等摸鱼值自己涨\n0/1\n○\n戳 100 下\n17/100\n完成 1/3\n摸鱼数据\n摸鱼实习生\n生涯总收入\n369.8\n本局 / 往期\n369.8 / 0\n当前余额\n354.8\n累计投入\n15\n点击力 / 挂机\n3 / 0.2每秒\n累计点击\n18\n今日回访\n2/3（离线效率 100%）\n连续日报\n0 天\n图鉴\n1/55\n转生\n0 点（×1.00）\n纪录·最佳单日\n61.2（2026-11-27）\n纪录·最长连签\n0 天\n纪录·最多点击\n15\n导出存档 JSON\n存档码（换设备用）\n复制这串码到新设备「导入」，进度就能带过去（防手滑，非防篡改）。\n复制/生成存档码\n导入存档码\n摸鱼图鉴\n1/55\n梗语录 1/10\n升级彩蛋 0/45\n买升级、收线索，开始收集摸鱼彩蛋\n关于\nv0.5.0 · 2026-11-27\n新增：摸鱼小队（招募/派遣/好感/一键领取）+ 天赋树（18 天赋/24 点/溢出转化）；新增：每日摸鱼卡（16 张，选 1 生效 24h）；新增：回合制老板（3 性格，看线索选应对，5 秒窗口）；新增：工位经营（8 件家具，买完看得见，集齐 +10%）+ 每日精力（4 档取舍）\n今日工位梗：摸了一条鱼\n离职再就业\n重置余额与 20% 等级，换永久点数：总倍率 = 1 + 0.75 × 累计点数（线性）；图鉴/日报/段位/历史累计保留。建议攒够多点再转。\n未解锁（本局累计 369.8 / 需 1.00亿）\n???\n语录 2\n这个需求很简单\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n??",
+          "team": null,
+          "arcade": null,
+          "cards": null,
+          "boss": null,
+          "welcome": null
+        },
+        "save": {
+          "v": 2,
+          "moyu": 46,
+          "createdAt": 1795784531980,
+          "savedAt": 1795783090037,
+          "levels": {
+            "coffee": 1
+          },
+          "totalClicks": 15,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 14,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [
+              "click_1"
+            ],
+            "points": 0,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 1,
+            "best": {
+              "coffee": 540
+            }
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": "big_meeting",
+            "until": 1795870944730,
+            "dismissed": false
+          }
+        }
+      },
+      "snap_O2-04-after-buys": {
+        "t": 6889,
+        "hud": {
+          "moyu": "317.1",
+          "sub": "点击 +5\n不点也 0.2/秒\n实习生 4%\n卡·全员大会\n🎮\n2\n👥\n精力 100\n🔊\n📔",
+          "rank": "实习生 4%",
+          "card": "卡·全员大会"
+        },
+        "quest": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "panels": {
+          "journal": false,
+          "team": false,
+          "arcade": false,
+          "cards": false,
+          "boss": false,
+          "welcome": false
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天还剩 2 次",
+            "text": "🎮2",
+            "dis": false,
+            "badge": "2"
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 · 第一杯，回魂 ★ 点击最优 23 摸鱼值 L",
+            "dis": false
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 282.9",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 97 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3682.9",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.47万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 14",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 99.97万",
+            "dis": true
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": null,
+          "team": null,
+          "arcade": null,
+          "cards": null,
+          "boss": null,
+          "welcome": null
+        },
+        "save": {
+          "v": 2,
+          "moyu": 317,
+          "createdAt": 1795784531980,
+          "savedAt": 1795784596384,
+          "levels": {
+            "coffee": 3
+          },
+          "totalClicks": 18,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 17,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [
+              "click_1"
+            ],
+            "points": 0,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 1,
+            "best": {
+              "coffee": 540
+            }
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": "big_meeting",
+            "until": 1795870944730,
+            "dismissed": false
+          }
+        }
+      },
+      "snap_O2-05-claimed": {
+        "t": 7452,
+        "hud": {
+          "moyu": "317.3",
+          "sub": "点击 +5\n不点也 0.2/秒\n实习生 4%\n卡·全员大会\n🎮\n2\n👥\n精力 100\n🔊\n📔",
+          "rank": "实习生 4%",
+          "card": "卡·全员大会"
+        },
+        "quest": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "panels": {
+          "journal": true,
+          "team": false,
+          "arcade": false,
+          "cards": false,
+          "boss": false,
+          "welcome": false
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天还剩 2 次",
+            "text": "🎮2",
+            "dis": false,
+            "badge": "2"
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 · 第一杯，回魂 ★ 点击最优 23 摸鱼值 L",
+            "dis": false
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 282.7",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 97 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3682.7",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.47万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 14",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 99.97万",
+            "dis": true
+          },
+          {
+            "id": "journal-close",
+            "aria": "关闭",
+            "text": "✕",
+            "dis": false
+          },
+          {
+            "id": "journal-claim",
+            "text": "完成 1/3",
+            "dis": true
+          },
+          {
+            "id": "stats-export",
+            "text": "导出存档 JSON",
+            "dis": false
+          },
+          {
+            "id": "savecode-copy",
+            "text": "复制/生成存档码",
+            "dis": false
+          },
+          {
+            "id": "savecode-import",
+            "text": "导入存档码",
+            "dis": false
+          },
+          {
+            "id": "prestige-btn",
+            "text": "未解锁（本局累计 370.3 / 需 1.00亿）",
+            "dis": true
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": "摸鱼日报\n✕\n2026-11-27 · 🔥 连续 0 天（今天未领）\n✓\n今天上线看一眼\n1/1\n○\n什么都不点，等摸鱼值自己涨\n0/1\n○\n戳 100 下\n17/100\n完成 1/3\n摸鱼数据\n摸鱼实习生\n生涯总收入\n370.3\n本局 / 往期\n370.3 / 0\n当前余额\n317.3\n累计投入\n53\n点击力 / 挂机\n5 / 0.2每秒\n累计点击\n18\n今日回访\n2/3（离线效率 100%）\n连续日报\n0 天\n图鉴\n1/55\n转生\n0 点（×1.00）\n纪录·最佳单日\n61.2（2026-11-27）\n纪录·最长连签\n0 天\n纪录·最多点击\n15\n导出存档 JSON\n存档码（换设备用）\n复制这串码到新设备「导入」，进度就能带过去（防手滑，非防篡改）。\n复制/生成存档码\n导入存档码\n摸鱼图鉴\n1/55\n梗语录 1/10\n升级彩蛋 0/45\n买升级、收线索，开始收集摸鱼彩蛋\n关于\nv0.5.0 · 2026-11-27\n新增：摸鱼小队（招募/派遣/好感/一键领取）+ 天赋树（18 天赋/24 点/溢出转化）；新增：每日摸鱼卡（16 张，选 1 生效 24h）；新增：回合制老板（3 性格，看线索选应对，5 秒窗口）；新增：工位经营（8 件家具，买完看得见，集齐 +10%）+ 每日精力（4 档取舍）\n今日工位梗：摸了一条鱼\n离职再就业\n重置余额与 20% 等级，换永久点数：总倍率 = 1 + 0.75 × 累计点数（线性）；图鉴/日报/段位/历史累计保留。建议攒够多点再转。\n未解锁（本局累计 370.3 / 需 1.00亿）\n???\n语录 2\n这个需求很简单\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n???\n??",
+          "team": null,
+          "arcade": null,
+          "cards": null,
+          "boss": null,
+          "welcome": null
+        },
+        "save": {
+          "v": 2,
+          "moyu": 317,
+          "createdAt": 1795784531980,
+          "savedAt": 1795784596384,
+          "levels": {
+            "coffee": 3
+          },
+          "totalClicks": 18,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 17,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [
+              "click_1"
+            ],
+            "points": 0,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 1,
+            "best": {
+              "coffee": 540
+            }
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": "big_meeting",
+            "until": 1795870944730,
+            "dismissed": false
+          }
+        }
+      },
+      "snap_O2-06-arcade-menu": {
+        "t": 9052,
+        "hud": {
+          "moyu": "317.6",
+          "sub": "点击 +5\n不点也 0.2/秒\n实习生 4%\n卡·全员大会\n🎮\n2\n👥\n精力 100\n🔊\n📔",
+          "rank": "实习生 4%",
+          "card": "卡·全员大会"
+        },
+        "quest": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "panels": {
+          "journal": false,
+          "team": false,
+          "arcade": true,
+          "cards": false,
+          "boss": false,
+          "welcome": false
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天还剩 2 次",
+            "text": "🎮2",
+            "dis": false,
+            "badge": "2"
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 · 第一杯，回魂 ★ 点击最优 23 摸鱼值 L",
+            "dis": false
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 282.4",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 97 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3682.4",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.47万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 14",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 99.97万",
+            "dis": true
+          },
+          {
+            "id": "arcade-close",
+            "aria": "关闭",
+            "text": "✕",
+            "dis": false
+          },
+          {
+            "text": "开始（30 秒）",
+            "dis": false
+          },
+          {
+            "text": "开始（30 秒内无限轮）",
+            "dis": false
+          },
+          {
+            "text": "开始（30 秒）",
+            "dis": false
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": null,
+          "team": null,
+          "arcade": "摸鱼站\n✕\n今天还能玩 2/3 次 · 每局能赢摸鱼值\n接咖啡 最高 540\n咖啡掉下来时点住它——掉地上就没了\n满分 ≈ 25 秒挂机收益（新号保底 30）\n开始（30 秒）\n找老板 最高 0\n在一堆同事脸里找出王总，越快越好\n满分 ≈ 25 秒挂机收益（新号保底 30）\n开始（30 秒内无限轮）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n满分 ≈ 25 秒挂机收益（新号保底 30）\n开始（30 秒）",
+          "cards": null,
+          "boss": null,
+          "welcome": null
+        },
+        "save": {
+          "v": 2,
+          "moyu": 317,
+          "createdAt": 1795784531980,
+          "savedAt": 1795784596384,
+          "levels": {
+            "coffee": 3
+          },
+          "totalClicks": 18,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 17,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [
+              "click_1"
+            ],
+            "points": 0,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 1,
+            "best": {
+              "coffee": 540
+            }
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": "big_meeting",
+            "until": 1795870944730,
+            "dismissed": false
+          }
+        }
+      },
+      "snap_O2-07-findboss-result": {
+        "t": 41100,
+        "hud": {
+          "moyu": "354.0",
+          "sub": "点击 +5\n不点也 0.2/秒\n实习生 4%\n卡·全员大会\n🎮\n1\n👥\n精力 100\n🔊\n📔",
+          "rank": "实习生 4%",
+          "card": "卡·全员大会"
+        },
+        "quest": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "panels": {
+          "journal": false,
+          "team": false,
+          "arcade": true,
+          "cards": false,
+          "boss": false,
+          "welcome": false
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天还剩 1 次",
+            "text": "🎮1",
+            "dis": false,
+            "badge": "1"
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 · 第一杯，回魂 ★ 点击最优 23 摸鱼值 L",
+            "dis": false
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 276.0",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 96 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3676.0",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.47万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 14",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 99.97万",
+            "dis": true
+          },
+          {
+            "id": "arcade-close",
+            "aria": "关闭",
+            "text": "✕",
+            "dis": false
+          },
+          {
+            "id": "arcade-again",
+            "text": "再来一局",
+            "dis": false
+          },
+          {
+            "id": "arcade-back",
+            "text": "返回摸鱼站",
+            "dis": false
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": null,
+          "team": null,
+          "arcade": "找老板\n✕\n今天还能玩 1/3 次 · 每局能赢摸鱼值\n找老板 结束\n2900 分\n本局奖励 +30 摸鱼值\n🎉 新纪录！（旧 0）\n找对 58 · 找错 0\n再来一局 返回摸鱼站",
+          "cards": null,
+          "boss": null,
+          "welcome": null
+        },
+        "save": {
+          "v": 2,
+          "moyu": 354,
+          "createdAt": 1795784531980,
+          "savedAt": 1795784631011,
+          "levels": {
+            "coffee": 3
+          },
+          "totalClicks": 18,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 17,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [
+              "click_1"
+            ],
+            "points": 0,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 2,
+            "best": {
+              "coffee": 540,
+              "findboss": 2900
+            }
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": "big_meeting",
+            "until": 1795870944730,
+            "dismissed": false
+          }
+        }
+      },
+      "snap_O2-08-rhythm-result": {
+        "t": 81807,
+        "hud": {
+          "moyu": "392.1",
+          "sub": "点击 +5\n不点也 0.2/秒\n实习生 4%\n卡·全员大会\n🎮\n👥\n精力 100\n🔊\n📔",
+          "rank": "实习生 4%",
+          "card": "卡·全员大会"
+        },
+        "quest": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "panels": {
+          "journal": false,
+          "team": false,
+          "arcade": true,
+          "cards": false,
+          "boss": false,
+          "welcome": false
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天已玩完",
+            "text": "🎮",
+            "dis": false
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 · 第一杯，回魂 ★ 点击最优 23 摸鱼值 L",
+            "dis": false
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 207.9",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 82 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3607.9",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.46万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 14",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 99.96万",
+            "dis": true
+          },
+          {
+            "id": "arcade-close",
+            "aria": "关闭",
+            "text": "✕",
+            "dis": false
+          },
+          {
+            "text": "明天再来",
+            "dis": true
+          },
+          {
+            "text": "明天再来",
+            "dis": true
+          },
+          {
+            "text": "明天再来",
+            "dis": true
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": null,
+          "team": null,
+          "arcade": "摸鱼站\n✕\n今天玩完了，明天再来\n接咖啡 最高 540\n咖啡掉下来时点住它——掉地上就没了\n满分 ≈ 25 秒挂机收益（新号保底 30）\n明天再来\n找老板 最高 2900\n在一堆同事脸里找出王总，越快越好\n满分 ≈ 25 秒挂机收益（新号保底 30）\n明天再来\n节奏点击 最高 1180\n跟着节拍点屏幕，越准分越高\n满分 ≈ 25 秒挂机收益（新号保底 30）\n明天再来",
+          "cards": null,
+          "boss": null,
+          "welcome": null
+        },
+        "save": {
+          "v": 2,
+          "moyu": 392,
+          "createdAt": 1795784531980,
+          "savedAt": 1795784670051,
+          "levels": {
+            "coffee": 3
+          },
+          "totalClicks": 18,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 17,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [
+              "click_1"
+            ],
+            "points": 0,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 3,
+            "best": {
+              "coffee": 540,
+              "findboss": 2900,
+              "rhythm": 1180
+            }
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": "big_meeting",
+            "until": 1795870944730,
+            "dismissed": false
+          }
+        }
+      },
+      "snap_O2-09-after-games": {
+        "t": 82782,
+        "hud": {
+          "moyu": "392.3",
+          "sub": "点击 +5\n不点也 0.2/秒\n实习生 4%\n卡·全员大会\n🎮\n👥\n精力 100\n🔊\n📔",
+          "rank": "实习生 4%",
+          "card": "卡·全员大会"
+        },
+        "quest": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "panels": {
+          "journal": false,
+          "team": false,
+          "arcade": false,
+          "cards": false,
+          "boss": false,
+          "welcome": false
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天已玩完",
+            "text": "🎮",
+            "dis": false
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 · 第一杯，回魂 ★ 点击最优 23 摸鱼值 L",
+            "dis": false
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 207.7",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 82 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3607.7",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.46万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 14",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 99.96万",
+            "dis": true
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": null,
+          "team": null,
+          "arcade": null,
+          "cards": null,
+          "boss": null,
+          "welcome": null
+        },
+        "save": {
+          "v": 2,
+          "moyu": 392,
+          "createdAt": 1795784531980,
+          "savedAt": 1795784670051,
+          "levels": {
+            "coffee": 3
+          },
+          "totalClicks": 18,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 17,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [
+              "click_1"
+            ],
+            "points": 0,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 3,
+            "best": {
+              "coffee": 540,
+              "findboss": 2900,
+              "rhythm": 1180
+            }
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": "big_meeting",
+            "until": 1795870944730,
+            "dismissed": false
+          }
+        }
+      },
+      "snap_O2-10-end": {
+        "t": 83587,
+        "hud": {
+          "moyu": "392.5",
+          "sub": "点击 +5\n不点也 0.2/秒\n实习生 4%\n卡·全员大会\n🎮\n👥\n精力 100\n🔊\n📔",
+          "rank": "实习生 4%",
+          "card": "卡·全员大会"
+        },
+        "quest": "攒够 50 摸鱼值 → 解锁「刷手机」（每秒自动 +1）",
+        "panels": {
+          "journal": false,
+          "team": false,
+          "arcade": false,
+          "cards": false,
+          "boss": false,
+          "welcome": false
+        },
+        "buttons": [
+          {
+            "id": "btn-arcade",
+            "aria": "摸鱼站，今天已玩完",
+            "text": "🎮",
+            "dis": false
+          },
+          {
+            "id": "btn-team",
+            "aria": "摸鱼小队，还有精力 100",
+            "text": "👥精力 100",
+            "dis": false,
+            "badge": "精力 100"
+          },
+          {
+            "id": "btn-mute",
+            "aria": "音效开关",
+            "text": "🔊",
+            "dis": false
+          },
+          {
+            "id": "btn-journal",
+            "aria": "日报与图鉴",
+            "text": "📔",
+            "dis": false
+          },
+          {
+            "text": "点了才赚咖啡续命 +1 点击力 · 第一杯，回魂 ★ 点击最优 23 摸鱼值 L",
+            "dis": false
+          },
+          {
+            "text": "会自动赚刷手机 +1/秒 · ×2差5级 ★ 挂机最优 50 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "点了才赚带薪喝水 +2 点击力 100 摸鱼值",
+            "dis": false
+          },
+          {
+            "text": "会自动赚带薪蹲坑 +5/秒 600 摸鱼值 还差 207.5",
+            "dis": true
+          },
+          {
+            "text": "点了才赚人体工学椅 +5 点击力 800 摸鱼值 再戳 82 下",
+            "dis": true
+          },
+          {
+            "text": "会自动赚摸鱼群聊 +15/秒 4000 摸鱼值 还差 3607.5",
+            "dis": true
+          },
+          {
+            "text": "会自动赚无用会议 +50/秒 2.50万 摸鱼值 还差 2.46万",
+            "dis": true
+          },
+          {
+            "text": "会自动赚深度摸鱼 +180/秒 · ×2差5级 15.00万 摸鱼值 还差 14",
+            "dis": true
+          },
+          {
+            "text": "会自动赚退休式躺平 +700/秒 100.00万 摸鱼值 还差 99.96万",
+            "dis": true
+          }
+        ],
+        "shopAffordable": 9,
+        "shopCount": 9,
+        "texts": {
+          "journal": null,
+          "team": null,
+          "arcade": null,
+          "cards": null,
+          "boss": null,
+          "welcome": null
+        },
+        "save": {
+          "v": 2,
+          "moyu": 392,
+          "createdAt": 1795784531980,
+          "savedAt": 1795784670051,
+          "levels": {
+            "coffee": 3
+          },
+          "totalClicks": 18,
+          "daily": {
+            "date": "2026-11-27",
+            "goals": [
+              {
+                "id": "visit_1",
+                "target": 1,
+                "progress": 1,
+                "done": true
+              },
+              {
+                "id": "idle_earn",
+                "target": 1,
+                "progress": 0,
+                "done": false
+              },
+              {
+                "id": "click_100",
+                "target": 100,
+                "progress": 17,
+                "done": false
+              }
+            ],
+            "claimed": false,
+            "streak": 0,
+            "window": 3,
+            "claimsToday": 0
+          },
+          "team": {
+            "colleagues": {}
+          },
+          "talents": {
+            "unlocked": [
+              "click_1"
+            ],
+            "points": 0,
+            "rankGranted": -1,
+            "dailyGiftDate": "2026-11-27",
+            "overflow": 0
+          },
+          "decor": [],
+          "energy": {
+            "date": "2026-11-27",
+            "left": 100,
+            "used": [],
+            "boosted": {
+              "idleMult": 1,
+              "patrolRewardMult": 1,
+              "clickMult": 1
+            }
+          },
+          "arcade": {
+            "date": "2026-11-27",
+            "played": 3,
+            "best": {
+              "coffee": 540,
+              "findboss": 2900,
+              "rhythm": 1180
+            }
+          },
+          "cards": {
+            "date": "2026-11-27",
+            "offers": [
+              "big_meeting",
+              "old_zhou_secret",
+              "quiet_day"
+            ],
+            "chosen": "big_meeting",
+            "until": 1795870944730,
+            "dismissed": false
+          }
+        }
+      }
+    }
+  ],
+  "notes": [],
+  "errors": []
+}
