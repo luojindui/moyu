@@ -111,6 +111,8 @@ export function greedySpend(state: GameState, cps: number): GameState {
       if (price > s.moyu) continue;
       const m = marginalEffect(u.id, lv);
       const score = (m.idleRate + m.clickPower * cps) / price;
+      // 纯挂机玩家不买点击升级（避免把点击力抬高后靠丢梗返利虚增收益）
+      if (score <= 0) continue;
       if (score > bestScore) {
         bestScore = score;
         bestId = u.id;

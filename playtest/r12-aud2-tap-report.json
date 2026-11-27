@@ -1,42 +1,90 @@
 {
+  "startedAt": "2026-11-27T08:46:13.069Z",
+  "rates": {
+    "60ms": {
+      "success": 3,
+      "trials": 5,
+      "noButton": 0,
+      "details": [
+        "idle",
+        "ok",
+        "ok",
+        "ok",
+        "idle"
+      ]
+    },
+    "90ms": {
+      "success": 3,
+      "trials": 5,
+      "noButton": 0,
+      "details": [
+        "ok",
+        "idle",
+        "ok",
+        "idle",
+        "ok"
+      ]
+    },
+    "120ms": {
+      "success": 1,
+      "trials": 5,
+      "noButton": 0,
+      "details": [
+        "idle",
+        "idle",
+        "idle",
+        "ok",
+        "idle"
+      ]
+    },
+    "160ms": {
+      "success": 0,
+      "trials": 5,
+      "noButton": 0,
+      "details": [
+        "idle",
+        "idle",
+        "idle",
+        "idle",
+        "idle"
+      ]
+    },
+    "220ms": {
+      "success": 0,
+      "trials": 5,
+      "noButton": 0,
+      "details": [
+        "idle",
+        "idle",
+        "idle",
+        "idle",
+        "idle"
+      ]
+    }
+  },
   "reRender": {
-    "renders": 9,
-    "seconds": 1.5,
+    "rendersIn1500ms": 9,
     "rendersPerSec": 6,
+    "avgGapMs": 154.4,
     "gaps": [
-      149.7,
-      151.8,
-      149.5,
-      167.2,
-      166.6,
-      148,
-      151.5,
-      150
+      168.6,
+      147.9,
+      152.1,
+      149.4,
+      148.5,
+      150.4,
+      150.7,
+      167.4
     ]
   },
-  "rates": {
-    "30ms": "3/5",
-    "60ms": "2/5",
-    "90ms": "5/5",
-    "120ms": "1/5",
-    "160ms": "0/5",
-    "220ms": "0/5"
-  },
   "claimTap": {
-    "panelOpen": true,
-    "claimBtnFound": null,
-    "favorBefore": 26,
-    "favorAfter": 26,
+    "favorPre": 14,
+    "claimBtn": "领取 +360",
+    "favorBefore": 14,
+    "favorAfter": 14,
+    "missionId": "quick",
     "claimed": false
   },
-  "note": "主循环每 150ms 调 teamPanel.refreshNow() → 面板打开时强制整块重建 innerHTML；真实点按跨越一次重建即丢 click",
-  "eventTrace": {
-    "log": [
-      "up:SMALL",
-      "click:SMALL"
-    ],
-    "sameNodeAtRelease": false,
-    "targetActAtRelease": "SMALL",
-    "panelHidden": false
-  }
+  "eventTrace": null,
+  "finishedAt": "2026-11-27T08:46:35.009Z"
 }
