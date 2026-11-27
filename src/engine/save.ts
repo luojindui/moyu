@@ -7,7 +7,7 @@ import { TALENTS, emptyTalents, type TalentState } from "./talents";
 import { CARDS, emptyCardState, type CardState } from "./cards";
 import { DECOR } from "./decor";
 import { ENERGY_ACTIONS as ENERGY_ACTIONS_CACHE, ENERGY_PER_DAY, emptyEnergy, type EnergyAction, type EnergyState } from "./energy";
-import { ARCADE_DAILY_LIMIT, GAMES, emptyArcade, type ArcadeState } from "./minigames";
+import { ARCADE_DAILY_LIMIT, GAMES, MAX_SCORE, emptyArcade, type ArcadeState } from "./minigames";
 
 export const SAVE_KEY = "moyu-save";
 export const SAVE_VERSION = 2; // v2：加入 team/talents/patrolSurvives
@@ -302,7 +302,7 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
       const best: Partial<Record<string, number>> = {};
       for (const g of GAMES) {
         const v = rawArcade.best?.[g.id];
-        if (typeof v === "number" && Number.isFinite(v) && v >= 0) best[g.id] = Math.min(9999, Math.floor(v));
+        if (typeof v === "number" && Number.isFinite(v) && v >= 0) best[g.id] = Math.min(MAX_SCORE, Math.floor(v));
       }
       arcade.best = best;
     }

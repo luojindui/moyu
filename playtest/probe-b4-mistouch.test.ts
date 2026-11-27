@@ -13,14 +13,14 @@ describe("批次4 回归：前 2 秒误触退还次数", () => {
   });
 
   it("2.5 秒退出：消耗次数但奖励按比例缩水", () => {
-    const r = finishGame(st(), "rhythm", 600, 1000, 2.5)!;
+    const r = finishGame(st(), "rhythm", 1180, 1000, 2.5)!;
     expect(r.state.arcade.played).toBe(1);
     expect(r.reward).toBeGreaterThan(0);
-    expect(r.reward).toBeLessThan(finishGame(st(), "rhythm", 600, 1000, 30)!.reward);
+    expect(r.reward).toBeLessThan(finishGame(st(), "rhythm", 1180, 1000, 30)!.reward);
   });
 
   it("打满 30 秒：全额", () => {
-    const r = finishGame(st(), "rhythm", 600, 1000, 30)!;
+    const r = finishGame(st(), "rhythm", 1180, 1000, 30)!;
     expect(r.reward).toBe(25000);
   });
 });

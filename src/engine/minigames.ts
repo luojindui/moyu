@@ -26,8 +26,20 @@ export const GAMES: GameDef[] = [
 /** 每天总共能玩几次（跨游戏共享） */
 export const ARCADE_DAILY_LIMIT = 3;
 
-/** 满分参考值（三游戏打满都落在这附近） */
-export const REF_SCORE = 600;
+/**
+ * 各游戏的"打满"参考分（按各自可达上限归一化，避免某游戏结构性打不满/另一个轻松满）：
+ * - 接咖啡：掉落 25-30 个、全接 ≈ 500-600（取 540）
+ * - 找老板：30 秒内 24 个正确 ≈ 1200（12 个才 600，不再轻松满）
+ * - 节奏：全 perfect 1180
+ */
+export const REF_SCORE_BY_GAME: Record<GameId, number> = {
+  coffee: 540,
+  findboss: 1200,
+  rhythm: 1180,
+};
+
+/** 兼容旧引用（取节奏的参考值） */
+export const REF_SCORE = REF_SCORE_BY_GAME.rhythm;
 /** 满分奖励 ≈ 该秒数的挂机收益（跨阶段恒定，不随进度漂移） */
 export const TARGET_IDLE_SECONDS = 25;
 /** 分数硬上限（防篡改） */
@@ -78,7 +90,8 @@ export function finishGame(
   const capped = Math.min(score, MAX_SCORE);
   // 奖励 = 满分的 0..1 比例 × 「目标挂机秒数」
   // 用比例×秒数而不是固定 +20，避免跨阶段漂移（早期曾达 300 倍）
-  const scoreRatio = Math.min(1, capped / REF_SCORE); // REF_SCORE 分 = 打满
+  const ref = REF_SCORE_BY_GAME[game] ?? REF_SCORE;
+  const scoreRatio = Math.min(1, capped / ref); // 各游戏按自己的参考分归一化
   // 早退折算：至少玩 1/3 时长才给全额，否则按比例（防"开局即退"）
   const timeRatio = Math.max(0, Math.min(1, playedSeconds / 30));
   const ratio = scoreRatio * (timeRatio >= 1 / 3 ? 1 : timeRatio * 3);

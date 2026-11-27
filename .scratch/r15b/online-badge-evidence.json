@@ -1,0 +1,25 @@
+{
+  "hasSave": true,
+  "played1": {
+    "badge": "2",
+    "aria": "摸鱼站，今天还剩 2 次"
+  },
+  "crossDay": {
+    "badge": {
+      "badge": null,
+      "aria": "摸鱼站小游戏"
+    },
+    "state": {
+      "date": "2026-11-27",
+      "played": 0,
+      "best": {
+        "coffee": 496,
+        "findboss": 6250
+      }
+    }
+  },
+  "played3": {
+    "badge": null,
+    "aria": "摸鱼站小游戏"
+  }
+}

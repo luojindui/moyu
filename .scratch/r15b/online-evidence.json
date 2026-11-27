@@ -2,7 +2,13 @@
   "steps": {
     "about": "ok",
     "bootBadge": "ok",
-    "coffee": "ok"
+    "coffee": "ok",
+    "findboss": "ok",
+    "rhythm": "ok",
+    "persist": "ok",
+    "noRecord": "ok",
+    "refund": "ok",
+    "exitConfirm": "ok"
   },
   "errors": [],
   "coffee": {
@@ -197,13 +203,605 @@
       "aria": "摸鱼站，今天还剩 2 次"
     }
   },
-  "findboss": {},
-  "rhythm": {},
-  "limit": {},
-  "persist": {},
-  "noRecord": {},
-  "refund": {},
-  "exit": {},
+  "findboss": {
+    "mid": {
+      "timer": "25.5s",
+      "score": "1156",
+      "hint": "找出王总（红色「王」）· 已找 18"
+    },
+    "done": true,
+    "samples": [
+      {
+        "timer": "29.0s",
+        "score": "490",
+        "hint": "找出王总（红色「王」）· 已找 4"
+      },
+      {
+        "timer": "28.0s",
+        "score": "680",
+        "hint": "找出王总（红色「王」）· 已找 8"
+      },
+      {
+        "timer": "27.0s",
+        "score": "871",
+        "hint": "找出王总（红色「王」）· 已找 12"
+      },
+      {
+        "timer": "26.0s",
+        "score": "1061",
+        "hint": "找出王总（红色「王」）· 已找 16"
+      },
+      {
+        "timer": "25.0s",
+        "score": "1251",
+        "hint": "找出王总（红色「王」）· 已找 20"
+      },
+      {
+        "timer": "30.0s",
+        "score": "1489",
+        "hint": "找出王总（红色「王」）· 已找 25"
+      },
+      {
+        "timer": "23.0s",
+        "score": "1680",
+        "hint": "找出王总（红色「王」）· 已找 29"
+      },
+      {
+        "timer": "22.0s",
+        "score": "1870",
+        "hint": "找出王总（红色「王」）· 已找 33"
+      },
+      {
+        "timer": "21.0s",
+        "score": "2061",
+        "hint": "找出王总（红色「王」）· 已找 37"
+      },
+      {
+        "timer": "20.0s",
+        "score": "2251",
+        "hint": "找出王总（红色「王」）· 已找 41"
+      },
+      {
+        "timer": "19.0s",
+        "score": "2441",
+        "hint": "找出王总（红色「王」）· 已找 45"
+      },
+      {
+        "timer": "30.0s",
+        "score": "2679",
+        "hint": "找出王总（红色「王」）· 已找 50"
+      },
+      {
+        "timer": "17.0s",
+        "score": "2870",
+        "hint": "找出王总（红色「王」）· 已找 54"
+      },
+      {
+        "timer": "16.0s",
+        "score": "3060",
+        "hint": "找出王总（红色「王」）· 已找 58"
+      },
+      {
+        "timer": "15.0s",
+        "score": "3251",
+        "hint": "找出王总（红色「王」）· 已找 62"
+      },
+      {
+        "timer": "14.0s",
+        "score": "3441",
+        "hint": "找出王总（红色「王」）· 已找 66"
+      },
+      {
+        "timer": "13.0s",
+        "score": "3631",
+        "hint": "找出王总（红色「王」）· 已找 70"
+      },
+      {
+        "timer": "30.0s",
+        "score": "3869",
+        "hint": "找出王总（红色「王」）· 已找 75"
+      },
+      {
+        "timer": "11.0s",
+        "score": "4060",
+        "hint": "找出王总（红色「王」）· 已找 79"
+      },
+      {
+        "timer": "10.0s",
+        "score": "4250",
+        "hint": "找出王总（红色「王」）· 已找 83"
+      },
+      {
+        "timer": "9.0s",
+        "score": "4441",
+        "hint": "找出王总（红色「王」）· 已找 87"
+      },
+      {
+        "timer": "8.0s",
+        "score": "4631",
+        "hint": "找出王总（红色「王」）· 已找 91"
+      },
+      {
+        "timer": "7.0s",
+        "score": "4821",
+        "hint": "找出王总（红色「王」）· 已找 95"
+      },
+      {
+        "timer": "30.0s",
+        "score": "5059",
+        "hint": "找出王总（红色「王」）· 已找 100"
+      },
+      {
+        "timer": "5.0s",
+        "score": "5250",
+        "hint": "找出王总（红色「王」）· 已找 104"
+      },
+      {
+        "timer": "4.0s",
+        "score": "5440",
+        "hint": "找出王总（红色「王」）· 已找 108"
+      },
+      {
+        "timer": "3.0s",
+        "score": "5631",
+        "hint": "找出王总（红色「王」）· 已找 112"
+      },
+      {
+        "timer": "2.0s",
+        "score": "5821",
+        "hint": "找出王总（红色「王」）· 已找 116"
+      },
+      {
+        "timer": "1.0s",
+        "score": "6011",
+        "hint": "找出王总（红色「王」）· 已找 120"
+      },
+      {
+        "timer": "30.0s",
+        "score": "6250",
+        "hint": "找出王总（红色「王」）· 已找 125"
+      }
+    ],
+    "clicks": 125,
+    "lastHudScore": "6250",
+    "result": {
+      "bodyText": "找老板 结束\n6250 分\n本局奖励 +30 摸鱼值\n🎉 新纪录！（旧 0）\n找对 125 · 找错 0\n再来一局 返回摸鱼站",
+      "record": "🎉 新纪录！（旧 0）",
+      "reward": "本局奖励 +30 摸鱼值",
+      "score": "6250 分",
+      "hints": [
+        "找对 125 · 找错 0"
+      ],
+      "hasAgain": true,
+      "hasBack": true
+    },
+    "toast": "摸鱼站 +30（得分 6250）",
+    "save": {
+      "date": "2026-11-27",
+      "played": 2,
+      "best": {
+        "coffee": 496,
+        "findboss": 6250
+      }
+    },
+    "menuAfter": {
+      "left": "今天还能玩 1/3 次 · 每局能赢摸鱼值",
+      "cards": [
+        {
+          "name": "接咖啡 最高 496",
+          "btn": "开始（30 秒）",
+          "disabled": false
+        },
+        {
+          "name": "找老板 最高 6250",
+          "btn": "开始（30 秒内无限轮）",
+          "disabled": false
+        },
+        {
+          "name": "节奏点击 最高 0",
+          "btn": "开始（30 秒）",
+          "disabled": false
+        }
+      ],
+      "buttons": [
+        {
+          "text": "开始（30 秒）",
+          "disabled": false
+        },
+        {
+          "text": "开始（30 秒内无限轮）",
+          "disabled": false
+        },
+        {
+          "text": "开始（30 秒）",
+          "disabled": false
+        }
+      ]
+    }
+  },
+  "rhythm": {
+    "judgeEarly": [
+      {
+        "text": "",
+        "cls": "judge-text",
+        "score": "0"
+      },
+      {
+        "text": "",
+        "cls": "judge-text",
+        "score": "0"
+      },
+      {
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "20"
+      },
+      {
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "20"
+      },
+      {
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "40"
+      },
+      {
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "40"
+      },
+      {
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "60"
+      },
+      {
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "60"
+      }
+    ],
+    "done": true,
+    "result": {
+      "bodyText": "节奏点击 结束\n1065 分\n本局奖励 +30 摸鱼值\n🎉 新纪录！（旧 0）\nperfect 56 · 漏拍 3\n再来一局 返回摸鱼站",
+      "record": "🎉 新纪录！（旧 0）",
+      "reward": "本局奖励 +30 摸鱼值",
+      "score": "1065 分",
+      "hints": [
+        "perfect 56 · 漏拍 3"
+      ],
+      "hasAgain": true,
+      "hasBack": true
+    },
+    "toast": "摸鱼站 +30（得分 1065）",
+    "save": {
+      "date": "2026-11-27",
+      "played": 3,
+      "best": {
+        "coffee": 496,
+        "findboss": 6250,
+        "rhythm": 1065
+      }
+    },
+    "judgeTail": [
+      {
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "1095"
+      },
+      {
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "1095"
+      },
+      {
+        "text": "PERFECT",
+        "cls": "judge-text perfect",
+        "score": "1095"
+      },
+      {
+        "text": "MISS",
+        "cls": "judge-text miss",
+        "score": "1095"
+      },
+      {
+        "text": "MISS",
+        "cls": "judge-text miss",
+        "score": "1095"
+      },
+      {
+        "text": "MISS",
+        "cls": "judge-text miss",
+        "score": "1095"
+      },
+      {
+        "text": "MISS",
+        "cls": "judge-text miss",
+        "score": "1095"
+      },
+      {
+        "text": "MISS",
+        "cls": "judge-text miss",
+        "score": "1095"
+      }
+    ]
+  },
+  "limit": {
+    "menu": {
+      "left": "今天玩完了，明天再来",
+      "cards": [
+        {
+          "name": "接咖啡 最高 496",
+          "btn": "明天再来",
+          "disabled": true
+        },
+        {
+          "name": "找老板 最高 6250",
+          "btn": "明天再来",
+          "disabled": true
+        },
+        {
+          "name": "节奏点击 最高 1065",
+          "btn": "明天再来",
+          "disabled": true
+        }
+      ],
+      "buttons": [
+        {
+          "text": "明天再来",
+          "disabled": true
+        },
+        {
+          "text": "明天再来",
+          "disabled": true
+        },
+        {
+          "text": "明天再来",
+          "disabled": true
+        }
+      ]
+    },
+    "badge": {
+      "badge": null,
+      "aria": "摸鱼站，今天已玩完"
+    }
+  },
+  "persist": {
+    "badge": {
+      "badge": null,
+      "aria": "摸鱼站小游戏"
+    },
+    "menu": {
+      "left": "今天玩完了，明天再来",
+      "cards": [
+        {
+          "name": "接咖啡 最高 496",
+          "btn": "明天再来",
+          "disabled": true
+        },
+        {
+          "name": "找老板 最高 6250",
+          "btn": "明天再来",
+          "disabled": true
+        },
+        {
+          "name": "节奏点击 最高 1065",
+          "btn": "明天再来",
+          "disabled": true
+        }
+      ],
+      "buttons": [
+        {
+          "text": "明天再来",
+          "disabled": true
+        },
+        {
+          "text": "明天再来",
+          "disabled": true
+        },
+        {
+          "text": "明天再来",
+          "disabled": true
+        }
+      ]
+    },
+    "save": {
+      "date": "2026-11-27",
+      "played": 3,
+      "best": {
+        "coffee": 496,
+        "findboss": 6250,
+        "rhythm": 1065
+      }
+    }
+  },
+  "noRecord": {
+    "done": true,
+    "result": {
+      "bodyText": "节奏点击 结束\n0 分\n本局 0 分，次数已扣 1 次\n历史最高 9999\nperfect 0 · 漏拍 49\n再来一局 返回摸鱼站",
+      "record": null,
+      "reward": "本局 0 分，次数已扣 1 次",
+      "score": "0 分",
+      "hints": [
+        "历史最高 9999",
+        "perfect 0 · 漏拍 49"
+      ],
+      "hasAgain": true,
+      "hasBack": true
+    },
+    "toast": "得分 0，没拿到奖励",
+    "save": {
+      "date": "2026-11-27",
+      "played": 1,
+      "best": {
+        "coffee": 496,
+        "findboss": 6250,
+        "rhythm": 9999
+      }
+    },
+    "menu": {
+      "left": "今天还能玩 2/3 次 · 每局能赢摸鱼值",
+      "cards": [
+        {
+          "name": "接咖啡 最高 496",
+          "btn": "开始（30 秒）",
+          "disabled": false
+        },
+        {
+          "name": "找老板 最高 6250",
+          "btn": "开始（30 秒内无限轮）",
+          "disabled": false
+        },
+        {
+          "name": "节奏点击 最高 9999",
+          "btn": "开始（30 秒）",
+          "disabled": false
+        }
+      ],
+      "buttons": [
+        {
+          "text": "开始（30 秒）",
+          "disabled": false
+        },
+        {
+          "text": "开始（30 秒内无限轮）",
+          "disabled": false
+        },
+        {
+          "text": "开始（30 秒）",
+          "disabled": false
+        }
+      ]
+    }
+  },
+  "refund": {
+    "before": {
+      "date": "2026-11-27",
+      "played": 0,
+      "best": {
+        "coffee": 496,
+        "findboss": 6250,
+        "rhythm": 9999
+      }
+    },
+    "toast": "得分 0，没拿到奖励",
+    "panelHidden": true,
+    "after": {
+      "date": "2026-11-27",
+      "played": 0,
+      "best": {
+        "coffee": 496,
+        "findboss": 6250,
+        "rhythm": 9999
+      }
+    },
+    "badge": {
+      "badge": "3",
+      "aria": "摸鱼站，今天还剩 3 次"
+    },
+    "menu": {
+      "left": "今天还能玩 3/3 次 · 每局能赢摸鱼值",
+      "cards": [
+        {
+          "name": "接咖啡 最高 496",
+          "btn": "开始（30 秒）",
+          "disabled": false
+        },
+        {
+          "name": "找老板 最高 6250",
+          "btn": "开始（30 秒内无限轮）",
+          "disabled": false
+        },
+        {
+          "name": "节奏点击 最高 9999",
+          "btn": "开始（30 秒）",
+          "disabled": false
+        }
+      ],
+      "buttons": [
+        {
+          "text": "开始（30 秒）",
+          "disabled": false
+        },
+        {
+          "text": "开始（30 秒内无限轮）",
+          "disabled": false
+        },
+        {
+          "text": "开始（30 秒）",
+          "disabled": false
+        }
+      ]
+    }
+  },
+  "exit": {
+    "start": {
+      "date": "2026-11-27",
+      "played": 0,
+      "best": {
+        "coffee": 496,
+        "findboss": 6250,
+        "rhythm": 9999
+      }
+    },
+    "mid": {
+      "score": "78",
+      "timer": "23.8s",
+      "taps": 6
+    },
+    "confirms": [
+      "本局已玩 6 秒，结束会按已完成比例结算并消耗 1 次机会。确定结束？"
+    ],
+    "toast": "摸鱼站 +3（得分 78）",
+    "after": {
+      "date": "2026-11-27",
+      "played": 1,
+      "best": {
+        "coffee": 496,
+        "findboss": 6250,
+        "rhythm": 9999
+      }
+    },
+    "badge": {
+      "badge": "2",
+      "aria": "摸鱼站，今天还剩 2 次"
+    },
+    "menu": {
+      "left": "今天还能玩 2/3 次 · 每局能赢摸鱼值",
+      "cards": [
+        {
+          "name": "接咖啡 最高 496",
+          "btn": "开始（30 秒）",
+          "disabled": false
+        },
+        {
+          "name": "找老板 最高 6250",
+          "btn": "开始（30 秒内无限轮）",
+          "disabled": false
+        },
+        {
+          "name": "节奏点击 最高 9999",
+          "btn": "开始（30 秒）",
+          "disabled": false
+        }
+      ],
+      "buttons": [
+        {
+          "text": "开始（30 秒）",
+          "disabled": false
+        },
+        {
+          "text": "开始（30 秒内无限轮）",
+          "disabled": false
+        },
+        {
+          "text": "开始（30 秒）",
+          "disabled": false
+        }
+      ]
+    }
+  },
   "exitConfirm": {},
   "page": {
     "href": "https://luojindui.github.io/moyu/",
@@ -262,5 +860,18 @@
         "disabled": false
       }
     ]
-  }
+  },
+  "final": {
+    "href": "https://luojindui.github.io/moyu/",
+    "arcadeFromSave": {
+      "date": "2026-11-27",
+      "played": 1,
+      "best": {
+        "coffee": 496,
+        "findboss": 6250,
+        "rhythm": 9999
+      }
+    }
+  },
+  "consoleErrors": []
 }

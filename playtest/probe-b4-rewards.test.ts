@@ -1,15 +1,17 @@
 import { describe, it, expect } from "vitest";
 import { initialState } from "../src/engine/state";
-import { emptyArcade, finishGame, REF_SCORE, TARGET_IDLE_SECONDS, MAX_SCORE, EARLY_FLOOR } from "../src/engine/minigames";
+import { emptyArcade, finishGame, REF_SCORE, REF_SCORE_BY_GAME, TARGET_IDLE_SECONDS, MAX_SCORE, EARLY_FLOOR } from "../src/engine/minigames";
 
 const TODAY = "2026-11-27";
 const st = () => ({ ...initialState(), arcade: emptyArcade(TODAY) });
 
 describe("批次4 回归：奖励跨阶段不漂移", () => {
-  it("满分奖励：中后期 = TARGET_IDLE_SECONDS 秒挂机收益", () => {
-    for (const idle of [1000, 100000]) {
-      const r = finishGame(st(), "rhythm", REF_SCORE, idle)!;
-      expect(r.reward).toBe(Math.floor(idle * TARGET_IDLE_SECONDS));
+  it("满分奖励：各游戏按自己的参考分归一化，中后期都 = 25 秒挂机收益", () => {
+    for (const game of ["coffee", "findboss", "rhythm"] as const) {
+      for (const idle of [1000, 100000]) {
+        const r = finishGame(st(), game, REF_SCORE_BY_GAME[game], idle)!;
+        expect(r.reward).toBe(Math.floor(idle * TARGET_IDLE_SECONDS));
+      }
     }
   });
 
