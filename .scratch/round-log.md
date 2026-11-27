@@ -322,3 +322,21 @@
 
 门槛（≥4/6 可交付）已达成。
 管理党 P2 已修：禁用「省心组合」视觉区分 + 「招 1 人后可用」提示；spec 明确"工位挂机"口径。
+
+### Round 3：自测性能与代码指标（lead 亲自跑）
+| 指标 | 结果 |
+|---|---|
+| 启动耗时 | DOM ready **80ms** / load **93ms** |
+| 帧率 | 平均 **60fps**，最大帧间隔 16.8ms（无掉帧） |
+| 内存 | 3MB → 3MB（开/关面板 20 次后无增长） |
+| 内存（小游戏） | 5 次进出小游戏后仍 3MB（无 rAF 泄漏） |
+| 存档体积 | **1030 字节**（满进度附近） |
+| 运行时错误 | 0 |
+| engine 层纯 DOM 依赖 | 0（纯净） |
+| 循环依赖 | 0（madge 检查） |
+| 最大文件 | main.ts 1149 行 / team-panel.ts 613 / scene.ts 441 |
+| `any`/`as never` | 7 处（少量，集中在 UI 事件类型） |
+
+### Round 3：8 人终验（进行中）
+final-hardcore / final-frag / final-quitter / final-collector / final-manager / final-action / final-data / final-audit
++ 代码与性能评审（code-perf-reviewer）
