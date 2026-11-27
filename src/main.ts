@@ -103,6 +103,7 @@ async function boot(): Promise<void> {
 
   // 3) 输入：主指针才算点击（防多指连点刷）；巡逻中点击 = 偷点（有收入也有风险）
   const es: EventState = newEventState();
+  es.surviveStreak = state.surviveStreak; // 连胜入档：读档恢复
   scene.events = es;
   let combo = 0; // 连击链（间隔 <0.4s 累积，>3s 断）
   let lastClickAt = 0;
@@ -186,6 +187,9 @@ async function boot(): Promise<void> {
       if (r.reward > 0) {
         trackDaily("survive");
         scene.fx.floatText(scene.w / 2, scene.h * 0.3, `安然度过 +${Math.round(r.reward)}（连胜 ${es.surviveStreak}）`);
+      } else if (es.bossVariant === "type" || es.bossVariant === "blitz") {
+        // 点击任务变体未达标：给明确失败反馈（不罚款）
+        scene.fx.floatText(scene.w / 2, scene.h * 0.3, "没达标…下次手快点");
       }
     }
     prevBossActive = bossActive;
@@ -283,6 +287,8 @@ async function boot(): Promise<void> {
       es.nextBossAt = Infinity;
       es.nextMemeAt = Infinity;
       es.bossCaught = false;
+      es.surviveStreak = 0;
+      es.bossPenaltyTotal = 0;
       prevBossActive = false; // 防止巡逻中重置触发幻影安然奖励
       scene.gameTime = 0;
       hud.refresh(state);

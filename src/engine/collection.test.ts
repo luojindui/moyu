@@ -6,6 +6,7 @@ import {
   syncFlavorCollection,
   TOTAL_ITEMS,
   flavorIndex,
+  collectionRows,
 } from "./collection";
 import { initialState } from "./state";
 import { UPGRADES } from "./upgrades";
@@ -76,5 +77,27 @@ describe("图鉴边界与净化（nurture 验收 #4）", () => {
   it("collectionCount 不超过 TOTAL_ITEMS（篡改档收敛）", () => {
     const s = { ...initialState(), collected: { quotes: [0, 0, 0, 1], flavors: [0, 0] } };
     expect(collectionCount(s)).toBe(3); // 去重后 2 + 1
+  });
+});
+
+describe("图鉴可浏览列表（variety 建议 #2：???" , () => {
+  it("collectionRows：55 格，含分组/名称/是否解锁/文本", () => {
+    const s = initialState();
+    s.collected.quotes = [0, 2];
+    s.collected.flavors = [0, 5];
+    const rows = collectionRows(s);
+    expect(rows.filter((r) => r.group === "quote")).toHaveLength(10);
+    expect(rows.filter((r) => r.group === "flavor")).toHaveLength(45);
+    expect(rows).toHaveLength(55);
+    // 解锁项带原文；未解锁为 ??? 占位
+    const q0 = rows.find((r) => r.group === "quote" && r.index === 0)!;
+    expect(q0.unlocked).toBe(true);
+    expect(q0.text).toBe(MEME_QUOTES[0]);
+    const q1 = rows.find((r) => r.group === "quote" && r.index === 1)!;
+    expect(q1.unlocked).toBe(false);
+    expect(q1.text).toBe("???");
+    // 每组按顺序：quote 先、flavor 后
+    expect(rows[0]!.group).toBe("quote");
+    expect(rows[rows.length - 1]!.group).toBe("flavor");
   });
 });

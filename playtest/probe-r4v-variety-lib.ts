@@ -55,7 +55,23 @@ export interface VarietyPersona {
   dodgeHold: boolean;
   /** 点击间隔抖动比例（0=匀速，1=±50%） */
   jitter: number;
+  /** 按会话时间变化的点击率（r3 口径画像用；缺省 = baseTps） */
+  tpsAt?: (t: number) => number;
 }
+
+/** 第 3 轮 player-variety 口径画像（复刻 10.3/13.8/2.6→0.7 基线用） */
+export const R3_VARIETY: VarietyPersona = {
+  name: "variety-r3(第3轮口径)",
+  baseTps: 2,
+  burstTps: 3.4,
+  reactionSec: 0.25,
+  buyEverySec: 15,
+  pick: "value",
+  tapMemes: true,
+  dodgeHold: true,
+  jitter: 0.25,
+  tpsAt: (t) => (t < 180 ? 3 : t < 600 ? 1.5 : 2),
+};
 
 export const PERSONAS: VarietyPersona[] = [
   {
@@ -204,6 +220,40 @@ export interface SimResult {
     quotes: number;
     flavors: number;
   };
+  detail: {
+    /** 语录首次收集时间（分钟，按收集顺序） */
+    quoteTimes: number[];
+    /** 语录全部收齐时间（分钟）；null=会话内未收齐 */
+    allQuotesAtMin: number | null;
+    /** 各升级首购时间（分钟） */
+    firstBuyTimes: { id: string; t: number }[];
+    /** 相邻首购间隔（分钟，>0） */
+    firstBuyGaps: { from: string; to: string; gapMin: number }[];
+    /** 日报 3 目标各自完成时间（分钟） */
+    dailyGoalTimes: { id: string; t: number }[];
+    /** 三变体首见时间（分钟） */
+    variantFirstTimes: { variant: BossVariant; t: number }[];
+    /** 各阶段新内容事件速率（件/分钟）与文本彩蛋占比 */
+    rate: {
+      /** 主线口径：彩蛋+语录+日报目标+变体首见 */
+      primaryFirst5: number;
+      primaryAfter15: number;
+      primaryAfter15FlavorPct: number;
+      /** 收藏口径：+升级首购（第 3 轮「新内容速率」口径） */
+      collectFirst5: number;
+      collectAfter15: number;
+      collectAfter15FlavorPct: number;
+      /** 全量口径：+变体达标/连胜/连击/领日报 */
+      allFirst5: number;
+      allAfter15: number;
+      allAfter15FlavorPct: number;
+      after15KindCounts: Record<string, number>;
+    };
+    /** 图鉴（55 条）累计收集：{分钟: 数量} */
+    codexAt: Record<string, number>;
+    /** 不同 kind 的新内容事件数 */
+    kindCounts: Record<string, number>;
+  };
   content: {
     /** 主线内容池大小（彩蛋45+语录10+日报3+变体3） */
     poolSize: number;
@@ -252,6 +302,7 @@ const DATE = "2026-11-27";
 export function simulate(opts: SimOptions): SimResult {
   const { persona: p, mode, minutes } = opts;
   const comboEnabled = mode === "current" && opts.comboEnabled !== false;
+  const quoteMode = opts.quoteMode ?? "random";
   const total = Math.round((minutes * 60) / DT);
   const bucketCount = Math.ceil((minutes * 60) / BUCKET_SEC);
 
@@ -301,6 +352,11 @@ export function simulate(opts: SimOptions): SimResult {
   const economy = { bossRewards: 0, memeEarnings: 0, penalties: 0, dailyClaims: 0, blitzBonus: 0 };
   let bossWindows = 0;
   let memeWindows = 0;
+  let memeTapSeq = 0;
+  const quoteTimes: number[] = [];
+  const dailyGoalTimes: { id: string; t: number }[] = [];
+  const variantFirstTimes: { variant: BossVariant; t: number }[] = [];
+  const codexSamples: { t: number; count: number }[] = [];
   let freeClicks = 0;
   let comboSum = 0;
   let comboGE6 = 0;
@@ -329,7 +385,10 @@ export function simulate(opts: SimOptions): SimResult {
     if (mode !== "current" || !state.daily) return;
     state = { ...state, daily: dailyTrack(state.daily, kind, n) };
     for (const g of state.daily.goals) {
-      if (g.done) addNovelty(tNow, "dailyGoal", g.id);
+      if (g.done) {
+        addNovelty(tNow, "dailyGoal", g.id);
+        if (!dailyGoalTimes.some((x) => x.id === g.id)) dailyGoalTimes.push({ id: g.id, t: +(tNow / 60).toFixed(2) });
+      }
     }
   };
 
@@ -340,11 +399,12 @@ export function simulate(opts: SimOptions): SimResult {
 
   let prevBossActive = false;
   let prevMemeActive = false;
-  let lastBuyAt = 0;
+  let lastBuyAt = -1e9;
   let dailyClaimed = false;
   let tNow = 0;
   let buySeq = 0;
 
+  const firstBuyTimes: { id: string; t: number }[] = [];
   const doBuy = (t: number): void => {
     const affordable = UPGRADES.filter((u) => state.moyu >= costOf(u.id, state.levels[u.id] ?? 0));
     if (affordable.length === 0) return;
@@ -363,6 +423,7 @@ export function simulate(opts: SimOptions): SimResult {
     buySeq += 1;
     buckets[Math.min(bucketCount - 1, Math.floor(t / BUCKET_SEC))]!.buys += 1;
     track("buy");
+    if (!firstBuyTimes.some((x) => x.id === target.id)) firstBuyTimes.push({ id: target.id, t: +(t / 60).toFixed(2) });
     addNovelty(t, "firstBuy", target.id);
     for (const idx of state.collected.flavors) {
       if (!beforeFlavors.includes(idx)) {
@@ -419,7 +480,12 @@ export function simulate(opts: SimOptions): SimResult {
       windows.push(w);
       currentWindow = w;
       windowsByBucket[bi]!.push(es.bossVariant);
-      if (mode === "current") addNovelty(t, "variant", es.bossVariant);
+      if (mode === "current") {
+        addNovelty(t, "variant", es.bossVariant);
+        if (!variantFirstTimes.some((x) => x.variant === es.bossVariant)) {
+          variantFirstTimes.push({ variant: es.bossVariant, t: +(t / 60).toFixed(2) });
+        }
+      }
       gateUntil = t + p.reactionSec;
       tapCredit = 0;
       nextClickAt = gateUntil;
@@ -434,10 +500,14 @@ export function simulate(opts: SimOptions): SimResult {
         const r = onMemeTap(state, es);
         state = r.state;
         economy.memeEarnings += r.earned;
-        const qi = Math.floor(rngQuote() * MEME_QUOTES.length);
+        const qi = quoteMode === "cycle" ? memeTapSeq % MEME_QUOTES.length : Math.floor(rngQuote() * MEME_QUOTES.length);
+        memeTapSeq += 1;
         const col = collectQuote(r.state, qi);
         state = col.state;
-        if (col.isNew) addNovelty(tappedAt, "quote", String(qi));
+        if (col.isNew) {
+          addNovelty(tappedAt, "quote", String(qi));
+          quoteTimes.push(+(tappedAt / 60).toFixed(2));
+        }
         b.memeTaps += 1;
         track("meme");
         void c;
@@ -456,7 +526,7 @@ export function simulate(opts: SimOptions): SimResult {
         rate = es.bossTaps < BOSS_BLITZ_TARGET ? p.burstTps : p.baseTps;
       }
     } else {
-      rate = p.baseTps;
+      rate = p.tpsAt ? p.tpsAt(t) : p.baseTps;
     }
     if (t >= gateUntil && rate > 0) {
       if (nextClickAt < t) nextClickAt = t;
@@ -567,14 +637,60 @@ export function simulate(opts: SimOptions): SimResult {
     plateauStartMin = buckets[i]!.minuteRange[0];
   }
   const countAt = (min: number): number => primaryNovelty.filter((n) => n.t <= min).length;
+  const codexAt: Record<string, number> = {};
+  for (const min of [5, 10, 12, 15, 20, 25, 30, 45, 60]) {
+    codexAt[String(min)] = state.collected.quotes.length + state.collected.flavors.length >= 0
+      ? primaryNovelty.filter((n) => n.t <= min && (n.kind === "quote" || n.kind === "flavor")).length
+      : 0;
+  }
 
   const clicksForCombo = freeClicks + windows.reduce((a, w) => a + w.taps, 0);
   const { idleRate } = effectOf(state);
+
+  // ---- detail 口径 ----
+  const firstBuyGaps = firstBuyTimes.slice(1).map((x, i) => {
+    const prev = firstBuyTimes[i]!;
+    return { from: prev.id, to: x.id, gapMin: +(x.t - prev.t).toFixed(2) };
+  });
+  const rateOf = (ev: NoveltyEvent[], fromMin: number, toMin: number): number =>
+    +(ev.filter((n) => n.t > fromMin && n.t <= toMin).length / Math.max(0.001, toMin - fromMin)).toFixed(2);
+  const collectNovelty = novelty.filter((n) => n.primary || n.kind === "firstBuy");
+  const after15 = novelty.filter((n) => n.t > 15);
+  const after15Primary = primaryNovelty.filter((n) => n.t > 15);
+  const after15Collect = collectNovelty.filter((n) => n.t > 15);
+  const flavorCount = (ev: NoveltyEvent[]): number => ev.filter((n) => n.kind === "flavor").length;
+  const pct = (num: number, den: number): number => (den ? +((num / den) * 100).toFixed(1) : 0);
+  const after15KindCounts: Record<string, number> = {};
+  for (const n of after15) after15KindCounts[n.kind] = (after15KindCounts[n.kind] ?? 0) + 1;
+  const kindCounts: Record<string, number> = {};
+  for (const n of novelty) kindCounts[n.kind] = (kindCounts[n.kind] ?? 0) + 1;
 
   return {
     persona: p.name,
     mode,
     seed: opts.seed,
+    detail: {
+      quoteTimes,
+      allQuotesAtMin: quoteTimes.length >= MEME_QUOTES.length ? quoteTimes[MEME_QUOTES.length - 1]! : null,
+      firstBuyTimes,
+      firstBuyGaps,
+      dailyGoalTimes,
+      variantFirstTimes,
+      rate: {
+        primaryFirst5: rateOf(primaryNovelty, 0, 5),
+        primaryAfter15: rateOf(primaryNovelty, 15, minutes),
+        primaryAfter15FlavorPct: pct(flavorCount(after15Primary), after15Primary.length),
+        collectFirst5: rateOf(collectNovelty, 0, 5),
+        collectAfter15: rateOf(collectNovelty, 15, minutes),
+        collectAfter15FlavorPct: pct(flavorCount(after15Collect), after15Collect.length),
+        allFirst5: rateOf(novelty, 0, 5),
+        allAfter15: rateOf(novelty, 15, minutes),
+        allAfter15FlavorPct: pct(flavorCount(after15), after15.length),
+        after15KindCounts,
+      },
+      codexAt,
+      kindCounts,
+    },
     buckets,
     novelty,
     windows,

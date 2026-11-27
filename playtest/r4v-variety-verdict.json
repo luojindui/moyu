@@ -1,0 +1,180 @@
+{
+  "probe": "r4v-variety-verdict",
+  "generatedAt": "2026-11-27T02:19:40.397Z",
+  "cliffB": {
+    "leadBaseline": {
+      "quoteExhaustCycle": 10.3,
+      "quoteExhaustRandom": 29.3,
+      "firstBuy6": 13.8,
+      "firstBuy7": 20.1,
+      "firstBuy8": 28.8,
+      "rateFirst5": 2.6,
+      "rateAfter15": 0.7
+    },
+    "reproducedBaseline": {
+      "quoteExhaustCycle": 11.01,
+      "quoteExhaustRandom": 23.84,
+      "firstBuyTimeline": [
+        {
+          "id": "coffee",
+          "t": 0.25
+        },
+        {
+          "id": "phone",
+          "t": 1.25
+        },
+        {
+          "id": "water",
+          "t": 5
+        },
+        {
+          "id": "toilet",
+          "t": 6.25
+        },
+        {
+          "id": "group",
+          "t": 11.75
+        },
+        {
+          "id": "chair",
+          "t": 14
+        },
+        {
+          "id": "meeting",
+          "t": 20.25
+        },
+        {
+          "id": "deep",
+          "t": 29
+        }
+      ],
+      "rateFirst5": 2.6,
+      "rateAfter15": 0.67
+    },
+    "current": {
+      "quoteExhaustCycle": 11.01,
+      "quoteExhaustRandom": 23.84,
+      "firstBuyTimeline": [
+        {
+          "id": "coffee",
+          "t": 0.25
+        },
+        {
+          "id": "phone",
+          "t": 1.25
+        },
+        {
+          "id": "water",
+          "t": 5
+        },
+        {
+          "id": "toilet",
+          "t": 6.25
+        },
+        {
+          "id": "group",
+          "t": 11.75
+        },
+        {
+          "id": "chair",
+          "t": 14
+        },
+        {
+          "id": "meeting",
+          "t": 20.25
+        },
+        {
+          "id": "deep",
+          "t": 29
+        }
+      ],
+      "maxFirstBuyGapMin": 8.75,
+      "rateFirst5": 3.6,
+      "rateAfter15": 0.67,
+      "rateAfter15All": 0.73,
+      "textFlavorPctAfter15": 72.7,
+      "dailyAllDoneMin": 4.78,
+      "variantAllSeenMin": 11.46
+    }
+  },
+  "perceivedDepth": {
+    "visiblePoolBefore": 10,
+    "visiblePoolAfter": 55,
+    "codexAt12": 21,
+    "codexAt30": 32,
+    "codexAt60": 41,
+    "remainingAt12": 34,
+    "remainingAt30": 23,
+    "lastNoveltyAt60": 57.5,
+    "exhaustedIn60": false
+  },
+  "variants": {
+    "baselineUniverse": 1,
+    "currentUniverse": 3,
+    "avgRatio": {
+      "hold": 0.401,
+      "type": 0.359,
+      "blitz": 0.24
+    },
+    "baselineRepeatRate": 1,
+    "currentRepeatRate": 0.366,
+    "baselineBigrams": 1,
+    "currentBigrams": 9
+  },
+  "behavior": {
+    "holdTapsPerWindow": 0,
+    "typeTapsPerWindow": 19.5,
+    "blitzTapsPerWindow": 21.83,
+    "typeWinRatePct": 100,
+    "blitzWinRatePct": 100,
+    "slowPersonaBlitzWinRatePct": 0,
+    "note": "正常画像（≥1 次/秒）三变体 100% 达标；仅极慢（0.9 次/秒）会 blitz 失败"
+  },
+  "mechanics": {
+    "baselineMechanicCount": 0,
+    "firstSeenMin": {
+      "combo": 0.03,
+      "dailyGoal": 0.54,
+      "variant": 2.13,
+      "variantWin": 2.26,
+      "dailyClaim": 1.02,
+      "streak": 10.16
+    },
+    "lastMechanicMin": 21.86,
+    "note": "上线前（第 3 轮）无 combo/日报/变体/连胜机制；现行最后一项机制里程碑（连胜 10 层）约在 22 分钟出现"
+  },
+  "randomQuoteCompletion": {
+    "collectedBy30": [
+      9,
+      8,
+      10,
+      10,
+      10,
+      10
+    ],
+    "all10Within30Runs": 4,
+    "runs": 6
+  },
+  "firstBuyGapFill": {
+    "windowMin": [
+      14,
+      20.25
+    ],
+    "baselineByKind": {
+      "flavor": 36,
+      "firstBuy": 6
+    },
+    "currentByKind": {
+      "flavor": 36,
+      "firstBuy": 6,
+      "variant": 1,
+      "variantWin": 1
+    }
+  },
+  "economy": {
+    "maxEventSharePct": 9.17,
+    "varietyMedianPct": 8.13,
+    "casualMedianPct": 7.31,
+    "thresholdPct": 10
+  }
+}

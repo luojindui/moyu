@@ -27,6 +27,8 @@ interface SaveBlob {
   collected?: Collected;
   /** 每日日报（旧档/非法形状为 null） */
   daily?: DailyState | null;
+  /** 连续安然连胜（旧档为 0） */
+  surviveStreak?: number;
 }
 
 /** 序列化并写入（savedAt=毫秒时间戳） */
@@ -54,6 +56,7 @@ export function serialize(state: GameState, adapter: SaveAdapter, savedAt: numbe
     createdAt,
     collected: state.collected,
     daily: state.daily,
+    surviveStreak: state.surviveStreak,
   };
   try {
     adapter.setItem(SAVE_KEY, JSON.stringify(blob));
@@ -104,13 +107,17 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
     const collected = sanitizeCollected(blob.collected as { quotes?: unknown; flavors?: unknown } | undefined);
     // 日报：严格形状校验（3 目标/数值/streak 整数）
     const daily: DailyState | null = restoreDaily(blob.daily);
+    const surviveStreak =
+      typeof blob.surviveStreak === "number" && Number.isInteger(blob.surviveStreak) && blob.surviveStreak >= 0
+        ? blob.surviveStreak
+        : 0;
     // createdAt 钳制：缺失默认 savedAt（不重发首日）；越界（未来/NaN）按 savedAt收敛，堵离线分级绕过
     const clampCreatedAt = (ca: unknown): number => {
       if (typeof ca !== "number" || !Number.isFinite(ca) || ca > now) return savedAtMs;
       return Math.max(ca, savedAtMs - 365 * 86_400_000);
     };
     return {
-      state: { moyu, levels, totalEarned, collected, daily },
+      state: { moyu, levels, totalEarned, collected, daily, surviveStreak },
       offlineSeconds,
       createdAt: clampCreatedAt(blob.createdAt),
     };

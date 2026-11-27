@@ -193,6 +193,6 @@ export class Scene {
 /** 巡逻变体横幅文案 */
 export function bossBannerText(variant: BossVariant, remain: number, taps: number): string {
   if (variant === "type") return `假装工作！点 ${Math.min(taps, BOSS_TYPE_TARGET)}/${BOSS_TYPE_TARGET} (${remain}s)`;
-  if (variant === "blitz") return `摸鱼冲刺！连点 ${Math.min(taps, BOSS_BLITZ_TARGET)}/${BOSS_BLITZ_TARGET} (${remain}s)`;
+  if (variant === "blitz") return `摸鱼冲刺！连点 ${Math.min(taps, BOSS_BLITZ_TARGET)}/${BOSS_BLITZ_TARGET} 奖×1.5 (${remain}s)`;
   return `⚠ 老板来了！忍住别点 (${remain}s)`;
 }

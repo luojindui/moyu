@@ -1,6 +1,6 @@
 import type { GameState } from "../engine/state";
 import { DAILY_GOAL_TEMPLATES, dailyAllDone, dailyReward } from "../engine/daily";
-import { collectionCount, TOTAL_ITEMS } from "../engine/collection";
+import { collectionCount, collectionRows, TOTAL_ITEMS } from "../engine/collection";
 import { MEME_QUOTES, UPGRADE_FLAVOR } from "../engine/flavor";
 import { UPGRADES } from "../engine/upgrades";
 import { formatMoyu } from "../engine/format";
@@ -15,6 +15,9 @@ export class Journal {
   private elQuote = document.getElementById("journal-quote")!;
   private elFlavor = document.getElementById("journal-flavor")!;
   private elLatest = document.getElementById("journal-latest")!;
+  private elGrid = document.getElementById("journal-grid");
+  private gridRendered = false;
+  private gridRenderedCount = -1;
   /** 最近一次刷新的状态：面板打开时立即重绘用 */
   private lastState: GameState | null = null;
   /** 上一次刷新时间（节流：面板关闭时零开销） */
@@ -77,6 +80,22 @@ export class Journal {
     this.elQuote.textContent = `${quotes}/${MEME_QUOTES.length}`;
     this.elFlavor.textContent = `${flavors}/${UPGRADES.length * 5}`;
     document.getElementById("journal-total")!.textContent = `${collectionCount(state)}/${TOTAL_ITEMS}`;
+
+    // 55 格可浏览图鉴（未解锁 ???），首次打开或收集数变化时重绘
+    const unlockedRows = state.collected.quotes.length + state.collected.flavors.length;
+    if (this.elGrid && (this.gridRendered !== true || this.gridRenderedCount !== unlockedRows)) {
+      this.gridRendered = true;
+      this.gridRenderedCount = unlockedRows;
+      this.elGrid.innerHTML = collectionRows(state)
+        .map(
+          (r) =>
+            `<div class="c-item ${r.unlocked ? "on" : "off"}" title="${r.unlocked ? r.label : "未解锁"}">
+               <span class="c-label">${r.unlocked ? r.label : "???"}</span>
+               <span class="c-text">${r.unlocked ? r.text : ""}</span>
+             </div>`,
+        )
+        .join("");
+    }
 
     // 最新收集（彩蛋优先展示文本）
     const latestFlavor = state.collected.flavors.at(-1);

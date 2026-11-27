@@ -175,6 +175,56 @@ describe("回访价值·休闲党 14 天（30 分钟/天）", () => {
     expect(rows.every((r) => r.buys >= 10)).toBe(true);
   });
 
+  it("长线 60 天：图鉴封顶日 / 段位封顶日 / 收集空窗最长天数（判断成长天花板）", () => {
+    const base = new Date(2026, 10, 13, 12, 0, 0);
+    const rng = lcg(20261113);
+    let state = initialState();
+    let firstCompleteDay: number | null = null;
+    let claimDays = 0;
+    let zeroDeltaStreak = 0;
+    let maxZeroStreak = 0;
+    let topRankDay: number | null = null;
+    const topRankName = RANKS.at(-1)!.name;
+    const milestones: Array<Record<string, unknown>> = [];
+    for (let d = 0; d < 60; d++) {
+      const date = dateStr(base, d);
+      if (d > 0) state = offlineEarn(state, 23.5 * 3600, d * 23.5 < 24 ? 1 : 0.7).state;
+      state = ensureDaily(state, date, rng);
+      const before = collectionCount(state);
+      const r = simulateSession(state, { date, maxSeconds: 1800, tps: 1, buyEverySec: 120, seed: 5000 + d });
+      state = r.state;
+      const after = collectionCount(state);
+      if (r.claimedReward !== null) claimDays++;
+      if (after >= TOTAL_ITEMS && firstCompleteDay === null) firstCompleteDay = d + 1;
+      if (rankFor(state.totalEarned).current === topRankName && topRankDay === null) topRankDay = d + 1;
+      if (after - before === 0) {
+        zeroDeltaStreak++;
+        maxZeroStreak = Math.max(maxZeroStreak, zeroDeltaStreak);
+      } else zeroDeltaStreak = 0;
+      if (d === 0 || d === 9 || d === 29 || d === 44 || d === 59) {
+        milestones.push({
+          day: d + 1,
+          collection: after,
+          rank: rankFor(state.totalEarned).current,
+          totalEarned: Math.round(state.totalEarned),
+          claim: r.claimedReward !== null,
+        });
+      }
+    }
+    log("60 天长线", {
+      claimDays,
+      collectionCompleteDay: firstCompleteDay,
+      topRankDay,
+      maxZeroCollectionStreakDays: maxZeroStreak,
+      milestones,
+    });
+    expect(claimDays).toBe(60); // 日报仪式 60/60 天可领
+    expect(firstCompleteDay).not.toBeNull(); // 图鉴 55/55 在两个月内可封顶
+    expect(firstCompleteDay!).toBeLessThanOrEqual(60);
+    expect(topRankDay).not.toBeNull(); // 段位在 60 天内可到顶（当前 7 档）
+    expect(maxZeroStreak).toBeLessThanOrEqual(10); // 图鉴空窗最长不超过 10 天
+  }, 30_000);
+
   it("第 1 天 30 分钟首访：图鉴从 0 起步能拿到第一波收集（语录+首档彩蛋）", () => {
     const base = new Date(2026, 10, 13, 12, 0, 0);
     const rng = lcg(20261113);

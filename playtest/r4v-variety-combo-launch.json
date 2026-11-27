@@ -1,0 +1,29 @@
+{
+  "probe": "r4v-variety-combo",
+  "rows": [
+    {
+      "persona": "variety(多玩法党)",
+      "baseTps": 2.2,
+      "comboUpliftPct": 11.34,
+      "avgCombo": 11.75,
+      "pctComboGE6": 98.1,
+      "maxCombo": 12
+    },
+    {
+      "persona": "clicker(狂点党)",
+      "baseTps": 3.2,
+      "comboUpliftPct": 13.86,
+      "avgCombo": 11.99,
+      "pctComboGE6": 100,
+      "maxCombo": 12
+    },
+    {
+      "persona": "casual(休闲党)",
+      "baseTps": 1,
+      "comboUpliftPct": 5.54,
+      "avgCombo": 3.63,
+      "pctComboGE6": 24,
+      "maxCombo": 12
+    }
+  ]
+}

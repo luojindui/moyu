@@ -113,27 +113,24 @@ describe("R3-① 老板巡逻风险回报", () => {
       const st = stateFrom(levels, moyu);
       const es = newEventState();
       bossOpen(es, 100);
-      const raw = Math.max(10, moyu * 0.05);
-      const cap = Math.max(10, 10 * idleRate);
       const r = onBossTap(st, es, 100 + BOSS_GRACE_SECONDS + 0.01);
       // 偷点后：余额 = moyu + 点击收入
       const moyuAfterIncome = moyu + r.income;
-      const reward = bossSurviveReward(st, es); // 注意 bossCaught 后为 0，这里用未抓状态算
-      es.bossCaught = false;
-      const rewardClean = bossSurviveReward(st, es);
+      const idle = effectOf(st).idleRate;
+      const rewardClean = bossSurviveReward(st, { ...es, bossCaught: false });
       rows.push({
         囤积挂机秒: bankedSeconds,
         余额: Math.round(moyu),
-        raw罚款_5pct: Math.round(Math.max(10, moyuAfterIncome * 0.05)),
-        cap罚款_10s挂机: Math.round(cap),
+        每击罚款_半秒挂机: Math.round(Math.max(10, 0.5 * idle)),
+        整段封顶_6秒挂机: Math.round(Math.max(10, 6 * idle)),
         实扣: r.lost,
         实扣挂机秒: +(r.lost / idleRate).toFixed(1),
         安然奖励: rewardClean,
         奖励挂机秒: +(rewardClean / idleRate).toFixed(1),
         罚奖比: +(r.lost / rewardClean).toFixed(2),
       });
-      const rawAfter = Math.max(10, moyuAfterIncome * 0.05);
-      if (Math.abs(r.lost - Math.min(rawAfter, cap, moyuAfterIncome)) > 1e-6) throw new Error("罚款公式不符");
+      const expectLost = Math.min(Math.max(10, 0.5 * idle), Math.max(10, 6 * idle), moyuAfterIncome);
+      if (Math.abs(r.lost - expectLost) > 1e-6) throw new Error("罚款公式不符");
     }
     console.table(rows);
   });

@@ -1,0 +1,8 @@
+   ✓ 老板巡逻结算 > 罚款封顶：min(raw, max(10, 10×idleRate))，后期不洗劫 0ms
+   ✓ 老板巡逻结算 > 安然度过：奖励 = max(50, 5 × idleRate)（克制，不喧宾夺主） 0ms
+   ✓ 同事丢梗 > 有效期内点击：奖励 5 × 点击力 0ms
+   ✓ 同事丢梗 > 安然连胜：奖励 ×(1+0.1N) 封顶 ×2，被抓清零 0ms
+   ✓ 巡逻变体（variety #1：拆掉同 pattern 重复） > blitz 变体：达标奖励 ×1.5，未达标为 0 0ms
+   × R5 机制修正（challenger 验收 P0/P1/P3） > 宽限期点击不再白嫖收入（P3）：无收入、无罚款、不算被抓 5ms
+   × R5 机制修正（challenger 验收 P0/P1/P3） > 罚款按偷点次数递增且不随余额（P0/P1）：无关余额、每点一次加罚、整段封顶 0ms
+   × R5 机制修正（challenger 验收 P0/P1/P3） > 连胜入档（P4）：GameState 持 surviveStreak，finishPatrol 推进并持久化 0ms

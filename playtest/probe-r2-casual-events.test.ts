@@ -173,14 +173,21 @@ describe("R2-② 随机事件打扰感（休闲节奏 30min×20 seed）", () => 
     expect(st.surviveTotal).toBeGreaterThan(0);
   });
 
-  it("中盘被逮痛感对比（余额 10 万时 5% 惩罚）", () => {
+  it("中盘被逮痛感对比（R5：罚款与余额脱钩，按挂机秒计）", () => {
     const s = midState();
     const es = newEventState();
     es.bossUntil = 999; es.bossCaught = false;
     const reward = bossSurviveReward(s, es); // 先算未被抓时的安然奖
     const r = onBossTap(s, es);
-    console.log(`[中盘] idle=${effectOf(s).idleRate}/s：忍完 8s 安然奖 ${reward.toFixed(0)}（5×idle）vs 被逮一次扣 ${r.lost.toFixed(0)}（5% 余额，min10）= 奖励的 ${(r.lost / reward).toFixed(1)} 倍`);
-    console.log(`[中盘判断] 中期罚款 >> 安然奖，手滑痛感随进度放大；同一巡逻只扣一次，无连坐`);
-    expect(r.lost).toBeGreaterThan(reward);
+    const idle = effectOf(s).idleRate;
+    console.log(`[中盘] idle=${idle}/s：安然奖 ${reward.toFixed(0)}（8×idle）vs 被逮一次扣 ${r.lost.toFixed(0)}（0.5×idle，整段封顶 6×idle）`);
+    // ✅ R5：罚款与余额脱钩（防花光规避），单次扣 0.5×idleRate
+    expect(r.lost).toBeCloseTo(Math.max(10, 0.5 * idle), 6);
+    // 同余额量级无关：换个余额罚款不变
+    const es2 = newEventState();
+    es2.bossUntil = 999;
+    es2.bossStartAt = 0;
+    const r2 = onBossTap({ ...s, moyu: 1_000_000 }, es2, 1);
+    expect(r2.lost).toBeCloseTo(r.lost, 6);
   });
 });

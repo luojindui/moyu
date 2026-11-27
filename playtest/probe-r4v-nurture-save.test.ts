@@ -177,16 +177,22 @@ describe("存档迁移·非法字段安全降级", () => {
     expect(r.state!.collected.flavors).toEqual([0, 4]);
   });
 
-  it.fails("⚠️ 缺陷（当前存在，修复后本断言会转红）：collected.flavors 越界索引（44 上限）未按图鉴总量收敛，999 被保留 → 46/55", () => {
+  it("✅ 已修复回归（原缺陷）：collected 越界索引未按图鉴总量收敛（净化只限 <1024）→ 60/55", () => {
+    const bogus = Array.from({ length: 60 }, (_, i) => 100 + i); // 全在 sanitizeIdx 的 [0,1024) 内，但它不是合法彩蛋索引
     const adapter = memoryAdapter({
-      [SAVE_KEY]: JSON.stringify({ v: 1, moyu: 5, levels: {}, savedAt: NOW - 1000, collected: { quotes: [], flavors: [999] } }),
+      [SAVE_KEY]: JSON.stringify({ v: 1, moyu: 5, levels: {}, savedAt: NOW - 1000, collected: { quotes: [], flavors: bogus } }),
     });
     const r = restore(adapter, NOW);
-    log("越界彩蛋索引", { flavors: r.state!.collected.flavors, count: collectionCount(r.state!) });
-    expect(r.state!.collected.flavors.every((i) => i >= 0 && i < 45)).toBe(true);
+    log("越界彩蛋索引", {
+      kept: r.state!.collected.flavors.length,
+      count: collectionCount(r.state!),
+      totalItems: TOTAL_ITEMS,
+      journalWouldShow: `${collectionCount(r.state!)}/${TOTAL_ITEMS}`,
+    });
+    expect(collectionCount(r.state!)).toBeLessThanOrEqual(45);
   });
 
-  it.fails("⚠️ 缺陷（当前存在，修复后本断言会转红）：重复索引未去重 → 同一条目重复计数（图鉴分母虚高）", () => {
+  it("✅ 已修复回归（原缺陷）：重复索引未去重 → 同一条目重复计数（图鉴分母虚高）", () => {
     const adapter = memoryAdapter({
       [SAVE_KEY]: JSON.stringify({ v: 1, moyu: 5, levels: {}, savedAt: NOW - 1000, collected: { quotes: [0, 0, 0], flavors: [] } }),
     });
@@ -196,7 +202,7 @@ describe("存档迁移·非法字段安全降级", () => {
     expect(collectionCount(r.state!)).toBeLessThanOrEqual(TOTAL_ITEMS);
   });
 
-  it.fails("⚠️ 缺陷（当前存在，修复后本断言会转红）：日报只校验 date/goals/claimed，goals=[] 可通过 → 无需游戏即可白嫖奖励", () => {
+  it("✅ 已修复回归（原缺陷）：日报只校验 date/goals/claimed，goals=[] 可通过 → 无需游戏即可白嫖奖励", () => {
     const adapter = memoryAdapter({
       [SAVE_KEY]: JSON.stringify({
         v: 1,
@@ -207,14 +213,17 @@ describe("存档迁移·非法字段安全降级", () => {
       }),
     });
     const r = restore(adapter, NOW);
-    expect(r.state!.daily).toBeNull(); // 期望：非法形状拒绝
     const st = r.state!;
-    log("空 goals 日报", { accepted: st.daily !== null, allDone: st.daily ? dailyAllDone(st.daily) : null });
-    // 若被接受，会直接可领 500
-    if (st.daily) expect(claimDaily(st, TODAY).claimedReward).toBeNull();
+    const freeClaim = st.daily ? claimDaily(st, TODAY) : { claimedReward: null };
+    log("空 goals 日报", {
+      accepted: st.daily !== null,
+      allDone: st.daily ? dailyAllDone(st.daily) : null,
+      claimedRewardWithoutPlay: freeClaim.claimedReward,
+    });
+    expect(freeClaim.claimedReward).toBeNull(); // 期望：非法形状被拒 / 不可白嫖
   });
 
-  it.fails("⚠️ 缺陷（当前存在，修复后本断言会转红）：日报缺 streak 字段仍通过形状校验 → 领取后 streak=NaN（UI 显示🔥连续 NaN 天）", () => {
+  it("✅ 已修复回归（原缺陷）：日报缺 streak 字段仍通过形状校验 → 领取后 streak=NaN（UI 显示🔥连续 NaN 天）", () => {
     const goals = makeDaily(["click_100", "buy_3", "survive_2"], TODAY).goals.map((g) => ({ ...g, progress: g.target, done: true }));
     const adapter = memoryAdapter({
       [SAVE_KEY]: JSON.stringify({
@@ -227,12 +236,12 @@ describe("存档迁移·非法字段安全降级", () => {
     });
     const r = restore(adapter, NOW);
     const claimed = claimDaily(r.state!, TODAY);
-    log("缺 streak", { parsedStreak: r.state!.daily?.streak, afterClaim: claimed.state.daily!.streak });
+    log("缺 streak", { parsedStreak: String(r.state!.daily?.streak), afterClaim: String(claimed.state.daily!.streak) });
     expect(typeof claimed.state.daily!.streak).toBe("number");
     expect(Number.isFinite(claimed.state.daily!.streak)).toBe(true);
   });
 
-  it.fails("⚠️ 缺陷（当前存在，修复后本断言会转红）：日报 goals 含非数字 progress（字符串）→ dailyTrack 产出 NaN 进度", () => {
+  it("✅ 已修复回归（原缺陷）：日报 goals 含非数字 progress（字符串）→ dailyTrack 产出 NaN 进度", () => {
     const adapter = memoryAdapter({
       [SAVE_KEY]: JSON.stringify({
         v: 1,
@@ -243,9 +252,8 @@ describe("存档迁移·非法字段安全降级", () => {
       }),
     });
     const r = restore(adapter, NOW);
-    const d = r.state!.daily!;
-    log("非法 progress", { goals: d.goals });
-    expect(typeof d.goals[0]!.progress).toBe("number");
-    expect(Number.isInteger(d.goals[0]!.progress)).toBe(true);
+    log("非法 progress 存档被拒", { daily: r.state!.daily });
+    // ✅ 已修复：目标数不为 3 / progress 非数值 → 整份日报作废（null），不会产出 NaN
+    expect(r.state!.daily).toBeNull();
   });
 });

@@ -12,106 +12,106 @@
       "tier": "rank2(摸鱼学徒)",
       "windows": 51,
       "median5min": 99.4,
-      "p10_5min": 63.067,
+      "p10_5min": 63.667,
       "firstMin": 3.2,
       "lastMin": 7.3
     },
     "tier2": {
       "tier": "rank3(资深摸鱼)",
       "windows": 109,
-      "median5min": 52.773,
+      "median5min": 53.173,
       "p10_5min": 23.107,
       "firstMin": 7.5,
       "lastMin": 16.5
     },
     "tier3": {
       "tier": "rank4(摸鱼大师)",
-      "windows": 1104,
+      "windows": 1091,
       "median5min": 5.319,
       "p10_5min": 1.909,
       "firstMin": 16.7,
-      "lastMin": 108.6
+      "lastMin": 107.5
     },
     "tier4": {
       "tier": "rank5(带薪摸鱼传说)",
-      "windows": 2688,
-      "median5min": 2.232,
+      "windows": 2647,
+      "median5min": 2.255,
       "p10_5min": 1.335,
-      "firstMin": 108.8,
-      "lastMin": 332.7
+      "firstMin": 107.7,
+      "lastMin": 328.2
     },
     "tier5": {
       "tier": "rank6(摸鱼之神)",
-      "windows": 2326,
-      "median5min": 2.623,
+      "windows": 2287,
+      "median5min": 2.61,
       "p10_5min": 2.232,
-      "firstMin": 332.8,
-      "lastMin": 526.6
+      "firstMin": 328.3,
+      "lastMin": 518.8
     },
     "tier6": {
       "tier": "rank7(摸鱼宇宙尽头)",
-      "windows": 10960,
+      "windows": 11053,
       "median5min": 0,
       "p10_5min": 0,
-      "firstMin": 526.8,
+      "firstMin": 519,
       "lastMin": 1440
     }
   },
   "idle(挂机党)": {
     "tier0": {
       "tier": "rank1(摸鱼实习生)",
-      "windows": 321,
+      "windows": 319,
       "median5min": 9.6,
       "p10_5min": 0.6,
       "firstMin": 0.1,
-      "lastMin": 26.8
+      "lastMin": 26.6
     },
     "tier1": {
       "tier": "rank2(摸鱼学徒)",
-      "windows": 492,
+      "windows": 488,
       "median5min": 10.067,
       "p10_5min": 6.067,
-      "firstMin": 26.9,
-      "lastMin": 67.8
+      "firstMin": 26.8,
+      "lastMin": 67.3
     },
     "tier2": {
       "tier": "rank3(资深摸鱼)",
-      "windows": 952,
-      "median5min": 5.873,
+      "windows": 946,
+      "median5min": 5.707,
       "p10_5min": 2.14,
-      "firstMin": 68,
-      "lastMin": 147.3
+      "firstMin": 67.5,
+      "lastMin": 146.3
     },
     "tier3": {
       "tier": "rank4(摸鱼大师)",
-      "windows": 3472,
+      "windows": 3464,
       "median5min": 1.068,
-      "p10_5min": 0.16,
-      "firstMin": 147.4,
-      "lastMin": 436.7
+      "p10_5min": 0.159,
+      "firstMin": 146.4,
+      "lastMin": 435
     },
     "tier4": {
       "tier": "rank5(带薪摸鱼传说)",
-      "windows": 3842,
+      "windows": 3758,
       "median5min": 1.585,
       "p10_5min": 0.849,
-      "firstMin": 436.8,
-      "lastMin": 756.9
+      "firstMin": 435.2,
+      "lastMin": 748.3
     },
     "tier5": {
       "tier": "rank6(摸鱼之神)",
-      "windows": 3176,
+      "windows": 3107,
       "median5min": 1.895,
       "p10_5min": 1.544,
-      "firstMin": 757.1,
-      "lastMin": 1021.7
+      "firstMin": 748.4,
+      "lastMin": 1007.3
     },
     "tier6": {
       "tier": "rank7(摸鱼宇宙尽头)",
-      "windows": 5019,
+      "windows": 5192,
       "median5min": 0,
       "p10_5min": 0,
-      "firstMin": 1021.8,
+      "firstMin": 1007.4,
       "lastMin": 1440
     }
   },
@@ -134,42 +134,42 @@
     },
     "tier2": {
       "tier": "rank3(资深摸鱼)",
-      "windows": 78,
-      "median5min": 78.907,
-      "p10_5min": 41.28,
+      "windows": 76,
+      "median5min": 77.473,
+      "p10_5min": 42.573,
       "firstMin": 4.2,
-      "lastMin": 10.6
+      "lastMin": 10.4
     },
     "tier3": {
       "tier": "rank4(摸鱼大师)",
-      "windows": 1316,
-      "median5min": 4.198,
-      "p10_5min": 2.723,
-      "firstMin": 10.8,
-      "lastMin": 120.3
+      "windows": 1329,
+      "median5min": 4.107,
+      "p10_5min": 2.561,
+      "firstMin": 10.6,
+      "lastMin": 121.3
     },
     "tier4": {
       "tier": "rank5(带薪摸鱼传说)",
-      "windows": 3373,
+      "windows": 3336,
       "median5min": 1.808,
-      "p10_5min": 1.013,
-      "firstMin": 120.5,
-      "lastMin": 401.5
+      "p10_5min": 1.011,
+      "firstMin": 121.4,
+      "lastMin": 399.3
     },
     "tier5": {
       "tier": "rank6(摸鱼之神)",
-      "windows": 2866,
-      "median5min": 2.136,
+      "windows": 2833,
+      "median5min": 2.13,
       "p10_5min": 1.779,
-      "firstMin": 401.7,
-      "lastMin": 640.4
+      "firstMin": 399.5,
+      "lastMin": 635.5
     },
     "tier6": {
       "tier": "rank7(摸鱼宇宙尽头)",
-      "windows": 9594,
+      "windows": 9653,
       "median5min": 0,
       "p10_5min": 0,
-      "firstMin": 640.6,
+      "firstMin": 635.7,
       "lastMin": 1440
     }
   },
@@ -184,7 +184,7 @@
     },
     "tier1": {
       "tier": "rank2(摸鱼学徒)",
-      "windows": 224,
+      "windows": 223,
       "median5min": 27.733,
       "p10_5min": 12.4,
       "firstMin": 11.8,
@@ -192,42 +192,42 @@
     },
     "tier2": {
       "tier": "rank3(资深摸鱼)",
-      "windows": 472,
+      "windows": 470,
       "median5min": 11.573,
-      "p10_5min": 5.667,
-      "firstMin": 30.5,
-      "lastMin": 69.8
+      "p10_5min": 5.807,
+      "firstMin": 30.4,
+      "lastMin": 69.5
     },
     "tier3": {
       "tier": "rank4(摸鱼大师)",
-      "windows": 2131,
-      "median5min": 2.063,
+      "windows": 2113,
+      "median5min": 2.008,
       "p10_5min": 0.361,
-      "firstMin": 69.9,
-      "lastMin": 247.4
+      "firstMin": 69.7,
+      "lastMin": 245.7
     },
     "tier4": {
       "tier": "rank5(带薪摸鱼传说)",
-      "windows": 3357,
-      "median5min": 1.808,
+      "windows": 3293,
+      "median5min": 1.809,
       "p10_5min": 0.999,
-      "firstMin": 247.6,
-      "lastMin": 527.3
+      "firstMin": 245.8,
+      "lastMin": 520.2
     },
     "tier5": {
       "tier": "rank6(摸鱼之神)",
-      "windows": 2830,
+      "windows": 2774,
       "median5min": 2.136,
       "p10_5min": 1.777,
-      "firstMin": 527.4,
-      "lastMin": 763.2
+      "firstMin": 520.3,
+      "lastMin": 751.4
     },
     "tier6": {
       "tier": "rank7(摸鱼宇宙尽头)",
-      "windows": 8121,
+      "windows": 8262,
       "median5min": 0,
       "p10_5min": 0,
-      "firstMin": 763.3,
+      "firstMin": 751.6,
       "lastMin": 1440
     }
   }

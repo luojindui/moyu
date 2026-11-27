@@ -1,0 +1,460 @@
+{
+  "probe": "r4v-variety-freshness",
+  "generatedAt": "2026-11-27T02:19:43.032Z",
+  "method": {
+    "bucketSec": 300,
+    "minutes": 30,
+    "seeds": [
+      1000,
+      8919,
+      16838,
+      24757,
+      32676,
+      40595
+    ],
+    "personas": 3,
+    "dt": 0.25
+  },
+  "baseline": [
+    {
+      "persona": "variety(多玩法党)",
+      "mode": "baseline",
+      "runs": 6,
+      "medianCollected": 29,
+      "medianMechanicsCollected": 7,
+      "medianLastNoveltyMin": 28.67,
+      "medianDenseUntilMin": 30,
+      "medianPlateauStartMin": null,
+      "medianEventSharePct": 5.05,
+      "medianEventNetSharePct": 5.05,
+      "medianAt10": 14,
+      "medianAt12": 15.5,
+      "medianAt20": 22.5,
+      "medianAt30": 29,
+      "medianTotalEarned": 327009,
+      "meanActionKinds": 4,
+      "meanVariantEntropy": 0,
+      "variantKindsCV": 0,
+      "newContentPerBucket": [
+        7.5,
+        6,
+        4,
+        4,
+        4,
+        3
+      ],
+      "newMechanicsPerBucket": [
+        2,
+        2,
+        0,
+        2,
+        0,
+        1
+      ],
+      "actionKindsPerBucket": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "behavior": {
+        "hold": {
+          "windows": 81,
+          "tapsPerWindow": 0,
+          "winRatePct": 100,
+          "clicksPerSec": 0
+        },
+        "type": {
+          "windows": 0,
+          "tapsPerWindow": 0,
+          "winRatePct": 0,
+          "clicksPerSec": 0
+        },
+        "blitz": {
+          "windows": 0,
+          "tapsPerWindow": 0,
+          "winRatePct": 0,
+          "clicksPerSec": 0
+        }
+      },
+      "combo": {
+        "avgCombo": 0,
+        "pctComboGE6": 0,
+        "pctComboGE12": 0,
+        "maxCombo": 0
+      }
+    },
+    {
+      "persona": "clicker(狂点党)",
+      "mode": "baseline",
+      "runs": 6,
+      "medianCollected": 37,
+      "medianMechanicsCollected": 8,
+      "medianLastNoveltyMin": 29.17,
+      "medianDenseUntilMin": 30,
+      "medianPlateauStartMin": null,
+      "medianEventSharePct": 4.775,
+      "medianEventNetSharePct": 4.775,
+      "medianAt10": 20,
+      "medianAt12": 22.5,
+      "medianAt20": 30.5,
+      "medianAt30": 37,
+      "medianTotalEarned": 1955637,
+      "meanActionKinds": 4,
+      "meanVariantEntropy": 0,
+      "variantKindsCV": 0,
+      "newContentPerBucket": [
+        11.5,
+        7,
+        8,
+        3,
+        4,
+        3
+      ],
+      "newMechanicsPerBucket": [
+        4,
+        2,
+        1,
+        1,
+        0,
+        0
+      ],
+      "actionKindsPerBucket": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "behavior": {
+        "hold": {
+          "windows": 81,
+          "tapsPerWindow": 0,
+          "winRatePct": 100,
+          "clicksPerSec": 0
+        },
+        "type": {
+          "windows": 0,
+          "tapsPerWindow": 0,
+          "winRatePct": 0,
+          "clicksPerSec": 0
+        },
+        "blitz": {
+          "windows": 0,
+          "tapsPerWindow": 0,
+          "winRatePct": 0,
+          "clicksPerSec": 0
+        }
+      },
+      "combo": {
+        "avgCombo": 0,
+        "pctComboGE6": 0,
+        "pctComboGE12": 0,
+        "maxCombo": 0
+      }
+    },
+    {
+      "persona": "casual(休闲党)",
+      "mode": "baseline",
+      "runs": 6,
+      "medianCollected": 20,
+      "medianMechanicsCollected": 3,
+      "medianLastNoveltyMin": 27.42,
+      "medianDenseUntilMin": 25,
+      "medianPlateauStartMin": null,
+      "medianEventSharePct": 7.54,
+      "medianEventNetSharePct": 7.54,
+      "medianAt10": 10,
+      "medianAt12": 12.5,
+      "medianAt20": 16.5,
+      "medianAt30": 20,
+      "medianTotalEarned": 79669,
+      "meanActionKinds": 4,
+      "meanVariantEntropy": 0,
+      "variantKindsCV": 0,
+      "newContentPerBucket": [
+        5.5,
+        4,
+        4,
+        3,
+        2,
+        1
+      ],
+      "newMechanicsPerBucket": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "actionKindsPerBucket": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "behavior": {
+        "hold": {
+          "windows": 81,
+          "tapsPerWindow": 0,
+          "winRatePct": 100,
+          "clicksPerSec": 0
+        },
+        "type": {
+          "windows": 0,
+          "tapsPerWindow": 0,
+          "winRatePct": 0,
+          "clicksPerSec": 0
+        },
+        "blitz": {
+          "windows": 0,
+          "tapsPerWindow": 0,
+          "winRatePct": 0,
+          "clicksPerSec": 0
+        }
+      },
+      "combo": {
+        "avgCombo": 0,
+        "pctComboGE6": 0,
+        "pctComboGE12": 0,
+        "maxCombo": 0
+      }
+    }
+  ],
+  "current": [
+    {
+      "persona": "variety(多玩法党)",
+      "mode": "current",
+      "runs": 6,
+      "medianCollected": 35,
+      "medianMechanicsCollected": 15,
+      "medianLastNoveltyMin": 28.67,
+      "medianDenseUntilMin": 30,
+      "medianPlateauStartMin": null,
+      "medianEventSharePct": 6.995,
+      "medianEventNetSharePct": 6.995,
+      "medianAt10": 19.5,
+      "medianAt12": 21,
+      "medianAt20": 28.5,
+      "medianAt30": 35,
+      "medianTotalEarned": 383623,
+      "meanActionKinds": 5.83,
+      "meanVariantEntropy": 0.7,
+      "variantKindsCV": 0.34,
+      "newContentPerBucket": [
+        12,
+        7.5,
+        5,
+        4,
+        4,
+        3
+      ],
+      "newMechanicsPerBucket": [
+        7,
+        2.5,
+        2,
+        2,
+        1,
+        1
+      ],
+      "actionKindsPerBucket": [
+        6,
+        5.5,
+        7,
+        5,
+        6,
+        5.5
+      ],
+      "behavior": {
+        "hold": {
+          "windows": 25,
+          "tapsPerWindow": 0,
+          "winRatePct": 100,
+          "clicksPerSec": 0
+        },
+        "type": {
+          "windows": 32,
+          "tapsPerWindow": 18.22,
+          "winRatePct": 100,
+          "clicksPerSec": 2.28
+        },
+        "blitz": {
+          "windows": 24,
+          "tapsPerWindow": 23,
+          "winRatePct": 100,
+          "clicksPerSec": 2.88
+        }
+      },
+      "combo": {
+        "avgCombo": 11.84,
+        "pctComboGE6": 98.9,
+        "pctComboGE12": 96.3,
+        "maxCombo": 12
+      }
+    },
+    {
+      "persona": "clicker(狂点党)",
+      "mode": "current",
+      "runs": 6,
+      "medianCollected": 43,
+      "medianMechanicsCollected": 16,
+      "medianLastNoveltyMin": 29.67,
+      "medianDenseUntilMin": 30,
+      "medianPlateauStartMin": null,
+      "medianEventSharePct": 7.585,
+      "medianEventNetSharePct": 7.585,
+      "medianAt10": 25.5,
+      "medianAt12": 28,
+      "medianAt20": 36.5,
+      "medianAt30": 43,
+      "medianTotalEarned": 2434790,
+      "meanActionKinds": 5.83,
+      "meanVariantEntropy": 0.7,
+      "variantKindsCV": 0.34,
+      "newContentPerBucket": [
+        16,
+        8.5,
+        9,
+        3,
+        4,
+        3
+      ],
+      "newMechanicsPerBucket": [
+        9,
+        2.5,
+        3,
+        1,
+        1,
+        0
+      ],
+      "actionKindsPerBucket": [
+        6,
+        5.5,
+        7,
+        5,
+        6,
+        5.5
+      ],
+      "behavior": {
+        "hold": {
+          "windows": 25,
+          "tapsPerWindow": 0,
+          "winRatePct": 100,
+          "clicksPerSec": 0
+        },
+        "type": {
+          "windows": 32,
+          "tapsPerWindow": 24.19,
+          "winRatePct": 100,
+          "clicksPerSec": 3.02
+        },
+        "blitz": {
+          "windows": 24,
+          "tapsPerWindow": 28,
+          "winRatePct": 100,
+          "clicksPerSec": 3.5
+        }
+      },
+      "combo": {
+        "avgCombo": 12.05,
+        "pctComboGE6": 100.5,
+        "pctComboGE12": 99.9,
+        "maxCombo": 12
+      }
+    },
+    {
+      "persona": "casual(休闲党)",
+      "mode": "current",
+      "runs": 6,
+      "medianCollected": 26,
+      "medianMechanicsCollected": 8,
+      "medianLastNoveltyMin": 27.42,
+      "medianDenseUntilMin": 25,
+      "medianPlateauStartMin": null,
+      "medianEventSharePct": 7.3100000000000005,
+      "medianEventNetSharePct": 7.3100000000000005,
+      "medianAt10": 15.5,
+      "medianAt12": 18,
+      "medianAt20": 22.5,
+      "medianAt30": 26,
+      "medianTotalEarned": 86749,
+      "meanActionKinds": 5.31,
+      "meanVariantEntropy": 0.7,
+      "variantKindsCV": 0.34,
+      "newContentPerBucket": [
+        9.5,
+        5.5,
+        5,
+        3,
+        2,
+        1
+      ],
+      "newMechanicsPerBucket": [
+        2,
+        3,
+        2,
+        0.5,
+        0,
+        0.5
+      ],
+      "actionKindsPerBucket": [
+        5,
+        5,
+        6,
+        4.5,
+        5.5,
+        5
+      ],
+      "behavior": {
+        "hold": {
+          "windows": 25,
+          "tapsPerWindow": 0,
+          "winRatePct": 100,
+          "clicksPerSec": 0
+        },
+        "type": {
+          "windows": 32,
+          "tapsPerWindow": 9.22,
+          "winRatePct": 100,
+          "clicksPerSec": 1.15
+        },
+        "blitz": {
+          "windows": 24,
+          "tapsPerWindow": 11.46,
+          "winRatePct": 0,
+          "clicksPerSec": 1.43
+        }
+      },
+      "combo": {
+        "avgCombo": 2.96,
+        "pctComboGE6": 14.9,
+        "pctComboGE12": 0.9,
+        "maxCombo": 12
+      }
+    }
+  ],
+  "arms": {
+    "baseline": "上线前：恒 hold 变体 / 无连击 / 无日报 / 无连胜（事件时序与 current 同源）",
+    "current": "现行：hold40%+type35%+blitz25% / 连击链 / 日报3目标 / 安然连胜"
+  },
+  "contentPool": {
+    "currentPrimary": 61,
+    "currentBreakdown": {
+      "flavors": 45,
+      "quotes": 10,
+      "dailyGoals": 3,
+      "variants": 3
+    },
+    "baselinePrimary": 55,
+    "baselineBreakdown": {
+      "flavors": 45,
+      "quotes": 10
+    }
+  }
+}

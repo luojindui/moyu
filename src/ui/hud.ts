@@ -12,6 +12,7 @@ export class Hud {
   private elIdle = document.getElementById("hud-idle")!;
   private elRank = document.getElementById("hud-rank")!;
   private elJournal = document.getElementById("btn-journal")!;
+  private elStreak = document.getElementById("hud-streak")!;
 
   refresh(state: GameState): void {
     this.elMoyu.textContent = formatMoyu(state.moyu);
@@ -26,5 +27,12 @@ export class Hud {
     const claimable = !!state.daily && !state.daily.claimed && dailyAllDone(state.daily);
     this.elJournal.classList.toggle("has-reward", claimable);
     this.elJournal.title = claimable ? "日报奖励可领取" : "日报与图鉴";
+    // 安然连胜（挑战党长期目标，入档持久化）
+    if (state.surviveStreak > 0) {
+      this.elStreak.textContent = `🔥连胜 ${state.surviveStreak}`;
+      this.elStreak.classList.remove("hidden");
+    } else {
+      this.elStreak.classList.add("hidden");
+    }
   }
 }

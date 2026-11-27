@@ -14,10 +14,12 @@ export interface GameState {
   collected: Collected;
   /** 每日日报（null = 今日尚未生成） */
   daily: DailyState | null;
+  /** 连续安然巡逻次数（入档持久化，被抓清零） */
+  surviveStreak: number;
 }
 
 export function initialState(): GameState {
-  return { moyu: 0, totalEarned: 0, levels: {}, collected: emptyCollected(), daily: null };
+  return { moyu: 0, totalEarned: 0, levels: {}, collected: emptyCollected(), daily: null, surviveStreak: 0 };
 }
 
 /** 统一的进账入口：余额与累计同步增加（惩罚只扣余额） */

@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import {
+  loadReport,
   loadScenes,
   stateFrom,
   effortOf,
@@ -27,7 +28,8 @@ describe("验收-① 偷点赌点存在性（真实进度）", () => {
       expect(s.ir).toBeCloseTo(s.reportIr, 6);
       checked++;
     }
-    console.log(`sanity: ${checked} 个检查点全部与引擎 effectOf 一致`);
+    const rep = loadReport();
+    console.log(`sanity: ${checked} 个检查点全部与引擎 effectOf 一致（report ${rep.generatedAt} / ${rep.engine}）`);
   });
 
   it("选代表性场景：忍 vs 硬刚 EV 表（真实余额=囤积型 / 余额清零=花光型）", () => {

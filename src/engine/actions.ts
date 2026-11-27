@@ -5,9 +5,9 @@ import { effectOf, costOf, UPGRADES } from "./upgrades";
 /** 初始点击力（未买任何升级时） */
 export const BASE_CLICK_POWER = 1;
 
-/** 连击链：间隔 <0.4s 累积，3s 断点清零；收入 ×(1+0.02×combo) 封顶 ×1.24（12 连击） */
+/** 连击链：间隔 <0.4s 累积，1.5s 断点清零；收入 ×(1+0.02×combo) 封顶 ×1.24（12 连击） */
 export const COMBO_WINDOW_S = 0.4;
-export const COMBO_BREAK_S = 3;
+export const COMBO_BREAK_S = 1.5;
 export const COMBO_MAX = 12;
 
 export function comboMultiplier(combo: number): number {

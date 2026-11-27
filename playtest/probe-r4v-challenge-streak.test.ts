@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { initialState } from "../src/engine/state";
 import { effectOf } from "../src/engine/upgrades";
-import { serialize } from "../src/engine/save";
+import { serialize, restore, SAVE_KEY } from "../src/engine/save";
 import {
   newEventState,
   onBossTap,
@@ -121,7 +121,8 @@ describe("验收-③ 安然连胜", () => {
     const mid = scenes.filter((s) => s.ir >= 10.2);
     for (const s of mid) {
       const run = simulatePatrolHour(stateFrom(s.levels, s.moyu), 7);
-      expect(run.totalReward / run.idleIncome).toBeLessThan(0.1);
+      // R5 奖励 5→8×idleRate 后中期占比约 11%，仍属克制（<15%）
+      expect(run.totalReward / run.idleIncome).toBeLessThan(0.15);
     }
     // 巡逻频率符合设计（90-150s 间隔 + 8s 窗口 → 约 128s/次）
     const patrolCounts = [7, 123, 999].map((seed) => simulatePatrolHour(stateFrom({ retire: 2 }, 0), seed).patrols);
@@ -159,22 +160,19 @@ describe("验收-③ 安然连胜", () => {
     console.table(rows);
   });
 
-  it("连胜不入存档：刷新/重开页面即清零（长期目标不可积累）", () => {
-    const s = stateFrom({ retire: 1 }, 12345);
-    const writes: string[] = [];
+  it("✅ R5 已修复（P4）：连胜入档，刷新/重开不再清零", () => {
+    const s = { ...stateFrom({ retire: 1 }, 12345), surviveStreak: 3 };
+    const store = new Map<string, string>();
     const adapter = {
-      getItem: () => null,
-      setItem: (_k: string, v: string) => writes.push(v),
-      removeItem: () => undefined,
+      getItem: (k: string) => store.get(k) ?? null,
+      setItem: (k: string, v: string) => void store.set(k, v),
+      removeItem: (k: string) => void store.delete(k),
     };
     serialize(s, adapter, Date.now());
-    const blob = JSON.parse(writes[writes.length - 1]);
+    const blob = JSON.parse(store.get(SAVE_KEY)!);
     console.log("存档字段：", Object.keys(blob).join(", "));
-    expect(Object.keys(blob)).not.toContain("surviveStreak");
-    // 纯运行时状态（events.ts 注释：事件为运行时状态，不入存档）
-    const es = newEventState();
-    es.surviveStreak = 7;
-    expect(es.surviveStreak).toBe(7);
-    console.log("surviveStreak 仅存在于运行时 EventState：关页/刷新后回到 0，满乘数需单次会话连续安然 11 次");
+    expect(Object.keys(blob)).toContain("surviveStreak");
+    const restored = restore(adapter, Date.now());
+    expect(restored.state!.surviveStreak).toBe(3);
   });
 });

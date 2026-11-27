@@ -68,13 +68,13 @@ describe("验收-④ 连击链收入提升", () => {
     expect(comboRun(cp, 8, BOSS_DURATION).lift).toBeGreaterThan(0.2);
   });
 
-  it("连击链细节：0.4s/3s 边界与封顶行为", () => {
+  it("连击链细节：0.4s 窗口 / 1.5s 断点 / 封顶 12（R5 收紧断点）", () => {
     // 0.39s 累积、0.4s 不累积
     expect(stepCombo(0, 0.39)).toBe(1);
     expect(stepCombo(0, 0.4)).toBe(0);
-    // 2.99s 保留、3.01s 清零
-    expect(stepCombo(7, 2.99)).toBe(7);
-    expect(stepCombo(7, 3.01)).toBe(0);
+    // R5：1.49s 保留、1.51s 清零（原 3s 太长导致"爆一次躺赢"）
+    expect(stepCombo(7, 1.49)).toBe(7);
+    expect(stepCombo(7, 1.51)).toBe(0);
     // 封顶 12
     let c = 0;
     for (let i = 0; i < 30; i++) c = stepCombo(c, 0.1);
@@ -84,10 +84,10 @@ describe("验收-④ 连击链收入提升", () => {
     expect(clickPowerOf(s)).toBe(10);
     expect(doClick(s, 12).moyu).toBeCloseTo(10 * 1.24, 10);
     expect(COMBO_WINDOW_S).toBe(0.4);
-    expect(COMBO_BREAK_S).toBe(3);
+    expect(COMBO_BREAK_S).toBe(1.5); // R5 收紧断点（原 3s 可"爆一次躺赢"）
   });
 
-  it("★发现：连击链只需一次爆发即可「永久保留」——间隔 2.9s 的慢玩家也吃满 ×1.24", () => {
+  it("✅ R5 已修复：一次爆发不再永久保留（断点 1.5s，慢点归零）", () => {
     const cp = 100;
     // 冷启动 1cps：零收益
     const coldSlow = comboRun(cp, 1, 60);
@@ -100,7 +100,8 @@ describe("验收-④ 连击链收入提升", () => {
     const lift = sticky.income / baseline - 1;
     // 只看爆发之后的"慢点"部分：每一下都是 ×1.24（对比冷启动 1cps 的 ×1.0）
     const slowTaps = taps.slice(12);
-    const slowIncome = slowTaps.length * cp * 1.24;
+    // R5 断点 1.5s：2.9s 间隔的第二下连击已清零 → 系数 1.0
+    const slowIncome = slowTaps.length * cp * 1.0;
     const slowBaseline = slowTaps.length * cp;
     console.log({
       冷启动1cps提升: pct(coldSlow.lift),
@@ -109,15 +110,16 @@ describe("验收-④ 连击链收入提升", () => {
       慢点击数: slowTaps.length,
       平均连击: +sticky.avgCombo.toFixed(1),
     });
-    expect(lift).toBeGreaterThan(0.1); // 需求预期的"1cps 零收益"只对冷启动成立
-    expect(slowIncome / slowBaseline - 1).toBeCloseTo(0.24, 10); // 慢点也吃满 ×1.24
+    // ✅ R5 已修复：断点 1.5s 后，慢点（2.9s 间隔）吃到 0 连击，不再"爆一次躺赢"
+    expect(slowIncome / slowBaseline - 1).toBeCloseTo(0, 6);
+    expect(lift).toBeGreaterThan(0.02); // 只剩爆发期（前 12 下）的收益
     // 对照：间隔改成 3.01s（>3s）→ 只剩一次爆发收益
     const brokenTaps: { t: number; gap: number }[] = [];
     for (let i = 0; i < 12; i++) brokenTaps.push({ t: i / 8, gap: i === 0 ? Infinity : 1 / 8 });
     for (let t = 1.5 + 3.01; t < 60; t += 3.01) brokenTaps.push({ t, gap: 3.01 });
     const broken = clickIncomeWithCombo(cp, brokenTaps);
     console.log(`间隔 3.01s（清零）提升：${pct(broken.income / (brokenTaps.length * cp) - 1)}`);
-    expect(broken.income / (brokenTaps.length * cp) - 1).toBeLessThan(0.02);
+    expect(broken.income / (brokenTaps.length * cp) - 1).toBeLessThan(0.06); // 只剩一次爆发的余温
   });
 
   it("连击 = 两档手速（0 / +24%）：≥2.5cps 全部同收益，无更高技巧回报", () => {

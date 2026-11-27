@@ -1,0 +1,105 @@
+{
+  "probe": "r4v-variety-behavior",
+  "byPersona": [
+    {
+      "persona": "variety(多玩法党)",
+      "baseTps": 2.2,
+      "burstTps": 3.4,
+      "behavior": {
+        "hold": {
+          "windows": 25,
+          "tapsPerWindow": 0,
+          "winRatePct": 100,
+          "clicksPerSec": 0
+        },
+        "type": {
+          "windows": 32,
+          "tapsPerWindow": 19.5,
+          "winRatePct": 100,
+          "clicksPerSec": 2.44
+        },
+        "blitz": {
+          "windows": 24,
+          "tapsPerWindow": 21.83,
+          "winRatePct": 100,
+          "clicksPerSec": 2.73
+        }
+      }
+    },
+    {
+      "persona": "clicker(狂点党)",
+      "baseTps": 3.2,
+      "burstTps": 4.2,
+      "behavior": {
+        "hold": {
+          "windows": 25,
+          "tapsPerWindow": 0,
+          "winRatePct": 100,
+          "clicksPerSec": 0
+        },
+        "type": {
+          "windows": 32,
+          "tapsPerWindow": 26.34,
+          "winRatePct": 100,
+          "clicksPerSec": 3.29
+        },
+        "blitz": {
+          "windows": 24,
+          "tapsPerWindow": 28.17,
+          "winRatePct": 100,
+          "clicksPerSec": 3.52
+        }
+      }
+    },
+    {
+      "persona": "casual(休闲党)",
+      "baseTps": 1,
+      "burstTps": 1.6,
+      "behavior": {
+        "hold": {
+          "windows": 25,
+          "tapsPerWindow": 0,
+          "winRatePct": 100,
+          "clicksPerSec": 0
+        },
+        "type": {
+          "windows": 32,
+          "tapsPerWindow": 9.84,
+          "winRatePct": 100,
+          "clicksPerSec": 1.23
+        },
+        "blitz": {
+          "windows": 24,
+          "tapsPerWindow": 12.46,
+          "winRatePct": 100,
+          "clicksPerSec": 1.56
+        }
+      }
+    },
+    {
+      "persona": "slow(单手慢速党)",
+      "baseTps": 0.7,
+      "burstTps": 0.9,
+      "behavior": {
+        "hold": {
+          "windows": 25,
+          "tapsPerWindow": 0,
+          "winRatePct": 100,
+          "clicksPerSec": 0
+        },
+        "type": {
+          "windows": 32,
+          "tapsPerWindow": 6.66,
+          "winRatePct": 100,
+          "clicksPerSec": 0.83
+        },
+        "blitz": {
+          "windows": 24,
+          "tapsPerWindow": 7.13,
+          "winRatePct": 0,
+          "clicksPerSec": 0.89
+        }
+      }
+    }
+  ]
+}

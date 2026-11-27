@@ -1,0 +1,342 @@
+{
+  "probe": "r4v-variety-variants",
+  "perSeed": [
+    {
+      "windows": 85,
+      "ratio": {
+        "hold": 0.365,
+        "type": 0.447,
+        "blitz": 0.188
+      },
+      "repeatRate": 0.452,
+      "expectedRepeatRate": 0.345,
+      "distinctBigrams": 9,
+      "bigramPool": 9,
+      "maxRun": 5,
+      "entropy": 1.503,
+      "entropyMax": 1.585,
+      "normalizedEntropy": 0.949
+    },
+    {
+      "windows": 86,
+      "ratio": {
+        "hold": 0.407,
+        "type": 0.372,
+        "blitz": 0.221
+      },
+      "repeatRate": 0.365,
+      "expectedRepeatRate": 0.345,
+      "distinctBigrams": 9,
+      "bigramPool": 9,
+      "maxRun": 5,
+      "entropy": 1.54,
+      "entropyMax": 1.585,
+      "normalizedEntropy": 0.972
+    },
+    {
+      "windows": 84,
+      "ratio": {
+        "hold": 0.321,
+        "type": 0.345,
+        "blitz": 0.333
+      },
+      "repeatRate": 0.361,
+      "expectedRepeatRate": 0.345,
+      "distinctBigrams": 9,
+      "bigramPool": 9,
+      "maxRun": 3,
+      "entropy": 1.584,
+      "entropyMax": 1.585,
+      "normalizedEntropy": 1
+    },
+    {
+      "windows": 84,
+      "ratio": {
+        "hold": 0.393,
+        "type": 0.417,
+        "blitz": 0.19
+      },
+      "repeatRate": 0.482,
+      "expectedRepeatRate": 0.345,
+      "distinctBigrams": 9,
+      "bigramPool": 9,
+      "maxRun": 5,
+      "entropy": 1.511,
+      "entropyMax": 1.585,
+      "normalizedEntropy": 0.954
+    },
+    {
+      "windows": 84,
+      "ratio": {
+        "hold": 0.548,
+        "type": 0.345,
+        "blitz": 0.107
+      },
+      "repeatRate": 0.349,
+      "expectedRepeatRate": 0.345,
+      "distinctBigrams": 9,
+      "bigramPool": 9,
+      "maxRun": 6,
+      "entropy": 1.351,
+      "entropyMax": 1.585,
+      "normalizedEntropy": 0.852
+    },
+    {
+      "windows": 84,
+      "ratio": {
+        "hold": 0.44,
+        "type": 0.381,
+        "blitz": 0.179
+      },
+      "repeatRate": 0.301,
+      "expectedRepeatRate": 0.345,
+      "distinctBigrams": 9,
+      "bigramPool": 9,
+      "maxRun": 5,
+      "entropy": 1.495,
+      "entropyMax": 1.585,
+      "normalizedEntropy": 0.943
+    },
+    {
+      "windows": 85,
+      "ratio": {
+        "hold": 0.447,
+        "type": 0.341,
+        "blitz": 0.212
+      },
+      "repeatRate": 0.357,
+      "expectedRepeatRate": 0.345,
+      "distinctBigrams": 9,
+      "bigramPool": 9,
+      "maxRun": 6,
+      "entropy": 1.523,
+      "entropyMax": 1.585,
+      "normalizedEntropy": 0.961
+    },
+    {
+      "windows": 84,
+      "ratio": {
+        "hold": 0.357,
+        "type": 0.321,
+        "blitz": 0.321
+      },
+      "repeatRate": 0.313,
+      "expectedRepeatRate": 0.345,
+      "distinctBigrams": 9,
+      "bigramPool": 9,
+      "maxRun": 4,
+      "entropy": 1.583,
+      "entropyMax": 1.585,
+      "normalizedEntropy": 0.999
+    },
+    {
+      "windows": 86,
+      "ratio": {
+        "hold": 0.326,
+        "type": 0.349,
+        "blitz": 0.326
+      },
+      "repeatRate": 0.4,
+      "expectedRepeatRate": 0.345,
+      "distinctBigrams": 9,
+      "bigramPool": 9,
+      "maxRun": 4,
+      "entropy": 1.584,
+      "entropyMax": 1.585,
+      "normalizedEntropy": 1
+    },
+    {
+      "windows": 85,
+      "ratio": {
+        "hold": 0.353,
+        "type": 0.271,
+        "blitz": 0.376
+      },
+      "repeatRate": 0.429,
+      "expectedRepeatRate": 0.345,
+      "distinctBigrams": 9,
+      "bigramPool": 9,
+      "maxRun": 5,
+      "entropy": 1.571,
+      "entropyMax": 1.585,
+      "normalizedEntropy": 0.991
+    },
+    {
+      "windows": 86,
+      "ratio": {
+        "hold": 0.314,
+        "type": 0.453,
+        "blitz": 0.233
+      },
+      "repeatRate": 0.376,
+      "expectedRepeatRate": 0.345,
+      "distinctBigrams": 9,
+      "bigramPool": 9,
+      "maxRun": 5,
+      "entropy": 1.531,
+      "entropyMax": 1.585,
+      "normalizedEntropy": 0.966
+    },
+    {
+      "windows": 81,
+      "ratio": {
+        "hold": 0.42,
+        "type": 0.333,
+        "blitz": 0.247
+      },
+      "repeatRate": 0.338,
+      "expectedRepeatRate": 0.345,
+      "distinctBigrams": 9,
+      "bigramPool": 9,
+      "maxRun": 4,
+      "entropy": 1.552,
+      "entropyMax": 1.585,
+      "normalizedEntropy": 0.979
+    },
+    {
+      "windows": 87,
+      "ratio": {
+        "hold": 0.379,
+        "type": 0.31,
+        "blitz": 0.31
+      },
+      "repeatRate": 0.302,
+      "expectedRepeatRate": 0.345,
+      "distinctBigrams": 9,
+      "bigramPool": 9,
+      "maxRun": 5,
+      "entropy": 1.578,
+      "entropyMax": 1.585,
+      "normalizedEntropy": 0.996
+    },
+    {
+      "windows": 83,
+      "ratio": {
+        "hold": 0.434,
+        "type": 0.337,
+        "blitz": 0.229
+      },
+      "repeatRate": 0.28,
+      "expectedRepeatRate": 0.345,
+      "distinctBigrams": 9,
+      "bigramPool": 9,
+      "maxRun": 4,
+      "entropy": 1.538,
+      "entropyMax": 1.585,
+      "normalizedEntropy": 0.971
+    },
+    {
+      "windows": 85,
+      "ratio": {
+        "hold": 0.424,
+        "type": 0.282,
+        "blitz": 0.294
+      },
+      "repeatRate": 0.345,
+      "expectedRepeatRate": 0.345,
+      "distinctBigrams": 9,
+      "bigramPool": 9,
+      "maxRun": 4,
+      "entropy": 1.559,
+      "entropyMax": 1.585,
+      "normalizedEntropy": 0.984
+    },
+    {
+      "windows": 84,
+      "ratio": {
+        "hold": 0.393,
+        "type": 0.44,
+        "blitz": 0.167
+      },
+      "repeatRate": 0.47,
+      "expectedRepeatRate": 0.345,
+      "distinctBigrams": 9,
+      "bigramPool": 9,
+      "maxRun": 4,
+      "entropy": 1.481,
+      "entropyMax": 1.585,
+      "normalizedEntropy": 0.935
+    },
+    {
+      "windows": 85,
+      "ratio": {
+        "hold": 0.482,
+        "type": 0.235,
+        "blitz": 0.282
+      },
+      "repeatRate": 0.369,
+      "expectedRepeatRate": 0.345,
+      "distinctBigrams": 9,
+      "bigramPool": 9,
+      "maxRun": 6,
+      "entropy": 1.514,
+      "entropyMax": 1.585,
+      "normalizedEntropy": 0.955
+    },
+    {
+      "windows": 84,
+      "ratio": {
+        "hold": 0.393,
+        "type": 0.381,
+        "blitz": 0.226
+      },
+      "repeatRate": 0.337,
+      "expectedRepeatRate": 0.345,
+      "distinctBigrams": 9,
+      "bigramPool": 9,
+      "maxRun": 4,
+      "entropy": 1.545,
+      "entropyMax": 1.585,
+      "normalizedEntropy": 0.975
+    },
+    {
+      "windows": 83,
+      "ratio": {
+        "hold": 0.434,
+        "type": 0.373,
+        "blitz": 0.193
+      },
+      "repeatRate": 0.341,
+      "expectedRepeatRate": 0.345,
+      "distinctBigrams": 9,
+      "bigramPool": 9,
+      "maxRun": 4,
+      "entropy": 1.511,
+      "entropyMax": 1.585,
+      "normalizedEntropy": 0.953
+    },
+    {
+      "windows": 83,
+      "ratio": {
+        "hold": 0.398,
+        "type": 0.434,
+        "blitz": 0.169
+      },
+      "repeatRate": 0.354,
+      "expectedRepeatRate": 0.345,
+      "distinctBigrams": 9,
+      "bigramPool": 9,
+      "maxRun": 3,
+      "entropy": 1.485,
+      "entropyMax": 1.585,
+      "normalizedEntropy": 0.937
+    }
+  ],
+  "summary": {
+    "seeds": 20,
+    "windowsPerSeed": 85,
+    "ratioHold": 0.401,
+    "ratioType": 0.358,
+    "ratioBlitz": 0.24,
+    "baselineRepeatRate": 1,
+    "currentRepeatRate": 0.366,
+    "theoreticalRepeatRate": 0.345,
+    "distinctBigramsAvg": 9,
+    "baselineDistinctBigrams": 1,
+    "maxRunAvg": 4.55,
+    "baselineMaxRun": 85,
+    "entropy": 1.527,
+    "entropyMax": 1.585,
+    "normalizedEntropy": 0.964
+  }
+}

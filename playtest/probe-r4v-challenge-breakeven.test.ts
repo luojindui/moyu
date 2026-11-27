@@ -7,7 +7,7 @@ import {
   BOSS_GRACE_SECONDS,
   BOSS_PENALTY_RATE,
   BOSS_PENALTY_MIN,
-  BOSS_PENALTY_CAP_IDLE_SECONDS,
+  BOSS_STEAL_PENALTY_IDLE_SECONDS,
 } from "../src/engine/events";
 import { loadScenes, stateFrom, decision, flipCps, openHold, r1, pct } from "./probe-r4v-challenge-lib";
 
@@ -33,9 +33,9 @@ describe("验收-② 盈亏线扫描", () => {
         openHold(es, 1000);
         const r = onBossTap(st, es, 1000 + BOSS_GRACE_SECONDS + 0.01, 0);
         const afterIncome = bank + r.income;
-        const raw = Math.max(BOSS_PENALTY_MIN, afterIncome * BOSS_PENALTY_RATE);
-        const cap = Math.max(BOSS_PENALTY_MIN, BOSS_PENALTY_CAP_IDLE_SECONDS * effectOf(st).idleRate);
-        const expectLost = Math.min(raw, cap, afterIncome);
+        // R5 新公式：每击 0.5×idleRate（下限 10），与余额脱钩
+        const idleRate = effectOf(st).idleRate;
+        const expectLost = Math.min(Math.max(BOSS_PENALTY_MIN, BOSS_STEAL_PENALTY_IDLE_SECONDS * idleRate), afterIncome);
         expect(r.lost).toBeCloseTo(expectLost, 6);
         expect(r.state.moyu).toBeGreaterThanOrEqual(0);
         // 收入先进 totalEarned（罚款不扣累计 → 不倒退段位）

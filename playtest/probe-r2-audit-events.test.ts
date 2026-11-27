@@ -154,7 +154,7 @@ describe("R2 审计①②：一次性惩罚 / 一梗一奖 / 安然奖", () => {
     expect(reward).toBe(50); // 底薪 0.2 → 5×0.2=1 → 取 min 50
     let rich = initialState();
     rich.levels["retire"] = 10; // 700×10×2^0 = 7000/s + 0.2
-    expect(bossSurviveReward(rich)).toBe(5 * (7000 + 0.2)); // = 35001
+    expect(bossSurviveReward(rich)).toBe(8 * (7000 + 0.2)); // R5：奖励 5→8 秒 = 56001.6
   });
 
   it("一梗一奖：第二次点击同梗无奖励", () => {

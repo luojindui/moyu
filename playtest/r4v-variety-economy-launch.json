@@ -1,0 +1,41 @@
+{
+  "probe": "r4v-variety-economy",
+  "rows": [
+    {
+      "persona": "variety(多玩法党)",
+      "medianEventSharePct": 5.1,
+      "medianEventNetSharePct": 5.1,
+      "bossRewards": 12804,
+      "memeEarnings": 6108,
+      "penalties": 0,
+      "blitzBonus": 1267,
+      "bossWindows": 13.5,
+      "memeWindows": 28,
+      "totalEarned": 376755
+    },
+    {
+      "persona": "clicker(狂点党)",
+      "medianEventSharePct": 5.18,
+      "medianEventNetSharePct": 5.18,
+      "bossRewards": 97473,
+      "memeEarnings": 22215,
+      "penalties": 0,
+      "blitzBonus": 7085,
+      "bossWindows": 13.5,
+      "memeWindows": 28,
+      "totalEarned": 2332974
+    },
+    {
+      "persona": "casual(休闲党)",
+      "medianEventSharePct": 7.52,
+      "medianEventNetSharePct": 7.52,
+      "bossRewards": 2257,
+      "memeEarnings": 4223,
+      "penalties": 0,
+      "blitzBonus": 212,
+      "bossWindows": 13.5,
+      "memeWindows": 28,
+      "totalEarned": 88147
+    }
+  ]
+}

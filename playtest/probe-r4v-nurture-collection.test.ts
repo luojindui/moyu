@@ -153,19 +153,19 @@ describe("图鉴·syncFlavorCollection 按等级补齐历史档（幂等）", ()
 });
 
 describe("图鉴·边界与缺陷复现（预期失败 = 缺陷证据）", () => {
-  it.fails("⚠️ 缺陷（当前存在，修复后本断言会转红）：collectQuote 不校验索引边界，越界索引可污染「x/10」", () => {
+  it("✅ 已修复回归（原缺陷）：collectQuote 不校验索引边界，越界索引可污染「x/10」", () => {
     const s = collectQuote(initialState(), 99).state;
     log("collectQuote(99)", { quotes: s.collected.quotes, count: collectionCount(s) });
     expect(s.collected.quotes.every((i) => Number.isInteger(i) && i >= 0 && i < MEME_QUOTES.length)).toBe(true);
   });
 
-  it.fails("⚠️ 缺陷（当前存在，修复后本断言会转红）：collectQuote 接受负数索引", () => {
+  it("✅ 已修复回归（原缺陷）：collectQuote 接受负数索引", () => {
     const s = collectQuote(initialState(), -1).state;
     log("collectQuote(-1)", { quotes: s.collected.quotes });
     expect(s.collected.quotes.every((i) => i >= 0)).toBe(true);
   });
 
-  it.fails("⚠️ 缺陷（当前存在，修复后本断言会转红）：collectFlavor 未知升级 id → findIndex(-1) 生成负索引（-5）", () => {
+  it("✅ 已修复回归（原缺陷）：collectFlavor 未知升级 id → findIndex(-1) 生成负索引（-5）", () => {
     const s = collectFlavor(initialState(), "no_such_upgrade", 0).state;
     log("collectFlavor(unknown)", { flavors: s.collected.flavors, flavorIndex: flavorIndex("no_such_upgrade", 0) });
     expect(s.collected.flavors.every((i) => i >= 0 && i <= 44)).toBe(true);

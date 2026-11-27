@@ -50,12 +50,12 @@ describe("养成党：丢梗语录图鉴可行性", () => {
   it("R3 修复回归：语录池 10 条 + 图鉴追踪已实现（collected）", () => {
     expect(MEME_QUOTES.length).toBe(10);
     // ✅ 已修复：GameState 增加 collected（图鉴）与 daily（日报）
-    expect(Object.keys(initialState()).sort()).toEqual(["collected", "daily", "levels", "moyu", "totalEarned"]);
+    expect(Object.keys(initialState()).sort()).toEqual(["collected", "daily", "levels", "moyu", "surviveStreak", "totalEarned"]);
     // 存档 blob 同样不含收集字段
     const store = new Map<string, string>();
     serialize(initialState(), { getItem: (k) => store.get(k) ?? null, setItem: (k, v) => void store.set(k, v), removeItem: (k) => void store.delete(k) }, 0);
     const blob = Object.keys(JSON.parse(store.get(SAVE_KEY)!));
-    expect(blob.sort()).toEqual(["collected", "createdAt", "daily", "levels", "moyu", "savedAt", "totalEarned", "v"]);
+    expect(blob.sort()).toEqual(["collected", "createdAt", "daily", "levels", "moyu", "savedAt", "surviveStreak", "totalEarned", "v"]);
     // 丢梗窗口参数：45-75s 一次
     expect([MEME_INTERVAL_MIN, MEME_INTERVAL_MAX]).toEqual([45, 75]);
   });

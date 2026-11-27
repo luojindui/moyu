@@ -11,42 +11,42 @@
       "quoteMode": "cycle",
       "lastNewContentMinute": 29.83,
       "firstFlatBucketMinute": null,
-      "endTotal": 591966
+      "endTotal": 599227
     },
     {
       "persona": "variety(多玩法党)",
       "quoteMode": "random",
       "lastNewContentMinute": 29.83,
       "firstFlatBucketMinute": null,
-      "endTotal": 591966
+      "endTotal": 599227
     },
     {
       "persona": "clicker(狂点党)",
       "quoteMode": "cycle",
-      "lastNewContentMinute": 28.36,
+      "lastNewContentMinute": 28.27,
       "firstFlatBucketMinute": null,
-      "endTotal": 5287148
+      "endTotal": 5339662
     },
     {
       "persona": "clicker(狂点党)",
       "quoteMode": "random",
-      "lastNewContentMinute": 28.36,
+      "lastNewContentMinute": 28.27,
       "firstFlatBucketMinute": null,
-      "endTotal": 5287148
+      "endTotal": 5339662
     },
     {
       "persona": "casual(休闲党)",
       "quoteMode": "cycle",
       "lastNewContentMinute": 29.21,
       "firstFlatBucketMinute": 10,
-      "endTotal": 99345
+      "endTotal": 99993
     },
     {
       "persona": "casual(休闲党)",
       "quoteMode": "random",
       "lastNewContentMinute": 29.21,
       "firstFlatBucketMinute": null,
-      "endTotal": 99345
+      "endTotal": 99993
     }
   ],
   "results": [
@@ -360,15 +360,15 @@
         }
       ],
       "end": {
-        "moyu": 123228.0499999906,
-        "totalEarned": 591966.0499999863,
+        "moyu": 130489.2499999898,
+        "totalEarned": 599227.2499999877,
         "idleRate": 764.2,
         "clickPower": 185
       },
       "economy": {
-        "bossRewards": 12152,
+        "bossRewards": 19413,
         "memeEarnings": 10350,
-        "eventShareOfTotal": 3.8,
+        "eventShareOfTotal": 4.97,
         "memeEvents": 29,
         "bossWindows": 13
       }
@@ -678,15 +678,15 @@
         }
       ],
       "end": {
-        "moyu": 123228.0499999906,
-        "totalEarned": 591966.0499999863,
+        "moyu": 130489.2499999898,
+        "totalEarned": 599227.2499999877,
         "idleRate": 764.2,
         "clickPower": 185
       },
       "economy": {
-        "bossRewards": 12152,
+        "bossRewards": 19413,
         "memeEarnings": 10350,
-        "eventShareOfTotal": 3.8,
+        "eventShareOfTotal": 4.97,
         "memeEvents": 29,
         "bossWindows": 13
       }
@@ -770,15 +770,15 @@
             25
           ],
           "clicks": 852,
-          "buys": 29,
+          "buys": 30,
           "dodgeWins": 2,
           "caught": 0,
           "memeTaps": 4,
           "bossWindows": 2,
           "newUnlocks": 3,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 0.818,
-          "nonClickActions": 35
+          "eventLayerEntropy": 0.803,
+          "nonClickActions": 36
         },
         {
           "bucket": 5,
@@ -787,15 +787,15 @@
             30
           ],
           "clicks": 852,
-          "buys": 24,
+          "buys": 23,
           "dodgeWins": 2,
           "caught": 0,
           "memeTaps": 5,
           "bossWindows": 2,
           "newUnlocks": 2,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 0.966,
-          "nonClickActions": 31
+          "eventLayerEntropy": 0.985,
+          "nonClickActions": 30
         }
       ],
       "noveltyTimeline": [
@@ -1010,41 +1010,41 @@
           "detail": "meeting:1"
         },
         {
-          "t": 21.26,
+          "t": 21.21,
           "kind": "flavor",
           "detail": "meeting:5"
         },
         {
-          "t": 21.98,
+          "t": 21.93,
           "kind": "flavor",
           "detail": "phone:50"
         },
         {
-          "t": 23.31,
+          "t": 23.24,
           "kind": "flavor",
           "detail": "group:20"
         },
         {
-          "t": 27.72,
+          "t": 27.63,
           "kind": "flavor",
           "detail": "meeting:10"
         },
         {
-          "t": 28.36,
+          "t": 28.27,
           "kind": "flavor",
           "detail": "water:50"
         }
       ],
       "end": {
-        "moyu": 944.5499999902356,
-        "totalEarned": 5287147.549999705,
+        "moyu": 53458.84999998969,
+        "totalEarned": 5339661.849999698,
         "idleRate": 2640.2,
         "clickPower": 1641
       },
       "economy": {
-        "bossRewards": 56508,
-        "memeEarnings": 101085,
-        "eventShareOfTotal": 2.98,
+        "bossRewards": 90653,
+        "memeEarnings": 101205,
+        "eventShareOfTotal": 3.59,
         "memeEvents": 29,
         "bossWindows": 13
       }
@@ -1128,15 +1128,15 @@
             25
           ],
           "clicks": 852,
-          "buys": 29,
+          "buys": 30,
           "dodgeWins": 2,
           "caught": 0,
           "memeTaps": 4,
           "bossWindows": 2,
           "newUnlocks": 3,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 0.818,
-          "nonClickActions": 35
+          "eventLayerEntropy": 0.803,
+          "nonClickActions": 36
         },
         {
           "bucket": 5,
@@ -1145,15 +1145,15 @@
             30
           ],
           "clicks": 852,
-          "buys": 24,
+          "buys": 23,
           "dodgeWins": 2,
           "caught": 0,
           "memeTaps": 5,
           "bossWindows": 2,
           "newUnlocks": 2,
           "distinctActionTypes": 4,
-          "eventLayerEntropy": 0.966,
-          "nonClickActions": 31
+          "eventLayerEntropy": 0.985,
+          "nonClickActions": 30
         }
       ],
       "noveltyTimeline": [
@@ -1363,41 +1363,41 @@
           "detail": "下班前给我"
         },
         {
-          "t": 21.26,
+          "t": 21.21,
           "kind": "flavor",
           "detail": "meeting:5"
         },
         {
-          "t": 21.98,
+          "t": 21.93,
           "kind": "flavor",
           "detail": "phone:50"
         },
         {
-          "t": 23.31,
+          "t": 23.24,
           "kind": "flavor",
           "detail": "group:20"
         },
         {
-          "t": 27.72,
+          "t": 27.63,
           "kind": "flavor",
           "detail": "meeting:10"
         },
         {
-          "t": 28.36,
+          "t": 28.27,
           "kind": "flavor",
           "detail": "water:50"
         }
       ],
       "end": {
-        "moyu": 944.5499999902356,
-        "totalEarned": 5287147.549999705,
+        "moyu": 53458.84999998969,
+        "totalEarned": 5339661.849999698,
         "idleRate": 2640.2,
         "clickPower": 1641
       },
       "economy": {
-        "bossRewards": 56508,
-        "memeEarnings": 101085,
-        "eventShareOfTotal": 2.98,
+        "bossRewards": 90653,
+        "memeEarnings": 101205,
+        "eventShareOfTotal": 3.59,
         "memeEvents": 29,
         "bossWindows": 13
       }
@@ -1637,15 +1637,15 @@
         }
       ],
       "end": {
-        "moyu": 86621.3000000056,
-        "totalEarned": 99345.30000000626,
+        "moyu": 87268.70000000566,
+        "totalEarned": 99992.7000000063,
         "idleRate": 41.2,
         "clickPower": 83
       },
       "economy": {
-        "bossRewards": 1279,
+        "bossRewards": 1926,
         "memeEarnings": 5225,
-        "eventShareOfTotal": 6.55,
+        "eventShareOfTotal": 7.15,
         "memeEvents": 29,
         "bossWindows": 13
       }
@@ -1880,15 +1880,15 @@
         }
       ],
       "end": {
-        "moyu": 86621.3000000056,
-        "totalEarned": 99345.30000000626,
+        "moyu": 87268.70000000566,
+        "totalEarned": 99992.7000000063,
         "idleRate": 41.2,
         "clickPower": 83
       },
       "economy": {
-        "bossRewards": 1279,
+        "bossRewards": 1926,
         "memeEarnings": 5225,
-        "eventShareOfTotal": 6.55,
+        "eventShareOfTotal": 7.15,
         "memeEvents": 29,
         "bossWindows": 13
       }

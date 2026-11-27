@@ -44,9 +44,27 @@ export interface Scene {
   reportIr: number;
 }
 
-/** 读 playtest/report.json：4 画像 × 8 检查点的真实进度 */
-export function loadReport(): { generatedAt: string; engine: string; sessions: { persona: string; checkpoints: { minute: number; moyu: number; clickPower: number; idleRate: number; levels: Levels }[] }[] } {
-  return JSON.parse(readFileSync("playtest/report.json", "utf8"));
+export interface Report {
+  generatedAt: string;
+  engine: string;
+  sessions: { persona: string; checkpoints: { minute: number; moyu: number; clickPower: number; idleRate: number; levels: Levels }[] }[];
+}
+
+let cachedReport: Report | null = null;
+
+/** 读 playtest/report.json：4 画像 × 8 检查点的真实进度（进程内缓存，避免与其他探针并发重写时读到半截文件） */
+export function loadReport(): Report {
+  if (cachedReport) return cachedReport;
+  let lastErr: unknown = null;
+  for (let i = 0; i < 5; i++) {
+    try {
+      cachedReport = JSON.parse(readFileSync("playtest/report.json", "utf8")) as Report;
+      return cachedReport;
+    } catch (e) {
+      lastErr = e;
+    }
+  }
+  throw lastErr instanceof Error ? lastErr : new Error("report.json 读取失败");
 }
 
 export function stateFrom(levels: Levels, moyu: number): GameState {

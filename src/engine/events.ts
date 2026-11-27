@@ -11,10 +11,14 @@ export const BOSS_PENALTY_RATE = 0.05;
 export const BOSS_PENALTY_MIN = 10;
 /** 罚款封顶：10 秒挂机收益（防后期洗劫，保"早期罚轻、后期不伤筋骨"） */
 export const BOSS_PENALTY_CAP_IDLE_SECONDS = 10;
-export const BOSS_REWARD_IDLE_SECONDS = 5;
+export const BOSS_REWARD_IDLE_SECONDS = 8;
 export const BOSS_REWARD_MIN = 50;
-/** 反应宽限：横幅弹出到此时间内点击免罚（半空中的手指不算顶风作案） */
+/** 反应宽限：横幅弹出到此时间内点击免罚（半空中的手指不算顶风作案）；宽限内不给收入 */
 export const BOSS_GRACE_SECONDS = 0.8;
+/** 偷点每击罚款 = 0.5 × 挂机秒收益（早期按下限 10）：轻罚但连续偷点会累积，交叉点落在 4-6cps */
+export const BOSS_STEAL_PENALTY_IDLE_SECONDS = 0.5;
+/** 单次巡逻偷点罚款总封顶 = 6 × 挂机秒收益（防无限罚，仍让 8cps 有赌点） */
+export const BOSS_STEAL_CAP_IDLE_SECONDS = 6;
 /** 安然连胜：连续安然 N 次奖励 ×(1+0.1N)，封顶 ×2 */
 export const SURVIVE_STREAK_CAP = 10;
 
@@ -24,7 +28,7 @@ export const BOSS_VARIANTS: BossVariant[] = ["hold", "type", "blitz"];
 /** type：8s 内点满 N 次 → 达标奖励（点击不罚） */
 export const BOSS_TYPE_TARGET = 5;
 /** blitz：8s 内点满 N 次 → 奖励 ×1.5（点击不罚） */
-export const BOSS_BLITZ_TARGET = 12;
+export const BOSS_BLITZ_TARGET = 20; // 需 ≥2.5cps 才能达标（与 type 的 5 次区分难度）
 export const BOSS_BLITZ_REWARD_MULT = 1.5;
 /** 变体权重：hold 40% / type 35% / blitz 25% */
 export function pickBossVariant(rng: () => number): BossVariant {
@@ -58,6 +62,8 @@ export interface EventState {
   bossVariant: BossVariant;
   /** 本次巡逻内的有效点击计数（type/blitz 变体用） */
   bossTaps: number;
+  /** 本次巡逻已累计罚款（偷点递增罚的封顶用） */
+  bossPenaltyTotal: number;
 }
 
 /** 事件为运行时状态，不入存档 */
@@ -72,6 +78,7 @@ export function newEventState(): EventState {
     surviveStreak: 0,
     bossVariant: "hold",
     bossTaps: 0,
+    bossPenaltyTotal: 0,
   };
 }
 
@@ -105,6 +112,7 @@ export function scheduleEvents(es: EventState, now: number, rng: () => number): 
     es.bossCaught = false;
     es.bossVariant = pickBossVariant(rng);
     es.bossTaps = 0;
+    es.bossPenaltyTotal = 0;
     es.nextBossAt = Infinity;
     // 巡逻开启时丢梗必然已结束（互斥条件 memeUntil < 0），无需清场
   } else if (now >= es.nextMemeAt && es.memeUntil < 0 && es.bossUntil < 0) {
@@ -127,6 +135,10 @@ export function onBossTap(
   if (es.bossUntil <= 0) {
     return { state: doClick(state, combo), caught: false, lost: 0, income: clickPowerOf(state) * comboMultiplier(combo) };
   }
+  // 宽限期内：手在半空——不给收入也不罚（不能零风险白嫖）
+  if (now < es.bossStartAt + BOSS_GRACE_SECONDS) {
+    return { state, caught: false, lost: 0, income: 0 };
+  }
   const income = clickPowerOf(state) * comboMultiplier(combo);
   const afterIncome = gain(state, income); // 偷点收入照给
   // type / blitz：反向玩法——点击是任务，不罚，计数
@@ -134,15 +146,17 @@ export function onBossTap(
     es.bossTaps += 1;
     return { state: afterIncome, caught: false, lost: 0, income };
   }
-  if (es.bossCaught) return { state: afterIncome, caught: false, lost: 0, income };
-  if (now < es.bossStartAt + BOSS_GRACE_SECONDS) {
-    return { state: afterIncome, caught: false, lost: 0, income };
+  // hold：每偷点一次累加罚款，整段封顶；罚款与余额脱钩（防"花光规避"），只按挂机收益计
+  const idleRate = effectOf(afterIncome).idleRate;
+  const perTap = Math.max(BOSS_PENALTY_MIN, BOSS_STEAL_PENALTY_IDLE_SECONDS * idleRate);
+  const cap = Math.max(BOSS_PENALTY_MIN, BOSS_STEAL_CAP_IDLE_SECONDS * idleRate);
+  if (es.bossPenaltyTotal >= cap) {
+    return { state: afterIncome, caught: false, lost: 0, income }; // 已罚满封顶
   }
-  const raw = Math.max(BOSS_PENALTY_MIN, afterIncome.moyu * BOSS_PENALTY_RATE);
-  const cap = Math.max(BOSS_PENALTY_MIN, BOSS_PENALTY_CAP_IDLE_SECONDS * effectOf(afterIncome).idleRate);
-  const lost = Math.min(raw, cap, afterIncome.moyu); // 汇报口径 = 实扣金额
+  const lost = Math.min(perTap, cap - es.bossPenaltyTotal, afterIncome.moyu);
   es.bossCaught = true;
   es.surviveStreak = 0; // 被抓清零连胜
+  es.bossPenaltyTotal += lost;
   return { state: { ...afterIncome, moyu: afterIncome.moyu - lost }, caught: true, lost, income };
 }
 
@@ -167,7 +181,9 @@ export function finishPatrol(state: GameState, es: EventState): { state: GameSta
   if (reward > 0 && !es.bossCaught) es.surviveStreak += 1;
   es.bossCaught = false;
   es.bossUntil = -1;
-  return { state: next, reward };
+  es.bossPenaltyTotal = 0;
+  // 连胜入档（刷新/重开不丢）
+  return { state: { ...next, surviveStreak: es.surviveStreak }, reward };
 }
 
 /** 巡逻安然结束奖励：max(50, 5×idleRate) × 连胜乘数（连续安然 N 次 ×(1+0.1N) 封顶 ×2）；被抓过不给 */

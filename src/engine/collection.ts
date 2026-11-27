@@ -1,6 +1,6 @@
 import type { GameState } from "./state";
 import { UPGRADES } from "./upgrades";
-import { MEME_QUOTES } from "./flavor";
+import { MEME_QUOTES, UPGRADE_FLAVOR } from "./flavor";
 
 /** 图鉴：丢梗语录 + 升级彩蛋 统一收集册 */
 export interface Collected {
@@ -86,4 +86,45 @@ export function sanitizeCollected(raw: { quotes?: unknown; flavors?: unknown } |
     quotes: toSet(raw?.quotes, MEME_QUOTES.length),
     flavors: toSet(raw?.flavors, UPGRADES.length * 5),
   };
+}
+
+/** 图鉴可浏览列表行（UI 渲染用；未解锁显示 ???） */
+export interface CollectionRow {
+  group: "quote" | "flavor";
+  index: number;
+  /** 展示名：语录序号 / 「升级名 · Lv档」 */
+  label: string;
+  unlocked: boolean;
+  text: string;
+}
+
+const TIER_LABEL = ["Lv.1", "Lv.5", "Lv.10", "Lv.20", "Lv.50"];
+
+/** 生成 55 格图鉴列表（语录在前、彩蛋在后，各自按索引排序） */
+export function collectionRows(state: GameState): CollectionRow[] {
+  const rows: CollectionRow[] = [];
+  const quotes = new Set(state.collected.quotes);
+  MEME_QUOTES.forEach((q, i) => {
+    rows.push({
+      group: "quote",
+      index: i,
+      label: `语录 ${i + 1}`,
+      unlocked: quotes.has(i),
+      text: quotes.has(i) ? q : "???",
+    });
+  });
+  const flavors = new Set(state.collected.flavors);
+  UPGRADES.forEach((u, ui) => {
+    for (let tier = 0; tier < 5; tier++) {
+      const idx = ui * 5 + tier;
+      rows.push({
+        group: "flavor",
+        index: idx,
+        label: `${u.name} · ${TIER_LABEL[tier]}`,
+        unlocked: flavors.has(idx),
+        text: flavors.has(idx) ? (UPGRADE_FLAVOR[u.id]?.[tier] ?? "???") : "???",
+      });
+    }
+  });
+  return rows;
 }
