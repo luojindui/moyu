@@ -2,6 +2,7 @@ import type { GameState } from "./state";
 import { gain, lose } from "./state";
 import { clickPowerOf, doClick, comboMultiplier } from "./actions";
 import { effectOf } from "./upgrades";
+import { talentEffects } from "./talents";
 
 /** 随机事件数值（视觉层读取同一份） */
 export const BOSS_INTERVAL_MIN = 90;
@@ -221,13 +222,14 @@ export function bossSurviveReward(state: GameState, es?: EventState): number {
   if (es?.bossCaught) return 0;
   const { idleRate } = effectOf(state);
   const base = Math.max(BOSS_REWARD_MIN, BOSS_REWARD_IDLE_SECONDS * idleRate);
-  return base * surviveStreakMult(es?.surviveStreak ?? 0);
+  const talent = talentEffects(state.talents);
+  return base * surviveStreakMult(es?.surviveStreak ?? 0) * talent.patrolRewardMult;
 }
 
 /** 丢梗点击奖励：5 × 点击力（仅窗口内有效） */
 export function onMemeTap(state: GameState, es: EventState): { state: GameState; earned: number } {
   if (es.memeUntil <= 0) return { state, earned: 0 };
-  const earned = MEME_REWARD_CLICKS * clickPowerOf(state);
+  const earned = MEME_REWARD_CLICKS * clickPowerOf(state) * talentEffects(state.talents).memeRewardMult;
   es.memeUntil = -1; // 一梗一奖
   return { state: { ...gain(state, earned), totalClicks: state.totalClicks + 1 }, earned };
 }

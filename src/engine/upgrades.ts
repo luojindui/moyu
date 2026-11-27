@@ -1,5 +1,7 @@
 import type { GameState } from "./state";
 import { prestigeMultiplier } from "./prestige";
+import { teamIdleRate } from "./team";
+import { talentEffects } from "./talents";
 
 export interface UpgradeDef {
   id: string;
@@ -73,7 +75,14 @@ export function effectOf(state: GameState): { clickPower: number; idleRate: numb
     if (u.idleRate) idleRate += effectAt(u, lv);
   }
   const mult = prestigeMultiplier(state.prestige) * collectionBonus(state);
-  return { clickPower: clickPower * mult, idleRate: idleRate * mult };
+  const talent = talentEffects(state.talents);
+  // 摸鱼小队：同事提供的挂机收益同样吃转生/图鉴倍率
+  const team = teamIdleRate(state) * mult;
+  // 天赋：挂机流
+  return {
+    clickPower: clickPower * mult,
+    idleRate: (idleRate * mult + team) * talent.idleMult,
+  };
 }
 
 /** 下一级（level → level+1）的即时效果增量（含里程碑跳变） */

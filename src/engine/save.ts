@@ -2,6 +2,8 @@ import type { GameState } from "./state";
 import { initialState } from "./state";
 import { sanitizeCollected, type Collected } from "./collection";
 import { restoreDaily, type DailyState } from "./daily";
+import { COLLEAGUES, MAX_COLLEAGUE_LEVEL, emptyTeam, type TeamState } from "./team";
+import { TALENTS, emptyTalents, type TalentState } from "./talents";
 
 export const SAVE_KEY = "moyu-save";
 export const SAVE_VERSION = 1;
@@ -39,6 +41,10 @@ interface SaveBlob {
   lifetimeEarned?: number;
   /** 转生点 */
   prestige?: number;
+  /** 摸鱼小队 */
+  team?: TeamState;
+  /** 天赋树 */
+  talents?: TalentState;
 }
 
 /** 序列化并写入（savedAt=毫秒时间戳） */
@@ -71,6 +77,8 @@ export function serialize(state: GameState, adapter: SaveAdapter, savedAt: numbe
     visits: state.visits,
     lifetimeEarned: state.lifetimeEarned,
     prestige: state.prestige,
+    team: state.team,
+    talents: state.talents,
   };
   try {
     adapter.setItem(SAVE_KEY, JSON.stringify(blob));
@@ -152,13 +160,41 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
     totalEarned = Math.min(totalEarned, lifetimeEarned);
     const moyu = Math.min(rawMoyu, totalEarned);
     const prestige = Math.floor(numOr0(blob.prestige));
+    // 天赋：只接受已知天赋 id、点数非负整数
+    const talents: TalentState = emptyTalents();
+    const rawTalents = blob.talents as { unlocked?: unknown; points?: unknown } | undefined;
+    if (Array.isArray(rawTalents?.unlocked)) {
+      talents.unlocked = rawTalents.unlocked.filter(
+        (x): x is string => typeof x === "string" && TALENTS.some((t) => t.id === x),
+      );
+    }
+    talents.points =
+      typeof rawTalents?.points === "number" && Number.isInteger(rawTalents.points) && rawTalents.points >= 0
+        ? rawTalents.points
+        : 0;
+    // 小队：只接受已知同事、等级整数且在范围内、任务 id 合法
+    const team: TeamState = emptyTeam();
+    const rawTeam = blob.team as { colleagues?: Record<string, unknown> } | undefined;
+    if (rawTeam?.colleagues && typeof rawTeam.colleagues === "object") {
+      for (const def of COLLEAGUES) {
+        const c = rawTeam.colleagues[def.id] as Record<string, unknown> | undefined;
+        if (!c || typeof c !== "object") continue;
+        const level = typeof c.level === "number" && Number.isInteger(c.level) && c.level >= 1
+          ? Math.min(c.level, MAX_COLLEAGUE_LEVEL)
+          : 1;
+        const missionId = typeof c.missionId === "string" ? c.missionId : null;
+        const startedAt = numOr0(c.startedAt);
+        const endsAt = numOr0(c.endsAt);
+        team.colleagues[def.id] = { level, missionId, startedAt, endsAt };
+      }
+    }
     // createdAt 钳制：缺失默认 savedAt（不重发首日）；越界（未来/NaN）按 savedAt收敛，堵离线分级绕过
     const clampCreatedAt = (ca: unknown): number => {
       if (typeof ca !== "number" || !Number.isFinite(ca) || ca > now) return savedAtMs;
       return Math.max(ca, savedAtMs - 365 * 86_400_000);
     };
     return {
-      state: { moyu, levels, totalEarned, collected, daily, surviveStreak, totalClicks, visits, lifetimeEarned, prestige },
+      state: { moyu, levels, totalEarned, collected, daily, surviveStreak, totalClicks, visits, lifetimeEarned, prestige, team, talents },
       offlineSeconds,
       createdAt: clampCreatedAt(blob.createdAt),
     };

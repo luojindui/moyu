@@ -2,6 +2,7 @@ import type { GameState } from "./state";
 import { gain } from "./state";
 import { effectOf, costOf, UPGRADES } from "./upgrades";
 import { prestigeMultiplier } from "./prestige";
+import { talentEffects } from "./talents";
 
 /** 初始点击力（未买任何升级时） */
 export const BASE_CLICK_POWER = 1;
@@ -18,7 +19,9 @@ export function comboMultiplier(combo: number): number {
 
 /** 当前总点击力（基础点击力也吃转生倍率） */
 export function clickPowerOf(state: GameState): number {
-  return BASE_CLICK_POWER * prestigeMultiplier(state.prestige) + effectOf(state).clickPower;
+  const base = BASE_CLICK_POWER * prestigeMultiplier(state.prestige) + effectOf(state).clickPower;
+  // 天赋：点击流「手速」
+  return base * talentEffects(state.talents).clickMult;
 }
 
 /** 点击一次（combo 为当前连击数）：返回新状态 */

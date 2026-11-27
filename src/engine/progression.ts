@@ -1,4 +1,5 @@
 import type { GameState } from "./state";
+import { talentEffects } from "./talents";
 
 /**
  * 长线进度辅助（R7）：
@@ -28,5 +29,6 @@ export function offlineEfficiency(state: GameState, createdAtMs: number, nowMs: 
   const visits = Math.min(state.visits.count, VISIT_BONUS_MAX_VISITS);
   const streakDays = state.daily?.streak ?? 0;
   const streakBonus = Math.min(STREAK_BONUS_MAX, STREAK_BONUS_STEP * Math.floor(streakDays / STREAK_BONUS_DAYS));
-  return Math.min(1, 0.7 + visits * VISIT_BONUS_STEP + streakBonus);
+  const talentBase = talentEffects(state.talents).offlineBaseBonus;
+  return Math.min(1, 0.7 + talentBase + visits * VISIT_BONUS_STEP + streakBonus);
 }

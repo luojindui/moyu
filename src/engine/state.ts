@@ -1,6 +1,10 @@
 import type { Collected } from "./collection";
 import { emptyCollected } from "./collection";
 import type { DailyState } from "./daily";
+import type { TeamState } from "./team";
+import { emptyTeam } from "./team";
+import type { TalentState } from "./talents";
+import { emptyTalents } from "./talents";
 
 /** 游戏状态（纯数据，engine 层的唯一事实来源） */
 export interface GameState {
@@ -24,6 +28,10 @@ export interface GameState {
   lifetimeEarned: number;
   /** 转生点（每点永久 ×1.08） */
   prestige: number;
+  /** 摸鱼小队（同事招募/派遣） */
+  team: TeamState;
+  /** 天赋树 */
+  talents: TalentState;
 }
 
 export function initialState(): GameState {
@@ -38,6 +46,8 @@ export function initialState(): GameState {
     visits: { date: "", count: 0 },
     lifetimeEarned: 0,
     prestige: 0,
+    team: emptyTeam(),
+    talents: emptyTalents(),
   };
 }
 

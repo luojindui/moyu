@@ -1,4 +1,5 @@
 import type { GameState } from "./state";
+import { grantPrestigeTalentPoints } from "./talents";
 
 /**
  * 离职再就业（转生层，R7 / R8 调参）：
@@ -64,6 +65,9 @@ export function doPrestige(state: GameState): { state: GameState; gained: number
       daily: state.daily,
       totalClicks: state.totalClicks,
       visits: state.visits,
+      // 转生保留小队与天赋，并按次给天赋点
+      team: state.team,
+      talents: grantPrestigeTalentPoints(state.talents),
     },
   };
 }

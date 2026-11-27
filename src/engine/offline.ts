@@ -1,6 +1,7 @@
 import type { GameState } from "./state";
 import { gain } from "./state";
 import { effectOf } from "./upgrades";
+import { talentEffects } from "./talents";
 
 export const OFFLINE_CAP_SECONDS = 12 * 3600; // R11：8h→12h（每天开机一次也能拿满一天的大半）
 export const OFFLINE_CAP_WEEK = 24 * 3600;
@@ -24,7 +25,9 @@ export interface OfflineResult {
 
 /** 离线结算：elapsed 秒按 8h 封顶 × idleRate × rate（首日 1.0 / 之后 0.7） */
 export function offlineEarn(state: GameState, elapsed: number, rate = 1): OfflineResult {
-  const applied = Math.max(0, Math.min(elapsed, capForElapsed(elapsed)));
+  // 天赋：挂机流「离线扩容」
+  const cap = capForElapsed(elapsed) + talentEffects(state.talents).offlineCapBonusHours * 3600;
+  const applied = Math.max(0, Math.min(elapsed, cap));
   const earned = effectOf(state).idleRate * applied * rate;
   return { applied, earned, state: gain(state, earned) };
 }
