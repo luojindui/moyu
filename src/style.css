@@ -1455,3 +1455,44 @@ body.choice-open .shop-row {
 .beat.on { background: #ffd76e; transform: scale(1.4); }
 .beat.perfect { background: #8be28b; }
 .beat.good { background: #7ec8ff; }
+
+/* 接咖啡：杯口线 + 接住反馈 */
+.cup-line {
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  bottom: 12%;
+  height: 4px;
+  background: #ffd76e;
+  border-radius: 2px;
+  opacity: 0.7;
+}
+.drop {
+  transition: none;
+}
+.drop.landed {
+  background: #6b3f22;
+  opacity: 0.6;
+}
+.drop.caught {
+  background: #8be28b;
+  transform: scale(1.4);
+  transition: transform 0.18s ease;
+}
+.arcade-record {
+  margin: 6px 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #8be28b;
+}
+.arcade-back-btn {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #e8e2d0;
+  background: #4a4a66;
+  border: 2px solid #6a6a8a;
+  border-radius: 5px;
+}

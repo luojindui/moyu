@@ -1,0 +1,794 @@
+{
+  "coffee": {
+    "drops": {
+      "min": 33,
+      "max": 41,
+      "mean": 36.39
+    },
+    "perfectScore": {
+      "min": 660,
+      "max": 820,
+      "mean": 727.84
+    },
+    "theoreticalMaxDrops": 53,
+    "theoreticalMaxScore": 1060,
+    "hitAllSeedsVerified": true,
+    "samples": 5000
+  },
+  "findboss": {
+    "roundCount": 5,
+    "grid": 3,
+    "roundCountFixedByUI": 5,
+    "maxTheoretical": 550,
+    "maxRealistic": 549,
+    "slowClear": 250,
+    "byLatency": [
+      {
+        "latencySec": 0.2,
+        "elapsed": 1,
+        "score": 540
+      },
+      {
+        "latencySec": 0.4,
+        "elapsed": 2,
+        "score": 530
+      },
+      {
+        "latencySec": 0.8,
+        "elapsed": 4,
+        "score": 510
+      },
+      {
+        "latencySec": 1.5,
+        "elapsed": 7.5,
+        "score": 475
+      },
+      {
+        "latencySec": 3,
+        "elapsed": 15,
+        "score": 400
+      }
+    ]
+  },
+  "rhythm": {
+    "beatCount": 59,
+    "enginePerfectAll": 1180,
+    "uiPerfectAll": 1475,
+    "uiExtraPerPerfect": 5,
+    "spam": [
+      {
+        "intervalMs": 50,
+        "hits": 59,
+        "score": 590,
+        "perfect": 0
+      },
+      {
+        "intervalMs": 100,
+        "hits": 59,
+        "score": 590,
+        "perfect": 0
+      },
+      {
+        "intervalMs": 250,
+        "hits": 59,
+        "score": 590,
+        "perfect": 0
+      },
+      {
+        "intervalMs": 300,
+        "hits": 59,
+        "score": 890,
+        "perfect": 20
+      },
+      {
+        "intervalMs": 400,
+        "hits": 44,
+        "score": 665,
+        "perfect": 15
+      }
+    ],
+    "beatsPerSec": 2
+  },
+  "rewardTable": [
+    {
+      "stage": "开局(底薪)",
+      "idleRate": 0.2,
+      "idle30s": 6,
+      "oneDispatch": {
+        "colleague": "zhou lv1",
+        "mission": "stroll(就近溜达 180s x2.2)",
+        "seconds": 153,
+        "reward": 660
+      },
+      "games": {
+        "rhythm": {
+          "score": 1475,
+          "reward": 296,
+          "vsIdle30": 49.3333,
+          "idleSecEquivalent": 1480,
+          "vsDispatch": 0.448
+        },
+        "coffee": {
+          "score": 820,
+          "reward": 164,
+          "vsIdle30": 27.3333,
+          "idleSecEquivalent": 820,
+          "vsDispatch": 0.248
+        },
+        "findboss": {
+          "score": 549,
+          "reward": 110,
+          "vsIdle30": 18.3333,
+          "idleSecEquivalent": 550,
+          "vsDispatch": 0.167
+        }
+      }
+    },
+    {
+      "stage": "早期",
+      "idleRate": 1,
+      "idle30s": 30,
+      "oneDispatch": {
+        "colleague": "zhou lv1",
+        "mission": "stroll(就近溜达 180s x2.2)",
+        "seconds": 153,
+        "reward": 660
+      },
+      "games": {
+        "rhythm": {
+          "score": 1475,
+          "reward": 303,
+          "vsIdle30": 10.1,
+          "idleSecEquivalent": 303,
+          "vsDispatch": 0.459
+        },
+        "coffee": {
+          "score": 820,
+          "reward": 168,
+          "vsIdle30": 5.6,
+          "idleSecEquivalent": 168,
+          "vsDispatch": 0.255
+        },
+        "findboss": {
+          "score": 549,
+          "reward": 113,
+          "vsIdle30": 3.7667,
+          "idleSecEquivalent": 113,
+          "vsDispatch": 0.171
+        }
+      }
+    },
+    {
+      "stage": "中期",
+      "idleRate": 1000,
+      "idle30s": 30000,
+      "oneDispatch": {
+        "colleague": "zhou lv1",
+        "mission": "stroll(就近溜达 180s x2.2)",
+        "seconds": 153,
+        "reward": 4599
+      },
+      "games": {
+        "rhythm": {
+          "score": 1475,
+          "reward": 9145,
+          "vsIdle30": 0.3048,
+          "idleSecEquivalent": 9.1,
+          "vsDispatch": 1.988
+        },
+        "coffee": {
+          "score": 820,
+          "reward": 5084,
+          "vsIdle30": 0.1695,
+          "idleSecEquivalent": 5.1,
+          "vsDispatch": 1.105
+        },
+        "findboss": {
+          "score": 549,
+          "reward": 3403,
+          "vsIdle30": 0.1134,
+          "idleSecEquivalent": 3.4,
+          "vsDispatch": 0.74
+        }
+      }
+    },
+    {
+      "stage": "后期",
+      "idleRate": 100000,
+      "idle30s": 3000000,
+      "oneDispatch": {
+        "colleague": "zhou lv1",
+        "mission": "stroll(就近溜达 180s x2.2)",
+        "seconds": 153,
+        "reward": 442743
+      },
+      "games": {
+        "rhythm": {
+          "score": 1475,
+          "reward": 885295,
+          "vsIdle30": 0.2951,
+          "idleSecEquivalent": 8.9,
+          "vsDispatch": 2
+        },
+        "coffee": {
+          "score": 820,
+          "reward": 492163,
+          "vsIdle30": 0.1641,
+          "idleSecEquivalent": 4.9,
+          "vsDispatch": 1.112
+        },
+        "findboss": {
+          "score": 549,
+          "reward": 329509,
+          "vsIdle30": 0.1098,
+          "idleSecEquivalent": 3.3,
+          "vsDispatch": 0.744
+        }
+      }
+    }
+  ],
+  "stageSpread": {
+    "rhythmMax_score": 1475,
+    "idleSecondsEquivalent": {
+      "opening_0_2": 1480,
+      "early_1": 303,
+      "mid_1000": 9.1,
+      "late_100000": 8.9
+    },
+    "vs30sIdle": {
+      "opening": 49.33,
+      "early": 10.1,
+      "mid": 0.305,
+      "late": 0.295
+    },
+    "spreadEarlyOverLateX": 34.2
+  },
+  "capScenario": [
+    {
+      "stage": "开局(底薪)",
+      "idleRate": 0.2,
+      "atCap9999": 2011,
+      "vsIdle30": 335.167,
+      "idleSecEquivalent": 10055
+    },
+    {
+      "stage": "早期",
+      "idleRate": 1,
+      "atCap9999": 2059,
+      "vsIdle30": 68.633,
+      "idleSecEquivalent": 2059
+    },
+    {
+      "stage": "中期",
+      "idleRate": 1000,
+      "atCap9999": 61993,
+      "vsIdle30": 2.066,
+      "idleSecEquivalent": 62
+    },
+    {
+      "stage": "后期",
+      "idleRate": 100000,
+      "atCap9999": 6001399,
+      "vsIdle30": 2,
+      "idleSecEquivalent": 60
+    }
+  ],
+  "daily3": [
+    {
+      "stage": "开局(底薪)",
+      "idleRate": 0.2,
+      "perGame": 296,
+      "daily3": 888,
+      "idle90s": 18,
+      "vsIdle90s": 49.333,
+      "idleSecEquivalent": 4440
+    },
+    {
+      "stage": "早期",
+      "idleRate": 1,
+      "perGame": 303,
+      "daily3": 909,
+      "idle90s": 90,
+      "vsIdle90s": 10.1,
+      "idleSecEquivalent": 909
+    },
+    {
+      "stage": "中期",
+      "idleRate": 1000,
+      "perGame": 9145,
+      "daily3": 27435,
+      "idle90s": 90000,
+      "vsIdle90s": 0.305,
+      "idleSecEquivalent": 27.4
+    },
+    {
+      "stage": "后期",
+      "idleRate": 100000,
+      "perGame": 885295,
+      "daily3": 2655885,
+      "idle90s": 9000000,
+      "vsIdle90s": 0.295,
+      "idleSecEquivalent": 26.6
+    }
+  ],
+  "breakEvenScore": [
+    {
+      "stage": "开局(底薪)",
+      "idleRate": 0.2,
+      "breakEvenScore": 29.8,
+      "reachableByRhythm": true,
+      "maxReachableScore": 1475
+    },
+    {
+      "stage": "早期",
+      "idleRate": 1,
+      "breakEvenScore": 145.6,
+      "reachableByRhythm": true,
+      "maxReachableScore": 1475
+    },
+    {
+      "stage": "中期",
+      "idleRate": 1000,
+      "breakEvenScore": 4838.7,
+      "reachableByRhythm": false,
+      "maxReachableScore": 1475
+    },
+    {
+      "stage": "后期",
+      "idleRate": 100000,
+      "breakEvenScore": 4998.3,
+      "reachableByRhythm": false,
+      "maxReachableScore": 1475
+    }
+  ],
+  "rewardMonotonic": true,
+  "zeroRewardScore": [
+    {
+      "idleRate": 0,
+      "minScoreForOneReward": 5
+    },
+    {
+      "idleRate": 0.2,
+      "minScoreForOneReward": 5
+    },
+    {
+      "idleRate": 1,
+      "minScoreForOneReward": 5
+    },
+    {
+      "idleRate": 1000,
+      "minScoreForOneReward": 1
+    },
+    {
+      "idleRate": 100000,
+      "minScoreForOneReward": 1
+    }
+  ],
+  "dispatchVariants": [
+    {
+      "stage": "开局(底薪)",
+      "idleRate": 0.2,
+      "zhou_lv1_stroll_3min": 660,
+      "zhou_lv5_chat_30min_matched": 11595,
+      "li_lv5_stroll_3min_matched_short": 47048,
+      "zhou_lv1_coffee_8h": 35661,
+      "zhou_lv1_stroll_3min_idleSecEq": 3300
+    },
+    {
+      "stage": "早期",
+      "idleRate": 1,
+      "zhou_lv1_stroll_3min": 660,
+      "zhou_lv5_chat_30min_matched": 11645,
+      "li_lv5_stroll_3min_matched_short": 47062,
+      "zhou_lv1_coffee_8h": 36382,
+      "zhou_lv1_stroll_3min_idleSecEq": 660
+    },
+    {
+      "stage": "中期",
+      "idleRate": 1000,
+      "zhou_lv1_stroll_3min": 4599,
+      "zhou_lv5_chat_30min_matched": 74131,
+      "li_lv5_stroll_3min_matched_short": 64921,
+      "zhou_lv1_coffee_8h": 936714,
+      "zhou_lv1_stroll_3min_idleSecEq": 4.6
+    },
+    {
+      "stage": "后期",
+      "idleRate": 100000,
+      "zhou_lv1_stroll_3min": 442743,
+      "zhou_lv5_chat_30min_matched": 6266403,
+      "li_lv5_stroll_3min_matched_short": 1834747,
+      "zhou_lv1_coffee_8h": 90158745,
+      "zhou_lv1_stroll_3min_idleSecEq": 4.43
+    }
+  ],
+  "coffeeExpectation": [
+    {
+      "catchRate": 0.5,
+      "expectedScore": 225.3,
+      "maxScore": 434
+    },
+    {
+      "catchRate": 0.7,
+      "expectedScore": 358.5,
+      "maxScore": 660
+    },
+    {
+      "catchRate": 0.85,
+      "expectedScore": 516.1,
+      "maxScore": 780
+    },
+    {
+      "catchRate": 0.95,
+      "expectedScore": 665.2,
+      "maxScore": 780
+    },
+    {
+      "catchRate": 1,
+      "expectedScore": 727.8,
+      "maxScore": 800
+    }
+  ],
+  "coffeeBlind": [
+    {
+      "tapIntervalMs": 500,
+      "fixedX": null,
+      "expectedScore": 149.3,
+      "maxScore": 252
+    },
+    {
+      "tapIntervalMs": 300,
+      "fixedX": null,
+      "expectedScore": 215.6,
+      "maxScore": 319
+    },
+    {
+      "tapIntervalMs": 500,
+      "fixedX": 0.5,
+      "expectedScore": 143.2,
+      "maxScore": 264
+    },
+    {
+      "tapIntervalMs": 200,
+      "fixedX": null,
+      "expectedScore": 269.2,
+      "maxScore": 374
+    },
+    {
+      "tapIntervalMs": 100,
+      "fixedX": null,
+      "expectedScore": 345.9,
+      "maxScore": 418
+    }
+  ],
+  "coffeeBlindSweep": [
+    {
+      "tapIntervalMs": 200,
+      "sweepSec": 1,
+      "expectedScore": 272.1,
+      "maxScore": 396
+    },
+    {
+      "tapIntervalMs": 100,
+      "sweepSec": 1,
+      "expectedScore": 309.9,
+      "maxScore": 407
+    },
+    {
+      "tapIntervalMs": 100,
+      "sweepSec": 0.5,
+      "expectedScore": 382.3,
+      "maxScore": 429
+    },
+    {
+      "tapIntervalMs": 50,
+      "sweepSec": 0.5,
+      "expectedScore": 381.8,
+      "maxScore": 420
+    },
+    {
+      "tapIntervalMs": 100,
+      "sweepSec": 2,
+      "expectedScore": 207.1,
+      "maxScore": 319
+    }
+  ],
+  "coffeeMissedAudit": {
+    "passedDrops": 7264,
+    "missedCounted": 0
+  },
+  "coffeeVisualWindow": {
+    "dropAt": 3.08,
+    "elementCreatedAtSec": 0.08,
+    "elementRemovedAtSec": 0.48,
+    "catchWindow": [
+      2.76,
+      3.4
+    ],
+    "overlapSec": 0,
+    "gapSec": 2.28
+  },
+  "findbossExpectation": [
+    {
+      "perRoundLatencySec": 0.15,
+      "elapsedSec": 0.75,
+      "score": 542,
+      "rewardAtMid": 3360
+    },
+    {
+      "perRoundLatencySec": 0.3,
+      "elapsedSec": 1.5,
+      "score": 535,
+      "rewardAtMid": 3317
+    },
+    {
+      "perRoundLatencySec": 0.5,
+      "elapsedSec": 2.5,
+      "score": 525,
+      "rewardAtMid": 3255
+    },
+    {
+      "perRoundLatencySec": 0.8,
+      "elapsedSec": 4,
+      "score": 510,
+      "rewardAtMid": 3162
+    },
+    {
+      "perRoundLatencySec": 1.2,
+      "elapsedSec": 6,
+      "score": 490,
+      "rewardAtMid": 3038
+    },
+    {
+      "perRoundLatencySec": 2,
+      "elapsedSec": 10,
+      "score": 450,
+      "rewardAtMid": 2790
+    },
+    {
+      "perRoundLatencySec": 3,
+      "elapsedSec": 15,
+      "score": 400,
+      "rewardAtMid": 2480
+    }
+  ],
+  "findbossErrors": [
+    {
+      "wrong": 0,
+      "scoreFast": 450,
+      "scoreTimeout": 250
+    },
+    {
+      "wrong": 1,
+      "scoreFast": 430,
+      "scoreTimeout": 230
+    },
+    {
+      "wrong": 2,
+      "scoreFast": 410,
+      "scoreTimeout": 210
+    },
+    {
+      "wrong": 3,
+      "scoreFast": 390,
+      "scoreTimeout": 190
+    },
+    {
+      "wrong": 5,
+      "scoreFast": 350,
+      "scoreTimeout": 150
+    }
+  ],
+  "rhythmExpectation": [
+    {
+      "perfectRate": 0,
+      "expectedScore": 590,
+      "rewardAtMid": 3658
+    },
+    {
+      "perfectRate": 0.2,
+      "expectedScore": 767,
+      "rewardAtMid": 4755
+    },
+    {
+      "perfectRate": 0.4,
+      "expectedScore": 944,
+      "rewardAtMid": 5852
+    },
+    {
+      "perfectRate": 0.6,
+      "expectedScore": 1121,
+      "rewardAtMid": 6950
+    },
+    {
+      "perfectRate": 0.8,
+      "expectedScore": 1298,
+      "rewardAtMid": 8047
+    },
+    {
+      "perfectRate": 0.95,
+      "expectedScore": 1430,
+      "rewardAtMid": 8866
+    },
+    {
+      "perfectRate": 1,
+      "expectedScore": 1475,
+      "rewardAtMid": 9145
+    }
+  ],
+  "rhythmSpamFloor": {
+    "score": 590,
+    "rewardAtMid": 3658
+  },
+  "strategyTiers": [
+    {
+      "tier": "低技能",
+      "coffee": 250,
+      "findboss": 490,
+      "rhythm": 590,
+      "argmax": "rhythm",
+      "daily3Best": {
+        "game": "rhythm",
+        "score": 1770
+      }
+    },
+    {
+      "tier": "中技能",
+      "coffee": 560,
+      "findboss": 510,
+      "rhythm": 900,
+      "argmax": "rhythm",
+      "daily3Best": {
+        "game": "rhythm",
+        "score": 2700
+      }
+    },
+    {
+      "tier": "高技能",
+      "coffee": 700,
+      "findboss": 530,
+      "rhythm": 1250,
+      "argmax": "rhythm",
+      "daily3Best": {
+        "game": "rhythm",
+        "score": 3750
+      }
+    },
+    {
+      "tier": "满技能",
+      "coffee": 820,
+      "findboss": 549,
+      "rhythm": 1475,
+      "argmax": "rhythm",
+      "daily3Best": {
+        "game": "rhythm",
+        "score": 4425
+      }
+    }
+  ],
+  "domination": {
+    "rhythmSpamFloor": 590,
+    "findbossAbsMax": 550,
+    "findbossRealisticMax": 549,
+    "findbossDominated": true,
+    "coffeeMax": 820,
+    "rhythmMax": 1475
+  },
+  "allocation": {
+    "formula": "reward = floor((idle*0.6+20) * score/100)，对 score 线性，无游戏系数、无边际递减",
+    "conclusion": "分配问题退化为单次 argmax，不存在 2+1/1+1+1 的组合策略"
+  },
+  "exploitAudit": {
+    "cap9999RewardAt1000": 61993,
+    "over9999CappedTo": 9999,
+    "over9999RewardEqualsCap": true,
+    "zeroConsumesAttempt": true,
+    "negConsumesAttempt": true,
+    "nanConsumesAttemptNoReward": true,
+    "fourthSubmissionBlocked": true,
+    "playedAfter3": 3
+  },
+  "crossDay": {
+    "sameDayIsSameObject": true,
+    "nextDayPlayed": 0,
+    "nextDayBestKept": 1475,
+    "bestHasAnyEffect": "无（best 仅菜单/结算展示，不参与奖励/成就/排行）"
+  },
+  "scaleMismatch": {
+    "specCap": 9999,
+    "actualMax": {
+      "coffee": 820,
+      "findboss": 549,
+      "rhythm": 1475
+    },
+    "capUtilization": {
+      "coffee": 0.082,
+      "findboss": 0.0549,
+      "rhythm": 0.1475
+    },
+    "engineComment": "minigames.ts:64「分数 × 0.6 秒挂机收益（30 秒小游戏 ≈ 18 秒挂机收益）」",
+    "scoreFor18sIdle": [
+      {
+        "idleRate": 0.2,
+        "requiredScore": 17.9,
+        "reachable": true
+      },
+      {
+        "idleRate": 1,
+        "requiredScore": 87.4,
+        "reachable": true
+      },
+      {
+        "idleRate": 1000,
+        "requiredScore": 2903.2,
+        "reachable": false
+      },
+      {
+        "idleRate": 100000,
+        "requiredScore": 2999,
+        "reachable": false
+      }
+    ]
+  },
+  "commentVsActual": [
+    {
+      "stage": "开局(底薪)",
+      "idleRate": 0.2,
+      "intended18s": 3.6,
+      "actualAtRhythmMax": 1480,
+      "ratioActualOverIntended": 82.22
+    },
+    {
+      "stage": "早期",
+      "idleRate": 1,
+      "intended18s": 18,
+      "actualAtRhythmMax": 303,
+      "ratioActualOverIntended": 16.83
+    },
+    {
+      "stage": "中期",
+      "idleRate": 1000,
+      "intended18s": 18000,
+      "actualAtRhythmMax": 9.145,
+      "ratioActualOverIntended": 0.51
+    },
+    {
+      "stage": "后期",
+      "idleRate": 100000,
+      "intended18s": 1800000,
+      "actualAtRhythmMax": 8.85295,
+      "ratioActualOverIntended": 0.49
+    }
+  ],
+  "consistency": {
+    "gameDailyLimitField": [
+      {
+        "id": "coffee",
+        "dailyLimit": 3
+      },
+      {
+        "id": "findboss",
+        "dailyLimit": 3
+      },
+      {
+        "id": "rhythm",
+        "dailyLimit": 3
+      }
+    ],
+    "actualSharedLimit": 3,
+    "dailyLimitUsedInCode": false,
+    "perfectScoreUiVsEngine": {
+      "enginePerPerfect": 20,
+      "uiEffectivePerPerfect": 25,
+      "diffPct": 25
+    },
+    "rewardBase": {
+      "arcadeUses": "stationIdleScaled（工位挂机，不含同事/固定同事挂机）",
+      "hudShows": "effectOf().idleRate（含同事固定 + 30% 工位占比）"
+    },
+    "durationSpec": {
+      "spec": 30,
+      "findbossActual": "≈1-6 秒点完 5 轮即结束（不是 30 秒）"
+    }
+  }
+}

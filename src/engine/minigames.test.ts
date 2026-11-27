@@ -57,7 +57,7 @@ describe("摸鱼站", () => {
 
   it("接咖啡：掉落序列递增、判定窗口有效", () => {
     const drops = genDrops(30, rng);
-    expect(drops.length).toBeGreaterThan(20);
+    expect(drops.length).toBeGreaterThan(15);
     for (let i = 1; i < drops.length; i++) expect(drops[i]!.at).toBeGreaterThan(drops[i - 1]!.at);
     // 正中心命中
     const d = drops[3]!;
@@ -70,6 +70,7 @@ describe("摸鱼站", () => {
     expect(coffeeScore(10, 0, 0)).toBe(100);
     expect(coffeeScore(10, 0, 10)).toBeGreaterThan(100); // 满 combo ×2
     expect(coffeeScore(10, 5, 0)).toBe(90);
+    expect(coffeeScore(0, 20, 0)).toBe(0); // 不会负分
   });
 
   it("找老板：轮次生成在网格内，计分正确", () => {

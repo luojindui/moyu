@@ -7,7 +7,6 @@ import {
   findScore,
   genBeats,
   genDrops,
-  genFindRounds,
   judgeBeat,
   judgeCatch,
   type GameId,
@@ -19,8 +18,9 @@ export class Arcade {
   private body = document.getElementById("arcade-body")!;
   private elTitle = document.getElementById("arcade-title")!;
   private elLeft = document.getElementById("arcade-left")!;
-  private play: { raf: number; cleanup: () => void } | null = null;
+  private play: { raf: number; cleanup: () => void; score?: () => number } | null = null;
   private lastState: GameState | null = null;
+  private currentGame: GameId | null = null;
 
   constructor(private onFinish: (game: GameId, score: number) => void) {
     document.getElementById("btn-arcade")!.addEventListener("click", () => this.toggle());
@@ -45,7 +45,14 @@ export class Arcade {
   }
 
   close(): void {
-    this.stopPlay();
+    // 中途退出：按当前分数结算并消耗次数（防"Esc 重开无限刷"）
+    if (this.play) {
+      const partial = this.play.score ? this.play.score() : 0;
+      const game = this.currentGame;
+      this.stopPlay();
+      if (game) this.onFinish(game, Math.max(0, Math.floor(partial)));
+      this.currentGame = null;
+    }
     this.root.classList.add("hidden");
   }
 
@@ -83,10 +90,10 @@ export class Arcade {
   }
 
   private startGame(game: GameId): void {
+    this.currentGame = game;
     const def = GAMES.find((g) => g.id === game)!;
     this.elTitle.textContent = def.name;
     const startAt = performance.now();
-    const total = def.duration * 1000;
     const rng = Math.random;
 
     if (game === "coffee") {
@@ -95,107 +102,140 @@ export class Arcade {
       let missed = 0;
       let combo = 0;
       let maxCombo = 0;
-      const used = new Set<number>();
+      const resolved = new Set<number>();
+      const els = new Map<number, HTMLElement>();
       this.body.innerHTML = `<div class="arcade-play" id="play-area">
         <div class="arcade-timer" id="play-timer"></div>
         <div class="arcade-score" id="play-score">0</div>
-        <div class="arcade-hint">点屏幕接住咖啡 ☕</div>
+        <div class="arcade-hint">咖啡落到杯口时点它 ☕</div>
         <div class="arcade-drops" id="play-drops"></div>
+        <div class="cup-line"></div>
       </div>`;
       const area = document.getElementById("play-area")!;
       const dropsEl = document.getElementById("play-drops")!;
       const scoreEl = document.getElementById("play-score")!;
       const timerEl = document.getElementById("play-timer")!;
-      let lastIdx = -1;
+      const DROP_SECONDS = 3; // 从顶部落到杯口的时长
       const onTap = (e: PointerEvent): void => {
         const rect = area.getBoundingClientRect();
         const tapAt = (performance.now() - startAt) / 1000;
         const tapX = (e.clientX - rect.left) / rect.width;
         const { hit } = judgeCatch(drops, tapAt, tapX);
-        if (hit && !used.has(hit.id)) {
-          used.add(hit.id);
+        if (hit && !resolved.has(hit.id)) {
+          resolved.add(hit.id);
           caught++;
           combo++;
           maxCombo = Math.max(maxCombo, combo);
+          const el = els.get(hit.id);
+          if (el) {
+            el.classList.add("caught");
+            setTimeout(() => el.remove(), 180);
+          }
+          scoreEl.textContent = String(coffeeScore(caught, missed, maxCombo));
         } else {
           combo = 0;
         }
-        scoreEl.textContent = String(coffeeScore(caught, missed, maxCombo));
       };
       area.addEventListener("pointerdown", onTap);
       const tick = (): void => {
         const elapsed = (performance.now() - startAt) / 1000;
         const leftS = Math.max(0, def.duration - elapsed);
         timerEl.textContent = `${leftS.toFixed(1)}s`;
-        // 掉落渲染（只显示 3 秒内的）
-        const visible = drops.filter((d) => d.at > elapsed - 0.4 && d.at < elapsed + 3);
-        for (const d of visible) {
-          if (used.has(d.id) || d.id <= lastIdx) continue;
-          const left = (d.at - elapsed) / 3;
-          if (left < 0) {
-            if (!used.has(d.id)) {
-              used.add(d.id);
+        // 逐帧更新所有掉落位置（顶部 → 杯口 = 88%）
+        for (const d of drops) {
+          const dt = d.at - elapsed;
+          if (dt > DROP_SECONDS) continue; // 还没出现
+          let el = els.get(d.id);
+          if (!el) {
+            el = document.createElement("div");
+            el.className = "drop";
+            el.style.left = `${d.x * 100}%`;
+            dropsEl.appendChild(el);
+            els.set(d.id, el);
+          }
+          if (dt >= 0) {
+            // 下落中：0%（顶）→ 88%（杯口）
+            el.style.top = `${88 - (dt / DROP_SECONDS) * 88}%`;
+            el.classList.remove("landed");
+          } else {
+            // 已过杯口：落地
+            el.style.top = "88%";
+            el.classList.add("landed");
+            if (!resolved.has(d.id) && dt < -0.4) {
+              resolved.add(d.id);
               missed++;
               combo = 0;
+              setTimeout(() => el!.remove(), 200);
             }
-            continue;
           }
-          const el = document.createElement("div");
-          el.className = "drop";
-          el.style.left = `${d.x * 100}%`;
-          el.style.top = `${Math.max(0, left * 100)}%`;
-          dropsEl.appendChild(el);
-          setTimeout(() => el.remove(), 400);
+          if (resolved.has(d.id) && dt < -0.6) {
+            el.remove();
+            els.delete(d.id);
+          }
         }
-        if (visible.length) lastIdx = Math.max(lastIdx, visible[visible.length - 1]!.id);
         scoreEl.textContent = String(coffeeScore(caught, missed, maxCombo));
         if (leftS > 0) this.play!.raf = requestAnimationFrame(tick);
         else {
-          const score = coffeeScore(caught, missed, maxCombo);
           area.removeEventListener("pointerdown", onTap);
-          this.finish(def, score);
+          for (const el of els.values()) el.remove();
+          this.finish(def, coffeeScore(caught, missed, maxCombo), { caught, missed, maxCombo });
         }
       };
-      this.play = { raf: requestAnimationFrame(tick), cleanup: () => area.removeEventListener("pointerdown", onTap) };
+      this.play = {
+        raf: requestAnimationFrame(tick),
+        cleanup: () => {
+          area.removeEventListener("pointerdown", onTap);
+          for (const el of els.values()) el.remove();
+        },
+        score: () => coffeeScore(caught, missed, maxCombo),
+      };
       return;
     }
 
     if (game === "findboss") {
-      const rounds = genFindRounds(5, 3, rng);
-      let idx = 0;
+      // 30 秒内尽可能多找：轮次不限，时间到才结束
       let correct = 0;
       let wrong = 0;
-      const roundStart: number[] = [];
+      let idx = 0;
+      const genRound = (): number => Math.floor(rng() * 9);
+      let bossAt = genRound();
       const renderRound = (): void => {
-        const r = rounds[idx]!;
-        roundStart[idx] = performance.now();
         this.body.innerHTML = `<div class="arcade-play">
-          <div class="arcade-timer" id="play-timer">第 ${idx + 1}/${rounds.length} 轮</div>
+          <div class="arcade-timer" id="play-timer">${def.duration.toFixed(1)}s</div>
+          <div class="arcade-score" id="play-score">0</div>
+          <div class="arcade-hint">找出王总（红色「王」）· 已找 ${correct}</div>
           <div class="arcade-grid" id="play-grid">
-            ${Array.from({ length: 9 }, (_, i) => `<button class="face ${i === r.bossAt ? "boss" : ""}" data-i="${i}">${i === r.bossAt ? "王" : "员"}</button>`).join("")}
+            ${Array.from({ length: 9 }, (_, i) => `<button class="face ${i === bossAt ? "boss" : ""}" data-i="${i}">${i === bossAt ? "王" : "员"}</button>`).join("")}
           </div>
         </div>`;
         const grid = document.getElementById("play-grid")!;
+        const scoreEl = document.getElementById("play-score")!;
         grid.querySelectorAll<HTMLButtonElement>("button.face").forEach((b) => {
           b.addEventListener("click", () => {
-            const ok = Number(b.dataset.i) === r.bossAt;
+            if (idx === undefined) return;
+            const ok = Number(b.dataset.i) === bossAt;
             if (ok) correct++;
             else wrong++;
             idx++;
-            if (idx >= rounds.length) {
-              const leftSec = Math.max(0, (total - (performance.now() - startAt)) / 1000);
-              this.finish(def, findScore(correct, wrong, leftSec));
-            } else renderRound();
+            scoreEl.textContent = String(findScore(correct, wrong, Math.max(0, def.duration - (performance.now() - startAt) / 1000)));
+            bossAt = genRound();
+            renderRound();
           });
         });
       };
-      // 30 秒总限时
-      const deadline = setTimeout(() => {
-        const leftSec = 0;
-        this.finish(def, findScore(correct, wrong, leftSec));
-      }, total);
-      this.play = { raf: 0, cleanup: () => clearTimeout(deadline) };
       renderRound();
+      const tick = (): void => {
+        const elapsed = (performance.now() - startAt) / 1000;
+        const leftS = Math.max(0, def.duration - elapsed);
+        const timerEl = document.getElementById("play-timer");
+        if (timerEl) timerEl.textContent = `${leftS.toFixed(1)}s`;
+        if (leftS > 0) {
+          this.play!.raf = requestAnimationFrame(tick);
+        } else {
+          this.finish(def, findScore(correct, wrong, 0), { caught: correct, missed: wrong });
+        }
+      };
+      this.play = { raf: requestAnimationFrame(tick), cleanup: () => undefined, score: () => findScore(correct, wrong, 0) };
       return;
     }
 
@@ -224,8 +264,11 @@ export class Arcade {
         if (res.kind === "perfect") perfect++;
         const el = row.querySelector<HTMLElement>(`[data-b="${res.index}"]`);
         if (el) el.className = `beat ${res.kind}`;
+      } else {
+        // 乱点惩罚：无节拍可对应时扣 5 分（防"狂点拿保底"）
+        score = Math.max(0, score - 5);
       }
-      scoreEl.textContent = String(score + perfect * 5);
+      scoreEl.textContent = String(score);
     };
     area.addEventListener("pointerdown", onTap);
     const tick = (): void => {
@@ -241,23 +284,35 @@ export class Arcade {
       if (leftS > 0) this.play!.raf = requestAnimationFrame(tick);
       else {
         area.removeEventListener("pointerdown", onTap);
-        this.finish(def, score + perfect * 5);
+        this.finish(def, score, { caught: perfect, missed: 0 });
       }
     };
-    this.play = { raf: requestAnimationFrame(tick), cleanup: () => area.removeEventListener("pointerdown", onTap) };
+    this.play = {
+      raf: requestAnimationFrame(tick),
+      cleanup: () => area.removeEventListener("pointerdown", onTap),
+      score: () => score,
+    };
   }
 
-  private finish(def: (typeof GAMES)[number], score: number): void {
+  private finish(def: (typeof GAMES)[number], score: number, detail?: Record<string, number>): void {
     this.stopPlay();
+    this.currentGame = null;
     this.onFinish(def.id, Math.max(0, Math.floor(score)));
     // 显示结算
     const state = this.lastState;
     const best = state?.arcade.best[def.id] ?? 0;
+    const record = Math.floor(score) > best;
+    const detailText = detail
+      ? Object.entries(detail)
+          .map(([k, v]) => `${k === "caught" ? "接住" : k === "missed" ? "漏接" : "最高连击"} ${v}`)
+          .join(" · ")
+      : "";
     this.body.innerHTML = `<div class="arcade-play">
       <div class="arcade-name">${def.name} 结束</div>
       <div class="arcade-score">${Math.floor(score)} 分</div>
-      <div class="arcade-hint">历史最高 ${best}</div>
-      <button class="ghost" id="arcade-back">返回摸鱼站</button>
+      ${record ? `<div class="arcade-record">🎉 新纪录！（旧 ${best}）</div>` : `<div class="arcade-hint">历史最高 ${best}</div>`}
+      ${detailText ? `<div class="arcade-hint">${detailText}</div>` : ""}
+      <button class="ghost arcade-back-btn" id="arcade-back">返回摸鱼站</button>
     </div>`;
     document.getElementById("arcade-back")!.addEventListener("click", () => this.renderMenu());
   }

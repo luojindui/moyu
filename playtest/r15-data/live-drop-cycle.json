@@ -1,0 +1,37 @@
+{
+  "firstDrop": {
+    "got": true,
+    "info": {
+      "createdAtMs": 61,
+      "top": "26.2067%",
+      "left": "70%",
+      "rectY": 389,
+      "areaRect": {
+        "top": 309,
+        "height": 300
+      }
+    }
+  },
+  "atCatchWindow": {
+    "createdAtMs": 61,
+    "nowMs": 3052,
+    "sinceCreatedMs": 2991,
+    "sameElementConnected": false,
+    "sameElementTop": "26.2067%",
+    "liveDropCount": 0,
+    "note": "判定窗口 = 创建 + 2.68s ~ 3.32s（at±0.32s）"
+  },
+  "quit": {
+    "playedBefore": {
+      "date": "2026-11-27",
+      "played": 0,
+      "best": {}
+    },
+    "playedAfter": {
+      "date": "2026-11-27",
+      "played": 0,
+      "best": {}
+    },
+    "closed": true
+  }
+}

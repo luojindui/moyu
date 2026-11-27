@@ -1,0 +1,426 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "startedAt": "2026-11-27T11:54:13.154Z",
+  "steps": [
+    {
+      "step": "fresh",
+      "at": 1795780454133,
+      "data": {
+        "today": "2026-11-27",
+        "arcade": {
+          "date": "",
+          "played": 0,
+          "best": {}
+        }
+      }
+    },
+    {
+      "step": "menu-initial",
+      "at": 1795780454269,
+      "data": {
+        "left": "今天还能玩 3/3 次",
+        "title": "摸鱼站",
+        "cards": [
+          {
+            "name": "接咖啡 最高 0",
+            "desc": "咖啡掉下来时点住它——掉地上就没了",
+            "game": "coffee",
+            "disabled": false,
+            "btnSize": [
+              300,
+              44
+            ]
+          },
+          {
+            "name": "找老板 最高 0",
+            "desc": "在一堆同事脸里找出王总，越快越好",
+            "game": "findboss",
+            "disabled": false,
+            "btnSize": [
+              300,
+              44
+            ]
+          },
+          {
+            "name": "节奏点击 最高 0",
+            "desc": "跟着节拍点屏幕，越准分越高",
+            "game": "rhythm",
+            "disabled": false,
+            "btnSize": [
+              300,
+              44
+            ]
+          }
+        ],
+        "closeSize": [
+          44,
+          44
+        ],
+        "rootHidden": false,
+        "role": "dialog",
+        "ariaModal": "true",
+        "state": {
+          "date": "2026-11-27",
+          "played": 0,
+          "best": {}
+        }
+      }
+    },
+    {
+      "step": "coffee",
+      "at": 1795780456942,
+      "data": {
+        "coffeeSamples": [
+          {
+            "t": 254,
+            "score": "0",
+            "timer": "29.8s",
+            "dropEls": 3,
+            "frames": 46
+          },
+          {
+            "t": 417,
+            "score": "0",
+            "timer": "29.6s",
+            "dropEls": 3,
+            "frames": 56
+          },
+          {
+            "t": 580,
+            "score": "0",
+            "timer": "29.4s",
+            "dropEls": 4,
+            "frames": 66
+          },
+          {
+            "t": 744,
+            "score": "0",
+            "timer": "29.3s",
+            "dropEls": 4,
+            "frames": 76
+          },
+          {
+            "t": 906,
+            "score": "0",
+            "timer": "29.1s",
+            "dropEls": 4,
+            "frames": 85
+          },
+          {
+            "t": 1069,
+            "score": "0",
+            "timer": "28.9s",
+            "dropEls": 4,
+            "frames": 95
+          },
+          {
+            "t": 1231,
+            "score": "-2",
+            "timer": "28.8s",
+            "dropEls": 5,
+            "frames": 105
+          },
+          {
+            "t": 1394,
+            "score": "-2",
+            "timer": "28.6s",
+            "dropEls": 5,
+            "frames": 115
+          },
+          {
+            "t": 1558,
+            "score": "-2",
+            "timer": "28.5s",
+            "dropEls": 4,
+            "frames": 124
+          },
+          {
+            "t": 1721,
+            "score": "-2",
+            "timer": "28.3s",
+            "dropEls": 4,
+            "frames": 134
+          },
+          {
+            "t": 1883,
+            "score": "-2",
+            "timer": "28.1s",
+            "dropEls": 4,
+            "frames": 144
+          },
+          {
+            "t": 2047,
+            "score": "-2",
+            "timer": "28.0s",
+            "dropEls": 4,
+            "frames": 154
+          },
+          {
+            "t": 2210,
+            "score": "-4",
+            "timer": "27.8s",
+            "dropEls": 5,
+            "frames": 164
+          },
+          {
+            "t": 2376,
+            "score": "-4",
+            "timer": "27.6s",
+            "dropEls": 4,
+            "frames": 173
+          }
+        ],
+        "analyzed": [
+          {
+            "top": "64.812%",
+            "addMs": 10,
+            "visibleMs": 1400,
+            "predictedArrivalMs": 1955,
+            "removedBeforeArrivalMs": 545
+          },
+          {
+            "top": "36.9453%",
+            "addMs": 10,
+            "visibleMs": 2350,
+            "predictedArrivalMs": 1119,
+            "removedBeforeArrivalMs": -1241
+          },
+          {
+            "top": "9.372%",
+            "addMs": 10,
+            "visibleMs": null,
+            "predictedArrivalMs": 291,
+            "removedBeforeArrivalMs": null
+          },
+          {
+            "top": "0.132%",
+            "addMs": 425,
+            "visibleMs": null,
+            "predictedArrivalMs": 429,
+            "removedBeforeArrivalMs": null
+          },
+          {
+            "top": "0.3696%",
+            "addMs": 1093,
+            "visibleMs": null,
+            "predictedArrivalMs": 1104,
+            "removedBeforeArrivalMs": null
+          },
+          {
+            "top": "88%",
+            "addMs": 1426,
+            "visibleMs": 0,
+            "predictedArrivalMs": 4066,
+            "removedBeforeArrivalMs": 2640
+          },
+          {
+            "top": "88%",
+            "addMs": 1443,
+            "visibleMs": 0,
+            "predictedArrivalMs": 4083,
+            "removedBeforeArrivalMs": 2640
+          },
+          {
+            "top": "88%",
+            "addMs": 1460,
+            "visibleMs": 0,
+            "predictedArrivalMs": 4100,
+            "removedBeforeArrivalMs": 2640
+          }
+        ],
+        "drops": 65,
+        "rafDuringCoffee": {
+          "rafTotal": 2,
+          "rafArcade": 1,
+          "longTotal": 0,
+          "longArcade": 0,
+          "clearCalls": 0,
+          "rafExec": 310
+        }
+      }
+    },
+    {
+      "step": "coffee-after-esc",
+      "at": 1795780457303,
+      "data": {
+        "rafAfterCoffeeEsc": {
+          "rafTotal": 1,
+          "rafArcade": 0,
+          "longTotal": 0,
+          "longArcade": 0,
+          "clearCalls": 1,
+          "rafExec": 333
+        },
+        "arcadeAfterCoffeeEsc": {
+          "date": "2026-11-27",
+          "played": 1,
+          "best": {}
+        }
+      }
+    },
+    {
+      "step": "rhythm",
+      "at": 1795780460477,
+      "data": {
+        "hits": 5,
+        "rhythmAfter": {
+          "score": "100",
+          "marks": {
+            "perfect": 5,
+            "good": 0
+          },
+          "beats": 59
+        },
+        "rafDuringRhythm": {
+          "rafTotal": 2,
+          "rafArcade": 1,
+          "longTotal": 0,
+          "longArcade": 0,
+          "clearCalls": 1,
+          "rafExec": 351
+        }
+      }
+    },
+    {
+      "step": "findboss-cleanup",
+      "at": 1795780461665,
+      "data": {
+        "longDuring": {
+          "rafTotal": 2,
+          "rafArcade": 1,
+          "longTotal": 0,
+          "longArcade": 0,
+          "clearCalls": 2,
+          "rafExec": 771
+        },
+        "longAfter": {
+          "rafTotal": 1,
+          "rafArcade": 0,
+          "longTotal": 0,
+          "longArcade": 0,
+          "clearCalls": 3,
+          "rafExec": 793
+        }
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "初始 3/3 次",
+      "pass": true,
+      "detail": "今天还能玩 3/3 次"
+    },
+    {
+      "name": "3 个游戏卡、按钮均可用",
+      "pass": true,
+      "detail": "[[\"coffee\",false],[\"findboss\",false],[\"rhythm\",false]]"
+    },
+    {
+      "name": "role=dialog + aria-modal",
+      "pass": true,
+      "detail": "[\"dialog\",\"true\"]"
+    },
+    {
+      "name": "关闭按钮 44×44",
+      "pass": true,
+      "detail": "[44,44]"
+    },
+    {
+      "name": "开始按钮高度 ≥44",
+      "pass": true,
+      "detail": "[[300,44],[300,44],[300,44]]"
+    },
+    {
+      "name": "初始最高分均 0",
+      "pass": true,
+      "detail": "[\"接咖啡 最高 0\",\"找老板 最高 0\",\"节奏点击 最高 0\"]"
+    },
+    {
+      "name": "Esc 关闭摸鱼站",
+      "pass": true,
+      "detail": "arcade hidden"
+    },
+    {
+      "name": "重开面板仍 3/3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "咖啡掉落 DOM 存在（有视觉元素）",
+      "pass": true,
+      "detail": "drops=65"
+    },
+    {
+      "name": "掉落方块生命周期仅 ~400ms（无下落动画）",
+      "pass": false,
+      "detail": "[{\"top\":\"64.812%\",\"addMs\":10,\"visibleMs\":1400,\"predictedArrivalMs\":1955,\"removedBeforeArrivalMs\":545},{\"top\":\"36.9453%\",\"addMs\":10,\"visibleMs\":2350,\"predictedArrivalMs\":1119,\"removedBeforeArrivalMs\":-1241},{\"top\":\"9.372%\",\"addMs\":10,\"visibleMs\":null,\"predictedArrivalMs\":291,\"removedBeforeArrivalMs\":null}]"
+    },
+    {
+      "name": "判定时刻前掉落已消失（视觉与判定脱节）",
+      "pass": false,
+      "detail": "[{\"top\":\"36.9453%\",\"addMs\":10,\"visibleMs\":2350,\"predictedArrivalMs\":1119,\"removedBeforeArrivalMs\":-1241}]"
+    },
+    {
+      "name": "无点击时 2s 内分数不为负（漏接 -2 始终不触发）",
+      "pass": false,
+      "detail": "[\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"-2\",\"-2\",\"-2\",\"-2\",\"-2\",\"-2\",\"-4\",\"-4\"]"
+    },
+    {
+      "name": "30s 计时器在走（采样首末差 >1.5s）",
+      "pass": true,
+      "detail": "29.8s → 27.6s"
+    },
+    {
+      "name": "咖啡游戏中存在 arcade rAF 循环",
+      "pass": true,
+      "detail": "{\"rafTotal\":2,\"rafArcade\":1,\"longTotal\":0,\"longArcade\":0,\"clearCalls\":0,\"rafExec\":310}"
+    },
+    {
+      "name": "咖啡中途 Esc：arcade rAF 清理为 0",
+      "pass": true,
+      "detail": "{\"rafTotal\":1,\"rafArcade\":0,\"longTotal\":0,\"longArcade\":0,\"clearCalls\":1,\"rafExec\":333}"
+    },
+    {
+      "name": "咖啡中途 Esc 不消耗次数",
+      "pass": false,
+      "detail": "{\"date\":\"2026-11-27\",\"played\":1,\"best\":{}}"
+    },
+    {
+      "name": "节奏点击有得分（perfect/good 生效）",
+      "pass": true,
+      "detail": "{\"score\":\"100\",\"marks\":{\"perfect\":5,\"good\":0},\"beats\":59}"
+    },
+    {
+      "name": "节奏标记 class 生效",
+      "pass": true,
+      "detail": "{\"perfect\":5,\"good\":0}"
+    },
+    {
+      "name": "节奏中途 Esc：arcade rAF 清理为 0",
+      "pass": true,
+      "detail": "{\"rafTotal\":1,\"rafArcade\":0,\"longTotal\":0,\"longArcade\":0,\"clearCalls\":2,\"rafExec\":722}"
+    },
+    {
+      "name": "节奏中途 Esc 不消耗次数",
+      "pass": false,
+      "detail": "{\"date\":\"2026-11-27\",\"played\":2,\"best\":{\"rhythm\":100}}"
+    },
+    {
+      "name": "找老板 30s 定时器存在",
+      "pass": false,
+      "detail": "{\"rafTotal\":2,\"rafArcade\":1,\"longTotal\":0,\"longArcade\":0,\"clearCalls\":2,\"rafExec\":771}"
+    },
+    {
+      "name": "找老板中途 Esc：30s 定时器被清除",
+      "pass": true,
+      "detail": "{\"rafTotal\":1,\"rafArcade\":0,\"longTotal\":0,\"longArcade\":0,\"clearCalls\":3,\"rafExec\":793}"
+    },
+    {
+      "name": "找老板中途 Esc 不消耗次数",
+      "pass": false,
+      "detail": "{\"date\":\"2026-11-27\",\"played\":3,\"best\":{\"rhythm\":100}}"
+    }
+  ],
+  "consoleErrors": [],
+  "error": "Error: waitFor timeout: document.getElementById('play-area') || document.getElementById('play-grid') || document.querySelector('.arcade-play')\n    at waitFor (file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-r15-browser.mjs:41:13)\n    at async startGame (file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-r15-browser.mjs:123:7)\n    at async playFindboss (file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-r15-browser.mjs:133:7)\n    at async runChrome.timeoutMs (file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-r15-browser.mjs:271:19)\n    at async runChrome (file:///Users/p/Desktop/workspace/code/moyu/playtest/lib/chrome.mjs:40:12)\n    at async file:///Users/p/Desktop/workspace/code/moyu/playtest/probe-r15-browser.mjs:22:1"
+}

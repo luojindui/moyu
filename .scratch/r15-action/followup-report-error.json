@@ -1,0 +1,75 @@
+{
+  "startedAt": "2026-11-27T11:54:20.437Z",
+  "url": "http://127.0.0.1:5173/",
+  "head": "77019bc",
+  "phases": {
+    "F1": {
+      "setup": {
+        "startAt": 1374.0999994277954
+      },
+      "res": {
+        "taps": 75,
+        "perfect": 11,
+        "good": 13,
+        "used": 24,
+        "score": "100",
+        "when": 12840
+      }
+    },
+    "F2": {
+      "setup": {
+        "startAt": 14622.699999809265
+      },
+      "res": {
+        "taps": 150,
+        "perfect": 0,
+        "good": 18,
+        "used": 18,
+        "score": "0",
+        "when": 9940
+      }
+    },
+    "F3": {
+      "setup": {
+        "startAt": 24955.89999961853
+      },
+      "out": {
+        "afterPerfectBeat0": {
+          "score": "20",
+          "cls": "beat perfect"
+        },
+        "afterGoodBeat1": {
+          "score": "30",
+          "cls": "beat good"
+        },
+        "missTapAt1850": {
+          "before": {
+            "score": "30",
+            "classes": "beat perfect|beat good|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat",
+            "hint": "跟着节拍点！",
+            "toast": "得分 0，没拿到奖励",
+            "timer": "29.7s"
+          },
+          "after": {
+            "score": "25",
+            "classes": "beat perfect|beat good|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat|beat",
+            "hint": "跟着节拍点！",
+            "toast": "得分 0，没拿到奖励",
+            "timer": "29.7s"
+          },
+          "scoreSame": false,
+          "classesSame": true,
+          "hintSame": true,
+          "toastSame": true,
+          "beat2": "beat",
+          "beat3": "beat"
+        },
+        "afterPerfectBeat3": {
+          "score": "45",
+          "cls": "beat perfect"
+        }
+      }
+    }
+  },
+  "error": "Error: eval: {\"exceptionId\":1,\"text\":\"Uncaught\",\"lineNumber\":1,\"columnNumber\":39,\"scriptId\":\"74\",\"stackTrace\":{\"callFrames\":[{\"functionName\":\"\",\"scriptId\":\"74\",\"url\":\"\",\"lineNumber\":1,\"columnNumber\":39},{\"functionName\":\"\",\"scriptId\":\"74\",\"url\":\"\",\"lineNumber\":17,\"columnNumber\":8}]},\"exception\":{\"type\":\"object\",\"subtype\":\"error\",\"className\":\"TypeError\",\"description\":\"TypeError: Cannot read properties of undefin\n    at evaluate (file:///Users/p/Desktop/workspace/code/moyu/.scratch/r15-action/followup.mjs:39:37)\n    at async evj (file:///Users/p/Desktop/workspace/code/moyu/.scratch/r15-action/followup.mjs:42:44)\n    at async runChrome.timeoutMs (file:///Users/p/Desktop/workspace/code/moyu/.scratch/r15-action/followup.mjs:178:18)\n    at async runChrome (file:///Users/p/Desktop/workspace/code/moyu/playtest/lib/chrome.mjs:40:12)\n    at async file:///Users/p/Desktop/workspace/code/moyu/.scratch/r15-action/followup.mjs:32:1"
+}

@@ -1,0 +1,365 @@
+{
+  "phase": "s1",
+  "meta": {
+    "startedAt": "2026-11-27T11:53:14.842Z",
+    "url": "http://127.0.0.1:5173/",
+    "finishedAt": "2026-11-27T11:53:37.356Z"
+  },
+  "errors": [],
+  "firstScreen": {
+    "viewport": {
+      "w": 390,
+      "h": 844
+    },
+    "btn": {
+      "label": "摸鱼站小游戏",
+      "rect": {
+        "x": 336,
+        "y": 458,
+        "w": 44,
+        "h": 44
+      },
+      "visible": true
+    },
+    "centerHit": {
+      "id": "btn-arcade",
+      "tag": "BUTTON",
+      "isSelf": true
+    },
+    "shopTop": 683,
+    "stageRect": {
+      "top": 131,
+      "h": 552
+    },
+    "btnStageOverlapRatio": 0.009,
+    "bodyHasArcadeWord": {
+      "摸鱼站": false,
+      "小游戏": false
+    }
+  },
+  "entry": {
+    "steps": 1,
+    "msToMenu": 507,
+    "open": true,
+    "title": "摸鱼站",
+    "left": "今天还能玩 3/3 次",
+    "body": "接咖啡 最高 0\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 0\n在一堆同事脸里找出王总，越快越好\n开始（30 秒）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n开始（30 秒）"
+  },
+  "menu": {
+    "leftText": "今天还能玩 3/3 次",
+    "cards": [
+      {
+        "name": "接咖啡 最高 0",
+        "desc": "咖啡掉下来时点住它——掉地上就没了",
+        "btn": "开始（30 秒）",
+        "disabled": false
+      },
+      {
+        "name": "找老板 最高 0",
+        "desc": "在一堆同事脸里找出王总，越快越好",
+        "btn": "开始（30 秒）",
+        "disabled": false
+      },
+      {
+        "name": "节奏点击 最高 0",
+        "desc": "跟着节拍点屏幕，越准分越高",
+        "btn": "开始（30 秒）",
+        "disabled": false
+      }
+    ],
+    "panelText": "摸鱼站\n✕\n今天还能玩 3/3 次\n接咖啡 最高 0\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 0\n在一堆同事脸里找出王总，越快越好\n开始（30 秒）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n开始（30 秒）",
+    "showsRewardInfo": false,
+    "panelRect": {
+      "x": 16,
+      "y": 191,
+      "w": 359,
+      "h": 463
+    }
+  },
+  "a11y": {
+    "activeAfterOpen": "btn-arcade",
+    "tabTrail": [
+      "btn-team",
+      "btn-mute",
+      "btn-journal",
+      "stage",
+      "shop-cards"
+    ]
+  },
+  "coffee": {
+    "tap": {
+      "x": 45.59375,
+      "y": 325.5,
+      "w": 298.796875,
+      "h": 44,
+      "text": "开始（30 秒）"
+    },
+    "startedTitle": "接咖啡",
+    "body": "29.5s\n0\n咖啡落到杯口时点它 ☕",
+    "before": {
+      "moyu": 0.4999872000000002,
+      "played": 0
+    },
+    "motion": [
+      {
+        "ms": 1,
+        "timer": "29.5s",
+        "n": 4,
+        "drops": [
+          {
+            "top": "79.6312%",
+            "left": "46%"
+          },
+          {
+            "top": "62.6179%",
+            "left": "38%"
+          },
+          {
+            "top": "34.4579%",
+            "left": "56%"
+          },
+          {
+            "top": "6.00453%",
+            "left": "30%"
+          }
+        ]
+      },
+      {
+        "ms": 262,
+        "timer": "29.2s",
+        "n": 4,
+        "drops": [
+          {
+            "top": "86.9792%",
+            "left": "46%"
+          },
+          {
+            "top": "69.9659%",
+            "left": "38%"
+          },
+          {
+            "top": "41.8059%",
+            "left": "56%"
+          },
+          {
+            "top": "13.3525%",
+            "left": "30%"
+          }
+        ]
+      },
+      {
+        "ms": 525,
+        "timer": "29.0s",
+        "n": 4,
+        "drops": [
+          {
+            "top": "88%",
+            "left": "46%"
+          },
+          {
+            "top": "77.792%",
+            "left": "38%"
+          },
+          {
+            "top": "49.632%",
+            "left": "56%"
+          },
+          {
+            "top": "21.1787%",
+            "left": "30%"
+          }
+        ]
+      },
+      {
+        "ms": 871,
+        "timer": "28.6s",
+        "n": 5,
+        "drops": [
+          {
+            "top": "88%",
+            "left": "46%"
+          },
+          {
+            "top": "88%",
+            "left": "38%"
+          },
+          {
+            "top": "59.8928%",
+            "left": "56%"
+          },
+          {
+            "top": "31.4395%",
+            "left": "30%"
+          },
+          {
+            "top": "9.43947%",
+            "left": "53%"
+          }
+        ]
+      },
+      {
+        "ms": 1134,
+        "timer": "28.4s",
+        "n": 4,
+        "drops": [
+          {
+            "top": "88%",
+            "left": "38%"
+          },
+          {
+            "top": "67.716%",
+            "left": "56%"
+          },
+          {
+            "top": "39.2627%",
+            "left": "30%"
+          },
+          {
+            "top": "17.2627%",
+            "left": "53%"
+          }
+        ]
+      },
+      {
+        "ms": 1397,
+        "timer": null,
+        "n": 0,
+        "drops": []
+      },
+      {
+        "ms": 1660,
+        "timer": null,
+        "n": 0,
+        "drops": []
+      },
+      {
+        "ms": 1921,
+        "timer": null,
+        "n": 0,
+        "drops": []
+      },
+      {
+        "ms": 2239,
+        "timer": null,
+        "n": 0,
+        "drops": []
+      },
+      {
+        "ms": 2502,
+        "timer": null,
+        "n": 0,
+        "drops": []
+      },
+      {
+        "ms": 2764,
+        "timer": null,
+        "n": 0,
+        "drops": []
+      },
+      {
+        "ms": 3027,
+        "timer": null,
+        "n": 0,
+        "drops": []
+      },
+      {
+        "ms": 3290,
+        "timer": null,
+        "n": 0,
+        "drops": []
+      },
+      {
+        "ms": 3553,
+        "timer": null,
+        "n": 0,
+        "drops": []
+      },
+      {
+        "ms": 3817,
+        "timer": null,
+        "n": 0,
+        "drops": []
+      },
+      {
+        "ms": 4078,
+        "timer": null,
+        "n": 0,
+        "drops": []
+      },
+      {
+        "ms": 4340,
+        "timer": null,
+        "n": 0,
+        "drops": []
+      },
+      {
+        "ms": 4602,
+        "timer": null,
+        "n": 0,
+        "drops": []
+      },
+      {
+        "ms": 4865,
+        "timer": null,
+        "n": 0,
+        "drops": []
+      },
+      {
+        "ms": 5128,
+        "timer": null,
+        "n": 0,
+        "drops": []
+      },
+      {
+        "ms": 5391,
+        "timer": null,
+        "n": 0,
+        "drops": []
+      },
+      {
+        "ms": 5653,
+        "timer": null,
+        "n": 0,
+        "drops": []
+      }
+    ],
+    "dropTopRange": {
+      "min": 6,
+      "max": 88,
+      "samples": 21
+    },
+    "naiveTaps": 0,
+    "scoreTimeline": [],
+    "end": {
+      "scoreText": "",
+      "resultShown": false,
+      "played": 0,
+      "best": {},
+      "moyu": 4.201307200114416,
+      "moyuDelta": 3.7013200001144155,
+      "toast": {
+        "text": "",
+        "show": false
+      },
+      "leftText": "",
+      "resultShowsReward": false,
+      "buttons": []
+    }
+  },
+  "afterCoffee": {
+    "leftText": "",
+    "body": "",
+    "played": 0
+  },
+  "close": {
+    "clicked": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "text": "✕"
+    },
+    "openAfter": false
+  },
+  "durationMs": 22469
+}

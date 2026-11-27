@@ -1,0 +1,300 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "checks": {
+    "pageReady": true,
+    "initial": {
+      "arcade": {
+        "date": "2026-11-27",
+        "played": 0,
+        "best": {}
+      },
+      "moyu": 0.07998,
+      "levels": {},
+      "idleHud": "0.2"
+    },
+    "menuOpen": {
+      "open": true,
+      "left": "今天还能玩 3/3 次",
+      "cards": [
+        "接咖啡 最高 0\n        咖啡掉下来时点住它——掉地上就没了\n        开始（30 秒）",
+        "找老板 最高 0\n        在一堆同事脸里找出王总，越快越好\n        开始（30 秒）",
+        "节奏点击 最高 0\n        跟着节拍点屏幕，越准分越高\n        开始（30 秒）"
+      ],
+      "enabledButtons": [
+        {
+          "g": "coffee",
+          "disabled": false
+        },
+        {
+          "g": "findboss",
+          "disabled": false
+        },
+        {
+          "g": "rhythm",
+          "disabled": false
+        }
+      ]
+    },
+    "findboss": {
+      "clicks": 5,
+      "clickElapsedMs": 0.3,
+      "finished": true,
+      "scoreText": "548 分",
+      "txt": "找老板 结束 548 分 历史最高 548 返回摸鱼站",
+      "wallMs": 377,
+      "state": {
+        "arcade": {
+          "date": "2026-11-27",
+          "played": 1,
+          "best": {
+            "findboss": 548
+          }
+        },
+        "moyu": 110.18663999999995,
+        "toasts": [
+          {
+            "t": 823,
+            "text": "摸鱼站 +110（得分 548）"
+          }
+        ]
+      }
+    },
+    "quitMidGame": {
+      "playedBeforeQuit": 1,
+      "midDropCount": 1,
+      "after": {
+        "arcadeClosed": true,
+        "played": 1,
+        "best": {
+          "findboss": 548
+        },
+        "moyu": 110.55661999999967
+      }
+    },
+    "coffee": {
+      "finished": true,
+      "scoreText": "0 分",
+      "played": 2,
+      "best": {
+        "findboss": 548
+      },
+      "toasts": [
+        {
+          "t": 823,
+          "text": "摸鱼站 +110（得分 548）"
+        },
+        {
+          "t": 33104,
+          "text": "得分 0，没拿到奖励"
+        }
+      ],
+      "dropAdds": 37,
+      "dropRemoves": 37,
+      "sampleAdds": [
+        {
+          "kind": "add",
+          "t": 17,
+          "left": "52%",
+          "top": "26.08%"
+        },
+        {
+          "kind": "add",
+          "t": 17,
+          "left": "26%",
+          "top": "46.7467%"
+        },
+        {
+          "kind": "add",
+          "t": 17,
+          "left": "69%",
+          "top": "67.7467%"
+        },
+        {
+          "kind": "add",
+          "t": 17,
+          "left": "62%",
+          "top": "87.08%"
+        },
+        {
+          "kind": "add",
+          "t": 584,
+          "left": "56%",
+          "top": "99.5333%"
+        },
+        {
+          "kind": "add",
+          "t": 1566,
+          "left": "21%",
+          "top": "99.7933%"
+        }
+      ],
+      "sampleChecks": [
+        {
+          "kind": "check200",
+          "ref": 17,
+          "t": 218,
+          "top": "26.08%",
+          "connected": true
+        },
+        {
+          "kind": "check200",
+          "ref": 17,
+          "t": 218,
+          "top": "46.7467%",
+          "connected": true
+        },
+        {
+          "kind": "check200",
+          "ref": 17,
+          "t": 218,
+          "top": "67.7467%",
+          "connected": true
+        },
+        {
+          "kind": "check200",
+          "ref": 17,
+          "t": 218,
+          "top": "87.08%",
+          "connected": true
+        },
+        {
+          "kind": "check200",
+          "ref": 584,
+          "t": 784,
+          "top": "99.5333%",
+          "connected": true
+        },
+        {
+          "kind": "check200",
+          "ref": 1566,
+          "t": 1767,
+          "top": "99.7933%",
+          "connected": true
+        }
+      ],
+      "lifetimes": [
+        401,
+        401,
+        401,
+        401,
+        400,
+        402,
+        401,
+        401,
+        401,
+        402
+      ]
+    },
+    "rhythm": {
+      "rhythmStartState": {
+        "date": "2026-11-27",
+        "played": 2,
+        "best": {
+          "findboss": 548
+        }
+      },
+      "finished": true,
+      "durationMs": 30116,
+      "taps": 119,
+      "scoreText": "590 分",
+      "played": 3,
+      "best": {
+        "findboss": 548,
+        "rhythm": 590
+      },
+      "toasts": [
+        {
+          "t": 823,
+          "text": "摸鱼站 +110（得分 548）"
+        },
+        {
+          "t": 33104,
+          "text": "得分 0，没拿到奖励"
+        },
+        {
+          "t": 65186,
+          "text": "摸鱼站 +118（得分 590）"
+        }
+      ]
+    },
+    "exhausted": {
+      "played": 3,
+      "leftText": "今天还能玩 0/3 次",
+      "buttons": [
+        {
+          "g": "coffee",
+          "disabled": true
+        },
+        {
+          "g": "findboss",
+          "disabled": true
+        },
+        {
+          "g": "rhythm",
+          "disabled": true
+        }
+      ],
+      "lockedCards": 3,
+      "toasts": [
+        {
+          "t": 823,
+          "text": "摸鱼站 +110（得分 548）"
+        },
+        {
+          "t": 33104,
+          "text": "得分 0，没拿到奖励"
+        },
+        {
+          "t": 65186,
+          "text": "摸鱼站 +118（得分 590）"
+        }
+      ]
+    }
+  },
+  "consoleErrors": [],
+  "rewardVerification": {
+    "stationIdleAssumed": 0.2,
+    "findboss": {
+      "score": 548,
+      "expectedReward": 110,
+      "toasts": [
+        {
+          "t": 823,
+          "text": "摸鱼站 +110（得分 548）"
+        }
+      ]
+    },
+    "coffee": {
+      "score": 0,
+      "expectedReward": 0,
+      "toasts": [
+        {
+          "t": 823,
+          "text": "摸鱼站 +110（得分 548）"
+        },
+        {
+          "t": 33104,
+          "text": "得分 0，没拿到奖励"
+        }
+      ]
+    },
+    "rhythm": {
+      "score": 590,
+      "expectedReward": 118,
+      "toasts": [
+        {
+          "t": 823,
+          "text": "摸鱼站 +110（得分 548）"
+        },
+        {
+          "t": 33104,
+          "text": "得分 0，没拿到奖励"
+        },
+        {
+          "t": 65186,
+          "text": "摸鱼站 +118（得分 590）"
+        }
+      ]
+    }
+  }
+}

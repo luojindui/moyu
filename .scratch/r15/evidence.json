@@ -1,0 +1,2277 @@
+{
+  "steps": {
+    "initialMenu": "ok",
+    "findboss1": "ok",
+    "coffee": "ok",
+    "rhythm": "ok",
+    "persist": "ok",
+    "dayReset": "ok",
+    "recordBreak": "ok",
+    "noRecord": "ok",
+    "zeroScore": "ok",
+    "escExit": "ok"
+  },
+  "menu": {
+    "initial": {
+      "title": "摸鱼站",
+      "left": "今天还能玩 3/3 次",
+      "cards": [
+        {
+          "name": "接咖啡",
+          "small": "最高 0",
+          "desc": "咖啡掉下来时点住它——掉地上就没了",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        },
+        {
+          "name": "找老板",
+          "small": "最高 0",
+          "desc": "在一堆同事脸里找出王总，越快越好",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        },
+        {
+          "name": "节奏点击",
+          "small": "最高 0",
+          "desc": "跟着节拍点屏幕，越准分越高",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        }
+      ],
+      "bodyText": "接咖啡 最高 0\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 0\n在一堆同事脸里找出王总，越快越好\n开始（30 秒）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n开始（30 秒）"
+    },
+    "initialState": {
+      "date": "2026-11-27",
+      "played": 0,
+      "best": {}
+    },
+    "afterFindboss": {
+      "title": "摸鱼站",
+      "left": "今天还能玩 2/3 次",
+      "cards": [
+        {
+          "name": "接咖啡",
+          "small": "最高 0",
+          "desc": "咖啡掉下来时点住它——掉地上就没了",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        },
+        {
+          "name": "找老板",
+          "small": "最高 547",
+          "desc": "在一堆同事脸里找出王总，越快越好",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        },
+        {
+          "name": "节奏点击",
+          "small": "最高 0",
+          "desc": "跟着节拍点屏幕，越准分越高",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        }
+      ],
+      "bodyText": "接咖啡 最高 0\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 547\n在一堆同事脸里找出王总，越快越好\n开始（30 秒）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n开始（30 秒）"
+    },
+    "afterCoffee": {
+      "title": "摸鱼站",
+      "left": "今天还能玩 1/3 次",
+      "cards": [
+        {
+          "name": "接咖啡",
+          "small": "最高 760",
+          "desc": "咖啡掉下来时点住它——掉地上就没了",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        },
+        {
+          "name": "找老板",
+          "small": "最高 547",
+          "desc": "在一堆同事脸里找出王总，越快越好",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        },
+        {
+          "name": "节奏点击",
+          "small": "最高 0",
+          "desc": "跟着节拍点屏幕，越准分越高",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        }
+      ],
+      "bodyText": "接咖啡 最高 760\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 547\n在一堆同事脸里找出王总，越快越好\n开始（30 秒）\n节奏点击 最高 0\n跟着节拍点屏幕，越准分越高\n开始（30 秒）"
+    },
+    "afterRhythm": {
+      "title": "摸鱼站",
+      "left": "今天还能玩 0/3 次",
+      "cards": [
+        {
+          "name": "接咖啡",
+          "small": "最高 760",
+          "desc": "咖啡掉下来时点住它——掉地上就没了",
+          "btn": "开始（30 秒）",
+          "disabled": true,
+          "locked": true
+        },
+        {
+          "name": "找老板",
+          "small": "最高 547",
+          "desc": "在一堆同事脸里找出王总，越快越好",
+          "btn": "开始（30 秒）",
+          "disabled": true,
+          "locked": true
+        },
+        {
+          "name": "节奏点击",
+          "small": "最高 1475",
+          "desc": "跟着节拍点屏幕，越准分越高",
+          "btn": "开始（30 秒）",
+          "disabled": true,
+          "locked": true
+        }
+      ],
+      "bodyText": "接咖啡 最高 760\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 547\n在一堆同事脸里找出王总，越快越好\n开始（30 秒）\n节奏点击 最高 1475\n跟着节拍点屏幕，越准分越高\n开始（30 秒）"
+    }
+  },
+  "games": {
+    "findbossPlaying": {
+      "timer": "第 1/5 轮",
+      "body": "第 1/5 轮\n员\n员\n员\n员\n王\n员\n员\n员\n员"
+    },
+    "findboss1": {
+      "done": true,
+      "result": {
+        "bodyText": "找老板 结束\n547 分\n历史最高 547\n返回摸鱼站",
+        "hint": "历史最高 547",
+        "scoreShown": [
+          "547 分"
+        ]
+      },
+      "toast": {
+        "text": "摸鱼站 +110（得分 547）",
+        "shown": true
+      },
+      "arcade": {
+        "date": "2026-11-27",
+        "played": 1,
+        "best": {
+          "findboss": 547
+        }
+      },
+      "save": {
+        "date": "2026-11-27",
+        "played": 1,
+        "best": {
+          "findboss": 547
+        }
+      },
+      "clicks": 5
+    },
+    "coffeeStart": {
+      "ok": true,
+      "rect": {
+        "left": 478,
+        "top": 329,
+        "width": 324,
+        "height": 300
+      },
+      "targets": 28
+    },
+    "coffeeSampleFlash": {
+      "tag": "flash",
+      "t": 2.4,
+      "n": 1,
+      "drops": [
+        {
+          "left": "44%",
+          "top": "99.7433%"
+        }
+      ],
+      "score": "21"
+    },
+    "coffeeFlashCount": 15,
+    "coffeeSampleBeforeCatch": {
+      "tag": "before-catch-8.4",
+      "t": 8.39,
+      "n": 0,
+      "drops": [],
+      "score": "105"
+    },
+    "coffee": {
+      "done": true,
+      "result": {
+        "bodyText": "接咖啡 结束\n760 分\n历史最高 760\n返回摸鱼站",
+        "hint": "历史最高 760",
+        "scoreShown": [
+          "760 分"
+        ]
+      },
+      "toast": {
+        "text": "摸鱼站 +152（得分 760）",
+        "shown": true
+      },
+      "arcade": {
+        "date": "2026-11-27",
+        "played": 2,
+        "best": {
+          "findboss": 547,
+          "coffee": 760
+        }
+      },
+      "save": {
+        "date": "2026-11-27",
+        "played": 2,
+        "best": {
+          "findboss": 547,
+          "coffee": 760
+        }
+      },
+      "samples": [
+        {
+          "tag": "auto",
+          "t": 0.2,
+          "n": 4,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "26.6233%"
+            },
+            {
+              "left": "44%",
+              "top": "51.9567%"
+            },
+            {
+              "left": "44%",
+              "top": "77.29%"
+            },
+            {
+              "left": "44%",
+              "top": "99.9133%"
+            }
+          ],
+          "score": "0"
+        },
+        {
+          "tag": "auto",
+          "t": 0.4,
+          "n": 4,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "26.6233%"
+            },
+            {
+              "left": "44%",
+              "top": "51.9567%"
+            },
+            {
+              "left": "44%",
+              "top": "77.29%"
+            },
+            {
+              "left": "44%",
+              "top": "99.9133%"
+            }
+          ],
+          "score": "0"
+        },
+        {
+          "tag": "auto",
+          "t": 0.6,
+          "n": 0,
+          "drops": [],
+          "score": "0"
+        },
+        {
+          "tag": "auto",
+          "t": 0.8,
+          "n": 0,
+          "drops": [],
+          "score": "0"
+        },
+        {
+          "tag": "auto",
+          "t": 1,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.63%"
+            }
+          ],
+          "score": "10"
+        },
+        {
+          "tag": "auto",
+          "t": 1.2,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.63%"
+            }
+          ],
+          "score": "10"
+        },
+        {
+          "tag": "auto",
+          "t": 1.4,
+          "n": 0,
+          "drops": [],
+          "score": "10"
+        },
+        {
+          "tag": "auto",
+          "t": 1.6,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.9833%"
+            }
+          ],
+          "score": "10"
+        },
+        {
+          "tag": "auto",
+          "t": 1.8,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.9833%"
+            }
+          ],
+          "score": "21"
+        },
+        {
+          "tag": "auto",
+          "t": 2,
+          "n": 0,
+          "drops": [],
+          "score": "21"
+        },
+        {
+          "tag": "auto",
+          "t": 2.2,
+          "n": 0,
+          "drops": [],
+          "score": "21"
+        },
+        {
+          "tag": "auto",
+          "t": 2.4,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.7433%"
+            }
+          ],
+          "score": "21"
+        },
+        {
+          "tag": "flash",
+          "t": 2.4,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.7433%"
+            }
+          ],
+          "score": "21"
+        },
+        {
+          "tag": "auto",
+          "t": 2.6,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.7433%"
+            }
+          ],
+          "score": "31"
+        },
+        {
+          "tag": "auto",
+          "t": 2.8,
+          "n": 0,
+          "drops": [],
+          "score": "31"
+        },
+        {
+          "tag": "auto",
+          "t": 3,
+          "n": 0,
+          "drops": [],
+          "score": "31"
+        },
+        {
+          "tag": "auto",
+          "t": 3.2,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.58%"
+            }
+          ],
+          "score": "42"
+        },
+        {
+          "tag": "auto",
+          "t": 3.4,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.58%"
+            }
+          ],
+          "score": "42"
+        },
+        {
+          "tag": "auto",
+          "t": 3.6,
+          "n": 0,
+          "drops": [],
+          "score": "42"
+        },
+        {
+          "tag": "auto",
+          "t": 3.8,
+          "n": 0,
+          "drops": [],
+          "score": "42"
+        },
+        {
+          "tag": "auto",
+          "t": 4,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.8567%"
+            }
+          ],
+          "score": "52"
+        },
+        {
+          "tag": "auto",
+          "t": 4.2,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.8567%"
+            }
+          ],
+          "score": "52"
+        },
+        {
+          "tag": "auto",
+          "t": 4.4,
+          "n": 0,
+          "drops": [],
+          "score": "52"
+        },
+        {
+          "tag": "auto",
+          "t": 4.6,
+          "n": 0,
+          "drops": [],
+          "score": "52"
+        },
+        {
+          "tag": "auto",
+          "t": 4.8,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.6367%"
+            }
+          ],
+          "score": "63"
+        },
+        {
+          "tag": "auto",
+          "t": 5,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.6367%"
+            }
+          ],
+          "score": "63"
+        },
+        {
+          "tag": "auto",
+          "t": 5.2,
+          "n": 0,
+          "drops": [],
+          "score": "73"
+        },
+        {
+          "tag": "auto",
+          "t": 5.4,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.9667%"
+            }
+          ],
+          "score": "73"
+        },
+        {
+          "tag": "auto",
+          "t": 5.6,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.9667%"
+            }
+          ],
+          "score": "73"
+        },
+        {
+          "tag": "auto",
+          "t": 5.8,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.9667%"
+            }
+          ],
+          "score": "73"
+        },
+        {
+          "tag": "auto",
+          "t": 6,
+          "n": 0,
+          "drops": [],
+          "score": "73"
+        },
+        {
+          "tag": "auto",
+          "t": 6.2,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.75%"
+            }
+          ],
+          "score": "73"
+        },
+        {
+          "tag": "auto",
+          "t": 6.4,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.75%"
+            }
+          ],
+          "score": "84"
+        },
+        {
+          "tag": "auto",
+          "t": 6.6,
+          "n": 0,
+          "drops": [],
+          "score": "84"
+        },
+        {
+          "tag": "auto",
+          "t": 6.8,
+          "n": 0,
+          "drops": [],
+          "score": "84"
+        },
+        {
+          "tag": "auto",
+          "t": 7,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.5533%"
+            }
+          ],
+          "score": "84"
+        },
+        {
+          "tag": "auto",
+          "t": 7.2,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.5533%"
+            }
+          ],
+          "score": "94"
+        },
+        {
+          "tag": "auto",
+          "t": 7.4,
+          "n": 0,
+          "drops": [],
+          "score": "94"
+        },
+        {
+          "tag": "auto",
+          "t": 7.6,
+          "n": 0,
+          "drops": [],
+          "score": "94"
+        },
+        {
+          "tag": "auto",
+          "t": 7.8,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.8867%"
+            }
+          ],
+          "score": "105"
+        },
+        {
+          "tag": "auto",
+          "t": 8,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.8867%"
+            }
+          ],
+          "score": "105"
+        },
+        {
+          "tag": "auto",
+          "t": 8.2,
+          "n": 0,
+          "drops": [],
+          "score": "105"
+        },
+        {
+          "tag": "before-catch-8.4",
+          "t": 8.39,
+          "n": 0,
+          "drops": [],
+          "score": "105"
+        },
+        {
+          "tag": "auto",
+          "t": 8.4,
+          "n": 0,
+          "drops": [],
+          "score": "121"
+        },
+        {
+          "tag": "auto",
+          "t": 8.6,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.6433%"
+            }
+          ],
+          "score": "121"
+        },
+        {
+          "tag": "auto",
+          "t": 8.8,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.6433%"
+            }
+          ],
+          "score": "121"
+        },
+        {
+          "tag": "auto",
+          "t": 9,
+          "n": 0,
+          "drops": [],
+          "score": "121"
+        },
+        {
+          "tag": "auto",
+          "t": 9.2,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.9733%"
+            }
+          ],
+          "score": "138"
+        },
+        {
+          "tag": "auto",
+          "t": 9.4,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.9733%"
+            }
+          ],
+          "score": "138"
+        },
+        {
+          "tag": "auto",
+          "t": 9.6,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.9733%"
+            }
+          ],
+          "score": "138"
+        },
+        {
+          "tag": "auto",
+          "t": 9.8,
+          "n": 0,
+          "drops": [],
+          "score": "138"
+        },
+        {
+          "tag": "auto",
+          "t": 10,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.82%"
+            }
+          ],
+          "score": "156"
+        },
+        {
+          "tag": "auto",
+          "t": 10.2,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.82%"
+            }
+          ],
+          "score": "156"
+        },
+        {
+          "tag": "auto",
+          "t": 10.4,
+          "n": 0,
+          "drops": [],
+          "score": "156"
+        },
+        {
+          "tag": "auto",
+          "t": 10.6,
+          "n": 0,
+          "drops": [],
+          "score": "156"
+        },
+        {
+          "tag": "auto",
+          "t": 10.8,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.53%"
+            }
+          ],
+          "score": "175"
+        },
+        {
+          "tag": "auto",
+          "t": 11,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.53%"
+            }
+          ],
+          "score": "175"
+        },
+        {
+          "tag": "auto",
+          "t": 11.2,
+          "n": 0,
+          "drops": [],
+          "score": "175"
+        },
+        {
+          "tag": "auto",
+          "t": 11.4,
+          "n": 0,
+          "drops": [],
+          "score": "175"
+        },
+        {
+          "tag": "auto",
+          "t": 11.6,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.86%"
+            }
+          ],
+          "score": "195"
+        },
+        {
+          "tag": "auto",
+          "t": 11.8,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.86%"
+            }
+          ],
+          "score": "195"
+        },
+        {
+          "tag": "auto",
+          "t": 12,
+          "n": 0,
+          "drops": [],
+          "score": "195"
+        },
+        {
+          "tag": "auto",
+          "t": 12.2,
+          "n": 0,
+          "drops": [],
+          "score": "216"
+        },
+        {
+          "tag": "auto",
+          "t": 12.4,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.6433%"
+            }
+          ],
+          "score": "216"
+        },
+        {
+          "tag": "auto",
+          "t": 12.6,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.6433%"
+            }
+          ],
+          "score": "216"
+        },
+        {
+          "tag": "auto",
+          "t": 12.8,
+          "n": 0,
+          "drops": [],
+          "score": "216"
+        },
+        {
+          "tag": "auto",
+          "t": 13,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.9767%"
+            }
+          ],
+          "score": "237"
+        },
+        {
+          "tag": "auto",
+          "t": 13.2,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.9767%"
+            }
+          ],
+          "score": "237"
+        },
+        {
+          "tag": "auto",
+          "t": 13.4,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.9767%"
+            }
+          ],
+          "score": "237"
+        },
+        {
+          "tag": "auto",
+          "t": 13.6,
+          "n": 0,
+          "drops": [],
+          "score": "237"
+        },
+        {
+          "tag": "auto",
+          "t": 13.8,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.7533%"
+            }
+          ],
+          "score": "261"
+        },
+        {
+          "tag": "auto",
+          "t": 14,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.7533%"
+            }
+          ],
+          "score": "261"
+        },
+        {
+          "tag": "auto",
+          "t": 14.2,
+          "n": 0,
+          "drops": [],
+          "score": "261"
+        },
+        {
+          "tag": "auto",
+          "t": 14.4,
+          "n": 0,
+          "drops": [],
+          "score": "261"
+        },
+        {
+          "tag": "auto",
+          "t": 14.6,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.5333%"
+            }
+          ],
+          "score": "285"
+        },
+        {
+          "tag": "auto",
+          "t": 14.8,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.5333%"
+            }
+          ],
+          "score": "285"
+        },
+        {
+          "tag": "auto",
+          "t": 15,
+          "n": 0,
+          "drops": [],
+          "score": "285"
+        },
+        {
+          "tag": "auto",
+          "t": 15.2,
+          "n": 0,
+          "drops": [],
+          "score": "285"
+        },
+        {
+          "tag": "auto",
+          "t": 15.4,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.9067%"
+            }
+          ],
+          "score": "310"
+        },
+        {
+          "tag": "auto",
+          "t": 15.6,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.9067%"
+            }
+          ],
+          "score": "310"
+        },
+        {
+          "tag": "auto",
+          "t": 15.8,
+          "n": 0,
+          "drops": [],
+          "score": "310"
+        },
+        {
+          "tag": "auto",
+          "t": 16,
+          "n": 0,
+          "drops": [],
+          "score": "336"
+        },
+        {
+          "tag": "auto",
+          "t": 16.2,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.6467%"
+            }
+          ],
+          "score": "336"
+        },
+        {
+          "tag": "auto",
+          "t": 16.4,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.6467%"
+            }
+          ],
+          "score": "336"
+        },
+        {
+          "tag": "auto",
+          "t": 16.6,
+          "n": 0,
+          "drops": [],
+          "score": "336"
+        },
+        {
+          "tag": "auto",
+          "t": 16.8,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.9833%"
+            }
+          ],
+          "score": "363"
+        },
+        {
+          "tag": "auto",
+          "t": 17,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.9833%"
+            }
+          ],
+          "score": "363"
+        },
+        {
+          "tag": "auto",
+          "t": 17.2,
+          "n": 0,
+          "drops": [],
+          "score": "363"
+        },
+        {
+          "tag": "auto",
+          "t": 17.4,
+          "n": 0,
+          "drops": [],
+          "score": "363"
+        },
+        {
+          "tag": "auto",
+          "t": 17.6,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.8267%"
+            }
+          ],
+          "score": "391"
+        },
+        {
+          "tag": "auto",
+          "t": 17.8,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.8267%"
+            }
+          ],
+          "score": "391"
+        },
+        {
+          "tag": "auto",
+          "t": 18,
+          "n": 0,
+          "drops": [],
+          "score": "391"
+        },
+        {
+          "tag": "auto",
+          "t": 18.2,
+          "n": 0,
+          "drops": [],
+          "score": "391"
+        },
+        {
+          "tag": "auto",
+          "t": 18.4,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.5333%"
+            }
+          ],
+          "score": "420"
+        },
+        {
+          "tag": "auto",
+          "t": 18.6,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.5333%"
+            }
+          ],
+          "score": "420"
+        },
+        {
+          "tag": "auto",
+          "t": 18.8,
+          "n": 0,
+          "drops": [],
+          "score": "420"
+        },
+        {
+          "tag": "auto",
+          "t": 19,
+          "n": 0,
+          "drops": [],
+          "score": "420"
+        },
+        {
+          "tag": "auto",
+          "t": 19.2,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.9133%"
+            }
+          ],
+          "score": "450"
+        },
+        {
+          "tag": "auto",
+          "t": 19.4,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.9133%"
+            }
+          ],
+          "score": "450"
+        },
+        {
+          "tag": "auto",
+          "t": 19.6,
+          "n": 0,
+          "drops": [],
+          "score": "450"
+        },
+        {
+          "tag": "auto",
+          "t": 19.8,
+          "n": 0,
+          "drops": [],
+          "score": "481"
+        },
+        {
+          "tag": "auto",
+          "t": 20,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.6467%"
+            }
+          ],
+          "score": "481"
+        },
+        {
+          "tag": "auto",
+          "t": 20.2,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.6467%"
+            }
+          ],
+          "score": "481"
+        },
+        {
+          "tag": "auto",
+          "t": 20.4,
+          "n": 0,
+          "drops": [],
+          "score": "481"
+        },
+        {
+          "tag": "auto",
+          "t": 20.6,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.9833%"
+            }
+          ],
+          "score": "513"
+        },
+        {
+          "tag": "auto",
+          "t": 20.8,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.9833%"
+            }
+          ],
+          "score": "513"
+        },
+        {
+          "tag": "auto",
+          "t": 21,
+          "n": 0,
+          "drops": [],
+          "score": "513"
+        },
+        {
+          "tag": "auto",
+          "t": 21.2,
+          "n": 0,
+          "drops": [],
+          "score": "513"
+        },
+        {
+          "tag": "auto",
+          "t": 21.4,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.77%"
+            }
+          ],
+          "score": "546"
+        },
+        {
+          "tag": "auto",
+          "t": 21.6,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.77%"
+            }
+          ],
+          "score": "546"
+        },
+        {
+          "tag": "auto",
+          "t": 21.8,
+          "n": 0,
+          "drops": [],
+          "score": "546"
+        },
+        {
+          "tag": "auto",
+          "t": 22,
+          "n": 0,
+          "drops": [],
+          "score": "546"
+        },
+        {
+          "tag": "auto",
+          "t": 22.2,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.58%"
+            }
+          ],
+          "score": "580"
+        },
+        {
+          "tag": "auto",
+          "t": 22.4,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.58%"
+            }
+          ],
+          "score": "580"
+        },
+        {
+          "tag": "auto",
+          "t": 22.6,
+          "n": 0,
+          "drops": [],
+          "score": "580"
+        },
+        {
+          "tag": "auto",
+          "t": 22.8,
+          "n": 0,
+          "drops": [],
+          "score": "580"
+        },
+        {
+          "tag": "auto",
+          "t": 23,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.8767%"
+            }
+          ],
+          "score": "600"
+        },
+        {
+          "tag": "auto",
+          "t": 23.2,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.8767%"
+            }
+          ],
+          "score": "600"
+        },
+        {
+          "tag": "auto",
+          "t": 23.4,
+          "n": 0,
+          "drops": [],
+          "score": "600"
+        },
+        {
+          "tag": "auto",
+          "t": 23.6,
+          "n": 0,
+          "drops": [],
+          "score": "620"
+        },
+        {
+          "tag": "auto",
+          "t": 23.8,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.6567%"
+            }
+          ],
+          "score": "620"
+        },
+        {
+          "tag": "auto",
+          "t": 24,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.6567%"
+            }
+          ],
+          "score": "620"
+        },
+        {
+          "tag": "auto",
+          "t": 24.2,
+          "n": 0,
+          "drops": [],
+          "score": "620"
+        },
+        {
+          "tag": "auto",
+          "t": 24.4,
+          "n": 0,
+          "drops": [],
+          "score": "640"
+        },
+        {
+          "tag": "auto",
+          "t": 24.6,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.4867%"
+            }
+          ],
+          "score": "640"
+        },
+        {
+          "tag": "auto",
+          "t": 24.8,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.4867%"
+            }
+          ],
+          "score": "640"
+        },
+        {
+          "tag": "auto",
+          "t": 25,
+          "n": 0,
+          "drops": [],
+          "score": "640"
+        },
+        {
+          "tag": "auto",
+          "t": 25.2,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.7667%"
+            }
+          ],
+          "score": "660"
+        },
+        {
+          "tag": "auto",
+          "t": 25.4,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.7667%"
+            }
+          ],
+          "score": "660"
+        },
+        {
+          "tag": "auto",
+          "t": 25.6,
+          "n": 0,
+          "drops": [],
+          "score": "660"
+        },
+        {
+          "tag": "auto",
+          "t": 25.8,
+          "n": 0,
+          "drops": [],
+          "score": "660"
+        },
+        {
+          "tag": "auto",
+          "t": 26,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.6133%"
+            }
+          ],
+          "score": "680"
+        },
+        {
+          "tag": "auto",
+          "t": 26.2,
+          "n": 1,
+          "drops": [
+            {
+              "left": "44%",
+              "top": "99.6133%"
+            }
+          ],
+          "score": "680"
+        },
+        {
+          "tag": "auto",
+          "t": 26.4,
+          "n": 0,
+          "drops": [],
+          "score": "680"
+        },
+        {
+          "tag": "auto",
+          "t": 26.6,
+          "n": 0,
+          "drops": [],
+          "score": "680"
+        },
+        {
+          "tag": "auto",
+          "t": 26.8,
+          "n": 0,
+          "drops": [],
+          "score": "700"
+        },
+        {
+          "tag": "auto",
+          "t": 27,
+          "n": 0,
+          "drops": [],
+          "score": "700"
+        },
+        {
+          "tag": "auto",
+          "t": 27.2,
+          "n": 0,
+          "drops": [],
+          "score": "700"
+        },
+        {
+          "tag": "auto",
+          "t": 27.4,
+          "n": 0,
+          "drops": [],
+          "score": "720"
+        },
+        {
+          "tag": "auto",
+          "t": 27.6,
+          "n": 0,
+          "drops": [],
+          "score": "720"
+        },
+        {
+          "tag": "auto",
+          "t": 27.8,
+          "n": 0,
+          "drops": [],
+          "score": "720"
+        },
+        {
+          "tag": "auto",
+          "t": 28,
+          "n": 0,
+          "drops": [],
+          "score": "720"
+        },
+        {
+          "tag": "auto",
+          "t": 28.2,
+          "n": 0,
+          "drops": [],
+          "score": "740"
+        },
+        {
+          "tag": "auto",
+          "t": 28.4,
+          "n": 0,
+          "drops": [],
+          "score": "740"
+        },
+        {
+          "tag": "auto",
+          "t": 28.6,
+          "n": 0,
+          "drops": [],
+          "score": "740"
+        },
+        {
+          "tag": "auto",
+          "t": 28.8,
+          "n": 0,
+          "drops": [],
+          "score": "740"
+        },
+        {
+          "tag": "auto",
+          "t": 29,
+          "n": 0,
+          "drops": [],
+          "score": "760"
+        },
+        {
+          "tag": "auto",
+          "t": 29.2,
+          "n": 0,
+          "drops": [],
+          "score": "760"
+        },
+        {
+          "tag": "auto",
+          "t": 29.4,
+          "n": 0,
+          "drops": [],
+          "score": "760"
+        },
+        {
+          "tag": "auto",
+          "t": 29.6,
+          "n": 0,
+          "drops": [],
+          "score": "760"
+        },
+        {
+          "tag": "auto",
+          "t": 29.8,
+          "n": 0,
+          "drops": [],
+          "score": "760"
+        },
+        {
+          "tag": "auto",
+          "t": 30,
+          "n": 0,
+          "drops": [],
+          "score": "760"
+        },
+        {
+          "tag": "auto",
+          "t": 30.2,
+          "n": 0,
+          "drops": [],
+          "score": null
+        },
+        {
+          "tag": "auto",
+          "t": 30.4,
+          "n": 0,
+          "drops": [],
+          "score": null
+        },
+        {
+          "tag": "auto",
+          "t": 30.6,
+          "n": 0,
+          "drops": [],
+          "score": null
+        }
+      ],
+      "phase1Scores": [
+        {
+          "t": 0.09,
+          "score": "0"
+        },
+        {
+          "t": 0.18,
+          "score": "0"
+        },
+        {
+          "t": 0.27,
+          "score": "0"
+        },
+        {
+          "t": 0.36,
+          "score": "0"
+        },
+        {
+          "t": 0.45,
+          "score": "0"
+        },
+        {
+          "t": 0.54,
+          "score": "0"
+        },
+        {
+          "t": 7.29,
+          "score": "94"
+        },
+        {
+          "t": 7.38,
+          "score": "94"
+        },
+        {
+          "t": 7.47,
+          "score": "94"
+        },
+        {
+          "t": 7.56,
+          "score": "94"
+        },
+        {
+          "t": 7.65,
+          "score": "94"
+        },
+        {
+          "t": 7.74,
+          "score": "105"
+        }
+      ]
+    },
+    "rhythmStart": {
+      "ok": true,
+      "beats": 59
+    },
+    "rhythm": {
+      "done": true,
+      "result": {
+        "bodyText": "节奏点击 结束\n1475 分\n历史最高 1475\n返回摸鱼站",
+        "hint": "历史最高 1475",
+        "scoreShown": [
+          "1475 分"
+        ]
+      },
+      "toast": {
+        "text": "摸鱼站 +296（得分 1475）",
+        "shown": true
+      },
+      "arcade": {
+        "date": "2026-11-27",
+        "played": 3,
+        "best": {
+          "findboss": 547,
+          "coffee": 760,
+          "rhythm": 1475
+        }
+      },
+      "save": {
+        "date": "2026-11-27",
+        "played": 3,
+        "best": {
+          "findboss": 547,
+          "coffee": 760,
+          "rhythm": 1475
+        }
+      }
+    }
+  },
+  "record": {
+    "break": {
+      "oldBest": 100,
+      "done": true,
+      "result": {
+        "bodyText": "找老板 结束\n547 分\n历史最高 547\n返回摸鱼站",
+        "hint": "历史最高 547",
+        "scoreShown": [
+          "547 分"
+        ]
+      },
+      "toast": {
+        "text": "摸鱼站 +110（得分 547）",
+        "shown": true
+      },
+      "arcade": {
+        "date": "2026-11-27",
+        "played": 1,
+        "best": {
+          "coffee": 760,
+          "findboss": 547,
+          "rhythm": 1475
+        }
+      },
+      "save": {
+        "date": "2026-11-27",
+        "played": 1,
+        "best": {
+          "coffee": 760,
+          "findboss": 547,
+          "rhythm": 1475
+        }
+      },
+      "htmlHasNewRecordWord": false,
+      "menu": {
+        "title": "摸鱼站",
+        "left": "今天还能玩 2/3 次",
+        "cards": [
+          {
+            "name": "接咖啡",
+            "small": "最高 760",
+            "desc": "咖啡掉下来时点住它——掉地上就没了",
+            "btn": "开始（30 秒）",
+            "disabled": false,
+            "locked": false
+          },
+          {
+            "name": "找老板",
+            "small": "最高 547",
+            "desc": "在一堆同事脸里找出王总，越快越好",
+            "btn": "开始（30 秒）",
+            "disabled": false,
+            "locked": false
+          },
+          {
+            "name": "节奏点击",
+            "small": "最高 1475",
+            "desc": "跟着节拍点屏幕，越准分越高",
+            "btn": "开始（30 秒）",
+            "disabled": false,
+            "locked": false
+          }
+        ],
+        "bodyText": "接咖啡 最高 760\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 547\n在一堆同事脸里找出王总，越快越好\n开始（30 秒）\n节奏点击 最高 1475\n跟着节拍点屏幕，越准分越高\n开始（30 秒）"
+      }
+    },
+    "noBreak": {
+      "oldBest": 9999,
+      "done": true,
+      "result": {
+        "bodyText": "找老板 结束\n547 分\n历史最高 9999\n返回摸鱼站",
+        "hint": "历史最高 9999",
+        "scoreShown": [
+          "547 分"
+        ]
+      },
+      "toast": {
+        "text": "摸鱼站 +110（得分 547）",
+        "shown": true
+      },
+      "arcade": {
+        "date": "2026-11-27",
+        "played": 1,
+        "best": {
+          "coffee": 760,
+          "findboss": 9999,
+          "rhythm": 1475
+        }
+      },
+      "menu": {
+        "title": "摸鱼站",
+        "left": "今天还能玩 2/3 次",
+        "cards": [
+          {
+            "name": "接咖啡",
+            "small": "最高 760",
+            "desc": "咖啡掉下来时点住它——掉地上就没了",
+            "btn": "开始（30 秒）",
+            "disabled": false,
+            "locked": false
+          },
+          {
+            "name": "找老板",
+            "small": "最高 9999",
+            "desc": "在一堆同事脸里找出王总，越快越好",
+            "btn": "开始（30 秒）",
+            "disabled": false,
+            "locked": false
+          },
+          {
+            "name": "节奏点击",
+            "small": "最高 1475",
+            "desc": "跟着节拍点屏幕，越准分越高",
+            "btn": "开始（30 秒）",
+            "disabled": false,
+            "locked": false
+          }
+        ],
+        "bodyText": "接咖啡 最高 760\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 9999\n在一堆同事脸里找出王总，越快越好\n开始（30 秒）\n节奏点击 最高 1475\n跟着节拍点屏幕，越准分越高\n开始（30 秒）"
+      }
+    }
+  },
+  "limit": {
+    "afterThree": {
+      "title": "摸鱼站",
+      "left": "今天还能玩 0/3 次",
+      "cards": [
+        {
+          "name": "接咖啡",
+          "small": "最高 760",
+          "desc": "咖啡掉下来时点住它——掉地上就没了",
+          "btn": "开始（30 秒）",
+          "disabled": true,
+          "locked": true
+        },
+        {
+          "name": "找老板",
+          "small": "最高 547",
+          "desc": "在一堆同事脸里找出王总，越快越好",
+          "btn": "开始（30 秒）",
+          "disabled": true,
+          "locked": true
+        },
+        {
+          "name": "节奏点击",
+          "small": "最高 1475",
+          "desc": "跟着节拍点屏幕，越准分越高",
+          "btn": "开始（30 秒）",
+          "disabled": true,
+          "locked": true
+        }
+      ],
+      "bodyText": "接咖啡 最高 760\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 547\n在一堆同事脸里找出王总，越快越好\n开始（30 秒）\n节奏点击 最高 1475\n跟着节拍点屏幕，越准分越高\n开始（30 秒）"
+    },
+    "buttonDisabled": [
+      {
+        "game": "coffee",
+        "disabled": true
+      },
+      {
+        "game": "findboss",
+        "disabled": true
+      },
+      {
+        "game": "rhythm",
+        "disabled": true
+      }
+    ],
+    "jsClickBlocked": {
+      "stillMenu": false,
+      "title": "摸鱼站"
+    },
+    "afterJsClick": "接咖啡 最高 760\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 547\n在一堆同事脸里找出王总，越快越好\n开始（30 秒）\n节奏点击 最高 1475\n跟着节拍点屏幕，越准分越高\n开始（30 秒）"
+  },
+  "persist": {
+    "menu": {
+      "title": "摸鱼站",
+      "left": "今天还能玩 0/3 次",
+      "cards": [
+        {
+          "name": "接咖啡",
+          "small": "最高 760",
+          "desc": "咖啡掉下来时点住它——掉地上就没了",
+          "btn": "开始（30 秒）",
+          "disabled": true,
+          "locked": true
+        },
+        {
+          "name": "找老板",
+          "small": "最高 547",
+          "desc": "在一堆同事脸里找出王总，越快越好",
+          "btn": "开始（30 秒）",
+          "disabled": true,
+          "locked": true
+        },
+        {
+          "name": "节奏点击",
+          "small": "最高 1475",
+          "desc": "跟着节拍点屏幕，越准分越高",
+          "btn": "开始（30 秒）",
+          "disabled": true,
+          "locked": true
+        }
+      ],
+      "bodyText": "接咖啡 最高 760\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 547\n在一堆同事脸里找出王总，越快越好\n开始（30 秒）\n节奏点击 最高 1475\n跟着节拍点屏幕，越准分越高\n开始（30 秒）"
+    },
+    "arcade": {
+      "date": "2026-11-27",
+      "played": 3,
+      "best": {
+        "coffee": 760,
+        "findboss": 547,
+        "rhythm": 1475
+      }
+    }
+  },
+  "dayReset": {
+    "menu": {
+      "title": "摸鱼站",
+      "left": "今天还能玩 3/3 次",
+      "cards": [
+        {
+          "name": "接咖啡",
+          "small": "最高 760",
+          "desc": "咖啡掉下来时点住它——掉地上就没了",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        },
+        {
+          "name": "找老板",
+          "small": "最高 100",
+          "desc": "在一堆同事脸里找出王总，越快越好",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        },
+        {
+          "name": "节奏点击",
+          "small": "最高 1475",
+          "desc": "跟着节拍点屏幕，越准分越高",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        }
+      ],
+      "bodyText": "接咖啡 最高 760\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 100\n在一堆同事脸里找出王总，越快越好\n开始（30 秒）\n节奏点击 最高 1475\n跟着节拍点屏幕，越准分越高\n开始（30 秒）"
+    },
+    "arcade": {
+      "date": "2026-11-27",
+      "played": 0,
+      "best": {
+        "coffee": 760,
+        "findboss": 100,
+        "rhythm": 1475
+      }
+    }
+  },
+  "zeroScore": {
+    "before": {
+      "title": "摸鱼站",
+      "left": "今天还能玩 1/3 次",
+      "cards": [
+        {
+          "name": "接咖啡",
+          "small": "最高 760",
+          "desc": "咖啡掉下来时点住它——掉地上就没了",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        },
+        {
+          "name": "找老板",
+          "small": "最高 9999",
+          "desc": "在一堆同事脸里找出王总，越快越好",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        },
+        {
+          "name": "节奏点击",
+          "small": "最高 1475",
+          "desc": "跟着节拍点屏幕，越准分越高",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        }
+      ],
+      "bodyText": "接咖啡 最高 760\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 9999\n在一堆同事脸里找出王总，越快越好\n开始（30 秒）\n节奏点击 最高 1475\n跟着节拍点屏幕，越准分越高\n开始（30 秒）"
+    },
+    "playing": {
+      "timer": "29.5s",
+      "score": "0"
+    },
+    "done": true,
+    "result": {
+      "bodyText": "节奏点击 结束\n0 分\n历史最高 1475\n返回摸鱼站",
+      "hint": "历史最高 1475",
+      "scoreShown": [
+        "0 分"
+      ]
+    },
+    "toast": {
+      "text": "得分 0，没拿到奖励",
+      "shown": true
+    },
+    "arcade": {
+      "date": "2026-11-27",
+      "played": 3,
+      "best": {
+        "coffee": 760,
+        "findboss": 9999,
+        "rhythm": 1475
+      }
+    },
+    "save": {
+      "date": "2026-11-27",
+      "played": 3,
+      "best": {
+        "coffee": 760,
+        "findboss": 9999,
+        "rhythm": 1475
+      }
+    },
+    "after": {
+      "title": "摸鱼站",
+      "left": "今天还能玩 0/3 次",
+      "cards": [
+        {
+          "name": "接咖啡",
+          "small": "最高 760",
+          "desc": "咖啡掉下来时点住它——掉地上就没了",
+          "btn": "开始（30 秒）",
+          "disabled": true,
+          "locked": true
+        },
+        {
+          "name": "找老板",
+          "small": "最高 9999",
+          "desc": "在一堆同事脸里找出王总，越快越好",
+          "btn": "开始（30 秒）",
+          "disabled": true,
+          "locked": true
+        },
+        {
+          "name": "节奏点击",
+          "small": "最高 1475",
+          "desc": "跟着节拍点屏幕，越准分越高",
+          "btn": "开始（30 秒）",
+          "disabled": true,
+          "locked": true
+        }
+      ],
+      "bodyText": "接咖啡 最高 760\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 9999\n在一堆同事脸里找出王总，越快越好\n开始（30 秒）\n节奏点击 最高 1475\n跟着节拍点屏幕，越准分越高\n开始（30 秒）"
+    }
+  },
+  "escExit": {
+    "before": {
+      "date": "2026-11-27",
+      "played": 0,
+      "best": {
+        "coffee": 760,
+        "findboss": 9999,
+        "rhythm": 1475
+      }
+    },
+    "midPlaying": {
+      "timer": "28.5s",
+      "score": "0"
+    },
+    "panelHidden": true,
+    "arcade": {
+      "date": "2026-11-27",
+      "played": 0,
+      "best": {
+        "coffee": 760,
+        "findboss": 9999,
+        "rhythm": 1475
+      }
+    },
+    "menuAfter": {
+      "title": "摸鱼站",
+      "left": "今天还能玩 3/3 次",
+      "cards": [
+        {
+          "name": "接咖啡",
+          "small": "最高 760",
+          "desc": "咖啡掉下来时点住它——掉地上就没了",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        },
+        {
+          "name": "找老板",
+          "small": "最高 9999",
+          "desc": "在一堆同事脸里找出王总，越快越好",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        },
+        {
+          "name": "节奏点击",
+          "small": "最高 1475",
+          "desc": "跟着节拍点屏幕，越准分越高",
+          "btn": "开始（30 秒）",
+          "disabled": false,
+          "locked": false
+        }
+      ],
+      "bodyText": "接咖啡 最高 760\n咖啡掉下来时点住它——掉地上就没了\n开始（30 秒）\n找老板 最高 9999\n在一堆同事脸里找出王总，越快越好\n开始（30 秒）\n节奏点击 最高 1475\n跟着节拍点屏幕，越准分越高\n开始（30 秒）"
+    },
+    "save": {
+      "date": "2026-11-27",
+      "played": 0,
+      "best": {
+        "coffee": 760,
+        "findboss": 9999,
+        "rhythm": 1475
+      }
+    }
+  },
+  "errors": [],
+  "today": "2026-11-27",
+  "expected": {
+    "coffeeDrops": 38,
+    "coffeeFirst": [
+      {
+        "id": 0,
+        "at": 0.8,
+        "x": 0.44
+      },
+      {
+        "id": 1,
+        "at": 1.56,
+        "x": 0.44
+      },
+      {
+        "id": 2,
+        "at": 2.32,
+        "x": 0.44
+      },
+      {
+        "id": 3,
+        "at": 3.08,
+        "x": 0.44
+      }
+    ],
+    "rhythmBeats": 59
+  },
+  "finalState": {
+    "arcade": {
+      "date": "2026-11-27",
+      "played": 0,
+      "best": {
+        "coffee": 760,
+        "findboss": 9999,
+        "rhythm": 1475
+      }
+    },
+    "saveArcade": {
+      "date": "2026-11-27",
+      "played": 0,
+      "best": {
+        "coffee": 760,
+        "findboss": 9999,
+        "rhythm": 1475
+      }
+    }
+  },
+  "consoleErrors": []
+}

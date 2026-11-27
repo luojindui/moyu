@@ -1,0 +1,1113 @@
+{
+  "startedAt": "2026-11-27T11:50:58.520Z",
+  "url": "http://127.0.0.1:5173/",
+  "head": "77019bc",
+  "phases": {
+    "C0desktop": {
+      "btn": {
+        "rect": [
+          1226,
+          414,
+          44,
+          44
+        ],
+        "area": 1936,
+        "covered": null,
+        "z": "5",
+        "display": "block",
+        "vw": 1280,
+        "vh": 800
+      },
+      "menu": {
+        "panel": [
+          360,
+          463
+        ],
+        "cards": [
+          {
+            "w": 300,
+            "h": 44,
+            "text": "开始（30 秒）"
+          },
+          {
+            "w": 300,
+            "h": 44,
+            "text": "开始（30 秒）"
+          },
+          {
+            "w": 300,
+            "h": 44,
+            "text": "开始（30 秒）"
+          }
+        ]
+      },
+      "shots": [
+        ".scratch/r15-action/r15-action-layout-01-desktop-main.png",
+        ".scratch/r15-action/r15-action-layout-02-desktop-menu.png"
+      ]
+    },
+    "C0mobile": {
+      "btn": {
+        "rect": [
+          336,
+          458,
+          44,
+          44
+        ],
+        "area": 1936,
+        "covered": null,
+        "z": "5",
+        "display": "block",
+        "vw": 390,
+        "vh": 844
+      },
+      "menu": {
+        "panel": [
+          358.796875,
+          463
+        ],
+        "panelMargins": [
+          15.59375,
+          15.609375
+        ],
+        "close": [
+          44,
+          44
+        ],
+        "cards": [
+          {
+            "w": 298.796875,
+            "h": 44,
+            "text": "开始（30 秒）"
+          },
+          {
+            "w": 298.796875,
+            "h": 44,
+            "text": "开始（30 秒）"
+          },
+          {
+            "w": 298.796875,
+            "h": 44,
+            "text": "开始（30 秒）"
+          }
+        ]
+      },
+      "shot": ".scratch/r15-action/r15-action-layout-03-mobile-menu.png"
+    },
+    "C1": {
+      "start": {
+        "startAt": 2717.300000190735,
+        "now": 2719.300000190735,
+        "rect": [
+          33.59375,
+          301,
+          322.796875,
+          300
+        ],
+        "osc": 0
+      },
+      "schedule": {
+        "scheduled": 36,
+        "now": 3.1999998092651367
+      },
+      "done": true,
+      "taps": 36,
+      "hits": 36,
+      "misses": 0,
+      "deltaStats": {
+        "min": -2,
+        "p50": -2,
+        "max": -2
+      },
+      "tapSamples": [
+        {
+          "id": 0,
+          "at": 0.8,
+          "deltaMs": -2,
+          "before": 0,
+          "after": 10,
+          "hit": true,
+          "dropCount": 1
+        },
+        {
+          "id": 1,
+          "at": 1.36,
+          "deltaMs": -2,
+          "before": 10,
+          "after": 22,
+          "hit": true,
+          "dropCount": 0
+        },
+        {
+          "id": 2,
+          "at": 2.23,
+          "deltaMs": -2,
+          "before": 22,
+          "after": 34,
+          "hit": true,
+          "dropCount": 0
+        },
+        {
+          "id": 3,
+          "at": 2.83,
+          "deltaMs": -2,
+          "before": 34,
+          "after": 48,
+          "hit": true,
+          "dropCount": 1
+        },
+        {
+          "id": 4,
+          "at": 3.66,
+          "deltaMs": -2,
+          "before": 48,
+          "after": 62,
+          "hit": true,
+          "dropCount": 0
+        },
+        {
+          "id": 5,
+          "at": 4.6,
+          "deltaMs": -2,
+          "before": 62,
+          "after": 78,
+          "hit": true,
+          "dropCount": 0
+        }
+      ],
+      "finish": {
+        "title": "接咖啡",
+        "body": "接咖啡 结束\n720 分\n历史最高 720\n返回摸鱼站",
+        "left": "今天还能玩 2/3 次",
+        "arcade": {
+          "date": "2026-11-27",
+          "played": 1,
+          "best": {
+            "coffee": 720
+          }
+        }
+      },
+      "dropSample": [
+        {
+          "top": "26.1833%",
+          "left": "14%",
+          "rect": [
+            69.2,
+            380.5,
+            22,
+            22
+          ],
+          "playAreaBottom": 601,
+          "panelBottom": 619,
+          "opacity": "1",
+          "animation": "none",
+          "inViewport": true
+        },
+        {
+          "top": "44.85%",
+          "left": "53%",
+          "rect": [
+            193.5,
+            435.8,
+            22,
+            22
+          ],
+          "playAreaBottom": 601,
+          "panelBottom": 619,
+          "opacity": "1",
+          "animation": "none",
+          "inViewport": true
+        },
+        {
+          "top": "73.85%",
+          "left": "81%",
+          "rect": [
+            282.8,
+            521.6,
+            22,
+            22
+          ],
+          "playAreaBottom": 601,
+          "panelBottom": 619,
+          "opacity": "1",
+          "animation": "none",
+          "inViewport": true
+        },
+        {
+          "top": "93.85%",
+          "left": "50%",
+          "rect": [
+            184,
+            580.8,
+            22,
+            22
+          ],
+          "playAreaBottom": 601,
+          "panelBottom": 619,
+          "opacity": "1",
+          "animation": "none",
+          "inViewport": true
+        }
+      ],
+      "dropSampleT": 46,
+      "atFirstCatch": {
+        "t": 801,
+        "drops": 1,
+        "score": "10",
+        "timer": "29.2s"
+      },
+      "dropLogSummary": {
+        "total": 72,
+        "sample": [
+          {
+            "k": "add",
+            "t": 15.1,
+            "top": "26.1833%",
+            "left": "14%",
+            "rect": [
+              69.2,
+              380.5,
+              22,
+              22
+            ],
+            "inViewport": true
+          },
+          {
+            "k": "add",
+            "t": 15.1,
+            "top": "44.85%",
+            "left": "53%",
+            "rect": [
+              193.5,
+              435.8,
+              22,
+              22
+            ],
+            "inViewport": true
+          },
+          {
+            "k": "add",
+            "t": 15.1,
+            "top": "73.85%",
+            "left": "81%",
+            "rect": [
+              282.8,
+              521.6,
+              22,
+              22
+            ],
+            "inViewport": true
+          },
+          {
+            "k": "add",
+            "t": 15.1,
+            "top": "93.85%",
+            "left": "50%",
+            "rect": [
+              184,
+              580.8,
+              22,
+              22
+            ],
+            "inViewport": true
+          },
+          {
+            "k": "remove",
+            "t": 414.9
+          },
+          {
+            "k": "remove",
+            "t": 414.9
+          },
+          {
+            "k": "remove",
+            "t": 414.9
+          },
+          {
+            "k": "remove",
+            "t": 414.9
+          },
+          {
+            "k": "add",
+            "t": 664.6,
+            "top": "99.86%",
+            "left": "57%",
+            "rect": [
+              206.3,
+              598.6,
+              22,
+              22
+            ],
+            "inViewport": true
+          },
+          {
+            "k": "remove",
+            "t": 1064.7
+          }
+        ],
+        "addCount": 36,
+        "removeCount": 36,
+        "tops": [
+          "26.1833%",
+          "44.85%",
+          "73.85%",
+          "93.85%",
+          "99.86%",
+          "99.5867%",
+          "99.6467%",
+          "99.87%",
+          "99.76%",
+          "99.6667%",
+          "99.7033%",
+          "99.8%",
+          "99.9067%",
+          "99.83%",
+          "99.7667%",
+          "99.7933%",
+          "99.6567%",
+          "99.8767%",
+          "99.77%",
+          "99.5467%",
+          "99.79%",
+          "99.5933%",
+          "99.8867%",
+          "99.7733%",
+          "99.7767%",
+          "99.4367%",
+          "99.8833%",
+          "99.4467%",
+          "99.56%",
+          "99.7333%",
+          "99.6733%"
+        ],
+        "lefts": [
+          "14%",
+          "53%",
+          "81%",
+          "50%",
+          "57%",
+          "15%"
+        ]
+      },
+      "shots": {
+        "drop": ".scratch/r15-action/r15-action-coffee-01-drop-visible.png",
+        "catch": ".scratch/r15-action/r15-action-coffee-02-at-catch-moment.png",
+        "finish": ".scratch/r15-action/r15-action-coffee-03-finish.png"
+      }
+    },
+    "C2": {
+      "start": {
+        "startAt": 33529.70000076294,
+        "rect": [
+          33.59375,
+          301,
+          322.796875,
+          300
+        ]
+      },
+      "schedule": {
+        "n": 18
+      },
+      "done": true,
+      "samples": [
+        {
+          "id": 0,
+          "at": 0.8,
+          "x": 0.53,
+          "offsetMs": -310,
+          "dx": 0,
+          "expected": true,
+          "kind": "early-310"
+        },
+        {
+          "id": 1,
+          "at": 1.73,
+          "x": 0.76,
+          "offsetMs": -200,
+          "dx": 0,
+          "expected": true,
+          "kind": "early-200"
+        },
+        {
+          "id": 2,
+          "at": 2.49,
+          "x": 0.29,
+          "offsetMs": -100,
+          "dx": 0,
+          "expected": true,
+          "kind": "early-100"
+        },
+        {
+          "id": 3,
+          "at": 3.34,
+          "x": 0.32,
+          "offsetMs": -50,
+          "dx": 0,
+          "expected": true,
+          "kind": "early-50"
+        },
+        {
+          "id": 4,
+          "at": 4.13,
+          "x": 0.71,
+          "offsetMs": 5,
+          "dx": 0,
+          "expected": null,
+          "kind": "late-5"
+        },
+        {
+          "id": 5,
+          "at": 4.79,
+          "x": 0.38,
+          "offsetMs": 5,
+          "dx": 0,
+          "expected": null,
+          "kind": "late-5"
+        },
+        {
+          "id": 6,
+          "at": 5.76,
+          "x": 0.6,
+          "offsetMs": 5,
+          "dx": 0,
+          "expected": null,
+          "kind": "late-5"
+        },
+        {
+          "id": 7,
+          "at": 6.54,
+          "x": 0.44,
+          "offsetMs": 20,
+          "dx": 0,
+          "expected": false,
+          "kind": "late-20"
+        },
+        {
+          "id": 8,
+          "at": 7.42,
+          "x": 0.66,
+          "offsetMs": 50,
+          "dx": 0,
+          "expected": false,
+          "kind": "late-50"
+        },
+        {
+          "id": 9,
+          "at": 8.03,
+          "x": 0.41,
+          "offsetMs": 100,
+          "dx": 0,
+          "expected": false,
+          "kind": "late-100"
+        },
+        {
+          "id": 10,
+          "at": 8.92,
+          "x": 0.5,
+          "offsetMs": 200,
+          "dx": 0,
+          "expected": false,
+          "kind": "late-200"
+        },
+        {
+          "id": 11,
+          "at": 9.9,
+          "x": 0.25,
+          "offsetMs": 310,
+          "dx": 0,
+          "expected": false,
+          "kind": "late-310"
+        },
+        {
+          "id": 12,
+          "at": 10.93,
+          "x": 0.3,
+          "offsetMs": 0,
+          "dx": 0.12,
+          "expected": true,
+          "kind": "x+120"
+        },
+        {
+          "id": 13,
+          "at": 11.76,
+          "x": 0.62,
+          "offsetMs": 0,
+          "dx": -0.12,
+          "expected": true,
+          "kind": "x-120"
+        },
+        {
+          "id": 14,
+          "at": 12.62,
+          "x": 0.66,
+          "offsetMs": 0,
+          "dx": 0.14,
+          "expected": false,
+          "kind": "x+140"
+        },
+        {
+          "id": 15,
+          "at": 13.57,
+          "x": 0.81,
+          "offsetMs": 0,
+          "dx": -0.14,
+          "expected": false,
+          "kind": "x-140"
+        },
+        {
+          "id": 16,
+          "at": 14.39,
+          "x": 0.78,
+          "offsetMs": -2,
+          "dx": 0,
+          "expected": true,
+          "kind": "control"
+        },
+        {
+          "id": 17,
+          "at": 15.21,
+          "x": 0.69,
+          "offsetMs": -2,
+          "dx": 0,
+          "expected": true,
+          "kind": "control"
+        }
+      ],
+      "results": [
+        {
+          "kind": "early-310",
+          "at": 0.8,
+          "offsetMs": -310,
+          "dx": 0,
+          "expected": true,
+          "actualMs": -310,
+          "before": 0,
+          "after": 10,
+          "hit": true,
+          "dropCount": 1
+        },
+        {
+          "kind": "early-200",
+          "at": 1.73,
+          "offsetMs": -200,
+          "dx": 0,
+          "expected": true,
+          "actualMs": -200,
+          "before": 10,
+          "after": 22,
+          "hit": true,
+          "dropCount": 1
+        },
+        {
+          "kind": "early-100",
+          "at": 2.49,
+          "offsetMs": -100,
+          "dx": 0,
+          "expected": true,
+          "actualMs": -100,
+          "before": 22,
+          "after": 34,
+          "hit": true,
+          "dropCount": 0
+        },
+        {
+          "kind": "early-50",
+          "at": 3.34,
+          "offsetMs": -50,
+          "dx": 0,
+          "expected": true,
+          "actualMs": -50,
+          "before": 34,
+          "after": 48,
+          "hit": true,
+          "dropCount": 0
+        },
+        {
+          "kind": "late-5",
+          "at": 4.13,
+          "offsetMs": 5,
+          "dx": 0,
+          "expected": null,
+          "actualMs": 5,
+          "before": 48,
+          "after": 62,
+          "hit": true,
+          "dropCount": 0
+        },
+        {
+          "kind": "late-5",
+          "at": 4.79,
+          "offsetMs": 5,
+          "dx": 0,
+          "expected": null,
+          "actualMs": 5,
+          "before": 62,
+          "after": 78,
+          "hit": true,
+          "dropCount": 1
+        },
+        {
+          "kind": "late-5",
+          "at": 5.76,
+          "offsetMs": 5,
+          "dx": 0,
+          "expected": null,
+          "actualMs": 5,
+          "before": 78,
+          "after": 94,
+          "hit": true,
+          "dropCount": 0
+        },
+        {
+          "kind": "late-20",
+          "at": 6.54,
+          "offsetMs": 20,
+          "dx": 0,
+          "expected": false,
+          "actualMs": 20,
+          "before": 94,
+          "after": 112,
+          "hit": true,
+          "dropCount": 0
+        },
+        {
+          "kind": "late-50",
+          "at": 7.42,
+          "offsetMs": 50,
+          "dx": 0,
+          "expected": false,
+          "actualMs": 50,
+          "before": 112,
+          "after": 130,
+          "hit": true,
+          "dropCount": 0
+        },
+        {
+          "kind": "late-100",
+          "at": 8.03,
+          "offsetMs": 100,
+          "dx": 0,
+          "expected": false,
+          "actualMs": 100,
+          "before": 130,
+          "after": 150,
+          "hit": true,
+          "dropCount": 1
+        },
+        {
+          "kind": "late-200",
+          "at": 8.92,
+          "offsetMs": 200,
+          "dx": 0,
+          "expected": false,
+          "actualMs": 200,
+          "before": 150,
+          "after": 170,
+          "hit": true,
+          "dropCount": 1
+        },
+        {
+          "kind": "late-310",
+          "at": 9.9,
+          "offsetMs": 310,
+          "dx": 0,
+          "expected": false,
+          "actualMs": 310,
+          "before": 170,
+          "after": 192,
+          "hit": true,
+          "dropCount": 0
+        },
+        {
+          "kind": "x+120",
+          "at": 10.93,
+          "offsetMs": 0,
+          "dx": 0.12,
+          "expected": true,
+          "actualMs": 0,
+          "before": 192,
+          "after": 214,
+          "hit": true,
+          "dropCount": 1
+        },
+        {
+          "kind": "x-120",
+          "at": 11.76,
+          "offsetMs": 0,
+          "dx": -0.12,
+          "expected": true,
+          "actualMs": 0,
+          "before": 214,
+          "after": 238,
+          "hit": true,
+          "dropCount": 1
+        },
+        {
+          "kind": "x+140",
+          "at": 12.62,
+          "offsetMs": 0,
+          "dx": 0.14,
+          "expected": false,
+          "actualMs": 0,
+          "before": 238,
+          "after": 238,
+          "hit": false,
+          "dropCount": 1
+        },
+        {
+          "kind": "x-140",
+          "at": 13.57,
+          "offsetMs": 0,
+          "dx": -0.14,
+          "expected": false,
+          "actualMs": 0,
+          "before": 238,
+          "after": 238,
+          "hit": false,
+          "dropCount": 0
+        },
+        {
+          "kind": "control",
+          "at": 14.39,
+          "offsetMs": -2,
+          "dx": 0,
+          "expected": true,
+          "actualMs": -2,
+          "before": 238,
+          "after": 255,
+          "hit": true,
+          "dropCount": 1
+        },
+        {
+          "kind": "control",
+          "at": 15.21,
+          "offsetMs": -2,
+          "dx": 0,
+          "expected": true,
+          "actualMs": -2,
+          "before": 255,
+          "after": 272,
+          "hit": true,
+          "dropCount": 1
+        }
+      ]
+    },
+    "C3": {
+      "start": {
+        "startAt": 49153
+      },
+      "samples": [
+        {
+          "t": 490,
+          "score": "0",
+          "drops": 0,
+          "hint": "点屏幕接住咖啡 ☕",
+          "osc": 0
+        },
+        {
+          "t": 974,
+          "score": "0",
+          "drops": 0,
+          "hint": "点屏幕接住咖啡 ☕",
+          "osc": 0
+        },
+        {
+          "t": 1457,
+          "score": "0",
+          "drops": 1,
+          "hint": "点屏幕接住咖啡 ☕",
+          "osc": 0
+        },
+        {
+          "t": 1939,
+          "score": "0",
+          "drops": 0,
+          "hint": "点屏幕接住咖啡 ☕",
+          "osc": 0
+        },
+        {
+          "t": 2422,
+          "score": "0",
+          "drops": 1,
+          "hint": "点屏幕接住咖啡 ☕",
+          "osc": 0
+        },
+        {
+          "t": 2905,
+          "score": "0",
+          "drops": 0,
+          "hint": "点屏幕接住咖啡 ☕",
+          "osc": 0
+        },
+        {
+          "t": 3388,
+          "score": "0",
+          "drops": 1,
+          "hint": "点屏幕接住咖啡 ☕",
+          "osc": 0
+        },
+        {
+          "t": 3871,
+          "score": "0",
+          "drops": 0,
+          "hint": "点屏幕接住咖啡 ☕",
+          "osc": 0
+        },
+        {
+          "t": 4354,
+          "score": "0",
+          "drops": 1,
+          "hint": "点屏幕接住咖啡 ☕",
+          "osc": 0
+        }
+      ],
+      "shot": ".scratch/r15-action/r15-action-coffee-04-negative-score.png"
+    },
+    "C5": {
+      "start": {
+        "startAt": 53893.5
+      },
+      "grid": {
+        "n": 9,
+        "rects": [
+          [
+            94,
+            64
+          ],
+          [
+            94,
+            64
+          ],
+          [
+            94,
+            64
+          ],
+          [
+            94,
+            64
+          ],
+          [
+            94,
+            64
+          ],
+          [
+            94,
+            64
+          ],
+          [
+            94,
+            64
+          ],
+          [
+            94,
+            64
+          ],
+          [
+            94,
+            64
+          ]
+        ],
+        "timer": "第 1/5 轮",
+        "bossTexts": [
+          "王"
+        ],
+        "normalText": "员"
+      },
+      "run": {
+        "res": [
+          {
+            "k": 0,
+            "timer": "第 1/5 轮",
+            "bossAt": 5,
+            "picked": 0,
+            "wrong": true,
+            "dt": 0.2,
+            "afterTimer": "第 2/5 轮",
+            "afterBodySame": false,
+            "score": null
+          },
+          {
+            "k": 1,
+            "timer": "第 2/5 轮",
+            "bossAt": 0,
+            "picked": 0,
+            "wrong": false,
+            "dt": 0,
+            "afterTimer": "第 3/5 轮",
+            "afterBodySame": false,
+            "score": null
+          },
+          {
+            "k": 2,
+            "timer": "第 3/5 轮",
+            "bossAt": 8,
+            "picked": 8,
+            "wrong": false,
+            "dt": 0.1,
+            "afterTimer": "第 4/5 轮",
+            "afterBodySame": false,
+            "score": null
+          },
+          {
+            "k": 3,
+            "timer": "第 4/5 轮",
+            "bossAt": 8,
+            "picked": 8,
+            "wrong": false,
+            "dt": 0,
+            "afterTimer": "第 5/5 轮",
+            "afterBodySame": false,
+            "score": null
+          },
+          {
+            "k": 4,
+            "timer": "第 5/5 轮",
+            "bossAt": 5,
+            "picked": 5,
+            "wrong": false,
+            "dt": 0.2,
+            "afterTimer": null,
+            "afterBodySame": false,
+            "score": null
+          }
+        ],
+        "totalMs": 1.3,
+        "osc": 0
+      },
+      "finish": {
+        "title": "找老板",
+        "body": "找老板 结束\n477 分\n历史最高 477\n返回摸鱼站",
+        "left": "今天还能玩 1/3 次",
+        "arcade": {
+          "date": "2026-11-27",
+          "played": 2,
+          "best": {
+            "coffee": 720,
+            "findboss": 477
+          }
+        }
+      },
+      "shots": {
+        "grid": ".scratch/r15-action/r15-action-findboss-01-grid.png",
+        "finish": ".scratch/r15-action/r15-action-findboss-02-finish-wrong.png"
+      }
+    },
+    "C6": {
+      "run": {
+        "startAt": 2462.300000190735,
+        "totalMs": 0.9,
+        "perClick": [
+          0.1,
+          0.1,
+          0,
+          0,
+          0.1
+        ],
+        "body": "找老板 结束\n549 分\n历史最高 549\n返回摸鱼站",
+        "arcade": {
+          "date": "2026-11-27",
+          "played": 1,
+          "best": {
+            "coffee": 720,
+            "findboss": 549
+          }
+        }
+      },
+      "finish": {
+        "body": "找老板 结束\n549 分\n历史最高 549\n返回摸鱼站",
+        "left": "今天还能玩 2/3 次",
+        "arcade": {
+          "date": "2026-11-27",
+          "played": 1,
+          "best": {
+            "coffee": 720,
+            "findboss": 549
+          }
+        }
+      }
+    },
+    "C7": {
+      "start": {
+        "startAt": 3103.3999996185303
+      },
+      "mid5s": {
+        "timer": "第 1/5 轮",
+        "body": "第 1/5 轮\n员\n王\n员\n员\n员\n员\n员\n员\n员",
+        "left": "今天还能玩 2/3 次"
+      },
+      "done": false,
+      "finish": {
+        "body": "",
+        "arcade": {
+          "date": "2026-11-27",
+          "played": 1,
+          "best": {
+            "coffee": 720,
+            "findboss": 549
+          }
+        },
+        "left": ""
+      },
+      "shots": [
+        ".scratch/r15-action/r15-action-findboss-03-idle-5s.png",
+        ".scratch/r15-action/r15-action-findboss-04-idle-finish.png"
+      ]
+    },
+    "C8": {
+      "locked": {
+        "left": "今天还能玩 0/3 次",
+        "cards": [
+          {
+            "name": "接咖啡 最高 720",
+            "locked": true,
+            "disabled": true
+          },
+          {
+            "name": "找老板 最高 549",
+            "locked": true,
+            "disabled": true
+          },
+          {
+            "name": "节奏点击 最高 0",
+            "locked": true,
+            "disabled": true
+          }
+        ]
+      },
+      "shot": ".scratch/r15-action/r15-action-layout-04-locked.png"
+    }
+  },
+  "coffeeDrops": {
+    "seed1": {
+      "count": 36,
+      "first3": [
+        {
+          "id": 0,
+          "at": 0.8,
+          "x": 0.14
+        },
+        {
+          "id": 1,
+          "at": 1.36,
+          "x": 0.53
+        },
+        {
+          "id": 2,
+          "at": 2.23,
+          "x": 0.81
+        }
+      ],
+      "intervalStats": {
+        "min": 0.55,
+        "p50": 0.87,
+        "max": 1.03
+      }
+    },
+    "seed2": {
+      "count": 35
+    },
+    "windowSamples": 18
+  },
+  "errs": [],
+  "finishedAt": "2026-11-27T11:52:40.740Z"
+}

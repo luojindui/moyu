@@ -26,6 +26,13 @@ export const GAMES: GameDef[] = [
 /** 每天总共能玩几次（跨游戏共享） */
 export const ARCADE_DAILY_LIMIT = 3;
 
+/** 满分参考值（三游戏打满都落在这附近） */
+export const REF_SCORE = 600;
+/** 满分奖励 ≈ 该秒数的挂机收益（跨阶段恒定，不随进度漂移） */
+export const TARGET_IDLE_SECONDS = 25;
+/** 分数硬上限（防篡改） */
+export const MAX_SCORE = 2000;
+
 export interface ArcadeState {
   date: string;
   /** 今天已玩次数 */
@@ -60,9 +67,11 @@ export function finishGame(
     // 0 分也消耗次数（防止反复重开刷次数）
     return { state: { ...state, arcade: { ...state.arcade, played: state.arcade.played + 1 } }, reward: 0 };
   }
-  const capped = Math.min(score, 9999);
-  // 奖励：分数 × 0.6 秒挂机收益（30 秒小游戏 ≈ 18 秒挂机收益，不喧宾夺主）
-  const reward = Math.floor((idleRate * 0.6 + 20) * (capped / 100));
+  const capped = Math.min(score, MAX_SCORE);
+  // 奖励 = 满分的 0..1 比例 × 「目标挂机秒数」
+  // 用比例×秒数而不是固定 +20，避免跨阶段漂移（早期曾达 300 倍）
+  const ratio = Math.min(1, capped / REF_SCORE); // REF_SCORE 分 = 打满
+  const reward = Math.floor(idleRate * TARGET_IDLE_SECONDS * ratio);
   const best = Math.max(state.arcade.best[game] ?? 0, capped);
   return {
     reward,
@@ -97,7 +106,7 @@ export function genDrops(duration: number, rng: () => number): Drop[] {
   let id = 0;
   while (t < duration - 0.5) {
     drops.push({ id: id++, at: Number(t.toFixed(2)), x: Number((0.12 + rng() * 0.76).toFixed(2)) });
-    t += 0.55 + rng() * 0.5;
+    t += 0.8 + rng() * 0.55;
   }
   return drops;
 }
@@ -121,7 +130,7 @@ export function judgeCatch(drops: Drop[], tapAt: number, tapX: number): { hit: D
 export function coffeeScore(caught: number, missed: number, maxCombo: number): number {
   const base = caught * 10;
   const comboBonus = Math.min(2, 1 + maxCombo * 0.05);
-  return Math.floor(base * comboBonus - missed * 2);
+  return Math.max(0, Math.floor(base * comboBonus - missed * 2));
 }
 
 /* ===================== 小游戏 2：找老板 ===================== */

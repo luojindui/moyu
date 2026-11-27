@@ -1,0 +1,9 @@
+[0.4s] s1: 移动端 390x844 全新存档
+[1.8s] shot s1-01-first-screen
+[2.4s] shot s1-02-menu
+[4.2s] shot s1-03-coffee-early
+[5.6s] shot s1-04-coffee-mid
+[21.6s] shot s1-05-coffee-result
+[22.0s] shot s1-06-menu-after-one
+[22.5s] evidence -> playtest/r15-frag-s1.json
+DONE s1
