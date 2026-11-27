@@ -245,11 +245,15 @@ describe("成就墙 · 永久性与转生保留", () => {
     expect(achDone(achById("boss_10")!, afterCaught), "被老板抓到后 boss_10 仍应保持完成（永久成就）").toBe(true);
   });
 
-  it("天赋成就应永久（重置天赋后不应丢失）", () => {
-    const got = ACH_MIN_STATE.talent_6!(base());
+  it("天赋成就应永久（v0.6.6：bestTalentsUnlocked 历史最高）", () => {
+    const got: GameState = { ...ACH_MIN_STATE.talent_6!(base()), bestTalentsUnlocked: 6 };
     expect(achDone(achById("talent_6")!, got)).toBe(true);
     const afterReset = { ...got, talents: { ...got.talents, unlocked: [] } };
     expect(achDone(achById("talent_6")!, afterReset), "重置天赋后 talent_6 仍应保持完成").toBe(true);
+    // 历史最高本身也参与：即使当前清空也能点亮
+    expect(achDone(achById("talent_6")!, { ...base(), bestTalentsUnlocked: 6 })).toBe(true);
+    // 重置后加成保留
+    expect(achEffects(afterReset).idleMult).toBeGreaterThanOrEqual(achEffects(got).idleMult);
   });
 
   it("转生保留 bestIdleRate / rankIndex / cardsChosenTotal", () => {
@@ -262,6 +266,7 @@ describe("成就墙 · 永久性与转生保留", () => {
       cardsChosenTotal: 6,
       surviveStreak: 10,
       bestSurviveStreak: 10,
+      bestTalentsUnlocked: 8,
     };
     const r = doPrestige(s);
     expect(r).not.toBeNull();
@@ -269,6 +274,7 @@ describe("成就墙 · 永久性与转生保留", () => {
     expect(r!.state.rankIndex).toBe(7);
     expect(r!.state.cardsChosenTotal).toBe(6);
     expect(r!.state.bestSurviveStreak).toBe(10);
+    expect(r!.state.bestTalentsUnlocked).toBe(8);
     // 转生后 boss 成就应保持（历史最高连胜保留）
     expect(achDone(achById("boss_10")!, r!.state)).toBe(true);
   });
@@ -300,11 +306,12 @@ describe("成就墙 · 存档净化（bestIdleRate/rankIndex/cardsChosenTotal）
   });
 
   it("极值钳制（bestIdleRate≤1e30 / rankIndex≤20 / cardsChosenTotal≤100000）", () => {
-    const s = restoreOf({ bestIdleRate: 1e308, rankIndex: 999, cardsChosenTotal: 1e9, bestSurviveStreak: 1e9 });
+    const s = restoreOf({ bestIdleRate: 1e308, rankIndex: 999, cardsChosenTotal: 1e9, bestSurviveStreak: 1e9, bestTalentsUnlocked: 1e9 });
     expect(s.bestIdleRate).toBe(1e30);
     expect(s.rankIndex).toBe(20);
     expect(s.cardsChosenTotal).toBe(100000);
     expect(s.bestSurviveStreak).toBe(100000);
+    expect(s.bestTalentsUnlocked).toBe(18);
   });
 
   it("小数向下取整", () => {
@@ -314,10 +321,15 @@ describe("成就墙 · 存档净化（bestIdleRate/rankIndex/cardsChosenTotal）
     expect(s.cardsChosenTotal).toBe(3);
   });
 
-  it("净化后成就不再被篡改值误导（rankIndex 上限 20 > 合法最大 13 的偏差记录）", () => {
+  it("rankIndex 净化上限应为合法最大 14（v0.6.6 声称已从 20 收窄）", () => {
     const s = restoreOf({ rankIndex: 999 });
-    expect(s.rankIndex).toBe(20);
-    // 合法路径最大 13；20 只可能来自篡改 → rank_14 变成了"篡改可达、正常不可达"
-    expect(achDone(achById("rank_14")!, s)).toBe(true);
+    expect(s.rankIndex, "rankIndex 上限应为 14（合法段位为 1..14）").toBe(14);
+  });
+
+  it("bestTalentsUnlocked 负数/非法 → 0", () => {
+    const s = restoreOf({ bestTalentsUnlocked: -5 });
+    expect(s.bestTalentsUnlocked).toBe(0);
+    const t = restoreOf({ bestTalentsUnlocked: null });
+    expect(t.bestTalentsUnlocked).toBe(0);
   });
 });

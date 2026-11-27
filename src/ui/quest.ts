@@ -121,8 +121,16 @@ export class Quest {
 
   /** 每 150ms 调用；state 为当前，prev 为上一帧 */
   tick(state: GameState, prev: GameState | null): void {
-    // 已进阶（转生过/本局累计很高）则不再显示新手目标
-    if (state.prestige > 0 || state.lifetimeEarned > 1e6) {
+    // 已进阶/已用过新系统 → 不再显示新手目标（与 main 的 looksNewbie 判定保持一致）
+    const notNewbie =
+      state.prestige > 0 ||
+      state.lifetimeEarned > 1e6 ||
+      Object.keys(state.team.colleagues).length > 0 ||
+      state.decor.length > 0 ||
+      state.energy.used.length > 0 ||
+      !!state.cards?.chosenDate ||
+      (state.arcade?.played ?? 0) > 0;
+    if (notNewbie) {
       this.root.classList.add("hidden");
       return;
     }

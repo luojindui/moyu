@@ -1,9 +1,9 @@
 {
   "name": "成就墙 live",
-  "pass": 29,
-  "total": 30,
+  "pass": 30,
+  "total": 31,
   "failed": [
-    "E2 重置天赋后 talent_6 仍应保持（永久）"
+    "F3 极值钳制（1e30 / rankIndex≤14 / 100000 / 18）"
   ],
   "checks": [
     {
@@ -92,9 +92,14 @@
       "detail": "[\"click_1k\",\"talent_6\",\"boss_3\",\"boss_10\"]"
     },
     {
-      "id": "E2 重置天赋后 talent_6 仍应保持（永久）",
-      "ok": false,
-      "detail": "重置后 done=[\"click_1k\",\"boss_3\",\"boss_10\"]；idleMult 1.1037→1.0608"
+      "id": "E2 重置天赋后 talent_6 仍保持（永久）",
+      "ok": true,
+      "detail": "重置后 done=[\"click_1k\",\"talent_6\",\"boss_3\",\"boss_10\"]"
+    },
+    {
+      "id": "E2b 重置天赋后永久加成保留",
+      "ok": true,
+      "detail": "idleMult 1.103656→1.103656"
     },
     {
       "id": "F1 负数净化 → 0",
@@ -104,7 +109,7 @@
     {
       "id": "F1b 实机负值 bestIdleRate 被游戏立刻上调为合法值（无负值残留）",
       "ok": true,
-      "detail": "{\"b\":11.469369599999998,\"r\":1,\"c\":0}"
+      "detail": "{\"b\":11.93273213184,\"r\":1,\"c\":0}"
     },
     {
       "id": "F2 非法类型净化 → 0",
@@ -114,17 +119,17 @@
     {
       "id": "F2b 实机非法类型不残留",
       "ok": true,
-      "detail": "{\"b\":11.469369599999998,\"r\":1,\"c\":0}"
+      "detail": "{\"b\":11.93273213184,\"r\":1,\"c\":0}"
     },
     {
-      "id": "F3 极值钳制（1e30 / 20 / 100000）",
-      "ok": true,
-      "detail": "{\"b\":1e+30,\"r\":20,\"c\":100000}"
+      "id": "F3 极值钳制（1e30 / rankIndex≤14 / 100000 / 18）",
+      "ok": false,
+      "detail": "{\"b\":1e+30,\"r\":20,\"c\":100000,\"t\":18}"
     },
     {
       "id": "F4 极值档 HUD 无 NaN/Infinity 且可操作",
       "ok": true,
-      "detail": "{\"moyu\":\"58.9\",\"click\":\"1\",\"idle\":\"13.8\",\"rank\":\"实习生 1%\",\"card\":\"\",\"toast\":\"🏆 成就解锁：摸鱼之王\",\"toastShown\":true,\"sr\":\"成就解锁：摸"
+      "detail": "{\"moyu\":\"60.7\",\"click\":\"1\",\"idle\":\"14.8\",\"rank\":\"实习生 1%\",\"card\":\"\",\"toast\":\"\",\"toastShown\":false,\"sr\":\"✓ 戳屏幕完成！\"}"
     },
     {
       "id": "G1 转生按钮可用",
@@ -132,24 +137,24 @@
       "detail": "{\"disabled\":false,\"text\":\"离职再就业：+3 点（永久 ×3.25）\"}"
     },
     {
-      "id": "G2 转生保留 bestIdleRate/rankIndex/cardsChosenTotal",
+      "id": "G2 转生保留 bestIdleRate/rankIndex/cardsChosenTotal/bestTalentsUnlocked",
       "ok": true,
-      "detail": "{\"b\":5000,\"r\":7,\"c\":6}"
+      "detail": "{\"b\":5000,\"r\":7,\"c\":6,\"t\":8}"
     },
     {
       "id": "G3 转生后 rank/idle/card 类成就仍在",
       "ok": true,
-      "detail": "[\"click_1k\",\"idle_1k\",\"rank_7\",\"card_5\",\"boss_3\",\"boss_10\"]"
+      "detail": "[\"click_1k\",\"idle_1k\",\"talent_6\",\"rank_7\",\"card_5\",\"boss_3\",\"boss_10\"]"
     },
     {
       "id": "G4 转生后 boss 成就保留（历史最高连胜不清）",
       "ok": true,
-      "detail": "转生后 done=[\"click_1k\",\"idle_1k\",\"rank_7\",\"card_5\",\"boss_3\",\"boss_10\"]"
+      "detail": "转生后 done=[\"click_1k\",\"idle_1k\",\"talent_6\",\"rank_7\",\"card_5\",\"boss_3\",\"boss_10\"]"
     },
     {
       "id": "H1 同状态重复求值恒定（不重复叠加）",
       "ok": true,
-      "detail": "{\"p1\":6,\"p2\":6}"
+      "detail": "{\"p1\":7,\"p2\":7}"
     },
     {
       "id": "H2 无异常",
@@ -157,5 +162,5 @@
       "detail": "[]"
     }
   ],
-  "ms": 14758
+  "ms": 12453
 }

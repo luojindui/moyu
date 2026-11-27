@@ -325,7 +325,7 @@ export function restore(adapter: SaveAdapter, now: number): RestoreResult {
     const clampNum = (v: unknown, max: number): number =>
       typeof v === "number" && Number.isFinite(v) && v >= 0 ? Math.min(max, v) : 0;
     const bestIdleRate = clampNum(blob.bestIdleRate, 1e30);
-    const rankIndex = Math.min(20, Math.floor(clampNum(blob.rankIndex, 20)));
+    const rankIndex = Math.min(14, Math.floor(clampNum(blob.rankIndex, 14)));
     const cardsChosenTotal = Math.floor(clampNum(blob.cardsChosenTotal, 100000));
     const bestSurviveStreak = Math.floor(clampNum(blob.bestSurviveStreak, 100000));
     const bestTalentsUnlocked = Math.min(18, Math.floor(clampNum(blob.bestTalentsUnlocked, 18)));

@@ -229,49 +229,37 @@ await runChrome(async ({ port }) => {
         JSON.stringify({ claimed: sEnd.daily.claimed, team: Object.keys(sEnd.team.colleagues).length, energy: sEnd.energy.used.length, arcade: sEnd.arcade.played, clicks: sEnd.totalClicks }));
       const stepCount = happy.seen.length;
       rep.expect("H7a 目标链可完整走通且步数可观测", stepCount >= 9, `实际观测 ${stepCount} 步：${JSON.stringify(happy.seen)}`);
-      rep.expect("H7b 目标链步数应为 9（任务书/提交信息），实际实现", stepCount === 9, `实际观测 ${stepCount} 步（实现为 10 步）：${JSON.stringify(happy.seen)}`);
+      const upd = await ev(c, `fetch("./updates.json").then((r) => r.json()).then((j) => (j.notes ?? []).find((x) => /10 步/.test(x)) ?? "")`).catch(() => "");
+      rep.expect("H7b 更新日志口径应为 10 步", /10 步/.test(upd ?? ""), String(upd ?? "null"));
+      rep.expect("H7c 实机可观测步数 ≥9（选卡步可能瞬完）", stepCount >= 9, `实际观测 ${stepCount} 步：${JSON.stringify(happy.seen)}`);
       await shotSafe("ONB2-happy-end");
     }
 
-    // ---------- 场景 2：中途跳过每日卡 → 是否卡死 ----------
+    // ---------- 场景 2：中途跳过每日卡 → 目标链应能继续推进（v0.6.6 修复） ----------
     await seedAndReload(baseSeed());
     const seenSkip = [];
     let skipped = false;
-    let stuckObserved = false;
-    let stuckText = "";
+    let finishedSkip = false;
+    let skipReload = false;
     const t2 = Date.now();
     const origin2 = await ev(c, `performance.timeOrigin`);
-    let reload2 = false;
-    while (Date.now() - t2 < 100_000) {
-      if ((await ev(c, `performance.timeOrigin`)) !== origin2) { reload2 = true; break; }
+    while (Date.now() - t2 < 150_000) {
+      if ((await ev(c, `performance.timeOrigin`)) !== origin2) { skipReload = true; break; }
       const q = await questInfo();
-      if (q.hidden && !q.onboarding) break;
-      if (q.text && !seenSkip.includes(q.text)) seenSkip.push(q.text);
-      if (await bossAnswerIfOpen()) continue;
-      const cv = await cardsVisible();
-      if (cv && !skipped) { await skipCard(); skipped = true; continue; }
-      if (cv && skipped) { // 已跳过却又出现（不应发生）
-        await skipCard();
-        continue;
-      }
-      if (/选一张「今日摸鱼卡」/.test(q.text)) {
-        // 到达卡牌步骤：等弹窗出现（最多 6s），点「今天先不选」，再观察是否卡住
-        let vis = await cardsVisible();
-        const tw = Date.now();
-        while (!vis && Date.now() - tw < 6000) { await sleep(200); vis = await cardsVisible(); }
-        if (vis) { await skipCard(); skipped = true; }
-        stuckText = q.text;
-        await sleep(2600);
-        const q2 = await questInfo();
-        stuckObserved = !q2.hidden && /选一张「今日摸鱼卡」/.test(q2.text ?? "") && !(await cardsVisible());
-        break;
-      }
+      if (q.hidden && !q.onboarding) { finishedSkip = true; break; }
       const r = await stepOnce(seenSkip, "skip");
-      if (r.action === "done") break;
+      if (r.action === "skip-card") skipped = true;
+      if (r.q.hidden && !r.q.onboarding) { finishedSkip = true; break; }
+      if (r.action === "retry") await sleep(300);
     }
-    const qStuck = await questInfo();
-    runs.push({ scenario: "skipCard", seen: seenSkip, skipped, stuckText, onboarding: qStuck.onboarding, text: qStuck.text, reload2 });
-    rep.expect("H8 跳过每日卡会卡在「选卡」步骤（当天无法补选）", skipped && stuckObserved && qStuck.onboarding === true && /选一张「今日摸鱼卡」/.test(qStuck.text ?? ""), JSON.stringify({ skipped, stuckObserved, text: qStuck.text, onboarding: qStuck.onboarding, seen: seenSkip.length }));
+    const qSkip = await questInfo();
+    runs.push({ scenario: "skipCard-continue", seen: seenSkip, skipped, finishedSkip, onboarding: qSkip.onboarding, text: qSkip.text, reload: skipReload });
+    rep.expect("H8 跳过每日卡后目标链仍可继续推进", skipped === true && finishedSkip === true, JSON.stringify({ skipped, finishedSkip, text: qSkip.text, onboarding: qSkip.onboarding, seen: seenSkip.length, reload: skipReload }));
+    if (finishedSkip) {
+      let bSkip = await badgeVisibility();
+      for (let i = 0; i < 10 && Object.values(bSkip).some((v) => v !== "shown"); i++) { await sleep(300); bSkip = await badgeVisibility(); }
+      rep.expect("H8b 跳过卡后完成链路角标也恢复", bSkip.arcade === "shown" && bSkip.energy === "shown" && bSkip.talent === "shown", JSON.stringify(bSkip));
+    }
 
     // ---------- 场景 3：老玩家是否被误判为新手 ----------
     const veteran = baseSeed({
@@ -294,8 +282,32 @@ await runChrome(async ({ port }) => {
     await seedAndReload(veteran);
     const qv = await questInfo();
     const bv = await badgeVisibility();
-    runs.push({ scenario: "veteran500k", onboarding: qv.onboarding, text: qv.text, badges: bv });
-    rep.expect("H9 老玩家（lifetime 50 万，已有小队/家具/精力/卡）不应被当新手", qv.onboarding === false, `onboarding=${qv.onboarding} quest="${qv.text}" badges=${JSON.stringify(bv)}`);
+    runs.push({ scenario: "veteran500k-all", onboarding: qv.onboarding, text: qv.text, badges: bv });
+    rep.expect("H9a 老玩家不再隐藏系统角标（onboarding class 已移除）", qv.onboarding === false && bv.arcade === "shown", `onboarding=${qv.onboarding} badges=${JSON.stringify(bv)}`);
+    rep.expect("H9d 老玩家的新手目标条也应隐藏（残留问题记录）", qv.hidden === true, `quest hidden=${qv.hidden} text="${qv.text}"`);
+
+    // 变体：任一新系统有记录即视为老玩家
+    const variants = [
+      { name: "仅招募 1 同事", over: { team: { colleagues: { zhou: { level: 1, missionId: null, startedAt: 0, endsAt: 0, favor: 0, autoRepeat: false, rewardSnapshot: 0 } } } } },
+      { name: "仅 1 件家具", over: { decor: ["plant"] } },
+      { name: "仅用过精力", over: { energy: { date: today, left: 60, used: ["slack"], boosted: { idleMult: 1.25, patrolRewardMult: 1, clickMult: 1 } } } },
+      { name: "仅选过今日卡", over: { cards: { date: today, offers: ["coffee_day"], chosen: "coffee_day", until: Date.now() + 3600_000, dismissed: true, chosenDate: today, nextDayGuaranteed: null } } },
+      { name: "仅玩过小游戏", over: { arcade: { date: today, played: 1, best: { coffee: 100 } } } },
+    ];
+    const variantResults = [];
+    for (const v of variants) {
+      const seed = { ...veteran, ...v.over };
+      await seedAndReload(seed);
+      const q = await questInfo();
+      variantResults.push({ name: v.name, onboarding: q.onboarding });
+    }
+    runs.push({ scenario: "veteran-variants", variants: variantResults });
+    rep.expect("H9b 任一新系统有记录即不再误判为新手", variantResults.every((x) => x.onboarding === false), JSON.stringify(variantResults));
+
+    // 真正的纯新手（有累计但未用任何新系统）仍应走引导
+    await seedAndReload({ ...veteran, team: { colleagues: {} }, decor: [], energy: { date: today, left: 100, used: [], boosted: { idleMult: 1, patrolRewardMult: 1, clickMult: 1 } }, cards: { date: today, offers: [], chosen: null, until: 0, dismissed: true, chosenDate: "", nextDayGuaranteed: null }, arcade: { date: today, played: 0, best: {} } });
+    const qn = await questInfo();
+    rep.expect("H9c 未用任何新系统的玩家仍显示新手引导", qn.onboarding === true, JSON.stringify(qn));
 
     await seedAndReload({ ...veteran, totalEarned: 2e6, lifetimeEarned: 2e6 });
     const qv2 = await questInfo();

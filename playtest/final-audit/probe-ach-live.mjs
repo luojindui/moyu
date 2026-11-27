@@ -32,7 +32,7 @@ async function blobFromState() {
     patrolSurvives: s.patrolSurvives, cards: s.cards, decor: s.decor, energy: s.energy,
     arcade: s.arcade, totalClicks: s.totalClicks, visits: s.visits,
     lifetimeEarned: s.lifetimeEarned, prestige: s.prestige, team: s.team, talents: s.talents,
-    bestIdleRate: s.bestIdleRate, rankIndex: s.rankIndex, cardsChosenTotal: s.cardsChosenTotal, bestSurviveStreak: s.bestSurviveStreak,
+    bestIdleRate: s.bestIdleRate, rankIndex: s.rankIndex, cardsChosenTotal: s.cardsChosenTotal, bestSurviveStreak: s.bestSurviveStreak, bestTalentsUnlocked: s.bestTalentsUnlocked,
   };
 }
 async function writeSaveAndReload(blob, ms = 500) {
@@ -57,7 +57,7 @@ async function engineAch() {
       done: A.ACHIEVEMENTS.filter((a) => a.progress(s) >= a.target).map((a) => a.id),
       idleMult: e.idleMult, clickMult: e.clickMult, offlineBonus: e.offlineBonus,
       idleRate: U.effectOf(s).idleRate, clickPower: AC.clickPowerOf(s),
-      bestIdleRate: s.bestIdleRate, rankIndex: s.rankIndex, cardsChosenTotal: s.cardsChosenTotal, bestSurviveStreak: s.bestSurviveStreak, bestSurviveStreak: s.bestSurviveStreak,
+      bestIdleRate: s.bestIdleRate, rankIndex: s.rankIndex, cardsChosenTotal: s.cardsChosenTotal, bestSurviveStreak: s.bestSurviveStreak, bestTalentsUnlocked: s.bestTalentsUnlocked, bestTalentsUnlocked: s.bestTalentsUnlocked, bestSurviveStreak: s.bestSurviveStreak,
     };
   })()`);
 }
@@ -194,7 +194,8 @@ await runChrome(async ({ port }) => {
     const engE2 = await engineAch();
     await closeAllModals(c);
     rep.expect("E1 6 天赋时 talent_6 达成", engE1.done.includes("talent_6"), JSON.stringify(engE1.done));
-    rep.expect("E2 重置天赋后 talent_6 仍应保持（永久）", engE2.done.includes("talent_6"), `重置后 done=${JSON.stringify(engE2.done)}；idleMult ${engE1.idleMult.toFixed(4)}→${engE2.idleMult.toFixed(4)}`);
+    rep.expect("E2 重置天赋后 talent_6 仍保持（永久）", engE2.done.includes("talent_6"), `重置后 done=${JSON.stringify(engE2.done)}`);
+    rep.expect("E2b 重置天赋后永久加成保留", Math.abs(engE2.idleMult - engE1.idleMult) < 1e-9, `idleMult ${engE1.idleMult.toFixed(6)}→${engE2.idleMult.toFixed(6)}`);
 
     // ============ F. 存档净化（负数/极值/空值） ============
     await ev(c, "window.__MOYU__.saveNow()");
@@ -227,10 +228,10 @@ await runChrome(async ({ port }) => {
     rep.expect("F2b 实机非法类型不残留", Number.isFinite(sNull.bestIdleRate) && sNull.bestIdleRate >= 0 && sNull.rankIndex === 1 && sNull.cardsChosenTotal === 0, JSON.stringify({ b: sNull.bestIdleRate, r: sNull.rankIndex, c: sNull.cardsChosenTotal }));
     await ev(c, "window.__MOYU__.saveNow()");
     const fMax = await blobFromState();
-    fMax.bestIdleRate = 1e308; fMax.rankIndex = 999; fMax.cardsChosenTotal = 1e9;
+    fMax.bestIdleRate = 1e308; fMax.rankIndex = 999; fMax.cardsChosenTotal = 1e9; fMax.bestTalentsUnlocked = 1e9;
     await writeSaveAndReload(fMax);
     const sMax = await state(c);
-    rep.expect("F3 极值钳制（1e30 / 20 / 100000）", sMax.bestIdleRate === 1e30 && sMax.rankIndex === 20 && sMax.cardsChosenTotal === 100000, JSON.stringify({ b: sMax.bestIdleRate, r: sMax.rankIndex, c: sMax.cardsChosenTotal }));
+    rep.expect("F3 极值钳制（1e30 / rankIndex≤14 / 100000 / 18）", sMax.bestIdleRate === 1e30 && sMax.rankIndex === 14 && sMax.cardsChosenTotal === 100000 && sMax.bestTalentsUnlocked === 18, JSON.stringify({ b: sMax.bestIdleRate, r: sMax.rankIndex, c: sMax.cardsChosenTotal, t: sMax.bestTalentsUnlocked }));
     const h = await hud(c);
     rep.expect("F4 极值档 HUD 无 NaN/Infinity 且可操作", !/NaN|Infinity/.test(JSON.stringify(h)) && (await waitFrames(c, 3)), JSON.stringify(h).slice(0, 120));
 
@@ -239,7 +240,7 @@ await runChrome(async ({ port }) => {
     const g0 = await blobFromState();
     g0.totalEarned = 2e8; g0.lifetimeEarned = 2e8;
     g0.bestIdleRate = 5000; g0.rankIndex = 7; g0.cardsChosenTotal = 6;
-    g0.surviveStreak = 10; g0.bestSurviveStreak = 10; g0.decor = []; g0.levels = { phone: 5 }; g0.talents = { ...(g0.talents ?? {}), unlocked: [], points: 0 };
+    g0.surviveStreak = 10; g0.bestSurviveStreak = 10; g0.bestTalentsUnlocked = 8; g0.decor = []; g0.levels = { phone: 5 }; g0.talents = { ...(g0.talents ?? {}), unlocked: [], points: 0 };
     await writeSaveAndReload(g0);
     const engG1 = await engineAch();
     await openPanel(c, "#btn-journal", "#journal");
@@ -250,7 +251,7 @@ await runChrome(async ({ port }) => {
     const sG = await state(c);
     const engG2 = await engineAch();
     await closeAllModals(c);
-    rep.expect("G2 转生保留 bestIdleRate/rankIndex/cardsChosenTotal", sG.bestIdleRate === 5000 && sG.rankIndex === 7 && sG.cardsChosenTotal === 6, JSON.stringify({ b: sG.bestIdleRate, r: sG.rankIndex, c: sG.cardsChosenTotal }));
+    rep.expect("G2 转生保留 bestIdleRate/rankIndex/cardsChosenTotal/bestTalentsUnlocked", sG.bestIdleRate === 5000 && sG.rankIndex === 7 && sG.cardsChosenTotal === 6 && sG.bestTalentsUnlocked === 8, JSON.stringify({ b: sG.bestIdleRate, r: sG.rankIndex, c: sG.cardsChosenTotal, t: sG.bestTalentsUnlocked }));
     rep.expect("G3 转生后 rank/idle/card 类成就仍在", engG1.done.includes("rank_7") && engG1.done.includes("idle_1k") && engG1.done.includes("card_5"), JSON.stringify(engG1.done));
     rep.expect("G4 转生后 boss 成就保留（历史最高连胜不清）", engG2.done.includes("boss_10"), `转生后 done=${JSON.stringify(engG2.done)}`);
 

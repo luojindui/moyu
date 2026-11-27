@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-27T13:19:52.174Z",
-  "nowIso": "2026-11-27T13:19:52.174Z",
+  "generatedAt": "2026-11-27T14:39:28.861Z",
+  "nowIso": "2026-11-27T14:39:28.861Z",
   "today": "2026-11-27",
   "checks": {
     "upgradePrices": [
@@ -187,7 +187,7 @@
       },
       {
         "name": "collection55",
-        "got": 1.2,
+        "got": 1.4022927360000004,
         "expectFactor": 1.2
       },
       {
@@ -212,17 +212,17 @@
       },
       {
         "name": "decor5",
-        "got": 1.4345100000000002,
+        "got": 1.4632002000000004,
         "expectFactor": 1.4345100000000002
       },
       {
         "name": "decor8",
-        "got": 1.5779610000000004,
+        "got": 1.6899962310000007,
         "expectFactor": 1.5779610000000004
       },
       {
         "name": "energy2",
-        "got": 1.3125,
+        "got": 1.325625,
         "expectFactor": 1.3125
       }
     ],
@@ -236,8 +236,8 @@
       "decor": 1.5779610000000004,
       "energy": 1.3125,
       "expected": 57703.581174283776,
-      "got": 57703.581174283776,
-      "ratio": 1,
+      "got": 85322.6336399803,
+      "ratio": 1.4786367137644005,
       "factors": {
         "prestige": 7,
         "collection": 1.2,
@@ -250,11 +250,11 @@
       }
     },
     "idleSplit": {
-      "station": 57703.581174283776,
+      "station": 85322.6336399803,
       "fixed": 78654.24,
       "share": 10196.7768,
-      "total": 146554.59797428377,
-      "manual": 146554.59797428377,
+      "total": 174173.6504399803,
+      "manual": 174173.6504399803,
       "diff": 0
     },
     "clickStack": {
@@ -267,238 +267,238 @@
       "decor": 1.265,
       "energy": 1,
       "expected": 715.04125,
-      "got": 715.04125
+      "got": 729.1207
     },
     "dispatch": {
-      "station": 57703.581174283776,
+      "station": 85322.6336399803,
       "rows": [
         {
           "colleague": "zhou",
           "mission": "stroll",
-          "got": 796584,
-          "expected": 796584,
+          "got": 1176639,
+          "expected": 1176639,
           "ok": true
         },
         {
           "colleague": "zhou",
           "mission": "quick",
-          "got": 2625107,
-          "expected": 2625107,
+          "got": 3877561,
+          "expected": 3877561,
           "ok": true
         },
         {
           "colleague": "zhou",
           "mission": "chat",
-          "got": 7060634,
-          "expected": 7060634,
+          "got": 10429302,
+          "expected": 10429302,
           "ok": true
         },
         {
           "colleague": "zhou",
           "mission": "meeting",
-          "got": 11586682,
-          "expected": 11586682,
+          "got": 17114752,
+          "expected": 17114752,
           "ok": true
         },
         {
           "colleague": "zhou",
           "mission": "toilet",
-          "got": 63726751,
-          "expected": 63726751,
+          "got": 94131138,
+          "expected": 94131138,
           "ok": true
         },
         {
           "colleague": "zhou",
           "mission": "coffee",
-          "got": 162213548,
-          "expected": 162213548,
+          "got": 239606534,
+          "expected": 239606534,
           "ok": true
         },
         {
           "colleague": "mei",
           "mission": "stroll",
-          "got": 547654,
-          "expected": 547654,
+          "got": 805716,
+          "expected": 805716,
           "ok": true
         },
         {
           "colleague": "mei",
           "mission": "quick",
-          "got": 1804770,
-          "expected": 1804770,
+          "got": 2655201,
+          "expected": 2655201,
           "ok": true
         },
         {
           "colleague": "mei",
           "mission": "chat",
-          "got": 3236140,
-          "expected": 3236140,
+          "got": 4761051,
+          "expected": 4761051,
           "ok": true
         },
         {
           "colleague": "mei",
           "mission": "meeting",
-          "got": 11948826,
-          "expected": 11948826,
+          "got": 17579268,
+          "expected": 17579268,
           "ok": true
         },
         {
           "colleague": "mei",
           "mission": "toilet",
-          "got": 43812362,
-          "expected": 43812362,
+          "got": 64457317,
+          "expected": 64457317,
           "ok": true
         },
         {
           "colleague": "mei",
           "mission": "coffee",
-          "got": 111522378,
-          "expected": 111522378,
+          "got": 164073171,
+          "expected": 164073171,
           "ok": true
         },
         {
           "colleague": "qiang",
           "mission": "stroll",
-          "got": 565951,
-          "expected": 565951,
+          "got": 828705,
+          "expected": 828705,
           "ok": true
         },
         {
           "colleague": "qiang",
           "mission": "quick",
-          "got": 1865067,
-          "expected": 1865067,
+          "got": 2730961,
+          "expected": 2730961,
           "ok": true
         },
         {
           "colleague": "qiang",
           "mission": "chat",
-          "got": 3344259,
-          "expected": 3344259,
+          "got": 4896896,
+          "expected": 4896896,
           "ok": true
         },
         {
           "colleague": "qiang",
           "mission": "meeting",
-          "got": 8232024,
-          "expected": 8232024,
+          "got": 12053899,
+          "expected": 12053899,
           "ok": true
         },
         {
           "colleague": "qiang",
           "mission": "toilet",
-          "got": 67914198,
-          "expected": 67914198,
+          "got": 99444673,
+          "expected": 99444673,
           "ok": true
         },
         {
           "colleague": "qiang",
           "mission": "coffee",
-          "got": 115248336,
-          "expected": 115248336,
+          "got": 168754598,
+          "expected": 168754598,
           "ok": true
         },
         {
           "colleague": "li",
           "mission": "stroll",
-          "got": 1402197,
-          "expected": 1402197,
+          "got": 2044067,
+          "expected": 2044067,
           "ok": true
         },
         {
           "colleague": "li",
           "mission": "quick",
-          "got": 4620876,
-          "expected": 4620876,
+          "got": 6736131,
+          "expected": 6736131,
           "ok": true
         },
         {
           "colleague": "li",
           "mission": "chat",
-          "got": 5523806,
-          "expected": 5523806,
+          "got": 8052386,
+          "expected": 8052386,
           "ok": true
         },
         {
           "colleague": "li",
           "mission": "meeting",
-          "got": 13597062,
-          "expected": 13597062,
+          "got": 19821260,
+          "expected": 19821260,
           "ok": true
         },
         {
           "colleague": "li",
           "mission": "toilet",
-          "got": 46739901,
-          "expected": 46739901,
+          "got": 68135581,
+          "expected": 68135581,
           "ok": true
         },
         {
           "colleague": "li",
           "mission": "coffee",
-          "got": 118974294,
-          "expected": 118974294,
+          "got": 173436025,
+          "expected": 173436025,
           "ok": true
         },
         {
           "colleague": "wang",
           "mission": "stroll",
-          "got": 602545,
-          "expected": 602545,
+          "got": 874683,
+          "expected": 874683,
           "ok": true
         },
         {
           "colleague": "wang",
           "mission": "quick",
-          "got": 1985662,
-          "expected": 1985662,
+          "got": 2882481,
+          "expected": 2882481,
           "ok": true
         },
         {
           "colleague": "wang",
           "mission": "chat",
-          "got": 3560498,
-          "expected": 3560498,
+          "got": 5168586,
+          "expected": 5168586,
           "ok": true
         },
         {
           "colleague": "wang",
           "mission": "meeting",
-          "got": 8764303,
-          "expected": 8764303,
+          "got": 12722675,
+          "expected": 12722675,
           "ok": true
         },
         {
           "colleague": "wang",
           "mission": "toilet",
-          "got": 72305505,
-          "expected": 72305505,
+          "got": 104962070,
+          "expected": 104962070,
           "ok": true
         },
         {
           "colleague": "wang",
           "mission": "coffee",
-          "got": 276075567,
-          "expected": 276075567,
+          "got": 400764267,
+          "expected": 400764267,
           "ok": true
         }
       ]
     },
     "dispatchSnapshot": {
-      "snapshot": 7060634,
-      "claimed": 7060634
+      "snapshot": 10429302,
+      "claimed": 10429302
     },
     "daily": {
-      "idleRate": 146554.59797428377,
-      "expected": 87932758.78457026,
-      "got": 87932758.78457026,
-      "delta": 87932758.7845459
+      "idleRate": 174173.6504399803,
+      "expected": 104504190.26398818,
+      "got": 104504190.26398818,
+      "delta": 104504190.26403809
     },
     "patrol": {
-      "idle": 146554.59797428377,
-      "base": 586218.3918971351,
-      "expectHold": 2011901.5209909675,
-      "gotHold": 2011901.5209909675,
+      "idle": 174173.6504399803,
+      "base": 696694.6017599212,
+      "expectHold": 2391055.87324005,
+      "gotHold": 2391055.87324005,
       "streak3": 1.3,
       "streakCap": 1.5,
       "talent": 1.2,
@@ -506,18 +506,18 @@
       "energy": 2.2
     },
     "patrolVariants": {
-      "typeReward": 1547616.5546084365,
-      "blitzReward": 2321424.831912655,
-      "choiceCorrect": 1096829,
-      "choiceWrong": -609349,
-      "choiceBase": 609349.8172004367
+      "typeReward": 1839273.748646192,
+      "blitzReward": 2758910.622969288,
+      "choiceCorrect": 1499024,
+      "choiceWrong": -832791,
+      "choiceBase": 832791.401923809
     },
     "meme": {
-      "clickPower": 715.04125,
+      "clickPower": 729.1207,
       "talentMeme": 1.15,
       "favorMeme": 1.1,
-      "expected": 4522.6359062500005,
-      "got": 4522.6359062500005
+      "expected": 4611.6884275,
+      "got": 4611.6884275
     },
     "arcade": {
       "rows": [
@@ -554,70 +554,6 @@
       ],
       "earlyFloor": 30,
       "refundPlayed": 0
-    },
-    "offline": {
-      "rows": [
-        {
-          "seconds": 3600,
-          "capHours": 12,
-          "applied": 3600,
-          "got": 367664722.4674216,
-          "expectEarned": 367664722.4674216,
-          "ratio": 1
-        },
-        {
-          "seconds": 39600,
-          "capHours": 12,
-          "applied": 39600,
-          "got": 4044311947.1416373,
-          "expectEarned": 4044311947.1416373,
-          "ratio": 1
-        },
-        {
-          "seconds": 46800,
-          "capHours": 12,
-          "applied": 43200,
-          "got": 4411976669.609059,
-          "expectEarned": 4411976669.609059,
-          "ratio": 1
-        },
-        {
-          "seconds": 691200,
-          "capHours": 24,
-          "applied": 86400,
-          "got": 8823953339.218119,
-          "expectEarned": 8823953339.218119,
-          "ratio": 1
-        },
-        {
-          "seconds": 2678400,
-          "capHours": 48,
-          "applied": 172800,
-          "got": 17647906678.436237,
-          "expectEarned": 17647906678.436237,
-          "ratio": 1
-        }
-      ],
-      "caps": {
-        "day": 43200,
-        "week": 86400,
-        "month": 172800
-      },
-      "idle2Applied": 50400,
-      "rates": {
-        "firstDay": 0.95,
-        "afterDay_noVisit": 0.95,
-        "afterDay_1visit": 0.95,
-        "afterDay_3visit": 0.95
-      },
-      "wipOfflineMax": 0.95,
-      "docConflict": "当前 WIP 把离线效率硬上限设为 0.95：首日不再是「全额 1.0」（文档/PROJECT-SUMMARY 写首日全额）；而 resume.settleReturn 对 ≥7 天回归仍强制 rate=1（>0.95），两套上限并存"
-    },
-    "offline7d": {
-      "applied": 86400,
-      "earned": 17280,
-      "normalEarned": 16416,
-      "ratio": 1.0526315789473684
     },
     "prestige": {
       "rows": [
@@ -662,22 +598,22 @@
         "clickMult": 2
       },
       "restoredBoost": {
-        "idleMult": 1,
+        "idleMult": 1.08,
         "patrolRewardMult": 1,
-        "clickMult": 1.2
+        "clickMult": 2
       },
-      "liveClick": 1430.0825,
-      "restoredClick": 858.0495,
-      "ratioAfterReload": 0.6,
-      "liveIdle": 136332.82073769637,
-      "restoredIdle": 132815.65007564478,
-      "idleDropPct": 2.5798414813250403,
-      "baseClick": 715.04125
+      "liveClick": 1458.2414,
+      "restoredClick": 1458.2414,
+      "ratioAfterReload": 1,
+      "liveIdle": 159059.3553380409,
+      "restoredIdle": 159059.3553380409,
+      "idleDropPct": 0,
+      "baseClick": 729.1207
     },
     "teamSummary": {
-      "uiShown": 22411.074352285134,
-      "engineTeam": 88851.01679999998,
-      "ratio": 0.2522320527038148,
+      "uiShown": 30696.790091994088,
+      "engineTeam": 88851.0168,
+      "ratio": 0.3454860866825115,
       "missing": {
         "prestigeMult": 7,
         "collection": 1.2,
@@ -718,11 +654,11 @@
       }
     ],
     "dispatchNet": {
-      "perHour": 8232024,
-      "uiLossPerHour": 6405596.030046795,
+      "perHour": 12053899,
+      "uiLossPerHour": 7300453.329935362,
       "engineLossPerHour": 9429347.894399999,
-      "uiNet": 1826427.9699532054,
-      "engineNet": -1197323.8943999987
+      "uiNet": 4753445.670064638,
+      "engineNet": 2624551.1056000013
     },
     "talentTransform": {
       "state": "解锁 click_5a，未解锁 event_5a；patrolSurvives=20",
@@ -748,28 +684,28 @@
       "energy": {
         "claimedFactors": "slack ×1.25、social ×1.05（文案「今天挂机 +25% / +5%」）",
         "stationFactor": 1.3125,
-        "totalIdleFactor": 1.1034437424416024,
-        "totalIdlePct": 10.344374244160237,
+        "totalIdleFactor": 1.1320361331391293,
+        "totalIdlePct": 13.203613313912932,
         "claimedPctIfStacked": 31.25,
-        "stationShareOfTotal": 0.3310199758131278
+        "stationShareOfTotal": 0.4225156260452137
       },
       "slackOnly": {
         "stationFactor": 1.25,
-        "totalPct": 8.275499395328211,
+        "totalPct": 10.562890651130342,
         "claimedPct": 25
       },
       "talentIdle": {
         "talentMult": 1.08,
-        "totalIdleFactor": 1.0300416894617652,
-        "totalPct": 3.004168946176522,
+        "totalIdleFactor": 1.0614426706700775,
+        "totalPct": 6.144267067007747,
         "claimedPct": 8
       }
     },
     "dailyWindows": {
-      "firstReward": 87932758.78457026,
+      "firstReward": 104504190.26398818,
       "claimedAfterWindowReroll": false,
-      "secondReward": 87932758.78457026,
-      "totalSameDay": 175865517.56914052,
+      "secondReward": 104504190.26398818,
+      "totalSameDay": 209008380.52797636,
       "note": "claimDaily 只在同一天第一次 +streak；但奖励可领 4 次/天（每 6 小时时段）"
     },
     "firstDayRisk": {
@@ -790,30 +726,30 @@
     "teamFormulaDrift": [
       {
         "name": "early",
-        "ui": 20.0816,
+        "ui": 20.082416,
         "engineTeam": 20.0816,
-        "ratio": 1,
-        "underPct": 0,
+        "ratio": 1.0000406342124133,
+        "underPct": -0.004063421241329301,
         "mult": 1,
         "fav": 1,
         "teamIdle": 1
       },
       {
         "name": "mid",
-        "ui": 60.827424,
+        "ui": 60.83569824,
         "engineTeam": 203.627424,
-        "ratio": 0.29871921377348465,
-        "underPct": 70.12807862265153,
+        "ratio": 0.298759847985898,
+        "underPct": 70.1240152014102,
         "mult": 3.38,
         "fav": 1,
         "teamIdle": 1
       },
       {
         "name": "endgame",
-        "ui": 16569.034767559508,
-        "engineTeam": 88851.01680000001,
-        "ratio": 0.18648109345620348,
-        "underPct": 81.35189065437966,
+        "ui": 22058.53587875385,
+        "engineTeam": 88851.01679999998,
+        "ratio": 0.24826430437376665,
+        "underPct": 75.17356956262333,
         "mult": 8.4,
         "fav": 1.08,
         "teamIdle": 1.7
@@ -821,11 +757,6 @@
     ]
   },
   "defects": [
-    {
-      "level": "P2",
-      "where": "src/engine/progression.ts（并行 WIP，未提交） / src/engine/resume.ts",
-      "issue": "当前离线效率硬上限 OFFLINE_MAX=0.95：实测首日 0.95、3 次回访后 0.95，不再是文档承诺的「首日全额 1.0」；而 settleReturn 对 ≥7 天回归仍强制 rate=1，同一系统两套上限（0.95 与 1.0）并存"
-    },
     {
       "level": "P2",
       "where": "src/main.ts saveNow/lastDaySnapshot",

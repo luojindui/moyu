@@ -1,0 +1,2203 @@
+{
+  "generatedAt": "2026-11-27T14:44:27.949Z",
+  "snapshot": {
+    "head": "be5d2e9",
+    "headTitle": "fix(batch5 P1/P2 from QA audit): skipping daily card no longer deadlocks the newbie quest (dismiss counts as done), talent achievements use historical best unlocked count (reset no longer regresses permanent bonus), old players detected via team/decor/energy/card/arcade activity not just lifetime; +3 regression tests (262 green); v0.6.6",
+    "dirty": ""
+  },
+  "checks": [
+    {
+      "panel": "启动",
+      "item": "dev 启动无 boot 错误",
+      "shown": "ok",
+      "expected": "ok",
+      "ok": true
+    },
+    {
+      "panel": "①小队面板",
+      "item": "小队挂机 +X/秒 = teamIdleBreakdown.total",
+      "shown": 90300,
+      "expected": 90307.57680000001,
+      "engine": {
+        "breakdown": 90307.57680000001,
+        "station": 75974.27151916889
+      },
+      "ok": true
+    },
+    {
+      "panel": "①小队面板",
+      "item": "zhou 挂机/秒（面板 Math.round + formatMoyu 粒度）",
+      "shown": 2930,
+      "expected": 2930,
+      "engine": {
+        "id": "zhou",
+        "ui": 2930,
+        "engine": 2930.37024
+      },
+      "ok": true
+    },
+    {
+      "panel": "①小队面板",
+      "item": "mei 挂机/秒（面板 Math.round + formatMoyu 粒度）",
+      "shown": 9553,
+      "expected": 9553,
+      "engine": {
+        "id": "mei",
+        "ui": 9553,
+        "engine": 9553.4628
+      },
+      "ok": true
+    },
+    {
+      "panel": "①小队面板",
+      "item": "qiang 挂机/秒（面板 Math.round + formatMoyu 粒度）",
+      "shown": 17700,
+      "expected": 17747,
+      "engine": {
+        "id": "qiang",
+        "ui": 17747,
+        "engine": 17747.35536
+      },
+      "ok": true
+    },
+    {
+      "panel": "①小队面板",
+      "item": "li 挂机/秒（面板 Math.round + formatMoyu 粒度）",
+      "shown": 25900,
+      "expected": 25941,
+      "engine": {
+        "id": "li",
+        "ui": 25941,
+        "engine": 25941.247920000005
+      },
+      "ok": true
+    },
+    {
+      "panel": "①小队面板",
+      "item": "wang 挂机/秒（面板 Math.round + formatMoyu 粒度）",
+      "shown": 34100,
+      "expected": 34135,
+      "engine": {
+        "id": "wang",
+        "ui": 34135,
+        "engine": 34135.14048
+      },
+      "ok": true
+    },
+    {
+      "panel": "②派遣净收益",
+      "item": "18 个任务按钮「净 +X/h」= 引擎真实净（flips=2）",
+      "shown": "0/30 一致",
+      "expected": "全部一致",
+      "engine": {
+        "flips": [
+          {
+            "colleague": "qiang",
+            "mission": "chat",
+            "est": 4371367,
+            "uiNet": 1745167.6027789274,
+            "engineNet": -840837.8944000024,
+            "e2eNet": -840837.8944000658,
+            "deltaIdle": 2662.1033040000184,
+            "signFlip": true,
+            "domNet": 1745200
+          },
+          {
+            "colleague": "wang",
+            "mission": "stroll",
+            "est": 782571,
+            "uiNet": 3297331.470371904,
+            "engineNet": -2781555.8592000045,
+            "e2eNet": -2781555.859200012,
+            "deltaIdle": 5120.271072000003,
+            "signFlip": true,
+            "domNet": 3297300
+          }
+        ],
+        "e2eRows": [
+          {
+            "colleague": "zhou",
+            "mission": "stroll",
+            "est": 698666,
+            "uiNet": 14344555.735185951,
+            "engineNet": 14856800.070399998,
+            "e2eNet": 14856800.0704,
+            "deltaIdle": 439.55553599999985,
+            "signFlip": false,
+            "domNet": 14344600
+          },
+          {
+            "colleague": "zhou",
+            "mission": "quick",
+            "est": 2302424,
+            "uiNet": 8740292.205774188,
+            "engineNet": 9252536.540988235,
+            "e2eNet": 9252536.540988237,
+            "deltaIdle": 439.55553599999985,
+            "signFlip": false,
+            "domNet": 8740300
+          },
+          {
+            "colleague": "zhou",
+            "mission": "chat",
+            "est": 6192728,
+            "uiNet": 12476480.441068307,
+            "engineNet": 12988724.776282353,
+            "e2eNet": 12988724.776282355,
+            "deltaIdle": 439.55553599999985,
+            "signFlip": false,
+            "domNet": 12476500
+          }
+        ]
+      },
+      "ok": false
+    },
+    {
+      "panel": "⑥天赋面板",
+      "item": "点击转化行显示",
+      "shown": "点击转化：3000/10500 次（当前 +10%）",
+      "expected": "包含「点击转化」",
+      "ok": true
+    },
+    {
+      "panel": "⑥天赋面板",
+      "item": "未解锁 event_5a 时是否仍显示「安然转化 +X%」",
+      "shown": "安然转化：20/30 次（当前 +20%）",
+      "expected": "不应显示非 0 加成（实际 conversionBonus 该段=0）",
+      "expectedStr": "不显示/显示0",
+      "engine": {
+        "surviveToIdle": false,
+        "conv": 0.1,
+        "survivePctEngine": 0,
+        "uiShown": 20
+      },
+      "note": "UI 恒显示进度行，实际 conversionBonus 不含该段",
+      "ok": false
+    },
+    {
+      "panel": "成就墙",
+      "item": "汇总 22 条 + 等级",
+      "shown": "16/22 · Lv.5",
+      "expected": "16/22 · Lv.5",
+      "ok": true
+    },
+    {
+      "panel": "成就墙",
+      "item": "分类进度 10 行",
+      "shown": 10,
+      "expected": 10,
+      "ok": true
+    },
+    {
+      "panel": "成就墙",
+      "item": "10 个分类进度文本 = 引擎 achByCategory",
+      "shown": "10/10",
+      "expected": "10/10",
+      "engine": [],
+      "ok": true
+    },
+    {
+      "panel": "成就墙",
+      "item": "条目数 22",
+      "shown": 22,
+      "expected": 22,
+      "ok": true
+    },
+    {
+      "panel": "成就墙",
+      "item": "22 条进度/勾选 = 引擎 achDone/progress",
+      "shown": "22/22",
+      "expected": "22/22",
+      "engine": [],
+      "ok": true
+    },
+    {
+      "panel": "工位面板",
+      "item": "离线收益倍率 ×N.NN",
+      "shown": 1.62,
+      "expected": 1.6225,
+      "engine": 1.6225,
+      "ok": true
+    },
+    {
+      "panel": "HUD",
+      "item": "摸鱼值",
+      "shown": "10000.00亿",
+      "expected": "10000.00亿",
+      "ok": true
+    },
+    {
+      "panel": "HUD",
+      "item": "点击力",
+      "shown": "729.1",
+      "expected": "729.1",
+      "ok": true
+    },
+    {
+      "panel": "HUD",
+      "item": "挂机/秒",
+      "shown": "16.63万",
+      "expected": "16.63万",
+      "ok": true
+    },
+    {
+      "panel": "HUD",
+      "item": "段位+进度",
+      "shown": "宇宙尽头·终",
+      "expected": "宇宙尽头·终",
+      "ok": true
+    },
+    {
+      "panel": "商店",
+      "item": "9 档价格/等级 vs costOf",
+      "shown": "9/9",
+      "expected": "9/9",
+      "engine": [],
+      "ok": true
+    },
+    {
+      "panel": "③精力focus",
+      "item": "实时 boost ×2 / ×1.08",
+      "shown": "2|1.08",
+      "expected": "2|1.08",
+      "ok": true
+    },
+    {
+      "panel": "③精力focus",
+      "item": "刷新后 boost ×2 / ×1.08",
+      "shown": "2|1.08",
+      "expected": "2|1.08",
+      "ok": true
+    },
+    {
+      "panel": "③精力focus",
+      "item": "刷新后 HUD 点击力与刷新前一致",
+      "shown": "22.8",
+      "expected": "22.8",
+      "ok": true
+    },
+    {
+      "panel": "④离线",
+      "item": "1h（非封顶） 到账金额 = 引擎 settleReturn",
+      "shown": 131500,
+      "expected": 131507.39627899992,
+      "engine": {
+        "elapsed": 3600.746,
+        "applied": 3600.746,
+        "earned": 131507.39627899992,
+        "panelRate": 0.95,
+        "impliedRate": 0.95,
+        "cap": 43200,
+        "incomeMult": 1.6225,
+        "capHours": 12
+      },
+      "ok": true
+    },
+    {
+      "panel": "④离线",
+      "item": "1h（非封顶） 封顶文案（引擎 cap=12h）",
+      "shown": "离线效率 95%｜12 小时封顶",
+      "expected": "…12 小时封顶",
+      "engine": {
+        "elapsed": 3600.746,
+        "applied": 3600.746,
+        "earned": 131507.39627899992,
+        "panelRate": 0.95,
+        "impliedRate": 0.95,
+        "cap": 43200,
+        "incomeMult": 1.6225,
+        "capHours": 12
+      },
+      "ok": true
+    },
+    {
+      "panel": "④离线",
+      "item": "100h（12h 封顶） 到账金额 = 引擎 settleReturn",
+      "shown": 1577800,
+      "expected": 1577761.8080399998,
+      "engine": {
+        "elapsed": 360000.759,
+        "applied": 43200,
+        "earned": 1577761.8080399998,
+        "panelRate": 0.95,
+        "impliedRate": 0.95,
+        "cap": 43200,
+        "incomeMult": 1.6225,
+        "capHours": 12
+      },
+      "ok": true
+    },
+    {
+      "panel": "④离线",
+      "item": "100h（12h 封顶） 封顶文案（引擎 cap=12h）",
+      "shown": "离线效率 95%｜超过上限，已按上限结算 12 小时 0 分",
+      "expected": "…已按上限结算 12 小时",
+      "engine": {
+        "elapsed": 360000.759,
+        "applied": 43200,
+        "earned": 1577761.8080399998,
+        "panelRate": 0.95,
+        "impliedRate": 0.95,
+        "cap": 43200,
+        "incomeMult": 1.6225,
+        "capHours": 12
+      },
+      "ok": true
+    },
+    {
+      "panel": "④离线",
+      "item": "8 天（24h 封顶 + ≥7 天回归） 到账金额 = 引擎 settleReturn",
+      "shown": 3321600.0000000005,
+      "expected": 3321603.8063999997,
+      "engine": {
+        "elapsed": 691200.74,
+        "applied": 86400,
+        "earned": 3321603.8063999997,
+        "panelRate": 0.95,
+        "impliedRate": 1,
+        "cap": 86400,
+        "incomeMult": 1.6225,
+        "capHours": 24
+      },
+      "ok": true
+    },
+    {
+      "panel": "④离线",
+      "item": "8 天（24h 封顶 + ≥7 天回归） 封顶文案（引擎 cap=24h）",
+      "shown": "离线效率 95%｜超过上限，已按上限结算 24 小时 0 分",
+      "expected": "…已按上限结算 24 小时",
+      "engine": {
+        "elapsed": 691200.74,
+        "applied": 86400,
+        "earned": 3321603.8063999997,
+        "panelRate": 0.95,
+        "impliedRate": 1,
+        "cap": 86400,
+        "incomeMult": 1.6225,
+        "capHours": 24
+      },
+      "ok": true
+    },
+    {
+      "panel": "⑤离线回归",
+      "item": "8 天（24h 封顶 + ≥7 天回归） 面板效率 vs 实际结算效率",
+      "shown": "面板 95% / 实际 100%",
+      "expected": "两者一致",
+      "expectedStr": "两者一致",
+      "engine": {
+        "panelRate": 0.95,
+        "impliedRate": 1,
+        "extraPct": 5.263157894736836,
+        "earned": 3321603.8063999997
+      },
+      "note": "resume.settleReturn 对 ≥7 天强制 rate=1，绕过硬上限",
+      "ok": false
+    },
+    {
+      "panel": "④离线",
+      "item": "31 天（48h 封顶 + ≥7 天回归） 到账金额 = 引擎 settleReturn",
+      "shown": 6643200.000000001,
+      "expected": 6643207.612799999,
+      "engine": {
+        "elapsed": 2678400.829,
+        "applied": 172800,
+        "earned": 6643207.612799999,
+        "panelRate": 0.95,
+        "impliedRate": 1,
+        "cap": 172800,
+        "incomeMult": 1.6225,
+        "capHours": 48
+      },
+      "ok": true
+    },
+    {
+      "panel": "④离线",
+      "item": "31 天（48h 封顶 + ≥7 天回归） 封顶文案（引擎 cap=48h）",
+      "shown": "离线效率 95%｜超过上限，已按上限结算 48 小时 0 分",
+      "expected": "…已按上限结算 48 小时",
+      "engine": {
+        "elapsed": 2678400.829,
+        "applied": 172800,
+        "earned": 6643207.612799999,
+        "panelRate": 0.95,
+        "impliedRate": 1,
+        "cap": 172800,
+        "incomeMult": 1.6225,
+        "capHours": 48
+      },
+      "ok": true
+    },
+    {
+      "panel": "⑤离线回归",
+      "item": "31 天（48h 封顶 + ≥7 天回归） 面板效率 vs 实际结算效率",
+      "shown": "面板 95% / 实际 100%",
+      "expected": "两者一致",
+      "expectedStr": "两者一致",
+      "engine": {
+        "panelRate": 0.95,
+        "impliedRate": 1,
+        "extraPct": 5.263157894736836,
+        "earned": 6643207.612799999
+      },
+      "note": "resume.settleReturn 对 ≥7 天强制 rate=1，绕过硬上限",
+      "ok": false
+    },
+    {
+      "panel": "新手引导",
+      "item": "第 1 位同事招募价 = 1,500",
+      "shown": 1500,
+      "expected": 1500,
+      "engine": {
+        "recruitCostOf": 1500
+      },
+      "note": "按钮文案「招募 1500」",
+      "ok": true
+    },
+    {
+      "panel": "新手引导",
+      "item": "目标链步数（quest 文本存在）",
+      "shown": "买下点亮的「咖啡续命」卡片",
+      "expected": "非空",
+      "ok": true
+    },
+    {
+      "panel": "线上v0.6.6",
+      "item": "生产包不暴露 __MOYU__",
+      "shown": "false",
+      "expected": "false",
+      "ok": true
+    },
+    {
+      "panel": "线上v0.6.6",
+      "item": "版本 = v0.6.6",
+      "shown": "v0.6.6 · 2026-11-27",
+      "expected": "v0.6.6 · 2026-11-27",
+      "ok": true
+    },
+    {
+      "panel": "线上v0.6.6",
+      "item": "9 档商店渲染",
+      "shown": 9,
+      "expected": 9,
+      "ok": true
+    },
+    {
+      "panel": "线上v0.6.6",
+      "item": "成就墙 22 条已上线",
+      "shown": 22,
+      "expected": 22,
+      "ok": true
+    },
+    {
+      "panel": "线上v0.6.6",
+      "item": "初始 HUD 点击/挂机",
+      "shown": "1|0.2",
+      "expected": "1|0.2",
+      "ok": true
+    },
+    {
+      "panel": "线上v0.6.6",
+      "item": "离线 100h 封顶文案",
+      "shown": "离线效率 90%｜超过上限，已按上限结算 12 小时 0 分",
+      "expected": "包含「已按上限结算 12 小时」",
+      "ok": true
+    },
+    {
+      "panel": "线上v0.6.6",
+      "item": "离线 8d 封顶文案",
+      "shown": "离线效率 90%｜超过上限，已按上限结算 24 小时 0 分",
+      "expected": "包含「已按上限结算 24 小时」",
+      "ok": true
+    },
+    {
+      "panel": "线上v0.6.6",
+      "item": "8 天档实际结算效率（100h 档 12h×0.9 反推）",
+      "shown": 0.9999809014514895,
+      "expected": 1,
+      "engine": {
+        "g100": 785400.0000000001,
+        "g8d": 1745300,
+        "implied8d": 0.9999809014514895
+      },
+      "note": "面板写 90%，反推实际 100% → ⑤ 在线上同样未修",
+      "ok": true
+    }
+  ],
+  "scenarios": {
+    "S1": {
+      "state": {
+        "moyu": 1000000177405.1764,
+        "idle": 166281.8483191689,
+        "click": 729.1207,
+        "teamTotal": 90307.57680000001,
+        "station": 75974.27151916889,
+        "prestige": 8,
+        "bestIdleRate": 166281.8483191689,
+        "rankIndex": 14,
+        "cardsChosenTotal": 5,
+        "bestSurviveStreak": 3,
+        "bestTalentsUnlocked": 14
+      },
+      "hud": {
+        "moyu": "10000.00亿",
+        "click": "729.1",
+        "idle": "16.63万",
+        "rank": "宇宙尽头·终",
+        "card": "卡·咖啡管够",
+        "streak": "♻ 转生×8（可晋升）"
+      },
+      "hudExp": {
+        "moyu": "10000.00亿",
+        "click": "729.1",
+        "idle": "16.63万",
+        "rank": "宇宙尽头·终",
+        "streak": "♻ 转生×8（可晋升）"
+      },
+      "shop": [
+        {
+          "id": "coffee",
+          "price": "81",
+          "next": "+1 点击力 · 咖啡因已注入静脉",
+          "level": "Lv.12"
+        },
+        {
+          "id": "phone",
+          "price": "3311",
+          "next": "+4/秒 · 手指有了肌肉记忆",
+          "level": "Lv.30"
+        },
+        {
+          "id": "water",
+          "price": "306",
+          "next": "+2 点击力 · 今日饮水 KPI 达成",
+          "level": "Lv.8"
+        },
+        {
+          "id": "toilet",
+          "price": "1.30万",
+          "next": "+10/秒 · 隔间是我的办公室",
+          "level": "Lv.22"
+        },
+        {
+          "id": "chair",
+          "price": "1610",
+          "next": "+5 点击力 · ×2差5级 · 坐着就是赚钱",
+          "level": "Lv.5"
+        },
+        {
+          "id": "group",
+          "price": "3.25万",
+          "next": "+30/秒 · 摸鱼情报交换中",
+          "level": "Lv.15"
+        },
+        {
+          "id": "meeting",
+          "price": "6.65万",
+          "next": "+50/秒 · ×2差3级 · 发言=加班，沉默=摸鱼",
+          "level": "Lv.7"
+        },
+        {
+          "id": "deep",
+          "price": "22.81万",
+          "next": "+180/秒 · ×2差2级 · 心流状态，勿扰",
+          "level": "Lv.3"
+        },
+        {
+          "id": "retire",
+          "price": "115.00万",
+          "next": "+700/秒 · 工资？那是副业",
+          "level": "Lv.1"
+        }
+      ],
+      "shopExp": [
+        {
+          "id": "coffee",
+          "price": "81",
+          "next": "+1 点击力",
+          "level": "Lv.12"
+        },
+        {
+          "id": "water",
+          "price": "306",
+          "next": "+2 点击力",
+          "level": "Lv.8"
+        },
+        {
+          "id": "chair",
+          "price": "1610",
+          "next": "+5 点击力",
+          "level": "Lv.5"
+        },
+        {
+          "id": "phone",
+          "price": "3311",
+          "next": "+4/秒",
+          "level": "Lv.30"
+        },
+        {
+          "id": "toilet",
+          "price": "1.30万",
+          "next": "+10/秒",
+          "level": "Lv.22"
+        },
+        {
+          "id": "group",
+          "price": "3.25万",
+          "next": "+30/秒",
+          "level": "Lv.15"
+        },
+        {
+          "id": "meeting",
+          "price": "6.65万",
+          "next": "+50/秒",
+          "level": "Lv.7"
+        },
+        {
+          "id": "deep",
+          "price": "22.81万",
+          "next": "+180/秒",
+          "level": "Lv.3"
+        },
+        {
+          "id": "retire",
+          "price": "115.00万",
+          "next": "+700/秒",
+          "level": "Lv.1"
+        }
+      ],
+      "summary": "\n      已招募 5/5 · 小队挂机 +9.03万/秒\n      \n      自动重复：完成后自动领取并续班（离线回来最多补 1 轮）\n    ",
+      "mates": [
+        {
+          "name": "老周 Lv.5",
+          "skill": "挂机 +2930/秒 + 工位 4.0% · 擅长 聊八卦",
+          "missions": [
+            {
+              "id": "zhou",
+              "mission": "stroll",
+              "text": "就近溜达3m · +69.87万 · 净 +1434.46万/h"
+            },
+            {
+              "id": "zhou",
+              "mission": "quick",
+              "text": "溜一圈13m · +230.24万 · 净 +874.03万/h"
+            },
+            {
+              "id": "zhou",
+              "mission": "chat",
+              "text": "茶水间聊八卦 ★26m · +619.27万 · 净 +1247.65万/h"
+            },
+            {
+              "id": "zhou",
+              "mission": "meeting",
+              "text": "开个会51m · +1016.24万 · 净 +986.11万/h"
+            },
+            {
+              "id": "zhou",
+              "mission": "toilet",
+              "text": "长线蹲点3h · +5589.33万 · 净 +1434.46万/h"
+            },
+            {
+              "id": "zhou",
+              "mission": "coffee",
+              "text": "楼下买咖啡7h · +1.42亿 · 净 +1882.80万/h"
+            }
+          ],
+          "buttons": [
+            {
+              "act": "upgrade",
+              "id": "zhou",
+              "text": "已满级 Lv.5"
+            },
+            {
+              "act": "auto",
+              "id": "zhou",
+              "text": "自动重复：关"
+            },
+            {
+              "act": "dispatch",
+              "id": "zhou",
+              "text": "就近溜达3m · +69.87万 · 净 +1434.46万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "zhou",
+              "text": "溜一圈13m · +230.24万 · 净 +874.03万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "zhou",
+              "text": "茶水间聊八卦 ★26m · +619.27万 · 净 +1247.65万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "zhou",
+              "text": "开个会51m · +1016.24万 · 净 +986.11万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "zhou",
+              "text": "长线蹲点3h · +5589.33万 · 净 +1434.46万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "zhou",
+              "text": "楼下买咖啡7h · +1.42亿 · 净 +1882.80万/h"
+            }
+          ]
+        },
+        {
+          "name": "小美 Lv.5",
+          "skill": "挂机 +9553/秒 + 工位 5.0% · 擅长 开会",
+          "missions": [
+            {
+              "id": "mei",
+              "mission": "stroll",
+              "text": "就近溜达3m · +71.84万 · 净 +1004.81万/h"
+            },
+            {
+              "id": "mei",
+              "mission": "quick",
+              "text": "溜一圈15m · +236.74万 · 净 +515.01万/h"
+            },
+            {
+              "id": "mei",
+              "mission": "chat",
+              "text": "茶水间聊八卦30m · +424.49万 · 净 +417.05万/h"
+            },
+            {
+              "id": "mei",
+              "mission": "meeting",
+              "text": "开个会 ★1h · +1567.35万 · 净 +1135.42万/h"
+            },
+            {
+              "id": "mei",
+              "mission": "toilet",
+              "text": "长线蹲点4h · +5746.95万 · 净 +1004.81万/h"
+            },
+            {
+              "id": "mei",
+              "mission": "coffee",
+              "text": "楼下买咖啡8h · +1.46亿 · 净 +1396.64万/h"
+            }
+          ],
+          "buttons": [
+            {
+              "act": "upgrade",
+              "id": "mei",
+              "text": "已满级 Lv.5"
+            },
+            {
+              "act": "auto",
+              "id": "mei",
+              "text": "自动重复：关"
+            },
+            {
+              "act": "dispatch",
+              "id": "mei",
+              "text": "就近溜达3m · +71.84万 · 净 +1004.81万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "mei",
+              "text": "溜一圈15m · +236.74万 · 净 +515.01万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "mei",
+              "text": "茶水间聊八卦30m · +424.49万 · 净 +417.05万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "mei",
+              "text": "开个会 ★1h · +1567.35万 · 净 +1135.42万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "mei",
+              "text": "长线蹲点4h · +5746.95万 · 净 +1004.81万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "mei",
+              "text": "楼下买咖啡8h · +1.46亿 · 净 +1396.64万/h"
+            }
+          ]
+        },
+        {
+          "name": "强哥 Lv.5",
+          "skill": "挂机 +1.77万/秒 + 工位 6.0% · 擅长 蹲点",
+          "missions": [
+            {
+              "id": "qiang",
+              "mission": "stroll",
+              "text": "就近溜达3m · +73.98万 · 净 +779.78万/h"
+            },
+            {
+              "id": "qiang",
+              "mission": "quick",
+              "text": "溜一圈15m · +243.79万 · 净 +275.39万/h"
+            },
+            {
+              "id": "qiang",
+              "mission": "chat",
+              "text": "茶水间聊八卦30m · +437.14万 · 净 +174.52万/h"
+            },
+            {
+              "id": "qiang",
+              "mission": "meeting",
+              "text": "开个会1h · +1076.03万 · 净 +376.27万/h"
+            },
+            {
+              "id": "qiang",
+              "mission": "toilet",
+              "text": "长线蹲点 ★4h · +8877.24万 · 净 +1519.55万/h"
+            },
+            {
+              "id": "qiang",
+              "mission": "coffee",
+              "text": "楼下买咖啡8h · +1.51亿 · 净 +1183.29万/h"
+            }
+          ],
+          "buttons": [
+            {
+              "act": "upgrade",
+              "id": "qiang",
+              "text": "已满级 Lv.5"
+            },
+            {
+              "act": "auto",
+              "id": "qiang",
+              "text": "自动重复：关"
+            },
+            {
+              "act": "dispatch",
+              "id": "qiang",
+              "text": "就近溜达3m · +73.98万 · 净 +779.78万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "qiang",
+              "text": "溜一圈15m · +243.79万 · 净 +275.39万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "qiang",
+              "text": "茶水间聊八卦30m · +437.14万 · 净 +174.52万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "qiang",
+              "text": "开个会1h · +1076.03万 · 净 +376.27万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "qiang",
+              "text": "长线蹲点 ★4h · +8877.24万 · 净 +1519.55万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "qiang",
+              "text": "楼下买咖啡8h · +1.51亿 · 净 +1183.29万/h"
+            }
+          ]
+        },
+        {
+          "name": "小李 Lv.5",
+          "skill": "挂机 +2.59万/秒 + 工位 7.0% · 擅长 跑腿",
+          "missions": [
+            {
+              "id": "li",
+              "mission": "stroll",
+              "text": "就近溜达 ★3m · +182.68万 · 净 +2686.04万/h"
+            },
+            {
+              "id": "li",
+              "mission": "quick",
+              "text": "溜一圈 ★15m · +602.02万 · 净 +1440.49万/h"
+            },
+            {
+              "id": "li",
+              "mission": "chat",
+              "text": "茶水间聊八卦30m · +719.65万 · 净 +471.72万/h"
+            },
+            {
+              "id": "li",
+              "mission": "meeting",
+              "text": "开个会1h · +1771.45万 · 净 +803.87万/h"
+            },
+            {
+              "id": "li",
+              "mission": "toilet",
+              "text": "长线蹲点4h · +6089.37万 · 净 +554.76万/h"
+            },
+            {
+              "id": "li",
+              "mission": "coffee",
+              "text": "楼下买咖啡8h · +1.55亿 · 净 +969.94万/h"
+            }
+          ],
+          "buttons": [
+            {
+              "act": "upgrade",
+              "id": "li",
+              "text": "已满级 Lv.5"
+            },
+            {
+              "act": "auto",
+              "id": "li",
+              "text": "自动重复：关"
+            },
+            {
+              "act": "dispatch",
+              "id": "li",
+              "text": "就近溜达 ★3m · +182.68万 · 净 +2686.04万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "li",
+              "text": "溜一圈 ★15m · +602.02万 · 净 +1440.49万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "li",
+              "text": "茶水间聊八卦30m · +719.65万 · 净 +471.72万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "li",
+              "text": "开个会1h · +1771.45万 · 净 +803.87万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "li",
+              "text": "长线蹲点4h · +6089.37万 · 净 +554.76万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "li",
+              "text": "楼下买咖啡8h · +1.55亿 · 净 +969.94万/h"
+            }
+          ]
+        },
+        {
+          "name": "王师傅 Lv.5",
+          "skill": "挂机 +3.41万/秒 + 工位 8.0% · 擅长 买咖啡",
+          "missions": [
+            {
+              "id": "wang",
+              "mission": "stroll",
+              "text": "就近溜达3m · +78.26万 · 净 +329.73万/h"
+            },
+            {
+              "id": "wang",
+              "mission": "quick",
+              "text": "溜一圈15m · +257.89万 · 净 -2038368.5/h"
+            },
+            {
+              "id": "wang",
+              "mission": "chat",
+              "text": "茶水间聊八卦30m · +462.43万 · 净 -3105512.5/h"
+            },
+            {
+              "id": "wang",
+              "mission": "meeting",
+              "text": "开个会1h · +1138.29万 · 净 -971224.5/h"
+            },
+            {
+              "id": "wang",
+              "mission": "toilet",
+              "text": "长线蹲点4h · +9390.86万 · 净 +1112.31万/h"
+            },
+            {
+              "id": "wang",
+              "mission": "coffee",
+              "text": "楼下买咖啡 ★8h · +3.59亿 · 净 +3246.59万/h"
+            }
+          ],
+          "buttons": [
+            {
+              "act": "upgrade",
+              "id": "wang",
+              "text": "已满级 Lv.5"
+            },
+            {
+              "act": "auto",
+              "id": "wang",
+              "text": "自动重复：关"
+            },
+            {
+              "act": "dispatch",
+              "id": "wang",
+              "text": "就近溜达3m · +78.26万 · 净 +329.73万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "wang",
+              "text": "溜一圈15m · +257.89万 · 净 -2038368.5/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "wang",
+              "text": "茶水间聊八卦30m · +462.43万 · 净 -3105512.5/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "wang",
+              "text": "开个会1h · +1138.29万 · 净 -971224.5/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "wang",
+              "text": "长线蹲点4h · +9390.86万 · 净 +1112.31万/h"
+            },
+            {
+              "act": "dispatch",
+              "id": "wang",
+              "text": "楼下买咖啡 ★8h · +3.59亿 · 净 +3246.59万/h"
+            }
+          ]
+        }
+      ],
+      "perCol": [
+        {
+          "id": "zhou",
+          "ui": 2930,
+          "engine": 2930.37024
+        },
+        {
+          "id": "mei",
+          "ui": 9553,
+          "engine": 9553.4628
+        },
+        {
+          "id": "qiang",
+          "ui": 17747,
+          "engine": 17747.35536
+        },
+        {
+          "id": "li",
+          "ui": 25941,
+          "engine": 25941.247920000005
+        },
+        {
+          "id": "wang",
+          "ui": 34135,
+          "engine": 34135.14048
+        }
+      ],
+      "dispatches": [
+        {
+          "colleague": "zhou",
+          "mission": "stroll",
+          "est": 698666,
+          "uiNet": 14344555.735185951,
+          "engineNet": 14856800.070399998,
+          "e2eNet": 14856800.0704,
+          "deltaIdle": 439.55553599999985,
+          "signFlip": false
+        },
+        {
+          "colleague": "zhou",
+          "mission": "quick",
+          "est": 2302424,
+          "uiNet": 8740292.205774188,
+          "engineNet": 9252536.540988235,
+          "e2eNet": 9252536.540988237,
+          "deltaIdle": 439.55553599999985,
+          "signFlip": false
+        },
+        {
+          "colleague": "zhou",
+          "mission": "chat",
+          "est": 6192728,
+          "uiNet": 12476480.441068307,
+          "engineNet": 12988724.776282353,
+          "e2eNet": 12988724.776282355,
+          "deltaIdle": 439.55553599999985,
+          "signFlip": false
+        },
+        {
+          "colleague": "zhou",
+          "mission": "meeting",
+          "est": 10162425,
+          "uiNet": 9861149.85283301,
+          "engineNet": 10373394.188047059,
+          "e2eNet": 10373394.188047059,
+          "deltaIdle": 439.55553599999985,
+          "signFlip": false
+        },
+        {
+          "colleague": "zhou",
+          "mission": "toilet",
+          "est": 55893339,
+          "uiNet": 14344573.088127129,
+          "engineNet": 14856817.423341177,
+          "e2eNet": 14856817.423341177,
+          "deltaIdle": 439.55553599999985,
+          "signFlip": false
+        },
+        {
+          "colleague": "zhou",
+          "mission": "coffee",
+          "est": 142273956,
+          "uiNet": 18827996.323421247,
+          "engineNet": 19340240.658635296,
+          "e2eNet": 19340240.658635296,
+          "deltaIdle": 439.55553599999985,
+          "signFlip": false
+        },
+        {
+          "colleague": "mei",
+          "mission": "stroll",
+          "est": 718368,
+          "uiNet": 10048054.668982439,
+          "engineNet": 9208490.088,
+          "e2eNet": 9208490.08800001,
+          "deltaIdle": 1433.019419999997,
+          "signFlip": false
+        },
+        {
+          "colleague": "mei",
+          "mission": "quick",
+          "est": 2367352,
+          "uiNet": 5150102.66898244,
+          "engineNet": 4310538.0879999995,
+          "e2eNet": 4310538.088000011,
+          "deltaIdle": 1433.019419999997,
+          "signFlip": false
+        },
+        {
+          "colleague": "mei",
+          "mission": "chat",
+          "est": 4244907,
+          "uiNet": 4170508.6689824397,
+          "engineNet": 3330944.0879999995,
+          "e2eNet": 3330944.0880000107,
+          "deltaIdle": 1433.019419999997,
+          "signFlip": false
+        },
+        {
+          "colleague": "mei",
+          "mission": "meeting",
+          "est": 15673503,
+          "uiNet": 11354197.668982439,
+          "engineNet": 10514633.088,
+          "e2eNet": 10514633.08800001,
+          "deltaIdle": 1433.019419999997,
+          "signFlip": false
+        },
+        {
+          "colleague": "mei",
+          "mission": "toilet",
+          "est": 57469513,
+          "uiNet": 10048072.918982439,
+          "engineNet": 9208508.338,
+          "e2eNet": 9208508.33800001,
+          "deltaIdle": 1433.019419999997,
+          "signFlip": false
+        },
+        {
+          "colleague": "mei",
+          "mission": "coffee",
+          "est": 146286035,
+          "uiNet": 13966449.043982439,
+          "engineNet": 13126884.463,
+          "e2eNet": 13126884.46300001,
+          "deltaIdle": 1433.019419999997,
+          "signFlip": false
+        },
+        {
+          "colleague": "qiang",
+          "mission": "stroll",
+          "est": 739769,
+          "uiNet": 7797813.602778927,
+          "engineNet": 5211808.105599998,
+          "e2eNet": 5211808.105599934,
+          "deltaIdle": 2662.1033040000184,
+          "signFlip": false
+        },
+        {
+          "colleague": "qiang",
+          "mission": "quick",
+          "est": 2437878,
+          "uiNet": 2753945.6027789274,
+          "engineNet": 167940.10559999757,
+          "e2eNet": 167940.10559993424,
+          "deltaIdle": 2662.1033040000184,
+          "signFlip": false
+        },
+        {
+          "colleague": "qiang",
+          "mission": "chat",
+          "est": 4371367,
+          "uiNet": 1745167.6027789274,
+          "engineNet": -840837.8944000024,
+          "e2eNet": -840837.8944000658,
+          "deltaIdle": 2662.1033040000184,
+          "signFlip": true
+        },
+        {
+          "colleague": "qiang",
+          "mission": "meeting",
+          "est": 10760289,
+          "uiNet": 3762722.6027789274,
+          "engineNet": 1176717.1055999976,
+          "e2eNet": 1176717.1055999342,
+          "deltaIdle": 2662.1033040000184,
+          "signFlip": false
+        },
+        {
+          "colleague": "qiang",
+          "mission": "toilet",
+          "est": 88772392,
+          "uiNet": 15195531.602778926,
+          "engineNet": 12609526.105599998,
+          "e2eNet": 12609526.105599934,
+          "deltaIdle": 2662.1033040000184,
+          "signFlip": false
+        },
+        {
+          "colleague": "qiang",
+          "mission": "coffee",
+          "est": 150644059,
+          "uiNet": 11832940.977778926,
+          "engineNet": 9246935.480599998,
+          "e2eNet": 9246935.480599934,
+          "deltaIdle": 2662.1033040000184,
+          "signFlip": false
+        },
+        {
+          "colleague": "li",
+          "mission": "stroll",
+          "est": 1826810,
+          "uiNet": 26860372.536575418,
+          "engineNet": 22527926.123199996,
+          "e2eNet": 22527926.123199962,
+          "deltaIdle": 3891.187188000011,
+          "signFlip": false
+        },
+        {
+          "colleague": "li",
+          "mission": "quick",
+          "est": 6020170,
+          "uiNet": 14404852.536575418,
+          "engineNet": 10072406.123199996,
+          "e2eNet": 10072406.123199962,
+          "deltaIdle": 3891.187188000011,
+          "signFlip": false
+        },
+        {
+          "colleague": "li",
+          "mission": "chat",
+          "est": 7196525,
+          "uiNet": 4717222.536575418,
+          "engineNet": 384776.1231999956,
+          "e2eNet": 384776.1231999621,
+          "deltaIdle": 3891.187188000011,
+          "signFlip": false
+        },
+        {
+          "colleague": "li",
+          "mission": "meeting",
+          "est": 17714523,
+          "uiNet": 8038695.536575418,
+          "engineNet": 3706249.1231999956,
+          "e2eNet": 3706249.123199962,
+          "deltaIdle": 3891.187188000011,
+          "signFlip": false
+        },
+        {
+          "colleague": "li",
+          "mission": "toilet",
+          "est": 60893675,
+          "uiNet": 5547591.286575418,
+          "engineNet": 1215144.8731999956,
+          "e2eNet": 1215144.873199962,
+          "deltaIdle": 3891.187188000011,
+          "signFlip": false
+        },
+        {
+          "colleague": "li",
+          "mission": "coffee",
+          "est": 155002084,
+          "uiNet": 9699433.036575418,
+          "engineNet": 5366986.623199996,
+          "e2eNet": 5366986.623199962,
+          "deltaIdle": 3891.187188000011,
+          "signFlip": false
+        },
+        {
+          "colleague": "wang",
+          "mission": "stroll",
+          "est": 782571,
+          "uiNet": 3297331.470371904,
+          "engineNet": -2781555.8592000045,
+          "e2eNet": -2781555.859200012,
+          "deltaIdle": 5120.271072000003,
+          "signFlip": true
+        },
+        {
+          "colleague": "wang",
+          "mission": "quick",
+          "est": 2578930,
+          "uiNet": -2038368.5296280961,
+          "engineNet": -8117255.8592000045,
+          "e2eNet": -8117255.859200012,
+          "deltaIdle": 5120.271072000003,
+          "signFlip": false
+        },
+        {
+          "colleague": "wang",
+          "mission": "chat",
+          "est": 4624288,
+          "uiNet": -3105512.529628096,
+          "engineNet": -9184399.859200004,
+          "e2eNet": -9184399.859200012,
+          "deltaIdle": 5120.271072000003,
+          "signFlip": false
+        },
+        {
+          "colleague": "wang",
+          "mission": "meeting",
+          "est": 11382864,
+          "uiNet": -971224.5296280961,
+          "engineNet": -7050111.8592000045,
+          "e2eNet": -7050111.859200012,
+          "deltaIdle": 5120.271072000003,
+          "signFlip": false
+        },
+        {
+          "colleague": "wang",
+          "mission": "toilet",
+          "est": 93908635,
+          "uiNet": 11123070.220371904,
+          "engineNet": 5044182.8907999955,
+          "e2eNet": 5044182.890799988,
+          "deltaIdle": 5120.271072000003,
+          "signFlip": false
+        },
+        {
+          "colleague": "wang",
+          "mission": "coffee",
+          "est": 358560244,
+          "uiNet": 32465941.970371902,
+          "engineNet": 26387054.640799996,
+          "e2eNet": 26387054.640799988,
+          "deltaIdle": 5120.271072000003,
+          "signFlip": false
+        }
+      ],
+      "talentProg": [
+        "点击转化：3000/10500 次（当前 +10%）",
+        "安然转化：20/30 次（当前 +20%）",
+        "溢出转化：4/30 点（当前 +2.0% 挂机，封顶 +15%）",
+        "天赋点：每次转生 +1；段位 3/5/7/9/11/13 档各 +1；每日首开 +1（上限 24，满树需 27 点 → 终局必须放弃一条流派）"
+      ],
+      "eff": {
+        "surviveToIdle": false,
+        "clickToIdleStep": 300,
+        "clickUltBase": 0
+      },
+      "conv": 0.1,
+      "clickPct": 0.1,
+      "survivePct": 0,
+      "decorSummary": "\n      已装修 8/8 · 挂机 ×1.58 · 点击 ×1.26 · 离线收益 ×1.62\n    ",
+      "dEff": {
+        "idleMult": 1.5779610000000004,
+        "clickMult": 1.265,
+        "offlineBonus": 0,
+        "offlineIncomeMult": 1.6225,
+        "dispatchRewardMult": 1.3
+      },
+      "ach": {
+        "summary": "16/22 · Lv.5",
+        "cats": [
+          "点击 1/3",
+          "挂机 1/2",
+          "图鉴 3/3",
+          "工位 2/2",
+          "小队 3/3",
+          "天赋 2/2",
+          "段位 2/2",
+          "摸鱼站 0/2",
+          "摸鱼卡 1/1",
+          "老板 1/2"
+        ],
+        "items": [
+          {
+            "name": "手速入门（已完成）",
+            "count": "✓",
+            "done": true
+          },
+          {
+            "name": "键盘杀手",
+            "count": "3000/10000",
+            "done": false
+          },
+          {
+            "name": "鼠标终结者",
+            "count": "3000/100000",
+            "done": false
+          },
+          {
+            "name": "躺平起步（已完成）",
+            "count": "✓",
+            "done": true
+          },
+          {
+            "name": "摸鱼自由",
+            "count": "166281/1000000",
+            "done": false
+          },
+          {
+            "name": "收集癖（已完成）",
+            "count": "✓",
+            "done": true
+          },
+          {
+            "name": "博物学家（已完成）",
+            "count": "✓",
+            "done": true
+          },
+          {
+            "name": "全图鉴（已完成）",
+            "count": "✓",
+            "done": true
+          },
+          {
+            "name": "开始装修（已完成）",
+            "count": "✓",
+            "done": true
+          },
+          {
+            "name": "工位大户（已完成）",
+            "count": "✓",
+            "done": true
+          },
+          {
+            "name": "第一个同事（已完成）",
+            "count": "✓",
+            "done": true
+          },
+          {
+            "name": "满编小队（已完成）",
+            "count": "✓",
+            "done": true
+          },
+          {
+            "name": "资深团队（已完成）",
+            "count": "✓",
+            "done": true
+          },
+          {
+            "name": "初窥门径（已完成）",
+            "count": "✓",
+            "done": true
+          },
+          {
+            "name": "天赋满树（已完成）",
+            "count": "✓",
+            "done": true
+          },
+          {
+            "name": "中层摸鱼（已完成）",
+            "count": "✓",
+            "done": true
+          },
+          {
+            "name": "宇宙尽头（已完成）",
+            "count": "✓",
+            "done": true
+          },
+          {
+            "name": "街机新手",
+            "count": "300/500",
+            "done": false
+          },
+          {
+            "name": "街机高手",
+            "count": "300/2000",
+            "done": false
+          },
+          {
+            "name": "今日宜摸鱼（已完成）",
+            "count": "✓",
+            "done": true
+          },
+          {
+            "name": "老油条（已完成）",
+            "count": "✓",
+            "done": true
+          },
+          {
+            "name": "摸鱼之王",
+            "count": "3/10",
+            "done": false
+          }
+        ]
+      },
+      "achExp": {
+        "summary": "16/22 · Lv.5",
+        "cats": [
+          "点击 1/3",
+          "挂机 1/2",
+          "图鉴 3/3",
+          "工位 2/2",
+          "小队 3/3",
+          "天赋 2/2",
+          "段位 2/2",
+          "摸鱼站 0/2",
+          "摸鱼卡 1/1",
+          "老板 1/2"
+        ],
+        "items": [
+          {
+            "name": "手速入门",
+            "count": "✓"
+          },
+          {
+            "name": "键盘杀手",
+            "count": "3000/10000"
+          },
+          {
+            "name": "鼠标终结者",
+            "count": "3000/100000"
+          },
+          {
+            "name": "躺平起步",
+            "count": "✓"
+          },
+          {
+            "name": "摸鱼自由",
+            "count": "166281/1000000"
+          },
+          {
+            "name": "收集癖",
+            "count": "✓"
+          },
+          {
+            "name": "博物学家",
+            "count": "✓"
+          },
+          {
+            "name": "全图鉴",
+            "count": "✓"
+          },
+          {
+            "name": "开始装修",
+            "count": "✓"
+          },
+          {
+            "name": "工位大户",
+            "count": "✓"
+          },
+          {
+            "name": "第一个同事",
+            "count": "✓"
+          },
+          {
+            "name": "满编小队",
+            "count": "✓"
+          },
+          {
+            "name": "资深团队",
+            "count": "✓"
+          },
+          {
+            "name": "初窥门径",
+            "count": "✓"
+          },
+          {
+            "name": "天赋满树",
+            "count": "✓"
+          },
+          {
+            "name": "中层摸鱼",
+            "count": "✓"
+          },
+          {
+            "name": "宇宙尽头",
+            "count": "✓"
+          },
+          {
+            "name": "街机新手",
+            "count": "300/500"
+          },
+          {
+            "name": "街机高手",
+            "count": "300/2000"
+          },
+          {
+            "name": "今日宜摸鱼",
+            "count": "✓"
+          },
+          {
+            "name": "老油条",
+            "count": "✓"
+          },
+          {
+            "name": "摸鱼之王",
+            "count": "3/10"
+          }
+        ]
+      },
+      "stats": [
+        "生涯总收入50000.01亿",
+        "本局 / 往期50000.01亿 / 0",
+        "当前余额10000.01亿",
+        "累计投入21.49亿",
+        "点击力 / 挂机729 / 16.63万每秒",
+        "累计点击3000",
+        "今日回访3/3（离线效率 95%）",
+        "连续日报0 天",
+        "图鉴55/55",
+        "转生8 点（×7.00）",
+        "纪录·最佳单日0.1（2026-11-27）",
+        "纪录·最长连签0 天",
+        "纪录·最多点击0"
+      ],
+      "prestigeBtn": "离职再就业：+20 点（永久 ×22.00）"
+    },
+    "dispatchNet": {
+      "total": 30,
+      "bad": 30,
+      "flips": 2,
+      "examples": [
+        {
+          "colleague": "qiang",
+          "mission": "chat",
+          "est": 4371367,
+          "uiNet": 1745167.6027789274,
+          "engineNet": -840837.8944000024,
+          "e2eNet": -840837.8944000658,
+          "deltaIdle": 2662.1033040000184,
+          "signFlip": true,
+          "domNet": 1745200
+        },
+        {
+          "colleague": "wang",
+          "mission": "stroll",
+          "est": 782571,
+          "uiNet": 3297331.470371904,
+          "engineNet": -2781555.8592000045,
+          "e2eNet": -2781555.859200012,
+          "deltaIdle": 5120.271072000003,
+          "signFlip": true,
+          "domNet": 3297300
+        }
+      ],
+      "rows": [
+        {
+          "colleague": "zhou",
+          "mission": "stroll",
+          "est": 698666,
+          "uiNet": 14344555.735185951,
+          "engineNet": 14856800.070399998,
+          "e2eNet": 14856800.0704,
+          "deltaIdle": 439.55553599999985,
+          "signFlip": false,
+          "domNet": 14344600
+        },
+        {
+          "colleague": "zhou",
+          "mission": "quick",
+          "est": 2302424,
+          "uiNet": 8740292.205774188,
+          "engineNet": 9252536.540988235,
+          "e2eNet": 9252536.540988237,
+          "deltaIdle": 439.55553599999985,
+          "signFlip": false,
+          "domNet": 8740300
+        },
+        {
+          "colleague": "zhou",
+          "mission": "chat",
+          "est": 6192728,
+          "uiNet": 12476480.441068307,
+          "engineNet": 12988724.776282353,
+          "e2eNet": 12988724.776282355,
+          "deltaIdle": 439.55553599999985,
+          "signFlip": false,
+          "domNet": 12476500
+        },
+        {
+          "colleague": "zhou",
+          "mission": "meeting",
+          "est": 10162425,
+          "uiNet": 9861149.85283301,
+          "engineNet": 10373394.188047059,
+          "e2eNet": 10373394.188047059,
+          "deltaIdle": 439.55553599999985,
+          "signFlip": false,
+          "domNet": 9861100
+        },
+        {
+          "colleague": "zhou",
+          "mission": "toilet",
+          "est": 55893339,
+          "uiNet": 14344573.088127129,
+          "engineNet": 14856817.423341177,
+          "e2eNet": 14856817.423341177,
+          "deltaIdle": 439.55553599999985,
+          "signFlip": false,
+          "domNet": 14344600
+        },
+        {
+          "colleague": "zhou",
+          "mission": "coffee",
+          "est": 142273956,
+          "uiNet": 18827996.323421247,
+          "engineNet": 19340240.658635296,
+          "e2eNet": 19340240.658635296,
+          "deltaIdle": 439.55553599999985,
+          "signFlip": false,
+          "domNet": 18828000
+        },
+        {
+          "colleague": "mei",
+          "mission": "stroll",
+          "est": 718368,
+          "uiNet": 10048054.668982439,
+          "engineNet": 9208490.088,
+          "e2eNet": 9208490.08800001,
+          "deltaIdle": 1433.019419999997,
+          "signFlip": false,
+          "domNet": 10048100
+        },
+        {
+          "colleague": "mei",
+          "mission": "quick",
+          "est": 2367352,
+          "uiNet": 5150102.66898244,
+          "engineNet": 4310538.0879999995,
+          "e2eNet": 4310538.088000011,
+          "deltaIdle": 1433.019419999997,
+          "signFlip": false,
+          "domNet": 5150100
+        },
+        {
+          "colleague": "mei",
+          "mission": "chat",
+          "est": 4244907,
+          "uiNet": 4170508.6689824397,
+          "engineNet": 3330944.0879999995,
+          "e2eNet": 3330944.0880000107,
+          "deltaIdle": 1433.019419999997,
+          "signFlip": false,
+          "domNet": 4170500
+        },
+        {
+          "colleague": "mei",
+          "mission": "meeting",
+          "est": 15673503,
+          "uiNet": 11354197.668982439,
+          "engineNet": 10514633.088,
+          "e2eNet": 10514633.08800001,
+          "deltaIdle": 1433.019419999997,
+          "signFlip": false,
+          "domNet": 11354200
+        },
+        {
+          "colleague": "mei",
+          "mission": "toilet",
+          "est": 57469513,
+          "uiNet": 10048072.918982439,
+          "engineNet": 9208508.338,
+          "e2eNet": 9208508.33800001,
+          "deltaIdle": 1433.019419999997,
+          "signFlip": false,
+          "domNet": 10048100
+        },
+        {
+          "colleague": "mei",
+          "mission": "coffee",
+          "est": 146286035,
+          "uiNet": 13966449.043982439,
+          "engineNet": 13126884.463,
+          "e2eNet": 13126884.46300001,
+          "deltaIdle": 1433.019419999997,
+          "signFlip": false,
+          "domNet": 13966400.000000002
+        },
+        {
+          "colleague": "qiang",
+          "mission": "stroll",
+          "est": 739769,
+          "uiNet": 7797813.602778927,
+          "engineNet": 5211808.105599998,
+          "e2eNet": 5211808.105599934,
+          "deltaIdle": 2662.1033040000184,
+          "signFlip": false,
+          "domNet": 7797800
+        },
+        {
+          "colleague": "qiang",
+          "mission": "quick",
+          "est": 2437878,
+          "uiNet": 2753945.6027789274,
+          "engineNet": 167940.10559999757,
+          "e2eNet": 167940.10559993424,
+          "deltaIdle": 2662.1033040000184,
+          "signFlip": false,
+          "domNet": 2753900
+        },
+        {
+          "colleague": "qiang",
+          "mission": "chat",
+          "est": 4371367,
+          "uiNet": 1745167.6027789274,
+          "engineNet": -840837.8944000024,
+          "e2eNet": -840837.8944000658,
+          "deltaIdle": 2662.1033040000184,
+          "signFlip": true,
+          "domNet": 1745200
+        },
+        {
+          "colleague": "qiang",
+          "mission": "meeting",
+          "est": 10760289,
+          "uiNet": 3762722.6027789274,
+          "engineNet": 1176717.1055999976,
+          "e2eNet": 1176717.1055999342,
+          "deltaIdle": 2662.1033040000184,
+          "signFlip": false,
+          "domNet": 3762700
+        },
+        {
+          "colleague": "qiang",
+          "mission": "toilet",
+          "est": 88772392,
+          "uiNet": 15195531.602778926,
+          "engineNet": 12609526.105599998,
+          "e2eNet": 12609526.105599934,
+          "deltaIdle": 2662.1033040000184,
+          "signFlip": false,
+          "domNet": 15195500
+        },
+        {
+          "colleague": "qiang",
+          "mission": "coffee",
+          "est": 150644059,
+          "uiNet": 11832940.977778926,
+          "engineNet": 9246935.480599998,
+          "e2eNet": 9246935.480599934,
+          "deltaIdle": 2662.1033040000184,
+          "signFlip": false,
+          "domNet": 11832900
+        },
+        {
+          "colleague": "li",
+          "mission": "stroll",
+          "est": 1826810,
+          "uiNet": 26860372.536575418,
+          "engineNet": 22527926.123199996,
+          "e2eNet": 22527926.123199962,
+          "deltaIdle": 3891.187188000011,
+          "signFlip": false,
+          "domNet": 26860400
+        },
+        {
+          "colleague": "li",
+          "mission": "quick",
+          "est": 6020170,
+          "uiNet": 14404852.536575418,
+          "engineNet": 10072406.123199996,
+          "e2eNet": 10072406.123199962,
+          "deltaIdle": 3891.187188000011,
+          "signFlip": false,
+          "domNet": 14404900
+        },
+        {
+          "colleague": "li",
+          "mission": "chat",
+          "est": 7196525,
+          "uiNet": 4717222.536575418,
+          "engineNet": 384776.1231999956,
+          "e2eNet": 384776.1231999621,
+          "deltaIdle": 3891.187188000011,
+          "signFlip": false,
+          "domNet": 4717200
+        },
+        {
+          "colleague": "li",
+          "mission": "meeting",
+          "est": 17714523,
+          "uiNet": 8038695.536575418,
+          "engineNet": 3706249.1231999956,
+          "e2eNet": 3706249.123199962,
+          "deltaIdle": 3891.187188000011,
+          "signFlip": false,
+          "domNet": 8038700
+        },
+        {
+          "colleague": "li",
+          "mission": "toilet",
+          "est": 60893675,
+          "uiNet": 5547591.286575418,
+          "engineNet": 1215144.8731999956,
+          "e2eNet": 1215144.873199962,
+          "deltaIdle": 3891.187188000011,
+          "signFlip": false,
+          "domNet": 5547600
+        },
+        {
+          "colleague": "li",
+          "mission": "coffee",
+          "est": 155002084,
+          "uiNet": 9699433.036575418,
+          "engineNet": 5366986.623199996,
+          "e2eNet": 5366986.623199962,
+          "deltaIdle": 3891.187188000011,
+          "signFlip": false,
+          "domNet": 9699400
+        },
+        {
+          "colleague": "wang",
+          "mission": "stroll",
+          "est": 782571,
+          "uiNet": 3297331.470371904,
+          "engineNet": -2781555.8592000045,
+          "e2eNet": -2781555.859200012,
+          "deltaIdle": 5120.271072000003,
+          "signFlip": true,
+          "domNet": 3297300
+        },
+        {
+          "colleague": "wang",
+          "mission": "quick",
+          "est": 2578930,
+          "uiNet": -2038368.5296280961,
+          "engineNet": -8117255.8592000045,
+          "e2eNet": -8117255.859200012,
+          "deltaIdle": 5120.271072000003,
+          "signFlip": false,
+          "domNet": -2038368.5
+        },
+        {
+          "colleague": "wang",
+          "mission": "chat",
+          "est": 4624288,
+          "uiNet": -3105512.529628096,
+          "engineNet": -9184399.859200004,
+          "e2eNet": -9184399.859200012,
+          "deltaIdle": 5120.271072000003,
+          "signFlip": false,
+          "domNet": -3105512.5
+        },
+        {
+          "colleague": "wang",
+          "mission": "meeting",
+          "est": 11382864,
+          "uiNet": -971224.5296280961,
+          "engineNet": -7050111.8592000045,
+          "e2eNet": -7050111.859200012,
+          "deltaIdle": 5120.271072000003,
+          "signFlip": false,
+          "domNet": -971224.5
+        },
+        {
+          "colleague": "wang",
+          "mission": "toilet",
+          "est": 93908635,
+          "uiNet": 11123070.220371904,
+          "engineNet": 5044182.8907999955,
+          "e2eNet": 5044182.890799988,
+          "deltaIdle": 5120.271072000003,
+          "signFlip": false,
+          "domNet": 11123100
+        },
+        {
+          "colleague": "wang",
+          "mission": "coffee",
+          "est": 358560244,
+          "uiNet": 32465941.970371902,
+          "engineNet": 26387054.640799996,
+          "e2eNet": 26387054.640799988,
+          "deltaIdle": 5120.271072000003,
+          "signFlip": false,
+          "domNet": 32465900
+        }
+      ]
+    },
+    "S1shots": [
+      "playtest/v066-shots/s1-journal-ach.png"
+    ],
+    "focus": {
+      "focusLive": {
+        "click": 22.808,
+        "idle": 0.25796777305596597,
+        "boost": {
+          "idleMult": 1.08,
+          "patrolRewardMult": 1,
+          "clickMult": 2
+        },
+        "hudClick": "22.8"
+      },
+      "focusAfter": {
+        "click": 22.808,
+        "idle": 0.25796777305596597,
+        "boost": {
+          "idleMult": 1.08,
+          "patrolRewardMult": 1,
+          "clickMult": 2
+        },
+        "hudClick": "22.8"
+      }
+    },
+    "S3shot": "playtest/v066-shots/s3-welcome-1h.png",
+    "offline": [
+      {
+        "case": "1h（非封顶）",
+        "welcome": {
+          "hidden": false,
+          "time": "1 小时 0 分",
+          "gain": "13.15万",
+          "rule": "离线效率 95%｜12 小时封顶"
+        },
+        "engine": {
+          "elapsed": 3600.746,
+          "applied": 3600.746,
+          "earned": 131507.39627899992,
+          "panelRate": 0.95,
+          "impliedRate": 0.95,
+          "cap": 43200,
+          "incomeMult": 1.6225,
+          "capHours": 12
+        },
+        "expectGain": "13.15万"
+      },
+      {
+        "case": "100h（12h 封顶）",
+        "welcome": {
+          "hidden": false,
+          "time": "100 小时 0 分",
+          "gain": "157.78万",
+          "rule": "离线效率 95%｜超过上限，已按上限结算 12 小时 0 分"
+        },
+        "engine": {
+          "elapsed": 360000.759,
+          "applied": 43200,
+          "earned": 1577761.8080399998,
+          "panelRate": 0.95,
+          "impliedRate": 0.95,
+          "cap": 43200,
+          "incomeMult": 1.6225,
+          "capHours": 12
+        },
+        "expectGain": "157.78万"
+      },
+      {
+        "case": "8 天（24h 封顶 + ≥7 天回归）",
+        "welcome": {
+          "hidden": false,
+          "time": "192 小时 0 分",
+          "gain": "332.16万",
+          "rule": "离线效率 95%｜超过上限，已按上限结算 24 小时 0 分"
+        },
+        "engine": {
+          "elapsed": 691200.74,
+          "applied": 86400,
+          "earned": 3321603.8063999997,
+          "panelRate": 0.95,
+          "impliedRate": 1,
+          "cap": 86400,
+          "incomeMult": 1.6225,
+          "capHours": 24
+        },
+        "expectGain": "332.16万"
+      },
+      {
+        "case": "31 天（48h 封顶 + ≥7 天回归）",
+        "welcome": {
+          "hidden": false,
+          "time": "744 小时 0 分",
+          "gain": "664.32万",
+          "rule": "离线效率 95%｜超过上限，已按上限结算 48 小时 0 分"
+        },
+        "engine": {
+          "elapsed": 2678400.829,
+          "applied": 172800,
+          "earned": 6643207.612799999,
+          "panelRate": 0.95,
+          "impliedRate": 1,
+          "cap": 172800,
+          "incomeMult": 1.6225,
+          "capHours": 48
+        },
+        "expectGain": "664.32万"
+      }
+    ],
+    "newbie": {
+      "recruitText": "招募 1500",
+      "expectPrice": 1500,
+      "lockedCount": 1,
+      "questText": "买下点亮的「咖啡续命」卡片",
+      "onboardingClass": "onboarding"
+    },
+    "S4shot": "playtest/v066-shots/s4-newbie-team.png",
+    "prod": {
+      "base": {
+        "hasDebug": false,
+        "cards": 9,
+        "hud": {
+          "moyu": "0.2",
+          "click": "1",
+          "idle": "0.2",
+          "rank": "实习生 0%"
+        },
+        "boot": false
+      },
+      "ver": {
+        "version": "v0.6.6 · 2026-11-27",
+        "achSummary": "0/22 · Lv.1",
+        "achItems": 22
+      },
+      "offline": [
+        {
+          "case": "100h",
+          "hidden": false,
+          "time": "100 小时 0 分",
+          "gain": "78.54万",
+          "rule": "离线效率 90%｜超过上限，已按上限结算 12 小时 0 分",
+          "moyu": "78.64万"
+        },
+        {
+          "case": "8d",
+          "hidden": false,
+          "time": "192 小时 0 分",
+          "gain": "174.53万",
+          "rule": "离线效率 90%｜超过上限，已按上限结算 24 小时 0 分",
+          "moyu": "174.63万"
+        }
+      ]
+    },
+    "S5shot": "playtest/v066-shots/s5-prod-offline.png"
+  },
+  "defects": [
+    {
+      "level": "P1",
+      "where": "src/ui/team-panel.ts 净收益公式",
+      "issue": "仍有符号翻转（端到端口径 = 奖励/小时 − 挂机率前后差×3600）：qiang/chat 面板 1745200/h vs 引擎 -840838/h；wang/stroll 面板 3297300/h vs 引擎 -2781556/h"
+    },
+    {
+      "level": "P1",
+      "where": "src/engine/resume.ts + src/ui/welcome.ts",
+      "issue": "8 天（24h 封顶 + ≥7 天回归）：面板写 95%，实际按 100% 结算（多 5.3%）；resume.settleReturn 仍对 ≥7 天强制 rate=1"
+    },
+    {
+      "level": "P1",
+      "where": "src/engine/resume.ts + src/ui/welcome.ts",
+      "issue": "31 天（48h 封顶 + ≥7 天回归）：面板写 95%，实际按 100% 结算（多 5.3%）；resume.settleReturn 仍对 ≥7 天强制 rate=1"
+    },
+    {
+      "level": "P1",
+      "where": "线上 v0.6.6 欢迎面板（8 天回归）",
+      "issue": "面板「离线效率 90%｜超过上限，已按上限结算 24 小时 0 分」，但按 100h 档反推实际按 100.0% 结算 → ≥7 天回归仍绕 95% 上限（线上同样命中）"
+    }
+  ],
+  "summary": {
+    "total": 44,
+    "pass": 40,
+    "fail": 4
+  }
+}
